@@ -288,16 +288,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
         protected void SaveSingleChild()
         {
             MembershipManager membershipManager = new MembershipManager();
+            Child savedChild;
 
             //checking if existing child prevents yellow death screens
             if (status == Constants.QueryStrings.Registration.ModeEdit || membershipManager.isExistingChild(singleChild.ChildId))
             {
-                membershipManager.UpdateChild(singleChild);
+                savedChild = membershipManager.UpdateChild(singleChild);
             }
             else
             {
-                membershipManager.AddChild(singleChild, this.CurrentMember.MemberId);
+                savedChild = membershipManager.AddChild(singleChild, this.CurrentMember.MemberId);
             }
+
+            // Update personalization
+            Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
+            rps.UpdateChild(savedChild.ChildId);
         }
 
         protected void SetRegisteringUser()

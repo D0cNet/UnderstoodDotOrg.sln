@@ -26,6 +26,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveTools
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 using System.ComponentModel;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -707,19 +708,41 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 results = finalList;
 
-                /*var resp = System.Web.HttpContext.Current.Response;
-                resp.Write(String.Format("Member: {0} {1} | Child: {2}<br>", member.FirstName, member.LastName, child.Nickname));
-                resp.Write(String.Format("Total articles to search: {0}<br>", allArticlesQuery.Take(1).GetResults().TotalSearchResults));
-                resp.Write(String.Format("Matches: {0}<br><br>", totalMatches));
-                //resp.Write(String.Format("Timely: {0}<br>", timelyArticles.Count()));
-                //resp.Write(String.Format("Must: {0}<br><br>", mustReadArticles.Count()));
+                //var resp = System.Web.HttpContext.Current.Response;
+                //resp.Write(String.Format("Member: {0} {1} | Child: {2}<br>", member.FirstName, member.LastName, child.Nickname));
+                //resp.Write(String.Format("Total articles to search: {0}<br>", allArticlesQuery.Take(1).GetResults().TotalSearchResults));
+                //resp.Write(String.Format("Matches: {0}<br><br>", totalMatches));
+                ////resp.Write(String.Format("Timely: {0}<br>", timelyArticles.Count()));
+                ////resp.Write(String.Format("Must: {0}<br><br>", mustReadArticles.Count()));
 
-                foreach (Article a in finalList)
-                {
-                    resp.Write(String.Format("{0} - {1} ({2})<br>", a.ItemId.ToString(), a.Name, a.Language));
-                }
+                //resp.Write(String.Format("Grade: {0}<br><br>", child.Grades.FirstOrDefault().Value));
 
-                resp.Write("<br><br>");*/
+                //foreach (Article a in finalList)
+                //{
+                //    resp.Write(String.Format("{0} - {1} ({2})<br>", a.ItemId.ToString(), a.Name, a.Language));
+
+                //    if (a.ChildGrades != null)
+                //    {
+                //        resp.Write("Indexed grades: ");
+                //        resp.Write(string.Join(" ", a.ChildGrades.Select(i => Sitecore.Context.Database.GetItem(i))
+                //                                        .Where(i => i != null)
+                //                                        .Select(i => ((GradeLevelItem)i).Name.Raw)
+                //                                        .ToArray()));
+                //    }
+
+                //    DefaultArticlePageItem article = a.GetItem();
+                //    if (article != null)
+                //    {
+                //        resp.Write("<br>Article grades: ");
+                //        resp.Write(string.Join(" ", article.ChildGrades.ListItems.Select(i => new GradeLevelItem(i))
+                //                        .Select(i => i.Name.Raw).ToList()
+                //                                        .ToArray()));     
+                //    }
+
+                //    resp.Write("<br><br>");
+                //}
+
+                //resp.Write("<br><br>");
             }  
 
             return results;
