@@ -91,12 +91,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
         protected void BindReviews()
         {
-            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());            
+            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
 
             if (ddlSorting.SelectedIndex == 0)
-                reviews = reviews.OrderBy(i => i.Created).ToList();
-            else if (ddlSorting.SelectedIndex == 1)
                 reviews = reviews.OrderBy(i => i.Created).Reverse().ToList();
+            else if (ddlSorting.SelectedIndex == 1)
+                reviews = reviews.OrderBy(i => i.Created).ToList();
             else if (ddlSorting.SelectedIndex == 2)
                 reviews = reviews.OrderBy(i => i.Rating).Reverse().ToList();
             else
@@ -240,7 +240,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
                         BindReviews();
 
-                        Response.Redirect(Request.RawUrl);
+                        Response.Redirect(Request.RawUrl + "#tabs2-parent-reviews");
                     }
                     catch
                     {
