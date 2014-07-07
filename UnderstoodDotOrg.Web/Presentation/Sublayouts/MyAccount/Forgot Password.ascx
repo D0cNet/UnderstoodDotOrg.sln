@@ -13,11 +13,15 @@
                         </header>
                         <p class="intro-text"><%--No worries. We'll send you an email with a link to reset it.--%>
                             <sc:Text id="directions" runat="server" field="Directions"></sc:Text>
-                        </p>
-                        <asp:Literal ID="litErrorMessage" runat="server">User does not exist</asp:Literal>
+                        </p>                        
                         <label>
                             <asp:TextBox runat="server" ID="txtEmailAddress"></asp:TextBox>
                         </label>
+                        <asp:RequiredFieldValidator ID="valEmailRequired" runat="server" ControlToValidate="txtEmailAddress" CssClass="validationerror" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="valEmailRegex" runat="server" ControlToValidate="txtEmailAddress" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
+
+                        <asp:Literal ID="litErrorMessage" runat="server"></asp:Literal>
+
                         <asp:Button runat="server" ID="btnSubmit" CssClass="button submit rs_skip" OnClick="btnSubmit_Click" />
                         <asp:Button runat="server" ID="btnCancel" CssClass="button gray rs_skip" OnClick="btnCancel_Click" />
                         <sc:Text runat="server" id="hint" field="Hint Text"></sc:Text>

@@ -16,66 +16,63 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         {
             btnSubmit.Text = DictionaryConstants.SubmitButtonText;
             btnCancel.Text = DictionaryConstants.CancelButtonText;
-            litErrorMessage.Visible = false;
-            litErrorMessage.Text = DictionaryConstants.EmailAddressErrorMessage;
+            //litErrorMessage.Visible = false;
+            //litErrorMessage.Text = DictionaryConstants.EmailAddressErrorMessage;
             txtEmailAddress.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
+
+            //set validation
+            valEmailRequired.ErrorMessage = valEmailRegex.ErrorMessage = DictionaryConstants.EmailAddressErrorMessage; //"it looks like you had a typo"
+            valEmailRegex.ValidationExpression = Constants.Validators.Email;
 
             Page.Form.DefaultButton = btnSubmit.UniqueID;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            var email = txtEmailAddress.Text;
+
             try
             {
-                var email = txtEmailAddress.Text;
+                //always show success message, even if we don't send the email
+                //add ASP.Net validation
+
+                MembershipManager membershipManager = new MembershipManager();
                 Member member;
-  
-                try
-                {
-                    // verify email exists
-                    MembershipManager membershipManager = new MembershipManager();
-                    member = membershipManager.GetMember(email);
-                }
-                catch (Exception ex)
-                {
-                                       
-                    litErrorMessage.Text = DictionaryConstants.EmailInvalidUser;
-                    member = null;
-                }
+
+                member = membershipManager.GetMember(email);
 
                 if (member != null)
                 {
-                                        
                     var passwordReset = Sitecore.Context.Database.GetItem(Constants.TemplateIDs.ForgotPasswordPage);
                     var link = string.Format(Request.Url.Host + "{0}?guid={1}", passwordReset.GetUrl(), member.MemberId.ToString());
-					
+
                     BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PreferredLanguage = member.PreferredLanguage, PasswordResetLink = link, ToEmail = email });
 
                     if (reply.Successful)
-                    {
-                        uxView.ActiveViewIndex = 1;
-                        litSuccessStory.Text = Model.SuccessMessage.Rendered.Replace("$email$", email);
-                    }
+                    { }
                     else
                     {
-                        uxView.ActiveViewIndex = 0;
-                        litErrorMessage.Visible = true;
-                        litErrorMessage.Text = DictionaryConstants.EmailException;
+                        litErrorMessage.Text = "There was an issue sending your password reset email";
+                        throw new Exception("Issue sending email to: " + email);
                     }
                 }
                 else
                 {
-                    //user does not exist
-                    uxView.ActiveViewIndex = 0;
-                    litErrorMessage.Visible = true;
+                    throw new Exception("User does not exist: " + email);
                 }
             }
             catch (Exception ex)
             {
                 Sitecore.Diagnostics.Log.Error("Forgot password error", ex, this);
-                uxView.ActiveViewIndex = 0;
-                litErrorMessage.Visible = true;
-                litErrorMessage.Text = DictionaryConstants.EmailException;
+                //uxView.ActiveViewIndex = 0;
+                //litErrorMessage.Visible = true;
+                //litErrorMessage.Text = DictionaryConstants.EmailException;
+            }
+
+            if (string.IsNullOrEmpty(litErrorMessage.Text))
+            {
+                uxView.ActiveViewIndex = 1;
+                litSuccessStory.Text = Model.SuccessMessage.Rendered.Replace("$email$", Server.HtmlEncode(email));
             }
         }
 
