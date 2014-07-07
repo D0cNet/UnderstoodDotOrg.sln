@@ -1063,7 +1063,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 string adminKeyBase64 = TelligentAuth();
 
                 webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-
+                try{
                 var requestUrl = String.Format("{0}api.ashx/v2/forums/{1}/threads/{2}/replies.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), forumID, threadID);
                 var xml = webClient.DownloadString(requestUrl);
                 var xmlDoc = new XmlDocument();
@@ -1078,6 +1078,11 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         replies.Add(rpm);
                         rpm = null;
                     }
+                }
+                }catch(Exception ex)
+                {
+                    replies = null;
+                    Sitecore.Diagnostics.Error.LogError("Error in TelligentServices.ReadReplies. Error:\n" + ex.Message); 
                 }
             }
             return replies;
@@ -2138,6 +2143,11 @@ namespace UnderstoodDotOrg.Services.TelligentService
             {
                 var requestorID = ReadUserId(requestor);
                 var requesteeID = ReadUserId(requestee);
+                
+                //Same user ?
+                if (requesteeID.Equals(requestorID))
+                    return Constants.TelligentFriendStatus.Approved;
+
                 string address = String.Empty;
                 using (WebClient client = new WebClient())
                 {

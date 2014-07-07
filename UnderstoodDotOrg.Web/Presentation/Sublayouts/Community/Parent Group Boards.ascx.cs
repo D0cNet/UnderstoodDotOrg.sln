@@ -99,12 +99,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if (e.Item.DataItem is ThreadModel)
                 {
                     Item thread = null;
-                    HiddenField hdSub = (HiddenField)e.Item.FindControl("hdSubject");
-                    if (hdSub != null)
+                    HiddenField hdFrmID = (HiddenField)e.Item.FindControl("forumId");
+                    HiddenField hdThID = (HiddenField)e.Item.FindControl("threadId");
+
+                    if (hdFrmID != null && hdThID !=null)
                     {
 
-                        string subject = hdSub.Value;
-                        thread = Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@Subject = '" + subject + "']");
+                        string forumId = hdFrmID.Value;
+                        string threadId = hdThID.Value;
+                        thread = Threads.ConvertThreadtoSitecoreItem(forumId, threadId); //Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@Subject = '" + subject + "']");
                         // ID = thread.ID.ToString();
                     }
                     HtmlAnchor hrefDiscussions = (HtmlAnchor)e.Item.FindControl("hrefDiscussion");

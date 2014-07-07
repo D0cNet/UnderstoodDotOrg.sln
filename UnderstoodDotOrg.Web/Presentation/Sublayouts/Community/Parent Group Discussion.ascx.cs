@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
@@ -47,17 +48,28 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             ThreadModel thModel = UnderstoodDotOrg.Services.CommunityServices.Threads.ThreadModelFactory(forumID, threadID);
 
                             //Populate the initial Post
-                            lblSubject.Text = thModel.Subject;
-                            imgAvatar.ImageUrl = thModel.Author.AvatarUrl;
-                            lblName.Text = thModel.Author.UserName;
-                            lblLocation.Text = thModel.Author.UserLocation;
-                            litComment.Text = thModel.Body;
-                            litNumReplies.Text = thModel.ReplyCount;
-                            litMemberCount.Text = thModel.Members.Count.ToString();
                             rptChildCard.DataSource = thModel.Author.Children;
                             rptChildCard.DataBind();
                             rptGroupDiscussion.DataSource = thModel.Replies;
                             rptGroupDiscussion.DataBind();
+
+                            if(IsUserLoggedIn)
+                            {
+                                if(!String.IsNullOrEmpty(CurrentMember.ScreenName))
+                                {
+                                    btnConnect.LoadState(CurrentMember.ScreenName);
+                                }
+                            }
+                                
+                            lblSubject.Text = thModel.Subject;
+                            imgAvatar.ImageUrl = thModel.Author.AvatarUrl;
+                            lblName.Text = thModel.Author.UserName;
+                            hrefName.HRef = thModel.Author.ProfileLink;
+                            lblLocation.Text = thModel.Author.UserLocation;
+                            litComment.Text = thModel.Body;
+                            litNumReplies.Text = thModel.ReplyCount;
+                            litMemberCount.Text = thModel.Members.Count.ToString();
+                            
                         }
                         catch (Exception ex)
                         {

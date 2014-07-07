@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Group Discussion.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Group_Discussion" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/ConnectButton.ascx" TagPrefix="uc1" TagName="ConnectButton" %>
 
-    <!-- BEGIN PARTIAL: community/main_header -->
+
+<!-- BEGIN PARTIAL: community/main_header -->
 
     <!-- END PARTIAL: community/main_header -->
 <script>
@@ -51,12 +53,13 @@
                                     <asp:Image ID="imgAvatar" runat="server" />
 
                                 </div>
-                                <a class="name" href="REPLACE">
+                                <a class="name" id="hrefName" runat="server" href="REPLACE">
                                     <asp:Label Text="" ID="lblName" runat="server" /></a>
                                 <p class="location">
                                     <asp:Label Text="" ID="lblLocation" runat="server" />
                                 </p>
-                                <a href="REPLACE" class="button rs_skip">Connect</a>
+                               <%-- <a href="REPLACE" class="button rs_skip">Connect</a>--%>
+                                <uc1:ConnectButton runat="server" ID="btnConnect" />
                                 <div class="member-card-specialties parents-member-cards">
                                     <asp:Repeater ID="rptChildCard" OnItemDataBound="rptChildCard_ItemDataBound" ClientIDMode="Static" runat="server">
                                         <HeaderTemplate>

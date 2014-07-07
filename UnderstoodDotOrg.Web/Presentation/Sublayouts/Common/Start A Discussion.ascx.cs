@@ -63,6 +63,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
                         ddlForums.DataSource = grpModel.Forums;
                         ddlForums.DataBind();
+                        rbddlFname.Checked = true;
                     }
                 }
                 else

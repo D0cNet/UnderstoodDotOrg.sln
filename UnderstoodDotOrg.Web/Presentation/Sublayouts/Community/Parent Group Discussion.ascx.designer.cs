@@ -49,6 +49,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.WebControls.Image imgAvatar;
         
         /// <summary>
+        /// hrefName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor hrefName;
+        
+        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLocation;
+        
+        /// <summary>
+        /// btnConnect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ConnectButton btnConnect;
         
         /// <summary>
         /// rptChildCard control.

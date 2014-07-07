@@ -80,7 +80,8 @@
                                                 <ul class="discussions">
                                             </HeaderTemplate>
                                             <ItemTemplate>
-                                                <asp:HiddenField Value='<%# Eval("Subject") %>' runat="server" ID="hdSubject"/>
+                                                <asp:HiddenField Value='<%# Eval("ForumID") %>' runat="server" ID="forumId"/>
+                                                <asp:HiddenField Value='<%# Eval("ThreadID") %>' runat="server" ID="threadId"/>
                                                 <li>
 							                        <div class="col summary">
 								                        <a href="REPLACE" id="hrefDiscussion" runat="server">

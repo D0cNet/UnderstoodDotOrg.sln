@@ -4,9 +4,7 @@
         if (!Page_ClientValidate('<%= validation_group %>')) {
             return false;
         }
-        else {
-            return confirm('<%= confirmationMessage %>');
-        }
+        
     }
 
     function loadDialog() {
