@@ -59,7 +59,7 @@
                 </div>
                 <!-- .col -->
                 <div class="col col-4">
-                    <a class="close-guide">Close</a>
+                    <a class="close-guide"><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseButtonText %></a>
                 </div>
                 <!-- .col -->
             </header>
