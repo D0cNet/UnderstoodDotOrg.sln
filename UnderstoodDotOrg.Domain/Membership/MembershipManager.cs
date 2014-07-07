@@ -377,6 +377,12 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             var user = this.GetUser(EmailAddress, true);
             // TODO: refactor this using LINQ once we add Email to entity model
+
+            if (user == null)
+            {
+                return null;
+            }
+
             return this.GetMember(Guid.Parse(user.ProviderUserKey.ToString()));
         }
 
