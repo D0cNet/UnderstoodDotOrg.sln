@@ -112,6 +112,9 @@
     <Reference Include="Sitecore.SharedSource.PartialLanguageFallback">
       <HintPath>..\Libraries\Sitecore.SharedSource.PartialLanguageFallback.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Support.405542">
+      <HintPath>..\Libraries\Sitecore.Support.405542.dll</HintPath>
+    </Reference>
     <Reference Include="SolrNet">
       <HintPath>..\Libraries\SolrNet.dll</HintPath>
     </Reference>
