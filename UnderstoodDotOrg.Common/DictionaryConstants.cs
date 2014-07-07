@@ -1509,6 +1509,8 @@ namespace UnderstoodDotOrg.Common
 
        public static string ReadBlogLabel { get { return Translate.TextByDomain(PosesDictionary, "Read Blog Label"); } }
 
+       public static string RepliesLabel { get { return Translate.TextByDomain(PosesDictionary, "Replies Label"); } }
+
        #region Connect Button Labels
        public static string ConnectBtnText { get { return Translate.TextByDomain(PosesDictionary, "Connect Button Text"); } }
        public static string ViewActivity { get { return Translate.TextByDomain(PosesDictionary, "View Activity Button Text"); } }
