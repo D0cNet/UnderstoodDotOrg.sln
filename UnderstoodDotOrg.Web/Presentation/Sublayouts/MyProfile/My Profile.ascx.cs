@@ -117,7 +117,7 @@
                 }
 
                 //top of edit interests
-                hypEditCommunityAboutMe.NavigateUrl = MyAccountFolderItem.GetCompleteMyProfileStepFour();
+                hypEditCommunityAboutMe.NavigateUrl = String.Format(MyAccountFolderItem.GetCompleteMyProfileStepFour() + "?{0}={1}", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
 
                 //jump to edit community
                 hypEditCommunity.NavigateUrl = hypCompleteYourProfile.NavigateUrl = String.Format(MyAccountFolderItem.GetCompleteMyProfileStepFour() + "?{0}={1}#community", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
