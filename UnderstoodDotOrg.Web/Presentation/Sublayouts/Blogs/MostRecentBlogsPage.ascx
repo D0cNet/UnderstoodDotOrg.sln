@@ -14,7 +14,7 @@
                     <div class="blog-filter clearfix skiplink-toolbar">
                         <div class="mobile-search-box">
                             <fieldset class="group-search-form mobile-group-search-form">
-                                <label for="blog-group-search-text" class="visuallyhidden" aria-hidden="true">Search this blog</label>
+                                <label for="blog-group-search-text" class="visuallyhidden" aria-hidden="true"><sc:Text Field="Search This Blog Text" runat="server" /></label>
                                 <input type="text" class="group-search" id="blog-group-search-text" name="group-search" placeholder="Search this blog"></input>
                                 <input class="group-search-button" type="submit" value="Go"></input>
                             </fieldset>
@@ -27,13 +27,13 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
 
-                                    <li id="Recent" role="presentation" class="filter selected" data-sort-by="date"><a role="menuitem" onclick="showRecent();" runat="server">Most recent</a></li>
+                                    <li id="Recent" role="presentation" class="filter selected" data-sort-by="date"><a role="menuitem" onclick="showRecent();" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostRecentLabel %></a></li>
 
-                                    <li id="Read" role="presentation" class="filter " data-sort-by="read"><a role="menuitem" onclick="" runat="server">Most read</a></li>
+                                    <li id="Read" role="presentation" class="filter " data-sort-by="read"><a role="menuitem" onclick="" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostReadLabel %></a></li>
 
-                                    <li id="Shared" role="presentation" class="filter " data-sort-by="shared"><a role="menuitem" onclick="" runat="server">Most shared</a></li>
+                                    <li id="Shared" role="presentation" class="filter " data-sort-by="shared"><a role="menuitem" onclick="" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostSharedLabel %></a></li>
 
-                                    <li id="TalkedAbout" role="presentation" class="filter " data-sort-by="talkedabout"><a role="menuitem" onclick="showTalkedAbout();" runat="server">Most talked about</a></li>
+                                    <li id="TalkedAbout" role="presentation" class="filter " data-sort-by="talkedabout"><a role="menuitem" onclick="showTalkedAbout();" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostTalkedLabel %></a></li>
 
                                 </ul>
                             </div>
@@ -56,7 +56,7 @@
                                     <a>
                                         <img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>
 
-                                    <p class="blog-card-comments"><b class="number-of-comments"><%# Item.CommentCount %></b>Comments</p>
+                                    <p class="blog-card-comments"><b class="number-of-comments"><%# Item.CommentCount %></b><sc:Text Field="Comments Text" runat="server" /></p>
 
                                 </div>
                                 <div class="blog-card-info group">
@@ -64,10 +64,10 @@
 
 
                                     <div class="blog-card-post-info">
-                                        <p class="blog-posted">Posted</p>
+                                        <p class="blog-posted"><sc:Text Field="Posted Text" runat="server" /></p>
                                         <p class="blog-post-date"><%# Item.PublishedDate %></p>
                                         <p class="blog-by">
-                                            by
+                                            <sc:Text Field="By Text" runat="server" />
           <a href="<%# Item.AuthorUrl %>" class="author"><%# Item.Author %></a>
                                         </p>
                                     </div>
@@ -137,7 +137,7 @@
                             <a>
                                 <img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>
 
-                            <p class="blog-card-comments"><b class="number-of-comments"><%# Item.CommentCount %></b>Comments</p>
+                            <p class="blog-card-comments"><b class="number-of-comments"><%# Item.CommentCount %></b><sc:Text Field="CommentsText" runat="server" /></p>
 
                         </div>
                         <div class="blog-card-info group">

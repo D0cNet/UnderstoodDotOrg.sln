@@ -1479,8 +1479,35 @@ namespace UnderstoodDotOrg.Common
 
        public static string FeaturedParentQuestionsLabel { get { return Translate.TextByDomain(PosesDictionary, "Featured Parent Questions Label"); } }
 
-       public static string RepliesLabel { get { return Translate.TextByDomain(PosesDictionary, "Replies Label"); } }
+       public static string TheUnderstoodBlogLabel { get { return Translate.TextByDomain(PosesDictionary, "The Understood Blog Label"); } }
 
+       public static string ReadTheUnderstoodBlogButtonLabel { get { return Translate.TextByDomain(PosesDictionary, "Read The Understood Blog Button Label"); } }
+
+       public static string MoreBlogsLabel { get { return Translate.TextByDomain(PosesDictionary, "More Blogs Label"); } }
+
+       public static string FromOurBlogsLabel { get { return Translate.TextByDomain(PosesDictionary, "From Our Blogs Label"); } }
+
+       public static string SeeAllBlogsLabel { get { return Translate.TextByDomain(PosesDictionary, "See All Blogs Label"); } }
+
+       public static string SeeMoreLabel { get { return Translate.TextByDomain(PosesDictionary, "See More Label"); } }
+
+       public static string PostedByLabel { get { return Translate.TextByDomain(PosesDictionary, "Posted By Label"); } }
+
+       public static string MostReadLabel { get { return Translate.TextByDomain(PosesDictionary, "Most Read Label"); } }
+
+       public static string MostSharedLabel { get { return Translate.TextByDomain(PosesDictionary, "Most Shared Label"); } }
+
+       public static string MostTalkedLabel { get { return Translate.TextByDomain(PosesDictionary, "Most Talked Label"); } }
+
+       public static string MostSharedThisWeekLabel { get { return Translate.TextByDomain(PosesDictionary, "Most Shared This Week Label"); } }
+
+       public static string ParentsAreTalkingAboutLabel { get { return Translate.TextByDomain(PosesDictionary, "Parents Are Talking About Label"); } }
+
+       public static string PostACommentLabel { get { return Translate.TextByDomain(PosesDictionary, "Post A Comment Label"); } }
+
+       public static string SearchThisBlogLabel { get { return Translate.TextByDomain(PosesDictionary, "Search This Blog Label"); } }
+
+       public static string ReadBlogLabel { get { return Translate.TextByDomain(PosesDictionary, "Read Blog Label"); } }
 
        #region Connect Button Labels
        public static string ConnectBtnText { get { return Translate.TextByDomain(PosesDictionary, "Connect Button Text"); } }

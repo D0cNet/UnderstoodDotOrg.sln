@@ -4,7 +4,7 @@
 <div class="community-our-blogs">
     <div class="row">
         <div class="col col-24 container skiplink-content" aria-role="main">
-            <h2>From Our Blogs</h2>
+            <h2><sc:Text Field="From Our Blogs Text" runat="server" /></h2>
             <div class="row blogs-more">
                 <asp:Repeater ID="BlogPostsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" OnItemDataBound="BlogPostRepeater_OnItemDataBound" runat="server">
                     <ItemTemplate>
@@ -21,7 +21,7 @@
                                 </div>
                                 <!-- end .blog-card-title -->
                                 <div class="blog-card-post-info">
-                                    Posted by <a href="<%# Item.AuthorUrl %>"><%# Item.Author %></a> <%# Item.PublishedDate %>
+                                    <sc:Text  Field="Posted By Text" runat="server" /> <a href="<%# Item.AuthorUrl %>"><%# Item.Author %></a> <%# Item.PublishedDate %>
                                 </div>
                                 <div class="blog-card-post-excerpt">
                                     <%# Item.Body %> <a href="<%# Item.Url %>" class="link-see-more">See more</a>

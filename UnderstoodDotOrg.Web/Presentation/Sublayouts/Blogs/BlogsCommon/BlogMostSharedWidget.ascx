@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BlogMostSharedWidget.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon.BlogMostSharedWidget" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="blog-most-shared">
-    <h3>Most Shared This Week</h3>
+    <h3><sc:Text Field="Most Shared This Week Text" runat="server" /></h3>
     <asp:Repeater ID="rptMostShared" runat="server"
         ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
         <ItemTemplate>

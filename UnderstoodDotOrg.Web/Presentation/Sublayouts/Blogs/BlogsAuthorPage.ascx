@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class="col-23 blog-post-list-wrapper blog-author-posts clearfix skiplink-content" aria-role="main" aria-role="main">
-                <h2>Recent Posts</h2>
+                <h2><sc:Text Field="Recent Posts Text" runat="server" /></h2>
                
                   <!-- BEGIN PARTIAL: community/blog_post -->
                 <asp:Repeater ID="rptrBlogPosts" runat="server">
@@ -53,7 +53,7 @@
                             </div>
     
                             <div class="blog-post-timestamp">
-                              <p class="blog-posted">Posted</p>
+                              <p class="blog-posted"><sc:Text Field="Posted Text" runat="server" /></p>
                               <p class="blog-timestamp-posted"><asp:Literal ID="litBlogPostTime" runat="server"></asp:Literal></p>
                               <p class="blog-time-units"><asp:Literal ID="litBlogAge" runat="server"></asp:Literal></p>
                             </div>

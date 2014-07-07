@@ -1,8 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MoreBlogs.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon.MoreBlogs" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="community-blogs-more">
     <div class="row">
         <div class="col col-24 container">
-            <h2>More Blogs</h2>
+            <h2><sc:Text Field="More Blogs Text" runat="server" /></h2>
             <!-- BEGIN PARTIAL: community/carousel_arrows -->
             <div class="arrows more-blogs next-prev-menu arrows">
 

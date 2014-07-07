@@ -5,7 +5,7 @@
         <h2><sc:FieldRenderer id="BlogTitle" runat="server" fieldname="Title" /></h2>
         <p class="byline">
             <sc:FieldRenderer id="BlogDate" runat="server" fieldname="Date" />
-            by <a id="linkAuthor" runat="server">
+            <sc:Text Field="By Text" runat="server" /> <a id="linkAuthor" runat="server">
                 <sc:FieldRenderer id="frBlogAuthor" runat="server" fieldname="Author" />
             </a>
         </p>
@@ -17,7 +17,7 @@
     </article>
 
     <div class="about-the-author">
-        <h4>About the Author</h4>
+        <h4><sc:Text Field="About The Author Text" runat="server" /></h4>
 
         <a class="author-image" href="REPLACE">
             <img alt="65x65 Placeholder" src="http://placehold.it/65x65" />
@@ -25,7 +25,7 @@
 
         <div class="author-details">
             <a class="author-name" id="linkAuthor2" runat="server"><sc:FieldRenderer id="frBlogAuthor2" runat="server" fieldname="Author" /></a>
-            <a class="author-more-posts" id="linkAuthor3" runat="server">More Posts by this Author</a>
+            <a class="author-more-posts" id="linkAuthor3" runat="server"><sc:Text Field="More Posts By This Author Text" runat="server" /></a>
             <p class="author-description"><asp:Literal ID="ltAuthorBio" runat="server" /></p>
         </div>
     </div>
