@@ -88,6 +88,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Section
                 if (icons != null)
                 {
                     icons.MatchingChildrenIds = item.GetMatchingChildrenIds(CurrentMember);
+                    icons.HasMatchingParentInterest = item.HasMatchingParentInterest(CurrentMember);
                 }
 
                 // Handle first image
