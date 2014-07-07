@@ -369,6 +369,9 @@ validate = function () {
     if (!isValid) {
         markInvalid();
     }
+
+    $(".sign-up-inputs input").change(validate);
+
     return isValid;
 }
 
