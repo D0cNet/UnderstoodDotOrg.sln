@@ -16,14 +16,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
     public partial class KnowledgeQuizQuestionrArticlePage : System.Web.UI.UserControl
     {
+        public class KnowledgeAnswer
+        {
+            public Guid ID { get; set; }
+            public string CorrectAnswer { get; set; }
+            public bool Result { get; set; }
+        }
+
         public bool JumpToAnswer;
         private Item PageResources = Sitecore.Context.Item.Children.FirstOrDefault();
         private Item ResultsFolder;
         private int QuestionNumber;
         private Item GenericQuestion;
         private bool MoreQuestions = false;
-        private string Answer;
-        List<Item> Questions;
+        private KnowledgeAnswer Answer = new KnowledgeAnswer();
+        List<Item> Questions;        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -101,7 +108,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (GenericQuestion.IsOfType(TrueFalseQuestionItem.TemplateId))
             {
                 TrueFalseQuestionItem Question = (TrueFalseQuestionItem)GenericQuestion;
-                Answer = Question.CorrectAnswer.Item.Fields["Content Title"].ToString();
+                Answer.CorrectAnswer = Question.CorrectAnswer.Item.Fields["Content Title"].ToString();
+                Answer.ID = Question.ID.ToGuid();
 
                 pnlTrueFalse.Visible = true;
             }
@@ -109,7 +117,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 MultipleChoiceQuestionItem Question = (MultipleChoiceQuestionItem)GenericQuestion;
 
-                Answer = Question.CorrectAnswer.Item.Fields["Answer"].ToString();
+                Answer.CorrectAnswer = Question.CorrectAnswer.Item.Fields["Answer"].ToString();
+                Answer.ID = Question.ID.ToGuid();
 
                 foreach (Item i in Question.InnerItem.Children)
                 {
@@ -136,60 +145,60 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         
         protected void btnTrue_Click(object sender, EventArgs e)
         {
-            if (Answer == "True")
+            if (Answer.CorrectAnswer == "True")
             {
-                UpdateScore(1);
-                UpdateAnswers(true);
+                Answer.Result = true;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect correct");
                 lblIncorrect.Visible = false;
             }
             else
             {
-                UpdateAnswers(false);
+                Answer.Result = false;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect incorrect");
                 lblCorrect.Visible = false;
             }
 
+            UpdateAnswers(Answer);
             ShowQuestionResult();
             JumpToAnswer = true;
         }
 
         protected void btnFalse_Click(object sender, EventArgs e)
         {
-            if (Answer == "False")
+            if (Answer.CorrectAnswer == "False")
             {
-                UpdateScore(1);
-                UpdateAnswers(true);
+                Answer.Result = true;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect correct");
                 lblIncorrect.Visible = false;
             }
             else
             {
-                UpdateAnswers(false);
+                Answer.Result = false;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect incorrect");
                 lblCorrect.Visible = false;
             }
 
+            UpdateAnswers(Answer);
             ShowQuestionResult();
             JumpToAnswer = true;
         }
 
         protected void rblAnswer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Answer == rblAnswer.SelectedValue)
+            if (Answer.CorrectAnswer == rblAnswer.SelectedValue)
             {
-                UpdateScore(1);
-                UpdateAnswers(true);
+                Answer.Result = true;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect correct");
                 lblIncorrect.Visible = false;
             }
             else
             {
-                UpdateAnswers(false);
+                Answer.Result = false;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect incorrect");
                 lblCorrect.Visible = false;
             }
 
+            UpdateAnswers(Answer);
             rblAnswer.Items.Clear();
             ShowQuestionResult();
             JumpToAnswer = true;
@@ -227,19 +236,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             }
         }
 
-        public void UpdateAnswers(bool result)
+        public void UpdateAnswers(KnowledgeAnswer answer)
         {
             if (Session["CorrectTracker"] != null)
             {
-                List<bool> answers = (List<bool>)Session["CorrectTracker"];
-                answers.Add(result);
-                Session["CorrectTracker"] = answers;
+                List<KnowledgeAnswer> answers = (List<KnowledgeAnswer>)Session["CorrectTracker"];
+
+                if (answers.Where(i => i.ID == answer.ID).Count() == 0)
+                {
+                    answers.Add(answer);
+                    Session["CorrectTracker"] = answers;
+                    if (answer.Result)
+                        UpdateScore(1);
+                }
             }
             else
             {
-                List<bool> answers = new List<bool>();
-                answers.Add(result);
+                List<KnowledgeAnswer> answers = new List<KnowledgeAnswer>();
+                answers.Add(answer);
                 Session["CorrectTracker"] = answers;
+                if (answer.Result)
+                    UpdateScore(1);
             }
         }
 
@@ -249,11 +266,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 HtmlGenericControl spanResult = e.FindControlAs<HtmlGenericControl>("spanResult");
 
-                bool result = (bool)e.Item.DataItem;
+                KnowledgeAnswer answer = (KnowledgeAnswer)e.Item.DataItem;
 
                 if (spanResult != null)
                 {
-                    if (result)
+                    if (answer.Result)
                         spanResult.Attributes.Add("class", "results-indicator correct");
                     else
                         spanResult.Attributes.Add("class", "results-indicator incorrect");
