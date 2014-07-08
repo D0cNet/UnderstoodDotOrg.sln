@@ -1428,7 +1428,8 @@ namespace UnderstoodDotOrg.Common
         #endregion
 
        public static string ViewAllLabel { get { return Translate.TextByDomain(PosesDictionary, "View All Label"); } }
-       #region Community Labels
+       
+        #region Community Labels
        public static string GroupRecommendedBackLink { get { return Translate.TextByDomain(PosesDictionary, "Group Recommended Back Link"); } }
        public static string RecommendedHeader { get { return Translate.TextByDomain(PosesDictionary, "Recommended Header"); } }
 
@@ -1444,7 +1445,9 @@ namespace UnderstoodDotOrg.Common
        public static string ForumValidationConfirmation { get { return "Are you sure you want to Create/Publish this item?"; } }
        #endregion
 
-
+       #region Community Messages
+       public static string ThinkingOfYouMessage { get { return Translate.TextByDomain(PosesDictionary, "Thinking Of You Message"); } }
+       #endregion
 
 
 
