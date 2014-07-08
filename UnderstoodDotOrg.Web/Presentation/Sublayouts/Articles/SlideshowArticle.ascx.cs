@@ -157,7 +157,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     hypLink1.NavigateUrl = slide.GetUrl();
                     hypLink1.Text = slide.Name;
                     frPageSummary1.Item = slide;
-                    Panel pnlThumbnail1 = e.FindControlAs<Panel>("pnlThumbnail2");
+                    Panel pnlThumbnail1 = e.FindControlAs<Panel>("pnlThumbnail1");
                     string url = slide.GetArticleThumbnailUrl(380, 220);
                     string style = string.Format("background-image: url('{0}')", url);
                     pnlThumbnail1.Attributes.Add("style", style);
