@@ -44,7 +44,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
 
             litChild.Text = String.Format("{0} ({1})", child.Nickname, childGrade);
             
-            var articles = SearchHelper.GetArticles(child.Members.FirstOrDefault(), child, DateTime.Now);
+            var articles = SearchHelper.GetArticles(child.Members.FirstOrDefault(), child, DateTime.Now)
+                                .Where(i => i.GetItem() != null);
             if (articles.Any())
             {
                 rptArticles.DataSource = articles;
