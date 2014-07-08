@@ -375,6 +375,39 @@ validate = function () {
     return isValid;
 }
 
+reviewMarkInvalid = function () {
+    $.each(Page_Validators, function (index, validator) {
+        if (!validator.isvalid) {
+            $(validator).parents("label").addClass("error");
+            $(validator).removeClass("valid").addClass("validationerror");
+        }
+    });
+}
+
+reviewValidate = function () {
+    $("span.validationerror:not([id*='itIsGoodFor'])").removeClass("validationerror").addClass("valid");
+    $("label.error").removeClass("error");
+
+    var isValid = Page_ClientValidate("vlgReviewInputs");
+    if (!isValid) {
+        reviewMarkInvalid();
+    }
+    else{
+        $(".review-submit").off("click");
+    }
+
+    //if ($("[id*='hfKeyValuePairs']").val() != "") {
+    //    $("[id*='itIsGoodFor']").hide();
+    //}
+    //else {
+    //    $("[id*='itIsGoodFor']").show();
+    //}
+
+    $(".rate-this-app input").change(validate);
+
+    return isValid;
+}
+
 ValidateRadioButtons = function (sender, args) {
     args.IsValid = $("input[name*=" + sender.groupName + "]:checked").length > 0;
 }

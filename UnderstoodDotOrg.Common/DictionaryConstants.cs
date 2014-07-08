@@ -702,6 +702,42 @@ namespace UnderstoodDotOrg.Common
 
         #endregion
 
+        #region Submit Review
+
+        public static string ReviewSelectGradeErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Select Grade Error Message");
+            }
+        }
+
+        public static string ReviewIThinkItIsErrorMessaage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "I Think It Is Error Message");
+            }
+        }
+
+        public static string ReviewWhatYouThinkErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "What You Think Error Message");
+            }
+        }
+
+        public static string ReviewGiveTitleErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Give Title Error Message");
+            }
+        }
+
+        #endregion
+
         #region Fragments
 
         public static string RecommendationsMatchFragment

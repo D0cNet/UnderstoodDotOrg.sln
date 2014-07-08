@@ -76,6 +76,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected global::System.Web.UI.WebControls.Panel pnlMoreLink;
         
         /// <summary>
+        /// pnlReview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlReview;
+        
+        /// <summary>
         /// ddlGrades control.
         /// </summary>
         /// <remarks>
@@ -85,13 +94,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected global::System.Web.UI.WebControls.DropDownList ddlGrades;
         
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// rfvGrades control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGrades;
         
         /// <summary>
         /// ddlIThinkItIs control.
@@ -103,13 +112,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected global::System.Web.UI.WebControls.DropDownList ddlIThinkItIs;
         
         /// <summary>
-        /// RequiredFieldValidator4 control.
+        /// rfvIThinkItIs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIThinkItIs;
         
         /// <summary>
         /// rptIssuesChecklist control.
@@ -130,13 +139,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected global::System.Web.UI.WebControls.TextBox txbWhatYouThink;
         
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// rfvWhatYouThink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWhatYouThink;
         
         /// <summary>
         /// txbReviewTitle control.
@@ -148,13 +157,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected global::System.Web.UI.WebControls.TextBox txbReviewTitle;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// rfvReviewTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvReviewTitle;
         
         /// <summary>
         /// hfKeyValuePairs control.

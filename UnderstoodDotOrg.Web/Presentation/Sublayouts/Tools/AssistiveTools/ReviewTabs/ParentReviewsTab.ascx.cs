@@ -44,6 +44,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             rptIssuesChecklist.DataBind();
 
             litAverageRating.Text = GetRatingHTML(Int32.Parse(CSMUserReviewExtensions.GetAverageRating(pageItem.ID.ToGuid())));
+
+            rfvGrades.ErrorMessage = DictionaryConstants.ReviewSelectGradeErrorMessage;
+            rfvIThinkItIs.ErrorMessage = DictionaryConstants.ReviewIThinkItIsErrorMessaage;
+            rfvWhatYouThink.ErrorMessage = DictionaryConstants.ReviewWhatYouThinkErrorMessage; 
+            rfvReviewTitle.ErrorMessage = DictionaryConstants.ReviewGiveTitleErrorMessage;
         }
 
         protected void BindDropDowns()
@@ -93,6 +98,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected void BindReviews()
         {
             List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
+
+            if (IsUserLoggedIn)
+            {
+                if (reviews.Where(i => i.MemberId == CurrentMember.MemberId).Count() > 0)
+                    pnlReview.Visible = false;
+            }
 
             if (ddlSorting.SelectedIndex == 0)
                 reviews = reviews.OrderBy(i => i.Created).Reverse().ToList();
@@ -206,7 +217,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                     if (hfRating.Value != null)
                         review.Rating = Int32.Parse(hfRating.Value);
 
-                    if (hfKeyValuePairs.Value != null)
+                    if (!string.IsNullOrEmpty(hfKeyValuePairs.Value))
                     {
                         string[] IDs = hfKeyValuePairs.Value.Split('|');
 

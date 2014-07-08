@@ -133,142 +133,147 @@
             </asp:Panel>
             <!-- .show-more -->
             <!-- BEGIN PARTIAL: rate-this-app -->
-            <section id="write-review" class="rate-this-app">
-                <header>
-                    <h2>Rate this App</h2>
-                </header>
-                <p>For learning & attention issues</p>
-                <div class="is-it-any-good">
-                    <h3>Is it any good ?</h3>
-                    <!-- BEGIN PARTIAL: results-slider-ratings -->
-                    <div class="results-slider zero blue blue-one ">
-                        <span class="visuallyhidden">quality rating</span>
-                        <button class="slider-button">1</button>
-                        <button class="slider-button">2</button>
-                        <button class="slider-button">3</button>
-                        <button class="slider-button">4</button>
-                        <button class="slider-button">5</button>
+            <asp:Panel ID="pnlReview" runat="server">
+                <section id="write-review" class="rate-this-app">
+                    <header>
+                        <h2>Rate this App</h2>
+                    </header>
+                    <p>For learning & attention issues</p>
+                    <div class="is-it-any-good">
+                        <h3>Is it any good ?</h3>
+                        <!-- BEGIN PARTIAL: results-slider-ratings -->
+                        <div class="results-slider zero blue blue-one ">
+                            <span class="visuallyhidden">quality rating</span>
+                            <button class="slider-button">1</button>
+                            <button class="slider-button">2</button>
+                            <button class="slider-button">3</button>
+                            <button class="slider-button">4</button>
+                            <button class="slider-button">5</button>
+                        </div>
+                        <!-- END PARTIAL: results-slider-ratings -->
                     </div>
-                    <!-- END PARTIAL: results-slider-ratings -->
-                </div>
-                <div class="for-kids">
-                    <h3>For kids</h3>
-                    <label for="rate-for-kids">
-                        <asp:DropDownList ID="ddlGrades" runat="server"></asp:DropDownList>
-                        <asp:RequiredFieldValidator id="RequiredFieldValidator3"
-                            controltovalidate="ddlGrades"
-                            validationgroup="vlgReviewInputs"
-                            runat="server">
-                        </asp:RequiredFieldValidator>
-                    </label>
-                </div>
-                <div class="i-think-it-is">
-                    <h3>I think it is</h3>
-                    <label for="rate-i-think">
-                        <asp:DropDownList ID="ddlIThinkItIs" runat="server"></asp:DropDownList>
-                        <asp:RequiredFieldValidator id="RequiredFieldValidator4"
-                            controltovalidate="ddlIThinkItIs"
-                            validationgroup="vlgReviewInputs"
-                            runat="server">
-                        </asp:RequiredFieldValidator>
-                    </label>
-                </div>
-                <div class="it-is-good-for">
-                    <fieldset>
-                        <legend>It is good for</legend>
-                        <asp:Repeater ID="rptIssuesChecklist" runat="server" OnItemDataBound="rptSkillsChecklist_ItemDataBound">
-                            <HeaderTemplate>
-                                <ul>
-                            </HeaderTemplate>
-                            <ItemTemplate>
-                                <li>
-                                    <span class="checkbox-wrap">
-                                        <input id="inputSkill" runat="server" type="checkbox" name="rate-goodfor-reading" aria-required="true"></span>
-                                    <label for="rate-goodfor-reading"><asp:Literal ID="litSkill" runat="server"></asp:Literal></label>
-                                </li>
-                            </ItemTemplate>
-                            <FooterTemplate>
-                                </ul>
-                            </FooterTemplate>
-                        </asp:Repeater>
-                    </fieldset>
-                </div>
-                <div class="tell-other-families">
-                    <label>
-                        <span>Tell other families what you think</span>
-                        <asp:TextBox ID="txbWhatYouThink" runat="server" TextMode="MultiLine"></asp:TextBox>
-                        <asp:RequiredFieldValidator id="RequiredFieldValidator2"
-                            controltovalidate="txbWhatYouThink"
-                            validationgroup="vlgReviewInputs"
-                            runat="server">
-                        </asp:RequiredFieldValidator>
-                    </label>
-                </div>
-                <div class="give-your-review">
-                    <label>
-                        <span>Give your review a title</span>
-                        <asp:TextBox ID="txbReviewTitle" runat="server" TextMode="MultiLine"></asp:TextBox>
-                        <asp:RequiredFieldValidator id="RequiredFieldValidator1"
-                            controltovalidate="txbReviewTitle"
-                            validationgroup="vlgReviewInputs"
-                            runat="server">
-                        </asp:RequiredFieldValidator>
-                    </label>
-                </div>
-                <asp:HiddenField ID="hfKeyValuePairs" runat="server" />
-                <asp:HiddenField ID="hfRating" runat="server" />
-                <script>
-                    $(function () {
+                    <div class="for-kids">
+                        <h3>For kids</h3>
+                        <label for="rate-for-kids">
+                            <asp:DropDownList ID="ddlGrades" runat="server" aria-required="true"></asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvGrades" 
+                                ControlToValidate="ddlGrades"
+                                validationgroup="vlgReviewInputs" 
+                                runat="server" 
+                                CssClass="validationerror"></asp:RequiredFieldValidator>
+                        </label>
+                    </div>
+                    <div class="i-think-it-is">
+                        <h3>I think it is</h3>
+                        <label for="rate-i-think">
+                            <asp:DropDownList ID="ddlIThinkItIs" runat="server" aria-required="true"></asp:DropDownList>
+                            <asp:RequiredFieldValidator id="rfvIThinkItIs"
+                                controltovalidate="ddlIThinkItIs"
+                                validationgroup="vlgReviewInputs"
+                                runat="server"
+                                CssClass="validationerror">
+                            </asp:RequiredFieldValidator>
+                        </label>
+                    </div>
+                    <div class="it-is-good-for">
+                        <fieldset>
+                            <legend>It is good for</legend>
+                            <asp:Repeater ID="rptIssuesChecklist" runat="server" OnItemDataBound="rptSkillsChecklist_ItemDataBound">
+                                <HeaderTemplate>
+                                    <ul>
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <li>
+                                        <span class="checkbox-wrap">
+                                            <input id="inputSkill" runat="server" type="checkbox" name="rate-goodfor-reading"></span>
+                                        <label for="rate-goodfor-reading"><asp:Literal ID="litSkill" runat="server"></asp:Literal></label>
+                                    </li>
+                                </ItemTemplate>
+                                <FooterTemplate>
+                                    </ul>
+                                </FooterTemplate>
+                            </asp:Repeater>
+                        </fieldset>
+                    </div>
+                    <div class="tell-other-families">
+                        <label>
+                            <span>Tell other families what you think</span>
+                            <asp:TextBox ID="txbWhatYouThink" runat="server" TextMode="MultiLine" aria-required="true"></asp:TextBox>
+                            <asp:RequiredFieldValidator id="rfvWhatYouThink"
+                                controltovalidate="txbWhatYouThink"
+                                validationgroup="vlgReviewInputs"
+                                runat="server"
+                                CssClass="validationerror">
+                            </asp:RequiredFieldValidator>
+                        </label>
+                    </div>
+                    <div class="give-your-review">
+                        <label>
+                            <span>Give your review a title</span>
+                            <asp:TextBox ID="txbReviewTitle" runat="server" TextMode="MultiLine" aria-required="true"></asp:TextBox>
+                            <asp:RequiredFieldValidator id="rfvReviewTitle"
+                                controltovalidate="txbReviewTitle"
+                                validationgroup="vlgReviewInputs"
+                                runat="server"
+                                CssClass="validationerror">
+                            </asp:RequiredFieldValidator>
+                        </label>
+                    </div>
+                    <asp:HiddenField ID="hfKeyValuePairs" runat="server" />
+                    <asp:HiddenField ID="hfRating" runat="server" />
+                    <script>
+                        $(function () {
 
-                        if (<%= OpenTab.ToString().ToLower() %>)
-                        {
-                            location.hash = '#tabs2-parent-reviews';
-                        }
+                            if (<%= OpenTab.ToString().ToLower() %>)
+                            {
+                                location.hash = '#tabs2-parent-reviews';
+                            }
 
-                        var hiddenField = $("[id*='hfKeyValuePairs']");
-                        var hiddenField2 = $("[id*='hfRating']");
+                            var hiddenField = $("[id*='hfKeyValuePairs']");
+                            var hiddenField2 = $("[id*='hfRating']");
 
-                        $(".checkbox-wrap").click(function () {
-                            var values = "";
-                            var first = true;
+                            $(".checkbox-wrap").click(function () {
+                                var values = "";
+                                var first = true;
 
-                            $(this).parent().parent().find(".checked").each(function () {
-                                if (first) {
-                                    values = $(this).find('input').data("id");
-                                    first = false;
-                                }
-                                else
-                                    values += "|" + $(this).find('input').data("id");
+                                $(this).parent().parent().find(".checked").each(function () {
+                                    if (first) {
+                                        values = $(this).find('input').data("id");
+                                        first = false;
+                                    }
+                                    else
+                                        values += "|" + $(this).find('input').data("id");
+                                })
+
+                                hiddenField.val(values);
                             })
 
-                            hiddenField.val(values);
+                            $(".results-slider").click(function () {
+                                $this = $(this);
+
+                                setHiddenRatingValue($this);
+                            })
+
+                            function setHiddenRatingValue($element)
+                            {
+                                if ($element.hasClass("blue-one"))
+                                    hiddenField2.val(1);
+                                else if ($element.hasClass("blue-two"))
+                                    hiddenField2.val(2);
+                                else if ($element.hasClass("blue-three"))
+                                    hiddenField2.val(3);
+                                else if ($element.hasClass("blue-four"))
+                                    hiddenField2.val(4);
+                                else
+                                    hiddenField2.val(5);
+                            }
+
+                            setHiddenRatingValue($(".is-it-any-good .results-slider"));
                         })
-
-                        $(".results-slider").click(function () {
-                            $this = $(this);
-
-                            setHiddenRatingValue($this);
-                        })
-
-                        function setHiddenRatingValue($element)
-                        {
-                            if ($element.hasClass("blue-one"))
-                                hiddenField2.val(1);
-                            else if ($element.hasClass("blue-two"))
-                                hiddenField2.val(2);
-                            else if ($element.hasClass("blue-three"))
-                                hiddenField2.val(3);
-                            else if ($element.hasClass("blue-four"))
-                                hiddenField2.val(4);
-                            else
-                                hiddenField2.val(5);
-                        }
-
-                        setHiddenRatingValue($(".is-it-any-good .results-slider"));
-                    })
-                </script>
-                <button ID="btnSubmit" class="review-submit" runat="server" type="button" onserverclick="btnSubmit_Click">Submit</button>
-            </section>
+                    </script>
+                    <button ID="btnSubmit" class="review-submit" runat="server" type="button" causesvalidation="false" onserverclick="btnSubmit_Click" onclick="reviewValidate();">Submit</button>
+                </section>
+           </asp:Panel>
             <!-- END PARTIAL: rate-this-app -->
         </div>
         <!-- end .col col-17 -->
@@ -296,3 +301,11 @@
     </div>
     <!-- end .row -->
 </div>
+<style>
+    span.validationerror {
+        color: #de5a02 !important;
+        font-family: Arial, sans-serif !important;
+        font-size: 14px !important;
+        font-size: 0.875rem !important;
+    }
+</style>
