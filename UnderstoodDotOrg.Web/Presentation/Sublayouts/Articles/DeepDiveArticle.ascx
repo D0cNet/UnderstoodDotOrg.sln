@@ -30,6 +30,10 @@
                         </asp:ListView>
 
                     </div>
+
+                    <div class="article-copy">
+                        <sc:fieldrenderer id="frBodyContent" runat="server" fieldname="Body Content" />
+                    </div>
                     <!-- END whats-covered -->
                     <!-- END PARTIAL: whats-covered -->
                     <!-- FIXME: add correct article content for A8a here. see speckle. -->
