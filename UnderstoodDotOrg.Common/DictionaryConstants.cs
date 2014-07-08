@@ -702,7 +702,7 @@ namespace UnderstoodDotOrg.Common
 
         #endregion
 
-        #region Submit Review
+        #region Submit Review Error Messages
 
         public static string ReviewSelectGradeErrorMessage
         {
@@ -778,6 +778,106 @@ namespace UnderstoodDotOrg.Common
             get
             {
                 return Translate.TextByDomain(PosesDictionary, "Or Fragment");
+            }
+        }
+
+        #endregion
+
+        #region Submit Review Labels
+
+        public static string QualityLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Quality Label");
+            }
+        }
+
+        public static string GoodForLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Good For Label");
+            }
+        }
+
+        public static string WriteYourOwnReviewLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Write Your Own Review Label");
+            }
+        }
+
+        public static string ReviewReportLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Review Report Label");
+            }
+        }
+
+        public static string ForLearningIssuesLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "For Learning Issues Label");
+            }
+        }
+
+        public static string RateThisAppLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Rate This App Label");
+            }
+        }
+
+        public static string IsItAnyGoodLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Is It Any Good Label");
+            }
+        }
+
+        public static string ForKidsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "For Kids Label");
+            }
+        }
+
+        public static string IThinkItIsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "I Think It Is Label");
+            }
+        }
+
+        public static string ItIsGoodForLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "It Is Good For Label");
+            }
+        }
+
+        public static string TellOtherFamiliesLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Tell Other Families Label");
+            }
+        }
+
+        public static string GiveReviewTitleLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Give Review Title Label");
             }
         }
 

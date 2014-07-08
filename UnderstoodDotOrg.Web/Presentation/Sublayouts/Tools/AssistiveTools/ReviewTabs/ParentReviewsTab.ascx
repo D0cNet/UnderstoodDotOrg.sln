@@ -10,7 +10,7 @@
                     <asp:Literal ID="litAverageRating" runat="server"></asp:Literal>
                     <!-- END PARTIAL: results-slider -->
                     <h4><asp:Literal ID="litNumberOfReviews" runat="server"></asp:Literal></h4>
-                    <p>For learning &amp; attention issues</p>
+                    <p><%= UnderstoodDotOrg.Common.DictionaryConstants.ForLearningIssuesLabel %></p>
                 </div>
                 <!-- end review-rating -->
                 <div class="review-rating-sort select-inverted-mobile">
@@ -26,11 +26,11 @@
                         <ItemTemplate>
                             <div class="review-section-title">
                                 <div class="review-section grade">
-                                    Grade
+                                    <%= UnderstoodDotOrg.Common.DictionaryConstants.GradeLabel %>
                                     <span class="review-grade four"><asp:Literal ID="litGrade" runat="server"></asp:Literal></span>
                                 </div>
                                 <div class="review-section quality">
-                                    Quality
+                                    <%= UnderstoodDotOrg.Common.DictionaryConstants.QualityLabel %>
                                     <span class="visuallyhidden">rating</span>
                                     <span>
                                         <asp:Literal ID="litRating" runat="server"></asp:Literal>
@@ -44,7 +44,7 @@
                         <asp:Repeater ID="rptSkills" runat="server" OnItemDataBound="rptSkills_ItemDataBound">
                             <HeaderTemplate>
                                 <p>
-                                    <span>Good For</span>
+                                    <span><%= UnderstoodDotOrg.Common.DictionaryConstants.GoodForLabel %></span>
                             </HeaderTemplate>
                             <ItemTemplate>
                                 <span>
@@ -58,10 +58,10 @@
                         <div class="review-report">
                             <span class="write-review">
                                 <i></i>
-                                <a href="#write-review">Write Your Own Review</a></span>
+                                <a href="#write-review"><%= UnderstoodDotOrg.Common.DictionaryConstants.WriteYourOwnReviewLabel %></a></span>
                             <span class="review-report">
                                 <i></i>
-                                <a href="#" id="reportAnchor" runat="server" onserverclick="reportAnchor_ServerClick">Report</a></span>
+                                <a href="#" id="reportAnchor" runat="server" onserverclick="reportAnchor_ServerClick"><%= UnderstoodDotOrg.Common.DictionaryConstants.ReviewReportLabel %></a></span>
                         </div>
                         <!-- end review-report -->
                         </ItemTemplate>
@@ -72,11 +72,11 @@
                             <ItemTemplate>
                                 <div class="review-section-title">
                                     <div class="review-section grade">
-                                        Grade
+                                        <%= UnderstoodDotOrg.Common.DictionaryConstants.GradeLabel %>
                                         <span class="review-grade four"><asp:Literal ID="litGrade" runat="server"></asp:Literal></span>
                                     </div>
                                     <div class="review-section quality">
-                                        Quality
+                                        <%= UnderstoodDotOrg.Common.DictionaryConstants.QualityLabel %>
                                         <span class="visuallyhidden">rating</span>
                                         <span>
                                             <asp:Literal ID="litRating" runat="server"></asp:Literal>
@@ -90,7 +90,7 @@
                             <asp:Repeater ID="rptSkills" runat="server" OnItemDataBound="rptSkills_ItemDataBound">
                                 <HeaderTemplate>
                                     <p>
-                                        <span>Good For</span>
+                                        <span><%= UnderstoodDotOrg.Common.DictionaryConstants.GoodForLabel %></span>
                                 </HeaderTemplate>
                                 <ItemTemplate>
                                     <span>
@@ -104,10 +104,10 @@
                             <div class="review-report">
                                 <span class="write-review">
                                     <i></i>
-                                    <a href="#write-review">Write Your Own Review</a></span>
+                                    <a href="#write-review"><%= UnderstoodDotOrg.Common.DictionaryConstants.WriteYourOwnReviewLabel %></a></span>
                                 <span class="review-report">
                                     <i></i>
-                                    <a href="#" id="reportAnchor" runat="server" onserverclick="reportAnchor_ServerClick">Report</a></span>
+                                    <a href="#" id="reportAnchor" runat="server" onserverclick="reportAnchor_ServerClick"><%= UnderstoodDotOrg.Common.DictionaryConstants.ReviewReportLabel %></a></span>
                             </div>
                             <!-- end review-report -->
                             </ItemTemplate>
@@ -136,11 +136,11 @@
             <asp:Panel ID="pnlReview" runat="server">
                 <section id="write-review" class="rate-this-app">
                     <header>
-                        <h2>Rate this App</h2>
+                        <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.RateThisAppLabel %></h2>
                     </header>
-                    <p>For learning & attention issues</p>
+                    <p><%= UnderstoodDotOrg.Common.DictionaryConstants.ForLearningIssuesLabel %></p>
                     <div class="is-it-any-good">
-                        <h3>Is it any good ?</h3>
+                        <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.RateThisAppLabel %></h3>
                         <!-- BEGIN PARTIAL: results-slider-ratings -->
                         <div class="results-slider zero blue blue-one ">
                             <span class="visuallyhidden">quality rating</span>
@@ -153,7 +153,7 @@
                         <!-- END PARTIAL: results-slider-ratings -->
                     </div>
                     <div class="for-kids">
-                        <h3>For kids</h3>
+                        <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.ForKidsLabel %></h3>
                         <label for="rate-for-kids">
                             <asp:DropDownList ID="ddlGrades" runat="server" aria-required="true"></asp:DropDownList>
                             <asp:RequiredFieldValidator ID="rfvGrades" 
@@ -164,7 +164,7 @@
                         </label>
                     </div>
                     <div class="i-think-it-is">
-                        <h3>I think it is</h3>
+                        <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.IThinkItIsLabel %></h3>
                         <label for="rate-i-think">
                             <asp:DropDownList ID="ddlIThinkItIs" runat="server" aria-required="true"></asp:DropDownList>
                             <asp:RequiredFieldValidator id="rfvIThinkItIs"
@@ -177,7 +177,7 @@
                     </div>
                     <div class="it-is-good-for">
                         <fieldset>
-                            <legend>It is good for</legend>
+                            <legend><%= UnderstoodDotOrg.Common.DictionaryConstants.ItIsGoodForLabel %></legend>
                             <asp:Repeater ID="rptIssuesChecklist" runat="server" OnItemDataBound="rptSkillsChecklist_ItemDataBound">
                                 <HeaderTemplate>
                                     <ul>
@@ -197,7 +197,7 @@
                     </div>
                     <div class="tell-other-families">
                         <label>
-                            <span>Tell other families what you think</span>
+                            <span><%= UnderstoodDotOrg.Common.DictionaryConstants.TellOtherFamiliesLabel %></span>
                             <asp:TextBox ID="txbWhatYouThink" runat="server" TextMode="MultiLine" aria-required="true"></asp:TextBox>
                             <asp:RequiredFieldValidator id="rfvWhatYouThink"
                                 controltovalidate="txbWhatYouThink"
@@ -209,7 +209,7 @@
                     </div>
                     <div class="give-your-review">
                         <label>
-                            <span>Give your review a title</span>
+                            <span><%= UnderstoodDotOrg.Common.DictionaryConstants.GiveReviewTitleLabel %></span>
                             <asp:TextBox ID="txbReviewTitle" runat="server" TextMode="MultiLine" aria-required="true"></asp:TextBox>
                             <asp:RequiredFieldValidator id="rfvReviewTitle"
                                 controltovalidate="txbReviewTitle"
@@ -271,7 +271,7 @@
                             setHiddenRatingValue($(".is-it-any-good .results-slider"));
                         })
                     </script>
-                    <button ID="btnSubmit" class="review-submit" runat="server" type="button" causesvalidation="false" onserverclick="btnSubmit_Click" onclick="reviewValidate();">Submit</button>
+                    <button ID="btnSubmit" class="review-submit" runat="server" type="button" causesvalidation="false" onserverclick="btnSubmit_Click" onclick="reviewValidate();"><%= UnderstoodDotOrg.Common.DictionaryConstants.SubmitAnswerLabel %></button>
                 </section>
            </asp:Panel>
             <!-- END PARTIAL: rate-this-app -->
@@ -281,9 +281,9 @@
             <!-- BEGIN PARTIAL: rate-this-app-sidebar -->
             <section class="rate-this-app-sidebar">
                 <header>
-                    <h2>Rate This App</h2>
+                    <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.RateThisAppLabel %></h2>
                 </header>
-                <p>For learning & attention issues</p>
+                <p><%= UnderstoodDotOrg.Common.DictionaryConstants.ForLearningIssuesLabel %></p>
                 <!-- BEGIN PARTIAL: results-slider-ratings -->
                 <div class="results-slider zero blue blue-one ">
                     <span class="visuallyhidden">quality rating</span>
