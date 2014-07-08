@@ -5,6 +5,9 @@
     .article-entry, .article-child {
         margin-bottom: 1em;
     }
+    .article-child {
+        padding: 30px;
+    }
     .article-mappings {
         overflow: hidden;
         font-size: 11px;
@@ -15,34 +18,53 @@
     }
 </style>
 
-<asp:Label runat="server" AssociatedControlID="txtEmail">Member's Email</asp:Label>
-<asp:TextBox ID="txtEmail" runat="server" />
+<asp:UpdatePanel ID="pnlSearch" runat="server" UpdateMode="Always" ChildrenAsTriggers="true">
 
-<asp:Button ID="btnSubmit" runat="server" Text="Submit" />
-
-<asp:UpdatePanel ID="pnlResults" runat="server" UpdateMode="Conditional">
     <ContentTemplate>
 
-<asp:Repeater runat="server" ID="rptInterests" OnItemDataBound="rptInterests_ItemDataBound">
-    <HeaderTemplate>
-        <h3>Parent Interests:</h3>
-        <ul>
-    </HeaderTemplate>
-    <ItemTemplate>
-        <li><asp:Literal ID="litInterest" runat="server" /></li>
-    </ItemTemplate>
-    <FooterTemplate>
-        </ul>
-    </FooterTemplate>
-</asp:Repeater>
+        <asp:Label runat="server" AssociatedControlID="txtEmail">Member's Email</asp:Label>
+        <asp:TextBox ID="txtEmail" runat="server" />
 
-<asp:Repeater ID="rptChildren" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Child" OnItemDataBound="rptChildren_ItemDataBound">
-    <ItemTemplate>
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+
+        <asp:Repeater runat="server" ID="rptInterests" OnItemDataBound="rptInterests_ItemDataBound">
+            <HeaderTemplate>
+                <h3>Parent Interests:</h3>
+                <ul>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <li><asp:Literal ID="litInterest" runat="server" /></li>
+            </ItemTemplate>
+            <FooterTemplate>
+                </ul>
+            </FooterTemplate>
+        </asp:Repeater>
+
+        <asp:Panel ID="pnlChildren" runat="server" Visible="false">
+            Select Child: <asp:DropDownList ID="ddlChildren" runat="server" />
+            <asp:Button ID="btnSearch" runat="server" Text="Search" />
+            <asp:UpdateProgress runat="server" AssociatedUpdatePanelID="pnlResults">
+                <ProgressTemplate>
+                    Searching...
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+        </asp:Panel>
+
+    </ContentTemplate>
+
+</asp:UpdatePanel>
+
+<asp:UpdatePanel ID="pnlResults" runat="server" UpdateMode="Conditional">
+    <Triggers>
+        <asp:AsyncPostBackTrigger ControlID="btnSearch" />
+    </Triggers>
+    <ContentTemplate>
+
         <div class="article-child">
-            <h3>Child: <%# Item.Nickname %> (<asp:Literal ID="litGrade" runat="server" />)</h3>
-            <asp:Repeater ID="rptIssues" DataSource="<%# Item.Issues %>" OnItemDataBound="rptIssues_ItemDataBound" runat="server">
+            <h3><asp:Literal ID="litChild" runat="server" /></h3>
+            <asp:Repeater ID="rptIssues" OnItemDataBound="rptIssues_ItemDataBound" runat="server">
                 <HeaderTemplate>
-                    <h4>Child Issues:</h4>
+                    <h4>Issues:</h4>
                     <ul>
                 </HeaderTemplate>
                 <ItemTemplate>
@@ -115,9 +137,6 @@
                 </FooterTemplate>
             </asp:Repeater>
         </div>
-    </ItemTemplate>
-</asp:Repeater>
-
 
         </ContentTemplate>
     </asp:UpdatePanel>

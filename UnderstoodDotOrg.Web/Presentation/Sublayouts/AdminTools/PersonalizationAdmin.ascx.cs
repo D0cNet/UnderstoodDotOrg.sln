@@ -1,5 +1,6 @@
 ﻿using Sitecore.Web.UI.WebControls;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
@@ -21,6 +22,43 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
         private void BindEvents()
         {
             btnSubmit.Click += btnSubmit_Click;
+            btnSearch.Click += btnSearch_Click;
+        }
+
+        void btnSearch_Click(object sender, EventArgs e)
+        {
+            MembershipManager mm = new MembershipManager();
+            Child child = mm.GetChild(Guid.Parse(ddlChildren.SelectedValue));
+
+            string childGrade = string.Empty;
+
+            var grade = child.Grades.FirstOrDefault();
+            if (grade != null)
+            {
+                GradeLevelItem gli = Sitecore.Context.Database.GetItem(grade.Key);
+                if (gli != null)
+                {
+                    childGrade = gli.Name.Rendered;
+                }
+            }
+
+            litChild.Text = String.Format("{0} ({1})", child.Nickname, childGrade);
+            
+            var articles = SearchHelper.GetArticles(child.Members.FirstOrDefault(), child, DateTime.Now);
+            if (articles.Any())
+            {
+                rptArticles.DataSource = articles;
+                rptArticles.DataBind();
+            }
+
+            var issues = child.Issues.Select(i => Sitecore.Context.Database.GetItem(i.Key))
+                                .Where(i => i != null)
+                                .Select(i => new ChildIssueItem(i));
+            if (issues.Any())
+            {
+                rptIssues.DataSource = issues;
+                rptIssues.DataBind();
+            }
         }
 
         void btnSubmit_Click(object sender, EventArgs e)
@@ -33,10 +71,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                 var member = mm.GetMember(txtEmail.Text);
                 if (member != null)
                 {
-                    if (member.Children.Any())
+                    bool hasChildren = member.Children.Any();
+                    pnlChildren.Visible = hasChildren;
+
+                    if (hasChildren)
                     {
-                        rptChildren.DataSource = member.Children;
-                        rptChildren.DataBind();
+                        ddlChildren.DataSource = member.Children;
+                        ddlChildren.DataTextField = "Nickname";
+                        ddlChildren.DataValueField = "ChildId";
+                        ddlChildren.DataBind();
                     }
 
                     if (member.Interests.Any())
@@ -52,42 +95,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
         {
             if (e.IsItem())
             {
-                Issue issue = (Issue)e.Item.DataItem;
+                ChildIssueItem issue = (ChildIssueItem)e.Item.DataItem;
 
                 Literal litIssue = e.FindControlAs<Literal>("litIssue");
-                ChildIssueItem cii = Sitecore.Context.Database.GetItem(issue.Key);
-                if (cii != null)
-                {
-                    litIssue.Text = cii.IssueName.Rendered;
-                }
-            }
-        }
-
-        protected void rptChildren_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
-        {
-            if (e.IsItem())
-            {
-                Child child = (Child)e.Item.DataItem;
-
-                Literal litGrade = e.FindControlAs<Literal>("litGrade");
-                var grade = child.Grades.FirstOrDefault();
-                if (grade != null)
-                {
-                    GradeLevelItem gli = Sitecore.Context.Database.GetItem(grade.Key);
-                    if (gli != null)
-                    {
-                        litGrade.Text = gli.Name.Rendered;
-                    }
-                }
-
-                Repeater rptArticles = e.FindControlAs<Repeater>("rptArticles");
-
-                var articles = SearchHelper.GetArticles(child.Members.FirstOrDefault(), child, DateTime.Now);
-                if (articles.Any())
-                {
-                    rptArticles.DataSource = articles;
-                    rptArticles.DataBind();
-                }
+                litIssue.Text = issue.IssueName.Rendered;
             }
         }
 
