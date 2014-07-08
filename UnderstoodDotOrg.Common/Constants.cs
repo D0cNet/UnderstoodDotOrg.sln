@@ -750,6 +750,7 @@ namespace UnderstoodDotOrg.Common
             public static string TelligentCommentContentTypeId = "9262536b-49a3-4494-802f-04dff10424ed";
             public static string PersonalizationHandlerAllowedIps = "PersonalizationHandlerAllowedIps";
             public static string TelligentAdminApiKey = "TelligentAdminApiKey";
+            public static string TelligentAssistiveTechBlogId = "TelligentAssistiveTechBlogId";
             //Added for default avatar
             public static string AnonymousAvatar = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") + "/utility/anonymous.gif";
             public static string DefaultLocation = "Toronto";

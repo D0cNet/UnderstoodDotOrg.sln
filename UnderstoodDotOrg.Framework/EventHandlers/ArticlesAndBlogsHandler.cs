@@ -80,7 +80,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             {
                 if (item["BlogId"] == string.Empty)
                 {
-                    CreateTelligentPost(item, 10); 
+                    CreateTelligentPost(item, Int32.Parse(Settings.GetSetting(Common.Constants.Settings.TelligentAssistiveTechBlogId))); 
                 }
             }
         }
