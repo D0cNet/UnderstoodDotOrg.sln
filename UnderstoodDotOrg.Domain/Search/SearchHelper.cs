@@ -619,8 +619,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 // Inclusion/Exclusion processing based on member and child
                 var matchingArticlesQuery = allArticlesQuery
-                                    .Where(GetMemberInterestsPredicate(member))
-                                    .Where(GetCombinedChildPredicate(child));
+                                    .Filter(GetMemberInterestsPredicate(member))
+                                    .Filter(GetCombinedChildPredicate(child));
 
                 int totalMatches = matchingArticlesQuery.Take(1).GetResults().TotalSearchResults;
 
@@ -664,7 +664,7 @@ namespace UnderstoodDotOrg.Domain.Search
                 // 4 - Must read
                 var fourthQuery = matchingArticlesQuery
                                     .Filter(GetExcludeArticlesPredicate(toProcess))
-                                    .Where(GetMustReadPredicate());
+                                    .Filter(GetMustReadPredicate());
 
                 AddFromBucket(fourthQuery, ref toProcess);
 
@@ -680,10 +680,11 @@ namespace UnderstoodDotOrg.Domain.Search
                 {
                     var backfillQuery = allArticlesQuery
                                             .Filter(GetExcludeArticlesPredicate(toProcess))
-                                            .Where(GetMemberBackfillInterestsPredicate(member))
-                                            .Where(GetCombinedChildPredicate(child));
+                                            .Filter(GetMemberBackfillInterestsPredicate(member))
+                                            .Filter(GetCombinedChildPredicate(child));
 
                     toProcess.AddRange(GetRandomBucketArticles(backfillQuery, spotsToFill));
+                    Sitecore.Diagnostics.Log.Info("Personalized backfill for non matching parent interests", backfillQuery);
                 }
 
                 // Post Process

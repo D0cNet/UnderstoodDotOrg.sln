@@ -1,51 +1,123 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PersonalizationAdmin.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools.PersonalizationAdmin" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-<div class="container article">
-    <div class="row">
-        <div class="col col-24">
-         Title:<sc:FieldRenderer  FieldName="Page Title" ID="scPageTitle" runat="server" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col col-24">
-            Subheader: <sc:FieldRenderer FieldName="Page Subtitle" ID="scPagetSubtitle" runat="server" />
-        </div>
-    </div>
+<style type="text/css">
+    .article-entry, .article-child {
+        margin-bottom: 1em;
+    }
+    .article-mappings {
+        overflow: hidden;
+        font-size: 11px;
+    }
+    .article-column {
+        float: left;
+        width: 33%;
+    }
+</style>
 
-    <div class="row">
-        <div class="col col-9">
-            Body:<sc:FieldRenderer FieldName="Instructions" ID="scInstructions" runat="server" />
-            <br />
-            <br />
-            Select a User:<asp:DropDownList ID="ddlSelectParent" runat="server">
-            </asp:DropDownList>
-            <br />
-            Select a Child:<asp:DropDownList ID="ddlSelectChild" runat="server">
-            </asp:DropDownList>
-            <br />
-            <br />
-            <br />
-            <asp:Button ID="btnRunPersonalization" runat="server" OnClick="btnRunPersonalization_Click" Text="Preview Personalization" />
-            <br />
-            <asp:Label ID="lblMessage" runat="server" Text="No Results"></asp:Label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col col-24">
-            <asp:GridView ID="gridPreview" runat="server" DataSourceID="ContentObjectDataSource">
-            </asp:GridView>
-            <asp:ObjectDataSource ID="ContentObjectDataSource" runat="server"></asp:ObjectDataSource>
-        </div>
-    </div>
-    <br />
-    <hr />
+<asp:Label runat="server" AssociatedControlID="txtEmail">Member's Email</asp:Label>
+<asp:TextBox ID="txtEmail" runat="server" />
 
-    <div class="row">
-        <div class="col col-24">
-            Help:<sc:FieldRenderer FieldName="Help Email" ID="scHelpEmail" runat="server" />
-        </div>
-    </div>
+<asp:Button ID="btnSubmit" runat="server" Text="Submit" />
 
-    
-</div>
+<asp:UpdatePanel ID="pnlResults" runat="server" UpdateMode="Conditional">
+    <ContentTemplate>
+
+<asp:Repeater runat="server" ID="rptInterests" OnItemDataBound="rptInterests_ItemDataBound">
+    <HeaderTemplate>
+        <h3>Parent Interests:</h3>
+        <ul>
+    </HeaderTemplate>
+    <ItemTemplate>
+        <li><asp:Literal ID="litInterest" runat="server" /></li>
+    </ItemTemplate>
+    <FooterTemplate>
+        </ul>
+    </FooterTemplate>
+</asp:Repeater>
+
+<asp:Repeater ID="rptChildren" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Child" OnItemDataBound="rptChildren_ItemDataBound">
+    <ItemTemplate>
+        <div class="article-child">
+            <h3>Child: <%# Item.Nickname %> (<asp:Literal ID="litGrade" runat="server" />)</h3>
+            <asp:Repeater ID="rptIssues" DataSource="<%# Item.Issues %>" OnItemDataBound="rptIssues_ItemDataBound" runat="server">
+                <HeaderTemplate>
+                    <h4>Child Issues:</h4>
+                    <ul>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <li><asp:Literal ID="litIssue" runat="server" /></li>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </ul>
+                </FooterTemplate>
+            </asp:Repeater>
+
+            <asp:Repeater ID="rptArticles" runat="server" OnItemDataBound="rptArticles_ItemDataBound">
+                <HeaderTemplate>
+                    <div class="articles-list">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <div class="article-entry">
+                        <h4><asp:HyperLink ID="hlTitle" runat="server"><asp:Literal ID="litTitle" runat="server" /></asp:HyperLink></h4>
+                        
+                        <div class="article-mappings">
+                        <div class="article-column">
+                        <asp:Repeater ID="rptArticleGrades" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.GradeLevelItem">
+                            <HeaderTemplate>
+                                <h5>Grades:</h5>
+                                <ul>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li><%# Item.Name.Raw %></li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </ul>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                        </div>
+
+                        <div class="article-column">
+                        <asp:Repeater ID="rptArticleIssues" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildIssueItem">
+                            <HeaderTemplate>
+                                <h5>Issues:</h5>
+                                <ul>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li><%# Item.IssueName.Raw %></li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </ul>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                        </div>
+
+                        <div class="article-column">
+                        <asp:Repeater ID="rptArticleInterests" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent.ParentInterestItem">
+                            <HeaderTemplate>
+                                <h5>Interests:</h5>
+                                <ul>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li><%# Item.InterestName.Raw %></li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </ul>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                        </div>
+
+                        </div>
+                    </div>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </div>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
+    </ItemTemplate>
+</asp:Repeater>
+
+
+        </ContentTemplate>
+    </asp:UpdatePanel>
