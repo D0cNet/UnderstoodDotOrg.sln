@@ -47,7 +47,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             //TODO: move to dictionary
             valRegPassword.ErrorMessage = valRegPasswordConfirm.ErrorMessage = DictionaryConstants.PasswordErrorMessage;
             //TODO: move to dictionary
-            valCompPassword.ErrorMessage = valCompPasswordConfirm.ErrorMessage = "It looks like your passwords don't match";
+            valCompPassword.ErrorMessage = valCompPasswordConfirm.ErrorMessage = DictionaryConstants.PasswordMatchError;
             valZipCode.ErrorMessage = DictionaryConstants.ZipCodeErrorMessage;
             valZipCode.ValidationExpression = Constants.Validators.ZipCode;            
 
@@ -141,7 +141,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             else
             {
                 //something failed...
-                uxErrorMessage.Text = "Please provide your name, email address, and a password to create your account";
+                uxErrorMessage.Text = DictionaryConstants.SomethingFailedError;
             }
         }
     }

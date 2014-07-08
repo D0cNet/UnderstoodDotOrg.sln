@@ -73,6 +73,15 @@ public CustomTextField SuccessMessage
 }
 
 
+public CustomTextField ProblemText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Problem Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

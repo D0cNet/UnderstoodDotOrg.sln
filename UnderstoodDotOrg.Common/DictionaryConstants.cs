@@ -13,6 +13,22 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
+        public static string MyAccount_BackToHomePageLinkText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "MyAccount_Back To Home Page Link Text");
+            }
+        }
+
+        public static string MyArticle_ForgotPasswordLink
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "MyArticle_Forgot Password Link");
+            }
+        }
+
         public static string Community_RSVPButtonText
         {
             get
@@ -596,6 +612,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string UnderstoodText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Understood Text");
+            }
+        }
+
         public static string EmailAddressErrorMessage
         {
             get
@@ -641,6 +665,22 @@ namespace UnderstoodDotOrg.Common
             get
             {
                 return Translate.TextByDomain(PosesDictionary, "Password Error Message");
+            }
+        }
+
+        public static string SomethingFailedError
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Something Failed Error");
+            }
+        }
+
+        public static string PasswordMatchError
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Password Match Error");
             }
         }
 

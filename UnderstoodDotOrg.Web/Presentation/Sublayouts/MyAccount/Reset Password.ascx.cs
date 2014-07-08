@@ -3,6 +3,7 @@
     using System;
     using UnderstoodDotOrg.Common;
     using UnderstoodDotOrg.Domain.Membership;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
     public partial class Reset_Password : System.Web.UI.UserControl
     {
@@ -25,7 +26,7 @@
             //TODO: move to dictionary
             valRegPassword.ErrorMessage = valRegPasswordConfirm.ErrorMessage = DictionaryConstants.PasswordErrorMessage;
             //TODO: move to dictionary
-            valCompPassword.ErrorMessage = valCompPasswordConfirm.ErrorMessage = "It looks like your passwords don't match";
+            valCompPassword.ErrorMessage = valCompPasswordConfirm.ErrorMessage = DictionaryConstants.PasswordMatchError;
             valPassword.Display =
                 valRegPassword.Display =
                 valCompPassword.Display =
@@ -34,16 +35,18 @@
                 valCompPasswordConfirm.Display = System.Web.UI.WebControls.ValidatorDisplay.Dynamic;
 
             // TODO: fix hardcoded text
-            if (string.IsNullOrEmpty(guid))
+            if (string.IsNullOrEmpty(Request.QueryString["guid"]))
             {
                 uxPassword.Enabled = false;
                 uxPasswordConfirm.Enabled = false;
-                string redirect = "Please start the process back on the forgot password screen: <a href=\"{0}\">{1}</a>";
+                ResetYourPasswordItem context = (ResetYourPasswordItem)Sitecore.Context.Item;
+                string redirect = context.ForgotPasswordText + " <a href=\"{0}\">{1}</a>";
 
                 var forgotPassword = Sitecore.Context.Database.GetItem("{06AC924E-D5D1-4CED-AF7A-EB2F631AE4C4}");
+                string linkText = context.ForgotPasswordLinkText;
                 var link = Sitecore.Links.LinkManager.GetItemUrl(forgotPassword);
 
-                uxMessage.Text = string.Format(redirect, link, link);
+                uxMessage.Text = string.Format(redirect, link, linkText);
             }
         }
 
@@ -63,11 +66,11 @@
             if (uxPassword.Text == uxPasswordConfirm.Text && !string.IsNullOrEmpty(uxPasswordConfirm.Text))
             {
                 password = uxPassword.Text;
-
+                ResetYourPasswordItem context = (ResetYourPasswordItem)Sitecore.Context.Item;
                 var membershipManager = new MembershipManager();
                 var reset = membershipManager.ResetPassword(Guid.Parse(guid), password);
 
-                uxMessage.Text = "password updated successfully";
+                uxMessage.Text = context.PasswordUpdatedText;
             }
         }
     }

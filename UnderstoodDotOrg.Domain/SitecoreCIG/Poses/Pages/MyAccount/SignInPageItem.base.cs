@@ -64,6 +64,24 @@ public CustomImageField FacebookSigninImage
 }
 
 
+public CustomTextField PTagNotAMemberText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["P Tag Not A Member Text"]);
+	}
+}
+
+
+public CustomTextField ForgotPasswordText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Forgot Password Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

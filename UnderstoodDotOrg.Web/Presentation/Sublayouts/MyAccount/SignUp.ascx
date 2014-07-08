@@ -126,7 +126,7 @@
 
                 <div class="we-take-your-privacy-seriously-popover popover-container">
                     <div class="we-take-your-privacy-seriously-content">
-                        <strong>Understood.com</strong> is an independent, not-for-profit website. We collect your information so we can make your site experience relevant for you. We will not share your information and are not affiliated with any pharmaceutical or other for-profit company. <a href="REPLACE">Read our privacy policy</a>
+                        <strong><%= UnderstoodDotOrg.Common.DictionaryConstants.UnderstoodText %></strong> <sc:FieldRenderer ID="frWeTakePrivacySeriously" runat="server" FieldName="We Take Privacy Seriously Text"></sc:FieldRenderer> <sc:Link ID="linkPrivacy" runat="server" Field="Privacy Policy Link"></sc:Link>
                     </div>
                 </div>
             </div>

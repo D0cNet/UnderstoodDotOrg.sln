@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 //using UnderstoodDotOrg.Services.AccessControlServices;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
@@ -30,9 +31,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             uxPassword.Attributes["placeholder"] = DictionaryConstants.EnterPasswordWatermark;
             uxSignIn.Text = DictionaryConstants.SignInButtonText;
             uxRegisterLink.Text = DictionaryConstants.SignUpButtonText;
-
+           
+            SignInPageItem context = (SignInPageItem)Sitecore.Context.Item;
             uxRegisterLink.NavigateUrl = MyAccountFolderItem.GetSignUpPage();
             uxForgotPassword.NavigateUrl = MyAccountFolderItem.GetForgotPasswordPage();
+            uxForgotPassword.Text = context.ForgotPasswordText;
 
             this.Page.Form.DefaultButton = this.uxSignIn.UniqueID;
 

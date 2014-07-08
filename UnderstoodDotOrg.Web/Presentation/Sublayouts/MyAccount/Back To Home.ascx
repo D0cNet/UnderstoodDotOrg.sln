@@ -5,7 +5,7 @@
     <div class="row">
         <!-- article -->
         <div class="col col-22 offset-1">
-            <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Back to Homepage</a>
+            <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.MyAccount_BackToHomePageLinkText %></a>
         </div>
     </div>
     <!-- .row -->

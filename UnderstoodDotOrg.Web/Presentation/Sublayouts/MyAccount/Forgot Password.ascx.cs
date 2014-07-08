@@ -12,6 +12,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
     public partial class Forgot_Password : BaseSublayout<ForgotPasswordItem>
     {
+        ForgotPasswordItem context = (ForgotPasswordItem)Sitecore.Context.Item;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             btnSubmit.Text = DictionaryConstants.SubmitButtonText;
@@ -30,7 +32,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             var email = txtEmailAddress.Text;
-
             try
             {
                 //always show success message, even if we don't send the email
@@ -52,7 +53,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     { }
                     else
                     {
-                        litErrorMessage.Text = "There was an issue sending your password reset email";
+                        litErrorMessage.Text = context.ProblemText;
                         throw new Exception("Issue sending email to: " + email);
                     }
                 }

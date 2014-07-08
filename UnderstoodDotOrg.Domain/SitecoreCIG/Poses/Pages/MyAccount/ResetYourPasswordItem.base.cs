@@ -55,6 +55,33 @@ public CustomTextField Directions
 }
 
 
+public CustomTextField ForgotPasswordText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Forgot Password Text"]);
+	}
+}
+
+
+public CustomTextField PasswordUpdatedText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Password Updated Text"]);
+	}
+}
+
+
+public CustomTextField ForgotPasswordLinkText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Forgot Password Link Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

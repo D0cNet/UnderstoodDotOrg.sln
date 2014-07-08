@@ -10,8 +10,7 @@
                     <sc:Text ID="PageHeading" runat="server" Field="Page Title"></sc:Text>
                 </h1>
             </header>
-
-            <%--<p>Please create a new password. Understood passwords must have 6 characters. You can use letters and/or numbers.</p>--%>
+            <sc:FieldRenderer runat="server" ID="frPasswordDirections" FieldName="Directions"/>
             <sc:Text ID="description" runat="server" Field="Body Content"></sc:Text>
 
             <label>

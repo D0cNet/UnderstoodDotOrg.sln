@@ -5,7 +5,7 @@
 <div class="container sign-up-link">
     <div class="row">
         <div class="col col-23">
-            <p>Not a member yet? <%--<a href="REPLACE">Sign Up</a>--%><asp:HyperLink runat="server" ID="uxRegisterLink"></asp:HyperLink></p>
+            <p><sc:FieldRenderer runat="server" FieldName="P Tag Not A Member Text" /> <asp:HyperLink runat="server" ID="uxRegisterLink"></asp:HyperLink></p>
         </div>
     </div>
 </div>
@@ -38,7 +38,7 @@
             <%--<button class="button">Sign In</button>--%>
             <asp:Button CssClass="button" ID="uxSignIn" runat="server" OnClick="uxSignIn_Click" />
             <%--<a class="sign-in-forgot-password" href="REPLACE">Forgot Your Password?</a>--%>
-            <asp:HyperLink runat="server" ID="uxForgotPassword" CssClass="sign-in-forgot-password">Forgot Your Password?</asp:HyperLink>
+            <asp:HyperLink runat="server" ID="uxForgotPassword" CssClass="sign-in-forgot-password"></asp:HyperLink>
 
         </div>
     </div>
