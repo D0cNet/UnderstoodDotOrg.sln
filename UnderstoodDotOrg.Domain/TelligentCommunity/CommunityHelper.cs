@@ -736,7 +736,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                             BlogId = blogId,
                             Url = "/en/Community and Events/Blogs/BlogPosts?BlogId=" + blogId
                         };
-                        if (!title.Equals("Articles"))
+                        if (!title.Equals("Articles") && !title.Equals("Assistive Tools") && !title.Equals("Behavior Tools"))
                         {
                             blogs.Add(blogPost);
                         }
