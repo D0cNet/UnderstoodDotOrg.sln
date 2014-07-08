@@ -38,11 +38,11 @@
                 <!-- END PARTIAL: key-takeaways -->
             </div>
             <!-- BEGIN PARTIAL: about-the-author -->
-            <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" visible="false" />
+            <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
 
             <!-- END PARTIAL: about-the-author -->
             <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" visible="false" />
+            <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
 
             <!-- END PARTIAL: reviewed-by -->
             <!-- BEGIN PARTIAL: find-helpful -->

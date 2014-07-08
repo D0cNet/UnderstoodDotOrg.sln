@@ -34,4 +34,9 @@
     </div>
     <!-- .row -->
 </div>
+<style>
+    .article-intro .article-intro-count{
+        margin-bottom: 5px;
+    }
+</style>
 <!-- .container -->

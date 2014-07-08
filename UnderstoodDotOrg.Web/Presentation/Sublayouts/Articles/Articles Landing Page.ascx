@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col col-15 offset-1">
             <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" Visible="false"/>
+            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx"/>
             <!-- END PARTIAL: reviewed-by -->
         </div>
     </div>
