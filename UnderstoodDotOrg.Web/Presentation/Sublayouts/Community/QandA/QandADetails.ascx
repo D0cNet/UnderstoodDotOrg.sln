@@ -10,12 +10,12 @@
                     <img alt="70x70 Placeholder" src="http://placehold.it/70x70" />
                 </div>
                 <div class="question-answer-info">
-                    <span class="question-status"><%= UnderstoodDotOrg.Common.DictionaryConstants.OpenQuestionLabel %></span>
+                    <span class="question-status"><sc:Text Field="Open Question Text" runat="server" /></span>
                     <h2 class="title"><asp:Label ID="QuestionTitleLabel" runat="server" /></h2>
                     <div class="description">
                         <asp:Label ID="QuestionBodyLabel" runat="server" />
                     </div>
-                    <span class="details"><%= UnderstoodDotOrg.Common.DictionaryConstants.InLabel %> <a href="REPLACE" class="topic"><asp:Label ID="GroupLabel" runat="server" /></a> - <%= UnderstoodDotOrg.Common.DictionaryConstants.AskedByLabel %> <a href="REPLACE" class="author"><asp:Label ID="AuthorLabel" runat="server" /></a> <span class="bullet">&bull;</span> <asp:Label ID="DateLabel" runat="server" /></span>
+                    <span class="details"><sc:Text ID="Text1" Field="In Text" runat="server" /> <a href="REPLACE" class="topic"><asp:Label ID="GroupLabel" runat="server" /></a> - <sc:Text ID="Text2" Field="Asked By Text" runat="server" /> <a href="REPLACE" class="author"><asp:Label ID="AuthorLabel" runat="server" /></a> <span class="bullet">&bull;</span> <asp:Label ID="DateLabel" runat="server" /></span>
                     <div class="buttons">
                         <a class="button answer" href="javascript:void" onclick="DisplayForm();"><%= UnderstoodDotOrg.Common.DictionaryConstants.AnswerQuestionLabel %></a>
                         <a class="button follow" href="REPLACE"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.AnswerQuestionLabel %></span></a>

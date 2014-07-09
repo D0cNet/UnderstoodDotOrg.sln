@@ -89,6 +89,7 @@
     <Compile Include="Models\Telligent\Message.cs" />
     <Compile Include="Models\Telligent\Notification.cs" />
     <Compile Include="Models\Telligent\Question.cs" />
+    <Compile Include="Models\Telligent\SearchResult.cs" />
     <Compile Include="Models\Telligent\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ExactTarget.etAPI\Reference.cs">

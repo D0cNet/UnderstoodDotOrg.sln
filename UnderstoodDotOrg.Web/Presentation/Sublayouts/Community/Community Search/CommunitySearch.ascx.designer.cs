@@ -7,108 +7,99 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Community_Search {
     
     
-    public partial class QandADetails {
+    public partial class CommunitySearch {
         
         /// <summary>
-        /// QuestionTitleLabel control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label QuestionTitleLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSearch;
         
         /// <summary>
-        /// QuestionBodyLabel control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label QuestionBodyLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit btnSearch;
         
         /// <summary>
-        /// Text1 control.
+        /// divResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divResults;
         
         /// <summary>
-        /// GroupLabel control.
+        /// litResultCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label GroupLabel;
+        protected global::System.Web.UI.WebControls.Literal litResultCount;
         
         /// <summary>
-        /// Text2 control.
+        /// litResultName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text2;
+        protected global::System.Web.UI.WebControls.Literal litResultName;
         
         /// <summary>
-        /// AuthorLabel control.
+        /// litFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AuthorLabel;
+        protected global::System.Web.UI.WebControls.Literal litFilter;
         
         /// <summary>
-        /// DateLabel control.
+        /// searchFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DateLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl searchFilter;
         
         /// <summary>
-        /// commentsForm control.
+        /// ddlFilterSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl commentsForm;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFilterSearch;
         
         /// <summary>
-        /// CommentEntryTextField control.
+        /// divResultsList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea CommentEntryTextField;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divResultsList;
         
         /// <summary>
-        /// valComment control.
+        /// rptResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valComment;
-        
-        /// <summary>
-        /// SubmitButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitButton;
+        protected global::System.Web.UI.WebControls.Repeater rptResults;
     }
 }

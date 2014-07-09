@@ -37,7 +37,7 @@
                 <div class="description">
                     <%# Item.Body %>
                 </div>
-                <span class="details">In <a href="REPLACE" class="topic"><asp:Literal ID="lbGroup" runat="server" /></a> - Answered by <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink>, <asp:Literal ID="lbModerator" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.ModeratorLabel %>" /> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
+                <span class="details"><sc:Text Field="In Text" runat="server" /> <a href="REPLACE" class="topic"><asp:Literal ID="lbGroup" runat="server" /></a> - <sc:Text Field="Answered By Text" runat="server" /> <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink>, <asp:Literal ID="lbModerator" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.ModeratorLabel %>" /> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
                 <div class="buttons">
                     <button id="btnLike" onserverclick="LikeButton_Click" class="helped" runat="server"><i class="icon-comment-like"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ThisHelpedLabel %></button>
                     <button class="report"><i class="icon-comment-flag"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReportAsInappropriateLabel %></button>
