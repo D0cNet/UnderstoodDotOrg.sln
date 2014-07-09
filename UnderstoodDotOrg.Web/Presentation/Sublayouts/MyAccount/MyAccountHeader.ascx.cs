@@ -51,7 +51,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 if(!String.IsNullOrEmpty(CurrentMember.ScreenName))
                 {
                     List<INotification> notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
-                    if (notifs != null)
+                    if (notifs != null && notifs.Count() >0)
                     {
                         spnCount.Visible = true;
                         litNotifCount.Text = notifs.Count().ToString();

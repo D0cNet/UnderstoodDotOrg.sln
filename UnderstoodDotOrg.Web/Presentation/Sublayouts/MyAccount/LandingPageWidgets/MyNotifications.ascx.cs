@@ -41,7 +41,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
                         aspxItem.Controls.Add(connectionNotifUC);
 
                     }
-                    else if (dataItem is CommentNotification)
+                   if (dataItem is CommentNotification)
                     {
                         var commentNotifUC = LoadControl(Constants.NotificationElements.CommentTemplateFrontPath) as CommentTemplateFront;
 
@@ -49,6 +49,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
 
                     }
 
+                   if (dataItem is ForumReplyNotification)
+                   {
+                       var commentNotifUC = LoadControl(Constants.NotificationElements.ForumReplyTemplateFrontPath) as ForumReplyTemplateFront;
+
+                       aspxItem.Controls.Add(commentNotifUC);
+
+                   }
                     aspxItem.DataBind();
 
                 }
@@ -65,7 +72,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             litSeeAllNotificationsLabel.Text = DictionaryConstants.SeeAllNotificationsLabel;
             hrefNotificationsLink.HRef =   MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetUrl();
             hrefNotificationsLink.InnerText = context.SeeAllNotificationsText;
-            if (Notifications != null)
+            if (Notifications != null && Notifications.Count() >0)
             {
                 litNotifCount.Text = Notifications.Count().ToString();
                 pnlEmptyText.Visible = false;

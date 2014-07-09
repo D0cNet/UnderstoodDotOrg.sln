@@ -726,7 +726,8 @@ namespace UnderstoodDotOrg.Common
             {
                 Comment,
                 Connection,
-                ForumReply
+                ForumReply,
+                ForumAuthorReply
             }
             public static string CommentTemplatePath
             {
@@ -746,6 +747,17 @@ namespace UnderstoodDotOrg.Common
             public static string ConnectTemplateFrontPath { get { return @"~/Presentation/Sublayouts/MyAccount/Notification Templates/ConnectTemplateFront.ascx"; } }
 
             public static string CommentTemplateFrontPath { get { return @"~/Presentation/Sublayouts/MyAccount/Notification Templates/CommentTemplateFront.ascx"; } }
+
+            public static string ForumReplyTemplatePath
+            {
+                get
+                {
+                    return @"~/Presentation/Sublayouts/MyAccount/Notification Templates/ForumReplyTemplate.ascx";
+                }
+            }
+
+            public static string ForumReplyTemplateFrontPath { get { return @"~/Presentation/Sublayouts/MyAccount/Notification Templates/ForumReplyTemplateFront.ascx"; } }
+
         }
         #endregion
     

@@ -84,14 +84,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                         aspxItem.Controls.Add(connectionNotifUC);
 
                     }
-                    else if (dataItem is CommentNotification)
+                    if (dataItem is CommentNotification)
                     {
                         var commentNotifUC = LoadControl(Constants.NotificationElements.CommentTemplatePath) as CommentTemplate;
 
                         aspxItem.Controls.Add(commentNotifUC);
 
                     }
+                    if (dataItem is ForumReplyNotification)
+                    {
+                        var forumNotifUC = LoadControl(Constants.NotificationElements.ForumReplyTemplatePath) as ForumReplyTemplate;
 
+                        aspxItem.Controls.Add(forumNotifUC);
+
+                    }
                     aspxItem.DataBind();
 
                 }

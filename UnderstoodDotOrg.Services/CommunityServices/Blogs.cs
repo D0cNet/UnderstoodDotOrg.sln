@@ -20,5 +20,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
                           "/blogposts?BlogId=" + id, ".aspx", "");
             return BlogUrl;
         }
+
+       
     }
 }

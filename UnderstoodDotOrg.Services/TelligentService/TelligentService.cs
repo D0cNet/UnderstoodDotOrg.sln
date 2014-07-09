@@ -19,6 +19,7 @@ using System.Web.Security;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Services;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+using UnderstoodDotOrg.Common.Extensions;
 using System.IO;
 namespace UnderstoodDotOrg.Services.TelligentService
 {
@@ -934,6 +935,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             Dictionary<string, Constants.NotificationElements.NotificationType> NotificationTypes = new Dictionary<string, Constants.NotificationElements.NotificationType>()
             {
                 {"d0e2bf58-74b3-4090-8ff0-0d9a11188f0b",Constants.NotificationElements.NotificationType.Comment}, //Also commented on
+              {"b005f46c-55c2-4f7b-afb0-d699fa8d33aa",Constants.NotificationElements.NotificationType.ForumAuthorReply},
                 {"bb2f90fb-5630-4d0b-b1be-06e4a1307d35",Constants.NotificationElements.NotificationType.ForumReply},
                 {"bb196c30-fad3-4ad8-a644-2a0187fc5617",Constants.NotificationElements.NotificationType.Connection} //Connection request
 
@@ -972,9 +974,25 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                switch (notifType)   
                                {
                                    case Constants.NotificationElements.NotificationType.ForumReply:
-
+                                   case Constants.NotificationElements.NotificationType.ForumAuthorReply:
+                                       var forumName = notification.SelectSingleNode("Content/Application/HtmlName").InnerText;
+                                       var replyId = notification.SelectSingleNode("TargetUrl").InnerText.Split('#')[1];
+                                       var replyUser = notification.SelectSingleNode("Actors/RestNotificationActor[last()]/User/DisplayName").InnerText;
+                                       //var createdDate = notification.SelectSingleNode("Actors/RestNotificationActor[last()]/Date").InnerText.Split('.')[0];
+                                       if (replyId != null)
+                                       {
+                                           var replyBody = ReadReply(replyId);
+                                           notif = new ForumReplyNotification(notification);
+                                           if (replyBody != null)
+                                           {
+                                               ((ForumReplyNotification)notif).Text = replyBody.SelectSingleNode("Body").InnerText;
+                                           }
+                                       }
+                                       ((ForumReplyNotification)notif).ForumUrl = UnderstoodDotOrg.Services.CommunityServices.Forum.ConvertForumNametoSitecoreItem(forumName).GetUrl();
+                                       notifList.Add(notif);
                                        break;
                                    case Constants.NotificationElements.NotificationType.Comment:
+                                       var BlogName = notification.SelectSingleNode("Content/Application/HtmlName").InnerText;
                                        var contentId = notification.SelectSingleNode("Content/ContentId").InnerText;
                                        var commentUser = notification.SelectSingleNode("Actors/RestNotificationActor[last()]/User/DisplayName").InnerText;
                                        //var createdDate = notification.SelectSingleNode("Actors/RestNotificationActor[last()]/Date").InnerText.Split('.')[0];
@@ -984,6 +1002,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                        {
                                            ((CommentNotification)notif).Text = comment.SelectSingleNode("Body").InnerText;
                                        }
+                                      // ((CommentNotification)notif).BlogUrl = UnderstoodDotOrg.Services.CommunityServices.Blogs.ConvertForumNametoSitecoreItem(forumName).GetUrl();
                                        notifList.Add(notif);
                                        break;
                                    case Constants.NotificationElements.NotificationType.Connection:

@@ -103,6 +103,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.WebControls.Literal litComment;
         
         /// <summary>
+        /// ThanksButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ThanksButton ThanksButton;
+        
+        /// <summary>
+        /// ThinkingOfYouButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ThinkingOfYouButton ThinkingOfYouButton;
+        
+        /// <summary>
+        /// LikeButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.LikeButton LikeButton;
+        
+        /// <summary>
         /// plhGroupDiscussions control.
         /// </summary>
         /// <remarks>

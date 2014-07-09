@@ -1,2 +1,2 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ConnectButton.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ConnectButton" %>
-  <asp:Button Text="Connect" ID="btnConnect" CssClass="button" OnClick="btnConnect_Click"  runat="server" />
+  <asp:Button  ID="btnConnect" CssClass="button" OnClick="btnConnect_Click"  runat="server" />

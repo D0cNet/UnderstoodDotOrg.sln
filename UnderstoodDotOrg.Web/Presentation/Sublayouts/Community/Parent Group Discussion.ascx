@@ -1,5 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Group Discussion.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Group_Discussion" %>
 <%@ Register Src="~/Presentation/Sublayouts/Common/ConnectButton.ascx" TagPrefix="uc1" TagName="ConnectButton" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/ThanksButton.ascx" TagPrefix="uc1" TagName="ThanksButton" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/ThinkingOfYouButton.ascx" TagPrefix="uc1" TagName="ThinkingOfYouButton" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/LikeButton.ascx" TagPrefix="uc1" TagName="LikeButton" %>
+
+
+
 
 
 <!-- BEGIN PARTIAL: community/main_header -->
@@ -139,22 +145,13 @@
                                 <h4>Show your support</h4>
                                 <ul class="support-menu">
                                     <li>
-                                        <button class="thanks">
-                                            <i class="smiley-icon"></i>
-                                            <p>Thanks</p>
-                                        </button>
+                                        <uc1:ThanksButton runat="server" ID="ThanksButton" />
                                     </li>
                                     <li>
-                                        <button class="thinking-of-you">
-                                            <i class="flower-icon"></i>
-                                            <p>Thinking of You</p>
-                                        </button>
+                                        <uc1:ThinkingOfYouButton runat="server" ID="ThinkingOfYouButton" />
                                     </li>
                                     <li>
-                                        <button class="likes">
-                                            <i class="thumbs-up-icon"></i>
-                                            <p>15</p>
-                                        </button>
+                                        <uc1:LikeButton runat="server" ID="LikeButton" />
                                     </li>
                                 </ul>
                             </footer>

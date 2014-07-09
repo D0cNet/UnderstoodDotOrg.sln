@@ -771,6 +771,41 @@
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.designer.cs">
       <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\LikeButton.ascx.cs">
+      <DependentUpon>LikeButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\LikeButton.ascx.designer.cs">
+      <DependentUpon>LikeButton.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ThanksButton.ascx.cs">
+      <DependentUpon>ThanksButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ThanksButton.ascx.designer.cs">
+      <DependentUpon>ThanksButton.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ThinkingOfYouButton.ascx.cs">
+      <DependentUpon>ThinkingOfYouButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\ThinkingOfYouButton.ascx.designer.cs">
+      <DependentUpon>ThinkingOfYouButton.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplate.ascx.cs">
+      <DependentUpon>ForumReplyTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplate.ascx.designer.cs">
+      <DependentUpon>ForumReplyTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplateFront.ascx.cs">
+      <DependentUpon>ForumReplyTemplateFront.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplateFront.ascx.designer.cs">
+      <DependentUpon>ForumReplyTemplateFront.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Recommendation\ArticleRecommendationIcons.ascx.cs">
       <DependentUpon>ArticleRecommendationIcons.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2917,6 +2952,11 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\LikeButton.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\ThanksButton.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\ThinkingOfYouButton.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplate.ascx" />
+    <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplateFront.ascx" />
     <Content Include="Presentation\Sublayouts\Recommendation\ArticleRecommendationIcons.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Comments\Entries.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ConnectButton.ascx" />

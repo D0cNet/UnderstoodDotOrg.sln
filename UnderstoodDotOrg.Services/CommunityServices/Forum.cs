@@ -103,6 +103,14 @@ namespace UnderstoodDotOrg.Services.CommunityServices
 
             return forumItem;
         }
+        public static Item ConvertForumNametoSitecoreItem(string name)
+        {
+            Item forumItem = null;
+            Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
+            forumItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Forums.ForumTemplateID + "' and @@name = '" + name + "']");
+
+            return forumItem;
+        }
         public static ForumModel ForumModelFactory(ForumItem item)
         {
             ForumModel frm = new ForumModel(item, TelligentService.TelligentService.ReadThreadList);

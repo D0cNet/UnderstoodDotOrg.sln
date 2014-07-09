@@ -1,5 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="GroupDiscussionList.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.GroupDiscussionList" %>
 <%@ Register Src="~/Presentation/Sublayouts/Common/ConnectButton.ascx" TagPrefix="uc1" TagName="ConnectButton" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/ThanksButton.ascx" TagPrefix="uc1" TagName="ThanksButton" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/ThinkingOfYouButton.ascx" TagPrefix="uc1" TagName="ThinkingOfYouButton" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/LikeButton.ascx" TagPrefix="uc1" TagName="LikeButton" %>
+
+
+
 
 <asp:Repeater ID="rptDiscussionList" OnItemDataBound="rptDiscussionList_ItemDataBound"  runat="server">
     <HeaderTemplate>
@@ -81,23 +87,14 @@
             <h4>Show your support</h4>
             <ul class="support-menu">
                 <li>
-              <button runat="server" command="Thanks" commandarguments=<%# Eval("AuthorName") %> id="btnThanks" onclick="" class="thanks">
-                    <i class="smiley-icon"></i>
-                    <p>Thanks</p>
-                </button>
+                    <uc1:ThanksButton runat="server" ID="ThanksButton" />
                     
                 </li>
                 <li>
-                <button runat="server" id="btnThinkingOfYou" onclick="" class="thinking-of-you">
-                    <i class="flower-icon"></i>
-                    <p>Thinking of You</p>
-                </button>
+                    <uc1:ThinkingOfYouButton runat="server" id="ThinkingOfYouButton" />
                 </li>
                 <li>
-                <button class="likes">
-                    <i class="thumbs-up-icon"></i>
-                    <p>15</p>
-                </button>
+                    <uc1:LikeButton runat="server" id="LikeButton" />
                 </li>
             </ul>
         </footer>

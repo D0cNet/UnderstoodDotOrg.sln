@@ -1619,6 +1619,7 @@ namespace UnderstoodDotOrg.Common
         public static string NotificationsButtonLabel { get { return Translate.TextByDomain(PosesDictionary, "Notifications Text"); } }
 
         public static string SeeAllNotificationsLabel { get { return Translate.TextByDomain(PosesDictionary, "All Notifications Text"); } }
+        public static string ForumReplyHeader { get { return Translate.TextByDomain(PosesDictionary, "Forum Reply Header Text"); } }
         #endregion
 
 

@@ -36,7 +36,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 }
 
             }
-            litNotifsCount.Text = notifs.Count().ToString();
+            litNotifsCount.Text = notifs!=null && notifs.Count() >0?notifs.Count().ToString():"0";
             litwhatsHappeningLabel.Text = DictionaryConstants.WhatsHappeningLabel;
             litPrivateMsgsLabel.Text = DictionaryConstants.PrivateMessagesLabel;
             litEmailPrefLabel.Text = DictionaryConstants.EmailPreferencesLabel;

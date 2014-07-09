@@ -12,9 +12,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class ConnectButton : BaseSublayout//System.Web.UI.UserControl
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+                this.Text = DictionaryConstants.ConnectBtnText;
         }
 
         private string UserName
