@@ -508,7 +508,7 @@
       ].join(',');
 
       // Add modal window to end of body.
-      $('body').append(this.$modalWindow);
+      $('form').append(this.$modalWindow);
 
       // Build uniform components.
       $(uniform_components).uniform();
