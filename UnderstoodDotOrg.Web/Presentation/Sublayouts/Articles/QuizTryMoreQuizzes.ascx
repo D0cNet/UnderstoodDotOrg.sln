@@ -3,7 +3,7 @@
 <div class="container try-another-quiz alt-layout">
     <div class="row rs_read_this try-another-quiz-rs-wrapper">
         <!-- BEGIN PARTIAL: try-another-quiz -->
-        <h2>Try Another Quiz</h2>
+        <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_TryAnotherQuizText %></h2>
         <asp:Repeater ID="rptTryMoreQuizzes" runat="server" OnItemDataBound="rptTryMoreQuizzes_ItemDataBound">
             <HeaderTemplate>
                 <div class="col col-11 offset-1">
@@ -15,7 +15,7 @@
                 </div>
                 <div class="quiz-text">
                     <h4><sc:FieldRenderer ID="frQuizName" runat="server" FieldName="Page Title"></sc:FieldRenderer></h4>
-                    <span><asp:Hyperlink CssClass="more-link" ID="hypMoreLink" runat="server">Take the Quiz</asp:Hyperlink></span>
+                    <span><asp:Hyperlink CssClass="more-link" ID="hypMoreLink" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_TaketheQuizText %></asp:Hyperlink></span>
                 </div>
             </ItemTemplate>
             <FooterTemplate>

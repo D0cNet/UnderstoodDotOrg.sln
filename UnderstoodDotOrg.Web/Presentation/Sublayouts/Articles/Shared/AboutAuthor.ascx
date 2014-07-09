@@ -4,7 +4,7 @@
 <div class="rs_about_author rs_read_this">
     <section class="about-the-author">
         <header>
-            <h2>About the Author</h2>
+            <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_AbouttheAuthorText %></h2>
         </header>
         <%--<img src="http://placehold.it/60x60" alt="REPLACE">--%>
         <asp:HyperLink ID="hlAuthorImage" runat="server" Visible="false">
@@ -21,7 +21,7 @@
                 <%--Lorem ipsum dolor sit amet, consectetuer laoreet dolore adipiscing elit, sed diam nonummy nibh euismod tincidunt ut dolore.--%>
                 <sc:fieldrenderer id="frAuthorBio" runat="server" fieldname="Author Biodata" />
             </p>
-            <asp:HyperLink ID="hlAuthorMorePost" runat="server" Text="More Posts by this Author" Visible="false">
+            <asp:HyperLink ID="hlAuthorMorePost" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.Articles_MorePostsbythisAuthorText %>" Visible="false">
             </asp:HyperLink>
             <%--<a href="REPLACE">More Posts by this Author</a>--%>
         </div>

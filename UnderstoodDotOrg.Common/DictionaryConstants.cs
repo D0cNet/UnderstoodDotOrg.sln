@@ -999,7 +999,90 @@ namespace UnderstoodDotOrg.Common
         }
 
         #endregion
-        
+
+        #region Article Labels
+
+        public static string Articles_MorePostsbythisAuthorText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_More Posts by this Author Text");
+            }
+        }
+        public static string Articles_AbouttheAuthorText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_About the Author Text");
+            }
+        }
+
+        public static string Articles_BackText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Back Text");
+            }
+        }
+        public static string Articles_TryAnotherQuizText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Try Another Quiz Text");
+            }
+        }
+
+        public static string Articles_TaketheQuizText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Take the Quiz Text");
+            }
+        }
+
+        public static string Articles_SeeAllCommentsText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_See All Comments Text");
+            }
+        }
+
+        public static string Articles_AddMyCommentText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Add My Comment Text");
+            }
+        }
+        public static string Articles_AnswersSavedText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Answers Saved Text");
+            }
+        }
+
+        public static string Articles_SomethingWentWrongText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Something Went Wrong Text");
+            }
+        }
+
+        public static string Articles_DownloadasPDFButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Download as PDF Button Text");
+            }
+        }
+
+
+
+        #endregion Article Labels
+
         #region MyAccount Labels
 
         public static string MyAccount_EnterAScreenName
@@ -1017,6 +1100,8 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "MyAccount_Zip Code");
             }
         }
+
+
 
         #endregion MyAccount Labels
 

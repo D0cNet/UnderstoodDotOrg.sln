@@ -88,9 +88,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             string url = Sitecore.Context.Item.GetUrl();
 
             hlAllComments.HRef = url + "#comment-list"; //Navigate to top of comment section
-            hlAllComments.InnerText = "See All Comments";
+            hlAllComments.InnerText = DictionaryConstants.Articles_SeeAllCommentsText;
             hlAddMyComment.HRef = url + "#comment-submit";
-            hlAddMyComment.InnerText = "Add My Comment";
+            hlAddMyComment.InnerText = DictionaryConstants.Articles_AddMyCommentText;
         }
     }
 }
