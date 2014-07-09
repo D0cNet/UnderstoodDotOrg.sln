@@ -85,13 +85,13 @@
                         
                         <div class="article-mappings">
                         <div class="article-column">
-                        <asp:Repeater ID="rptArticleGrades" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.GradeLevelItem">
+                        <asp:Repeater ID="rptArticleGrades" runat="server" OnItemDataBound="rptArticleGrades_ItemDataBound">
                             <HeaderTemplate>
                                 <h5>Grades:</h5>
                                 <ul>
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <li><%# Item.Name.Raw %></li>
+                                <li><asp:Literal ID="litGrade" runat="server" /></li>
                             </ItemTemplate>
                             <FooterTemplate>
                                 </ul>
@@ -100,13 +100,13 @@
                         </div>
 
                         <div class="article-column">
-                        <asp:Repeater ID="rptArticleIssues" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildIssueItem">
+                        <asp:Repeater ID="rptArticleIssues" runat="server" OnItemDataBound="rptArticleIssues_ItemDataBound">
                             <HeaderTemplate>
                                 <h5>Issues:</h5>
                                 <ul>
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <li><%# Item.IssueName.Raw %></li>
+                                <li><asp:Literal ID="litIssue" runat="server" /></li>
                             </ItemTemplate>
                             <FooterTemplate>
                                 </ul>
@@ -115,13 +115,13 @@
                         </div>
 
                         <div class="article-column">
-                        <asp:Repeater ID="rptArticleInterests" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent.ParentInterestItem">
+                        <asp:Repeater ID="rptArticleInterests" runat="server" OnItemDataBound="rptArticleInterests_ItemDataBound">
                             <HeaderTemplate>
                                 <h5>Interests:</h5>
                                 <ul>
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <li><%# Item.InterestName.Raw %></li>
+                                <li><asp:Literal ID="litInterest" runat="server" /></li>
                             </ItemTemplate>
                             <FooterTemplate>
                                 </ul>

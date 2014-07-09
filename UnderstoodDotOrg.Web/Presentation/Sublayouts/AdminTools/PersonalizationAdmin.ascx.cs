@@ -14,6 +14,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
 {
     public partial class PersonalizationAdmin : System.Web.UI.UserControl
     {
+        private List<Guid> _childIssues = new List<Guid>();
+        private Guid? _childGuidId;
+        private List<Guid> _parentInterests = new List<Guid>();
+
         private void Page_Load(object sender, EventArgs e)
         {
             BindEvents();
@@ -30,6 +34,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             MembershipManager mm = new MembershipManager();
             Child child = mm.GetChild(Guid.Parse(ddlChildren.SelectedValue));
 
+            _parentInterests = child.Members.FirstOrDefault().Interests.Select(i => Sitecore.Context.Database.GetItem(i.Key))
+                                    .Where(i => i != null)
+                                    .Select(i => i.ID.ToGuid())
+                                    .ToList();
+
             string childGrade = string.Empty;
 
             var grade = child.Grades.FirstOrDefault();
@@ -38,27 +47,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                 GradeLevelItem gli = Sitecore.Context.Database.GetItem(grade.Key);
                 if (gli != null)
                 {
+                    // store value for data bound match
+                    _childGuidId = grade.Key;
+
                     childGrade = gli.Name.Rendered;
                 }
             }
 
             litChild.Text = String.Format("{0} ({1})", child.Nickname, childGrade);
-            
-            var articles = SearchHelper.GetArticles(child.Members.FirstOrDefault(), child, DateTime.Now)
-                                .Where(i => i.GetItem() != null);
-            if (articles.Any())
-            {
-                rptArticles.DataSource = articles;
-                rptArticles.DataBind();
-            }
 
             var issues = child.Issues.Select(i => Sitecore.Context.Database.GetItem(i.Key))
                                 .Where(i => i != null)
                                 .Select(i => new ChildIssueItem(i));
             if (issues.Any())
             {
+                // store lookup values for data bound match
+                _childIssues = issues.Select(i => i.ID.ToGuid()).ToList();
+
                 rptIssues.DataSource = issues;
                 rptIssues.DataBind();
+            }
+
+            var articles = SearchHelper.GetArticles(child.Members.FirstOrDefault(), child, DateTime.Now)
+                                .Where(i => i.GetItem() != null);
+            if (articles.Any())
+            {
+                rptArticles.DataSource = articles;
+                rptArticles.DataBind();
             }
         }
 
@@ -99,6 +114,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                 ChildIssueItem issue = (ChildIssueItem)e.Item.DataItem;
 
                 Literal litIssue = e.FindControlAs<Literal>("litIssue");
+
                 litIssue.Text = issue.IssueName.Rendered;
             }
         }
@@ -161,6 +177,51 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                     rptArticleInterests.DataSource = interests;
                     rptArticleInterests.DataBind();
                 }
+            }
+        }
+
+        protected void rptArticleIssues_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                ChildIssueItem item = (ChildIssueItem)e.Item.DataItem;
+
+                Literal litIssue = e.FindControlAs<Literal>("litIssue");
+
+                litIssue.Text = (_childIssues.Contains(item.ID.ToGuid())) 
+                    ? HighlightMatch(item.IssueName.Rendered) : item.IssueName.Rendered;
+
+            }
+        }
+
+        protected void rptArticleGrades_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                GradeLevelItem item = (GradeLevelItem)e.Item.DataItem;
+
+                Literal litGrade = e.FindControlAs<Literal>("litGrade");
+
+                litGrade.Text = (_childGuidId == item.ID.ToGuid()) 
+                    ? HighlightMatch(item.Name.Rendered) : item.Name.Rendered;
+            }
+        }
+
+        private string HighlightMatch(string input)
+        {
+            return String.Format("<b>{0}</b>", input);
+        }
+
+        protected void rptArticleInterests_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                ParentInterestItem item = (ParentInterestItem)e.Item.DataItem;
+
+                Literal litInterest = e.FindControlAs<Literal>("litInterest");
+
+                litInterest.Text = (_parentInterests.Contains(item.ID.ToGuid()))
+                    ? HighlightMatch(item.InterestName.Rendered) : item.InterestName.Rendered;
             }
         }
     }
