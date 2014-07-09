@@ -8,41 +8,26 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
-
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Framework.UI;
+using System.Web.UI.HtmlControls;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
-    public partial class GroupDiscussionList : System.Web.UI.UserControl
+    public partial class GroupDiscussionList : BaseSublayout//System.Web.UI.UserControl
     {
         public override void DataBind()
         {
             rptDiscussionList.DataBind();
         }
 
+       
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Item currItem = Sitecore.Context.Item;
-            //if (currItem != null)
-            //{
-            //    GroupDiscussionItem grpDItem = new GroupDiscussionItem(currItem);
-            //    if (grpDItem != null)
-            //    {
-            //        string forumID = grpDItem.ForumID.Text;
-            //        string threadID = grpDItem.ThreadID.Text;
-
-            //        //ThreadModel thModel = new ThreadModel(forumID, threadID);
-            //        List<ReplyModel> replies = CommunityHelper.ReadReplies(forumID, threadID);
-            //        if (replies != null)
-            //        {
-            //            rptDiscussionList.DataSource = replies;
-            //            rptDiscussionList.DataBind();
-            //        }
-
-            //    }
-            //}
+           
         }
         protected void rptChildCard_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-
+           
             Repeater childIssues_repeater = (Repeater)e.Item.FindControl("rptChildIssues");
             if (childIssues_repeater != null)
             {
@@ -52,6 +37,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         }
         protected void rptDiscussionList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
+            ConnectButton btnConnect = e.FindControlAs<ConnectButton>("btnConnect");
+            if (btnConnect != null)
+            {
+                if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
+                {
+                    if (!String.IsNullOrEmpty(((ReplyModel)e.Item.DataItem).Author.UserName))
+                        btnConnect.LoadState(((ReplyModel)e.Item.DataItem).Author.UserName);
+                }
+            }
+
+            HtmlAnchor hrefName = e.FindControlAs<HtmlAnchor>("hrefName");
+            if(hrefName !=null)
+            {
+                hrefName.HRef = ((ReplyModel)e.Item.DataItem).Author.ProfileLink;
+            }
+
             Repeater childModel_repeater = (Repeater)e.Item.FindControl("rptChildCard");
             if (childModel_repeater != null)
             {

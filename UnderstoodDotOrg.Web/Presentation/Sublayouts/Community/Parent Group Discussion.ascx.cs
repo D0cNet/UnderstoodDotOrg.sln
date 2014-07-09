@@ -53,12 +53,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             rptGroupDiscussion.DataSource = thModel.Replies;
                             rptGroupDiscussion.DataBind();
 
-                            if(IsUserLoggedIn)
+                            if (thModel.Author!=null)
                             {
-                                if(!String.IsNullOrEmpty(CurrentMember.ScreenName))
-                                {
-                                    btnConnect.LoadState(CurrentMember.ScreenName);
-                                }
+
+                                btnConnect.LoadState(thModel.Author.UserName);
+                              
                             }
                                 
                             lblSubject.Text = thModel.Subject;

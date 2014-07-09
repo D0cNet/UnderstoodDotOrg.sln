@@ -2145,8 +2145,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 var requesteeID = ReadUserId(requestee);
                 
                 //Same user ?
-                if (requesteeID.Equals(requestorID))
-                    return Constants.TelligentFriendStatus.Approved;
+                //if (requesteeID.Equals(requestorID))
+                //    return Constants.TelligentFriendStatus.Approved;
 
                 string address = String.Empty;
                 using (WebClient client = new WebClient())

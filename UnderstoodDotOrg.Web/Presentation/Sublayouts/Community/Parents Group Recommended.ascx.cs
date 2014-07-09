@@ -71,7 +71,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 String[] topics = CurrentMember.Interests.Select(x => x.Key.ToString("B").ToUpper()).ToArray();
                 String[] states = new string[] { CurrentMember.zipCodeToState() };
                 String[] partners = new string[0]; //Partners not applicable to Member profile
-                return Groups.FindGroups(issues,topics,grades,states,partners);
+                return Groups.FindGroups(issues,topics,grades,states,partners).OrderByDescending(x=> x.NumOfMembers).ToList();
                 
             }
             return grpItems;

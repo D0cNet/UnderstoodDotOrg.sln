@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="GroupDiscussionList.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.GroupDiscussionList" %>
-<asp:Repeater ID="rptDiscussionList" OnItemDataBound="rptDiscussionList_ItemDataBound" runat="server">
+<%@ Register Src="~/Presentation/Sublayouts/Common/ConnectButton.ascx" TagPrefix="uc1" TagName="ConnectButton" %>
+
+<asp:Repeater ID="rptDiscussionList" OnItemDataBound="rptDiscussionList_ItemDataBound"  runat="server">
     <HeaderTemplate>
      <div class="discussion-post clearfix rs_read_this">
     </HeaderTemplate>
@@ -9,9 +11,10 @@
                 <img alt="150x150 Placeholder" src="<%#Eval("Author.AvatarUrl") %>" />
 
             </div>
-                <a class="name" href="REPLACE"><%#Eval("AuthorName") %></a>
+                <a class="name" runat="server" id="hrefName" href="REPLACE"><%#Eval("AuthorName") %></a>
                 <p class="location"><%#Eval("Author.UserLocation") %></p>
-                <a href="REPLACE" class="button rs_skip">Connect</a>
+               <%-- <a href="REPLACE" class="button rs_skip">Connect</a>--%>
+            <uc1:ConnectButton runat="server" ID="btnConnect" />
             <div class="member-card-specialties parents-member-cards">
                 <asp:Repeater ID="rptChildCard" OnItemDataBound="rptChildCard_ItemDataBound"  ClientIDMode="Static" runat="server">
                 <HeaderTemplate>
@@ -45,12 +48,7 @@
                                     </ItemTemplate>
                                     <FooterTemplate></ul></FooterTemplate>
                                 </asp:Repeater>
-							    <%-- <ul>
-								    <li>Illo Fuga</li>
-								    <li>Voluptas Repudiandae</li>
-								    <li>Nostrum Maiores</li>
-								    <li>Temporibus Sit</li>
-							    </ul>--%>
+						
 							    <div class="card-buttons">
 								    <button class="button gray">View Profile</button>
 								    <button class="button blue">See Activity</button>
@@ -83,13 +81,14 @@
             <h4>Show your support</h4>
             <ul class="support-menu">
                 <li>
-                <button class="thanks">
+              <button runat="server" command="Thanks" commandarguments=<%# Eval("AuthorName") %> id="btnThanks" onclick="" class="thanks">
                     <i class="smiley-icon"></i>
                     <p>Thanks</p>
                 </button>
+                    
                 </li>
                 <li>
-                <button class="thinking-of-you">
+                <button runat="server" id="btnThinkingOfYou" onclick="" class="thinking-of-you">
                     <i class="flower-icon"></i>
                     <p>Thinking of You</p>
                 </button>

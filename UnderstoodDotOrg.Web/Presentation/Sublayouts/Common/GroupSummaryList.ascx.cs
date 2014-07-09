@@ -55,40 +55,40 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 {
                     var item = (GroupCardModel)e.Item.DataItem;
 
-                    bool viewDiscussions = CommunityHelper.IsUserInGroup(UserID, item.GroupID);
-
-                    LinkButton joinView = (LinkButton)e.Item.FindControl("btnJoinGroup");
-                    if (joinView != null)
-                    {
-
+                bool viewDiscussions = TelligentService.IsUserInGroup(UserID, item.GroupID);
+                
+                LinkButton joinView = (LinkButton)e.Item.FindControl("btnJoinGroup");
+                if (joinView != null)
+                {
+                   
                         //joinView.Text = viewDiscussions ? "View Discussions" : "Join this Group";
                         joinView.Text = viewDiscussions ? DictionaryConstants.ViewDiscussionsLabel : DictionaryConstants.JoinThisGroupLabel;
-                        //If the user is to join group, then use Telligent group id, else use sitecore item id
+                    //If the user is to join group, then use Telligent group id, else use sitecore item id
                         joinView.CommandArgument = viewDiscussions ? item.ItemID : item.GroupID;
-                        joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
-                    }
+                    joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
+                }
 
                     HtmlAnchor titleLink = (HtmlAnchor)e.Item.FindControl("titleLink");
                     if (titleLink != null)
+                {
+                    if (viewDiscussions)
                     {
-                        if (viewDiscussions)
+                        if (e.Item.DataItem is GroupCardModel)
                         {
-                            if (e.Item.DataItem is GroupCardModel)
-                            {
                                 Item grpItem = Sitecore.Context.Database.GetItem(item.ItemID);
-                                var link = LinkManager.GetItemUrl(grpItem);
+                            var link = LinkManager.GetItemUrl(grpItem);
 
-                                titleLink.HRef = link;
-                            }
+                            titleLink.HRef = link;
                         }
                     }
+                }
 
                     var recommendationIcons = e.Item.FindControl("CommunityRecommendationIcons") as CommunityRecommendationIcons;
                     if (recommendationIcons != null)
                     {
                         recommendationIcons.MatchingChildrenIds = item.GrpItem.GetMatchingChildrenIds(this.CurrentMember);
-                    }
-                }
+            }
+        }
             }
         }
 
@@ -101,7 +101,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     return CurrentMember.ScreenName;
                 else
                     return String.Empty;
-                //throw new Exception("No current user available");
+                    //throw new Exception("No current user available");
                 //if (Session["username"] == null)
                 //{
                 //    MembershipManager mem = new MembershipManager();
@@ -113,7 +113,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 //}
                 //else
                 //    return Session["username"].ToString();
-                // return CurrentMember.ScreenName;
+              // return CurrentMember.ScreenName;
             }
         }
 
@@ -144,8 +144,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
+             
+            
             ///TODO:Get current user id in session
             //string UserID = Guid.Empty;
 
@@ -159,7 +159,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             {
                 try
                 {
-
+                   
                     //Call view Discussion using sitecore group id
                     Sitecore.Data.ID grpItemID = Sitecore.Data.ID.Parse(btn.CommandArgument);
                     Item grpItem = Sitecore.Context.Database.GetItem(grpItemID);
@@ -183,7 +183,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                         //Send Email
                         GroupItem grpItem = new GroupItem(Groups.ConvertGroupIDtoSitecoreItem(btn.CommandArgument));
                         GroupCardModel grpModel = Groups.GroupCardModelFactory(grpItem);
-
+                     
                         BaseReply reply = ExactTargetService.InvokeEM9GroupWelcome(new InvokeEM9GroupWelcomeRequest
                         {
                             PreferredLanguage = CurrentMember.PreferredLanguage,
@@ -198,20 +198,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                                 groupModImgLink = grpModel.ModeratorAvatarUrl, //owner.Avatar,
                                 groupModName = grpModel.ModeratorName
                             }
-                        });
-
-
+                        });  
+  
+                       
 
                     }
                 }
                 catch (Exception ex)
                 {
                     Sitecore.Diagnostics.Error.LogError("Error in btnJoinGroup_Click for joining Group function.\nError:\n" + ex.Message);
-
+                   
                 }
 
             }
-
+             
             DataBind();
 
         }

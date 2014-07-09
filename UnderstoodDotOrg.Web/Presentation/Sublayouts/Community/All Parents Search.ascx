@@ -2,7 +2,8 @@
     <!-- BEGIN PARTIAL: community/main_header -->
 
 <!-- END PARTIAL: community/main_header -->
- <div class="container community-parents">
+<%-- <div class="container community-parents">--%>
+<div class="container">
         <div class="row">
             <div class="col col-24 skiplink-toolbar">
                 <h2 class="offset-1">All Parents</h2>

@@ -49,22 +49,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     {
                         if (CurrentMember.ScreenName != null)
                         {
-                            //Check friendship
-                            Status = TelligentService.IsFriend(CurrentMember.ScreenName, UserName);
-                            //Set Text Appropriately
-                            switch (Status)
+                            //Check if same user
+                            if (CurrentMember.ScreenName.Equals(userName))
                             {
-                                case Constants.TelligentFriendStatus.NotSpecified:
-                                    Text = DictionaryConstants.ConnectBtnText;
-                                    break;
-                                case Constants.TelligentFriendStatus.Pending:
-                                    Text = DictionaryConstants.RequestSent;
-                                    break;
-                                case Constants.TelligentFriendStatus.Approved:
-                                    Text = DictionaryConstants.ViewActivity;
-                                    break;
-                                default:
-                                    break;
+                                this.Visible = false;
+                            }
+                            else
+                            {
+
+                                //Check friendship
+                                Status = TelligentService.IsFriend(CurrentMember.ScreenName, UserName);
+                                //Set Text Appropriately
+                                switch (Status)
+                                {
+                                    case Constants.TelligentFriendStatus.NotSpecified:
+                                        Text = DictionaryConstants.ConnectBtnText;
+                                        break;
+                                    case Constants.TelligentFriendStatus.Pending:
+                                        Text = DictionaryConstants.RequestSent;
+                                        break;
+                                    case Constants.TelligentFriendStatus.Approved:
+                                        Text = DictionaryConstants.ViewActivity;
+                                        break;
+                                    default:
+                                        break;
+                                }
                             }
                         }
                     }
