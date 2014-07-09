@@ -125,15 +125,15 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         //Telligent
         public string Title { get; set; }
         public string Description { get; set; } //Group Description
-        public string NumOfMembers { get; set; }
-        public string NumOfDiscussions
+        public int NumOfMembers { get; set; }
+        public int NumOfDiscussions
         {
             get
             {
                 if (Forums != null)
-                    return Forums.Select(x => x.Threads.Count()).Sum().ToString();
+                    return Forums.Select(x => x.Threads.Count()).Sum();
                 else
-                    return "0";
+                    return 0;
             }
         }
         public string JoinUrl { get; set; } //TODO: point create Group Item

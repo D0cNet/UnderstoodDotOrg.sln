@@ -89,7 +89,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
            //Use sitecore fast query to perform search
            Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("web");
            Item[] grps = masterDb.SelectItems(strb.ToString());
-           results = grps.Select(x => GroupCardModelFactory(new GroupItem(x))).ToList<GroupCardModel>();
+           results = grps.Select(x => GroupCardModelFactory(new GroupItem(x))).OrderByDescending(x => x.NumOfMembers).ToList<GroupCardModel>();
 
 
            return results;
@@ -151,7 +151,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
                            grpModel.ForumFunc = TelligentService.TelligentService.ReadForumsList;
                           
                            grpModel.GrpItem = grpItem;
-                           grpModel.NumOfMembers = childNode.FirstChild.SelectSingleNode("Group/TotalMembers").InnerText;
+                           grpModel.NumOfMembers = int.Parse(childNode.FirstChild.SelectSingleNode("Group/TotalMembers").InnerText);
                            grpModel.Description = childNode.FirstChild.SelectSingleNode("Group/Description").InnerText;
                            grpModel.Title = childNode.FirstChild.SelectSingleNode("Group/Name").InnerText;
                            

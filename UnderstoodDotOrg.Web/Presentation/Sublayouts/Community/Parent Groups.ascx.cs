@@ -115,7 +115,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             var grpItems = Groups.FindGroups();// groups.Select(x => new GroupCardModel(x)).ToList<GroupCardModel>();
             //use FindGroups(new string[0],new string[0],new string[0],new string[0],new string[0]) instead
             Session["groupItems"] = grpItems;
-            rptGroupCards.DataSource = grpItems.Take(10).OrderByDescending(x => x.NumOfMembers).ToList();
+            rptGroupCards.DataSource = grpItems.Take(10).ToList();
             rptGroupCards.DataBind();
            
         }
@@ -135,7 +135,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
             //Perform search using criteria
             var groupResult = Groups.FindGroups( issue, topic, grade,state,partner);
-            rptGroupCards.DataSource = groupResult.Take(10).OrderByDescending(x=> x.NumOfMembers).ToList();
+            rptGroupCards.DataSource = groupResult.Take(10).ToList();
             rptGroupCards.DataBind();
         }
 

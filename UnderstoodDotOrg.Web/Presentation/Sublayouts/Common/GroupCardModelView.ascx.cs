@@ -29,8 +29,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 litModeratorScreenName.Text = gm.ModeratorName;
                 litModeratorTitle.Text = gm.ModeratorTitle;
                 litTitle.Text = gm.Title;
-                litNumMembers.Text = gm.NumOfMembers;
-                litNumThreads.Text = gm.NumOfDiscussions;
+                litNumMembers.Text = gm.NumOfMembers.ToString();
+                litNumThreads.Text = gm.NumOfDiscussions.ToString();
 
             }
         }
