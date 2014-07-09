@@ -177,6 +177,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MembershipModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Membership\ResetPasswordTicket.cs" />
     <Compile Include="Models\TelligentCommunity\BaseNotification.cs" />
     <Compile Include="Models\TelligentCommunity\CommentNotification.cs" />
     <Compile Include="Models\TelligentCommunity\ConnectNotification.cs" />

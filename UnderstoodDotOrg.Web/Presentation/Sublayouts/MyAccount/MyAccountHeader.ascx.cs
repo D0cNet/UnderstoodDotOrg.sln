@@ -68,7 +68,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 Response.Redirect(MainsectionItem.GetHomePageItem().GetUrl());
             }
 
-            if (CurrentMember != null)
+            if (CurrentMember != null && !string.IsNullOrEmpty(CurrentMember.ScreenName))
             {
                 try
                 {
@@ -81,17 +81,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 catch { }
             }
 
-            if (!IsPostBack)
-            {
-                try
-                {
-                    if (CurrentMember.ScreenName != null)
-                    {
-                        userAvatar.Src = TelligentService.GetUser(this.CurrentMember.ScreenName).AvatarUrl;
-                    }
-                }
-                catch { }
-            }
+            //if (!IsPostBack)
+            //{
+            //    try
+            //    {
+            //        if (CurrentMember.ScreenName != null)
+            //        {
+            //            userAvatar.Src = TelligentService.GetUser(this.CurrentMember.ScreenName).AvatarUrl;
+            //        }
+            //    }
+            //    catch { }
+            //}
         }
 
         protected void rptrAccountNav_ItemDataBound(object sender, RepeaterItemEventArgs e)

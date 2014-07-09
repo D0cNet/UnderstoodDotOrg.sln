@@ -16,6 +16,7 @@
             {
                 guid = Request.QueryString["guid"].ToString();
             }
+            ResetPasswordTicket ResetTicket = new ResetPasswordTicket(guid);
 
             uxPassword.Attributes["placeholder"] = DictionaryConstants.EnterNewPasswordWatermark;
             uxPasswordConfirm.Attributes["placeholder"] = DictionaryConstants.ReEnterNewPasswordWatermark;
@@ -48,6 +49,17 @@
 
                 uxMessage.Text = string.Format(redirect, link, linkText);
             }
+            else if (ResetTicket.Used || !string.IsNullOrEmpty(ResetTicket.Status))
+            {
+                uxPassword.Enabled = false;
+                uxPasswordConfirm.Enabled = false;
+                string redirect = ResetTicket.Status + " <a href=\"{0}\">{1}</a>";
+
+                var forgotPassword = Sitecore.Context.Database.GetItem("{06AC924E-D5D1-4CED-AF7A-EB2F631AE4C4}");
+                var link = Sitecore.Links.LinkManager.GetItemUrl(forgotPassword);
+
+                uxMessage.Text = string.Format(redirect, link, link);
+            }
         }
 
         protected void uxSave_Click(object sender, EventArgs e)
@@ -59,12 +71,14 @@
                 guid = Request.QueryString["guid"].ToString();
             }
 
+            ResetPasswordTicket ResetTicket = new ResetPasswordTicket(guid);
             string password = string.Empty;
 
             // TODO: Add validation that passwords match
 
             if (uxPassword.Text == uxPasswordConfirm.Text && !string.IsNullOrEmpty(uxPasswordConfirm.Text))
             {
+                ResetTicket.CompleteTicket(Request.UserHostAddress);
                 password = uxPassword.Text;
                 ResetYourPasswordItem context = (ResetYourPasswordItem)Sitecore.Context.Item;
                 var membershipManager = new MembershipManager();
