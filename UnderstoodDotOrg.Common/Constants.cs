@@ -611,13 +611,20 @@ namespace UnderstoodDotOrg.Common
             public const string Shared = "Item Shared";
             public const string FoundHelpful_True = "FoundHelpfulTrue";
             public const string FoundHelpful_False = "FoundHelpfulFalse";
-            public const string WasRead = "Item Read";
-
+        
             public const string SharedWithEmail = "Shared Email";
             public const string SharedWithFacebook = "Shared on Facebook";
             public const string SharedWithPinterest = "Shared on Pinterest";
             public const string SharedWithTwitter = "Shared on Twitter";
             public const string SharedWithGooglePlus = "Shared on Google+";
+
+            public const string Skipped_Blog = "SkippedBlog";
+            public const string Skipped_BlogPost = "SkippedBlogPost";
+            public const string Skipped_Question = "SkippedQuestion";
+            public const string Skipped_Group = "SkippedGroup";
+            public const string Skipped_Discussion = "SkippedDiscussion";
+
+            public const string ItemViewed = "ItemViewed";
 
         }
         public static class UserActivity_Types
@@ -636,6 +643,7 @@ namespace UnderstoodDotOrg.Common
             public const int Type_QuestionAndAnswer = 9;
 
             public const int FoundHelpfulVote = 10;
+            public const int ContentSkipped = 11;
         }
         public static class SolrFields
         {

@@ -23,11 +23,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                                                                           Constants.UserActivity_Values.Favorited).ToString();
 
             //i read this page. now record it.
+            Guid MemberId = new Guid();
+            Guid ContentId = new Guid();
+
+            //Create an instance of the Membership Manager
             MembershipManager mgr = new MembershipManager();
-            
-            mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.WasRead, Constants.UserActivity_Types.Type_Blog);
+            //log that this member has skipped a blog:
+            mgr.LogMemberActivity(MemberId, ContentId,
+                Constants.UserActivity_Values.Skipped_Blog,
+                Constants.UserActivity_Types.ContentSkipped);
+
+            //log that this member has skipped a blog post:
+            mgr.LogMemberActivity(MemberId, ContentId,
+                Constants.UserActivity_Values.Skipped_BlogPost ,
+                Constants.UserActivity_Types.ContentSkipped);
+
+            //log that this member has skipped a :
+            mgr.LogMemberActivity(MemberId, ContentId,
+                Constants.UserActivity_Values.Skipped_Group ,
+                Constants.UserActivity_Types.ContentSkipped);
+
+            //log that this member has viewed this page 
+            //bg: note: we are going to need views for some things and consider how this will behave when we have hundreds of millions of rows
+            mgr.LogMemberActivity(MemberId, ContentId,
+                Constants.UserActivity_Values.ItemViewed,
+                Constants.UserActivity_Types.ContentRelated);
+
+
+            mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.ItemViewed , Constants.UserActivity_Types.Type_Blog);
 
             mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.SharedWithTwitter, Constants.UserActivity_Types.Type_BlogPost);
+           
+            
+            
             /*
             mgr.LogMemberHelpfulVote(MemberIdValue, 
                 ContentIdValue, 
