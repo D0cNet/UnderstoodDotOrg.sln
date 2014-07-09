@@ -25,8 +25,7 @@
                         </asp:DropDownList>
                         <asp:DropDownList ID="ddlGrades" runat="server" ValidationGroup="vgLearningToolBrowse" CssClass="grade-select">
                         </asp:DropDownList>
-                        <asp:DropDownList ID="ddlTechTypes" runat="server" CssClass="tech parent small-width tech-type-select" 
-                            ValidationGroup="vgLearningToolBrowse">
+                        <asp:DropDownList ID="ddlTechTypes" runat="server" CssClass="tech parent small-width tech-type-select">
                         </asp:DropDownList>
                         <input type="hidden" id="hfSelectedPlatform" class="hfSelectedPlatform" runat="server" />
                         <asp:Repeater ID="rptrDynPlatformDropdowns" runat="server">

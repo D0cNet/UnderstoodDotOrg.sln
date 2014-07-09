@@ -34,8 +34,7 @@
         //required aria-required="true" 
         $searchByToolTabs.find(".search-by-tool-tab-links>li").on("click", function () {
             var $browseRequiredControls =
-                $techTypeSelect
-                    .add($issueSelect)
+                $issueSelect
                     .add($gradeSelect)
                     .add($platformSelects.filter(".active").first());
             var $searchRequiredControls = $tbKeywordSearch;
