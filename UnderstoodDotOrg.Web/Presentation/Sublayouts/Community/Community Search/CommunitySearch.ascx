@@ -9,9 +9,11 @@
                 <fieldset>
                     <legend>Search</legend>
                     <span class="field">
-                        <label for="search-term" class="visuallyhidden">Search</label>
-                        <input type="text" id="txtSearch" class="search-term" runat="server" placeholder="Search">
-                        <input type="submit" id="btnSearch" value="Go" onserverclick="Unnamed_ServerClick" runat="server">
+                        <asp:Panel runat="server" DefaultButton="btnSearch">
+                            <label for="search-term" class="visuallyhidden">Search</label>
+                            <asp:TextBox ID="txtSearch" CssClass="search-term" runat="server" placeholder="Search" />
+                            <asp:Button type="submit" id="btnSearch" value="Go" OnClick="Unnamed_ServerClick" runat="server" />
+                        </asp:Panel>
                     </span>
                 </fieldset>
             </div>
@@ -19,7 +21,6 @@
         </div>
     </div>
 </div>
-
 <div class="container l-results-and-filter">
     <div class="row">
         <div class="col col-24 rs_read_this">

@@ -67,7 +67,7 @@
                 string[] u = url.Split('?');
                 url = u[0];
             }
-            Response.Redirect(url + "?q=" + txtSearch.Value);
+            Response.Redirect(url + "?q=" + txtSearch.Text);
         }
 
         protected void ddlFilterSearch_SelectedIndexChanged(object sender, EventArgs e)
