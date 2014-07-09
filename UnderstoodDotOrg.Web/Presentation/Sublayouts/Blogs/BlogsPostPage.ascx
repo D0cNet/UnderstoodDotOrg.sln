@@ -11,8 +11,9 @@
     <div class="container">
         <div class="row blog-container">
             <sc:Placeholder Key="BlogBody" runat="server" />
+            <div class="col col-1 sidebar-spacer" style="height: 1006px;"></div>
             <!-- BEGIN PARTIAL: community/blog-post-sidebar -->
-            <div class="col col-6 blog-post-sidebar skiplink-sidebar">
+            <div class="col col-5 offset-1 blog-post-sidebar skiplink-sidebar rs_read_this">
                     
                     <sc:Placeholder key="FoundHelpful" runat="server" />
 

@@ -25,21 +25,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             foreach (var item in dataSource)
             {
                 BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
-                if (!blogPost.Author.Rendered.IsNullOrEmpty())
+                if (blogPost != null)
                 {
                     item.Author = blogPost.Author.Rendered;
-                }
-                item.ContentTypeId = blogPost.ContentTypeId;
-                item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
-                var author = Sitecore.Context.Database.GetItem("/sitecore/content/Home/Community and Events/Blogs/Author/" + item.Author);
-                item.AuthorUrl = "/Community and Events/Blogs/Author/" + item.Author;
-                if (this.CurrentMember != null)
-                {
-                    if (!this.CurrentMember.ScreenName.IsNullOrEmpty())
+                    item.ContentTypeId = blogPost.ContentTypeId;
+                    item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
+                    var author = Sitecore.Context.Database.GetItem("/sitecore/content/Home/Community and Events/Blogs/Author/" + item.Author);
+                    item.AuthorUrl = "/Community and Events/Blogs/Author/" + item.Author;
+                    if (this.CurrentMember != null)
                     {
-                        if (CommunityHelper.IsBookmarked(this.CurrentMember.ScreenName, item.ContentId))
+                        if (!this.CurrentMember.ScreenName.IsNullOrEmpty())
                         {
-                            item.IsFollowing = true;
+                            if (CommunityHelper.IsBookmarked(this.CurrentMember.ScreenName, item.ContentId))
+                            {
+                                item.IsFollowing = true;
+                            }
                         }
                     }
                 }
