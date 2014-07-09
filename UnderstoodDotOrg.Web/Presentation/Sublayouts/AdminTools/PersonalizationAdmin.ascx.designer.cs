@@ -13,13 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
     public partial class PersonalizationAdmin {
         
         /// <summary>
-        /// pnlSearch control.
+        /// txtDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel pnlSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
         
         /// <summary>
         /// txtEmail control.
@@ -47,6 +47,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptInterests;
+        
+        /// <summary>
+        /// pnlSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel pnlSearch;
         
         /// <summary>
         /// pnlChildren control.

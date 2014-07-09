@@ -1,12 +1,36 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PersonalizationAdmin.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools.PersonalizationAdmin" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
+<html>
+    <head></head>
+    <body>
+
+        <form runat="server">
+
+            <link href="/Presentation/includes/css/vendor/bootstrap.css" rel="stylesheet" />
+            <link href="/Presentation/includes/css/vendor/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+            <script src="/Presentation/includes/js/vendor/jquery-1.10.2.min.js" type="text/javascript"></script>
+            <script src="/Presentation/includes/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var $dp = $("#datepicker input");
+            $dp.datepicker();
+
+            if ($dp.val() == "") {
+                $dp.datepicker('setDate', new Date());
+            }
+        });
+    </script>
+
+            <asp:ScriptManager runat="server" />
+
 <style type="text/css">
+    body {
+        margin: 5px;
+    }
     .article-entry, .article-child {
         margin-bottom: 1em;
-    }
-    .article-child {
-        padding: 30px;
     }
     .article-mappings {
         overflow: hidden;
@@ -16,32 +40,53 @@
         float: left;
         width: 33%;
     }
+    h3, h4,  h5 {
+        margin: .3em 0;
+    }
+    ul {
+        margin: .5em 0;
+    }
+    .article-entry {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid black;
+    }
 </style>
 
-<asp:UpdatePanel ID="pnlSearch" runat="server" UpdateMode="Always" ChildrenAsTriggers="true">
 
+<div id="datepicker">
+    <asp:Label runat="server" AssociatedControlID="txtDate">Date</asp:Label>
+    <asp:TextBox ID="txtDate" runat="server" />
+</div>
+
+<asp:Label runat="server" AssociatedControlID="txtEmail">Member's Email</asp:Label>
+<asp:TextBox ID="txtEmail" runat="server" />
+
+<asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+
+
+<asp:Repeater runat="server" ID="rptInterests" OnItemDataBound="rptInterests_ItemDataBound">
+<HeaderTemplate>
+    <h3>Parent Interests:</h3>
+    <ul>
+</HeaderTemplate>
+<ItemTemplate>
+    <li><asp:Literal ID="litInterest" runat="server" /></li>
+</ItemTemplate>
+<FooterTemplate>
+    </ul>
+</FooterTemplate>
+</asp:Repeater>
+
+
+<asp:UpdatePanel ID="pnlSearch" runat="server" UpdateMode="Always" ChildrenAsTriggers="true">
+    <Triggers>
+        <asp:PostBackTrigger ControlID="btnSubmit" />
+    </Triggers>
     <ContentTemplate>
 
-        <asp:Label runat="server" AssociatedControlID="txtEmail">Member's Email</asp:Label>
-        <asp:TextBox ID="txtEmail" runat="server" />
-
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
-
-        <asp:Repeater runat="server" ID="rptInterests" OnItemDataBound="rptInterests_ItemDataBound">
-            <HeaderTemplate>
-                <h3>Parent Interests:</h3>
-                <ul>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <li><asp:Literal ID="litInterest" runat="server" /></li>
-            </ItemTemplate>
-            <FooterTemplate>
-                </ul>
-            </FooterTemplate>
-        </asp:Repeater>
-
         <asp:Panel ID="pnlChildren" runat="server" Visible="false">
-            Select Child: <asp:DropDownList ID="ddlChildren" runat="server" />
+            Select Child: <asp:DropDownList ID="ddlChildren" runat="server" data-theme="none" />
             <asp:Button ID="btnSearch" runat="server" Text="Search" />
             <asp:UpdateProgress runat="server" AssociatedUpdatePanelID="pnlResults">
                 <ProgressTemplate>
@@ -140,3 +185,8 @@
 
         </ContentTemplate>
     </asp:UpdatePanel>
+
+            </form>
+
+        </body>
+</html>

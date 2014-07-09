@@ -68,7 +68,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                 rptIssues.DataBind();
             }
 
-            var articles = SearchHelper.GetArticles(child.Members.FirstOrDefault(), child, DateTime.Now)
+            DateTime specifiedDate = DateTime.Parse(txtDate.Text).Date;
+
+            var articles = SearchHelper.GetArticles(child.Members.FirstOrDefault(), child, specifiedDate)
                                 .Where(i => i.GetItem() != null);
             if (articles.Any())
             {
