@@ -219,7 +219,7 @@
             </div>
             <!-- .quality-tooltip -->
             <!-- END PARTIAL: popover-quality-info -->
-            <a class="quality-review-link" href="REPLACE"><asp:Literal ID="litNumReviews" runat="server"></asp:Literal> Reviews</a>
+            <a class="quality-review-link" href="<%= Model.GetUrl()+"#tabs2-parent-reviews" %>"><asp:Literal ID="litNumReviews" runat="server"></asp:Literal> Reviews</a>
         </div>
 
         <div class="rating-label">Learning</div>
