@@ -76,9 +76,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                     })
                     .OrderBy(cr => cr.CategoryTitle);
 
-                rptrSearchResultsSections.DataSource = categoryResults;
-                rptrSearchResultsSections.ItemDataBound += rptrSearchResultsSections_ItemDataBound;
-                rptrSearchResultsSections.DataBind();
+                if (categoryResults.Count() > 0)
+                {
+                    rptrSearchResultsSections.DataSource = categoryResults;
+                    rptrSearchResultsSections.ItemDataBound += rptrSearchResultsSections_ItemDataBound;
+                    rptrSearchResultsSections.DataBind();
+                }
+                else
+                    pnlNoResults.Visible = true;
             }
         }
 

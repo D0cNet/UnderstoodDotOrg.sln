@@ -115,6 +115,11 @@
         <!-- .container -->
     </ItemTemplate>
 </asp:Repeater>
+<asp:Panel ID="pnlNoResults" runat="server" CssClass="container partners-carousel" Visible="false">
+    <div class="row">
+        <h2><sc:FieldRenderer ID="frNoResultsLabel" runat="server" FieldName="No Results Label" /></h2>
+    </div>
+</asp:Panel>
 
 <div class="assistive-tool-related-articles-small">
     <!-- BEGIN PARTIAL: assistive-tool-related-articles -->
