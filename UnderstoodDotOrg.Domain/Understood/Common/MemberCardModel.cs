@@ -68,7 +68,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         public string UserLocation { get; set; }
         public string UserLabel { get; set; }
         public List<ChildCardModel> Children { get; set; }
-        public List<Constants.TelligentRole> Roles { get; set; }
+        public List<int> Roles { get; set; }
         public List<UserBadgeModel> Badges{get;set;}
 
         public bool Contactable { get; set; }

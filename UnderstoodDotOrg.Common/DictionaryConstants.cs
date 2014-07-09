@@ -1726,7 +1726,16 @@ namespace UnderstoodDotOrg.Common
         public static string ThinkingOfYouMessage { get { return Translate.TextByDomain(PosesDictionary, "Thinking Of You Message"); } }
         #endregion
 
+        #region Community Roles
 
+        public static string CommunityEveryone { get { return Translate.TextByDomain(PosesDictionary, "Everyone Role"); } }
+        public static string CommunityMember { get { return Translate.TextByDomain(PosesDictionary, "Member Role"); } }
+        public static string CommunityModerator { get { return Translate.TextByDomain(PosesDictionary, "Moderator Role"); } }
+        public static string CommunityAdministrator { get { return Translate.TextByDomain(PosesDictionary, "Administrator Role"); } }
+        public static string CommunityExpert { get { return Translate.TextByDomain(PosesDictionary, "Expert Role"); } }
+        public static string CommunityBlogger { get { return Translate.TextByDomain(PosesDictionary, "Blogger Role"); } }
+
+        #endregion
 
 
         public static string SelectAll { get { return Translate.TextByDomain(PosesDictionary, "SelectAll"); } }

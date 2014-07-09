@@ -119,9 +119,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
                     ddlTopics.DataBind();
                 }
-                memberChkbx.Attributes.Add("value", Constants.TelligentRole.Member.ToString());
-                expertChkbx.Attributes.Add("value", Constants.TelligentRole.Expert.ToString());
-                moderatorChkbx.Attributes.Add("value", Constants.TelligentRole.Moderator.ToString());
+                memberChkbx.Attributes.Add("value", Constants.TelligentRoles.RegisteredUser.ToString());
+                expertChkbx.Attributes.Add("value", Constants.TelligentRoles.Expert.ToString());
+                moderatorChkbx.Attributes.Add("value", Constants.TelligentRoles.Moderator.ToString());
 
                 MembershipManager mem = new MembershipManager();
 
@@ -173,21 +173,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             //Check Topic selected
             string topic = ddlTopics.SelectedValue.ToString();
 
-            List<Constants.TelligentRole> role = new List<Constants.TelligentRole>();
+            var role = new List<int>();
             //Check role types checked
             if (memberChkbx.Checked)
             {
-                role.Add(Constants.TelligentRole.Member);
+                role.Add(Constants.TelligentRoles.RegisteredUser);
             }
             if (expertChkbx.Checked)
             {
-                role.Add(Constants.TelligentRole.Expert);
+                role.Add(Constants.TelligentRoles.Expert);
                 
             }
 
             if (moderatorChkbx.Checked)
             {
-                role.Add(Constants.TelligentRole.Moderator);
+                role.Add(Constants.TelligentRoles.Moderator);
             }
              
             //Perform search using criteria
@@ -198,7 +198,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
        
 
-        private List<MemberCardModel> FindMembers(string zipcode,string issue,string topic,List<Constants.TelligentRole> roles)
+        private List<MemberCardModel> FindMembers(string zipcode,string issue,string topic,List<int> roles)
         {
 
             //MembershipManager mem = new MembershipManager();

@@ -6,8 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 using System.Data.Entity;
-using MembershipProvider = System.Web.Security.Membership;
-using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation
@@ -16,15 +15,23 @@ namespace UnderstoodDotOrg.Web.Presentation
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //set validation
-            //valGender.ErrorMessage = "Please tell us the gender of your child";
-            valGender.ErrorMessage = "Please tell us the gender of your child";
-            Page.ClientScript.RegisterExpandoAttribute(valGender.ClientID, "groupName", uxBoy.GroupName);
+            var un = string.Empty;
 
-            CustomValidator1.ErrorMessage = "Please tell us the gender of your child";
-            Page.ClientScript.RegisterExpandoAttribute(CustomValidator1.ClientID, "groupName", RadioButton1.GroupName);
+            if (!string.IsNullOrEmpty(Request.QueryString["un"]))
+            {
+                un = Request.QueryString["un"];
+            }
+            else
+            {
+                un = "everythingisawesome1";
+            }
 
-            Page.Form.DefaultButton = uxSubmit.ClientID;
+            var roles = TelligentService.GetUserRoles(un);
+
+            foreach (var role in roles)
+            {
+                litRoles.Text += role.ToString() + " - " + Constants.TelligentRoles.Roles[role] + "</br>";
+            }
         }
 
     }

@@ -1015,13 +1015,35 @@ namespace UnderstoodDotOrg.Common
             public const string TelligentUrl = "TelligentUrl";
             public const string ContentTypeId = "ContentTypeId";
         }
-        public enum TelligentRole
-        {
-            Expert,
-            Moderator,
-            Blogger,
-            Member
+
+        public static class TelligentRoles
+        { 
+            //Sitecore.Configuration.Settings.GetSetting("TelligentConfig")
+            public static int Everyone { get { return int.Parse(Sitecore.Configuration.Settings.GetSetting("TelligentEveryoneRoleID")); } }
+            public static int RegisteredUser { get { return int.Parse(Sitecore.Configuration.Settings.GetSetting("TelligentRegisteredUserRoleID")); } }
+            public static int Moderator { get { return int.Parse(Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID")); } }
+            public static int Administrator { get { return int.Parse(Sitecore.Configuration.Settings.GetSetting("TelligentAdministratorRoleID")); } }
+            public static int Expert { get { return int.Parse(Sitecore.Configuration.Settings.GetSetting("TelligentExpertRoleID")); } }
+            public static int Blogger { get { return int.Parse(Sitecore.Configuration.Settings.GetSetting("TelligentBloggerRoleID")); } }
+
+            public static Dictionary<int, string> Roles = new Dictionary<int, string>() 
+                {
+	                {Everyone, DictionaryConstants.CommunityEveryone},
+                    {RegisteredUser, DictionaryConstants.CommunityMember},
+                    {Moderator, DictionaryConstants.CommunityModerator},
+                    {Administrator, DictionaryConstants.CommunityAdministrator},
+                    {Expert, DictionaryConstants.CommunityExpert},
+                    {Blogger, DictionaryConstants.CommunityBlogger}
+                };            
         }
+
+        //public enum TelligentRole
+        //{
+        //    Expert,
+        //    Moderator,
+        //    Blogger,
+        //    Member
+        //}
         public enum TelligentFriendStatus
         {
             NotSpecified,

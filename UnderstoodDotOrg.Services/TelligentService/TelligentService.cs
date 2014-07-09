@@ -690,6 +690,34 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return memberCardSrc;
 
         }
+
+        public static List<int> GetUserRoles(string Username)
+        {
+            //GET api.ashx/v2/roles/permissions/user/{username}.xml 
+
+            var webClient = new WebClient();
+            string adminKeyBase64 = TelligentAuth();
+            string apiFragment = @"{0}/api.ashx/v2/roles/permissions/user/{1}.xml";
+
+            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+
+            var serverHost = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") ?? "localhost/telligent.com";
+            var requestUrl = string.Format(apiFragment, serverHost, Username);
+
+            var xml = webClient.DownloadString(requestUrl);
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+            var nodes = xmlDoc.SelectNodes("/Response/Roles/Role");
+
+            var response = new List<int>();
+            foreach (XmlNode item in nodes)
+            {
+                response.Add(int.Parse(item.SelectSingleNode("Id").InnerText));
+            }
+
+            return response;
+        }
+
         public static List<BlogPost> ListBlogPosts(string blogId)
         {
             var webClient = new WebClient();

@@ -139,14 +139,14 @@ namespace UnderstoodDotOrg.Services.CommunityServices
                            {
                                grpModel.ModeratorAvatarUrl = childNode.FirstChild.SelectSingleNode("AvatarUrl").InnerText;
                                grpModel.ModeratorName = owner.ScreenName;
-                               grpModel.ModeratorTitle = Constants.TelligentRole.Moderator.ToString();
+                               grpModel.ModeratorTitle = Constants.TelligentRoles.Roles[Constants.TelligentRoles.Moderator];
                                grpModel.Owner = owner;
                            }
                            else //Use default values
                            {
                                grpModel.ModeratorAvatarUrl = childNode.FirstChild.SelectSingleNode("AvatarUrl").InnerText;
                                grpModel.ModeratorName = username;
-                               grpModel.ModeratorTitle = Constants.TelligentRole.Moderator.ToString();
+                               grpModel.ModeratorTitle = Constants.TelligentRoles.Roles[Constants.TelligentRoles.Moderator];
                             }
                            grpModel.ForumFunc = TelligentService.TelligentService.ReadForumsList;
                           
