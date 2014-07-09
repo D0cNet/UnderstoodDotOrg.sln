@@ -45,7 +45,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 if (member != null)
                 {
                     var passwordReset = Sitecore.Context.Database.GetItem(Constants.TemplateIDs.ForgotPasswordPage);
-                    var link = string.Format(Request.Url.Host + "{0}?guid={1}", passwordReset.GetUrl(), new ResetPasswordTicket(member.MemberId)._ResetTicketID);
+                    var link = string.Format(Request.Url.Host + "{0}?guid={1}", passwordReset.GetUrl(), new ResetPasswordTicket(member.MemberId).ResetTicketID);
 
                     BaseReply reply = ExactTargetService.InvokeEM22ForgotPassword(new InvokeEM22ForgotPasswordRequest { PreferredLanguage = member.PreferredLanguage, PasswordResetLink = link, ToEmail = email });
 

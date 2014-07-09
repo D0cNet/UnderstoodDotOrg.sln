@@ -11,13 +11,13 @@ namespace UnderstoodDotOrg.Domain.Membership
 {
     public class ResetPasswordTicket
     {
-        public string _ResetTicketID;
-        public string _UserID;
-        public string _CreatedOn;
-        public bool _Used;
-        public string _IP;
+        private string _ResetTicketID;
+        private string _UserID;
+        private string _CreatedOn;
+        private bool _Used;
+        private string _IP;
 
-        public string _Status;
+        private string _Status;
 
         public string ResetTicketID
         {
