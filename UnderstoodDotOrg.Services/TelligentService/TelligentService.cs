@@ -1,24 +1,24 @@
 ﻿using Sitecore.Configuration;
+using Sitecore.Links;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Xml;
 using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Common.Helpers;
-using UnderstoodDotOrg.Domain.Understood.Common;
-
-using System.Text.RegularExpressions;
-using Sitecore.Links;
-using System.Collections.Specialized;
 using UnderstoodDotOrg.Domain.Membership;
-using System.Web.Security;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
-using UnderstoodDotOrg.Domain.Understood.Services;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
+using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Domain.Understood.Services;
+using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Common.Extensions;
 using System.IO;
 namespace UnderstoodDotOrg.Services.TelligentService
@@ -2254,6 +2254,120 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 };
             }
             return user;
+        }
+
+        /// <summary>
+        /// Performs a search on the Telligent database, returns a list of results.
+        /// </summary>
+        /// <param name="q">The string that will be used to search the database.</param>
+        /// <param name="param">Application type to limit the search. To search all, pass string.Empty</param>
+        /// <returns></returns>
+        public static List<SearchResult> CommunitySearch(string q, string param)
+        {
+            var searchResultsList = new List<SearchResult>();
+            try
+            {
+                string appId = string.Empty;
+                switch (param)
+                {
+                    case "blog":
+                        appId = "blog";
+                        break;
+                    case "group":
+                        appId = "forum";
+                        break;
+                    case "question":
+                        appId = "wiki";
+                        break;
+                    case "expert":
+                        appId = "expert";
+                        break;
+                    case "all":
+                        appId = "";
+                        break;
+
+                }
+                using (var webClient = new WebClient())
+                {
+
+                    webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
+                    var requestUrl = string.Format(GetApiEndPoint("search.xml?Query={0}&PageSize=100&Category={1}"), q, appId);
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList xn = xmlDoc.SelectNodes("Response/SearchResults/SearchResult");
+                    foreach (XmlNode result in xn)
+                    {
+                        XmlNode content = result.SelectSingleNode("Content");
+                        XmlNode application = result.SelectSingleNode("Content/Application");
+                        XmlNode container = result.SelectSingleNode("Group/Container");
+                        if (!application["HtmlName"].InnerText.Equals("Articles")
+                            && !application["HtmlName"].InnerText.Equals("Assistive Tools")
+                            && !result["ContentType"].InnerText.Equals("status")
+                            && !result["ContentType"].InnerText.Equals("fileapp")
+                            && !result["ContentType"].InnerText.Equals("wikiapp")
+                            && !result["ContentType"].InnerText.Equals("forumapp"))
+                        {
+                            string id = result["Id"].InnerText;
+                            string title = result["BestMatchTitle"].InnerText;
+                            string body = result["BestMatch"].InnerText;
+                            string type = result["ContentType"].InnerText;
+                            string typeTransformed = string.Empty;
+                            string date = FormatDate(result["Date"].InnerText);
+                            title = Regex.Replace(title, "<em>", "<strong>");
+                            title = Regex.Replace(title, "</em>", "</strong>");
+                            body = Regex.Replace(body, "<em>", "<strong>");
+                            body = Regex.Replace(body, "</em>", "</strong>");
+                            
+                            if (body != string.Empty)
+                            {
+                                body = "&ldquo;" + body + "&rdquo;" ;
+                            }
+
+                            switch (type)
+                            {
+                                case "comment":
+                                        typeTransformed = "Blog Comment";
+                                    if (appId == "wiki") typeTransformed = "Question Answer";
+                                    break;
+                                case "blog":
+                                    typeTransformed = "Blog Post";
+                                    break;
+                                case "blogapp":
+                                    typeTransformed = "Blog";
+                                    break;
+                                case "wiki":
+                                    typeTransformed = "Question";
+                                    break;
+                                case "forum":
+                                    typeTransformed = "Discussion Post";
+                                    break;
+                                case "forumreply":
+                                    typeTransformed = "Discussion Reply";
+                                    break;
+                                case "group":
+                                    typeTransformed = "Group";
+                                    break;
+                            }
+                            var searchResult = new SearchResult()
+                            {
+                                Id = id,
+                                Title = title,
+                                Body = body,
+                                Type = type,
+                                TypeTransformed = typeTransformed,
+                                Date = date
+                            };
+                            searchResultsList.Add(searchResult);
+                        }
+                    }
+                }
+            }
+            catch { }
+            return searchResultsList;
         }
     }
 }
