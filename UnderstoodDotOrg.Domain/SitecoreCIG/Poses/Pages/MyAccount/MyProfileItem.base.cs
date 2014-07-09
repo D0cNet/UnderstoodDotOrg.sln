@@ -55,6 +55,51 @@ public CustomGeneralLinkField SignInPage
 }
 
 
+public CustomTextField VisitorsText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Visitors Text"]);
+	}
+}
+
+
+public CustomTextField MembersText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Members Text"]);
+	}
+}
+
+
+public CustomTextField FriendsText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Friends Text"]);
+	}
+}
+
+
+public CustomTextField NoProfileText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["No Profile Text"]);
+	}
+}
+
+
+public CustomTextField AddChildText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Add Child Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

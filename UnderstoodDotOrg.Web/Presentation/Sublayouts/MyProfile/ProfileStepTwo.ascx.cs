@@ -19,7 +19,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
     {
         string status = "cmp"; //"cmp", "edit", "add"
         int index = 0;
-        string pronoun = "your child";
+        static MyProfileStepTwoItem context = (MyProfileStepTwoItem)Sitecore.Context.Item;
+        string pronoun = context.YourChildText;
         Child singleChild;
 
         #region Page_Load support
@@ -94,19 +95,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             uxSelectGrade.DataValueField = "Value";
             uxSelectGrade.DataBind();
 
-            uxSelectGrade.Items.Insert(0, new ListItem() { Text = "Select Grade", Value = string.Empty, Selected = true });
+            uxSelectGrade.Items.Insert(0, new ListItem() { Text = context.SelectGradeText , Value = string.Empty, Selected = true });
 
             switch (status)
             {
                 case Constants.QueryStrings.Registration.ModeEdit:
                     this.SetupChildEdit();
-                    litGenderGradeQuestion.Text = string.Format("{0} is a {1} in:", singleChild.Nickname, singleChild.Gender);
+                    litGenderGradeQuestion.Text = string.Format(context.GenderQuestionAText, singleChild.Nickname, singleChild.Gender);
                     uxGender.Visible = false;
 
                     break;
                 case Constants.QueryStrings.Registration.ModeAdd:
                     this.SetupChildAdd();
-                    litGenderGradeQuestion.Text = "My child struggling with learning or attention issues is a:";
+                    litGenderGradeQuestion.Text = context.GenderQuestionBText;
 
                     break;
                 default:
@@ -127,14 +128,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
 
             //set validation
-            valGender.ErrorMessage = "Please tell us the gender of your child";
+            valGender.ErrorMessage = DictionaryConstants.TellGenderofChildText;
             Page.ClientScript.RegisterExpandoAttribute(valGender.ClientID, "groupName", uxBoy.GroupName);
 
-            valEvalStatus.ErrorMessage = "Please tell us if your child has been formally evaluated";
+            valEvalStatus.ErrorMessage = DictionaryConstants.HasChildBeenEvaluatedText;
             Page.ClientScript.RegisterExpandoAttribute(valEvalStatus.ClientID, "groupName", q2a1.GroupName);
 
-            valNickname.ErrorMessage = "Please give your child a nickname";
-            valGrade.ErrorMessage = "Please select your child's grade";
+            valNickname.ErrorMessage = DictionaryConstants.GiveChildNicknameText;
+            valGrade.ErrorMessage = DictionaryConstants.GiveChildGradeText;
         }
 
         private string setPronoun(string gender)

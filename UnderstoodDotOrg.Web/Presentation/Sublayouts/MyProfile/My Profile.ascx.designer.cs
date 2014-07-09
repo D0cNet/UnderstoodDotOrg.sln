@@ -238,6 +238,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.HyperLink hypViewAsVisitors;
         
         /// <summary>
+        /// frVisitors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frVisitors;
+        
+        /// <summary>
         /// hypViewAsMembers control.
         /// </summary>
         /// <remarks>
@@ -245,6 +254,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hypViewAsMembers;
+        
+        /// <summary>
+        /// frMembers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frMembers;
         
         /// <summary>
         /// hypViewAsFriends control.
@@ -256,6 +274,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.HyperLink hypViewAsFriends;
         
         /// <summary>
+        /// frFriends control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frFriends;
+        
+        /// <summary>
         /// uxNoProfile control.
         /// </summary>
         /// <remarks>
@@ -263,6 +290,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel uxNoProfile;
+        
+        /// <summary>
+        /// frNoProfileText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoProfileText;
         
         /// <summary>
         /// hypCompleteYourProfile control.

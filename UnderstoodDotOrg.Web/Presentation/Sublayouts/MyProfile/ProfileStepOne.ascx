@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProfileStepOne.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile.ProfileStepOne" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <div class="container profile-questions-header-container flush">
     <div class="row">
@@ -19,28 +20,28 @@
                     <div class="progress-bar-wrapper rs_read_this">
                         <div class="progress-header">
                             Progress
-                            <span class="visuallyhidden">Step 1 of 4</span>
+                            <span class="visuallyhidden"><sc:FieldRenderer ID="frStep1" FieldName="Step 1 Text" runat="server"/></span>
                         </div>
                         <div class="progress-bar step-1 rs_skip">
-                            <span class="step-1 step" aria-hidden="true" role="presentation">1</span>
+                            <span class="step-1 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.OneFragment %></span>
                             <span class="step-1-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-2 step" aria-hidden="true" role="presentation">2</span>
+                            <span class="step-2 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.TwoFragment %></span>
                             <span class="step-2-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-3 step" aria-hidden="true" role="presentation">3</span>
+                            <span class="step-3 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.ThreeFragment %></span>
                             <span class="step-3-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="done step" aria-hidden="true" role="presentation">Done</span>
+                            <span class="done step" aria-hidden="true" role="presentation"><%=UnderstoodDotOrg.Common.DictionaryConstants.DoneFragment %></span>
                         </div>
                     </div>
                     <!-- .progress-bar-wrapper -->

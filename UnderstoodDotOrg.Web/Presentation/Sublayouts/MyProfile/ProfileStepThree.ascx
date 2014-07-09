@@ -23,25 +23,25 @@
                             <sc:Text ID="Text3" Field="Header Progress Bar Text" runat="server" />
                         </div>
                         <div class="progress-bar step-2b rs_skip">
-                            <span class="step-1 step" aria-hidden="true" role="presentation">1</span>
+                            <span class="step-1 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.OneFragment %></span>
                             <span class="step-1-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-2 step" aria-hidden="true" role="presentation">2</span>
+                            <span class="step-2 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.TwoFragment %></span>
                             <span class="step-2-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-3 step" aria-hidden="true" role="presentation">3</span>
+                            <span class="step-3 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.ThreeFragment %></span>
                             <span class="step-3-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="done step" aria-hidden="true" role="presentation">Done</span>
+                            <span class="done step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.DoneFragment %></span>
                         </div>
                     </div>
                     <!-- .progress-bar-wrapper -->
@@ -487,7 +487,7 @@
                             </span>
                             <div class="504-tooltip popover-container rs_skip">
                                 <p>
-                                    <span class="title">lorem ipsum soged</span> Unde non repudiandae eum nobis blanditiis doloribus quae ea. voluptatem voluptas a qui eligendi et qui perferendis. nihil aut quo molestiae omnis sunt ducimus cum illo beatae accusamus. nostrum voluptates error numquam omnis eligendi minima aperiam. aperiam quis quo deserunt quae occaecati ut dolores autem et esse
+                                    <sc:FieldRenderer ID="fr504popover" FieldName="504 Tooltip Popover" runat="server"/> 
                                 </p>
                             </div>
                         </div>

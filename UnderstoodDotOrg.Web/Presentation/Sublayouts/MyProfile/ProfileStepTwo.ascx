@@ -26,25 +26,25 @@
                             </span>
                         </div>
                         <div class="progress-bar step-2 rs_skip">
-                            <span class="step-1 step" aria-hidden="true" role="presentation">1</span>
+                            <span class="step-1 step" aria-hidden="true" role="presentation"><%=UnderstoodDotOrg.Common.DictionaryConstants.OneFragment %></span>
                             <span class="step-1-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-2 step" aria-hidden="true" role="presentation">2</span>
+                            <span class="step-2 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.TwoFragment %></span>
                             <span class="step-2-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-3 step" aria-hidden="true" role="presentation">3</span>
+                            <span class="step-3 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.ThreeFragment %></span>
                             <span class="step-3-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="done step" aria-hidden="true" role="presentation">Done</span>
+                            <span class="done step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.DoneFragment %></span>
                         </div>
                     </div>
                     <!-- .progress-bar-wrapper -->

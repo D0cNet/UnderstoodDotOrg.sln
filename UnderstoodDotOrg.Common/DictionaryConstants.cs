@@ -11,6 +11,66 @@ namespace UnderstoodDotOrg.Common
     {
         private static string PosesDictionary = "Poses Dictionary";
 
+        #region Exception Text
+
+        public static string MyProfile_SelectIEPText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "MyProfile_Select IEP Text");
+            }
+        }
+
+        public static string MyProfile_SelectDiagnosisText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "MyProfile_Select Diagnosis Text");
+            }
+        }
+
+        public static string MyProfile_Select504Text
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "MyProfile_Select 504 Text");
+            }
+        }
+
+        public static string TellGenderofChildText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Tell Gender of Child Text");
+            }
+        }
+
+        public static string HasChildBeenEvaluatedText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Has Child Been Evaluated Text");
+            }
+        }
+
+        public static string GiveChildNicknameText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Give Child Nickname Text");
+            }
+        }
+
+        public static string GiveChildGradeText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Give Child Grade Text");
+            }
+        }
+
+        #endregion Exception Text
+
         #region Button Text
 
         public static string MyAccount_BackToHomePageLinkText
@@ -740,6 +800,63 @@ namespace UnderstoodDotOrg.Common
 
         #region Fragments
 
+        public static string DoneFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Done Fragment");
+            }
+        }
+
+        public static string OneFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "1 Fragment");
+            }
+        }
+
+        public static string TwoFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "2 Fragment");
+            }
+        }
+
+        public static string ThreeFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "3 Fragment");
+            }
+        }
+
+        public static string EditFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Edit Fragment");
+            }
+        }
+
+        public static string CancelFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Cancel Fragment");
+            }
+        }
+
+        public static string ClickHereFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Click Here Fragment");
+            }
+        }
+
+
         public static string RecommendationsMatchFragment
         {
             get
@@ -882,6 +999,26 @@ namespace UnderstoodDotOrg.Common
         }
 
         #endregion
+        
+        #region MyAccount Labels
+
+        public static string MyAccount_EnterAScreenName
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "MyAccount_Enter A Screen Name");
+            }
+        }
+
+        public static string MyAccount_MyAccount_ZipCode
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "MyAccount_Zip Code");
+            }
+        }
+
+        #endregion MyAccount Labels
 
         public static string Featured
         {
@@ -891,6 +1028,7 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        
         public static string HowCanHelp
         {
             get

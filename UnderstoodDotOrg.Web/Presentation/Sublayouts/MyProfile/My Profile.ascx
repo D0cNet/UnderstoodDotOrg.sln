@@ -35,7 +35,7 @@
                         <div class="col col-4">
                             <h2>
                                 <asp:Literal ID="ltlAboutMeLabel" runat="server"></asp:Literal></h2>
-                            <asp:HyperLink ID="hypEditCommunityAboutMe" runat="server">Edit</asp:HyperLink>
+                            <asp:HyperLink ID="hypEditCommunityAboutMe" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.EditFragment %></asp:HyperLink>
                         </div>
                         <div class="col col-20 profile-details">
                             <div class="row">
@@ -96,7 +96,7 @@
                             <h2>
                                 <asp:Literal ID="ltlMyChildrenLabel" runat="server"></asp:Literal></h2>
                             <%--<a href="REPLACE">Add a Third Child</a>--%>
-                            <asp:HyperLink ID="uxAddChild" runat="server" CssClass="addChildButton" Text="Add a {0} Child"></asp:HyperLink>
+                            <asp:HyperLink ID="uxAddChild" runat="server" CssClass="addChildButton"></asp:HyperLink>
                         </div>
                         <div class="col col-20 profile-details">
                             <asp:ListView runat="server" ID="uxChildList" ItemType="UnderstoodDotOrg.Domain.Membership.Child" OnItemDataBound="uxChildList_ItemDataBound">
@@ -143,7 +143,7 @@
                         <div class="col col-4">
                             <h2>
                                 <asp:Literal ID="ltlCommunityLabel" runat="server"></asp:Literal></h2>
-                            <asp:HyperLink ID="hypEditCommunity" runat="server">Edit</asp:HyperLink>
+                            <asp:HyperLink ID="hypEditCommunity" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.EditFragment %></asp:HyperLink>
                         </div>
                         <div class="col col-20 profile-details">
                             <div class="row">
@@ -208,18 +208,18 @@
                                     <div class="col col-18 profile-detail-information">
                                         <ul>
                                             <li>
-                                                <asp:HyperLink ID="hypViewAsVisitors" runat="server">Visitors &gt;</asp:HyperLink></li>
+                                                <asp:HyperLink ID="hypViewAsVisitors" runat="server"><sc:FieldRenderer ID="frVisitors" FieldName="Visitors Text" runat="server"/> &gt;</asp:HyperLink></li>
                                             <li>
-                                                <asp:HyperLink ID="hypViewAsMembers" runat="server">Members &gt;</asp:HyperLink></li>
+                                                <asp:HyperLink ID="hypViewAsMembers" runat="server"><sc:FieldRenderer ID="frMembers" FieldName="Members Text" runat="server"/> &gt;</asp:HyperLink></li>
                                             <li>
-                                                <asp:HyperLink ID="hypViewAsFriends" runat="server">Friends &gt;</asp:HyperLink></li>
+                                                <asp:HyperLink ID="hypViewAsFriends" runat="server"><sc:FieldRenderer ID="frFriends" FieldName="Friends Text" runat="server"/> &gt;</asp:HyperLink></li>
                                         </ul>
                                     </div>
                                 </asp:PlaceHolder>
                                 <asp:Panel runat="server" ID="uxNoProfile" Visible="false">
                                     <p class="empty">
-                                        You don't have a community profile, to create one please
-                                        <asp:HyperLink CssClass="comment-link" ID="hypCompleteYourProfile" runat="server">click here.</asp:HyperLink>
+                                        <sc:FieldRenderer ID="frNoProfileText" runat="server" FieldName="No Profile Text" />
+                                        <asp:HyperLink CssClass="comment-link" ID="hypCompleteYourProfile" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.ClickHereFragment %></asp:HyperLink>
                                     </p>
                                 </asp:Panel>
                             </div>
@@ -276,8 +276,8 @@
                         <div class="col col-4">
                             <h2>
                                 <asp:Literal ID="ltlContactLabel" runat="server"></asp:Literal></h2>
-                            <a href="#" class="btnEdit">Edit</a>
-                            <a href="#" class="btnCancel">Cancel</a>
+                            <a href="#" class="btnEdit"><%= UnderstoodDotOrg.Common.DictionaryConstants.EditFragment %></a>
+                            <a href="#" class="btnCancel"><%= UnderstoodDotOrg.Common.DictionaryConstants.CancelFragment %></a>
                             <asp:LinkButton ID="lbSave_PhoneNumber" CssClass="lbSave" Text="Save" OnClick="lbSave_PhoneNumber_Click" runat="server"></asp:LinkButton>
                         </div>
                         <div class="col col-20 profile-details">

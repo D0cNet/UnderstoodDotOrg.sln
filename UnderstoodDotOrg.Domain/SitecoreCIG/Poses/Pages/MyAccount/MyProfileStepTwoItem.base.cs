@@ -100,6 +100,15 @@ public CustomTextField TroubleAreasQuestionTitle
 }
 
 
+public CustomTextField YourChildText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Your Child Text"]);
+	}
+}
+
+
 public CustomTextField ChildNicknameQuestionText
 {
 	get
@@ -118,6 +127,15 @@ public CustomTextField SCArea1
 }
 
 
+public CustomTextField SelectGradeText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Select Grade Text"]);
+	}
+}
+
+
 public CustomTextField TAArea1
 {
 	get
@@ -132,6 +150,15 @@ public CustomTextField YesButton
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Yes Button"]);
+	}
+}
+
+
+public CustomTextField GenderQuestionAText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Gender Question A Text"]);
 	}
 }
 
@@ -159,6 +186,15 @@ public CustomTextField TAArea2
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["TA Area 2"]);
+	}
+}
+
+
+public CustomTextField GenderQuestionBText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Gender Question B Text"]);
 	}
 }
 

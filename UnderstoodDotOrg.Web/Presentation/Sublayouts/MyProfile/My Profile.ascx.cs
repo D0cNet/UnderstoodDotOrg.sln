@@ -54,8 +54,11 @@
                 this.CurrentMember = membershipManager.GetMember(this.CurrentMember.MemberId);
                 this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId, true);
 
-                SetLabels();
+                MyProfileItem context = (MyProfileItem)Sitecore.Context.Item;
+                HyperLink myHL = (HyperLink)this.FindControl("uxAddChild");
+                myHL.Text = context.AddChildText;
 
+                SetLabels();
                 SetRole();
 
                 uxChildList.DataSource = this.CurrentMember.Children;

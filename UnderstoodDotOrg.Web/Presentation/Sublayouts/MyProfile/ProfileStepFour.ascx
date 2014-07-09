@@ -24,25 +24,25 @@
                             <sc:Text ID="Text3" Field="Header Progress Bar Text" runat="server" />
                         </div>
                         <div class="progress-bar step-3 rs_skip">
-                            <span class="step-1 step" aria-hidden="true" role="presentation">1</span>
+                            <span class="step-1 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.OneFragment %></span>
                             <span class="step-1-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-2 step" aria-hidden="true" role="presentation">2</span>
+                            <span class="step-2 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.TwoFragment%></span>
                             <span class="step-2-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="step-3 step" aria-hidden="true" role="presentation">3</span>
+                            <span class="step-3 step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.ThreeFragment%></span>
                             <span class="step-3-progress progress">
                                 <span class="progress-spacer">
                                     <span class="progress-percent"></span>
                                 </span>
                             </span>
-                            <span class="done step" aria-hidden="true" role="presentation">Done</span>
+                            <span class="done step" aria-hidden="true" role="presentation"><%= UnderstoodDotOrg.Common.DictionaryConstants.DoneFragment%></span>
                         </div>
                     </div>
                     <!-- .progress-bar-wrapper -->
@@ -303,7 +303,7 @@
                     </span>
                     <div class="textfields-wrapper">
                         <div class="textfield-wrapper">
-                            <asp:Label AssociatedControlID="ScreenNameTextField" ID="lblScreenName" runat="server" CssClass="visuallyhidden" aria-hidden="true">Enter a Screen Name</asp:Label>
+                            <asp:Label AssociatedControlID="ScreenNameTextField" ID="lblScreenName" runat="server" CssClass="visuallyhidden" aria-hidden="true"><%= UnderstoodDotOrg.Common.DictionaryConstants.MyAccount_EnterAScreenName %></asp:Label>
                             <asp:TextBox type="text" ID="ScreenNameTextField" runat="server" />
                             <!--input type="textfield" name="connect-1" placeholder="Screen Name"-->
                             <span class="popover-trigger-container">
@@ -321,7 +321,7 @@
                             </div>
                         </div>
                         <div class="textfield-wrapper">
-                            <asp:Label AssociatedControlID="ZipCodeTextField" ID="lblZipCodes" runat="server" CssClass="visuallyhidden" aria-hidden="true">Zip Code</asp:Label>
+                            <asp:Label AssociatedControlID="ZipCodeTextField" ID="lblZipCodes" runat="server" CssClass="visuallyhidden" aria-hidden="true"><%= UnderstoodDotOrg.Common.DictionaryConstants.MyAccount_MyAccount_ZipCode %></asp:Label>
                             <asp:TextBox type="text" ID="ZipCodeTextField" runat="server" />
                             <!--input type="textfield" name="connect-2" placeholder="Zip Code"-->
                             <span class="popover-trigger-container">

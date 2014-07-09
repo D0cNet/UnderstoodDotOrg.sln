@@ -144,10 +144,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             //set validation
             Page.ClientScript.RegisterExpandoAttribute(valDiagnosis.ClientID, "groupName", "diagnosis");
-            valDiagnosis.ErrorMessage = "Please select at least one diagnosis";
+            valDiagnosis.ErrorMessage = DictionaryConstants.MyProfile_SelectDiagnosisText;
 
-            valIEP.ErrorMessage = "Please select your child's IEP status";
-            val504.ErrorMessage = "Please select your child's Section 504 status";
+            valIEP.ErrorMessage = DictionaryConstants.MyProfile_SelectIEPText;
+            val504.ErrorMessage = DictionaryConstants.MyProfile_Select504Text;
         }
 
         protected void DoNextStep()
