@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WhatYouNeedToKnowTab.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.ReviewTabs.WhatYouNeedToKnowTab" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <div id="tabs1-what-you-need-to-know" class="panel-container">
     <div class="row">
@@ -18,7 +19,7 @@
                         <a href="REPLACE">Android</a>--%>
                     </span>
                     <span class="about-platforms">
-                        <a href="REPLACE">Learn about Platforms</a></span>
+                        <sc:FieldRenderer ID="frPlatformsLink" runat="server" FieldName="Learn About Platforms Link" /></span>
                 </p>
             </section>
             <!-- BEGIN PARTIAL: at-detail-thumb-mobile -->

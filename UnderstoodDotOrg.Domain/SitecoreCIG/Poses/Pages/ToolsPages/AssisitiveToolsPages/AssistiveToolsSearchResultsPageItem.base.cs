@@ -46,6 +46,24 @@ public static implicit operator Item(AssistiveToolsSearchResultsPageItem customI
 #region Field Instance Methods
 
 
+public CustomTextField NoResultsLabel
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["No Results Label"]);
+	}
+}
+
+
+public CustomGeneralLinkField LearnAboutPlatformsLink
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Learn About Platforms Link"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

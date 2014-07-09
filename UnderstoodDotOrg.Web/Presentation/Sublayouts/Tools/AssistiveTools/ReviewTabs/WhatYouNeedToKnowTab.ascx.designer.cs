@@ -22,6 +22,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected global::System.Web.UI.WebControls.Repeater rptrPlatforms;
         
         /// <summary>
+        /// frPlatformsLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPlatformsLink;
+        
+        /// <summary>
         /// rptrScreenshots control.
         /// </summary>
         /// <remarks>

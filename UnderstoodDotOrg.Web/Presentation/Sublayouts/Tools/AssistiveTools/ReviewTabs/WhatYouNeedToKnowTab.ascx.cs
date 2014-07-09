@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Framework.UI;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.ReviewTabs
 {
@@ -44,6 +45,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
             rptrSubjects.DataSource = subjects;
             rptrSubjects.DataBind();
+
+            frPlatformsLink.Item = MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage();
         }
     }
 }
