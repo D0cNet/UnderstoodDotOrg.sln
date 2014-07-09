@@ -110,7 +110,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             UnauthenticatedSessionMember = member;
 
             // TODO: return unauthenticated users to different results page
-            Response.Redirect(FormHelper.GetRecommendationUrl());
+            // Response.Redirect(FormHelper.GetRecommendationUrl());
         }
     }
 }
