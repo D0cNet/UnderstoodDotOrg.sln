@@ -27,6 +27,12 @@
                     <%--zoom out on infographic within viewport--%>
                     <a href="REPLACE" class="infographic-zoom-icon infographic-zoom-icon-zoom-out">Zoom Out</a>
                 </div>
+                <style>
+                    .infographic img {
+                        width: 100%;
+                        height: auto;
+                    }
+                </style>
                 <!-- end infographic-zoom -->
 
                     <!-- BEGIN PARTIAL: embed-overlay -->
