@@ -6,7 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate
 {
@@ -17,8 +17,8 @@ public static readonly string TemplateId = "{92FB8D67-690A-45F1-B330-C4BBAE189AA
 
 #region Inherited Base Templates
 
-private readonly ContentPageItem _ContentPageItem;
-public ContentPageItem ContentPage { get { return _ContentPageItem; } }
+private readonly CommunityBaseTemplateItem _CommunityBaseTemplateItem;
+public CommunityBaseTemplateItem CommunityBaseTemplate { get { return _CommunityBaseTemplateItem; } }
 
 #endregion
 
@@ -26,7 +26,7 @@ public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 
 public GroupItem(Item innerItem) : base(innerItem)
 {
-	_ContentPageItem = new ContentPageItem(innerItem);
+	_CommunityBaseTemplateItem = new CommunityBaseTemplateItem(innerItem);
 
 }
 
@@ -69,6 +69,42 @@ public CustomTreeListField Issues
 	get
 	{
 		return new CustomTreeListField(InnerItem, InnerItem.Fields["Issues"]);
+	}
+}
+
+
+public CustomTreeListField Topic
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Topic"]);
+	}
+}
+
+
+public CustomTreeListField Grades
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Grades"]);
+	}
+}
+
+
+public CustomTreeListField States
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["States"]);
+	}
+}
+
+
+public CustomTreeListField Partners
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Partners"]);
 	}
 }
 

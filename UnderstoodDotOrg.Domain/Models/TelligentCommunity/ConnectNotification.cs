@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
 
 namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
 {
@@ -55,7 +56,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
         {
             get
             {
-               return (String.Format(DictionaryConstants.ConnectAction,UserName,"REPLACE"));
+                return (String.Format(DictionaryConstants.ConnectAction, UserName, MemberExtensions.GetMemberPublicProfile(UserName)));
                
             }
            

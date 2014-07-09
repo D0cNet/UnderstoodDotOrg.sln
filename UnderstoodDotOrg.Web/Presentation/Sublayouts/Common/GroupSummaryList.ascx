@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="GroupSummaryList.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.GroupSummaryList" %>
+<%@ Register Src="~/Presentation/Sublayouts/Recommendation/CommunityRecommendationIcons.ascx" TagPrefix="uc1" TagName="CommunityRecommendationIcons" %>
+
 <asp:ListView ID="lvGroupCards" runat="server">
     <EmptyDataTemplate>
         <div class="row">
@@ -16,7 +18,7 @@
         <div class="col col-18 topic clearfix">
             <header>
             <a id="titleLink" runat="server"><h3><%#Eval("Title") %></h3></a>
-                <span class="children-key">
+                <%--<span class="children-key">
                     <ul>
                     <li>
                         <i class='child-b' title='CHILD NAME HERE'></i>
@@ -31,7 +33,8 @@
 
                         </li>
                     </ul>
-                </span>
+                </span>--%>
+                <uc1:CommunityRecommendationIcons runat="server" id="CommunityRecommendationIcons" />
             </header>
             <div class="col col-4 feature-image"><img alt="150x150 Placeholder" src="<%#Eval("ModeratorAvatarUrl") %>"/></div>
             <div class="col col-18 description">

@@ -1579,6 +1579,9 @@ namespace UnderstoodDotOrg.Common
 
         public static string ForumCreateConfirmation { get { return Translate.TextByDomain(PosesDictionary, "Forum Created Successfully Message"); } }
         public static string ForumValidationConfirmation { get { return Translate.TextByDomain(PosesDictionary, "Forum Validation Confirmation Message"); } }
+
+        public static string ViewDiscussionsLabel { get { return Translate.TextByDomain(PosesDictionary, "View Discussions Label"); } }
+        public static string JoinThisGroupLabel { get { return Translate.TextByDomain(PosesDictionary, "Join this Group Label"); } }
         #endregion
 
         #region Community Messages
@@ -1596,6 +1599,9 @@ namespace UnderstoodDotOrg.Common
 
         //TODO: create matching labels in sitecore
         #region Notification Labels
+        /// <summary>
+        /// Use string.format, has two placeholders (0=Username, 1=URL)
+        /// </summary>
         public static string ConnectAction { get { return Translate.TextByDomain(PosesDictionary, "Wants To Connect Text"); } }
         public static string ConnectLink { get { return Translate.TextByDomain(PosesDictionary, "Parent Connection Text"); } }
         public static string CommentAction { get { return Translate.TextByDomain(PosesDictionary, "Comment Action Text"); } }

@@ -1765,6 +1765,13 @@
     <Compile Include="Presentation\Sublayouts\MyProfile\SavedProfileQuestionsControl.ascx.designer.cs">
       <DependentUpon>SavedProfileQuestionsControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Recommendation\CommunityRecommendationIcons.ascx.cs">
+      <DependentUpon>CommunityRecommendationIcons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Recommendation\CommunityRecommendationIcons.ascx.designer.cs">
+      <DependentUpon>CommunityRecommendationIcons.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Recommendation\CreateAccount.ascx.cs">
       <DependentUpon>CreateAccount.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3052,6 +3059,7 @@
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepThree.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\ProfileStepTwo.ascx" />
     <Content Include="Presentation\Sublayouts\MyProfile\SavedProfileQuestionsControl.ascx" />
+    <Content Include="Presentation\Sublayouts\Recommendation\CommunityRecommendationIcons.ascx" />
     <Content Include="Presentation\Sublayouts\Recommendation\CreateAccount.ascx" />
     <Content Include="Presentation\Sublayouts\Recommendation\Multiple Children.ascx" />
     <Content Include="Presentation\Sublayouts\Recommendation\Recommendation Icons.ascx" />
