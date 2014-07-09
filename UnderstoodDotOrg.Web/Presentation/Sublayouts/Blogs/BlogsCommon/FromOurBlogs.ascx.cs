@@ -25,7 +25,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             foreach (var item in dataSource)
             {
                 BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
-                item.Author = blogPost.Author.Rendered;
+                if (!blogPost.Author.Rendered.IsNullOrEmpty())
+                {
+                    item.Author = blogPost.Author.Rendered;
+                }
                 item.ContentTypeId = blogPost.ContentTypeId;
                 item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
                 var author = Sitecore.Context.Database.GetItem("/sitecore/content/Home/Community and Events/Blogs/Author/" + item.Author);
