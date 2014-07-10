@@ -84,9 +84,12 @@
 </script>
 
  <div class="col-6 start-discussion">
-<p>Got a question?</p>
-<p class="want-to-talk">Want to talk?</p>
-<a href=""   id="btn_start_discussion"  class="button">Start a Discussion</a>
+<p>
+    <asp:Literal ID="litGotAQuestionLabel" runat="server" /></p>
+<p class="want-to-talk">
+    <asp:Literal ID="litWantToTalkLabel" runat="server" /></p>
+<a href=""   id="btn_start_discussion"  class="button">
+    <asp:Literal ID="litStartADiscussionLabel" runat="server" /></a>
 </div><!-- end .start-discussion -->
 
 <div class="modal_discussion" title="Start a Discussion" runat="server" id="modal_discussion" style="display:none;clear:both;overflow:hidden">

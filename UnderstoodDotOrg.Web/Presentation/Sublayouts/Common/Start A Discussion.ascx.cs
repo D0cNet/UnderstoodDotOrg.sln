@@ -22,7 +22,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         public string confirmationMessage = DictionaryConstants.ForumValidationConfirmation;
         protected override void OnInit(EventArgs e)
         {
-
+            litGotAQuestionLabel.Text = DictionaryConstants.GotAQuestionLabel;
+            litWantToTalkLabel.Text = DictionaryConstants.WantToTalkLabel;
+            litStartADiscussionLabel.Text = DictionaryConstants.StartDiscussion;
             base.OnInit(e);
         }
 

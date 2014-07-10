@@ -5,12 +5,23 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Services.CommunityServices;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class GroupCardModelView : System.Web.UI.UserControl
     {
+        protected override void OnInit(EventArgs e)
+        {
+            litMembersOnlyDiscussion.Text = DictionaryConstants.MembersOnlyDiscussionLabel;
+            litFindConvoLabel.Text = DictionaryConstants.FindAConversationLabel;
+            litDiscussionLabel.Text = DictionaryConstants.DiscussionsLabel;
+            litSearchLabel.Text = DictionaryConstants.SearchLabel;
+            litMembersLabel.Text = DictionaryConstants.MembersLabel;
+            base.OnInit(e);
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Item currItem = Sitecore.Context.Item;

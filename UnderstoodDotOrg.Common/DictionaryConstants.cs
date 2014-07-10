@@ -2079,5 +2079,17 @@ namespace UnderstoodDotOrg.Common
         public static string DiscussionLabel { get { return Translate.TextByDomain(PosesDictionary, "Discussion Label"); } }
 
         public static string LatestPostLabel { get { return Translate.TextByDomain(PosesDictionary, "Latest Post Label"); } }
+
+        public static string MembersOnlyDiscussionLabel { get { return Translate.TextByDomain(PosesDictionary, "Members Privacy Label"); } }
+
+        public static string FindAConversationLabel { get { return Translate.TextByDomain(PosesDictionary, "Find Conversation Label"); } }
+
+        public static string DiscussionsLabel { get { return Translate.TextByDomain(PosesDictionary, "Discussions Label"); } }
+
+        public static string GotAQuestionLabel { get { return Translate.TextByDomain(PosesDictionary, "Got a Question Label"); } }
+
+        public static string WantToTalkLabel { get { return Translate.TextByDomain(PosesDictionary, "Want To Talk Label"); }}
+
+        public static string MembersLabel { get { return Translate.TextByDomain(PosesDictionary, "Members Label"); } }
     }
 }

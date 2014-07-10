@@ -8,7 +8,8 @@
       <!-- BEGIN PARTIAL: community/groups_private_heading -->
 <!--groups private partial-->
 <div class="col groups-private">
-  <p class="col">Only members can see the conversations</p>
+  <p class="col">
+      <asp:Literal  ID="litMembersOnlyDiscussion" runat="server" /></p>
   <i class="icon"></i>
 </div>
 <!-- END PARTIAL: community/groups_private_heading -->
@@ -29,15 +30,17 @@
     <div class="statistics col col-5">
       <div class="meta">
         <p class="members">
-            <asp:Literal Text="" ID="litNumMembers" runat="server" /> Members</p>
-        <p class="discussions"><asp:Literal Text="" ID="litNumThreads" runat="server" /> Discussions</p>
+            <asp:Literal Text="" ID="litNumMembers" runat="server" /> <asp:Literal ID="litMembersLabel" runat="server" /></p>
+        <p class="discussions"><asp:Literal Text="" ID="litNumThreads" runat="server" /> <asp:Literal ID="litDiscussionLabel" runat="server" /></p>
       </div>
       <div class="mobile-search-box">
-      <h3>Find a conversation</h3>
+      <h3>
+          <asp:Literal  ID="litFindConvoLabel" runat="server" /></h3>
         <!-- BEGIN PARTIAL: community/groups_search_form -->
 <!--groups search form-->
     <fieldset class="group-search-form mobile-group-search-form">
-      <label for="group-search-text" class="visuallyhidden" aria-hidden="true">Search</label>
+      <label for="group-search-text" class="visuallyhidden" aria-hidden="true">
+          <asp:Literal ID="litSearchLabel" runat="server" /></label>
       <input type="text" class="group-search" id="group-search-text" name="group-search" placeholder="Search">
       <input class="group-search-button" type="submit" value="Go">
     </fieldset>

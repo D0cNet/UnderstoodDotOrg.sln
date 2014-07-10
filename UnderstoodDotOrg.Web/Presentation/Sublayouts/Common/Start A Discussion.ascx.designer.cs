@@ -13,6 +13,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     public partial class Start_A_Discussion {
         
         /// <summary>
+        /// litGotAQuestionLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litGotAQuestionLabel;
+        
+        /// <summary>
+        /// litWantToTalkLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litWantToTalkLabel;
+        
+        /// <summary>
+        /// litStartADiscussionLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litStartADiscussionLabel;
+        
+        /// <summary>
         /// modal_discussion control.
         /// </summary>
         /// <remarks>

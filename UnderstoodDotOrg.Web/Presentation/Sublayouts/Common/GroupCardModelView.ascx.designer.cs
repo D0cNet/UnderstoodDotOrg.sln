@@ -22,6 +22,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.Literal litTitle;
         
         /// <summary>
+        /// litMembersOnlyDiscussion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litMembersOnlyDiscussion;
+        
+        /// <summary>
         /// imgModeratorImage control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.Literal litNumMembers;
         
         /// <summary>
+        /// litMembersLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litMembersLabel;
+        
+        /// <summary>
         /// litNumThreads control.
         /// </summary>
         /// <remarks>
@@ -74,5 +92,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litNumThreads;
+        
+        /// <summary>
+        /// litDiscussionLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litDiscussionLabel;
+        
+        /// <summary>
+        /// litFindConvoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litFindConvoLabel;
+        
+        /// <summary>
+        /// litSearchLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litSearchLabel;
     }
 }
