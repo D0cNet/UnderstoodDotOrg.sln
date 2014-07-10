@@ -54,7 +54,7 @@
                     ItemType="UnderstoodDotOrg.Services.Models.Telligent.SearchResult">
                     <ItemTemplate>
                         <!-- BEGIN PARTIAL: about/about-search-results -->
-                        <div class="row search-result-container rs_read_this">
+                        <div class="row search-result-container rs_read_this repeater-item">
                             <%--<div class="col col-6 search-image">
                                 <img class="foo" alt="FPO content image" src="http://placehold.it/230x129&amp;text=230x129" />
                             </div>--%>

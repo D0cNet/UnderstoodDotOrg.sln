@@ -7,8 +7,9 @@
     using System.Text;
     using System.Xml;
     using System.Text.RegularExpressions;
+    using UnderstoodDotOrg.Framework.UI;
 
-    public partial class CommunitySearch : System.Web.UI.UserControl
+    public partial class CommunitySearch : BaseSublayout
     {
         private void Page_Load(object sender, EventArgs e)
         {
