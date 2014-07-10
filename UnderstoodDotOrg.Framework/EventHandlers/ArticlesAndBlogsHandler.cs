@@ -40,6 +40,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     CreateTelligentPost(item, 11);
                 }
             }
+                // Articles
             else if (item.InheritsFromType(DefaultArticlePageItem.TemplateId))
             {
                 if (item["BlogId"] == string.Empty)
@@ -47,6 +48,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     CreateTelligentPost(item, 4); 
                 }
             }
+                // Blog Posts
             else if (item.TemplateID == Sitecore.Data.ID.Parse(BlogsPostPageItem.TemplateId))
             {
                 if (item["BlogId"] == string.Empty)
@@ -76,6 +78,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
                     }
                 }
             }
+                // Assistive Tech
             else if (item.TemplateID == Sitecore.Data.ID.Parse("{C9DFC576-7750-4A84-9A79-61F16585E64E}"))
             {
                 if (item["BlogId"] == string.Empty)
@@ -96,7 +99,7 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             {
                 // Append ID to keep title unique
                 { "Title", String.Format("{0} {1}", item.Name, item.ID.ToString()) },
-                { "Body", item.Paths.Path }
+                { "Body", item.ID.ToString() }
             };
 
             try
