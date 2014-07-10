@@ -48,20 +48,46 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 hlSectionTitle.NavigateUrl = MainsectionItem.GetHomePageItem().GetUrl();
                 frSectionTitle.Item = MainsectionItem.GetHomePageItem();
 
-                if(!String.IsNullOrEmpty(CurrentMember.ScreenName))
-                {
-                    List<INotification> notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
-                    if (notifs != null && notifs.Count() >0)
+                
+                    if (!String.IsNullOrEmpty(CurrentMember.ScreenName))
                     {
-                        spnCount.Visible = true;
-                        litNotifCount.Text = notifs.Count().ToString();
-                        Notifications = notifs;
+                        List<INotification> notifs =new  List<INotification>();
+                        List<Conversation> checkConvos =new List<Conversation>();
+                        if (Notifications != null && Notifications.Count() > 0)
+                        {
+                            notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
+                            if (notifs != null && notifs.Count() > 0)
+                            {
+                                //spnCount.Visible = true;
+                                //litNotifCount.Text = notifs.Count().ToString();
+                                Notifications = notifs;
+
+                            }
+                        }
+
+                        if (!(Session["conversations"] is List<Conversation>))
+                        {
+                            checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
+                            if (checkConvos != null && checkConvos.Count() > 0)
+                            {
+                                Session["conversations"] = checkConvos;
+                            }
+                        }
+                        int totalNotifs = notifs.Count() + checkConvos.Count();
+                        if (totalNotifs > 0)
+                        {
+                            spnCount.Visible = true;
+                            litNotifCount.Text = totalNotifs.ToString();
+                        }
+                        else
+                        {
+                            spnCount.Visible = false;
+
+                        }
+
+
                     }
-                    else
-                    {
-                        spnCount.Visible = false;
-                    }
-                }
+                
             }
             else
             {

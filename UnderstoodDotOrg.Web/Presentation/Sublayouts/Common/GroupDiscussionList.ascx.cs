@@ -43,10 +43,37 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
                 {
                     if (!String.IsNullOrEmpty(((ReplyModel)e.Item.DataItem).Author.UserName))
+                    {
                         btnConnect.LoadState(((ReplyModel)e.Item.DataItem).Author.UserName);
+                        
+                    }
+                }
+            }
+             ThanksButton btnThanks = e.FindControlAs<ThanksButton>("btnThanks");
+             if (btnThanks != null)
+            {
+                if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
+                {
+                    if (!String.IsNullOrEmpty(((ReplyModel)e.Item.DataItem).Author.UserName))
+                    {
+                        btnThanks.LoadState(((ReplyModel)e.Item.DataItem).Author.UserName);
+                        
+                    }
                 }
             }
 
+            ThinkingOfYouButton btnThink = e.FindControlAs<ThinkingOfYouButton>("btnThinkingOfYou");
+            if (btnThink != null)
+            {
+                if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
+                {
+                    if (!String.IsNullOrEmpty(((ReplyModel)e.Item.DataItem).Author.UserName))
+                    {
+                        btnThink.LoadState(((ReplyModel)e.Item.DataItem).Author.UserName);
+
+                    }
+                }
+            }
             HtmlAnchor hrefName = e.FindControlAs<HtmlAnchor>("hrefName");
             if(hrefName !=null)
             {

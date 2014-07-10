@@ -12,7 +12,7 @@
           </li>
           <li id="liMessagesTab" runat="server" class="messages-tab ">
             <asp:HyperLink ID="hypPrivateMessages" runat="server"><asp:literal text="" ID="litPrivateMsgsLabel" runat="server" /></asp:HyperLink>
-            <span class="circle">0</span>
+            <span class="circle"><asp:Literal ID="litPMs" runat="server"></asp:Literal></span>
           </li>
           <li id="liEmailPreferencesTab" runat="server" class="email-tab last ">
             <asp:HyperLink ID="hypEmailAndAlertPreferences" runat="server"><asp:literal text="" ID="litEmailPrefLabel" runat="server" /></asp:HyperLink>

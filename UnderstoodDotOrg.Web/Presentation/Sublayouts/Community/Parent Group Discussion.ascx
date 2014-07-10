@@ -145,7 +145,7 @@
                                 <h4>Show your support</h4>
                                 <ul class="support-menu">
                                     <li>
-                                        <uc1:ThanksButton runat="server" ID="ThanksButton" />
+                                        <uc1:ThanksButton  runat="server" ID="ThanksButton" />
                                     </li>
                                     <li>
                                         <uc1:ThinkingOfYouButton runat="server" ID="ThinkingOfYouButton" />
@@ -157,7 +157,10 @@
                             </footer>
                             <%-- <sc:SubLayout ID="sbDiscussioinList" Path="~/Presentation/Sublayouts/Common/GroupDiscussionList.ascx" runat="server"></sc:SubLayout>--%>
                         </div>
-                        <asp:PlaceHolder ID="plhGroupDiscussions" runat="server"></asp:PlaceHolder>
+                       
+                                <asp:PlaceHolder ID="plhGroupDiscussions" runat="server"></asp:PlaceHolder>
+               
+                      
                         <!--Groups Discussion-Post-->
 
                         <!-- END PARTIAL: community/groups_discussion_post -->

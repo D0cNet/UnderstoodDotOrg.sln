@@ -76,6 +76,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::System.Web.UI.WebControls.Literal litPrivateMsgsLabel;
         
         /// <summary>
+        /// litPMs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litPMs;
+        
+        /// <summary>
         /// liEmailPreferencesTab control.
         /// </summary>
         /// <remarks>

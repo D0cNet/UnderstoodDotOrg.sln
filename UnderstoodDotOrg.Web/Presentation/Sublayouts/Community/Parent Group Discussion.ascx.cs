@@ -57,7 +57,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             {
 
                                 btnConnect.LoadState(thModel.Author.UserName);
-                              
+                                ThanksButton.LoadState(thModel.Author.UserName);
+                                ThinkingOfYouButton.LoadState(thModel.Author.UserName);
                             }
                                 
                             lblSubject.Text = thModel.Subject;
@@ -78,15 +79,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     }
                 }
             }
-                //var grpDitem = Session["discussionItem"] as GroupDiscussionItem;
-                //if (grpDitem != null)
-                //{
-                //    string forumID = grpDitem.ForumID.Text;
-                //    string threadID = grpDitem.ThreadID.Text;
-                //    var replies = CommunityHelper.ReadReplies(forumID, threadID);
-                //    rptGroupDiscussion.DataSource = replies;
-                //    rptGroupDiscussion.DataBind();
-                //}
+                
           
 
         }
@@ -113,6 +106,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     TelligentService.PostReply(forumID, threadID ,body,CurrentMember.ScreenName);
                 var replies = TelligentService.ReadReplies(forumID, threadID);
                 litNumReplies.Text = replies.Count.ToString();
+              
                 rptGroupDiscussion.DataSource = replies;
                 rptGroupDiscussion.DataBind();
                 txtBody.Text = "";

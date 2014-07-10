@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
     public partial class ThinkingOfYouButton {
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// btnThinkingOfYou control.
         /// </summary>
         /// <remarks>
@@ -20,5 +29,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnThinkingOfYou;
+        
+        /// <summary>
+        /// litThinkingOfYou control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litThinkingOfYou;
     }
 }

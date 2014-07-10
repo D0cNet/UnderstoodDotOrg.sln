@@ -7,7 +7,7 @@
 
 
 
-<asp:Repeater ID="rptDiscussionList" OnItemDataBound="rptDiscussionList_ItemDataBound"  runat="server">
+<asp:Repeater ID="rptDiscussionList"  OnItemDataBound="rptDiscussionList_ItemDataBound"  runat="server">
     <HeaderTemplate>
      <div class="discussion-post clearfix rs_read_this">
     </HeaderTemplate>
@@ -87,14 +87,14 @@
             <h4>Show your support</h4>
             <ul class="support-menu">
                 <li>
-                    <uc1:ThanksButton runat="server" ID="ThanksButton" />
+                    <uc1:ThanksButton runat="server" ID="btnThanks" />
                     
                 </li>
                 <li>
-                    <uc1:ThinkingOfYouButton runat="server" id="ThinkingOfYouButton" />
+                    <uc1:ThinkingOfYouButton runat="server" id="btnThinkingOfYou" />
                 </li>
                 <li>
-                    <uc1:LikeButton runat="server" id="LikeButton" />
+                    <uc1:LikeButton runat="server" id="btnLike" />
                 </li>
             </ul>
         </footer>

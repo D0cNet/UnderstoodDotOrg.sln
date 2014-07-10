@@ -1809,6 +1809,7 @@ namespace UnderstoodDotOrg.Common
 
         #region Community Messages
         public static string ThinkingOfYouMessage { get { return Translate.TextByDomain(PosesDictionary, "Thinking Of You Message"); } }
+        public static string ThankYouMessage { get { return Translate.TextByDomain(PosesDictionary, "Thank You Message"); } }
         #endregion
 
         #region Community Roles
@@ -1938,5 +1939,9 @@ namespace UnderstoodDotOrg.Common
         public static string InitialDropDownText { get { return Translate.TextByDomain(PosesDictionary, "Select Forum Label"); } }
 
         public static string InitialTextBoxText { get { return Translate.TextByDomain(PosesDictionary, "Create New Forum Label"); } }
+
+        public static string ThanksLabel { get { return Translate.TextByDomain(PosesDictionary, "Thanks Label"); } }
+        public static string ThinkingOfYouLabel { get { return Translate.TextByDomain(PosesDictionary, "Thinking Of You Label"); } }
+        public static string SentLabel { get { return Translate.TextByDomain(PosesDictionary, "Sent Label"); } }
     }
 }

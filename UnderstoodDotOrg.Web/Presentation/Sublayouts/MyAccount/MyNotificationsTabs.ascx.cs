@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
 using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Services.Models.Telligent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -19,28 +20,45 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         protected void Page_Load(object sender, EventArgs e)
         {
             List<INotification> notifs = new List<INotification>();
-            if (Notifications != null)
-            {
-                notifs = Notifications;
+            List<Conversation> checkConvos = new List<Conversation>();
 
-            }
-            else
+            if (IsUserLoggedIn)
             {
-                if (IsUserLoggedIn)
+                if (!String.IsNullOrEmpty(CurrentMember.ScreenName))
                 {
-                    if (!String.IsNullOrEmpty(CurrentMember.ScreenName))
+                    if (Notifications != null)
+                    {
+                        notifs = Notifications;
+
+                    }
+                    else
                     {
                         notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
                         Notifications = notifs;
                     }
-                }
+                    
 
+                     if (Session["conversations"] is List<Conversation>)
+                     {
+                         checkConvos = Session["conversations"] as List<Conversation>;
+                     }
+                     else
+                     {
+                         checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
+                         Session["conversations"] = checkConvos;
+                     }
+				    
+                }
             }
+           
+
+         
+
             litNotifsCount.Text = notifs!=null && notifs.Count() >0?notifs.Count().ToString():"0";
             litwhatsHappeningLabel.Text = DictionaryConstants.WhatsHappeningLabel;
             litPrivateMsgsLabel.Text = DictionaryConstants.PrivateMessagesLabel;
             litEmailPrefLabel.Text = DictionaryConstants.EmailPreferencesLabel;
-
+            litPMs.Text = checkConvos.Count().ToString();
             if (!IsPostBack)
             {
                 if (Sitecore.Context.Item.TemplateID.ToString() == EmailandAlertPreferencesPageItem.TemplateId)

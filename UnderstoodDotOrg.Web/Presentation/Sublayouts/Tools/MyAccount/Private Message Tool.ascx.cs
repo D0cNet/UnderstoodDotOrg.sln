@@ -253,7 +253,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                                                            {
 															   PreferredLanguage = CurrentMember.PreferredLanguage,
                                                                ///TODO: change url to profile setting link
-                                                               ContactSettingsLink = "www.google.com",
+                                                               ContactSettingsLink = MemberExtensions.GetMemberPublicProfile(username),
                                                                ///TODO: change URL to message centre link
                                                                MsgCenterLink = myAccountLink,
                                                                PMText = CKEditorControl1.Text,

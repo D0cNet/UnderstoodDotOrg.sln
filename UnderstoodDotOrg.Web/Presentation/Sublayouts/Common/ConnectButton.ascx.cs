@@ -15,8 +15,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-                this.Text = DictionaryConstants.ConnectBtnText;
+            ////if(!IsPostBack)
+            ////    this.Text = DictionaryConstants.ConnectBtnText;
         }
 
         private string UserName
@@ -37,7 +37,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             set { btnConnect.Text = value; }
         }
 
-        private Constants.TelligentFriendStatus Status { get; set; }
+        private Constants.TelligentFriendStatus Status
+        {
+            get
+            {
+                return (Constants.TelligentFriendStatus)ViewState["_status"]  ;
+            }
+            set
+            {
+                ViewState["_status"] = value;
+            }
+        }
 
         public void LoadState(string userName)
         {
@@ -78,6 +88,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                                 }
                             }
                         }
+                    }
+                    else
+                    {
+                        this.Text = DictionaryConstants.ConnectBtnText;
                     }
                 }
                 catch (Exception ex)
