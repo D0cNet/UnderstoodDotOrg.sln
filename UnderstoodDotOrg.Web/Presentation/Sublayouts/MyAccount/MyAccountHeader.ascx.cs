@@ -53,7 +53,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     {
                         List<INotification> notifs =new  List<INotification>();
                         List<Conversation> checkConvos =new List<Conversation>();
-                        if (Notifications != null && Notifications.Count() > 0)
+                        if (Notifications == null)
                         {
                             notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
                             if (notifs != null && notifs.Count() > 0)
@@ -63,15 +63,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                                 Notifications = notifs;
 
                             }
+                            else
+                            {
+                                notifs = new List<INotification>();
+                            }
+                        }
+                        else
+                        {
+                            notifs = Notifications;
                         }
 
-                        if (!(Session["conversations"] is List<Conversation>))
+                        if (Session["conversations"]==null)
                         {
                             checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
                             if (checkConvos != null && checkConvos.Count() > 0)
                             {
                                 Session["conversations"] = checkConvos;
                             }
+                            else
+                            {
+                                checkConvos = new List<Conversation>();
+                            }
+                        }
+                        else
+                        {
+                            checkConvos = Session["conversations"] as List<Conversation>;
+                            
                         }
                         int totalNotifs = notifs.Count() + checkConvos.Count();
                         if (totalNotifs > 0)

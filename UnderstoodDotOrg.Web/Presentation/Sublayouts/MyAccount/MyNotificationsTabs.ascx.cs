@@ -34,18 +34,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     else
                     {
                         notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
-                        Notifications = notifs;
+                        if (notifs != null)
+                        {
+                            Notifications = notifs;
+                        }
+                        else
+                            Notifications = new List<INotification>();
                     }
                     
 
-                     if (Session["conversations"] is List<Conversation>)
+                     if (Session["conversations"] !=null)
                      {
                          checkConvos = Session["conversations"] as List<Conversation>;
                      }
                      else
                      {
                          checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
-                         Session["conversations"] = checkConvos;
+                         if (checkConvos != null)
+                         {
+                             Session["conversations"] = checkConvos;
+                         }
+                         else
+                         {
+                             
+                             checkConvos = new List<Conversation>();
+                             Session["conversations"] = checkConvos;
+                         }
                      }
 				    
                 }

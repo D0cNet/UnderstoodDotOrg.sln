@@ -72,7 +72,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             litSeeAllNotificationsLabel.Text = DictionaryConstants.SeeAllNotificationsLabel;
             hrefNotificationsLink.HRef =   MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetMyNotificationsPage().GetUrl();
             hrefNotificationsLink.InnerText = context.SeeAllNotificationsText;
-            if (Notifications != null && Notifications.Count() >0)
+            if (Notifications != null )
             {
                 litNotifCount.Text = Notifications.Count().ToString();
                 pnlEmptyText.Visible = false;

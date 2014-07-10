@@ -8,6 +8,10 @@
   public void Application_End() {
   }
 
+  public void Session_End()
+  {
+      Session.Abandon();
+  }
   public void Application_Error(object sender, EventArgs args) 
   {
       Exception ex = Server.GetLastError();
