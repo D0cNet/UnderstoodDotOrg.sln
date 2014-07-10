@@ -594,6 +594,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TycePlayerPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\TYCE\Pages\TyceQuestionsPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Article\AuthorItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Article\AuthorItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Article\ExpertPersonItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Article\ReviewerBioItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Child\ChildChallengeItem.base.cs" />

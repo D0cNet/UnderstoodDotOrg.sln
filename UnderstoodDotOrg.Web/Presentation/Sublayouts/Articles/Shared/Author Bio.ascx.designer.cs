@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
     
     
     public partial class Author_Bio {
         
         /// <summary>
-        /// ImgAuthorImage control.
+        /// imgExpert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Image ImgAuthorImage;
+        protected global::System.Web.UI.WebControls.Image imgExpert;
         
         /// <summary>
-        /// frAuthorName control.
+        /// frBodyContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorName;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBodyContent;
         
         /// <summary>
-        /// frAuthorBio control.
+        /// frExpertBlogsHeading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorBio;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frExpertBlogsHeading;
     }
 }

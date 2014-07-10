@@ -6,6 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article
 {
@@ -14,11 +15,18 @@ public partial class AuthorItem : CustomItem
 
 public static readonly string TemplateId = "{3F153988-B0C9-4C5D-9234-D9ADC2A3D55A}";
 
+#region Inherited Base Templates
+
+private readonly BasePageNEWItem _BasePageNEWItem;
+public BasePageNEWItem BasePageNEW { get { return _BasePageNEWItem; } }
+
+#endregion
 
 #region Boilerplate CustomItem Code
 
 public AuthorItem(Item innerItem) : base(innerItem)
 {
+	_BasePageNEWItem = new BasePageNEWItem(innerItem);
 
 }
 

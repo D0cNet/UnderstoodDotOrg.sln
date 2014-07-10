@@ -498,6 +498,13 @@
     <Compile Include="Presentation\Sublayouts\Articles\AudioArticle.ascx.designer.cs">
       <DependentUpon>AudioArticle.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx.cs">
+      <DependentUpon>Author Bio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx.designer.cs">
+      <DependentUpon>Author Bio.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\BasicArticle.ascx.cs">
       <DependentUpon>BasicArticle.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -574,13 +581,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\AboutAuthor.ascx.designer.cs">
       <DependentUpon>AboutAuthor.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx.cs">
-      <DependentUpon>Author Bio.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx.designer.cs">
-      <DependentUpon>Author Bio.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx.cs">
       <DependentUpon>QuizFoundHelpfulControl.ascx</DependentUpon>
@@ -2920,6 +2920,7 @@
     <Content Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Assessment Quiz.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\AudioArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\BasicArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Comments.ascx" />
@@ -2931,7 +2932,6 @@
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\AboutAuthor.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
