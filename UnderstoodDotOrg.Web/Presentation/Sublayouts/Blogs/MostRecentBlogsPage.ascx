@@ -13,11 +13,15 @@
                     <!-- BEGIN PARTIAL: community/blog_filter -->
                     <div class="blog-filter clearfix skiplink-toolbar">
                         <div class="mobile-search-box">
-                            <fieldset class="group-search-form mobile-group-search-form">
-                                <label for="blog-group-search-text" class="visuallyhidden" aria-hidden="true"><sc:Text Field="Search This Blog Text" runat="server" /></label>
-                                <input type="text" class="group-search" id="blog-group-search-text" name="group-search" placeholder="Search this blog"></input>
-                                <input class="group-search-button" type="submit" value="Go"></input>
-                            </fieldset>
+                            <asp:Panel runat="server" DefaultButton="btnSearch">
+                                <fieldset class="group-search-form mobile-group-search-form">
+                                    <label for="blog-group-search-text" class="visuallyhidden" aria-hidden="true">
+                                        <sc:Text Field="Search This Blog Text" runat="server" />
+                                    </label>
+                                    <asp:TextBox CssClass="group-search" ID="txtSearch" placeholder="Search this blog" runat="server"></asp:TextBox>
+                                    <asp:Button ID="btnSearch" CssClass="group-search-button" OnClick="btnSearch_Click" runat="server"></asp:Button>
+                                </fieldset>
+                            </asp:Panel>
                         </div>
                         <div class="filters">
                             <div class="dropdown">

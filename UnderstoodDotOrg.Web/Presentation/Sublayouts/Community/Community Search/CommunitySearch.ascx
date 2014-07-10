@@ -11,8 +11,8 @@
                     <span class="field">
                         <asp:Panel runat="server" DefaultButton="btnSearch">
                             <label for="search-term" class="visuallyhidden">Search</label>
-                            <asp:TextBox ID="txtSearch" CssClass="search-term" runat="server" placeholder="Search" />
-                            <asp:Button type="submit" id="btnSearch" value="Go" OnClick="Unnamed_ServerClick" runat="server" />
+                            <asp:TextBox ID="txtSearch" CssClass="search-term" runat="server" placeholder="Search the Understood Community" />
+                            <asp:Button type="submit" id="btnSearch" value="Go" OnClick="SearchButton_Click" runat="server" />
                         </asp:Panel>
                     </span>
                 </fieldset>
@@ -60,8 +60,8 @@
                             </div>--%>
 
                             <div class="col col-11 offset-1 search-content">
-                                <h4><a href="REPLACE"><%# Item.Title %></a></h4>
-                                <p><%# Item.Body %></p>
+                                <h4><a href="<%# Item.Url %>"><%# Item.BestMatchTitle %></a></h4>
+                                <p><%# Item.BestMatchBody %></p>
                             </div>
                             <div class="col search-content" style="display:inline-block; margin-left:35px; margin-top:35px">
                                 <p><%# Item.Date %></p>

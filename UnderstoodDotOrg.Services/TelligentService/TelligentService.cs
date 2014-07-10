@@ -2288,7 +2288,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
         /// Performs a search on the Telligent database, returns a list of results.
         /// </summary>
         /// <param name="q">The string that will be used to search the database.</param>
-        /// <param name="param">Application type to limit the search. To search all, pass string.Empty</param>
+        /// <param name="param">Application type to limit the search.
+        /// Options: blog, group, question, expert, all</param>
         /// <returns></returns>
         public static List<SearchResult> CommunitySearch(string q, string param)
         {
@@ -2340,13 +2341,16 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             && !result["ContentType"].InnerText.Equals("forumapp"))
                         {
                             string id = result["Id"].InnerText;
-                            string title = result["BestMatchTitle"].InnerText;
-                            string body = result["BestMatch"].InnerText;
+                            string bestMatchTitle = result["BestMatchTitle"].InnerText;
+                            string title = result["Title"].InnerText;
+                            string bestMatch = result["BestMatch"].InnerText;
+                            string body = result["Body"].InnerText;
                             string type = result["ContentType"].InnerText;
                             string typeTransformed = string.Empty;
                             string date = FormatDate(result["Date"].InnerText);
-                            title = Regex.Replace(title, "<em>", "<strong>");
-                            title = Regex.Replace(title, "</em>", "</strong>");
+                            string url = string.Empty;
+                            bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
+                            bestMatchTitle = Regex.Replace(title, "</em>", "</strong>");
                             body = Regex.Replace(body, "<em>", "<strong>");
                             body = Regex.Replace(body, "</em>", "</strong>");
                             
@@ -2359,16 +2363,23 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             {
                                 case "comment":
                                         typeTransformed = "Blog Comment";
-                                    if (appId == "wiki") typeTransformed = "Question Answer";
+                                        url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + application["HtmlName"].InnerText + "/" + Regex.Replace(title, "Comment on ", "");
+                                        if (appId == "wiki")
+                                        {
+                                            typeTransformed = "Question Answer";
+                                        }
                                     break;
                                 case "blog":
                                     typeTransformed = "Blog Post";
+                                    url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + application["HtmlName"].InnerText + "/" + title;
                                     break;
                                 case "blogapp":
                                     typeTransformed = "Blog";
+                                    url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{E486F071-8B5F-42B9-91C1-CC8A61A8622E}")) + "?BlogId=" + result["SectionId"].InnerText;
                                     break;
                                 case "wiki":
                                     typeTransformed = "Question";
+                                    url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{7356A32F-1795-4EAE-BE24-EBBD79B3093C}")) + String.Format("?wikiId={0}&wikiPageId={1}&contentId={2}", result["WikiId"].InnerText, result["ContentId"].InnerText, id);
                                     break;
                                 case "forum":
                                     typeTransformed = "Discussion Post";
@@ -2383,11 +2394,14 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             var searchResult = new SearchResult()
                             {
                                 Id = id,
-                                Title = title,
-                                Body = body,
+                                BestMatchTitle = bestMatchTitle,
+                                BestMatchBody = bestMatch,
                                 Type = type,
                                 TypeTransformed = typeTransformed,
-                                Date = date
+                                Date = date,
+                                Title = title,
+                                Body = body,
+                                Url = url
                             };
                             searchResultsList.Add(searchResult);
                         }

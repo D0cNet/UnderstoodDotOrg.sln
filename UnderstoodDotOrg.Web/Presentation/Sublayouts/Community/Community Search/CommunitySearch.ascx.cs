@@ -31,11 +31,13 @@
                 {
                     a = Request.QueryString["a"];
                 }
+
                 var dataSource = TelligentService.CommunitySearch(q, a);
                 rptResults.DataSource = dataSource;
                 rptResults.DataBind();
                 litResultCount.Text = dataSource.Count.ToString();
             }
+            
             switch (Request.QueryString["a"])
             {
                 case "all":
@@ -56,11 +58,10 @@
                 default:
                     litFilter.Text = "Community";
                     break;
-
             }
         }
 
-        protected void Unnamed_ServerClick(object sender, EventArgs e)
+        protected void SearchButton_Click(object sender, EventArgs e)
         {
             string url = Request.RawUrl;
             if (Request.RawUrl.Contains("?"))
@@ -68,6 +69,7 @@
                 string[] u = url.Split('?');
                 url = u[0];
             }
+
             Response.Redirect(url + "?q=" + txtSearch.Text);
         }
 

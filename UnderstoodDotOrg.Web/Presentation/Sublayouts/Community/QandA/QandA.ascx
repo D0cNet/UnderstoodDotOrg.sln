@@ -58,11 +58,13 @@
                     <option>Topic 4</option>
                 </select>
 
-                <fieldset class="question-search-form">
-                    <label for="question-search-text" class="visuallyhidden">Search</label>
-                    <input type="text" class="question-search" id="question-search-text" name="search-term" placeholder="Search" />
-                    <input class="search-button" type="submit" value="Go">
-                </fieldset>
+                <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch">
+                    <fieldset class="question-search-form">
+                        <label for="question-search-text" class="visuallyhidden">Search</label>
+                        <asp:TextBox CssClass="question-search" ID="txtSearch" placeholder="Search" runat="server" />
+                        <asp:Button CssClass="search-button" ID="btnSearch" OnClick="btnSearch_Click" runat="server" />
+                    </fieldset>
+                </asp:Panel>
             </div>
             <sc:Placeholder Key="QuestionsList" runat="server" />
 
