@@ -17,7 +17,8 @@ using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Services.CommunityServices;
 using UnderstoodDotOrg.Services.TelligentService;
-
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.Membership;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
     public partial class Parent_Group_Boards : BaseSublayout//System.Web.UI.UserControl
@@ -25,7 +26,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
       
         protected override void OnInit(EventArgs e)
         {
-
+            litjumpToText.Text = DictionaryConstants.JumpToText;
+            
             base.OnInit(e);
         }
 
@@ -65,7 +67,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             rptForums.DataSource = grpModel.Forums;
                             rptForums.DataBind();
 
-                            lvJumpto.DataSource = grpModel.Forums;
+                            lvJumpto.DataSource = currItem.Children.Select(x => Forum.ForumModelFactory(new ForumItem(x))).ToList<ForumModel>();  //grpModel.Forums;
                             lvJumpto.DataBind();
 
                      
@@ -83,13 +85,57 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
         protected void rptForums_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            Repeater childModel_repeater = (Repeater)e.Item.FindControl("rptThreads");
-            if (childModel_repeater != null)
+            if (e.Item.DataItem != null)
             {
-                childModel_repeater.DataSource = ((ForumModel)e.Item.DataItem).Threads;
-                childModel_repeater.DataBind();
-            }
+                if (e.Item.DataItem is ForumModel)
+                {
 
+                    Literal litstartDiscussion = (Literal)e.Item.FindControl("litstartDiscussion");
+                    if (litstartDiscussion != null)
+                    {
+                        litstartDiscussion.Text = DictionaryConstants.StartDiscussion;
+                    }
+                    
+                    Literal litDiscussionLabel = (Literal)e.Item.FindControl("litDiscussionLabel");
+                    if (litDiscussionLabel != null)
+                    {
+                        litDiscussionLabel.Text = DictionaryConstants.DiscussionLabel;
+                    }
+                   
+                     Literal litRepliesLabel = (Literal)e.Item.FindControl("litRepliesLabel");
+                    if (litRepliesLabel != null)
+                    {
+                        litRepliesLabel.Text = DictionaryConstants.RepliesLabel;
+                    }
+
+
+                    Literal litLatestPostLabel = (Literal)e.Item.FindControl("litLatestPostLabel");
+                    if (litLatestPostLabel != null)
+                    {
+                        litLatestPostLabel.Text = DictionaryConstants.LatestPostLabel;
+                    }
+                    Literal litViewAll = (Literal)e.Item.FindControl("litViewAll");
+                    if (litViewAll != null)
+                    {
+                        litViewAll.Text = DictionaryConstants.ViewAllLabel;
+                    }
+                    ForumModel item = (ForumModel)e.Item.DataItem;
+                    Repeater childModel_repeater = (Repeater)e.Item.FindControl("rptThreads");
+                    if (childModel_repeater != null)
+                    {
+                        childModel_repeater.DataSource = ((ForumModel)e.Item.DataItem).Threads.Take(3).ToList<ThreadModel>();
+                        childModel_repeater.DataBind();
+                    }
+                    HtmlAnchor hrefForumLink = (HtmlAnchor)e.Item.FindControl("hrefForumLink");
+                    if (hrefForumLink != null)
+                    {
+                        if (!String.IsNullOrEmpty(item.ForumID))
+                        {
+                            hrefForumLink.HRef = Forum.ConvertForumIDtoSitecoreItem(item.ForumID).GetUrl(); //LinkManager.GetItemUrl(thread);
+                        }
+                    }
+                }
+            }
         }
 
         protected void rptThreads_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -98,15 +144,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             {
                 if (e.Item.DataItem is ThreadModel)
                 {
+                    ThreadModel item = (ThreadModel)e.Item.DataItem ;
                     Item thread = null;
                     HiddenField hdFrmID = (HiddenField)e.Item.FindControl("forumId");
                     HiddenField hdThID = (HiddenField)e.Item.FindControl("threadId");
-
+                    string forumId = String.Empty;
+                    string threadId = String.Empty;
                     if (hdFrmID != null && hdThID !=null)
                     {
 
-                        string forumId = hdFrmID.Value;
-                        string threadId = hdThID.Value;
+                         forumId = hdFrmID.Value;
+                         threadId = hdThID.Value;
                         thread = Threads.ConvertThreadtoSitecoreItem(forumId, threadId); //Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@Subject = '" + subject + "']");
                         // ID = thread.ID.ToString();
                     }
@@ -118,6 +166,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             hrefDiscussions.HRef = LinkManager.GetItemUrl(thread);
                         }
                     }
+
+                    HtmlAnchor hrefLastPostUser = (HtmlAnchor)e.Item.FindControl("hrefLastPostUser");
+                    if (hrefLastPostUser != null)
+                    {
+                        if (thread != null)
+                        {
+                            hrefLastPostUser.HRef = MemberExtensions.GetMemberPublicProfile(item.LastPostUser);
+                        }
+                    }
+                   
                 }
             }
         }

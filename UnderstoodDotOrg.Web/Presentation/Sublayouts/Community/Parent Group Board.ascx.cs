@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Framework.UI;
@@ -134,6 +135,34 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                         if (thread != null)
                         {
                             hrefDiscussions.HRef = LinkManager.GetItemUrl(thread) ;
+                        }
+                    }
+
+                    HtmlAnchor hrefprofile = (HtmlAnchor)e.Item.FindControl("hrefProfile");
+                    if (hrefprofile != null)
+                    {
+                        if (thread != null)
+                        {
+
+                            hrefprofile.HRef = MemberExtensions.GetMemberPublicProfile(((ThreadModel)e.Item.DataItem).StartedBy);
+                        }
+                    }
+                    HtmlAnchor hrefprofile2 = (HtmlAnchor)e.Item.FindControl("hrefProfile2");
+                    if (hrefprofile != null)
+                    {
+                        if (thread != null)
+                        {
+
+                            hrefprofile2.HRef = MemberExtensions.GetMemberPublicProfile(((ThreadModel)e.Item.DataItem).LastPostUser);
+                        }
+                    }
+                    HtmlAnchor hrefprofile3 = (HtmlAnchor)e.Item.FindControl("hrefProfile3");
+                    if (hrefprofile != null)
+                    {
+                        if (thread != null)
+                        {
+
+                            hrefprofile3.HRef = MemberExtensions.GetMemberPublicProfile(((ThreadModel)e.Item.DataItem).LastPostUser);
                         }
                     }
                 }

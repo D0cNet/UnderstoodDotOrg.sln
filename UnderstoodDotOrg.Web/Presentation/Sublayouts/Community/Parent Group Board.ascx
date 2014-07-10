@@ -92,12 +92,12 @@
                                 <div class="col latest-post rs_skip">
                                     <h4>Latest Post:</h4>
                                     <p class="mins-ago"><%# Eval("LastPostTime") %></p>
-                                    <a href="REPLACE"><%# Eval("LastPostUser") %></a>
+                                    <a  runat="server" id="hrefProfile2" href="REPLACE"><%# Eval("LastPostUser") %></a>
                                     <p><%# Eval("LastPostBody") %></p>
                                 </div>
                                 <div class="col started-by">
                                     <h4>Started by:</h4>
-                                    <a href="REPLACE"><%# Eval("StartedBy") %></a>
+                                    <a runat="server" id="hrefProfile" href="REPLACE"><%# Eval("StartedBy") %></a>
                                 </div>
 
                                 <div class="col replies">
@@ -107,7 +107,7 @@
                                 <div class="col latest-post-tabular">
                                     <h4>Latest Post:</h4>
                                     <p>5<%# Eval("LastPostTime") %></p>
-                                    <a href="REPLACE"><%# Eval("LastPostUser") %></a>
+                                    <a  runat="server" id="hrefProfile3" href="REPLACE"><%# Eval("LastPostUser") %></a>
                                     <p><%# Eval("LastPostBody") %></p>
                                 </div>
 

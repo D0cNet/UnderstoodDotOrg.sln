@@ -2071,5 +2071,13 @@ namespace UnderstoodDotOrg.Common
         public static string ThanksLabel { get { return Translate.TextByDomain(PosesDictionary, "Thanks Label"); } }
         public static string ThinkingOfYouLabel { get { return Translate.TextByDomain(PosesDictionary, "Thinking Of You Label"); } }
         public static string SentLabel { get { return Translate.TextByDomain(PosesDictionary, "Sent Label"); } }
+
+        public static string StartDiscussion { get { return Translate.TextByDomain(PosesDictionary, "Start a Discussion Label"); } }
+
+        public static string JumpToText { get { return Translate.TextByDomain(PosesDictionary, "JumpTo Label"); } }
+
+        public static string DiscussionLabel { get { return Translate.TextByDomain(PosesDictionary, "Discussion Label"); } }
+
+        public static string LatestPostLabel { get { return Translate.TextByDomain(PosesDictionary, "Latest Post Label"); } }
     }
 }
