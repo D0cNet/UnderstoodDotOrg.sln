@@ -58,6 +58,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
             hlTwitter.NavigateUrl = SocialHelper.GetTwitterShareUrl(page, page.PageTitle.Raw);
             hlTwitter.Text = DictionaryConstants.SocialSharingTwitter;
+
+            hlPinterest.NavigateUrl = SocialHelper.GetPinterestShareUrl(page);
         }
 
         protected void lbSave_Click(object sender, EventArgs e)

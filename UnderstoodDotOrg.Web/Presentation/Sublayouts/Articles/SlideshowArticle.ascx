@@ -1,15 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SlideshowArticle.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.SlideshowArticle" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-<script type="text/javascript">
-    (function (d) {
-        var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
-        p.type = 'text/javascript';
-        p.async = true;
-        p.src = '//assets.pinterest.com/js/pinit.js';
-        f.parentNode.insertBefore(p, f);
-    }(document));
-</script>
-<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 
 <sc:Sublayout ID="Sublayout1" Path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulCountOnly.ascx" runat="server"></sc:Sublayout>
 

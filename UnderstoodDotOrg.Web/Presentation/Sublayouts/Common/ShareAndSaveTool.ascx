@@ -1,16 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShareAndSaveTool.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ShareAndSaveTool" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-<script type="text/javascript">
-    (function (d) {
-        var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
-        p.type = 'text/javascript';
-        p.async = true;
-        p.src = '//assets.pinterest.com/js/pinit.js';
-        f.parentNode.insertBefore(p, f);
-    }(document));
-</script>
-<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+<%--<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>--%>
 
 <%--<script >
     function sendemail()
@@ -25,7 +16,7 @@
             <asp:HyperLink ID="hlFacebook" CssClass="socicon icon-facebook" runat="server"></asp:HyperLink><br />
             <asp:HyperLink ID="hlTwitter" CssClass="socicon icon-twitter" runat="server"></asp:HyperLink><br />
             <asp:HyperLink ID="hlGooglePlus" CssClass="socicon icon-googleplus" runat="server"></asp:HyperLink><br />
-            <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonPin"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" /></a>
+            <asp:HyperLink ID="hlPinterest" CssClass="socicon icon-pinterest" runat="server"></asp:HyperLink>
         </div>
     </div>
     <style>
