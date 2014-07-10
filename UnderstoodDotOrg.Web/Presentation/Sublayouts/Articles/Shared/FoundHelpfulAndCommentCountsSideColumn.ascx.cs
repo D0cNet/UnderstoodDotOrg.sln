@@ -1,4 +1,5 @@
 ﻿using Sitecore.Data;
+using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Activity;
 using UnderstoodDotOrg.Framework.UI;
@@ -22,18 +24,37 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             {
                 BindData((DefaultArticlePageItem)DataSource);
             }
+
+            if (DataSource != null && TemplateManager.GetTemplate(DataSource).InheritsFrom(new ID(BehaviorToolsAdvicePageItem.TemplateId)))
+            {
+                BindData((BehaviorToolsAdvicePageItem)DataSource);
+            }
         }
 
-        private void BindData(DefaultArticlePageItem page)
+        private void BindData(Item thePage)
         {
+            string BlogId = "";
+            string BlogPostId = "";
+
+            if (thePage.TemplateID.ToString() == DefaultArticlePageItem.TemplateId)
+            {
+                BlogId = new DefaultArticlePageItem(thePage).BlogId.Raw;
+                BlogPostId = new DefaultArticlePageItem(thePage).BlogPostId.Raw;
+            }
+            else if (thePage.TemplateID.ToString() == BehaviorToolsAdvicePageItem.TemplateId)
+            {
+                BlogId = new BehaviorAdvicePageItem(thePage).BlogId.Raw;
+                BlogPostId = new BehaviorAdvicePageItem(thePage).BlogPostId.Raw;
+            }
+
             ActivityLog tempLog = new ActivityLog();
             //ContentId, ActivityValue
             int helpfulCount = tempLog.GetActivityCountByValue(new Guid(Sitecore.Context.Item.ID.ToString()), Constants.UserActivity_Values.FoundHelpful_True); 
             int commentCount = 0;
 
-            if (!string.IsNullOrEmpty(page.BlogId.Raw) && !string.IsNullOrEmpty(page.BlogPostId.Raw))
+            if (!string.IsNullOrEmpty(BlogId) && !string.IsNullOrEmpty(BlogPostId))
             {
-                commentCount = CommunityHelper.GetTotalComments(page.BlogId.Raw, page.BlogPostId.Raw);
+                commentCount = CommunityHelper.GetTotalComments(BlogId, BlogPostId);
             }
 
             lblHelpfulCount.Text = lblHelpfulCountMobile.Text = helpfulCount.ToString();

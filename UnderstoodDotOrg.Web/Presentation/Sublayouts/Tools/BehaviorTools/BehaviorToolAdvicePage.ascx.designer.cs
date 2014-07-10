@@ -58,22 +58,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frWhyThisWillHelp;
         
         /// <summary>
-        /// slSocialCounter control.
+        /// Sublayout2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout slSocialCounter;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout2;
         
         /// <summary>
-        /// slHelpfulVote control.
+        /// Sublayout3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout slHelpfulVote;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout3;
         
         /// <summary>
         /// slKeepReading control.
@@ -85,13 +85,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools {
         protected global::Sitecore.Web.UI.WebControls.Sublayout slKeepReading;
         
         /// <summary>
-        /// slHelpfulVoteWide control.
+        /// Sublayout1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout slHelpfulVoteWide;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
         
         /// <summary>
         /// slTipCarousel control.

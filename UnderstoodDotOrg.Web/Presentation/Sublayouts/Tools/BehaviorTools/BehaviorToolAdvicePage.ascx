@@ -34,9 +34,9 @@
     <!-- right bar -->
     <div class="col col-5 offset-1">
       
-        <sc:Sublayout ID="slSocialCounter" runat="server" Path="~/Presentation/Sublayouts/Tools/BehaviorTools/Widgets/SocialCounter.ascx" />
+        <sc:sublayout ID="Sublayout2" path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" runat="server"></sc:sublayout>
 
-        <sc:Sublayout ID="slHelpfulVote" runat="server" Path="~/Presentation/Sublayouts/Tools/BehaviorTools/Widgets/HelpfulVote.ascx" Parameters="AdditionalCSSClass=sidebar" />
+        <sc:sublayout ID="Sublayout3" path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" runat="server"></sc:sublayout>
 
         <sc:Sublayout ID="slKeepReading" runat="server" Path="~/Presentation/Sublayouts/Tools/BehaviorTools/Widgets/KeepReading.ascx" />
 
@@ -47,7 +47,7 @@
 <div class="container">
   <div class="row row-equal-heights">
     <div class="col col-15 offset-1">
-      <sc:Sublayout ID="slHelpfulVoteWide" runat="server" Path="~/Presentation/Sublayouts/Tools/BehaviorTools/Widgets/HelpfulVote.ascx" Parameters="AdditionalCSSClass=content" />
+      <sc:sublayout id="Sublayout1" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
     </div>
 
     <!-- spacer column -->
