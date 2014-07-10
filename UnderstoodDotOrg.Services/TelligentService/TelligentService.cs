@@ -2264,22 +2264,29 @@ namespace UnderstoodDotOrg.Services.TelligentService
        
         public static User GetUser(string username)
         {
-            User user = new User();
-            using (var webClient = new WebClient())
+            User user = null;
+            try
             {
-                webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
-                var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Sitecore.Configuration.Settings.GetSetting("TelligentConfig"), username);
-
-                var xml = webClient.DownloadString(requestUrl);
-                var doc = new XmlDocument();
-                doc.LoadXml(xml);
-        
-                XmlNode node = doc.SelectSingleNode("Response/User");
-                user = new User()
+                using (var webClient = new WebClient())
                 {
-                    AvatarUrl = node["AvatarUrl"].InnerText,
-                    Username = node["Username"].InnerText,
-                };
+                    webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
+                    var requestUrl = String.Format("{0}api.ashx/v2/users/{1}.xml", Sitecore.Configuration.Settings.GetSetting("TelligentConfig"), username);
+
+                    var xml = webClient.DownloadString(requestUrl);
+                    var doc = new XmlDocument();
+                    doc.LoadXml(xml);
+
+                    XmlNode node = doc.SelectSingleNode("Response/User");
+                    user = new User()
+                    {
+                        AvatarUrl = node["AvatarUrl"].InnerText,
+                        Username = node["Username"].InnerText,
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error("Error retrieving telligent user", ex);
             }
             return user;
         }

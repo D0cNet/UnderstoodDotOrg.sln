@@ -144,7 +144,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                         if (thread != null)
                         {
 
-                            hrefprofile.HRef = MemberExtensions.GetMemberPublicProfile(((ThreadModel)e.Item.DataItem).StartedBy);
+                            hrefprofile.HRef = MembershipHelper.GetPublicProfileUrl(((ThreadModel)e.Item.DataItem).StartedBy);
                         }
                     }
                     HtmlAnchor hrefprofile2 = (HtmlAnchor)e.Item.FindControl("hrefProfile2");
@@ -153,7 +153,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                         if (thread != null)
                         {
 
-                            hrefprofile2.HRef = MemberExtensions.GetMemberPublicProfile(((ThreadModel)e.Item.DataItem).LastPostUser);
+                            hrefprofile2.HRef = MembershipHelper.GetPublicProfileUrl(((ThreadModel)e.Item.DataItem).LastPostUser);
                         }
                     }
                     HtmlAnchor hrefprofile3 = (HtmlAnchor)e.Item.FindControl("hrefProfile3");
@@ -162,7 +162,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                         if (thread != null)
                         {
 
-                            hrefprofile3.HRef = MemberExtensions.GetMemberPublicProfile(((ThreadModel)e.Item.DataItem).LastPostUser);
+                            hrefprofile3.HRef = MembershipHelper.GetPublicProfileUrl(((ThreadModel)e.Item.DataItem).LastPostUser);
                         }
                     }
                 }

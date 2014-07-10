@@ -31,15 +31,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
 
         protected void rptFriends_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
         {
-            var item = (User)e.Item.DataItem;
+            User user = (User)e.Item.DataItem;
             HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
-
-            var membershipManager = new MembershipManager();
-
-            hypUserProfileLink.NavigateUrl = string.Format(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetUrl()
-                + "?{0}={1}",
-                Constants.ACCOUNT_EMAIL,
-                CommunityHelper.ReadUserEmail(item.Username));
+            hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(user);
         }
     }
 }

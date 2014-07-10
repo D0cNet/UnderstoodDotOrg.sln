@@ -487,6 +487,10 @@ namespace UnderstoodDotOrg.Common
             {
                 get { return new Guid("{EE8EF105-6F7D-4389-B20D-4ECAD8703F70}"); }
             }
+            public static Guid ViewPublicProfilePage
+            {
+                get { return new Guid("{C052673C-2BFC-47A9-AC13-F178E63D8086}"); }
+            }
         }
 
         #endregion
@@ -790,6 +794,7 @@ namespace UnderstoodDotOrg.Common
             public static string CommentsListEndpoint = "CommentsListEndpoint";
             public static string ContentServiceEndpoint = "ContentServiceEndpoint";
             public static string BehaviorToolSuggestionEmail = "BehaviorToolSuggestionEmail";
+            public static string WildcardUrlPlaceholder = "WildcardUrlPlaceholder";
 
             #region Salesforce
             private static string SalesforceUsername = ConfigurationManager.AppSettings[Constants.Settings.SalesforceUsername];

@@ -36,7 +36,7 @@ namespace UnderstoodDotOrg.Domain.Models.TelligentCommunity
         {
             get
             {
-                return (String.Format(DictionaryConstants.CommentAction, UserName, MemberExtensions.GetMemberPublicProfile(UserName)));
+                return (String.Format(DictionaryConstants.CommentAction, UserName, MembershipHelper.GetPublicProfileUrl(UserName)));
 
             }
 

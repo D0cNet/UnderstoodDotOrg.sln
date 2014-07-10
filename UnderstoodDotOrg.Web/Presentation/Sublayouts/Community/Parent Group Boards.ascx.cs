@@ -172,7 +172,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     {
                         if (thread != null)
                         {
-                            hrefLastPostUser.HRef = MemberExtensions.GetMemberPublicProfile(item.LastPostUser);
+                            hrefLastPostUser.HRef = MembershipHelper.GetPublicProfileUrl(item.LastPostUser);
                         }
                     }
                    

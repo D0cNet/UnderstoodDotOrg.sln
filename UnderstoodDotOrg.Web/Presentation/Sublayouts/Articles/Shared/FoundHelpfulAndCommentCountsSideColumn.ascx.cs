@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
@@ -36,12 +37,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             string BlogId = "";
             string BlogPostId = "";
 
-            if (thePage.TemplateID.ToString() == DefaultArticlePageItem.TemplateId)
+            if (thePage.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
                 BlogId = new DefaultArticlePageItem(thePage).BlogId.Raw;
                 BlogPostId = new DefaultArticlePageItem(thePage).BlogPostId.Raw;
             }
-            else if (thePage.TemplateID.ToString() == BehaviorToolsAdvicePageItem.TemplateId)
+            else if (thePage.InheritsTemplate(BehaviorToolsAdvicePageItem.TemplateId))
             {
                 BlogId = new BehaviorAdvicePageItem(thePage).BlogId.Raw;
                 BlogPostId = new BehaviorAdvicePageItem(thePage).BlogPostId.Raw;

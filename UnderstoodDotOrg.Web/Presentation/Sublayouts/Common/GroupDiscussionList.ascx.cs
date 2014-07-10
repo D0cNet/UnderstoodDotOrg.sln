@@ -37,54 +37,45 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         }
         protected void rptDiscussionList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            ConnectButton btnConnect = e.FindControlAs<ConnectButton>("btnConnect");
-            if (btnConnect != null)
+            if (e.IsItem())
             {
-                if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
+                ReplyModel reply = (ReplyModel)e.Item.DataItem;
+                string recipientScreenName = reply.Author.UserName;
+
+                if (IsUserLoggedIn 
+                    && !string.IsNullOrEmpty(CurrentMember.ScreenName)
+                    && !string.IsNullOrEmpty(recipientScreenName))
                 {
-                    if (!String.IsNullOrEmpty(((ReplyModel)e.Item.DataItem).Author.UserName))
+                    ConnectButton btnConnect = e.FindControlAs<ConnectButton>("btnConnect");
+                    if (btnConnect != null)
                     {
-                        btnConnect.LoadState(((ReplyModel)e.Item.DataItem).Author.UserName);
-                        
+                        btnConnect.LoadState(recipientScreenName);
+                    }
+                    ThanksButton btnThanks = e.FindControlAs<ThanksButton>("btnThanks");
+                    if (btnThanks != null)
+                    {
+                        btnThanks.LoadState(recipientScreenName);
+                    }
+
+                    ThinkingOfYouButton btnThink = e.FindControlAs<ThinkingOfYouButton>("btnThinkingOfYou");
+                    if (btnThink != null)
+                    {
+                        btnThink.LoadState(recipientScreenName);
                     }
                 }
-            }
-             ThanksButton btnThanks = e.FindControlAs<ThanksButton>("btnThanks");
-             if (btnThanks != null)
-            {
-                if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
+
+                HtmlAnchor hrefName = e.FindControlAs<HtmlAnchor>("hrefName");
+                if (hrefName != null)
                 {
-                    if (!String.IsNullOrEmpty(((ReplyModel)e.Item.DataItem).Author.UserName))
-                    {
-                        btnThanks.LoadState(((ReplyModel)e.Item.DataItem).Author.UserName);
-                        
-                    }
+                    hrefName.HRef = ((ReplyModel)e.Item.DataItem).Author.ProfileLink;
                 }
-            }
 
-            ThinkingOfYouButton btnThink = e.FindControlAs<ThinkingOfYouButton>("btnThinkingOfYou");
-            if (btnThink != null)
-            {
-                if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
+                Repeater childModel_repeater = (Repeater)e.Item.FindControl("rptChildCard");
+                if (childModel_repeater != null)
                 {
-                    if (!String.IsNullOrEmpty(((ReplyModel)e.Item.DataItem).Author.UserName))
-                    {
-                        btnThink.LoadState(((ReplyModel)e.Item.DataItem).Author.UserName);
-
-                    }
+                    childModel_repeater.DataSource = ((ReplyModel)e.Item.DataItem).Author.Children;
+                    childModel_repeater.DataBind();
                 }
-            }
-            HtmlAnchor hrefName = e.FindControlAs<HtmlAnchor>("hrefName");
-            if(hrefName !=null)
-            {
-                hrefName.HRef = ((ReplyModel)e.Item.DataItem).Author.ProfileLink;
-            }
-
-            Repeater childModel_repeater = (Repeater)e.Item.FindControl("rptChildCard");
-            if (childModel_repeater != null)
-            {
-                childModel_repeater.DataSource = ((ReplyModel)e.Item.DataItem).Author.Children;
-                childModel_repeater.DataBind();
             }
         }
 

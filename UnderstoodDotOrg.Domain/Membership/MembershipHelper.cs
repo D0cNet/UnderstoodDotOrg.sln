@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Importer;
 
 namespace UnderstoodDotOrg.Domain.Membership
@@ -48,5 +50,44 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             return ret;
         }
+
+        public static string GetLocalizedGender(string genderKey)
+        {
+            // TODO: use constants
+            if (genderKey == "boy")
+            {
+                return Common.DictionaryConstants.BoyButtonText;
+            }
+            else if (genderKey == "girl")
+            {
+                return Common.DictionaryConstants.GirlButtonText;
+            }
+            return string.Empty;
+        }
+
+        public static string GetPublicProfileUrl(string screenName)
+        {
+            if (!string.IsNullOrEmpty(screenName))
+            {
+                Item item = Sitecore.Context.Database.GetItem(Constants.Pages.ViewPublicProfilePage);
+                if (item != null)
+                {
+                    string wildcard = Sitecore.Configuration.Settings.GetSetting(Constants.Settings.WildcardUrlPlaceholder);
+                    return item.GetUrl().Replace(wildcard, screenName);
+                }
+            }
+
+            return string.Empty;
+        }
+
+        public static string GetPublicProfileUrl(Domain.TelligentCommunity.User user)
+        {
+            return GetPublicProfileUrl(user.Username);
+        }
+
+        public static string GetPublicProfileUrl(Member member)
+        {
+            return GetPublicProfileUrl(member.ScreenName);
+        }        
     }
 }

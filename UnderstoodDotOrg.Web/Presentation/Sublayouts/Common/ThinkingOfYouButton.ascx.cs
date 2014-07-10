@@ -30,33 +30,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             if(IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
             {
-                //Grab text for thank you from dictionary
-                string strThinkMsg = String.Format(DictionaryConstants.ThinkingOfYouMessage, CurrentMember.ScreenName);
-            
-                //Send private message
-                string newConvID = TelligentService.CreateConversation(CurrentMember.ScreenName, DictionaryConstants.ThinkingOfYouLabel, strThinkMsg, UserName);
-
-                if (!String.IsNullOrEmpty(newConvID))
-                {
-                    //Send email
-                    string memberEmail = TelligentService.GetMemberEmail(UserName);
-                    string myAccountLink = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount.ToString()));
-
-                    BaseReply reply = ExactTargetService.InvokeEM21PrivateMessage(
-                                                       new InvokeEM21PrivateMessageRequest
-                                                       {
-                                                           PreferredLanguage = CurrentMember.PreferredLanguage,
-                                                           ///TODO: change url to profile setting link
-                                                           ContactSettingsLink = MemberExtensions.GetMemberPublicProfile(UserName),
-                                                           ///TODO: change URL to message centre link
-                                                           MsgCenterLink = myAccountLink,
-                                                           PMText = strThinkMsg,
-                                                           ReportInappropriateLink = "flagged@understood.org",
-                                                           ToEmail = memberEmail
-                                                       });
-                }
-                
-               
+                Services.CommunityServices.Members.SendThinkingOfYou(CurrentMember.ScreenName, UserName);
             }
             //set text to sent from dictionary
             Text = DictionaryConstants.SentLabel;

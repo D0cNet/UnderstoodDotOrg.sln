@@ -28,36 +28,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         protected void btnThanks_ServerClick(object sender, EventArgs e)
         {
-            if(IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
+            if (IsUserLoggedIn
+                && !String.IsNullOrEmpty(CurrentMember.ScreenName)
+                && !string.IsNullOrEmpty(UserName))
             {
-                //Grab text for thank you from dictionary
-                string strThanksMsg = String.Format(DictionaryConstants.ThankYouMessage, CurrentMember.ScreenName);
-            
-                //Send private message
-                string newConvID = TelligentService.CreateConversation(CurrentMember.ScreenName, DictionaryConstants.ThanksLabel, strThanksMsg, UserName);
+                UnderstoodDotOrg.Services.CommunityServices.Members.SendThanks(CurrentMember.ScreenName, UserName);
 
-                if (!String.IsNullOrEmpty(newConvID))
-                {
-                    //Send email
-                    string memberEmail = TelligentService.GetMemberEmail(UserName);
-                    string myAccountLink = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount.ToString()));
-
-                    BaseReply reply = ExactTargetService.InvokeEM21PrivateMessage(
-                                                       new InvokeEM21PrivateMessageRequest
-                                                       {
-                                                           PreferredLanguage = CurrentMember.PreferredLanguage,
-                                                           ///TODO: change url to profile setting link
-                                                           ContactSettingsLink = MemberExtensions.GetMemberPublicProfile(UserName),
-                                                           ///TODO: change URL to message centre link
-                                                           MsgCenterLink = myAccountLink,
-                                                           PMText = strThanksMsg,
-                                                           ReportInappropriateLink = "flagged@understood.org",
-                                                           ToEmail = memberEmail
-                                                       });
-                }
-                
-               
             }
+
             //set text to sent from dictionary
             Text = DictionaryConstants.SentLabel;
             //Page.Response.Redirect(Page.Request.Url.ToString(), false);

@@ -2106,6 +2106,8 @@ namespace UnderstoodDotOrg.Common
         public static string ConnectBtnText { get { return Translate.TextByDomain(PosesDictionary, "Connect Button Text"); } }
         public static string ViewActivity { get { return Translate.TextByDomain(PosesDictionary, "View Activity Button Text"); } }
         public static string RequestSent { get { return Translate.TextByDomain(PosesDictionary, "Request Sent Button Text"); } }
+        public static string UnconnectButtonText { get { return Translate.TextByDomain(PosesDictionary, "Unconnect Button Text"); } }
+        public static string PrivateMessageButtonText { get { return Translate.TextByDomain(PosesDictionary, "Private Message Button Text"); } }
         #endregion
 
         public static string InitialDropDownText { get { return Translate.TextByDomain(PosesDictionary, "Select Forum Label"); } }

@@ -1,4 +1,5 @@
 ﻿using Sitecore.Data;
+using Sitecore.Data.Items;
 using Sitecore.Web.UI.HtmlControls;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,6 @@ namespace UnderstoodDotOrg.Common.Helpers
 {
     public static class MembershipHelper
     {
-
         static public string SignUpLink()
         {
             return Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(new ID(Constants.Pages.SignUp)));
@@ -21,7 +21,6 @@ namespace UnderstoodDotOrg.Common.Helpers
         {
             return Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(new ID(Constants.Pages.SignIn)));
         }
-
 
         
         /// <summary>

@@ -74,6 +74,15 @@ public CustomIntegerField GradeNumber
 }
 
 
+public CustomTextField AbbreviatedGrade
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Abbreviated Grade"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

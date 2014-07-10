@@ -13,22 +13,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
     public partial class AccountHeader {
         
         /// <summary>
-        /// pnlPrivateUser control.
+        /// hlBackToHomepage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlPrivateUser;
+        protected global::System.Web.UI.WebControls.HyperLink hlBackToHomepage;
         
         /// <summary>
-        /// pnlNotSignedInView control.
+        /// imgAvatar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNotSignedInView;
+        protected global::System.Web.UI.WebControls.Image imgAvatar;
+        
+        /// <summary>
+        /// litLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litLocation;
         
         /// <summary>
         /// rptChildren control.
@@ -40,39 +49,120 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         protected global::System.Web.UI.WebControls.Repeater rptChildren;
         
         /// <summary>
-        /// btnConnect control.
+        /// scNotConnectingWide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConnect;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout scNotConnectingWide;
         
         /// <summary>
-        /// pnlSignedIn control.
+        /// pnlMemberConnectWide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlSignedIn;
+        protected global::System.Web.UI.WebControls.Panel pnlMemberConnectWide;
         
         /// <summary>
-        /// divNotConnected control.
+        /// cbMemberConnectWide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNotConnected;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ConnectButton cbMemberConnectWide;
         
         /// <summary>
-        /// divConnected control.
+        /// scFriendWide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divConnected;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout scFriendWide;
+        
+        /// <summary>
+        /// pnlAnonConnectWide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlAnonConnectWide;
+        
+        /// <summary>
+        /// cbAnonConnectWide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ConnectButton cbAnonConnectWide;
+        
+        /// <summary>
+        /// pnlSupport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel pnlSupport;
+        
+        /// <summary>
+        /// btnThanks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnThanks;
+        
+        /// <summary>
+        /// btnThinking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnThinking;
+        
+        /// <summary>
+        /// scNotConnectingNarrow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout scNotConnectingNarrow;
+        
+        /// <summary>
+        /// pnlConnectNarrow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlConnectNarrow;
+        
+        /// <summary>
+        /// cbConnectNarrow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ConnectButton cbConnectNarrow;
+        
+        /// <summary>
+        /// scFriendNarrow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout scFriendNarrow;
     }
 }

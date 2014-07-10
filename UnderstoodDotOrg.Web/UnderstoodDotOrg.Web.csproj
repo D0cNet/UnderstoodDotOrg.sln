@@ -386,6 +386,20 @@
     <Compile Include="Presentation\Sublayouts\Account\AccountHeader.ascx.designer.cs">
       <DependentUpon>AccountHeader.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Common\FriendButtons.ascx.cs">
+      <DependentUpon>FriendButtons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Common\FriendButtons.ascx.designer.cs">
+      <DependentUpon>FriendButtons.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Common\NotConnectingMessage.ascx.cs">
+      <DependentUpon>NotConnectingMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Common\NotConnectingMessage.ascx.designer.cs">
+      <DependentUpon>NotConnectingMessage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx.cs">
       <DependentUpon>Comments.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2904,6 +2918,8 @@
     <Content Include="Presentation\Sublayouts\About\Widgets\ThankYouSocial.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountBody.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountHeader.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\Common\FriendButtons.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\Common\NotConnectingMessage.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Tabs\Connections.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Tabs\Profile.ascx" />

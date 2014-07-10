@@ -1,177 +1,116 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AccountHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.AccountHeader" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/ThanksButton.ascx" TagPrefix="uc1" TagName="ThanksButton" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/ConnectButton.ascx" TagPrefix="uc1" TagName="ConnectButton" %>
 
 <div class="container back-to-previous-nav">
     <div class="row">
         <!-- article -->
         <div class="col col-22 offset-1">
-            <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i>Back to Homepage</a>
+            <asp:HyperLink id="hlBackToHomepage" runat="server" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.MyAccount_BackToHomePageLinkText %></asp:HyperLink>
         </div>
     </div>
     <!-- .row -->
 </div>
 <!-- .container -->
 
-<asp:Panel ID="pnlPrivateUser" CssClass="container" runat="server" Visible="false">
+<div class="container">
     <div class="row">
         <div class="col col-22 offset-1">
             <!-- BEGIN PARTIAL: account-view-header -->
-            <div class="account-view-header">
+            <div class="account-view-header <%= CanConnectCss %>">
                 <div class="account-top-wrapper">
                     <div class="account-photo">
-                        <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                        <asp:Image runat="server" ID="imgAvatar" />
                     </div>
                     <div class="account-info">
-                        <h1 class="account-username">
-                            <%= screenName %>
-                        </h1>
-                        <p class="account-location"></p>
-                        <!-- BEGIN PARTIAL: account-view-header-connect -->
-                        <div class="account-connect-links wide no-margin">
-                            <p class="no-connect-msg rs_read_this">This user is not connecting with other parents at this time.</p>
-                        </div>
-                        <!-- END PARTIAL: account-view-header-connect -->
-                    </div>
-                    <div class="clearfix"></div>
-                    <!-- BEGIN PARTIAL: account-view-header-connect -->
-                    <div class="account-connect-links narrow">
-                        <p class="no-connect-msg rs_read_this">This user is not connecting with other parents at this time.</p>
-                    </div>
-                    <!-- END PARTIAL: account-view-header-connect -->
-                </div>
-            </div>
-            <!-- END PARTIAL: account-view-header -->
-        </div>
-    </div>
-</asp:Panel>
+                        <h1 class="account-username"><%= ScreenName %></h1>
+                        <p class="account-location"><asp:Literal ID="litLocation" runat="server" /></p>
 
-<asp:Panel ID="pnlNotSignedInView" CssClass="container" runat="server" Visible="false">
-    <div class="row">
-        <div class="col col-22 offset-1 skiplink-content" aria-role="main">
-            <!-- BEGIN PARTIAL: account-view-header -->
-            <div class="account-view-header can-connect">
-                <div class="account-top-wrapper">
-                    <div class="account-photo">
-                        <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                    </div>
-                    <div class="account-info">
-                        <h1 class="account-username"><%= screenName %></h1>
-                        <p class="account-location"></p>
-                        <div class="member-card-specialties">
-                            <ul>
+                        <asp:Repeater ID="rptChildren" runat="server">
+                            <HeaderTemplate>
+                                <div class="member-card-specialties">
+                                    <ul>
+                            </HeaderTemplate>
+                            <ItemTemplate>
                                 <span class="visuallyhidden">grade level</span>
-                                <asp:Repeater ID="rptChildren" runat="server" OnItemDataBound="rptChildren_ItemDataBound">
-                                    <ItemTemplate>
-                                        <li class=''><a href='REPLACE'>
-                                            <asp:Literal ID="litGrade" runat="server"></asp:Literal></a><!-- BEGIN PARTIAL: community/child_info_card -->
-                                            <div class="card-child-info popover rs_skip">
-                                                <div class="popover-content">
-                                                    <span class="caret"></span>
-                                                    <h3>Grade
-                                                        <asp:Literal ID="litGrade2" runat="server"></asp:Literal>, 
-                                                        <asp:Literal ID="litGender" runat="server">Boy</asp:Literal>
-                                                    </h3>
-                                                    <!-- BEGIN PARTIAL: community/carousel_arrows -->
-                                                    <div class="arrows child-info-next-prev-menu arrows-gray">
-                                                        <div class="rsArrow rsArrowLeft">
-                                                            <button class="rsArrowIcn"></button>
-                                                        </div>
-                                                        <div class="rsArrow rsArrowRight">
-                                                            <button class="rsArrowIcn"></button>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end .arrows -->
-                                                    <!-- END PARTIAL: community/carousel_arrows -->
-                                                    <ul>
-                                                        <asp:Repeater ID="rptChildIssues" runat="server" ItemType="UnderstoodDotOrg.Domain.Membership.Issue">
-                                                            <ItemTemplate>
-                                                                <li>
-                                                                    <%# Eval("Value") %>
-                                                                </li>
-                                                            </ItemTemplate>
-                                                        </asp:Repeater>
-                                                    </ul>
-                                                    <div class="card-buttons">
-                                                        <button class="button gray">View Profile</button>
-                                                        <button class="button blue">See Activity</button>
-                                                    </div>
+                                <li class="specialty-long"><a href="#"><asp:Literal ID="litGrade" runat="server" /></a>
+
+                                    <div class="card-child-info popover rs_skip">
+                                        <div class="popover-content">
+                                            <span class="caret"></span>
+                                            <h3><asp:Literal ID="litChild" runat="server" /></h3>
+                                            <!-- BEGIN PARTIAL: community/carousel_arrows -->
+                                            <div class="arrows child-info-next-prev-menu arrows-gray">
+                                                <div class="rsArrow rsArrowLeft">
+                                                    <button class="rsArrowIcn"></button>
+                                                </div>
+                                                <div class="rsArrow rsArrowRight">
+                                                    <button class="rsArrowIcn"></button>
                                                 </div>
                                             </div>
-                                            <!-- END PARTIAL: community/child_info_card -->
-                                        </li>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                                <li class="specialty specialty-final"><span class="visuallyhidden">additional information</span><span tabindex='0' data-tabbable='true'>&nbsp;</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- BEGIN PARTIAL: account-view-header-connect -->
-                    <div class="account-connect-links wide">
-                        <button class="button">Connect</button>
-                    </div>
-                    <!-- END PARTIAL: account-view-header-connect -->
-                    <div class="clearfix"></div>
-                    <!-- BEGIN PARTIAL: account-view-header-support -->
-                    <div class="account-show-support">
-                        <p>Show your support</p>
-                        <div class="account-support-links">
-                            <a href="REPLACE"><i class="icon-account-smiley"></i><span>Thanks</span></a>
-                            <a href="REPLACE"><i class="icon-account-flower"></i><span>Thinking of You</span></a>
-                        </div>
-                    </div>
-                    <!-- END PARTIAL: account-view-header-support -->
-                    <!-- BEGIN PARTIAL: account-view-header-connect -->
-                    <div class="account-connect-links narrow">
-                        <asp:Button ID="btnConnect" CssClass="button" OnClick="btnConnect_Click" runat="server" Text="Connect" />
-                    </div>
-                    <!-- END PARTIAL: account-view-header-connect -->
-                </div>
-            </div>
-            <!-- END PARTIAL: account-view-header -->
-        </div>
-    </div>
-</asp:Panel>
 
-<asp:Panel ID="pnlSignedIn" CssClass="container" runat="server" Visible="false">
-    <div class="row">
-        <div class="col col-22 offset-1 skiplink-content" aria-role="main">
-            <!-- BEGIN PARTIAL: account-view-header -->
-            <div class="account-view-header can-connect">
-                <div class="account-top-wrapper">
-                    <div class="account-photo">
-                        <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
+                                            <asp:Repeater ID="rptIssues" runat="server" OnItemDataBound="rptIssues_ItemDataBound">
+                                                <HeaderTemplate>
+                                                    <ul>
+                                                </HeaderTemplate>
+                                                <ItemTemplate>
+                                                    <li><asp:Literal ID="litIssue" runat="server" /></li>
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                    </ul>
+                                                </FooterTemplate>
+                                            </asp:Repeater>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                        <li class="specialty specialty-final"><span class="visuallyhidden">additional information</span><span tabindex='0' data-tabbable='true'>&nbsp;</span></li>
+                                    </ul>
+                                </div>
+                            </FooterTemplate>
+                        </asp:Repeater>
+
+                        <sc:Sublayout ID="scNotConnectingWide" Visible="false" runat="server" Parameters="AdditionalCSSClass=wide no-margin" Path="~/Presentation/Sublayouts/Account/Common/NotConnectingMessage.ascx" />
+
+                        <asp:Panel ID="pnlMemberConnectWide" runat="server" Visible="false" CssClass="account-connect-links wide no-margin">
+                            <uc1:ConnectButton ID="cbMemberConnectWide" runat="server" />
+                        </asp:Panel>
+
+                        <sc:Sublayout ID="scFriendWide" Visible="false" runat="server" Parameters="AdditionalCSSClass=wide no-margin" Path="~/Presentation/Sublayouts/Account/Common/FriendButtons.ascx" />
+
                     </div>
-                    <div class="account-info">
-                        <h1 class="account-username"><%= screenName %></h1>
-                        <p class="account-location"></p>
-                        <!-- BEGIN PARTIAL: account-view-header-connect -->
-                        <div class="account-connect-links wide no-margin" id="divNotConnected" runat="server" visible="false">
-                            <button class="button">Connect</button>
-                        </div>
-                        <div class="account-connect-links wide no-margin" id="divConnected" runat="server" visible="false">
-                            <button class="button gray unconnect">Unconnect</button>
-                            <button class="button">Private Message</button>
-                        </div>
-                        <!-- END PARTIAL: account-view-header-connect -->
-                    </div>
+
+                    <asp:Panel ID="pnlAnonConnectWide" runat="server" Visible="false" CssClass="account-connect-links wide">
+                        <uc1:ConnectButton ID="cbAnonConnectWide" runat="server" />
+                    </asp:Panel>
+
                     <div class="clearfix"></div>
-                    <!-- BEGIN PARTIAL: account-view-header-support -->
-                    <div class="account-show-support">
-                        <p>Show your support</p>
-                        <div class="account-support-links">
-                            <a href="REPLACE"><i class="icon-account-smiley"></i><span>Thanks</span></a>
-                            <a href="REPLACE"><i class="icon-account-flower"></i><span>Thinking of You</span></a>
-                        </div>
-                    </div>
-                    <!-- END PARTIAL: account-view-header-support -->
-                    <!-- BEGIN PARTIAL: account-view-header-connect -->
-                    <div class="account-connect-links narrow">
-                        <button class="button">Connect</button>
-                    </div>
-                    <!-- END PARTIAL: account-view-header-connect -->
+
+                    <asp:UpdatePanel ID="pnlSupport" Visible="false" runat="server">
+                        <ContentTemplate>
+                            <div class="account-show-support">
+                                <div class="account-support-links">
+                                    <asp:LinkButton ID="btnThanks" runat="server"><i class="icon-account-smiley"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.ThanksLabel %></span></asp:LinkButton>
+                                    <asp:LinkButton ID="btnThinking" runat="server"><i class="icon-account-flower"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.ThinkingOfYouLabel %></span></asp:LinkButton>
+                                  </div>
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+                    <sc:Sublayout runat="server" ID="scNotConnectingNarrow" Visible="false" Parameters="AdditionalCSSClass=narrow" Path="~/Presentation/Sublayouts/Account/Common/NotConnectingMessage.ascx" />
+
+                    <asp:Panel ID="pnlConnectNarrow" runat="server" Visible="false" CssClass="account-connect-links narrow">
+                        <uc1:ConnectButton ID="cbConnectNarrow" runat="server" />
+                    </asp:Panel>
+
+                    <sc:Sublayout ID="scFriendNarrow" Visible="false" runat="server" Parameters="AdditionalCSSClass=narrow" Path="~/Presentation/Sublayouts/Account/Common/FriendButtons.ascx" />
+
                 </div>
             </div>
+
             <!-- END PARTIAL: account-view-header -->
         </div>
     </div>
-</asp:Panel>
+</div>

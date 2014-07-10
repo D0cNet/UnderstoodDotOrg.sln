@@ -1003,6 +1003,9 @@
 })(jQuery);
 
 window.fbAsyncInit = function () {
+    if (typeof fbAppId === 'undefined' || fbAppId === null) {
+        return;
+    }
     FB.init({
         //appId: '284669011701311', // App ID
         appId: fbAppId, // App ID
