@@ -7,7 +7,7 @@
         <div class="col col-24 skiplink-content" aria-role="main">
 
             <header class="header-parent-toolkit">
-                <h1 class="rs_skip">Understood</h1>
+                <h1 class="rs_skip"><%= UnderstoodDotOrg.Common.DictionaryConstants.TheUnderstoodBlogLabel %></h1>
                 <h2 class="rs_read_this">
                     <sc:FieldRenderer ID="frParentToolKitHeading" runat="server" FieldName="Your Parent Toolkit Heading" />
                 </h2>

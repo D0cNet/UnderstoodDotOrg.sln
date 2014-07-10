@@ -22,6 +22,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.HyperLink hlLogoLink;
         
         /// <summary>
+        /// frTitleText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTitleText;
+        
+        /// <summary>
         /// imgMobileLogo control.
         /// </summary>
         /// <remarks>

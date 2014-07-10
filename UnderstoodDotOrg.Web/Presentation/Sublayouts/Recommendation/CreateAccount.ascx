@@ -165,9 +165,9 @@
         </div>
         <div class="col col-12 related-tool-wrapper">
             <a href="REPLACE" class="related-tool parenting-coach">
-                <span class="tool-intro">Try a related tool</span>
-                <span class="tool-name">Parenting Coach</span>
-                <span class="tool-description">Practical tips for everyday challenges</span>
+                <span class="tool-intro"><sc:FieldRenderer ID="frToolIntro" runat="server" FieldName="Try a related tool Text"/></span>
+                <span class="tool-name"><sc:FieldRenderer ID="frToolName" runat="server" FieldName="Parenting Coach Text"/></span>
+                <span class="tool-description"><sc:FieldRenderer ID="frToolDescription" runat="server" FieldName="Practical tips for everyday challenges Text" /></span>
             </a>
         </div>
 

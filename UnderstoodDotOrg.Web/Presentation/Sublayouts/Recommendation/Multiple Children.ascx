@@ -75,9 +75,9 @@
                                                             <%--<h3><a href="REPLACE">Facere Quod Dicta Ut Saepe Voluptate Fugit</a></h3>
                                                                     <p>Grade 5</p>--%>
                                                             <div class="buttons-container">
-                                                                <button class="icon-plus">save this</button>
-                                                                <button class="icon-skip">skip</button>
-                                                                <button class="icon-bell">remind</button>
+                                                                <button class="icon-plus"><%= UnderstoodDotOrg.Common.DictionaryConstants.SaveThisButtonText %></button>
+                                                                <button class="icon-skip">skip<%= UnderstoodDotOrg.Common.DictionaryConstants.SkipButtonText %></button>
+                                                                <button class="icon-bell">remind<%= UnderstoodDotOrg.Common.DictionaryConstants.RemindButtonText %></button>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -105,7 +105,7 @@
                                     <!-- END PARTIAL: recommendations/carousel-for-you -->
 
                                     <div class="why-link popover-trigger-container why<%# Container.ItemIndex %>-tooltip-trigger">
-                                        <a href="#" class="popover-link" data-popover-placement="bottom">Why these recommendations? <i class="icon-tooltip"></i></a>
+                                        <a href="#" class="popover-link" data-popover-placement="bottom"><%= UnderstoodDotOrg.Common.DictionaryConstants.WhytheserecommendationsButtonText %><i class="icon-tooltip"></i></a>
                                     </div>
 
                                     <div class="why<%# Container.ItemIndex %>-tooltip popover-container">
@@ -135,7 +135,7 @@
                                                     </asp:Repeater>
                                                     <li>
                                                         <asp:HyperLink ID="hlReplaceMatchingIssues" runat="server" CssClass="edit">
-                                                                    Edit this list
+                                                                    <%= UnderstoodDotOrg.Common.DictionaryConstants.EditthislistButtonText %>
                                                         </asp:HyperLink>
                                                     </li>
                                                     <%--<li>Spoken Language</li>
@@ -144,7 +144,7 @@
                                                             <li>Motor skills</li>
                                                             <li><a href="REPLACE" class="edit">Edit this list</a></li>--%>
                                                 </ul>
-                                                <a class="button close">Close</a>
+                                                <a class="button close"><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseButtonText %></a>
                                             </div>
                                         </div>
                                     </div>

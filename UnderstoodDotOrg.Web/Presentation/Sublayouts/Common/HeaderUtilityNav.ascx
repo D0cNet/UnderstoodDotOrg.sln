@@ -12,7 +12,7 @@
 </style>
 <div class="logo-u-main">
     <asp:HyperLink runat="server" ID="hlLogoLink">
-        <span class="visuallyhidden">Understood for learning and attention issues</span>
+        <span class="visuallyhidden"><sc:FieldRenderer ID="frTitleText" runat="server" FieldName="Understood for learning and attention issues"/></span>
         <asp:Image ID="imgMobileLogo" runat="server" />
     </asp:HyperLink>
 </div>

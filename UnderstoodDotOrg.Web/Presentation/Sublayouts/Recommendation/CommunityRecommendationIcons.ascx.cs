@@ -5,6 +5,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -16,7 +17,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
         public bool HasMatchingParentInterest { get; set; }
 
         private string child = @"<li><i class=""child-{1}"" title=""{0}""></i></li>";
-        private string parentList = @"<li><i>Parent</i></li>";
+        static string myString = DictionaryConstants.Core_ParentLabel;
+        private string parentList = @"<li><i>" + myString + "</i></li>";
 
         protected void Page_Load(object sender, EventArgs e)
         {

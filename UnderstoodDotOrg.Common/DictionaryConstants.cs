@@ -73,6 +73,38 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
+        public static string WhytheserecommendationsButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Why these recommendations Button Text");
+            }
+        }
+
+        public static string EditthislistButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Edit this list Button Text");
+            }
+        }
+
+        public static string RemindButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Remind Button Text");
+            }
+        }
+
+        public static string SkipButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Skip Button Text");
+            }
+        }
+
         public static string PrintButtonText
         {
             get
@@ -1000,6 +1032,18 @@ namespace UnderstoodDotOrg.Common
             get
             {
                 return Translate.TextByDomain(PosesDictionary, "Or Fragment");
+            }
+        }
+
+        #endregion
+
+        #region Core Labels
+
+        public static string Core_ParentLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Core_Parent Label");
             }
         }
 

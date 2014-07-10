@@ -28,7 +28,7 @@
         }
     </style>
     <div class="share-save-icon">
-        <h3>Share &amp; Save</h3>
+        <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.ShareandSaveText %></h3>
         <!-- leave no white space for layout consistency -->
         <a href="REPLACE" class="icon icon-share">Share</a>
             <span class="tools">
@@ -45,7 +45,7 @@
                             $(".icon-save").addClass("active");
                     }
                 </script>
-                <a href="#" class="icon icon-print" onclick="window.print()">Print</a>
+                <a href="#" class="icon icon-print" onclick="window.print()"><%= UnderstoodDotOrg.Common.DictionaryConstants.PrintButtonText %></a>
                 <%--OOS for this release--%>
                 <%--<a href="#" class="icon icon-remind">Remind</a>--%>
                 <%--When You need it check MembershipManager.LogMemberActivity(x,y,z,q). Sample usage is in Sandbox.ascx.cs--%>
