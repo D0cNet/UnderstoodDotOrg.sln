@@ -73,6 +73,95 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
+        public static string PrintButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Print Button Text");
+            }
+        }
+
+        public static string FalseButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "False Button Text");
+            }
+        }
+
+        public static string TrueButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "True Button Text");
+            }
+        }
+
+        public static string Articles_EmbedText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Embed Text");
+            }
+        }
+
+
+        public static string DownloadButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Download Button Text");
+            }
+        }
+
+        public static string CopyText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Copy Text");
+            }
+        }
+
+        public static string Articles_ZoomOutText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Zoom Out Text");
+            }
+        }
+
+        public static string Articles_ZoomInText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Zoom In Text");
+            }
+        }
+
+        public static string Articles_SearchbyKeywordText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Search by Keyword Text");
+            }
+        }
+
+        public static string Articles_BrowsebyLetterText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Browse by Letter Text");
+            }
+        }
+
+        public static string Articles_BacktoTopText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Back to Top Text");
+            }
+        }
+
         public static string MyAccount_BackToHomePageLinkText
         {
             get
@@ -391,6 +480,14 @@ namespace UnderstoodDotOrg.Common
         #endregion
 
         #region Input Placeholders
+
+        public static string Articles_AddCommentText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Add Comment Text");
+            }
+        }
 
         public static string ScreenNameWatermark
         {
@@ -800,6 +897,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Fragments
 
+        public static string FindFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Find Fragment");
+            }
+        }
+
         public static string DoneFragment
         {
             get
@@ -1000,7 +1105,30 @@ namespace UnderstoodDotOrg.Common
 
         #endregion
 
-        #region Article Labels
+        #region Article 
+        public static string IncorrectText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Incorrect Text");
+            }
+        }
+
+        public static string CorrectText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Correct Text");
+            }
+        }
+
+        public static string CloseText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Close Text");
+            }
+        }
 
         public static string Articles_MorePostsbythisAuthorText
         {

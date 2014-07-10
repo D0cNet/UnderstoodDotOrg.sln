@@ -48,6 +48,7 @@
                                 <div class="bottom">
                                     <i id="iconType" runat="server"></i>
                                     <asp:HyperLink ID="hypActionLink" runat="server"></asp:HyperLink>
+                                    <%--this has to be wired up--%>
                                     <span id="fileSize" runat="server">125K</span>
                                 </div>
                             </div>

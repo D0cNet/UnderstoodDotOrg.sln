@@ -33,7 +33,7 @@
             <button id="lbSave" runat="server" class="icon-plus" onserverclick="lbSave_Click"></button>
         </ContentTemplate>
     </asp:UpdatePanel>
-    <button class="icon-print" onclick="window.print()">print</button>
+    <button class="icon-print" onclick="window.print()"><%= UnderstoodDotOrg.Common.DictionaryConstants.PrintButtonText %></button>
     <%--OOS for this release--%>
     <%--<button class="icon-bell">remind me</button>--%>
     <%--When You need it check MembershipManager.LogMemberActivity(x,y,z,q). Sample usage is in Sandbox.ascx.cs--%>

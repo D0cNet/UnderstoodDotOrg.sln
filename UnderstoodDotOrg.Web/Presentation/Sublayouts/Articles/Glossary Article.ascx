@@ -20,12 +20,12 @@
                 <ul>
                     <li class="glossary-tab-browse">
                         <a href="#glossary-browse">
-                            Browse by Letter
+                            <%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_BrowsebyLetterText %>
                         </a>
                     </li>
                     <li class="glossary-tab-keyword">
                         <a href="#glossary-search">
-                            Search by Keyword
+                            <%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_SearchbyKeywordText %>
                         </a>
                     </li>
                 </ul>
@@ -42,7 +42,7 @@
                     <label>
                         <input type="text" name="keyword" placeholder="Keyword">
                     </label>
-                    <span>Find</span>
+                    <span><%= UnderstoodDotOrg.Common.DictionaryConstants.FindFragment %></span>
                 </div>
             </div>
             <!-- END PARTIAL: glossary-tabs -->
@@ -56,7 +56,7 @@
                             <a class="glossary-anchor" name="<%#Container.DataItem %>">
                                 <%# Container.DataItem %>
                             </a>
-                            <a class="back-to-top" href="#top">Back to Top</a>
+                            <a class="back-to-top" href="#top"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_BacktoTopText %></a>
                         </div>
                         <asp:Repeater ID="rptListTermbyAnchor" runat="server" OnItemDataBound="rptListTermbyAnchor_ItemDataBound">
                             <HeaderTemplate></HeaderTemplate>

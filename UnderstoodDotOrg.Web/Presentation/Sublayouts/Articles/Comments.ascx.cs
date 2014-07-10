@@ -47,8 +47,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             btnSubmit.Text = DictionaryConstants.SubmitButtonText;
 
-            // TODO: convert to dictionary
-            txtComment.Attributes.Add("placeholder", "Add your comment...");
+            // TODO: convert to dictionary -- Done
+            txtComment.Attributes.Add("placeholder", DictionaryConstants.Articles_AddCommentText);
 
             Item currentItem = Sitecore.Context.Item;
 

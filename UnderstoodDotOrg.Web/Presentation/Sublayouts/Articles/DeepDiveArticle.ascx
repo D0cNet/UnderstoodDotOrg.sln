@@ -49,7 +49,7 @@
                                         <%# Item.Title.Rendered %>
                                     </h2>
                                     <%# Item.Content.Rendered %>
-                                    <span class="back-to-top rs_skip"><a href="#top">Back to Top</a></span>
+                                    <span class="back-to-top rs_skip"><a href="#top"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_BacktoTopText %></a></span>
                                 </div>
                             </ItemTemplate>
                             <SeparatorTemplate>
@@ -69,7 +69,7 @@
                                         <%# Item.Title.Rendered %>
                                     </h2>
                                     <%# Item.Content.Rendered %>
-                                    <span class="back-to-top rs_skip"><a href="#top">Back to Top</a></span>
+                                    <span class="back-to-top rs_skip"><a href="#top"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_BacktoTopText %></a></span>
                                 </div>
                             </ItemTemplate>
                             <SeparatorTemplate>
