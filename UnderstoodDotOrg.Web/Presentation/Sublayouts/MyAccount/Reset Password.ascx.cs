@@ -2,8 +2,10 @@
 {
     using System;
     using UnderstoodDotOrg.Common;
+    using UnderstoodDotOrg.Domain.ExactTarget;
     using UnderstoodDotOrg.Domain.Membership;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+    using UnderstoodDotOrg.Services.ExactTarget;
 
     public partial class Reset_Password : System.Web.UI.UserControl
     {
@@ -82,9 +84,14 @@
                 password = uxPassword.Text;
                 ResetYourPasswordItem context = (ResetYourPasswordItem)Sitecore.Context.Item;
                 var membershipManager = new MembershipManager();
-                var reset = membershipManager.ResetPassword(Guid.Parse(guid), password);
+                var reset = membershipManager.ResetPassword(Guid.Parse(ResetTicket.UserID), password);
+
+                
 
                 uxMessage.Text = context.PasswordUpdatedText;
+
+                var member = membershipManager.GetMember(Guid.Parse(ResetTicket.UserID));
+                ExactTargetService.InvokeEM23PasswordResetConfirmation(new InvokeEM23PasswordResetConfirmationRequest { PreferredLanguage = member.PreferredLanguage, EmailAddress = member.Email, ReportChangedPasswordLink = "#", ToEmail = member.Email, UserPassword = "**********" });
             }
         }
     }
