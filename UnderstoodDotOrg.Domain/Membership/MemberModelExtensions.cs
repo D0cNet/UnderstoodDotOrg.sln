@@ -47,7 +47,11 @@ namespace UnderstoodDotOrg.Domain.Membership
 
         public virtual ICollection<Quiz> CompletedQuizes { get; set; }
 
-
+        /// <summary>
+        /// storing roles, may be null and filled from TelligentServices.GetPosesMember()
+        /// </summary>
+        public List<int> CommunityRoles { get; set; }
+        
         //new member properties keep popping up. 
         /* In case of emergency implement operation key/value them all
         private Dictionary<string, string> _extendedMemberProperties;
