@@ -30,6 +30,9 @@
         </label>
       </div>
     </fieldset>
+
+
+    <!-- 
     <div class="toggle-wrapper">
       <label>
         <span><sc:FieldRenderer ID="frSupportPlanReminders" runat="server" FieldName="Support Plan Reminders" /></span>
@@ -67,7 +70,7 @@
       </label>
     </div>    
   </div><!-- .toggles-wrapper -->
-          
+  --> 
 
 </div>
         <%--<button class="button">Save</button>--%>

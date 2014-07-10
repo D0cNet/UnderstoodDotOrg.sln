@@ -16,6 +16,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             if (!IsPostBack)
             {
                 //fill the page with values from current member
+
+                //bg: The form elements in the ascx for alert notification settings have been commented out
+                // so as to remove confusion - the alerts are not being used, we can not test them, we have already validated that we 
+                // can save the settings in the db
+
+
                 ux_advocacy_alerts.Checked = CurrentMember.AdvocacyAlerts;
                 ux_content_reminders.Checked = CurrentMember.ContentReminders;
                 ux_event_reminders.Checked = CurrentMember.EventReminders;
