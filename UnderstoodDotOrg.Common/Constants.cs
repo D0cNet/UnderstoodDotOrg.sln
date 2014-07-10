@@ -625,6 +625,7 @@ namespace UnderstoodDotOrg.Common
             public const string Skipped_Discussion = "SkippedDiscussion";
 
             public const string ItemViewed = "ItemViewed";
+            public const string SubtopicItemViewed = "ItemViewed_Subtopic_";
 
         }
         public static class UserActivity_Types

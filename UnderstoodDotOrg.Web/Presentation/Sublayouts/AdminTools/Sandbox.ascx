@@ -19,6 +19,10 @@ Activity Value
 <p>
     Was Activity Log a Success? <asp:Label ID="lblSuccess" runat="server" Text="Unknown" Font-Bold="True" ForeColor="#FF3300"></asp:Label>
 </p>
+<hr />
+Log page views: <asp:Button ID="btnLogSub" runat="server" Text="Button" OnClick="btnLogSub_Click" />
+<hr />
+View popular
 
 <hr />
 

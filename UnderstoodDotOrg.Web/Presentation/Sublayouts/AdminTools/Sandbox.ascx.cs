@@ -25,7 +25,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             //i read this page. now record it.
             Guid MemberId = new Guid();
             Guid ContentId = new Guid();
-
+            /*
             //Create an instance of the Membership Manager
             MembershipManager mgr = new MembershipManager();
             //log that this member has skipped a blog:
@@ -50,12 +50,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                 Constants.UserActivity_Types.ContentRelated);
 
 
-            mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.ItemViewed , Constants.UserActivity_Types.Type_Blog);
+            mgr.LogMemberActivity(new Guid(), new Guid(), 
+                                Constants.UserActivity_Values.ItemViewed , 
+                                Constants.UserActivity_Types.Type_Blog);
 
-            mgr.LogMemberActivity(new Guid(), new Guid(), Constants.UserActivity_Values.SharedWithTwitter, Constants.UserActivity_Types.Type_BlogPost);
+            mgr.LogMemberActivity(new Guid(), new Guid(), 
+                        Constants.UserActivity_Values.SharedWithTwitter, 
+                        Constants.UserActivity_Types.Type_BlogPost);
            
             
-            
+   
+            */
             /*
             mgr.LogMemberHelpfulVote(MemberIdValue, 
                 ContentIdValue, 
@@ -261,6 +266,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             quiz.MemberAnswers.Add(new QuizItem(Guid.Parse("93e4c02c-3d3d-4ccd-95a3-180bb513e444"), "JUNKANSWER2"));
             //to save a quiz to the db
             mgr.QuizResults_SaveToDb(m.MemberId, quiz);
+
+        }
+
+        protected void btnLogSub_Click(object sender, EventArgs e)
+        {
+            MembershipManager mgr = new MembershipManager();
+
+            mgr.LogSubtopicPageView(Guid.Parse("93e4c02c-3d3d-4ccd-95a3-180bb513e543"), new Guid(), new Guid());
 
         }
     }

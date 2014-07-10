@@ -1237,7 +1237,21 @@ namespace UnderstoodDotOrg.Domain.Membership
             success = true;
             return success ;
         }
-
+        /// <summary>
+        /// Records in our activity log a page view of a specific item within a specific subtopic
+        /// </summary>
+        /// <param name="MemberId"></param>
+        /// <param name="ContentId"></param>
+        /// <param name="Subtopic"></param>
+        /// <returns></returns>
+        public bool LogSubtopicPageView(Guid MemberId, Guid ContentId, Guid Subtopic)
+        {
+            return LogMemberActivity(MemberId,
+                                ContentId,
+                                UnderstoodDotOrg.Common.Constants.UserActivity_Values.SubtopicItemViewed + Subtopic.ToString(),
+                                UnderstoodDotOrg.Common.Constants.UserActivity_Types.ContentRelated);
+                
+        }
 
         /// <summary>
         /// Inserts a row into our member activity log table with information about what the specified user has just done
