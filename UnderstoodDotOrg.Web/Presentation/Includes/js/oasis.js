@@ -332,10 +332,10 @@ $(document).ready(function () {
     }
 });
 $(".show-more-link").click(function () {
-    for (var i = showCount; i < showCount + 3; i++) {
+    for (var i = showCount; i < showCount + 5; i++) {
         $(".repeater-item").eq(i).show();
     }
-    showCount += 3;
+    showCount += 5;
     if ($(".repeater-item").length <= showCount) {
         $(".show-more-link").hide();
     }
