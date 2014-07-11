@@ -141,27 +141,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 if (randomSlides.Count >= 2)
                 {
                     var slide = randomSlides[1];
-                    hypLink2.NavigateUrl = slide.GetUrl();
-                    hypLink2.Text = slide.Name;
-                    frPageSummary2.Item = slide;
-                    Panel pnlThumbnail2 = e.FindControlAs<Panel>("pnlThumbnail2");
-                    string url = slide.GetArticleThumbnailUrl(380, 220);
-                    string style = string.Format("background-image: url('{0}')", url);
-                    pnlThumbnail2.Attributes.Add("style", style);
-                    e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow2").Visible = true;
+                    if (slide != null)
+                    {
+                        hypLink2.NavigateUrl = slide.GetUrl();
+                        hypLink2.Text = slide.Name;
+                        frPageSummary2.Item = slide;
+                        Panel pnlThumbnail2 = e.FindControlAs<Panel>("pnlThumbnail2");
+                        string url = slide.GetArticleThumbnailUrl(380, 220);
+                        string style = string.Format("background-image: url('{0}')", url);
+                        pnlThumbnail2.Attributes.Add("style", style);
+                        e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow2").Visible = true;
+                    }
                 }
 
                 if (randomSlides.Count >= 1)
                 {
                     var slide = randomSlides[0];
-                    hypLink1.NavigateUrl = slide.GetUrl();
-                    hypLink1.Text = slide.Name;
-                    frPageSummary1.Item = slide;
-                    Panel pnlThumbnail1 = e.FindControlAs<Panel>("pnlThumbnail1");
-                    string url = slide.GetArticleThumbnailUrl(380, 220);
-                    string style = string.Format("background-image: url('{0}')", url);
-                    pnlThumbnail1.Attributes.Add("style", style);
-                    e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow1").Visible = true;
+                    if (slide != null)
+                    {
+                        hypLink1.NavigateUrl = slide.GetUrl();
+                        hypLink1.Text = slide.Name;
+                        frPageSummary1.Item = slide;
+                        Panel pnlThumbnail1 = e.FindControlAs<Panel>("pnlThumbnail1");
+                        string url = slide.GetArticleThumbnailUrl(380, 220);
+                        string style = string.Format("background-image: url('{0}')", url);
+                        pnlThumbnail1.Attributes.Add("style", style);
+                        e.FindControlAs<System.Web.UI.WebControls.PlaceHolder>("phSlideshow1").Visible = true;
+                    }
                 }
 
                 ltlSlideshowRestartLabel.Text = DictionaryConstants.SlideshowRestartLabel;
