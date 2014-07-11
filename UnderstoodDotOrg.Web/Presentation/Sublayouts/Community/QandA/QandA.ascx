@@ -58,7 +58,7 @@
                     <option>Topic 4</option>
                 </select>
 
-                <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch">
+                <asp:Panel runat="server" DefaultButton="btnSearch">
                     <fieldset class="question-search-form">
                         <label for="question-search-text" class="visuallyhidden">Search</label>
                         <asp:TextBox CssClass="question-search" ID="txtSearch" placeholder="Search" runat="server" />

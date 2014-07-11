@@ -168,5 +168,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 }
             }
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            var text = txtSearch.Text;
+            Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + text + "&a=group");
+        }
     }
 }
