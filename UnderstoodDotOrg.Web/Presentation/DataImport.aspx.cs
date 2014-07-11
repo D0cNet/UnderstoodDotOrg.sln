@@ -296,7 +296,7 @@ namespace UnderstoodDotOrg.Web.Presentation
         {
             int kidAge = Int32.Parse(age);
 
-            if (kidAge >= 2 && kidAge <= 4)
+            if (kidAge >= 2 && kidAge <= 5)
                 return "1";
             else if (kidAge < 17)
                 return (kidAge - 5).ToString();
