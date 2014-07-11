@@ -35,7 +35,7 @@ namespace UnderstoodDotOrg.Web.Handlers
 
             SetContextLanguage(lang);
 
-            int blurbLimit = 150;
+            int blurbLimit = 150; // TODO: move to constant
             SearchResultsItem item = Sitecore.Context.Database.GetItem(Constants.Pages.SearchResults);
             if (item != null && !string.IsNullOrEmpty(item.SearchResultSummaryCharacterLimit.Raw))
             {
@@ -45,6 +45,7 @@ namespace UnderstoodDotOrg.Web.Handlers
             int totalResults = 0;
             List<Article> articles = SearchHelper.PerformArticleSearch(terms, type, page, out totalResults);
             var query = from a in articles
+                        where a.GetItem() != null
                         let i = new DefaultArticlePageItem(a.GetItem())
                         select new SearchArticle
                         {
