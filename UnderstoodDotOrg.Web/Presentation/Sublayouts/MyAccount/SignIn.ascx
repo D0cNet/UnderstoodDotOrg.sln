@@ -12,7 +12,7 @@
 <div class="container myaccount-sign-in">
     <div class="row">
         <div class="col col-14 centered">
-            <h1>Sign In</h1>
+            <h1><%= UnderstoodDotOrg.Common.DictionaryConstants.SignInButtonText %></h1>
             <a class="fb-sign-in" href="REPLACE">
                 <sc:Image ID="scFacebookSigninImage" runat="server" Field="FacebookSigninImage" />
             </a>

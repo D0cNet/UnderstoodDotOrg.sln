@@ -5,7 +5,7 @@
 <div class="container sign-in-link flush">
     <div class="row">
         <div class="col col-23">
-            <p>Already signed up? <%--<a href="\My Account\Sign In">Sign In</a>--%><asp:HyperLink ID="uxSignIn" runat="server"></asp:HyperLink></p>
+            <p><sc:FieldRenderer ID="frAlreadySignedUp" runat="server" FieldName="Already Signed Up Text"/> <%--<a href="\My Account\Sign In">Sign In</a>--%><asp:HyperLink ID="uxSignIn" runat="server"></asp:HyperLink></p>
         </div>
     </div>
 </div>

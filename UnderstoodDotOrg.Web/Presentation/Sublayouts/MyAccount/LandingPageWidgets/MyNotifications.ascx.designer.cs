@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     public partial class MyNotifications {
         
         /// <summary>
+        /// frNotifications control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNotifications;
+        
+        /// <summary>
         /// litNotifCount control.
         /// </summary>
         /// <remarks>

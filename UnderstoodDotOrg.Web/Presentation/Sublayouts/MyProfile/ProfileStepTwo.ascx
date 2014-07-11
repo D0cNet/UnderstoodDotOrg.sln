@@ -97,7 +97,7 @@
 
                                 <span class="question-spacer" style="display: inline-block; float: left; line-height: 50px; width: 73px; text-align: center;">
                                     <%--<sc:Text ID="Text7" Field="In Text" runat="server" />--%>
-                                in
+                                <%= UnderstoodDotOrg.Common.DictionaryConstants.InLabel %>
                                 </span>
                             </asp:PlaceHolder>
 

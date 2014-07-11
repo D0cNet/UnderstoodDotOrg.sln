@@ -112,6 +112,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         protected global::System.Web.UI.WebControls.DropDownList uxIEPStatus;
         
         /// <summary>
+        /// frIEPTooltip control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frIEPTooltip;
+        
+        /// <summary>
         /// valIEP control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ux504Status;
+        
+        /// <summary>
+        /// fr504popover control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer fr504popover;
         
         /// <summary>
         /// val504 control.

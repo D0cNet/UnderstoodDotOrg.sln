@@ -8,7 +8,7 @@
         <div class="parent-toolkit-wrapper">
             <div class="parent-toolkit-header-container arrows-gray">
 
-                <h2>Your Parent Toolkit</h2>
+                <h2><sc:Text ID="frToolkitText" runat="server" Field="Your Parent Toolkit Text"/></h2>
 
                 <span class="button-close"><i class="icon-close-toolkit"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseButtonText %></span>
 

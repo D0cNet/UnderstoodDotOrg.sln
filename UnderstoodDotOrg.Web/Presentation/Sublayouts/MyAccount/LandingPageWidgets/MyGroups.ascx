@@ -20,7 +20,7 @@
         </div>
     </asp:Panel>
     <asp:Panel runat="server" ID="pnlNoGroups" Visible="false">
-        <p class="empty">asd
+        <p class="empty">
             <sc:FieldRenderer ID="frNoGroup" runat="server" FieldName="No Groups Text"></sc:FieldRenderer>
             <sc:Link ID="scAllGroups" Field="No Groups Link" runat="server"></sc:Link>
         </p>

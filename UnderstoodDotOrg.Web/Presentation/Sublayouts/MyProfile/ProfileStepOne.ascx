@@ -19,7 +19,7 @@
                     <!-- BEGIN PARTIAL: profile-questions-header-right -->
                     <div class="progress-bar-wrapper rs_read_this">
                         <div class="progress-header">
-                            Progress
+                            <%= UnderstoodDotOrg.Common.DictionaryConstants.ProgressFragment%>
                             <span class="visuallyhidden"><sc:FieldRenderer ID="frStep1" FieldName="Step 1 Text" runat="server"/></span>
                         </div>
                         <div class="progress-bar step-1 rs_skip">
@@ -253,7 +253,7 @@
                 <div class="question-wrapper clearfix child-count-question rs_read_this">
                     <h3 class="question-inline">
                         <sc:text id="Text24" field="More Children Question Part 1" runat="server" />
-                        <span class="child-counter">second</span>
+                        <span class="child-counter"><%= UnderstoodDotOrg.Common.DictionaryConstants. %></span>
                         <sc:text id="Text25" field="More Children Question Part 2" runat="server" />
                     </h3>
                     <div class="radio-toggle-wrapper no-margin">

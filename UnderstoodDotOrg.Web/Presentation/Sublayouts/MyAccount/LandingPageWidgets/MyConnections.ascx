@@ -4,7 +4,7 @@
 <div class="row">
     <div class="landing-modules my-connections">
         <header>
-            <h3>My Connections<span class="landing-module-count"><asp:Label ID="ltFriendCount" runat="server" /></span></h3>
+            <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.MyConnectionsLabel %><span class="landing-module-count"><asp:Label ID="ltFriendCount" runat="server" /></span></h3>
         </header>
         <section class="connections group" id="user_equal_heights">
             <div class="row member-cards">

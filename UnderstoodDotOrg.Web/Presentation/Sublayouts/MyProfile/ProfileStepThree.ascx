@@ -448,7 +448,7 @@
 
                             <div class="iep-tooltip popover-container rs_skip">
                                 <p>
-                                    <span class="title">lorem ipsum soged</span> Et beatae itaque quod est voluptatem eligendi. necessitatibus harum consectetur veritatis illum iste autem saepe. ducimus quasi eaque tempore qui natus fugiat id qui sit et ut
+                                    <sc:FieldRenderer ID="frIEPTooltip" runat="server" FieldName="iep tooltip" />
                                 </p>
                             </div>
                         </div>

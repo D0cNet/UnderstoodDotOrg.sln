@@ -929,6 +929,22 @@ namespace UnderstoodDotOrg.Common
 
         #region Fragments
 
+        public static string SecondFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Second Fragment");
+            }
+        }
+
+        public static string ProgressFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Progress Fragment");
+            }
+        }
+
         public static string FindFragment
         {
             get
@@ -1256,6 +1272,14 @@ namespace UnderstoodDotOrg.Common
         #endregion Article Labels
 
         #region MyAccount Labels
+
+        public static string MyCommentsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Comments Label");
+            }
+        }
 
         public static string MyAccount_EnterAScreenName
         {

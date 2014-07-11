@@ -69,13 +69,12 @@
         <asp:CheckBox runat="server" id="ux_private_message_alerts" class="toggle rs_preserve" type="checkbox" value="true" />
       </label>
     </div>    
-  </div><!-- .toggles-wrapper -->
-  --> 
+  </div><!-- .toggles-wrapper --> 
 
 </div>
         <%--<button class="button">Save</button>--%>
 	<div style="width:100%; text-align: center;">
-          <asp:Button runat="server" ID="uxSave" OnClick="uxSave_Click" CssClass="button" Width="30%" text="Submit"/>
+          <asp:Button runat="server" ID="uxSave" OnClick="uxSave_Click" CssClass="button" Width="30%" text="<%# UnderstoodDotOrg.Common.DictionaryConstants.SubmitButtonText %>"/>
           <asp:Literal ID="uxMessage" runat="server"></asp:Literal>
     </div>
 </div>

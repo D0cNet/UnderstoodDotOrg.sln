@@ -14,7 +14,7 @@
             <sc:Text ID="description" runat="server" Field="Body Content"></sc:Text>
 
             <label>
-                <span class="visuallyhidden">Enter new password</span>
+                <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.EnterNewPasswordWatermark %></span>
                 <%--<input type="text" placeholder="Enter new password" aria-required="true">--%>
                 <asp:TextBox ID="uxPassword" runat="server" TextMode="Password" aria-required="true"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="valPassword" runat="server" ControlToValidate="uxPassword" CssClass="validationerror"></asp:RequiredFieldValidator>

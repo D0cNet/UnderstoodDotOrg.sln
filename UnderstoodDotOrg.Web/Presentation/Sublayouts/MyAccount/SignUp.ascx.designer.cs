@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
     public partial class SignUp {
         
         /// <summary>
+        /// frAlreadySignedUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAlreadySignedUp;
+        
+        /// <summary>
         /// uxSignIn control.
         /// </summary>
         /// <remarks>

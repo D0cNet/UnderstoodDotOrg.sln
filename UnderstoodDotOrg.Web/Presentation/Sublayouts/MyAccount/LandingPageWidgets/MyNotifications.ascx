@@ -3,7 +3,7 @@
 <!-- BEGIN PARTIAL: account-landing-notifications -->
 <div class="landing-notifications landing-modules rs_read_this">
     <header class="clearfix">
-        <h3>Notifications<span class="landing-module-count"><asp:Literal ID="litNotifCount" Text="0" runat="server"></asp:Literal></span></h3>
+        <h3><sc:FieldRenderer ID="frNotifications" runat="server" FieldName="Notifications Text"/><span class="landing-module-count"><asp:Literal ID="litNotifCount" Text="0" runat="server"></asp:Literal></span></h3>
     </header>
     <asp:ListView  ID="lvNotifications" OnItemDataBound="lvNotifications_ItemDataBound"  runat="server">
         <LayoutTemplate>
