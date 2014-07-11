@@ -20,6 +20,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
     {
         public const string validation_group = "newDiscussion";
         public string confirmationMessage = DictionaryConstants.ForumValidationConfirmation;
+
+        public string HiddenText
+        {
+            get { return hdSelectedText.Value; }
+            set { hdSelectedText.Value = value; }
+        }
         protected override void OnInit(EventArgs e)
         {
             litGotAQuestionLabel.Text = DictionaryConstants.GotAQuestionLabel;
@@ -34,7 +40,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         protected void Page_Load(object sender, EventArgs e)
         {
             rqdDropDownFName.Enabled = String.IsNullOrEmpty(txtFName.Text);
-            rqdFname.Enabled = ddlForums.SelectedValue.Equals("0");
+            txtFName.Text = HiddenText;
             if (!IsPostBack)
             {
                 ddlForums.Items.Add(new ListItem() { Value = "0", Text = InitialDropDownText });
@@ -44,7 +50,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 btnSubmit.ValidationGroup = validation_group;
                 rqdDropDownFName.ValidationGroup = validation_group;
                 rqdDiscussion.ValidationGroup = validation_group;
-                rqdFname.ValidationGroup = validation_group;
+              
                 rqdSubject.ValidationGroup = validation_group;
 
 
@@ -65,7 +71,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
                         ddlForums.DataSource = grpModel.Forums;
                         ddlForums.DataBind();
-                        rbddlFname.Checked = true;
+                        //rbddlFname.Checked = true;
+                        //rbddlFname.Visible = false;
+                        //rbtxtFname.Checked = false;
+                        //rbtxtFname.Disabled = true;
+                        //rbtxtFname.Visible = false;
+                       txtFName.Visible = false;
                     }
                 }
                 else
@@ -79,13 +90,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                         //Disable forum selection and select 
                         ddlForums.Enabled = false;
                         ddlForums.Visible = false;
-                        rbddlFname.Disabled = true;
-                        rbddlFname.Visible = false;
-                        rqdDropDownFName.Enabled = false;
-                        rbtxtFname.Checked = true;
-                        rbtxtFname.Disabled = true;
-                        rbtxtFname.Visible = false;
-                        
+                        //rbddlFname.Disabled = true;
+                        //rbddlFname.Visible = false;
+                        //rqdDropDownFName.Enabled = false;
+                        //rbtxtFname.Checked = true;
+                        //rbtxtFname.Disabled = true;
+                        //rbtxtFname.Visible = false;
+                        txtFName.Visible = true;
                         txtFName.Text = frmItem.DisplayName;
                         txtFName.Enabled = false;
                     }
@@ -143,40 +154,40 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                             frmItemID = ddlForums.SelectedIndex > -1 ? ddlForums.SelectedValue : String.Empty;
                         else if (!String.IsNullOrEmpty(txtFName.Text)) //If a name was input
                         {
-
+                            frmItemID = new ForumItem( Forum.ConvertForumNametoSitecoreItem(txtFName.Text)).ForumID;
                             //Create forum and return ForumID
-                            ForumModel frmModel = TelligentService.CreateForum(CurrentMember.ScreenName, grpItem.GroupID.Text, txtFName.Text);
-                            if (frmModel != null)
-                            {
-                                Item frmItemLocal = Forum.CreateSitecoreForum(frmModel, grpItem, Sitecore.Context.Language);
-                                if (frmItemLocal != null)
-                                {
-                                    //Success
-                                    frmItemID = frmModel.ForumID;
-                                    //Publish sitecore item
-                                    PublishItem(frmItemLocal);
-                                }
-                                else
-                                {
-                                    //Delete Telligent Forum
-                                    TelligentService.DeleteForum(frmModel.ForumID);
-                                    var msg = "Error creating forum item in sitecore";
-                                    Sitecore.Diagnostics.Error.LogError(msg);
-                                    error_msg.Text = msg;
-                                    error_msg.Visible = true;
-                                    ShowClientSideForm();
-                                    return;
-                                }
-                            }
-                            else
-                            {
-                                var msg = "Error creating forum item in Telligent.";
-                                Sitecore.Diagnostics.Error.LogError(msg);
-                                error_msg.Text = msg;
-                                error_msg.Visible = true;
-                                ShowClientSideForm();
-                                return;
-                            }
+                        //    ForumModel frmModel = TelligentService.CreateForum(CurrentMember.ScreenName, grpItem.GroupID.Text, txtFName.Text);
+                        //    if (frmModel != null)
+                        //    {
+                        //        Item frmItemLocal = Forum.CreateSitecoreForum(frmModel, grpItem, Sitecore.Context.Language);
+                        //        if (frmItemLocal != null)
+                        //        {
+                        //            //Success
+                        //            frmItemID = frmModel.ForumID;
+                        //            //Publish sitecore item
+                        //            PublishItem(frmItemLocal);
+                        //        }
+                        //        else
+                        //        {
+                        //            //Delete Telligent Forum
+                        //            TelligentService.DeleteForum(frmModel.ForumID);
+                        //            var msg = "Error creating forum item in sitecore";
+                        //            Sitecore.Diagnostics.Error.LogError(msg);
+                        //            error_msg.Text = msg;
+                        //            error_msg.Visible = true;
+                        //            ShowClientSideForm();
+                        //            return;
+                        //        }
+                        //    }
+                        //    else
+                        //    {
+                        //        var msg = "Error creating forum item in Telligent.";
+                        //        Sitecore.Diagnostics.Error.LogError(msg);
+                        //        error_msg.Text = msg;
+                        //        error_msg.Visible = true;
+                        //        ShowClientSideForm();
+                        //        return;
+                        //    }
                         }
                         else
                         {

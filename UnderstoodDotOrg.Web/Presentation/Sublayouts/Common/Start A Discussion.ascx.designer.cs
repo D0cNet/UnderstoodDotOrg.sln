@@ -40,6 +40,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.Literal litStartADiscussionLabel;
         
         /// <summary>
+        /// hdSelectedText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdSelectedText;
+        
+        /// <summary>
         /// modal_discussion control.
         /// </summary>
         /// <remarks>
@@ -67,24 +76,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// rbddlFname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbddlFname;
-        
-        /// <summary>
-        /// forumSelect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl forumSelect;
-        
-        /// <summary>
         /// ddlForums control.
         /// </summary>
         /// <remarks>
@@ -103,24 +94,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqdDropDownFName;
         
         /// <summary>
-        /// rbtxtFname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbtxtFname;
-        
-        /// <summary>
-        /// forumName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl forumName;
-        
-        /// <summary>
         /// txtFName control.
         /// </summary>
         /// <remarks>
@@ -128,15 +101,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFName;
-        
-        /// <summary>
-        /// rqdFname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqdFname;
         
         /// <summary>
         /// lblSubject control.

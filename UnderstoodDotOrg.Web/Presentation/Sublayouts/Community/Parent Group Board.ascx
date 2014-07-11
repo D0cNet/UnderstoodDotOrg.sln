@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="col latest-post-tabular">
                                     <h4>Latest Post:</h4>
-                                    <p>5<%# Eval("LastPostTime") %></p>
+                                    <p><%# Eval("LastPostTime") %></p>
                                     <a  runat="server" id="hrefProfile3" href="REPLACE"><%# Eval("LastPostUser") %></a>
                                     <p><%# Eval("LastPostBody") %></p>
                                 </div>

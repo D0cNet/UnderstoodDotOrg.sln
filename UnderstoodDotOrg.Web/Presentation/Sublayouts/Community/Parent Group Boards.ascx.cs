@@ -175,6 +175,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             hrefLastPostUser.HRef = MembershipHelper.GetPublicProfileUrl(item.LastPostUser);
                         }
                     }
+
+                    Literal litDiscussionLabel = (Literal)e.Item.FindControl("litDiscussionLabel");
+                    if (litDiscussionLabel != null)
+                    {
+                        litDiscussionLabel.Text = DictionaryConstants.DiscussionLabel;
+                    }
+
+                    Literal litRepliesLabel = (Literal)e.Item.FindControl("litRepliesLabel");
+                    if (litRepliesLabel != null)
+                    {
+                        litRepliesLabel.Text = DictionaryConstants.RepliesLabel;
+                    }
+
+
+                    Literal litLatestPostLabel = (Literal)e.Item.FindControl("litLatestPostLabel");
+                    if (litLatestPostLabel != null)
+                    {
+                        litLatestPostLabel.Text = DictionaryConstants.LatestPostLabel;
+                    }
                    
                 }
             }

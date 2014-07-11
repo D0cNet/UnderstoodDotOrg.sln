@@ -1,8 +1,34 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Group Boards.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Group_Boards" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <script type="text/javascript" language="javascript">
-    jQuery(".col col-11 links:last").addClass("additional-links");
+    function openWindow(name) {
 
+       
+        var ddlfnameValidator = document.getElementById(jQuery("[id$='rqdDropDownFName']").attr('id'));
+        var ddlist = jQuery("[id$='ddlForums']");
+        var txtname = jQuery("[id$='txtFName']"); 
+        var hdField = jQuery("[id$='hdSelectedText']");
+       
+   
+        ddlfnameValidator.enabled = false;
+        txtname.prop("disabled", true);
+        txtname.val(name);
+        hdField.val(name);
+      
+        ddlist.hide();
+        jQuery('.selected span').hide();
+        jQuery("#forumSelect").hide();
+        txtname.show();
+       
+        jQuery(".modal_discussion").dialog("open");
+        return false;
+    }//);
+    jQuery(document).ready(function () {
+      
+      
+       
+        jQuery(".col col-11 links:last").addClass("additional-links");
+    });
 </script>
 <div class="container">
     <!-- BEGIN PARTIAL: community/featured_group -->
@@ -19,7 +45,7 @@
             <div class="col-16 discussion-boards  offset-1 skiplink-toolbar">
               <h3>
                   <asp:Literal ID="litjumpToText" runat="server" /></h3>
-
+                <asp:HiddenField ID="hdSelectText" runat="server" />
       
                 <asp:ListView GroupItemCount="3" OnItemDataBound="lvJumpto_ItemDataBound"  GroupPlaceholderID="groupPlaceholder" ItemPlaceholderID="itemPlaceholder"  ID="lvJumpto" runat="server">
                     <LayoutTemplate>
@@ -71,7 +97,7 @@
 	                        <div class="col col-23 individual-group rs_read_this" aria-role="main">
                                 <header class="offset-1">
 			                        <h3><%# Eval("Name") %></h3>
-			                        <a href="REPLACE" id="hrefStartDiscussion" class="rs_skip start-discussion">
+			                        <a href="" id="hrefStartDiscussion" onclick="openWindow('<%# Eval("Name") %>'); return false;" class="rs_skip start-discussion">
                                         <asp:Literal ID="litstartDiscussion" runat="server" /></a>
 		                        </header>
 		                        <div>
@@ -93,17 +119,18 @@
                                                 <li>
 							                        <div class="col summary">
 								                        <a href="REPLACE" id="hrefDiscussion" runat="server">
-									                        <h4 class="visuallyhidden">Discussion</h4>
+									                        <h4 class="visuallyhidden">
+                                                                <asp:Literal ID="litDiscussionLabel" runat="server" /> </h4>
                                                             <%# Eval("Subject") %>
 
 								                        </a>
 							                        </div>
 							                        <div class="col replies">
-								                        <h4>Replies</h4>
+								                        <h4><asp:Literal ID="litRepliesLabel" runat="server" /></h4>
 								                        <p><%# Eval("ReplyCount") %></p>
 							                        </div>
 							                        <div class="col latest-post">
-								                        <h4>Latest Post</h4>
+								                        <h4><asp:Literal ID="litLatestPostLabel" runat="server" /></h4>
 								                        <p><%# Eval("LastPostTime") %></p>
 								                        <a href="REPLACE" id="hrefLastPostUser" runat="server"><%#Eval("LastPostUser") %></a>
 							                        </div>
