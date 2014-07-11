@@ -48,24 +48,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             ThreadModel thModel = UnderstoodDotOrg.Services.CommunityServices.Threads.ThreadModelFactory(forumID, threadID);
 
                             //Populate the initial Post
-                            rptChildCard.DataSource = thModel.Author.Children;
-                            rptChildCard.DataBind();
+                            ProfileCommentCard.Member = thModel.Author;
+                            //rptChildCard.DataSource = thModel.Author.Children;
+                            //rptChildCard.DataBind();
                             rptGroupDiscussion.DataSource = thModel.Replies;
                             rptGroupDiscussion.DataBind();
 
                             if (thModel.Author!=null)
                             {
 
-                                btnConnect.LoadState(thModel.Author.UserName);
+                                //btnConnect.LoadState(thModel.Author.UserName);
                                 ThanksButton.LoadState(thModel.Author.UserName);
                                 ThinkingOfYouButton.LoadState(thModel.Author.UserName);
                             }
                                 
                             lblSubject.Text = thModel.Subject;
-                            imgAvatar.ImageUrl = thModel.Author.AvatarUrl;
-                            lblName.Text = thModel.Author.UserName;
-                            hrefName.HRef = thModel.Author.ProfileLink;
-                            lblLocation.Text = thModel.Author.UserLocation;
+                            //imgAvatar.ImageUrl = thModel.Author.AvatarUrl;
+                            //lblName.Text = thModel.Author.UserName;
+                            //hrefName.HRef = thModel.Author.ProfileLink;
+                            //lblLocation.Text = thModel.Author.UserLocation;
                             litComment.Text = thModel.Body;
                             litNumReplies.Text = thModel.ReplyCount;
                             litMemberCount.Text = thModel.Members.Count.ToString();

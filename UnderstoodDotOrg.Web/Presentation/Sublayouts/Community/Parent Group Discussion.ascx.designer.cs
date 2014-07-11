@@ -40,58 +40,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.WebControls.Label lblSubject;
         
         /// <summary>
-        /// imgAvatar control.
+        /// ProfileCommentCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgAvatar;
-        
-        /// <summary>
-        /// hrefName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor hrefName;
-        
-        /// <summary>
-        /// lblName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
-        
-        /// <summary>
-        /// lblLocation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLocation;
-        
-        /// <summary>
-        /// btnConnect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ConnectButton btnConnect;
-        
-        /// <summary>
-        /// rptChildCard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptChildCard;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards.ProfileCommentCard ProfileCommentCard;
         
         /// <summary>
         /// litComment control.

@@ -785,6 +785,13 @@
     <Compile Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx.designer.cs">
       <DependentUpon>FoundHelpfulWidget.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\ProfileCommentCard.ascx.cs">
+      <DependentUpon>ProfileCommentCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Cards\ProfileCommentCard.ascx.designer.cs">
+      <DependentUpon>ProfileCommentCard.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Community Search\CommunitySearch.ascx.cs">
       <DependentUpon>CommunitySearch.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2975,6 +2982,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostControl.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Cards\ProfileCommentCard.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Community Search\CommunitySearch.ascx" />
     <Content Include="Presentation\Sublayouts\Common\LikeButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ThanksButton.ascx" />

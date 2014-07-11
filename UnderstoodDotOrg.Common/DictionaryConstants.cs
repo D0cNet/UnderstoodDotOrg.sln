@@ -2137,5 +2137,10 @@ namespace UnderstoodDotOrg.Common
         public static string WantToTalkLabel { get { return Translate.TextByDomain(PosesDictionary, "Want To Talk Label"); }}
 
         public static string MembersLabel { get { return Translate.TextByDomain(PosesDictionary, "Members Label"); } }
+
+        public static string ViewProfileLabel { get { return Translate.TextByDomain(PosesDictionary, "View Profile Label"); } }
+        public static string SeeActivityLabel { get { return Translate.TextByDomain(PosesDictionary, "See Activity Label"); } }
+        public static string GradeLevelLabel { get { return Translate.TextByDomain(PosesDictionary, "Grade Level Label"); } }
+        public static string AdditionalInformationLabel { get { return Translate.TextByDomain(PosesDictionary, "Additional Information Label"); } }
     }
 }
