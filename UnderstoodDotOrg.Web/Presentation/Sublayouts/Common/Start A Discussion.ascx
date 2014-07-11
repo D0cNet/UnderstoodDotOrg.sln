@@ -49,10 +49,10 @@
                  jQuery('.selected').show();
                  jQuery("#forumSelect").show();
                  ddlist.prop("disabled", false);
-                 if (txtname.css("display") == "inline-block")
-                     txtname.show();
+                 if (ddlist.css("display") == "inline-block" || ddlist.css("display") == "block")
+                     txtname.hide();
                  else
-                    txtname.hide();
+                    txtname.show();
                  jQuery(".modal_discussion").dialog("open");
                  return false;
              });

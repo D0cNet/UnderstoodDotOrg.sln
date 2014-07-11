@@ -76,7 +76,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                         //rbtxtFname.Checked = false;
                         //rbtxtFname.Disabled = true;
                         //rbtxtFname.Visible = false;
-                       txtFName.Visible = false;
+                       //txtFName.Visible = false;
                     }
                 }
                 else

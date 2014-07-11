@@ -18,7 +18,10 @@
         ddlist.hide();
         jQuery('.selected span').hide();
         jQuery("#forumSelect").hide();
-        txtname.show();
+        if (name !== '')
+            txtname.show();
+        
+        
        
         jQuery(".modal_discussion").dialog("open");
         return false;
