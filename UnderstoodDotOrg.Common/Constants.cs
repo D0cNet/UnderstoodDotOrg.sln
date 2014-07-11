@@ -85,8 +85,9 @@ namespace UnderstoodDotOrg.Common
 
 		public static class EmailIDs
 		{
+			//English IDs
 			public static int EM1WelcomeToUnderstoodENID = 352;
-			public static int EM2ParentToolkitTestENID = 512;
+			public static int EM2ParentToolkitENID = 512;
 			public static int EM3ExploreTheCommunityENID = 516;
 			public static int EM4LearnActENID = 517;
 			public static int EM6HolidayDonationsENID = 519;
@@ -108,8 +109,34 @@ namespace UnderstoodDotOrg.Common
 			public static int EM23PasswordResetConfirmationENID = 529;
 			public static int EM24ContentSharedWithAFriendENID = 956;
 			public static int EM25WebinarSharedWithAFriendENID = 531;
-			public static int EM28AppsTechnologySharedWithAFriend = 538;
+			public static int EM28AppsTechnologySharedWithAFriendENID = 538;
             public static int BehaviorToolSuggestion = 1543;
+
+			//Spanish IDs
+			public static int EM1WelcomeToUnderstoodSPID = 1725;
+			public static int EM2ParentToolkitSPID = 1714;
+			public static int EM3ExploreTheCommunitySPID = 1721;
+			public static int EM4LearnActSPID = 1706;
+			public static int EM6HolidayDonationsSPID = 1707;
+			public static int EM7NewsletterConfirmationID = 1722;
+			public static int EM8SubscriptionConfirmedSPID = 1723;
+			public static int EM9GroupWelcomeSPID = 1724;
+			public static int EM10WebinarConfirmationSPID = 1692;
+			public static int EM11DonationAcknowledgementSPID = 1695;
+			public static int EM12ThankYouForContactingUSSPID = 1696;
+			public static int EM13ActivityFromTodaySPID = 1708;
+			public static int EM14ActivityFromThisWeekSPID = 534;
+			public static int EM15HappyHolidaysSPID = 1697;
+			public static int EM16ContentReminderSPID = 1698;
+			public static int EM17ObservationLogReminderSPID = 1710;
+			public static int EM18UpdateProfileReminderSPID = 1711;
+			public static int EM19WebinarReminderSPID = 1712;
+			public static int EM21PrivateMessageSPID = 1715;
+			public static int EM22ForgotPasswordSPID = 1716;
+			public static int EM23PasswordResetConfirmationSPID = 1717;
+			public static int EM24ContentSharedWithAFriendSPID = 1718;
+			public static int EM25WebinarSharedWithAFriendSPID = 1719;
+			public static int EM28AppsTechnologySharedWithAFriendSPID = 1720;
 		}
 
         public const string ARTICLE_SEARCH_INDEX_NAME = "sitecore_web_index";

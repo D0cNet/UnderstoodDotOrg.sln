@@ -6,13 +6,13 @@
             <ul class="search-by-tool-tab-links">
                 <li class="browse-by-tab">
                     <a href="#browse-by">
-                        Browse By
+                        <asp:Label ID="lblBrowseBy" runat="server" Text="" />
                     </a>
                     <!-- Needs to be on one line to prevent whitespace -->
                 </li>
                 <li class="search-by-tab">
                     <a href="#search-by">
-                        Search By
+                        <asp:Label ID="lblSearchBy" runat="server" Text="" />
                     </a>
                 </li>
             </ul>
@@ -57,7 +57,7 @@
                         <input type="text" id="tbKeywordSearch" runat="server" name="at-search-by" class="tbKeywordSearch" 
                             ValidationGroup="vgLearningToolSearch">
                         <div class="submit-button-container2 rs_skip">
-                            <asp:Button ID="btnSearchFind" runat="server" OnClick="btnFindSubmit_Click" CssClass="button" Text="Find"
+                            <asp:Button ID="btnSearchFind" runat="server" OnClick="btnFindSubmit_Click" CssClass="button"
                                 ValidationGroup="vgLearningToolSearch"></asp:Button>
                         </div>
                     </fieldset>

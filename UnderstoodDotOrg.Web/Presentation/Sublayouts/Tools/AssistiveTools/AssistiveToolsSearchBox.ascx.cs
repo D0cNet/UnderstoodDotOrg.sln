@@ -26,6 +26,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
         {
             if (!Page.IsPostBack)
             {
+				lblBrowseBy.Text = DictionaryConstants.BrowseByLabel;
+				lblSearchBy.Text = DictionaryConstants.SearchLabel;
+
+				btnBrowseFind.Text = "";
+				btnSearchFind.Text = "";
                 // Set selected state of dynamic dropdown
                 PlatformId = Request.QueryString[Constants.QueryStrings.LearningTool.PlatformId];
 

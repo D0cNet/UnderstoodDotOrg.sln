@@ -9,7 +9,7 @@
             <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom">
                 <%= Model.ThumbnailImage.Rendered %>
             </a>
-            <span class="icon-search rs_preserve rs_skip">search</span>
+            <span class="icon-search rs_preserve rs_skip"><asp:Label id="lblSearch" runat="server" Text="" /></span>
         </div>
         <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
         <!-- popover hidden content -->
@@ -57,7 +57,7 @@
         </div>
         <div class="see-rating rs_skip" style="display: none;">
             <div class="popover-trigger-container">
-                <a href="REPLACE" class="popover-link rs_preserve rs_skip" data-popover-placement="bottom">See Rating</a>
+                <a href="REPLACE" class="popover-link rs_preserve rs_skip" data-popover-placement="bottom"><asp:Label ID="lblSeeRating" runat="server" Text="" /></a>
             </div>
             <!-- BEGIN PARTIAL: popover-see-rating -->
             <div class="search-result row popover-container" style="display: none;">
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="result-ratings col col-11 offset-1">
-                    <div class="rating-label">Grade</div>
+                    <div class="rating-label"><asp:Label ID="lblGrade" runat="server" Text="" /></div>
                     <div class="grade-scale-wrapper">
                         <span class="visuallyhidden">rating</span>
                         <div class="grade-scale">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
 
-                    <div class="rating-label">Quality</div>
+                    <div class="rating-label"><asp:label ID="lblQuality" runat="server" Text="" /></div>
                     <div class="quality-scale-wrapper">
                         <span class="visuallyhidden">rating</span>
                         <div class="quality-scale">
@@ -94,7 +94,7 @@
                         </div>
                     </div>
 
-                    <div class="rating-label">Learning</div>
+                    <div class="rating-label"><asp:Label runat="server" ID="lblLearningFragment" Text="" /></div>
                     <div class="learning-scale-wrapper">
                         <span class="visuallyhidden">rating</span>
                         <div class="learning-scale">
@@ -112,7 +112,7 @@
     </div>
 
     <div class="result-ratings show-popover col col-10">
-        <div class="rating-label">Grade</div>
+        <div class="rating-label"><asp:Label ID="lblGrade1" runat="server" Text="" /></div>
         <span class="visuallyhidden">rating</span>
         <div class="grade-scale-wrapper">
             <span class="visuallyhidden">rating</span>
@@ -127,29 +127,29 @@
         </div>
         <div class="grade-info-wrapper rs_skip">
             <div class="popover-trigger-container">
-                <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a>
+                <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip"><asp:Label ID="lblMoreInformation" runat="server" Text="" /></i></a>
             </div>
             <!-- BEGIN PARTIAL: popover-grade-info -->
             <div class="grade-tooltip popover-container" style="display: none;">
-                <div class="tooltip-title">About our rating system</div>
+                <div class="tooltip-title"><asp:label id="lblAboutOurRatingSystem" runat="server" text="" /></div>
                 <div class="ratings-wrapper">
                     <div class="rating">
                         <div class="rating-icon">
                             <span class="circle green"></span>
                         </div>
-                        <div class="rating-info"><strong>On:</strong> Content is appropriate for kids this age.</div>
+                        <div class="rating-info"><strong><asp:Label ID="lblOnFragment" runat="server" Text="" /></strong> <asp:Label ID="lblContentIsAppropriate" runat="server" Text="" /></div>
                     </div>
                     <div class="rating">
                         <div class="rating-icon">
                             <span class="circle yellow"></span>
                         </div>
-                        <div class="rating-info"><strong>Pause:</strong> Know your child; some content may not be right for some kids.</div>
+                        <div class="rating-info"><strong><asp:Label ID="lblPauseFragment" runat="server" Text="" /></strong> <asp:Label ID="lblKnowYourChild" runat="server" Text="" /></div>
                     </div>
                     <div class="rating">
                         <div class="rating-icon">
                             <span class="circle red"></span>
                         </div>
-                        <div class="rating-info"><strong>Off:</strong> Not appropriate for kids this age.</div>
+                        <div class="rating-info"><strong><asp:Label ID="lblOffFragment" runat="server" Text="" /></strong> <asp:Label ID="lblNotAppropriate" runat="server" Text="" /></div>
                     </div>
                 </div>
                 <!-- .ratings-wrapper -->
@@ -158,7 +158,7 @@
             <!-- END PARTIAL: popover-grade-info -->
         </div>
 
-        <div class="rating-label">Quality</div>
+        <div class="rating-label"><asp:Label ID="lblQuality1" runat="server" Text="" /></div>
         <div class="quality-scale-wrapper">
             <span class="visuallyhidden">rating</span>
             <div class="quality-scale">
@@ -169,10 +169,10 @@
         </div>
         <div class="quality-info-wrapper rs_skip">
             <span class="popover-trigger-container">
-                <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a></span>
+                <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip"><asp:Label ID="lblMoreInformation1" runat="server" Text="" /></i></a></span>
             <!-- BEGIN PARTIAL: popover-quality-info -->
             <div class="quality-tooltip popover-container" style="display: none;">
-                <div class="tooltip-title">Quality Rating</div>
+                <div class="tooltip-title"><asp:Label ID="lblQualityRating" runat="server" Text="" /></div>
                 <div class="ratings-wrapper">
                     <div class="rating">
                         <div class="rating-icon">
@@ -180,7 +180,7 @@
                             <div class="results-slider blue-five" aria-label="5">5</div>
                             <!-- END PARTIAL: results-slider -->
                         </div>
-                        <div class="rating-info">The best!</div>
+                        <div class="rating-info"><asp:Label ID="lblTheBest" runat="server" Text="" /></div>
                     </div>
                     <div class="rating">
                         <div class="rating-icon">
@@ -188,7 +188,7 @@
                             <div class="results-slider blue-four" aria-label="4">4</div>
                             <!-- END PARTIAL: results-slider -->
                         </div>
-                        <div class="rating-info">Really Good</div>
+                        <div class="rating-info"><asp:Label ID="lblReallyGood" runat="server" Text="" /></div>
                     </div>
                     <div class="rating">
                         <div class="rating-icon">
@@ -196,7 +196,7 @@
                             <div class="results-slider blue-three" aria-label="3">3</div>
                             <!-- END PARTIAL: results-slider -->
                         </div>
-                        <div class="rating-info">Just Fine</div>
+                        <div class="rating-info"><asp:Label ID="lblJustFine" runat="server" Text="" /></div>
                     </div>
                     <div class="rating">
                         <div class="rating-icon">
@@ -204,7 +204,7 @@
                             <div class="results-slider blue-two" aria-label="2">2</div>
                             <!-- END PARTIAL: results-slider -->
                         </div>
-                        <div class="rating-info">Disappointing</div>
+                        <div class="rating-info"><asp:Label ID="lblDisappointing" runat="server" Text="" /></div>
                     </div>
                     <div class="rating">
                         <div class="rating-icon">
@@ -212,7 +212,7 @@
                             <div class="results-slider blue-one" aria-label="1">1</div>
                             <!-- END PARTIAL: results-slider -->
                         </div>
-                        <div class="rating-info">Don't Bother</div>
+                        <div class="rating-info"><asp:Label ID="lblDontBother" runat="server" Text="" /></div>
                     </div>
                 </div>
                 <!-- .ratings-wrapper -->
@@ -222,7 +222,7 @@
             <a class="quality-review-link" href="<%= Model.GetUrl()+"#tabs2-parent-reviews" %>"><asp:Literal ID="litNumReviews" runat="server"></asp:Literal> Reviews</a>
         </div>
 
-        <div class="rating-label">Learning</div>
+        <div class="rating-label"><asp:Label ID="lblLearningFragment1" runat="server" Text="" /></div>
         <div class="learning-scale-wrapper">
             <span class="visuallyhidden">rating</span>
             <div class="learning-scale">
@@ -232,7 +232,7 @@
             </div>
             <div class="learning-info-wrapper rs_skip">
                 <div class="popover-trigger-container">
-                    <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a>
+                    <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip"><asp:Label ID="lblMoreInformation2" runat="server" Text="" /></i></a>
                 </div>
                 <!-- BEGIN PARTIAL: popover-learning-info -->
                 <div class="learning-tooltip popover-container" style="display: none;">
@@ -244,7 +244,7 @@
                                 <div class="results-slider purple-five" aria-label="5">5</div>
                                 <!-- END PARTIAL: results-slider -->
                             </div>
-                            <div class="rating-info"><strong>Best:</strong> Really engaging, excellent learning approach.</div>
+                            <div class="rating-info"><strong><asp:Label ID="lblBestFragment" runat="server" Text="" /></strong> <asp:Label ID="lblReallyEngaging" runat="server" Text="" /></div>
                         </div>
                         <div class="rating">
                             <div class="rating-icon">
@@ -252,7 +252,7 @@
                                 <div class="results-slider purple-four" aria-label="4">4</div>
                                 <!-- END PARTIAL: results-slider -->
                             </div>
-                            <div class="rating-info"><strong>Very Good:</strong> Engaging, very good learning approach.</div>
+                            <div class="rating-info"><strong><asp:Label ID="lblVeryGoodFragment" runat="server" Text="" /></strong> <asp:Label ID="lblEngaging" runat="server" Text="" /></div>
                         </div>
                         <div class="rating">
                             <div class="rating-icon">
@@ -260,7 +260,7 @@
                                 <div class="results-slider purple-three" aria-label="3">3</div>
                                 <!-- END PARTIAL: results-slider -->
                             </div>
-                            <div class="rating-info"><strong>Good:</strong> Pretty engaging, good learning approach.</div>
+                            <div class="rating-info"><strong><asp:Label ID="lblGoodFragment" runat="server" Text="" /></strong> <asp:Label ID="lblPrettyEngaging" runat="server" Text="" /></div>
                         </div>
                         <div class="rating">
                             <div class="rating-icon">
@@ -268,7 +268,7 @@
                                 <div class="results-slider purple-two" aria-label="2">2</div>
                                 <!-- END PARTIAL: results-slider -->
                             </div>
-                            <div class="rating-info"><strong>Fair:</strong> Somewhat engaging, okay learning approach.</div>
+                            <div class="rating-info"><strong><asp:Label ID="lblFairFragment" runat="server" Text="" /></strong> <asp:Label ID="lblSomewhatEngaging" runat="server" Text="" /></div>
                         </div>
                         <div class="rating">
                             <div class="rating-icon">
@@ -276,7 +276,7 @@
                                 <div class="results-slider purple-one" aria-label="1">1</div>
                                 <!-- END PARTIAL: results-slider -->
                             </div>
-                            <div class="rating-info"><strong>Not for learning:</strong> Not recommended for learning.</div>
+                            <div class="rating-info"><strong><asp:Label ID="lblNotForLearningFragment" runat="server" Text="" /></strong> <asp:Label ID="lblNotRecommended" runat="server" Text="" /></div>
                         </div>
                         <div class="rating">
                             <div class="rating-icon">
@@ -284,7 +284,7 @@
                                 <div class="results-slider zero" aria-label="0">0</div>
                                 <!-- END PARTIAL: results-slider -->
                             </div>
-                            <div class="rating-info"><strong>Not for kids:</strong> Not age-appropriate for kids; not recommended for learning.</div>
+                            <div class="rating-info"><strong><asp:Label ID="lblNotForKidsFragment" runat="server" Text="" /></strong> <asp:Label ID="lblNotAgeAppropriate" runat="server" Text="" /></div>
                         </div>
                     </div>
                     <!-- .ratings-wrapper -->

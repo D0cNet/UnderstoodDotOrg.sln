@@ -35,7 +35,7 @@
 <div class="container parents-are-saying">
     <div class="row">
         <div class="col col-24 header-container rs_read_this parents-are-saying-heading-rs-wrapper">
-            <h2>What parents are saying...</h2>
+            <h2><asp:Label runat="server" Text="" ID="lblWhatParentsAreSaying" /></h2>
         </div>
     </div>
     <div class="row ie-padding">
@@ -184,7 +184,7 @@
 <div class="container more-carousel">
     <div class="row">
         <div class="col col-24">
-            <h2>Related Articles</h2>
+            <h2><asp:Label ID="lblRelatedArticles" runat="server" Text="" /></h2>
             <!-- BEGIN PARTIAL: more-carousel -->
             <div id="featured-slides-container" class="arrows-gray">
                 <ul>

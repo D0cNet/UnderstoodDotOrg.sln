@@ -272,7 +272,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM2ParentToolkitTestENID, 0);
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM2ParentToolkitENID, 0);
 
 			try
 			{
@@ -1662,7 +1662,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM28AppsTechnologySharedWithAFriend, 0);
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM28AppsTechnologySharedWithAFriendENID, 0);
 
 			try
 			{

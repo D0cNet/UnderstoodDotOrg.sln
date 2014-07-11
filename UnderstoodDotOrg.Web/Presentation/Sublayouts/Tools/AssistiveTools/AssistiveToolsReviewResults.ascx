@@ -51,7 +51,7 @@
                             <div class="col col-10">
                                 <h3 class="two-lines rs_read_this"><%# Eval("CategoryTitle") %></h3>
                                 <div class="popover-trigger-container assistive-tooltip-trigger"<%# (bool)Eval("ShowHelpModal") ? string.Empty : " style=\"display:none;\"" %>>
-                                    <a href="REPLACE" class="popover-link rs_preserve " data-popover-placement="bottom"><i class="icon-tooltip">more information</i></a>
+                                    <a href="REPLACE" class="popover-link rs_preserve " data-popover-placement="bottom"><i class="icon-tooltip"><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreInformationLabel %></i></a>
                                 </div>
                                 <div class="assistive-tooltip popover-container"<%# (bool)Eval("ShowHelpModal") ? string.Empty : " style=\"display:none;\"" %>>
                                     <%# Eval("HelpModalContent") %>
@@ -70,9 +70,9 @@
                             <div class="col col-4 pull-6">
                                 <span class="result-count"><span class="category-display-count" data-category-id="<%# Eval("CategoryId") %>">
                                     <%# Eval("CategoryResultDisplayCount") %></span> 
-                                    of 
+                                    of
                                     <%# Eval("CategoryResultTotalCount") %> results</span>
-                            </div>
+                            </div>5
                         </header>
                         <div class="tech-results-wrapper at-bottom container<%# Eval("CategoryId") %>">
                             <asp:Repeater ID="rptrResults" runat="server" 
@@ -96,7 +96,7 @@
                                             data-container="container<%# Eval("CategoryId") %>" data-max-results="<%# Eval("CategoryResultTotalCount") %>"
                                             data-results-per-click="<%= UnderstoodDotOrg.Common.Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE %>"
                                             data-sort-option="<%= SortOption %>">
-                                            Show More
+                                            <%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %>
                                             <i class="icon-arrow-down-blue"></i>
                                         </a>
                                     </div>

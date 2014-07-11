@@ -9,7 +9,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveTools
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
-using UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
@@ -19,6 +19,45 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+			lblAboutOurRatingSystem.Text = DictionaryConstants.AboutOurRatingSystemLabel;
+			lblBestFragment.Text = DictionaryConstants.BestFragment;
+			lblContentIsAppropriate.Text = DictionaryConstants.ContentIsAppropriateLabel;
+			lblDisappointing.Text = DictionaryConstants.DisappointingLabel;
+			lblDontBother.Text = DictionaryConstants.DontBotherLabel;
+			lblEngaging.Text = DictionaryConstants.EngagingLabel;
+			lblFairFragment.Text = DictionaryConstants.Fairfragment;
+			lblGoodFragment.Text = DictionaryConstants.Goodfragment;
+			lblGrade.Text = DictionaryConstants.GradeLabel;
+			lblGrade1.Text = DictionaryConstants.GradeLabel;
+			lblJustFine.Text = DictionaryConstants.GradeLabel;
+			lblKnowYourChild.Text = DictionaryConstants.KnowYourChildLabel;
+			lblLearningFragment.Text = DictionaryConstants.Learningfragment;
+			lblLearningFragment1.Text = DictionaryConstants.Learningfragment;
+			lblMoreInformation.Text = DictionaryConstants.MoreInformationLabel;
+			lblMoreInformation1.Text = DictionaryConstants.MoreInformationLabel;
+			lblMoreInformation2.Text = DictionaryConstants.MoreInformationLabel;
+			lblNotAgeAppropriate.Text = DictionaryConstants.NotAgeAppropriateLabel;
+			lblNotAppropriate.Text = DictionaryConstants.NotAppropriateLabel;
+			lblNotForKidsFragment.Text = DictionaryConstants.NotAppropriateLabel;
+			lblNotForLearningFragment.Text = DictionaryConstants.NotForLearningfragment;
+			lblNotRecommended.Text = DictionaryConstants.NotRecommendedLabel;
+			lblOffFragment.Text = DictionaryConstants.OffFragment;
+			lblOnFragment.Text = DictionaryConstants.Onfragment;
+			lblPauseFragment.Text = DictionaryConstants.Pausefragment;
+			lblPrettyEngaging.Text = DictionaryConstants.PrettyEngagingLabel;
+			lblQuality.Text = DictionaryConstants.QualityLabel;
+			lblQuality1.Text = DictionaryConstants.QualityLabel;
+			lblQualityRating.Text = DictionaryConstants.QualityRatingLabel;
+			lblReallyEngaging.Text = DictionaryConstants.ReallyEngagingLabel;
+			lblReallyGood.Text = DictionaryConstants.ReallyGoodLabel;
+			lblSearch.Text = DictionaryConstants.SearchLabel;
+			lblSeeRating.Text = DictionaryConstants.SeeRatingLabel;
+			lblSomewhatEngaging.Text = DictionaryConstants.SomewhatEngagingLabel;
+			lblTheBest.Text = DictionaryConstants.TheBestLabel;
+			lblVeryGoodFragment.Text = DictionaryConstants.VeryGoodfragment;
+
+
             var screenshots = Model.Screenshots.ListItems
                 .Where(i => i != null && i.Paths.IsMediaItem)
                 .Select(i => (MediaItem)i);
@@ -50,9 +89,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
             rptrSubjects.DataSource = subjects;
             rptrSubjects.DataBind();
-
-            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Model.ID.ToGuid());
-            litNumReviews.Text = reviews.Count.ToString();
         }
     }
 }

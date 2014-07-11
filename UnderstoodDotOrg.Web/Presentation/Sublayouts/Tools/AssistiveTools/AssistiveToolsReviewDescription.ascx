@@ -8,9 +8,9 @@
             <div id="tab-container" class="tab-container what-you-need-to-know-tabs">
                 <ul class='etabs'>
                     <li class='tab'>
-                        <a href="#tabs1-what-you-need-to-know">What You Need To Know</a></li>
+                        <a href="#tabs1-what-you-need-to-know"><asp:Label ID="lblWhatYouNeedToKnow" runat="server" Text="" /></a></li>
                     <li class='tab rs_skip'>
-                        <a href="#tabs2-parent-reviews">Parent Reviews</a></li>
+                        <a href="#tabs2-parent-reviews"><asp:Label ID="lblParentReviews" runat="server" Text="" /></a></li>
                 </ul>
                 <div class="tab-container rs_read_this">
                     <span class="visuallyhidden">What You Need To Know</span>

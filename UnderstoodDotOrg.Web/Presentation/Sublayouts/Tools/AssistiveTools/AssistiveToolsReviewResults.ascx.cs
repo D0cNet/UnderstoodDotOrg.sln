@@ -12,15 +12,19 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveTools
 using UnderstoodDotOrg.Common.Comparers;
 using UnderstoodDotOrg.Domain.Search;
 using System.Collections.Specialized;
+using Sitecore.Web.UI.WebControls;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
     public partial class AssistiveToolsReviewResults : BaseSublayout<AssistiveToolsSearchResultsPageItem>
     {
         protected SearchHelper.SortOptions.AssistiveToolsSortOptions SortOption { get; set; }
+		private string assistiveToolsGuid = string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             var defaultSortValue = (int)SearchHelper.SortOptions.AssistiveToolsSortOptions.Relevance;
             SortOption = Request.QueryString[Constants.QueryStrings.LearningTool.SortOption]
                 .AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>(defaultValue: defaultSortValue);
@@ -49,7 +53,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                     return;
                 }
             }
-
+			
             if (!Page.IsPostBack)
             {
                 var categoryResults = searchResults
@@ -103,6 +107,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                         Value = so.ToString()
                     });
                 var ddlSortOptions = e.FindControlAs<DropDownList>("ddlSortOptions");
+
                 ddlSortOptions.DataSource = sortOptions;
                 ddlSortOptions.DataTextField = "Text";
                 ddlSortOptions.DataValueField = "Value";

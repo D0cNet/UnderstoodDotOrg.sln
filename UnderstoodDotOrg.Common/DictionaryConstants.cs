@@ -1051,6 +1051,78 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+		public static string BestFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Best Fragment");
+			}
+		}
+
+		public static string VeryGoodfragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Very Good Fragment");
+			}
+		}
+
+		public static string Goodfragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Good Fragment");
+			}
+		}
+
+		public static string Fairfragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Fair Fragment");
+			}
+		}
+
+		public static string NotForLearningfragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Not For Learning Fragment");
+			}
+		}
+
+		public static string Onfragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "On Fragment");
+			}
+		}
+
+		public static string OffFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Off Fragment");
+			}
+		}
+
+		public static string Pausefragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Pause Fragment");
+			}
+		}
+
+		public static string Learningfragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Learning Fragment");
+			}
+		}
+
         #endregion
 
         #region Core Labels
@@ -1074,6 +1146,126 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Quality Label");
             }
         }
+
+		public static string MoreInformationLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "More Information Label");
+			}
+		}
+
+		public static string SeeRatingLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "See Rating Label");
+			}
+		}
+
+		public static string RelatedArticlesLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Related Articles Label");
+			}
+		}
+
+		public static string ContentIsAppropriateLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Content Is Appropriate Label");
+			}
+		}
+
+		public static string KnowYourChildLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Know Your Child Label");
+			}
+		}
+
+		public static string NotAppropriateLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Not Appropriate Label");
+			}
+		}
+
+		public static string LearningRatingLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Learning Rating Label");
+			}
+		}
+
+		public static string JustFineLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Just Fine Label");
+			}
+		}
+
+		public static string ReallyEngagingLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Really Engaging Label");
+			}
+		}
+
+		public static string EngagingLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Engaging Label");
+			}
+		}
+
+		public static string PrettyEngagingLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Pretty Engaging Label");
+			}
+		}
+
+		public static string SomewhatEngagingLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Somewhat Engaging Label");
+			}
+		}
+
+		public static string NotRecommendedLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Not Recommended Label");
+			}
+		}
+
+		public static string NotAgeAppropriateLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Not Age Appropriate Label");
+			}
+		}
+
+		public static string WhatParentsAreSayingLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "What parents are saying Label");
+			}
+		}
 
         public static string GoodForLabel
         {
@@ -1106,6 +1298,70 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "For Learning Issues Label");
             }
         }
+
+		public static string QualityRatingLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Quality Rating Label");
+			}
+		}
+
+		public static string ReallyGoodLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Really Good Label");
+			}
+		}
+
+		public static string TheBestLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "The Best Label");
+			}
+		}
+
+		public static string WhatYouNeedToKnowLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "What You Need to Know Label");
+			}
+		}
+
+		public static string ParentReviewsLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Parent Reviews Label");
+			}
+		}
+
+		public static string SearchByLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Search By Label");
+			}
+		}
+
+		public static string BrowseByLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Browse By Label");
+			}
+		}
+
+		public static string BackToResultsLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Back To Results Label");
+			}
+		}
 
         public static string RateThisAppLabel
         {
@@ -1162,6 +1418,22 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Give Review Title Label");
             }
         }
+
+		public static string DisappointingLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Disappointing Label");
+			}
+		}
+
+		public static string DontBotherLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Dont Bother Label");
+			}
+		}
 
         #endregion
 
@@ -1525,6 +1797,14 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Read More Label");
             }
         }
+
+		public static string AboutOurRatingSystemLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "About our rating system label");
+			}
+		}
 
         public static string GradeLabel
         {
