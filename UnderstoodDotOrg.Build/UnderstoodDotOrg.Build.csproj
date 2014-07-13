@@ -147,6 +147,26 @@
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\robots.txt.bak" />
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\Web %282%29.config" />
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\Web.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\caching.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\communityserver.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\communityserver_override.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\connectionStrings.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\ExtendedAnalytics.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\Packages.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\SiteUrls.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\SiteUrls_redirects.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\tasks.config" />
+    <None Include="EnvironmentSpecifics\TelligentDEV\web\Web.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\caching.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\communityserver.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\communityserver_override.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\connectionStrings.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\ExtendedAnalytics.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\Packages.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\SiteUrls.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\SiteUrls_redirects.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\tasks.config" />
+    <None Include="EnvironmentSpecifics\TelligentQA\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EnvironmentSpecifics\PROD_AUTH\bin\Sitemap.XML.dll" />
@@ -169,6 +189,9 @@
     <Content Include="EnvironmentSpecifics\QA_204.232.148.68\sitecore modules\Shell\sitemap XML\SitemapManager.xml" />
     <Content Include="EnvironmentSpecifics\QA_204.232.148.68\Sitemap1.xml" />
     <Content Include="EnvironmentSpecifics\QA_204.232.148.68\solr\solrconfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EnvironmentSpecifics\TelligentProd\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
