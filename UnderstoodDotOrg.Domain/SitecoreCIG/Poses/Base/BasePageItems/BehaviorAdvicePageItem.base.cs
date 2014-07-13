@@ -136,11 +136,29 @@ public CustomTreeListField CarouselRelatedArticlesItems
 }
 
 
-public CustomTextField ContentThumbnail
+public CustomTextField ContentTypeId
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Content Thumbnail"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["ContentTypeId"]);
+	}
+}
+
+
+public CustomImageField ContentThumbnail
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Content Thumbnail"]);
+	}
+}
+
+
+public CustomTextField TelligentUrl
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["TelligentUrl"]);
 	}
 }
 

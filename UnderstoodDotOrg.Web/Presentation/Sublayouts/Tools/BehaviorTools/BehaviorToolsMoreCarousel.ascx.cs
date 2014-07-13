@@ -64,14 +64,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             {
                 Item item = (Item)e.Item.DataItem;
 
-                FieldRenderer frContentThumbnail = e.FindControlAs<FieldRenderer>("frContentThumbnail");
-                frContentThumbnail.Item = item;
+                BehaviorAdvicePageItem article = new BehaviorAdvicePageItem(item);
 
-                HyperLink hlArticleLink = e.FindControlAs<HyperLink>("hlArticleLink");
-                hlArticleLink.NavigateUrl = item.GetUrl();
+                if (article != null)
+                {
 
-                Literal litArticleTitle = e.FindControlAs<Literal>("litArticleTitle");
-                litArticleTitle.Text = ((BasePageNEWItem)item).NavigationTitle.Rendered;
+                    System.Web.UI.WebControls.Image imgThumbnail = e.FindControlAs<System.Web.UI.WebControls.Image>("imgThumbnail");
+                    imgThumbnail.ImageUrl = article.GetArticleThumbnailUrl(230, 129);
+
+                    HyperLink hlArticleLink = e.FindControlAs<HyperLink>("hlArticleLink");
+                    hlArticleLink.NavigateUrl = article.GetUrl();
+
+                    Literal litArticleTitle = e.FindControlAs<Literal>("litArticleTitle");
+                    litArticleTitle.Text = article.InnerItem.Fields["Navigation Title"].ToString();
+                }
             }
         }
     }

@@ -20,7 +20,7 @@
                         <div class="rs_read_this">
                             <asp:HyperLink runat="server" ID="hlArticleLink">
                                 <p><asp:Literal ID="litArticleTitle" runat="server" /></p>
-                                <sc:FieldRenderer ID="frContentThumbnail" runat="server" FieldName="Content Thumbnail" Parameters="mw=230&mh=129" />
+                                <asp:Image ID="imgThumbnail" runat="server" />
                             </asp:HyperLink>
                         </div>
                     </li>
