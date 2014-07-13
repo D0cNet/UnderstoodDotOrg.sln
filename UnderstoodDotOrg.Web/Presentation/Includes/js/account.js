@@ -694,7 +694,6 @@
                 $('.role-question .selected').find("input").trigger('click');
                 $('.role-question .selected').removeClass('selected');
                 $('.role-question option:selected').prop('selected', false);
-                $(this).find("input").trigger('click');
             });
 
             $(window).resize(function () {
