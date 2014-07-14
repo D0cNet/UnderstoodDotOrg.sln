@@ -237,7 +237,7 @@
                         <div class="col col-4">
                             <h2>
                                 <asp:Literal ID="ltlEmailAndPasswordLabel" runat="server"></asp:Literal></h2>
-                            <a href="REPLACE">Edit</a>
+                            <a href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.EditFragment %></a>
                         </div>
                         <div class="col col-20 profile-details">
                             <div class="row">
@@ -278,7 +278,7 @@
                                 <asp:Literal ID="ltlContactLabel" runat="server"></asp:Literal></h2>
                             <a href="#" class="btnEdit"><%= UnderstoodDotOrg.Common.DictionaryConstants.EditFragment %></a>
                             <a href="#" class="btnCancel"><%= UnderstoodDotOrg.Common.DictionaryConstants.CancelFragment %></a>
-                            <asp:LinkButton ID="lbSave_PhoneNumber" CssClass="lbSave" Text="Save" OnClick="lbSave_PhoneNumber_Click" runat="server"></asp:LinkButton>
+                            <asp:LinkButton ID="lbSave_PhoneNumber" CssClass="lbSave" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.SaveButtonText %>" OnClick="lbSave_PhoneNumber_Click" runat="server"></asp:LinkButton>
                         </div>
                         <div class="col col-20 profile-details">
                             <div class="row">
