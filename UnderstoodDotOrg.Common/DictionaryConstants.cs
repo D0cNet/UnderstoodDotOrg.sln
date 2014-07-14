@@ -2301,6 +2301,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SelectTechnologyLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Select Technology Label");
+            }
+        }
+
         public static string ChatWithLabel
         {
             get

@@ -97,7 +97,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 {
                     qs += (qs != string.Empty ? "&" : string.Empty) + Constants.QueryStrings.LearningTool.GradeId + "=" + gradeId;
                 }
-                if (typeId != string.Empty)
+                if (typeId != string.Empty && typeId != "All")
                 {
                     qs += (qs != string.Empty ? "&" : string.Empty) + Constants.QueryStrings.LearningTool.TypeId + "=" + typeId;
                 }
@@ -173,7 +173,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 ddlTechTypes.DataTextField = "Text";
                 ddlTechTypes.DataValueField = "Value";
                 ddlTechTypes.DataBind();
-                ddlTechTypes.Items.Insert(0, new ListItem(DictionaryConstants.AllTechnologyLabel, string.Empty));
+                ddlTechTypes.Items.Insert(0, new ListItem(DictionaryConstants.AllTechnologyLabel, "All"));
+                ddlTechTypes.Items.Insert(0, new ListItem(DictionaryConstants.SelectTechnologyLabel, string.Empty));
             }
 
             var platformsFolder = (AssistiveToolsPlatformFolderItem)AssistiveToolsGlobalsFolder.Children
