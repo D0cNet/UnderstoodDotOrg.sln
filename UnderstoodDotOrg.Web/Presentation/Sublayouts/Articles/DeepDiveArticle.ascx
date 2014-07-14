@@ -83,7 +83,7 @@
                     </div>
                     <!-- END PARTIAL: article-copy -->
                     <div class="deep-dive-more">
-                    <a href="REMOVE">More
+                    <a href="REMOVE"><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreButtonText %>
                         <i class="icon-arrow-down-blue"></i>
                     </a>
                 </div>

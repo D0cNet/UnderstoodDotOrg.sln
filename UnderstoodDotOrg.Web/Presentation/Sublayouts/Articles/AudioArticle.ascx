@@ -44,7 +44,7 @@
       <!-- BEGIN PARTIAL: transcript-control -->
         <div class="transcript-container Audio">
           <div class="read-more mobile-close">
-            <a href="REMOVE">Close Transcript<i class="icon-arrow-up-blue"></i></a>
+            <a href="REMOVE"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_CloseTranscriptButtonText %><i class="icon-arrow-up-blue"></i></a>
           </div>
           <div class="transcript-wrap clearfix rs_read_this">
             <div>

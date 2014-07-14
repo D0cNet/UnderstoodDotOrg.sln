@@ -44,7 +44,7 @@
                 <h3 class="rs_read_this"><sc:FieldRenderer ID="frExpertBlogsHeading" runat="server" FieldName="Expert Blogs Heading" /></h3>
             </div>
             <div class="col col-3 offset-1 expert-events-see-more">
-                <a href="REPLACE" class="see-more">See more</a>
+                <a href="REPLACE" class="see-more"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeMoreLabel %></a>
             </div>
             <!-- /.col -->
 
@@ -67,7 +67,7 @@
                 <div class="col col-3 push-13">
                     <div class="expert-blog-post-type">
                         <h4>72</h4>
-                        <p class="comments">Comments</p>
+                        <p class="comments"><%= UnderstoodDotOrg.Common.DictionaryConstants.CommentsLabel %></p>
                     </div>
                     <!-- /.expert-blog-post-type -->
                 </div>

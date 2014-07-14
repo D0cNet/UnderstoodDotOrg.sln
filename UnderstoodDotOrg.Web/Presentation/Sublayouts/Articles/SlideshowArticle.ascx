@@ -76,7 +76,7 @@
                     <HeaderTemplate>
                         <div class="index-buttons-container">
                             <div class="button prev gray">
-                                Prev
+                                <%= UnderstoodDotOrg.Common.DictionaryConstants.PrevButtonText %>
                             </div>
                     </HeaderTemplate>
                     <ItemTemplate>
@@ -84,10 +84,10 @@
                     </ItemTemplate>
                     <FooterTemplate>
                         <div class="button next gray">
-                            Next
+                            <%= UnderstoodDotOrg.Common.DictionaryConstants.NextButtonText %>
                         </div>
                         <div class="button last gray">
-                            Last
+                            <%= UnderstoodDotOrg.Common.DictionaryConstants.LastButtonText %>
                         </div>
                         </div>
                     </FooterTemplate>

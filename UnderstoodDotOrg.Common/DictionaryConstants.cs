@@ -73,6 +73,46 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
+        public static string EmailButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Email Button Text");
+            }
+        }
+
+        public static string ShareButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Share Button Text");
+            }
+        }
+
+        public static string PrevButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Prev Button Text");
+            }
+        }
+
+        public static string LastButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Last Button Text");
+            }
+        }
+
+        public static string Articles_CloseTranscriptButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Close Transcript Button Text");
+            }
+        }
+
         public static string WhytheserecommendationsButtonText
         {
             get
@@ -929,6 +969,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Fragments
 
+        public static string ofFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "of Fragment");
+            }
+        }
+
         public static string SecondFragment
         {
             get
@@ -1438,6 +1486,15 @@ namespace UnderstoodDotOrg.Common
         #endregion
 
         #region Article 
+
+        public static string ShareLabelText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Share Label Text");
+            }
+        }
+
         public static string IncorrectText
         {
             get

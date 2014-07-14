@@ -44,7 +44,7 @@
                     <div class="comment-form">
                         <asp:Label runat="server" AssociatedControlID="txtComment"></asp:Label>
                         <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" MaxLength="1000" CssClass="comment-form-reply" />
-                        <label for="comment-form-reply-text" class="visuallyhidden">Add your comment</label>
+                        <label for="comment-form-reply-text" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_AddMyCommentText %></label>
                         <asp:RequiredFieldValidator ForeColor="Red" ValidationGroup="vgSubmitButton" ID="rfvComment" runat="server" ControlToValidate="txtComment" CssClass="validationerror"></asp:RequiredFieldValidator>
                         <%--<asp:TextBox CssClass="comment-form-reply" ID="CommentEntryTextField" runat="server" />--%>
                         <asp:Button ValidationGroup="vgSubmitButton" ID="btnSubmit" OnClick="SubmitButton_Click" CssClass="comment-form-submit button" runat="server" />

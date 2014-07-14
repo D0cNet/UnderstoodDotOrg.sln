@@ -1,9 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShareContent.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared.ShareContent" %>
 
 <div class="share-dropdown-menu rs_skip">
-    <button class="social-share-button">Share <i class="icon-arrow"></i></button>
+    <button class="social-share-button"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShareButtonText %> <i class="icon-arrow"></i></button>
     <div class="share-menu">
-        <span class="social-share">Share <i class="icon-arrow"></i></span>
+        <span class="social-share"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShareLabelText %> <i class="icon-arrow"></i></span>
         <ul>
             <li class="clearfix">
                 <asp:HyperLink ID="hlFacebook" CssClass="icon-facebook share-icon" runat="server"><i class="icon-facebook"></i>
@@ -27,7 +27,7 @@
 <!-- END PARTIAL: share-content-dropdown -->
 <!-- BEGIN PARTIAL: article-action-buttons -->
 <div class="article-actions buttons-container rs_skip clearfix">
-    <button class="icon-email">email</button>
+    <button class="icon-email"><%= UnderstoodDotOrg.Common.DictionaryConstants.em %></button>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="update-panel">
         <ContentTemplate>
             <button id="lbSave" runat="server" class="icon-plus" onserverclick="lbSave_Click"></button>

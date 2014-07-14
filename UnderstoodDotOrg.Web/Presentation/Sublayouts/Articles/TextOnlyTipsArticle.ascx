@@ -21,7 +21,7 @@
                                             <%--<div class="slide-count">Slide 1 of 10</div>--%>
                                             <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/ShareContent.ascx" runat="server"></sc:Sublayout>
                                         </div>
-                                        <div class="slide-count-text"><asp:Label ID="lblCircle" runat="server"><asp:Literal ID="ltlSlideNumber" runat="server"></asp:Literal></asp:Label> of <asp:Literal ID="ltlSlideCount" runat="server"></asp:Literal></div>
+                                        <div class="slide-count-text"><asp:Label ID="lblCircle" runat="server"><asp:Literal ID="ltlSlideNumber" runat="server"></asp:Literal></asp:Label> <%= UnderstoodDotOrg.Common.DictionaryConstants.ofFragment %> <asp:Literal ID="ltlSlideCount" runat="server"></asp:Literal></div>
                                         <sc:FieldRenderer EnclosingTag="h3" FieldName="Tip title" ID="frTipTitle" runat="server"></sc:FieldRenderer>
                                         <sc:FieldRenderer EnclosingTag="p" FieldName="Tip text" ID="frTipText" runat="server"></sc:FieldRenderer>
                                     </div>
