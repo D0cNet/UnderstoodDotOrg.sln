@@ -8,7 +8,7 @@
                 <!-- BEGIN PARTIAL: community/parent_question_card -->
                 <div class="card-parent-question clearfix repeater-item">
                     <div class="question-image">
-                        <img alt="70x70 Placeholder" src="http://placehold.it/70x70" />
+                        <img alt="70x70 Placeholder" style="height:70px; width:70px;" src="<%# Item.AuthorAvatarUrl %>" />
                     </div>
                     <div class="question-info">
                         <a href="<%# Item.Url %>" class="title"><%# Item.Title %></a>

@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Common;
@@ -144,7 +145,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                         if (thread != null)
                         {
 
-                            hrefprofile.HRef = MembershipHelper.GetPublicProfileUrl(((ThreadModel)e.Item.DataItem).StartedBy);
+                            hrefprofile.HRef = UnderstoodDotOrg.Domain.Membership.MembershipHelper.GetPublicProfileUrl(((ThreadModel)e.Item.DataItem).StartedBy);
                         }
                     }
                     HtmlAnchor hrefprofile2 = (HtmlAnchor)e.Item.FindControl("hrefProfile2");
@@ -153,7 +154,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                         if (thread != null)
                         {
 
-                            hrefprofile2.HRef = MembershipHelper.GetPublicProfileUrl(((ThreadModel)e.Item.DataItem).LastPostUser);
+                            hrefprofile2.HRef = UnderstoodDotOrg.Domain.Membership.MembershipHelper.GetPublicProfileUrl(((ThreadModel)e.Item.DataItem).LastPostUser);
                         }
                     }
                     HtmlAnchor hrefprofile3 = (HtmlAnchor)e.Item.FindControl("hrefProfile3");
@@ -162,7 +163,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                         if (thread != null)
                         {
 
-                            hrefprofile3.HRef = MembershipHelper.GetPublicProfileUrl(((ThreadModel)e.Item.DataItem).LastPostUser);
+                            hrefprofile3.HRef = UnderstoodDotOrg.Domain.Membership.MembershipHelper.GetPublicProfileUrl(((ThreadModel)e.Item.DataItem).LastPostUser);
                         }
                     }
                 }
@@ -171,8 +172,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            var text = txtSearch.Text;
-            Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + text + "&a=group");
+            string query = TextHelper.RemoveHTML(txtSearch.Text);
+            Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=group");
         }
     }
 }

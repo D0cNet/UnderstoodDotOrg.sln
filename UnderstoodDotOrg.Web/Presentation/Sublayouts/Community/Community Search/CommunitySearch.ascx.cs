@@ -8,6 +8,7 @@
     using System.Xml;
     using System.Text.RegularExpressions;
     using UnderstoodDotOrg.Framework.UI;
+    using UnderstoodDotOrg.Common.Helpers;
 
     public partial class CommunitySearch : BaseSublayout
     {
@@ -63,6 +64,7 @@
 
         protected void SearchButton_Click(object sender, EventArgs e)
         {
+            string query = TextHelper.RemoveHTML(txtSearch.Text);
             string url = Request.RawUrl;
             if (Request.RawUrl.Contains("?"))
             {
@@ -70,7 +72,7 @@
                 url = u[0];
             }
 
-            Response.Redirect(url + "?q=" + txtSearch.Text);
+            Response.Redirect(url + "?q=" + query);
         }
 
         protected void ddlFilterSearch_SelectedIndexChanged(object sender, EventArgs e)
