@@ -208,11 +208,11 @@
                                     <div class="col col-18 profile-detail-information">
                                         <ul>
                                             <li>
-                                                <asp:HyperLink ID="hypViewAsVisitors" runat="server"><sc:FieldRenderer ID="frVisitors" FieldName="Visitors Text" runat="server"/> &gt;</asp:HyperLink></li>
+                                                <asp:HyperLink ID="hypViewAsVisitors" runat="server"><sc:FieldRenderer ID="frVisitors" FieldName="Visitors Text" runat="server"/> <i class="icon-arrow-right-blue"></i></asp:HyperLink></li>
                                             <li>
-                                                <asp:HyperLink ID="hypViewAsMembers" runat="server"><sc:FieldRenderer ID="frMembers" FieldName="Members Text" runat="server"/> &gt;</asp:HyperLink></li>
+                                                <asp:HyperLink ID="hypViewAsMembers" runat="server"><sc:FieldRenderer ID="frMembers" FieldName="Members Text" runat="server"/> <i class="icon-arrow-right-blue"></i></asp:HyperLink></li>
                                             <li>
-                                                <asp:HyperLink ID="hypViewAsFriends" runat="server"><sc:FieldRenderer ID="frFriends" FieldName="Friends Text" runat="server"/> &gt;</asp:HyperLink></li>
+                                                <asp:HyperLink ID="hypViewAsFriends" runat="server"><sc:FieldRenderer ID="frFriends" FieldName="Friends Text" runat="server"/> <i class="icon-arrow-right-blue"></i></asp:HyperLink></li>
                                         </ul>
                                     </div>
                                 </asp:PlaceHolder>
