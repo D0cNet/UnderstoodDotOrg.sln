@@ -21,7 +21,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Page.ClientScript.RegisterStartupScript(this.GetType(), "DefaultPointer()", "document.body.style.cursor='default';");
+           
+           // this.Page.ClientScript.RegisterStartupScript(this.GetType(), "DefaultPointer()", "document.body.style.cursor='default';");
+        }
+
+        public string Class
+        {
+            get { return this.btnJoin.CssClass; }
+            set { this.btnJoin.CssClass = value; }
         }
         private string GroupID
         {
@@ -53,7 +60,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             if (!String.IsNullOrEmpty(groupID))
             {
                 GroupID = groupID;
-                Text = DictionaryConstants.JoinThisGroupLabel;  
+                Text = DictionaryConstants.JoinThisGroupLabel;
+                IsMember = false;
                 try
                 {
                     if (CurrentMember != null)
