@@ -48,7 +48,7 @@
                     </asp:RequiredFieldValidator>
 
                     <div class="buttons">
-                        <button type="button" runat="server" id="btnShowResults" onserverclick="btnSend_Click" class="button send rs_preserve" >Send</button>
+                        <button type="button" runat="server" id="btnShowResults" onserverclick="btnSend_Click" class="button send rs_preserve" ><%= UnderstoodDotOrg.Common.DictionaryConstants.SendButtonText %></button>
                     </div>
                 </asp:Panel>
                 <asp:Panel ID="pnlConfirmation" runat="server" Visible="false" CssClass="rs_read_this">

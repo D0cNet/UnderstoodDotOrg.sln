@@ -58,7 +58,7 @@
     }
 
 </style>
-<div class="user-info-bar">Welcome, <a href="<%= MyAccountPageItem.GetUrl() %>"><%= UserDisplayName %></a>!</div>
+<div class="user-info-bar"><%= UnderstoodDotOrg.Common.DictionaryConstants.WelcomeFragment%>, <a href="<%= MyAccountPageItem.GetUrl() %>"><%= UserDisplayName %></a>!</div>
 <% } %>
 <div class="l-bar">
     <asp:Repeater runat="server" ID="rptNavUtility" OnItemDataBound="rptNavUtility_ItemDataBound">

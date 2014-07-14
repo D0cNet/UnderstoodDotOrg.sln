@@ -21,7 +21,7 @@
                 <ol class="carousel-navigation">
                 </ol>
                 <button class="play-pause pause">
-                    Pause</button>
+                    <%= UnderstoodDotOrg.Common.DictionaryConstants.PauseLabel %></button>
                 <div id="hero-carousel-wrapper" class="rsDefault" data-random="false">
                     <asp:Repeater runat="server" ID="rptHomeSlider" OnItemDataBound="rptHomeSlider_ItemDataBound">
                         <ItemTemplate>

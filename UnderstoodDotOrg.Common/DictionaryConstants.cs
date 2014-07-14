@@ -81,6 +81,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
+        public static string SendButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Send Button Text");
+            }
+        }
+
         public static string ViewGlossaryButtonText
         {
             get
@@ -984,6 +992,14 @@ namespace UnderstoodDotOrg.Common
         #endregion
 
         #region Fragments
+
+        public static string WelcomeFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Welcome Fragment");
+            }
+        }
 
         public static string ofFragment
         {
