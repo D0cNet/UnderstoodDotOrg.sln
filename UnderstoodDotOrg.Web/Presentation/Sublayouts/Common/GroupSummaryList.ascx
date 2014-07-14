@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="GroupSummaryList.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.GroupSummaryList" %>
 <%@ Register Src="~/Presentation/Sublayouts/Recommendation/CommunityRecommendationIcons.ascx" TagPrefix="uc1" TagName="CommunityRecommendationIcons" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/GroupJoinButton.ascx" TagPrefix="uc1" TagName="GroupJoinButton" %>
+
 
 <asp:ListView ID="lvGroupCards" runat="server">
     <EmptyDataTemplate>
@@ -51,7 +53,8 @@
                 <p class="discussions"><%#Eval("NumOfDiscussions") %> Discussions</p>
             <div class="submit-button-wrap">
             <%--<a href="<%#Eval("JoinUrl") %>" class="button rs_skip">Join this Group</a>--%>
-                    <asp:LinkButton ID="btnJoinGroup" OnClick="btnJoinGroup_Click" CssClass="button rs_skip" runat="server" Text=""></asp:LinkButton>
+          <%--          <asp:LinkButton ID="btnJoinGroup" OnClick="btnJoinGroup_Click" CssClass="button rs_skip" runat="server" Text=""></asp:LinkButton>--%>
+                <uc1:GroupJoinButton runat="server" id="GroupJoinButton" />
             </div>
         </div>
         </div> 

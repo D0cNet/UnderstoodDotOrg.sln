@@ -57,15 +57,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
                     bool viewDiscussions = TelligentService.IsUserInGroup(UserID, item.GroupID);
 
-                    LinkButton joinView = (LinkButton)e.Item.FindControl("btnJoinGroup");
-                    if (joinView != null)
+                    GroupJoinButton joinbtn = (GroupJoinButton)e.Item.FindControl("GroupJoinButton");
+                    if (joinbtn != null)
                     {
-
+                        joinbtn.LoadState(item.GroupID);
                         //joinView.Text = viewDiscussions ? "View Discussions" : "Join this Group";
-                        joinView.Text = viewDiscussions ? DictionaryConstants.ViewDiscussionsLabel : DictionaryConstants.JoinThisGroupLabel;
+                        //joinView.Text = viewDiscussions ? DictionaryConstants.ViewDiscussionsLabel : DictionaryConstants.JoinThisGroupLabel;
                         //If the user is to join group, then use Telligent group id, else use sitecore item id
-                        joinView.CommandArgument = viewDiscussions ? item.ItemID : item.GroupID;
-                        joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
+                        //joinView.CommandArgument = viewDiscussions ? item.ItemID : item.GroupID;
+                       // joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
                     }
 
                     HtmlAnchor titleLink = (HtmlAnchor)e.Item.FindControl("titleLink");
@@ -151,69 +151,69 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         }
 
-        protected void btnJoinGroup_Click(object sender, EventArgs e)
-        {
+        //protected void btnJoinGroup_Click(object sender, EventArgs e)
+        //{
 
-            LinkButton btn = ((LinkButton)sender);
-            if (btn.Attributes["name"].ToString().Equals("view"))
-            {
-                try
-                {
+        //    LinkButton btn = ((LinkButton)sender);
+        //    if (btn.Attributes["name"].ToString().Equals("view"))
+        //    {
+        //        try
+        //        {
 
-                    //Call view Discussion using sitecore group id
-                    Sitecore.Data.ID grpItemID = Sitecore.Data.ID.Parse(btn.CommandArgument);
-                    Item grpItem = Sitecore.Context.Database.GetItem(grpItemID);
-                    string itemUrl = Sitecore.Links.LinkManager.GetItemUrl(grpItem);
-                    Sitecore.Web.WebUtil.Redirect(itemUrl);
-                }
-                catch (Exception ex)
-                {
-                    Sitecore.Diagnostics.Error.LogError("Error in btnJoinGroup_Click for View Discussions function.\nError:\n" + ex.Message);
-                }
-            }
-            else
-            {
-                try
-                {
-                    //TODO: Get test Cases for this redirect
-                    //this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.CommunityUser);
-                    //Join the group using telligent group id
-                    if (CommunityHelper.JoinGroup(btn.CommandArgument, UserID))
-                    {
-                        //Send Email
-                        GroupItem grpItem = new GroupItem(Groups.ConvertGroupIDtoSitecoreItem(btn.CommandArgument));
-                        GroupCardModel grpModel = Groups.GroupCardModelFactory(grpItem);
+        //            //Call view Discussion using sitecore group id
+        //            Sitecore.Data.ID grpItemID = Sitecore.Data.ID.Parse(btn.CommandArgument);
+        //            Item grpItem = Sitecore.Context.Database.GetItem(grpItemID);
+        //            string itemUrl = Sitecore.Links.LinkManager.GetItemUrl(grpItem);
+        //            Sitecore.Web.WebUtil.Redirect(itemUrl);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Sitecore.Diagnostics.Error.LogError("Error in btnJoinGroup_Click for View Discussions function.\nError:\n" + ex.Message);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        try
+        //        {
+        //            //TODO: Get test Cases for this redirect
+        //            //this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.CommunityUser);
+        //            //Join the group using telligent group id
+        //            if (CommunityHelper.JoinGroup(btn.CommandArgument, UserID))
+        //            {
+        //                //Send Email
+        //                GroupItem grpItem = new GroupItem(Groups.ConvertGroupIDtoSitecoreItem(btn.CommandArgument));
+        //                GroupCardModel grpModel = Groups.GroupCardModelFactory(grpItem);
 
-                        BaseReply reply = ExactTargetService.InvokeEM9GroupWelcome(new InvokeEM9GroupWelcomeRequest
-                        {
-                            PreferredLanguage = CurrentMember.PreferredLanguage,
-                            GroupLeaderEmail = grpModel.ModeratorEmail,
-                            GroupLink = grpItem.GetUrl(),
-                            GroupTitle = grpItem.DisplayName,
-                            ToEmail = CurrentMember.Email,
+        //                BaseReply reply = ExactTargetService.InvokeEM9GroupWelcome(new InvokeEM9GroupWelcomeRequest
+        //                {
+        //                    PreferredLanguage = CurrentMember.PreferredLanguage,
+        //                    GroupLeaderEmail = grpModel.ModeratorEmail,
+        //                    GroupLink = grpItem.GetUrl(),
+        //                    GroupTitle = grpItem.DisplayName,
+        //                    ToEmail = CurrentMember.Email,
 
-                            GroupModerator = new Moderator
-                            {
-                                groupModBioLink = grpModel.ModeratorBio,
-                                groupModImgLink = grpModel.ModeratorAvatarUrl, //owner.Avatar,
-                                groupModName = grpModel.ModeratorName
-                            }
-                        });
+        //                    GroupModerator = new Moderator
+        //                    {
+        //                        groupModBioLink = grpModel.ModeratorBio,
+        //                        groupModImgLink = grpModel.ModeratorAvatarUrl, //owner.Avatar,
+        //                        groupModName = grpModel.ModeratorName
+        //                    }
+        //                });
 
 
 
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Sitecore.Diagnostics.Error.LogError("Error in btnJoinGroup_Click for joining Group function.\nError:\n" + ex.Message);
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Sitecore.Diagnostics.Error.LogError("Error in btnJoinGroup_Click for joining Group function.\nError:\n" + ex.Message);
 
-                }
+        //        }
 
-            }
+        //    }
 
-            DataBind();
+        //    DataBind();
 
-        }
+        //}
     }
 }

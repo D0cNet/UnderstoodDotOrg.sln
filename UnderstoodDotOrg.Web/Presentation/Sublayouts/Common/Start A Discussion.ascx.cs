@@ -195,7 +195,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                             Sitecore.Diagnostics.Error.LogError(msg);
                             error_msg.Text = msg;
                             error_msg.Visible = true;
-                            ShowClientSideForm();
+                            ShowClientSideForm(HiddenText);
                             return;
                         }
                        
@@ -204,6 +204,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     {
 
                         frmItemID = frmItem.ForumID.Text;
+                        HiddenText = frmItem.DisplayName;
 
                        
                     }
@@ -238,7 +239,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                                     TelligentService.DeleteForumThread(frmItemID, thModel.ThreadID);
                                     error_msg.Text = "Failed to create discussion.";
                                     error_msg.Visible = true;
-                                    ShowClientSideForm();
+                                    ShowClientSideForm(HiddenText);
                                 }
 
 
@@ -248,7 +249,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                                 //The assumption is that if the Thread is null, then there was an error in telligent API call and nothing was created
                                 error_msg.Text = "Failed to create discussion.";
                                 error_msg.Visible = true;
-                                ShowClientSideForm();
+                                ShowClientSideForm(HiddenText);
                             }
 
 
@@ -258,7 +259,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                             Sitecore.Diagnostics.Error.LogError(ex.Message);
                             error_msg.Text = "Failed to create discussion.";
                             error_msg.Visible = true;
-                            ShowClientSideForm();
+                            ShowClientSideForm(HiddenText);
                         }
                     }
                 }
@@ -267,28 +268,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     Sitecore.Diagnostics.Error.LogError("Error creating forum item in btnSubmit_Click.\nError:\n " + ex.Message);
                     error_msg.Text = "Critical Error creating discussion.";
                     error_msg.Visible = true;
-                    ShowClientSideForm();
+                    ShowClientSideForm(HiddenText);
                 }
             }
             else
             {
                 error_msg.Text = "You are not logged on.";
                 error_msg.Visible = true;
-                ShowClientSideForm();
+                ShowClientSideForm(HiddenText);
             }
         
 
         }
 
-        private void ShowClientSideForm()
+        private void ShowClientSideForm(string name="")
         {
-            clientsideScript("jQuery('.modal_discussion').dialog('open')");
+            if(!String.IsNullOrEmpty(name))
+                clientsideScript(" openWindow('"+name+"'); ");
+            else
+                clientsideScript(" LoadFromButton(); ");
         }
 
         private void clientsideScript(string jsText)
         {
             StringBuilder cstext1 = new StringBuilder();
-            cstext1.Append("<script type='text/javascript'>jQuery(document).ready(function() {");
+            cstext1.Append("<script type='text/javascript'>loadDialog();jQuery(document).ready(function() { ");
             cstext1.Append(jsText);
             cstext1.Append(@"});</script>");
 

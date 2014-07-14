@@ -28,35 +28,67 @@
 
         });
     }
+    function openWindow(name) {
+
+
+        var ddlfnameValidator = document.getElementById(jQuery("[id$='rqdDropDownFName']").attr('id'));
+        var ddlist = jQuery("[id$='ddlForums']");
+        var txtname = jQuery("[id$='txtFName']");
+        var hdField = jQuery("[id$='hdSelectedText']");
+
+
+        ddlfnameValidator.enabled = false;
+        txtname.prop("disabled", true);
+        txtname.val(name);
+        hdField.val(name);
+
+        ddlist.hide();
+        jQuery('.selected span').hide();
+        jQuery("#forumSelect").hide();
+        if (name !== '')
+            txtname.show();
+
+
+
+        jQuery(".modal_discussion").dialog("open");
+        return false;
+    }//);
+    function LoadFromButton()
+    {
+
+        var InitialDropDownText = '<%= InitialDropDownText %>';
+        var InitialTextboxText = '<%= InitialTextBoxText %>';
+
+        var ddlfnameValidator = jQuery("#<%=rqdDropDownFName.ClientID%>");
+        var ddlist = $("#<%=ddlForums.ClientID%>");
+        var txtname = jQuery("#<%=txtFName.ClientID%>");
+        var hdText = jQuery("#<%= hdSelectedText.ClientID %>"); 
+
+        ddlfnameValidator.enabled = true;
+        jQuery(ddlist).show();
+        jQuery('.selected span').show();
+        jQuery('.selected').show();
+        jQuery("#forumSelect").show();
+        ddlist.prop("disabled", false);
+
+        if (ddlist.css("display") == "inline-block" || ddlist.css("display") == "block")
+        txtname.hide();
+        else
+            txtname.show();
+
+        hdText.val("");
+        jQuery(".modal_discussion").dialog("open");
+        return false;
+             
+
+    }
    
     jQuery(document).ready(function () {
         loadDialog();
-       
-      
-        jQuery("#btn_start_discussion").click(
-             function () {
-                
-                 var InitialDropDownText = '<%= InitialDropDownText %>';
-                 var InitialTextboxText = '<%= InitialTextBoxText %>';
-                 
-                 var ddlfnameValidator = jQuery("#<%=rqdDropDownFName.ClientID%>");
-                 var ddlist = $("#<%=ddlForums.ClientID%>");
-                 var txtname = jQuery("#<%=txtFName.ClientID%>");
-            
-                 ddlfnameValidator.enabled = true;
-                 jQuery(ddlist).show();
-                 jQuery('.selected span').show();
-                 jQuery('.selected').show();
-                 jQuery("#forumSelect").show();
-                 ddlist.prop("disabled", false);
-                 if (ddlist.css("display") == "inline-block" || ddlist.css("display") == "block")
-                     txtname.hide();
-                 else
-                    txtname.show();
-                 jQuery(".modal_discussion").dialog("open");
-                 return false;
-             });
-
+        jQuery("#btn_start_discussion").click( function(){
+            LoadFromButton();
+            return false;
+        });
         
           
         jQuery("a").click(

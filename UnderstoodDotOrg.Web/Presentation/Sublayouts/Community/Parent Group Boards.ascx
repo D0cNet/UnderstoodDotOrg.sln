@@ -1,33 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Group Boards.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Group_Boards" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <script type="text/javascript" language="javascript">
-    function openWindow(name) {
-
-       
-        var ddlfnameValidator = document.getElementById(jQuery("[id$='rqdDropDownFName']").attr('id'));
-        var ddlist = jQuery("[id$='ddlForums']");
-        var txtname = jQuery("[id$='txtFName']"); 
-        var hdField = jQuery("[id$='hdSelectedText']");
-       
-   
-        ddlfnameValidator.enabled = false;
-        txtname.prop("disabled", true);
-        txtname.val(name);
-        hdField.val(name);
-      
-        ddlist.hide();
-        jQuery('.selected span').hide();
-        jQuery("#forumSelect").hide();
-        if (name !== '')
-            txtname.show();
-        
-        
-       
-        jQuery(".modal_discussion").dialog("open");
-        return false;
-    }//);
+    
     jQuery(document).ready(function () {
-      
+       
       
        
         jQuery(".col col-11 links:last").addClass("additional-links");

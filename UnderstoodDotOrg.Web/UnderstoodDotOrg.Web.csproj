@@ -792,6 +792,13 @@
     <Compile Include="Presentation\Sublayouts\Common\Cards\ProfileCommentCard.ascx.designer.cs">
       <DependentUpon>ProfileCommentCard.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupJoinButton.ascx.cs">
+      <DependentUpon>GroupJoinButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\GroupJoinButton.ascx.designer.cs">
+      <DependentUpon>GroupJoinButton.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Community Search\CommunitySearch.ascx.cs">
       <DependentUpon>CommunitySearch.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2983,6 +2990,7 @@
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\BlogFeaturePostWithBreadcrumb.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\BlogsCommon\FoundHelpfulWidget.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Cards\ProfileCommentCard.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\GroupJoinButton.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Community Search\CommunitySearch.ascx" />
     <Content Include="Presentation\Sublayouts\Common\LikeButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ThanksButton.ascx" />
