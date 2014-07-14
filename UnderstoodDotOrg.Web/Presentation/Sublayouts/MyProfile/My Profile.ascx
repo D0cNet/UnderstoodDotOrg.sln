@@ -104,7 +104,7 @@
                                     <div class="row">
                                         <div class="col col-5 offset-1 clearfix">
                                             <h3><%# Eval("Nickname") %></h3>
-                                            <a href="<%# getChildEditLink(Container) %>" class="child-edit">Edit</a>
+                                            <a href="<%# getChildEditLink(Container) %>" class="child-edit"><%= UnderstoodDotOrg.Common.DictionaryConstants.EditFragment %></a>
                                         </div>
                                         <div class="col col-18 profile-detail-information">
                                             <div class="children-heading">

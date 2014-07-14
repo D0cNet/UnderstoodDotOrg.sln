@@ -114,7 +114,7 @@
 <!-- popover hidden content -->
 <div class="glossary-term-content-wrapper popover-container">
     <blockquote>
-        <span>Dyslexia:</span> Difficulty in reading, spelling, writing, and related language skills that results from an impairment in the way the brain processes information &hellip; <a href="REPLACE.html">View Glossary</a>
+        <span>Dyslexia:</span> Difficulty in reading, spelling, writing, and related language skills that results from an impairment in the way the brain processes information &hellip; <a href="REPLACE.html"><%= UnderstoodDotOrg.Common.DictionaryConstants.ViewGlossaryButtonText %></a>
     </blockquote>
 </div>
 <!-- END PARTIAL: glossary-term -->

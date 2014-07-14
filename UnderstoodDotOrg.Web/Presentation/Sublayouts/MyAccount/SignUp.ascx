@@ -16,7 +16,8 @@
                 <sc:text id="pageTitle" runat="server" field="Page Title" />
             </h1>
             <a class="fb-sign-in" href="#">
-                <img alt="facebook" src="/Presentation/includes/images/icon.fb-sign-in@2x.png" />
+                <sc:Image ID="frFBImage" runat="server" Field="FB Image"/>
+                <%--<img alt="facebook" src="/Presentation/includes/images/icon.fb-sign-in@2x.png" />--%>
                 <%--wire up to FB--%>
             </a>
             <div id="fb-root"></div>

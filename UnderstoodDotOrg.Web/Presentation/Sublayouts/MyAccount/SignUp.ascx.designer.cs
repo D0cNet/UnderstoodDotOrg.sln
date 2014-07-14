@@ -40,6 +40,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount {
         protected global::Sitecore.Web.UI.WebControls.Text pageTitle;
         
         /// <summary>
+        /// frFBImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Image frFBImage;
+        
+        /// <summary>
         /// pageDirections control.
         /// </summary>
         /// <remarks>

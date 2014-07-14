@@ -12,7 +12,7 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <asp:Panel ID="pnlForm" runat="server" CssClass="share-email-form rs_read_this">
-                    <h1>Send to a Friend</h1>
+                    <h1><%= UnderstoodDotOrg.Common.DictionaryConstants.Core_SendtoafriendLabel %></h1>
                     <p id="validWarning" runat="server" visible="false" style="color: red;"><asp:Literal ID="litValidationMessage" runat="server"></asp:Literal></p>
 
                     <asp:Label runat="server" AssociatedControlID="txtYourName" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.EnterNameLabel %></asp:Label>
@@ -52,7 +52,7 @@
                     </div>
                 </asp:Panel>
                 <asp:Panel ID="pnlConfirmation" runat="server" Visible="false" CssClass="rs_read_this">
-                    <h1>Email Sent!</h1>
+                    <h1><%= UnderstoodDotOrg.Common.DictionaryConstants.Core_EmailSentLabel %></h1>
                     <p><asp:Literal ID="litThankYouMessage" runat="server"></asp:Literal></p>
                     <div class="buttons">
                         <a class="button close" data-dismiss="modal"><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseWindowButtonText %></a>

@@ -13,6 +13,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Exception Text
 
+        public static string Account_ThisUserIsNotConnectingMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Account_This User Is Not Connecting Message");
+            }
+        }
+
         public static string MyProfile_SelectIEPText
         {
             get
@@ -72,6 +80,14 @@ namespace UnderstoodDotOrg.Common
         #endregion Exception Text
 
         #region Button Text
+
+        public static string ViewGlossaryButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "View Glossary Button Text");
+            }
+        }
 
         public static string EmailButtonText
         {
@@ -1174,6 +1190,23 @@ namespace UnderstoodDotOrg.Common
         #endregion
 
         #region Core Labels
+
+        public static string Core_EmailSentLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Core_Email Sent Label");
+            }
+        }
+
+        public static string Core_SendtoafriendLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Core_Send to a friend Label");
+            }
+        }
+
 
         public static string Core_ParentLabel
         {
