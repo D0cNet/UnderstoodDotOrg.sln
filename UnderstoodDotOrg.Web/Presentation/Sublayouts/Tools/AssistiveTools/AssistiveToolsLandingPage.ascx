@@ -16,6 +16,11 @@
             </div>
         </div>
     </section>
+    <style>
+        .hero-image-container img {
+            height: auto;
+        }
+    </style>
     <!-- END PARTIAL: at-hero-image -->
 </div>
 
