@@ -548,6 +548,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SignInPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SignUpPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\TermsandConditionsItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ViewProfileItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\WhatsBeenHappeningItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\WhatsBeenHappeningItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\Recommendation\CreateAccountItem.base.cs" />

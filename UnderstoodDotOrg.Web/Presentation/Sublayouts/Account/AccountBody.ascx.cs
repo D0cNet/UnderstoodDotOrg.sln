@@ -17,119 +17,48 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 {
-    public partial class AccountBody : BaseSublayout<PublicAccountItem>
+    public partial class AccountBody : BaseSublayout<ViewProfileItem>
     {
-        public List<Child> TempList = new List<Child>();
-        public int ListTotal;
-        private string viewMode = "";
+        public Member ProfileMember;
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            uxSignIn.Text = "Sign In";
-            uxSignUp.Text = "Sign Up";
-
-            uxSignUp.NavigateUrl = MyAccountFolderItem.GetSignUpPage();
-            uxSignIn.NavigateUrl = MyAccountFolderItem.GetSignInPage();
-
-            viewMode = Request.QueryString[Constants.VIEW_MODE].IsNullOrEmpty() ? "" : Request.QueryString[Constants.VIEW_MODE];
+            InitViews();
             
-            string userScreenName = "";
-            if (!Request.QueryString[Constants.ACCOUNT_EMAIL].IsNullOrEmpty())
+        }
+
+        private void InitViews()
+        {
+            if (IsUserLoggedIn)
             {
-                userScreenName = Request.QueryString[Constants.ACCOUNT_EMAIL];
+                pnlMemberOpen.Visible = true;
             }
             else
             {
-                Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
-            }
-            var membershipManager = new MembershipManager();
-            var thisMember = new Member();
-            thisMember = membershipManager.GetMemberByScreenName(userScreenName);
-            //var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
-            
-            if (thisMember.ScreenName != null)
-            {
-                ListTotal = thisMember.Children.Count;
-                if (ListTotal != 0)
-                {
-                    rptChildren.DataSource = thisMember.Children;
-                    rptChildren.DataBind();
-                }
-                if ((thisMember.Interests != null) && (thisMember.Interests.Count != 0))
-                {
-                    rptInterests.DataSource = thisMember.Interests;
-                    rptInterests.DataBind();
-                }
-                List<GroupModel> groupsList = CommunityHelper.GetUserGroups(thisMember.ScreenName);
-
-                if (groupsList != null)
-                {
-                    rptGroups.DataSource = groupsList;
-                    rptGroups.DataBind();
-                }
-                if (CurrentMember != null) //must check if a user is logged in
-                {
-                    if (!String.IsNullOrEmpty(CurrentMember.ScreenName)) //Then check for a screenName, because it is used further down
-                    {
-
-
-                        if (thisMember.allowConnections)
-                        {
-                            if (IsUserLoggedIn)
-                            {
-                                if (CurrentMember.ScreenName == thisMember.ScreenName)
-                                {
-                                    SetVisibilityBasedOnViewMode();
-                                }
-                                else
-                                {
-                                    if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
-                                    {
-                                        Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString);
-                                    }
-                                    divNotConnected.Visible = true;
-                                }
-                            }
-                            else
-                            {
-                                divNotSignedIn.Visible = true;
-                            }
-                        }
-                        else
-                        {
-                            if ((!CurrentMember.ScreenName.IsNullOrEmpty()) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)))
-                            {
-                                Response.Redirect(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl() + "?" + Request.QueryString);
-                            }
-                            divPrivateProfile.Visible = true;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                divPrivateProfile.Visible = true;
+                pnlAnonymousClosed.Visible = !ProfileMember.allowConnections;
+                pnlAnonymousOpen.Visible = ProfileMember.allowConnections;
+                pnlMemberOpen.Visible = false;
             }
         }
 
         private void SetVisibilityBasedOnViewMode()
         {
-            if (viewMode == Constants.VIEW_MODE_VISITOR)
-            {
-                divNotSignedIn.Visible = true;
-            }
-            if (viewMode == Constants.VIEW_MODE_MEMBER)
-            {
-                divNotConnected.Visible = true;
-            }
-            if (viewMode == Constants.VIEW_MODE_FRIEND)
-            {
-                Response.Redirect(string.Format(
-                    MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl()
-                    + "?{0}={1}",
-                    Constants.VIEW_MODE,
-                    Constants.VIEW_MODE_FRIEND));
-            }
+            //if (viewMode == Constants.VIEW_MODE_VISITOR)
+            //{
+            //    divNotSignedIn.Visible = true;
+            //}
+            //if (viewMode == Constants.VIEW_MODE_MEMBER)
+            //{
+            //    divNotConnected.Visible = true;
+            //}
+            //if (viewMode == Constants.VIEW_MODE_FRIEND)
+            //{
+            //    Response.Redirect(string.Format(
+            //        MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().GetUrl()
+            //        + "?{0}={1}",
+            //        Constants.VIEW_MODE,
+            //        Constants.VIEW_MODE_FRIEND));
+            //}
         }
 
         protected void rptChildren_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -139,21 +68,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 Child dataItem = e.Item.DataItem as Child;
                 Repeater rptRow = e.FindControlAs<Repeater>("rptRow");
 
-                if (TempList.Count < 2)
-                {
-                    TempList.Add(dataItem);
-                    if (TempList.Count == 2)
-                    {
-                        rptRow.DataSource = TempList;
-                        rptRow.DataBind();
-                        TempList.Clear();
-                    }
-                    else if (e.Item.ItemIndex + 1 == ListTotal)
-                    {
-                        rptRow.DataSource = TempList;
-                        rptRow.DataBind();
-                    }
-                }
+                //if (TempList.Count < 2)
+                //{
+                //    TempList.Add(dataItem);
+                //    if (TempList.Count == 2)
+                //    {
+                //        rptRow.DataSource = TempList;
+                //        rptRow.DataBind();
+                //        TempList.Clear();
+                //    }
+                //    else if (e.Item.ItemIndex + 1 == ListTotal)
+                //    {
+                //        rptRow.DataSource = TempList;
+                //        rptRow.DataBind();
+                //    }
+                //}
             }
         }
 

@@ -1,7 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AccountHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.AccountHeader" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <%@ Register Src="~/Presentation/Sublayouts/Common/ThanksButton.ascx" TagPrefix="uc1" TagName="ThanksButton" %>
-<%@ Register Src="~/Presentation/Sublayouts/Common/ConnectButton.ascx" TagPrefix="uc1" TagName="ConnectButton" %>
+<%@ Register Src="~/Presentation/Sublayouts/Account/Common/ConnectButton.ascx" TagPrefix="uc1" TagName="ConnectButton" %>
+<%@ Register Src="~/Presentation/Sublayouts/Account/Common/PrivateMessageButton.ascx" TagPrefix="uc1" TagName="PrivateMessageButton" %>
 
 <div class="container back-to-previous-nav">
     <div class="row">
@@ -75,15 +76,14 @@
                         <sc:Sublayout ID="scNotConnectingWide" Visible="false" runat="server" Parameters="AdditionalCSSClass=wide no-margin" Path="~/Presentation/Sublayouts/Account/Common/NotConnectingMessage.ascx" />
 
                         <asp:Panel ID="pnlMemberConnectWide" runat="server" Visible="false" CssClass="account-connect-links wide no-margin">
-                            <uc1:ConnectButton ID="cbMemberConnectWide" runat="server" />
+                            <uc1:ConnectButton ID="ucMemberConnectWide" runat="server" />
+                            <uc1:PrivateMessageButton ID="ucPrivateMessageWide" Visible="false" runat="server" />
                         </asp:Panel>
-
-                        <sc:Sublayout ID="scFriendWide" Visible="false" runat="server" Parameters="AdditionalCSSClass=wide no-margin" Path="~/Presentation/Sublayouts/Account/Common/FriendButtons.ascx" />
 
                     </div>
 
                     <asp:Panel ID="pnlAnonConnectWide" runat="server" Visible="false" CssClass="account-connect-links wide">
-                        <uc1:ConnectButton ID="cbAnonConnectWide" runat="server" />
+                        <uc1:ConnectButton ID="ucAnonConnectWide" runat="server" />
                     </asp:Panel>
 
                     <div class="clearfix"></div>
@@ -91,6 +91,7 @@
                     <asp:UpdatePanel ID="pnlSupport" Visible="false" runat="server">
                         <ContentTemplate>
                             <div class="account-show-support">
+                                <p><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowYourSupportLabel %></p>
                                 <div class="account-support-links">
                                     <asp:LinkButton ID="btnThanks" runat="server"><i class="icon-account-smiley"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.ThanksLabel %></span></asp:LinkButton>
                                     <asp:LinkButton ID="btnThinking" runat="server"><i class="icon-account-flower"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.ThinkingOfYouLabel %></span></asp:LinkButton>
@@ -102,10 +103,9 @@
                     <sc:Sublayout runat="server" ID="scNotConnectingNarrow" Visible="false" Parameters="AdditionalCSSClass=narrow" Path="~/Presentation/Sublayouts/Account/Common/NotConnectingMessage.ascx" />
 
                     <asp:Panel ID="pnlConnectNarrow" runat="server" Visible="false" CssClass="account-connect-links narrow">
-                        <uc1:ConnectButton ID="cbConnectNarrow" runat="server" />
+                        <uc1:ConnectButton ID="ucConnectNarrow" runat="server" />
+                        <uc1:PrivateMessageButton ID="ucPrivateMessageNarrow" Visible="false" runat="server" />
                     </asp:Panel>
-
-                    <sc:Sublayout ID="scFriendNarrow" Visible="false" runat="server" Parameters="AdditionalCSSClass=narrow" Path="~/Presentation/Sublayouts/Account/Common/FriendButtons.ascx" />
 
                 </div>
             </div>

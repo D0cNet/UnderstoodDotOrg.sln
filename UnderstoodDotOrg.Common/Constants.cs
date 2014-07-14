@@ -634,6 +634,12 @@ namespace UnderstoodDotOrg.Common
                 public const string Keyword = "keyword";
                 public const string SortOption = "sort";
             }
+            public static class PublicProfile
+            {
+                public const string View = "view";
+                public const string ViewConnections = "connections";
+                public const string ViewComments = "comments";
+            }
         }
         public static class UserActivity_Values
         {

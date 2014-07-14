@@ -2141,6 +2141,27 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
             return success;
         }
+        public static bool DeleteFriendRequest(string requestor, string requestee)
+        {
+            bool success = false;
+            
+            MakeApiRequest(wc =>
+                {
+                    wc.Headers.Add("Rest-Method", "DELETE");
+
+                    string address = string.Format(GetApiEndPoint("users/{0}/friends/{1}.xml"), requestor, requestee);
+                    NameValueCollection data = new NameValueCollection();
+
+                    string xml = Encoding.UTF8.GetString(wc.UploadValues(address, data));
+                    XmlDocument document = new XmlDocument();
+                    document.LoadXml(xml);
+
+                    success = true;
+                });
+
+            return success;
+        }
+        
         public static bool UpdateFriendRequest(string requestor, string requestee, string friendshipstate)
         {
             bool success = false;

@@ -67,22 +67,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         protected global::System.Web.UI.WebControls.Panel pnlMemberConnectWide;
         
         /// <summary>
-        /// cbMemberConnectWide control.
+        /// ucMemberConnectWide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ConnectButton cbMemberConnectWide;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common.ConnectButton ucMemberConnectWide;
         
         /// <summary>
-        /// scFriendWide control.
+        /// ucPrivateMessageWide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout scFriendWide;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common.PrivateMessageButton ucPrivateMessageWide;
         
         /// <summary>
         /// pnlAnonConnectWide control.
@@ -94,13 +94,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         protected global::System.Web.UI.WebControls.Panel pnlAnonConnectWide;
         
         /// <summary>
-        /// cbAnonConnectWide control.
+        /// ucAnonConnectWide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ConnectButton cbAnonConnectWide;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common.ConnectButton ucAnonConnectWide;
         
         /// <summary>
         /// pnlSupport control.
@@ -148,21 +148,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         protected global::System.Web.UI.WebControls.Panel pnlConnectNarrow;
         
         /// <summary>
-        /// cbConnectNarrow control.
+        /// ucConnectNarrow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.ConnectButton cbConnectNarrow;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common.ConnectButton ucConnectNarrow;
         
         /// <summary>
-        /// scFriendNarrow control.
+        /// ucPrivateMessageNarrow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout scFriendNarrow;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common.PrivateMessageButton ucPrivateMessageNarrow;
     }
 }

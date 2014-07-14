@@ -10,7 +10,7 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
     
     
-    public partial class AccountBody {
+    public partial class AccountNonFriendProfile {
         
         /// <summary>
         /// pnlAnonymousOpen control.
@@ -40,13 +40,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         protected global::System.Web.UI.WebControls.Panel pnlMemberOpen;
         
         /// <summary>
-        /// rptChildren control.
+        /// lvChildren control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptChildren;
+        protected global::System.Web.UI.WebControls.ListView lvChildren;
         
         /// <summary>
         /// rptInterests control.

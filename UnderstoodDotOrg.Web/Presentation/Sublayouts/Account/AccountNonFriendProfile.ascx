@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AccountBody.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.AccountBody" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AccountNonFriendProfile.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.AccountNonFriendProfile" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <asp:Panel ID="pnlAnonymousOpen" runat="server" Visible="false" CssClass="sign-in-prompt-links">
@@ -29,22 +29,29 @@
         <div class="col col-22 offset-1">
             <!-- BEGIN PARTIAL: member-view-content -->
             <div class="member-view-content">
-                <asp:Repeater ID="rptChildren" runat="server">
-                    <HeaderTemplate>
+                            
+                <asp:ListView ID="lvChildren" runat="server" GroupItemCount="2">
+                    <LayoutTemplate>
                         <div class="member-view-children">
                             <div class="row">
                                 <div class="col col-6 section-label">
                                     <h3>Children</h3>
                                 </div>
                                 <div class="col col-18">
-
-                                    <!-- START Template-->
-                                    <div class="row">
-                    </HeaderTemplate>
+                                    <asp:PlaceHolder ID="groupPlaceholder" runat="server" />
+                                </div>
+                            </div>
+                        </div>
+                    </LayoutTemplate>
+                    <GroupTemplate>
+                        <div class="row">  
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+                        </div>
+                    </GroupTemplate>
                     <ItemTemplate>
                         <div class="col col-12 rs_read_this">
                             <h4><asp:Literal ID="litChild" runat="server" /></h4>
-                            <asp:Repeater ID="rptIssues" runat="server">
+                            <asp:Repeater ID="rptIssues" runat="server" OnItemDataBound="rptIssues_ItemDataBound">
                                 <HeaderTemplate>
                                     <ul>
                                 </HeaderTemplate>
@@ -57,17 +64,7 @@
                             </asp:Repeater>
                         </div>
                     </ItemTemplate>
-                    <FooterTemplate>
-                                    </div>
-                                <!-- /. row -->
-                                </div>
-                                <!-- /.col -->
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.member-view-children -->
-                    </FooterTemplate>
-                </asp:Repeater>
+                </asp:ListView>
 
                 <asp:Repeater ID="rptInterests" runat="server">
                     <HeaderTemplate>
@@ -92,9 +89,7 @@
                     </FooterTemplate>
                 </asp:Repeater>
 
-                <hr>
-
-                <asp:Repeater ID="rptGroups" runat="server">
+                <asp:Repeater ID="rptGroups" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.GroupModel">
                     <HeaderTemplate>
                         <hr />
 
@@ -106,7 +101,7 @@
                                 <ul>
                     </HeaderTemplate>
                     <ItemTemplate>
-
+                        <li><a href="<%# Item.Url %>"><%# Item.Title %></a></li>
                     </ItemTemplate>
                     <FooterTemplate>
                                 </ul>
@@ -114,8 +109,8 @@
                         </div>
                     </FooterTemplate>
                 </asp:Repeater>
-            </div>
             <!-- /.member-view-groups-->
+            </div>
             <!-- END PARTIAL: member-view-content -->
         </div>
     </div>

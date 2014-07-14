@@ -5,7 +5,7 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.PublicAccount;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
@@ -13,35 +13,30 @@ using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 {
-    public partial class AccountHeader : BaseSublayout<PublicAccountItem>
+    public partial class AccountHeader : BaseSublayout<ViewProfileItem>
     {
         protected string ScreenName { get; set; }
+        public Member ProfileMember { get; set; }
+
         protected string CanConnectCss
         {
             get
             {
-                return (_profileMember != null && _profileMember.allowConnections)
+                return (ProfileMember != null && ProfileMember.allowConnections)
                     ? "can-connect"
                     : string.Empty;
             }
         }
 
-        private Member _profileMember = null;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            ScreenName = Sitecore.Web.WebUtil.GetUrlName(0);
-
-            MembershipManager mm = new MembershipManager();
-            
-            // TODO: ensure this is valid place to check for screen name
-            _profileMember = mm.GetMemberByScreenName(ScreenName);
-
-            if (_profileMember == null)
+            if (ProfileMember == null)
             {
-                // TODO: show error message
                 return;
             }
+
+            ScreenName = ProfileMember.ScreenName;
+
             BindEvents();
             InitView();
         }
@@ -79,14 +74,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 imgAvatar.Visible = false;
             }
 
-            pnlSupport.Visible = _profileMember.allowConnections;
+            // Hide support from user viewing their own profile
+            if (IsUserLoggedIn
+                && !string.IsNullOrEmpty(CurrentMember.ScreenName)
+                && CurrentMember.ScreenName == ScreenName)
+            {
+                pnlSupport.Visible = false;
+            }
+            else
+            {
+                pnlSupport.Visible = ProfileMember.allowConnections;
+            }
 
             // Conditional content for logged in viewers
             if (!IsUserLoggedIn)
             {
-                if (_profileMember.allowConnections && _profileMember.Children.Any())
+                if (ProfileMember.allowConnections && ProfileMember.Children.Any())
                 {
-                    rptChildren.DataSource = _profileMember.Children;
+                    rptChildren.DataSource = ProfileMember.Children;
                     rptChildren.DataBind();
                 }
             }
@@ -98,36 +103,40 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 
         private void ToggleConnectButtons()
         {
-            if (_profileMember.allowConnections)
+            if (ProfileMember.allowConnections)
             {
-                cbAnonConnectWide.LoadState(ScreenName);
-                cbConnectNarrow.LoadState(ScreenName);
-                cbMemberConnectWide.LoadState(ScreenName);
+                // Controls that require screen name targets
+                ucConnectNarrow.TargetScreenName 
+                    = ucAnonConnectWide.TargetScreenName 
+                    = ucMemberConnectWide.TargetScreenName
+                    = ucPrivateMessageNarrow.TargetScreenName
+                    = ucPrivateMessageWide.TargetScreenName 
+                    = ScreenName;
 
                 bool isConnected = (IsUserLoggedIn && !string.IsNullOrEmpty(CurrentMember.ScreenName))
                     ? CommunityHelper.CheckFriendship(CurrentMember.ScreenName, ScreenName)
                     : false;
 
                 // Connect/friend button shared with anon and members
-                pnlConnectNarrow.Visible = !isConnected;
+                pnlConnectNarrow.Visible = true;
 
                 // Connect buttons unique to anon and members
-                pnlMemberConnectWide.Visible = IsUserLoggedIn && !isConnected;
-                pnlAnonConnectWide.Visible = !IsUserLoggedIn && !isConnected;
+                pnlMemberConnectWide.Visible = IsUserLoggedIn;
+                pnlAnonConnectWide.Visible = !IsUserLoggedIn;
 
                 // Friend buttons
-                scFriendNarrow.Visible = scFriendWide.Visible = IsUserLoggedIn && isConnected;
+                ucPrivateMessageNarrow.Visible = ucPrivateMessageWide.Visible = IsUserLoggedIn && isConnected;
             }
             else
             {
                 pnlConnectNarrow.Visible = pnlMemberConnectWide.Visible = pnlAnonConnectWide.Visible
-                    = scFriendWide.Visible = scFriendWide.Visible = false;
+                    = ucPrivateMessageNarrow.Visible = ucPrivateMessageWide.Visible = false;
             }
         }
 
         private void ToggleDisabledConnectionMessage()
         {
-            scNotConnectingNarrow.Visible = scNotConnectingWide.Visible = !_profileMember.allowConnections;
+            scNotConnectingNarrow.Visible = scNotConnectingWide.Visible = !ProfileMember.allowConnections;
         }
 
         void btnThanks_Click(object sender, EventArgs e)
@@ -139,6 +148,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                     btnThanks.Text = UnderstoodDotOrg.Common.DictionaryConstants.RequestSent;
                 }
             }
+            else
+            {
+                // TODO: redirect
+            }
         }
 
         void btnThinking_Click(object sender, EventArgs e)
@@ -149,6 +162,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 {
                     btnThinking.Text = UnderstoodDotOrg.Common.DictionaryConstants.RequestSent;
                 }
+            }
+            else
+            {
+                // TODO: redirect
             }
         }
 

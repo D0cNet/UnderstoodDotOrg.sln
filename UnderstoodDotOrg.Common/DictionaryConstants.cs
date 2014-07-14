@@ -2626,5 +2626,9 @@ namespace UnderstoodDotOrg.Common
         public static string SeeActivityLabel { get { return Translate.TextByDomain(PosesDictionary, "See Activity Label"); } }
         public static string GradeLevelLabel { get { return Translate.TextByDomain(PosesDictionary, "Grade Level Label"); } }
         public static string AdditionalInformationLabel { get { return Translate.TextByDomain(PosesDictionary, "Additional Information Label"); } }
+
+        public static string ShowYourSupportLabel { get { return Translate.TextByDomain(PosesDictionary, "Show Your Support Label"); } }
+        public static string ProfileLabel { get { return Translate.TextByDomain(PosesDictionary, "Profile Label"); } }
+        public static string ConnectionsLabel { get { return Translate.TextByDomain(PosesDictionary, "Connections Label"); } }
     }
 }

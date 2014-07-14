@@ -10,60 +10,78 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
     
     
-    public partial class AccountBody {
+    public partial class AccountProfile {
         
         /// <summary>
-        /// pnlAnonymousOpen control.
+        /// ucAccountHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlAnonymousOpen;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.AccountHeader ucAccountHeader;
         
         /// <summary>
-        /// pnlAnonymousClosed control.
+        /// ucAccountNonFriendProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlAnonymousClosed;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.AccountNonFriendProfile ucAccountNonFriendProfile;
         
         /// <summary>
-        /// pnlMemberOpen control.
+        /// pnlFriends control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlMemberOpen;
+        protected global::System.Web.UI.WebControls.Panel pnlFriends;
         
         /// <summary>
-        /// rptChildren control.
+        /// litCommentCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptChildren;
+        protected global::System.Web.UI.WebControls.Literal litCommentCount;
         
         /// <summary>
-        /// rptInterests control.
+        /// ddlMobileTabs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptInterests;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMobileTabs;
         
         /// <summary>
-        /// rptGroups control.
+        /// ucAccountFriendProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptGroups;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.AccountFriendProfile ucAccountFriendProfile;
+        
+        /// <summary>
+        /// ucAccountFriendConnections control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.AccountFriendConnections ucAccountFriendConnections;
+        
+        /// <summary>
+        /// ucAccountFriendComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.AccountFriendComments ucAccountFriendComments;
     }
 }

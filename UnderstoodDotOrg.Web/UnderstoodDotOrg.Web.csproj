@@ -379,6 +379,34 @@
     <Compile Include="Presentation\Sublayouts\Account\AccountBody.ascx.designer.cs">
       <DependentUpon>AccountBody.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountFriendComments.ascx.cs">
+      <DependentUpon>AccountFriendComments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountFriendComments.ascx.designer.cs">
+      <DependentUpon>AccountFriendComments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountFriendConnections.ascx.cs">
+      <DependentUpon>AccountFriendConnections.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountFriendConnections.ascx.designer.cs">
+      <DependentUpon>AccountFriendConnections.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountFriendProfile.ascx.cs">
+      <DependentUpon>AccountFriendProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountFriendProfile.ascx.designer.cs">
+      <DependentUpon>AccountFriendProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountNonFriendProfile.ascx.cs">
+      <DependentUpon>AccountNonFriendProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountNonFriendProfile.ascx.designer.cs">
+      <DependentUpon>AccountNonFriendProfile.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Account\AccountHeader.ascx.cs">
       <DependentUpon>AccountHeader.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -386,12 +414,26 @@
     <Compile Include="Presentation\Sublayouts\Account\AccountHeader.ascx.designer.cs">
       <DependentUpon>AccountHeader.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Common\FriendButtons.ascx.cs">
-      <DependentUpon>FriendButtons.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Account\AccountProfile.ascx.cs">
+      <DependentUpon>AccountProfile.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Common\FriendButtons.ascx.designer.cs">
-      <DependentUpon>FriendButtons.ascx</DependentUpon>
+    <Compile Include="Presentation\Sublayouts\Account\AccountProfile.ascx.designer.cs">
+      <DependentUpon>AccountProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Common\ConnectButton.ascx.cs">
+      <DependentUpon>ConnectButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Common\ConnectButton.ascx.designer.cs">
+      <DependentUpon>ConnectButton.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Common\PrivateMessageButton.ascx.cs">
+      <DependentUpon>PrivateMessageButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\Common\PrivateMessageButton.ascx.designer.cs">
+      <DependentUpon>PrivateMessageButton.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Account\Common\NotConnectingMessage.ascx.cs">
       <DependentUpon>NotConnectingMessage.ascx</DependentUpon>
@@ -2931,8 +2973,14 @@
     <Content Include="Presentation\Sublayouts\About\Widgets\Donate.ascx" />
     <Content Include="Presentation\Sublayouts\About\Widgets\ThankYouSocial.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountBody.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\AccountFriendComments.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\AccountFriendConnections.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\AccountFriendProfile.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\AccountNonFriendProfile.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountHeader.ascx" />
-    <Content Include="Presentation\Sublayouts\Account\Common\FriendButtons.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\AccountProfile.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\Common\ConnectButton.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\Common\PrivateMessageButton.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Common\NotConnectingMessage.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Tabs\Connections.ascx" />
