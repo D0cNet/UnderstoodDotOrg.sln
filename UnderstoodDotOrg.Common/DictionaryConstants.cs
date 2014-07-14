@@ -2379,6 +2379,7 @@ namespace UnderstoodDotOrg.Common
 
         public static string ViewDiscussionsLabel { get { return Translate.TextByDomain(PosesDictionary, "View Discussions Label"); } }
         public static string JoinThisGroupLabel { get { return Translate.TextByDomain(PosesDictionary, "Join this Group Label"); } }
+        public static string JoinGroupButtonText { get { return Translate.TextByDomain(PosesDictionary, "Join Group Button Text"); } }
         #endregion
 
         #region Community Messages

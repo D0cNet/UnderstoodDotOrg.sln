@@ -539,6 +539,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountProfileItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\PublicAccount\PublicAccountProfileItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\RegisterCommunityProfileItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\RegisterCommunityProfileItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\ResetYourPasswordItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\MyAccount\SavedProfileQuestionsControlItem.instance.cs" />

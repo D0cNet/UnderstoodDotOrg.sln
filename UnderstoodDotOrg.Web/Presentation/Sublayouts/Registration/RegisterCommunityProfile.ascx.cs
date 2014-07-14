@@ -11,25 +11,23 @@ using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Helpers;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Registration {
-    public partial class RegisterCommunityProfile : System.Web.UI.UserControl {
-        protected void Page_Load(object sender, EventArgs e) {
-			//if (this.CurrentMember != null && this.CurrentUser != null)
-			//{
-			//	Response.Redirect(MyAccountFolderItem.GetMyAccountPage());
-			//}
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Registration
+{
+    public partial class RegisterCommunityProfile : BaseSublayout<RegisterCommunityProfileItem>//System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            btnRegister.Text = DictionaryConstants.JoinGroupButtonText;
+            txtScreenName.Attributes["placeholder"] = DictionaryConstants.ScreenNameWatermark;
+            hypCompleteMyProfile.Text = Model.CompleteMyFullProfileText.Rendered;
+            hypCompleteMyProfile.NavigateUrl = MyAccountFolderItem.GetCompleteMyProfileStepOne();
         }
 
-		protected void registerForCommunity_Click(object sender, EventArgs e)
-		{
-			//this.FlushRegisteringUser();
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
 
-			////everything's cool
-			//if (this.registeringUser == null)
-			//{
-			//	this.registeringUser = new Domain.Membership.Member();
-			//}
-		}
+        }
     }
 }
