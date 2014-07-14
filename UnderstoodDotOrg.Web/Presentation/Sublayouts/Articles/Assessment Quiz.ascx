@@ -76,7 +76,7 @@
                     var hiddenField = $("[id*='hfKeyValuePairs']");
 
                     $("ul[id*='rptPageQuestions_rblAnswer']").click(function () {
-                        Answers[$(this).data("id")] = $(this).find("li input").val();
+                        Answers[$(this).data("id")] = $(this).find("li .checked input").val();
                         hiddenField.val(JSON.stringify(Answers));
                     })
 

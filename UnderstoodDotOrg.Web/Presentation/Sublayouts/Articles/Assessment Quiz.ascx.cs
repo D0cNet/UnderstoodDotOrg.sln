@@ -159,7 +159,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     {
                         totalPoints += contextQuestion.TrueValue;
                     }
-                    else if (question.Value.Answer == "True")
+                    else if (question.Value.Answer == "False")
                     {
                         totalPoints += contextQuestion.FalseValue;
                     }
