@@ -13,14 +13,6 @@ namespace UnderstoodDotOrg.Common
 
         #region Exception Text
 
-        public static string Account_ThisUserIsNotConnectingMessage
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "Account_This User Is Not Connecting Message");
-            }
-        }
-
         public static string MyProfile_SelectIEPText
         {
             get
@@ -81,22 +73,6 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
-        public static string SendButtonText
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "Send Button Text");
-            }
-        }
-
-        public static string ViewGlossaryButtonText
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "View Glossary Button Text");
-            }
-        }
-
         public static string EmailButtonText
         {
             get
@@ -104,6 +80,22 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Email Button Text");
             }
         }
+
+		public static string SendButtonText
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Send Button Text");
+			}
+		}
+
+		public static string ViewGlossaryButtonText
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "View Glossary Button Text");
+			}
+		}
 
         public static string ShareButtonText
         {
@@ -993,14 +985,6 @@ namespace UnderstoodDotOrg.Common
 
         #region Fragments
 
-        public static string WelcomeFragment
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "Welcome Fragment");
-            }
-        }
-
         public static string ofFragment
         {
             get
@@ -1008,6 +992,70 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "of Fragment");
             }
         }
+
+		public static string MoreFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "More Fragment");
+			}
+		}
+
+		public static string ShowAllFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Show All Fragment");
+			}
+		}
+
+		public static string GroupsFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Groups Fragment");
+			}
+		}
+
+		public static string QAFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "QA Fragment");
+			}
+		}
+
+		public static string ExpertsFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Experts Fragment");
+			}
+		}
+
+		public static string FilterByFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Filter By Fragment");
+			}
+		}
+
+		public static string BlogsFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Blogs Fragment Fragment");
+			}
+		}
+
+		public static string MenuFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Menu Fragment");
+			}
+		}
 
         public static string SecondFragment
         {
@@ -1203,26 +1251,33 @@ namespace UnderstoodDotOrg.Common
 			}
 		}
 
+		public static string WelcomeFragment
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Welcome Fragment");
+			}
+		}
+
         #endregion
 
         #region Core Labels
 
-        public static string Core_EmailSentLabel
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "Core_Email Sent Label");
-            }
-        }
+		public static string Core_EmailSentLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Core_Email Sent Label");
+			}
+		}
 
-        public static string Core_SendtoafriendLabel
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "Core_Send to a friend Label");
-            }
-        }
-
+		public static string Core_SendtoafriendLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Core_Send to a friend Label");
+			}
+		}
 
         public static string Core_ParentLabel
         {
@@ -2350,14 +2405,6 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-        public static string SelectTechnologyLabel
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "Select Technology Label");
-            }
-        }
-
         public static string ChatWithLabel
         {
             get
@@ -2373,6 +2420,14 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "See My Bio Label");
             }
         }
+
+		public static string SelectTechnologyLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Select Technology Label");
+			}
+		}
 
         #endregion
 
@@ -2395,8 +2450,18 @@ namespace UnderstoodDotOrg.Common
 
         public static string ViewDiscussionsLabel { get { return Translate.TextByDomain(PosesDictionary, "View Discussions Label"); } }
         public static string JoinThisGroupLabel { get { return Translate.TextByDomain(PosesDictionary, "Join this Group Label"); } }
-        public static string JoinGroupButtonText { get { return Translate.TextByDomain(PosesDictionary, "Join Group Button Text"); } }
-        #endregion
+
+		public static string APrivateParentCommunityLabel { get { return Translate.TextByDomain(PosesDictionary, "A Private Parent Community Label"); } }
+		public static string WeAskForAScreenname { get { return Translate.TextByDomain(PosesDictionary, "We Ask For A Screenname Label"); } }
+		public static string SelectATopicLabel { get { return Translate.TextByDomain(PosesDictionary, "Select A Topic Label"); } }
+		public static string SoOtherParentsLabel { get { return Translate.TextByDomain(PosesDictionary, "So Other Parents Label"); } }
+		public static string UnderstoodMakesItEasyLabel { get { return Translate.TextByDomain(PosesDictionary, "Understood Makes It Easy Label"); } }
+		public static string YesIWouldLikeToSignUpLabel { get { return Translate.TextByDomain(PosesDictionary, "Yes I Would Like To Sign Up Label"); } }
+		public static string WhyDoWeAskLabel { get { return Translate.TextByDomain(PosesDictionary, "Why Do We Ask Label"); } }
+		public static string OrCompleteMyProfileLabel { get { return Translate.TextByDomain(PosesDictionary, "Or Complete My Profile Label"); } }
+		public static string JoinGroupButtonText { get { return Translate.TextByDomain(PosesDictionary, "Join Group Button Text"); } }
+
+		#endregion
 
         #region Community Messages
         public static string ThinkingOfYouMessage { get { return Translate.TextByDomain(PosesDictionary, "Thinking Of You Message"); } }

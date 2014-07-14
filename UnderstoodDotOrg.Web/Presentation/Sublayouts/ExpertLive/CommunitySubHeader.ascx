@@ -37,7 +37,7 @@
                 <ul class="menu" aria-label="secondary-navigation" aria-role="navigation">
                     <li class="submenu">
                         <div class="inner">
-                            <div class="label-more"><span>More <i class="icon-hide-show-fff"></i></span></div>
+                            <div class="label-more"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreFragment %> <i class="icon-hide-show-fff"></i></span></div>
                             <ul>
                                 <asp:Repeater runat="server" ID="rptTopicHeader" OnItemDataBound="rptTopicHeader_ItemDataBound">
                                     <ItemTemplate>

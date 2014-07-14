@@ -8,12 +8,20 @@
     using System.Xml;
     using System.Text.RegularExpressions;
     using UnderstoodDotOrg.Framework.UI;
+	using UnderstoodDotOrg.Common;
     using UnderstoodDotOrg.Common.Helpers;
 
     public partial class CommunitySearch : BaseSublayout
     {
         private void Page_Load(object sender, EventArgs e)
         {
+
+			ddlFilterSearch.Items[0].Text = DictionaryConstants.FilterByFragment;
+			ddlFilterSearch.Items[1].Text = DictionaryConstants.BlogsFragment;
+			ddlFilterSearch.Items[2].Text = DictionaryConstants.GroupsFragment;
+			ddlFilterSearch.Items[3].Text = DictionaryConstants.QAFragment;
+			ddlFilterSearch.Items[4].Text = DictionaryConstants.ExpertsFragment;
+
             string q = string.Empty;
             q = Request.QueryString["q"];
             litResultName.Text = q;

@@ -7,7 +7,7 @@
         <div class="row header-wrapper">
             <div class="col col-14 offset-1 header-title">
                 <h1>Welcome to the Understood Community</h1>
-                <p class="subhead">A private parent community with expert guidance and support</p>
+                <p class="subhead"><%= UnderstoodDotOrg.Common.DictionaryConstants.APrivateParentCommunityLabel %></p>
             </div>
 
             <div class="col col-9 header-share-save">
@@ -21,17 +21,17 @@
     <nav class="container nav-secondary">
         <div class="row">
             <div class="col col-24">
-                <div class="label-menu"><span>Menu</span></div>
+                <div class="label-menu"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.MenuFragment %></span></div>
                 <ul class="menu" aria-role="navigation" aria-label="secondary-navigation">
                     <li class="title">
-                        <p class="select-topic">Select a topic:</p>
+                        <p class="select-topic"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectATopicLabel %></p>
                         <button><asp:Literal ID="litInitialMenuChoice" runat="server" /></button>
                         <i class="icon-hide-show-fff"></i>
                     </li>
                     <li class="submenu">
                         <div class="inner">
                             <div class="label-more">
-                                <button>More <i class="icon-hide-show-fff"></i></button>
+                                <button><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreFragment %> <i class="icon-hide-show-fff"></i></button>
                             </div>
                             <ul>
                                 <asp:Repeater ID="rptLinks" runat="server">

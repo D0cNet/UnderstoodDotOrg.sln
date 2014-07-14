@@ -7,10 +7,10 @@
             <!-- BEGIN PARTIAL: about/search-box-module -->
             <div class="search-box-module">
                 <fieldset>
-                    <legend>Search</legend>
+                    <legend><%= UnderstoodDotOrg.Common.DictionaryConstants.SearchLabel %></legend>
                     <span class="field">
                         <asp:Panel runat="server" DefaultButton="btnSearch">
-                            <label for="search-term" class="visuallyhidden">Search</label>
+                            <label for="search-term" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SearchLabel %></label>
                             <asp:TextBox ID="txtSearch" CssClass="search-term" runat="server" placeholder="Search the Understood Community" />
                             <asp:Button type="submit" id="btnSearch" value="Go" OnClick="SearchButton_Click" runat="server" />
                         </asp:Panel>
@@ -33,12 +33,12 @@
             </div>
             <label id="searchFilter" runat="server">
                 <asp:DropDownList ID="ddlFilterSearch" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlFilterSearch_SelectedIndexChanged">
-                    <asp:ListItem Selected="True" Value="">Filter by</asp:ListItem>
-                    <asp:ListItem Value="all">Show All</asp:ListItem>
-                    <asp:ListItem Value="blog">Blogs</asp:ListItem>
-                    <asp:ListItem Value="group">Groups</asp:ListItem>
-                    <asp:ListItem Value="question">Q&A</asp:ListItem>
-                    <asp:ListItem Value="expert">Experts</asp:ListItem>
+                    <asp:ListItem Selected="True" Value=""></asp:ListItem>
+                    <asp:ListItem Value="all"></asp:ListItem>
+                    <asp:ListItem Value="blog"></asp:ListItem>
+                    <asp:ListItem Value="group"></asp:ListItem>
+                    <asp:ListItem Value="question"></asp:ListItem>
+                    <asp:ListItem Value="expert"></asp:ListItem>
                 </asp:DropDownList>
             </label>
             <div class="clearfix"></div>

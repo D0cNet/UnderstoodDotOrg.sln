@@ -53,7 +53,7 @@
                         <!-- end .member-card-info -->
                         <div class="member-card-specialties">
                             <ul>
-                                <span class="visuallyhidden">grade level/span>
+                                <span class="visuallyhidden">grade level</span>
                 <li class='specialty-long'><a href='REPLACE'>PreK</a><!-- BEGIN PARTIAL: community/child_info_card -->
 
                     <div class="card-child-info popover rs_skip">
