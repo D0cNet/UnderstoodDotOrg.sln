@@ -44,20 +44,37 @@ namespace UnderstoodDotOrg.Web.Handlers
 
             int totalResults = 0;
             List<Article> articles = SearchHelper.PerformArticleSearch(terms, type, page, out totalResults);
-            var query = from a in articles
-                        where a.GetItem() != null
-                        let i = new DefaultArticlePageItem(a.GetItem())
-                        select new SearchArticle
-                        {
-                            Title = Common.Helpers.TextHelper.HighlightSearchTitle(terms, i.ContentPage.PageTitle.Rendered),
-                            Url = i.GetUrl(),
-                            Thumbnail = i.GetArticleThumbnailUrl(230, 129),
-                            Blurb = Common.Helpers.TextHelper.TruncateText(
-                                Sitecore.StringUtil.RemoveTags(HttpUtility.HtmlDecode(i.ContentPage.BodyContent.Rendered)), blurbLimit),
-                            Type = i.GetArticleType()
-                        };
+            List<SearchArticle> searchArticles = new List<SearchArticle>();
+            foreach (Article article in articles)
+            {
+                DefaultArticlePageItem articleItem = article.GetItem();
+                if (articleItem == null)
+                {
+                    continue;
+                }
 
-            results.Articles = query.ToList();
+                // Handle cases such as invalid link format exception
+                try
+                {
+                    var sa = new SearchArticle
+                    {
+                        Title = Common.Helpers.TextHelper.HighlightSearchTitle(terms, articleItem.ContentPage.PageTitle.Rendered),
+                        Url = articleItem.GetUrl(),
+                        Thumbnail = articleItem.GetArticleThumbnailUrl(230, 129),
+                        Blurb = Common.Helpers.TextHelper.TruncateText(
+                            Sitecore.StringUtil.RemoveTags(HttpUtility.HtmlDecode(articleItem.ContentPage.BodyContent.Raw)), blurbLimit),
+                        Type = articleItem.GetArticleType()
+                    };
+
+                    searchArticles.Add(sa);
+                }
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error("Error populating search result", ex, this);
+                }
+            }
+
+            results.Articles = searchArticles;
             results.TotalMatches = totalResults;
 
             results.HasMoreResults = HasMoreResults(page, Constants.SEARCH_RESULTS_ENTRIES_PER_PAGE, results.Articles.Count(), totalResults);
