@@ -303,9 +303,9 @@ namespace UnderstoodDotOrg.Domain.Importer
             switch (strippedString.ToLower())
             {
                 case "adhd":
-                    return "Hyperactivity/Impulsivity";
+                    return "Attention/Hyperactivity";
                 case "add":
-                    return "Attention/Staying Focused";
+                    return "Attention/Hyperactivity";
                 case "dyslexia":
                     return "Reading";
                 case "dysgraphia":
@@ -313,19 +313,19 @@ namespace UnderstoodDotOrg.Domain.Importer
                 case "dyscalculia":
                     return "Math";
                 case "expressive language disorder":
-                    return "Spoken Language";
+                    return "Speech/Oral Expression";
                 case "receptive language disorder":
                     return "Listening Comprehension";
                 case "sensory processing issue":
-                    return "Motor Skills";
+                    return "Social Skills, Including Conversation";
                 case "auditory processing issue":
                     return "Listening Comprehension";
                 case "dyspraxia":
-                    return "Motor Skills";
+                    return "Social Skills, Including Conversation";
                 case "social pragmatic language disorder":
-                    return "Social Skills";
+                    return "Social Skills, Including Conversation";
                 case "executive functioning issue":
-                    return "Executive Funtcion";
+                    return "Organization, Planning, Time Management";
                 case "nonverbal learning issues":
                     return "Reading";
                 case "visual processing issue":
