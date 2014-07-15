@@ -57,8 +57,10 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                 if (thModel == null)
                 {
                     thModel = readThreadFunc(ForumID);  //CommunityHelper.ReadThreadList(ForumID);
-                   
+
                 }
+               
+
                 return thModel;
             }
         }

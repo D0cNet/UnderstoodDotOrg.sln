@@ -21,6 +21,7 @@ using UnderstoodDotOrg.Domain.Understood.Services;
 using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Common.Extensions;
 using System.IO;
+using UnderstoodDotOrg.Services.CommunityServices;
 namespace UnderstoodDotOrg.Services.TelligentService
 {
     public class TelligentService
@@ -1207,7 +1208,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             catch (Exception ex)
             {
-                th = null;
+               // th = null;
                 Sitecore.Diagnostics.Log.Error(ex.Message, ex);
             }
             return th;
@@ -2341,7 +2342,52 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
             return stat;
         }
-       
+        public static List<GroupCardModel> GetUserGroups(string username)
+        {
+            List<GroupCardModel> groups = new List<GroupCardModel>();
+            if (!String.IsNullOrEmpty(username))
+            {
+                username = username.Trim();
+                WebClient webClient = new WebClient();
+                string adminKeyBase64 = TelligentAuth();
+
+                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+                //   webClient.Headers.Add("Rest-Impersonate-User", username);
+                string requestUrl = String.Empty;
+
+                requestUrl = String.Format("{0}api.ashx/v2/users/{1}/groups.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), username);
+                try
+                {
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/Groups");
+                    if (node != null)
+                    {
+                        foreach (XmlNode group in node)
+                        {
+                            GroupItem item = Groups.ConvertGroupIDtoSitecoreItem(group.SelectSingleNode("Id").InnerText);
+                            GroupCardModel b = Groups.GroupCardModelFactory(item);
+                            groups.Add(b);
+                            b = null;
+                        }
+
+
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    groups = null;
+                    Sitecore.Diagnostics.Log.Error(ex.Message, ex);
+                }
+
+
+            }
+            return groups;
+
+            
+        }
         public static User GetUser(string username)
         {
             User user = null;

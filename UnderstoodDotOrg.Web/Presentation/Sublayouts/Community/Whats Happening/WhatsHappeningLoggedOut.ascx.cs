@@ -32,8 +32,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 sbQuestions.Visible = true;
                 sbCommunityMembers.Visible = false;
                 sbMyFriends.Visible = true;
-                sbGroups.Visible = true;
+
                 sbRecentBlogPosts.Visible = true;
+            }
+            else
+            {
+           
             }
         }
     }

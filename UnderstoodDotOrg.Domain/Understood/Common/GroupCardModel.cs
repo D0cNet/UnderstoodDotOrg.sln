@@ -141,7 +141,19 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
        // public string GroupItemID { get { return GrpItem.ID.ToString(); } }
         public string TemplateID { get { return GrpItem.InnerItem.TemplateID.ToString(); } }
         public GroupItem GrpItem { get; set; }
-        public string ItemID { get { return GrpItem.ID.ToString(); } } 
+        public string ItemID { get { return GrpItem.ID.ToString(); } }
+        public DateTime LastActivityDate
+        {
+            get
+            {
+                if (Forums!=null)
+                    return Forums
+                        .Where(t => t.Threads!=null && t.Threads.Count >0)
+                        .Select(x => x.Threads.OrderByDescending(t => t.LastPostDate).FirstOrDefault().LastPostDate).FirstOrDefault();
+                else
+                    return new DateTime();
+            }
+        }
        // List<Issue> RelatedIssues { get; set; }
     }
 

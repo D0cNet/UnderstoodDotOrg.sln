@@ -65,9 +65,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             var events = SearchHelper.GetUpcomingEvents(6);
             if (events.Any())
             {
+                this.Visible = true;
                 rptEvents.DataSource = events;
                 rptEvents.DataBind();
             }
+            else
+                this.Visible = false;
         }
     }
 }

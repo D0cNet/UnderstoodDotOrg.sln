@@ -10,25 +10,25 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening {
     
     
-    public partial class Most_Active_Groups {
+    public partial class MyGroups {
         
         /// <summary>
-        /// litMostActiveGroupsLabel control.
+        /// litMyGroupsLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litMostActiveGroupsLabel;
+        protected global::System.Web.UI.WebControls.Literal litMyGroupsLabel;
         
         /// <summary>
-        /// hrefAllGroups control.
+        /// hrefSeeAllGroup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hrefAllGroups;
+        protected global::System.Web.UI.WebControls.HyperLink hrefSeeAllGroup;
         
         /// <summary>
         /// litSeeAllGroups control.
@@ -40,12 +40,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
         protected global::System.Web.UI.WebControls.Literal litSeeAllGroups;
         
         /// <summary>
-        /// rptAllGroups control.
+        /// rptMyGroups control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptAllGroups;
+        protected global::System.Web.UI.WebControls.Repeater rptMyGroups;
     }
 }

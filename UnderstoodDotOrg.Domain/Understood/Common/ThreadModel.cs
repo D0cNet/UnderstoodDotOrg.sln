@@ -49,6 +49,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                //this.childNode = childNode;
                Subject = childNode.SelectSingleNode("Subject").InnerText;
                ReplyCount = childNode.SelectSingleNode("ReplyCount").InnerText??"0";
+               LastPostDate = Convert.ToDateTime(childNode.SelectSingleNode("LatestPostDate").InnerText);
                LastPostTime = formatDateFunc(childNode.SelectSingleNode("LatestPostDate").InnerText);
                if ( !ReplyCount.Equals("0"))
                {
@@ -65,6 +66,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
            }
        }
 
+       public DateTime LastPostDate { get; set; }
        public string Subject { get; set; }
        public string LastPostTime { get; set; }
        public string LastPostUser { get; set; }

@@ -2676,8 +2676,19 @@ namespace UnderstoodDotOrg.Common
         public static string GradeLevelLabel { get { return Translate.TextByDomain(PosesDictionary, "Grade Level Label"); } }
         public static string AdditionalInformationLabel { get { return Translate.TextByDomain(PosesDictionary, "Additional Information Label"); } }
 
+        public static string MostActiveGroupsLabel { get { return Translate.TextByDomain(PosesDictionary, "Most Active Group Label"); } }
+
+        public static string SeeAllGroupsLabel { get { return Translate.TextByDomain(PosesDictionary, "See All Group Label"); } }
+
+        public static string SkipThisLabel { get { return Translate.TextByDomain(PosesDictionary, "Skip This Label"); } }
+        public static string PostsLabel { get { return Translate.TextByDomain(PosesDictionary, "Posts Label"); } }
+
+        public static string MyGroupsLabel {  get { return Translate.TextByDomain(PosesDictionary, "My Groups Label"); } }
+
         public static string ShowYourSupportLabel { get { return Translate.TextByDomain(PosesDictionary, "Show Your Support Label"); } }
         public static string ProfileLabel { get { return Translate.TextByDomain(PosesDictionary, "Profile Label"); } }
         public static string ConnectionsLabel { get { return Translate.TextByDomain(PosesDictionary, "Connections Label"); } }
+
+        public static string RecommendedGroupsLabel { get { return Translate.TextByDomain(PosesDictionary, "Recommended Groups Label"); } }
     }
 }

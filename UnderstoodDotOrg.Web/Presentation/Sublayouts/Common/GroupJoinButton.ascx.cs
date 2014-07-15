@@ -22,7 +22,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         protected void Page_Load(object sender, EventArgs e)
         {
            
-           // this.Page.ClientScript.RegisterStartupScript(this.GetType(), "DefaultPointer()", "document.body.style.cursor='default';");
+         
         }
 
         public string Class
@@ -143,54 +143,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
 
 
-      //  protected string _Text;
-      //  protected string _ClassName;
-
-        //public string Text
-        //{
-        //    get { return _Text; }
-        //    set { _Text = value; }
-        //}
-
-        //public string ClassName
-        //{
-        //    get { return _ClassName; }
-        //    set { _ClassName = value; }
-        //}
-
-        //protected override void OnPreRender(EventArgs e)
-        //{
-        //   this.Page.ClientScript.RegisterClientScriptBlock(this.Page.GetType(),
-        //        "__doAlert",
-        //        "<script language=\"javascript\">\n" +
-        //        "\n" +
-        //        "function __doWait (btnWaiter)\n" +
-        //        "{\n" +
-        //      //  " btnWaiter.setAttribute(\"value\",\"Please Wait...\");\n" +
-        //        " document.body.style.cursor=\"wait\";\n" +
-        //        "}\n" +
-        //        "\n" +
-        //        "</script>"
-        //        );
-        //}
-
-        //protected override void Render(HtmlTextWriter writer)
-        //{
-        //    StringBuilder builder = new StringBuilder();
-
-        //    builder.Append("<input type=\"submit\" value=\"");
-        //    builder.Append(Text);
-        //    builder.Append("\" onclick=\"javascript:__doWait (this);\"");
-        //    if (_ClassName != null)
-        //    {
-        //        builder.Append(" class=\"");
-        //        builder.Append(_ClassName);
-        //        builder.Append("\"");
-        //    }
-        //    builder.Append("/>");
-
-        //    writer.Write(builder.ToString());
-        //}
 
     }
 }

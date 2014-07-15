@@ -69,7 +69,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
 
                foreach (string state in states)
                {
-
+                   if(!String.IsNullOrEmpty(state))
                    strValues.Append(" @States= '%" + state + "%'").Append(OrCondition);
                }
 
