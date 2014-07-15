@@ -488,6 +488,9 @@ namespace UnderstoodDotOrg.Domain.Search
             // Sitecore implementation does not handle escaping reserved characters
             terms = NormalizeSearchTerm(terms);
 
+            // Remove quotes
+            bool phraseSearch = terms.Contains("\\\"");
+            
             var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
 
             using (var ctx = index.CreateSearchContext())
@@ -535,8 +538,20 @@ namespace UnderstoodDotOrg.Domain.Search
                     query = query.Filter(GetInheritsArticlePredicate());
                 }
 
-                query = query.Where(a => a.Name.Contains(terms).Boost(3)
-                                    || a.Content.Contains(terms));
+                // Search for terms
+                if (!phraseSearch)
+                {
+                    query = query.Where(a => a.Name.Contains(terms).Boost(3)
+                                        || a.Content.Contains(terms));
+                }
+                else
+                {
+                    // Place quotes around entire term and do equality search
+                    terms = String.Format("\"{0}\"", terms.Replace("\\\"", ""));
+
+                    query = query.Where(a => a.Name.Equals(terms).Boost(3)
+                                        || a.Content.Equals(terms));
+                }
 
 
                 totalResults = query.Take(1).GetResults().TotalSearchResults;

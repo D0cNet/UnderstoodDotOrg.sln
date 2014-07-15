@@ -25,6 +25,9 @@ namespace UnderstoodDotOrg.Common.Helpers
 
         public static string HighlightSearchTitle(string terms, string title)
         {
+            // strip quotes
+            terms = terms.Replace("\"", "");
+
             string[] reserved = new [] { ".", "^", "$", "*", "+", "?", "(", ")", "[", "{", "|", "\\", "}", ":", "-" };
             reserved = reserved.Select(x => @"\" + x).ToArray();
 

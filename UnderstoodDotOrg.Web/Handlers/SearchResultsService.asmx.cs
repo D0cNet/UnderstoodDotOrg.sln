@@ -58,7 +58,7 @@ namespace UnderstoodDotOrg.Web.Handlers
                 {
                     var sa = new SearchArticle
                     {
-                        Title = Common.Helpers.TextHelper.HighlightSearchTitle(terms, articleItem.ContentPage.PageTitle.Rendered),
+                        Title = Common.Helpers.TextHelper.HighlightSearchTitle(terms, HttpUtility.HtmlDecode(articleItem.ContentPage.PageTitle.Rendered)),
                         Url = articleItem.GetUrl(),
                         Thumbnail = articleItem.GetArticleThumbnailUrl(230, 129),
                         Blurb = Common.Helpers.TextHelper.TruncateText(
