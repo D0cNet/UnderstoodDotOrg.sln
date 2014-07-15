@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.CommunityServices;
 using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
@@ -61,6 +62,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             hlBackToHomepage.NavigateUrl = MainsectionItem.GetHomePageItem().GetUrl();
 
             // TODO: find member location?
+            litLocation.Text = GeoTargeting.GetStateByZip(ProfileMember.ZipCode);
 
             // Avatar
             var user = TelligentService.GetUser(ScreenName);
