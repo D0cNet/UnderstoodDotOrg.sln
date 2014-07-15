@@ -1,0 +1,82 @@
+# Guard config for syncing compiled DP front-end source source files to
+# IIS website folder
+#
+# more about Guard: https://github.com/guard/guard
+#
+#
+# we're here to do the same thing to the assets that a VS build does 
+# (copy them to the website folder), without the overhead of the VS 
+# build.
+#
+# note that this guard config is intended to be run in the mac host 
+# environment of the windows dev VM, that's where ruby is fastest (no 
+# emulation overhead; ruby sucks on windows).
+#
+# the files copied should effectively mirror the VS manifest, which, 
+# IIRC, is essentially all files except PSDs.
+# 
+# FIXME: confirm the above
+# 
+# - JSB / 2014-07-15
+
+
+#####
+
+
+# the dirs we want to watch, represented as a regexp. we currently have
+# the following in the Presentation/includes dir: 
+# 
+#   - audio       (static audio assets for TYCE)
+#   - css         (compiled CSS)
+#   - css.source  (source SASS)
+#   - images      (static images + dynamically generated sprites from compass)
+#   - js          (static JS)
+#
+# so we enumerate the ones we want to copy in a regex, taking care to 
+# not include css.source. (it's a shame that regexps are postive match 
+# only.)
+#
+# NOTE: when new folders are added, this regex and these docs need to 
+# be updated.
+WATCH_DIR_REGEX = /^Presentation\/Includes\/(audio|css|images|js)\/.*/
+
+# the Website docroot relative to this dir. it has its own Presentation
+# folder into which we're copying the files.
+DEST_DIR = "../../UnderstoodDotOrg/local/Website"
+
+
+# group things, on the off chance that we're doing more with guard that 
+# we are right now
+group :emulate_vs_build do
+
+	# :all_on_start copies everything on startup to ensure the website 
+	# dir is representative of the state in the asset source. note that 
+	# this is 'destructive', in the sense that it will overwrite any 
+	# hotfixes you may have applied in the website folder. but you're 
+	# using this tool, so you won't have that problem anymore!
+	#
+	guard :shell, :all_on_start => true do
+
+		watch(WATCH_DIR_REGEX) do |m|
+			filename = m[0]
+
+			# parent dirs of files register as changed along with the 
+			# files, but we only want to copy the individual files 
+			# because we want to be predictable and  we don't want to 
+			# mix and match syncing techniques.
+			#
+			if File.ftype(filename) == 'file'
+	 			FileUtils.copy(filename, "#{DEST_DIR}/#{filename}")	
+
+	 			# output nice message for visual confirmation
+	 			puts "#{Time.now.iso8601} - #{filename} changed."
+	 		else
+	 			# puts "#{Time.now.iso8601} - ignoring \'#{filename}\'!"
+			end
+
+
+		end
+
+	end
+
+end

@@ -1,0 +1,25 @@
+source 'https://rubygems.org'
+
+# NOTE: version numbers here represent the versions specified in the DP
+# front-end repo and should not be messed with!
+
+# compass is required for compiling our CSS
+# http://compass-style.org
+gem "compass", "~>0.12.2"
+
+# Breakpoint css for simplified media queries
+# http://breakpoint-sass.com
+gem "breakpoint", "~>2.0.7"
+
+# for watching the Presentation/includes dir during development
+# and auto-syncing files to the Website dir. see Guardfile.
+# https://github.com/guard/guard
+gem 'guard'
+
+# we're using the shell plugin for our work
+# https://github.com/guard/guard-shell
+gem 'guard-shell'
+
+# for wrapping up the auto-generation and auto-sync tasks into one tool
+# https://github.com/ddollar/foreman
+gem "foreman"
