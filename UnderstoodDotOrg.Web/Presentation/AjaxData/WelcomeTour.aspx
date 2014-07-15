@@ -7,7 +7,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <div class="modal-close close"><i class="icon-close"></i><span>Close</span></div>
+                <div class="modal-close close"><i class="icon-close"></i><span><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseText %></span></div>
             </div>
 
             <div class="modal-body">
@@ -24,7 +24,7 @@
                     <div class="welcome-tour-carousel">
                         <!-- BEGIN PARTIAL: community/welcome_carousel -->
                         <ul class="welcome-tour-navigation arrows-gray">
-                            <li class="header paging-data">See All</li>
+                            <li class="header paging-data"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllFragment %></li>
                             <li class="rsArrow rsArrowLeft">
                                 <button class="rsArrowIcn"></button>
                             </li>
