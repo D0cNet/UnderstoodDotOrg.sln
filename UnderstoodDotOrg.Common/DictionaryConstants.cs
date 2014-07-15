@@ -2212,7 +2212,7 @@ namespace UnderstoodDotOrg.Common
         {
             get
             {
-                return Translate.TextByDomain(PosesDictionary, "Recommended For You Label");
+                return Translate.TextByDomain(PosesDictionary, "Recommended Header");
             }
         }
 
