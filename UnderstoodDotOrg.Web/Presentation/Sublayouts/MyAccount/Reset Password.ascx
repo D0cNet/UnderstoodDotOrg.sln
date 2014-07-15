@@ -23,7 +23,7 @@
             </label>
 
             <label>
-                <span class="visuallyhidden">Re-enter new password</span>
+                <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.ReEnterNewPasswordWatermark %></span>
                 <%--<input type="text" placeholder="Re-enter new password" aria-required="true">--%>
                 <asp:TextBox ID="uxPasswordConfirm" runat="server" TextMode="Password" aria-required="true"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="valPasswordConfirm" runat="server" ControlToValidate="uxPasswordConfirm" CssClass="validationerror"></asp:RequiredFieldValidator>
