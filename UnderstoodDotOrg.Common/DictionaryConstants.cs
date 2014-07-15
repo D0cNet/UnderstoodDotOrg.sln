@@ -81,6 +81,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
+        public static string RSSFeedButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "RSS Feed Button Text");
+            }
+        }
+
         public static string EmailButtonText
         {
             get
@@ -1757,6 +1765,15 @@ namespace UnderstoodDotOrg.Common
 
 
         #endregion MyAccount Labels
+
+        public static string MoreBloggersLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "More Bloggers Label");
+            }
+        }
+
 
         public static string Featured
         {

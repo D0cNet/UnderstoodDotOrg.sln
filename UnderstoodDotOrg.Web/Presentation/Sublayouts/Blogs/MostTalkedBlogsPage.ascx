@@ -32,8 +32,8 @@
       </div>
     </div>
     <div class="col col-4 blog-feature-follow-blog">
-      <a href="REPLACE" class="button">Follow-blog</a>
-      <a class="rss icon" href="REPLACE">RSS Feed</a>
+      <a href="REPLACE" class="button"><%= UnderstoodDotOrg.Common.DictionaryConstants.FollowBlog %></a>
+      <a class="rss icon" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.RSS %></a>
     </div>
   </div>
 </div>
@@ -46,26 +46,26 @@
 <div class="blog-filter clearfix skiplink-toolbar">
  <div class="mobile-search-box">
     <fieldset class="group-search-form mobile-group-search-form">
-      <label for="blog-group-search-text" class="visuallyhidden" aria-hidden="true">Search this blog</label>
+      <label for="blog-group-search-text" class="visuallyhidden" aria-hidden="true"><%= UnderstoodDotOrg.Common.DictionaryConstants.SearchThisBlogLabel %></label>
       <input type="text" class="group-search" id="blog-group-search-text" name="group-search" placeholder="Search this blog"></input>
-      <input class="group-search-button" type="submit" value="Go"></input>
+      <input class="group-search-button" type="submit" value="<%# UnderstoodDotOrg.Common.DictionaryConstants.GoButtonText %>"></input>
     </fieldset>
   </div>
   <div class="filters">
     <div class="dropdown">
       <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-          <span class="current-filter">Most talked about</span>
-          <span class="dropdown-title">Sort by</span>
+          <span class="current-filter"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostTalkedLabel %></span>
+          <span class="dropdown-title"><%= UnderstoodDotOrg.Common.DictionaryConstants.SortByLabel %></span>
       </a>
       <ul class="dropdown-menu" role="menu">
       
-        <li role="presentation" class="filter " data-sort-by="date"><a role="menuitem" href="REPLACE">Most recent</a></li>
+        <li role="presentation" class="filter " data-sort-by="date"><a role="menuitem" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostRecentLabel %></a></li>
       
-        <li role="presentation" class="filter " data-sort-by="read"><a role="menuitem" href="REPLACE">Most read</a></li>
+        <li role="presentation" class="filter " data-sort-by="read"><a role="menuitem" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostReadLabel %></a></li>
       
-        <li role="presentation" class="filter " data-sort-by="shared"><a role="menuitem" href="REPLACE">Most shared</a></li>
+        <li role="presentation" class="filter " data-sort-by="shared"><a role="menuitem" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostSharedLabel %></a></li>
       
-        <li role="presentation" class="filter selected" data-sort-by="talkedabout"><a role="menuitem" href="REPLACE">Most talked about</a></li>
+        <li role="presentation" class="filter selected" data-sort-by="talkedabout"><a role="menuitem" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostTalkedLabel %></a></li>
       
       </ul>
     </div>
@@ -182,7 +182,7 @@
 <div class="container show-more rs_skip">
   <div class="row">
     <div class="col col-24">
-      <a class="show-more-link " href="#" data-path="blog/posts" data-container="blog-post-list-inner" data-item="blog-list" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+      <a class="show-more-link " href="#" data-path="blog/posts" data-container="blog-post-list-inner" data-item="blog-list" data-count="2"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
     </div>
   </div>
 </div><!-- .show-more -->

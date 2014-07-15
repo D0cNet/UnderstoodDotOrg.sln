@@ -26,8 +26,8 @@
                         <div class="filters">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-                                    <span class="current-filter">Most recent</span>
-                                    <span class="dropdown-title">Sort by</span>
+                                    <span class="current-filter"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostRecentLabel %></span>
+                                    <span class="dropdown-title"><%= UnderstoodDotOrg.Common.DictionaryConstants.SortByLabel %></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
 

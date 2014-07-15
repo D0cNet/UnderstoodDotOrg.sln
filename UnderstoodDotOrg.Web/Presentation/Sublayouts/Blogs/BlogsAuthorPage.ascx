@@ -129,7 +129,7 @@
     <div class="container show-more rs_skip">
       <div class="row">
         <div class="col col-24">
-          <asp:LinkButton id="showmore" runat="server"  data-path="blog/recent-posts" data-container="blog-post-list" data-item="blog-list" data-count="2">Show More<i class="icon-arrow-down-blue"></i></asp:LinkButton>
+          <asp:LinkButton id="showmore" runat="server"  data-path="blog/recent-posts" data-container="blog-post-list" data-item="blog-list" data-count="2"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></asp:LinkButton>
         </div>
       </div>
     </div><!-- .show-more -->
@@ -159,7 +159,7 @@
       <div class="community-bloggers-more">
         <div class="row">
           <div class="col col-24 container">
-            <h3>More Bloggers</h3>
+            <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreBloggersLabel %></h3>
             <div class="carousel-arrow-wrapper">
               <!-- BEGIN PARTIAL: community/carousel_arrows -->
     <div class="arrows more-bloggers-next-prev-menu arrows-gray">
