@@ -1738,7 +1738,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             //Resolve User into Member
                             User = memMan.GetMember(userEmail);
 
-                            User.CommunityRoles = GetUserRoles(User.ScreenName);
+                            User.CommunityRoles = GetUserRoles(screenName);
                         }
                     }
                 }

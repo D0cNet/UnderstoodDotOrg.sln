@@ -27,7 +27,7 @@
             </div>
             <div class="account-info">
                 <h1 class="account-username"><%= CurrentMember.ScreenName %></h1>
-                <p class="account-location"></p>
+                <p class="account-location"><asp:Literal ID="litLocation" runat="server" /></p>
             </div>
             <div class="account-links">
                 <a class="profile-link button" href="<%= MyProfilePage.GetUrl() %>"><%= MyProfilePage.MyAccountBase.ContentPage.BasePageNEW.NavigationTitle.Rendered %></a>

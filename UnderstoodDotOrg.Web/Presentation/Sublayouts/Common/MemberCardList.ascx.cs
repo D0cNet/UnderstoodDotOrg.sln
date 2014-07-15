@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common 
 {
@@ -68,12 +69,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
                     }
 
-                    Literal userloc = (Literal)e.Item.FindControl("UserLocation");
-                    if (userloc != null)
+                    var member = TelligentService.GetPosesMember(username.Text);
+                    if (member != null)
                     {
-                        userloc.Text = ((MemberCardModel)e.Item.DataItem).UserLocation;
-
-
+                        Literal userloc = (Literal)e.Item.FindControl("UserLocation");
+                        if (userloc != null)
+                        {
+                            if (member.ZipCode != null)
+                            {
+                                userloc.Text = UnderstoodDotOrg.Services.CommunityServices.GeoTargeting.GetStateByZip(member.ZipCode);
+                                //userloc.Text = ((MemberCardModel)e.Item.DataItem).UserLocation;
+                            }
+                        }
                     }
                     ConnectButton btnConnect = (ConnectButton)e.Item.FindControl("connectBtn");
                     if (btnConnect != null)

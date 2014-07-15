@@ -48,6 +48,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 hlSectionTitle.NavigateUrl = MainsectionItem.GetHomePageItem().GetUrl();
                 frSectionTitle.Item = MainsectionItem.GetHomePageItem();
 
+                if (CurrentMember.ZipCode != null)
+                {
+                    litLocation.Text = Services.CommunityServices.GeoTargeting.GetStateByZip(CurrentMember.ZipCode);
+                }
                 
                     if (!String.IsNullOrEmpty(CurrentMember.ScreenName))
                     {

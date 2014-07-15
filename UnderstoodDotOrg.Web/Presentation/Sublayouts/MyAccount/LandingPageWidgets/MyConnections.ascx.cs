@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets
 {
@@ -34,6 +35,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             User user = (User)e.Item.DataItem;
             HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
             hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(user);
+
+            var member = TelligentService.GetPosesMember(user.Username);
+            if (member != null)
+            {
+                Literal litLocation = (Literal)e.Item.FindControl("litLocation");
+                if (litLocation != null)
+                {
+                    if (member.ZipCode != null)
+                    {
+                        litLocation.Text = UnderstoodDotOrg.Services.CommunityServices.GeoTargeting.GetStateByZip(member.ZipCode);
+                        //userloc.Text = ((MemberCardModel)e.Item.DataItem).UserLocation;
+                    }
+
+                }
+            }
         }
     }
 }

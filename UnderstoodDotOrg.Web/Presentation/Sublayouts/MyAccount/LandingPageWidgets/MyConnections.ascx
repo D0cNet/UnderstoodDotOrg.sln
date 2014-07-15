@@ -25,7 +25,7 @@
                                     <div class="member-card-name hyphenate member">
 
                                         <asp:HyperLink ID="hypUserProfileLink" CssClass="name-member" runat="server"><%# Item.Username %></asp:HyperLink>
-                                        <p class="location"><%# Item.DisplayName %></p>
+                                        <p class="location"><asp:Literal ID="litLocation" runat="server" /></p>
 
                                     </div>
                                     <!-- end .member-card-name -->
