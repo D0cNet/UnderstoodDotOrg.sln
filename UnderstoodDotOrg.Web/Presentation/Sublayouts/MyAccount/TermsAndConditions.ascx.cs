@@ -46,7 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             
             //string url = MembershipHelper.GetNextStepURL(1);
             // send them to My Account, not into CMP
-            string url = MyAccountFolderItem.GetMyAccountPage();
+            string url = MyAccountItem.GetMyAccountPage().GetUrl();
             
             // NOTE: temorarily commented out to prevent 404 redirect
 
@@ -64,7 +64,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
         protected void lbSignIn_Click(object sender, EventArgs e)
         {
-            Logout(MyAccountFolderItem.GetSignInPage());
+            Logout(SignInPageItem.GetSignInPage().GetUrl());
         }
     }
 }

@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Tools.BehaviorTool;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 {
@@ -87,7 +88,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
                 rfvGrades.Text = callout.CalloutGradeRequiredFieldMessage.Text;
                 litSuggestError.Text = callout.SuggestionRequiredFieldMessage.Text;
 
-                hlSignUp.NavigateUrl = MyAccountFolderItem.GetSignUpPage();
+                hlSignUp.NavigateUrl = SignUpPageItem.GetSignUpPage().GetUrl();
             }
         }
 

@@ -199,6 +199,24 @@ public CustomTextField SeeAllNotificationsText
 }
 
 
+public CustomTextField NotificationsText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Notifications Text"]);
+	}
+}
+
+
+public CustomTextField MyNotifications
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["My Notifications"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

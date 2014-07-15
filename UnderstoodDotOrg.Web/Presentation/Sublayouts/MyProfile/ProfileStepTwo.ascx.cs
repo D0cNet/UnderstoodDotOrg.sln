@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
@@ -321,7 +322,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             if (singleChild.EvaluationStatus == Guid.Parse(Constants.ChildEvaluation.StatusEvaluationYes))
             {
                 //eval = yes, always show page 3
-                redirect = MyAccountFolderItem.GetCompleteMyProfileStepThree();
+                redirect = MyProfileStepThreeItem.GetCompleteMyProfileStepThree().GetUrl();
 
                 //add current status to query string if present
                 if (!string.IsNullOrEmpty(status))
@@ -332,7 +333,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             else if (status == Constants.QueryStrings.Registration.ModeEdit || status == Constants.QueryStrings.Registration.ModeAdd)
             {
                 //go back to my profile
-                redirect = MyAccountFolderItem.GetMyProfilePage();
+                redirect = MyProfileItem.GetMyProfilePage().GetUrl();
             }
             else
             {
@@ -340,12 +341,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 if (this.registeringUser.Children.Where(x => x.Issues.Count == 0).Count() > 0)
                 {
                     //more children, go to step 2
-                    redirect = MyAccountFolderItem.GetCompleteMyProfileStepTwo();
+                    redirect = MyProfileStepTwoItem.GetCompleteMyProfileStepTwo().GetUrl();
                 }
                 else
                 {
                     //no more children to deal with, go to step 4
-                    redirect = MyAccountFolderItem.GetCompleteMyProfileStepFour();
+                    redirect = MyProfileStepFourItem.GetCompleteMyProfileStepFour().GetUrl();
                 }
             }
 

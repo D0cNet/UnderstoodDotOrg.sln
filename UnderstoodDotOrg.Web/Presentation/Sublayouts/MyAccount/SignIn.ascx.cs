@@ -33,8 +33,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             uxRegisterLink.Text = DictionaryConstants.SignUpButtonText;
            
             SignInPageItem context = (SignInPageItem)Sitecore.Context.Item;
-            uxRegisterLink.NavigateUrl = MyAccountFolderItem.GetSignUpPage();
-            uxForgotPassword.NavigateUrl = MyAccountFolderItem.GetForgotPasswordPage();
+            uxRegisterLink.NavigateUrl = SignUpPageItem.GetSignUpPage().GetUrl();
+            uxForgotPassword.NavigateUrl = ForgotPasswordItem.GetForgotPassword().GetUrl();
             uxForgotPassword.Text = context.ForgotPasswordText;
 
             this.Page.Form.DefaultButton = this.uxSignIn.UniqueID;

@@ -91,6 +91,15 @@ public CustomTextField NotAgreeErrorMessage
 }
 
 
+public CustomTextField AlreadySignedUpText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Already Signed Up Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

@@ -106,7 +106,7 @@
                 uxZipcode.Text = this.CurrentMember.ZipCode.Trim();
 
                 uxAddChild.Text = string.Format(uxAddChild.Text, ((ChildCount)this.CurrentMember.Children.Count).ToString());
-                uxAddChild.NavigateUrl = MyAccountFolderItem.GetCompleteMyProfileStepTwo() + "?" + Constants.QueryStrings.Registration.Mode + "=" + Constants.QueryStrings.Registration.ModeAdd;
+                uxAddChild.NavigateUrl = MyProfileStepTwoItem.GetCompleteMyProfileStepTwo().GetUrl() + "?" + Constants.QueryStrings.Registration.Mode + "=" + Constants.QueryStrings.Registration.ModeAdd;
 
                 if (Session["PostReloadScript"] != null)
                 {
@@ -120,10 +120,10 @@
                 }
 
                 //top of edit interests
-                hypEditCommunityAboutMe.NavigateUrl = String.Format(MyAccountFolderItem.GetCompleteMyProfileStepFour() + "?{0}={1}", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
+                hypEditCommunityAboutMe.NavigateUrl = String.Format(MyProfileStepFourItem.GetCompleteMyProfileStepFour().GetUrl() + "?{0}={1}", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
 
                 //jump to edit community
-                hypEditCommunity.NavigateUrl = hypCompleteYourProfile.NavigateUrl = String.Format(MyAccountFolderItem.GetCompleteMyProfileStepFour() + "?{0}={1}#community", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
+                hypEditCommunity.NavigateUrl = hypCompleteYourProfile.NavigateUrl = String.Format(MyProfileStepFourItem.GetCompleteMyProfileStepFour().GetUrl() + "?{0}={1}#community", Constants.QueryStrings.Registration.Mode, Constants.QueryStrings.Registration.ModeEdit);
 
                 if (!string.IsNullOrEmpty(this.CurrentMember.ScreenName))
                 {
@@ -313,7 +313,7 @@
 
         protected string getChildEditLink(ListViewDataItem Container)
         {
-            string ret = UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.MyAccountFolderItem.GetCompleteMyProfileStepTwo()
+            string ret = MyProfileStepTwoItem.GetCompleteMyProfileStepTwo().GetUrl()
                 + '?' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.Mode + '=' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ModeEdit
                 + "&" + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ChildIndex + "=" + Container.DataItemIndex;
 

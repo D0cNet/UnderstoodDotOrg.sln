@@ -24,7 +24,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Registration
             btnRegister.Text = DictionaryConstants.JoinGroupButtonText;
             txtScreenName.Attributes["placeholder"] = DictionaryConstants.ScreenNameWatermark;
             hypCompleteMyProfile.Text = Model.CompleteMyFullProfileText.Rendered;
-            hypCompleteMyProfile.NavigateUrl = MyAccountFolderItem.GetCompleteMyProfileStepOne();
+            hypCompleteMyProfile.NavigateUrl = MyProfileStepOneItem.GetCompleteMyProfileStepOne().GetUrl();
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Registration
             this.ReturnRedirect();
             
             //oh, you're still here? well...lets just go to your account page...
-            Response.Redirect(MyAccountFolderItem.GetMyAccountPage());
+            Response.Redirect(MyAccountItem.GetMyAccountPage().GetUrl());
         }
 
         protected void UpdateUser()

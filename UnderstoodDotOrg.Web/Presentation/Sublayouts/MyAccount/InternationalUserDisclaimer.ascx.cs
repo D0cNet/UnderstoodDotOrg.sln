@@ -1,6 +1,8 @@
 ﻿using System;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
@@ -22,14 +24,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         {
             AuthorizeInternationalUser();
 
-            Response.Redirect(MyAccountFolderItem.GetSignUpPage());
+            Response.Redirect(SignUpPageItem.GetSignUpPage().GetUrl());
         }
 
         protected void lnkSignIn_Click(object sender, EventArgs e)
         {
             AuthorizeInternationalUser();
 
-            Response.Redirect(MyAccountFolderItem.GetSignInPage());
+            Response.Redirect(SignInPageItem.GetSignInPage().GetUrl());
         }
 
         protected void AuthorizeInternationalUser()

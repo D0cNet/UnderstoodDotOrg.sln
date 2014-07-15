@@ -187,7 +187,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 Response.Redirect(MyProfileItem.GetMyProfilePage().GetUrl());
             }
 
-            Response.Redirect(MyAccountFolderItem.GetCompleteMyProfileStepFive());
+            Response.Redirect(MyProfileStepFiveItem.GetCompleteMyProfileStepFive().GetUrl());
             //}
         }
 

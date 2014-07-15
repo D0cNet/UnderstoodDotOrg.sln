@@ -522,6 +522,22 @@ namespace UnderstoodDotOrg.Common
             {
                 get { return new Guid("{EE8EF105-6F7D-4389-B20D-4ECAD8703F70}"); }
             }
+            public static Guid ResetPassword
+            {
+                get { return new Guid("{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}"); }
+            }
+            public static Guid TermsAndConditions
+            {
+                get { return new Guid("{307399BC-63C4-42FD-A9D3-3E7289DF4AD6}"); }
+            }
+            public static Guid ForgotPassword
+            {
+                get { return new Guid("{06AC924E-D5D1-4CED-AF7A-EB2F631AE4C4}"); }
+            }
+            public static Guid InternationalUser
+            {
+                get { return new Guid("{491396AC-E14D-4EEA-A6BD-181166BB9893}"); }
+            }
         }
 
         #endregion

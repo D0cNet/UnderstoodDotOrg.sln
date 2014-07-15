@@ -1,25 +1,17 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Sitecore.Web.UI.WebControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.ChecklistArticle;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
-using Sitecore.Data.Items;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.SearchTypes;
 using UnderstoodDotOrg.Common.Extensions;
-using Sitecore.Data.Fields;
-using Sitecore.Web.UI.WebControls;
-using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.ChecklistArticle;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.Understood.Quiz;
 using UnderstoodDotOrg.Framework.UI;
-using UnderstoodDotOrg.Domain.Membership;
-using Newtonsoft.Json;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages;
-using UnderstoodDotOrg.Domain.SitecoreCIG;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -181,7 +173,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             }
             else
             {
-                Response.Redirect(MyAccountFolderItem.GetSignUpPage());
+                Response.Redirect(SignUpPageItem.GetSignUpPage().GetUrl());
             }
 
             BindData();

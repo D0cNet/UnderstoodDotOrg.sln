@@ -13,6 +13,7 @@ using UnderstoodDotOrg.Common;
 using System.Text;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using System.Web.UI.HtmlControls;
 namespace UnderstoodDotOrg.Web.Presentation.Layouts
 {
     public partial class Browser : System.Web.UI.Page
@@ -30,6 +31,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
         protected void Page_Load(object sender, EventArgs e)
         {
             BindEvents();
+            //this.SetCanonicalUrl();
 
             if (!IsPostBack)
 			{
@@ -74,6 +76,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
                 rptLanguage.DataSource = languageLinks;
                 rptLanguage.DataBind();
             }
+        }
+
+        private void SetCanonicalUrl()
+        {
+            string url = string.Empty;
+
+            if (PageItem.InnerItem.TemplateID.ToString() == UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.HomePageItem.TemplateId)
+            {
+                url = "/";
+            }
+            else
+            {
+                url = PageItem.GetUrl();
+            }
+
+            if (Request.Path != url)
+            {
+                Response.RedirectPermanent(url);
+            }
+
+            var canonicalLink = new HtmlLink();
+            canonicalLink.Attributes.Add("rel", "canonical");
+            canonicalLink.Attributes.Add("href", url);
+            this.Header.Controls.Add(canonicalLink);
         }
 
         private void InitOverrides()

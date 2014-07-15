@@ -6,8 +6,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.Understood.Activity;
 using UnderstoodDotOrg.Framework.UI;
 
@@ -68,7 +70,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             }
             else
             {
-                Response.Redirect(MyAccountFolderItem.GetSignUpPage());
+                Response.Redirect(SignUpPageItem.GetSignUpPage().GetUrl());
             }
         }
 
@@ -166,7 +168,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             }
             else
             {
-                Response.Redirect(MyAccountFolderItem.GetSignUpPage());
+                Response.Redirect(SignUpPageItem.GetSignUpPage().GetUrl());
             }
         }
     }

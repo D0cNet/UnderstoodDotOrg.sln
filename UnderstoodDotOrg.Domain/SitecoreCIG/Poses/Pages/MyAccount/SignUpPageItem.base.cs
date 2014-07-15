@@ -109,6 +109,42 @@ public CustomTextField ZipCodeMessage
 }
 
 
+public CustomTextField WeTakePrivacySeriouslyText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["We Take Privacy Seriously Text"]);
+	}
+}
+
+
+public CustomGeneralLinkField PrivacyPolicyLink
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Privacy Policy Link"]);
+	}
+}
+
+
+public CustomTextField AlreadySignedUpText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Already Signed Up Text"]);
+	}
+}
+
+
+public CustomImageField FBImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["FB Image"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

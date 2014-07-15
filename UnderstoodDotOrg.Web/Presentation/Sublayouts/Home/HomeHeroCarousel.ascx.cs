@@ -20,6 +20,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Recommendation;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
 {
@@ -33,9 +34,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Home
         {
             HomePageItem ContextItem = Sitecore.Context.Item;
 
-            CompleteMyProfileUrl = IsUserLoggedIn 
-                ? MyAccountFolderItem.GetMyProfileStepOnePage().GetUrl() 
-                : MyAccountFolderItem.GetSignInPage();
+            CompleteMyProfileUrl = IsUserLoggedIn
+                ? MyProfileStepOneItem.GetCompleteMyProfileStepOne().GetUrl()
+                : SignInPageItem.GetSignInPage().GetUrl();
 
             if (UnauthenticatedSessionMember != null)
             {

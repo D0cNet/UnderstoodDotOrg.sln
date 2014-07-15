@@ -5,7 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Services.TelligentService;
 
@@ -56,7 +58,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common
         void btnAnonConnect_Click(object sender, EventArgs e)
         {
             // TODO: implement redirect manager
-            Response.Redirect(MyAccountFolderItem.GetSignInPage());
+            Response.Redirect(SignInPageItem.GetSignInPage().GetUrl());
         }
 
         private void BindContent()

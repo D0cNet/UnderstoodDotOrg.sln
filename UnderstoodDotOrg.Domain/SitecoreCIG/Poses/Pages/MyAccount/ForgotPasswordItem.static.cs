@@ -8,11 +8,11 @@ using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount
 {
-    public partial class MyProfileStepFiveItem
+    public partial class ForgotPasswordItem
     {
-        public static MyProfileStepFiveItem GetCompleteMyProfileStepFive()
+        public static ForgotPasswordItem GetForgotPassword()
         {
-            return Sitecore.Context.Database.GetItem(Constants.Pages.Registration5);
+            return Sitecore.Context.Database.GetItem(Constants.Pages.ForgotPassword);
         }
     }
 }

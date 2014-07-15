@@ -31,18 +31,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            imgAvatar.ImageUrl = this.Member.AvatarUrl;
-            imgAvatar.AlternateText = this.Member.UserName;
+            //imgAvatar.ImageUrl = !string.IsNullOrEmpty(this.Member.AvatarUrl) ? this.Member.AvatarUrl :  ;
+            if (this.Member != null)
+            {
 
-            hypName.NavigateUrl = this.ProfileLink;
-            hypName.Text = this.Member.UserName;
+                imgAvatar.ImageUrl = this.Member.AvatarUrl;
+                imgAvatar.AlternateText = this.Member.UserName;
 
-            litLocation.Text = this.Member.UserLocation;
+                hypName.NavigateUrl = this.ProfileLink;
+                hypName.Text = this.Member.UserName;
 
-            btnConnect.LoadState(this.Member.UserName);
+                litLocation.Text = this.Member.UserLocation;
 
-            rptChildCard.DataSource = this.Member.Children;
-            rptChildCard.DataBind();
+                btnConnect.LoadState(this.Member.UserName);
+
+                rptChildCard.DataSource = this.Member.Children;
+                rptChildCard.DataBind();
+            }
+
         }
 
         /// <summary>

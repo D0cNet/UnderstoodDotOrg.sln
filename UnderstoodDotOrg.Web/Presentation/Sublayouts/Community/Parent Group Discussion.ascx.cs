@@ -19,14 +19,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
     public partial class Parent_Group_Discussion : BaseSublayout//System.Web.UI.UserControl
     {
         GroupDiscussionList rptGroupDiscussion;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             rptGroupDiscussion = (GroupDiscussionList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupDiscussionList.ascx");
             rptGroupDiscussion.ID = "rptGroupCards";
             plhGroupDiscussions.Controls.Add(rptGroupDiscussion);
 
-            if (!IsPostBack)
-            {
+            //if (!IsPostBack)
+            //{
                 txtBody.Attributes.Add("placeholder", "Join the discussion");
                 txtBody.Attributes.Add("id", "join-discussion-text");
                
@@ -79,7 +80,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
                     }
                 }
-            }
+            //}
                 
           
 

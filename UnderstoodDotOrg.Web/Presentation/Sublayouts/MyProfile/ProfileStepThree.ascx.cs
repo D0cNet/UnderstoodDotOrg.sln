@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
@@ -157,15 +158,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             //if here via edit OR add
             if (status == Constants.QueryStrings.Registration.ModeAdd || status == Constants.QueryStrings.Registration.ModeEdit)
             {
-                redirect = MyAccountFolderItem.GetMyProfilePage();
+                redirect = MyProfileItem.GetMyProfilePage().GetUrl();
             }
             else if (this.registeringUser.Children.Where(x => x.Issues.Count == 0).Count() > 0)
             {
-                redirect = MyAccountFolderItem.GetCompleteMyProfileStepTwo();
+                redirect = MyProfileStepTwoItem.GetCompleteMyProfileStepTwo().GetUrl();
             }
             else
             {
-                redirect = MyAccountFolderItem.GetCompleteMyProfileStepFour();
+                redirect = MyProfileStepFourItem.GetCompleteMyProfileStepFour().GetUrl();
             }
 
             //move onto next step

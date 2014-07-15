@@ -35,7 +35,7 @@ namespace UnderstoodDotOrg.Framework.UI
                     if (page.CurrentMember == null)
                     {
                         //not logged in, please log in
-                        page.Page.Response.Redirect(MyAccountFolderItem.GetSignInPage());
+                        page.Page.Response.Redirect(SignInPageItem.GetSignInPage().GetUrl());
                     }
                     else
                     {
@@ -52,7 +52,7 @@ namespace UnderstoodDotOrg.Framework.UI
                     if (page.CurrentMember == null)
                     {
                         //not logged in, please log in
-                        page.Page.Response.Redirect(MyAccountFolderItem.GetSignInPage());
+                        page.Page.Response.Redirect(SignInPageItem.GetSignInPage().GetUrl());
                     }
                     break;
                 case Constants.UserPermission.AnonymousUser:
@@ -69,14 +69,14 @@ namespace UnderstoodDotOrg.Framework.UI
                     //redirect to international user page
                     if (page.isInternationalUser == Constants.GeoIPLookup.InternationalStatus.UnknownInternationalUser)
                     {
-                        page.Page.Response.Redirect(MyAccountFolderItem.GetInternationalUserDisclaimer());
+                        page.Page.Response.Redirect(InternationalUserPageItem.GetInternationalUserPage().GetUrl());
                     }                        
                     break;
                 case Constants.UserPermission.AgreedToTerms:
                     //redirect to T&C if they have not agreed yet
                     if (page.CurrentMember != null && !page.CurrentMember.AgreedToSignUpTerms)
                     {
-                        page.Page.Response.Redirect(MyAccountFolderItem.GetTermsAndConditions());
+                        page.Page.Response.Redirect(TermsandConditionsItem.GetTermsAndConditionsPage().GetUrl());
                     }
                     break;
                 default:

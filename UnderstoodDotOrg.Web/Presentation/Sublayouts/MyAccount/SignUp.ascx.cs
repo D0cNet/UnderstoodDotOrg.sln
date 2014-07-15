@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Helpers;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -20,7 +21,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         {
             if (this.CurrentMember != null && this.CurrentUser != null)
             {
-                Response.Redirect(MyAccountFolderItem.GetMyAccountPage());
+                Response.Redirect(MyAccountItem.GetMyAccountPage().GetUrl());
             }
 
             //assign placeholders
@@ -36,7 +37,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
             //setup signup text and navigation
             uxSignIn.Text = DictionaryConstants.SignInButtonText;
-            uxSignIn.NavigateUrl = MyAccountFolderItem.GetSignInPage();
+            uxSignIn.NavigateUrl = SignInPageItem.GetSignInPage().GetUrl();
 
             //set validation
             valFirstName.ErrorMessage = DictionaryConstants.FirstNameErrorMessage;
@@ -136,7 +137,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 this.CurrentMember = this.registeringUser;
                 this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId);
 
-                Response.Redirect(MyAccountFolderItem.GetTermsAndConditions());
+                Response.Redirect(TermsandConditionsItem.GetTermsAndConditionsPage().GetUrl());
             }
             else
             {

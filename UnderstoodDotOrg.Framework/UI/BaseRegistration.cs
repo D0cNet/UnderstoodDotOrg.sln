@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 
@@ -64,7 +65,7 @@ namespace UnderstoodDotOrg.Framework.UI
 
             if (this.CurrentMember == null && this.CurrentUser == null && item.TemplateID.ToGuid() != Guid.Parse(SignInPageItem.TemplateId) && item.TemplateID.ToGuid() != Guid.Parse(SignUpPageItem.TemplateId) )
             {
-                Response.Redirect(MyAccountFolderItem.GetSignInPage());
+                Response.Redirect(SignInPageItem.GetSignInPage().GetUrl());
             }
         }
     }

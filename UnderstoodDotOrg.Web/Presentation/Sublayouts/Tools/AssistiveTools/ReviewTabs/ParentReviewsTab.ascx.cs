@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages;
-using UnderstoodDotOrg.Framework.UI;
-using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.LearningTool;
-using System.Web.UI.HtmlControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
-using Sitecore.Data.Items;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
-using UnderstoodDotOrg.Services.TelligentService;
-using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
+using UnderstoodDotOrg.Domain.Understood.Helper;
+using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.ReviewTabs
 {
@@ -265,7 +262,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             }
             else
             {
-                string url = MyAccountFolderItem.GetSignUpPage();
+                string url = SignUpPageItem.GetSignUpPage().GetUrl();
                 Response.Redirect(url);
             }
         }

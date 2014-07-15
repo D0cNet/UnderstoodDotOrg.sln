@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Sitecore.Data.Items;
+using System;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain;
-using UnderstoodDotOrg.Framework.UI;
-using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages;
-using UnderstoodDotOrg.Domain.SitecoreCIG;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
-using UnderstoodDotOrg.Domain.TelligentCommunity;
-using Sitecore.Data.Items;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.Understood.Activity;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -88,7 +81,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             }
             else
             {
-                string url = MyAccountFolderItem.GetSignUpPage();
+                string url = SignUpPageItem.GetSignUpPage().GetUrl();
                 Response.Redirect(url);
             }
         }
@@ -119,7 +112,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             }
             else
             {
-                string url = MyAccountFolderItem.GetSignUpPage();
+                string url = SignUpPageItem.GetSignUpPage().GetUrl();
                 Response.Redirect(url);
             }
         }

@@ -8,11 +8,11 @@ using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount
 {
-    public partial class MyProfileStepFiveItem
+    public partial class TermsandConditionsItem
     {
-        public static MyProfileStepFiveItem GetCompleteMyProfileStepFive()
+        public static TermsandConditionsItem GetTermsAndConditionsPage()
         {
-            return Sitecore.Context.Database.GetItem(Constants.Pages.Registration5);
+            return Sitecore.Context.Database.GetItem(Constants.Pages.TermsAndConditions);
         }
     }
 }

@@ -66,7 +66,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             }
             else
             {
-                string url = MyAccountFolderItem.GetSignUpPage();
+                string url = SignUpPageItem.GetSignUpPage().GetUrl();
                 Response.Redirect(url);
             }
         }
