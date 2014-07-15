@@ -20,7 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // NOTE: back-end code similar to non friend view, but markup is different enough
+            // NOTE: back-end code similar to non friend view, but markup is different, should be refactored in future
             if (ProfileMember == null)
             {
                 return;
@@ -81,6 +81,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             {
                 lvChildren.DataSource = ProfileMember.Children;
                 lvChildren.DataBind();
+
+                ((Literal)lvChildren.FindControl("litChildrenHeading")).Text = UnderstoodDotOrg.Common.DictionaryConstants.ChildrenLabel;
             }
 
             if (ProfileMember.Interests.Any())

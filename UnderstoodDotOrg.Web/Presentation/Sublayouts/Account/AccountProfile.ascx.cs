@@ -16,10 +16,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
         private Member _profileMember = null;
         private int _selectedTab = 0;
 
-        public string ProfileUrl
-        {
-            get { return Model.GetUrl(); }
-        }
+        public string ProfileUrl { get; set; }
         public string ProfileConnectionsUrl
         {
             get { return GetProfileViewUrl(Constants.QueryStrings.PublicProfile.ViewConnections); }
@@ -31,7 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 
         private string GetProfileViewUrl(string view)
         {
-            return String.Format("{0}?{1}={2}", Model.GetUrl(), Constants.QueryStrings.PublicProfile.View, view);
+            return String.Format("{0}?{1}={2}", ProfileUrl, Constants.QueryStrings.PublicProfile.View, view);
         }
 
         protected string GetSelectedTabClass(int index)
@@ -41,10 +38,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 
         private void Page_Load(object sender, EventArgs e)
         {
+            BindEvents();
+            GetMember();
             InitView();
         }
 
-        private void InitView()
+        private void BindEvents()
+        {
+            ddlMobileTabs.SelectedIndexChanged += ddlMobileTabs_SelectedIndexChanged;
+        }
+
+        private void GetMember()
         {
             string screenName = Sitecore.Web.WebUtil.GetUrlName(0);
 
@@ -69,6 +73,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
                 return;
             }
+        }
+
+        private void InitView()
+        {
+            ProfileUrl = MembershipHelper.GetPublicProfileUrl(_profileMember);
 
             ucAccountHeader.ProfileMember = ucAccountNonFriendProfile.ProfileMember = _profileMember;
 
@@ -76,7 +85,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             if (IsUserLoggedIn
                 && !string.IsNullOrEmpty(CurrentMember.ScreenName))
             {
-                var status = TelligentService.IsFriend(CurrentMember.ScreenName, screenName);
+                var status = TelligentService.IsFriend(CurrentMember.ScreenName, _profileMember.ScreenName);
                 if (status == UnderstoodDotOrg.Common.Constants.TelligentFriendStatus.Approved)
                 {
                     InitFriendsView();
@@ -119,18 +128,38 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 ucAccountFriendProfile.ProfileMember = _profileMember;
             }
 
-            // Dropdown list
-            List<ListItem> tabs = new List<ListItem>();
-            tabs.Add(new ListItem(DictionaryConstants.ProfileLabel, string.Empty));
-            tabs.Add(new ListItem(DictionaryConstants.ConnectionsLabel, Constants.QueryStrings.PublicProfile.ViewConnections));
-            tabs.Add(new ListItem(DictionaryConstants.CommentsLabel, Constants.QueryStrings.PublicProfile.ViewComments));
+            litCommentCount.Text = TelligentService.GetTotalUserComments(_profileMember.ScreenName).ToString();
 
-            ddlMobileTabs.DataSource = tabs;
-            ddlMobileTabs.DataTextField = "Text";
-            ddlMobileTabs.DataValueField = "Value";
-            ddlMobileTabs.DataBind();
+            if (!IsPostBack)
+            {
+                // Dropdown list
+                List<ListItem> tabs = new List<ListItem>();
+                tabs.Add(new ListItem(DictionaryConstants.ProfileLabel, string.Empty));
+                tabs.Add(new ListItem(DictionaryConstants.ConnectionsLabel, Constants.QueryStrings.PublicProfile.ViewConnections));
+                tabs.Add(new ListItem(DictionaryConstants.CommentsLabel, Constants.QueryStrings.PublicProfile.ViewComments));
 
-            
+                tabs[_selectedTab].Selected = true;
+
+                ddlMobileTabs.DataSource = tabs;
+                ddlMobileTabs.DataTextField = "Text";
+                ddlMobileTabs.DataValueField = "Value";
+                ddlMobileTabs.DataBind();
+            }
         }
+
+        void ddlMobileTabs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = ddlMobileTabs.SelectedValue;
+            if (!String.IsNullOrEmpty(selectedValue))
+            {
+                Response.Redirect(GetProfileViewUrl(selectedValue));
+            }
+            else
+            {
+                Response.Redirect(ProfileUrl);
+            }
+        }
+
+        
     }
 }

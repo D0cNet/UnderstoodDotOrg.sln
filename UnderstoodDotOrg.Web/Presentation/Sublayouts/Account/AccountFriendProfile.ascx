@@ -6,7 +6,7 @@
             <div class="children-container">
                 <div class="row">
                     <div class="col col-5">
-                        <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.ChildrenLabel %></h3>
+                        <h3><asp:Literal ID="litChildrenHeading" runat="server" /></h3>
                     </div>
                     <div class="col col-19">
                         <asp:PlaceHolder ID="groupPlaceholder" runat="server" />

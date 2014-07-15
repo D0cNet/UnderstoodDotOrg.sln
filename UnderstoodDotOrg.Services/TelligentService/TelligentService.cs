@@ -691,6 +691,65 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
         }
 
+        public static int GetTotalUserComments(string userName)
+        {
+            List<Comment> comments = new List<Comment>();
+
+            // TODO: revise user model to store user id instead of doing an extra lookup
+            string userId = ReadUserId(userName);
+            int totalEntries = 0;
+
+            MakeApiRequest(wc =>
+            {
+                string address = GetApiEndPoint(String.Format("comments.xml?PageSize=1&UserId={0}", userId));
+                NameValueCollection data = new NameValueCollection();
+
+                string xml = wc.DownloadString(address);
+                XmlDocument document = new XmlDocument();
+                document.LoadXml(xml);
+
+                XmlNode container = document.SelectSingleNode("Response/Comments");
+
+                totalEntries = Convert.ToInt32(container.Attributes["TotalCount"].Value);
+            });
+
+            return totalEntries;
+        }
+
+        public static List<Comment> GetUserComments(string userName, int page, int pageSize, out int totalComments)
+        {
+            List<Comment> comments = new List<Comment>();
+
+            // TODO: revise user model to store user id instead of doing an extra lookup
+            string userId = ReadUserId(userName);
+            int totalEntries = 0;
+            int pageIndex = page - 1;
+
+            MakeApiRequest(wc =>
+            {
+                string address = GetApiEndPoint(String.Format("comments.xml?PageIndex={0}&PageSize={1}&UserId={2}&SortBy=CreatedUtcDate&SortOrder=Descending", 
+                    pageIndex, pageSize, userId));
+
+                string xml = wc.DownloadString(address);
+                XmlDocument document = new XmlDocument();
+                document.LoadXml(xml);
+
+                XmlNode container = document.SelectSingleNode("Response/Comments");
+
+                totalEntries = Convert.ToInt32(container.Attributes["TotalCount"].Value);
+
+                foreach (XmlNode xn in container.SelectNodes("Comment"))
+                {
+                    Comment comment = new Comment(xn);
+                    comments.Add(comment);
+                }
+            });
+
+            totalComments = totalEntries;
+
+            return comments;
+        }
+
         public static List<int> GetUserRoles(string Username)
         {
             //GET api.ashx/v2/roles/permissions/user/{username}.xml 

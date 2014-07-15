@@ -95,6 +95,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             {
                 lvChildren.DataSource = ProfileMember.Children;
                 lvChildren.DataBind();
+
+                ((Literal)lvChildren.FindControl("litChildrenHeading")).Text = UnderstoodDotOrg.Common.DictionaryConstants.ChildrenLabel;
             }
 
             if (ProfileMember.Interests.Any())

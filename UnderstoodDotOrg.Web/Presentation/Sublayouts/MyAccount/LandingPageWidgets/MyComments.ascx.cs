@@ -15,6 +15,8 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using System.Text.RegularExpressions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 {
@@ -34,14 +36,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
                 hypCommentsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
                 hypCommentsTab.Text = context.SeeAllCommentsText;
 
-                List<Comment> commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
+                int totalComments;
 
-                litCount.Text = commentsList.Count.ToString();
+                List<Services.Models.Telligent.Comment> comments = TelligentService.GetUserComments(CurrentMember.ScreenName, 1, 2, out totalComments);
 
-                if ((commentsList != null) && (commentsList.Count != 0))
+                // TODO: comment count needs to retrieved from the TotalCount attribute, this returns the number of paged results
+                litCount.Text = totalComments.ToString();
+
+                if (comments.Any())
                 {
                     pnlComments.Visible = true;
-                    rptComments.DataSource = commentsList.Count == 1 ? commentsList.GetRange(0, 1) : commentsList.GetRange(0, 2);
+                    rptComments.DataSource = comments;
                     rptComments.DataBind();
                 }
                 else
@@ -55,13 +60,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
         {
             if (e.Item.DataItem != null)
             {
-                var item = e.Item.DataItem as Comment;
+                var comment = e.Item.DataItem as Services.Models.Telligent.Comment;
                 HyperLink hypCommentLink = (HyperLink)e.Item.FindControl("hypCommentLink");
-                hypCommentLink.NavigateUrl = "/";
-                hypCommentLink.Text = item.CommentTitle;
+
+                ContentPageItem item = Sitecore.Context.Database.GetItem(comment.SitecoreId);
+                if (item != null)
+                {
+                    hypCommentLink.NavigateUrl = item.GetUrl();
+                    hypCommentLink.Text = item.PageTitle.Rendered;
+                }
 
                 Literal litCommentBody = (Literal)e.Item.FindControl("litCommentBody");
-                litCommentBody.Text = Regex.Replace(Regex.Replace(item.Body, @"<[^>]+>|&nbsp;", "").Trim(), @"\s{2,}", " ").Truncate(30,true,false);
+                litCommentBody.Text = UnderstoodDotOrg.Common.Helpers.TextHelper.TruncateText(
+                    Sitecore.StringUtil.RemoveTags(HttpUtility.HtmlDecode(comment.Body)), 30); // TODO: use constant
             }
         }
 

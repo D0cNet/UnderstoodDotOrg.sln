@@ -35,7 +35,7 @@
                         <div class="member-view-children">
                             <div class="row">
                                 <div class="col col-6 section-label">
-                                    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.ChildrenLabel %></h3>
+                                    <h3><asp:Literal ID="litChildrenHeading" runat="server" /></h3>
                                 </div>
                                 <div class="col col-18">
                                     <asp:PlaceHolder ID="groupPlaceholder" runat="server" />

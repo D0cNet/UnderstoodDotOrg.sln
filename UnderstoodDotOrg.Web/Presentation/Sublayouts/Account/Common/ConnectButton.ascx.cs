@@ -71,6 +71,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common
                     break;
                 case Constants.TelligentFriendStatus.Approved:
                     buttonLabel = DictionaryConstants.UnconnectButtonText;
+                    btnConnect.CssClass += " gray unconnect";
                     break;
             }
 

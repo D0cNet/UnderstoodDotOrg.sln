@@ -28,6 +28,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string IsApproved { get; set; }
         public string AuthorUsername { get; set; }
         public DateTime CommentDate { get; set; }
+        public Guid SitecoreId { get; set; }
 
         public Comment() { }
 
@@ -79,6 +80,12 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
                 AuthorProfileUrl = author["ProfileUrl"].InnerText;
                 AuthorUsername = author["Username"].InnerText;
                 Likes = CommunityHelper.GetTotalLikes(commentId).ToString();
+                //ParentTitle = xn["Content"]["Application"]["Container"]["HtmlName"].InnerText;
+                //CommentTitle = xn["Content"]["HtmlName"].InnerText;
+                Guid sitecoreGuid = Guid.Empty;
+                // NOTE: telligent adds HTML that needs to be stripped
+                Guid.TryParse(Sitecore.StringUtil.RemoveTags(xn["Content"]["HtmlDescription"].InnerText), out sitecoreGuid);
+                SitecoreId = sitecoreGuid;
                 CommentDate = parsedDate;
             }
 
