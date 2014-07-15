@@ -3,19 +3,27 @@
 <div class="">
     <div class="">
         <div id="search-by-tool-tabs">
-            <ul class="search-by-tool-tab-links">
+            <ul>
                 <li class="browse-by-tab">
                     <a href="#browse-by">
-                        <asp:Label ID="lblBrowseBy" runat="server" Text="" />
+                        <asp:Literal ID="lblBrowseBy" runat="server"/>
                     </a>
                     <!-- Needs to be on one line to prevent whitespace -->
                 </li>
                 <li class="search-by-tab">
                     <a href="#search-by">
-                        <asp:Label ID="lblSearchBy" runat="server" Text="" />
+                        <asp:Literal ID="lblSearchBy" runat="server" />
                     </a>
                 </li>
             </ul>
+            <style>
+                #search-by-tool-tabs ul {
+                    height: 50px;
+                }
+                    #search-by-tool-tabs ul li.browse-by-tab, #search-by-tool-tabs ul li.search-by-tab {
+                        float: left;
+                    }
+            </style>
             <div id="browse-by" >
                 <asp:Panel runat="server" CssClass="form rs_read_this" DefaultButton="btnBrowseFind">
                     <span class="visuallyhidden">Browse By</span>

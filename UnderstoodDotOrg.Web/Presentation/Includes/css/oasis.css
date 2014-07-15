@@ -202,11 +202,6 @@ span.validationerror {
 /* BEGIN: temporary AO override rules: assistive-tech.css */
 
 /* SVN rev 1364 */
-/* Fixed css bug with dropdown widths */
-#search-by-tool-tabs fieldset > div[id^="uniform-"][id*="ddlTechTypes"],
-#search-by-tool-tabs fieldset > div[id^="uniform-"][id*="ddlTechTypes"] ~ div.selector {
-  width: 76% !important;
-}
 
 /* END: temporary AO override rules: assistive-tech.css */
 

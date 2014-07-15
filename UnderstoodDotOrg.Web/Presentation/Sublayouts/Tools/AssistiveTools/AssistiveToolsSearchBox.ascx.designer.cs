@@ -19,7 +19,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBrowseBy;
+        protected global::System.Web.UI.WebControls.Literal lblBrowseBy;
         
         /// <summary>
         /// lblSearchBy control.
@@ -28,7 +28,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSearchBy;
+        protected global::System.Web.UI.WebControls.Literal lblSearchBy;
         
         /// <summary>
         /// ddlIssues control.

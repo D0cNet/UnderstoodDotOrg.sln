@@ -120,7 +120,12 @@
         <h2><sc:FieldRenderer ID="frNoResultsLabel" runat="server" FieldName="No Results Label" /></h2>
     </div>
 </asp:Panel>
-
+<style>
+    .tech-search-results .result-image img {
+        width: 100%;
+        height: auto;
+    }
+</style>
 <div class="assistive-tool-related-articles-small">
     <!-- BEGIN PARTIAL: assistive-tool-related-articles -->
     <div class="assistive-tool-related-articles">
