@@ -1,0 +1,177 @@
+.recent-questions {
+  background-color: #f4f2f1;
+  padding-bottom: 50px;
+
+  .row {
+    margin: 0 15px;
+    @include bp(min-width 960px) {
+      margin: 0 auto;
+    }
+  }
+  .recent-questions-wrapper {
+    margin: 36px 0 0 0;
+    position: relative;
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 36px);
+    }
+
+    @include bp($bp-medium) {
+      margin: 58px 0 0 0;
+    }
+
+    @include bp($bp-large) {
+      margin: 58px 0 0;
+    }
+  }
+
+  h2 {
+    color: #7b3f84;
+    @include rem(font-size, 30px);
+    font-weight: normal;
+    margin-bottom: 22px;
+
+    @include bp($bp-small) {
+      width: 60%;
+    }
+
+    @include bp($bp-large) {
+      @include rem(font-size, 36px);
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  .carousel-arrow-wrapper {
+    width: 100%;
+    @include bp($bp-small) {
+      width: 208px;
+    }
+    @include bp($bp-small-plus) {
+      width: 235px;
+    }
+  }
+
+  .question-cards {
+    margin: 14px 0 34px 0;
+
+    @include bp($bp-medium) {
+      margin-top: 51px;
+      margin-bottom: 0px;
+    }
+
+    .question-card {
+      padding: 0;
+
+      @include bp($bp-small) {
+        float: left;
+        width: 50%;
+      }
+    }
+
+    @include bp($bp-small) {
+      .rsContent ul > li:first-child .question-card-info {
+        margin-right: 5px;
+      }
+    }
+
+    .question-card-info {
+      background-color: #fff;
+      padding: 22px;
+
+      @include bp($bp-large) {
+        padding: 40px;
+      }
+
+      @include old-ie {
+        height: 300px;
+        margin-right: 5px;
+      }
+
+      .question-card-title, .question-card-title a{
+        color: #7b3f84;
+        @include rem(font-size, 21px);
+        font-weight: normal;
+        margin-bottom: 21px;
+
+        @include bp($bp-small) {
+          margin-bottom: 10px;
+        }
+
+        @include bp($bp-large) {
+          @include rem(font-size, 24px);
+          margin-bottom: 18px;
+        }
+      }
+
+      .question-card-text {
+        color: #696969;
+        @include rem(font-size, 14px);
+        @include rem(line-height, 24px);
+
+        @include bp($bp-small) {
+          margin-bottom: 24px;
+        }
+
+        @include bp($bp-large) {
+          margin-bottom: 8px;
+        }
+      }
+
+      .question-card-links {
+        font-size: 0;
+        list-style: none;
+        padding: 0;
+
+        li {
+          border-left: 1px solid #d2d2d2;
+          display: inline-block;
+          padding: 0 14px;
+
+          @include bp($bp-small) {
+            padding: 0 0 0 4px;
+          }
+
+          @include bp($bp-small-plus) {
+            padding: 0 14px;
+          }
+
+          @include bp($bp-large) {
+            padding: 0 21px;
+          }
+
+          &:first-child {
+            border-left: none;
+            padding-left: 0;
+
+            @include bp($bp-small) {
+              padding-right: 4px;
+            }
+
+            @include bp($bp-small-plus) {
+              padding-right: 14px;
+            }
+          }
+
+          a {
+            @include rem(font-size, 12px);
+            @include rem(line-height, 26px);
+            text-decoration: underline;
+
+            @include bp($bp-small-plus) {
+              @include rem(font-size, 14px);
+            }
+
+            @include bp($bp-large) {
+              @include rem(font-size, 16px);
+            }
+
+            &:hover, &:focus {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

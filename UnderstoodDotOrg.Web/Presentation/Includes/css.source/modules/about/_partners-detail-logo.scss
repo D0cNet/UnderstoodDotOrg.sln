@@ -1,0 +1,21 @@
+/**
+ * SASS partial for partners-detail-logo module.
+ */
+
+.partner-logo {
+  margin-bottom: 20px;
+
+  @include bp($bp-small-plus) {
+    float: right;
+    max-width: 30%;
+    margin-top: 2px;
+  }
+
+  img {
+    width: 100%;
+
+    @include bp ($bp-small) {
+      max-width: 270px;
+    }
+  }
+} // end .partner-logo

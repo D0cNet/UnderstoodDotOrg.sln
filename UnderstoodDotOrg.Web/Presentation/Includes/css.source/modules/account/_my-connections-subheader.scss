@@ -1,0 +1,16 @@
+// This inherets properties from my-groups-subheader
+.my-account-subheader.connections-subheader{
+  padding: 16px 13px 25px;
+  @include bp($bp-small-plus) {
+    padding: 44px 13px 30px;
+  }
+  h1{
+    margin-bottom: 7px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 10px;
+    }
+  }
+  .select-container{
+    margin-bottom: 0px;
+  }
+}

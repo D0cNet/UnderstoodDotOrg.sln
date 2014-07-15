@@ -1,0 +1,33 @@
+/**
+ * SASS partial for signup-international module.
+ */
+.signup-international {
+  background: #f4f2f1;
+  padding-bottom: 80px;
+  margin-top: 0 !important;
+  padding-top: 70px !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  h1 {
+    color: #7b3f84;
+    font-weight: normal;
+    @include rem(line-height, 36px);
+  }
+  p {
+    color: #696969;
+    font-family: Arial, sans-serif;
+    @include rem(font-size, 16px);
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+  .sign-up-links {
+    font-family: "Circular", Arial, Helvetica, sans-serif;
+    @include rem(font-size, 18px);
+    a {
+      @include rem(line-height, 26px);
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: underline;
+    }
+  }
+}

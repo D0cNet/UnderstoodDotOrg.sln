@@ -1,0 +1,33 @@
+/**
+ * SASS partial for partners-donate module.
+ */
+
+.partner-donate {
+  background: #f4f2f1;
+  text-align: center;
+  padding: 40px 34px 30px 34px;
+  margin-bottom: 20px;
+
+  @include bp($bp-small-plus) {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 80px;
+  }
+
+  h2 {
+    color: #7a4183;
+    @include rem(font-size, 22px);
+    @include rem(line-height, 26px);
+    font-weight: normal;
+    margin-bottom: 15px;
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 20px;
+    }
+  } // end .partner-donate h2
+
+  a {
+    width: 146px;
+    height: 50px;
+  }
+} // end .partner-donate

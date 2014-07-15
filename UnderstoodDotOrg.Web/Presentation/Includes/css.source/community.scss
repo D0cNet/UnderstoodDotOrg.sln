@@ -1,0 +1,24 @@
+/**
+ * Include SASS partials for community modules.
+ */
+@import 'config';
+
+@import 'modules/community/community';
+@import 'modules/community/main-header';
+@import 'modules/community/welcome-tour';
+@import 'modules/community/groups';
+@import 'modules/community/experts';
+@import 'modules/community/upcoming-events';
+@import 'modules/community/event-cards';
+@import 'modules/community/recent-questions';
+@import 'modules/community/members';
+@import 'modules/community/whats-happening-groups';
+@import 'modules/community/whats-happening';
+@import 'modules/community/blogs';
+@import 'modules/community/experts_calendar';
+@import 'modules/community/parents';
+@import 'modules/community/chat-webinar';
+@import 'modules/community/questions';
+@import 'modules/community/_qa_submit_question';
+@import 'modules/about-the-author';
+@import 'modules/article/keep-reading';

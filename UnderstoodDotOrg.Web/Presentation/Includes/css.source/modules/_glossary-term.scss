@@ -1,0 +1,43 @@
+.glossary-term-popover{
+  .popover{
+    max-width: 360px;
+    .popover-content{
+      height: auto;
+      @include rem(font-size, 16px);
+      font-weight: 400;
+      color: #696969;
+
+      @include bp($bp-small) {
+        min-width: 320px;
+      }
+
+      blockquote{
+        margin: 0;
+        padding: 0;
+        @include rem(line-height, 24px);
+        span{
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        a{
+          @include link-colors(#426da9);
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      } // end blockquote
+    } // end .popover-content
+  } // end .popover
+  .glossary-term-link {
+    color: #426da9;
+    text-decoration: none;
+    border-bottom: 1px dashed #426da9;
+    font-weight: 400;
+
+      &:hover {
+        border: none;
+      }
+  } // end .glossary-term-link
+} // end .glossary-term-popover

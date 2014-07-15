@@ -1,0 +1,254 @@
+#gameboard.attention_game {
+    background-color: #f3f1f1;
+}
+#gameboard.attention_game .SSGame_modal_standalone_decoration {
+    background-image: image_url('simulations/attention/desktop/standalone_icon.png');
+}
+#attention_grid {
+    position: absolute;
+    top: 104px;
+    left: 308px;
+    width: 334px;
+    height: 334px;
+    padding: 2px;
+    background-color: #D3D3D3;
+}
+.breakpoint_tablet #attention_grid {
+    top: 49px;
+    left: 200px;
+}
+.breakpoint_phone #attention_grid {
+    top: 13px;
+    left: 22px;
+    width: 278px;
+    height: 278px;
+    padding: 1px;
+}
+#attention_grid .panel {
+    float: left;
+    width: 108px;
+    height: 108px;
+    margin: 1px;
+    background-color: white;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+.breakpoint_phone #attention_grid .panel {
+    width: 90px;
+    height: 90px;
+}
+#attention_grid .panel_monkey {
+    background-image: image_url('simulations/attention/desktop/monkey_bg.png');
+}
+#attention_grid .panel_elephant {
+    background-image: image_url('simulations/attention/desktop/elephant_bg.png');
+}
+#attention_grid .panel_shark {
+    background-image: image_url('simulations/attention/desktop/shark_bg.png');
+}
+#attention_grid .panel_rhino {
+    background-image: image_url('simulations/attention/desktop/rhino_bg.png');
+}
+#attention_grid .panel_bird {
+    background-image: image_url('simulations/attention/desktop/bird_bg.png');
+}
+#attention_grid .panel_snake {
+    background-image: image_url('simulations/attention/desktop/snake_bg.png');
+}
+#attention_grid .panel_kangaroo {
+    background-image: image_url('simulations/attention/desktop/kangaroo_bg.png');
+}
+#attention_grid .panel_octopus {
+    background-image: image_url('simulations/attention/desktop/octopus_bg.png');
+}
+#attention_grid .panel_camel {
+    background-image: image_url('simulations/attention/desktop/camel_bg.png');
+}
+.breakpoint_phone #attention_grid .panel_monkey {
+    background-image: image_url('simulations/attention/phone/monkey_bg.png');
+}
+.breakpoint_phone #attention_grid .panel_elephant {
+    background-image: image_url('simulations/attention/phone/elephant_bg.png');
+}
+.breakpoint_phone #attention_grid .panel_shark {
+    background-image: image_url('simulations/attention/phone/shark_bg.png');
+}
+.breakpoint_phone #attention_grid .panel_rhino {
+    background-image: image_url('simulations/attention/phone/rhino_bg.png');
+}
+.breakpoint_phone #attention_grid .panel_bird {
+    background-image: image_url('simulations/attention/phone/bird_bg.png');
+}
+.breakpoint_phone #attention_grid .panel_snake {
+    background-image: image_url('simulations/attention/phone/snake_bg.png');
+}
+.breakpoint_phone #attention_grid .panel_kangaroo {
+    background-image: image_url('simulations/attention/phone/kangaroo_bg.png');
+}
+.breakpoint_phone #attention_grid .panel_octopus {
+    background-image: image_url('simulations/attention/phone/octopus_bg.png');
+}
+.breakpoint_phone #attention_grid .panel_camel {
+    background-image: image_url('simulations/attention/phone/camel_bg.png');
+}
+
+#attention_pieces1, #attention_pieces2 {
+    position: absolute;
+    width: 270px;
+    height: 100%
+}
+.breakpoint_tablet #attention_pieces1, .breakpoint_tablet #attention_pieces2 {
+    width: 200px;
+}
+#attention_pieces1 {
+    top: 0px;
+    left: 0px;
+}
+.breakpoint_phone #attention_pieces1 {
+    top: auto;
+    bottom: 0px;
+    left: 22px;
+    width: 275px;
+    height: 120px;
+}
+#attention_pieces2 {
+    top: 0;
+    right: 0;
+}
+.breakpoint_phone #attention_pieces2 {
+    display: none;
+}
+
+.attention_game .piece {
+    position: relative;
+    width: 108px;
+    height: 108px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 1px solid #D3D3D3;
+    cursor: pointer;
+}
+.breakpoint_phone.attention_game .piece {
+    width: 50px;
+    height: 50px;
+}
+.breakpoint_phone.attention_game .piece.over_grid,
+.breakpoint_phone.attention_game .piece.ui-draggable-dragging {
+    width: 90px;
+    height: 90px;
+    background-size: 100%;
+}
+.attention_game .piece_monkey {
+    background-image: image_url('simulations/attention/desktop/monkey.png');
+}
+.attention_game .piece_elephant {
+    background-image: image_url('simulations/attention/desktop/elephant.png');
+}
+.attention_game .piece_shark {
+    background-image: image_url('simulations/attention/desktop/shark.png');
+}
+.attention_game .piece_rhino {
+    background-image: image_url('simulations/attention/desktop/rhino.png');
+}
+.attention_game .piece_bird {
+    background-image: image_url('simulations/attention/desktop/bird.png');
+}
+.attention_game .piece_snake {
+    background-image: image_url('simulations/attention/desktop/snake.png');
+}
+.attention_game .piece_kangaroo {
+    background-image: image_url('simulations/attention/desktop/kangaroo.png');
+}
+.attention_game .piece_octopus {
+    background-image: image_url('simulations/attention/desktop/octopus.png');
+}
+.attention_game .piece_camel {
+    background-image: image_url('simulations/attention/desktop/camel.png');
+}
+.attention_game .piece_monkey.back_visible {
+    background-image: image_url('simulations/attention/desktop/monkey_back.png');
+}
+.attention_game .piece_elephant.back_visible {
+    background-image: image_url('simulations/attention/desktop/elephant_back.png');
+}
+.attention_game .piece_shark.back_visible {
+    background-image: image_url('simulations/attention/desktop/shark_back.png');
+}
+.attention_game .piece_rhino.back_visible {
+    background-image: image_url('simulations/attention/desktop/rhino_back.png');
+}
+.attention_game .piece_bird.back_visible {
+    background-image: image_url('simulations/attention/desktop/bird_back.png');
+}
+.attention_game .piece_snake.back_visible {
+    background-image: image_url('simulations/attention/desktop/snake_back.png');
+}
+.attention_game .piece_kangaroo.back_visible {
+    background-image: image_url('simulations/attention/desktop/kangaroo_back.png');
+}
+.attention_game .piece_octopus.back_visible {
+    background-image: image_url('simulations/attention/desktop/octopus_back.png');
+}
+.attention_game .piece_camel.back_visible {
+    background-image: image_url('simulations/attention/desktop/camel_back.png');
+}
+
+.breakpoint_phone.attention_game .piece_monkey {
+    background-image: image_url('simulations/attention/phone/monkey.png');
+}
+.breakpoint_phone.attention_game .piece_elephant {
+    background-image: image_url('simulations/attention/phone/elephant.png');
+}
+.breakpoint_phone.attention_game .piece_shark {
+    background-image: image_url('simulations/attention/phone/shark.png');
+}
+.breakpoint_phone.attention_game .piece_rhino {
+    background-image: image_url('simulations/attention/phone/rhino.png');
+}
+.breakpoint_phone.attention_game .piece_bird {
+    background-image: image_url('simulations/attention/phone/bird.png');
+}
+.breakpoint_phone.attention_game .piece_snake {
+    background-image: image_url('simulations/attention/phone/snake.png');
+}
+.breakpoint_phone.attention_game .piece_kangaroo {
+    background-image: image_url('simulations/attention/phone/kangaroo.png');
+}
+.breakpoint_phone.attention_game .piece_octopus {
+    background-image: image_url('simulations/attention/phone/octopus.png');
+}
+.breakpoint_phone.attention_game .piece_camel {
+    background-image: image_url('simulations/attention/phone/camel.png');
+}
+.breakpoint_phone.attention_game .piece_monkey.back_visible {
+    background-image: image_url('simulations/attention/phone/monkey_back.png');
+}
+.breakpoint_phone.attention_game .piece_elephant.back_visible {
+    background-image: image_url('simulations/attention/phone/elephant_back.png');
+}
+.breakpoint_phone.attention_game .piece_shark.back_visible {
+    background-image: image_url('simulations/attention/phone/shark_back.png');
+}
+.breakpoint_phone.attention_game .piece_rhino.back_visible {
+    background-image: image_url('simulations/attention/phone/rhino_back.png');
+}
+.breakpoint_phone.attention_game .piece_bird.back_visible {
+    background-image: image_url('simulations/attention/phone/bird_back.png');
+}
+.breakpoint_phone.attention_game .piece_snake.back_visible {
+    background-image: image_url('simulations/attention/phone/snake_back.png');
+}
+.breakpoint_phone.attention_game .piece_kangaroo.back_visible {
+    background-image: image_url('simulations/attention/phone/kangaroo_back.png');
+}
+.breakpoint_phone.attention_game .piece_octopus.back_visible {
+    background-image: image_url('simulations/attention/phone/octopus_back.png');
+}
+.breakpoint_phone.attention_game .piece_camel.back_visible {
+    background-image: image_url('simulations/attention/phone/camel_back.png');
+}
+.piece.ui-draggable-dragging {
+    -moz-box-shadow: 0 0 5px 5px #D3D3D3;
+    -webkit-box-shadow: 0 0 5px 5px #D3D3D3;
+    box-shadow: 0 0 5px 5px #D3D3D3;
+}

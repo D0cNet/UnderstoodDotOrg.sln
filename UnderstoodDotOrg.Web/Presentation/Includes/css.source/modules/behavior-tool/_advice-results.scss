@@ -1,0 +1,434 @@
+/**
+ * SASS partial for advice-results module.
+ */
+
+$advice-font-purple: #7a4183;
+$advice-bg-gray: #f4f2f1;
+$advice-border-gray: #e8e6e5;
+$advice-font-gray: #696969;
+
+.behavior-results {
+  background: #f4f2f1;
+}
+
+.advice-results {
+  background-color: $advice-bg-gray;
+  padding-top: 40px;
+
+  header {
+    margin-bottom: 40px;
+    position: relative;
+    text-align: center;
+    @include bp($bp-medium) {
+      margin-bottom: 30px;
+    }
+    @include bp($bp-medium) {
+      margin-bottom: 10px;
+      text-align: left
+    }
+
+    h3 {
+      @include rem(font-size, 18px);
+      color: $advice-font-purple;
+      display: inline-block;
+      margin-left: 5px;
+      font-weight: 200;
+      @include bp($bp-medium) {
+        @include rem(font-size, 36px);
+        // This is not bold on b2
+        font-weight: normal;
+        margin-bottom: 0px;
+      }
+    }
+
+    .how-to-use {
+      @include rem(line-height, 36px);
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      @include bp($bp-medium) { display: inline-block; }
+    }
+  }//.advice-results header
+
+  .results-wrapper {
+    text-align: center;
+    @include bp($bp-small-plus) {
+      margin-left: -30px;
+    }
+    @include bp($bp-medium) {
+      margin-left: -65px;
+    }
+    @include bp($bp-small-plus) {
+      margin: 0 auto;
+      text-align: left;
+
+      .search-result {
+        text-align: center;
+      }
+    }
+    @include bp($bp-large) {
+      margin-left: -65px;
+      text-align: center;
+    }
+  }
+
+  .search-result {
+    background-color: #fff;
+    display: inline-block;
+    margin: 0px;
+    max-width: 272px;
+    padding: 19px 15px 25px;
+    @include bp($bp-small-plus) {
+      padding: 20px;
+      margin-bottom: 35px;
+      margin-left: 30px;
+    }
+    @include bp($bp-medium) {
+      margin: 35px 0px 35px 60px;
+      margin-left: 62px;
+    }
+
+    @include old-ie {
+      max-width: 230px;
+    }
+  }
+
+  .result-body {
+    background-color: $advice-font-purple;
+    padding: 20px 20px 65px 20px;
+    position: relative;
+    max-height: 162px;
+    width: 230px;
+    text-align: center;
+    border: none;
+    @include bp($bp-small-plus) {
+      max-height: 190px;
+      min-height: 190px;
+    }
+    &.open .result-hover {
+      display: block;
+    }
+
+    @include old-ie {
+      padding: 20px 20px 10px 20px;
+    }
+  }
+
+  .result-info {
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
+    width: 100%;
+    @include bp($bp-small-plus) {
+      position: relative;
+      margin-top: 15px;
+    }
+  }
+
+  .result-hover {
+    background-color: $advice-bg-gray;
+    border-collapse: separate;
+    display: none;
+    padding: 20px 0 0 55px;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    .hover-link-wrapper{
+      a {
+        @include rem(font-size, 16px);
+        color: $advice-font-purple;
+        display: table-cell;
+        line-height: 19px;
+        padding: 15px 0 0 0;
+        width: 100%;
+        vertical-align: top;
+
+        @include old-ie {
+          display: inline-block;
+        }
+      }
+      .tip-save {
+        border-bottom: 1px solid $advice-border-gray;
+        padding: 0 0 6px 0;
+        vertical-align: bottom;
+
+        &:hover, &:focus {
+          text-decoration: none;
+          color: #426da9;
+        }
+      }
+
+      .tip-remind-me {
+        &:hover, &:focus {
+          text-decoration: none;
+          color: #426da9;
+        }
+      }
+
+      .tip-save > span, .tip-remind-me > span{
+        height: 33px;
+        display: inline-block;
+        padding-top: 4px;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .hover-link-wrapper {
+    display: table-row;
+  }
+
+  .result-tip {
+    margin-top: 6px;
+    margin-bottom: 22px;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 26px);
+    color: #fff;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 22px);
+      @include rem(line-height, 28px);
+      margin-top: 25px;
+      margin-bottom: 0px;
+    }
+  }
+
+  .icon-advice-like,
+  .tip-comment {
+    background-image: image-url('sprite.advice.results.png');
+    background-size: 86px 29px;
+    display: inline-block;
+
+    .no-backgroundsize & {
+      background-image: image-url('sprite.advice.results.lo-res.png');
+    }
+  }
+
+  .tip-comment {
+    @include rem(font-size, 17px);
+    background-size: 86px 29px;
+    color: $advice-font-purple;
+    height: 29px;
+    margin-right: 15px;
+    text-align: center;
+    width: 32px;
+  }
+
+  .tip-like {
+    @include rem(font-size, 17px);
+    color: #fff;
+    @include bp($bp-medium) {
+      @include rem(font-size, 25px);
+      font-weight: bold;
+    }
+
+    .icon-advice-like {
+      background-position: -33px 11px;
+      height: 29px;
+      margin-right: 8px;
+      width: 18px;
+    }
+  }
+
+  .result-hover{
+    .tip-save:focus, .tip-remind-me:focus {
+      i.icon-advice-save {
+        margin-top: 5px;
+        background: image-url('sprite.icons.article-tips.png') 0px -35px no-repeat;
+        background-size: 145px 145px;
+
+        .no-backgroundsize & {
+          background-image: image-url('sprite.icons.article-tips.145.png');
+        }
+
+      }
+      i.icon-advice-bell {
+        margin-top: 4px;
+        background: image-url('sprite.icons.article-tips.png') -46px -35px no-repeat;
+        background-size: 145px 145px;
+
+        .no-backgroundsize & {
+          background-image: image-url('sprite.icons.article-tips.145.png');
+        }
+
+      }
+    }
+
+    .tip-save, .tip-remind-me {
+      i.icon-advice-save, i.icon-advice-bell{
+        display: inline-block;
+        float: left;
+        height: 25px;
+        width: 25px;
+        margin-right: 0px;
+      }
+
+      i.icon-advice-save,
+      i.icon-advice-save.active,
+      i.icon-advice-bell,
+      i.icon-advice-bell.active {
+
+        background: {
+          image: image-url('sprite.icons.article-tips.png');
+          repeat: no-repeat;
+          size: 145px 145px;
+        }
+
+        .no-backgroundsize & {
+          background-image: image-url('sprite.icons.article-tips.145.png');
+        }
+
+      }
+
+      i.icon-advice-save {
+        background-position: 0px 0px;
+        margin-top: 5px;
+
+        &.is-hover {
+          margin-top: 5px;
+          background-position: 0px -35px;
+        }
+      }
+
+      i.icon-advice-save.active {
+        background-position: 0px -70px;
+        margin-top: 0px;
+
+        &.is-hover {
+          margin-top: 0px;
+          background-position: 0px -120px;
+        }
+
+      }
+
+
+      i.icon-advice-bell {
+        background-position: -46px 0px;
+        margin-top: 4px;
+
+        &.is-hover {
+          margin-top: 4px;
+          background-position: -46px -35px;
+        }
+
+      }
+
+      i.icon-advice-bell.active {
+        background-position: -46px -70px;
+        margin-top: 0px;
+
+        &.is-hover {
+          margin-top: 0px;
+          background-position: -46px -120px;
+        }
+
+      }
+
+    }
+
+  }
+
+
+  .icon-results-more {
+    background-image: image-url('sprite.icon.arrows.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    display: inline-block;
+    height: 11px;
+    margin-left: 20px;
+    width: 18px;
+  }
+
+  .tip-view {
+    @include rem(font-size, 18px);
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .rsArrowWrapper {
+    bottom: 60px;
+    margin-bottom: 10px;
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+  }
+  .rsVisibleNearbyWrap {
+    min-height: 354px;
+  }
+  .rsArrow .rsArrowIcn{
+    top: -8px;
+  }
+  .rsArrowRight  .rsArrowIcn {
+    margin-right: -16px;
+    right: 5px;
+  }
+  .rsArrowLeft  .rsArrowIcn {
+    right: 58px;
+  }
+  .results-more-link {
+    display: none;
+    text-align: center;
+    @include rem(font-size, 24px);
+    @include rem(line-height, 24px);
+    padding: 0;
+    padding-bottom: 50px;
+    padding-top: 20px;
+
+    span {
+      display: inline-block;
+    }
+
+    &:hover span {
+      text-decoration: underline;
+    }
+
+    @include bp($bp-medium) {
+      display: block;
+      padding-bottom: 45px;
+    }
+  }
+  .icon-tooltip {
+    background-image: image_url('sprite.tooltip.info.png');
+    background-size: 44px 22px;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    margin: 0 0 -3px 10px;
+    width: 22px;
+    &:hover { background-position: -22px 0px; }
+    @include bp($bp-medium) {
+      display: none;
+    }
+  }
+
+  footer {
+    display: none;
+    position: relative;
+    text-align: right;
+    @include bp($bp-medium) { display: block; }
+
+    p { color: $advice-font-gray; }
+    p, .suggest-challenge { display: inline-block; }
+  }
+
+  // don't display "show more" on mobile
+  .show-more {
+    display: none;
+
+    @include bp($bp-small-plus) {
+      display: block;
+    }
+
+  }
+}//.advice-results

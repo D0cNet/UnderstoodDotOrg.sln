@@ -1,0 +1,52 @@
+/**
+ * SASS partial for show-more module.
+ */
+
+.show-more {
+  clear: both;
+  margin-bottom: 35px;
+  text-align: center;
+  cursor: pointer;
+
+  @include bp($bp-small-plus){
+    margin-bottom: 50px;
+  }
+
+  a {
+    @include rem(font-size, 20px);
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+
+    i {
+      margin-left: 12px;
+
+        @include bp($bp-small-plus){
+          margin-left: 18px;
+        }
+
+    }
+
+    @include bp($bp-small-plus){
+      @include rem(font-size, 24px);
+    }
+
+  }
+
+  // different alignment in single column layout
+
+  .single-col & {
+    
+    @include bp($bp-small-plus){
+      text-align: left;
+      padding: 20px 0 0 50%;
+    }
+
+    @include bp($bp-medium){
+      padding: 20px 0 0 41%;
+      margin-left: 0;
+    }
+
+  }
+
+}// .show-more

@@ -1,0 +1,314 @@
+.recos-for-you-container {
+  
+  margin: 0 15px 25px;
+  
+  @include bp($bp-small-plus){
+    margin: 0 20px 45px;
+  }
+
+  & .carousel-container {
+    border-bottom: solid 1px #c6c5c5;
+    padding-bottom: 25px;
+
+    @include bp($bp-small-plus){
+      padding-bottom: 40px;
+    }
+
+  }
+
+  .why-link {
+    text-align: center;
+
+    @include bp($bp-small-plus){
+      text-align: left;
+    }
+
+    .popover {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+      }
+      .col1 {
+        float: left; width: 33%;
+
+        li {
+          display: block;
+          background: #f4f2f1;
+          color: #208ec4;
+          @include rem(font-size, 14px);
+          @include rem(line-height, 40px);
+          height: 40px;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+      }
+
+      .col2 {
+        float: left; width: 67%;
+        padding-left: 30px;
+
+        h4 {
+          color: #7b3f84;
+          font-weight: normal;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 20px);
+          margin: -5px 0 15px 0;
+
+          @include bp($bp-small-plus){
+            @include rem(font-size, 20px);
+            @include rem(line-height, 24px);
+          }
+
+        }
+
+        ul {
+          float: left;
+          margin-bottom: 22px;
+        }
+
+        li {
+          color: #696969;
+          margin-bottom: 6px;
+          @include rem(font-size, 14px);
+          @include rem(line-height, 16px);
+
+          @include bp($bp-small-plus){
+            @include rem(font-size, 16px);
+            @include rem(line-height, 20px);
+          }
+
+          a {
+            text-decoration: underline;
+
+            &:hover {
+              text-decoration: none;
+            }
+
+          }
+        }//li
+
+        .button {
+          float: left;
+          height: 40px;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 40px);
+          width: 110px;
+          margin-bottom: 30px;
+        }
+
+      }
+    }
+    
+  }
+
+}//.recos-for-you-container
+
+// last carousel - remove margin-bottom and border-bottom
+.recos-for-you-carousels .recos-for-you-container:last-child {
+  
+  &.recos-for-you-container {
+    margin-bottom: 0;
+  }
+
+  & .carousel-container {
+    border-bottom: none;
+  }
+}
+
+.recos-for-you {
+
+  @include bp($bp-small-plus){
+    margin-bottom: 20px;
+  }
+
+  // constrain height IE8
+  @include old-ie {
+    height: 475px !important;
+  }
+
+  ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding:80px 0 0 0;
+  
+  }
+  .rsOverflow {
+    margin-top: -70px;
+      
+    @include bp($bp-small-plus){
+      margin-top: -95px;
+    }
+
+    // constrain height IE8
+    @include old-ie {
+      height: 475px !important;
+    }
+  }
+
+  li {
+    clear: both;
+    width: 100%;
+
+    @include bp($bp-small-plus){
+      width: 50%;
+      float: left;
+      clear: none;
+      margin-top: 25px;
+      padding-left: 40px;
+    }
+
+    .article-photo {
+      display: block;
+      float: left;
+      margin-bottom: 95px;
+      overflow: hidden;
+      width: 45%;
+
+      @include bp($bp-small-plus){
+        margin-bottom: 45px;
+        width: 45%;
+      }
+
+      @include bp($bp-medium){
+        width: 32%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .article-title {
+      float: left;
+      padding-left: 20px;
+      width: 55%;
+      margin-bottom: 95px;
+      
+      @include bp($bp-small-plus){
+        margin-bottom: 45px;
+        width: 49%;
+      }
+
+      @include bp($bp-medium){
+        width: 62%;
+      }
+
+      h3 {
+        margin: 0 0 .5em;
+        font-weight:normal;
+
+        @include bp($bp-small-plus) {
+          margin: -5px 0 .5em;
+          @include rem(font-size, 18px);
+          @include rem(line-height, 22px);
+        }
+
+        @include bp($bp-medium) {
+          margin: -5px 0 .5em;
+          @include rem(font-size, 24px);
+          @include rem(line-height, 28px);
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
+      }
+
+      p {
+        line-height: 1.2em;
+        color: #696969;
+      }
+
+      .buttons-container {
+        display: block;
+
+        @include bp($bp-small-plus){
+          display: none;
+        }
+
+        @include old-ie {
+          display: block;
+        }
+
+        button {
+          float: left;
+          width: 28px;
+          height: 30px;
+          border-right: solid 1px #d2d2d2;
+          margin: 0 12px 0 0;
+          
+          &:last-child {
+            border-right: none !important;
+          }
+
+          @include bp($bp-medium){
+            width: 35px;
+            margin: 0 15px 0 0;
+          }
+
+        }
+
+      }//.buttons-container
+
+    }// .article-title-container
+
+    &:hover,
+    &.focused {
+      .article-title .buttons-container {
+        display: block;
+      }
+    }
+
+  }//.article
+
+  .rsArrowIcn {
+    z-index: 2;
+    
+    @include bp($bp-small-plus){
+      top: 0;
+      bottom: initial;
+    }
+
+  }
+
+  .rsArrowLeft .rsArrowIcn {
+    top: auto;
+    bottom: 26px;
+    right: 50%;
+    margin-right: 15px;
+       
+    @include bp($bp-small-plus){
+      margin-right: 0;
+      bottom: 0;
+      top: 26px;
+      right: 54px;
+    }
+
+    @include bp($bp-medium) {
+      right: 44px;
+    }
+
+  }// .rsArrowLeft
+
+  .rsArrowRight .rsArrowIcn {
+    top: auto;
+    bottom: 26px;
+    right: auto;
+    left: 50%;
+    margin-left: 15px;
+
+    @include bp($bp-small-plus) {
+      left: auto;
+      margin-left: 0;
+      bottom: 0;
+      top: 26px;
+      right: 0;
+    }
+
+  }// .rsArrowRight
+
+}//.recos-for-you

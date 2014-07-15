@@ -1,0 +1,40 @@
+/**
+ * SASS partial for about-experts-introduction module.
+ */
+
+.l-about-experts-intro-carousel{
+
+  .row{
+    @include bp($bp-small-plus){
+      border-bottom: 1px solid #d2d2d2;
+      margin-bottom: 48px;
+    }
+  }
+
+} // .l-about-experts-intro-carousel
+
+.about-experts-introduction{
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  color: #696969;
+  @include rem(font-size, 15px);
+  @include rem(line-height, 26px);
+  padding: 0px 14px 20px 14px;
+
+  @include bp($bp-small-plus){
+    margin-bottom: 20px;
+    padding: 60px 14px 20px 0px;
+  }
+  @include bp($bp-large){
+    padding-top: 44px;
+  }
+
+  p{
+    margin: 0px;
+    @include bp($bp-small-plus){
+      margin-top: -6px;
+    }
+  }
+
+} // .about-experts-introduction

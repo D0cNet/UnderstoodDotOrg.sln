@@ -1,0 +1,89 @@
+/**
+ * SASS partial for article tips list
+ */
+
+$article-tips-purple: #7a4183;
+$article-tips-gray: #696969;
+$article-tips-border-gray: #cccccc;
+
+.article-tips-container{
+  .article-tips-item{
+    border-top: 1px solid $article-tips-border-gray;
+    padding-top: 20px;
+      @include bp($bp-small-plus) {
+        border-top: none;
+        @include dropshadow;
+        padding: 40px;
+        margin-bottom: 50px;
+      }
+    .article-tips-image{
+      img{
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        @include bp($bp-small-plus) {
+          margin-bottom: 38px;
+        }
+      }
+    }
+    // main button styles (image bg positions on pseudo element) are in _action-buttons.scss.
+    .buttons-container {
+      margin-bottom: 15px;
+      float: left;
+      button {
+        display: block;
+        float: left;
+        height: 25px;
+        width: 23px;
+        margin: 0 12px;
+        &:first-child {
+          margin-left: 0px;
+          @include bp($bp-large) {
+            margin-left: 13px;
+          }
+        }
+        &.icon-plus {
+          margin: 0 6px 0 12px;
+        }
+        &.icon-print {
+          width: 25px;
+        }
+        cursor: pointer;
+      }
+    }
+    .title-wrap{
+      display:block;
+      width: 100%;
+      @include bp($bp-small-plus) {
+        float: left;
+        max-width: 230px;
+      }
+    }
+    .tools-wrap{
+      width: 220px;
+      @include bp($bp-large) {
+        float: right;
+      }
+      .share-dropdown-menu-wrap {
+        padding-right: 10px;
+        margin-top: 5px;
+      }
+    }
+    h3 {
+      color: $article-tips-purple;
+      @include rem(font-size, 24px);
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+    p{
+      color: $article-tips-gray;
+      font-family: Arial, sans-serif;
+      @include rem(font-size, 16px);
+      @include rem(line-height, 27px);
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 15px);
+        @include rem(line-height, 26px);
+      }
+    }
+  } // .article-tips-item
+} // .article-tips-container

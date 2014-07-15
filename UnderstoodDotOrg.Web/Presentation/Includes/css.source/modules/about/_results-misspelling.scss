@@ -1,0 +1,75 @@
+.l-results-misspelling {
+  .row {
+    padding: 30px 0 30px 0;
+    @include bp($bp-small-plus) {
+      padding: 40px 0 35px 0;
+    }
+
+    .results {
+      float: left;
+      @include bp($bp-large){
+        margin-left: 10px;
+      }
+
+      h1 {
+        color: #696969;
+        @include rem(font-size, 36px);
+        line-height: 1;
+        margin-bottom: 20px;
+        font-weight:normal;
+
+        span {
+          color: #7a4183;
+          font-weight: bold;
+        }
+      }
+
+      h2 {
+        color: #696969;
+        @include rem(font-size, 24px);
+        font-weight: normal;
+        margin-bottom: 30px;
+
+        a {
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      h3 {
+        color: #696969;
+        @include rem(font-size, 18px);
+        font-weight:normal;
+        margin-bottom:30px;
+
+        @include bp($bp-small-plus) {
+          margin-bottom:0;
+        }
+        span {
+          color: #7a4183;
+          font-weight: bold;
+        }
+      }
+
+    }
+
+    label {
+      width: 190px;
+
+      @include bp($bp-small-plus) {
+        float:right;
+      }
+    }
+
+  } /* .row */
+
+  &.bottom {
+    .row {
+      border-bottom: solid 1px #e2e2e2;
+    }
+  }
+
+} /* .l-results-misspelling*/

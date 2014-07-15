@@ -1,0 +1,98 @@
+// This is a shared module
+// When changing these styles please review all account subheaders
+// My groups, my events, my profile, my comments etc.
+
+.my-account-subheader {
+  position: relative;
+  background: #f4f2f1;
+  //  Negative margin here was causing white space on groups page mobile
+  margin: 0 0 25px;
+
+  //  This sets the padding for basic subheader seen on my profile
+  //  To add padding to other pages see individual style sheets
+  padding: 24px 13px 19px;
+  @include bp($bp-small-plus) {
+    @include box-shadow(inset 0 -1px 2px #ddd);
+    margin-bottom: 40px;
+    padding: 42px 0;
+  }
+  @include bp($bp-large){
+    margin-top: -85px;
+  }
+
+  .subheader-field-wrapper {
+    color: #696969;
+    width: 100%;
+    @include bp($bp-small-plus) {
+      width: 420px;
+      float: right;
+    }
+  }
+
+  h2 {
+    color: #7b3f84;
+    @include rem(font-size, 34px);
+    @include rem(line-height, 48px);
+    margin-bottom: 10px;
+    @include bp($bp-small-plus) {
+      float: left;
+      @include rem(font-size, 36px);
+      margin: 0;
+    }
+  }
+
+  a.separated-link {
+    @include rem(font-size, 18px);
+    @include rem(line-height, 42px);
+    margin-top: 7px;
+    text-decoration: underline;
+
+    @include bp($bp-small-plus) {
+      border-left: 1px solid #bcbdc0;
+      float: left;
+      margin-left: 25px;
+      padding-left: 25px;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  fieldset {
+    // dl, td, dd Used for my groups subheader
+    color: #696969;
+    @include bp($bp-small-plus) {
+      float: right;
+    }
+  }
+
+  .select-container {
+    display: block;
+    width: auto;
+    margin-bottom: 10px;
+
+    @include bp($bp-small-plus) {
+      display: inline-block;
+      margin-left: 4px;
+      margin-bottom: 0px;
+    }
+
+    &.filter {
+      @include bp($bp-small-plus) {
+        width: 190px;
+      }
+      @include bp($bp-medium) {
+        width: 230px;
+      }
+    }
+
+    &.sort {
+      @include bp($bp-small-plus) {
+        width: 150px;
+      }
+      @include bp($bp-medium) {
+        width: 190px;
+      }
+    }
+  } // .select-container
+} // .my-account-subheader

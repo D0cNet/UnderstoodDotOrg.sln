@@ -1,0 +1,488 @@
+/* Start Readspeaker Core CSS */
+
+/*********** FONT STUFF ****************************************/
+@font-face {
+  font-family: 'gcontroller';
+  src: url('fonts/gcontroller.eot');
+}
+@font-face {
+  font-family: 'gcontroller';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,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) format('truetype'), url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/*********** GENERAL CLASSES ***********************************/
+#rslightbox_contentcontainer #rslightbox_logo {
+  display: none;
+}
+/*********** THE GLOBAL CONTROLLER *****************************/
+/* GC MIXINS */
+#rsToggle {
+  bottom: 0px;
+  left: 0px;
+  height: 80px;
+  width: 515px;
+  box-shadow: 0 0 3px #999999;
+  border-radius: 4px;
+  font-family: Circular, Arial, Helvetica, sans-serif;
+  z-index: 1001;
+  /* MAIN LABEL */
+  /* DRAG HANDLE */
+  /* STATUS INDICATOR */
+  /* BUTTONS */
+  /* COLLAPSED TOGGLE */
+}
+#rsToggle.rsClosed {
+  width: 120px;
+}
+#rsToggle a,
+#rsToggle .rsbtn_title {
+  text-decoration: none;
+  color: #777777;
+  font-weight: bold;
+}
+#rsToggle .rsbtn_title {
+  color: #7a4183;
+}
+#rsToggle .rsToggle_close_left {
+  margin-left: 20px;
+  position: absolute;
+  height: 40px;
+  width: 166px;
+  background: #298fc2;
+  bottom: 80px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 16px;
+  z-index: 0;
+  cursor: pointer;
+}
+
+#rsToggle.rsClosed .rsToggle_close_left {
+  bottom: 0;
+}
+
+#rsToggle .rsToggle_close_left .rsbtn_label {
+  padding: 0 10px 0 38px;
+  line-height: 40px;
+  margin: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+#rsToggle .rsToggle_close_left:before {
+  position: absolute;
+  background-image: image-url("readspeaker.icon.mobile-open.png");
+  background-position: center 6px;
+  background-repeat: no-repeat;
+  top: -1px;
+  height: 10px;
+  width: 166px;
+  content: '';
+}
+
+#rsToggle .rsToggle_close_left:after {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  color: #426da9;
+  content: "\e601";
+  font-family: 'gcontroller';
+}
+
+#rsToggle.rsActive .rsToggle_close_left:after {
+  color: #a8d226;
+}
+
+#rsToggle .rsbtn_move {
+  display: none;
+}
+
+#rsToggle .rsToggleButton {
+  height: 80px;
+  background: #ffffff;
+  @include transparent(#ffffff, .9);
+  font-size: 12.8px;
+  padding-right: 16px;
+}
+#rsToggle .rsToggleButton .rsToggleContainer {
+  display: inline-block;
+  float: left;
+  height: 80px;
+  border-left: 1px solid #cccccc;
+  /* ACTIVATE / DEACTIVATE */
+  /* SPEED */
+  /* TEXT SIZE */
+}
+#rsToggle .rsToggleButton .rsToggleContainer .rsbtn_label {
+  display: none;
+}
+#rsToggle .rsToggleButton .rsToggleContainer .rsTopFold,
+#rsToggle .rsToggleButton .rsToggleContainer .rsBottomFold {
+  display: block;
+  margin: 15px 10px 10px;
+}
+
+#rsToggle .rsToggleButton .rsToggleContainer .rsBottomFold {
+  text-align: center;
+}
+
+#rsToggle .rsToggleButton .rsToggleContainer .rsTopFold .rsbtn_pill,
+#rsToggle .rsToggleButton .rsToggleContainer .rsBottomFold .rsbtn_pill {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 28px;
+  background: #f4f2f1;
+  border-radius: 4px;
+  line-height: 28px;
+  vertical-align: middle;
+  text-align: center;
+  box-shadow: inset 0 5px 5px -5px rgba(0, 0, 0, 0.48);
+}
+
+#rsToggle .rsToggleButton .rsToggleContainer .rsTopFold a.rsSelected .rsbtn_pill,
+#rsToggle .rsToggleButton .rsToggleContainer .rsBottomFold a.rsSelected .rsbtn_pill {
+  background: #7a4183;
+  color: #ffffff;
+}
+#rsToggle .rsToggleButton .rsToggleContainer.rsActivatorHolder .rsBottomFold {
+  margin: 0 15px 0 10px;
+}
+
+#rsToggle .rsToggleButton .rsToggleContainer .rsBottomFold .rsbtn_title_left {
+  float: left;
+}
+#rsToggle .rsToggleButton .rsToggleContainer .rsBottomFold .rsbtn_title_right {
+  float: right;
+}
+#rsToggle .rsToggleButton .rsToggleContainer .rsbtn_toggle .rsSwitcher {
+  position: relative;
+  display: inline-block;
+  background: #cccccc;
+  width: 62px;
+  height: 28px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+#rsToggle .rsToggleButton .rsToggleContainer .rsbtn_toggle .rsSwitchHandle {
+  position: absolute;
+  width: 29px;
+  height: 24px;
+  top: 0;
+  left: 0;
+  right: auto;
+  background: #fff;
+  border-radius: 4px;
+}
+#rsToggle .rsToggleButton .rsToggleContainer .rsbtn_toggle.rsActive .rsSwitcher {
+  background: #a9cf0e;
+}
+#rsToggle .rsToggleButton .rsToggleContainer .rsbtn_toggle.rsActive .rsSwitchHandle {
+  left: auto;
+  right: 0;
+}
+#rsToggle .rsToggleButton .rsToggleContainer.rsSpeedHolder .rsTopFold .rsbtn_pill {
+  width: 60px;
+}
+
+#rsToggle .rsToggleButton .rsToggleContainer.rsInfoHolder .rsTopFold .rsbtn_about .rsbtn_pill {
+  background: #7b3f84;
+  color: #FFFFFF;
+  padding: 0;
+}
+#rsToggle .rsToggleButton .rsToggleContainer.rsTxtHolder .rsTopFold .rsbtn_pill .rsTxtSmall,
+#rsToggle .rsToggleButton .rsToggleContainer.rsInfoHolder .rsTopFold .rsbtn_pill .rsTxtSmall {
+  font-size: 7.111111111111112px;
+}
+#rsToggle .rsToggleButton .rsToggleContainer.rsTxtHolder .rsTopFold .rsbtn_pill .rsTxtMed,
+#rsToggle .rsToggleButton .rsToggleContainer.rsInfoHolder .rsTopFold .rsbtn_pill .rsTxtMed {
+  font-size: 9.142857142857144px;
+}
+#rsToggle .rsToggleButton .rsToggleContainer.rsTxtHolder .rsTopFold .rsbtn_pill .rsTxtLarge,
+#rsToggle .rsToggleButton .rsToggleContainer.rsInfoHolder .rsTopFold .rsbtn_pill .rsTxtLarge {
+  font-size: 12.8px;
+}
+#rsToggle .rsToggleButton .rsToggleContainer:first-child {
+  border-left: none;
+}
+#rsToggle .rsToggle_close_right {
+  display: none;
+}
+#rsToggle .rsToggle_close_right .rsbtn_label {
+  display: none;
+}
+#rsToggle.rsClosed {
+  box-shadow: none;
+}
+#rsToggle.rsClosed .rsToggleButton,
+#rsToggle.rsClosed .rsToggle_close_right {
+  display: none;
+}
+#rsToggle.rsClosed .rsToggle_close_left {
+  box-shadow: 0 0 3px #999999;
+}
+/*********** THE PLAYERS ***************************************/
+.rsbtn_player .rsbtn_left,
+.rsbtn_btnlabel,
+.rsbtn_exp {
+  display: none;
+}
+/* PLAYER MIXINS */
+/* PLAYER */
+.rsbtn_player {
+  position: absolute;
+  margin: 0;
+  top: -20px;
+  left: -13px;
+  z-index: 2;
+  @include bp($bp-small-plus) {
+    left: 0;
+  }
+  @include bp($bp-large) {
+    top: -20px;
+    left: -20px;
+  }
+  @include bp(min-width 1040px) {
+    left: -20px;
+  }
+}
+.rsbtn_player a {
+  text-decoration: none;
+}
+.rsbtn_player.rshidden {
+  display: none;
+}
+.rsbtn_player .rsbtn_play .rsbtn_right {
+  background: #298fc2;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 3px #999999;
+  color: #ffffff;
+// SG - Commenting this out as it breaks IE8 because the .htc doesn't exist
+// This CSS will eventually be hosted by ReadSpeaker and this reference
+// needs to be present in their code
+//  behavior: url('PIE.htc');
+  display: block;
+}
+.rsbtn_player .rsbtn_play .rsbtn_right:hover {
+  background: #426da9;
+}
+.rsbtn_player .rsbtn_play .rsbtn_right i.icon {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 40px;
+  vertical-align: top;
+  width: 40px;
+  text-align: center;
+}
+.rsbtn_player .rsbtn_play .rsbtn_right i.icon:before {
+  content: "\e603";
+}
+.rsbtn_player.rsexpanded {
+  /*margin-left: -(@player-width / 2);*/
+}
+.rsbtn_player.rsexpanded .rsbtn_exp {
+  display: inline;
+}
+.rsbtn_player.rsexpanded .rsbtn_play .rsbtn_right {
+  position: relative;
+  float: right;
+  display: block;
+  background: #ffffff;
+  width: 45px;
+  height: 36px;
+  z-index: inherit;
+  color: #7a4183;
+  box-shadow: 0 0 3px #999999;
+  margin-top: 2px;
+  border-radius: 0 20px 20px 0;
+  margin-left: -10px;
+}
+.rsbtn_player.rsexpanded .rsbtn_play .rsbtn_right:hover {
+  background: #7a4183;
+  color: #ffffff;
+}
+.rsbtn_player.rsexpanded .rsbtn_play .rsbtn_right i.icon {
+  line-height: 36px;
+}
+.rsbtn_player.rsexpanded .rsbtn_play .rsbtn_right i.icon:before {
+  content: "\e602";
+}
+.rsbtn_player.rsexpanded .rsbtn_pause {
+  position: relative;
+  float: right;
+  display: block;
+  background: #298fc2;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 3px #999999;
+  color: #ffffff;
+  behavior: url('PIE.htc');
+  margin-left: -3px;
+  z-index: 20;
+}
+.rsbtn_player.rsexpanded .rsbtn_pause:hover {
+  background: #426da9;
+}
+.rsbtn_player.rsexpanded .rsbtn_pause i.icon {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 40px;
+  vertical-align: middle;
+  width: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rsbtn_player.rsexpanded .rsbtn_pause i.icon:before {
+  content: "\e604";
+}
+.rsbtn_player.rsexpanded.rspaused .rsbtn_pause i.icon:before,
+.rsbtn_player.rsexpanded.rsstopped .rsbtn_pause i.icon:before {
+  content: "\e603";
+}
+.rsbtn_player.rsexpanded .rsbtn_next {
+  position: relative;
+  float: right;
+  display: block;
+  background: #ffffff;
+  width: 45px;
+  height: 36px;
+  z-index: inherit;
+  color: #7a4183;
+  box-shadow: 0 0 3px #999999;
+  margin-top: 2px;
+  margin-left: -20px;
+  border-radius: 0 20px 20px 0;
+}
+.rsbtn_player.rsexpanded .rsbtn_next:hover {
+  background: #7a4183;
+  color: #ffffff;
+}
+.rsbtn_player.rsexpanded .rsbtn_next i.icon {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 40px;
+  vertical-align: middle;
+  width: 40px;
+  text-align: center;
+  line-height: 36px;
+  margin-left: 20px;
+}
+.rsbtn_player.rsexpanded .rsbtn_next i.icon:before {
+  content: "\e605";
+}
+.rsbtn_player.rsexpanded.rsNoNext .rsbtn_next {
+  display: none;
+}
+.rsbtn_player.rspopup {
+  position: absolute;
+  margin: auto;
+  display: none;
+}
+/*********** ICONS *********************************************/
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'gcontroller';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Toolbar Mobile */
+#rsToggle {
+  @include bp(max-width 525px) {
+    &.rsClosed {
+      height: 40px;
+      background: transparent;
+
+      .rsToggle_close_left {
+        bottom: 0;
+      }
+    }
+
+    width: 100%;
+    height: 160px;
+    background: #fff;
+    border-radius: 0;
+
+    .rsToggleButton {
+      float: none;
+      padding: 0 20px;
+      border-bottom: 1px solid #f4f2f1;
+      height: 85px;
+    }
+
+    .rsToggle_close_left {
+      margin-left: 20px;
+      height: 40px;
+      width: 166px;
+      position: absolute;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      bottom: 160px;
+
+      .rsbtn_label {
+        padding: 0 10px 0 38px;
+        line-height: 40px;
+        margin: 0;
+        position: static;
+      }
+    }
+
+    .rsToggle_close_right {
+      display: none;
+    }
+
+    .rsToggleButton .rsToggleContainer {
+      border-left: none;
+    }
+
+    .rsToggleButton .rsToggleContainer .rsTopFold,
+    .rsToggleButton .rsToggleContainer .rsSpeedHolder {
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .rsToggleButton .rsToggleContainer.rsInfoHolder .rsTopFold,
+    .rsToggleButton .rsToggleContainer.rsInfoHolder .rsBottomFold {
+      margin-right: 0;
+    }
+
+    .rsToggleButton .rsToggleContainer.rsInfoHolder .rsBottomFold {
+      margin-left: 0;
+    }
+
+    .rsToggleButton .rsToggleContainer.rsSpeedHolder .rsTopFold .rsbtn_pill {
+      width: 53px;
+    }
+
+    .rsToggleButton .rsToggleContainer .rsTopFold .rsTxtDec .rsbtn_pill,
+    .rsToggleButton .rsToggleContainer .rsTopFold .rsTxtInc .rsbtn_pill,
+    .rsToggleButton .rsToggleContainer .rsTopFold .rsTxtIncLarge .rsbtn_pill {
+      width: 61px;
+    }
+
+    .rsToggleButton .rsToggleContainer.rsActivatorHolder .rsBottomFold {
+      margin: 0 15px 0 0;
+    }
+  }
+}
+
+/* End Readspeaker Core CSS */

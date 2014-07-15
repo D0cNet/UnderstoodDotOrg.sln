@@ -1,0 +1,678 @@
+/**
+ * SASS partial for about donation module
+ */
+
+$about-donate-purple: #794382;
+$about-donate-gray: #696969;
+$about-donate-gray-hover: #bcbdc0;
+$about-donate-select-border: #e1e1e1;
+
+.donate-create-wrap{
+  background: #f4f2f1;
+  padding: 0 15px;
+  h1{
+    @include rem(font-size, 34px);
+    color: $about-donate-purple;
+    font-weight: bold;
+    margin: 23px 0 17px 0;
+    @include bp($bp-small) {
+      @include rem(font-size, 36px);
+      margin: 53px 0 22px 0;
+    }
+  }
+  h2{
+    @include rem(font-size, 24px);
+    @include rem(line-height, 30px);
+    color: $about-donate-purple;
+    font-weight: normal;
+    margin-bottom: 19px;
+    @include bp($bp-small) {
+      margin-bottom: 37px;
+    }
+  }
+  p{
+    color: $about-donate-gray;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 22px);
+  }
+  p.contact-us{
+    margin-bottom: 48px;
+    @include bp($bp-medium) {
+      margin-bottom: 42px;
+    }
+    a{
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  p.subtitle{
+    @include rem(font-size, 20px);
+    @include rem(line-height, 26px);
+    margin-bottom:28px;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 24px);
+      @include rem(line-height, 30px);
+      margin-bottom:12px;
+      padding-right: 70px;
+    }
+    @include bp($bp-small-plus) {
+      padding-right: 140px;
+    }
+  }
+
+  .about-donate-footer{
+    @include bp($bp-medium) {
+      padding-left: 208px;
+    }
+    .button-wrap{
+      text-align : center;
+      button.about-donate{
+        @include rem(font-size, 22px);
+        font-weight: bold;
+        @include rem(line-height, 40px);
+        height: 60px;
+        margin-bottom: 30px;
+        width: 100%;
+        @include bp($bp-small-plus) {
+          height: 70px;
+          margin: 0 0 40px;
+          width: 370px;
+        }
+        @include bp($bp-medium) {
+          margin: 0 auto 40px;
+        }
+      }
+    }
+
+    .keep-posted-wrap{
+      display: block;
+      margin-bottom: 32px;
+      @include bp($bp-medium) {
+        margin-bottom: 44px;
+      }
+      input{
+        display: inline-block;
+        margin-right: 10px;
+      }
+      .keep-posted{
+        color: $about-donate-gray;
+        display: inline-block;
+        @include rem(font-size, 17px);
+        @include rem(line-height, 24px);
+        vertical-align: top;
+        width: 85%;
+        margin-top: -2px;
+      }
+    }
+    p.donate-to-partners{
+      margin-bottom: 27px;
+      @include bp($bp-medium) {
+        margin-bottom: 36px;
+      }
+    }
+  }
+  .about-donate-notes{
+    .logo-img-wrap{
+      margin: 0 auto;
+      text-align:center;
+      width: 140px;
+      @include bp($bp-small-plus) {
+        float: right;
+        margin: 0;
+      }
+      .logo-img{
+        margin: 26px auto 32px;
+        @include bp($bp-small-plus) {
+          margin: -28px auto 32px;
+        }
+      }
+    }
+    p.small-note{
+      color: #8b8b8b;
+      @include rem(font-size, 14px);
+      @include rem(line-height, 18px);
+      @include bp($bp-small-plus) {
+        float: left;
+        max-width: 450px;
+      }
+      @include bp($bp-medium) {
+        max-width: 500px;
+      }
+      @include bp($bp-large) {
+        max-width: 790px;
+      }
+    }
+  } //.about-donate-notes
+
+  // START choose your gift amount for section
+  .choose-gift-section{
+    margin-bottom: 25px;
+    @include bp($bp-medium) {
+      margin-bottom: 38px;
+      max-width: 873px;
+    }
+    .choose-gift-wrapper{
+      // Hide radio buttons outside the viewable area
+      overflow: hidden;
+      position: relative;
+      .gift-group{
+        @include bp($bp-small-plus) {
+          float: left;
+          width: 48%;
+          &:first-child{
+            margin-right: 4%;
+          }
+        }
+      }
+
+      label {
+        float:left;
+        position: relative;
+        width:46%;
+        margin-bottom: 25px;
+        min-width: 130px;
+        background-color:#fff;
+        overflow:auto;
+        &:first-child{
+          margin-right: 8%;
+        }
+        .no-touch &:hover{
+          background-color: $about-donate-gray-hover;
+          // Selected states override these further down
+          span.number{
+            color: #000;
+          }
+          span.gift-description{
+            color: #000;
+          }
+        }
+      }
+
+      label > span {
+        background: none;
+        margin: 0 auto;
+        color: $about-donate-gray;
+        cursor: pointer;
+        text-align:center;
+        @include rem(font-size, 14px);
+        @include rem(line-height, 15.25px);
+        display:block;
+        @include bp($bp-small) {
+          @include rem(font-size, 16px);
+          @include rem(line-height, 20px);
+        }
+
+        & > button {
+          width: 100%;
+          height: 100%;
+          padding:18px 15px;
+          border: none;
+          background: transparent;
+          color: inherit;
+
+          &:focus {
+            background-color: $about-donate-gray-hover;
+          }
+
+          @include bp($bp-small) {
+            padding:30px 16px;
+          }
+        }
+        span.gift-description{
+          display: block;
+          margin: 0 auto;
+          width: 108px;
+          @include bp($bp-medium) {
+            width: 125px;
+          }
+        }
+        span.number{
+          display: block;
+          color: $about-donate-purple;
+          @include rem(font-size, 30px);
+          @include rem(line-height, 21px);
+          padding:0 0 12px;
+          @include bp($bp-medium) {
+            @include rem(font-size, 36px);
+            @include rem(line-height, 30px);
+          }
+        }
+        span.icon-check{
+          // Display hidden check
+          display: none;
+          position: absolute;
+          bottom: 12px;
+          right: 12px;
+        }
+      }
+
+      label input {
+        display: none;
+      }
+
+      input.checked + span {
+        background-color:$about-donate-purple;
+        color:#fff;
+        span.number{
+          color: #fff;
+        }
+        button:focus {
+          background: transparent;
+        }
+        span.icon-check{
+          // Display Visible check
+          display: block;
+          .check-img{
+            height: auto;
+            width:20px;
+            @include bp($bp-medium) {
+              width: 26px;
+            }
+          }
+        } //span.icon-check
+        span.gift-description{
+          color: #fff;
+        }
+      }
+    } // .choose-gift-wrapper
+    .other-amount-form{
+      border-top: 1px solid #c6c5c5;
+      color: $about-donate-gray;
+      @include rem(font-size, 16px);
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-top: 15px;
+      padding-top: 12px;
+      padding-bottom: 25px;
+
+      // This to help input be 100% while label is fixed
+      display: table;
+      width: 100%;
+      @include bp($bp-small-plus) {
+        padding-bottom: 45px;
+      }
+
+      .form-group{
+        margin-bottom: 22px;
+        // This to help input be 100% while label is fixed
+        display: table-row;
+
+        .form-fit{
+          @include bp($bp-small-plus) {
+            display: table-cell;
+            vertical-align: middle;
+            width: 195px;
+          }
+          @include bp($bp-medium) {
+            width: 220px;
+          }
+        }
+        .form-flex{
+          @include bp($bp-small-plus) {
+            display: table-cell;
+          }
+        }
+
+        label{
+          display: block;
+          @include rem(line-height, 27px);
+          @include bp($bp-small-plus) {
+            padding-right: 10px;
+            text-align: right;
+          }
+        }
+        .dollar-prefix{
+          display: inline-block;
+          height: 50px;
+          float: left;
+          width: 8%;
+          color: #696969;
+          text-align: center;
+          border: solid 2px #e9e9e9;
+          background-color: #eeeeee;
+          position: relative;
+          right: -2px;
+          padding: 12px 0;
+        }
+      }
+      input[type=text]{
+        display: inline-block;
+        width: 92%;
+        &::-ms-clear {
+          width : 0;
+          height: 0;
+        }
+      }
+
+    }
+  }// .choose-gift-section
+  // END choose your gift amount for section
+
+  // START who is this gift for section
+  .gift-for-section{
+    margin-bottom: 25px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 38px;
+    }
+    h2{
+      margin-bottom: 14px;
+      @include bp($bp-small-plus) {
+        margin-bottom: 34px;
+      }
+    }
+    .gift-for-wrapper{
+      // Hide radio buttons outside the viewable area
+      overflow: hidden;
+      position: relative;
+      label {
+        display: block;
+        margin-bottom: 18px;
+        overflow:auto;
+
+        span {
+          height: 50px;
+        }
+
+        @include bp($bp-small-plus) {
+          display: inline-block;
+          margin-right: 5px;
+
+          &.no-card span{
+            width: 153px;
+          }
+          &.yes-send-card span{
+            width: 243px;
+          }
+        }
+      }
+
+      label > span {
+        background-color:#fff;
+        @include border-radius(3px);
+        color: $about-donate-purple;
+        display: block;
+        text-align:center;
+        @include rem(font-size, 18px);
+        font-weight: bold;
+        @include rem(line-height, 39px);
+        .no-touch &:hover{
+          background-color: $about-donate-gray-hover;
+          color: #000;
+        }
+
+        button {
+          padding: 8px 0px;
+          width: 100%;
+          height: 100%;
+          background: transparent;
+          color: inherit;
+          border: none;
+
+          &:focus {
+            background-color: $about-donate-gray-hover;
+            color: #000;
+          }
+        }
+      }
+
+      label input {
+        display: none;
+      }
+
+      input.checked + span {
+        background-color:$about-donate-purple;
+        @include border-radius(3px);
+        color:#fff;
+        display: block;
+
+        button {
+          background: transparent;
+          color: inherit;
+        }
+      }
+    } // .choose-gift-wrapper
+  }// .choose-gift-section
+  // END who is this gift for section
+
+  // START gift occurance section
+  .gift-occurance-section{
+    margin-bottom: 25px;
+    @include bp($bp-small) {
+      margin-bottom: 46px;
+    }
+    h2{
+      margin-bottom: 25px;
+      @include bp($bp-small) {
+        margin-bottom: 29px;
+      }
+    }
+    // This div is created dynamically
+    div.radio, div.radio span, div.radio input{
+      height: 22px;
+    }
+    .radio-wrapper{
+      label, .label{
+        display: inline-block;
+        margin-bottom: 28px;
+        position: relative;
+        width: 100%;
+        @include bp($bp-small-plus) {
+          width: 40%;
+        }
+        @include bp($bp-medium) {
+          margin-bottom: 15px;
+          width: 29.5%;
+        }
+      }
+      span{
+        color: $about-donate-gray;
+        @include rem(font-size, 16px);
+        @include rem(line-height, 16px);
+        font-weight: bold;
+      }
+    }
+  }
+  // END gift occurance section
+
+  // START how would you like to pay section
+  .how-pay-section{
+    color: $about-donate-gray;
+    @include rem(font-size, 16px);
+    h2{
+      margin-bottom: 18px;
+      // This makes words sit on two lines at small breakpoint
+      width: 190px;
+      @include bp($bp-small) {
+        width: 100%;
+      }
+      @include bp($bp-medium) {
+        margin-bottom: 27px;
+      }
+    }
+    // This div is created dynamically
+    div.radio, div.radio span, div.radio input{
+      height: 22px;
+    }
+    .how-pay-option-wrapper{
+      .pay-by{
+        display: block;
+        line-height: 30px;
+        padding-top: 4px;
+        margin-bottom: 6px;
+        @include bp($bp-medium) {
+          display: inline-block;
+          margin-bottom: 0px;
+          padding-right: 5px;
+          text-align: right;
+          width: 200px;
+        }
+      }
+      .radio-wrapper{
+        margin-bottom: 32px;
+        position: relative;
+        @include bp($bp-medium) {
+          display: inline-block;
+          margin-bottom: 19px;
+          width: 470px;
+        }
+        label{
+          display: inline-block;
+          width: 49%;
+          @include bp($bp-medium) {
+            width: 30%;
+          }
+        }
+        span{
+          color: $about-donate-gray;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 16px);
+          font-weight: bold;
+        }
+      }
+    }
+    .how-pay-form-wrapper{
+      @include bp($bp-small-plus) {
+        margin-bottom: 29px;
+      }
+      @include bp($bp-medium) {
+        margin-bottom: 25px;
+      }
+      .form-group{
+        @include rem(line-height, 40px);
+        margin-bottom: 23px;
+        @include bp($bp-small-plus) {
+          margin-bottom: 20px;
+        }
+        &.expiration-date-wrap{
+          margin-bottom: 26px;
+          @include bp($bp-small-plus) {
+            margin-bottom: 25px;
+          }
+        }
+        .cvv-info-wrapper{
+          display: inline-block;
+          margin-left: 5px;
+          .popover-link{
+            position: relative;
+            top: 3px;
+            background-color: transparent;
+            padding: 0px;
+            border: 0;
+          }
+          .popover {
+            @include rem(font-size, 14px);
+            @include rem(line-height, 20px);
+            min-width: 320px;
+            @include bp($bp-small-plus){
+              min-width: 400px;
+            }
+
+            /* CSS hack to fix bad calculation by popover JS */
+            @include bp((max-width 480px) and (orientation landscape)) {
+              left: 164px !important;
+            }
+          }
+          .icon-tooltip-dark {
+            // Adding margin to this will cause popovers to appear off center
+            //  Instead, modify the wrapper
+            background-image: image_url('sprite.tooltip.info-dark.png');
+            background-size: 44px 22px;
+            cursor: pointer;
+            display: inline-block;
+            height: 22px;
+            line-height: 30px;
+            width: 22px;
+            &:hover { background-position: -22px 0px; }
+            vertical-align: text-bottom;
+
+            .no-backgroundsize & {
+              background-image: image-url('sprite.tooltip.info-dark.lo-res.png');
+            }
+            
+          }
+        }
+        label, .label{
+          display: block;
+          @include rem(line-height, 27px);
+          @include bp($bp-medium) {
+            display: inline-block;
+            padding-right: 7px;
+            text-align: right;
+            width: 203px;
+          }
+        }
+        input[type=text]{
+          display: block;
+          
+          @include bp($bp-small-plus) {
+            display: inline-block;
+            width: 470px;
+          }
+          &.cvv-input{
+            display: inline-block;
+            width: 89%;
+            @include bp($bp-small-plus) {
+              width: 230px;
+            }
+          }
+          &.phone-input{
+            margin-bottom: 17px;
+            @include bp($bp-small-plus) {
+              display: inline-block;
+              width: 310px;
+              margin-bottom: 0px;
+            }
+          }
+          &.zip-input{
+            @include bp($bp-small-plus) {
+              display: inline-block;
+              width: 150px;
+            }
+          }
+        }
+        .select-container{
+          display: block;
+          width: auto;
+          margin-bottom: 10px;
+          &.month-dropdown{
+            margin-bottom: 15px;
+          }
+
+          @include bp($bp-small-plus) {
+            display: inline-block;
+            margin-bottom: 0px;
+            &.month-dropdown{
+              width: 230px;
+            }
+            &.year-dropdown{
+              margin-left: 4px;
+              width: 230px;
+            }
+            &.cell-dropdown{
+              margin-left: 7px;
+              width: 150px;
+            }
+            &.state-dropdown{
+                width: 470px;
+            } // cell-dropdown
+          }
+        }
+      }
+    } //..how-pay-form-wrapper
+  } //.how-pay-section
+  // END how would you like to pay section
+
+  // Shared class to center form and other elements in center of page
+  .form-center{
+    @include bp($bp-small-plus) {
+      width: 620px;
+    }
+    @include bp($bp-medium) {
+      margin-right: auto;
+      margin-left: -8px;
+      width: 685px;
+    }
+  }
+} // .donate-create-wrap

@@ -1,0 +1,55 @@
+/**
+ * SASS partial for about donation module
+ */
+
+$about-donate-purple: #794382;
+$about-donate-gray: #696969;
+$about-donate-gray-hover: #bcbdc0;
+$about-donate-select-border: #e1e1e1;
+
+.gift-for-section{
+
+  .ecard-form-wrapper{
+    color: $about-donate-gray;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 40px);
+    margin-top: 17px;
+    margin-bottom: 50px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 65px;
+    }
+    &.form-center {
+      @include bp($bp-medium) {
+        margin-right: auto;
+        margin-left: 50px;
+        width: 645px;
+      }
+    }
+    .form-group{
+      margin-bottom: 22px;
+      label, .label{
+        display: block;
+        @include rem(line-height, 27px);
+        @include bp($bp-small-plus) {
+          display: inline-block;
+          padding-right: 7px;
+          text-align: right;
+          width: 145px;
+        }
+      }
+      textarea,
+      input[type=text]{
+        display: block;
+        
+        @include bp($bp-small-plus) {
+          display: inline-block;
+          width: 470px;
+        }
+      }
+      textarea {
+        height: 130px;
+        padding: 10px 14px;
+      }
+    }
+  } //.ecard-form-wrapper
+} // .donate-create-wrap

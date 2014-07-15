@@ -1,0 +1,250 @@
+.sign-in-link{
+  text-align:right;
+  background-color:#f4f2f1;
+  padding:25px 15px 10px 0;
+
+  @include bp($bp-small-plus){
+    padding-right: 0;
+  }
+
+  p{
+    color:#696969;
+    @include rem(font-size, 16px);
+    margin-bottom:0;
+
+    a{
+      color:#426da9;
+      text-decoration:underline;
+    }
+
+  }
+
+}
+.sign-up{
+  background-color:#f4f2f1;
+  padding:0 15px 20px 15px;
+  margin:0;
+  @include bp($bp-large){
+    padding:0 0 45px 0;
+  }
+  h1{
+    color:#794382;
+    @include rem(font-size, 32px);
+    line-height:58px;
+    margin-bottom:25px;
+    font-weight:normal;
+  }
+
+  .fb-sign-in{
+    img{
+      width:100%;
+      max-width: 310px;
+      display: block;
+      height: 50px;
+      margin-bottom:25px;
+    }
+  }
+
+  p{
+    font-family: 'Circular', Arial, sans-serif;
+    color:#696969;
+    @include rem(font-size, 18px);
+    line-height:24px;
+    margin-bottom:10px;
+
+    a{
+      color:#426da9;
+      text-decoration:underline;
+      font-style:normal;
+    }
+
+  }
+
+  .sign-up-inputs{
+    margin-top:-15px;
+    
+    label{
+      @include bp($bp-large){
+        width:74%;
+        display:inline-block;
+      }
+
+      input{
+        display:block;
+        margin-top:23px;
+        margin-bottom:5px;
+      }
+
+    }
+
+    p{
+      font-family:Arial, sans-serif;
+      @include rem(font-size, 14px);
+      font-style:italic;
+      margin-top:0;
+
+      @include bp($bp-large){
+        display:inline-block;
+        width:21%;
+        margin-left:1%;
+        line-height:16px;
+        vertical-align:top;
+        margin-top:15px;
+      }
+
+    }
+
+    @include bp($bp-large){
+
+      .zip-code{
+        label{
+          width:35%;
+          position:relative;
+        }
+
+        p{
+          margin-left:42%;
+          width:22%;
+          margin-top:40px;
+
+          a{
+            position:absolute;
+            left:37%;
+          }
+
+        }
+
+        margin-bottom:20px;
+      }
+
+    }
+
+    margin-bottom:10px;
+
+    // Error
+    span{
+      display:none;
+    }
+
+    .error{
+      margin-top:-15px;
+
+      input{
+        border-color:#de5a02;
+      }
+
+      span{
+        color:#de5a02;
+        font-family:Arial, sans-serif;
+        display:inline;
+        @include rem(font-size, 14px);
+
+        @include bp($bp-large){
+          position:relative;
+          display:inline-block;
+          width:940px;
+        }
+      }
+    }
+  }
+
+  .sign-up-newsletter{
+
+    @include bp($bp-large){
+      width:76%
+    }
+
+    label{
+
+      input{
+        display:inline-block;
+        width:30px;
+        height:15px;
+      }
+
+      span{
+        font-family:Arial, sans-serif;
+        color:#696969;
+        @include rem(font-size, 14px);
+        line-height:24px;
+        display:inline-block;
+        width:80%;
+        vertical-align:top;
+
+        @include bp($bp-large){
+          font-family: 'Circular', Arial, sans-serif;
+          @include rem(font-size, 18px);
+          width:92%;
+        }
+
+      }
+
+    }
+
+    p{
+      margin-top:25px;
+      width:100%;
+      @include rem(font-size, 16px);
+
+      @include bp($bp-large){
+        font-family: 'Circular', Arial, sans-serif;
+        width:98%;
+      }
+    }
+
+    .button {
+      @include rem(font-size, 15px);
+      display: block;
+      margin: 23px auto 5px;
+      width:100%;
+
+      @include bp($bp-large){
+        @include rem(font-size, 18px);
+        margin-bottom:15px;
+        width:35%;
+      }
+    }
+
+    .we-take-your-privacy-seriously{
+      color:#426da9;
+      font-family:Arial, sans-serif;
+      @include rem(font-size, 14px);
+      text-decoration:underline;
+      display:inline-block;
+      margin:0 auto;
+      @include bp($bp-large){
+        padding-top: 6px;
+        text-align:center;
+      }
+
+    }
+  }
+
+  //popovers
+  .popover{
+    max-width: 450px;
+  }
+  .we-take-your-privacy-seriously-container{
+    min-width: 400px;
+    @include bp($bp-small-plus){
+      text-align: center;
+    }
+    .we-take-your-privacy-seriously-content{
+      color: #696969;
+      @include rem(line-height, 24px);
+      @include rem(font-size, 16px);
+      font-style: normal;
+      a{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .sign-up-inputs .zip-code p.why-do-we-ask-container{
+    .why-do-we-ask-content{
+      @include rem(font-size, 16px);
+      @include rem(line-height, 24px);
+      font-style: normal;
+    }
+  }
+}

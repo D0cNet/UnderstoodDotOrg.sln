@@ -1,0 +1,50 @@
+@import 'config';
+
+
+.embed-overlay{
+  padding: 20px 16px;
+  @include rem(font-size, 14px);
+  font-weight: normal;
+  color: #696969;
+  margin: 0px;
+  @include bp($bp-small-plus){
+    @include rem(font-size, 16px);
+    padding: 34px 36px;
+  }
+  
+  h3{
+    color: #7a4183;
+    @include rem(font-size, 20px);
+    font-weight: normal;
+    margin-bottom: 18px;
+    @include bp($bp-small-plus){
+      @include rem(font-size, 24px);
+      margin-bottom: 26px;
+    }
+  }
+  textarea{
+    margin-bottom: 20px;
+    height: 8em;
+
+    @include bp($bp-small-plus){
+      margin-bottom: 20px;
+    }
+    
+  }
+  .copy-button-container{
+    text-align: right;
+    a{
+      @include rem(font-size, 15px);
+      width: 120px;
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 0px;
+      padding-left: 28px;
+      padding-right: 28px;
+      @include bp($bp-small-plus){
+        @include rem(font-size, 18px);
+        width: 190px;
+      }
+    }
+  }
+}// end .embed-overlay

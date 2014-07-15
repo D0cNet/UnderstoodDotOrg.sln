@@ -1,0 +1,265 @@
+/**
+ * SASS partial for tertiary carousel module.
+ */
+
+.carousel-tertiary {
+  border-bottom: 1px solid #e1e1e1;
+  margin: 0 0 20px;
+
+  @include bp($bp-small-plus) {
+    border-bottom: none;
+    margin-bottom: 30px;
+  }
+
+  #topic-carousel {
+    width:100%;
+    padding: 0 8%;
+    margin: 65px 0 85px;
+
+    @include bp($bp-small) {
+      margin-top: 75px
+    }
+
+    @include bp($bp-small-plus) {
+      margin-top: 55px;
+      padding: 0 4%;
+      overflow: hidden;
+      margin: 0;
+    }
+  }// #topic-carousel
+
+  /* Making Button 10px Larger and centering image so increase clickable area on touch devices */
+  .play-pause {
+    display: block;
+    z-index: 2;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    width: 44px;
+    height: 44px;
+    background-size: 34px auto;
+    text-indent: -9999px;
+    background-image: image-url('sprite.btn.carousel.play-pause.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+
+    &:hover {
+      background-position: 5px -36.5px;
+    }
+
+    &.play {
+      background-position: 5px -73px;
+
+      &:hover {
+        background-position: 5px -109.5px;
+      }
+    }
+
+    .no-backgroundsize & {
+      background-image: image-url('sprite.btn.carousel.play-pause.lo-res.png');
+    }
+    
+  }
+
+  .topicCarousel{
+    .rsBullets {
+      display: none;
+    }
+
+    .rsSlide{
+      overflow:visible;
+
+      @include bp($bp-small-plus){
+        overflow:hidden;
+      }
+
+      .title{
+        @include rem(font-size, 20px);
+        @include rem(line-height, 26px);
+        color: #426da9;
+        margin-top:-70px;
+        margin-bottom:10px;
+        height:50px;
+
+        @include bp($bp-small-plus){
+          display:none;
+        }
+      }
+
+      .rsTmb{
+        display:none;
+
+        @include bp($bp-small-plus){
+          display:block;
+        }
+      }
+    }// .topic-carousel
+
+
+    .rsThumbs{
+      overflow: visible;
+      position: absolute;
+      top: -55px;
+      @include rem(font-size, 20px);
+      color: #426da9;
+    }// .rsThumbs
+
+    @include bp($bp-small-plus) {
+
+      .rsTmb {
+        display: inline-block;
+        vertical-align: middle;
+        background: none;
+        padding: 0;
+        border: none;
+        color: #696969;
+
+        &:hover,
+        &:focus {
+          color: #426da9;
+          text-decoration: underline;
+        }
+
+        @include bp($bp-small-plus) {
+          margin-left: 20px;
+          text-align: left;
+        }
+        @include bp($bp-medium) {
+          margin-left: 10px;
+          margin-right: 6px;
+        }
+        
+      }// .rsTmb
+
+      .rsNavSelected .rsTmb,
+      .rsNavSelected .rsTmb:hover,
+      .rsNavSelected .rsTmb:focus {
+        color: #fff;
+      }
+
+      .rsThumbs .rsThumb {
+        width: 190px;
+        height: 25%;
+        color: #696969;
+        border-bottom: 1px solid #c6c5c5;
+
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 16px);
+          @include rem(line-height, 20px);
+        }
+
+        @include bp($bp-medium) {
+          @include rem(font-size, 18px);
+          @include rem(line-height, 22px);
+        }
+
+        &:before {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+          margin-right: -0.25em; /* Adjusts for spacing */
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          color: #426da9;
+        }
+
+      }// .rsThumbs .rsThumb
+
+      .rsThumbs {
+        width: 240px;
+        height:100%;
+        padding: 0;
+        overflow:visible;
+        display: none;
+        position: relative;
+        top: auto;
+
+        .rsThumbsContainer {
+          height: 100%;
+
+          @include bp($bp-medium) {
+            margin-left: 50px;
+          }
+        }// .rsThumbsContainer
+
+        @include bp($bp-small-plus) {
+          display: block;
+        }
+
+        @include old-ie {
+          position: absolute;
+          top: 0;
+          right: 40px;
+        }
+
+      }// .rsThumbs
+
+      .rsThumb.rsNavSelected {
+        background-color: #794382;
+        position: relative;
+        width: 270px;
+        height: 26%;
+        left: -80px;
+        top: -1px;
+        padding: 0 0 0 80px;
+        z-index: 2;
+        border: none;
+        color: #ffffff;
+        .rsTmb{
+          border:none;
+        }
+
+        &:hover {
+          color: #ffffff;
+        }
+
+      }// .rsThumb.rsNavSelected
+    }
+
+    .rsArrowLeft .rsArrowIcn {
+      background-position: 0 -37px;
+      top: auto;
+      bottom: -65px;
+      right: 57%;
+      z-index: 2;
+
+      &:hover {
+        background-position: 0 -75px;
+      }
+    }// .rsArrowLeft .rsArrowIcn
+
+    .rsArrowRight .rsArrowIcn {
+      background-position: -38px -37px;
+      top: auto;
+      bottom: -65px;
+      right: 33%;
+      &:hover {
+        background-position: -38px -75px;
+      }
+      @include bp($bp-small) {
+        right: 40%;
+      }
+      @include bp($bp-small-plus) {
+        right: 43%;
+      }
+    }// .rsArrowRight .rsArrowIcn
+
+    .rsOverflow{
+      overflow: visible;
+      @include bp($bp-small-plus) {
+        overflow: hidden;
+      }
+    }// .rsOverflow
+
+
+  }// .topicCarousel
+
+}// .carousel-tertiary

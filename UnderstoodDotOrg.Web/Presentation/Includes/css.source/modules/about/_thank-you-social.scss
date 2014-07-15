@@ -1,0 +1,147 @@
+// This section is for global styles
+// To add individual styles target outside of thank-you-social
+.thank-you-social{
+  a{
+    display: inline-block;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 22px);
+    height: 40px;
+    overflow: visible;
+    margin: 9px 0 5px 0;
+    // padding top/bottom here will increase the height of the dividers
+    padding: 0;
+    text-decoration: underline;
+    // Full width at mobile
+    width: 100%;
+    @include bp($bp-small){
+      // icons and text stack in thirds for tablet
+      margin: 9px 0 54px 0;
+      text-align: center;
+      vertical-align: top;
+      width: 32.5%;
+    }
+    @include bp($bp-large){
+      border-left: 1px solid #d3d1d0;
+      height: 30px;
+      text-align: left;
+      width: auto;
+    }
+    &:hover{
+      text-decoration: none;
+      span.circle{
+        background-color: #426da9;
+      }
+    }
+    &.facebook-link{
+      height: 30px;
+    }
+    @include bp($bp-large){
+      &.email-link{
+        border-left: none;
+        margin: 9px 15px 3px 29px;
+        padding-left: 30px;
+      }
+      &.twitter-link{
+        margin: 9px 15px 3px 21px;
+        padding-left: 46px;
+      }
+      &.facebook-link{
+        margin: 9px 15px 3px 19px;
+        padding-left: 46px;
+      }
+    }
+    span.circle{
+      display: inline-block;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      background-color: #794382;
+      margin-right: 11px;
+      text-align: center;
+      vertical-align: text-top;
+      position: relative;
+      top: -10px;
+      @include bp($bp-small){
+        margin-right: 0;
+      }
+      @include bp($bp-large){
+        margin-right: 21px;
+      }
+    }
+    span.icon{
+      background: image-url('sprite.icon.thank-you.png');
+      background-repeat: no-repeat;
+      background-size: 20px 66px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      .no-backgroundsize & {
+        background-image: image-url('sprite.icon.thank-you.lo-res.png');
+      }
+      &.icon-envelope{
+        background-position: 0 0;
+        margin: 14px 0 0 11px;
+      }
+      &.icon-twitter{
+        background-position: 0 -23px;
+        margin: 14px 0 0 11px;
+      }
+      &.icon-facebook{
+        background-position: 0 -48px;
+        margin: 12px 0 0 10px;
+      }
+    }
+    span.text-link{
+      text-decoration: inherit;
+      @include bp($bp-small){
+        display:block;
+        margin: auto;
+        width: 100px;
+      }
+      @include bp($bp-large){
+        display: inline-block;
+        width: auto;
+      }
+    }
+  } //a
+} //.thank-you-social
+
+// Specific Thank You page styles
+.l-thank-you-social{
+  position: relative;
+  // Margin bottom and top should be equal to avoid whitespace at the bottom
+  // Pull the container up over the hero image
+  margin-bottom: -32px;
+  top: -32px;
+  @include bp($bp-small-plus){
+    margin-bottom: -25px;
+    top: -25px;
+  }
+  @include bp($bp-large){
+    margin-bottom: -87px;
+    top: -87px;
+  }
+  .thank-you-social{
+    background-color: #f4f2f1;
+    padding: 30px 0 30px 20px;
+    // margin-top: 30px;
+    @include bp($bp-small){
+      padding: 38px 0 37px 0px;
+    }
+  } //.thank-you-social
+}//.l-thank-you-social
+
+.l-sign-up-confirm{
+  a{
+    @include bp($bp-large){
+      &:first-child{
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}

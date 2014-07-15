@@ -1,0 +1,77 @@
+/**
+ * SASS partial for donate module.
+ */
+
+.donate-advice-sidebar {
+  background-color: #fff;
+  @include bp($bp-small-plus) {
+    padding: 0 !important;
+  }
+}
+.donate {
+  // Add inline-block here so top margin works
+  display: inline-block;
+  padding: 35px 10px 15px 20px;
+  background-color: #f4f2f1;
+  margin: 15px;
+  @include bp($bp-small) {
+    display: block;
+  }
+  @include bp($bp-small-plus) {
+    margin: 4px 0 40px 5px;
+    max-width: 271px;
+  }
+
+  h4 {
+    color: #7a4183;
+    font-weight: normal;
+    @include rem(font-size, 22px);
+    @include rem(line-height, 26px);
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: #696969;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 22px);
+    margin-bottom: 30px;
+  }
+
+  ul.donation-amounts {
+    list-style: none;
+    padding: 0;
+    li {
+      float: left;
+      margin-right: 10px;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(3n) {
+        clear: left;
+        @include bp($bp-small-plus) {
+          clear: none;
+        }
+      }
+    }
+
+    .button {
+      background: #fff;
+      @include rem(font-size, 16px);
+      font-weight: normal;
+      color: #696969;
+      height: 40px;
+      line-height: 40px;
+      min-width: 120px;
+      margin-right: 0;
+      @include bp($bp-small) {
+          min-width: 110px;
+      }
+
+      &:hover {
+        background: #bcbdc0;
+        color: #000;
+      }
+    }
+  }
+}

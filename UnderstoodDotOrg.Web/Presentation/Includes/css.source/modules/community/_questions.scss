@@ -1,0 +1,708 @@
+$comment-icon-blue: #436da9;
+$comment-icon-purple: #7b3f84;
+
+$border-color: #d2d2d2;
+
+.community-q-a {
+
+  h2 {
+    color: #7b3f84;
+    @include rem(font-size, 36px);
+    font-weight: normal;
+    margin-bottom: 18px;
+    margin-top: 24px;
+  }
+
+  .cta-cards {
+    @include bp($bp-medium) {
+      border-bottom: 1px solid $border-color;
+      display: table;
+      padding-bottom: 50px;
+      width: 100%;
+    }
+  }
+
+  .card {
+    border-bottom: 1px solid $border-color;
+    color: #696969;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 24px);
+    margin: 0 16px;
+    padding-bottom: 27px;
+    text-align: center;
+
+    @include bp($bp-medium) {
+      border-bottom: none;
+      border-left: 1px solid $border-color;
+      display: table-cell;
+      height: 260px;
+      margin: 0;
+      padding: 0 8px;
+      position: relative;
+      width: 33%;
+
+      &.card-ask {
+        border-left: none;
+      }
+    }
+
+    .card-contents {
+      height: 100%;
+      position: relative;
+    }
+
+    .description {
+      display: block;
+      margin-bottom: 23px;
+    }
+
+    input {
+      margin: 0 auto;
+      width: 230px;
+
+      @include bp($bp-medium) {
+        margin: 0 0 0 -1px;
+      }
+    }
+
+    .button {
+      @include rem(font-size, 16px);
+      font-weight: bold;
+      margin: 10px auto 0;
+      width: 230px;
+
+      @include bp($bp-medium) {
+        bottom: 0;
+        left: 50%;
+        margin-left: -115px;
+        position: absolute;
+      }
+    }
+  }
+
+  .card-answer {
+    .button {
+      margin-top: 0;
+    }
+  }
+
+  .card-discover {
+    .button {
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  .box-search {
+    background-color: #f4f2f1;
+    margin: 32px 16px 38px;
+    padding: 16px 14px;
+
+    @include bp($bp-large) {
+      background-color: #fff;
+      margin: 12px 0;
+      padding: 0;
+    }
+
+    .dropdown,
+    .dropdown-toggle,
+    .dropdown-menu > li,
+    .dropdown-menu .menuitem,
+    .selector.hover {
+      background-position: 0 -400px;
+      @include dropshadow;
+      span {
+        background-position: right -100px;
+      }
+    }
+    .selector,
+    .selector > span {
+      min-width: 100%;
+
+      @include bp($bp-large) {
+        min-width: inherit;
+        width: 190px;
+      }
+    }
+
+    .dropdown {
+      margin: 0 0 15px;
+
+      @include bp($bp-large) {
+        margin: 0;
+      }
+    }
+
+    .dropdown-container {
+      @include bp($bp-large) {
+        border-right: 1px solid $border-color;
+        float: left;
+        display: block;
+        margin: 13px 0;
+        padding-right: 10px;
+      }
+    }
+
+    .dropdown-menu {
+      left: 0;
+
+      a {
+        background: #ffffff;
+
+        &:hover, &:active {
+          background: #794381;
+          color: #fff;
+        }
+      }
+    }
+
+    select {
+      @include bp($bp-large) {
+        width: 120px;
+      }
+    }
+
+    .selector {
+      background-position: 0 -350px;
+      display: block;
+      margin: 15px 0;
+
+      @include bp($bp-medium) {
+        float: left;
+        margin: 12px 10px 12px 0;
+      }
+
+      @include bp($bp-large) {
+        background-position: 0 -250px;
+        margin: 12px 0 12px 10px;
+      }
+
+      span {
+        background-position: right -100px;
+
+        @include bp($bp-large) {
+          background-position: 100% 0;
+        }
+      }
+
+      select {
+        width: 100%;
+      }
+
+      &.selected {
+        background-position: 0 -450px;
+
+        span {
+          background-position: right -200px;
+        }
+      }
+    }
+
+    .question-search-form {
+      background-color: #fff;
+      border: solid 2px #e1e1e1;
+      height: 50px;
+      padding: 0 10px 0 14px;
+      width: 100%;
+
+      @include bp($bp-medium) {
+        float: left;
+        margin: 12px 0 12px 1px;
+      }
+
+      @include bp($bp-large) {
+        margin: 12px 0 12px 10px;
+        width: 196px;
+      }
+    }
+
+    .question-search {
+      border: none;
+      @include rem(font-size, 16px);
+      height: 46px;
+      margin: 0;
+      padding: 0;
+      width: 80%;
+    }
+  }
+
+  .featured-parent-questions {
+    border-top: 1px solid $border-color;
+    color: #696969;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 33px);
+    margin: 0 16px;
+    padding-top: 12px;
+
+    @include bp($bp-large) {
+      margin: 0;
+      padding: 12px 40px 0;
+    }
+
+    h2 {
+      margin-bottom: 32px;
+    }
+
+    .card-parent-question {
+      margin-bottom: 46px;
+      position: relative;
+
+      .question-image {
+        float: left;
+      }
+
+      .question-info {
+        display: table-cell;
+        padding-left: 32px;
+
+        @include bp($bp-small) {
+          width: 380px;
+        }
+
+        @include bp($bp-small-plus) {
+          width: 540px;
+        }
+
+        @include bp($bp-large) {
+          width: 640px;
+        }
+
+        .title {
+          display: inline-block;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 22px);
+          margin-bottom: 28px;
+
+          @include bp($bp-large) {
+            @include rem(font-size, 20px);
+          }
+        }
+
+        .details {
+          display: block;
+          @include rem(font-size, 14px);
+          @include rem(line-height, 21px);
+
+          @include bp($bp-large) {
+            @include rem(font-size, 15px);
+          }
+
+          .topic, .author {
+            text-decoration: underline;
+
+            &:hover, &:focus {
+              text-decoration: none;
+            }
+          }
+
+          .bullet {
+            @include rem(font-size, 10px);
+            vertical-align: top;
+          }
+        }
+
+        .button {
+          background-color: #f4f2f1;
+          color: #298fc2;
+          font-weight: bold;
+          margin-top: 32px;
+          overflow: hidden;
+          padding: 0;
+          height: 40px;
+          @include rem(line-height, 40px);
+          text-decoration: none;
+          @include rem(font-size, 16px);
+
+          @include bp($bp-small-plus) {
+            width: 189px;
+          }
+
+          &:hover {
+            background-color: #208ec4;
+            color: #fff;
+          }
+        }
+      }
+
+      .question-reply-container {
+        position: absolute;
+        top: 85px;
+        width: 70px;
+
+        @include bp($bp-large) {
+          display: table-cell;
+          position: relative;
+          top: 0;
+          vertical-align: top;
+          width: auto;
+        }
+
+        .question-replies {
+          @include rem(font-size, 16px);
+          @include rem(line-height, 26px);
+          text-align: center;
+
+          @include bp($bp-large) {
+            border-left: 1px solid $border-color;
+            display: table-cell;
+            height: 82px;
+            padding-left: 52px;
+            vertical-align: middle;
+            width: auto;
+          }
+        }
+
+        .count-replies {
+          display: block;
+          @include rem(font-size, 26px);
+          @include linebreak();
+        }
+      }
+    }
+  }
+
+  .show-more {
+    margin-bottom: 40px;
+  }
+}
+
+.link-back {
+  color: #426da9;
+  display: block;
+  @include rem(font-size, 16px);
+  margin-bottom: 36px;
+
+  .icon-arrow-left-blue {
+    margin-right: 11px;
+  }
+}
+
+.community-q-a-details {
+  color: #696969;
+  margin: 0 16px;
+  padding: 12px 15px 0;
+
+  @include bp($bp-large) {
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  .card-question-detail {
+    margin-bottom: 46px;
+    position: relative;
+
+    .question-image {
+      float: left;
+    }
+
+    .question-answer-info {
+      .buttons {
+        @include rem(font-size, 0px);
+        margin-top: 26px;
+      }
+
+      .button {
+        cursor: pointer;
+        font-weight: bold;
+        margin-bottom: 16px;
+        text-decoration: none;
+
+        @include bp($bp-small-plus) {
+          display: inline-block;
+          width: 200px;
+        }
+      }
+
+      .button.follow {
+        background-color: #f4f2f1;
+        color: #298fc2;
+        padding: 0;
+
+        @include bp($bp-small-plus) {
+          margin-left: 10px;
+        }
+
+        &:hover {
+          background-color: #208ec4;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.community-q-a-details-answers {
+  background-color: #fafafa;
+  color: #696969;
+  padding-top: 12px;
+
+  .row {
+    margin: 0 16px;
+
+    @include bp($bp-large) {
+      margin: 0 auto;
+    }
+  }
+
+  h2 {
+    color: #7b3f84;
+    @include rem(font-size, 24px);
+    font-weight: normal;
+    margin-bottom: 18px;
+    margin-top: 24px;
+  }
+
+  .question-sort {
+    .sort-options {
+      @include bp($bp-large) {
+        min-width: 190px;
+        position: absolute;
+        right: 0;
+        top: 24px;
+      }
+    }
+
+    .filters {
+      padding: 5px 15px 30px;
+      position: relative;
+
+      @include bp($bp-large) {
+        float: left;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+
+        @include reset-margin-before-after();
+      }
+    }
+
+    .dropdown,
+    .dropdown-toggle,
+    .dropdown-menu > li,
+    .dropdown-menu .menuitem {
+      min-width: 100%;
+      position: relative;
+
+      @include bp($bp-large) {
+        min-width: inherit;
+      }
+    }
+
+    .dropdown {
+      display: block;
+      margin-bottom: 20px;
+      @include dropshadow;
+    }
+
+    .dropdown-menu{
+      border: 0;
+      left: 0;
+      @include dropshadow;
+      z-index: 1;
+
+      li {
+        cursor: pointer;
+
+        a {
+          background-color: #fff;
+          @include rem(font-size, 14px);
+          font-weight: normal;
+          @include rem(line-height, 50px);
+
+          &:hover {
+            color: #696969;
+          }
+
+          &:before {
+            @include sprite-background-image('radio-unselected', $setHeight: true, $setWidth: true);
+            content: " ";
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: text-bottom;
+          }
+        }
+
+        &:hover a:before{
+          @include sprite-background-image('radio-gold-hover', $setHeight: true, $setWidth: true);
+        }
+
+        &.selected a:before{
+          @include sprite-background-image('radio-gold-selected', $setHeight: true, $setWidth: true);
+        }
+      }
+    }
+
+    .dropdown-toggle {
+      background: #fff;
+      border: none;
+      color: #696969;
+      font-weight: normal;
+      z-index: 2;
+    }
+
+    .open .dropdown-toggle .current-filter {
+      display: none;
+    }
+
+    .dropdown-toggle:after {
+      @include sprite-background-image('arrow-blue-down', $setHeight: true, $setWidth: true);
+    }
+
+    .dropdown-toggle:hover:after, .open .dropdown-toggle:after {
+      @include sprite-background-image('arrow-blue-up', $setHeight: true, $setWidth: true);
+    }
+  }
+
+  .card-answer {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    position: relative;
+
+    @include bp($bp-large) {
+      margin-bottom: 0;
+    }
+
+    .answer-image {
+      float: left;
+      position: relative;
+
+      .badge {
+        bottom: 0;
+        @include rem(font-size, 13px);
+        font-weight: bold;
+        height: 20px;
+        @include rem(line-height, 21px);
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 20px;
+
+        &.moderator {
+          background-color: #426da9;
+          color: #fff;
+        }
+      }
+    }
+
+    .question-answer-info {
+
+      .icon-comment-like,
+      .icon-comment-flag {
+        background-image: image-url('sprite.icon.comments.png');
+        background-repeat: no-repeat;
+        background-size: 54px 36px;
+        display: inline-block;
+        height: 18px;
+        margin-right: 10px;
+        width: 16px;
+
+        .no-backgroundsize & {
+          background-image: image-url('sprite.icon.comments.lo-res.png');
+        }
+        
+      }
+
+      .icon-comment-flag { background-position: -36px 0px; }
+      .icon-comment-like {
+        color: $comment-icon-purple;
+        background-position: -20px 0px;
+      }
+
+      .buttons {
+        @include rem(font-size, 14px);
+        margin-bottom: 18px;
+        margin-top: 20px;
+
+        @include bp($bp-small-plus) {
+          float: left;
+        }
+
+        button {
+          color: #696969;
+          cursor: pointer;
+          display: block;
+          margin: 10px 0;
+          background: inherit;
+          border: none;
+
+          @include bp($bp-small-plus) {
+            display: inline-block;
+          }
+
+          &:before {
+            content: " ";
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: text-bottom;
+          }
+
+          @include old-ie {
+            background-color: transparent;
+          }
+
+        }
+        
+        .helped {
+          padding-right: 20px;
+
+          &:hover, &:focus {
+            color: $comment-icon-blue;
+            text-decoration: none;
+
+            i {
+              background-position: -20px -18px;
+            }
+          }
+        }
+
+        .report {
+          &:hover, &:focus {
+            color: $comment-icon-blue;
+            text-decoration: none;
+
+            i {
+              background-position: -36px -18px;
+            }
+          }
+        }
+      }
+
+      .count-helped {
+        color: #7b3f84;
+        background-color: transparent;
+        border: none;
+        @include rem(font-size, 24px);
+
+        @include bp($bp-small-plus) {
+          display: block;
+          float: right;
+          margin-bottom: 18px;
+          margin-top: 20px;
+        }
+
+        /* link disabled
+        &:hover, &:focus {
+          color: $comment-icon-blue;
+          text-decoration: none;
+
+          i {
+            background-position: -20px -18px;
+          }
+        }
+        */
+      }
+    }
+  }
+
+  .show-more {
+    margin-top: 48px;
+    margin-bottom: 44px;
+  }
+}

@@ -1,0 +1,10 @@
+/**
+ * Include SASS partials for homepage modules.
+ */
+@import 'config';
+
+@import 'modules/homepage/behavior-tool-module';
+@import 'modules/homepage/guide-me';
+@import 'modules/homepage/guide-me-overlay';
+@import 'modules/carousel/hero-carousel';
+@import 'modules/carousel/featured-carousel';

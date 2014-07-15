@@ -1,0 +1,103 @@
+.page-topic.support {
+  @include bp ($bp-small-plus) {
+    padding: 45px 0;
+  }
+  .title-wrapper {
+    position: relative;
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      width: 96px;
+      height: 100px;
+      background-image: image-url('icon.planner.png');
+      background-size: 88px auto;
+      background-repeat: no-repeat;
+      .no-backgroundsize & {
+        background-image: image-url('icon.planner.lo-res.png');
+      }
+    }
+    h1 {
+      padding-top: 13px;
+      @include rem(font-size, 28px);
+      @include rem(line-height, 36px);
+
+      @include bp (min-width 429px) {
+        @include rem(line-height, 80px);
+      }
+
+      @include bp($bp-small-plus) {
+        @include rem(line-height, 36px);
+      }
+
+      @include bp($bp-medium) {
+        @include rem(line-height, 40px);
+      }
+    }
+    h1 {
+      padding-left: 120px;
+      @include bp($bp-small-plus) {
+        padding-left: 152px;
+      }
+    }
+    .page-subtitle {
+      padding-left: 0px;
+      @include bp ($bp-small-plus) {
+        padding-left: 152px;
+        margin-bottom: 0;
+      }
+    }
+    .page-subtitle {
+      color: #7a4183;
+      margin: 19px 0 20px 0;
+      text-align: center;
+      @include bp ($bp-small-plus) {
+        margin: 9px 0 5px 0;
+        text-align: left;
+      }
+    }
+  }
+  .more-action-plans-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    @include bp ($bp-small-plus) {
+      width: 197px;
+    }
+    @include bp ($bp-large) {
+      width: 300px;
+    }
+    .selector, .selector span {
+      min-width: 100%;
+      @include bp ($bp-small-plus) {
+        min-width: 0;
+      }
+    }
+    .more-action-plans {
+      float: right;
+    }
+  }
+  .col-9 {
+    width: 100%;
+    @include bp ($bp-large) {
+      width: 37.5%;
+    }
+  }
+  div.selector {
+    background-position: 0 -300px;
+    @include bp ($bp-large) {
+      float: right;
+    }
+    &.selected {
+      background-position: 0 -450px;
+    }
+    &.selected span {
+      background-position: 100% -200px;
+    }
+    span {
+      background-position: right -50px;
+    }
+  }
+}

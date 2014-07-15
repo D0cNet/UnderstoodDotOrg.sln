@@ -1,0 +1,85 @@
+/**
+ * SASS partial for article-checklist module.
+ */
+$checklist-button-gray: #bcbdc0;
+$checklist-font-gray: #696969;
+$checklist-border-gray: #d2d2d2;
+
+.article-checklist {
+  color: $checklist-font-gray;
+
+  .checkbox-wrapper {
+    display: block;
+    margin-bottom: 18px;
+
+    label {
+      display: table-row;
+      @include old-ie {
+        display: inline;
+      }
+
+      input,
+      span {
+        display: table-cell;
+        vertical-align: top;
+        @include old-ie {
+          display: inline-block;
+        }
+      }
+    }
+
+    .checker{
+      overflow: hidden;
+    }
+  }
+
+  .checklist-question {
+    @include rem(font-size, 24px);
+    color: #7b3f84;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+
+  .checklist-question-wrapper {
+    border-top: 1px solid $checklist-border-gray;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    display: inline-block;
+
+    @include bp($bp-small) {
+      margin-bottom: 40px;
+      padding-top: 40px;
+    }
+  }
+
+  .save-answers,
+  .download-pdf {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    @include bp($bp-large) { max-width: 41%; }
+
+    .button {
+      @include bp($bp-large) {
+        margin: 0;
+        min-width: 243px;
+      }
+    }
+  }
+  .download-pdf {
+    @include bp($bp-large) {
+      border-left: 1px solid $checklist-border-gray;
+      padding-left: 50px;
+      margin-left: 50px;
+    }
+  }
+
+  .checklist-actions {
+    border-top: 1px solid $checklist-border-gray;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  .checklist-action-space { display: inline; }
+}

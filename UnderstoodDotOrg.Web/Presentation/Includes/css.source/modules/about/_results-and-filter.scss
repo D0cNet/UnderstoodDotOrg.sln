@@ -1,0 +1,41 @@
+.l-results-and-filter {
+  .row {
+    padding: 30px 5px 30px 5px;
+    margin-bottom: 30px;
+    border-bottom: solid 1px #e2e2e2;
+    @include bp($bp-small-plus) {
+      padding: 50px 5px 40px 5px;
+      margin-bottom: 0;
+    }
+
+    .results {
+      float: left;
+
+      h1 {
+        color: #696969;
+        @include rem(font-size, 36px);
+        line-height: 1;
+        margin-bottom:30px;
+        font-weight: normal;
+
+        @include bp($bp-small-plus) {
+          margin-bottom:0;
+        }
+
+        span {
+          color: #7a4183;
+          font-weight: bold;
+        }
+      } /* h1 */
+    } /* .results */
+
+    label {
+      width: 190px;
+
+      @include bp($bp-small-plus) {
+        float: right;
+      }
+    }
+  } /* .row */
+
+} /* .l-results-and-filter */

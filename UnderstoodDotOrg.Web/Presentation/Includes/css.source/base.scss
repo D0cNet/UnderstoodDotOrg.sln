@@ -1,0 +1,143 @@
+@import 'config';
+@import 'fonts';
+
+// Circular font looks too heavy on webkit browsers. setting font smoothing lightens things up a bit.
+// Use wildcard selector "*" so that all elements are picked up, including <button>s.  See UN-4237
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-family: Circular, Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+address,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+table,
+caption,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+td, th {
+  vertical-align: top;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0; 
+  list-style: none;
+}
+
+p {
+  margin-bottom: $margin-bottom-default;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: $margin-bottom-default;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  line-height: 1.1;
+}
+
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* Atomic styles */ 
+/* Zen Coding (Emmet) syntax http://docs.emmet.io/cheat-sheet/ */
+
+.m-0 {
+  margin: 0 !important;
+}
+.mt-0 {
+  margin-top: 0 !important;
+}
+.mr-0 {
+  margin-right: 0 !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+
+.bd-n {
+  border: none !important;
+}
+
+.fl-l {
+  float: left !important;
+}
+.fl-r {
+  float: right !important;
+}
+.fl-n {
+  float: none !important;
+}
+
+.ta-l {
+  text-align: left !important;
+}
+.ta-r {
+  text-align: right !important;
+}
+.ta-c {
+  text-align: center !important;
+}
+
+.whs-nw {
+  white-space: nowrap;
+}

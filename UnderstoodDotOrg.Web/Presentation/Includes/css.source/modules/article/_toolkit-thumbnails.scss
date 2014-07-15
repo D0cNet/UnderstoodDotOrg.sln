@@ -1,0 +1,176 @@
+.toolkit-thumbnails-container {
+  background-color: #f4f2f1;
+  margin: 0;
+
+  @include bp($bp-large) {
+    margin-top: -66px;
+    padding-top: 50px;
+  }
+
+  .inner-container{
+    overflow:hidden;
+    min-height: 390px;
+
+    #toolkit-thumbnails {
+      // for slide mode
+      overflow:visible;
+      width: 250px;
+      min-height: 280px;
+      margin-bottom: 50px;
+      margin-left: 8%;
+      @include bp(min-width 350px){
+        margin-left: 13%;
+      }
+      @include bp(min-width 420px){
+        margin-left: 20%;
+      }
+      @include bp($bp-small){
+        margin-left: 22%;
+      }
+      @include bp(min-width 550px){
+        margin-left: 29%;
+      }
+      @include bp($bp-small-plus){
+        margin-left: 32%;
+      }
+      @include bp($bp-medium){
+        margin-left: 34%;
+      }
+      @include bp(min-width 900px){
+        margin-left: 37%;
+      }
+
+      // undo the slideshow stuff
+      @include bp($bp-large){
+        overflow:visible;
+        width: 100%;
+        margin-left: 50px;
+
+        height: auto;
+        min-width: none;
+      }
+
+      .rsSlide {
+        min-height: 320px;
+      }
+
+      .thumbnail {
+        position: relative;
+        width: 230px;
+        height: 280px;
+        background-color: #fff;
+        margin: 20px 0 0 20px;
+        padding: 20px;
+        @include dropshadow;
+
+        a {
+          color: #426da9;
+          @include rem(font-size, 22px);
+          font-weight: normal;
+        }
+
+        h4 {
+          margin: 10px;
+          @include rem(font-size, 22px);
+          max-height: 145px;
+          overflow: hidden;
+        }
+
+        .bottom {
+          width: 190px;
+          height: 100px;
+          position: absolute;
+          bottom: 0;
+          border-top: 1px solid #f4f2f1;
+
+          i {
+            float: left;
+            display: block;
+            height: 46px;
+            width: 36px;
+            margin: 25px 15px 0 15px;
+          }
+
+          i.pdf {
+            background: image-url('sprite.icons.toolkit-thumbnails.png') 0px 0px no-repeat;
+            .no-backgroundsize & {
+              background: image-url('sprite.icons.toolkit-thumbnails.lo-res.png') 0px 0px no-repeat;
+            }
+            background-size: 193px 46px;
+          }
+          i.article {
+            background: image-url('sprite.icons.toolkit-thumbnails.png') -37px 0px no-repeat;
+            .no-backgroundsize & {
+              background: image-url('sprite.icons.toolkit-thumbnails.lo-res.png') -37px 0px no-repeat;
+            }
+            background-size: 193px 46px;
+            width: 42px;
+          }
+          i.video {
+            background: image-url('sprite.icons.toolkit-thumbnails.png') -81px 0px no-repeat;
+            .no-backgroundsize & {
+              background: image-url('sprite.icons.toolkit-thumbnails.lo-res.png') -81px 0px no-repeat;
+            }
+            background-size: 193px 46px;
+            width: 40px;
+          }
+          i.word {
+            background: image-url('sprite.icons.toolkit-thumbnails.png') -124px 0px no-repeat;
+            .no-backgroundsize & {
+              background: image-url('sprite.icons.toolkit-thumbnails.lo-res.png') -124px 0px no-repeat;
+            }
+            background-size: 193px 46px;
+          }
+          i.audio {
+            background: image-url('sprite.icons.toolkit-thumbnails.png') -161px 0px no-repeat;
+            .no-backgroundsize & {
+              background: image-url('sprite.icons.toolkit-thumbnails.lo-res.png') -161px 0px no-repeat;
+            }
+            background-size: 193px 46px;
+          }
+
+
+
+          a {
+            float: left;
+            margin-top: 25px;
+            width: 118px;
+            @include rem(font-size, 16px);
+          }
+          span {
+            float: left;
+            width: 120px;
+            color: #696969;
+            line-height: 1;
+            @include rem(font-size, 14px);
+          }
+        }
+
+        @include bp($bp-large){
+          float: left;
+          margin: 50px 0 0 50px;
+        }
+      }
+
+      .rsOverflow{
+        height: 420px;
+        overflow: visible;
+      }
+
+      .rsArrowLeft .rsArrowIcn {
+        top: auto;
+        bottom: -80px;
+        left: 90px;
+      }
+
+      .rsArrowRight .rsArrowIcn {
+        top: auto;
+        bottom: -80px;
+        right: 70px;
+      }
+
+    }
+  }
+
+
+}

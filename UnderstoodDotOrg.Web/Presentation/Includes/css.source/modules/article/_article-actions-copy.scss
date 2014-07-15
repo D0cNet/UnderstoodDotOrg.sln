@@ -1,0 +1,105 @@
+/**
+ * SASS partial for article actions copy module.
+ */
+
+.article-actions-copy {
+  color: #696969;
+  @include rem(line-height, 26px);
+  border-bottom: 1px solid #d2d2d2;
+  margin-bottom: 9px;
+  @include bp($bp-small-plus) {
+    margin-bottom: 25px;
+  }
+
+  h3 {
+    @include rem(font-size, 24px);
+    font-weight: normal;
+    color: #7a4183;
+    margin-bottom: 20px;
+  }
+  p {
+    font-family: Arial, sans-serif;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 27px);
+    font-weight: normal;
+    margin-bottom: 20px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 30px;
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+    }
+  }
+
+  > div:not([class]):first-of-type {
+    margin-top: 20px;
+    @include bp($bp-small-plus) {
+      margin-top: 30px;
+    }
+  }
+
+  .action-step {
+    float: left;
+
+    span {
+    @include rem(font-size, 34px);
+    font-weight: bold;
+    display: inline-block;
+    color: #7a4183;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: #f4f2f1;
+    padding-top: 18px;
+    text-align: center;
+      @include bp($bp-small-plus) {
+        margin-left: 40px;
+        display: block;
+        @include rem(font-size, 48px);
+        padding-top: 30px;
+        width: 92px;
+        height: 92px;
+      }
+    } // end .action-step.span
+  } // end .action-step
+
+  .action-head {
+    padding-top: 15px;
+    vertical-align: center;
+    h3 {
+      @include rem(font-size, 24px);
+      font-weight: normal;
+      color: #7a4183;
+      padding-left: 85px;
+      margin-bottom: 10px;
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 28px);
+        padding-left: 116px;
+      }
+    }
+    @include bp($bp-small-plus) {
+      margin-left: 40px;
+      padding-top: 0;
+    }
+  } // end .action-head
+  
+  .clearfix {
+    @include bp($bp-small-plus) {
+      display: none;
+    }
+  }
+
+  .action-copy {
+    float: none;
+    display: block;
+    @include bp($bp-small-plus) {
+      margin-left: 40px;
+      padding: 0 0 0 116px;
+    }
+    @include bp($bp-medium) {
+    }
+  } // end .action-copy
+} // end .article-actions-copy

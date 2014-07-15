@@ -1,0 +1,87 @@
+.l-page-not-found-promos{
+  padding-bottom: 30px;
+  h2{
+    color: #7a4183;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 24px);
+    font-weight: normal;
+    margin-bottom: 17px;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 24px);
+      @include rem(line-height, 35px);
+      margin-bottom: 32px;
+    }
+  }
+
+}//.l-page-not-found-promos
+
+.page-not-found-promos{
+
+  a{
+    display:block;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 24px);
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 22px);
+      @include rem(line-height, 28px);
+      padding-top: 13px;
+      &:first-child{
+        padding-top: 0px;
+      }
+    }
+
+  } //a
+  p{
+    color: #696969;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 21px);
+  }
+
+  .promo-single{
+    a{
+      margin-bottom: 18px;
+      @include bp($bp-small-plus) {
+        margin-bottom: 28px;
+      }
+    }
+    img{
+      margin-bottom: 37px;
+      width: 100%;
+      max-width: 290px;
+      height: auto;
+      @include bp($bp-small-plus) {
+        max-width: 230px;
+      }
+    }
+  } //.promo-single
+
+  .promo-list{
+    padding-left: 2px;
+    a{
+      margin-bottom: 10px;
+      border-top: 1px solid #d2d2d2;
+      padding-top: 19px;
+      &:first-child{
+        border-top: none;
+        padding-top: 0px;
+      }
+      @include bp($bp-small-plus) {
+        border-top: none;
+        padding-top: 28px;
+      }
+    }
+    p{
+      padding-bottom: 5px;
+      @include bp($bp-small-plus) {
+        // No bottom padding or margin here
+        // Adding padding to parent to get an even margin below this section
+        // Otherwise different paragraph sizes wil cause larger margins
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+    }
+
+  } //.promo-list
+
+} //.page-not-found-promos

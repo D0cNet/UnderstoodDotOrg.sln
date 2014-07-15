@@ -1,0 +1,56 @@
+// THIS IS A SHARED MODULE
+// This targets my connections and my profile connections tab
+.my-connections-grid {
+  margin-top: 0px;
+  @include bp($bp-small-plus) {
+    margin-top: 10px;
+  }
+  h3 {
+    @include rem(font-size, 22px);
+    @include rem(line-height, 30px);
+  }
+  .connections {
+    padding: 0;
+
+    .member-card {
+      float: left;
+      height: 312px;
+      width: 50%;
+
+      @include bp($bp-small) {
+        width: 33%;
+      }
+
+      @include bp($bp-medium) {
+        margin-bottom: 12px;
+        width: 25%;
+      }
+
+      @include bp($bp-large) {
+        height: 323px;
+        margin-bottom: 78px;
+        padding: 0;
+      }
+    }
+
+    .member-card-info {
+      width: 126px;
+
+      @include bp($bp-large) {
+        height: 273px;
+        width: 150px;
+      }
+    }
+
+    .my-connections-list, .member-cards {
+      position: relative;
+    }
+  } //connections
+
+  // This removes the border from the show more link only from the grid page
+  .showmore-footer{
+    border-top: none;
+    padding-top: 0px;
+  }
+
+} //my-connections.page

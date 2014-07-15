@@ -1,0 +1,49 @@
+/**
+ * SASS partial for partners-featured-content module.
+ */
+
+.featured-content-block {
+  margin-bottom: 30px;
+  h2 {
+    color: #7a4183;
+    @include rem(font-size, 24px);
+    @include rem(line-height, 28px);
+    font-weight: normal;
+    margin-bottom: 17px;
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 22px);
+      margin-bottom: 20px;
+    }
+  } // end .featured-content-block h2
+
+  .featured-title {
+    border-bottom: 1px solid #dedede;
+
+    @include bp($bp-small-plus) {
+      &:last-child {
+        border: none;
+      }
+    }
+    .title-link {
+      display: block;
+      margin: 15px 0;
+      @include rem(font-size, 18px);
+      @include rem(line-height, 30px);
+
+      @include bp($bp-small-plus) {
+        margin: 30px 0;
+        @include rem(font-size, 24px);
+      }
+
+      a {
+        color: #426da9;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    } // end .title-link
+  } // end .featured-title
+} // end .featured-content-block

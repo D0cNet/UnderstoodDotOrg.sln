@@ -1,0 +1,84 @@
+/**
+ * SASS partial for expert-bio module.
+ */
+
+.expert-bio{
+
+  .row{
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #d2d2d2;
+
+    @include bp($bp-small-plus){
+      padding-bottom: 70px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .expert-bio-details{
+
+    .expert-bio-image{
+      img{
+        display: block;
+        height: auto;
+        max-width: 100%;
+        margin: 0 auto 24px;
+
+        @include bp($bp-small-plus){
+          margin: 0 0 24px 0;
+        }
+      }
+
+    } // .expert-bio-image
+    .expert-bio-detail{
+      margin-bottom: 30px;
+
+      @include bp($bp-small-plus){
+        margin-bottom: 0px;
+      }
+
+      .hours-intro{
+        font-weight: normal;
+        color: #696969;
+        @include rem(font-size, 16px);
+        @include rem(line-height, 16px);
+        margin-bottom: 10px;
+      }
+      .hours{
+        font-weight: bold;
+        color: #7a4183;
+        @include rem(font-size, 16px);
+        @include rem(line-height, 16px);
+        margin-bottom: 22px;
+      }
+      .links{
+        font-weight: normal;
+        @include rem(font-size, 15px);
+        @include rem(line-height, 15px);
+        text-decoration: underline;
+        display: block;
+        margin-bottom: 10px;
+        &:hover{
+          text-decoration: none;
+        }
+        &:last-child{
+          margin-bottom: 0px;
+        }
+      }
+    } // .expert-bio-detail
+
+  } // .expert-bio-details
+
+  .expert-bio-text{
+    margin-top: -6px; // account for line-height
+
+    p{
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: normal;
+      color: #696969;
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+    }
+  }
+
+} // .expert-bio

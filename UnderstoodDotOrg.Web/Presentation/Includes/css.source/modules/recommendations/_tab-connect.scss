@@ -1,0 +1,91 @@
+.recos-tab-connect {
+
+  header {
+    margin-bottom: 20px;
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-weight: normal;
+      @include rem(font-size, 14px);
+      @include rem(line-height, 19px);
+      color: #696969;
+      margin-bottom: 15px;
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 18px);
+        @include rem(line-height, 26px);
+        margin-bottom: 0;
+      }
+
+    }
+
+    .button {
+      @include rem(font-size, 14px);
+
+      @include bp($bp-medium) {
+        @include rem(font-size, 15px);
+      }
+
+      @include bp($bp-large) {
+        @include rem(font-size, 16px);
+      }
+
+    }
+  }
+
+  .parents-member-cards {
+    position: relative;
+
+    .member-card-container {
+      display: inline-block;
+      float: left;
+      width: 50%;
+
+      @include bp($bp-small) {
+        width: 33.3333333%;
+      }
+
+      @include bp($bp-small-plus) {
+        width: 25%;
+      }
+    }
+  }
+
+  .member-card {
+    float: none;
+    height: 302px;
+    margin: 0 auto 20px;
+    width: 128px;
+
+    @include bp($bp-medium) {
+      margin-bottom: 25px;
+    }
+
+    @include bp($bp-large) {
+      height: 323px;
+      margin-bottom: 45px;
+      padding: 0;
+      width: 160px;
+    }
+
+    .member-card-info {
+
+      @include bp($bp-large) {
+        height: 273px;
+        width: 150px;
+      }
+    }
+
+    .member-card-specialties {
+      margin-top: 12px;
+
+      @include bp($bp-large) {
+        width: 190px;
+      }
+    }
+  }
+
+}

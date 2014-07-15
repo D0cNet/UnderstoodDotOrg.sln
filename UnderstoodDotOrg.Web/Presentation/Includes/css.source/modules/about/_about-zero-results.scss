@@ -1,0 +1,49 @@
+.l-about-zero-results {
+
+  .zero-results-inner {
+    padding: 20px 0 15px 0;
+    border-bottom: solid 1px #e2e2e2;
+    @include bp($bp-small-plus) {
+      padding: 40px 0 20px 0;
+    }
+  }
+
+  h1 {
+    color: #696969;
+    @include rem(font-size, 36px);
+    @include rem(line-height, 48px);
+    margin-bottom: 17px;
+    font-weight: normal;
+
+    span {
+      color: #7a4183;
+      font-weight: bold;
+    }
+
+  }
+
+  p {
+    color: #696969;
+    @include rem(font-size, 18px);
+  }
+
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  li {
+    color: #696969;
+    @include rem(font-size, 16px);
+    line-height: 20px;
+    margin-bottom: 15px;
+
+    &:before {
+      content: "• ";
+      font-family: Arial, sans-serif;
+      color: #426da9;
+      @include rem(font-size, 16px);
+    }
+  }
+
+
+}

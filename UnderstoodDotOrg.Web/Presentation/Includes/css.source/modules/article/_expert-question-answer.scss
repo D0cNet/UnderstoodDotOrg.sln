@@ -1,0 +1,100 @@
+/**
+ * Expert Question SASS Partial
+ */
+.expert-question {
+  color: #696969;
+  font-family: Arial, sans-serif;
+  @include rem(font-size, 15px);
+  @include rem(line-height, 26px);
+  padding: 0;
+  margin: 30px 0 20px 0;
+
+  @include bp($bp-small-plus) {
+    padding-right: 15px;
+  }
+  border-bottom: 1px solid #c6c5c5;
+  p {
+    @include rem(font-size, 16px);
+    @include rem(line-height, 27px);
+    @include bp($bp-small-plus) {
+      margin-bottom: 2em;
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+    }
+  }
+  p:first-child:before {
+    content: image-url('icon.expert-question.lowres.png');
+    float:left;
+    padding-right: 15px;
+  }
+}
+.expert-answer {
+  color: #696969;
+  font-family: Arial, sans-serif;
+  @include rem(font-size, 15px);
+  @include rem(line-height, 26px);
+  padding: 0;
+  margin: 30px 0 20px 0;
+
+  @include bp($bp-small-plus) {
+    padding-right: 15px;
+  }
+  border-bottom: 1px solid #c6c5c5;
+  p {
+    @include bp($bp-small-plus) {
+      margin-bottom: 2em;
+    }
+  }
+  .expert-content{
+    p{
+      @include rem(font-size, 16px);
+      @include rem(line-height, 27px);
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 15px);
+        @include rem(line-height, 26px);
+      }
+    }
+  }
+  .expert-content p:first-child:before {
+    content: image-url('icon.expert-answer.lowres.png');
+    float:left;
+    padding-right: 15px;
+  }
+  .expert-author {
+    img {
+      width: 100%;
+    }
+    margin: 0 auto 30px;
+    max-width: 294px;
+    @include bp($bp-small) {
+      float: left;
+      margin: 8px 30px 30px 0;
+      max-width: 230px;
+    }
+    .expert-author-info {
+      background: #7b3e84;
+      color: #fff;
+      text-align: center;
+      padding: 18px 10px;
+      
+      p {
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 10px;
+        @include bp($bp-small) {
+          margin-bottom: 3px;
+          padding-top: 2px;
+        }
+        &.name {
+          @include bp($bp-small) {
+            @include rem(font-size, 16px);
+            font-weight: bold;
+          }
+        }
+        &.title {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

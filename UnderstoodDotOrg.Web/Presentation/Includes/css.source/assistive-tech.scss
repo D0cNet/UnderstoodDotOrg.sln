@@ -1,0 +1,18 @@
+/**
+ * Include SASS partials for assistive tech modules.
+ */
+@import 'config';
+
+@import 'modules/assistive-tech/at-search-tool';
+@import 'modules/assistive-tech/at-hero-image';
+@import 'modules/assistive-tech/at-detail-thumb';
+@import 'modules/assistive-tech/what-you-need-to-know-tabs';
+@import 'modules/assistive-tech/popovers-assisted-technology';
+@import 'modules/assistive-tech/back-button';
+@import 'modules/assistive-tech/rate-this-app';
+@import 'modules/assistive-tech/rate-this-app-sidebar';
+@import 'modules/assistive-tech/get-this-app';
+@import 'modules/assistive-tech/parents-are-saying';
+@import 'modules/behavior-tool/behavior-tool-related-articles';
+@import 'modules/assistive-tech/tech-search-results';
+@import 'modules/assistive-tech/results-slider';

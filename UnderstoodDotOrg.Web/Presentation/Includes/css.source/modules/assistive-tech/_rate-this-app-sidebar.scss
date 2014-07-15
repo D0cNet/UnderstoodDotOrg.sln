@@ -1,0 +1,19 @@
+.rate-this-app-sidebar {
+  border-bottom: 0 !important;
+  padding-left: 33px !important;
+
+  h2 {
+    color:#7a4183;
+    @include rem(font-size, 28px);
+    line-height:28px;
+    font-weight:normal;
+    margin-bottom:5px;
+  }
+
+  p {
+    color:#696969;
+    @include rem(font-size, 18px);
+    line-height:28px;
+  }
+
+}

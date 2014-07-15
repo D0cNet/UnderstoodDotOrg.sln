@@ -1,0 +1,247 @@
+/**
+ * SASS partial for personalize-interests-content modules.
+ */
+
+.l-personalize-interests{
+  background-color: #f4f2f1;
+
+  .personalize-interests-content{
+
+    .school-issues{
+      background-color: #ffffff;
+      padding: 40px 15px 25px;
+      border-bottom: 1px solid #f4f2f1;
+
+      @include bp($bp-small-plus){
+        margin-bottom: 20px;
+        padding: 40px 38px 33px;
+        @include dropshadow;
+      }
+
+      .school-issues-title{
+
+        h3{
+          @include rem(font-size, 24px);
+          @include rem(line-height, 28px);
+          color: #794382;
+          font-weight: normal;
+          margin-bottom: 34px;
+          margin-top: -5px;
+        }
+
+      } // .school-issues-title
+
+      .school-issues-options{
+        .column-wrap{
+          // This column gets extra padding per design
+          @include bp($bp-small-plus){
+            padding-left: 43px;
+          }
+        }
+
+        .checkbox-wrapper{
+          @include rem(font-size, 15px);
+          @include rem(line-height, 18px);
+          color: #696969;
+          font-weight: normal;
+          margin-bottom: 13px;
+          position: relative;
+          display: table;
+          @include bp($bp-small-plus){
+            margin-bottom: 12px;
+          }
+
+          label{
+            display: table-row;
+
+            .checker{
+              display: table-cell;
+              vertical-align: top;
+            }
+
+            > span{
+              display: table-cell;
+              padding-left: 20px;
+            }
+          }
+
+          @include bp($bp-small-plus){
+            @include rem(font-size, 18px);
+            @include rem(line-height, 22px);
+          }
+        } // .checkbox-wrapper
+        @include bp($bp-small-plus){
+          & .checkbox-wrapper:last-child{
+            margin-bottom: 0px;
+          }
+        }
+
+      } // .school-issues-options
+
+    } // .school-issues
+
+
+    .ways-to-help, .home-life, .growing-up, .social-emotional-issues{
+      background-color: #ffffff;
+      padding: 39px 15px 19px;
+      border-bottom: 1px solid #f4f2f1;
+
+      @include bp($bp-small-plus){
+        @include rem(font-size, 18px);
+        @include rem(line-height, 22px);
+        @include dropshadow;
+        padding: 38px 20px 38px 38px;
+        height: 368px;
+        margin-bottom: 20px;
+        & .checkbox-wrapper:last-child{
+          margin-bottom: 0px;
+        }
+      }
+      @include bp($bp-medium){
+        height: 325px;
+      }
+      @include bp($bp-large){
+        height: 308px;
+      }
+
+      .checkbox-wrapper{
+        @include rem(font-size, 15px);
+        @include rem(line-height, 18px);
+        color: #696969;
+        font-weight: normal;
+        margin-bottom: 13px;
+        position: relative;
+        display: table;
+        @include bp($bp-small-plus){
+          margin-bottom: 12px;
+        }
+
+        label{
+          display: table-row;
+
+          .checker{
+            display: table-cell;
+            vertical-align: top;
+          }
+
+          > span{
+            display: table-cell;
+            padding-left: 20px;
+          }
+        }
+
+        @include bp($bp-small-plus){
+          @include rem(font-size, 18px);
+          @include rem(line-height, 22px);
+        }
+      } // .checkbox-wrapper
+
+      h3{
+        @include rem(font-size, 24px);
+        @include rem(line-height, 28px);
+        color: #794382;
+        font-weight: normal;
+        margin-bottom: 34px;
+        margin-top: -4px;
+      }
+
+    } // .ways-to-help, .home-life
+    .ways-to-help, .growing-up{
+
+      @include bp($bp-small-plus){
+        margin-right: 5px;
+      }
+    }
+    .home-life, .social-emotional-issues{
+
+      @include bp($bp-small-plus){
+        margin-left: 5px;
+      }
+    }
+    .preferred-language{
+      background-color: #ffffff;
+      padding: 39px 15px 19px;
+      border-bottom: 1px solid #f4f2f1;
+
+      @include bp($bp-small-plus){
+        @include rem(font-size, 18px);
+        @include rem(line-height, 22px);
+        @include dropshadow;
+        padding: 38px 20px 38px 38px;
+        margin-bottom: 40px;
+        & .checkbox-wrapper:last-child{
+          margin-bottom: 0px;
+        }
+      }
+
+      div.radio, div.radio span, div.radio input{
+        height: 22px;
+      }
+
+      .radio-wrapper{
+        @include rem(font-size, 15px);
+        @include rem(line-height, 18px);
+        color: #696969;
+        font-weight: normal;
+        margin-bottom: 13px;
+        position: relative;
+        display: table;
+        @include bp($bp-small-plus){
+          margin-bottom: 15px;
+        }
+
+        label{
+          display: table-row;
+
+          .radio{
+            display: table-cell;
+            vertical-align: top;
+          }
+
+          > span{
+            display: table-cell;
+            padding-left: 20px;
+          }
+        }
+
+        @include bp($bp-small-plus){
+          @include rem(font-size, 18px);
+          @include rem(line-height, 22px);
+        }
+
+      } // .radio-wrapper
+
+      h3{
+        @include rem(font-size, 24px);
+        @include rem(line-height, 28px);
+        color: #794382;
+        font-weight: normal;
+        margin-bottom: 34px;
+        margin-top: -4px;
+      }
+
+    } // .preferred-language
+
+    .personalize-interests-next{
+      text-align: center;
+      margin-bottom: 30px;
+      margin-top: 50px;
+
+      @include bp($bp-small-plus){
+        margin-top: 0px;
+        margin-bottom: 65px;
+      }
+
+      .form-action-next{
+        text-align: center;
+
+        input[type=submit]{
+          max-width: 150px;
+        }
+      }
+
+    } // .personalize-interests-next
+
+  } // .personalize-interests-content
+
+} // .l-personalize-interests

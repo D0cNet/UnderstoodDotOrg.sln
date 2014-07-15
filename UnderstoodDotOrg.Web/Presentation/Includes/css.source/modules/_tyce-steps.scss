@@ -1,0 +1,732 @@
+.tyce-main-feature {
+  color: #696969;
+  @include rem(font-size, 15px);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  @include bp($bp-small-plus) {  
+    @include rem(font-size, 18px);
+    line-height: 1.333;
+    margin-bottom: 75px;
+  }
+
+  img.pic {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    @include bp($bp-small-plus) { 
+      margin-top: 4px;
+    }
+  }
+
+  .col:first-of-type {  
+    @include bp(max-width 649px) {
+      margin: 0 -15px;
+    }
+  }
+
+  h2 {
+    @include rem(font-size, 28px);
+    margin-bottom: 9px;
+    color: #7a4183;
+    @include bp($bp-small-plus) {     
+      @include rem(font-size, 30px);
+      margin-bottom: 19px;
+    }
+  }
+
+  p a {
+    text-decoration: underline;
+  }
+} // .tyce-main-feature
+
+.tyce-module-3 {
+  background: #f4f2f1;
+  padding-top: 20px;
+  margin: 0;
+  @include bp($bp-small-plus) {     
+    margin-bottom: 66px;
+  }
+  
+  .row {
+    padding: 0 15px;
+    @include bp($bp-small-plus) {     
+      padding: 0;
+      margin: 0 -5px;
+    }
+    @include bp($bp-large) {  
+      margin: 0 auto;
+    }
+  }
+  .module-wrap {
+    @include bp($bp-small-plus) {     
+      display: table;
+      width: 100%;
+    }
+  }
+  .module {
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 17px 20px 10px;
+    color: #696969;
+    @include rem(font-size, 15px);
+    line-height: 1.467;
+    @include bp($bp-small-plus) { 
+      padding: 25px 2.2% 0;
+      @include rem(font-size, 16px);  
+      line-height: 1.375;
+      display: table-cell;
+      width: 33.33%;
+      border-left: 5px solid #f4f2f1;
+      border-right: 5px solid #f4f2f1;
+    }
+    @include bp($bp-large) {
+      padding-left: 40px;
+      padding-right: 40px;
+    } 
+
+    p {
+      margin-bottom: 18px;
+      a {
+        text-decoration: underline;
+      }
+    }
+    .link {
+      @include bp($bp-small-plus) { 
+        & + .link {
+        }
+      }
+    }
+    .field {
+     margin-bottom: 20px;
+     @include bp($bp-small-plus) { 
+        margin-top: 37px;
+      }
+    }
+    .button {
+      margin-bottom: 20px;
+    }
+  } // .module
+
+  h2 {
+    font-weight: normal;
+    @include rem(font-size, 20px);
+    margin-bottom: 12px;
+    color: #794382;
+    @include bp($bp-small-plus) { 
+      @include rem(font-size, 24px);
+      margin-bottom: 20px;
+    }
+  }
+  textarea {
+    background: #f4f2f1;
+    border: 0;
+    width: 100%;
+    padding: 15px 0 0 20px;
+    height: 9em;
+    @include placeholder{
+      color: #696969;
+    }
+  } 
+} // .tyce-module-3
+
+
+.share-tools {
+  margin: 25px 0 5px -15px;
+  padding: 0;
+  list-style: none;
+  @include pie-clearfix();
+  @include bp($bp-small-plus) { 
+    margin-top: 34px;
+    margin-left: -5px;
+  }
+  
+  li {
+    float: left;
+    margin: 0 0 15px 15px;
+    line-height: 0;
+    @include bp($bp-small-plus) { 
+      margin: 0 0 5px 5px;
+    }
+  }
+  .icon {
+    @include hide-text(left);
+    width: 36px;
+    height: 36px;
+    display: block;
+    background-image: image-url('sprite.social.footer.png');
+    background-repeat: no-repeat;
+    background-size: 165px 80px;
+
+    .no-backgroundsize & {
+      background: image-url('sprite.social.footer.lo-res.png');
+    }
+    @include bp($bp-small-plus) { 
+      width: 42px;
+      height: 42px;
+      background-size: 193px 93px;
+    }
+
+  }
+
+  .icon-facebook {
+    background-position: 0 0;
+    .no-backgroundsize & {
+      background-position: 0 0;
+    }
+    &:hover {
+      background-position: 0 -43px;
+      @include bp($bp-small-plus) { 
+        background-position: 0 -50px;
+      }
+    }
+  }
+
+  .icon-twitter {
+    background-position: -43px 0;
+    @include bp($bp-small-plus) { 
+      background-position: -50px 0;
+    }
+    .no-backgroundsize & {
+      background-position: -50px 0;
+    }
+    &:hover {
+      background-position: -43px -43px;
+      @include bp($bp-small-plus) { 
+        background-position: -50px -50px;
+      }
+    }
+  }
+
+  .icon-google {
+    background-position: -86px 0;
+    @include bp($bp-small-plus) { 
+      background-position: -100px 0;
+    }
+    
+    .no-backgroundsize & {
+      background-position: -100px 0;
+    }
+    &:hover {
+      background-position: -86px -43px;
+      @include bp($bp-small-plus) { 
+        background-position: -100px -50px;
+      }
+    }
+  }
+
+  .icon-pinterest {  
+    background-position: -129px 0;
+    @include bp($bp-small-plus) { 
+      background-position: -150px 0;
+    }
+    .no-backgroundsize & {
+      background-position: -150px 0;
+    }
+    &:hover {
+      background-position: -129px -43px;
+      @include bp($bp-small-plus) { 
+        background-position: -150px -50px;
+      }
+    }
+  }
+
+  .icon-email {
+    background: image-url('sprite.icon.email.84.png');
+    background-size: 36px 79px;
+    @include bp($bp-small-plus) { 
+      background-size: 42px 92px;
+    }
+    .no-backgroundsize & {
+      background: image-url('sprite.icon.email.42.png');
+    }
+    &:hover {
+      background-position: 0 100%;
+    }
+  }
+
+} // .share-tools
+
+.tyce-addresses {
+  margin: 0;
+  padding: 7px 15px 0;
+  background: #F4F2F1;
+  color: #696969;
+  @include bp($bp-small-plus) {
+    background: none;
+    padding: 0;
+  }
+
+  .row {
+    background: #F4F2F1;
+    max-width: 950px;
+    padding: 0;
+    &:last-of-type {
+      padding-bottom: 10px;
+      @include bp($bp-small-plus) {
+        padding-bottom: 4px;
+      }
+    }
+  } // .row
+
+  header {
+    @include bp($bp-small-plus) {
+      padding-top: 25px;
+    }
+  }
+
+  .message {
+    @include rem(font-size, 20px);
+    line-height: 1.2;
+    color: #7b3f84;
+    @include bp($bp-small-plus) {
+      margin-bottom: 22px;
+    }
+    @include bp($bp-medium) {
+      @include rem(font-size, 22px);
+    }
+  } // .message
+
+  p {
+    @include rem(font-size, 18px);
+    line-height: 1.3;
+    margin-bottom: 23px;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 13px);
+    }
+    @include bp($bp-medium) {
+      @include rem(font-size, 14px);
+    }
+    @include bp($bp-large) {
+      @include rem(font-size, 16px);
+    }
+  } // p
+} // .tyce-addresses
+
+.tyce-step-wrap {
+  background: #F4F2F1;
+  margin: 0;
+  padding: 0 15px 30px;
+  @include bp($bp-small-plus) {
+    padding: 0 0 55px;
+  }
+}
+
+.tyce-step {
+  background: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  
+  @include bp($bp-small-plus) {
+    margin-bottom: 15px;
+  }
+
+  &.is-inactive header,
+  &.is-inactive .body,{
+    @include opacity(0.2);
+  }
+
+  .button {
+    height: 50px;
+    line-height: 50px;
+    @include rem(font-size, 18px);
+    font-weight: bold;
+    color: #000;
+  }
+
+  header {
+    background: #fff;
+    padding: 20px 20px 15px;
+    @include bp($bp-small-plus) {
+      padding: 25px 40px;
+      min-height: 46px;
+      @include pie-clearfix();
+    }
+
+    .button {
+      background: #f4f2f1;
+      margin: 25px 0 15px;
+      @include bp($bp-small-plus) {
+        width: 150px;
+        float: right;
+        margin: 0 0 0 15px;
+      }
+      &:hover {
+        background: #ffbc0d;
+
+        .touch & {
+          background: #f4f2f1;
+        }
+      }
+
+      &.active {
+        background: #f2af00;
+
+        .touch & {
+          background: #f4f2f1;
+        }
+      }
+    } // .button
+  } // header
+
+  .body {
+    background: #fff;
+    padding: 0 20px 30px;
+    @include bp($bp-small-plus) {
+      padding: 0 40px 40px;
+    }
+
+    .button {
+      margin: 0;
+      width: 100%;
+      @include bp($bp-small-plus) {
+        width: 230px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+
+  h2 {
+    @include rem(font-size, 20px);
+    line-height: 1.2;
+    font-weight: normal;
+    color: #794382;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 24px);
+      line-height: 1.5;
+      padding-left: 57px;
+      position: relative;
+      float: left;
+      min-height: 39px;
+      margin-top: 6px;
+      max-width: 64%;
+    }
+    @include bp($bp-medium) {
+      max-width: 71%;
+    }
+    @include bp($bp-large) {
+      @include rem(font-size, 24px);
+      max-width: 600px;
+    }
+    .num {
+      @include rem(font-size, 24px);
+      font-weight: bold;
+      width: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: #f4f2f1;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 16px;
+      @include bp($bp-small-plus) {
+        position: absolute;
+        left: 0;
+        top: -1px;
+        margin: 0
+      }
+    }
+    .instructions {
+      display: block;
+      @include rem(font-size, 15px);
+      line-height: 1;
+      margin-top: 13px;
+      @include bp($bp-small-plus) {
+        margin-top: 5px;
+        @include rem(font-size, 18px);
+      }
+    }
+  } // h2
+
+  .info {
+    text-align: center;
+    @include rem(font-size, 15px);
+    padding-top: 15px;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 16px);
+      padding-top: 16px;
+      text-align: left;
+      float: right;
+      clear: none;
+    }
+    a {
+      text-decoration: underline;
+      @include bp($bp-large) {
+        white-space: nowrap;
+      }
+      
+    }
+  } // .info
+
+  .action {
+    text-align: center;
+    padding-top: 20px;
+    @include bp($bp-small-plus) {
+      padding-top: 30px;
+      text-align: left;
+      width: 470px;
+      margin: 0 auto;
+    } 
+    @include bp($bp-large) {
+      text-align: center;
+      width: auto;
+      padding-left: 6%;
+    }   
+    .button {
+      margin-bottom: 25px;
+      @include bp($bp-small-plus) {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 50px 0 0;
+      }
+    }
+    a {
+      @include rem(font-size, 15px);
+      text-decoration: underline;
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 16px);
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        max-width: 185px;
+      } 
+    }
+  } // .action
+} // .tyce-step
+
+.reponsive-select-mobile {
+  @include bp($bp-small-plus) {
+    display: none;
+  }
+}
+#uniform-personalize-grade-mobile {
+  display: block !important;
+  &.selector {
+    color: #000;
+    font-weight: bold;
+    @include rem(font-size, 18px);
+  }
+  @include bp($bp-small-plus) {
+    display: none !important;
+  }
+}
+
+.reponsive-select-full-options {
+  display: none;
+  @include bp($bp-small-plus) {
+    display: block;
+    @include pie-clearfix();
+    padding: 4px 0 0;
+    margin: 0 auto;
+    list-style: none;
+    width: 480px;
+  }
+  @include bp($bp-large) {
+    width: 800px;
+    margin: 0 -5px;
+  }
+
+  li {
+    float: left;
+    margin: 0 5px 10px;
+  }
+
+  .grade {
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    @include rem(font-size, 18px);
+    line-height: 1;
+    color: #000;
+    background: #f4f2f1;
+    font-weight: bold;
+    border-radius: 2px;
+    border: 0;
+
+    &:hover,
+    &:focus {
+      background: #bcbdc0;
+      text-decoration: none;
+    }
+
+    &.active {
+      background: #7a4183;
+      color: #fff;
+    }
+
+    &.active:hover {
+      background: #9850a2;
+      color: #fff;
+    }
+  } // .grade
+} // .reponsive-select-full-options
+
+.input-buttons {
+  margin: 0;
+  padding: 12px 0 0;
+  list-style: none;
+
+  @include pie-clearfix();
+  @include bp($bp-small-plus) {
+    width: 480px;
+    margin: 0 auto;
+  }
+  @include bp($bp-large) {
+    width: auto;
+    margin: 0 -5px 0 35px;
+    padding-top: 22px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @include opacity(0);
+    position: absolute;
+  }
+  
+  li {
+    display: table;
+    width: 100%;
+    margin: 0 0 10px;
+    position: relative;
+    @include bp($bp-small-plus) {
+      margin: 0 5px 10px;
+      float: left;
+      display: block;
+      width: auto;
+    }
+  }
+
+  label {
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    cursor: pointer;
+    @include rem(font-size, 18px);
+    line-height: 1;
+    color: #000;
+    background: #f4f2f1;
+    font-weight: bold;
+    border-radius: 4px;
+    @include bp($bp-small-plus) {
+      width: 230px;
+      @include rem(font-size, 16px);
+      line-height: 1.125;
+    }
+
+    .no-touch &:hover {
+      background: #bcbdc0;
+      text-decoration: none;
+    }
+
+    br {
+      display: none;
+      @include bp($bp-small-plus) {
+        display: inline;
+      }
+    }
+     
+  } // label
+
+  input[type="checkbox"]:checked + label,
+  input[type="radio"]:checked + label {
+    background: #7a4183;
+    color: #fff;
+    &:hover {
+      background: #9850a2;
+    }
+  }
+
+  input[type="checkbox"]:focus + label,
+  input[type="radio"]:focus + label {
+    outline: thin dotted;
+    outline-offset: -2px;
+  }
+
+  .modal & {
+    padding: 0;
+    margin-bottom: 20px;
+    @include bp($bp-small-plus) {
+      width: 400px;
+      padding-top: 20px;
+      margin: 0 -5px 30px;
+    }
+    label {
+      @include bp($bp-small-plus) {
+        width: 190px;
+        @include rem(font-size, 18px);
+        line-height: 1;
+      }
+    }    
+  } // .modal &
+
+} // .input-buttons
+
+.tyce-issues {
+  margin: 0;
+  padding: 5px 0 0;
+  list-style: none;
+  @include bp($bp-large) {
+    @include pie-clearfix();
+    padding: 0;
+  }
+  .issue {
+    color: #696969;
+    border-bottom: 1px solid #d7d7d7;
+    @include rem(font-size, 15px);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    padding-bottom: 23px;
+
+    &:last-child {
+      border: 0;
+      margin-bottom: 10px;
+    }
+    @include bp($bp-large) {
+      @include rem(font-size, 14px);
+      line-height: 1.714;
+      border: 0;
+      padding: 20px 20px 10px;
+      min-height: 300px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.15);
+      float: left;
+      width: 230px;
+      margin: 0 0 50px 50px;
+
+      .no-rgba &,
+      .no-box-shadow & {
+        border: 1px solid #f2f2f2;
+      }
+
+      &:nth-child(3n+1) {
+        margin-left: 0;
+        clear: left;
+      }
+    }
+    
+    p {
+      margin: 0;
+    }
+  } // .issues
+
+  h3 {
+    @include rem(font-size, 18px);
+    font-weight: normal;
+    color: #7b3f84;
+    margin-bottom: 10px;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 20px);
+    }
+    @include bp($bp-large) {
+      line-height: 1.2;
+      min-height: 2.4em;
+      margin-bottom: 8px;
+    }
+  }
+} // .tyce-issues
+
+            

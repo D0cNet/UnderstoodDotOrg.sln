@@ -1,0 +1,78 @@
+/**
+ * SASS partial for partners-detail-header module.
+ */
+
+.lower-border {
+  @include bp($bp-small-plus) {
+    margin-bottom: 50px !important;
+    border-bottom: 1px solid #d2d2d2;
+  }
+}
+.partner-heading {
+  margin-bottom: 20px;
+
+  @include bp($bp-small-plus) {
+    float: left;
+    max-width: 62.5%;
+    margin-top: 1px;
+  }
+
+  h1.partner-name {
+    color: #7a4183;
+    @include rem(font-size, 30px);
+    @include rem(line-height, 34px);
+    font-weight: normal;
+    margin-bottom: 20px;
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 36px);
+    }
+  } // end h1.partner-name
+
+  h2.partner-tagline {
+    color: #696969;
+    @include rem(font-size, 20px);
+    @include rem(line-height, 26px);
+    font-weight: normal;
+    margin-bottom: 20px;
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 24px);
+    }
+  } // end h2.partner-tagline
+
+  span.return-all-partners {
+    display: block;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 16px);
+    font-weight: normal;
+    margin-bottom: 5px;
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: #7a4183;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  } // end span.return-all-partners
+
+  span.partner-link {
+    @include rem(font-size, 16px);
+    @include rem(line-height, 26px);
+    font-weight: normal;
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  } // end span.partner-link
+} // end .partner-heading

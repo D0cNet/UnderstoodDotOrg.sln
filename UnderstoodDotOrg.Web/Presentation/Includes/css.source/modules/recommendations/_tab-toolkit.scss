@@ -1,0 +1,27 @@
+.recos-tab-content {
+	
+	.tab-toolkit-wrapper {
+    display: block;
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 100%;
+
+    .tab-toolkit-header-container {
+      background: none;
+      padding: 0;
+      position: static;
+    }
+
+    @include old-ie {
+
+      .rsArrow {
+        display: none;
+      }
+
+    }
+
+  }
+	
+}

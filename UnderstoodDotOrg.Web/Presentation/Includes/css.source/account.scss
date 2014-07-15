@@ -1,0 +1,45 @@
+/**
+ * Include SASS partials for account modules.
+ */
+@import 'config';
+
+@import 'modules/account/my-account-nav';
+@import 'modules/account/sign-in';
+@import 'modules/account/sign-up-international';
+@import 'modules/account/forgot-password-confirmation';
+@import 'modules/account/account-notification-tabs';
+@import 'modules/account/sign-up';
+@import 'modules/account/sign-up-terms';
+@import 'modules/account/account-landing';
+@import 'modules/account/account-landing-notifications';
+@import 'modules/account/account-landing-mygroups';
+@import 'modules/account/account-landing-myfavorites';
+@import 'modules/account/reset-password';
+@import 'modules/account/forgot-password';
+@import 'modules/account/my-events-tabs';
+@import 'modules/account/my-profile-content';
+@import 'modules/account/account-landing-my-connections';
+@import 'modules/account/account-landing-mycomments';
+@import 'modules/account/account-landing-events';
+@import 'modules/account/friends-view-tabs';
+@import 'modules/account/account-mycomments';
+@import 'modules/account/my-connections';
+@import 'modules/account/my-groups-discussion-form';
+@import 'modules/account/account-view-header';
+@import 'modules/account/account-mygroups';
+@import 'modules/account/my-account-subheader';
+@import 'modules/account/showmore-footer';
+@import 'modules/account/member-view-content';
+@import 'modules/account/account-myfavorites';
+@import 'modules/account/my-connections-activity-feed';
+@import 'modules/account/sign-in-prompt';
+@import 'modules/account/sign-in-prompt-links';
+@import 'modules/account/profile-questions';
+@import 'modules/account/profile-saved-questions';
+@import 'modules/account/registration-profile';
+@import 'modules/account/my-comments-subheader';
+@import 'modules/account/my-events-subheader';
+@import 'modules/account/my-notifications-subheader';
+@import 'modules/account/my-groups-subheader';
+@import 'modules/account/my-saved-subheader';
+@import 'modules/account/my-connections-subheader';

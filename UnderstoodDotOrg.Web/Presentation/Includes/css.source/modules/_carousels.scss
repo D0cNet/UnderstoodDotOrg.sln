@@ -1,0 +1,174 @@
+/**
+ * SASS partial to include merge common elements of various carousels.
+ */
+
+@import 'modules/carousel/carousel-tertiary';
+@import 'modules/carousel/partners-carousel';
+@import 'modules/carousel/featured-carousel';
+
+// Arrows for Carousels
+.rsArrow .rsArrowIcn {
+  background-image: image-url('sprite.arrows.carousel.png');
+  background-repeat: no-repeat;
+  background-size: 75px 113px;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  // fix jagged edges in webkit
+  image-rendering:-webkit-optimize-contrast;
+
+  @include bp($bp-medium) {
+    width: 31px;
+    height: 31px;
+    background-size: 64px 96px;
+  }
+
+  // fix jagged edges in webkit
+  &:hover {
+    image-rendering: auto;
+  }
+
+  &:focus {
+    @include dropshadow(.8);
+  }
+
+  .no-backgroundsize & {
+    background-image: image-url('sprite.arrows.carousel.lo-res.png');
+  }
+
+}
+
+.arrows-gray {
+  .rsArrowLeft {
+    .rsArrowIcn {
+      background-position: 0 -37px;
+
+      @include bp($bp-medium) {
+        background-position: 0 -32px;
+      }
+    }
+
+    &.rsArrowDisabled {
+      .rsArrowIcn {
+        @include opacity(.5);
+        cursor: default;
+        // background-position: 0 -37px;
+
+        @include bp($bp-medium) {
+          background-position: 0 -32px;
+        }
+
+        &:hover {
+          background-position: 0 -37px;
+
+          @include bp($bp-medium) {
+            background-position: 0 -32px;
+          }
+        }
+      }
+    }
+  }// .rsArrowLeft
+
+  .rsArrowRight {
+    .rsArrowIcn {
+      background-position: -37px -37px;
+
+      @include bp($bp-medium) {
+        background-position: -32px -31px;
+      }
+    }
+
+    &.rsArrowDisabled {
+      .rsArrowIcn {
+        @include opacity(.5);
+        cursor: default;
+        // background-position: -38px -37px;
+
+        @include bp($bp-medium) {
+          background-position: -32px -31px;
+        }
+
+        &:hover {
+          background-position: -37px -37px;
+
+          @include bp($bp-medium) {
+            background-position: -32px -31px;
+          }
+        }
+      }
+    }
+  }// .rsArrowRight
+
+}// .arrows-gray
+
+
+.rsArrowLeft {
+  .rsArrowIcn  {
+    background-position: 0 0;
+    top: 0;
+    right: 50px;
+
+    @include bp($bp-medium){
+      top: 0;
+      right: 44px;
+    }
+
+    .no-touch &:hover {
+      background-position: 0 -75px;
+
+      @include bp($bp-medium) {
+        background-position: 0 -63px;
+
+      }
+    }
+  }// .rsArrowIcn
+
+  &.rsArrowDisabled {
+    .rsArrowIcn {
+      @include opacity(.5);
+      cursor: default;
+
+      &:hover {
+        background-position: 0 0;
+      }
+    }
+  }
+}// .rsArrowLeft
+
+.rsArrowRight {
+  .rsArrowIcn {
+    background-position: -37px 0;
+    top: 0;
+    right: 0;
+
+    @include bp($bp-medium){
+      top: 0;
+      right: 0;
+      background-position: -32px 0;
+    }
+
+    .no-touch &:hover {
+      background-position: -37px -75px;
+
+      @include bp($bp-medium) {
+        background-position: -32px -63px;
+      }
+    }
+  }// .rsArrowIcn
+
+  &.rsArrowDisabled {
+    .rsArrowIcn {
+      @include opacity(.5);
+      cursor: default;
+
+      &:hover {
+        background-position: -37px 0;
+
+        @include bp($bp-medium) {
+          background-position: -32px 0;
+        }
+
+      }
+    }
+  }
+}// .rsArrowRight

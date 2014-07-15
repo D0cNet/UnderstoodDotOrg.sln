@@ -1,0 +1,55 @@
+.share-email-modal {
+	
+	.modal-header {
+		padding: 0;
+		min-height: 0;
+		border-bottom: none;
+	}
+
+	h1 {
+		color: #7a4183;
+		font-weight: normal;
+		margin-bottom: 10px;
+		@include rem(font-size, 18px);
+
+    @include bp($bp-small-plus) {
+    	margin-bottom: 20px;
+    	margin-top: 10px;
+    	@include rem(font-size, 24px);
+    }
+	}
+
+	p {
+		color: #696969;
+		padding-bottom: 20px;
+	}
+
+	input[type=text],
+	input[type=email],
+	textarea {
+		margin-bottom: 10px;
+	}
+
+	.buttons {
+		margin-top: 0;
+
+		@include bp($bp-small-plus) {
+			margin-top: 20px;
+		}
+
+		.button  {
+			width: 150px;
+		}
+
+	}//.buttons
+
+	.share-email-confirm {
+		display: none;
+
+		.button {
+			width: 200px;
+		}
+
+	}//.share-email-confirm
+
+}//.share-email-modal

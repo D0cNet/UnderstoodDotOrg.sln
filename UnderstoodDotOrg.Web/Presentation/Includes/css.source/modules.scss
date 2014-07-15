@@ -1,0 +1,89 @@
+/**
+ * Include SASS partials for individual modules.
+ */
+@import 'config';
+
+@import 'modules/mini-tool';
+@import 'modules/get-recommendations';
+@import 'modules/secondary-menu';
+@import 'modules/toolkit-header';
+@import 'modules/toolkit';
+@import 'modules/more-to-explore';
+@import 'modules/child-content-indicator';
+@import 'modules/newsletter-signup';
+@import 'modules/featured-event';
+@import 'modules/show-more';
+@import 'modules/listing';
+@import 'modules/article-listing';
+@import 'modules/carousels';
+@import 'modules/find-helpful';
+@import 'modules/glossary-term';
+@import 'modules/helpful-count';
+@import 'modules/sidebar-promos';
+@import 'modules/comment-list';
+@import 'modules/hero-image';
+@import 'modules/share-save';
+@import 'modules/share-email';
+@import 'modules/share-content-dropdown';
+@import 'modules/toolkit-header';
+@import 'modules/skip-list';
+@import 'modules/readspeaker';
+@import 'modules/readspeaker-layout';
+@import 'modules/action-buttons';
+@import 'modules/user-profiles';
+@import 'modules/video-player';
+@import 'modules/transcript-control';
+@import 'modules/readspeaker-modal';
+@import 'modules/welcome-screen';
+
+/**
+ * Style definitions that affect multiple modules.
+ */
+
+// article pages
+.article.container,
+.article-intro.container {
+  @include bp($bp-small-plus) {
+    margin: 0;
+  }
+}
+
+.featured-recommended h2,
+.more-to-explore h2,
+.partners-carousel h2,
+.newsletter-signup h2,
+.more-carousel h2 {
+  color: #7a4183;
+  font-weight: normal;
+  @include rem(font-size, 18px);
+  @include rem(line-height, 28px);
+  text-align: center;
+
+  @include bp($bp-small-plus) {
+    text-align: left;
+    @include rem(font-size, 36px);
+    @include rem(line-height, 28px);
+  }
+  
+  @include bp($bp-medium) {
+    @include rem(font-size, 24px);
+    @include rem(line-height, 28px);
+  }
+}
+
+.featured-recommended h2,
+.more-carousel h2 {
+  @include bp($bp-medium) {
+    @include rem(font-size, 36px);
+  }
+}
+
+/**
+ * CSS for split module container that currently contains the featured
+ * event and get recommendations modules.
+ */
+.split-modules .row {
+  margin-bottom: 15px;
+  @include bp($bp-small-plus) { margin-bottom: 0; }
+  @include bp($bp-medium) { margin-bottom: 30px; }
+}

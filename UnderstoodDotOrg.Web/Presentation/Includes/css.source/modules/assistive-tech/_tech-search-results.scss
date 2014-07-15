@@ -1,0 +1,680 @@
+/**
+ * SASS partial for tech-search-results module.
+ * Some of these classes appear in popovers
+ * Uses layouts at2 and at3
+ */
+
+$grade-red: #f85d4d;
+$grade-yellow: #f2af00;
+$grade-green: #5caa7f;
+$grade-selection-gray: #7b7b7b;
+$result-border-gray: #e1e1e1;
+$result-font-gray: #696969;
+$assistive-tech-purple: #7a4183;
+
+
+.container.assistive-tech-results {
+  background: #f4f2f1;
+  margin: 0;
+  padding: 0 15px;
+  .search-result {
+    border: none;
+  }
+}
+
+.tech-search-results {
+  color: $grade-selection-gray;
+
+  header {
+    margin: 50px 0 20px;
+    @include bp($bp-small-plus){
+      margin: 50px 0;
+    }
+    .selector {
+      @include bp($bp-large){
+        float: right;
+      }
+    }
+  }
+
+  // The counter next to heading on at2
+  .result-count {
+    display: block;
+    margin-top: 0px;
+    margin-left: 0px;
+    @include rem(font-size, 15px);
+    font-family: Arial, sans-serif;
+    @include bp($bp-small-plus) {
+      display: inline-block;
+      margin-top: 6px;
+      margin-left: 0;
+      @include rem(font-size, 16px);
+    }
+  }
+
+  h3 {
+    display: inline-block;
+    color: $assistive-tech-purple;
+    @include rem(font-size, 24px);
+    margin-bottom: 20px;
+    font-weight: 400;
+    @include bp($bp-small-plus) {
+      display: inline-block;
+      @include rem(font-size, 28px);
+      margin-bottom: 0;
+    }
+    &.two-lines {
+      width: 155px;
+      @include bp($bp-small-plus) {
+        width: auto;
+      }
+    }
+    .icon-tooltip {
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  .search-result {
+    @include old-ie {
+       padding: 35px 0px;
+     }
+    .instructional & {
+      background: #fbfaf9;
+    }
+    @include old-ie {
+      border: 1px solid $result-border-gray;
+      margin-bottom: 40px;
+      padding: 35px 0px;
+    }
+    @include bp($bp-small-plus){
+      border: 1px solid $result-border-gray;
+      margin-bottom: 40px;
+      padding: 35px 0px;
+    }
+    color: $result-font-gray;
+    margin-bottom: 40px;
+    padding: 0px;
+  }
+
+  .result-details {
+    min-width: 151px;
+    margin-left: 117px;
+    @include bp($bp-small-plus) {
+      margin-left: 4.16666666667%;
+      min-width: 191px;
+      width: 64%;
+    }
+     @include bp($bp-medium) {
+      width: 27%;
+    }
+
+  }
+
+  &.single {
+    .result-keywords {
+      margin: 0 0 10px 117px;
+      @include bp($bp-small-plus) {
+        margin-left: 0;
+      }
+      @include bp($bp-medium){
+      margin-top: 5px;
+      margin-bottom: 0;
+      }
+    }
+    .result-ratings {
+    @include bp($bp-small-plus) {
+      padding-left: 30px;
+      width: 64%;
+    }
+    @include bp($bp-medium) {
+      padding-left: 40px;
+      width: 44%;
+    }
+  }
+  }
+  &.multi {
+    .result-keywords {
+      margin: 0;
+      @include bp($bp-small-plus) {
+        margin-left: 0;
+      }
+      @include bp($bp-medium){
+      margin-top: 5px;
+      margin-bottom: 0;
+      }
+    }
+    .result-ratings {
+      padding-top: 20px;
+      @include bp($bp-small-plus) {
+        padding: 0 0 0 30px;
+        width: 68%;
+      }
+      @include bp($bp-medium) {
+        padding-left: 40px;
+        width: 59%;
+      }
+      @include bp($bp-large) {
+        width: 47%;
+      }
+    }
+    .result-details {
+      padding-bottom: 20px;
+      @include bp($bp-medium) {
+      width: 35%;
+      }
+      @include bp($bp-large) {
+      width: 27%;
+      }
+    }
+  }
+  .result-keywords {
+    @include rem(font-size, 14px);
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      border-left: 1px solid $result-border-gray;
+      display: inline-block;
+      margin-right: 15px;
+      padding-left: 15px;
+      &:first-child {
+        border-left: none;
+        padding-left: 0;
+      }
+      a{
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+
+  // This shared on mobile "See Rating" popover
+  .rating-label {
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+    @include rem(font-size, 14px);
+    @include bp($bp-medium){
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  }
+
+  .grade-scale,
+  .quality-scale,
+  .learning-scale,
+  .grade-scale-wrapper,
+  .grade-info-wrapper,
+  .quality-scale-wrapper,
+  .quality-info-wrapper,
+  .learning-scale-wrapper,
+  .learning-info-wrapper {
+    display: inline-block;
+    @include rem(line-height, 40px);
+  }
+  .grade-info-wrapper, .quality-info-wrapper, .learning-info-wrapper {
+    display: none;
+    @include bp($bp-small){
+      display: inline-block;
+    }
+  }
+  .quality-review-link {
+//    border-left: 1px solid $result-border-gray;
+    padding-left: 15px;
+    text-decoration: underline;
+    display: none;
+    @include bp($bp-small-plus){
+      display: inline-block;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  // Applies only to the '4 Reviews' on the see rating popovers
+  .quality-review-link-see-rating {
+    float: right;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .quality-scale-wrapper.full-width{
+    width: 100%;
+    .quality-scale{
+      width: 100%;
+    }
+  }
+
+  .grade-scale {
+    position: relative;
+    width: auto;
+
+    .grade {
+      @include rem(font-size, 13px);
+      color: #fff;
+      display: table-cell;
+      height: 26px;
+      @include rem(line-height, 26px);
+      margin: 0px;
+      padding: 0px;
+      text-align: center;
+      width: 26px;
+      font-weight: bold;
+
+      @include bp($bp-small) {
+        @include rem(line-height, 28px);
+        height: 28px;
+        width: 28px;
+      }
+    }
+    .grade1 {
+      @include border-radius(20px 0 0 20px);
+      padding-left: 8px;
+
+      @include bp($bp-small){
+        padding-left: 12px;
+      }
+    }
+    .grade12 {
+      @include border-radius(0 20px 20px 0);
+      padding-right: 8px;
+      @include bp($bp-small){
+        padding-right: 12px;
+        width: 40px;
+      }
+    }
+
+    .selection {
+      @include rem(font-size, 13px);
+      background-image: image_url('rating.slider.selection.png');
+      background-size: 36px 36px;
+      display: inline-block;
+      height: 36px;
+      @include rem(line-height, 36px);
+      margin-top: -5px;
+      position: absolute;
+      text-align: center;
+      width: 36px;
+
+      @include bp($bp-small) {
+        background-size: 40px 40px;
+        @include rem(line-height, 40px);
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    .selection.grade1 {
+      left: -1%;
+
+      @include bp($bp-small) {
+        left: -1%;
+      }
+    }
+    .selection.grade2 {
+      left: 7%;
+
+      @include bp($bp-small) {
+        left: 7%;
+      }
+    }
+    .selection.grade3 {
+      left: 15%;
+
+      @include bp($bp-small) {
+        left: 14%;
+      }
+    }
+    .selection.grade4 {
+      left: 23%;
+
+      @include bp($bp-small) {
+        left: 23%;
+      }
+    }
+    .selection.grade5 {
+      left: 32%;
+
+      @include bp($bp-small) {
+        left: 31%;
+      }
+    }
+    .selection.grade6 {
+      left: 39%;
+
+      @include bp($bp-small) {
+        left: 39%;
+      }
+    }
+    .selection.grade7 {
+      left: 48%;
+
+      @include bp($bp-small) {
+        left: 47%;
+      }
+    }
+    .selection.grade8 {
+      left: 57%;
+
+      @include bp($bp-small) {
+        left: 55%;
+      }
+    }
+    .selection.grade9 {
+      left: 65%;
+
+      @include bp($bp-small) {
+        left: 63%;
+      }
+    }
+    .selection.grade10 {
+      left: 73%;
+
+      @include bp($bp-small) {
+        left: 71%;
+      }
+    }
+    .selection.grade11 {
+      left: 81%;
+
+      @include bp($bp-small) {
+        left: 79%;
+      }
+    }
+    .selection.grade12 {
+      left: 90%;
+
+      @include bp($bp-small) {
+        left: 88%;
+      }
+    }
+  }
+  // .grade-scale
+
+  .circle {
+    @include border-radius(24px);
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+  }
+  .grade.red,
+  .circle.red { background-color: $grade-red; }
+  .grade.yellow,
+  .circle.yellow { background-color: $grade-yellow; }
+  .grade.green,
+  .circle.green { background-color: $grade-green; }
+
+  .popover-trigger-container{
+    // position icon here
+    margin-left: 10px;
+    // unless this is the see-rating link then no margin
+  }
+  .see-rating{
+    .popover-trigger-container{
+      margin-left: 0;
+    }
+  }
+  .grade-info-wrapper{
+    .popover-trigger-container {
+      margin-left: 0;
+      @include bp($bp-small-plus){
+        margin-left: 9px;
+      }
+    }
+  }
+
+  .icon-tooltip {
+    // Adding margin to this will cause popovers to appear off center
+    //  Instead, modify the wrapper
+    background-image: image_url('sprite.tooltip.info.png');
+    background-size: 44px 22px;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    @include rem(line-height, 30px);
+    width: 22px;
+    &:hover { background-position: -22px 0px; }
+    vertical-align: text-bottom;
+
+    .no-backgroundsize & {
+      background-image: image_url('sprite.tooltip.info.lo-res.png');
+    }
+  }
+
+  // If you need to target this element in the popover see popover stylesheet
+  .result-image {
+    float: left;
+    margin-top: 8px;
+    padding-right: 20px;
+    min-width: 100px;
+    width: 20%;
+    @include bp($bp-small-plus){
+      margin-right: 0;
+      width: auto;
+    }
+    img {
+      max-width: 100%;
+    }
+    .result-image-inner{
+      position: relative;
+      .icon-search {
+        background: image-url('sprite.icon.search-white.png') 0px 0px no-repeat;
+        background-size: 16px 66px;
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        bottom: 5px;
+        margin-left: 5px;
+        text-indent: -9999px;
+        &:hover, &.is-hover{
+          background: image-url('sprite.icon.search-white.png') 0px -25px no-repeat;
+          background-size: 16px 66px;
+        }
+        .no-backgroundsize & {
+          background: image-url('sprite.icon.search-white.lo-res.png');
+          &:hover, &.is-hover {
+            background-position: 0 -25px;
+          }
+        }
+      }
+    }
+    .result-type {
+      color: #696969;
+      @include rem(font-size, 15px);
+      margin-top: 10px;
+      @include bp($bp-small-plus){
+        text-align: center;
+        margin-top: 20px;
+        @include rem(font-size, 14px);
+      }
+    }
+  }
+
+  .tooltip-title,
+  .result-title {
+    @include rem(font-size, 24px);
+    color: $assistive-tech-purple;
+    margin-bottom: 10px;
+    min-width: 300px;
+    font-weight: normal;
+  }
+
+  .result-description{
+    font-family: Arial, sans-serif;
+    padding: 0px 15px 15px 0;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 26px);
+    @include bp($bp-small-plus){
+      @include rem(font-size, 16px);
+      @include rem(line-height, 22px);
+    }
+  }
+
+  .popover-link{
+    text-decoration: underline;
+    text-indent: -9999px;
+  }
+
+  // These rating class shared with multiple modules
+  .rating {
+    border-top: 1px solid $result-border-gray;
+    margin-bottom: 15px;
+    padding-top: 15px;
+
+    &:first-child { border-top: none; }
+
+    .rating-icon{
+      padding-top: 5px;
+      display: inline-block;
+    }
+
+    .rating-info {
+      display: inline-block;
+      padding: 0 5px 5px;
+      vertical-align: top;
+      width: 35%;
+      @include bp($bp-small-plus){
+        padding-left: 25px;
+        width: 50%;
+      }
+    }
+  }
+
+  .results-more-link {
+    @include rem(font-size, 24px);
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+    @include bp($bp-small-plus){
+      margin-bottom: 50px;
+    }
+    span {
+      display: inline-block;
+    }
+  }
+
+  .icon-results-more {
+    background-image: image-url('sprite.icon.arrows.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    display: inline-block;
+    height: 11px;
+    margin-left: 20px;
+    width: 18px;
+  }
+
+  fieldset {
+    @include bp($bp-small-plus) {
+      float: right;
+    }
+  }
+
+  .select-container {
+    display: block;
+    width: auto;
+    &.sort {
+      @include bp($bp-small-plus) {
+        width: 150px;
+      }
+      @include bp($bp-medium) {
+        width: 190px;
+      }
+    }
+  } // .select-container
+  .quality-learning-scale-wrap {
+    @include bp($bp-small-plus) {
+      min-width: 384px;
+    }
+  }
+  .learning-scale-container {
+    @include bp($bp-small-plus) {
+      display: inline-block;
+      min-width: 182px;
+      padding-left: 16px;
+    }
+  }
+  .quality-scale-container {
+    @include bp($bp-small-plus) {
+      display: inline-block;
+      min-width: 182px;
+    }
+  }
+    .rating-grade-container {
+      padding-top: 1px;
+    @include bp($bp-small) {
+      padding-top: 25px;
+      display: inline-block;
+      min-width: 384px;
+    }
+    @include bp($bp-small-plus) {
+      padding: 0;
+    }
+  }
+
+  // This targets at3
+  // AT3 has an additional column
+  &.single {
+    .result-keywords {
+      margin-bottom: 45px;
+      @include rem(font-size, 16px);
+      li{
+        &:first-child{
+          margin-right: 10px;
+        }
+      }
+    }
+    .result-type{
+      @include bp($bp-small-plus) {
+        display: none;
+      }
+    }
+    .result-ratings-wrap{
+      @include bp($bp-small-plus) {
+        width: 43%;
+      }
+      .result-ratings {
+        padding-left: 0;
+        width: 100%;
+        .result-details{
+          width: 100%;
+          margin-left: 0;
+        }
+        .tech-search-results-ratings{
+          clear: left;
+        } // tech-search-results-ratings
+      } //results-ratings
+    }
+  } //&single
+}
+
+// Show/Hide Ratings depending on screen size
+.tech-search-results.multi .result-keywords,
+.tech-search-results.multi .result-ratings.show-popover {
+  display: none;
+
+  @include bp($bp-small-plus) {
+    display: block;
+  }
+
+}
+
+// Show/Hide Ratings Link depending on screen size
+.tech-search-results.multi .see-rating {
+  display: block;
+
+  @include bp($bp-small-plus) {
+    display: none;
+  }
+
+}

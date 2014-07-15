@@ -1,0 +1,204 @@
+/**
+* SASS partial for MyAccount My Profile Content module.
+*/
+.my-profile.container {
+  @include bp($bp-small-plus) {
+    margin: 0;
+  }
+}
+.profile-wrap {
+  @include rem(font-size, 18px);
+  @include rem(line-height, 30px);
+  color: #696969;
+
+  a{
+    text-decoration: underline;
+  }
+  .children-heading {
+    @include rem(font-size, 20px);
+    @include rem(line-height, 22px);
+    color: #7a4183;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    @include rem(font-size, 24px);
+    @include rem(line-height, 30px);
+    color: #7a4183;
+    font-weight: normal;
+    margin-bottom: 13px;
+  }
+
+  h3 {
+    @include rem(font-size, 17px);
+    @include rem(line-height, 26px);
+    color: #7a4183;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 18px);
+      display: block;
+      margin: 0 0 10px;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li {
+      margin-bottom: 5px;
+      @include bp($bp-small-plus) {
+        margin: 0;
+      }
+      &.children-list {
+        @include rem(font-size, 16px);
+        &:before {
+          content: " ";
+          @include rem(line-height, 30px);
+          width: 8px;
+          height: 8px;
+          background-color: #208ec4;
+          float: left;
+          margin: 10px;
+          border-radius: 50%;
+          position: relative;
+          left: -29px;
+        }
+      }
+    }
+  }
+  .profile-notice {
+    p{
+      @include rem(font-size, 15px);
+      @include rem(line-height, 18px);
+      margin-top: 30px;
+      max-width: 100%;
+      color: #696969;
+      @include bp($bp-small-plus) {
+        padding-bottom: 13px;
+      }
+    }
+  }
+  .profile-section {
+    border-bottom: 1px solid #e8e8e8;
+    border-width: 80%;
+    padding: 30px 0 20px 0;
+    position: relative;
+    // this positioning allows the floated notices to sit at the bottom
+    @include bp($bp-small-plus) {
+      padding: 40px 0 30px 0;
+    }
+    &:last {
+      margin-bottom: 20px;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+    .profile-details{
+      @include bp($bp-small-plus) {
+        padding-left: 25px;
+      }
+      .row{
+        margin-bottom: 5px;
+        @include bp($bp-small-plus) {
+          margin-bottom: 3px;
+        }
+      }
+    }
+    @include bp($bp-small-plus) {
+      .profile-detail-information{
+        padding-left: 15px;
+      }
+    }
+  }
+  .children-section{
+    // position note in thissection
+    .inline{
+      @include bp($bp-small-plus) {
+        position: absolute;
+        bottom: 25px;
+        width: 20%;
+      }
+    }
+    .profile-details{
+      h3{
+        float: left;
+        margin-top: 30px;
+        margin-bottom: 25px;
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 18px);
+          float: none;
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+      }
+      .row{
+        margin-bottom: 10px;
+      }
+      ul {
+        padding-left: 20px;
+        text-indent: -30px;
+        @include bp($bp-small-plus) {
+          margin-bottom: 10px;
+        }
+      }
+      a{
+        float: right;
+        margin-top: 28px;
+        @include bp($bp-small-plus) {
+          float: none;
+          display: block;
+          margin-top: 13px;
+        }
+      }
+    } //profile-details
+    .section-label{
+      // so that this label is only on one line per mockup
+      @include bp($bp-small-plus) {
+        overflow:visible;
+        a{
+          display:block;
+          width: 150px;
+        }
+      }
+    }
+  }
+  .community-section{
+    // position note in community section
+    @include bp($bp-small-plus) {
+      padding-bottom: 90px;
+      .inline{
+        position: absolute;
+        bottom: 5px;
+        width: 17%;
+      }
+    }
+  }
+  .contact-section{
+    // position note in contact section
+    padding-bottom: 90px;
+    .profile-notice{
+      p{
+        @include bp($bp-small-plus) {
+          width: 20%;
+        }
+      }
+    }
+  }
+  .privacy-section{
+    a{
+      @include rem(font-size, 18px);
+      text-decoration: none;
+    }
+    h3{
+      padding-bottom: 15px;
+    }
+  }
+  .password{
+    @include rem(font-size, 54px);
+    @include rem(line-height, 25px);
+    letter-spacing: -5px;
+  }
+}

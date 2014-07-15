@@ -1,0 +1,136 @@
+/**
+ * SASS partial for founding-carousel module
+ */
+.l-founding-partners-carousel {
+  @include bp($bp-small-plus) {
+    background: #fafafa;
+  }
+}
+
+.founding-container {
+  background: #fafafa;
+  padding: 0 15px 25px 15px;
+
+  @include bp($bp-small-plus) {
+    margin: 0 0 50px 0;
+    padding: 0 15px;
+  }
+  @include bp($bp-large) {
+    padding: 0;
+  }
+
+  header {
+    h2 {
+      color: #7a4183;
+      @include rem(font-size, 30px);
+      @include rem(line-height, 34px);
+      font-weight: normal;
+      padding: 20px 0 10px 0;
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 32px);
+        @include rem(line-height, 48px);
+        padding-top: 40px;
+      }
+    } // end .founding-container h2
+
+    p {
+      color: #696969;
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+      font-weight: normal;
+      margin-bottom: 30px;
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 18px);
+        @include rem(line-height, 28px);
+        margin-bottom: 20px;
+      }
+    } // end .founding-container p
+
+    a {
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+      font-weight: normal;
+      text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 18px);
+        @include rem(line-height, 28px);
+      }
+    } // end .founding-container a
+  } // end header
+
+  .founding-carousel-outer {
+    overflow: hidden;
+    text-align: center;
+
+    @include bp($bp-small-plus) {
+      text-align: left;
+    }
+  }
+
+  .founding-slides-wrapper {
+    height: 155px !important;
+    margin: 0;
+
+    @include bp($bp-small) {
+      height: 100% !important;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 10px 10px 0 0;
+        display: inline-block;
+
+        &:nth-child(2) {
+          margin-right: 0;
+
+          @include bp($bp-small) {
+            margin-right: 10px;
+          }
+        }
+        &:nth-child(6n) {
+          @include bp($bp-large) {
+            margin-right: 0;
+          }
+        }
+
+        a {
+          img {
+            width: 140px;
+            height: 81px;
+
+            @include bp($bp-small-plus) {
+              width: 150px;
+              height: 89px;
+            }
+          } // end li a img
+        } // end li a
+      } // end li
+    } // end ul
+
+    .rsOverflow {
+      overflow: visible;
+    }
+
+    .rsArrowLeft .rsArrowIcn {
+      top: 110px;
+      right: 50%;
+      margin-right: 15px;
+    }
+    .rsArrowRight .rsArrowIcn {
+      top: 110px;
+      right: auto;
+      left: 50%;
+      margin-left: 15px;
+    }
+  } // end .founding-slides-wrapper
+} // END .founding-container

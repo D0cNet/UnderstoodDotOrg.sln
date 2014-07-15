@@ -1,0 +1,276 @@
+/**
+ * SASS partial for account-view-header module.
+ */
+
+$account-role-blue: #5279b3;
+$account-name-purple: #7a4183;
+$account-dark-gray: #696969;
+$account-border-gray: #d2d2d2;
+$account-button-gray: #bcbdc0;
+$account-button-yellow-inactive: #f7c84c;
+$account-button-yellow-active: #f2af00;
+$account-button-yellow-hover: #ffbc0d;
+
+.back-to-previous-nav a.back-to-previous {
+  display: none;
+  height: 0px;
+  line-height: 40px;
+  margin: 30px 0 0 0;
+  i { margin-right: 10px; }
+  
+  @include bp($bp-small-plus) {
+    display: block;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+.account-view-header {
+  @include rem(font-size, 17px);
+  color: $account-dark-gray;
+  position: relative;
+  z-index: 50;
+
+  .account-top-wrapper { position: relative; }
+
+  .account-photo {
+    margin-right: 20px;
+    position: relative;
+    float: left;
+    min-height: 127px;
+
+    @include bp($bp-small-plus){
+      min-height: 100%;
+    }
+  }
+
+  .account-photo,
+  .account-info {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .account-username {
+    color: $account-font-purple;
+    font-weight: bold;
+    @include rem(font-size, 17px);
+    @include rem(line-height, 24px);
+
+    @include bp($bp-small) {
+      @include rem(font-size, 22px);
+      @include rem(line-height, 22px);
+      margin-bottom: 3px;
+    }
+  }
+  .account-info {
+    padding: 27px 0 0;
+    @include bp($bp-small) { padding: 20px 0 0; }
+  }
+
+  .account-connect-links{
+    > button.button{
+      font-weight: bold;
+      color: #000000;
+    }
+  }
+  .account-connect-links.narrow {
+    display: block;
+    margin: 20px 0 14px 0;
+    @include bp($bp-small) { display: none; }
+  }
+  .account-connect-links.wide {
+    display: none;
+    text-align: center;
+    @include bp($bp-small) {
+      display: table-cell;
+      padding: 23px 0 0;
+      text-align: left;
+      vertical-align: top;
+
+      &.no-margin { padding: 12px 0 0; }
+    }
+  }
+
+  .account-photo {
+    max-width: 100px;
+    margin-right: 20px;
+    @include bp($bp-small) { max-width: 150px; }
+    @include bp($bp-small-plus) { margin-right: 50px; }
+
+    img { max-width: 100%; }
+
+    .account-role {
+      @include rem(font-size, 13px);
+      background-color: $account-role-blue;
+      top: 0px;
+      color: #fff;
+      line-height: 24px;
+      max-width: 100px;
+      position: relative;
+      text-align: center;
+      top: -24px;
+      width: 100px;
+      @include bp($bp-small) {
+        max-width: 150px;
+        width: 150px;
+      }
+    }// .account-role
+  }// .account-photo
+
+  .account-location {
+    @include rem(font-size, 17px);
+
+    @include bp($bp-small) {
+      @include rem(font-size, 16px);
+      margin-bottom: 0;
+    }
+  }
+
+  .account-show-support {
+    margin: 0;
+    position: static;
+    text-align: left;
+    p {
+        font-weight: bold;
+      }
+    @include rem(font-size, 16px);
+    @include bp($bp-small) { margin: 20px 0; }
+    @include bp($bp-medium) {
+      margin: 0 0 20px;
+      padding-top: 18px;
+      position: absolute;
+      right: -20px;
+      top: 0px;
+    }
+
+    i, .icon-account-smiley {
+      background-image: image-url('sprite.icon.support.png');
+      background-size: 43px 28px;
+      height: 25px;
+      width: 25px;
+      .no-backgroundsize & {
+        background-image: image-url('sprite.icon.support.lo-res.png');
+      }
+    }
+    .icon-account-flower {
+      background-position: -25px 0px;
+      width: 18px;
+      height: 28px;
+    }
+
+    a {
+      display: inline-block;
+      &:first-child {
+        border-right: 1px solid $account-border-gray;
+        margin-right: 10px;
+        padding-right: 10px;
+      }
+      i, span {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      span { padding-left: 10px; }
+    }
+  }// .account-show-support
+
+  .no-connect-msg {
+    display: inline-block;
+    margin: 0;
+
+    @include bp($bp-small-plus) { max-width: 200px; }
+    @include bp($bp-medium) {
+      max-width: 300px;
+      position: absolute;
+      right: 0px;
+      top: 16px;
+    }
+  }
+
+  .button {
+    display: inline-block;
+    cursor: pointer;
+    height: 34px;
+    @include rem(line-height, 34px);
+    padding: 0 20px;
+    text-align: center;
+    width: 128px;
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+    @include bp($bp-small-plus) {
+      max-width: 100px;
+    }
+    @include bp($bp-large) {
+      max-width: 190px;
+      width: 150px;
+    }
+  }// .button
+  .button.gray {
+    margin-right: 2px;
+    @include bp($bp-small) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.account-view-header.can-connect {
+  .account-photo,
+  .account-info,
+  .account-connect-links {
+    display: inline-block;
+    float: left;
+    position: relative;
+  }
+  .account-info {
+    position: static;
+
+    @include bp(321px) {
+      position: relative;
+    }
+  }
+  .account-connect-links.wide {
+    display: none;
+    @include bp($bp-small) {
+      display: block;
+      margin-left: 50px;
+    }
+
+    &.no-margin {
+      margin-left: 0;
+    }
+  }
+  .account-connect-links.narrow {
+    @include bp($bp-small) { display: none; }
+  }
+
+  .account-connect-links {
+    .button {
+      max-width: inherit;
+      padding: 0 10px;
+      width: 144px;
+      &.unconnect {
+        width: 139px;
+      }
+      @include bp($bp-small-plus) { max-width: 100px; }
+      @include bp($bp-large) { max-width: inherit; }
+    }
+  }
+}// .account-view-header.can-connect
+
+.account-view-header.connected {
+  .account-connect-links .button {
+    max-width: 134px;
+    margin-right: 10px;
+    float: left;
+    @include rem(font-size , 15px);
+    @include bp($bp-medium) {
+      max-width: 144px;
+      @include rem(font-size , 16px);
+    }
+  }
+  .account-connect-links.wide {
+    width: inherit;
+    margin-left: 0;
+    @include bp($bp-small) { width: 100%; }
+  }
+}

@@ -1,0 +1,107 @@
+/**
+* SASS partial for account landing global notifiation module.
+* This dependent on account-landing.scss
+*/
+.landing-notifications.landing-modules{
+  border-top-color: #7a4183;
+  // This to force the notifications module to fit in the grid
+  @include bp($bp-small-plus) {
+    width: 102%
+  }
+  @include bp($bp-large) {
+    overflow: visible;
+    width: 279px;
+  }
+  h3 {
+    @include rem(font-size, 22px);
+    @include rem(line-height, 30px);
+  }
+  .landing-module-count{
+    color: #7a4183;
+  }
+  ul.landing-module-items{
+    li.new-connection{
+      padding-bottom:20px;
+      .notification-item{
+        min-height: 100px;
+      }
+    }
+    li.new-comment{
+      .notification-item{
+        min-height: 135px;
+      }
+      @include old-ie {
+        .notification-item{
+          min-height: 117px !important;
+        }
+      }
+    }
+    li.new-note{
+      padding-bottom:20px;
+      .notification-item{
+        min-height: 100px;
+      }
+    }
+    li{
+      .button-wrapper{
+        .button {
+          @include rem(font-size, 15px);
+          @include rounded-corners(3px);
+          color: black;
+          height: 30px;
+          line-height: 30px;
+          margin-right: 0px;
+          max-width: 107px;
+          &:first-child { margin-right: 20px; }
+          @include bp($bp-medium) { max-width: none; }
+          @include bp($bp-large) { max-width: 107px; }
+        }
+      } //button-wrapper
+
+      i{
+        background-image: image_url('sprite.icon.notifications.png');
+        background-size: 57px 19px;
+        display: inline-block;
+        height: 18px;
+        margin-right: 10px;
+        position: relative;
+        &.icon-notification-comment {
+          width: 21px;
+          top: 4px;
+        }
+        &.icon-notification-link {
+          background-position: -40px 0px;
+          width: 16px;
+          top: 3px;
+        }
+        &.icon-notification-reminder {
+          background-position: -22px 0px;
+          width: 16px;
+          top: 4px;
+        }
+        &.icon-results-more {
+          background-image: image-url('sprite.icon.arrows.png');
+          background-position: top left;
+          background-repeat: no-repeat;
+          background-size: 150px 150px;
+          display: inline-block;
+          height: 11px;
+          margin-left: 20px;
+          width: 18px;
+        }
+        .no-backgroundsize & {
+          background-image: image-url('sprite.icon.notifications.lo-res.png');
+        }
+      }
+      p.notification-item{
+        @include rem(line-height, 18px);
+        a{
+          text-decoration: underline;
+        }
+      }
+      .timestamp{
+        padding-bottom: 12px;
+      }
+    } //li
+  } // ul.landing-module-items
+} // landing-notifications.landing-modules

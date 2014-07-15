@@ -1,0 +1,56 @@
+/**
+ * SASS partial for about-understood-video module.
+ */
+
+ .about-pagetopic {
+  min-height: 160px;
+  padding: 20px 13px 20px;
+  @include bp($bp-small-plus){
+    padding: 20px 15px 40px;
+    margin-bottom: 58px;
+  }
+
+  h1 {
+    @include rem(font-size, 33px);
+
+    @include bp($bp-small-plus){
+      @include rem(font-size, 36px);
+      margin-top: 31px;
+    }
+  }
+
+  .share-save-container {
+    margin-top: 15px;
+    @include bp($bp-small-plus){ margin-top: 5px; }
+
+    div.share-save-icon {
+      @include bp($bp-small-plus){ margin-top: 24px; }
+    }
+  }
+ }
+
+.about-video-container {
+  p {
+    font-family: arial, sans-serif;
+    color: #696969;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 26px);
+    font-weight: normal;
+
+    @include bp($bp-small-plus) {
+      margin-top: -2px;
+      margin-bottom: 30px;
+    }
+  } // end .about-video-container p
+
+  .about-video-frame {
+    margin-bottom: 30px;
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 35px;
+    }
+    img {
+      width: 100%;
+    }
+  } // end .about-video-frame
+} // end .about-video-container

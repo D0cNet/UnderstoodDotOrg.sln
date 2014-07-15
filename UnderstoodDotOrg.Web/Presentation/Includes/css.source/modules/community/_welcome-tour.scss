@@ -1,0 +1,180 @@
+.welcome-tour {
+  h1 {
+    color: #7a4183;
+    @include rem(font-size, 20px);
+    @include rem(margin-bottom, 15px);
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 28px);
+      @include rem(line-height, 40px);
+    }
+
+    @include bp(min-width 800px) {
+      @include rem(font-size, 36px);
+    }
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .subhead {
+    color: #696969;
+
+    @include bp($bp-small-plus) {
+      @include rem(line-height, 30px);
+    }
+
+    @include bp($bp-medium) {
+      @include rem(font-size, 21px);
+    }
+  }
+
+  .paging-data {
+    @include rem(font-size, 21px);
+  }
+
+  .welcome-tour-navigation {
+    width: 150px;
+    margin: 0 auto 15px auto;
+    position: relative;
+
+    @include bp($bp-small-plus) {
+      position: absolute;
+      top: 86px;
+      right: 30px;
+    }
+  }
+
+  .paging-data {
+    @include rem(font-size, 21px);
+    @include rem(line-height, 35px);
+    height: 35px;
+    color: #208ec4;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rsArrowLeft .rsArrowIcn {
+    left: 0;
+    right: auto;
+  }
+
+  .slides {
+    width: 100%;
+    height: auto !important;
+
+    @include bp($bp-small-plus) {
+    }
+  }
+
+  .slide {
+    position: relative;
+    width: 100%;
+
+    img {
+      display: none;
+      width: 100%;
+
+      @include bp($bp-small-plus) {
+        display: block;
+      }
+    }
+
+    .welcome-highlights {
+      padding-left: 18px;
+      margin-bottom: 30px;
+
+      @include bp($bp-small-plus) {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        @include rem(font-size, 18px);
+        width: 50%;
+      }
+
+      li {
+        list-style-type: disc;
+        margin-bottom: 7px;
+        color: #208ec4;
+        @include rem(line-height, 22px);
+
+        @include bp($bp-small-plus) {
+          color: #208ec4;
+        }
+
+        span {
+          color: #696969;
+
+          @include bp($bp-small-plus) {
+            color: #fff;
+          }
+        }
+      }
+
+      &.dark-text span {
+
+        @include bp($bp-small-plus) {
+          color: #696969;
+        }
+      }
+    }
+
+    .buttons {
+
+      @include bp($bp-small-plus) {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+      }
+
+      .button {
+        width: 100%;
+
+        &:first-child {
+          margin: 0 0 10px 0;
+
+          @include bp($bp-small-plus) {
+            margin: 0 10px 0 0;
+          }
+        }
+
+        @include bp($bp-small-plus) {
+          width: auto;
+          float: left;
+          margin: 0 10px 0 0;
+        }
+      }
+    }
+  }
+}
+
+.welcome-tour-modal {
+  display: block;
+
+  .modal-dialog {
+    width: 100%;
+    max-width: 770px; // 710px + 30 + 30
+  }
+
+  .modal-body {
+    padding: 15px;
+
+    @include bp($bp-small-plus) {
+      padding: 30px;
+    }
+  }
+
+  .modal-header {
+    padding: 0;
+    border: none;
+    height: auto;
+    min-height: 0;
+  }
+
+  .rsContent > ul {
+    margin-bottom: 0;
+  }
+}

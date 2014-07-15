@@ -1,0 +1,63 @@
+.comments-summary{
+  display: none;
+  @include bp($bp-small-plus) {
+    display: block;
+  }
+  color: #696969;
+  @include rem(font-size, 14px);
+  font-weight: normal;
+  margin-bottom: 30px;
+  h3{
+    color: #7a4183;
+    @include rem(font-size, 20px);
+    font-weight: normal;
+    margin-bottom: 22px;
+  }
+  div.quote-container{
+    margin-bottom: 30px;
+    blockquote{
+      font-family: Arial, Helvetica, sans-serif; //arial as per a15 psd
+      margin: 0 0 26px 0;
+      padding: 20px 20px;
+      background-color: #f4f2f1;
+      position: relative;
+      @include border-radius(5px);
+      a{
+        color: #426da9;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      p{
+        margin: 0;
+        padding: 0;
+      }
+      i.arrow-quote-bottom{
+        background-image: image-url('icon.comments-summary.arrow-quote-bottom.png');
+        width: 30px;
+        height: 15px;
+        position: absolute;
+        bottom: -15px;
+        left: 15px;
+      }
+    }
+    span{
+      margin-left: 22px;
+    }
+  }
+  ul{
+    color: #426da9;
+    @include rem(font-size, 18px);
+    font-weight: normal;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li{
+      padding: 15px 0;
+      &:first-child{
+        border-bottom: 1px solid #f4f2f1;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+// COMPASS
+// we want access to all of compass right now. (may change in the future.)
+@import "compass";
+
+// COMPASS EXTENSIONS
+// add any additional extensions here so they are available to all CSS files.
+@import "breakpoint";
+
+// COMPASS MIXINS
+// add any additional mixins here so they are available to all CSS files.
+@import "mixins/rem";
+@import "mixins/bp_fallback";
+@import "mixins/placeholder";
+@import "mixins/sprite-generation";
+@import "mixins/reset-margin-before-after";
+@import "mixins/user_select.scss";
+@import "mixins/linebreak";
+@import "mixins/rounded-corners";
+@import "mixins/old-ie";
+@import "mixins/transparent";
+@import "mixins/dropshadow";
+@import "mixins/rs-play-button";
+@import "mixins/animate";
+
+
+// ---------------------------------------------------------------------------
+// GLOBAL SASS VARIABLES
+
+// the width of the layout. nothing should be wider.
+$layout-max-width: 960px;
+
+// Set old_ie_rules variable to false only if it's not already set
+$old_ie_rules: false !default;
+
+// main breakpoints for our templates. use these as part of the breakpoint 
+// extension like so:
+//
+//  @include bp($bp-large) { ... }
+// 
+// these are specified with min-width since our goal is to approach the CSS 
+// "mobile-first". note that the 320px breakpoint is missing since it is 
+// implied as the default breakpoint. yeah, the breakpoint names are not very
+// inspired/inventive. deal with it.
+//
+$bp-small : min-width 480px;
+$bp-small-plus : min-width 650px;
+$bp-medium : min-width 769px;
+$bp-large : min-width 960px;
+
+// breakpoint for content between 650 and 768
+$bp-650-768: (min-width 650px) (max-width 768px);
+
+$bp-medium-max: (min-width 768px) (max-width 959px);
+$bp-small-plus-max: (min-width 650px) (max-width 767px);
+$bp-small-max: (min-width 480px) (max-width 649px);
+$bp-mobile: max-width 479px;
+
+// One off breakpoint for experts calendar which was built desktop first
+$bp-medium-and-smaller : max-width 768px;
+
+
+// One off 767 and less used on tyce player page
+$bp-767-and-smaller : max-width 767px;
+
+// currently not used because we will do everything retina
+// $display2x : (screen) 
+// 					(-webkit-min-device-pixel-ratio 2)  
+// 					( min-device-pixel-ratio 2) 
+// 					( min-resolution 192dpi) 
+// 					( min-resolution 2dppx);
+
+// default bottom margin for use with p, lists, etc.
+$margin-bottom-default: 1em;

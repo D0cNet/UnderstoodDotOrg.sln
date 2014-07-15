@@ -1,0 +1,254 @@
+/**
+ * SASS partial for secondaryMenu module.
+ */
+
+.nav-secondary {
+  color: #fff;
+  line-height: 1.125;
+  margin: -45px 0 25px;
+
+  @include bp($bp-small-plus){
+    margin-top: -55px;
+    margin-bottom: 40px;
+  }
+
+  @include bp($bp-medium){
+    margin-top: -70px;
+    margin-bottom: 50px;
+  }
+
+  a {
+    color: #fff
+  }
+  li a {
+    display: block;
+  }
+  .label-menu {
+    float: left;
+    background: #526aa9;
+    width: 27.8%;
+    @include bp($bp-small-plus){
+      display: none;
+    }
+    span {
+      display: table-cell;
+      vertical-align: middle;
+      height: 50px;
+      padding-left: 26px;
+    }
+  } // .label-menu
+
+  .menu {
+    float: left;
+    width: 72.2%;
+    background: #298fc2;
+    position: relative;
+    @include bp($bp-small-plus){
+      float: none;
+      width: 100%;
+      display: table;
+      background: #426da9;
+    }
+    > li {
+      @include bp($bp-small-plus){
+        display: table-cell;
+        vertical-align: middle;
+      }
+      &.title {
+      position: relative;
+        @include bp($bp-small-plus){
+          display: none;
+        }
+        button {
+          background: transparent;
+          border: none;
+          color: white;
+          cursor: pointer;
+          display: table-cell;
+          vertical-align: middle;
+          height: 50px;
+          padding: 0 50px 0 20px;
+        }
+        .icon-hide-show-fff {
+          position: absolute;
+          right: 26px;
+          top: 23px;
+        }
+      } // &.title
+
+      & + li {
+        border-left: 1px solid #298fc2;
+      }
+      span {
+        display: table;
+        width: 100%;
+        height: 50px;
+        @include rem(line-height, 50px);
+        padding-left: 20px;
+
+        @include bp($bp-small-plus) {
+          line-height: inherit;
+          padding-left: inherit;
+        }
+      }
+      a {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        @include bp($bp-small-plus){
+          padding: 0 15px;
+        }
+        @include bp($bp-medium){
+          padding: 0 20px;
+        }
+        @include bp($bp-large){
+          padding: 0 30px;
+        }
+        &.selected {
+          background: #426da9;
+          @include bp($bp-small-plus){
+            background: #298fc2;
+          }
+        }
+        &:hover, &:focus {
+          background: #426da9;
+          text-decoration: none;
+          
+          @include bp($bp-small-plus){
+            background: #298fc2;
+          }
+        }
+      } // a
+
+      .label-more {
+        display: none;
+        @include bp($bp-small-plus){
+          display: table;
+          width: 100%;
+        }
+        button {
+          background: transparent;
+          border: none;
+          color: white;
+          cursor: pointer;
+          display: table-cell;
+          font-weight: normal;
+          height: 50px;
+          text-align: center;
+          vertical-align: middle;
+          width: 100%;
+        }
+        .icon-hide-show-fff {
+          vertical-align: text-top;
+          position: relative;
+          top: 5px;
+          margin-left: 14px;
+        }
+      }
+    } // > li
+  } // .menu
+
+  .submenu {
+    display: none;
+    position: absolute;
+    background: #298fc2;
+    width: 100%;
+    z-index: 9999;
+    -webkit-transform: translate3d(0,0,0); // fix for android z-index bug
+    @include bp($bp-small-plus) {
+      position: relative;
+      z-index: 50;
+      width: 21.9%;
+      background: #426da9;
+    }
+    @include bp($bp-large) {
+      width: 150px;
+    }
+
+    .inner {
+      position: relative;
+    }
+    ul {
+      height: 312px;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      @include bp($bp-small-plus) {
+        display: none;
+        background: #426da9;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 330px;
+      }
+      @include bp($bp-medium) {
+        height: 380px;
+      }
+      @include bp($bp-large) {
+        height: 460px;
+      }
+    }
+   li > span {
+      display: block;
+      height: auto;
+      a {
+        padding: 15px 20px;
+        line-height: 1.375;
+        display: block;
+        overflow: hidden;
+        @include bp($bp-small-plus) {
+          padding: 14px 12px  11px 15px;
+          line-height: 1.125;
+          position: relative;
+        }
+        @include bp($bp-large) {
+          padding-left: 12px;
+        }
+      } // a
+    } // li > span
+
+    li + li a:before {
+      @include bp($bp-small-plus) {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #588bc2;
+        border-right: 15px solid #426da9;
+        border-left: 18px solid #426da9;
+      }
+    }
+    li + li a:hover:before,
+    li + li a:focus:before,
+    li + li a.selected:before {
+      @include bp($bp-small-plus) {
+        content: none;
+      }
+    }
+  } // .submenu
+
+  .is-open {
+    .submenu {
+      display: block;
+    }
+    .title button {
+      visibility: hidden;
+    }
+    .icon-hide-show-fff {
+      background-position: 0 100%;
+    }
+  } // .is-open
+
+  .icon-hide-show-fff {
+    display: inline-block;
+    width: 9px;
+    height: 6px;
+    background-image: image-url('sprite.icon.hide-show.fff.png');
+    background-size: 9px 12px;
+    .no-backgroundsize & {
+      background-image: image-url('icon.arrow.down.fff.9.png');
+    }
+  }
+} // .nav-secondary

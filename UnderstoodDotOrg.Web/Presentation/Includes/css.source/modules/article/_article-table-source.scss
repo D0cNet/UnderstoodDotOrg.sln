@@ -1,0 +1,40 @@
+.article-table-source {
+  font-family: arial, sans-serif;
+  @include rem(font-size, 15px);
+  @include rem(line-height, 26px);
+  font-weight: normal;
+  color: #696969;
+  clear: both;
+  
+  @include bp($bp-small-plus) {
+    @include rem(font-size, 11px);
+    @include rem(line-height, 14px);
+    margin-bottom: 45px;
+  }
+
+  .source-head {
+    @include rem(font-size, 13px);
+    @include rem(line-height, 19px);
+    margin-bottom: 13px;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 12px);
+      @include rem(line-height, 18px);
+    }
+  }
+
+  .source-ref {
+    font-style: italic;
+  }
+  p.source-caption{
+    @include rem(font-size, 14px);
+    @include rem(line-height, 22px);
+    margin-top: 0px;
+    padding-bottom: 1em;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 11px);
+      @include rem(line-height, 14px);
+      margin-top: 5px;
+      padding: 0;
+    }
+  }
+}

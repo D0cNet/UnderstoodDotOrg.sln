@@ -1,0 +1,177 @@
+.deep-dive-article-container {
+  .whats-covered-deep-dive {
+    background-color: #fafafa;
+    padding: 20px;
+    min-height: 200px;
+    margin-bottom: 35px;
+
+    @include bp($bp-small-plus) {
+      padding: 40px;
+    }
+
+    h2 {
+      font-weight: normal;
+      color: #7a4183;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      @include bp($bp-medium) {
+        @include column-count(2);
+      }
+
+      li {
+        // design change per katherine. see UN-4957
+        @include rem(margin-bottom, 8px);
+
+        @include bp($bp-medium) {
+          // inline-block prevents extra margin at top of second column.
+          // see <http://stackoverflow.com/a/5315013/2284440>
+          display: inline-block;
+          width: auto;
+        }
+
+        // FIXME: this is for IE8, but CSS3 multicol does not work in 
+        // IE9 either. what to do?!?!?!
+        @include old-ie {
+          display: block;
+        }
+      }// end .whats-covered-deep-dive ul li
+
+      a {
+        text-decoration: underline;
+        color: #426da9;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }// end .whats-covered ul
+  } // end .whats-covered-deep-dive
+  .deep-dive-block {
+    padding-bottom: 40px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #d2d2d2;
+
+    &:last-child {
+      border: none;
+    }
+
+    h2 {
+      @include rem(font-size, 28px);
+      font-weight: normal;
+      color: #7a4183;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        font-family: arial, sans-serif;
+        color: #696969;
+        @include rem(font-size, 16px);
+        @include rem(line-height, 27px);
+        position: relative;
+        border-top: 1px solid #f4f2f1;
+        margin-top: 12px;
+        padding: 12px 0 0 20px;
+        
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 15px);
+          @include rem(line-height, 26px);
+        }
+
+        &:first-child {
+          border-top: 0;
+          margin-top: 0;
+          padding-top: 0;
+
+          &:before {
+            top: -1px;
+          }
+
+        }
+
+        &:before {
+        font-family: Circular;
+        content: "• ";
+        color: #426da9;
+        @include rem(font-size, 18px);
+        position: absolute;
+        top: 11px;
+        left: 0;
+        }
+
+      } //end li
+    } // end ul
+
+    span.back-to-top {
+      display: inline-block;
+      text-align: right;
+      float: right;
+
+      a {
+        @include rem(font-size, 14px);
+        color: #426da9;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  } // end .deep-dive-block
+  .deep-dive-more {
+    display: block;
+    background: #fff;
+    margin: 0 0 45px 0;
+    text-align: center;
+
+    .icon-arrow-up-blue {
+      width: 18px;
+      height: 15px;
+      display: inline-block;
+      background: image-url("sprite.icon.arrows.png") 0 0 no-repeat;
+      background-size: 150px 150px;
+      background-position:  -52px 0;
+    }
+
+    @include bp($bp-small-plus) {
+      display: none;
+    }
+    a {
+        @include rem(font-size, 24px);
+        color: #426da9;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        i {
+          margin-left: 18px;
+        }
+      }
+  } // end .deep-dive-more
+  .deep-dive-extra {
+    display: none;
+
+    @include bp($bp-small-plus) {
+      display: block;
+    }
+  } // end .deep-dive-extra
+  #block3 {
+    border: none;
+
+    @include bp($bp-small-plus) {
+      border-bottom: 1px solid #e8e8e8;
+    }
+  }
+} // end .deep-dive-article-container

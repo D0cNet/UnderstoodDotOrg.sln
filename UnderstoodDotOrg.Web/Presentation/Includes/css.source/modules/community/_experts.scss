@@ -1,0 +1,862 @@
+/* Experts */
+.experts-page {
+  h2 {
+    color: #7b3f84;
+    @include rem(font-size, 30px);
+    font-weight: normal;
+    margin-bottom: 10px;
+
+    @include bp($bp-medium) {
+      @include rem(font-size, 36px);
+    }
+  }
+
+  .event.container h2 {
+    font-weight: bold;
+  }
+
+  p {
+    color: #696969;
+  }
+
+  .subhead {
+    margin-bottom: 30px;
+  }
+
+  .community-main-header .subhead {
+    margin-bottom: 0;
+  }
+
+  .page-topic {
+    margin-bottom: 50px;
+  }
+
+  .experts-nav-form {
+    background: #f4f2f1;
+    padding: 15px;
+    margin: 0 15px 30px 15px;
+    clear: both;
+
+    @include bp($bp-small-plus) {
+      padding: 0;
+      border-bottom: 1px solid #c6c5c5;
+      background: none;
+    }
+
+    @include bp($bp-large) {
+      margin: 0 0 30px;
+    }
+
+    .dropdown,
+    .dropdown-toggle,
+    .dropdown-menu > li,
+    .dropdown-menu .menuitem,
+    .selector,
+    .selector > span {
+      min-width: 100%;
+
+      @include bp($bp-small-plus) {
+        min-width: inherit;
+      }
+    }
+
+    .dropdown,
+    .selector,
+    .archive-search-form {
+      float: left;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .dropdown-toggle,
+    .dropdown-menu li {
+      @include bp($bp-small-plus) {
+        width: 240px;
+      }
+    }
+
+    .dropdown-menu {
+      border: none;
+      left: 0;
+      padding-bottom: 16px;
+      background: #f4f2f1;
+      @include bp($bp-small-plus) {
+        padding-bottom: 0px;
+        background: inherit;
+      }
+    }
+
+    .selector {
+      margin-right: 10px;
+      
+      @include bp($bp-small-plus) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .dropdown {
+      @include bp($bp-small-plus) {
+        margin: 0 7px 0 0;
+        padding: 0 7px 0 0;
+        border-right: 1px solid #c6c5c5;
+      }
+    }
+
+    .archive-search-form {
+      margin-bottom: 0;
+      background-color: #fff;
+
+      @include bp($bp-small-plus) {
+        margin-bottom: 20px;
+        width: 237px;
+      }
+
+      @include bp($bp-large) {
+        float: right;
+        display: block;
+        margin-right: 0;
+      }
+
+      .archive-search {
+        @include bp($bp-medium) {
+          width: 135px;
+        }
+        @include bp($bp-large) {
+          width: 185px;
+        }
+      }
+    }
+  }
+
+  .events-chat {
+    margin-bottom: 40px;
+  }
+
+  .events-chat {
+    padding: 0 15px;
+
+    @include bp($bp-large) {
+      padding: 0;
+    }
+
+    .event-card {
+      margin-bottom: 35px;
+      display: table;
+      width: 100%;
+
+      &.first {
+        @include bp($bp-small-plus) {
+          padding-bottom: 35px;
+          border-bottom: 1px solid #ccc;
+        }
+      }
+
+      @include bp($bp-small-plus) {
+        width: 91.6666666667%;
+      }
+
+      .event-card-title {
+        margin-bottom: 10px;
+      }
+    }
+
+    .event-host-title {
+      margin-bottom: 0;
+
+      @include bp($bp-small-plus) {
+        margin-bottom: inherit;
+      }
+    }
+
+    .event-card-image,
+    .event-card-details {
+      display: table-cell;
+      float: none;
+    }
+
+    .event-card-image {
+      margin-right: 16px;
+    }
+
+    .event-cards {
+      margin-left: 0px;
+      margin-right: 0px;
+
+      &:first-child {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #ccc;
+
+        @include bp($bp-small-plus) {
+          margin-bottom: 0;
+          border-bottom: none;
+        }
+      }
+    }
+
+    .event-card-datetime {
+      margin-bottom: 14px;
+    }
+
+    .button.col-4 {
+      display: block;
+      margin: 0 auto;
+      padding: 0;
+      width: 140px;
+
+      @include bp($bp-small-plus) {
+        float: right;
+        margin-left: 83.3333333333%;
+      }
+
+      @include bp($bp-large) {
+        float: none;
+      }
+    }
+  } // end .events-chat
+
+  .no-webinars {
+    background: #f4f2f1;
+    padding: 30px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+
+    p {
+      @include rem(font-size, 16px);
+    }
+  }
+
+  .event-cards,
+  .event-card-image {
+    visibility: visible;
+  }
+
+  &.chat.past .live-chat {
+    background-color: #fafafa;
+  }
+
+  .live-chat {
+    background-color: #f4f2f1;
+    padding: 40px 0;
+    position: relative;
+
+    @include bp($bp-small-plus) {
+      padding: 40px 15px;
+    }
+
+    header.col-24 {
+      margin: 0 15px;
+
+      @include bp($bp-large) {
+        margin: inherit;
+      }
+
+      .subhead {
+        display: none;
+
+        @include bp($bp-small-plus) {
+          display: block;
+        }
+      }
+    }
+
+    .event-cards {
+      margin: 0;
+
+      .event-card {
+        width: 100%;
+        margin: 0;
+        float: left;
+        padding: 0 15px;
+
+        @include bp($bp-small) {
+          width: 50%;
+          padding: 0 5px;
+        }
+      }
+
+      ul li:first-child .event-card {
+        @include bp($bp-small) {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .event-card-info {
+      width: 100%;
+      background-color: #fff;
+      position: relative;
+      padding: 15px 15px 15px 15px;
+
+      @include bp($bp-medium) {
+        padding: 0;
+      }
+    }
+
+    .event-card-upper {
+      display: table;
+      padding: 0;
+
+      @include bp($bp-small-plus) {
+        margin-left: 8.33333333333%;
+      }
+
+      @include bp($bp-medium) {
+        padding: 30px 30px 30px 0;
+      }
+    }
+
+    .event-card-image,
+    .event-card-details {
+      display: table-cell;
+      float: none;
+      vertical-align: top;
+    }
+
+    .event-card-image {
+      margin-right: 16px;
+    }
+
+    .event-cards .event-card-image,
+    .event-cards .image-label {
+      @include bp((min-width 480px) (max-width 649px)) {
+        width: 100px;
+      }
+    }
+
+    .event-cards .event-card-image img {
+      @include bp((min-width 480px) (max-width 649px)) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .event-cards {
+      padding: 0;
+    }
+
+    .event-card,
+    .event-card:first-child {
+      margin-right: 0;
+    }
+
+    .event-card-heading {
+      @include rem(font-size, 16px);
+      margin-bottom: 15px;
+    }
+
+    .event-card .event-card-title {
+      color: #7a4183;
+    }
+
+    .event-card-info-link {
+      margin: 0;
+      @include rem(font-size, 14px);
+
+      a {
+        text-decoration: underline;
+
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .event-card-info > .event-card-info-link {
+      display: inline-block;
+      width: 45%;
+      padding: 0 7px 0 0;
+
+      @include bp($bp-small) {
+        display: none;
+      }
+    }
+
+    .event-card-upper .event-card-info-link {
+      display: none;
+      width: 100%;
+      clear: both;
+
+      @include bp($bp-small) {
+        display: block;
+      }
+    }
+
+    .live-chat-content {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .rsOverflow {
+      overflow: visible;
+
+      @include old-ie {
+        height: 300px !important;
+
+        .image-label {
+          @include rem(font-size, 13px);
+        }
+
+      }
+
+    }
+
+    .subhead {
+      @include rem(font-size, 18px);
+    }
+
+    .live-chat-navigation {
+      list-style-type: none;
+      width: 100%;
+      margin: 30px 0;
+      padding: 0;
+      position: relative;
+
+      @include bp($bp-small-plus) {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        width: 150px;
+        margin: 0;
+      }
+
+      @include bp($bp-large) {
+        right: 0;
+      }
+
+      .header {
+        width: 100%;
+        padding: 0 40px;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        color: #426da9;
+      }
+
+      .rsArrowLeft .rsArrowIcn {
+        right: auto;
+        left: 0;
+      }
+    }
+
+  } // end .live-chat
+
+  .archive-search-form {
+    width: 100%;
+    height: 50px;
+    padding: 0 10px 0 14px;
+    border: solid 2px #e1e1e1;
+
+    @include bp(min-width 760px) {
+      float: right;
+      width: 190px;
+      margin-bottom: 0;
+    }
+
+    @include bp(min-width 900px) {
+      width: 310px;
+    }
+  }
+
+  .archive-search {
+    margin: 0;
+    width: 80%;
+    height: 46px;
+    border: none;
+    padding: 0;
+
+    // Custom Breakpoint to get desired view on 768 devices
+    @include bp(min-width 760px) {
+      width: 130px;
+    }
+
+    @include bp(min-width 900px) {
+      width: 255px;
+    }
+  }
+
+  .archive {
+    header.col-24 {
+      padding: 0 15px;
+      margin-bottom: 30px;
+
+      @include bp($bp-large) {
+        padding: 0;
+      }
+    }
+
+    h2 {
+      float: left;
+      @include bp($bp-small-plus) {
+        margin-left: 4.1%;
+      }
+    }
+
+    .event-cards {
+      padding: 0 15px;
+      margin: 0;
+
+      @include bp($bp-large) {
+        padding: 0;
+      }
+
+      .event-card {
+        display: table;
+        width: 100%;
+        margin: 0 auto 50px auto;
+        position: relative;
+
+        @include bp($bp-small-plus) {
+          margin-left: 4.16666666667%;
+          width: 95.8333333333%;
+        }
+      }
+
+      .event-card-image,
+      .event-card-details,
+      .event-card-date-details {
+        display: table-cell;
+        float: none;
+        vertical-align: top;
+      }
+
+      .event-card-date-details {
+        display: block;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        text-align: center;
+        width: 70px;
+
+        @include bp($bp-small) {
+          position: static;
+          top: auto;
+          left: auto;
+          display: table-cell;
+          width: 16.6666666667%; // Col 4 equivalent
+          vertical-align: middle;
+          padding-left: 15px;
+        }
+
+        @include bp($bp-medium) {
+          padding-left: 30px;
+        }
+
+        p {
+          margin-bottom: 10px;
+          @include rem(line-height, 16px);
+          @include rem(font-size, 16px);
+
+          &.event-type {
+            color: #794382;
+          }
+
+          &.event-date {
+            @include rem(line-height, 15px);
+            @include rem(font-size, 18px);
+
+            @include bp($bp-small-plus) {
+              @include rem(line-height, 20px);
+              @include rem(font-size, 24px);
+            }
+          }
+
+          &.event-date-sub {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .event-card-image {
+        width: 70px;
+        margin: 0;
+
+        @include bp($bp-large) {
+          width: 126px;
+        }
+
+        @include bp($bp-large) {
+          width: 150px;
+        }
+
+        a {
+          position: relative;
+          display: block;
+          overflow: visible;
+
+          .play {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -12px;
+            margin-left: -12px;
+            text-indent: -9999em;
+            @include sprite-background-image('play-button-sml', $setHeight: true, $setWidth: true);
+
+            @include bp($bp-small) {
+              margin-top: -20px;
+              margin-left: -20px;
+              @include sprite-background-image('play-button', $setHeight: true, $setWidth: true);
+            }
+
+            &:hover,
+            &:focus {
+              @include sprite-background-image('play-button-hover-sml', $setHeight: true, $setWidth: true);
+
+              @include bp($bp-small) {
+                @include sprite-background-image('play-button-hover', $setHeight: true, $setWidth: true);
+              }
+            }
+
+          }
+
+        }
+
+        a,
+        a img {
+          width: 70px;
+          height: 70px;
+
+          @include bp($bp-small) {
+            height: 126px;
+            width: 126px;
+          }
+
+          @include bp($bp-large) {
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
+
+      .image-label {
+        width: 70px;
+        height: 25px;
+        @include rem(line-height, 25px);
+        @include rem(font-size, 11px);
+        bottom: -25px;
+
+        @include bp($bp-small) {
+          display: block;
+          width: 100%;
+          height: 30px;
+          @include rem(line-height, 30px);
+          @include rem(font-size, 15px);
+          bottom: 0;
+        }
+      }
+
+      .event-card-details {
+        width: 75%;
+        padding: 0 0 0 15px;
+
+        @include bp($bp-small) {
+          width: inherit;
+          border-right: 1px solid #c6c5c5;
+          padding: 0 15px;
+        }
+
+        @include bp($bp-medium) {
+          width: inherit;
+          padding: 0 30px 0 15px;
+        }
+
+
+        .event-card-topics-head {
+          font-weight: 700;
+          margin-bottom: 15px;
+        }
+
+        .event-card-title {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    .see-archive {
+      width: 190px;
+      margin: 0 auto 40px;
+      display: block;
+      clear: both;
+      @include bp($bp-small) {
+
+      }
+      @include bp($bp-small-plus) {
+        margin-right: 15px;
+        float: right;
+        clear: none;
+      }
+
+      @include bp($bp-medium) {
+        margin-right: 15px;
+        float: right;
+      }
+
+      @include bp($bp-large) {
+        margin: 0px;
+      }
+    }
+
+    .child-content-indicator {
+      .children-key {
+        @include bp($bp-medium) {
+          padding-right: 0px;
+        }
+        li {
+          @include bp($bp-small) {
+            width: 50%;
+            min-width: 50%;
+          }
+        }
+      }
+    }
+
+  } // end .archive
+
+  .archive,
+  &.archive-results {
+    .child-content-indicator {
+      margin-bottom: 0px;
+    }
+    .child-content-indicator .children-key {
+      width: 100%;
+      max-width: 500px;
+
+      @include bp(min-width 850px) {
+        float: left;
+      }
+      @include bp($bp-small) {
+        max-width: 500px;
+      }
+      @include bp($bp-large) {
+        max-width: 960px;
+      }
+    }
+    .child-content-indicator .children-key li {
+      width: 45%;
+      min-width: 45%;
+      margin-right: 0;
+      padding: 0 5px;
+
+      @include bp($bp-medium) {
+        width: auto;
+        min-width: 143px;
+        margin-right: 15px;
+        padding: 0;
+      }
+    }
+  }
+
+  &.archive-results {
+    header.col-24,
+    .event-card-info {
+      @include bp($bp-large) {
+        padding: 0 4.16666666667% 0 0;
+      }
+    }
+    .form-wrapper {
+      @include bp($bp-large) {
+        padding: 0 4.1%;
+      }
+    }
+    .suggest-webinar-form {
+      margin: 0 15px 55px 15px;
+      @include bp($bp-large) {
+        margin: 0 0 55px 0;
+      }
+    }
+    .suggest-webinar-form .col-24,
+    .suggest-webinar-form > header {
+      @include bp($bp-large) {
+      }
+    }
+
+    .form-wrapper {
+      border-top: 1px solid #c6c5c5;
+      padding-top: 46px;
+    }
+
+    .show-more {
+      margin-top: 12px;
+    }
+  }
+
+  .children-key,
+  .event-cards .children-key{
+    padding: 0;
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      float: left;
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .children-key {
+    padding: 0 15px;
+
+    @include bp($bp-large) {
+      padding: 0;
+    }
+  }
+
+  .child-content-indicator li {
+    @include bp($bp-medium) {
+      line-height: 50px;
+      height: 50px;
+    }
+  }
+
+  .suggest-webinar-form {
+    margin-bottom: 50px;
+
+    h3 {
+      @include rem(font-size, 24px);
+      color: #794382;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .suggest-webinar-field {
+      margin-bottom: 15px;
+      width: 100%;
+
+      @include bp($bp-small) {
+        float: left;
+        margin: 0 7px 15px 0;
+        width: 63%;
+      }
+
+      @include bp($bp-small-plus) {
+        width: 70%;
+      }
+
+      @include bp($bp-medium) {
+        margin: 0 7px 0 0;
+        width: 78%;
+      }
+    }
+
+    .suggest-webinar-submit {
+      height: 50px;
+      line-height: 50px;
+      margin: 0 auto;
+
+      @include bp($bp-small) {
+        float: left;
+        margin: 0;
+      }
+
+      @include bp($bp-small-plus) {
+        width: 28%;
+      }
+
+      @include bp($bp-medium) {
+        width: 21%;
+      }
+    }
+  }
+} // end .experts-page

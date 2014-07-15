@@ -1,0 +1,77 @@
+/**
+ * SASS partial for Behavior Tool related articles module.
+ */
+
+ .assistive-tool-related-articles-large{
+  .assistive-tool-related-articles{
+    padding: 20px;
+    @include bp($bp-small-plus) {
+      padding-bottom: 0px;
+    }
+  }
+ }
+ .assistive-tool-related-articles-small{
+  .assistive-tool-related-articles{
+    padding: 6px 15px 5px;
+    @include bp($bp-small-plus) {
+      padding: 20px;
+    }
+  }
+ }
+
+.behavior-tool-related-articles-large{
+  .behavior-tool-related-articles{
+    padding: 20px;
+    @include bp($bp-small-plus) {
+      padding-bottom: 0px;
+    }
+  }
+}
+
+.behavior-tool-related-articles-small{
+  .behavior-tool-related-articles{
+    padding: 18px 15px 18px;
+    li{
+      margin-bottom:3px;
+    }
+    @include bp($bp-small-plus) {
+      padding: 20px;
+    }
+  }
+}
+
+.tool-related-articles-wrap,
+.assistive-tool-related-articles-small,
+.behavior-tool-related-articles-small{
+  background: #426da9;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    @include bp($bp-small-plus) {
+      margin-left: 10px;
+    }
+
+    li {
+      background-image: image-url('icon.tools.related-articles.png');
+      background-size: 15px 20px;
+      background-repeat: no-repeat;
+      background-position: 0;
+      margin-bottom:0px;
+      padding-left: 30px;
+      padding-top: 18px;
+      @include bp($bp-small-plus) {
+        padding-top: 16px;
+      }
+      .no-backgroundsize & {
+        background-image: image-url('icon.tools.related-articles.lo-res.png');
+      }
+      a {
+        color: #fff;
+        @include rem(font-size, 18px);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }//.tool-related-articles ul
+}

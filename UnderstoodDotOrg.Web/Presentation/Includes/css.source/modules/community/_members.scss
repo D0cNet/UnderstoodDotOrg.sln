@@ -1,0 +1,93 @@
+.community-members {
+  margin: 0 15px;
+  .community-members-wrapper {
+    margin-bottom: 38px;
+    margin-top: 28px;
+    position: relative;
+
+    @include bp($bp-small-plus) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @include bp($bp-large) {
+      margin-top: 58px;
+      margin-bottom: 0;
+    }
+    .member-cards .rsContent > ul > li {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+      @include bp($bp-small) {
+        width: 33.3%
+      }
+      @include bp($bp-large) {
+        width: 25%;
+      }
+    }
+    .member-cards .member-card {
+      float: none;
+      margin: 0 auto;
+      
+      @include bp(max-width 649px) {
+          width: 100%;
+        }
+
+      @include bp($bp-large) {
+        width: 150px;
+      }
+    }
+
+  }
+
+  h2 {
+    color: #7b3f84;
+    @include rem(font-size, 30px);
+    font-weight: normal;
+    margin-bottom: 22px;
+
+    @include bp($bp-small) {
+      @include rem(font-size, 28px);
+      width: 60%;
+    }
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 0;
+    }
+
+    @include bp($bp-large) {
+      @include rem(font-size, 36px);
+    }
+  }
+
+    padding: 0;
+  .carousel-arrow-wrapper {
+    width: 100%;
+    @include bp($bp-small) {
+      width: 208px;
+    }
+    @include bp($bp-small-plus) {
+      width: 235px;
+    }
+  }
+
+  .member-cards {
+    margin-top: 32px;
+    position: relative;
+
+    @include bp($bp-large) {
+      margin: 50px 0 50px 0;
+    }
+
+    .member-card-specialties {
+      
+      @include bp(max-width 649px) {
+        width: 100%;
+      }
+      @include bp($bp-large) {
+        width: 190px;
+      }
+
+    }
+  }
+}

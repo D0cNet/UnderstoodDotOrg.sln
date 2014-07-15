@@ -1,0 +1,217 @@
+#gameboard.executive_game {
+    font-weight: bold;
+    background-color: #FAFAFA;
+}
+.breakpoint_phone #gameboard {
+    font-size: 18px;
+}
+#gameboard.executive_game .SSGame_modal_standalone_decoration {
+    background-image: image_url('simulations/executive/desktop/standalone_icon.png');
+}
+
+#executive_board {
+    position: absolute;
+    top: 105px;
+    width: 666px;
+    overflow: hidden;
+    z-index: 1;
+}
+.breakpoint_desktop #executive_board {
+    left: 145px;
+    height: 380px;
+}
+.breakpoint_tablet #executive_board {
+    left: 34px;
+    height: 286px;
+}
+.breakpoint_phone #executive_board {
+    top: 70px;
+    left: 10px;
+    height: 324px;
+    width: 320px;
+}
+
+.executive_game_prompt {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    top: 20px;
+    left: 83px;
+    z-index: 20;
+    background-color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+}
+.breakpoint_tablet .executive_game_prompt {
+    top: 10px;
+}
+.breakpoint_phone .executive_game_prompt {
+    width: 250px;
+    left: 25px;
+}
+.executive_game_prompt h3 {
+    font-weight:normal;
+    font-size: .75em;
+    color: #666;
+    margin-bottom: 10px;
+}
+.executive_game_prompt p {
+    font-size: 1.25em;
+    color: #63428e;
+}
+
+
+#executive_board .channel {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 352px;
+    z-index: 3;
+    overflow: hidden;
+    cursor: pointer;
+}
+.breakpoint_tablet #executive_board .channel {
+    height: 258px;
+}
+.breakpoint_phone #executive_board .channel {
+    width: 50px;
+    height: 300px;
+}
+#executive_board .channel>div {
+    position: absolute;
+    margin: 0 7px;
+    width: 100px;
+    background-color: white;
+    height: 100%;
+    border: 3px solid #FFF;
+    overflow: hidden;
+}
+.breakpoint_phone #executive_board .channel>div {
+    margin: 0 5px;
+    width: 40px;
+}
+#executive_board .channel>div:hover {
+    border-color: #EAEAEA;
+}
+#executive_board .channel.targetted>div,
+#executive_board .channel.targetted>div:hover {
+    border-color: #298FC2;
+}
+#executive_board .channel .feedback {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #63428e;
+    font-size: 1.25em;
+}
+
+#executive_trap {
+    position: absolute;
+    bottom: 0px;
+    width: 116px;
+    height: 32px;
+    background-color: blue;
+    z-index: 5;
+    cursor: pointer;
+    background: image_url('simulations/executive/desktop/paddle_purple.png') no-repeat 0 -4px;
+}
+.breakpoint_phone #executive_trap {
+    width: 60px;
+    height: 27px;
+    background: image_url('simulations/executive/phone/paddle_purple.png') no-repeat 0 -4px;
+}
+#executive_trap_rear {
+    position: absolute;
+    bottom: 32px;
+    width: 116px;
+    height: 5px;
+    z-index: 2;
+    background: image_url('simulations/executive/desktop/paddle_purple.png') no-repeat 0 0;
+}
+.breakpoint_phone #executive_trap_rear {
+    bottom: 25px;
+    background: image_url('simulations/executive/phone/paddle_purple.png') no-repeat 0 0;
+}
+#executive_trap .bg_red, #executive_trap .bg_green,
+#executive_trap_rear .bg_red, #executive_trap_rear .bg_green {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+}
+#executive_trap .bg_red, #executive_trap .bg_green {
+    background-position: 0 -4px;
+}
+#executive_trap_rear .bg_red, #executive_trap_rear .bg_green {
+    background-position: 0 0;
+}
+#executive_trap .bg_red, #executive_trap_rear .bg_red {
+    background-image: image_url('simulations/executive/desktop/paddle_red.png');
+}
+#executive_trap .bg_green, #executive_trap_rear .bg_green {
+    background-image: image_url('simulations/executive/desktop/paddle_green.png');
+}
+.breakpoint_phone #executive_trap .bg_red, .breakpoint_phone #executive_trap_rear .bg_red {
+    background-image: image_url('simulations/executive/phone/paddle_red.png');
+}
+.breakpoint_phone #executive_trap .bg_green, .breakpoint_phone #executive_trap_rear .bg_green {
+    background-image: image_url('simulations/executive/phone/paddle_green.png');
+}
+
+#executive_board .ball {
+    position: absolute;
+    z-index: 4;
+    left: 25px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}
+#executive_board .executive_star {
+    left: 19px;
+}
+.breakpoint_phone #executive_board .ball {
+    left: 5px;
+}
+.breakpoint_phone #executive_board .executive_star {
+    left: 2px;
+}
+.executive_circle {
+    background-image: image_url('simulations/executive/desktop/executive_circles.png');
+}
+.breakpoint_phone .executive_circle {
+    background-image: image_url('simulations/executive/phone/executive_circles.png');
+}
+.executive_square {
+    background-image: image_url('simulations/executive/desktop/executive_squares.png');
+}
+.breakpoint_phone .executive_square {
+    background-image: image_url('simulations/executive/phone/executive_squares.png');
+}
+.executive_star {
+    background-image: image_url('simulations/executive/desktop/executive_stars.png');
+}
+.breakpoint_phone .executive_star {
+    background-image: image_url('simulations/executive/phone/executive_stars.png');
+}
+.executive_triangle {
+    background-image: image_url('simulations/executive/desktop/executive_triangles.png');
+}
+.breakpoint_phone .executive_triangle {
+    background-image: image_url('simulations/executive/phone/executive_triangles.png');
+}
+
+#executive_score {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    font-size: 1.25em;
+}
+.breakpoint_phone #executive_score {
+    top: 25px;
+    left: 15px;
+    font-size: 1em;
+}

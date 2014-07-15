@@ -1,0 +1,73 @@
+/**
+ * SASS partial for advocacy-signup
+ */
+
+.l-take-action-share{
+  margin-bottom: 22px;
+  @include bp($bp-small-plus){
+    position: relative;
+    top: -16px;
+  }
+  @include bp($bp-medium){
+    left: -29px;
+  }
+  div.share-save-icon{
+    h3{
+      @include rem(font-size, 18px);
+      text-align: center;
+      @include bp($bp-small-plus){
+        @include rem(font-size, 16px);
+        text-align: left;
+      }
+    }
+  }
+}
+
+.l-take-action-signup{
+  clear:both;
+  margin-bottom: 35px;
+  @include bp($bp-small-plus){
+    margin-bottom: 40px;
+  }
+}
+.l-take-action-promo{
+  clear:both;
+  margin-bottom: 35px;
+  @include bp($bp-small-plus){
+    margin-bottom: 50px;
+  }
+}
+.take-action-signup{
+  background-color: #f4f2f1;
+  margin: 0;
+  padding: 35px 21px 30px 25px;
+  @include bp($bp-small-plus){
+    padding: 35px 20px 30px 20px;
+  }
+  h4{
+    color: #7a4183;
+    @include rem(font-size, 24px);
+    @include rem(line-height, 28px);
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  .take-action-email-button{
+    @include rem(font-size, 16px);
+    @include rem(line-height, 47px);
+  }
+  .take-action-input{
+    margin-bottom: 10px;
+  }
+}
+
+.take-action-promo{
+  background-color: #f4f2f1;
+  margin: 0;
+  padding: 10px;
+  @include bp($bp-small-plus){
+    padding: 0;
+  }
+  img{
+    width: 100%;
+  }
+}

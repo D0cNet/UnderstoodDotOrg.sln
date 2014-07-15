@@ -1,0 +1,12 @@
+// SASS mixin for cross-platform drop shadow.
+
+@mixin dropshadow($opacity: .24, $border-color: #dfdfdf) {
+
+  @include box-shadow(rgba(#000, $opacity) 0 0 3px);
+
+  // Border stroke for IE8
+  @include old-ie {
+    outline: solid 1px $border-color;
+  }
+
+}

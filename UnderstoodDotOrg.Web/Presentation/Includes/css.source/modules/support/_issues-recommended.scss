@@ -1,0 +1,159 @@
+.issues-recommended {
+  h1 {
+    color: #7a4183;
+    font-weight: normal;
+    @include rem(font-size, 20px);
+    @include rem(margin-bottom, 15px);
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 28px);
+      @include rem(line-height, 40px);
+    }
+
+    @include bp(min-width 800px) {
+      @include rem(font-size, 36px);
+    }
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .subhead {
+    color: #696969;
+
+    @include bp($bp-small-plus) {
+      @include rem(line-height, 30px);
+    }
+
+    @include bp($bp-medium) {
+      @include rem(font-size, 22px);
+    }
+  }
+
+}
+
+.issues-recommended-modal {
+  display: block;
+
+  .modal-dialog {
+    width: 100%;
+    max-width: 750px; // 710px + 30 + 30
+  }
+
+  .modal-body {
+    padding: 15px;
+    width: 100%;
+
+    @include bp($bp-small-plus) {
+      padding: 30px;
+    }
+
+    @include bp($bp-large) {
+      padding: 40px;
+    }
+
+    .button {
+      width: 100%;
+      height: 50px;
+      padding: 0 20px;
+      margin: 0 auto;
+      display: block;
+      @include bp($bp-small-plus) {
+        width: auto;
+      }
+    }
+  }
+
+  .suggest-goal-wrapper {
+    border-bottom: 1px solid #d2d2d2;
+    margin-bottom: 39px;
+
+    .call-to-action {
+      margin-bottom: 6px;
+      color: #696969;
+
+      @include bp($bp-small-plus) {
+        @include rem(line-height, 30px);
+      }
+
+      @include bp($bp-medium) {
+        @include rem(font-size, 18px);
+      }
+    }
+
+    .your-goal {
+      margin-bottom: 38px;
+      border: 2px solid #d2d2d2;
+      @include placeholder{
+        color: #6a6a6a;
+      }
+    }
+
+    .see-chat-schedule {
+      margin-bottom: 37px;
+      text-decoration: underline;
+      display: block;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  .modal-header {
+    padding: 0;
+    border: none;
+    height: auto;
+    min-height: 0;
+  }
+
+  .modal-close {
+    background: image-url('icon.close.overlay.44.png') 0 2px no-repeat;
+    background-size: 16px 36px;
+    color: #696969;
+    cursor: pointer;
+    display: inline-block;
+    @include rem(font-size, 15px);
+    padding: 0 0 0 24px;
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 65px;
+    z-index: 101;
+
+    &:hover {
+      text-decoration: none;
+      color: #426da9;
+      background-position: 0 -18px;
+    }
+
+    .no-backgroundsize & {
+      background-image: image-url('icon.close.overlay.16.png');
+    }
+
+    @include bp($bp-small-plus){
+      @include rem(font-size, 24px);
+      background-size: 22px 50px;
+      background-position: 0 6px;
+      padding: 0 0 0 34px;
+      top: -40px;
+      width: 95px;
+
+      &:hover {
+        background-position: 0 -22px;
+      }
+
+      .no-backgroundsize & {
+        background-image: image-url('icon.close.overlay.22.png');
+      }
+
+    }
+  }
+
+  .rsContent > ul {
+    margin-bottom: 0;
+  }
+}

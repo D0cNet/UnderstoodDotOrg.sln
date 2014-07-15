@@ -1,15 +1,15 @@
 /**
  * SASS mixin for cross-platform border-radius.
  */
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 1, ../css.source/modules/support/_support-header.scss */
 .page-topic.support {
   padding: 45px 0;
 }
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 5, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .title-wrapper {
   position: relative;
 }
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 7, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .title-wrapper:before {
   position: absolute;
   content: '';
@@ -18,15 +18,15 @@
   top: 0;
   width: 96px;
   height: 100px;
-  background-image: url("../images/icon.planner.png");
+  background-image: url('../images/icon.planner.png?1404390952');
   background-size: 88px auto;
   background-repeat: no-repeat;
 }
-/* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 18, ../css.source/modules/support/_support-header.scss */
 .no-backgroundsize .page-topic.support .title-wrapper:before {
-  background-image: url("../images/icon.planner.low-res.png");
+  background-image: url('../images/icon.planner.lo-res.png?1404390952');
 }
-/* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 22, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .title-wrapper h1 {
   padding-top: 13px;
   font-size: 28px;
@@ -40,18 +40,18 @@
   line-height: 40px;
   line-height: 2.5rem;
 }
-/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 39, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .title-wrapper h1 {
   padding-left: 120px;
   padding-left: 152px;
 }
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 45, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .title-wrapper .page-subtitle {
   padding-left: 0px;
   padding-left: 152px;
   margin-bottom: 0;
 }
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 52, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .title-wrapper .page-subtitle {
   color: #7a4183;
   margin: 19px 0 20px 0;
@@ -59,7 +59,7 @@
   margin: 9px 0 5px 0;
   text-align: left;
 }
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 62, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .more-action-plans-wrapper {
   margin: 0 auto;
   width: 100%;
@@ -67,102 +67,102 @@
   width: 197px;
   width: 300px;
 }
-/* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 72, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .more-action-plans-wrapper .selector, .page-topic.support .more-action-plans-wrapper .selector span {
   min-width: 100%;
   min-width: 0;
 }
-/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 78, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .more-action-plans-wrapper .more-action-plans {
   float: right;
 }
-/* line 82, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 82, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .col-9 {
   width: 100%;
   width: 37.5%;
 }
-/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 88, ../css.source/modules/support/_support-header.scss */
 .page-topic.support div.selector {
   background-position: 0 -300px;
   float: right;
 }
-/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 93, ../css.source/modules/support/_support-header.scss */
 .page-topic.support div.selector.selected {
   background-position: 0 -450px;
 }
-/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 96, ../css.source/modules/support/_support-header.scss */
 .page-topic.support div.selector.selected span {
   background-position: 100% -200px;
 }
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_support-header.scss */
+/* line 99, ../css.source/modules/support/_support-header.scss */
 .page-topic.support div.selector span {
   background-position: right -50px;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 1, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues {
   border-bottom: 1px solid #c6c5c5;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 3, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-issues-heading {
   margin-bottom: 40px;
   overflow: hidden;
 }
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 6, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-issues-heading .detail {
   float: left;
   margin-bottom: 10px;
   margin-bottom: 0px;
 }
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 13, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-issues-heading p {
   font-size: 18px;
   font-size: 1.125rem;
   color: #696969;
   margin: 0;
 }
-/* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 18, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-issues-heading .issues-recommended-wrapper {
   float: right;
 }
-/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 24, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-issues-list, .support-select-issues .select-checklist-actions {
   width: 590px;
 }
-/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 27, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-goals-list {
   border-bottom: 1px solid #c6c5c5;
 }
-/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 29, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-goals-list .select-goals-wrapper {
   margin: 5px 5px 37px 0;
 }
-/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 31, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-goals-list .select-goals-wrapper legend {
   margin-bottom: 10px;
   font-size: 24px;
   font-size: 1.5rem;
   color: #7b3f84;
 }
-/* line 36, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 36, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-goals-list .select-goals-wrapper span {
   font-size: 18px;
   font-size: 1.125rem;
   color: dimgrey;
 }
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 40, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .select-goals-list .select-goals-wrapper .checker {
   margin-top: -5px;
 }
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 45, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .goal-checklist-actions {
   padding: 40px 0 50px 0;
 }
-/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 47, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .goal-checklist-actions .button, .support-select-issues .goal-checklist-actions .issue-not-found {
   width: 100%;
 }
-/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 50, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .goal-checklist-actions .button {
   height: 50px;
   margin: 0 auto 10px;
@@ -170,7 +170,7 @@
   width: 190px;
   margin: 0 50px 0 0;
 }
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 59, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .goal-checklist-actions .issue-not-found {
   font-size: 18px;
   font-size: 1.125rem;
@@ -180,18 +180,18 @@
   width: auto;
   margin: 10px 0 0 0;
 }
-/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 68, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .goal-checklist-actions .issue-not-found .let-us-know {
   font-size: 18px;
   font-size: 1.125rem;
   color: #426cab;
   text-decoration: underline;
 }
-/* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 72, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .goal-checklist-actions .issue-not-found .let-us-know:hover {
   text-decoration: none;
 }
-/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 78, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .error-box {
   width: 100%;
   padding: 27px 39px;
@@ -200,17 +200,17 @@
   margin-bottom: 39px;
   color: #de5a02;
 }
-/* line 85, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 85, ../css.source/modules/support/_select-issues.scss */
 .support-select-issues .error-box p {
   margin: 0;
 }
 
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_select-issues.scss */
+/* line 90, ../css.source/modules/support/_select-issues.scss */
 .issues-recommended-modal {
   display: none;
 }
 
-/* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 2, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended h1 {
   color: #7a4183;
   font-weight: normal;
@@ -225,13 +225,13 @@
   font-size: 36px;
   font-size: 2.25rem;
 }
-/* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 19, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended ul,
 .issues-recommended li {
   list-style-type: none;
   padding: 0;
 }
-/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 24, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended .subhead {
   color: #696969;
   line-height: 30px;
@@ -240,23 +240,23 @@
   font-size: 1.375rem;
 }
 
-/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 38, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal {
   display: block;
 }
-/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 41, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .modal-dialog {
   width: 100%;
   max-width: 750px;
 }
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 46, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .modal-body {
   padding: 15px;
   width: 100%;
   padding: 30px;
   padding: 40px;
 }
-/* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 58, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .modal-body .button {
   width: 100%;
   height: 50px;
@@ -265,12 +265,12 @@
   display: block;
   width: auto;
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 70, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .suggest-goal-wrapper {
   border-bottom: 1px solid #d2d2d2;
   margin-bottom: 39px;
 }
-/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 74, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .suggest-goal-wrapper .call-to-action {
   margin-bottom: 6px;
   color: #696969;
@@ -279,53 +279,53 @@
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 87, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .suggest-goal-wrapper .your-goal {
   margin-bottom: 38px;
   border: 2px solid #d2d2d2;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 3, ../css.source/mixins/_placeholder.scss */
 .issues-recommended-modal .suggest-goal-wrapper .your-goal.placeholder {
   color: #6a6a6a;
 }
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 4, ../css.source/mixins/_placeholder.scss */
 .issues-recommended-modal .suggest-goal-wrapper .your-goal:-moz-placeholder {
   color: #6a6a6a;
   opacity: 1;
 }
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 5, ../css.source/mixins/_placeholder.scss */
 .issues-recommended-modal .suggest-goal-wrapper .your-goal::-moz-placeholder {
   color: #6a6a6a;
   opacity: 1;
 }
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 6, ../css.source/mixins/_placeholder.scss */
 .issues-recommended-modal .suggest-goal-wrapper .your-goal:-ms-input-placeholder {
   color: #6a6a6a;
 }
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_placeholder.scss */
+/* line 7, ../css.source/mixins/_placeholder.scss */
 .issues-recommended-modal .suggest-goal-wrapper .your-goal::-webkit-input-placeholder {
   color: #6a6a6a;
 }
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 95, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .suggest-goal-wrapper .see-chat-schedule {
   margin-bottom: 37px;
   text-decoration: underline;
   display: block;
 }
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 99, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .suggest-goal-wrapper .see-chat-schedule:hover {
   text-decoration: none;
 }
-/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 106, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .modal-header {
   padding: 0;
   border: none;
   height: auto;
   min-height: 0;
 }
-/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 113, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .modal-close {
-  background: url("../images/icon.close.overlay.44.png") 0 2px no-repeat;
+  background: url('../images/icon.close.overlay.44.png?1404390952') 0 2px no-repeat;
   background-size: 16px 36px;
   color: #696969;
   cursor: pointer;
@@ -346,34 +346,34 @@
   top: -40px;
   width: 95px;
 }
-/* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 127, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .modal-close:hover {
   text-decoration: none;
   color: #426da9;
   background-position: 0 -18px;
 }
-/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 133, ../css.source/modules/support/_issues-recommended.scss */
 .no-backgroundsize .issues-recommended-modal .modal-close {
-  background-image: url("../images/icon.close.overlay.16.png");
+  background-image: url('../images/icon.close.overlay.16.png?1404390952');
 }
-/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 145, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .modal-close:hover {
   background-position: 0 -22px;
 }
-/* line 149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 149, ../css.source/modules/support/_issues-recommended.scss */
 .no-backgroundsize .issues-recommended-modal .modal-close {
-  background-image: url("../images/icon.close.overlay.22.png");
+  background-image: url('../images/icon.close.overlay.22.png?1404390952');
 }
-/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_issues-recommended.scss */
+/* line 156, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .rsContent > ul {
   margin-bottom: 0;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_child-choices.scss */
+/* line 1, ../css.source/modules/support/_child-choices.scss */
 .select-child-wrapper {
   margin: 20px 0 68px 0;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_child-choices.scss */
+/* line 3, ../css.source/modules/support/_child-choices.scss */
 .select-child-wrapper h3 {
   text-align: center;
   color: #7b3f84;
@@ -386,13 +386,13 @@
   font-size: 1.5rem;
   margin-bottom: 50px;
 }
-/* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_child-choices.scss */
+/* line 15, ../css.source/modules/support/_child-choices.scss */
 .select-child-wrapper .child-choices {
   width: 242px;
   margin: 0 auto;
   width: 400px;
 }
-/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_child-choices.scss */
+/* line 21, ../css.source/modules/support/_child-choices.scss */
 .select-child-wrapper .child-choices .child-choices-menu {
   width: 242px;
   padding: 0px;
@@ -400,7 +400,7 @@
   margin: 0px;
   width: 400px;
 }
-/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_child-choices.scss */
+/* line 29, ../css.source/modules/support/_child-choices.scss */
 .select-child-wrapper .child-choices .child-choices-menu li {
   float: left;
   position: relative;
@@ -411,22 +411,22 @@
   display: block;
   width: 189px;
 }
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_child-choices.scss */
+/* line 40, ../css.source/modules/support/_child-choices.scss */
 .select-child-wrapper .child-choices .child-choices-menu li.row-first {
   margin-right: 10px;
 }
-/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_child-choices.scss */
+/* line 43, ../css.source/modules/support/_child-choices.scss */
 .select-child-wrapper .child-choices .child-choices-menu li:hover .name {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
   background-color: #FFFFFF;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .select-child-wrapper .child-choices .child-choices-menu li:hover .name {
   outline: solid 1px #dfdfdf;
 }
-/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_child-choices.scss */
+/* line 47, ../css.source/modules/support/_child-choices.scss */
 .select-child-wrapper .child-choices .child-choices-menu li .name {
   width: 240px;
   height: 50px;
@@ -443,19 +443,19 @@
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_child-choices.scss */
+/* line 62, ../css.source/modules/support/_child-choices.scss */
 .select-child-wrapper .child-choices .child-choices-menu li .name:focus {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
   background-color: #FFFFFF;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .select-child-wrapper .child-choices .child-choices-menu li .name:focus {
   outline: solid 1px #dfdfdf;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 1, ../css.source/modules/support/_my-goals.scss */
 .edit-goals {
   width: 100%;
   padding: 15px 25px 25px 25px;
@@ -465,7 +465,7 @@
   padding: 5px 5px 5px 20px;
   height: 60px;
 }
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 13, ../css.source/modules/support/_my-goals.scss */
 .edit-goals .getting-started {
   float: left;
   margin-top: 10px;
@@ -473,7 +473,7 @@
   font-size: 1.3125rem;
   color: #7b3f84;
 }
-/* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 19, ../css.source/modules/support/_my-goals.scss */
 .edit-goals .edit-button {
   padding: 0 35px;
   width: auto;
@@ -484,12 +484,12 @@
   margin: 0;
 }
 
-/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 33, ../css.source/modules/support/_my-goals.scss */
 .action-plan-graph-wrapper {
   width: 100%;
   display: table;
 }
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 37, ../css.source/modules/support/_my-goals.scss */
 .action-plan-graph-wrapper .my-goals {
   position: relative;
   width: 4px;
@@ -500,7 +500,7 @@
   width: 22px;
   width: 42px;
 }
-/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 50, ../css.source/modules/support/_my-goals.scss */
 .action-plan-graph-wrapper .my-goals h3 {
   font-size: 0px;
   position: absolute;
@@ -508,7 +508,7 @@
   top: 50%;
   left: 0;
 }
-/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 56, ../css.source/modules/support/_my-goals.scss */
 .action-plan-graph-wrapper .my-goals h3:before {
   content: '';
   position: absolute;
@@ -516,7 +516,7 @@
   left: 0px;
   width: 17px;
   height: 68px;
-  background: url("../images/icon.my.goals.mobile.png");
+  background: url('../images/icon.my.goals.mobile.png?1404390952');
   background-repeat: no-repeat;
   background-color: white;
   background-position: 0 8px;
@@ -525,48 +525,48 @@
   padding: 0;
   z-index: 0;
   height: 96px;
-  background: url("../images/icon.my.goals.png");
+  background: url('../images/icon.my.goals.png?1404390952');
   background-repeat: no-repeat;
   background-size: 19px;
 }
-/* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 69, ../css.source/modules/support/_my-goals.scss */
 .no-backgroundsize .action-plan-graph-wrapper .my-goals h3:before {
-  background-image: url("../images/icon.my.goals.mobile.lowres.png");
+  background-image: url('../images/icon.my.goals.mobile.lowres.png?1404390952');
   background-position: 0 8px;
 }
-/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 80, ../css.source/modules/support/_my-goals.scss */
 .no-backgroundsize .action-plan-graph-wrapper .my-goals h3:before {
-  background-image: url("../images/icon.my.goals.lowres.png");
+  background-image: url('../images/icon.my.goals.lowres.png?1404390952');
   background-position: 0 8px;
 }
-/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 88, ../css.source/modules/support/_my-goals.scss */
 .action-plan-graph-wrapper .x-axis-wrapper {
   display: table-cell;
   position: relative;
 }
-/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 92, ../css.source/modules/support/_my-goals.scss */
 .action-plan-graph-wrapper .graph-wrapper {
   min-height: 128px;
   position: relative;
   border-left: 4px solid #696969;
   border-bottom: 4px solid #696969;
 }
-/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 97, ../css.source/modules/support/_my-goals.scss */
 .action-plan-graph-wrapper .graph-wrapper:after {
   content: '';
   position: absolute;
   bottom: -16px;
   right: -3px;
-  background: url("../images/icon.graph-axis-arrow.png");
+  background: url('../images/icon.graph-axis-arrow.png?1404390952');
   background-size: 14px 27px;
   height: 27px;
   width: 14px;
 }
-/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 106, ../css.source/modules/support/_my-goals.scss */
 .no-backgroundsize .action-plan-graph-wrapper .graph-wrapper:after {
-  background-image: url("../images/icon.graph-axis-arrow.lo-res.png");
+  background-image: url('../images/icon.graph-axis-arrow.lo-res.png?1404390952');
 }
-/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 110, ../css.source/modules/support/_my-goals.scss */
 .action-plan-graph-wrapper .graph-wrapper .grid-background {
   position: absolute;
   top: 0;
@@ -575,13 +575,13 @@
   width: 100%;
 }
 
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 119, ../css.source/modules/support/_my-goals.scss */
 .graph-key {
   height: 20px;
   margin: 12px 0 0 0;
   position: relative;
 }
-/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 123, ../css.source/modules/support/_my-goals.scss */
 .graph-key p {
   padding: 0;
   width: auto;
@@ -595,21 +595,21 @@
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 135, ../css.source/modules/support/_my-goals.scss */
 .graph-key p.now {
   left: 13%;
 }
-/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 138, ../css.source/modules/support/_my-goals.scss */
 .graph-key p.later {
   left: 90%;
 }
 
-/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 143, ../css.source/modules/support/_my-goals.scss */
 .graph-key-time {
   display: none;
 }
 
-/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 146, ../css.source/modules/support/_my-goals.scss */
 .show-months-checkbox {
   clear: both;
   width: 123px;
@@ -618,7 +618,7 @@
   margin: 40px 40px 0 0;
   float: right;
 }
-/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 155, ../css.source/modules/support/_my-goals.scss */
 .show-months-checkbox label {
   color: #6a6a6a;
   font-size: 15px;
@@ -628,31 +628,31 @@
   float: right;
   padding-left: 12px;
 }
-/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 162, ../css.source/modules/support/_my-goals.scss */
 .show-months-checkbox input {
   float: left;
 }
 
-/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 168, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list {
   list-style: none;
   margin: 20px 0 25px 0;
   text-transform: capitalize;
 }
-/* line 172, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 172, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list li {
   width: 100%;
   position: relative;
   padding: 25px 0 25px 0px;
 }
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 176, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list li a {
   font-size: 16px;
   color: #696969;
   display: inline-block;
   padding-left: 15px;
 }
-/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 182, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list li .action-plan-button {
   content: '';
   height: 18px;
@@ -664,21 +664,21 @@
   cursor: pointer;
   border: 0px;
 }
-/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 193, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list li:hover .list-options {
   display: block;
 }
-/* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 196, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list li .action-element-wrapper {
   width: auto;
   position: relative;
   display: inline-block;
 }
-/* line 201, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 201, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list li .action-element-wrapper:hover .list-options {
   display: block;
 }
-/* line 206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 206, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list .list-options {
   cursor: default;
   display: none;
@@ -689,7 +689,7 @@
   width: 500px;
   list-style: none;
 }
-/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 215, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list .list-options li {
   float: left;
   position: relative;
@@ -698,15 +698,15 @@
   font-size: 16px;
   color: #696969;
 }
-/* line 222, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 222, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list .list-options li:first-child {
   padding-left: 0px;
 }
-/* line 224, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 224, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list .list-options li:first-child:after {
   display: none;
 }
-/* line 228, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 228, ../css.source/modules/support/_my-goals.scss */
 .action-plan-list .list-options li:after {
   content: '';
   position: absolute;
@@ -717,12 +717,12 @@
   background-color: #d3d1d0;
 }
 
-/* line 242, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 242, ../css.source/modules/support/_my-goals.scss */
 .grid-background {
   position: relative;
 }
 
-/* line 246, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_my-goals.scss */
+/* line 246, ../css.source/modules/support/_my-goals.scss */
 .grid-tick-mark {
   height: 100%;
   width: 1px;
@@ -733,14 +733,14 @@
   left: 0;
 }
 
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 3, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper, .track-goals-timeline {
   background-color: #f4f2f1;
   padding: 30px 15px 30px 15px;
   margin-bottom: 30px;
   padding: 50px 40px 30px 40px;
 }
-/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 10, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper h2, .track-goals-timeline h2 {
   font-size: 21px;
   font-size: 1.3125rem;
@@ -750,17 +750,17 @@
   text-align: center;
   margin-bottom: 48px;
 }
-/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 20, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .title, .track-goals-wrapper .activity-bar-graph, .track-goals-timeline .title, .track-goals-timeline .activity-bar-graph {
   float: left;
 }
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 23, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .activities-remaining, .track-goals-timeline .activities-remaining {
   float: right;
   width: 117px;
   width: auto;
 }
-/* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 30, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .title, .track-goals-timeline .title {
   width: 117px;
   text-decoration: underline;
@@ -772,11 +772,11 @@
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 40, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .title:hover, .track-goals-timeline .title:hover {
   text-decoration: none;
 }
-/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 44, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .activity-bar-graph-wrapper, .track-goals-timeline .activity-bar-graph-wrapper {
   height: auto;
   margin-bottom: 19px;
@@ -787,7 +787,7 @@
   margin-bottom: 19px;
   height: 41px;
 }
-/* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 58, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .activity-bar-graph, .track-goals-timeline .activity-bar-graph {
   width: 100%;
   height: 41px;
@@ -796,21 +796,21 @@
   margin-right: 28px;
   width: 469px;
 }
-/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 67, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .activity-bar-graph .completed, .track-goals-wrapper .activity-bar-graph .skipped, .track-goals-timeline .activity-bar-graph .completed, .track-goals-timeline .activity-bar-graph .skipped {
   height: 100%;
   display: block;
   position: absolute;
 }
-/* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 72, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .activity-bar-graph .completed, .track-goals-timeline .activity-bar-graph .completed {
   background-color: #7a4183;
 }
-/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 75, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .activity-bar-graph .skipped, .track-goals-timeline .activity-bar-graph .skipped {
   background-color: #298fc2;
 }
-/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 79, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .activities-remaining, .track-goals-timeline .activities-remaining {
   margin-top: 22px;
   margin-bottom: 0px;
@@ -822,7 +822,7 @@
   font-size: 1rem;
   margin-top: 0;
 }
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 90, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .track-goals-key, .track-goals-timeline .track-goals-key {
   list-style: none;
   width: 100px;
@@ -830,7 +830,7 @@
   margin: 50px 0 0 26px;
   width: 340px;
 }
-/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 98, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .track-goals-key li, .track-goals-timeline .track-goals-key li {
   position: relative;
   font-size: 14px;
@@ -840,7 +840,7 @@
   margin-bottom: 16px;
   margin-bottom: 0;
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 109, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .track-goals-key .completed:before, .track-goals-wrapper .track-goals-key .skipped:before, .track-goals-wrapper .track-goals-key .remaining:before, .track-goals-timeline .track-goals-key .completed:before, .track-goals-timeline .track-goals-key .skipped:before, .track-goals-timeline .track-goals-key .remaining:before {
   content: '';
   position: absolute;
@@ -849,40 +849,40 @@
   height: 14px;
   width: 14px;
 }
-/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 118, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .track-goals-key .completed:before, .track-goals-timeline .track-goals-key .completed:before {
   background-color: #7a4183;
 }
-/* line 121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 121, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .track-goals-key .skipped, .track-goals-timeline .track-goals-key .skipped {
   margin-left: 50px;
 }
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 125, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .track-goals-key .skipped:before, .track-goals-timeline .track-goals-key .skipped:before {
   background-color: #298fc2;
 }
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 129, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .track-goals-key .remaining, .track-goals-timeline .track-goals-key .remaining {
   margin-left: 71px;
 }
-/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 133, ../css.source/modules/support/_track-goals.scss */
 .track-goals-wrapper .track-goals-key .remaining:before, .track-goals-timeline .track-goals-key .remaining:before {
   border: 1px solid #d2d2d2;
   background-color: #FFFFFF;
 }
 
-/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 141, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline {
   margin-bottom: 50px;
 }
-/* line 143, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 143, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline h2 {
   width: 240px;
   margin: 0 auto;
   width: 450px;
   width: 662px;
 }
-/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 153, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-outer-wrapper {
   width: 855px;
   height: 330px;
@@ -890,7 +890,7 @@
   margin-bottom: 50px;
   position: relative;
 }
-/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 160, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-wrapper {
   width: auto;
   overflow: hidden;
@@ -899,7 +899,7 @@
   margin-bottom: 50px;
   width: 855px;
 }
-/* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 170, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline {
   border-bottom: 1px solid #c0c0c0;
   width: 1000%;
@@ -907,7 +907,7 @@
   left: 0;
   opacity: 0;
 }
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 176, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline ul {
   list-style: none;
   padding: 0px;
@@ -915,7 +915,7 @@
   position: absolute;
   bottom: 0;
 }
-/* line 183, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 183, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li {
   height: 70px;
   width: 90px;
@@ -928,7 +928,7 @@
   font-size: 0.9375rem;
   color: #696969;
 }
-/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 193, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li:before {
   content: '';
   position: absolute;
@@ -938,11 +938,11 @@
   left: -3px;
   background-color: transparent;
 }
-/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 202, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li.haslabel:before {
   background-color: #c0c0c0;
 }
-/* line 205, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 205, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li .label-wrapper {
   position: absolute;
   display: block;
@@ -951,32 +951,32 @@
   bottom: 86px;
   left: -2px;
 }
-/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 212, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li .label-wrapper .label {
   display: inline-block;
 }
-/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 215, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li .label-wrapper .label.focus {
   outline: thin dotted #426da9;
 }
-/* line 218, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 218, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li .label-wrapper .created, .track-goals-timeline .timeline li .label-wrapper .begin, .track-goals-timeline .timeline li .label-wrapper .skip, .track-goals-timeline .timeline li .label-wrapper .complete {
   text-transform: capitalize;
   font-weight: bold;
 }
-/* line 222, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 222, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li .label-wrapper .begin {
   color: #5caa7f;
 }
-/* line 225, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 225, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li .label-wrapper .skip {
   color: #298fc2;
 }
-/* line 228, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 228, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline li .label-wrapper .complete {
   color: #298fc2;
 }
-/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 234, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-key {
   list-style: none;
   padding: 0;
@@ -984,7 +984,7 @@
   width: 390px;
   width: auto;
 }
-/* line 242, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 242, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-key li {
   float: left;
   position: relative;
@@ -999,7 +999,7 @@
   margin-right: 40px;
   width: auto;
 }
-/* line 255, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 255, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-key li .icon {
   display: block;
   position: absolute;
@@ -1017,49 +1017,49 @@
   line-height: 24px;
   line-height: 1.5rem;
 }
-/* line 270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 270, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-key li.completed {
   margin-bottom: 19px;
   margin-bottom: 0;
 }
-/* line 275, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 275, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-key li.completed .icon {
   background-color: #7a4183;
 }
-/* line 279, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 279, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-key li.in-progress {
   margin-bottom: 19px;
   margin-bottom: 0;
 }
-/* line 284, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 284, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-key li.in-progress .icon {
   background-color: #5caa7f;
 }
-/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 288, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-key li.skipped .icon {
   background-color: #298fc2;
 }
-/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 291, ../css.source/modules/support/_track-goals.scss */
 .track-goals-timeline .timeline-key li.all-activities .icon {
   background-color: #FFFFFF;
   border: 1px solid #d2d2d2;
   color: #696969;
 }
 
-/* line 299, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 299, ../css.source/modules/support/_track-goals.scss */
 .progress-toggle-container {
   padding-bottom: 20px;
   border-bottom: 1px solid #cccccc;
   padding-bottom: 25px;
 }
 
-/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 306, ../css.source/modules/support/_track-goals.scss */
 .track-progress-wrapper {
   width: 291px;
   margin: 0 auto;
   width: 430px;
 }
-/* line 312, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 312, ../css.source/modules/support/_track-goals.scss */
 .track-progress-wrapper h3 {
   color: #7b3f84;
   font-size: 22px;
@@ -1067,32 +1067,32 @@
   font-weight: normal;
   margin-bottom: 15px;
 }
-/* line 318, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 318, ../css.source/modules/support/_track-goals.scss */
 .track-progress-wrapper .track-progress, .track-progress-wrapper h3 {
   text-align: center;
 }
-/* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 321, ../css.source/modules/support/_track-goals.scss */
 .track-progress-wrapper .track-progress {
   color: #696969;
   font-size: 16px;
   font-size: 1rem;
   margin-bottom: 15px;
 }
-/* line 327, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 327, ../css.source/modules/support/_track-goals.scss */
 .track-progress-wrapper .toggle-wrapper label {
   width: auto;
   margin: 0 auto;
 }
-/* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_track-goals.scss */
+/* line 331, ../css.source/modules/support/_track-goals.scss */
 .track-progress-wrapper .toggle-wrapper .ez-checkbox {
   width: auto;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 1, ../css.source/modules/support/_help-list.scss */
 .help-content-wrapper {
   height: 100%;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 3, ../css.source/modules/support/_help-list.scss */
 .help-content-wrapper.resize {
   -webkit-transition: height 50ms ease-in-out;
   -moz-transition: height 50ms ease-in-out;
@@ -1101,7 +1101,7 @@
   transition: height 50ms ease-in-out;
 }
 
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 7, ../css.source/modules/support/_help-list.scss */
 .help-list {
   list-style: none;
   padding: 0;
@@ -1110,18 +1110,18 @@
   margin: 0 auto;
   width: 100%;
 }
-/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 11, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element {
   border: none;
   background: transparent;
   position: absolute;
 }
-/* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 15, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element .status, .help-list .list-element .start-over, .help-list .list-element .done-this, .help-list .list-element .skip-this {
   border: none;
   background: transparent;
 }
-/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 27, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-outer-wrapper {
   margin: 0 auto;
   margin-bottom: 30px;
@@ -1129,20 +1129,20 @@
   margin: 0px 0px 30px 30px;
   margin: 0px 0px 30px 30px;
 }
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 37, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-outer-wrapper.first {
   margin-left: 0;
 }
-/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 42, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-outer-wrapper.tablet-first {
   margin: 0px 0px 30px 0px;
   margin: 0px 0px 30px 30px;
 }
-/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 50, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-outer-wrapper.first.tablet-first {
   margin-left: 0;
 }
-/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 56, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper {
   height: 290px;
   width: 270px;
@@ -1154,7 +1154,7 @@
   opacity: 1;
   margin: auto;
 }
-/* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 65, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.fadeOutInitContent {
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
@@ -1162,72 +1162,72 @@
   -o-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
-/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 68, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.animateaway {
   height: 0;
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 70, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.animateaway h3, .help-list .list-element-wrapper.animateaway a, .help-list .list-element-wrapper.animateaway button {
   display: none;
 }
-/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 77, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper h3, .help-list .list-element-wrapper .detail {
   margin: 0 auto;
   text-align: center;
 }
-/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 81, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper h3 {
   color: #7a4183;
   font-size: 24px;
   font-size: 1.5rem;
   margin: 50px 0 25px 0;
 }
-/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 87, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.accessibility.done .status, .help-list .list-element-wrapper.accessibility.skipped .status, .help-list .list-element-wrapper.hover.done .status, .help-list .list-element-wrapper.hover.skipped .status {
   display: none;
 }
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 90, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.accessibility .detail, .help-list .list-element-wrapper.accessibility .done-this, .help-list .list-element-wrapper.accessibility .skip-this, .help-list .list-element-wrapper.hover .detail, .help-list .list-element-wrapper.hover .done-this, .help-list .list-element-wrapper.hover .skip-this {
   display: block;
 }
-/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 93, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.accessibility h3, .help-list .list-element-wrapper.hover h3 {
   margin: 0 0 17px 0;
 }
-/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 97, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .detail, .help-list .list-element-wrapper .done-this, .help-list .list-element-wrapper .skip-this, .help-list .list-element-wrapper .start-over {
   display: none;
 }
-/* line 100, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 100, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .detail {
   color: #696969;
   font-size: 16px;
   font-size: 1rem;
   margin-bottom: 18px;
 }
-/* line 105, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 105, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .activity-action {
   position: absolute;
   width: 210px;
   top: 157px;
 }
-/* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 111, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done h3, .help-list .list-element-wrapper.skipped h3 {
   color: #FFFFFF;
 }
-/* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 115, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done .status, .help-list .list-element-wrapper.skipped .status {
   display: block;
 }
-/* line 118, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 118, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .status, .help-list .list-element-wrapper .list-element {
   text-indent: -9999px;
 }
-/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 120, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .status:focus, .help-list .list-element-wrapper .list-element:focus {
   outline: none;
 }
-/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 124, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .status {
   display: none;
   position: absolute;
@@ -1238,7 +1238,7 @@
   border: none;
   background: transparent;
 }
-/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 134, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done .status:before, .help-list .list-element-wrapper.skipped .status:before {
   content: '';
   position: absolute;
@@ -1249,135 +1249,135 @@
   background-size: 31px 31px;
   background-repeat: no-repeat;
 }
-/* line 144, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 144, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done {
   background-color: #7a4183;
 }
-/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 146, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done .status:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -9px -4px;
   background-size: 168.5px;
 }
-/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 151, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.done .status:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: 0px -4px;
 }
-/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 156, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done .activity-action {
   opacity: .5;
 }
-/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 160, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .activity-action, .help-list .list-element-wrapper.done.hover .activity-action {
   opacity: 1;
 }
-/* line 163, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 163, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .status, .help-list .list-element-wrapper.done.accessibility .done-this, .help-list .list-element-wrapper.done.hover .status, .help-list .list-element-wrapper.done.hover .done-this {
   display: none;
 }
-/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 166, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .detail, .help-list .list-element-wrapper.done.accessibility .skip-this, .help-list .list-element-wrapper.done.hover .detail, .help-list .list-element-wrapper.done.hover .skip-this {
   color: #FFFFFF;
 }
-/* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 170, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .skip-this:before, .help-list .list-element-wrapper.done.hover .skip-this:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -88px -83px;
   background-size: 168.5px;
 }
-/* line 175, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 175, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.done.accessibility .skip-this:before, .no-backgroundsize .help-list .list-element-wrapper.done.hover .skip-this:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -80px -83px;
 }
-/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 180, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .skip-this:hover, .help-list .list-element-wrapper.done.hover .skip-this:hover {
   color: #426da9;
 }
-/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 182, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .skip-this:hover:before, .help-list .list-element-wrapper.done.hover .skip-this:hover:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -88px -44px;
   background-size: 168.5px;
 }
-/* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 187, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.done.accessibility .skip-this:hover:before, .no-backgroundsize .help-list .list-element-wrapper.done.hover .skip-this:hover:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -80px -44px;
 }
-/* line 194, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 194, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .done-this, .help-list .list-element-wrapper.done.hover .done-this {
   display: none;
 }
-/* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 197, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .start-over, .help-list .list-element-wrapper.done.hover .start-over {
   display: block;
 }
-/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 202, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped {
   background-color: #298fc2;
 }
-/* line 204, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 204, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped .activity-action {
   opacity: .5;
 }
-/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 207, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped .detail {
   color: #FFFFFF;
 }
-/* line 210, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 210, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped .status:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -88px -4px;
   background-size: 168.5px;
 }
-/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 215, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.skipped .status:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -68px -4px;
 }
-/* line 221, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 221, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped.hover .status, .help-list .list-element-wrapper.skipped.hover .skip-this, .help-list .list-element-wrapper.skipped.accessibility .status, .help-list .list-element-wrapper.skipped.accessibility .skip-this {
   display: none;
 }
-/* line 224, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 224, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped.hover .activity-action, .help-list .list-element-wrapper.skipped.accessibility .activity-action {
   opacity: 1;
 }
-/* line 227, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 227, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped.hover .done-this, .help-list .list-element-wrapper.skipped.accessibility .done-this {
   color: #FFFFFF;
 }
-/* line 229, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 229, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped.hover .done-this:before, .help-list .list-element-wrapper.skipped.accessibility .done-this:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -48px -83px;
   background-size: 168.5px;
 }
-/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 234, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.skipped.hover .done-this:before, .no-backgroundsize .help-list .list-element-wrapper.skipped.accessibility .done-this:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -42px -78px;
 }
-/* line 239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 239, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped.hover .done-this:hover:before, .help-list .list-element-wrapper.skipped.accessibility .done-this:hover:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -8px -44px;
   background-size: 168.5px;
 }
-/* line 244, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 244, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.skipped.hover .done-this:hover:before, .no-backgroundsize .help-list .list-element-wrapper.skipped.accessibility .done-this:hover:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -2px -38px;
 }
-/* line 252, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 252, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .done-this, .help-list .list-element-wrapper .skip-this, .help-list .list-element-wrapper .start-over {
   font-size: 14px;
   font-size: 0.875rem;
@@ -1386,7 +1386,7 @@
   padding-left: 35px;
   height: 33px;
 }
-/* line 258, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 258, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .done-this:before, .help-list .list-element-wrapper .skip-this:before, .help-list .list-element-wrapper .start-over:before {
   content: '';
   position: absolute;
@@ -1395,11 +1395,11 @@
   height: 33px;
   width: 33px;
 }
-/* line 266, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 266, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .done-this:hover, .help-list .list-element-wrapper .skip-this:hover, .help-list .list-element-wrapper .start-over:hover {
   color: #426da9;
 }
-/* line 270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 270, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .done-this, .help-list .list-element-wrapper .start-over {
   position: absolute;
   left: 20px;
@@ -1407,61 +1407,61 @@
   border: none;
   background: transparent;
 }
-/* line 278, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 278, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .done-this:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -48px -4px;
   background-size: 168.5px;
 }
-/* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 283, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .done-this:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -42px 4px;
 }
-/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 288, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .done-this:hover:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -48px -44px;
   background-size: 168.5px;
 }
-/* line 293, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 293, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .done-this:hover:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -43px -36px;
 }
-/* line 299, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 299, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .start-over {
   width: 110px;
   height: 34px;
   color: #FFFFFF;
 }
-/* line 303, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 303, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .start-over:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -128px -44px;
   background-size: 168.5px;
 }
-/* line 308, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 308, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .start-over:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -125px -44px;
 }
-/* line 313, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 313, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .start-over:hover:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -128px -4px;
   background-size: 168.5px;
 }
-/* line 318, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 318, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .start-over:hover:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -125px -4px;
 }
-/* line 324, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 324, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .skip-this {
   position: absolute;
   right: 20px;
@@ -1470,57 +1470,57 @@
   border: none;
   background: transparent;
 }
-/* line 331, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 331, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .skip-this:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -88px -4px;
   background-size: 168.5px;
 }
-/* line 336, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 336, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .skip-this:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -83px -4px;
 }
-/* line 341, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 341, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .skip-this:hover {
   color: #426da9;
 }
-/* line 343, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 343, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .skip-this:hover:before {
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -88px -44px;
   background-size: 168.5px;
 }
-/* line 348, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 348, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .skip-this:hover:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -83px -44px;
 }
 
-/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 360, ../css.source/modules/support/_help-list.scss */
 .old-ie .help-list li .done-this:before, .old-ie .help-list li .skip-this:before, .old-ie .help-list li .start-over:before {
   height: 41px;
   width: 38px;
 }
-/* line 367, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 367, ../css.source/modules/support/_help-list.scss */
 .old-ie .help-list li.done .skip-this:before, .old-ie .help-list li.done .done-this:before, .old-ie .help-list li.done .status:before {
   height: 41px;
   width: 38px;
 }
-/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 373, ../css.source/modules/support/_help-list.scss */
 .old-ie .help-list li .status {
   height: 46px;
   width: 35px;
 }
-/* line 377, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-list.scss */
+/* line 377, ../css.source/modules/support/_help-list.scss */
 .old-ie .help-list li .status:before {
   height: 46px;
   width: 48px;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 1, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper {
   position: absolute;
   text-align: center;
@@ -1531,26 +1531,26 @@
   display: none;
   opacity: 0;
 }
-/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 10, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper.get-height {
   display: block;
 }
-/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 12, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper.get-height .help-action-content {
   width: 100%;
   height: 100%;
   display: block;
 }
-/* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 17, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper.get-height .new-content-section, .help-action-content-wrapper.get-height .new-content-section-heading {
   display: block;
 }
-/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 21, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper .new-content-section {
   display: none;
   opacity: 0;
 }
-/* line 25, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 25, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper.initialize-animate {
   -webkit-animation: show 500ms ease-in 0;
   -moz-animation: show 500ms ease-in 0;
@@ -1559,11 +1559,11 @@
   animation: show 500ms ease-in 0;
   opacity: 1;
 }
-/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 29, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper .new-content-section-heading {
   opacity: 0;
 }
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 32, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper.show {
   -webkit-animation: show 400ms ease-in 0;
   -moz-animation: show 400ms ease-in 0;
@@ -1571,21 +1571,21 @@
   -o-animation: show 400ms ease-in 0;
   animation: show 400ms ease-in 0;
 }
-/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 34, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper.show .new-content-section, .help-action-content-wrapper.show .new-content-section-heading {
   opacity: 1;
 }
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 37, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper.show .detail-initial, .help-action-content-wrapper.show .heading-initial {
   opacity: 1;
   display: none;
 }
-/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 42, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content-wrapper .new-content-section-heading {
   opacity: 0;
 }
 
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 46, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content {
   position: absolute;
   padding: 14px;
@@ -1596,7 +1596,7 @@
   padding: 20px;
   padding: 40px;
 }
-/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 53, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content.animateToTop {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -1606,15 +1606,15 @@
   top: 0;
   height: auto;
 }
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 64, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-heading {
   margin-bottom: 20px;
 }
-/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 67, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .container {
   margin: 0;
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 70, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content h3 {
   font-size: 21px;
   font-size: 1.3125rem;
@@ -1630,22 +1630,22 @@
   margin-left: 0px;
   margin-bottom: 30px;
 }
-/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 86, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content dl {
   display: table;
   margin-bottom: 20px;
   margin-bottom: 33px;
 }
-/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 94, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content dt, .help-action-content dd {
   display: table-cell;
   vertical-align: top;
 }
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 99, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content dt {
   width: 80px;
 }
-/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 102, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content dt .count {
   display: block;
   width: 45px;
@@ -1666,12 +1666,12 @@
   width: 90px;
   height: 90px;
 }
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 119, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content dt .count {
-  background-image: url("../images/icon.circle.white.90x90.png");
+  background-image: url('../images/icon.circle.white.90x90.png?1404390952');
   background-color: transparent;
 }
-/* line 126, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 126, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content dd {
   color: #696969;
   line-height: 20px;
@@ -1686,11 +1686,11 @@
   line-height: 1.5rem;
   padding: 0 0 0 28px;
 }
-/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 137, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content dd .highlight {
   font-weight: bold;
 }
-/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 142, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar {
   width: 100%;
   display: block;
@@ -1701,7 +1701,7 @@
   float: right;
   width: auto;
 }
-/* line 153, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 153, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li {
   float: left;
   position: relative;
@@ -1713,7 +1713,7 @@
   color: #696969;
   cursor: pointer;
 }
-/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 161, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li:before {
   content: '';
   position: absolute;
@@ -1721,77 +1721,77 @@
   left: 0;
   height: 27px;
 }
-/* line 168, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 168, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this {
   padding-left: 33px;
   margin-right: 13px;
   margin-right: 28px;
 }
-/* line 174, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 174, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this:before {
-  background: url("../images/sprite.support.helptoolbar.png");
+  background: url('../images/sprite.support.helptoolbar.png?1404390952');
   background-repeat: no-repeat;
   background-position: -2px -4px;
   background-size: 56px;
   width: 26px;
 }
-/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 180, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.done-this:before {
-  background-image: url("../images/sprite.support.helptoolbar.lowres.png");
+  background-image: url('../images/sprite.support.helptoolbar.lowres.png?1404390952');
   background-position: -2px -4px;
 }
-/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 185, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this:hover {
   color: #426da9;
 }
-/* line 187, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 187, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this:hover:before {
-  background: url("../images/sprite.support.helptoolbar.png");
+  background: url('../images/sprite.support.helptoolbar.png?1404390952');
   background-repeat: no-repeat;
   background-position: -2px -34px;
   background-size: 56px;
 }
-/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 192, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.done-this:hover:before {
-  background-image: url("../images/sprite.support.helptoolbar.lowres.png");
+  background-image: url('../images/sprite.support.helptoolbar.lowres.png?1404390952');
   background-position: -2px -34px;
 }
-/* line 199, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 199, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this {
   padding-left: 33px;
   margin-left: 13px;
   margin-left: 18px;
 }
-/* line 205, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 205, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:before {
-  background: url("../images/sprite.support.helptoolbar.png");
+  background: url('../images/sprite.support.helptoolbar.png?1404390952');
   background-repeat: no-repeat;
   background-position: -28px -4px;
   background-size: 56px;
   width: 30px;
 }
-/* line 211, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 211, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.skip-this:before {
-  background-image: url("../images/sprite.support.helptoolbar.lowres.png");
+  background-image: url('../images/sprite.support.helptoolbar.lowres.png?1404390952');
   background-position: -28px -4px;
 }
-/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 216, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:hover {
   color: #426da9;
 }
-/* line 218, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 218, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:hover:before {
-  background: url("../images/sprite.support.helptoolbar.png");
+  background: url('../images/sprite.support.helptoolbar.png?1404390952');
   background-repeat: no-repeat;
   background-position: -28px -34px;
   background-size: 56px;
 }
-/* line 223, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 223, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.skip-this:hover:before {
-  background-image: url("../images/sprite.support.helptoolbar.lowres.png");
+  background-image: url('../images/sprite.support.helptoolbar.lowres.png?1404390952');
   background-position: -28px -34px;
 }
-/* line 229, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 229, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:after {
   content: '';
   position: absolute;
@@ -1802,18 +1802,18 @@
   background-color: #d3d1d0;
   left: -17px;
 }
-/* line 245, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 245, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .help-action-strategies-wrapper {
   border-bottom: 1px solid #c6c5c5;
   clear: both;
 }
 
-/* line 251, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 251, ../css.source/modules/support/_help-action-content.scss */
 .help-topic-suggestions {
   padding-top: 24px;
   padding-top: 40px;
 }
-/* line 256, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 256, ../css.source/modules/support/_help-action-content.scss */
 .help-topic-suggestions .suggestion-wrapper {
   width: 344px;
   float: left;
@@ -1821,7 +1821,7 @@
   width: 311px;
   width: 344px;
 }
-/* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 268, ../css.source/modules/support/_help-action-content.scss */
 .help-topic-suggestions .suggestion-wrapper:first-child {
   margin-right: 77px;
   margin-bottom: 25px;
@@ -1829,23 +1829,23 @@
   margin-right: 20px;
   margin-right: 77px;
 }
-/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 280, ../css.source/modules/support/_help-action-content.scss */
 .help-topic-suggestions .image, .help-topic-suggestions .description {
   float: left;
 }
-/* line 283, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 283, ../css.source/modules/support/_help-action-content.scss */
 .help-topic-suggestions .image {
   margin-right: 13px;
   margin-right: 20px;
 }
-/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 288, ../css.source/modules/support/_help-action-content.scss */
 .help-topic-suggestions .image img {
   height: 74px;
   width: 130px;
   height: 106px;
   width: 190px;
 }
-/* line 297, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 297, ../css.source/modules/support/_help-action-content.scss */
 .help-topic-suggestions .description {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -1856,12 +1856,12 @@
   width: 132px;
 }
 
-/* line 310, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 310, ../css.source/modules/support/_help-action-content.scss */
 .help-list {
   display: block;
 }
 
-/* line 315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 315, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content.animating, .help-action-content.video.animating {
   -webkit-animation: growContentBox 500ms;
   /* Safari 4+ */
@@ -1877,7 +1877,7 @@
   width: 100%;
   left: 0;
 }
-/* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 328, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content.animateToTop, .help-action-content.video.animateToTop {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -1888,15 +1888,15 @@
   height: auto;
 }
 
-/* line 336, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 336, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content.video .get-help-toolbar {
   margin-bottom: 23px;
 }
-/* line 339, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 339, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content.video .description, .help-action-content.video .description-mobile {
   color: #696969;
 }
-/* line 342, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 342, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content.video .description {
   font-size: 16px;
   font-size: 1rem;
@@ -1905,7 +1905,7 @@
   display: none;
   display: block;
 }
-/* line 351, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 351, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content.video .description-mobile {
   font-size: 14px;
   font-size: 0.875rem;
@@ -1914,21 +1914,21 @@
   margin-bottom: 21px;
   display: none;
 }
-/* line 360, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 360, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content.video .read-more {
   background-color: transparent;
 }
-/* line 363, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 363, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content.video .transcript-container {
   margin: 25px 0;
 }
 
-/* line 368, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 368, ../css.source/modules/support/_help-action-content.scss */
 .content-outer-wrapper {
   overflow: hidden;
 }
 
-/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 373, ../css.source/modules/support/_help-action-content.scss */
 .webinar-video .transcript-container .transcript-wrap {
   font-size: 14px;
   font-size: 0.875rem;
@@ -1939,37 +1939,37 @@
   max-width: 550px;
   display: none;
 }
-/* line 380, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 380, ../css.source/modules/support/_help-action-content.scss */
 .webinar-video .transcript-container .transcript-wrap .set-height {
   display: block;
   opacity: 0;
   position: absolute;
 }
-/* line 385, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 385, ../css.source/modules/support/_help-action-content.scss */
 .webinar-video .transcript-container .transcript-wrap h3, .webinar-video .transcript-container .transcript-wrap h2, .webinar-video .transcript-container .transcript-wrap p {
   text-align: left;
 }
-/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 388, ../css.source/modules/support/_help-action-content.scss */
 .webinar-video .transcript-container .transcript-wrap p {
   clear: both;
 }
-/* line 391, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 391, ../css.source/modules/support/_help-action-content.scss */
 .webinar-video .transcript-container .transcript-wrap h3 {
   margin: 0 0 5px 0;
 }
-/* line 396, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 396, ../css.source/modules/support/_help-action-content.scss */
 .webinar-video .transcript-container.open .transcript-wrap {
   display: block;
 }
 
 @-webkit-keyframes growContentBox {
-  /* line 402, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  /* line 402, ../css.source/modules/support/_help-action-content.scss */
   0% {
     height: 290px;
     width: 270px;
   }
 
-  /* line 404, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  /* line 404, ../css.source/modules/support/_help-action-content.scss */
   100% {
     height: 100%;
     width: 100%;
@@ -1978,13 +1978,13 @@
 }
 
 @-moz-keyframes growContentBox {
-  /* line 410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  /* line 410, ../css.source/modules/support/_help-action-content.scss */
   0% {
     height: 290px;
     width: 270px;
   }
 
-  /* line 412, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  /* line 412, ../css.source/modules/support/_help-action-content.scss */
   100% {
     height: 100%;
     width: 100%;
@@ -1993,13 +1993,13 @@
 }
 
 @-o-keyframes growContentBox {
-  /* line 418, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  /* line 418, ../css.source/modules/support/_help-action-content.scss */
   0% {
     height: 290px;
     width: 270px;
   }
 
-  /* line 420, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  /* line 420, ../css.source/modules/support/_help-action-content.scss */
   100% {
     height: 100%;
     width: 100%;
@@ -2008,13 +2008,13 @@
 }
 
 @keyframes growContentBox {
-  /* line 426, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  /* line 426, ../css.source/modules/support/_help-action-content.scss */
   0% {
     height: 290px;
     width: 270px;
   }
 
-  /* line 428, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+  /* line 428, ../css.source/modules/support/_help-action-content.scss */
   100% {
     height: 100%;
     width: 100%;
@@ -2022,11 +2022,11 @@
   }
 }
 
-/* line 434, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 434, ../css.source/modules/support/_help-action-content.scss */
 .help-content-wrapper {
   height: 100%;
 }
-/* line 436, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_help-action-content.scss */
+/* line 436, ../css.source/modules/support/_help-action-content.scss */
 .help-content-wrapper.resize {
   -webkit-transition: height 20ms ease-in-out;
   -moz-transition: height 20ms ease-in-out;
@@ -2035,18 +2035,18 @@
   transition: height 20ms ease-in-out;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 1, ../css.source/modules/support/_action-plan-toolbar.scss */
 .breadcrumb-menu {
   float: left;
   margin-bottom: 17px;
   margin-bottom: 45px;
 }
 
-/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 10, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .print-button, .toolbar-wrapper .print-button-mobile {
   height: 50px;
 }
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 13, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .print-button {
   display: none;
   float: right;
@@ -2055,58 +2055,58 @@
   margin: 2px 0 40px 0;
   display: block;
 }
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 23, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .print-button-mobile {
   display: block;
   width: 100%;
   margin: 2px 0 25px 0;
   display: none;
 }
-/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 31, ../css.source/modules/support/_action-plan-toolbar.scss */
 .no-goals-toolbar .toolbar-wrapper {
   margin-bottom: 14px;
   padding-bottom: 30px;
   border-bottom: 1px solid #c6c5c5;
   margin-bottom: 39px;
 }
-/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 38, ../css.source/modules/support/_action-plan-toolbar.scss */
 .no-goals-toolbar .toolbar-wrapper .toolbar-heading {
   width: 100%;
 }
-/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 41, ../css.source/modules/support/_action-plan-toolbar.scss */
 .no-goals-toolbar .toolbar-wrapper .action-toolbar {
   margin-top: 25px;
   margin-top: 11px;
 }
-/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 47, ../css.source/modules/support/_action-plan-toolbar.scss */
 .no-goals-toolbar .toolbar-wrapper h2 {
   width: 180px;
   width: 220px;
   width: 280px;
 }
-/* line 57, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 57, ../css.source/modules/support/_action-plan-toolbar.scss */
 .goals-toolbar .toolbar-wrapper {
   margin-bottom: 22px;
   margin-bottom: 37px;
 }
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 62, ../css.source/modules/support/_action-plan-toolbar.scss */
 .goals-toolbar .toolbar-wrapper h2 {
   margin-bottom: 10px;
   width: 240px;
 }
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 66, ../css.source/modules/support/_action-plan-toolbar.scss */
 .goals-toolbar .toolbar-wrapper .action-toolbar {
   margin-top: 0px;
   margin-top: 11px;
 }
-/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 73, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .toolbar-heading {
   clear: both;
   width: 100%;
   float: left;
   margin: 0;
 }
-/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 78, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .toolbar-heading h2 {
   color: #7b3f84;
   font-size: 21px;
@@ -2119,14 +2119,14 @@
   font-size: 2rem;
   font-weight: normal;
 }
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 90, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .toolbar-heading .heading-tag {
   color: #696969;
   font-size: 18px;
   font-size: 1.125rem;
   margin-bottom: 0px;
 }
-/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 96, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar {
   list-style: none;
   height: 19px;
@@ -2142,23 +2142,23 @@
   display: block;
   width: 320px;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 112, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .my-progress {
   z-index: 1;
   position: relative;
 }
-/* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 117, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .my-progress h4 {
   color: #7b3f84;
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: normal;
 }
-/* line 123, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 123, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .my-progress.hover .progress-toggle-outer-wrapper, .toolbar-wrapper .action-toolbar .my-progress.hover .progress-toggle-wrapper, .toolbar-wrapper .action-toolbar .my-progress.focus .progress-toggle-outer-wrapper, .toolbar-wrapper .action-toolbar .my-progress.focus .progress-toggle-wrapper {
   display: block;
 }
-/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 128, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-outer-wrapper {
   display: none;
   position: absolute;
@@ -2172,7 +2172,7 @@
   top: 20px;
   left: -101%;
 }
-/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 145, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper {
   display: none;
   width: 100%;
@@ -2187,11 +2187,11 @@
   width: 450px;
   top: 15px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .toolbar-wrapper .action-toolbar .progress-toggle-wrapper {
   outline: solid 1px #dfdfdf;
 }
-/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 158, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper:before {
   content: '';
   position: absolute;
@@ -2205,7 +2205,7 @@
   border-bottom: 13px solid white;
   left: 50%;
 }
-/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 173, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper:after {
   content: '';
   position: absolute;
@@ -2225,35 +2225,35 @@
   transform: rotate(-45deg);
   left: 50%;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .toolbar-wrapper .action-toolbar .progress-toggle-wrapper:after {
   outline: solid 1px #dfdfdf;
 }
-/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 188, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper .choice-list {
   list-style: none;
 }
-/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 192, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper .toggle-wrapper .ez-checkbox {
   width: 100%;
 }
-/* line 195, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 195, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .progress-toggle-wrapper .toggle-wrapper .switch-wrapper {
   display: block;
   margin: 0 auto;
 }
-/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 202, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar .my-progress.hover .progress-toggle {
   display: block;
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 209, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar.has-tagline {
   margin-top: 70px;
 }
-/* line 214, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 214, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li {
   float: left;
   padding: 0;
@@ -2266,16 +2266,16 @@
   height: auto;
   width: auto;
 }
-/* line 220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 220, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li:first-child {
   margin-left: 0px;
 }
-/* line 230, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 230, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.my-progress a, .toolbar-wrapper .action-toolbar li.print a, .toolbar-wrapper .action-toolbar li.email a {
   display: none;
   display: block;
 }
-/* line 236, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 236, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li:after {
   content: '';
   position: absolute;
@@ -2285,64 +2285,64 @@
   top: -2px;
   left: 0px;
 }
-/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 247, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li:before {
   content: '';
   position: absolute;
   width: 24px;
   height: 17px;
-  background: url("../images/sprite.icons.article-tips.png");
+  background: url('../images/sprite.icons.article-tips.png?1404390952');
   background-repeat: no-repeat;
   bottom: 0;
   bottom: 4px;
 }
-/* line 260, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 260, ../css.source/modules/support/_action-plan-toolbar.scss */
 .no-backgroundsize .toolbar-wrapper .action-toolbar li:before {
-  background-image: url("../images/sprite.icons.article-tips.145.png");
+  background-image: url('../images/sprite.icons.article-tips.145.png?1404390952');
 }
-/* line 264, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 264, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.my-progress {
   padding-left: 0px;
 }
-/* line 266, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 266, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.my-progress:before {
   background-position: -119px -75px;
   background-size: 145px 145px;
 }
-/* line 270, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 270, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.my-progress:hover:before, .toolbar-wrapper .action-toolbar li.my-progress:focus:before, .toolbar-wrapper .action-toolbar li.my-progress.icon-email:focus:before {
   background-position: -119px -127px;
   background-size: 145px 145px;
 }
-/* line 276, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 276, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.print:before {
   background-position: -78px 0px;
   background-size: 145px 145px;
 }
-/* line 280, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 280, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.print:hover:before, .toolbar-wrapper .action-toolbar li.print:focus:before, .toolbar-wrapper .action-toolbar li.print.icon-print:focus:before {
   background-position: -78px -35px;
   background-size: 145px 145px;
 }
-/* line 285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 285, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.email {
   padding-right: 0px;
 }
-/* line 287, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 287, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.email:before {
   background-position: -77px -74px;
   background-size: 145px 145px;
 }
-/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 291, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.email:hover:before, .toolbar-wrapper .action-toolbar li.email:focus:before, .toolbar-wrapper .action-toolbar li.email.icon-email:focus:before {
   background-position: -77px -126px;
   background-size: 145px 145px;
 }
-/* line 297, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 297, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.first:after {
   display: none;
 }
-/* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 301, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li a {
   text-decoration: underline;
   font-size: 16px;
@@ -2350,25 +2350,25 @@
   color: #426da9;
   padding-left: 32px;
 }
-/* line 306, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 306, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li a:hover {
   text-decoration: none;
 }
 
-/* line 315, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 315, ../css.source/modules/support/_action-plan-toolbar.scss */
 .print-plan-toolbar .toolbar-wrapper {
   border-bottom: 1px solid #c6c5c5;
 }
-/* line 317, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 317, ../css.source/modules/support/_action-plan-toolbar.scss */
 .print-plan-toolbar .toolbar-wrapper h2 {
   margin-bottom: 20px;
 }
 
-/* line 323, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 323, ../css.source/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal {
   padding: 40px;
 }
-/* line 325, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 325, ../css.source/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal h1 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -2377,45 +2377,45 @@
   margin-bottom: 22px;
   margin-bottom: 34px;
 }
-/* line 334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 334, ../css.source/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .email-info {
   border: 2px solid #d2d2d2;
   margin-bottom: 10px;
 }
-/* line 338, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 338, ../css.source/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .comment-box {
   height: 168px;
   width: 100%;
   margin-bottom: 25px;
   margin-bottom: 40px;
 }
-/* line 346, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 346, ../css.source/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .modal-header {
   padding: 0;
   border: none;
   height: auto;
   min-height: 0;
 }
-/* line 352, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 352, ../css.source/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .modal-body {
   overflow: hidden;
   padding: 22px 18px;
   padding: 20px;
   padding: 40px;
 }
-/* line 362, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 362, ../css.source/modules/support/_action-plan-toolbar.scss */
 .action-plan-email-modal .button {
   padding: 0 66px;
   float: left;
   width: inherit;
 }
 
-/* line 369, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_action-plan-toolbar.scss */
+/* line 369, ../css.source/modules/support/_action-plan-toolbar.scss */
 .goals-toolbar .skiplink-toolbar .secondary-navigation-link {
   left: 0;
 }
 
-/* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 2, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper h2 {
   font-size: 21px;
   font-size: 1.3125rem;
@@ -2424,29 +2424,29 @@
   margin-bottom: 5px;
   margin-bottom: 6px;
 }
-/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 11, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics {
   list-style: none;
   padding: 0;
   margin-bottom: 9px;
   margin-bottom: 20px;
 }
-/* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 18, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li {
   border-top: 1px solid #cac9c9;
   position: relative;
 }
-/* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 22, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li.completed:before, .activity-topic-wrapper .topics li.skipped:before {
   right: 0;
   top: 7px;
   top: 10px;
 }
-/* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 30, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li:first-child {
   border-top: none;
 }
-/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 33, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li p {
   color: #696969;
   font-size: 16px;
@@ -2458,11 +2458,11 @@
   line-height: 3.0625rem;
 }
 
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 46, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li.completed, .activity-topic-wrapper .topics li.skipped, .activity-topic-wrapper .topics li.key-completed, .activity-topic-wrapper .topics li.key-skipped, .print-activity-key li.completed, .print-activity-key li.skipped, .print-activity-key li.key-completed, .print-activity-key li.key-skipped {
   position: relative;
 }
-/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 48, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li.completed:before, .activity-topic-wrapper .topics li.skipped:before, .activity-topic-wrapper .topics li.key-completed:before, .activity-topic-wrapper .topics li.key-skipped:before, .print-activity-key li.completed:before, .print-activity-key li.skipped:before, .print-activity-key li.key-completed:before, .print-activity-key li.key-skipped:before {
   content: '';
   position: absolute;
@@ -2471,47 +2471,47 @@
   height: 31px;
   width: 32px;
 }
-/* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 60, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li.completed:before, .activity-topic-wrapper .topics li.key-completed:before, .print-activity-key li.completed:before, .print-activity-key li.key-completed:before {
-  background: url("../images/sprite.print.plan.png");
+  background: url('../images/sprite.print.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: 0px -1px;
   background-size: 26px;
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -48px -4px;
   background-size: 168.5px;
 }
-/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 71, ../css.source/modules/support/_print-activity-topic.scss */
 .no-backgroundsize .activity-topic-wrapper .topics li.completed:before, .no-backgroundsize .activity-topic-wrapper .topics li.key-completed:before, .no-backgroundsize .print-activity-key li.completed:before, .no-backgroundsize .print-activity-key li.key-completed:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -44px -4px;
 }
-/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 78, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li.skipped:before, .activity-topic-wrapper .topics li.key-skipped:before, .print-activity-key li.skipped:before, .print-activity-key li.key-skipped:before {
-  background: url("../images/sprite.print.plan.png");
+  background: url('../images/sprite.print.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: 0px -29px;
   background-size: 26px;
-  background: url("../images/sprite.support.plan.png");
+  background: url('../images/sprite.support.plan.png?1404390952');
   background-repeat: no-repeat;
   background-position: -88px -4px;
   background-size: 168.5px;
 }
-/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 89, ../css.source/modules/support/_print-activity-topic.scss */
 .no-backgroundsize .activity-topic-wrapper .topics li.skipped:before, .no-backgroundsize .activity-topic-wrapper .topics li.key-skipped:before, .no-backgroundsize .print-activity-key li.skipped:before, .no-backgroundsize .print-activity-key li.key-skipped:before {
-  background-image: url("../images/sprite.support.plan.lowres.png");
+  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
   background-position: -83px -4px;
 }
 
-/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 96, ../css.source/modules/support/_print-activity-topic.scss */
 .print-activity-key {
   padding: 0;
   list-style: none;
   margin-top: 28px;
   margin-top: 15px;
 }
-/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 103, ../css.source/modules/support/_print-activity-topic.scss */
 .print-activity-key li {
   float: left;
   color: #696969;
@@ -2522,12 +2522,12 @@
   line-height: 1.9375rem;
   padding-left: 40px;
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 109, ../css.source/modules/support/_print-activity-topic.scss */
 .print-activity-key li:first-child {
   margin-right: 30px;
   margin-right: 39px;
 }
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/support/_print-activity-topic.scss */
+/* line 119, ../css.source/modules/support/_print-activity-topic.scss */
 .print-activity-key li.key-completed:before, .print-activity-key li.key-skipped:before {
   left: 0;
   top: 0;
@@ -2536,12 +2536,12 @@
 /**
  * SASS partial for account-notification-tabs module.
  */
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 12, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs-container {
   margin: -50px 0 0 0;
 }
 
-/* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 16, ../css.source/modules/account/_account-notification-tabs.scss */
 .my-notifications-page-header {
   clear: both;
   -webkit-box-shadow: inset 0px -5px 9px -9px #555555;
@@ -2553,7 +2553,7 @@
   margin: -20px 0 0 0;
   margin-top: -60px;
 }
-/* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 27, ../css.source/modules/account/_account-notification-tabs.scss */
 .my-notifications-page-header h1 {
   background: #f4f2f1;
   margin-left: 15px;
@@ -2566,19 +2566,19 @@
   margin-top: 50px;
 }
 
-/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 43, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs {
   position: relative;
   color: dimgrey;
   /* .checkbox-wrapper */
   /* .showmore-footer */
 }
-/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 47, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs header {
   position: relative;
   top: 0;
 }
-/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 52, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs h2, .account-notification-tabs h3 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -2588,27 +2588,27 @@
   padding-bottom: 15px;
   margin: 55px 0 20px 0;
 }
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 63, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs h3 {
   border-bottom: 1px solid #d1d1d1;
   margin-top: 15px;
 }
-/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 67, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs header {
   background-color: #f4f2f1;
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 69, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .header-wrapper {
   margin: 20px 0px;
   width: 100%;
   display: table;
 }
-/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 74, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs h2.inline, .account-notification-tabs .mobile-number {
   display: inline-block;
   display: table-cell;
 }
-/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 78, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .mobile-number {
   line-height: 24px;
   line-height: 1.5rem;
@@ -2616,20 +2616,20 @@
   font-size: 1.125rem;
   text-align: right;
 }
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 82, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .mobile-number strong {
   color: #000;
   font-size: 24px;
   font-size: 1.5rem;
   margin: 0 20px 0 15px;
 }
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 89, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .mobile-number a {
   text-decoration: underline;
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 95, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .circle {
   font-size: 11px;
   font-size: 0.6875rem;
@@ -2664,23 +2664,23 @@
   line-height: 26px;
   width: 26px;
 }
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 124, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .active .circle,
 .account-notification-tabs .circle.purple {
   background-color: #7a4183;
 }
-/* line 129, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 128, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs {
   display: block;
 }
-/* line 132, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 131, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs ul {
   display: block;
   list-style-type: none;
   margin: 0px;
   padding: 0px;
 }
-/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 137, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li {
   -webkit-box-shadow: inset 0px -5px 9px -9px #555555;
   -moz-box-shadow: inset 0px -5px 9px -9px #555555;
@@ -2695,7 +2695,7 @@
   padding: 0;
   margin: 0;
 }
-/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 149, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li a {
   font-size: 11px;
   font-size: 0.6875rem;
@@ -2717,18 +2717,18 @@
   line-height: 1.25rem;
   padding: 0 50px 0 20px;
 }
-/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 163, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li a:hover {
   text-decoration: none;
   background: #298fc2;
   color: #fff;
 }
-/* line 169, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 168, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li a:hover span.circle {
   background: #fff;
   color: #298fc2;
 }
-/* line 184, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 183, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li.active {
   -webkit-box-shadow: -5px 1px 1px -4px #d1d1d1;
   -moz-box-shadow: -5px 1px 1px -4px #d1d1d1;
@@ -2736,33 +2736,33 @@
   background-color: #fff;
   border-top: 4px solid #7a4183;
 }
-/* line 189, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 188, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li.active a {
   color: #7a4183;
   cursor: default;
 }
-/* line 193, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 192, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li.active a:hover {
   background: #fff;
 }
-/* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 195, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li.active a:hover span.circle {
   background: #7a4183;
   color: #fff;
 }
-/* line 202, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 201, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li.active .circle {
   background-color: #7a4183;
 }
-/* line 205, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 204, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li.active + li {
   cursor: default;
 }
-/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 208, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs li:first-child a {
   border-left: none;
 }
-/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 214, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notifications-section-tabs .circle {
   position: absolute;
   right: 10px;
@@ -2770,40 +2770,40 @@
   right: 15px;
   top: 10px;
 }
-/* line 228, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 227, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .account-body-wrapper {
   clear: both;
   padding: 15px;
   padding: 40px 0;
 }
-/* line 238, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
-.account-notification-tabs i {
-  background-image: url("../images/sprite.icon.notifications.png");
+/* line 240, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-notification-comment, .account-notification-tabs i.icon-notification-reminder, .account-notification-tabs i.icon-notification-link {
+  background-image: url('../images/sprite.icon.notifications.png?1404390952');
   background-size: 57px 19px;
   display: inline-block;
   height: 18px;
 }
-/* line 243, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
-.no-backgroundsize .account-notification-tabs i {
-  background-image: url("../images/sprite.icon.notifications.lo-res.png");
+/* line 245, ../css.source/modules/account/_account-notification-tabs.scss */
+.no-backgroundsize .account-notification-tabs i.icon-notification-comment, .no-backgroundsize .account-notification-tabs i.icon-notification-reminder, .no-backgroundsize .account-notification-tabs i.icon-notification-link {
+  background-image: url('../images/sprite.icon.notifications.lo-res.png?1404390952');
 }
-/* line 247, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 250, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-comment {
   width: 21px;
 }
-/* line 250, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 253, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-link {
   background-position: -40px 0px;
   width: 16px;
 }
-/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 257, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-reminder {
   background-position: -22px 0px;
   width: 16px;
 }
-/* line 258, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 261, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-results-more {
-  background-image: url("../images/sprite.icon.arrows.png");
+  background-image: url('../images/sprite.icon.arrows.png?1404390952');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150px 150px;
@@ -2812,7 +2812,7 @@
   margin-left: 20px;
   width: 18px;
 }
-/* line 268, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 271, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .results-more-link {
   font-size: 24px;
   font-size: 1.5rem;
@@ -2824,51 +2824,51 @@
   top: 55px;
   margin: 70px 0;
 }
-/* line 279, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 282, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .results-more-link span {
   display: inline-block;
 }
-/* line 282, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 285, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-item {
   border-bottom: 1px solid #d1d1d1;
   padding: 15px 0px 30px 0px;
   padding: 0px 0px 15px 0px;
 }
-/* line 285, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 288, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-item p {
   margin: 1em 0 0 0;
 }
-/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 294, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header {
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 293, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 296, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header h4 {
   font-weight: normal;
 }
-/* line 296, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 299, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label {
   margin-bottom: 13px;
 }
-/* line 298, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 301, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label i {
   margin-right: 10px;
   position: relative;
 }
-/* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 304, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label i.icon-notification-comment {
   top: 7px;
 }
-/* line 304, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 307, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label i.icon-notification-link {
   top: 4px;
 }
-/* line 307, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 310, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label i.icon-notification-reminder {
   top: 4px;
 }
-/* line 311, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 314, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label a.notification-link {
   display: block;
   margin-bottom: 18px;
@@ -2878,7 +2878,7 @@
   display: inline;
   margin-left: 0px;
 }
-/* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 324, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-header .notification-label .timestamp {
   color: #bcbdc0;
   display: none;
@@ -2887,21 +2887,21 @@
   font-size: 0.875rem;
   display: block;
 }
-/* line 334, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 337, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-body .notification-action {
   margin-top: 0px;
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 337, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 340, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-body .notification-action a {
   text-decoration: underline;
 }
-/* line 339, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 342, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-body .notification-action a:hover {
   text-decoration: none;
 }
-/* line 344, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 347, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .notification-body .button {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -2912,17 +2912,17 @@
   max-width: 110px;
   margin-bottom: 5px;
 }
-/* line 355, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 358, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .paragraph-widget {
   display: block;
   display: none;
 }
-/* line 359, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 362, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .textarea-widget {
   display: none;
   display: block;
 }
-/* line 364, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 367, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper {
   display: block;
   margin-bottom: 20px;
@@ -2930,15 +2930,15 @@
   width: 99%;
   text-align: right;
 }
-/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 376, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper label {
   display: inline-block;
 }
-/* line 375, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 378, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper label:first-child {
   margin-right: 42px;
 }
-/* line 377, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 380, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper label span, .account-notification-tabs .checkbox-wrapper label .radio {
   font-size: 18px;
   font-size: 1.125rem;
@@ -2947,11 +2947,11 @@
   line-height: 18px;
   line-height: 1.125rem;
 }
-/* line 383, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 386, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .checkbox-wrapper label input {
   margin-right: 10px;
 }
-/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 391, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .account-notifications-tab-notifications-empty p {
   color: #7a4183;
   font-size: 24px;
@@ -2959,7 +2959,7 @@
   padding-bottom: 20px;
   border-bottom: 1px solid #d1d1d1;
 }
-/* line 396, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 399, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .private-message-tool {
   background: #f4f2f1;
   text-align: center;
@@ -2974,115 +2974,115 @@
   height: 700px;
   line-height: 700px;
 }
-/* line 413, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 416, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .showmore-footer {
   border-top: none;
   padding: 60px 0 0 0;
   padding-top: 100px;
 }
-/* line 421, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 424, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .showmore-footer .show-more {
   margin-bottom: -20px;
   margin-bottom: 0;
 }
-/* line 428, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 431, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs .showmore-footer a i {
   width: 18px;
   height: 11px;
-  background: url("../images/sprite.icon.arrows.png") 0 0 no-repeat;
+  background: url('../images/sprite.icon.arrows.png?1404390952') 0 0 no-repeat;
   background-size: 150px 150px;
 }
 
-/* line 439, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 442, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form p.instructions {
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 442, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 445, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form p.please-read, .account-notifications-tab-text-form legend.please-read {
   font-size: 15px;
   font-size: 0.9375rem;
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 448, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 451, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form legend.please-read {
   margin-bottom: 1em;
 }
-/* line 452, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 455, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form input[type=text],
 .account-notifications-tab-text-form textarea {
   max-width: 470px;
 }
-/* line 456, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 459, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form input[type=text] {
   margin-bottom: 30px;
   margin-bottom: 40px;
 }
-/* line 465, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 468, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form textarea {
   background-color: #f4f2f1 !important;
   border: none !important;
   height: 185px;
   padding: 20px;
 }
-/* line 472, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 475, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form label {
   display: block;
   margin: 20px 0 40px 0;
 }
-/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 480, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form .mobile-phone-number {
   display: inline;
   margin: 0px;
 }
-/* line 482, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 485, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-text-form .button {
   margin-bottom: 40px;
   margin-right: 0px;
   max-width: 230px;
 }
 
-/* line 489, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 492, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggles-wrapper {
   margin-bottom: 50px;
 }
 
-/* line 494, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 497, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper {
   display: block;
   margin-bottom: 20px;
 }
-/* line 498, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 501, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper label {
   cursor: pointer;
   display: table;
   width: 100%;
 }
-/* line 503, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 506, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper label > span, .toggle-wrapper label .ez-checkbox {
   display: table-cell;
   vertical-align: top;
   width: 48%;
 }
-/* line 507, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 510, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper label > span:first-child, .toggle-wrapper label .ez-checkbox:first-child {
   padding-right: 20px;
 }
-/* line 511, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 514, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .ez-checkbox {
   text-align: right;
 }
-/* line 512, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 515, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .ez-hide {
   display: none;
 }
-/* line 513, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 516, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .switch-wrapper {
   display: inline-block;
   width: 155px;
 }
-/* line 518, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 521, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .btn-toggle {
   display: inline-block;
   font-size: 18px;
@@ -3093,7 +3093,7 @@
   width: 75px;
   position: relative;
 }
-/* line 527, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 530, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .btn-toggle button {
   position: absolute;
   top: 0;
@@ -3106,7 +3106,7 @@
   color: inherit;
   padding: 0;
 }
-/* line 540, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 543, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .btn-right {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -3119,7 +3119,7 @@
   background-color: #f4f2f1;
   color: dimgrey;
 }
-/* line 547, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 550, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .btn-left,
 .toggle-wrapper .ez-checked .btn-right {
   -webkit-border-radius: 2px;
@@ -3135,7 +3135,7 @@
   height: 32px;
   line-height: 32px;
 }
-/* line 555, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/account/_account-notification-tabs.scss */
+/* line 558, ../css.source/modules/account/_account-notification-tabs.scss */
 .toggle-wrapper .ez-checked .btn-left {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -3151,42 +3151,42 @@
   line-height: 30px;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 1, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations {
   margin: 40px 0 0;
   padding: 40px 0;
   background: #f4f2f1;
 }
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 6, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .recommendations-promos {
   padding: 0 15px;
   padding: 0;
 }
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 13, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .promo {
   display: table;
   margin-bottom: 45px;
   padding: 0;
   padding: 0;
 }
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 23, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .promo a {
   color: #426da9;
   margin-bottom: 10px;
   font-size: 20px;
   font-size: 1.25rem;
 }
-/* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 28, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .promo a:hover {
   text-decoration: underline;
 }
-/* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 35, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .recommendations-promos .thumb,
 .additional-recommendations .recommendations-promos .promo-content {
   display: table-cell;
   vertical-align: top;
 }
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 40, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .recommendations-promos .thumb {
   width: 135px;
   padding-right: 15px;
@@ -3194,7 +3194,7 @@
   width: 190px;
   padding-right: 30px;
 }
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 45, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .recommendations-promos .thumb .play {
   position: absolute;
   z-index: 10;
@@ -3212,14 +3212,14 @@
   width: 160px;
   height: 88px;
 }
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 62, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .recommendations-promos .thumb .play:after {
   content: "";
   width: 41px;
   height: 41px;
   top: 13px;
   left: 40px;
-  background-image: url("../images/sprite.icon.reco.play-button.png");
+  background-image: url('../images/sprite.icon.reco.play-button.png?1404390952');
   background-size: 41px auto;
   background-repeat: no-repeat;
   display: block;
@@ -3227,37 +3227,37 @@
   top: 24px;
   left: 60px;
 }
-/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 74, ../css.source/modules/_additional-recommendations.scss */
 .no-backgroundsize .additional-recommendations .recommendations-promos .thumb .play:after {
-  background-image: url("../images/sprite.icon.reco.play-button.lo-res.png");
+  background-image: url('../images/sprite.icon.reco.play-button.lo-res.png?1404390952');
 }
-/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 84, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .recommendations-promos .thumb .play:hover:after {
   background-position: 0 -41px;
 }
-/* line 89, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 89, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .recommendations-promos .thumb img {
   width: 100%;
   position: relative;
   z-index: 1;
 }
-/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 102, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .children-key ul {
   padding: 0;
 }
-/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 106, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .children-key li {
   display: inline-block;
   width: 25px;
 }
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 112, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .related-tool-wrapper {
   margin: 0 15px;
   margin-left: 0;
   margin-right: 0;
   padding-left: 30px;
 }
-/* line 122, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 122, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .related-tool {
   display: block;
   background: #fff;
@@ -3268,17 +3268,17 @@
   margin: 0;
   float: right;
 }
-/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 135, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .related-tool:hover {
   text-decoration: none;
 }
-/* line 139, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 139, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .related-tool span {
   display: block;
   width: 100%;
   text-align: center;
 }
-/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 145, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .related-tool .tool-intro {
   border-bottom: 1px solid #e2e2e2;
   font-size: 20px;
@@ -3286,22 +3286,22 @@
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 152, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .related-tool .tool-name {
   font-size: 24px;
   font-size: 1.5rem;
   padding-top: 105px;
   background-size: 114px auto;
-  background-image: url("../images/icon.recommendations.parenting.coach.png");
+  background-image: url('../images/icon.recommendations.parenting.coach.png?1404390952');
   background-position: center top;
   background-repeat: no-repeat;
   margin-bottom: 10px;
 }
-/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 161, ../css.source/modules/_additional-recommendations.scss */
 .no-backgroundsize .additional-recommendations .related-tool .tool-name {
-  background-image: url("../images/icon.recommendations.parenting.coach.lo-res.png");
+  background-image: url('../images/icon.recommendations.parenting.coach.lo-res.png?1404390952');
 }
-/* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 167, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .child-content-indicator {
   clear: both;
   margin: 40px 0 0;
@@ -3309,18 +3309,18 @@
   width: 100%;
   padding: 0 15px;
 }
-/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_additional-recommendations.scss */
+/* line 182, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .child-content-indicator .children-key {
   width: 100%;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 1, ../css.source/modules/_landing.scss */
 .col.recommendations-sample {
   margin-bottom: 30px;
   margin-right: 4.166666%;
   margin-bottom: 0;
 }
-/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 9, ../css.source/modules/_landing.scss */
 .col.recommendations-sample > img {
   display: none;
   display: block;
@@ -3328,12 +3328,12 @@
   max-width: 388px;
 }
 
-/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 20, ../css.source/modules/_landing.scss */
 .col.recommendations-usage {
   padding-left: 4.166666%;
   border-left: 1px solid #e2e2e2;
 }
-/* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 26, ../css.source/modules/_landing.scss */
 .col.recommendations-usage h3 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -3341,21 +3341,21 @@
   margin-bottom: 30px;
   color: #7a4183;
 }
-/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 33, ../css.source/modules/_landing.scss */
 .col.recommendations-usage dl {
   display: table;
   margin-bottom: 33px;
 }
-/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 38, ../css.source/modules/_landing.scss */
 .col.recommendations-usage dt, .col.recommendations-usage dd {
   display: table-cell;
   vertical-align: top;
 }
-/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 43, ../css.source/modules/_landing.scss */
 .col.recommendations-usage dt {
   width: 80px;
 }
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 46, ../css.source/modules/_landing.scss */
 .col.recommendations-usage dt .count {
   display: block;
   width: 55px;
@@ -3366,33 +3366,33 @@
   font-size: 2rem;
   color: #7a4183;
   text-align: center;
-  background-image: url("../images/icon.circle.110x110.png");
+  background-image: url('../images/icon.circle.110x110.png?1404390952');
   background-size: 55px auto;
   background-repeat: no-repeat;
   font-weight: 700;
 }
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 59, ../css.source/modules/_landing.scss */
 .no-backgroundsize .col.recommendations-usage dt .count {
-  background-image: url("../images/icon.circle.55x55.png");
+  background-image: url('../images/icon.circle.55x55.png?1404390952');
 }
-/* line 65, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 65, ../css.source/modules/_landing.scss */
 .col.recommendations-usage dd {
   color: #696969;
   line-height: 24px;
   line-height: 1.5rem;
   padding: 0;
 }
-/* line 71, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 71, ../css.source/modules/_landing.scss */
 .col.recommendations-usage .buttons {
   padding-left: 80px;
 }
-/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 74, ../css.source/modules/_landing.scss */
 .col.recommendations-usage .buttons .button {
   display: inline-block;
   width: 45%;
   margin-bottom: 0;
 }
-/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/_landing.scss */
+/* line 80, ../css.source/modules/_landing.scss */
 .col.recommendations-usage .buttons .sign-up {
   margin-right: 0;
 }

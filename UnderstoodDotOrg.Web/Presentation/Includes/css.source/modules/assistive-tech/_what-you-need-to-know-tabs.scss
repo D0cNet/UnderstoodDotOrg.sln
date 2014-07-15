@@ -1,0 +1,507 @@
+.what-you-need-to-know-tabs{
+
+  .etabs {
+    margin: 0;
+    padding: 0;
+
+    @include bp($bp-small){
+      margin: 0 0 1px -1px;
+    }
+
+  }
+
+  .tab {
+    width: 50%;
+    display: table;
+    @include bp($bp-small){
+      width: auto;
+      margin-right:-7px;
+      display: inline-block;
+
+      @include old-ie {
+        width: 297px;
+      }
+    }
+
+    zoom:1;
+    *display:inline;
+    background: #ffffff;
+    border: solid 1px #eeeeee;
+    border-bottom: none;
+
+  }
+
+  .tab a {
+    height: 62px;
+    display: table-cell;
+    font-size: 19px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 15px;
+    @include rem(line-height, 27px);
+    @include bp($bp-small){
+      @include rem(line-height, 24px);
+      height: auto;
+      padding: 17px 16px;
+      display: block;
+    }
+    @include bp($bp-small-plus){
+      @include rem(font-size, 21px);
+      padding: 17px 28px;
+    }
+    outline: none;
+    color: #696969;
+    font-weight: 400px;
+    background-color: #f0f0f0;
+  }
+
+  .tab:first-child{
+    float: left;
+    @include bp($bp-small){
+      float: none;
+    }
+  }
+  .tab:last-child{
+    float: right;
+    @include bp($bp-small){
+      float: none;
+    }
+  }
+
+  .tab a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background: #298fc2;
+    color: #fff;
+  }
+
+  .tab.active {
+    border-top: 1px solid #7a4183;
+    background: #fff;
+    position: relative;
+    top: 1px;
+  }
+
+  .tab a.active {
+    color: #7a4183;
+    text-decoration: none;
+    background-color: #ffffff;
+    @include box-shadow(rgba(#000, .18) 0 0 3px -6px);
+  }
+
+  &.tab-container{
+    margin-bottom: 48px;
+  }
+
+  .row{
+    @include dropshadow;
+
+    .col.col-17{
+      border-right: 1px solid #f4f2f1;
+      padding: 15px;
+      @include bp($bp-small-plus) {
+        padding: 40px 70px 40px 38px;
+      }
+    }
+    .col.col-7{
+      padding: 40px 30px;
+    }
+  }
+
+  section {
+    border-bottom: 1px solid #d2d2d2;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    @include bp($bp-small-plus){
+      margin-bottom: 25px;
+      padding-bottom: 24px;
+    }
+
+    span{
+      h3 {
+        margin-top: 0;
+      }
+
+      &.slider-position {
+        float: none;
+        margin-bottom: 15px;
+        display:inline-block;
+        padding-top: 6px;
+
+        @include bp($bp-small){
+          vertical-align: top;
+          padding-top: 8px;
+
+        }
+        @include bp($bp-medium){
+          padding-top: 18px;
+          float: right;
+          margin-bottom: 0;
+          display: block;
+        }
+      }
+    }//.what-you-need-to-know-tabs section span
+
+    ul {
+      padding-left: 20px;
+      display: inline-block;
+
+      li {
+        width: 225px;
+        margin-right: 24px;
+        margin-top: 0;
+        float: left;
+
+        @include rem(font-size, 16px);
+        font-weight: bold;
+        color: #696969;
+        @include bp($bp-small-plus){
+          margin-top: 15px;
+        }
+
+        @include bp($bp-large){
+          width:45%;
+        }
+      }//.what-you-need-to-know-tabs section ul li
+    }
+    ul.kids-subjects {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        &:before {
+          content: " ";
+          @include rem(line-height, 26px);
+          width: 6px;
+          height: 6px;
+          background-color: #426da9;
+          float: left;
+          margin: 10px 10px 10px 0;
+          @include border-radius(50px);
+          position: relative;
+        }
+      }
+
+      @include old-ie {
+        width: 508px;
+      }
+
+    } // end ul.kids-subjects
+
+    clear: both;
+  }
+
+  h3{
+    color: #7a4183;
+    @include rem(font-size, 24px);
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    display: inline-block;
+    @include bp($bp-small-plus) {
+      margin-top: 25px;
+    }
+  }
+
+  h5{
+    color: #696969;
+    @include rem(font-size, 18px);
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
+
+  p{
+    color: #696969;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 26px);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .platform-list, .about-platforms{
+    a{
+      color: #426cab;
+      @include rem(font-size, 14px);
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: underline;
+    }
+  }
+
+  .about-platforms{
+    display: block;
+    @include bp($bp-small-plus) {
+      display: inline;
+      margin-left: 40px;
+    }
+  }
+
+  footer{
+    p{
+      color: #696969;
+      @include rem(font-size, 11px);
+      @include rem(line-height, 15px);
+      font-weight: 600;
+      a{
+        color: #426cab;
+        text-decoration: underline;
+      }
+    }//.what-you-need-to-know-tabs footer p
+  }
+
+  .review-intro {
+    background: #f0f0f0;
+    padding: 15px;
+    display: inline-block;
+    margin-top: 10px;
+
+    @include bp($bp-medium){
+      padding: 40px;
+      margin-top: 0;
+    }
+    .review-rating {
+      width: 230px;
+      float: left;
+      margin-top: 10px;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      h4 {
+        color: #7a4182;
+        @include rem(font-size, 20px);
+        @include rem(line-height, 24px);
+        margin-top: 15px;
+      }
+    }
+    .review-rating-sort {
+      width: 230px;
+      float: left;
+      margin-right: 25px;
+
+      @include bp($bp-medium){
+        width: 208px;
+        margin: 0;
+      }
+      @include bp($bp-medium){
+        margin-top: 11px;
+      }
+
+      & > label {
+        color: #696969;
+        @include rem(font-size, 16px);
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 15px 0 10px;
+        display: inline-block;
+      }
+
+      div.selector, div.selector span {
+        width: 100%;
+        @include rem(font-size, 16px);
+
+        @include bp($bp-medium){
+          @include rem(font-size, 14px);
+        }
+      }
+    }
+  }//.review-intro
+
+  #tabs2-parent-reviews {
+    .row .col.col-17 {
+
+      .rate-this-app {
+        margin-top: 10px;
+      }
+      @include bp($bp-medium){
+        padding-right: 36px;
+        padding-left: 36px;
+      }
+    }
+    .parent-reviews {
+      padding-left: 10px;
+
+      @include bp($bp-medium){
+        padding-left: 0;
+      }
+    }
+    section {
+      margin-top: 25px;
+      padding-bottom: 25px;
+
+      @include bp($bp-medium){
+        margin-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom:10px;
+
+        @include bp($bp-medium){
+          border-bottom: 1px solid #d2d2d2;
+          padding-bottom: 40px;
+          margin-bottom: 40px;
+        }
+      }
+
+      .link-separator {
+        text-decoration: underline;
+        padding: 0 10px;
+        border-left: 1px solid #d3d1d0;
+
+        &:hover {
+            text-decoration: none;
+        }
+        @include bp($bp-medium){
+          padding: 0 18px;
+        }
+      }
+      .review-section-title {
+        margin-bottom: 13px;
+
+        @include bp($bp-medium){
+          margin: 0;
+        }
+      }
+      .review-section {
+        display: inline-block;
+        color: #696969;
+        @include rem(font-size,14px);
+
+        &.grade {
+          span.review-grade.four {
+            background: #5caa7f;
+            @include border-radius(50px);
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            color: #fff;
+            display: inline-block;
+            text-align: center;
+            padding-top: 5px;
+          }
+        }
+
+        &.quality {
+          margin-top: 8px;
+          margin-left: 0;
+          margin-bottom: 8px;
+
+          @include bp($bp-medium){
+            margin-top: 0;
+            margin-left: 32px;
+            margin-bottom: 25px;
+          }
+
+          .results-slider {
+            margin-left: 10px;
+            vertical-align: middle;
+          }
+        }
+
+        &.date {
+          margin-left: 0;
+          @include bp($bp-medium){
+            margin-left: 10px;
+          }
+          @include bp($bp-large){
+            margin-left: 100px;
+          }
+        }
+      }//#tabs2-parent-reviews section review-section
+
+      .review-report {
+        span {
+          color: #696969;
+          @include rem(font-size,14px);
+          border-left: 1px solid #d3d1d0;
+          padding: 0;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+        span.review-report {
+          padding-left: 10px;
+
+          @include bp($bp-small-plus){
+            padding-left: 20px;
+          }
+
+          a {
+            color: #696969;
+            text-decoration: none;
+            border: none;
+            padding-right: 0;
+          }
+          i {
+            background-image: image-url('sprite.icon.comments.png');
+            background-repeat: no-repeat;
+            background-position: -36px 0;
+            background-size: 54px 36px;
+            display: inline-block;
+            width: 16px;
+            height: 18px;
+            margin-right: 10px;
+
+            .no-backgroundsize & {
+              background-image: image-url('sprite.icon.comments.lo-res.png');
+            }
+
+            }
+            &:hover {
+              i {
+                background-position: -36px -18px;
+              }
+              a {
+                color: #426da9;
+              }
+            }
+          } // end span.review-report
+
+        .write-review {
+          i {
+          background-image: image-url('sprite.icon.comments.png');
+          background-repeat: no-repeat;
+          background-size: 54px 36px;
+          background-position: -20px 0;
+          display: inline-block;
+          width: 16px;
+          height: 18px;
+          margin-right: 10px;
+
+          .no-backgroundsize & {
+            background-image: image-url('sprite.icon.comments.lo-res.png');
+          }
+
+          }
+          &:hover {
+            i {
+              background-position: -20px -18px;
+            }
+            a {
+              color: #426da9;
+              text-decoration: none;
+            }
+          }
+          @include bp($bp-small-plus) {
+            margin-right: 15px;
+          }
+          a {
+            color: #696969;
+            text-decoration: none;
+            border: none;
+            padding-right: 8px;
+          }
+        } // .write-review
+      } //.review-report
+  }//#tabs2-parent-reviews
+
+  .screenshot-wrapper .screenshot-thumbs{
+    hr{
+      margin-top: 0px;
+    }
+  }
+}
+}

@@ -1,0 +1,439 @@
+.help-action-content-wrapper {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  &.get-height {
+    display: block;
+    .help-action-content {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .new-content-section, .new-content-section-heading {
+      display: block;
+    }
+  }
+  .new-content-section {
+    display: none;
+    opacity: 0;
+  }
+  &.initialize-animate {
+    @include animation('show 500ms ease-in 0');
+    opacity: 1;
+  }
+  .new-content-section-heading {
+    opacity: 0;
+  }
+  &.show {
+    @include animation('show 400ms ease-in 0');
+    .new-content-section, .new-content-section-heading {
+      opacity: 1;
+    }
+    .detail-initial, .heading-initial {
+      opacity: 1;
+      display: none;
+    }
+  }
+  .new-content-section-heading {
+    opacity: 0;
+  }
+}
+.help-action-content {
+  position: absolute;
+  padding: 14px;
+  height: 290px;
+  width: 270px;
+  background-color: #f4f2f1;
+  left: 0;
+  &.animateToTop {
+    @include transition(all, 0.2s, ease-in-out);
+    top: 0;
+    height: auto;
+  }
+  @include bp ($bp-small-plus) {
+    padding: 20px;
+  }
+  @include bp ($bp-medium) {
+    padding: 40px;
+  }
+  .get-help-heading {
+    margin-bottom: 20px;
+  }
+  .container {
+    margin: 0;
+  }
+  h3 {
+    @include rem(font-size, 21px);
+    font-weight: 300;
+    margin-bottom: 19px;
+    color: #7a4183;
+    display: block;
+    margin-left: 15px;
+    text-align: left;
+    @include bp ($bp-small-plus) {
+      @include rem(font-size, 24px);
+      float: left;
+      margin-left: 0px;
+      margin-bottom: 30px;
+    }
+  }
+
+  dl {
+    display: table;
+    margin-bottom: 20px;
+    @include bp ($bp-small-plus) {
+      margin-bottom: 33px;
+    }
+  }
+
+  dt, dd {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  dt {
+    width: 80px;
+
+    .count {
+      display: block;
+      width: 45px;
+      height: 45px;
+      @include rem(line-height, 43px);
+      @include rem(font-size, 24px);
+      color: #7a4183;
+      text-align: center;
+      background-color: #FFFFFF;
+      border-radius: 100%;
+      font-weight: 700;
+      @include bp ($bp-medium) {
+        @include rem(line-height, 86px);
+        @include rem(font-size, 48px);
+        width: 90px;
+        height: 90px;
+      }
+      .no-backgroundsize & {
+        background-image: image-url('icon.circle.white.90x90.png');
+        background-color: transparent;
+      }
+    }
+  }
+
+  dd {
+    color: #696969;
+    @include rem(line-height, 20px);
+    @include rem(font-size, 14px);
+    padding: 0 0 0 12px;
+    width: 672px;
+    @include bp ($bp-small-plus) {
+      @include rem(font-size, 16px);
+      @include rem(line-height, 24px);
+      padding: 0 0 0 28px;
+    }
+    .highlight {
+      font-weight: bold;
+    }
+  }
+
+  .get-help-toolbar {
+    width: 100%;
+    display: block;
+    float: right;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0px;
+    @include bp ($bp-small-plus) {
+      float: right;
+      width: auto;
+    }
+    li {
+      float: left;
+      position: relative;
+      height: 27px;
+      @include rem (font-size, 14px);
+      @include rem (line-height, 27px);
+      color: #696969;
+      cursor: pointer;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 27px;
+      }
+      &.done-this {
+        padding-left: 33px;
+        margin-right: 13px;
+        @include bp ($bp-small-plus) {
+          margin-right: 28px;
+        }
+        &:before {
+          background: image-url('sprite.support.helptoolbar.png');
+          background-repeat: no-repeat;
+          background-position: -2px -4px;
+          background-size: 56px;
+          width: 26px;
+          .no-backgroundsize & {
+            background-image: image-url('sprite.support.helptoolbar.lowres.png');
+            background-position: -2px -4px;
+          }
+        }
+        &:hover {
+          color: #426da9;
+          &:before {
+            background: image-url('sprite.support.helptoolbar.png');
+            background-repeat: no-repeat;
+            background-position: -2px -34px;
+            background-size: 56px;
+            .no-backgroundsize & {
+              background-image: image-url('sprite.support.helptoolbar.lowres.png');
+              background-position: -2px -34px;
+            }
+          }
+        }
+      }
+      &.skip-this {
+        padding-left: 33px;
+        margin-left: 13px;
+        @include bp ($bp-small-plus) {
+          margin-left: 18px;
+        }
+        &:before {
+          background: image-url('sprite.support.helptoolbar.png');
+          background-repeat: no-repeat;
+          background-position: -28px -4px;
+          background-size: 56px;
+          width: 30px;
+          .no-backgroundsize & {
+            background-image: image-url('sprite.support.helptoolbar.lowres.png');
+            background-position: -28px -4px;
+          }
+        }
+        &:hover{
+          color: #426da9;
+          &:before {
+            background: image-url('sprite.support.helptoolbar.png');
+            background-repeat: no-repeat;
+            background-position: -28px -34px;
+            background-size: 56px;
+            .no-backgroundsize & {
+              background-image: image-url('sprite.support.helptoolbar.lowres.png');
+              background-position: -28px -34px;
+            }
+          }
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          left: -14px;
+          bottom: 0;
+          width: 1px;
+          height: 26px;
+          background-color: #d3d1d0;
+          @include bp ($bp-small-plus) {
+            left: -17px;
+          }
+        }
+      }
+    }
+  }
+
+  .help-action-strategies-wrapper {
+    border-bottom: 1px solid #c6c5c5;
+    clear: both;
+  }
+}
+
+.help-topic-suggestions {
+  padding-top: 24px;
+  @include bp ($bp-small-plus) {
+    padding-top: 40px;
+  }
+  .suggestion-wrapper {
+    width: 344px;
+    float: left;
+    @include bp ($bp-small-plus) {
+      width: 250px;
+    }
+    @include bp ($bp-large) {
+      width: 311px;
+    }
+    @include bp ($bp-large) {
+      width: 344px;
+    }
+    &:first-child {
+      margin-right: 77px;
+      margin-bottom: 25px;
+      @include bp ($bp-small-plus) {
+        margin-bottom: 0px;
+        margin-right: 20px;
+      }
+      @include bp ($bp-large) {
+        margin-right: 77px;
+      }
+    }
+  }
+  .image, .description {
+    float: left;
+  }
+  .image {
+    margin-right: 13px;
+    @include bp ($bp-small-plus) {
+      margin-right: 20px;
+    }
+    img {
+      height: 74px;
+      width: 130px;
+      @include bp ($bp-medium) {
+        height: 106px;
+        width: 190px;
+      }
+    }
+  }
+  .description {
+    @include rem (font-size, 15px);
+    width: 103px;
+    @include bp ($bp-small-plus) {
+      width: 100px;
+      @include rem (font-size, 16px);
+    }
+    @include bp ($bp-large) {
+      width: 132px;
+    }
+  }
+}
+
+.help-list {
+  display: block;
+}
+
+.help-action-content, .help-action-content.video {
+  &.animating {
+    //@include animation('growContentBox 500ms 0');
+    -webkit-animation: growContentBox 500ms; /* Safari 4+ */
+    -moz-animation:    growContentBox 500ms; /* Fx 5+ */
+    -o-animation:      growContentBox 500ms; /* Opera 12+ */
+    animation:         growContentBox 500ms;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode:forwards;
+    height: 100%;
+    width: 100%;
+    left: 0;
+  }
+  &.animateToTop {
+    @include transition(all, 0.2s, ease-in-out);
+    top: 0;
+    height: auto;
+  }
+}
+
+.help-action-content.video {
+  .get-help-toolbar {
+    margin-bottom: 23px;
+  }
+  .description, .description-mobile {
+    color: #696969;
+  }
+  .description {
+    @include rem (font-size, 16px);
+    margin-bottom: 35px;
+    clear: both;
+    display: none;
+    @include bp ($bp-small-plus) {
+      display: block;
+    }
+  }
+  .description-mobile {
+    @include rem (font-size, 14px);
+    border-top: 1px solid #c6c5c5;
+    padding-top: 25px;
+    margin-bottom: 21px;
+    @include bp ($bp-small-plus) {
+      display: none;
+    }
+  }
+  .read-more {
+    background-color: transparent;
+  }
+  .transcript-container {
+    margin: 25px 0;
+  }
+}
+
+.content-outer-wrapper {
+  overflow: hidden;
+}
+
+.webinar-video .transcript-container {
+  .transcript-wrap {
+    @include rem(font-size, 14px);
+    @include rem(line-height, 24px);
+    font-family: Arial, sans-serif;
+    position: relative;
+    max-width: 550px;
+    display: none;
+    .set-height {
+      display: block;
+      opacity: 0;
+      position: absolute;
+    }
+    h3, h2, p {
+      text-align: left;
+    }
+    p {
+      clear: both;
+    }
+    h3 {
+      margin: 0 0 5px 0;
+    }
+
+  }
+  &.open .transcript-wrap {
+    display: block;
+  }
+}
+
+@-webkit-keyframes growContentBox {
+  0%   { height: 290px;
+        width: 270px; }
+  100% { height: 100%;
+        width: 100%;
+        left: 0;
+      }
+}
+@-moz-keyframes growContentBox {
+  0%   { height: 290px;
+        width: 270px; }
+  100% { height: 100%;
+    width: 100%;
+    left: 0;
+  }
+}
+@-o-keyframes growContentBox {
+  0%   { height: 290px;
+        width: 270px; }
+  100% { height: 100%;
+    width: 100%;
+    left: 0;
+  }
+}
+@keyframes growContentBox {
+  0%   { height: 290px;
+        width: 270px; }
+  100% { height: 100%;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.help-content-wrapper {
+  height: 100%;
+  &.resize {
+    @include transition(height, 20ms, ease-in-out);
+  }
+}

@@ -1,0 +1,307 @@
+/**
+ * SASS partial for expert-events module.
+ */
+
+// Hide stuff that is for past only
+.expert-events.future{
+  .expert-event-type{
+    h4{
+      @include bp($bp-small-plus){
+        top: 56px;
+      }
+    }
+    .time-past{display:none;}
+  }
+  .expert-event{
+    .expert-event-details{
+      .date-past{display:none;}
+      .topics-covered{margin-bottom:16px;}
+    }
+  }
+}
+// Hide stuff that is for future only
+.expert-events.past{
+  .expert-event{
+    .expert-event-type{
+      h4{
+        @include bp($bp-small-plus){
+          top: 44px;
+        }
+      }
+    }
+    .expert-event-details{
+      .date-future{display:none;}
+      .links-future{display:none;}
+      .topics-covered{margin-bottom:0px;}
+    }
+  }
+}
+
+.expert-events{
+
+  .expert-events-title{
+
+    @include bp($bp-small-plus){
+      margin-bottom: 40px;
+    }
+
+    h3{
+      color: #7a4183;
+      @include rem(font-size, 30px);
+      @include rem(line-height, 34px);
+      font-weight: normal;
+      margin-bottom: 16px;
+
+      @include bp($bp-small-plus){
+        margin-bottom: 0px;
+      }
+    }
+    .see-more{
+      display: block;
+      text-decoration: none;
+      @include rem(font-size, 16px);
+      @include rem(line-height, 16px);
+      font-weight: normal;
+      background-color: #f4f2f1;
+      @include border-radius(3px);
+      max-width: 110px;
+      height: 40px;
+      text-align: center;
+      padding-top: 11px;
+      margin: 0 auto 40px auto;
+
+      &:hover{
+        text-decoration: none;
+        background: #bcbdc0;
+      }
+
+      @include bp($bp-small-plus){
+        margin: 0px;
+      }
+    }
+  } // .expert-events-title
+
+  .expert-event-container{
+
+    .expert-event{
+
+      &:first-child{
+        margin-bottom: 40px;
+
+        @include bp($bp-small-plus){
+          margin-bottom: 47px;
+        }
+      }
+
+      &:last-child{
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #d2d2d2;
+
+        @include bp($bp-small-plus){
+          padding-bottom: 49px;
+          margin-bottom: 46px;
+        }
+      }
+
+      .border-col{
+        display: none;
+        @include bp($bp-small-plus){
+          display: block;
+        }
+        div{
+          height: 128px;
+          border-right: 1px solid #c6c5c5;
+        }
+      }
+
+      .col:nth-child(2){
+        clear: both;
+        @include bp($bp-small-plus){
+          float: left;
+          clear: none;
+        }
+      }
+      .col:last-child{
+        @include bp($bp-small-plus){
+          margin-left: 4.16666666667%;
+        }
+      }
+
+      .expert-event-image{
+        margin-bottom: 12px;
+
+        @include bp($bp-small-plus){
+          width: auto;
+          margin-bottom: 0px;
+        }
+
+        a{
+          display: block; // need for focus (accessibility)
+          img{
+            height: auto;
+            width: 100%;
+            display: block;
+          }
+        }
+      } // .expert-event-image
+
+      .expert-event-type{
+
+        h4{
+          color: #7a4183;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 30px);
+          font-weight: normal;
+          margin-bottom: 4px;
+
+          @include bp($bp-small-plus){
+            @include rem(line-height, 16px);
+            text-align: center;
+            width: auto;
+            position: relative;
+            margin-bottom: 0px;
+          }
+        }
+        .time-past{
+          color: #696969;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 16px);
+          font-weight: normal;
+          text-align: left;
+          margin: 0 0 18px 0;
+
+          @include bp($bp-small-plus){
+            text-align: center;
+            span{
+              @include rem(font-size, 16px);
+              @include rem(line-height, 16px);
+              display: inline;
+              margin: 0px;
+            }
+            position: relative;
+            top: 56px;
+          }
+        }
+
+      } // .expert-event-type
+
+      .expert-event-details{
+
+        .date-future{
+          color: #7a4183;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 16px);
+          font-weight: bold;
+          margin-bottom: 12px;
+
+          @include bp($bp-small-plus){
+            @include rem(font-size, 18px);
+            @include rem(line-height, 18px);
+          }
+        }
+        .date-past{
+          color: #696969;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 16px);
+          font-weight: bold;
+          margin-bottom: 12px;
+          display: none;
+
+          @include bp($bp-small-plus){
+            display: block;
+            @include rem(font-size, 18px);
+            @include rem(line-height, 18px);
+          }
+        }
+        a.event-title{
+          color: #426da9;
+          @include rem(font-size, 18px);
+          @include rem(line-height, 24px);
+          font-weight: normal;
+          margin-bottom: 10px;
+          display: block;
+
+          @include bp($bp-small-plus){
+            @include rem(font-size, 24px);
+            @include rem(line-height, 30px);
+          }
+        }
+        h5{
+          color: #696969;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 24px);
+          font-weight: bold;
+          margin-bottom: 4px;
+
+          @include bp($bp-small-plus){
+            margin-bottom: 0px;
+          }
+        }
+        .topics-covered{
+          color: #696969;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 20px);
+          font-weight: normal;
+
+          @include bp($bp-small-plus){
+            @include rem(line-height, 24px);
+          }
+        }
+        .links-future{
+          a{
+            display: block;
+            text-decoration: underline;
+            @include rem(font-size, 16px);
+            @include rem(line-height, 22px);
+            font-weight: normal;
+
+            &:hover{
+              text-decoration: none;
+            }
+            &:last-child{
+              border: none;
+              padding-right: 0px;
+              margin-right: 0px;
+            }
+
+            @include bp($bp-small-plus){
+              display: inline-block;
+              border-right: 1px solid #d3d1d0;
+              padding-right: 13px;
+              margin-right: 10px;
+            }
+          }
+        }
+
+      } // .expert-event-details
+
+    } // .expert-event
+
+    .see-more{
+      display: block;
+      text-decoration: none;
+      @include rem(font-size, 16px);
+      @include rem(line-height, 16px);
+      font-weight: normal;
+      background-color: #f4f2f1;
+      @include border-radius(3px);
+      max-width: 110px;
+      height: 40px;
+      text-align: center;
+      padding-top: 11px;
+      margin: 40px auto;
+
+      &:hover{
+        text-decoration: none;
+        background: #bcbdc0;
+      }
+
+      @include bp($bp-small-plus){
+        margin: 0px;
+      }
+    }
+
+  } // .expert-event-container
+
+} // .expert-events

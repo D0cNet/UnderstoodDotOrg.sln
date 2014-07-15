@@ -1,0 +1,28 @@
+/**
+ * SASS partial for aboutTools module.
+ */
+.about-tools-header {
+  h3 {
+    @include rem(font-size, 24px);
+    font-weight: normal;
+    color: #6c4282;
+    padding: 30px 0;
+    @include bp($bp-small-plus) {
+      padding: 47px 0 37px 0;
+    }
+  }
+}
+.about-tools {
+  .mini-tools-wrap {
+    margin-bottom: 79px;
+    background: #fff;
+    background-image: none !important;
+    padding: 0;
+  }
+  .mini-tool {
+    background-color: #f4f2f1;
+    @include bp($bp-large){
+      min-height: 602px;
+    }
+  }
+}

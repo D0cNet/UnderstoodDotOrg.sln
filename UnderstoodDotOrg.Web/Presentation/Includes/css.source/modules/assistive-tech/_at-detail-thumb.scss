@@ -1,0 +1,147 @@
+/**
+ * SASS partial for Assistive Technology screenshot thumbs slider module.
+ */
+ $bp-650-959: (min-width 650px) (max-width 959px);
+
+.screenshot-wrapper {
+  width: 100%;
+
+  .screenshot-thumbs-lg {
+    padding-top: 0;
+
+    @include bp($bp-small-plus){
+    padding-top: 40px;
+    }
+  }
+  .screenshot-thumbs-mobile {
+    padding-top: 10px;
+
+    @include bp($bp-small-plus) {
+      padding-top: 0;
+    }
+  }
+  .screenshot-thumbs {
+
+    h2 {
+      @include rem(font-size, 24px);
+      color: #6c4282;
+      font-weight: normal;
+      margin-bottom: 24px;
+      text-align: center;
+
+      @include bp($bp-small-plus){
+        text-align: left;
+        margin-left: 0;
+      }
+      @include bp($bp-large){
+        margin-left: 25px;
+      }
+    }
+    p.slide-count {
+      margin: 0 auto;
+      @include rem(font-size, 16px);
+    }
+
+    .screenshot-thumbs-wrapper {
+      margin: 0 auto;
+      width: 291px;
+      height: 460px;
+      overflow:hidden;
+      img {
+        width:290px;
+        height: 384px;
+      }
+      @include bp($bp-650-959){
+        margin: 0;
+        width: 160px;
+        height: 310px;
+        img {
+          width: 160px;
+          height: 226px;
+        }
+      }
+      @include bp($bp-large){
+        margin: 25px;
+        width: 191px;
+        height: 310px;
+        img {
+          width: 191px;
+          height: 253px;
+        }
+      }
+
+      .rsOverflow {
+        height: 400px !important;
+        overflow: visible;
+        @include bp($bp-small-plus){
+          height: 270px !important;
+        }
+        .rsContainer {
+          overflow:visible;
+        }
+      }
+      .rsArrow .rsArrowIcn {
+        background-image: image-url('sprite.nav-arrows.carousel-grey.png');
+        background-size: 70px 65px;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        top: 410px;
+        right: 37%;
+        @include bp($bp-650-959){
+          top: 260px;
+          right: 26%;
+        }
+        @include bp($bp-large){
+          top: 270px;
+          right: -4px;
+        }
+
+        .no-backgroundsize & {
+          background-image: image-url('sprite.nav-arrows.carousel-grey.lo-res.png');
+        }
+      }
+      .rsArrowLeft .rsArrowIcn {
+        background-position: 0 0;
+        right: 51%;
+        @include bp($bp-650-959){
+          right: 50%;
+        }
+        @include bp($bp-large){
+          right: 38px;
+        }
+        &:hover {
+          background-position: 0 -35px;
+        }
+      }
+      .rsArrowRight .rsArrowIcn {
+        background-position: -40px 0;
+        &:hover {
+          background-position: -40px -35px;
+        }
+      }
+    } // .screenshot-thumbs-wrapper
+
+    .slide-count {
+      color:#696969;
+      font-family:Arial, sans-serif;
+      @include rem(font-size, 16px);
+      clear: both;
+      text-align: center;
+      bottom: 74px;
+      width: 60px;
+      height: 20px;
+      display: block;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      z-index: -1;
+      @include bp($bp-large){
+        position: absolute;
+        bottom: 42px;
+        left: 92px;
+        width: auto;
+      }
+    } //.slide-count
+  } // .screenshot-thumbs
+} // .screenshot-wrapper

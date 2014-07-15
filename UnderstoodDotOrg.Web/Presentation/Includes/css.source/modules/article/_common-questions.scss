@@ -1,0 +1,61 @@
+.common-questions {
+  margin: 0 15px;
+
+  @include bp($bp-small-plus){
+    margin: 0;
+  }
+
+  div.row{
+    @include bp($bp-small-plus){
+      margin-bottom: 20px;
+      &:last-child{
+        margin-bottom: 7px;
+      }
+    }
+
+    div.image-left{
+      float: left;
+      clear: left;
+      margin-right: 16px;
+      margin-bottom: 40px;
+      @include bp($bp-small-plus){
+        margin-right: 0;
+        clear: none;
+      }
+      img{
+        display: block;
+        height: auto;
+        max-width: 130px;
+        width: 100%;
+
+        @include bp($bp-small-plus){
+          max-width: 100%;
+          display: block;
+        }
+      }
+    }
+
+    div.question-right{
+      float: left;
+      width: 48%;
+      @include bp($bp-small-plus){
+        margin-bottom: 40px;
+        width: 20.8333333333%;
+        clear: none;
+      }
+      a{
+        @include rem(font-size, 15px);
+        display: block;
+        margin-top: -4px;
+
+
+        @include bp($bp-small-plus){
+          margin-top: -6px;
+          @include rem(font-size, 21px);
+          display: block;
+        }
+      }
+    }
+
+  }// div.row
+}// .common questions

@@ -1,0 +1,138 @@
+.event-cards {
+  margin-left: 0;
+  margin-top: 42px;
+  visibility: hidden;
+
+  @include bp($bp-small) {
+    margin-left: 42px;
+  }
+
+  @include bp($bp-small-plus) {
+    margin-left: 0;
+  }
+
+  @include bp($bp-large) {
+    margin-left: 42px;
+  }
+
+  .event-card {
+    display: inline-block;
+
+    &:first-child {
+      margin-bottom: 40px;
+      margin-right: 0;
+
+      @include bp($bp-small) {
+        margin-right: 36px;
+      }
+
+      @include bp($bp-small-plus) {
+        margin-right: 26px;
+      }
+
+      @include bp($bp-large) {
+        margin-right: 36px;
+      }
+    }
+
+    .event-card-image {
+      display: block;
+      float: left;
+      margin-right: 16px;
+      position: relative;
+
+      img {
+        height: 126px;
+        width: 126px;
+      }
+
+      @include bp($bp-large) {
+        margin-right: 16px;
+
+        img {
+          height: 150px;
+          width: 150px;
+        }
+      }
+    }
+
+    .event-card-content {
+      display: table-cell;
+    }
+
+    .event-card-datetime {
+      color: #7b3f84;
+      @include rem(font-size, 12px);
+      font-weight: bold;
+
+      @include bp($bp-small) {
+        @include rem(font-size, 16px);
+        margin-bottom: 14px;
+      }
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 16px);
+        margin-bottom: 0;
+        padding-bottom: 8px;
+      }
+    }
+
+    .event-card-title {
+      color: #426da9;
+      @include rem(font-size, 18px);
+      font-weight: normal;
+
+      @include bp($bp-large) {
+        @include rem(font-size, 24px);
+      }
+      
+    }
+
+    .card-buttons {
+      clear: both;
+      margin-top: 16px;
+
+      @include bp($bp-small-plus) {
+        margin-top: 0;
+      }
+
+      @include bp($bp-medium) {
+        margin-top: 26px;
+      }
+
+      .button {
+        font-weight: bold;
+        margin-right: 16px;
+        width: 78px;
+
+        @include bp($bp-small) {
+          @include rem(font-size, 16px);
+          height: 40px;
+          @include rem(line-height, 40px);
+          width: 90px;
+        }
+
+        @include bp($bp-small-plus) {
+          margin-bottom: 16px;
+          margin-top: 16px;
+          width: 135px;
+        }
+
+        @include bp($bp-medium) {
+          margin-bottom: 0;
+          margin-top: 0;
+          width: 90px;
+        }
+      }
+
+      a {
+        cursor: pointer;
+        @include rem(font-size, 12px);
+
+        @include bp($bp-small) {
+          @include rem(font-size, 16px);
+        }
+      }
+    }
+  }
+}

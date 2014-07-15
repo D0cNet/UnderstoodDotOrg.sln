@@ -1,0 +1,186 @@
+.additional-recommendations {
+  margin: 40px 0 0;
+  padding: 40px 0;
+  background: #f4f2f1;
+
+  .recommendations-promos {
+    padding: 0 15px;
+    @include bp ($bp-small-plus) {
+      padding: 0;
+    }
+  }
+
+  .promo {
+    display: table;
+    margin-bottom: 45px;
+    padding: 0;
+
+    @include bp($bp-small-plus) {
+      padding: 0;
+
+    }
+
+    a {
+      color: #426da9;
+      margin-bottom: 10px;
+      @include rem(font-size, 20px);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .recommendations-promos .thumb,
+  .recommendations-promos .promo-content {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .recommendations-promos .thumb {
+    width: 135px;
+    padding-right: 15px;
+    position: relative;
+
+    .play {
+      position: absolute;
+      z-index: 10;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 66px;
+      @include transparent(#000, .3);
+      position: absolute;
+      text-indent: -9999em;
+
+      @include bp($bp-small-plus) {
+        width: 160px;
+        height: 88px;
+      }
+
+      &:after {
+        content: "";
+        width: 41px;
+        height: 41px;
+        top: 13px;
+        left: 40px;
+        background-image: image-url('sprite.icon.reco.play-button.png');
+        background-size: 41px auto;
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+
+        .no-backgroundsize & {
+          background-image: image-url('sprite.icon.reco.play-button.lo-res.png');
+        }
+
+        @include bp($bp-small-plus) {
+          top: 24px;
+          left: 60px;
+        }
+      }
+
+      &:hover:after {
+        background-position: 0 -41px;
+      }
+    }
+
+    img {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    @include bp($bp-small-plus) {
+      width: 190px;
+      padding-right: 30px;
+    }
+  }
+
+  .children-key {
+    ul {
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      width: 25px;
+    }
+  }
+
+  .related-tool-wrapper {
+    margin: 0 15px;
+
+    @include bp($bp-small-plus) {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 30px;
+    }
+  }
+
+  .related-tool {
+    display: block;
+    background: #fff;
+    padding: 20px 40px 30px 40px;
+    color: #7a4183;
+    width: 100%;
+
+    @include bp($bp-small-plus) {
+      max-width: 390px;
+      margin: 0;
+      float: right;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .tool-intro {
+      border-bottom: 1px solid #e2e2e2;
+      @include rem(font-size, 20px);
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+    .tool-name {
+      @include rem(font-size, 24px);
+      padding-top: 105px;
+      background-size: 114px auto;
+      background-image: image-url('icon.recommendations.parenting.coach.png');
+      background-position: center top;
+      background-repeat: no-repeat;
+      margin-bottom: 10px;
+
+      .no-backgroundsize & {
+        background-image: image-url('icon.recommendations.parenting.coach.lo-res.png');
+      }
+    }
+  }
+
+  .child-content-indicator {
+    clear: both;
+    margin: 40px 0 0;
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+
+    @include breakpoint($bp-small-plus) {
+      padding: 0;
+
+      .children-key li {
+        margin-bottom: 0;
+      }
+    }
+
+    .children-key {
+      width: 100%;
+    }
+  }
+}

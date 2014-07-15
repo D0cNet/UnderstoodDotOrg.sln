@@ -1,0 +1,262 @@
+#community-page .container {
+  margin-left: inherit;
+  margin-right: inherit;
+}
+
+.search-button {
+  background: image-url("sprite.icon.search.32.png") 50% 2px no-repeat;
+  background-size: 16px 41px;
+  border: 0;
+  float: right;
+  height: 20px;
+  margin-top: 13px;
+  text-indent: -999em;
+  width: 20px;
+
+  .no-backgroundsize & {
+    background-image: image-url('sprite.icon.search.lo-res.png');
+  }
+
+}
+
+.button {
+  padding: 0 22px;
+}
+
+.question-answer-info {
+  display: table-cell;
+  padding-left: 32px;
+
+  @include bp($bp-small) {
+    width: 380px;
+  }
+
+  @include bp($bp-small-plus) {
+    width: 540px;
+  }
+
+  @include bp($bp-medium) {
+    width: 650px;
+  }
+
+  @include bp($bp-large) {
+    width: 720px;
+  }
+
+  .question-status {
+    display: block;
+    @include rem(font-size, 14px);
+    font-weight: bold;
+    margin-bottom: 14px;
+
+    @include bp($bp-large) {
+      @include rem(font-size, 18px);
+      margin-bottom: 33px;
+    }
+  }
+
+  .title {
+    color: #7b3f84;
+    display: inline-block;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 24px);
+    margin-bottom: 26px;
+
+    @include bp($bp-large) {
+      @include rem(font-size, 24px);
+      @include rem(line-height, 30px);
+      margin-bottom: 22px;
+    }
+  }
+
+  .description {
+    display: block;
+    @include rem(font-size, 14px);
+    @include rem(line-height, 21px);
+    margin-bottom: 26px;
+
+    @include bp($bp-large) {
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+      margin-bottom: 20px;
+    }
+  }
+
+  .details {
+    display: block;
+    @include rem(font-size, 14px);
+    @include rem(line-height, 21px);
+
+    @include bp($bp-large) {
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+    }
+
+    .topic {
+      text-decoration: underline;
+
+      &:after {
+        @include linebreak();
+
+        @include bp($bp-small-plus) {
+          @include clear_linebreak();
+        }
+      }
+
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+
+    .author {
+      text-decoration: underline;
+
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+
+    .bullet {
+      @include rem(font-size, 10px);
+      vertical-align: top;
+    }
+  }
+}
+
+.button-view-all {
+  background-color: #f4f2f1;
+  border-radius: 2px;
+  color: #298fc2;
+  cursor: pointer;
+  display: block;
+  @include rem(font-size, 16px);
+  @include rem(line-height, 16px);
+  margin-top: 8px;
+  padding: 13px 25px;
+  position: relative;
+  right: 0;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+
+  @include bp($bp-large) {
+    margin-top: 0;
+    position: absolute;
+  }
+
+  &:hover {
+    background-color: #208ec4;
+    color: #fff;
+  }
+}
+
+.card-buttons {
+
+  .button {
+    display: inline-block;
+    @include rem(font-size, 14px);
+    font-weight: bold;
+    height: 34px;
+    @include rem(line-height, 34px);
+    margin-right: 28px;
+    width: 113px;
+
+    @include bp($bp-large) {
+      @include rem(font-size, 16px);
+      @include rem(line-height, 40px);
+      height: 40px;
+      margin-right: 28px;
+      width: 150px;
+    }
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: underline;
+    @include rem(font-size, 14px);
+
+    @include bp($bp-large) {
+      @include rem(font-size, 16px);
+    }
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.next-prev-menu.arrows {
+  height: 36px;
+  position: relative;
+  right: 0;
+  top: 0;
+
+  @include bp($bp-small) {
+    position: absolute;
+  }
+
+  .rsArrow {
+    display: inline-block;
+    height: 36px;
+    position: static;
+    right: 0;
+    width: 36px;
+  }
+
+  .rsArrowLeft .rsArrowIcn {
+    left: 0;
+  }
+
+  .rsArrowRight .rsArrowIcn {
+    right: 0;
+  }
+
+  .view-all {
+    color: #298fc2;
+    display: inline-block;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 36px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    height: 36px;
+
+    @include bp($bp-small) {
+      @include rem(font-size, 14px);
+      margin: 0 5px;
+      position: relative;
+      width: inherit;
+    }
+
+    @include bp($bp-medium) {
+      height: 31px;
+      width: 31px;
+      @include rem(line-height, 36px);
+      height: 31px;
+    }
+
+    @include bp($bp-large) {
+      @include rem(font-size, 16px);
+      margin: 0 24px;
+    }
+  }
+}
+
+.rsContent > ul {
+  list-style: none;
+  @include reset-margin-before-after();
+  margin: 0;
+  padding: 0;
+}
+
+.ui-slider-tick-mark{
+    background: #bcbdc0;
+    display: inline-block;
+    height: 4px;
+    position: absolute;
+    top: 25px;
+    width: 1px;
+}

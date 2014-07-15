@@ -1,0 +1,154 @@
+/**
+ * SASS partial for share drop down
+ */
+
+.share-dropdown-menu{
+  position: relative;
+  float: right;
+  color: #426da9;
+  margin-right: 20px;
+  @include bp($bp-small-plus){
+    margin-right: -10px;
+  }
+
+  i.icon-arrow {
+    display: inline-block;
+    background: image-url('sprite.share.article-slideshow.png') 0px -82px no-repeat;
+    background-size: 20px 90px;
+    height: 8px;
+    width: 20px;
+
+    .no-backgroundsize & {
+      background-image: image-url('sprite.share.article-slideshow.lo-res.png');
+    }
+
+  }
+
+  .social-share-button {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+  }
+
+  .share-menu {
+    z-index: 10;
+    display: none;
+    cursor: pointer;
+    text-align: center;
+    @include dropshadow;
+
+    ul {
+      background-color: #fff;
+      list-style-type: none;
+      padding: 0;
+      margin: 0 15px;
+
+      li {
+        @include rem(font-size, 16px);
+        line-height: 46px;
+        height: 46px;
+        border-top: 1px solid #f4f2f1;
+        width: 105px;
+        text-align: left;
+        a {
+          color: #696969;
+        }
+        a.icon-facebook:hover, a.icon-facebook:focus{
+          color: #4382ce;
+          text-decoration: none;
+        }
+        a.icon-twitter:hover, a.icon-twitter:focus{
+          color: #40affc;
+          text-decoration: none;
+        }
+        a.icon-google:hover, a.icon-google:focus{
+          color: #db0a16;
+          text-decoration: none;
+        }
+        a.icon-pinterest:hover, a.icon-pinterest:focus{
+          color: #cc1f24;
+          text-decoration: none;
+        }
+        &:first-child {
+          border-top: 0;
+        }
+
+        i {
+          float: left;
+          margin: 13px 5px 13px 0;
+          height: 18px;
+          width: 20px;
+
+          .no-backgroundsize & {
+            background-image: image-url('sprite.share.article-slideshow.lo-res.png') !important;
+          }
+
+        }
+
+        i.icon-facebook {
+          background: image-url('sprite.share.article-slideshow.png') 0px 0px no-repeat;
+          background-size: 20px 90px;
+        }
+        i.icon-twitter {
+          background: image-url('sprite.share.article-slideshow.png') 0px -18px no-repeat;
+          background-size: 20px 90px;
+        }
+        i.icon-google {
+          background: image-url('sprite.share.article-slideshow.png') 0px -38px no-repeat;
+          background-size: 20px 90px;
+        }
+        i.icon-pinterest {
+          background: image-url('sprite.share.article-slideshow.png') 0px -56px no-repeat;
+          background-size: 20px 90px;
+        }
+      }
+    }
+  }
+
+  &:hover .share-menu, &.selected .share-menu {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    top: -21px;
+    left: -36px;
+
+    .social-share {
+      display: inline-block;
+      padding: 20px 0 10px 0;
+      text-align: center;
+    }
+
+    i.icon-arrow {
+      background: image-url('sprite.share.article-slideshow.png') 0px -75px no-repeat;
+      background-size: 20px 90px;
+      margin-bottom: 1px;
+      height: 6px;
+
+      .no-backgroundsize & {
+        background-image: image-url('sprite.share.article-slideshow.lo-res.png');
+      }
+      
+    }
+  }
+
+}
+
+.article-slideshow-container .share-dropdown-menu{
+  &:hover .share-menu, &.selected .share-menu {
+    left: -57px;
+    @include bp($bp-small){
+      left: -36px;
+    }
+
+    .social-share {
+      position: relative;
+      left: 11px;
+
+      @include bp($bp-small){
+        position: static;
+        left: 0;
+      }
+    }
+  }
+}

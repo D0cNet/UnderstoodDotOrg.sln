@@ -1,0 +1,132 @@
+/**
+ * SASS partial for article-listing module.
+ * (used on templates: g3, g4)
+ */
+
+.article-listing-container {
+  margin: 0 13px;
+  // fix to prevent 1px shifting in Chrome, due to royal slider defect
+  -webkit-backface-visibility: hidden;
+
+  @include bp($bp-small-plus){
+    margin: 0;
+  }
+  
+  .col-11 {
+    @include bp($bp-small-plus){
+      width: 43%;
+    }
+
+    @include bp($bp-medium){
+      width: 44%;
+    }
+  }
+
+  .listing-row {  }// .listing-row
+
+  .article {
+    margin-bottom: 34px;
+    @include legacy-pie-clearfix;
+
+    @include bp($bp-small-plus){
+        margin-bottom: 50px;
+      }
+
+    > a {
+      width: 50%;
+      padding-right: 16px;
+      display: block;
+      float: left;
+
+      @include bp($bp-small){
+        padding-right: 20px;
+      }
+
+      @include bp($bp-small-plus){
+        width: 53%;
+      }
+
+      @include bp($bp-medium){
+        padding-right: 34px;
+        width: 58%;
+      }
+
+      @include bp($bp-large){
+        padding-right: 50px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+    }
+
+
+
+    .article-title-container {
+      width: 45%;
+      float: left;
+      
+      @include bp($bp-small-plus){
+        width: 47%;
+      }
+
+      @include bp($bp-medium){
+        width: 42%;
+      }
+
+      h3 {
+        margin: -3px 0 4px;
+        @include rem(font-size, 15px);
+        @include rem(line-height, 20px);
+        font-weight: normal;
+
+        @include bp($bp-small-plus) {
+          margin: -5px 0 10px;
+          @include rem(font-size, 18px);
+          @include rem(line-height, 24px);
+        }
+
+        @include bp($bp-medium) {
+          @include rem(font-size, 22px);
+          @include rem(line-height, 28px);
+        }
+
+      }
+
+    }// .article-title-container
+
+  }// .article
+
+  // single column class used in G4
+  &.single-col {
+    .article {
+
+      > a {
+        @include bp($bp-small-plus){
+          width: 50%;
+          padding-right: 50px;
+        }
+
+        @include bp($bp-medium){
+          width: 41%;
+        } 
+      }
+
+      .article-title-container {
+
+        @include bp($bp-small-plus){
+          width: 46%;
+        }
+
+        h3 {
+          @include bp($bp-small-plus) {
+            @include rem(font-size, 22px);
+            @include rem(line-height, 28px);
+          }
+        }
+      }
+    }
+  }// .article-listing .single-col
+  
+}// .article-listing

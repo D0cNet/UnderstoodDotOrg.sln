@@ -1,0 +1,175 @@
+.recos-upcoming-events {
+  position: relative;
+  background: #f4f2f1;  
+  margin: 0;
+  padding: 0 15px; 
+
+  @include bp($bp-small-plus){
+    padding: 0 20px; 
+  }
+
+  > .row {
+    border-bottom: solid 1px #c6c5c5;
+    padding: 25px 0 80px;
+
+    @include bp($bp-small-plus){
+      padding-bottom: 25px;
+    }
+
+    @include bp($bp-small-plus){
+      padding: 45px 0 25px;
+    }
+  }
+
+  .rsContent {
+    > ul {
+      list-style: none;
+      margin: 0; padding: 0;
+
+      > li {
+
+        @include bp($bp-small){
+          padding-bottom: 25px;
+        }
+         
+        @include bp($bp-small-plus){
+          float: left;
+          width: 50%;
+          padding-right: 20px;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+  }//.rsContent
+
+  .event-wrapper {
+
+    @include bp($bp-large) {
+      padding: 0 20px 0 40px;
+    }
+
+    .author-image {
+      float: left;
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+
+      .label {
+        background: #426da9;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        height: 35px;
+        @include rem(font-size, 18px);
+        @include rem(line-height, 35px);
+        color: #fff;
+        width: 100%;
+      }
+
+    }
+
+    .event-card-info {
+      padding-left: 20px;
+      overflow: hidden;
+
+      .event-card-title {
+        @include rem(font-size, 18px);
+        @include rem(line-height, 22px);
+        margin-bottom: 10px;
+
+        @include bp($bp-medium){
+          @include rem(font-size, 24px);
+          @include rem(line-height, 28px);
+        }
+
+      }
+
+      .event-card-date {
+        color: #7a4283;
+        font-weight: bold;
+        margin-bottom: 10px;
+        @include rem(font-size, 16px);
+
+        @include bp($bp-medium){
+          @include rem(font-size, 18px);
+        }
+
+      }
+
+      .event-card-author {
+        color: #7a4283;
+        margin-bottom: 10px;
+        @include rem(font-size, 14px);
+
+        @include bp($bp-medium){
+          @include rem(font-size, 16px);
+        }
+      }
+
+    }//.event-card-info
+
+  }//.event-wrapper
+
+  .rsArrowIcn {
+    z-index: 2;
+    
+    @include bp($bp-small-plus){
+      top: 0;
+      bottom: initial;
+    }
+
+  }
+
+  .rsArrowLeft .rsArrowIcn {
+
+    top: auto;
+    bottom: 20px;
+    right: 50%;
+    margin-right: 15px;
+       
+    @include bp($bp-small-plus){
+      margin-right: 0;
+      bottom: 26px;
+      top: 0;
+      right: 54px;
+    }
+
+    @include bp($bp-medium) {
+      right: 44px;
+    }
+
+  }// .rsArrowLeft
+
+  .rsArrowRight .rsArrowIcn {
+    top: auto;
+    bottom: 20px;
+    right: auto;
+    left: 50%;
+    margin-left: 15px;
+
+    @include bp($bp-small-plus) {
+      left: auto;
+      margin-left: 0;
+      bottom: 26px;
+      top: 0;
+      right: 0;
+    }
+
+  }// .rsArrowRight
+
+  // constrain height IE8
+  .rsOverflow,
+  .rsAutoHeight {
+
+    @include old-ie {
+      height: 300px !important;
+    }
+
+  }
+
+
+}//.recos-upcoming-events 

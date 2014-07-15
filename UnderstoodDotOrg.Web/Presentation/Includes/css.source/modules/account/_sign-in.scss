@@ -1,0 +1,73 @@
+.sign-up-link{
+  text-align:right;
+  background-color:#f4f2f1;
+  padding:25px 15px 10px 0;
+  margin:0;
+
+  p{
+    color:#696969;
+    @include rem(font-size, 16px);
+    margin-bottom:0;
+
+    a{
+      color:#426da9;
+      text-decoration:underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.myaccount-sign-in{
+  background-color:#f4f2f1;
+  padding:0 15px 30px 15px;
+  margin:0;
+
+  h1{
+    color:#794382;
+    @include rem(font-size, 32px);
+    line-height:58px;
+    margin-bottom:25px;
+    font-weight:normal;
+  }
+
+  .fb-sign-in{
+    img{
+      margin-bottom:25px;
+      height: 50px;
+      max-width: 310px;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  p{
+    color:#696969;
+    @include rem(font-size, 18px);
+    line-height:40px;
+    margin-bottom:10px;
+  }
+
+  input{
+    display:block;
+    margin-bottom:25px;
+  }
+
+  .button {
+    display: block;
+    margin: 0px auto 15px auto;
+    width: 40%;
+    @include bp($bp-small-plus) { width: 30%; }
+  }
+
+  .sign-in-forgot-password{
+    color:#426da9;
+    font-family:Arial, sans-serif;
+    @include rem(font-size, 14px);
+    line-height:40px;
+    text-decoration:underline;
+    display:block;
+    margin:0 auto;
+    text-align:center;
+  }
+}

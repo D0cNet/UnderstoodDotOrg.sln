@@ -1,0 +1,145 @@
+/**
+ * SASS partial for my favorites
+ * This references common share drop menu
+ */
+.account-myfavorites{
+  margin-top: 10px;
+  .myfavorites-item{
+    padding-bottom: 26px;
+    .favorite-title-wrap{
+      @include bp($bp-small-plus){
+        width: 80%;
+      }
+      @include bp($bp-medium){
+        width: 50%;
+      }
+      .favorite-title{
+        color:#426da9;
+        display: block;
+        @include rem(font-size, 18px);
+        @include rem(line-height, 22px);
+        margin-bottom: 15px;
+        @include bp($bp-small-plus){
+          margin-right: 20px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+    .favorite-toolbar{
+      @include bp($bp-small-plus){
+        width: 100%;
+      }
+      @include bp($bp-medium){
+        width: 37.5%;
+      }
+      .favorite-comment-count{
+        float: left;
+        @include bp($bp-medium){
+          background-color:initial;
+        }
+        a{
+          position: relative;
+          top: 8px;
+          @include rem(font-size, 16px);
+          font-weight:normal;
+          font-style:normal;
+          color:#696969;
+          display:inline-block;
+          width:100%;
+          span{
+            background-image: image-url('sprite.helpful-count.png');
+            background-size: 72px 74px;
+            background-repeat: no-repeat;
+            background-position: -40px 0px;
+            display:inline-block;
+            line-height:32px;
+            color:#fff;
+            width:34px;
+            height:34px;
+            padding:0 8px;
+            position: relative;
+            margin-right:5px;
+            top: -4px;
+
+            .no-backgroundsize & {
+              background-image: image-url('sprite.helpful-count.lo-res.png');
+            }
+            
+          }
+          &:hover, &:focus {
+            outline: none;
+            color: #426da9;
+            span {
+              background-position: -40px -40px;
+            }
+          }
+        }
+      }
+      .tools{
+        background-color:#f4f2f1;
+        float:right;
+        padding: 10px 20px 10px 20px;
+        min-width: 240px;
+        @include bp($bp-small-plus){
+          padding: 10px 20px 10px 15px;
+        }
+        @include bp($bp-medium){
+          min-width: 218px;
+        }
+        @include bp($bp-large){
+          padding: 10px 41px 10px 34px;
+          min-width: 260px;
+          @include old-ie {
+            min-width: 180px;
+          }
+        }
+        .buttons-container{
+          float: left;
+          button {
+            float: left;
+            height: 25px;
+            width: 40px;
+            &:first-child {
+              width: 36px;
+              @include bp($bp-large){
+                width: 40px;
+              }
+            }
+            @include bp($bp-large){
+              width: 44px;
+            }
+            &:focus {
+              outline: none;
+            }
+
+            @include old-ie {
+              height: 35px;
+              position: relative;
+              top: -5px;
+            }
+          }
+        }
+        .share-dropdown-menu-wrap {
+          float: right;
+          margin-top: 2px;
+          .share-dropdown-menu {
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+    .favorite-type{
+      color: #7a4183;
+      @include rem(font-size, 20px);
+      font-weight: normal;
+      padding-bottom: 8px;
+    }
+  } // .myfavorites-item
+  .showmore-footer{
+    border-top: none;
+    padding-top: 15px;
+    @include bp($bp-small-plus){
+      padding-top: 35px;
+    }
+  }
+} // .account-mygroups

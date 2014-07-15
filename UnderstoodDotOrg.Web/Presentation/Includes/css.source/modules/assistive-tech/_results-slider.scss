@@ -1,0 +1,57 @@
+.results-slider {
+  background-color: transparent;
+  background-image: image-url('sprite.rating-sliders@2x.png');
+  background-size: 301px 212px;
+  background-repeat: no-repeat;
+  display:inline-block;
+  color:#fff;
+  width:145px;
+  height:35px;
+
+  .no-backgroundsize & {
+    background-image: image-url('sprite.rating-sliders.png');
+  }
+
+  .slider-button {
+    float: left;
+    position: absolute;
+    left: -99999px;
+  }
+
+  &.blue, &.purple {
+    cursor: pointer;
+  }
+
+  &.zero, &.blue-zero, &.purple-zero {
+    background-position: 0 -181px;
+  }
+  &.one, &.blue-one, &.purple-one {
+    background-position: -156px -145px;
+  }
+
+  &.blue-two {
+    background-position: -156px -109px;
+  }
+  &.blue-three {
+    background-position: -156px -73px;
+  }
+  &.blue-four {
+    background-position: -156px -37px;
+  }
+  &.blue-five {
+     background-position: -156px 0;
+  }
+
+  &.purple-two {
+    background-position: 0 -109px;
+  }
+  &.purple-three {
+    background-position: 0 -73px;
+  }
+  &.purple-four {
+    background-position: 0 -37px;
+  }
+  &.purple-five {
+    background-position: 0 0;
+  }
+}

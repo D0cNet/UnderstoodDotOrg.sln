@@ -1,0 +1,2404 @@
+.parent-groups {
+  h2, h4 {
+    color: #7a4183;
+  }
+  h2 {
+    font-weight: normal;
+    @include rem(font-size, 30px);
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 36px);
+    }
+  }
+  h4 {
+    font-weight: normal;
+    @include rem(font-size, 24px);
+  }
+  .has-subhead {
+    @include bp(($bp-small-plus)(max-width 959px)) {
+      margin-bottom: 130px;
+    }
+  }
+  &.recommended {
+    .has-subhead {
+      margin-bottom: 54px;
+    }
+    .groups-heading {
+      margin-bottom: 17px;
+      .title {
+        padding-left: 0px;
+        span {
+          display: none;
+        }
+        @include bp($bp-small-plus-max) {
+          width: 50%;
+        }
+        @include bp($bp-medium) {
+          width: 55%;
+        }
+      }
+      a.back-to-previous {
+        margin-bottom: 10px;
+        @include bp($bp-small-plus) {
+          margin-bottom: 20px;
+        }
+        i {
+          margin-right: 7px;
+          margin-bottom: -1px;
+        }
+      }
+      h2 {
+        clear: both;
+        float: left;
+        width: 100%;
+        @include bp(($bp-small-plus)(max-width 769px)) {
+          width: 50%;
+          @include rem(font-size, 30px);
+        }
+        @include bp(($bp-small-plus)(max-width 710px)) {
+          width: 38%;
+          @include rem(font-size, 30px);
+        }
+        @include bp($bp-medium) {
+          width: auto;
+        }
+      }
+    }
+    .title {
+      margin-bottom: 0px;
+      width: 100%;
+    }
+    .message-box {
+      overflow: hidden;
+      clear: left;
+      float: left;
+      margin-left: 4.1%;
+      width: 91%;
+      margin-bottom: 10px;
+      @include bp($bp-small-plus) {
+        overflow: inherit;
+        clear: none;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-bottom: 17px;
+      }
+
+      p {
+        color: #696969;
+        margin-left: 0;
+
+        a {
+          text-decoration: underline;
+
+          &:hover, &:focus {
+            text-decoration: none;
+          }
+        }
+      }
+      p:first-child {
+        @include bp($bp-small-plus) {
+          line-height: .5em;
+        }
+      }
+    }
+
+    .show-more {
+      margin-top: 20px;
+    }
+  }
+  .groups-heading {
+    float: left;
+    margin-bottom: 17px;
+    padding-left: 17px;
+    padding-right: 17px;
+    width: 100%;
+    @include bp($bp-small) {
+      padding-left: 0px;
+      padding-right: 0px;
+      width: 91.6666666667%;
+      margin-bottom: 50px;
+      margin-left: 4.16666666667%;
+    }
+    .back-to-previous {
+      margin: 0;
+      float: left;
+      @include bp($bp-small-plus) {
+        margin: 0 0 35px 0;
+      }
+      i {
+        margin-right: 7px;
+        margin-bottom: -1px;
+      }
+    }
+    .title {
+      clear: left;
+      width: 100%;
+      padding-left: 0px;
+      @include bp($bp-small-plus) {
+        width: 33%;
+      }
+      @include bp(($bp-small-plus) (max-width 920px)) {
+        width: 45%;
+      }
+      h2 {
+        margin-left: 0;
+        width: 100%;
+        span {
+          height: 100%;
+          width: 1px;
+          background-color: #bcbdc0;
+          display: none;
+          position: absolute;
+          float: right;
+          right: 10px;
+          @include bp(min-width 920px) {
+            display: inline-block;
+          }
+        }
+      }
+    }
+    .show-groups {
+      display: block;
+      text-align: left;
+      margin-bottom: 22px;
+
+      @include bp(min-width 920px) {
+        text-align: center;
+      }
+
+      @include bp(($bp-small-plus) (max-width 920px)) {
+        display: none;
+      }
+
+      a {
+        display: block;
+        margin-top: 13px;
+        text-decoration: underline;
+        width: 260px;
+
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+    .groups-private {
+      padding-right: 48px;
+      margin-top: 10px;
+      margin-top: 10px;
+      padding: 0;
+      float: left;
+      width: 100%;
+      @include bp($bp-small-plus) {
+        float: right;
+        margin-top: 0;
+        width: 280.2px;
+        margin-right: 0px;
+      }
+      p {
+        @include rem(font-size, 14px);
+        text-align: left;
+        margin-right: 11px;
+        color: #696969;
+        display: inline-block;
+        width: 250px;
+        @include bp(min-width 920px) {
+          width: 89%;
+        }
+        @include bp($bp-small-plus) {
+          text-align: right;
+          display: block;
+        }
+      }
+      .icon {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 8px;
+        @include sprite-background-image('lock-icon', $setHeight: true, $setWidth: true);
+        @include bp($bp-small-plus) {
+          vertical-align: middle;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .group-summary-wrapper {
+    margin-bottom: 15px;
+    @include bp($bp-large) {
+      margin-bottom: 30px;
+    }
+
+    .show-more {
+      margin-top: 20px;
+    }
+  }
+  .child-content-indicator {
+    .col-23 {
+      margin-left: 0px;
+    }
+    .children-key {
+      margin: 0 15px;
+      @include bp($bp-small-plus) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.parentgroups-tool {
+  margin-left: 15px;
+  margin-right: 15px;
+  @include bp($bp-small-plus){
+    padding: 30px 40px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  padding: 18px 13px;
+  background-color: #f4f2f1;
+  margin-bottom: 40px;
+  clear: both;
+  .selector {
+    background-position: 0 -350px;
+    margin-bottom: 14px;
+    min-width: 100%;
+    @include bp($bp-small-plus) {
+      min-width: 50px;
+      width: auto;
+    }
+    span {
+      background-color: white;
+      background-position: right -100px;
+      min-width: 100%;
+      @include bp($bp-small-plus) {
+        min-width: inherit;
+      }
+    }
+    &#uniform-parentgroupstool-partner {
+      margin-left: 0px;
+    }
+    margin-right: 10px;
+  }
+  .button {
+    width: 100%;
+    @include bp(($bp-small)(max-width 920px)) {
+      float: left;
+    }
+    @include bp($bp-small-plus) {
+      padding: 0 46px;
+      width: auto;
+    }
+  }
+  .show-groups {
+    text-decoration: underline;
+    margin-top: 16px;
+    margin-left: 42px;
+    display: none;
+    @include bp(($bp-small-plus)(max-width 920px)) {
+      display: block;
+      float: left;
+    }
+    @include bp($bp-small-plus) {
+      display: none;
+    }
+  }
+}
+div.selector.fixedWidth {
+  width: auto !important;
+}
+.col-24.group-summary {
+  float: left;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: table;
+  padding: 13px 14px 25px 14px;
+  @include bp($bp-small-plus) {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    padding: 38px 40px 40px 40px;
+    border: 1px solid #e1e1e1;
+    float: none;
+  }
+  .col {
+    padding: 0px;
+  }
+  p {
+    color: #696969;
+  }
+  .topic, .statistics {
+    @include bp($bp-small) {
+      float: none;
+      display: table-cell;
+      vertical-align: top;
+      width: auto;
+      position: relative;
+    }
+  }
+  .topic {
+    min-height: 200px;
+    @include bp($bp-small-plus-max) {
+      width: 71%;
+      padding-right: 20px;
+    }
+    border-right: 0px;
+    border-bottom: 1px solid #c6c5c5;
+    @include bp($bp-small) {
+      border-bottom: 0px;
+    }
+    @include bp($bp-small) {
+      overflow: inherit;
+      border-right: 1px solid #c6c5c5;
+      padding-right: 10px;
+    }
+    header {
+      margin-bottom: 35px;
+      height: inherit;
+      h3, .children-key {
+        display: inline-block;
+      }
+      h3 {
+        max-width: 500px;
+        float: left;
+        margin-bottom: 13px;
+        color: #7a4183;
+        @include rem (font-size, 21px);
+        @include bp($bp-small-plus) {
+          @include rem (font-size, 24px);
+        }
+        @include bp($bp-small) {
+          float: none;
+          margin-bottom: 0px;
+        }
+      }
+      .children-key {
+        float: left;
+        clear: both;
+        width: 100%;
+        vertical-align: top;
+        margin: 0px;
+
+        ul {
+          margin: 0;
+        }
+
+        @include bp($bp-small-plus) {
+          clear: none;
+          float: none;
+          max-width: 135px;
+          width: auto;
+        }
+        ul {
+          list-style: none;
+          float: left;
+          padding: 0;
+          li {
+            float: left;
+            margin-left: 11px;
+            &:first-child {
+              margin-left: 0px;
+              @include bp($bp-small-plus) {
+                margin-left: 11px;
+              }
+            }
+            i {
+              margin-top: 0px;
+              display: inline-block;
+              vertical-align: middle;
+              @include bp($bp-small-plus) {
+                margin-top: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .feature-image {
+      margin: 5px 17px 0 0;
+      float: left;
+      width: 71px;
+      @include bp($bp-small) {
+        margin: 5px 16px 0 0;
+      }
+      @include bp($bp-small-plus) {
+        width: 110px;
+        margin-right: 29px;
+      }
+      @include bp($bp-medium) {
+        margin-right: 52px;
+      }
+      img {
+        width: 71px;
+        height: 71px;
+        @include bp($bp-small-plus) {
+          width: 110px;
+          height: 110px;
+        }
+      }
+    }
+    .description {
+      float: left;
+      width: 64%;
+      @include bp(($bp-small) (max-width 649px)) {
+        width: 64%;
+      }
+      @include bp(($bp-small-plus) (max-width 880px)) {
+        width: 64%;
+      }
+    }
+    p {
+      @include rem(font-size, 15px);
+      line-height: 1.5;
+      padding-right: 10px;
+    }
+    .group-description-info, .leader {
+      margin: 0;
+    }
+    .group-description-info {
+      min-height: 60px;
+      padding-bottom: 9px;
+      @include bp($bp-small) {
+        padding-bottom: 35px;
+        min-height: 114px;
+      }
+      @include bp($bp-small-plus) {
+        padding-bottom: 15px;
+      }
+    }
+    .leader {
+      font-weight: bold;
+      bottom: 0;
+      margin-bottom: 14px;
+      @include bp($bp-small) {
+        @include rem (line-height, 15px);
+        position: absolute;
+        margin-bottom: 0px;
+      }
+      @include bp($bp-small-plus) {
+        @include rem (line-height, 11px);
+      }
+    }
+  }
+  .statistics {
+    text-align: center;
+    padding: 26px 0 0 0;
+    @include bp($bp-small-plus) {
+      padding: 20px 0 0 40px;
+      text-align: left;
+    }
+    @include bp(($bp-small) (max-width 880px)) {
+      padding: 18px 0 0 16px;;
+    }
+    @include bp($bp-small) {
+      width: 166px;
+    }
+    @include bp($bp-small-plus) {
+      width: 28%;
+    }
+    p {
+      @include rem(font-size, 18px);
+      color: #7a4183;
+      position: relative;
+      &:first-child {
+        padding-bottom: 15px;
+      }
+      &.discussions {
+        margin-bottom: 32px;
+        @include bp($bp-small-plus) {
+          margin-bottom: 54px;
+        }
+      }
+      &.members:after {
+        content: '';
+        height: 1px;
+        background-color: #c6c5c5;
+        position: absolute;
+        bottom: 0;
+        width: 143px;
+        margin-left: -71.5px;
+        left: 50%;
+        @include bp($bp-small-plus) {
+          width: 100%;
+          left: 0%;
+          margin-left: 0px;
+        }
+      }
+    }
+    .submit-button-wrap {
+      @include bp($bp-small) {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+    .button {
+      margin: 0;
+      width: 150px;
+      height: 41px;
+      @include rem(line-height, 40px);
+      padding: 0px;
+    }
+  }
+}
+.all-boards, .individual-board, .search {
+  .groups-heading {
+    border: 0px;
+    h2 {
+      font-weight: bold;
+    }
+    .title {
+      width: 100%;
+      text-align: left;
+      @include bp($bp-small) {
+        float: left;
+      }
+      @include bp(($bp-small) ($bp-small-plus)) {
+        width: 60%;
+      }
+      @include bp(($bp-small-plus) (max-width 768px)) {
+        width: 70%;
+      }
+      @include bp($bp-medium) {
+        width: 75%;
+      }
+    }
+    .groups-private {
+      width: 100%;
+      float: left;
+      @include bp($bp-small) {
+        margin-right: 0px;
+        width: 175px;
+      }
+      @include bp($bp-small) {
+        float: right;
+        margin-top: 0;
+      }
+      @include bp($bp-small-plus) {
+        width: 175.0px;
+      }
+      p {
+        width: 83%;
+        @include bp($bp-small) {
+          text-align: right;
+          float: left;
+        }
+        @include bp($bp-small-plus) {
+          width: 86%;
+        }
+      }
+      .icon {
+        float: right;
+        margin-top: 5px;
+        @include bp((min-width 338px)(max-width 480px)) {
+          margin-top: 0px;
+        }
+        @include bp($bp-small) {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  .description {
+    margin-left: 0px;
+    h2 {
+      margin-left: 0px;
+    }
+    width: 68.83%;
+    @include bp(($bp-medium)(max-width 843px)) {
+      width: 67%;
+    }
+    @include bp((min-width 843px)(max-width 980px)) {
+      width: 69%;
+    }
+    p {
+      @include rem(font-size, 15px);
+      @include bp($bp-small) {
+        @include rem(font-size, 18px);
+      }
+    }
+  }
+  .groups-private {
+    width: 100%;
+    float: left;
+    @include bp($bp-small) {
+      float: right;
+      margin-top: 0;
+    }
+    @include bp(($bp-small)(max-width 649px)) {
+      margin-right: 10px;
+      width: 206.047px;
+    }
+    @include bp($bp-small-plus) {
+      width: 189.2px;
+      margin-right: 0px;
+    }
+    p {
+      width: 86%;
+    }
+    .icon {
+      float: right;
+      margin-top: 5px;
+      @include bp((min-width 338px)(max-width 479px)) {
+        margin-top: 0px;
+      }
+      @include bp(min-width 480px) {
+        margin-top: 5px;
+      }
+    }
+  }
+  .col-24.featured-group.group-summary {
+    padding: 0px;
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    @include bp($bp-small) {
+      width: 91.6666666667%;
+      margin-left: 4.16666666667%;
+    }
+    .statistics, .topic {
+      display: block;
+      @include bp($bp-small-plus) {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+        position: relative;
+      }
+    }
+    .topic {
+      margin-left: 15px;
+      margin-right: 15px;
+      width: inherit;
+      border-right: 0px;
+      @include bp($bp-small) {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      @include bp(($bp-small)(max-width 649px)) {
+        width: 100%;
+      }
+      @include bp(($bp-small-plus)(max-width 768px)) {
+        width: 72%;
+      }
+      @include bp($bp-medium) {
+        width: 75%;
+      }
+      .feature-image {
+        margin-left: 0px;
+        @include bp($bp-small) {
+          margin-right: 33px;
+        }
+        @include bp($bp-large) {
+          margin-right: 49px;
+        }
+        @include bp(($bp-small)(max-width 560px)) {
+          width: 126px;
+        }
+        @include bp(min-width 561px) {
+          width: 150px;
+        }
+        img {
+          @include bp(($bp-small)(max-width 560px)) {
+            width: 126px;
+            height: 126px;
+          }
+          @include bp(min-width 561px) {
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
+      .description {
+        @include bp(($bp-small)(max-width 649px)) {
+          width: 55%;
+        }
+        @include bp(($bp-small-plus)(max-width 768px)) {
+          width: 54%;
+        }
+        p {
+          @include rem(font-size, 15px);
+          @include bp($bp-small-plus) {
+            @include rem(font-size, 18px);
+          }
+        }
+      }
+    }
+    .topic .leader {
+      position: relative;
+    }
+    .statistics {
+      overflow: hidden;
+      width: auto;
+      .meta {
+        @include bp(($bp-small)(max-width 649px)) {
+          float: left;
+          width: 26%;
+          text-align: left;
+        }
+        @include bp($bp-small-plus) {
+          text-align: left;
+        }
+        @include old-ie {
+          float: none;
+          width: 100%;
+        }
+        .members:after {
+          @include bp($bp-small-plus) {
+            left: 0px;
+            margin-left: 0px;
+            width: 100%;
+          }
+        }
+        p {
+          @include bp(($bp-small)(max-width 649px)) {
+            @include rem(font-size, 15px);
+            min-width: 132px;
+          }
+        }
+      }
+      .mobile-search-box {
+        @include bp(($bp-small)(max-width 649px)) {
+          float: right;
+          width: 68%;
+        }
+        @include old-ie {
+          float: none;
+          width: 100%;
+        }
+        h3 {
+          text-align: left;
+          @include bp(($bp-small)(max-width 649px)) {
+            width: 100%;
+          }
+        }
+      }
+      @include bp(($bp-small)(max-width 768px)) {
+        margin-right: 0px;
+      }
+      @include bp($bp-medium) {
+        margin-left: 4.16666666667%;
+      }
+      @include bp($bp-small) {
+        padding: 0px;
+        overflow: none;
+      }
+      h3, .group-search-form {
+        display: block;
+      }
+      p {
+        margin-left: 15px;
+        margin-right: 15px;
+        @include bp($bp-small) {
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+      }
+      .members:after {
+        @include bp(($bp-small)(max-width 560px)) {
+          width: 126px;
+        }
+        @include bp((min-width 561px)(max-width 650px)) {
+          width: 150px;
+          left: 0;
+          margin-left: 0;
+        }
+        @include bp($bp-small-plus) {
+          width: 143px;
+          margin-left: -71.5px;
+          left: 50%;
+        }
+      }
+    }
+  }
+  .col-24.group-summary, .col-24 {
+    border: 0px;
+    @include bp($bp-small-plus) {
+      border: 0px;
+    }
+
+  }
+  .topic {
+      border-right: 0px;
+      width: 100%;
+      padding: 20px 0 20px 0;
+      border-bottom: 1px solid #c6c5c5;
+      overflow: hidden;
+      border-right: 0px;
+      @include bp(($bp-small)(max-width 768px)) {
+        width: 100%;
+        border-bottom: none;
+        padding: 0 0 20px 0;
+      }
+      @include bp($bp-medium) {
+        border-bottom: none;
+        padding: 0 0 20px 0;
+      }
+      @include bp(($bp-small-plus)(max-width 769px)) {
+        width: 71%;
+      }
+      @include bp($bp-medium) {
+        width: 75%;
+      }
+      .feature-image {
+        margin-left: 0px;
+        margin-right: 23px;
+        width: 71px;
+        @include bp($bp-small-plus) {
+          width: 110px;
+        }
+    }
+    .statistics {
+      padding: 0;
+      margin-left: 2.1666%;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding-right: 40px;
+      @include bp(($bp-small)(max-width 768px)) {
+        display: table;
+      }
+      p, h3, .group-search-form {
+        display: block;
+        @include bp(($bp-small)(max-width 768px)) {
+          text-align: center;
+          line-height: 1.3;
+          display: table-cell;
+          vertical-align: middle;
+          margin-top: 9px;
+        }
+      }
+      p, h3 {
+        padding: 10px 10px;
+        height: 100%;
+      }
+      p {
+        &:first-child {
+          @include bp(($bp-small)(max-width 768px)) {
+            margin-right: 0px;
+          }
+        }
+      }
+      h3 {
+        display: none;
+        @include rem(font-size, 18px);
+        @include bp($bp-small) {
+          display: block;
+        }
+        &:before {
+          @include bp($bp-medium) {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background-color: #c6c5c5;
+            left: 0;
+            top: 0;
+          }
+          @include bp($bp-small) {
+            display: block;
+          }
+        }
+        @include bp($bp-small) {
+          @include rem(font-size, 21px);
+        }
+        position: relative;
+      }
+      .group-search-form {
+        padding: 0px 10px;
+        display: none;
+        @include bp($bp-small) {
+          display: block;
+        }
+      }
+      .members {
+        margin-bottom: 15px;
+        @include bp($bp-small) {
+          margin-bottom: 0px;
+        }
+        &:after {
+          display: block;
+          @include bp(($bp-small)(max-width 768px)) {
+            display: none;
+          }
+        }
+      }
+      .discussions {
+        position: relative;
+        padding: 0;
+        margin-bottom: 45px;
+        @include bp($bp-mobile) {
+          margin-bottom: 0px;
+        }
+        &:before {
+          display: none;
+          @include bp(($bp-small)(max-width 768px)) {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background-color: #c6c5c5;
+            left: 0;
+            top: 0;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .individual-group {
+    margin-left: 15px;
+    margin-right: 15px;
+    @include bp(($bp-small)(max-width 649px)) {
+      margin-left: 4.1%;
+      margin-right: 4.1%;
+    }
+    @include bp($bp-small-plus) {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    header {
+      overflow: hidden;
+      margin-bottom: 21px;
+      @include bp($bp-small) {
+        margin-bottom: 16px;
+      }
+      h3 {
+        float: left;
+        color: #7a4183;
+        font-weight: normal;
+        @include rem(font-size, 30px);
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 28px);
+        }
+      }
+      h4 {
+        @include rem(font-size, 30px);
+        margin-bottom: 6px;
+        @include bp($bp-small) {
+          @include rem(font-size, 28px);
+          margin-bottom:0px;
+        }
+      }
+
+      .start-discussion {
+        clear: left;
+        float: left;
+        @include rem(font-size, 14px);
+        margin-top: 0px;
+        text-decoration: underline;
+
+        @include bp($bp-small) {
+          clear: none;
+          float: right;
+          margin-right: 3.5%;
+          margin-top: 3px;
+          @include rem(font-size, 16px);
+        }
+
+        @include bp($bp-small-plus) {
+          margin-right: 6%;
+        }
+
+        @include bp($bp-medium) {
+          margin-right: 8%;
+        }
+
+        @include bp($bp-large) {
+          margin-right: 73px;
+        }
+
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+    .discussion-box {
+      margin-bottom: 37px;
+      border: 1px solid #e0e0e0;
+      padding: 0;
+      @include bp(($bp-small)(max-width 649px)) {
+        padding: 13px 17px 25px 17px;
+      }
+      @include bp($bp-small) {
+        margin-bottom: 50px;
+      }
+      header h4.summary, .replies h4, .latest-post h4, .latest-post-tabular h4 {
+        margin-bottom: 0px;
+      }
+      header h4 {
+        @include rem(font-size, 21px);
+        margin-bottom: 27px;
+        @include bp($bp-small) {
+          @include rem(font-size, 24px);
+          margin-bottom: 0px;
+        }
+      }
+      .wrapper {
+        padding: 13px 17px 0px 17px;
+        @include bp(($bp-small)(max-width 769px)) {
+          padding: 30px 20px 0 20px;
+        }
+        @include bp($bp-medium) {
+          padding: 30px 40px 0 40px;
+        }
+      }
+      .summary, .replies, .board, .started-by, .latest-post, .latest-post-tabular {
+        left: auto;
+      }
+      .summary {
+        width: 100%;
+        margin-bottom: 23px;
+        @include bp($bp-small-plus) {
+          width: 53.1666666667%;
+          margin-bottom: 0px;
+          min-width: 111px;
+          padding: 0;
+          margin: 0;
+        }
+        p {
+          @include rem(font-size, 16px);
+        }
+      }
+      .board {
+        @include bp($bp-small-plus) {
+          min-width: 80px;
+          padding: 0;
+          margin: 0;
+        }
+      }
+      .started-by {
+        @include bp($bp-small-plus) {
+          min-width: 126px;
+          padding: 0;
+          margin: 0;
+        }
+      }
+      .replies {
+        width: 39%;
+        position: relative;
+        margin: 0;
+        float: left;
+        padding-right: 25px;
+        text-align: center;
+        @include bp($bp-small) {
+          width: 13.3333333333%;
+        }
+        @include bp($bp-small-plus) {
+          min-width: 78px;
+          padding: 0;
+          margin-left: 1%;
+        }
+        p {
+          @include rem(font-size, 24px);
+          color: #696969;
+          margin-bottom: 0px;
+          @include bp($bp-small) {
+            @include rem(font-size, 30px);
+            margin-bottom: 0px;
+          }
+        }
+      }
+      .latest-post, .latest-post-tabular {
+        width: 61%;
+        float: right;
+        margin: 0;
+        padding: 0;
+        padding-left: 26px;
+        @include bp($bp-small) {
+          width: 20.3333333333%;
+          margin-left: 2.5%;
+        }
+        @include bp($bp-small-plus) {
+          min-width: 126px;
+          padding: 0;
+          margin: 0;
+        }
+        p, a {
+          @include rem(font-size, 14px);
+          @include bp($bp-small) {
+            @include rem(font-size, 16px);
+          }
+        }
+        p {
+          margin-bottom: 0px;
+          color: #696969;
+          float: left;
+          @include bp($bp-small) {
+            margin-top: 0px;
+          }
+        }
+        a {
+          margin-left: 4px;
+          text-decoration: underline;
+
+          @include bp($bp-small) {
+            clear: both;
+            float:left;
+            margin-left: 0px;
+            margin-top: 0px;
+          }
+
+          &:hover, &:focus {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .discussions {
+      list-style: none;
+      padding-left: 0px;
+      overflow: hidden;
+      margin-bottom: 0px;
+      li {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 45px;
+      }
+    }
+    footer {
+      height: 80px;
+      background-color: #fafafa;
+      text-align: center;
+      .button {
+        margin-top: 20px;
+        width: 150px;
+        margin: 20px auto 0;
+        height: 40px;
+        @include rem(line-height, 40px);
+      }
+    }
+  }
+}
+.all-boards, .individual-board {
+  .jump-to, .search-board {
+    margin: 0px 15px 22px 15px;
+    width: auto;
+    display: block;
+    @include bp($bp-small) {
+      margin: 0 0 53px 0;
+      display: table;
+      width: 100%;
+      width: 91.6666666667%;
+      margin-left: 4.1%;
+    }
+    .discussion-boards {
+      background-color: #fafafa;
+      height: 100%;
+      float: left;
+      display: block;
+      width: 100%;
+      padding: 22px 15px 42px 15px;
+      @include bp($bp-small) {
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 40px 20px 40px 40px;
+      }
+      @include bp(($bp-small)(max-width 785px)) {
+        padding-right: 0px;
+      }
+      @include bp(($bp-small)(max-width 849px)) {
+        width: 55%;
+      }
+      @include bp(min-width 850px) {
+        width: 66.6666666667%;
+      }
+      h3 {
+        margin-bottom: 21px;
+        width: 100%;
+        font-weight: normal;
+        color: #7a4183;
+        @include rem(font-size, 30px);
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 24px);
+        }
+      }
+      .links, .additional-links {
+        min-width: 180px;
+        margin-right: 15px;
+        @include bp($bp-small) {
+          width: 43.83333%
+        }
+        @include bp(min-width 786px) {
+          margin-right: 31px;
+        }
+      }
+
+      .links {
+        padding: 0px;
+
+        a {
+          text-decoration: underline;
+          float: left;
+          clear: left;
+          @include rem(font-size, 14px);
+
+          @include bp($bp-small) {
+            @include rem(font-size, 16px);
+          }
+
+          &:hover, &:focus {
+            text-decoration: none;
+          }
+        }
+
+        &.additional-links {
+          margin-left: 0px;
+        }
+      }
+    }
+    .start-discussion {
+      background-color: #794381;
+      text-align: center;
+      color: white;
+      padding:40px 25px;
+      height: 100%;
+      display: block;
+      float: left;
+      width: 100%;
+      margin-bottom: 36px;
+      @include bp($bp-small) {
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+        margin-bottom: 0px;
+        padding:40px 25px;
+      }
+      @include bp(($bp-small)(max-width 649px)) {
+        width: 45%;
+      }
+      @include bp(($bp-small-plus)(max-width 849px)) {
+        width: 35%;
+      }
+      @include bp(min-width 850px) {
+        width: 25%;
+      }
+      input {
+        padding: 0 19px;
+        width: initial;
+        @include bp($bp-small) {
+          padding: 0;
+        }
+      }
+      p {
+        margin-bottom: 2px;
+        @include rem(font-size, 22px);
+      }
+      .want-to-talk {
+        margin-bottom: 18px;
+      }
+
+      .button {
+        padding: 0;
+      }
+    }
+  }
+  .search-boards {
+    width: 100%;
+  }
+  .col-24.featured-group.group-summary {
+    .topic {
+      botder-bottom: 0px;
+    }
+    .mobile-search-box h3 {
+      color: #7a4183;
+      font-weight: normal;
+      @include rem(font-size, 20px);
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 24px);
+      }
+    }
+  }
+}
+.search .individual-group, .individual-board .individual-group {
+  .results-for, h3 {
+    display: inline-block;
+  }
+  .results-for {
+    color: #696969;
+    h3 {
+      float: none;
+    }
+  }
+  .results-for, .results-for h3 {
+    @include rem(font-size, 18px);
+    @include bp($bp-small) {
+      @include rem(font-size, 28px);
+    }
+  }
+  .discussion-box {
+    padding: 0;
+    margin-bottom: 0;
+    border: 0px;
+    @include bp($bp-small-plus) {
+      border: 1px solid #e0e0e0;
+      margin-bottom: 40px;
+    }
+    @include bp(($bp-small-plus)(max-width 700px)) {
+      padding: 30px 15px 0px 15px;
+    }
+    @include bp((min-width 701px)(max-width 768px)) {
+      padding: 30px 20px 0px 20px;
+    }
+    @include bp($bp-medium) {
+      padding: 30px 40px 0px 40px;
+    }
+    .discussions li {
+      clear: both;
+      padding: 23px 12px 27px 12px;
+      border: 1px solid #e0e0e0;
+      @include bp(($bp-small)(max-width 649px)) {
+        padding: 30px;
+      }
+      @include bp($bp-small-plus) {
+        padding: 0;
+        border: 0;
+      }
+    }
+    header {
+      .summary, .board, .started-by, .replies, .latest-post, .latest-post-tabular {
+        display: none;
+        @include bp($bp-small-plus) {
+          display: block;
+        }
+      }
+    }
+    .summary, .board, .started-by, .replies, .latest-post, .latest-post-tabular {
+      h4 {
+        display: block;
+        @include rem(font-size, 18px);
+        @include bp($bp-small-plus) {
+          display: none;
+          text-align: left;
+          @include rem(font-size, 24px);
+        }
+      }
+    }
+    .summary, .board, .started-by, .replies, .latest-post, .latest-post-tabular {
+      margin: 0px;
+      float: left;
+      clear: both;
+      width: 100%;
+      margin-bottom: 21px;
+      @include bp($bp-small) {
+        margin-bottom: 0px;
+      }
+      h4 {
+        float: left;
+        margin-right: 4px;
+        height: 18px;
+        @include rem(line-height, 18px);
+        @include bp(($bp-small)(max-width 650px)) {
+          margin-bottom: 17px;
+        }
+      }
+      a, p {
+        float: left;
+        @include rem(line-height, 18px);
+        @include bp(($bp-small) (max-width 649px)) {
+          float: none;
+          margin-left: 0;
+          @include rem(line-height, 20px);
+          clear: left;
+          display: block;
+        }
+        @include bp($bp-small-plus) {
+          float: none;
+          margin-left: 0;
+          @include rem(line-height, 16px);
+        }
+      }
+      a, h4 {
+        @include rem(font-size, 15px);
+      }
+      @include bp($bp-small) {
+        clear: none;
+      }
+    }
+
+    .summary {
+      h4 {
+        margin-bottom: 16px;
+        @include bp($bp-small) {
+          margin-bottom: 0px;
+        }
+        @include bp(($bp-small)(max-width 650px)) {
+          margin-bottom: 17px;
+        }
+      }
+      @include bp($bp-small) {
+        width: 23.83%;
+      }
+      @include bp(($bp-small)(max-width 648px)) {
+        width: 28%;
+        margin-right: 35px;
+        margin-bottom: 50px;
+      }
+      a {
+        @include rem(line-height, 21px);
+        @include rem(font-size, 21px);
+        @include bp($bp-small) {
+          @include rem(font-size, 15px);
+          @include rem(line-height, 16px);
+        }
+        @include bp(($bp-small) (max-width 649px)) {
+          @include rem(line-height, 20px);
+        }
+      }
+      p {
+        margin-bottom: 0px;
+      }
+      @include old-ie {
+        width: 20%;
+      }
+    }
+    .started-by {
+      @include bp(($bp-small)(max-width 648px)) {
+        width: 20.6%;
+        margin-right: 78px;
+        min-width: 80px;
+      }
+      @include bp($bp-small) {
+        width: 16.64%;
+      }
+      p {
+        @include rem(font-size, 15px);
+      }
+      @include old-ie {
+        width: 12%;
+        clear: none;
+      }
+    }
+    .replies {
+      text-align: left;
+      margin-bottom: 0px;
+      @include bp(($bp-small)(max-width 649px)) {
+        text-align: left;
+      }
+      @include bp($bp-small-plus) {
+        text-align: center;
+      }
+      @include bp($bp-small) {
+        width: 12.16%;
+      }
+      p {
+        @include rem(font-size, 16px);
+        color: #696969;
+        @include bp($bp-small) {
+          @include rem(font-size, 30px);
+          @include rem(line-height, 30px);
+        }
+      }
+      @include old-ie {
+        width: 8%;
+        clear: none;
+      }
+    }
+    .latest-post, .latest-post-tabular {
+      padding: 0px;
+      @include bp(($bp-small)(max-width 649px)) {
+        margin-left: 1%;
+      }
+      @include bp($bp-small) {
+        width: 19.24%;
+        @include rem(font-size, 24px);
+      }
+      a, p {
+        @include rem(font-size, 15px);
+      }
+      p {
+        color: #696969;
+      }
+      @include old-ie {
+        width: 10%;
+        clear: none;
+      }
+    }
+    .latest-post {
+      display: block;
+      @include bp(($bp-small)(max-width 649px)) {
+        width: 61.5%;
+        margin-bottom: 50px;
+      }
+      @include bp($bp-small-plus) {
+        display: none;
+      }
+      .mins-ago {
+        @include bp(($bp-small)(max-width 649px)) {
+          width: auto;
+          float: left;
+          margin-right: 4px;
+        }
+      }
+      a {
+        @include bp(($bp-small)(max-width 649px)) {
+          display: block;
+          clear: none;
+          float: left;
+        }
+      }
+    }
+    .latest-post-tabular {
+      display: none;
+      @include bp($bp-small-plus) {
+        display: block;
+      }
+      p, a {
+        @include bp($bp-small) {
+          float: left;
+          clear: both;
+          @include rem(line-height, 20px);
+        }
+      }
+      a {
+        margin-bottom: 2px;
+      }
+    }
+  }
+}
+.search .individual-group {
+  .discussion-box {
+    .board, .started-by, .replies, .latest-post-tabular {
+      @include bp(($bp-small-plus)(max-width 665px)) {
+        margin-left: .45%;
+      }
+      @include bp((min-width 666px)(max-width 710px)) {
+        margin-left: 1%;
+      }
+      @include bp((min-width 711px)(max-width 769px)) {
+        margin-left: 1.8%;
+      }
+    }
+    .board {
+      @include bp($bp-small) {
+        width: 13.64%;
+      }
+      @include bp(($bp-small)(max-width 648px)) {
+        clear: both;
+        width: 28%;
+        margin-right: 35px;
+      }
+      @include bp(($bp-medium) (max-width 820px)) {
+        margin-left: 2%;
+      }
+      @include bp(min-width 821px) {
+        margin-left: 3%;
+      }
+      @include old-ie {
+        width: 10%;
+        clear: none;
+      }
+    }
+    .started-by {
+      @include bp(($bp-small) (max-width 649px)) {
+        margin-left: .5%;
+      }
+      @include bp($bp-medium) {
+        margin-left: 3.5%;
+      }
+    }
+    .replies {
+      @include bp($bp-medium) {
+        margin-left: 2%;
+      }
+      p {
+        @include rem(font-size, 15px);
+        @include rem(line-height, 20px);
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 16px);
+          @include rem(line-height, 16px);
+        }
+      }
+    }
+    .latest-post, .latest-post-tabular {
+      padding: 0px;
+      @include bp((min-width 770px) (max-width 820px)) {
+        margin-left: 1%;
+      }
+      @include bp(min-width 821px) {
+        margin-left: 3%;
+      }
+    }
+  }
+}
+.individual-board .individual-group {
+  .discussion-box {
+    .started-by, .replies, .latest-post-tabular {
+      @include bp(($bp-small-plus)(max-width 665px)) {
+        margin-left: 3.45%;
+      }
+      @include bp((min-width 666px)(max-width 710px)) {
+        margin-left: 4%;
+      }
+      @include bp((min-width 711px)(max-width 769px)) {
+        margin-left: 6%;
+      }
+    }
+    .summary, .started-by {
+      @include bp(($bp-small)(max-width 649px)) {
+        width: 29%;
+        margin-right: 30px;
+      }
+    }
+    .latest-post, .replies {
+      @include bp(($bp-small)(max-width 649px)) {
+        width: 63%;
+        margin-left: 0px;
+      }
+    }
+    .started-by {
+      @include bp(($bp-small)(max-width 650px)) {
+        clear: both;
+      }
+      @include bp($bp-medium) {
+        margin-left: 9%;
+      }
+    }
+    .replies {
+      @include bp($bp-medium) {
+        margin-left: 8%;
+      }
+    }
+    .latest-post, .latest-post-tabular {
+      @include bp((min-width 770px) (max-width 820px)) {
+        margin-left: 4%;
+      }
+      @include bp(min-width 821px) {
+        margin-left: 8.5%;
+      }
+    }
+  }
+}
+.parent-groups .show-more {
+  margin-bottom: 50px;
+}
+
+.individual-board {
+  .col-24.featured-group.group-summary .topic {
+    margin-bottom: 0px;
+  }
+  .groups-heading .title {
+    width: 100%;
+    @include bp($bp-small) {
+      width: auto;
+    }
+  }
+  .search-board .discussion-boards {
+    background-color: #f4f2f1;
+    vertical-align: inherit;
+    @include bp($bp-small-max) {
+      padding: 40px 20px 40px 20px;
+    }
+    @include bp($bp-small-plus) {
+      padding: 37px 40px 61px 40px;
+    }
+  }
+  .mobile-group-search-form .group-search {
+    @include bp($bp-small-max) {
+      width: 82%;
+    }
+    @include bp($bp-small-plus-max) {
+      width: 87%;
+    }
+    @include bp(($bp-medium) (max-width 850px)) {
+      width: 90%;
+    }
+    @include bp((min-width 851px) (max-width 960px)) {
+      width: 92%;
+    }
+    @include bp($bp-large) {
+      width: 93%;
+    }
+  }
+  .discussion-box {
+    clear: both;
+  }
+
+  .show-more {
+    margin-bottom: 54px;
+    margin-top: 26px;
+  }
+}
+.all-boards .individual-group .discussion-box .replies p {
+  @include rem(font-size, 30px);
+  @include rem(line-height, 30px);
+}
+.parent-groups.all-boards .individual-group {
+  .discussion-box {
+    padding: 0px;
+    header {
+      .summary, .replies, .latest-post {
+        display: none;
+        @include bp($bp-small) {
+          display: block;
+          float: left;
+        }
+        @include bp(($bp-small)(max-width 524px)) {
+          @include rem(font-size, 20px);
+        }
+        @include bp(min-width 525px) {
+          @include rem(font-size, 24px);
+        }
+      }
+      .latest-post {
+        @include bp($bp-small) {
+          float: right;
+        }
+      }
+    }
+    .summary, .replies, .latest-post {
+      h4 {
+        display: block;
+        @include rem(font-size, 18px);
+        @include bp($bp-small) {
+          display: none;
+          text-align: left;
+          @include rem(font-size, 24px);
+        }
+      }
+    }
+    .summary, .replies {
+      @include bp($bp-small) {
+        float: left;
+      }
+    }
+    .summary {
+      @include bp(($bp-small) (max-width 559px)) {
+        width: 38%;
+      }
+      @include bp((min-width 560px) (max-width 649px)) {
+        width: 42%;
+      }
+      @include bp($bp-small-plus-max) {
+        width: 45%;
+      }
+      @include bp($bp-medium-max) {
+        width: 50%;
+      }
+      @include bp($bp-large) {
+        width: 53.1666667%;
+      }
+      @include bp($bp-small) {
+        min-width: 118px;
+      }
+    }
+    .replies {
+      width: 84px;
+      margin-left: 4px;
+      @include bp($bp-small) {
+        width: 13.33%;
+        min-width: 100px;
+        padding-right: 0px;
+      }
+      @include bp(($bp-small)(max-width 530px)) {
+        margin-left: 0;
+      }
+      @include bp(min-width 530px) {
+        margin-left: 5%;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        background-color: #e1e1e1;
+        right: 0;
+        top: 0;
+        display: none;
+        @include bp($bp-mobile) {
+          display: block;
+        }
+      }
+    }
+    .latest-post {
+      width: 65%;
+      float: left;
+      @include bp($bp-small) {
+        width: 20.33%;
+        float: right;
+        margin-left: 0px;
+        padding-left: 0px;
+      }
+      @include bp(($bp-small)(max-width 650px)) {
+        min-width: 125px;
+      }
+      @include bp(min-width 650px) {
+        min-width: 146px;
+      }
+      p, a {
+        @include bp($bp-small) {
+          float: left;
+          clear: both;
+          @include rem(line-height, 20px);
+        }
+      }
+    }
+  }
+}
+.individual-discussion {
+  .groups-heading {
+    margin-bottom: 24px;
+    .back-to-previous {
+      margin: 0;
+    }
+    .groups-private {
+      @include bp($bp-small-plus) {
+        width: 330px;
+      }
+      p {
+        @include bp($bp-small) {
+          display: inline-block;
+          width: auto;
+        }
+        @include bp($bp-small-plus) {
+          margin-left: 39px;
+        }
+      }
+      .icon {
+        float: right;
+        @include bp($bp-small-plus) {
+          margin-top: -1px;
+        }
+        @include bp($bp-small-max) {
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+  .discussion-list {
+    @include dropshadow;
+    margin: 0 15px;
+    position: relative;
+    clear: both;
+    margin-bottom: 20px;
+    @include bp($bp-small) {
+      padding: 0px;
+      margin-right: 4.1%;
+      margin-bottom: 30px;
+    }
+    @include bp($bp-small-plus) {
+      margin-right: 0px;
+    }
+    @include bp($bp-small-plus-max) {
+      width: 69%;
+      margin-bottom: 40px;
+    }
+    @include bp($bp-medium-max) {
+      width: 68%;
+      margin-bottom: 60px;
+    }
+    @include bp($bp-large) {
+      width: 70%;
+      margin: 0 0 75px 0;
+    }
+    .title {
+      width: 100%;
+      padding: 25px 15px 0 15px;
+      h2 {
+        font-weight: bold;
+      }
+      @include bp(($bp-small)(max-width 769px)) {
+        padding: 20px;
+      }
+      @include bp($bp-small) {
+        border-bottom: 1px solid #d2d2d2;
+      }
+      @include bp($bp-medium) {
+        padding: 40px;
+      }
+    }
+    .discussion-post {
+      width: 100%;
+      border-bottom: 1px solid #d2d2d2;
+      clear: both;
+      padding: 16px 15px;
+      @include bp(($bp-small)(max-width 769px)) {
+        padding: 20px;
+      }
+      @include bp($bp-large) {
+        padding: 40px;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .discussion-contributer {
+        float: left;
+        margin-top: 9px;
+        margin-right: 20px;
+        width: 117px;
+        clear: both;
+        @include bp($bp-small) {
+          width: 150px;
+          padding: 0;
+        }
+        @include bp(($bp-small)(max-width 768px)) {
+          margin-right: 25px;
+        }
+        @include bp($bp-large) {
+          margin-right: 50px;
+        }
+        a {
+          display: block;
+        }
+        .name {
+          margin-bottom: 0px;
+          @include rem(font-size, 22px);
+          @include bp($bp-small) {
+            margin-bottom: 3px;
+          }
+        }
+        .location {
+          margin-bottom: 7px;
+          color: #646464;
+          @include rem(font-size, 15px);
+          @include bp($bp-small) {
+            margin-bottom: 10px;
+          }
+        }
+        .contributer-image img {
+          height: 117px;
+          width: 117px;
+          margin-bottom: 10px;
+          @include bp($bp-small) {
+            height: 150px;
+            width: 150px;
+            margin-bottom: 20px;
+          }
+        }
+        .member-card-specialties {
+          height: 55px;
+          width: 140px;
+
+          @include bp($bp-large) {
+            width: 190px;
+          }
+        }
+        .button {
+          margin-bottom: 8px;
+          padding: 0px;
+          @include bp($bp-small) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      .discussion-comment {
+        color: #646464;
+        @include rem(line-height, 29px);
+        p {
+          margin-bottom: 20px;
+          @include bp(($bp-small-plus) (max-width 768px)) {
+            margin-bottom: 30px;
+          }
+          @include bp($bp-large) {
+            margin-bottom: 39px;
+          }
+        }
+      }
+      .discussion-footer {
+        bottom: 0;
+        width: 100%;
+        @include bp(min-width 730px) {
+          float: right;
+        }
+        @include bp($bp-large) {
+          width: 64%;
+        }
+        h4 {
+          color: #696969;
+          margin-bottom: 22px;
+          font-weight: bold;
+          @include rem(font-size, 16px);
+        }
+        .support-menu {
+          list-style: none;
+          overflow: hidden;
+          padding: 0px;
+          margin-bottom: 0px;
+          width: 258px;
+          @include bp($bp-large) {
+            width: 100%;
+          }
+          button {
+            float: left;
+            width: 33%;
+            position: relative;
+            padding: 0 5px;
+            text-align: center;
+            border: none;
+            background: inherit;
+            i {
+              display: inline-block;
+            }
+            p {
+              @include rem(line-height, 15px);
+            }
+            @include old-ie {
+              background-color: transparent;
+            }
+          }
+          .thanks:after, .thinking-of-you:after {
+            height: 64px;
+            width: 1px;
+            background-color: #d2d2d2;
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 2px;
+            @include bp($bp-large) {
+              top: 0;
+            }
+          }
+          .thinking-of-you:after {
+            @include bp($bp-large) {
+              display: none;
+            }
+          }
+          .thanks, .likes, .thinking-of-you {
+            text-align: center;
+            @include bp($bp-large) {
+              height: 27px;
+            }
+            i, p {
+              @include bp($bp-large) {
+                float: left
+              }
+            }
+            p {
+              @include bp($bp-large) {
+                margin-left: 8px;
+                margin-top: 6px;
+              }
+            }
+            i {
+              height: 27px;
+            }
+          }
+          .thanks, .thinking-of-you {
+            color: #696969;
+            cursor: pointer;
+
+            @include bp($bp-large) {
+              @include rem(font-size, 15px);
+            }
+
+            &:hover, &:hover p {
+              color: #426da9;
+              text-decoration: underline;
+            }
+          }
+          .thanks {
+            width: 28%;
+            padding: 0 22px 0 0;
+            @include bp($bp-large) {
+              padding-left: 0px;
+            }
+            @include bp($bp-large) {
+              width: 92px;
+              padding-right: 7px;
+            }
+            i {
+              background: image-url('sprite.btn.thanks.png') 0 0 no-repeat;
+              background-size: 25px 50px;
+              height: 25px;
+              width: 25px;
+
+              .no-backgroundsize & {
+                background: image-url('sprite.btn.thanks.lo-res.png') 0 0 no-repeat;
+              }
+            }
+
+            &:hover i {
+              background-position: 0 -25px;
+            }
+          }
+
+          .thinking-of-you {
+            width: 41%;
+            padding: 0 22px;
+            @include bp($bp-large) {
+              width: 56%;
+            }
+            i {
+              background: image-url('sprite.btn.thinkingofyou.png') 0 0 no-repeat;
+              background-size: 18px 56px;
+              height: 28px;
+              width: 18px;
+
+              .no-backgroundsize & {
+                background: image-url('sprite.btn.thinkingofyou.lo-res.png') 0 0 no-repeat;
+              }
+            }
+
+            &:hover i {
+              background-position: 0 -28px;
+            }
+          }
+          .likes {
+            color: #7a4183;
+            padding: 0 0 0 32px;
+            width: 23%;
+            @include rem(font-size, 24px);
+            @include bp($bp-large) {
+              float: right;
+              width: 60px;
+              margin-top: 4px;
+              padding: 0;
+              @include rem(font-size, 24px);
+            }
+            p {
+              font-weight: bold;
+              @include bp($bp-large) {
+                margin-top: 0px;
+              }
+            }
+            i {
+              background: image-url('sprite.btn.helpful.png') 0 0 no-repeat;
+              background-size: 16px 36px;
+              height: 18px;
+              width: 16px;
+
+              .no-backgroundsize & {
+                background: image-url('sprite.btn.helpful.lo-res.png') 0 0 no-repeat;
+              }
+            }
+
+            &:hover i {
+              background-position: 0 -18px;
+            }
+          }
+        }
+      }
+      .discussion-comment, .discussion-footer {
+        @include bp(min-width 730px) {
+          display: inline-block;
+          float: right;
+        }
+        @include bp((min-width 730px)(max-width 800px)) {
+          width: 58.5%;
+        }
+        @include bp((min-width 801px)(max-width 856px)) {
+          width: 65.5%;
+        }
+        @include bp((min-width 857px)(max-width 979px)) {
+          width: 68.5%;
+        }
+        @include bp($bp-large) {
+          width: 64%;
+        }
+      }
+    }
+  }
+  .discussion-sidebar {
+    display: none;
+    @include bp($bp-small-plus) {
+      display: block;
+    }
+    @include bp($bp-small-plus-max) {
+      padding: 20px 0 0 0;
+      width: 21%;
+    }
+    @include bp(($bp-small-plus)(max-width 700px)) {
+      margin: 0 10px 0 10px;
+    }
+    @include bp((min-width 700px)(max-width 769px)) {
+      margin: 0 10px 0 12px;
+    }
+    @include bp($bp-medium-max) {
+      margin: 0 10px 0 20px;
+      padding: 40px 0 0 0;
+      width: 20.6666%;
+    }
+    @include bp($bp-small-plus) {
+      margin-right: 4.1%;
+    }
+    @include bp($bp-medium) {
+      padding: 40px 0 0 0;
+    }
+    .button {
+      @include bp($bp-small-plus-max) {
+        padding: 0 10px;
+      }
+    }
+    .discussion, .replies {
+      width: 100%;
+      position: relative;
+      p {
+        color: #696969;
+        @include rem(font-size, 14px);
+        @include bp($bp-medium-max) {
+          @include rem(font-size, 16px);
+        }
+      }
+    }
+    .discussion:after {
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: #f3f2f1;
+      position: absolute;
+    }
+    .discussion {
+      margin-bottom: 40px;
+    }
+    .replies {
+      height: 29px;
+      margin-bottom: 49px;
+    }
+    .number-bubble-icon, .replies-bubble-icon {
+      display: block;
+      color: white;
+      text-align: center;
+      float: left;
+      margin-right: 10px;
+      font-style: normal;
+      @include rem(font-size, 16px);
+    }
+    .number-bubble-icon {
+      @include sprite-background-image('number-bubble-icon', $setHeight: true, $setWidth: true);
+      @include rem(line-height, 30px);
+      text-align: center;
+      margin-top: 7px;
+    }
+    .replies-bubble-icon {
+      @include sprite-background-image('talk-bubble-icon', $setHeight: true, $setWidth: true);
+    }
+    .something-to-add {
+      color: #7a4183;
+      @include rem(font-size, 20px);
+      @include bp($bp-medium-max) {
+        @include rem(font-size, 22px);
+      }
+    }
+
+    .button {
+      padding: 0;
+    }
+  }
+  .join-discussion {
+    margin: 0 15px 45px 15px;
+    @include bp($bp-small) {
+      margin-left: 4.1%;
+      margin-right: 4.1%;
+      margin-bottom: 45px;
+    }
+    @include bp($bp-small-plus) {
+      width: 59.5%;
+    }
+    @include bp(min-width 730px) {
+      margin-bottom: 50px;
+    }
+    @include bp($bp-large) {
+      width: 61.5%;
+    }
+    .comment {
+      width: 100%;
+      padding: 15px 11px;
+      height: 148px;
+      border: 1px solid #d2d2d2;
+      margin-bottom: 11px;
+      @include bp(min-width 730px) {
+        margin-bottom: 20px;
+        padding: 19px 17px;
+      }
+    }
+    .button {
+      width: 100%;
+      display: block;
+      @include bp($bp-small) {
+        margin-right: 0px;
+        width: auto;
+        padding: 0 30px;
+        float: right;
+      }
+    }
+  }
+}
+.group-search-form, .mobile-group-search-form  {
+  float: left;
+  height: 50px;
+  padding: 0 4px 0 10px;
+  border: solid 2px #e9e9e9;
+  width: 100%;
+  background-color: white;
+  @include box-sizing(border-box);
+  @include bp($bp-small) {
+    float: right;
+  }
+  label {
+    float: left;
+    width: 100%;
+    @include bp($bp-small) {
+      float: none;
+      width: auto;
+    }
+  }
+  .group-search {
+    margin: 0;
+    width: 190px;
+    height: 46px;
+    border: none;
+    padding: 0;
+    float: left;
+    @include box-sizing(border-box);
+    @include bp($bp-small) {
+      width: 88.5%;
+    }
+    @include bp($bp-large) {
+      width: 79%;
+      float: none;
+    }
+    @include bp($bp-small) {
+      width: 75%;
+    }
+  }
+  .group-search-button {
+    border: 0;
+    width: 20px;
+    height: 20px;
+    background: image-url("sprite.icon.search.32.png") 50% 2px no-repeat;
+    background-size: 16px 41px;
+    text-indent: -999em;
+    margin-top: 15px;
+    float: right;
+    padding-right: 30px;
+    @include bp($bp-small) {
+      float: none;
+      padding-right: 0px;
+    }
+    @include bp($bp-large) {
+      margin-top: 0px;
+      vertical-align: middle;
+    }
+    .no-backgroundsize & {
+      background-image: image-url('sprite.icon.search.lo-res.png');
+    }
+  }
+}
+.mobile-search-box {
+  float: left;
+  background-color: #f4f2f1;
+  width: 100%;
+  padding: 19px 15px 25px 15px;
+  @include bp($bp-small) {
+    background-color: #FFF;
+    width: auto;
+    padding: 0;
+  }
+  h3 {
+    @include rem(font-size, 20px);
+    margin-bottom: 9px;
+    width: auto;
+    color: #7a4183;
+    @include bp($bp-small) {
+      width: 125px;
+    }
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 24px);
+    }
+  }
+}
+
+.parent-groups.search .show-more {
+  margin-bottom: 102px;
+  margin-top: 26px;
+}

@@ -1,0 +1,105 @@
+/**
+ * SASS partial for the guide-me module.
+ */
+ 
+@import 'config';
+
+.guide-me {
+  margin: 0;
+  position: relative;
+  background: #f4f2f1;
+  .row {
+    max-width: 1200px;
+  }// .row
+  .guide-me-inner {
+    margin: 0 27px -29px;
+    padding: 15px 14px 20px;
+    position: relative;
+    background-color: #fff;
+    z-index: 10;
+    top: -29px;
+    @include rem(font-size, 15px);
+    color: #7a4183;
+    max-width: 710px;
+    -webkit-transform: translate3d(0,0,0); // fix for android z-index bug
+    @include bp($bp-small-plus){
+      @include rem(font-size, 24px);
+      margin: 0 auto -58px;
+      top: -58px;
+      padding: 20px 32px 30px;
+    }
+    @include bp($bp-medium){
+      line-height: 55px;
+      padding-top: 30px;
+    }
+    @include bp($bp-large){
+      padding: 30px 40px;
+    }
+
+    .col-12 {
+      @include bp($bp-small-plus){
+        width: auto;
+        float: none;
+        left: 0;
+        margin: 0;
+        padding: 0;
+      }
+      @include bp($bp-medium){
+        width: 50%;
+        float: left;
+        left: auto;
+      }
+    }
+    .button {
+      width: 100%;
+      text-align: left;
+      padding: 0 15px;
+      font-weight: bold;
+      @include rem(font-size, 15px);
+      background-image: image-url('arrow.down.000.20.png');
+      background-repeat: no-repeat;
+      background-size: 13px 13px;
+      background-position: 94% 50%;
+      margin-top: 14px;
+      height: 50px;
+      line-height: 50px;
+      @include bp($bp-small-plus){
+        padding: 0 22px;
+        height: 55px;
+        line-height: 55px;
+        @include rem(font-size, 18px);
+        background-size: 10px 10px;
+      }
+      @include bp($bp-medium){
+        display: inline-block;
+        margin: 0;
+      }
+      @include bp($bp-large){
+      }
+      .no-backgroundsize & {
+        background-image: image-url('arrow.down.000.10.png');
+      }
+      &:focus {
+        outline: none;
+        @include dropshadow(.8);
+      }
+    } // .button
+    .icon {
+      display: none;
+      @include bp($bp-large){
+        display: inline-block;
+        width: 43px;
+        height: 51px;
+        background-image: image-url('icon.guide-me.86.png');
+        background-size: 43px 51px;
+        vertical-align: middle;
+        margin-right: 15px;
+      }
+      .no-backgroundsize & {
+        background-image: image-url('icon.guide-me.43.png');
+      }
+    } // .icon
+    
+  } // .guide-me-inner
+
+} // .guide me

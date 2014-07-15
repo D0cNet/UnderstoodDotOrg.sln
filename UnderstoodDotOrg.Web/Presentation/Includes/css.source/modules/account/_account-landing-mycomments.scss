@@ -1,0 +1,43 @@
+/**
+* SASS partial for account landing global notifiation module.
+* This dependent on account-landing.scss
+*/
+.landing-mycomments.landing-modules{
+  border-top-color: #298fc2;
+  // This to force the groups module to fit in the grid
+  @include bp($bp-small-plus) {
+    width: 96%
+  }
+  @include bp($bp-large) {
+    overflow: visible;
+    width: 279px;
+  }
+  h3 {
+    @include rem(font-size, 22px);
+    @include rem(line-height, 30px);
+  }
+  .landing-module-count{
+    color: #298fc2;
+  }
+  .landing-module-items{
+    @include rem(line-height, 18px);
+    .comment-description{
+      margin-top: 5px;
+    }
+  }
+  ul{
+    display: table;
+    border-collapse: collapse;
+  }
+  li {
+    @include rem(line-height, 18px);
+    padding: 0 !important;
+    height: 115px;
+    overflow: hidden;
+    display: table-row;
+  }
+  .comment-wrap{
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,50 @@
+.audio-quote{
+  padding: 25px 15px;
+  background-color: #f9f9f9;
+  @include rem(font-size, 20px);
+  color: #696969;
+  font-weight: 400;
+  @include bp($bp-small-plus){
+    padding: 40px 40px;
+  }
+  @include bp($bp-medium){
+    @include rem(font-size, 24px);
+  }
+  .audio-quote-img{
+    text-align: center;
+    @include bp($bp-small-plus){
+      text-align: left;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 24px;
+    }
+    @include bp($bp-medium){
+      margin-right: 48px;
+    }
+    img{
+      margin-bottom: 25px;
+      max-width: 290px;
+      width: 100%;
+    }
+  }
+  .audio-quote-text{
+    @include bp($bp-small-plus){
+      display: inline-block;
+      width: 42%;
+    }
+    @include bp($bp-medium){
+      width: 49%;
+    }
+    @include bp($bp-large){
+      width: 60%;
+    }
+    p.audio-quote-content{
+      margin-bottom: 22px;
+    }
+    p.audio-quote-author{
+      margin-bottom: 25px;
+      font-weight: bold;
+      @include rem(font-size, 18px);
+    }
+  }
+}

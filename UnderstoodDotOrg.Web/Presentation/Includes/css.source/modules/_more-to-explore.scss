@@ -1,0 +1,314 @@
+/**
+ * SASS partial for more-to-explore module.
+ */
+
+.more-to-explore {
+  overflow:hidden;
+  background-color: #f4f2f1;
+  padding: 25px 0 0 0;
+  margin: 0;
+
+  @include bp($bp-small-plus) {
+    padding: 44px 15px 0;
+  }
+
+  @include bp($bp-medium) {
+    padding: 50px 15px 0;
+  }
+
+  .rsOverflow {
+    overflow: visible;
+
+    .rsSlide{
+       overflow:visible;
+     }
+
+  }
+
+  h2 {
+
+    @include bp($bp-small-plus) {
+      margin-left: 6.5%;
+    }
+
+    @include bp($bp-medium){
+      margin-left: 0;
+    }
+
+  }
+
+  .more-to-explore-slides-row {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .rsArrowLeft {
+    .rsArrowIcn  {
+      right: 50%;
+      margin-right: 15px;
+
+      @include bp($bp-small-plus){
+        right: 54px;
+        margin-right: 6.5%;
+      }
+
+      @include bp($bp-medium) {
+        right: 44px;
+        margin-right: 0;
+      }
+
+      @include bp($bp-large) {
+        right: -11px;
+      }
+
+    }
+  }
+
+  .rsArrowRight {
+    .rsArrowIcn {
+      left: 50%;
+      margin-left: 15px;
+
+      @include bp($bp-small-plus){
+        left: auto;
+        right: 0;
+        margin-left: 0;
+        margin-right: 6.5%;
+      }
+
+      @include bp($bp-medium) {
+        margin-right: 0;
+      }
+
+      @include bp($bp-large) {
+        right: -55px;
+      }
+
+    }
+  }
+
+  .rsArrow .rsArrowIcn {
+    top: auto;
+    bottom: 40px;
+    z-index: 2;
+
+    @include bp($bp-small){
+      bottom: -56px;
+    }
+
+    @include bp($bp-small-plus){
+      top: -30px;
+      bottom: auto;
+    }
+  }
+
+  .more-to-explore-container {
+    width: 100%;
+    margin: 0 auto;
+
+    @include bp($bp-small) {
+      height:444px !important;
+    }
+
+    @include bp($bp-small-plus) {
+      height:480px !important;
+    }
+
+    @include bp($bp-medium) {
+      height:520px !important;
+    }
+
+    @include bp($bp-large) {
+      height:470px !important;
+      width: 840px !important;
+    }
+
+    // Max content restrictions exist given the existence of definitive height
+
+    ul {
+      margin: 16px 14px 0;
+      padding: 0;
+      list-style: none;
+      white-space: nowrap;
+
+      @include bp($bp-small-plus) {
+        margin: 48px 0 0;
+      }
+
+      @include bp($bp-medium) {
+        margin: 52px 0 0;
+      }
+
+      li {
+        width: 100%;
+        white-space: normal;
+        display: inline-block;
+        vertical-align: top;
+        background: #fff;
+        padding: 0 2%;
+        padding: 18px 20px;
+        color: #696969;
+        margin-bottom: 96px;
+        height: 330px;
+
+        @include bp(340px 349px){
+          height: 340px;
+        }
+
+        @include bp(350px 359px){
+          height: 350px;
+        }
+
+        @include bp(360px 389px){
+          height: 360px;
+        }
+
+        @include bp(390px 429px){
+          height: 380px;
+        }
+
+        @include bp(430px 479px){
+          height: 400px;
+        }
+
+        @include bp($bp-small){
+          margin:0 4.6%;
+          width:41.2%;
+          height: 330px;
+        }
+
+        @include bp($bp-small-plus) {
+          padding: 16px 2% 23px;
+          height: 384px;
+        }
+
+        @include bp($bp-medium) {
+          height: 410px;
+        }
+
+        @include bp($bp-large) {
+          margin: 0 2.83%;
+          width: 28%;
+          height: 358px;
+        }
+
+        .header {
+          height: 80px;
+
+          @include bp($bp-small) {
+            height: 90px;
+          }
+
+          @include bp($bp-small-plus) {
+            height: 122px;
+          }
+
+          h3 {
+            color: #7a4183;
+            font-weight: normal;
+            @include rem(font-size, 15px);
+            margin-bottom: 5px;
+            @include bp($bp-small-plus) {
+              @include rem(font-size, 24px);
+              margin-bottom: 13px;
+            }
+          }
+
+          p {
+            font-family: arial, sans-serif;
+            @include rem(font-size, 12px);
+            line-height: 1.5;
+            min-height: 4.5em;
+            margin-bottom: 16px;
+            @include bp($bp-small-plus) {
+              @include rem(font-size, 16px);
+              line-height: 1.375;
+              min-height: 4.125em;
+            }
+          }
+
+        }// .header
+
+        img {
+          width: 100%;
+        }
+
+        .footer {
+
+          a {
+            margin-top:18px;
+            display:inline-block;
+            color: #426da9;
+            font-weight: normal;
+            @include rem(font-size, 15px);
+            line-height: 1.333;
+            text-decoration: underline;
+
+            @include bp($bp-small-plus) {
+              @include rem(font-size, 16px);
+              line-height: 1.375;
+              margin-top:23px;
+            }
+
+            &:first-child {
+              width:50%;
+              border-right:solid 1px #f4f2f1;
+              margin-left: 0;
+            }
+
+            & + a {
+              margin-left:8%;
+            }
+
+            &:hover {
+              text-decoration: none;
+            }
+
+          }// a
+
+        }// .footer
+
+        input {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        fieldset {
+          position: relative;
+          z-index: 99999;
+          margin-bottom: 10px;
+        }
+
+        .more-to-explore-tools {
+
+          position: relative;
+          height: 100%;
+
+          p {
+            min-height: 0px;
+            margin-bottom: 10px;
+          }
+
+          fieldset { margin: 0px; }
+
+          .header { height: auto; }
+
+          div.selector { margin-bottom: 10px; }
+
+          .submit-button-wrap {
+            width: 100%;
+            position: absolute;
+            bottom: -5px;
+
+            .button { margin-bottom: 0px; }
+          }
+
+        } // more-to-explore-tools
+
+      } // li
+
+    }// .more-to-explore-container ul
+
+  }// .more-to-explore-container
+
+}// .more-to-explore

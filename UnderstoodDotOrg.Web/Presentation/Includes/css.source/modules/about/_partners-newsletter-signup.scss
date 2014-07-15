@@ -1,0 +1,34 @@
+/**
+ * SASS partial for partners-newsletter-signup module.
+ */
+
+.partner-newsletter {
+  background: #f4f2f1;
+  text-align: center;
+  padding: 40px 34px 30px 34px;
+  margin-bottom: 20px;
+
+  @include bp($bp-small-plus) {
+    margin-top: -30px;
+    margin-bottom: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  h2 {
+    color: #7a4183;
+    @include rem(font-size, 22px);
+    @include rem(line-height, 26px);
+    font-weight: normal;
+    margin-bottom: 15px;
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 20px;
+    }
+  } // end .partner-newsletter h2
+
+  a {
+    width: 146px;
+    height: 50px;
+  }
+} // end .partner-newsletter

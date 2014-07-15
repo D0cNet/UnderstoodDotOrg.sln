@@ -1,0 +1,180 @@
+/**
+ * SASS partial for comment-gallery module.
+ */
+
+.comment-gallery {
+  background-color:#f4f2f1;
+  padding:22px 0 30px 0;
+  margin: 0 0 25px 0;
+  overflow:hidden;
+
+  @include bp($bp-small-plus){
+    margin-bottom: 45px;
+  }
+
+  @include bp($bp-large){
+    padding-bottom:0;
+  }
+
+  .slider-col{
+    width:75%;
+    margin:0 auto;
+
+    @include bp($bp-small){
+      width:100%;
+    }
+
+    @include bp($bp-large){
+      width:90%;
+    }
+  }
+
+  .rsArrow{
+    .rsArrowIcn{
+      top:auto;
+      bottom:0;
+    }
+  }
+  .rsArrowLeft{
+    .rsArrowIcn{
+      right:55%;
+
+      @include bp($bp-small){
+        right:60%;
+      }
+
+      @include bp($bp-large){
+        right:-50px;
+        top:-40px;
+      }
+    }
+  }
+  .rsArrowRight{
+    .rsArrowIcn{
+      right:30%;
+
+      @include bp($bp-small){
+        right:35%;
+      }
+
+      @include bp($bp-large){
+        right:-90px;
+        top:-40px;
+      }
+    }
+  }
+
+
+  .rsOverflow {
+    overflow:visible;
+    // Explicit height necessary to combat inline styles set by royalslider.js
+    height:120% !important;
+    // Max content restrictions exist given the existence of definitive height
+    
+    @include old-ie {
+      height: 500px !important;
+    }
+
+    .rsSlide{
+      overflow:visible;
+    }
+  }
+
+  h2 {
+    color: #7a4183;
+    font-weight: normal;
+    @include rem(font-size, 24px);
+    text-align: center;
+    @include bp($bp-large) {
+      text-align:left;
+      margin-bottom:20px;
+    }
+
+  }
+
+  .comment-gallery-container {
+    margin:0 auto;
+    // Explicit height necessary to combat inline styles set by royalslider.js
+    height:400px !important;
+    // Max content restrictions exist given the existence of definitive height
+
+    .rsContainer {
+      height: auto;
+    }
+
+    ul {
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+      white-space: nowrap;
+
+      li {
+        width:96%;
+        white-space: normal;
+        display: inline-block;
+        vertical-align: top;
+        background: #fff;
+        padding:30px 10%;
+        margin-left:4%;
+        min-height: 355px;
+
+        @include bp($bp-small) {
+          width:48%;
+          padding:30px 25px;
+          margin:0 1% 0 1%;
+        }
+
+        @include bp($bp-large) {
+          padding:30px 25px;
+          width:230px;
+          margin:0 30px;
+        }
+
+        p{
+          color:#696969;
+          font-family:Arial, sans-serif;
+          @include rem(font-size, 16px);
+          line-height: 22px;
+          min-height:150px;
+        }
+
+        .count-comments{
+          background-color:#fff;
+          padding-bottom:20px;
+          border-bottom:solid 1px #e8e8e8;
+          margin-bottom:15px;
+          display:block;
+          margin-left:0;
+
+          a{
+            border-top:none;
+          }
+
+        }
+
+        h4 {
+          color: #646464;
+          font-family:Arial, sans-serif;
+          @include rem(font-size, 14px);
+          line-height:24px;
+          font-weight:bold;
+        }
+
+        >a{
+          color:#426da9;
+          @include rem(font-size, 16px);
+          line-height:20px;
+          margin-top:5px;
+        }
+
+      }
+    }
+
+  }
+
+}
+.ie-padding {
+  @include old-ie {
+    padding-bottom: 80px;
+  }
+}

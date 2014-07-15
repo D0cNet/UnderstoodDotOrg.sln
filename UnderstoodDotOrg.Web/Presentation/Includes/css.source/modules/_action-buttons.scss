@@ -1,0 +1,132 @@
+//     these styles are consistent for all instances of these buttons, currently.  widths, and
+//     heights of buttons change per usage, as do margins.
+.buttons-container {
+  margin: 0;
+  button {
+    position: relative;
+    background: inherit;
+    float: left;
+    border: none;
+    vertical-align: top;
+    padding: 0;
+    text-indent: -99999px;
+    &:focus {
+      z-index: 1;
+    }
+    &:after {
+      content: '';
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      background: image-url('sprite.icons.article-tips.png');
+      background-repeat: no-repeat;
+      top: 0;
+      left: 0;
+
+      .no-backgroundsize & {
+        background-image: image-url('sprite.icons.article-tips.145.png');
+      }
+
+    }
+    &.icon-email {
+      &:after {
+        background-position: -77px -69px;
+        background-size: 145px 145px;
+      }
+      &:hover:after, &.icon-email:focus:after {
+        background-position: -77px -121px;
+        background-size: 145px 145px;
+      }
+    }
+    &.icon-plus {
+      &:after {
+        background-position: 0px 5px;
+        background-size: 145px 145px;
+      }
+      &:hover:after, &:focus:after {
+        background-position: 0px -30px;
+        background-size: 145px 145px;
+      }
+      &.active {
+        &:after {
+          background-position: 0px -70px;
+          background-size: 145px 145px;
+        }
+        &:hover:after, &:focus:after {
+          background-position: 0px -120px;
+          background-size: 145px 145px;
+        }
+      }
+
+      @include old-ie {
+        &:after {
+          background-position: 0px 3px;
+        }
+        &:hover:after, &:focus:after {
+          background-position: 0px -32px;
+        }
+        &.active {
+          &:after {
+            background-position: 0px -72px;
+          }
+          &:hover:after, &:focus:after {
+            background-position: 0px -122px;
+          }
+        }
+      }
+
+    }
+    &.icon-print {
+      &:after {
+        background-position: -78px 6px;
+        background-size: 145px 145px;
+      }
+      &:hover:after, &.icon-print:focus:after {
+        background-position: -78px -29px;
+        background-size: 145px 145px;
+      }
+    }
+    &.icon-bell {
+      &:after {
+        background-position: -46px 5px;
+        background-size: 145px 145px;
+      }
+      &:hover:after, &:focus:after {
+        background-position: -46px -30px;
+        background-size: 145px 145px;
+      }
+      &.active {
+        &:after {
+          background-position: -46px -69px;
+          background-size: 145px 145px;
+        }
+        &:hover:after, &:focus:after {
+          background-position: -46px -119px;
+          background-size: 145px 145px;
+        }
+      }
+    }
+    &.icon-skip {
+      &:after {
+        background-position: -125px 5px;
+        background-size: 145px 145px;
+      }
+      &:hover:after, &:focus:after {
+        background-position: -125px -30px;
+        background-size: 145px 145px;
+      }
+    }
+    &.action-button-hidden {
+      position: absolute;
+      left: -9999em;
+      top: -9999em;
+      height: 1px !important;
+      width: 1px !important;
+    }
+
+    @include old-ie {
+      background-color: transparent;
+    } 
+
+  }//button
+}// .buttons-container

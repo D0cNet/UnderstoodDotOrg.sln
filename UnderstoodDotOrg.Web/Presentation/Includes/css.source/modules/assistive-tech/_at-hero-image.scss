@@ -1,0 +1,86 @@
+/**
+* SASS partial for Assistive Tool hero image module.
+*/
+
+.at-hero-container-wrap{
+  // This pulls the gray background up behind the hero image
+  //  The height of the slider must be set in the child container
+  @include bp($bp-small-plus){
+    height: 288px;
+    overflow: visible;
+  }
+  @include bp($bp-medium){
+    height: 315px;
+    overflow: visible;
+  }
+  @include bp($bp-large){
+    height: 320px;
+    overflow: visible;
+  }
+}
+.hero-image-container {
+  left: 0;
+  position: relative;
+  text-align: center;
+  top: 0;
+  @include bp($bp-small-plus){
+    height: 542px;
+  }
+  img {
+    margin-left: -17%;
+    max-height: 100%;
+    max-width: 135%;
+    min-height: 200px;
+    width: auto;
+    @include bp($bp-small) {
+      margin-left: 0%;
+      max-width: 1200px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .text-container{
+    position:absolute;
+    top: 0;
+    width:100%;
+  }
+}
+.hero-content {
+  padding-left: 15px;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  @include bp($bp-small-plus){
+    padding-left: 0px;
+  }
+
+  h1 {
+    color: #7a4183;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 24px);
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-top: 13px;
+    width: 45%;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 44px);
+      @include rem(line-height, 48px);
+      margin-bottom: 12px;
+      padding-top: 36px;
+      width: 60%;
+    }
+  }
+  h2 {
+    color: #7a4183;
+    @include rem(font-size, 14px);
+    @include rem(line-height, 20px);
+    font-weight: normal;
+    padding-bottom: 24px;
+    width: 60%;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 21px);
+      @include rem(line-height, 28px);
+      width: 85%;
+    }
+  }
+}

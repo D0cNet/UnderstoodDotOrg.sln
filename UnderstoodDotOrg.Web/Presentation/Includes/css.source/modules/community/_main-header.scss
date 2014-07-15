@@ -1,0 +1,96 @@
+.community-main-header {
+  margin: 0 0 30px;
+
+  .row {
+
+    &.header-wrapper {
+      display: table;
+    }
+  }
+
+  header {
+    background: #f4f2f1;
+    padding: 30px 15px 0 15px;
+    position: relative;
+
+    @include bp($bp-small-plus) {
+      padding: 45px 15px 65px 15px;
+    }
+
+  }
+  h1, .subhead {
+    @include bp($bp-small-plus) {
+      margin-left: 2.7%;
+    }
+  }
+  .header-title, .header-share-save {
+    @include bp($bp-small-plus) {
+      display: table-cell;
+      float: none;
+    }
+  }
+
+  .header-share-save {
+    vertical-align: middle;
+  }
+
+  h1 {
+    @include rem(font-size, 34px);
+    color: #7b3f84;
+    margin-bottom: 10px;
+
+    @include bp($bp-medium) {
+      @include rem(font-size, 44px);
+    }
+  }
+
+  &.logged-in h1 {
+    @include bp($bp-medium) {
+      @include rem(font-size, 36px);
+    }
+  }
+
+  .subhead {
+    color: #696969;
+    display: none;
+    @include rem(font-size, 16px);
+    margin-bottom: 0;
+
+    @include bp($bp-small-plus) {
+      display: block;
+    }
+  }
+
+  .share-save-container {
+    margin-bottom: 25px;
+  }
+
+  .nav-secondary {
+    margin: 0;
+    // Set visibility to hidden to avoid jarring visual changes that occur when loading the menu, and only show the menu when complete
+    visibility: hidden;
+
+    @include bp($bp-small-plus) {
+      margin-top: -25px;
+      margin-bottom: 0;
+    }
+
+    @include bp($bp-medium) {
+      margin-top: -25px;
+      margin-bottom: 0;
+    }
+  }
+  .select-topic {
+    display: none;
+    position: absolute;
+    padding: 15px 20px;
+    line-height: 1.375;
+    color: #abcce2;
+  }
+  .is-open .select-topic {
+    display: block;
+    @include bp($bp-small-plus) {
+      display: none;
+    }
+  }
+}

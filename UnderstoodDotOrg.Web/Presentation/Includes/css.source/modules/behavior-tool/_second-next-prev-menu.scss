@@ -1,0 +1,71 @@
+.second-next-prev-menu{
+  overflow:hidden;
+  .second-next-prev-menu-slider{
+    .rsOverflow{
+      overflow:visible;
+      .rsArrowIcn{
+        top:-30px;
+      }
+    }
+  }
+
+  position: relative;
+  font-weight: normal;
+  @include border-radius(4px);
+  max-width: 320px;
+  span{
+    color: #7a4184;
+    @include rem(font-size, 18px);
+    width: 112px;
+    display: inline-block;
+    padding-top: 4px;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 24px);
+      margin-bottom: 34px;
+    }
+    @include bp($bp-large) {
+      margin-bottom: 0px;
+    }
+  }
+  .rsArrowLeft .rsArrowIcn{
+    right: 86px;
+    top: 6px;
+    @include bp($bp-small-plus) {
+      right: auto;
+      left: 0;
+      top: 45px;
+    }
+    @include bp($bp-large) {
+      right: 38px;
+      left: auto;
+      top: 6px;
+    }
+  }
+  .rsArrowRight .rsArrowIcn{
+    right: 15px;
+    top: 6px;
+    @include bp($bp-small-plus) {
+      right: auto;
+      left: 62px;
+      top: 45px;
+    }
+    @include bp($bp-large) {
+      right: 0px;
+      left: auto;
+      top: 6px;
+    }
+  }
+  p.next-prev-title{
+    margin-top: 18px;
+    max-width: 180px;
+    @include bp($bp-small-plus) {
+      max-width: 100%;
+    }
+    a{
+      @include rem(font-size, 15px);
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 17px);
+      }
+    }
+  }
+}

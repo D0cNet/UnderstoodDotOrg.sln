@@ -1,0 +1,408 @@
+.community-groups {
+
+  margin: 0 15px;
+
+  @include bp($bp-large) {
+    margin: 0;
+  }
+  .community-groups-wrapper {
+    border-top: 1px solid #d2d2d2;
+    padding-top: 28px;
+    position: relative;
+
+    @include bp($bp-large) {
+      padding-top: 58px;
+    }
+  }
+
+  h2 {
+    color: #7b3f84;
+    @include rem(font-size, 30px);
+    font-weight: normal;
+    margin-bottom: 22px;
+
+    @include bp($bp-small) {
+      @include rem(font-size, 28px);
+      width: 60%;
+    }
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 0;
+    }
+
+    @include bp($bp-large) {
+      @include rem(font-size, 36px);
+    }
+  }
+
+  .carousel-arrow-wrapper {
+    width: 100%;
+    @include bp($bp-small) {
+      width: 195px;
+    }
+  }
+
+  .group-cards {
+    margin-top: 31px;
+    margin-bottom: 45px;
+
+    @include bp($bp-large) {
+      margin: 50px 0 50px 45px;
+    }
+
+    .group-card {
+      margin-bottom: 40px;
+      padding: 0;
+
+      // disable carousel in IE8
+      @include old-ie {
+        display: none;
+      }
+
+      &:first-child,
+      &:last-child {
+
+        @include old-ie {
+          display: block;
+        }
+
+      }
+
+    }
+
+    .group-card-image {
+      display: inline-block;
+      float: left;
+      margin-right: 16px;
+
+      img {
+        height: 73px;
+        width: 127px;
+
+        @include bp($bp-large) {
+          height: 85px;
+          width: 150px;
+        }
+      }
+    }
+
+    .group-card-info {
+      display: table-cell;
+      float: none;
+
+      .group-card-name {
+        color: #426da9;
+        display: inline-block;
+        @include rem(font-size, 21px);
+        font-weight: normal;
+        @include rem(line-height, 21px);
+        margin-bottom: 16px;
+
+        @include bp($bp-small) {
+          margin-bottom: 0;
+        }
+
+        @include bp($bp-large) {
+          @include rem(font-size, 24px);
+          @include rem(line-height, 33px);
+          margin-bottom: 26px;
+          max-width: 220px;
+        }
+      }
+
+      .group-card-members, .group-card-posts {
+        color: #7b3f84;
+        display: inline-block;
+        @include rem(font-size, 14px);
+        height: 24px;
+
+        @include bp($bp-large) {
+          @include rem(font-size, 16px);
+        }
+      }
+
+      .group-card-members {
+        border-bottom: 1px solid #d2d2d2;
+      }
+
+      .card-buttons {
+        margin-top: 18px;
+        padding: 0;
+
+        .button {
+          margin-right: 5px;
+          width: 78px;
+
+          @include bp($bp-small) {
+            margin-bottom: 12px;
+            width: 135px;
+          }
+
+          @include bp($bp-large) {
+            margin-bottom: 0;
+            margin-right: 26px;
+            width: 90px;
+
+            &:after {
+              @include clear_linebreak();
+            }
+          }
+        }
+
+        a {
+          cursor: pointer;
+          @include rem(font-size, 12px);
+
+          @include bp($bp-small) {
+            @include rem(font-size, 16px);
+
+            &:before {
+              @include linebreak();
+            }
+          }
+
+          @include bp($bp-large) {
+            &:before {
+              @include clear_linebreak();
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //disable carousel IE8
+  .rsArrow {
+
+    @include old-ie {
+      display: none !important;
+    }
+
+  }
+
+}
+
+#community-page .action-skip-this {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #426da9;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  // disable for IE8 TODO: figure out how to make this work in IE8
+  @include old-ie {
+    display: none !important;
+  }
+
+}
+
+.community-my-groups {
+  background-color: #f4f2f1;
+
+  .community-my-groups-wrapper {
+    margin: 0 15px;
+    padding-top: 28px;
+    position: relative;
+
+    @include bp($bp-small-plus) {
+      margin: 0;
+    }
+
+    @include bp($bp-large) {
+      margin-bottom: 49px;
+      margin-top: 58px;
+      padding-top: 0;
+    }
+  }
+
+  h2 {
+    color: #7b3f84;
+    @include rem(font-size, 30px);
+    font-weight: normal;
+    margin-bottom: 12px;
+
+    @include bp($bp-small) {
+      width: 50%;
+    }
+
+    @include bp($bp-large) {
+      @include rem(font-size, 36px);
+    }
+  }
+
+  .button-view-all {
+    background-color: #fff;
+
+    @include bp($bp-small) {
+      margin-top: 0;
+      position: absolute;
+      top: 28px;
+    }
+
+    @include bp($bp-large) {
+      top: 0;
+    }
+  }
+
+  .group-cards {
+    margin-bottom: 45px;
+
+    @include bp($bp-large) {
+      margin-bottom: 0;
+      margin-top: 46px;
+    }
+
+    .group-card {
+      background-color: #fff;
+      margin: 12px 0 0;
+      padding: 16px;
+
+      @include bp($bp-large) {
+        padding: 50px 0 40px 45px;
+      }
+    }
+
+    .group-card-image {
+      text-align: center;
+
+      @include bp($bp-small-plus) {
+        display: inline-block;
+        float: left;
+      }
+
+      @include bp($bp-large) {
+        display: inline-block;
+        float: left;
+        width: 25%;
+      }
+    }
+
+    .group-card-info {
+      display: inline-block;
+      padding-left: 22px;
+
+      @include bp($bp-small-plus) {
+        width: 396px;
+      }
+
+      @include bp($bp-medium) {
+        width: 500px;
+      }
+
+      @include bp($bp-large) {
+        width: 75%;
+      }
+
+      .group-card-title {
+        display: inline-block;
+        @include rem(font-size, 24px);
+        font-weight: normal;
+        @include rem(line-height, 24px);
+        margin-bottom: 12px;
+        margin-top: 12px;
+
+        @include bp($bp-large) {
+          margin-bottom: 26px;
+          margin-top: 0;
+        }
+
+        a{
+          color: #7b3f84;
+        }
+      }
+
+      .group-card-excerpt {
+        color: #426da8;
+        @include rem(font-size, 18px);
+        font-weight: normal;
+        @include rem(line-height, 24px);
+
+        @include bp($bp-large) {
+          border-right: 1px solid #d2d2d2;
+          float: left;
+          margin-bottom: 20px;
+          padding: 0 30px 0 0;
+          width: 75%;
+        }
+
+        a{
+          color: #426da8;
+        }
+      }
+
+      .group-card-post-info {
+        clear:both;
+        color: #696969;
+        @include rem(font-size, 15px);
+        @include rem(line-height, 15px);
+        margin-bottom: 26px;
+
+        .bullet {
+          @include rem(font-size, 10px);
+          vertical-align: top;
+          visibility: hidden;
+
+          &:after {
+              @include linebreak();
+          }
+
+          @include bp($bp-large) {
+            visibility: visible;
+
+            &:after {
+              @include clear_linebreak();
+            }
+          }
+        }
+      }
+
+      .group-card-replies {
+        color: #696969;
+        @include rem(font-size, 16px);
+        margin-bottom: 8px;
+        margin-top: 8px;
+
+        @include bp($bp-large) {
+          text-align: center;
+          display: table;
+          width: 25%;
+        }
+
+        .replies {
+          @include bp($bp-large) {
+            display: table-cell;
+            vertical-align: middle;
+          }
+        }
+
+        .reply-count {
+          @include rem(font-size, 26px);
+
+          @include bp($bp-large) {
+            &:after {
+              @include linebreak();
+            }
+          }
+        }
+      }
+
+      .card-buttons {
+        margin-top: 18px;
+        padding: 0;
+
+        .button {
+          height: 40px;
+          line-height: 40px;
+          margin-right: 26px;
+          width: 189px;
+        }
+      }
+    }
+  }
+
+}

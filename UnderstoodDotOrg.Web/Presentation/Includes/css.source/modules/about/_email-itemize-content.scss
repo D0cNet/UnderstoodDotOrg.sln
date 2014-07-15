@@ -1,0 +1,179 @@
+/**
+ * SASS partial for email-itemize-content modules.
+ */
+
+
+
+.l-itemize-your-child{
+  background-color: #f4f2f1;
+
+  .email-itemize-content{
+
+    .needs-help-with{
+      background-color: #ffffff;
+      padding: 40px 15px 25px;
+      border-bottom: 1px solid #f4f2f1;
+
+      @include bp($bp-small-plus){
+        margin-bottom: 20px;
+        padding: 40px 40px 33px;
+        @include dropshadow;
+      }
+
+      .needs-help-with-title{
+
+        h3{
+          @include rem(font-size, 24px);
+          @include rem(line-height, 28px);
+          color: #794382;
+          font-weight: normal;
+          margin-bottom: 34px;
+          margin-top: -5px;
+        }
+
+      } // .needs-help-with-title
+
+      .needs-help-with-options{
+
+        .checkbox-wrapper{
+          @include rem(font-size, 15px);
+          @include rem(line-height, 18px);
+          color: #696969;
+          font-weight: normal;
+          margin-bottom: 14px;
+          position: relative;
+          display: table;
+          @include bp($bp-small-plus){
+            margin-bottom: 12px;
+          }
+
+          label{
+            display: table-row;
+
+            .checker{
+              display: table-cell;
+              vertical-align: top;
+            }
+
+            > span{
+              display: table-cell;
+              padding-left: 20px;
+            }
+          }
+
+          @include bp($bp-small-plus){
+            @include rem(font-size, 18px);
+            @include rem(line-height, 22px);
+          }
+        } // .checkbox-wrapper
+        @include bp($bp-small-plus){
+          & .checkbox-wrapper:last-child{
+            margin-bottom: 0px;
+          }
+        }
+
+      } // .needs-help-with-options
+
+    } // .needs-help-with
+
+
+    .child-enrolled, .child-nickname{
+      background-color: #ffffff;
+      padding: 39px 15px;
+      border-bottom: 1px solid #f4f2f1;
+
+      @include bp($bp-small-plus){
+        @include dropshadow;
+        height: 240px;
+      }
+      @include bp($bp-medium){
+        height: 197px;
+      }
+
+      h3{
+        @include rem(font-size, 24px);
+        @include rem(line-height, 28px);
+        color: #794382;
+        font-weight: normal;
+        margin-bottom: 35px;
+        margin-top: -4px;
+        @include bp($bp-small-plus){
+          margin-bottom: 25px;
+        }
+      }
+
+      .caption{
+        @include rem(font-size, 15px);
+        @include rem(line-height, 18px);
+        color: #696969;
+        font-weight: normal;
+        margin: 20px 0 0 0;
+      }
+
+    } // .child-enrolled, .child-nickname
+    .child-enrolled{
+      @include bp($bp-small-plus){
+        margin-right: 5px;
+        padding: 37px 38px 38px 38px;
+      }
+    }
+    .child-nickname{
+      padding-bottom: 38px;
+      @include bp($bp-small-plus){
+        margin-left: 5px;
+        padding: 37px 38px 38px 38px;
+      }
+    }
+
+    .email-itemize-next{
+      text-align: left;
+      margin: 35px 0 30px 15px;
+      @include bp($bp-small-plus){
+        margin: 39px 0 40px 0;
+        text-align: center;
+      }
+      .checkbox-wrap{
+        margin-bottom: 30px;
+        @include bp($bp-small-plus){
+          margin-bottom: 25px;
+        }
+        label{
+          display: table;
+          @include bp($bp-small-plus){
+            margin: 0 auto;
+          }
+          span{
+            display: table-cell;
+            @include rem(font-size, 18px);
+            @include rem(line-height, 22px);
+            color: #696969;
+            font-weight: normal;
+            margin: 38px 0 27px 0;
+          }
+          input[type=checkbox]{
+            display: table-cell;
+            margin-right: 10px;
+            position: relative;
+            bottom: 2px;
+
+            @include old-ie {
+              display: inline-block;
+            }
+            
+          }
+        }
+      }
+
+      .form-action-next{
+        text-align: center;
+
+        input[type=submit]{
+          max-width: 150px;
+        }
+      }
+
+    } // .email-itemize-next
+
+  } // .email-itemize-content
+
+} // .l-itemize-your-child

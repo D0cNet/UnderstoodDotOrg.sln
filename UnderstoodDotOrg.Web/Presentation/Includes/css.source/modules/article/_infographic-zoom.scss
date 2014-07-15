@@ -1,0 +1,59 @@
+.infographic {
+  position: relative;
+  margin-bottom: 46px;
+  .infographic-zoom {
+    position: absolute;
+    min-width: 320px;
+    margin: 0;
+    top: 0;
+    @include bp($bp-small){
+      right: 0;
+    }
+
+    .infographic-zoom-icon {
+      background-image: image-url('sprite.infographic-zoom.png');
+      background-size: 305px 120px;
+      display: block;
+      height: 60px;
+      float: left;
+      margin:0;
+      padding: 0;
+      text-indent: -9999px;
+      width: 73px;
+      &:hover, &:focus {
+        background-position-y: -60px;
+      }
+
+      @include bp($bp-small) {
+        width: 75px;
+      }
+
+      .no-backgroundsize & {
+        background-image: image-url('sprite.infographic-zoom.lo-res.png');
+      }
+
+    }
+    .infographic-zoom-icon-embed {
+      background-position: 0 0;
+    }
+    .infographic-zoom-icon-download {
+      background-position: -75px 0;
+    }
+    .infographic-zoom-icon-zoom-in {
+      background-position: -150px 0;
+    }
+    .infographic-zoom-icon-zoom-out {
+      background-position: -225px 0;
+    }
+  }
+
+  .zoom-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

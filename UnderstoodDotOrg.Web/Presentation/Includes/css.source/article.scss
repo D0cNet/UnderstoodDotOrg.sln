@@ -1,0 +1,116 @@
+/**
+ * Include SASS partials for account modules.
+ */
+@import 'config';
+
+@import 'vendor/jquery.fs.zoomer.css';
+@import 'modules/article/article-slideshow';
+@import 'modules/article/quotes';
+@import 'modules/article/article-poll';
+@import 'modules/article/audio-pull-quote';
+@import 'modules/article/article-intro-text';
+@import 'modules/article/article-table';
+@import 'modules/article/article-checklist';
+@import 'modules/article/personalize-checklist';
+@import 'modules/article/article-toolkit-intro';
+@import 'modules/article/toolkit-thumbnails';
+@import 'modules/article/infographic-zoom';
+@import 'modules/article/article-tips';
+@import 'modules/article/article-tips-intro-text';
+@import 'modules/article/article-copy';
+@import 'modules/article/article-table-source';
+@import 'modules/article/article-video-container';
+@import 'modules/article/article-actions-copy';
+@import 'modules/article/article-intro-text-toolkit';
+@import 'modules/article/audio-player';
+@import 'modules/article/at-a-glance';
+@import 'modules/article/key-takeaways';
+@import 'modules/article/keep-reading';
+@import 'modules/article/common-questions';
+@import 'modules/article/whats-covered';
+@import 'modules/article/expert-question-answer';
+@import 'modules/article/comments-summary';
+@import 'modules/article/bullet-point-with-image';
+@import 'modules/article/reviewed-by';
+@import 'modules/article/article-deep-dive-copy';
+@import 'modules/article/knowledge-quiz';
+@import 'modules/article/assessment-quiz';
+@import 'modules/article/try-another-quiz';
+@import 'modules/article/glossary';
+@import 'modules/about-the-author';
+@import 'modules/embed-overlay';
+
+
+.article-feature-image {
+  margin-bottom: 2em;
+
+  img {
+    width: 100%
+  }
+
+}
+
+
+// Article action buttons (email, plus, print, bell).
+// Can be seen on G5, A5, A9.
+.article-actions {
+  margin: 0;
+  button {
+    width: 44px;
+  }
+}// .article-actions
+
+// Action buttons with white background (A9).
+.article-slideshow-container.text-tips {
+  .article-actions {
+    background-color: #fff;
+    height: 50px;
+    width: 212px;
+    button {
+      height: 50px;
+      @include bp($bp-large) { width: 50px; }
+      &:after {
+        top: 22%;
+        left: 27%;
+      }
+      &.icon-plus:after {
+        left: 30%;
+      }
+      &.icon-bell:after {
+        left: 35%;
+      }
+      &.active {
+        margin-top: 0px;
+      }
+    }
+  }
+  .article-actions,
+  .share-dropdown-menu {
+    @include bp($bp-large) { top: 0px; }
+  }
+}
+
+.article-slideshow-container.slideshow {
+  .article-actions {
+    .share-dropdown-menu {
+      margin-top: 3px;
+    }
+    button {
+      height: 28px;
+      width: 37px;
+      @include bp($bp-large) {
+        width: 44px;
+      }
+      &:after {
+        top: -1%;
+        left: 0%;
+        @include bp($bp-large) {
+          left: 29%;
+        }
+      }
+      &.active {
+        margin-top: 0px;
+      }
+    }
+  }
+}

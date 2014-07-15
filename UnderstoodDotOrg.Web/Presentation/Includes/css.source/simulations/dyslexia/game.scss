@@ -1,0 +1,121 @@
+/*
+ * Purple: 7A4182
+ * Blue: 298FC2
+ */
+#gameboard.dyslexia_game {
+    font-size: 24px;
+    font-weight: bold;
+}
+.breakpoint_phone #gameboard {
+    font-size: 18px;
+}
+#gameboard.dyslexia_game .SSGame_modal_standalone_decoration {
+    background-image: image_url('simulations/dyslexia/desktop/standalone_icon.png');
+}
+
+#dyslexia_swaps_ctr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:#7A4182;
+}
+.breakpoint_phone #dyslexia_swaps_ctr {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+#dyslexia_swaps {
+    color: #FFF;
+    line-height: 30px;
+    margin: 25px 40px;
+    min-width: 175px;
+}
+.breakpoint_phone #dyslexia_swaps {
+    line-height: 21px;
+    margin: 10px 15px;
+    min-width: 0px;
+}
+#dyslexia_swaps .rule {
+    padding: 0 10px 0 0;
+}
+#dyslexia_sentence {
+    position: absolute;
+    top: 130px;
+    width: 96%;
+    padding: 0 2%;
+    text-align: left;
+}
+.breakpoint_phone #dyslexia_sentence {
+    top: 80px;
+    width: 100%;
+    padding: 0;
+}
+#dyslexia_sentence .word {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 15px 10px;
+}
+.breakpoint_phone #dyslexia_sentence .word {
+    margin: 5px 10px;
+}
+#dyslexia_sentence .punctuation {
+    font-size: 42px;
+    color: #7A4182;
+}
+.breakpoint_phone #dyslexia_sentence .punctuation {
+    font-size: 30px;
+}
+#dyslexia_sentence .letter {
+    cursor: pointer;
+    display: inline-block;
+    min-width: 38px;
+    max-width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 42px;
+    text-align: center;
+    margin: 0 5px;
+}
+.breakpoint_phone #dyslexia_sentence .letter {
+    min-width: 30px;
+    max-width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 30px;
+    margin: 0 2px;
+}
+#dyslexia_sentence .corrected .letter {
+}
+#dyslexia_sentence .wrong .letter {
+}
+#dyslexia_sentence .phrase:hover .letter {
+}
+#dyslexia_score {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+}
+.breakpoint_phone #dyslexia_score {
+    top: 18px;
+    left: 20px;
+    bottom: auto;
+    text-align: left;
+}
+
+.thumbsup {
+    width: 52px;
+    height: 52px;
+    background: image_url('simulations/dyslexia/desktop/thumbs_up.png') no-repeat;
+}
+.thumbsdown {
+    width: 52px;
+    height: 52px;
+    background: image_url('simulations/dyslexia/desktop/thumbs_down.png') no-repeat;
+}
+
+
+#gameboard.breakpoint_phone .response {
+    margin: 0 3px;
+}

@@ -1,0 +1,336 @@
+
+
+.track-goals-wrapper, .track-goals-timeline {
+  background-color: #f4f2f1;
+  padding: 30px 15px 30px 15px;
+  margin-bottom: 30px;
+  @include bp($bp-small-plus) {
+    padding: 50px 40px 30px 40px;
+  }
+  h2 {
+    @include rem (font-size, 21px);
+    font-weight: normal;
+    color: #7b3f84;
+    margin-bottom: 20px;
+    text-align: center;
+    @include bp ($bp-small-plus) {
+      margin-bottom: 48px;
+    }
+  }
+  .title, .activity-bar-graph {
+    float: left;
+  }
+  .activities-remaining {
+    float: right;
+    width: 117px;
+    @include bp($bp-small-plus) {
+      width: auto;
+    }
+  }
+  .title {
+    width: 117px;
+    text-decoration: underline;
+    color: #426da9;
+    @include rem (font-size, 14px);
+    margin: 22px 42px 0 0;
+    @include bp ($bp-small-plus) {
+      width: 239px;
+      @include rem (font-size, 16px);
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .activity-bar-graph-wrapper {
+    height: auto;
+    margin-bottom: 19px;
+    width: 100%;
+    @include bp ($bp-small-plus) {
+      width: 476px;
+      margin: 0 auto;
+    }
+    @include bp ($bp-large) {
+      width: auto;
+      margin-bottom: 19px;
+      height: 41px;
+    }
+  }
+  .activity-bar-graph {
+    width: 100%;
+    height: 41px;
+    border: 1px solid #d2d2d2;
+    position: relative;
+    margin-right: 28px;
+    @include bp ($bp-small-plus) {
+      width: 469px;
+    }
+    .completed, .skipped {
+      height: 100%;
+      display: block;
+      position: absolute;
+    }
+    .completed {
+      background-color: #7a4183;
+    }
+    .skipped {
+      background-color: #298fc2;
+    }
+  }
+  .activities-remaining {
+    margin-top: 22px;
+    margin-bottom: 0px;
+    @include rem (font-size, 14px);
+    color: #696969;
+    width: 80px;
+    @include bp ($bp-small-plus) {
+      @include rem (font-size, 16px);
+      margin-top: 0;
+    }
+  }
+  .track-goals-key {
+    list-style: none;
+    width: 100px;
+    padding: 0;
+    margin: 50px 0 0 26px;
+    @include bp ($bp-small-plus) {
+      width: 340px;
+    }
+    li {
+      position: relative;
+      @include rem (font-size, 14px);
+      color: #696969;
+      float: left;
+      margin-bottom: 16px;
+      @include bp ($bp-small-plus) {
+        margin-bottom: 0;
+      }
+    }
+    .completed, .skipped, .remaining {
+      &:before {
+        content: '';
+        position: absolute;
+        left: -26px;
+        top: 2px;
+        height: 14px;
+        width: 14px;
+      }
+    }
+    .completed:before {
+      background-color: #7a4183;
+    }
+    .skipped {
+      @include bp ($bp-small-plus) {
+        margin-left: 50px;
+      }
+      &:before {
+        background-color: #298fc2;
+      }
+    }
+    .remaining {
+      @include bp ($bp-small-plus) {
+        margin-left: 71px;
+      }
+      &:before {
+        border: 1px solid #d2d2d2;
+        background-color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.track-goals-timeline {
+  margin-bottom: 50px;
+  h2 {
+    width: 240px;
+    margin: 0 auto;
+    @include bp ($bp-small-plus) {
+      width: 450px;
+    }
+    @include bp ($bp-medium) {
+      width: 662px;
+    }
+  }
+  .timeline-outer-wrapper {
+    width: 855px;
+    height: 330px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  .timeline-wrapper {
+    width: auto;
+    overflow: hidden;
+    height: 330px;
+    position: relative;
+    margin-bottom: 50px;
+    @include bp ($bp-large) {
+      width: 855px;
+    }
+  }
+  .timeline {
+    border-bottom: 1px solid #c0c0c0;
+    width: 1000%;
+    height: 320px;
+    left: 0;
+    opacity: 0;
+    ul {
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+      position: absolute;
+      bottom: 0;
+    }
+    li {
+      height: 70px;
+      width: 90px;
+      float: left;
+      background-color: #FFFFFF;
+      margin: 0 2px 2px 3px;
+      position: relative;
+      padding: 28px 18px;
+      @include rem (font-size, 15px);
+      color: #696969;
+      &:before {
+        content: '';
+        position: absolute;
+        height: 96px;
+        width: 1px;
+        bottom: -2px;
+        left: -3px;
+        background-color: transparent;
+      }
+      &.haslabel:before {
+        background-color: #c0c0c0;
+      }
+      .label-wrapper {
+        position: absolute;
+        display: block;
+        width: 57px;
+        height: auto;
+        bottom: 86px;
+        left: -2px;
+        .label {
+          display: inline-block;
+        }
+        .label.focus {
+          outline: thin dotted #426da9;
+        }
+        .created, .begin, .skip, .complete {
+          text-transform: capitalize;
+          font-weight: bold;
+        }
+        .begin {
+          color: #5caa7f;
+        }
+        .skip {
+          color: #298fc2;
+        }
+        .complete {
+          color: #298fc2;
+        }
+      }
+    }
+  }
+  .timeline-key {
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+    width: 390px;
+    @include bp ($bp-medium) {
+      width: auto;
+    }
+    li {
+      float: left;
+      position: relative;
+      @include rem(font-size, 15px);
+      @include rem(line-height, 24px);
+      padding-left: 39px;
+      height: 25px;
+      color: #696969;
+      width: 140px;
+      @include bp ($bp-medium) {
+        margin-right: 40px;
+        width: auto;
+      }
+      .icon {
+        display: block;
+        position: absolute;
+        left: 5px;
+        margin-right: 0px;
+        top: 0;
+        border-radius: 100%;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        background-color: transparent;
+        color: #FFFFFF;
+        @include rem (font-size, 13px);
+        @include rem (line-height, 24px);
+      }
+      &.completed {
+        margin-bottom: 19px;
+        @include bp ($bp-medium) {
+          margin-bottom: 0;
+        }
+        .icon {
+          background-color: #7a4183;
+        }
+      }
+      &.in-progress {
+        margin-bottom: 19px;
+        @include bp ($bp-medium) {
+          margin-bottom: 0;
+        }
+        .icon {
+          background-color: #5caa7f;
+        }
+      }
+      &.skipped .icon {
+        background-color: #298fc2;
+      }
+      &.all-activities .icon {
+        background-color: #FFFFFF;
+        border: 1px solid #d2d2d2;
+        color: #696969;
+      }
+    }
+  }
+}
+.progress-toggle-container {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cccccc;
+  @include bp ($bp-small-plus) {
+    padding-bottom: 25px;
+  }
+}
+.track-progress-wrapper {
+  width: 291px;
+  margin: 0 auto;
+  @include bp ($bp-small-plus) {
+    width: 430px;
+  }
+  h3 {
+    color: #7b3f84;
+    @include rem (font-size, 22px);
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
+  .track-progress, h3 {
+    text-align: center;
+  }
+  .track-progress {
+    color: #696969;
+    @include rem (font-size, 16px);
+    margin-bottom: 15px;
+  }
+  .toggle-wrapper {
+    label {
+      width: auto;
+      margin: 0 auto;
+    }
+    .ez-checkbox {
+      width: auto;
+    }
+  }
+
+}

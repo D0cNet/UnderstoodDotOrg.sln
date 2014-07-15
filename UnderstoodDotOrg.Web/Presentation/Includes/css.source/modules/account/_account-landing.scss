@@ -1,0 +1,158 @@
+/**
+ * SASS partial for account landing global modules.
+ */
+.large-landing-module,
+.small-landing-modules{
+  @include bp($bp-650-768) {
+    display: block !important;
+    float: none !important;
+  }
+  @include old-ie {
+    float: left !important;
+  }
+}
+.large-landing-module{
+  @include bp($bp-650-768) {
+    width: auto !important;
+    margin-left: 2.6% !important;
+    margin-right: 4.6% !important;
+    padding-right: 0 !important;
+  }
+  @include bp($bp-large) {
+    .landing-modules{
+      height: 715px;
+    }
+  }
+  @include old-ie {
+    margin-left: 40px !important;
+    margin-right: 5px !important;
+    width: 276px !important;
+  }
+}
+.small-landing-modules{
+  @include bp($bp-650-768) {
+    margin-left: 0.4% !important;
+    margin-right: 2.6% !important;
+    width: auto !important;
+  }
+  .landing-modules{
+    @include bp($bp-small-plus) {
+      margin-left: 12px;
+    }
+    @include bp($bp-large) {
+      height: 350px;
+    }
+  }
+  @include old-ie {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    width: 602px !important;
+  }
+}
+
+.account-landing-wrapper{
+  background: #f4f2f1;
+  padding-top: 45px;
+  margin: 0;
+  margin-top:-30px;
+
+  @include bp(max-width 650px){ background-color: #fff; }
+  @include bp($bp-large){ margin-top: -85px; }
+
+  @include old-ie {
+    background: #f4f2f1 !important;
+  }
+}
+
+.landing-modules{
+  background: #fff;
+  @include dropshadow;
+  border-top: 4px solid black;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 0 20px;
+  @include bp($bp-small-plus) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .bottom{
+    padding: 15px 0 19px;
+    a{
+      color: #426da9;
+      text-decoration:underline;
+      @include rem(font-size, 15px);
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  header{
+    border-bottom: 1px solid #f4f2f1;
+    @include rem(font-size, 22px);
+    padding: 13px 0;
+    .landing-module-count{
+      float: right;
+      @include rem(font-size, 24px);
+    }
+  }
+  .mid-dot{
+    @include rem(font-size, 32px);
+    position: relative;
+    top: 6px;
+  }
+  .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    position: relative;
+
+    &:after {
+      @include opacity(.6);
+      font-size: 16px;
+      font-family: Arial, Helvetica, san-serif;
+      content: '•';
+      position: absolute;
+      top: -4px;
+      left: 1px;
+      display: block;
+    }
+  }//dot
+  .empty{
+    color: #696969;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 20px);
+    font-weight: normal;
+    height: 100%;
+    padding-top: 17px;
+    a{
+      text-decoration: underline;
+    }
+  }
+  ul.landing-module-items{
+    @include rem(line-height, 15px);
+    margin: 0;
+    padding-left: 0;
+    li{
+      list-style: none;
+      border-bottom: 1px solid #f4f2f1;
+      padding: 15px 0;
+      a{
+        @include rem(font-size, 15px);
+        color: #426da9;
+      }
+      .timestamp{
+        color: #bcbdc0;
+        font-family: Arial, sans-serif;
+        @include rem(font-size, 14px);
+      }
+      p{
+        color: #696969;
+        font-family: Arial, sans-serif;
+        @include rem(font-size, 15px);
+        margin-bottom: 0;
+      } // p
+    } // li
+  } // ul.landing-module-items
+} // .landing-modules

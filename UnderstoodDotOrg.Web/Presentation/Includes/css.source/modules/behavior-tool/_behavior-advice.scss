@@ -1,0 +1,111 @@
+/**
+ * SASS partial for behavior-advice module.
+ * Templates affected: b1 and b2
+ */
+
+$article-font-purple: #7b3f84;
+
+// This appears on b1 below hero
+
+.behavior-advice-layout {
+  background: #f4f2f1;
+
+  @include bp($bp-small-plus) {
+    padding: 0 15px;
+  }
+}
+
+.behavior-advice-container-wrapper {
+  background: #f4f2f1;
+
+  // Targets b1 and pulls the advice container up
+    .behavior-advice-container-pull .behavior-advice-wrapper {
+      // Position this with top instead of negative margin
+      // Negative margin doesn't display properly on IE10
+      position: relative;
+      top: -31px;
+      margin: 0 27px -31px;
+      // max-width: 600px;
+      @include bp($bp-medium) {
+        position: relative;
+        top: 0px;
+        margin: 0 0 35px 0;
+      }
+    }
+}
+
+.behavior-advice-container {
+  position: relative;
+  .behavior-advice-wrapper{
+    background: #fff;
+    padding: 0 20px;
+    @include bp($bp-small-plus) {
+      padding: 0;
+    }
+    // adding bottom margin will affect equal heights at bp-large
+    margin: 0 27px 0;
+    @include bp($bp-small-plus) {
+      margin: 0;
+    }
+  }
+}
+
+.behavior-advice {
+  margin: auto;
+  max-width: 600px;
+  padding: 15px 0 15px 0;
+  @include bp($bp-small-plus) {
+    padding: 33px 20px 15px 20px;
+  }
+
+  .behavior-advice-title {
+    color: $article-font-purple;
+    @include rem(font-size, 15px);
+    margin-bottom: 20px;
+    font-weight: normal;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 24px);
+    }
+  }
+
+  .advice-question-wrapper {
+    margin-bottom: 10px;
+  }
+
+  // This targets the second input on b1/b2
+  .advice-question-bottom{
+    .advice-question-wrapper {
+      @include bp($bp-small-plus) {
+        width: 71% !important;
+        float: left;
+      }
+    }
+    .behavior-advice-actions {
+      display: block;
+      margin: 0;
+      max-height: 50px;
+      @include bp($bp-small-plus) {
+        float: right;
+        width: 27%;
+      }
+      .submit-button{
+        width: 100%;
+      }
+    }
+  }
+
+  // style link below form in b1/b2
+  .advice-more-link {
+    color: #426da9;
+    @include rem(font-size, 14px);
+    display: block;
+    margin-top: 20px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 20px;
+      @include rem(font-size, 16px);
+      margin-top: 5px;
+    }
+  }
+
+  .button span { max-height: 50px; }
+}

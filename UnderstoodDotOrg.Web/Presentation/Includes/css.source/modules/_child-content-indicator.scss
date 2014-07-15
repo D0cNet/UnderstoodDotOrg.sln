@@ -1,0 +1,101 @@
+/**
+ * SASS partial for child-content-indicator module.
+ */
+
+
+.child-content-indicator {
+
+  padding: 0;
+  margin-bottom: 5px;
+
+
+  @include bp($bp-small-plus){
+    padding: 0;
+    margin: 0 0 15px;
+  }
+
+  @include bp($bp-large){
+    margin-bottom: 20px;
+  }
+
+  &.has-recommendations {
+    margin-bottom: 0px;
+  }
+
+  &.second  {
+    display: none;
+
+    @include bp($bp-small-plus){
+      display: block;
+    }
+  }
+
+  .children-key {
+
+    float: left;
+
+    @include bp($bp-small-plus){
+      padding-bottom: 5px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: block;
+        float: left;
+        min-width: 50%;
+        margin-bottom: 20px;
+        @include rem(font-size, 14px);
+        color: #696969;
+
+        @include bp($bp-small-plus){
+          min-width: 115px;
+          margin-right: 12px;
+        }
+
+        @include bp($bp-medium){
+          min-width: 120px;
+          margin-right: 12px;
+        }
+
+        @include bp($bp-large){
+          min-width: 125px;
+          margin-right: 15px;
+        }
+
+        i {
+          margin-bottom: -2px;
+          margin-right: 12px;
+        }
+
+      }// .children-key ul li
+
+    }// .children-key ul
+
+  }// .children-key
+
+  // has-recos override
+  &.has-recommendations {
+    .children-key {
+      @include bp($bp-medium) {
+        max-width: 356px;
+      }
+      @include bp($bp-large) {
+        max-width: 420px;
+      }
+    }
+  }
+
+}// .child-content-indicator
+
+// children content indicators listing container
+.children { 
+  display: block;
+  i {
+    margin-right: 8px;
+  }// .children i
+
+}// .children

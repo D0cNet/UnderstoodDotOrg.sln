@@ -1,0 +1,188 @@
+.landing-modules {
+  &.my-connections {
+    border-top-color: #8fad15;
+    margin-bottom: 60px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 0px;
+    }
+    .bottom{
+      border-top: 1px solid #F4F2F1;
+    }
+    .landing-module-count {
+      color: #8fad15;
+      display: none;
+      @include bp($bp-small-plus) {
+        display: block;
+      }
+    }
+
+    .member-cards .member-card-container {
+      float: left;
+      margin-left: 18px;
+      width: 46%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:nth-child(3) {
+        display: none;
+      }
+
+      img {
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      @include bp($bp-small) {
+        margin-left: 0;
+        width: 33%;
+
+        &:nth-child(3) {
+          display: initial;
+        }
+
+        img {
+          height: 126px;
+          width: 126px;
+        }
+      }
+
+      @include bp($bp-small-plus) {
+        width: auto;
+        float: none;
+        margin-left: 0;
+      }
+
+      @include bp($bp-large) {
+        img {
+          height: 150px;
+          width: 150px;
+        }
+      }
+    }
+
+    .card-child-info.mobile {
+      left: -25px;
+
+      .caret {
+        margin-left: -25px;
+      }
+    }
+  }
+}
+
+// This targets the my connections div on the landing page onlys
+.landing-modules.my-connections {
+  margin-bottom: 25px;
+
+  @include bp($bp-small-plus) {
+    margin-bottom: 2px; //prevents more-to-explore module from overlapping the bottom
+  }
+  
+  h3 {
+    @include rem(font-size, 22px);
+    @include rem(line-height, 30px);
+  }
+  // This styles the popover buttons on landing connections module
+  .button-choices {
+    margin-top: 1em;
+    .button {
+      height: 40px;
+      line-height: normal;
+      @include rem(font-size, 14px);
+      @include bp($bp-small-plus){
+        @include rem(font-size, 16px);
+      }
+    }
+    .button.activity {
+      float: right;
+      margin-right: 0;
+    }
+    .button.profile {
+      float: left;
+      margin-right: 5px;
+      @include bp($bp-small-plus) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .connections{
+    margin-bottom: 16px;
+    padding: 20px 0;
+    position: relative;
+
+    @include bp($bp-small-plus) {
+      padding: 20px 0 0;
+      margin-left: 20px;
+    }
+
+    .member-cards {
+      position: relative;
+    }
+
+    .user {
+      float: left;
+      min-height: 257px;
+      width: 46%;
+      &:nth-child(2){
+        margin-left: 18px;
+        @include bp($bp-small-plus) {
+          margin-left: 0px;
+        }
+      }
+      &:nth-child(3){
+        display: none;
+        @include bp($bp-small-plus) {
+          display: block;
+        }
+      }
+      @include bp($bp-small-plus) {
+        min-height: 270px;
+        width: 33.3333333333%;
+      }
+      .user > div{
+        min-height:75px;
+        @include bp($bp-small) {
+          min-height:25px;
+        }
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      .user-location{
+        color: #696969;
+        @include rem(font-size, 13px);
+        @include rem(line-height, 20px);
+        margin-bottom: 5px;
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 16px);
+          @include rem(line-height, 22px);
+          margin-bottom: 10px;
+        }
+      } //.user-location
+      .user-name {
+        @include rem(font-size, 18px);
+        @include rem(line-height, 21px);
+        margin: 13px 0 0;
+        -ms-word-break: break-all;
+        word-break: break-all;
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 22px);
+          @include rem(line-height, 26px);
+          margin: 21px 0 0;
+        }
+      } //.user-name
+      .user-title {
+        color: #696969;
+        @include rem(line-height, 22px);
+        margin-bottom: 0;
+      } //user-title
+    } //user
+  }
+}

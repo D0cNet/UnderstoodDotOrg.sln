@@ -1,0 +1,27 @@
+/**
+ * SASS partial for partners-detail-copy module.
+ */
+
+.partner-copy {
+
+  @include bp($bp-small-plus) {
+      float: left;
+      max-width: 62.5%;
+    }
+
+  p {
+    font-family: arial, sans-serif;
+    color: #696969;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 26px);
+    font-weight: normal;
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 80px;
+      }
+    }
+  } // end .about-video-container p
+} // end .partner-copy

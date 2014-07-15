@@ -1,0 +1,130 @@
+/**
+ * SASS partial to style Article Intro Text
+ * @TODO - Support between $bp-medium and $bp-large needs to be adjusted
+ *         no design currently exists for between 320 and 960.
+ */
+.article-intro-left { padding-left: 0 !important; }
+
+.article-intro-text {
+  p {
+    font-family: Arial, sans-serif;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 27px);
+    color: #696969;
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+    }
+  }
+}
+.article-intro {
+
+  .row {
+    @include bp($bp-small-plus) {
+      padding-left: 0;
+    }
+  }
+
+  @include bp($bp-small-plus) {
+    margin-bottom: 45px;
+  }
+  .article-intro-count {
+    background-color: #fafafa;
+    @include bp($bp-small-plus) {
+      background-color: transparent;
+      float: right;
+      margin-bottom: 0;
+      padding: 0;
+      text-align: right;
+      &.infographic-intro {
+        @include bp($bp-small-plus) { text-align: left; }
+      }
+    }
+  }
+  .count-helpful {
+    background-color: transparent;
+    @include bp($bp-small-plus) {
+      display: inline-block;
+      text-align: right;
+    }
+    a {
+      border: none;
+      margin: 0 12px;
+      padding: 20px 0;
+      width: 93%;
+      @include bp($bp-small-plus) {
+        margin: 0;
+        padding: 0;
+        width: auto;
+      }
+    }
+  }
+  .count-comments {
+    background-color: transparent;
+    @include bp($bp-small-plus) {
+      display: inline-block;
+    }
+    a {
+      border-top:none;
+      margin: 0 12px;
+      padding: 0 0 20px;
+      width: 93%;
+      @include bp($bp-small-plus) {
+        margin: 0;
+        padding: 0;
+        width: auto;
+      }
+    }
+  }
+  .article-intro-text {
+    @include bp($bp-small-plus) {
+      float: left;
+    }
+    p{
+      margin-bottom:40px;
+    }
+  }
+  // added a single class for when the article-intro-text is used outside of
+  // the default two column layout.  Removes default float.
+  &.single {
+    .article-intro-text {
+      @include bp($bp-small-plus) {
+        float: none;
+      }
+    }
+  }
+}
+.multiple {
+  .count-helpful {
+    a {
+      border-bottom: 1px solid #e0dfdf;
+      margin-bottom: 20px;
+      @include bp($bp-small-plus) {
+        border-bottom: none;
+        margin-bottom: inherit;
+      }
+      @include bp($bp-large) {
+        border-right: 1px solid #f4f2f1;
+        margin-right: 16px;
+        padding-right: 16px;
+      }
+    }
+  }
+}
+
+.find-this-helpful .helpful-count-wrapper {
+  background-color: #fafafa;
+  margin: 30px auto 0 auto;
+  padding: 25px 20px;
+  width: 100%;
+  @include bp($bp-small-plus) {
+    background: none;
+    padding: 0;
+  }
+
+  .count-helpful {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+}

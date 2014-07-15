@@ -1,0 +1,42 @@
+// This inherits properties from my-account-subheader
+.my-account-subheader.notifications-subheader{
+  height: 174px;
+  margin-bottom: 0;
+  padding: 23px 13px 19px;
+  @include bp($bp-medium) {
+    height: 185px;
+    padding: 45px 13px 19px;
+  }
+}
+
+// notifications language preferences
+.account-notifications-tab-email {
+
+  .language-preference.checkbox-wrapper {
+    margin: 30px 0 45px 0;
+
+    h2 {
+      display: inline-block;
+      float: left;
+      margin-top: 0px;
+
+      @include bp($bp-medium-and-smaller) {
+        display: block;
+        float: none;
+      }
+    }
+    label.english { margin-right: 23px; }
+
+  }
+
+  .checkbox-wrapper {
+    width: 103%;
+    label {
+      span {
+        font-size: 1rem;
+      }
+    }
+    label.daily-digest { margin-right: 39px !important; }
+  }
+
+}

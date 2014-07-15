@@ -1,0 +1,15 @@
+/**
+ * Include SASS partials for recos modules.
+ */
+@import 'config';
+
+@import 'modules/recommendations/recos';
+@import 'modules/recommendations/recos-for-you';
+@import 'modules/recommendations/upcoming-events';
+@import 'modules/recommendations/ask-parents';
+@import 'modules/recommendations/recos-tabs';
+@import 'modules/recommendations/tab-connect';
+@import 'modules/recommendations/tab-blogs';
+@import 'modules/recommendations/tab-toolkit';
+@import 'modules/additional-recommendations';
+@import 'modules/landing';

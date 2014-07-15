@@ -1,0 +1,74 @@
+/*
+    Dependent on my-connections.scss
+*/
+
+.connections-activity-feed {
+  color: #696969;
+  margin-top: -40px;
+  position: relative;
+
+  .user-details{
+    margin-top: 10px;
+    span {
+      float: left;
+      display: block;
+      margin-bottom: 5px;
+      width: 30px;
+      height: 30px;
+      &.small {
+        font-size: 9px;
+      }
+    }
+  }
+  .updated {
+    font-family: Arial, sans-serif;
+    @include rem(font-size, 14px);
+    margin: 30px 0 0;
+    text-align: right;
+  }
+  .feed-item {
+    border-top: 1px solid #d2d2d2;
+    padding: 30px 0;
+    > img {
+      float: left;
+    }
+    > ul {
+      list-style: none;
+      margin: 10px 0 0 90px;
+      padding: 0;
+    }
+    &:first-child{
+      border-top: none;
+    }
+    .feed-item-time {
+      color: #bcbdc0;
+      font-family: Arial, sans-serif;
+      @include rem(font-size, 14px);
+    }
+    .feed-item-title,
+    .feed-item-description {
+      @include rem(font-size, 18px);
+    }
+    .feed-item-description {
+      margin-top: 30px;
+    }
+    .friend {
+      img {
+        float: left;
+      }
+      .user-details {
+        float: left;
+        margin: 20px 0 0 20px;
+        a {
+          float: left;
+        }
+        .friend-name {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  .member-card-specialties {
+    margin-top: 20px;
+  }
+}

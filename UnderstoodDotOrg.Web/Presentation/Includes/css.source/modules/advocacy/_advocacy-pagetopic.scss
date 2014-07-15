@@ -1,0 +1,106 @@
+/**
+ * SASS partial for advocacy-pagetopic
+ */
+
+.advocacy-pagetopic {
+  // adding min-height will make it difficult to vertically center in full view
+  margin-bottom: 29px;
+  min-height: 0px;
+  padding: 25px 18px 30px 15px;
+  @include bp($bp-small-plus){
+    padding: 40px 0 45px;
+    margin-bottom: 45px;
+
+    > .row > .col {
+      padding-left: 4.16666666667%;
+    }
+
+  }
+
+  a.back-to-previous{
+    height: 18px;
+    margin-bottom: 0px;
+    top: -10px;
+    position: relative;
+    @include bp($bp-small-plus){
+      height: 25px;
+      top: -15px;
+    }
+  }
+
+  h1 {
+    @include rem(font-size, 30px);
+    @include rem(line-height, 36px);
+    margin-top: -3px;
+    @include bp($bp-small-plus){
+      @include rem(font-size, 36px);
+      @include rem(line-height, 38px);
+      margin-top: 0px;
+    }
+  }
+
+  .page-subtitle{
+    @include rem(font-size, 16px);
+    @include rem(line-height, 22px);
+
+    @include bp($bp-small-plus){
+      @include rem(font-size, 18px);
+      @include rem(line-height, 26px);
+      margin-top: 10px;
+    }
+  }
+  .powered-by{
+    color: #666666;
+    display: block;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 24px);
+    padding-top: 14px;
+    @include bp($bp-small-plus){
+      display: inline-block;
+      @include rem(font-size, 16px);
+      padding-top: 0;
+      padding-right: 10px;
+      text-align: center;
+    }
+  }
+  .partner-image{
+    display:none;
+    @include bp($bp-small-plus){
+      display:inline-block;
+      text-align: left;
+    }
+    img{
+      padding-top: 10px;
+      max-width: 315px;
+      width: 100%;
+      @include bp($bp-small-plus){
+        padding-top: 0;
+        max-width: 210px;
+      }
+    }
+  }
+  .partner-text{
+    @include rem(font-size, 18px);
+    text-decoration: underline;
+    @include bp($bp-small-plus){
+      display: none;
+    }
+  }
+
+  > .row{
+    > div:first-child{
+      @include bp($bp-small-plus){
+        display: table-cell;
+        float: none;
+      }
+    }
+    .partner-image-column{
+      display: block;
+      @include bp($bp-small-plus){
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.sign-in-prompt{
+  text-align: center;
+  background-color: #f4f2f1;
+  height: 340px;
+  padding-top: 120px;
+  margin-top: 0px;
+  position: relative;
+  z-index: 40;
+  @include bp($bp-medium) { margin-top: -72px; }
+
+  img{
+    margin-bottom: 20px;
+  }
+  h3{
+    font-weight: bold;
+    @include rem(font-size, 24px);
+    color: #bcbdc0;
+    margin: 0;
+  }
+}

@@ -1,0 +1,92 @@
+.support-select-issues {
+  border-bottom: 1px solid #c6c5c5;
+  .select-issues-heading {
+    margin-bottom: 40px;
+    overflow: hidden;
+    .detail {
+      float: left;
+      margin-bottom: 10px;
+      @include bp ($bp-small-plus) {
+        margin-bottom: 0px;
+      }
+    }
+    p {
+      @include rem (font-size, 18px);
+      color: #696969;
+      margin: 0;
+    }
+    .issues-recommended-wrapper {
+      @include bp ($bp-small-plus) {
+        float: right;
+      }
+    }
+  }
+  .select-issues-list, .select-checklist-actions {
+    width: 590px;
+  }
+  .select-goals-list {
+    border-bottom: 1px solid #c6c5c5;
+    .select-goals-wrapper {
+      margin: 5px 5px 37px 0;
+      legend {
+        margin-bottom: 10px;
+        @include rem (font-size, 24px);
+        color: #7b3f84;
+      }
+      span {
+        @include rem (font-size, 18px);
+        color: #696969
+      }
+      .checker {
+        margin-top: -5px;
+      }
+    }
+  }
+  .goal-checklist-actions {
+    padding: 40px 0 50px 0;
+    .button, .issue-not-found {
+      width: 100%;
+    }
+    .button {
+      height: 50px;
+      margin: 0 auto 10px;
+      float: left;
+      @include bp ($bp-small-plus) {
+        width: 190px;
+        margin: 0 50px 0 0;
+      }
+    }
+    .issue-not-found {
+      @include rem (font-size, 18px);
+      color: #6a6a6a;
+      text-align: center;
+      float: left;
+      @include bp ($bp-small-plus) {
+        width: auto;
+        margin: 10px 0 0 0;
+      }
+      .let-us-know {
+        @include rem (font-size, 18px);
+        color: #426cab;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .error-box {
+    width: 100%;
+    padding: 27px 39px;
+    background-color: #ffebdd;
+    display: none;
+    margin-bottom: 39px;
+    color: #de5a02;
+    p {
+      margin: 0;
+    }
+  }
+}
+.issues-recommended-modal {
+  display: none;
+}

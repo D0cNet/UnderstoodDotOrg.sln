@@ -1,0 +1,71 @@
+.select-child-wrapper {
+  margin: 20px 0 68px 0;
+  h3 {
+    text-align: center;
+    color: #7b3f84;
+    @include rem(font-size, 21px);
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    @include bp ($bp-small-plus) {
+      @include rem(font-size, 24px);
+      margin-bottom: 50px;
+    }
+  }
+  .child-choices {
+    width: 242px;
+    margin: 0 auto;
+    @include bp ($bp-small-plus) {
+      width: 400px;
+    }
+    .child-choices-menu {
+      width: 242px;
+      padding: 0px;
+      overflow: hidden;
+      margin: 0px;
+      @include bp ($bp-small-plus) {
+        width: 400px;
+      }
+      li {
+        float: left;
+        position: relative;
+        margin: 1px 10px 10px 1px;
+        list-style: none;
+        width: 240px;
+        height: 50px;
+        display: block;
+        @include bp ($bp-small-plus) {
+          width: 189px;
+        }
+        &.row-first {
+          margin-right: 10px;
+        }
+          &:hover .name {
+            @include dropshadow(.3);
+            background-color: #FFFFFF;
+          }
+          .name {
+            width: 240px;
+            height: 50px;
+            line-height: 50px;
+            text-decoration: none;
+            color: #000000;
+            background-color: #bcbdc0;
+            text-align: center;
+            padding: 0;
+            border-radius: 2px;
+            display: block;
+            font-weight: bold;
+            @include bp ($bp-small-plus) {
+            width: 189px;
+            @include rem (font-size, 18px);
+            &:focus {
+              @include dropshadow(.3);
+              background-color: #FFFFFF;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

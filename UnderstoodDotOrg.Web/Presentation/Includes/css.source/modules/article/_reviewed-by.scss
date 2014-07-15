@@ -1,0 +1,50 @@
+p.reviewed-by{
+    background-color: #f4f2f1;
+    padding: 15px;
+    margin-bottom: 46px;
+    @include rem(font-size, 14px);
+    font-weight: normal;
+    color: #696969;
+    @include bp($bp-small) {
+      padding: 20px 42px;
+    }
+    a{
+      font-weight: bold;
+      color: #426da9;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:after {
+        display: none;
+
+        @include bp($bp-small) {
+          display: inline-block;
+          color: #000;
+          font-size: 14px;
+          content: '•';
+          margin-left: 10px;
+          width: 0;
+        }
+      }
+    }
+
+    .reviewed-by-title {
+      display: block;
+
+      @include bp($bp-small) {
+        display: inline;
+        width: auto;
+      }
+    }
+
+    .reviewed-by-date {
+      float: right;
+      margin-left: 12px;
+      @include bp($bp-small) {
+        float: none;
+      }
+    }
+}

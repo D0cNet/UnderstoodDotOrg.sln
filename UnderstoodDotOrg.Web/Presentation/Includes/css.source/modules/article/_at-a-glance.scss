@@ -1,0 +1,52 @@
+.at-a-glance {
+  border-bottom: 1px solid #d2d2d2;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+
+  .header-at-a-glance {
+    padding: 0 0 19px;
+
+    h2 {
+      @include rem(font-size, 24px);
+      font-weight: normal;
+      color: #7a4183;
+      margin-bottom: 7px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      color: #696969;
+      @include rem(font-size, 16px);
+      @include rem(line-height, 27px);
+      position: relative;
+      border-top: 1px solid #f4f2f1;
+      margin-top: 12px;
+      padding: 12px 0 0 20px;
+      
+      @include bp($bp-medium) {
+        @include rem(font-size, 22px);
+        @include rem(line-height, 26px);
+      }
+
+      &:first-child {
+        border-top: 0;
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      &:before {
+        font-family: Circular, arial, sans-serif;
+        content: "• ";
+        color: #426da9;
+        @include rem(font-size, 13px);
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

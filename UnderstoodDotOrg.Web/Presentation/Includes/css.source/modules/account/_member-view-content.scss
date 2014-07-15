@@ -1,0 +1,91 @@
+/**
+ * SASS partial for member view
+ */
+$color1: #696969;
+$color2: #e6e6e6;
+$color3: #7a4183;
+$color4: #d2d2d2;
+$color5: #7b3f84;
+$color6: #426da9;
+$color7: #426da9;
+$color8: #208ec4;
+
+@mixin member-view-text($color, $font-size, $font-weight, $line-height: auto){
+  color: $color;
+  font-weight: $font-weight;
+  @include rem(font-size, $font-size);
+  @include rem(line-height, $line-height);
+}
+
+.member-view-content{
+  margin-top: 45px;
+  @include bp($bp-small-plus) {
+    margin-bottom: 50px;
+  }
+  h3{
+    @include member-view-text($color3, 24px, normal);
+    margin-bottom:15px;
+  }
+  h4{
+    @include member-view-text($color3, 20px, normal, 22px);
+    margin-bottom: 20px;
+  }
+  > .row{
+    padding-top: 25px;
+    margin-bottom: 25px
+  }
+  .member-view-children{
+    ul{
+      padding: 0;
+      list-style-type: none;
+      margin-bottom: 30px;
+      > li{
+        position: relative;
+        @include member-view-text($color1, 16px, normal);
+        margin-bottom: 18px;
+        margin-left: 18px;
+        &:before{
+          content: "";
+          height: 7px;
+          width: 7px;
+          background-color: $color8;
+          @include border-radius(7px);
+          display: inline-block;
+          position: absolute;
+          left: -18px;
+          top: 7px;
+        }
+      }
+    }
+  }
+  .member-view-interests{
+    ul{
+      padding: 0;
+      list-style-type: none;
+      > li{
+        margin-bottom: 8px;
+        @include member-view-text($color1, 18px, normal);
+      }
+    }
+  }
+  .member-view-groups{
+    ul{
+      padding: 0;
+      list-style-type: none;
+      > li{
+        margin-bottom: 10px;
+        > a{
+          @include member-view-text($color7, 18px, normal);
+          display: inline-block;
+          line-height: 18px;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .section-label {
+    max-width: 150px;
+    margin-right: 45px;
+    padding-right: 0;
+  }
+}

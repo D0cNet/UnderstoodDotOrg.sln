@@ -1,0 +1,302 @@
+.my-events-tabs {
+  padding: 0 15px;
+  position: relative;
+  top: -72px;
+  margin-bottom: -72px;
+  // Negative margin balances out the bottom
+  // Top positining causes white space
+  // These metrics should match
+  @include bp($bp-small-plus) {
+    padding: 0;
+    top: -48px;
+    margin-bottom: -48px;
+  }
+
+  .etabs{
+    display: none;
+    @include bp($bp-small-plus){
+      display: block;
+    }
+  }
+  .etabs-dropdown{
+    display: block;
+    .selector {
+      padding-left: 0;
+      span {
+        padding-left: 14px;
+        color: #69696C;
+        background-position: 100% -51px !important;
+      }
+    }
+    @include bp($bp-small-plus){
+      display: none;
+    }
+  }
+
+  .etabs {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .tab {
+    display: inline-block;
+    zoom: 1;
+    background-color: #e6e6e6;
+    border-bottom: none;
+    margin-left: -5px;
+
+    @include old-ie {
+      width: 250px;
+    }
+  }
+  .tab:first{
+    margin-left: 0;
+  }
+
+  .tab a {
+    @include rem(font-size, 18px);
+    display: block;
+    outline: none;
+    color: #696969;
+    font-weight: bold;
+    background-color: #e6e6e6;
+    text-decoration: none;
+    padding: 10px 15px;
+    @include bp($bp-small-plus){
+      padding: 10px 20px;
+    }
+    @include bp($bp-medium){
+      padding: 10px 38px;
+    }
+    @include bp($bp-large){
+      padding: 10px 54px;
+
+      @include old-ie {
+        padding: 10px 35px;
+      }
+    }
+  }
+
+  .tab a:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .tab.active {
+    border-top: 4px solid #7a4183;
+    background-color: #ffffff;
+
+    > a {
+      color: #7a4183;
+      @include rem(font-size, 18px);
+      font-weight: bold;
+      text-decoration: none;
+      background-color: #ffffff;
+    }
+  }
+
+  .row {
+    border-top: 1px solid #c6c5c5;
+    padding-top: 22px;
+    &:first-child{
+      border-top: none;
+      padding-top: 0px;
+    }
+    @include bp($bp-small-plus) {
+      padding-top: 56px;
+      border-top: none;
+    }
+  }
+
+  h4{
+    color: #696969;
+    @include rem(font-size, 16px);
+    font-weight: bold;
+  }
+
+  p{
+    color: #696969;
+    @include rem(font-size, 16px);
+  }
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  .panel-container {
+    padding-top: 40px;
+    @include bp($bp-small-plus){
+      padding-top: 56px;
+    }
+    .event-image{
+      position: relative;
+      padding: 0;
+      margin-bottom: 20px;
+      @include bp($bp-small-plus){
+        margin-bottom: 0;
+      }
+      .tomorrow-overlay{
+        height: 35px;
+        background-color: #7a4183;
+        @include opacity(0.9);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        max-width: 150px;
+        width: 100%;
+        color: #ffffff;
+        @include rem(font-size, 18px);
+        text-align: center;
+        padding-top: 5px;
+      }
+    }
+    .event-content{
+      padding-right: 25px;
+      @include bp($bp-small-plus){
+        border-right: 1px solid #c6c5c5;
+      }
+      a.event-title{
+        display: block;
+        margin-bottom: 16px;
+        margin-top: -6px;
+        @include rem(font-size, 22px);
+        @include rem(line-height, 30px);
+        font-weight: normal;
+      }
+      h4{
+        margin-bottom: 6px;
+      }
+      .topics-covered-list{
+        margin-bottom: 14px;
+      }
+      .event-links{
+        margin-bottom: 20px;
+        @include bp($bp-small-plus){
+          margin-bottom: 0;
+        }
+        a{
+          display: inline-block;
+          @include rem(line-height, 33px);
+          @include link-colors(#426da9);
+          text-decoration: underline;
+          @include rem(font-size, 15px);
+          padding: 0 25px;
+          border-left: 1px solid #f4f2f1;
+          @include bp($bp-small-plus){
+            padding: 0 5px;
+          }
+          @include bp($bp-large){
+            padding: 0 25px;
+          }
+          &.event-details{
+            padding-left: 0;
+            border-left: none;
+          }
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        .add-to-my-calendar{
+          padding-left: 0;
+          white-space:nowrap;
+          border-left: none;
+          @include bp($bp-small-plus){
+            padding-left: 5px;
+            border-left: 1px solid #f4f2f1;
+            display: inline;
+            margin-top: 0;
+          }
+          @include bp($bp-large){
+            padding-left: 25px;
+          }
+        }
+      }
+    }
+    .event-data-top, .event-data-bottom{
+      .event-type{
+        display: block;
+        color: #7a4183;
+      }
+      .event-month-day, .event-time, .event-year{
+        color: #696969;
+        @include rem(font-size, 18px);
+      }
+    }
+    .event-data-top{
+      display: block;
+      margin-bottom: 20px;
+      @include bp($bp-small-plus){
+        display: none;
+      }
+      .event-type{
+        @include rem(font-size, 18px);
+        margin-bottom: 3px;
+      }
+    }
+    .event-data-bottom{
+      text-align: center;
+      padding-top: 30px;
+      display: none;
+      @include bp($bp-small-plus){
+        display: block;
+      }
+      .event-type, .event-time, .event-year{
+        @include rem(font-size, 16px);
+        display: block;
+      }
+      .event-month-day{
+        @include rem(font-size, 26px);
+        display: block;
+      }
+      .event-month-day, .event-time, .event-year{
+        text-transform: none;
+      }
+    }
+  }
+  .panel-container {
+    .event-content{
+      .event-shapes{
+        margin-bottom: 20px;
+        @include bp($bp-small-plus){
+          margin-bottom: 0px;
+        }
+        .shape{
+          display: inline-block;
+          background-image: image-url('child.content.indicator.png');
+          .no-backgroundsize & {
+            background-image: image-url('child.content.indicator.lo-res.png');
+          }
+          width: 14px;
+          height: 14px;
+        }
+        .shape1{
+          background-position: 0 0;
+          background-size: 128px 23px;
+        }
+        .shape2{
+          margin-left: 10px;
+          background-position: -26px 0;
+          background-size: 128px 23px;
+        }
+      }
+    }
+  }
+  @include bp($bp-small-plus){
+    .showmore-footer{
+      border-top: none;
+      padding: 60px 0;
+    }
+  }
+}
+
+.my-events-page-header {
+  &.flush {
+    padding-left: 15px;
+  }
+  margin-top: -20px;
+  @include bp($bp-large){
+    margin-top: -60px;
+  }
+}

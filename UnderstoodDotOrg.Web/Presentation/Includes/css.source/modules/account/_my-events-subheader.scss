@@ -1,0 +1,10 @@
+// This inherets properties from my-account-subheader
+.my-account-subheader.events-subheader{
+  height: 157px;
+  margin-bottom: 0;
+  padding: 13px 13px 19px;
+  @include bp($bp-small-plus) {
+    height: 182px;
+    padding: 44px 13px 19px;
+  }
+}

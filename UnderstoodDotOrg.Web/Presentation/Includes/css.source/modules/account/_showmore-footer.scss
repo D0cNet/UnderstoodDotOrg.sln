@@ -1,0 +1,19 @@
+// Show more container appears at the bottom all account pages
+// This is a global module
+// To edit individual show more modules see individual page css
+.showmore-footer{
+  padding: 41px 0 38px;
+  text-align: center;
+  @include bp($bp-small-plus){
+    padding: 60px 0;
+  }
+  a{
+    color: #426da9;
+    @include rem(font-size, 24px);
+    i{
+      margin-left: 18px;
+      position: relative;
+      top: -1px;
+    }
+  }
+} //.showmore-footer

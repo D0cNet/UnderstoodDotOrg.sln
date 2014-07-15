@@ -1,0 +1,165 @@
+/**
+ * SASS partial for assessment-quiz module.
+ */
+
+@import 'config';
+
+$assessment-button-gray: #bcbdc0;
+$assessment-border-gray: #d2d2d2;
+$assessment-font-gray: #696969;
+$assessment-font-purple: #7b3f84;
+
+.assessment-quiz {
+  color: $assessment-font-gray;
+  margin: 0;
+
+  .radio-wrapper {
+    display: block;
+    margin-bottom: 30px;
+
+    label {
+      display: table-row;
+      @include old-ie {
+        display: inline;
+      }
+
+      input,
+      span {
+        display: table-cell;
+        vertical-align: top;
+
+        @include old-ie {
+          display: inline-block;
+        }
+      }
+
+      input {
+        height: 18px;
+        width: 18px;
+      }
+
+      .radio{
+        height: 20px;
+        width: 18px;
+        margin-right: 15px;
+        @include rem (line-height, 18px);
+        span {
+          background-position: -1px -521px;
+        }
+
+        &.focus.active span.checked,
+        &.hover.active span.checked {
+          background-position: -141px -521px !important;
+        }
+
+        &.focus.active span,
+        &.hover.active span {
+          background-position: -61px -521px !important;
+        }
+
+        .checked {
+          width: 20px;
+          height: 20px;
+          background-position: -81px -521px;
+        }
+      }
+    }
+  }
+
+  .assessment-quiz-pager,
+  .assessment-question,
+  .assessment-result-intro {
+    @include rem(font-size, 24px);
+  }
+  .assessment-quiz-pager {
+    margin-bottom: 25px;
+    font-weight: normal;
+  }
+  .assessment-question,
+  .assessment-result-title {
+    color: $assessment-font-purple;
+  }
+  legend.assessment-question, label.assessment-question {
+    margin-bottom:16px;
+    display: inline-block;
+  }
+  .assessment-result-intro {
+    margin-bottom: 15px;
+    font-weight: normal;
+  }
+  .assessment-result-title {
+    @include rem(font-size, 60px);
+    margin-bottom: 15px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 33px;
+    }
+  }
+  .assessment-result-description {
+    font-family: Arial, sans-serif;
+    @include rem(font-size, 14px);
+    @include rem(line-height, 24px);
+    font-weight: normal;
+    color: #696969;
+    margin-bottom: 45px;
+  }
+
+  .assessment-question-wrapper {
+    border-top: 1px solid $assessment-border-gray;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    &:first-child { border-top: none; }
+
+    @include bp($bp-small) {
+      margin-bottom: 50px;
+      padding-top: 50px;
+    }
+  }
+
+  .assessment-actions {
+    border-top: 1px solid $assessment-border-gray;
+    margin-bottom: 25px;
+    padding: 25px 0 0 0;
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 50px;
+      padding: 50px 0 0 0;
+    }
+
+    .button {
+      @include bp($bp-medium) {
+        &:first-child { margin-right: 35px; }
+        width: 150px;
+      }
+      @include bp($bp-large) { width: 230px; }
+    }
+  }
+}
+
+.assessment-quiz-modal {
+
+  color: dimgrey;
+  .modal-dialog, .modal-content {
+    @include bp($bp-small-plus) {
+      width: 470px;
+    }
+  }
+
+  .modal-body {
+    padding: 30px 40px;
+    p {
+      margin-bottom: 10px;
+    }
+    .title {
+      @include rem(font-size, 22px);
+      color: $assessment-font-purple;
+      font-weight: normal;
+    }
+    .button-container {
+      margin: 30px 0 0;
+      .button {
+        float: right;
+        width: 190px;
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+/**
+ * SASS partial for registration-profile module.
+ */
+
+$registration-border-gray: #e1e1e1;
+
+.registration-profile-container {
+  background: #f4f2f1;
+}
+
+.registration-profile {
+  color: $profile-questions-dark-gray;
+  margin: 70px 0 150px 0;
+  padding: 0 15px;
+
+
+  h1 {
+    @include rem(font-size, 32px);
+    color: $profile-question-purple;
+    margin-bottom: 32px;
+    font-weight: normal;
+  }
+
+  p.question, legend.question {
+    @include rem(font-size, 18px);
+    @include rem(line-height, 18px);
+    margin-bottom: 46px;
+    @include bp($bp-large) { margin-bottom: 0; }
+  }
+
+  .checkbox-wrapper {
+    @include rem(font-size, 15px);
+    margin-top: 15px;
+    @include bp($bp-medium) { @include rem(font-size, 18px); }
+
+    label { display: table-row; }
+
+    .checker,
+    .checker + span {
+      display: table-cell;
+      vertical-align: top;
+    }
+    .checker + span { padding-left: 23px; }
+  }
+
+  .select-wrapper { margin-top: 28px; }
+  .textfield-wrapper {
+    margin-top: 20px;
+  }
+  .select-wrapper,
+  .textfield-wrapper,
+  .form-actions {
+    display: block;
+    width: 100%;
+  }
+  .form-actions { text-align: center; }
+
+  .select-wrapper select,
+  .textfield-wrapper input,
+  .selector,
+  .selector span {
+    max-width: 100%;
+    width: 100% !important;
+  }
+
+  .question-description {
+    @include rem(font-size, 18px);
+    width: 100%;
+    @include bp($bp-small-plus) { width: 80%; }
+  }
+
+  .button,
+  .full-profile-link {
+    display: inline-block;
+    margin-top: 35px;
+    @include bp($bp-medium) {
+      min-width: 310px;
+      @include rem(font-size, 18px);
+    }
+    &:hover{
+      color: #000000;
+    }
+  }
+  .full-profile-link {
+    @include rem(font-size, 14px);
+    margin-top: 25px;
+    text-decoration: underline;
+  }
+  .button {
+   
+    @include bp($bp-small-plus) {
+      max-width: 300px;
+    }
+
+  }
+}// .registration-profile
+
+.registration-profile.about-child {
+
+  h2 { margin-bottom: 42px; }
+
+  p.question, legend.question { margin-bottom: 15px; }
+
+  p.question-description {
+    margin: 20px 0 0 0;
+    color: #696969;
+    font-weight: normal;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 16px);
+  }
+
+}
+
+.registration-profile.community-profile {
+  @include rem(font-size, 18px);
+  margin: 70px 0 50px 0;
+  @include bp($bp-small-plus) {
+    padding: 0 45px !important;
+  }
+
+  .subtitle{
+    @include rem(font-size, 19px);
+    @include rem(line-height, 23px);
+    @include bp($bp-small-plus) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .textfield-wrapper input {
+    // so the input box and link are inline with each other
+    display: inline-block;
+    
+    @include bp($bp-small-plus) {
+      float: left;
+    }
+    @include bp($bp-medium) {
+      margin-bottom: 25px;
+      max-width: 241px;
+    }
+    @include bp($bp-large) { max-width: 357px; }
+  }
+
+  .checkbox-wrapper {
+    @include rem(font-size, 18px);
+    label { display: table; }
+    input, span { display: table-cell; }
+    span { padding-left: 10px; }
+  }
+
+  div.why-ask-popover-trigger{
+    display: inline-block;
+    margin-left: 50px;
+    @include bp($bp-medium) {
+      margin-left: 40px;
+    }
+    @include bp($bp-large) {
+      margin-left: 50px;
+    }
+    button.popover-link{
+      cursor: pointer;
+      display: inline-block;
+      padding: 0;
+      @include rem(font-size, 15px);
+      font-weight: 400;
+      @include rem(line-height, 15px);
+      text-decoration: underline;
+      margin-top: 16px;
+      background-color: transparent;
+      border: 0;
+      @include link-colors(#426da9);
+    }
+
+    .popover{
+      max-width: 360px;
+      .popover-content{
+        p{
+          margin: 0;
+        }
+        min-width: 320px;
+        height: auto;
+        @include rem(font-size, 16px);
+        font-weight: 400;
+        @include rem(line-height, 24px);
+        a{
+          text-decoration: underline;
+        }
+        .title{
+          @include rem(font-size, 16px);
+          font-weight: bold;
+          color: #696969;
+        }
+      }
+    }
+  }
+
+  .question-wrapper.sign-up-newsletter{
+    max-width: 430px;
+  }
+
+  .question-wrapper{
+    .question-description {
+      max-width: 490px;
+      width: auto;
+    }
+  }
+
+}// .registration-profile.community-profile
+
+.registration-profile.about-child {
+  margin: 70px 0 50px 0;
+}

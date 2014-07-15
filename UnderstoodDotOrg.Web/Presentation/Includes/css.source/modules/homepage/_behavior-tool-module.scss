@@ -1,0 +1,98 @@
+/**
+ * SASS partial for behaviorTool module.
+ */
+
+.behavior-tool {
+
+  padding: 0 26px 32px;
+
+  @include bp($bp-small-plus){
+    padding: 0;
+  }
+
+  &:after {
+
+    @include bp($bp-medium) {
+      content: '';
+      width: 1px;
+      height: 100%;
+      background-color: #c6c5c5;
+      position: absolute;
+      right: -21.5%;
+      top: 0;
+    }
+
+  }
+
+  .behavior-form {
+    background: #fff;
+    margin: 0 0px;
+    padding: 20px 13px;
+
+    @include bp($bp-small-plus){
+      height: 405px;
+      padding: 26px 30px 40px;
+    }
+
+    @include bp($bp-medium) {
+      height: 410px;
+    }
+
+    @include bp($bp-large) {
+      padding: 26px 40px 40px;
+    }
+
+    h3 {
+      @include rem(font-size, 15px);
+      color: #7a4183;
+      font-weight: normal;
+      margin-bottom: 15px;
+
+      @include bp($bp-small-plus){
+        @include rem(font-size, 24px);
+        line-height: 1.15;
+        letter-spacing: -1px;
+      }
+
+    }
+
+    p {
+      @include rem(font-size, 12px);
+      color: #696969;
+      font-family: arial, sans-serif;
+      margin-bottom: 16px;
+
+      @include bp($bp-small-plus){
+        @include rem(font-size, 16px);
+        margin-bottom: 26px;
+      }
+
+    }
+
+    .selector {
+      margin-bottom: 10px;
+      @include rem(font-size, 12px);
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 15px);
+      }
+
+      @include bp($bp-large) {
+        @include rem(font-size, 16px);
+      }
+    }
+
+    .submit-button {
+      @include rem(font-size, 15px);
+      width: 100%;
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 18px);
+      }
+    }
+
+    // .submit-button
+
+  } // .behavior-form
+
+}// .behavior-tool

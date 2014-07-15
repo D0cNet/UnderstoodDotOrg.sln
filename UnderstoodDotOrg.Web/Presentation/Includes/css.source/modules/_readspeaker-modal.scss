@@ -1,0 +1,597 @@
+.readspeaker-wrapper {
+  overflow: hidden;
+  margin-top: 0px;
+  z-index: 100000;
+  position: relative;
+  @include bp(min-width 1024px) {
+    @include rem(margin-top, 10px);
+  }
+  header {
+    width: 280px;
+    margin: 0 auto;
+    @include bp($bp-small-plus) {
+      width: 408px;
+    }
+    @include bp(min-width 1040px) {
+      width: 480px;
+      float: left;
+    }
+  }
+  h1, h2, h3 {
+    color: #794381;
+  }
+  h1 {
+    @include rem(font-size, 20px);
+    @include rem(margin-bottom, 25px);
+    @include rem(margin-top, -3px);
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 24px);
+      @include rem(line-height, 32px);
+    }
+
+    @include bp(min-width 1040px) {
+      @include rem(margin-top, -6px);
+    }
+  }
+  h2, h3 {
+    @include rem(font-size, 16px);
+    @include rem(line-height, 24px);
+    @include rem(margin-bottom, 12px);
+    width: auto;
+    @include bp($bp-small-plus) {
+      display: block;
+      @include rem(font-size, 20px);
+      @include rem(line-height, 20px);
+      @include rem(margin-bottom, 15px);
+    }
+    @include bp($bp-medium) {
+      @include rem(font-size, 24px);
+      @include rem(line-height, 35px);
+    }
+  }
+  h2 {
+    font-weight: bold;
+    margin-top: 55px;
+    @include rem(margin-bottom, 3px);
+    @include bp($bp-small-plus) {
+      @include rem(margin-bottom, 11px);
+    }
+    @include bp($bp-large) {
+      margin-top: -9px;
+      @include rem(margin-bottom, 7px);
+      @include old-ie {
+        margin-top: -5px;
+      }
+    }
+  }
+  h3 {
+    font-weight: normal;
+    @include rem(line-height, 27px);
+    @include bp($bp-small-plus) {
+      @include rem(line-height, 30px);
+    }
+    @include bp($bp-small-plus) {
+      @include rem(margin-bottom, 15px);
+    }
+  }
+  .first {
+    font-weight: bold;
+    margin-bottom: 5px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 24px;
+    }
+    @include bp($bp-medium) {
+      margin-bottom: 38px;
+    }
+  }
+  ul,
+  li {
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+  }
+  .tip {
+    color: #446ea7;
+    margin-bottom: 0px;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 25px);
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .readspeaker-info {
+    li {
+      &:before {
+        content: '';
+        height: 7px;
+        width: 7px;
+        border-radius: 100%;
+        position: absolute;
+        left: 0px;
+        top: 4px;
+        background: #757575;
+      }
+      p {
+        @include rem(font-size, 15px);
+        @include rem(line-height, 15px);
+        color: #757575;
+        padding-left: 13px;
+      }
+    }
+  }
+
+  .subhead {
+    color: #696969;
+
+    @include bp($bp-small-plus) {
+      @include rem(line-height, 30px);
+    }
+
+    @include bp($bp-medium) {
+      @include rem(font-size, 21px);
+    }
+  }
+
+  .paging-data {
+    @include rem(font-size, 21px);
+  }
+
+  .rs-navigation,
+  .rs-pagers {
+    margin: 0 auto 10px auto;
+    position: relative;
+    height: 32px;
+    display: none;
+    margin-top: 18px;
+    @include bp($bp-large) {
+      display: block;
+    }
+  }
+
+  .pagination-container {
+    height: 16px;
+    @include bp($bp-large) {
+      width: 480px;
+    }
+    li {
+      display: inline-block;
+      padding: 0px;
+      margin-left: 26px;
+
+      &:first-child {
+        margin-left: 0px;
+      }
+      button {
+        height: 14px;
+        width: 14px;
+        border: none;
+        background: #e6e6e6;
+        border-radius: 100%;
+        text-indent: -99999px
+      }
+      &.selected button {
+        background: #7a4183;
+      }
+    }
+  }
+
+ .slide {
+    width: 310px;
+    margin: 0 auto;
+    @include bp($bp-small-plus) {
+      width: 448px;
+    }
+    @include bp(min-width 959px) {
+      width: 870px;
+    }
+    @include bp(min-width 1041px) {
+      width: 950px;
+    }
+  }
+
+  .navigation-outer-wrapper {
+    width: 310px;
+    margin: 0 auto;
+    @include bp($bp-small-plus) {
+      width: 100%
+    }
+    @include bp(min-width 959px) {
+      width: 870px;
+    }
+    @include bp(min-width 1041px) {
+      width: 950px;
+    }
+  }
+
+  .navigation-outer-wrapper {
+    padding-left: 15px;
+    @include bp($bp-small-plus) {
+      padding-left: 30px;
+    }
+  }
+
+  .navigation-wrapper {
+    width: 280px;
+    margin-top: 20px;
+    position: absolute;
+    top: 180px;
+    @include bp($bp-small-plus) {
+      width: 408px;
+      margin: 0 auto;
+      top: 281px;
+    }
+    @include bp($bp-medium) {
+      top: 298px;
+    }
+    @include bp($bp-large) {
+      position: relative;
+      float: right;
+      width: 480px;
+      top: 0;
+    }
+  }
+  .rs-slides-container {
+    position: relative;
+  }
+  .rs-image {
+    margin: 0 auto;
+    @include bp($bp-medium) {
+      float: right;
+      margin: 0;
+    }
+  }
+
+  .details {
+    width: auto;
+    margin: 0 auto;
+    @include bp($bp-medium) {
+      float: left;
+      width: 342px;
+    }
+    @include bp(min-width 1041px) {
+      width: 415px;
+    }
+
+    &.wide {
+      @include bp(min-width 1041px) {
+        width: 445px;
+      }
+    }
+    li {
+      color: #794381;
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 5px;
+      @include rem(font-size, 16px);
+      @include rem(line-height, 16px);
+      @include bp($bp-small-plus) {
+        display: block;
+        padding-left: 34px;
+        margin-bottom: 10px;
+        @include rem(font-size, 18px);
+        @include rem(line-height, 18px);
+      }
+      @include bp($bp-medium) {
+        @include rem(font-size, 22px);
+        @include rem(line-height, 22px);
+      }
+      &:before {
+        height: 7px;
+        width: 7px;
+        content: '';
+        position: absolute;
+        border-radius: 100%;
+        left: 0;
+        top: 5px;
+        background: #3090c0;
+        @include bp($bp-small-plus) {
+          height: 8px;
+          width: 8px;
+        }
+        @include bp($bp-medium) {
+          height: 10px;
+          width: 10px;
+        }
+      }
+    }
+  }
+
+  .rs-navigation {
+    width: 81px;
+    @include bp(min-width 1040px) {
+      display: block;
+    }
+  }
+
+  .paging-data {
+    @include rem(font-size, 21px);
+    @include rem(line-height, 35px);
+    height: 35px;
+    color: #208ec4;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rsArrowLeft .rsArrowIcn {
+    left: 0;
+    right: auto;
+  }
+
+  .slides {
+    height: auto !important;
+  }
+
+  .slide {
+    position: relative;
+    padding: 21px 15px 15px 15px;
+    @include bp($bp-small-plus) {
+      padding: 28px 20px 20px 20px;
+      min-width: 448px;
+    }
+    @include bp($bp-medium) {
+      padding: 47px 20px 20px 20px;
+    }
+    img {
+      display: block;
+      height: 158px;
+      width: 280px;
+      margin: 0 auto;
+      border: 1px solid #e6e6e6;
+
+      @include bp($bp-small-plus) {
+        height: 230px;
+        width: 408px;
+      }
+
+      @include bp($bp-large) {
+        height: 270px;
+        width: 480px;
+        float: right;
+      }
+    }
+
+    ul {
+      margin-bottom: 0px;
+      @include bp($bp-small-plus) {
+        margin-bottom: 18px;
+      }
+      @include bp($bp-medium) {
+        margin-bottom: 13px;
+      }
+    }
+
+    .welcome-highlights {
+      padding-left: 18px;
+      margin-bottom: 30px;
+
+      @include bp($bp-small-plus) {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        @include rem(font-size, 18px);
+        width: 50%;
+      }
+
+      li {
+        list-style-type: disc;
+        margin-bottom: 7px;
+        color: #208ec4;
+        padding: 0px;
+        @include rem(line-height, 22px);
+
+        @include bp($bp-small-plus) {
+          color: #208ec4;
+        }
+
+        span {
+          color: #696969;
+
+          @include bp($bp-small-plus) {
+            color: #fff;
+          }
+        }
+      }
+
+      &.dark-text span {
+
+        @include bp($bp-small-plus) {
+          color: #696969;
+        }
+      }
+    }
+
+    .buttons {
+
+      @include bp($bp-small-plus) {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+      }
+
+      .button {
+        width: 100%;
+
+        &:first-child {
+          margin: 0 0 10px 0;
+
+          @include bp($bp-small-plus) {
+            margin: 0 10px 0 0;
+          }
+        }
+
+        @include bp($bp-small-plus) {
+          width: auto;
+          float: left;
+          margin: 0 10px 0 0;
+        }
+      }
+    }
+  }
+}
+
+.readspeaker-modal {
+  display: block;
+  @include bp($bp-large) {
+    padding: 125px;
+  }
+
+  .modal-dialog {
+    width: 100%;
+    top: 50px;
+    @include bp($bp-small-plus) {
+      max-width: 650px;
+    }
+    @include bp($bp-large) {
+      max-width: 1200px;
+      max-height: 725px;
+    }
+  }
+
+  .modal-body {
+    padding: 15px;
+    outline: none;
+
+    @include bp($bp-small-plus) {
+      padding: 20px 30px 30px 30px;
+    }
+  }
+
+  .modal-header {
+    padding: 0;
+    border: none;
+    height: auto;
+    min-height: 20px;
+    position: relative;
+    margin: 0 auto;
+    width: 280px;
+    @include bp($bp-small-plus) {
+      width: 408px;
+    }
+    @include bp(min-width 959px) {
+      width: 870px;
+    }
+    @include bp(min-width 1041px) {
+      width: 950px;
+    }
+  }
+
+  .modal-body {
+    @include box-shadow(none);
+  }
+
+  .modal-content {
+    width: 310px;
+    margin: 0 auto;
+    @include bp($bp-small-plus) {
+      width: 468px;
+    }
+    @include bp(min-width 959px) {
+      width: 930px;
+    }
+    @include bp(min-width 1041px) {
+      width: 1010px;
+    }
+  }
+
+  .modal-close {
+    background-image: image-url('sprite.modal.close.lite.mobile.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 15px;
+    color: #bcbdc0;
+    cursor: pointer;
+    display: inline-block;
+    @include rem(font-size, 15px);
+    padding: 0 0 0 24px;
+    position: absolute;
+    top: 17px;
+    right: 0px;
+    width: 68px;
+    height: 15px;
+    @include old-ie {
+      top: 25px;
+    }
+    &:hover {
+      text-decoration: none;
+      color: #426da9;
+      background-position: 0 -16px;
+    }
+    @include bp($bp-small-plus) {
+      background-image: image-url('sprite.modal.close.lite.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 22px;
+      padding: 0 0 0 34px;
+      @include rem(font-size, 24px);
+      top: 15px;
+      right: 0px;
+      height: 22px;
+      @include old-ie {
+        height: 15px;
+      }
+      width: 102px;
+      &:hover {
+        background-position: 0 -21px;
+      }
+
+      .no-backgroundsize & {
+        background-image: image-url('sprite.modal.close.lite.lowres.png');
+      }
+
+    }
+    @include bp($bp-medium) {
+      right: 0;
+      top: 20px;
+    }
+
+    span {
+      display: block;
+      margin-top: -4px;
+      @include bp($bp-small-plus) {
+        margin-top: -7px;
+        @include old-ie {
+          margin-top: -4px;
+        }
+      }
+    }
+
+    .no-backgroundsize & {
+      background-image: image-url('sprite.modal.close.lite.mobile.lowres.png');
+    }
+
+  }
+
+  .rsContent > ul {
+    margin-bottom: 0;
+  }
+}
+
+.readspeaker-info {
+  width: 280px;
+  margin: 0 auto;
+  @include bp($bp-small-plus) {
+    margin: 0 auto;
+    width: 408px;
+  }
+  @include bp(min-width 1040px) {
+    float: left;
+    margin: auto;
+    width: 480px;
+  }
+}
+
+.slides-container-wrapper {
+  width: 280px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  @include bp($bp-small-plus) {
+    width: 408px;
+  }
+  @include bp(min-width 1040px) {
+    float: right;
+    margin: auto;
+    width: 480px;
+  }
+}

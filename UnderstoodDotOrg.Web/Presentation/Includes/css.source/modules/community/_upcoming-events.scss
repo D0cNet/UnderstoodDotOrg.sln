@@ -1,0 +1,59 @@
+.upcoming-events {
+  margin: 0 15px;
+  position: relative;
+
+  .carousel-arrow-wrapper {
+    width: 100%;
+    @include bp(($bp-small)(max-width 500px)) {
+      width: 234px;
+    }
+    @include bp((min-width 500px)(max-width 650px)) {
+      width: 240px;
+    }
+    @include bp($bp-small-plus) {
+      width: 275px;
+    }
+  }
+  .event-cards {
+    margin-top: 32px;
+    @include bp($bp-small-plus) {
+      margin-top: 42px;
+    }
+  }
+
+  @include bp($bp-small) {
+    & > .row > .col {
+      position: relative;
+    }
+  }
+
+  @include bp($bp-medium) {
+    padding-top: 16px;
+  }
+
+  @include bp($bp-large) {
+    padding-top: 0;
+  }
+
+  h2 {
+    color: #7b3f84;
+    margin-bottom: 22px;
+    @include rem(font-size, 30px);
+    font-weight: normal;
+
+    @include bp($bp-small) {
+      @include rem(font-size, 28px);
+      width: 50%;
+    }
+
+    @include bp($bp-small-plus) {
+      width: auto;
+      margin-bottom: 0px;
+    }
+
+    @include bp($bp-large) {
+      @include rem(font-size, 36px);
+    }
+  }
+
+}

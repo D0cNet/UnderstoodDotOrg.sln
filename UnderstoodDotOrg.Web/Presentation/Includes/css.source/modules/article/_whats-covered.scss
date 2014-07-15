@@ -1,0 +1,41 @@
+.whats-covered {
+  background-color: #fafafa;
+  padding: 20px;
+  min-height: 200px;
+  margin-bottom: 20px;
+
+  @include bp($bp-small-plus) {
+    padding: 40px;
+  }
+
+    h2 {
+      font-weight: normal;
+      color: #7a4183;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        width: 100%;
+        margin-right: 25px;
+
+        @include bp($bp-medium) {
+          width: 44%;
+        }
+      }// .whats-covered ul li
+
+      a {
+        text-decoration: underline;
+        color: #426da9;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }// .whats-covered ul
+  }

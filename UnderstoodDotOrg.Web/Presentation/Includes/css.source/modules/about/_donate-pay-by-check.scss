@@ -1,0 +1,32 @@
+/**
+ * SASS partial for about donation module
+ */
+
+$about-donate-purple: #794382;
+$about-donate-gray: #696969;
+$about-donate-gray-hover: #bcbdc0;
+$about-donate-select-border: #e1e1e1;
+
+.how-pay-section{
+  .pay-by-check{
+    padding-bottom: 22px;
+    h3{
+      color: $about-donate-purple;
+      @include rem(font-size, 16px);
+      font-weight: normal;
+      @include rem(line-height, 28px);
+      margin-bottom: 15px;
+      @include bp($bp-medium) {
+        margin-top: 10px;
+        margin-left: 208px;
+      }
+    }
+    img.pay-by-check{
+     margin-bottom: 50px;
+     max-width: 100%;
+      @include bp($bp-medium) {
+        margin-left: 208px;
+      }
+    }
+  }
+} // .donate-create-wrap

@@ -1,0 +1,66 @@
+.get-this-app{
+  margin-right: 30px;
+  text-align: left;
+  min-width: 300px;
+  @include bp($bp-small){
+    min-width: 500px;
+  }
+  @include bp($bp-small-plus){
+    min-width: 600px;
+  }
+  @include bp($bp-medium){
+    min-width: 20%;
+  }
+  @include bp($bp-large){
+    margin-left: 40px;
+  }
+  .price{
+    margin-bottom: 20px;
+    font-weight: bold;
+    @include rem(font-size, 16px);
+    color: #696969;
+    padding: 10px 30px;
+    border: 1px solid #bbbbbb;
+    @include border-radius(3px);
+    display: inline-block;
+    margin-right: 119px;
+    @include bp($bp-small){
+      margin-right: 50px;
+    }
+    @include bp($bp-medium){
+      margin-right: 0;
+    }
+  }
+  a{
+    display: inline-block;
+    float: left;
+    @include bp($bp-medium){
+      float: none;
+    }
+  }
+  img{
+    width:135px;
+    height:48px;
+    margin-right: 10px;
+
+    display:block;
+
+    &:first-child{
+      margin-bottom:20px;
+    }
+
+    @include bp($bp-medium){
+      width:150px;
+      height:53px;
+      margin-right: 0;
+    }
+  }
+
+  .purchase {
+    margin-bottom: 10px;
+    display: block;
+    @include bp($bp-medium){
+      display: none;
+    }
+  }
+}

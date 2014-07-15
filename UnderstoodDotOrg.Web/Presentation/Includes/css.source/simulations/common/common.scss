@@ -1,0 +1,195 @@
+#gameboard {
+    margin: auto;
+    position: relative;
+    font-family: "Circular", helvetica, arial, sans-serif;
+    cursor: default;
+}
+
+#gameboard .ui-dialog {
+    border-width: 2px;
+    border-color: rgb(36, 138, 191);
+    padding: 30px;
+}
+
+#gameboard .response {
+    display: inline-block;
+    background: image_url('simulations/common/desktop/answer.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    margin: 0 6px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+    color: #278DC1;
+    font-weight: bold;
+}
+
+#gameboard .response.correct {
+    background-image: image_url('simulations/common/desktop/answer_correct.png');
+    color: white;
+}
+#gameboard .response.incorrect {
+    background-image: image_url('simulations/common/desktop/answer_wrong.png');
+    color: white;
+}
+
+#gameboard .ui-dialog {
+    border-width: 0;
+    padding: 0;
+    /* From Tyce's modals */
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px; -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px; box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
+    -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;
+    z-index: 101;
+}
+#gameboard .ui-dialog-titlebar {
+    display: none;
+}
+#gameboard .ui-dialog-content {
+    color: rgb(36, 138, 191);
+    margin-top: 10px;
+    font-family: "Circular", helvetica, arial, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: #666;
+}
+#gameboard.breakpoint_phone .ui-dialog-content {
+    font-size: 18px;
+}
+#gameboard .SSGame_modal_game_title, #gameboard .SSGame_modal_standalone_title {
+    margin: 5px 0 30px 0;
+}
+#gameboard .SSGame_modal_game_title {
+    color: #7A4182;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+#gameboard.breakpoint_phone .SSGame_modal_game_title {
+    font-size: 24px;
+}
+#gameboard .SSGame_modal_standalone_title {
+    font-size: 24px;
+    text-align: left;
+    line-height: 1.25em;
+}
+#gameboard.breakpoint_phone .SSGame_modal_standalone_title {
+    font-size: 18px;
+}
+#gameboard.breakpoint_phone .SSGame_modal_standalone_title {
+    margin-bottom: 15px;
+}
+#gameboard .SSGame_modal_standalone_title b {
+    color: #7A4182;
+    font-weight: bold;
+    display: block;
+}
+#gameboard .SSGame_modal_standalone_decoration {
+    width: 60px;
+    height: 60px;
+    margin-right: 30px;
+    float: left;
+    background-repeat: no-repeat;
+}
+#gameboard.breakpoint_phone .SSGame_modal_standalone_decoration {
+    margin-right: 20px;
+}
+#gameboard .SSGame_modal_game_text, #gameboard .SSGame_modal_standalone_text {
+    clear: both;
+}
+#gameboard .SSGame_modal_game_text p, #gameboard .SSGame_modal_standalone_text p {
+    margin: 5px 0;
+}
+#gameboard .SSGame_modal_game_text p:first-child, #gameboard .SSGame_modal_standalone_text p:first-child {
+    margin-top: 0px;
+}
+#gameboard .SSGame_modal_game_text p:last-child, #gameboard .SSGame_modal_standalone_text p:last-child {
+    margin-bottom: 0px;
+}
+#gameboard .SSGame_modal_game_text {
+    text-align: center;
+}
+#gameboard .SSGame_modal_standalone_text {
+    font-size: 16px;
+
+    line-height: 1.25em;
+}
+#gameboard .ui-dialog .ui-dialog-buttonpane {
+    border-width: 0;
+    text-align: center;
+    padding: 0.5em 1em; /* To match the content settings since we stopped floating */
+    margin-top: 0; /* nah. */
+    margin-bottom: 10px;
+}
+#gameboard .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none;
+}
+#gameboard .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
+    background-image: none;
+    background-color: #f0ae29;
+    font-weight: bold;
+    width: 190px;
+    height: 50px;
+    line-height: 50px;
+    border-width: 0;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    color: #000;
+    font-weight: bold;
+    font-family: "Circular", helvetica, arial, sans-serif;
+    font-size: 18px;
+}
+#gameboard.breakpoint_phone {
+    font-size: 16px;
+}
+#gameboard .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
+    background-color: #ffbc0d;
+}
+#gameboard .ui-dialog-buttonset>a {
+    display: inline-block;
+    font-size: 18px;
+    width: 190px;
+}
+.SSGameModalMask {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+#SSGame_timer {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 55px;
+    width: 135px;
+    line-height: 55px;
+    text-align: right;
+    color: #FFF;
+    background: image_url('simulations/common/desktop/clock.png') no-repeat;
+    font-weight: bold;
+}
+.breakpoint_phone #SSGame_timer {
+    background-image: image_url('simulations/common/phone/clock.png');
+    top: 15px;
+    right: 15px;
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+}
+#SSGame_timer div {
+    padding: 0 10px;
+    margin-top: -2px;
+    font-size: 28px;
+    font-weight: normal;
+}
+.breakpoint_phone #SSGame_timer div {
+    padding: 0 5px;
+    margin-top: 0px;
+    font-size: 21px;
+}
+#SSGame_timer span {
+    display: inline-block;
+    width: .75em;
+    text-align: center;
+}
+#SSGame_timer span:nth-child(2) {
+    width: auto;
+}

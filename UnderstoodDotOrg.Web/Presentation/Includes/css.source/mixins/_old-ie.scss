@@ -1,0 +1,7 @@
+@mixin old-ie {
+  @if $old_ie_rules {	
+  	.old-ie & {
+    	@content;
+  	}
+  }
+}

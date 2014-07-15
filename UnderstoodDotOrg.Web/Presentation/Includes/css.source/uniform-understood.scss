@@ -1,0 +1,319 @@
+/*
+
+Uniform Theme: Understood
+Version: 1.8-understood (based on Uniform Default v1.8)
+Originally By: Josh Pyles
+License: MIT License
+---
+For use with the Uniform plugin:
+http://uniformjs.com/
+
+*/
+
+@import 'config';
+
+$button-height: 50px;
+$button-margin-left: 0px;
+$button-padding: 0px 15px 0 0px;
+$button-span-height: 54px;
+$checkbox-height: 21px;
+$checkbox-width: 20px;
+$input-padding: 0px;
+$radio-height: 21px;
+$radio-width: 20px;
+$select-fixed-width: 190px;
+$select-height: 50px;
+$select-margin-left: 15px;
+$select-margin-right: 36px;
+$select-select-height: 50px;
+$select-select-top: 0px;
+$sprite-size: 600px;
+$upload-action-width: 82px;
+$upload-filename-margin-top: 2px;
+$upload-filename-margin-bottom: 2px;
+$upload-filename-margin-left: 2px;
+$upload-filename-width: 85px;
+$upload-filename-padding: 0 10px;
+$upload-height: 28px;
+$upload-width: 190px;
+
+$input-background: none;
+$input-background-retina: none;
+$input-background-focus: none;
+$input-background-focus-retina: none;
+
+$sprite: image-url("sprite.uniform.600.png", true);
+$sprite-retina: image-url("sprite.uniform.1200.png", true);
+
+
+@import "vendor/uniform-base.scss";
+
+
+/* INPUT & TEXTAREA */
+
+#{$class-wrapper-element}#{$class-wrapper} input#{$class-input},
+#{$class-wrapper-element}#{$class-wrapper} select#{$class-multiselect},
+#{$class-wrapper-element}#{$class-wrapper} textarea#{$class-textarea} {
+
+	background-color: #fff;
+	padding: 0 14px;
+	@include rem(font-size, 14px);
+  	@include rem(line-height, 50px);
+	font-family: "Circular", Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #696969;
+	border: solid 2px #e9e9e9;
+	background: #fff;
+
+	@include bp($bp-small-plus){
+	  @include rem(font-size, 16px);
+	}
+
+	@include whenHover {
+		//@include dropshadow(.3);
+		//border-color: #999;
+	}
+
+	@include whenActive {
+		background: #fff;
+	}
+}
+
+#{$class-wrapper-element}#{$class-wrapper} textarea#{$class-textarea} {
+	@include rem(line-height, 24px);
+}
+
+/* PRESENTATION */
+
+/* Buttons */
+
+div#{$class-wrapper}#{$class-button} {
+	width: 100%;
+
+	span {
+		font-weight: bold;
+		font-family: "Circular", Arial, Helvetica, sans-serif;
+		font-size: 18px;
+		width: 100%;
+		color: #4c4c4c;
+		padding-left: 13px;
+		background: #f6c74c;
+	}
+
+	@include whenHover {
+		span {
+		}
+	}
+
+	@include whenDisabled {
+		span {
+			color: #4c4c4c;
+		}
+	}
+}
+
+
+/* Select */
+
+div#{$class-wrapper}#{$class-select} {
+
+  &.focused {
+    @include dropshadow(.8);
+  }
+
+  span {
+		color: #696969;
+		text-shadow: 0 1px 0 #fff
+	}
+
+	select {
+		font-family: "Circular", Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		cursor: pointer;
+		padding-left: 20px;
+        &:focus:before {
+          @include dropshadow(.3);
+        }
+	}
+
+	@include whenDisabled {
+		span {
+			color: #bbb;
+		}
+	}
+}
+
+
+/* Select Selected, add all inverted background wrappers */
+
+div#{$class-wrapper}#{$class-select}.selected,
+.select-inverted div#{$class-wrapper}#{$class-select}.selected,
+.select-inverted-mobile div#{$class-wrapper}#{$class-select}.selected,
+.sidebar div#{$class-wrapper}#{$class-select}.selected,
+.comments div#{$class-wrapper}#{$class-select}.selected,
+.my-account-subheader div#{$class-wrapper}#{$class-select}.selected {
+	
+	background-position: 0 -450px;
+
+	span {
+		color: #fff;
+		text-shadow: none;
+		background-position: right -200px;
+	}
+
+	&.active span {
+		color: #696969;
+	}
+
+}
+
+
+/* Sidebar Select Inverted for non-Mobile */
+
+.select-inverted div#{$class-wrapper}#{$class-select},
+.comments div#{$class-wrapper}#{$class-select} {
+
+	@include bp($bp-small-plus) {
+
+		background-position: 0 -300px;
+
+		span {
+			color: #696969;
+			text-shadow: none;
+			background-position: right -100px;
+		}
+
+		&.active span {
+			color: #696969;
+		}
+	}
+}
+
+.select-inverted div#{$class-wrapper}#{$class-select}.selected.active,
+.comments div#{$class-wrapper}#{$class-select}.selected.active {
+
+	@include bp($bp-small-plus) {
+    
+		span {
+			color: #fff;
+			text-shadow: none;
+		}
+
+	}
+}
+
+
+/* Sidebar Select Inverted - Mobile First */
+
+.select-inverted-mobile div#{$class-wrapper}#{$class-select},
+.sidebar div#{$class-wrapper}#{$class-select},
+.my-account-subheader div#{$class-wrapper}#{$class-select} {
+	
+	background-position: 0 -300px;
+
+	span {
+		color: #696969;
+		text-shadow: none;
+		background-position: right -100px;
+	}
+
+	&.active span {
+		color: #696969;
+	}
+
+}
+
+.select-inverted-mobile div#{$class-wrapper}#{$class-select}.selected.active,
+.sidebar div#{$class-wrapper}#{$class-select}.selected.active,
+.my-account-subheader div#{$class-wrapper}#{$class-select}.selected.active {
+
+	span {
+		color: #fff;
+		text-shadow: none;
+	}
+
+}
+
+
+/* Checker */
+div#{$class-wrapper}#{$class-checkbox} {
+   margin-right: 5px;
+
+   input {
+     &:focus {
+       @include opacity(1);
+       border: 1px solid rgba(0,0,0,.3);
+       outline: 0 none;
+     }
+     &[type="checkbox"]:focus:before {
+       @include dropshadow(.5);
+       content: " ";
+       vertical-align: top;
+     }
+
+     &[type="checkbox"]:focus:before {
+       height: $checkbox-height;
+       width: $checkbox-width;
+     }
+   }
+ }
+
+/* Radio */
+div#{$class-wrapper}#{$class-radio} {
+	margin-right: 3px;
+
+  input {
+    &[type="radio"]:focus:before {
+      @include dropshadow(.5);
+      content: " ";
+      vertical-align: top;
+    }
+
+    &[type="radio"]:focus:before {
+      height: $radio-height;
+      width: $radio-width;
+    }
+  }
+}
+
+.radio .focused {
+  @include opacity(1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  outline: 0 none;
+}
+
+/* Uploader */
+div#{$class-wrapper}#{$class-upload} {
+	span#{$class-action} {
+		text-shadow: #fff 0px 1px 0px;
+		background-color: #fff;
+		font-size: 11px;
+		font-weight: bold;
+	}
+
+	span#{$class-filename} {
+		color: #777;
+		border-right: solid 1px #bbb;
+		font-size: 11px;
+	}
+
+	@include whenDisabled {
+		span#{$class-action} {
+			color: #aaa;
+		}
+
+		span#{$class-filename} {
+			border-color: #ddd;
+			color: #aaa;
+		}
+	}
+}
+
+#{$class-wrapper-element}#{$class-wrapper} input#{$class-input} {
+	&, &:focus {
+		background-color: #fff;
+	}
+}
+
+
+@include retina();

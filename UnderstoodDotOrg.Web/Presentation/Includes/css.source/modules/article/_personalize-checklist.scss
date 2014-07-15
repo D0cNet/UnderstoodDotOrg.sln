@@ -1,0 +1,226 @@
+/**
+ * SASS partial for personalize-checklist module.
+ */
+
+$personalize-font-purple: #7b3f84;
+$personalize-font-gray: #696969;
+$personalize-font-gray-dark: #333333;
+
+
+
+// Styles for just part2
+.part2{
+
+
+  .modal-header {
+
+    .checklist-title {
+      @include bp($bp-small-plus){
+        @include rem(font-size, 36px);
+        @include rem(line-height, 36px);
+      }
+    }
+  }
+
+  .modal-content {
+    background-image: none;
+    background-color: #ffffff;
+  }
+
+  .modal-footer {
+    border-top: 1px solid #d2d2d2;
+    .checklist-actions{
+      text-align: center;
+      input{
+        max-width: 100%;
+        margin-bottom: 0px;
+        @include bp($bp-small-plus){
+          max-width: 150px;
+        }
+      }
+    }
+  }
+}
+
+// Styles for both part1 and part2
+.personalize-checklist {
+  color: $personalize-font-gray;
+  @include bp($bp-medium) {
+    width: 772px;
+
+    .checker { margin-top: -3px; }
+  }
+
+  .modal-header,
+  .modal-body,
+  .checklist-wrapper { padding: 0; }
+
+  .modal-header {
+    border-bottom: none;
+    margin-bottom: 22px;
+    @include bp($bp-small-plus){
+      margin-bottom: 30px;
+    }
+
+    .checklist-title {
+      @include rem(font-size, 22px);
+      font-weight: normal;
+      color: $personalize-font-purple;
+      @include bp($bp-small-plus){
+        @include rem(font-size, 30px);
+        @include rem(line-height, 30px);
+      }
+    }
+  }
+
+  .modal-footer {
+    padding: 40px 0 0 0;
+  }
+
+  .modal-content {
+    
+    .part1{
+
+      padding: 22px 18px;
+    
+      @include bp($bp-small-plus){
+        padding: 50px 40px;
+      }
+
+      background: image-url('temp.epm.bg.checklist-modal.png') center 127% no-repeat #ffffff;
+      background-size: 514px 446px;
+      @include bp($bp-small){
+        background: image-url('temp.epm.bg.checklist-modal.png') center 26% no-repeat #ffffff;
+        background-size: 772px 669px;
+      }
+      @include bp($bp-small-plus){
+        background: image-url('temp.epm.bg.checklist-modal.png') center 28px no-repeat #ffffff;
+        background-size: 772px 669px;
+      }
+    }
+
+    ul{
+      margin-bottom: 25px;
+      list-style: none;
+      padding:0;
+      li{
+        color: $personalize-font-gray-dark;
+        @include rem(font-size, 16px);
+        @include rem(line-height, 20px);
+        margin-bottom: 12px;
+        padding-left: 26px;
+        text-indent: -14px;
+        @include bp($bp-small-plus){
+          @include rem(line-height, 16px);
+          padding-bottom: 15px;
+          &:first-child, &:nth-child(2){
+            border-bottom: 1px solid #e4e5e5;
+          }
+        }
+        @include bp($bp-medium){
+          @include rem(font-size, 21px);
+          @include rem(line-height, 21px);
+        }
+      }
+      li:before {
+        content: "• ";
+        color: #426da9;
+        position: relative;
+        right: 10px;
+      }
+    }
+    
+
+    .checklist-buttons{
+      text-align: center;
+      .button {
+        width: 100%;
+      }
+      .button.advance{
+        margin-bottom: 20px;
+        @include bp($bp-small){
+          max-width: 130px;
+          margin-right: 20px;
+        }
+      }
+      .button.close{
+        margin-bottom: 192px;
+        @include bp($bp-small){
+          max-width: 206px;
+        }
+      }
+    }
+
+
+  }// part1
+
+  .part2{
+
+    display: none;
+    padding: 22px 18px;
+    
+    @include bp($bp-small-plus){
+      padding: 50px 40px;
+    }
+
+    .checklist-question {
+      @include rem(font-size, 18px);
+      color: #7b3f84;
+      margin-bottom: 20px;
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 22px);
+      }
+    }
+
+    .checklist-question-description {
+      margin-top: 20px;
+      @include rem(font-size, 14px);
+    }
+
+    .checklist-wrapper {
+      @include bp($bp-small-plus) {
+        .col-14 {
+          padding-right: 30px;
+          &:after {
+            background: #f4f2f1;
+            content: "";
+            position: absolute;
+            top: 5px;
+            right: 0;
+            width: 1px;
+            height: 90%;
+          }
+        }
+        .col-10 {
+          padding-left: 30px;
+        }
+      }
+      input[name=question3] {
+        font-size: 16px;
+      }
+    }
+
+    .checkbox-wrapper {
+      margin-bottom: 20px;
+
+      label {
+        display: table;
+        font-weight: bold;
+
+        .checker, span {
+          display: table-cell;
+          vertical-align: top;
+        }
+        .checker {
+          padding-right: 20px;
+          span { display: inline-block; }
+        }
+      }
+    }
+
+    .selector { margin-bottom: 40px; }
+
+    .button { max-width: 150px; }
+  }// part2
+
+}// personalize-checklist

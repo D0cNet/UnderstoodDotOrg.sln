@@ -1,0 +1,105 @@
+.article .table-container {
+  margin: 0 0 25px 0;
+  border-bottom: 1px solid #9a9a9a;
+
+  @include bp($bp-small-plus){
+    border-bottom: 0;
+  }
+}
+
+.article table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  caption {
+    background: #7a4183;
+    color: #fff;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 26px);
+    font-weight: bold;
+    padding: 17px 15px;
+    text-align: left;
+
+    @include bp($bp-small-plus){
+      @include rem(font-size, 18px);
+    }
+
+  }
+
+  th,
+  .th {
+    background: #bcbdc0;
+    border: 1px solid #9a9a9a;
+    color: #000;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 26px);
+    font-weight: bold;
+    padding: 12px 14px;
+    text-align: left;
+
+    @include bp($bp-small-plus){
+      @include rem(font-size, 16px);
+      @include rem(line-height, 22px);
+    }
+
+  }
+
+  td {
+    border: 1px solid #9a9a9a;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 26px);
+    padding: 12px 14px;
+
+    @include bp($bp-small-plus){
+      @include rem(font-size, 14px);
+      @include rem(line-height, 18px);
+    }
+
+  }
+
+  tr:last-child td {
+
+    border-bottom: 0;
+
+    @include bp($bp-small-plus){
+      border-bottom: 1px solid #9a9a9a;
+    }
+
+  }  
+
+  tr {
+    color: #696969;
+    background-color: #fff;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #f4f2f1;
+  }
+
+  // hide columnized tables on desktop (UN-2377)
+  &.original {
+    display: none;
+
+    @include bp($bp-small-plus){
+      display: table;
+    }
+  }
+
+  // show columnized tables on mobile (UN-2377)
+  &.mobile-only {
+    display: table;
+
+    @include bp($bp-small-plus){
+      display: none;
+    }
+  }
+
+}
+
+ 
+
+
+
+
+
+

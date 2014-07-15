@@ -1,0 +1,229 @@
+/**
+ * SASS partial for hero carousel module.
+ */
+
+.hero-carousel {
+  margin: 0;
+  
+  @include bp($bp-large){
+    position: relative;
+      &:before {
+        content: '';
+        display: block;      
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 58px;
+        background: #F4F2F1;
+      }
+    }
+  .row {
+    max-width: 1200px;
+    padding: 0;
+  }
+}
+
+.hero-carousel-inner {
+  position: relative;
+
+
+  /* Making Button 10px Larger and centering image so increase clickable area on touch devices */
+  .play-pause {
+    display: block;
+    z-index: 2;
+    border: none;
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    background-size: 34px auto;
+    text-indent: -9999px;
+    background-image: image-url('sprite.btn.carousel.play-pause.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+
+    @include bp($bp-small-plus){
+      bottom: 10px;
+    }
+
+    .no-touch &:hover {
+      background-position: 5px -36.5px;
+    }
+
+    &.play {
+      background-position: 5px -78px;
+
+      .no-touch &:hover {
+        background-position: 5px -119.5px;
+      }
+    }
+
+    .no-backgroundsize & {
+      background-image: image-url('sprite.btn.carousel.play-pause.lo-res.png');
+    }
+
+  }
+
+  .carousel-keyboard-trigger {
+    border: none;
+    background: none;
+    position: absolute;
+    left: -99999px;
+  }
+
+  .carousel-pagers {
+    list-style-type: none;
+    height: 0;
+    width: 100%;
+    top: 50%;
+    margin: -59px 0 0;
+    position: absolute;
+    display: none;
+
+    @include bp($bp-medium) {
+      display: block;
+    }
+
+    .rsArrow {
+      @include bp($bp-medium){
+        position: absolute;
+        width: 48px;
+        height: 118px;
+        background: #fff;
+        padding: 48px 0 0 17px;
+        z-index: 2;
+        @include opacity(0);
+        -webkit-transition: opacity .4s;
+        -moz-transition: opacity .4s;
+        -ms-transition: opacity .4s;
+        transition: opacity .4s;
+      }
+    }
+
+    &.active .rsArrow {
+      @include opacity(1);
+    }
+
+    .rsArrowLeft {
+      left: 0;
+      .rsArrowIcn {
+        background-position: 0 0;
+      }
+    }
+    .rsArrowRight {
+      right: 0;
+      .rsArrowIcn {
+        background-position: 100% 0;
+      }
+    }
+    .rsArrowIcn {
+      border: none;
+      background-color: transparent;
+      position: static;
+      width: 12px;
+      height: 21px;
+      background-image: image-url('sprite.icon.arrows.next-prev.24.png');
+      background-size: 25px 21px;
+
+      .no-backgroundsize & {
+        background-image: image-url('sprite.icon.arrows.next-prev.12.png');
+      }
+    }
+  }
+
+  .carousel-navigation {
+    display: none;
+
+    @include bp($bp-medium){
+      display: block;
+      position: absolute;
+      bottom: 69px;
+      width: 100%;
+      text-align: center;
+      z-index: 2;
+
+      li {
+        display: inline-block;
+        margin: 0 14px;
+      }
+
+      .navigation-link {
+        border: none;
+        text-indent: -9999px;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+          background: #bcbdc0;
+        }
+
+        &.selected {
+          background: #7a4183;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+#hero-carousel-wrapper {
+  width: 100%;
+  height: 200px;
+  @include bp($bp-small-plus){
+    height: 400px;
+  }
+  .slide {
+    background-position: 50% 0;
+    background-size: 600px 200px;
+    background-repeat: no-repeat;
+    height: 200px;
+    @include bp($bp-small-plus){
+      height: 400px;
+      background-size: auto;
+    }
+    .text {
+      font-weight: bold;
+      max-width: 125px;
+
+      @include rem(font-size, 18px);
+        line-height: 1.111;
+        color: #298fc2;
+        padding: 19px 0 0 27px;
+      @include bp($bp-small-plus){
+        @include rem(font-size, 36px);
+        @include rem(line-height, 40px);
+        padding: 36px 0 0 30px;
+      }
+      @include bp($bp-small-plus) {
+        max-width: 325px;
+      }
+      @include bp($bp-medium){
+        padding-left: 45px;
+        max-width: 350px;
+      }
+      @include bp($bp-large){
+        position: absolute;
+        left: 50%;
+        margin-left: -435px;
+        padding-left: 0;
+      }
+      p {
+        margin-bottom: 0.778em;
+      }
+      &.text-color-white {
+        color: #fff;
+      }
+      &.text-color-purple {
+        color: #7a4183;
+      }
+    } // .text
+  } // .slide
+
+} // #hero-carousel-wrapper

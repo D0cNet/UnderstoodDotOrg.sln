@@ -1,0 +1,153 @@
+/**
+ * SASS partial for about-experts-listing module.
+ */
+
+//VARIABLES
+$expert-listing-purple: #7a4183;
+$expert-listing-purple2: #7b3f84;
+$expert-listing-purple3: #794382;
+$expert-listing-gray-bg: #f4f2f1;
+$expert-listing-gray: #696969;
+$expert-listing-blue: #406bab;
+$expert-listing-blue2: #426da9;
+$expert-listing-white: #ffffff;
+
+.about-experts-listing{
+
+  > .row:last-child > .col:last-child > .about-expert{
+    border: none;
+  }
+
+  h3{
+    color: $expert-listing-purple3;
+    font-weight: normal;
+    @include rem(font-size, 24px);
+    @include rem(line-height, 28px);
+    margin-bottom: 30px;
+
+    @include bp($bp-small-plus){
+      @include rem(font-size, 36px);
+      @include rem(line-height, 36px);
+      margin-bottom: 46px;
+    }
+  } // .h3
+
+  .about-expert{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: 22px;
+
+    @include bp($bp-small-plus){
+      border: none;
+      padding-bottom: 30px;
+    }
+
+    .expert-listing-image{
+      float: left;
+      position: relative;
+      width: 100px;
+
+      @include bp($bp-small-plus){
+        float: none;
+        width: 150px;
+      }
+      @include bp($bp-medium){
+        width: 180px;
+      }
+      @include bp($bp-large){
+        width: 230px;
+      }
+
+      img{
+        display: block;
+        height: auto;
+        max-width: 100%;
+        -webkit-backface-visibility: visible;
+
+        @include bp($bp-small-plus){
+          margin-bottom: 26px;
+        }
+      }
+    } // .expert-listing-image
+
+    .expert-listing-details{
+      margin-left: 120px;
+
+      @include bp($bp-small-plus){
+        margin-left: 0px;
+      }
+
+      h4{
+        margin: 0 0 16px 0;
+        padding: 0;
+        color: $expert-listing-blue2;
+        font-weight: normal;
+        word-wrap: break-word;
+        @include rem(font-size, 24px);
+        @include rem(line-height, 26px);
+
+        @include bp($bp-small-plus){
+          margin-bottom: 10px;
+          min-height: 58px;
+        }
+
+      }
+
+      .credentials{
+        margin: 0 0 14px 0;
+        padding: 0;
+        color: $expert-listing-gray;
+        font-weight: normal;
+        @include rem(font-size, 15px);
+        @include rem(line-height, 21px);
+
+        @include bp($bp-small-plus){
+          @include rem(font-size, 16px);
+          @include rem(line-height, 20px);
+        }
+      }
+
+      .all-tasks{
+        margin-bottom: 18px;
+
+        .tasks{
+          margin-bottom: 0px;
+          @include rem(font-size, 15px);
+          @include rem(line-height, 21px);
+          color: $expert-listing-gray;
+          font-weight: normal;
+
+          @include bp($bp-small-plus){
+            margin-bottom: 14px;
+            @include rem(font-size, 16px);
+            @include rem(line-height, 16px);
+          }
+
+          &:last-child{
+            margin-bottom: 0px;
+          }
+        }
+      }
+
+      .links{
+        display: block;
+        margin: 0 0 12px 0;
+        padding: 0;
+        font-weight: normal;
+        @include rem(font-size, 15px);
+        @include rem(line-height, 16px);
+        text-decoration: underline;
+        &:hover{
+          text-decoration: none;
+        }
+
+        @include bp($bp-small-plus){
+          margin-bottom: 8px;
+        }
+      }
+
+    } // .expert-listing-details
+
+  } // .about-expert
+
+}// .about-experts-listing

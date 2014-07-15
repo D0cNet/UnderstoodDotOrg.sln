@@ -1,0 +1,84 @@
+/**
+ * SASS partial for listing module.
+ */
+
+.listing {
+  border-top: 1px solid #e1e1e1;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 0 10px;
+
+  @include bp($bp-small-plus) {
+    border-top: none;
+    margin: 0;
+  }
+
+  @include bp($bp-medium) {
+    padding-bottom: 20px;
+  }
+
+  h2 {
+    padding: 16px 0;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 30px);
+    color: #426da9;
+    font-weight: normal;
+
+    @include bp($bp-small-plus){
+      @include rem(font-size, 22px);
+      @include rem(line-height, 30px);
+      padding: 0 0 20px;
+    }
+
+    @include bp($bp-medium){
+      @include rem(font-size, 24px);
+    }
+
+    i {
+      margin-left: 5px;
+
+      @include bp($bp-medium){
+        margin-left: 15px;
+      }
+    }
+
+  }
+
+  .listing-row {
+
+    .col {
+      margin-bottom: 20px;
+
+      img {
+        width: 100%;
+      }
+
+      h3 {
+
+        margin: 0 0 4px;
+        @include rem(font-size, 15px);
+        @include rem(line-height, 24px);
+        color: #426da9;
+        font-weight: normal;
+
+        @include bp($bp-small-plus){
+          margin: -5px 0 15px;
+          @include rem(line-height, 21px);
+        }
+
+        @include bp($bp-medium){
+          @include rem(font-size, 22px);
+          @include rem(line-height, 28px);
+        }
+
+      }
+
+      @include bp($bp-small-plus){
+        padding-right: 4.16666666667%;
+      }
+
+    }
+
+  }// .listing-row
+
+}// .listing

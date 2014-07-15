@@ -1,0 +1,308 @@
+// global styles for this are located in my-connections.scss
+// .profile-connections is relient upon my-connections.scss
+
+.friends-view-tabs-page-header {
+  background-color: #f4f2f1;
+  height: 100px;
+  width: 100%;
+  @include bp($bp-medium) { 
+    margin-top: -20px !important;
+    padding-top: 120px;
+  }
+}
+
+.friends-view-tabs{
+
+  $color1: #696969;
+  $color2: #e6e6e6;
+  $color3: #7a4183;
+  $color4: #d2d2d2;
+  $color5: #7b3f84;
+  $color6: #426da9;
+  $color7: #426da9;
+  $color8: #208ec4;
+  $color9: #ffffff;
+
+  @mixin friends-view-text($color, $font-size, $font-weight, $line-height: auto){
+    color: $color;
+    font-weight: $font-weight;
+    @include rem(font-size, $font-size);
+    @include rem(line-height, $line-height);
+  }
+
+  // The bottom margin should match the top position to avoid whitespace at bottom
+  position: relative;
+  top: -49px;
+  margin-bottom: -49px;
+
+  .etabs{
+    display: none;
+    @include bp($bp-small){
+      display: block;
+    }
+  }
+  .etabs-dropdown{
+    display: block;
+    .selector {
+      padding-left: 0;
+      span {
+        padding-left: 14px;
+        padding-right: 0;
+        color: $account-tab-purple !important;
+        background-position: 100% -51px !important;
+        font-weight: bold;
+      }
+    }
+    @include bp($bp-small){
+      display: none;
+    }
+  }
+
+  .etabs {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .tab {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    background-color: $color2;
+    border-bottom: none;
+    margin-left: -5px;
+  }
+//  TODO: This is not a valid tag and is being ignored.
+  .tab:first{
+    margin-left: 0;
+  }
+
+  .tab a {
+    @include friends-view-text($color1, 18px, bold);
+    display: block;
+    outline: none;
+    background-color: $color2;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 0;
+    @include bp($bp-small){
+      width: 158px;
+    }
+    @include bp($bp-small-plus){
+      width: 194px;
+    }
+    @include bp($bp-medium){
+      width: 230px;
+    }
+    @include bp($bp-large){
+      width: 290px;
+    }
+  }
+
+  .tab a:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  //comments background img
+  .comment-number{
+    background-image: image-url('sprite.friends-view-tabs.comment-bg.png');
+    .no-backgroundsize & {
+      background-image: image-url('sprite.friends-view-tabs.comment-bg.lo-res.png');
+    }
+    background-position: 0px 0px;
+    background-size: 52px 26px;
+    background-repeat: no-repeat;
+    margin-left: 12px;
+    @include friends-view-text($color9, 13px, bold, 26px);
+    height: 26px;
+    width: 26px;
+    display: inline-block;
+    position: absolute;
+  }
+
+  .tab.active {
+    border-top: 4px solid $color3;
+    background-color: #ffffff;
+
+    > a {
+      @include friends-view-text($color3, 18px, bold);
+      text-decoration: none;
+      background-color: #ffffff;
+      .comment-number{
+        background-position: -26px 0px;
+      }
+    }
+  }
+
+  h3{
+    @include friends-view-text($color3, 24px, normal);
+    margin-bottom: 30px;
+  }
+
+  h4{
+    @include friends-view-text($color5, 20px, normal, 22px);
+    margin-bottom: 24px;
+  }
+
+  h5{
+    @include friends-view-text($color6, 18px, normal);
+    margin-bottom: 22px;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .member-cards {
+    position: relative;
+  }
+
+  p{
+    @include friends-view-text($color1, 16px, normal);
+  }
+
+  hr{
+    margin-bottom: 40px;
+    color: $color4;
+  }
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  .profile-panel, .comments-panel {
+    padding-top: 50px;
+  }
+
+  .profile-panel{
+    .children-container{
+      ul{
+        margin-bottom: 40px;
+        @include bp($bp-small-plus) {
+          margin-bottom: 0;
+        }
+        padding: 0;
+        list-style-type: none;
+        > li{
+          position: relative;
+          @include friends-view-text($color1, 16px, normal);
+          margin-bottom: 18px;
+          margin-left: 18px;
+          &:before{
+            content: "";
+            height: 7px;
+            width: 7px;
+            background-color: $color8;
+            @include border-radius(7px);
+            display: inline-block;
+            position: absolute;
+            left: -18px;
+            top: 7px;
+          }
+        }
+      }
+      div.col-19 > div:last-child > div:last-child ul {
+        margin-bottom: 0;
+      }
+    }
+    .children-interests{
+      ul{
+        padding: 0;
+        list-style-type: none;
+        > li{
+          margin-bottom: 8px;
+          @include friends-view-text($color1, 18px, normal);
+        }
+      }
+    }
+    .children-groups{
+      margin-bottom: 0;
+      ul{
+        padding: 0;
+        list-style-type: none;
+        > li{
+          margin-bottom: 10px;
+          > a{
+            @include friends-view-text($color7, 18px, normal, 18px);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  // global styles for this are located in my-connections.scss
+  .profile-connections{
+    .connections {
+      margin-top: 20px;
+      @include bp($bp-small-plus) {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  .comments-panel {
+    .comments-col-left{
+      margin-bottom: 40px;
+      h3{
+        @include friends-view-text($color3, 22px, bold);
+      }
+      p{
+        @include friends-view-text($color1, 14px, normal);
+        margin: 0;
+      }
+    }
+    .comments-col-right{
+      @include bp($bp-small-plus){
+        padding-left: 5px;
+      }
+      > div{
+        @include bp($bp-small-plus){
+          border-left: 1px solid #c6c5c5;
+          padding: 0 40px 0 30px;
+        }
+        margin-bottom: 12px;
+      }
+      footer{
+        @include friends-view-text($color1, 15px, normal);
+        button {
+          background-image: image-url('sprite.assistive-technology.review-flag.png');
+          background-position: 0px 3px;
+          background-size: 100px 28px;
+          background-repeat: no-repeat;
+          margin-left: 28px;
+          background-color: inherit;
+          border: none;
+          @include friends-view-text($color5, 18px, bold);
+          height: 22px;
+          width: 46px;
+          display: inline-block;
+          text-align: right;
+          @include old-ie {
+            background-color: transparent;
+          }
+
+          .no-backgroundsize & {
+            background-image: image-url('sprite.assistive-technology.review-flag.lo-res.png');
+          }
+
+        }
+      }
+    }
+    .showmore-footer{
+      border-top: none;
+      padding-top: 10px;
+    }
+  }
+
+  .friends-view-tabs-select{
+    position: relative;
+    bottom: 25px;
+  }
+}

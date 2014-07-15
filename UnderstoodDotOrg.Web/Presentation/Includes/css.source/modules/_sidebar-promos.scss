@@ -1,0 +1,102 @@
+.sidebar-promos {
+  // Add this in as a parameter for vertical views
+  &.vertical{
+    // Vertical sidebar is hidden on mobile
+    display: none;
+    @include bp($bp-small-plus) {
+      display: block;
+    }
+    margin: 0 auto;
+    width: 190px;
+    .promo{
+      margin-bottom: 25px;
+      a{
+        padding: 28px 36px 28px 20px;
+      }
+    }
+  } //vertical
+
+  // Add this in as a parameter for horizontal views
+  &.horizontal{
+    .promo{
+      display: block;
+      margin-bottom: 25px;
+      @include bp($bp-small-plus) {
+        display: inline-block;
+        margin-bottom: 30px;
+        margin-right: 5%;
+        max-width: 190px;
+        // max-width here controls the max-width of the colored box
+      }
+      a{
+        @include rem(font-size, 18px);
+        margin-right: 40px;
+        padding: 19px 36px 16px 20px;
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 16px);
+          // max width here controls the width of the text-box
+          max-width: 150px;
+          padding: 23px 36px 23px 20px;
+        }
+      }
+    }
+  } //horizontal
+} //sidebar-promos
+
+.promo {
+  @include border-radius(4px);
+  overflow: hidden;
+  position: relative;
+  a {
+    color: #fff;
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .icon-arrow-promo {
+    background-image: image-url('icon.arrow-promo.png');
+    background-repeat: no-repeat;
+    background-size: 6px 9px;
+    background-position: 50%;
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+
+    .no-backgroundsize & {
+      background-image: image-url('icon.arrow-promo.lo-res.png');
+    }
+
+  }
+}
+.purple-dark {
+  background: #7b3f84;
+  & .icon-arrow-promo {
+    background-color: #62326a;
+  }
+  &:hover .icon-arrow-promo {
+    background-color: #994da4;
+  }
+}
+.purple-light {
+  background: #6f4e93;
+  & .icon-arrow-promo {
+    background-color: #593e76;
+  }
+  &:hover .icon-arrow-promo {
+    background-color: #875fb3;
+  }
+}
+.blue {
+  background: #426da9;
+  & .icon-arrow-promo {
+    background-color: #335688;
+  }
+  &:hover .icon-arrow-promo {
+    background-color: #298fc2;
+  }
+}

@@ -1,0 +1,309 @@
+/**
+ * SASS partial for comment-list module.
+ */
+
+$comment-border-gray: #d2d2d2;
+$comment-icon-purple: #7b3f84;
+$comment-font-gray: #646464;
+$comment-font-blue: #0870ab;
+$comment-icon-blue: #436da9;
+
+
+.comments.container {
+  margin: 0;
+  padding: 50px 15px;
+  background: #fafafa;
+
+  @include bp($bp-small-plus) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.comments.container {
+  margin: 0;
+  padding: 50px 15px;
+  background: #fafafa;
+
+  @include bp($bp-small-plus) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.comment-list {
+  color: #646464;
+
+  header {
+    text-align: center;
+    position: relative;
+    @include bp($bp-small) { text-align: left; }
+  }
+
+  .icon-comment-like,
+  .icon-comment-reply,
+  .icon-comment-flag {
+    background-image: image-url('sprite.icon.comments.png');
+    background-repeat: no-repeat;
+    background-size: 54px 36px;
+    display: inline-block;
+    height: 18px;
+    width: 16px;
+
+    .no-backgroundsize & {
+      background-image: image-url('sprite.icon.comments.lo-res.png');
+    }
+
+  }
+  .icon-comment-reply {
+    background-position: 0px 0px;
+    width: 20px;
+  }
+  .icon-comment-flag { background-position: -36px 0px; }
+  .icon-comment-like {
+    color: $comment-icon-purple;
+    background-position: -20px 0px;
+  }
+
+  button.comment-like {
+    @include old-ie {
+      background-color: transparent;
+    }
+  }
+
+  .comment-reply:hover, .comment-reply:focus {
+    color: $comment-icon-blue;
+    i { background-position: 0px -18px; }
+  }
+  .comment-flag:hover, .comment-flag:focus {
+    color: $comment-icon-blue;
+    i { background-position: -36px -18px; }
+  }
+
+  /* link disabled
+  .comment-like:hover, .comment-like:focus {
+    color: $comment-icon-blue;
+    i { background-position: -20px -18px; }
+  }
+  */
+
+  .comment-list-wrapper,
+  .comment-footer { max-width: 625px; }
+
+  .comment-wrapper {
+    border-top: 1px solid $comment-border-gray;
+    padding-top: 1.5em;
+    margin-bottom: 1.5em;
+    width: 100%;
+    &:first-child { border-top: none; }
+
+    a:hover, a:focus { text-decoration: none; }
+  }
+
+  .comment-count {
+    @include rem(font-size, 24px);
+    color: $comment-icon-purple;
+    display: block;
+    margin-bottom: 1em;
+    font-weight: normal;
+
+    @include bp($bp-small) { display: inline-block; }
+  }
+
+  .comment-sort-header {
+    display: block;
+    width: 100%;
+  }
+
+  .select-container {
+    width: 100%;
+
+    @include bp($bp-small) {
+      position: absolute;
+      width: 200px;
+      right: 0px;
+      top: 0;
+    }
+
+    .selector,
+    span {
+      width: 100% !important;
+    }
+    
+  }
+
+  .comment-header {
+    position: relative;
+    margin-bottom: 20px;
+    max-height: 60px;
+    @include bp($bp-small) {
+      margin-bottom: 0px;
+    }
+
+    .comment-like {
+      @include rem(font-size, 24px);
+      color: $comment-icon-purple;
+      font-weight: bold;
+      position: absolute;
+      right: 0px;
+      bottom: 33%;
+      border: none;
+      outline: none;
+      background: inherit;
+
+      i { margin-right: 10px; }
+    }
+  }
+
+  .comment-info {
+    display: inline-block;
+    height: 60px;
+    margin: auto;
+
+    .comment-username {
+      font-weight: bold;
+      &:after { content : ""; }
+
+      @include bp($bp-small) {
+        display: inline-block;
+        &:after { content : " • "; }
+      }
+    }
+
+    .comment-date {
+      display: block;
+      @include bp($bp-small) { display: inline-block; }
+    }
+  }
+
+  .comment-avatar {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .comment-body {
+    margin-bottom: 33px;
+    margin-left: 0px;
+    @include bp($bp-small) {
+      margin-left: 80px;
+      margin-bottom: 23px;
+    }
+    p {
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+      margin-bottom: 0;
+    }
+  }
+
+  .comment-actions {
+    overflow: hidden;
+    height: 30px;
+    display: table;
+    margin-left: -6.5%;
+    @include bp($bp-small) {
+      margin-left: 80px;
+    }
+
+    a {
+      border-left: 1px solid $comment-border-gray;
+      color: $comment-font-gray;
+      display: table-cell;
+      @include rem(font-size, 14px);
+      line-height: 1.25em;
+      text-align: center;
+      width: 30%;
+      @include bp($bp-small) {
+        padding: 3px 16px 0px;
+        width: inherit;
+      }
+      &.comment-like{
+        width: 33%;
+        @include bp($bp-small) {
+          width: 30%;
+        }
+      }
+
+      &:first-child {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      i {
+        display: block;
+        margin: auto;
+        margin-bottom: 12px;
+        @include bp($bp-small-plus) {
+          display: inline-block;
+          margin-right: 10px;
+          margin-bottom: 0px;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+  }
+
+  .comment-footer {
+    border-top: 1px solid $comment-border-gray;
+    padding-top: 28px;
+
+    .comment-more-wrapper {
+      text-align: center;
+      width: 100%;
+    }
+
+    .comment-more {
+      color: #428bca;
+      @include rem(font-size, 24px);
+      line-height: 1;
+      display: inline-block;
+      margin-bottom: 50px;
+
+      &:hover, &:focus {
+        color: #2a6496;
+      }
+
+      .icon-comment-more {
+        background-image: image-url('sprite.icon.arrows.png');
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: 150px 150px;
+        display: inline-block;
+        height: 11px;
+        margin-left: 18px;
+        width: 18px;
+      }
+    }
+  }
+
+  .comment-form {
+
+    .comment-form-reply {
+      margin-bottom: 20px;
+      min-height: 146px;
+    }
+
+    .button {
+      margin-right: 0;
+      margin-bottom: 25px;
+      @include bp($bp-small) {
+        float: right;
+        max-width: 115px;
+      }
+
+    }
+
+  }
+}
+
+// give margin-bottom to comments section in behavior tool
+
+.comments.comments-behavior-tool.container {
+  margin: 0 0 25px 0;
+
+  @include bp($bp-small-plus) {
+    margin-bottom: 45px;
+  }
+
+}
+

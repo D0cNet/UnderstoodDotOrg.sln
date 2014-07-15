@@ -1,0 +1,94 @@
+/**
+ * SASS partial for account my groups
+ */
+.account-mygroups{
+  .mygroups-header-wrap{
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d2d2d2;
+    @include bp($bp-small-plus){
+      border-bottom: none;
+      padding-bottom: 20px;
+    }
+    .button.start-discussion {
+      @include rem(font-size, 16px);
+      display: block;
+      margin: 0 auto;
+      width: 190px;
+      @include bp($bp-small-plus) { margin-right: 0; }
+    }
+    header{
+      color: #7a4183;
+      @include rem(font-size, 16px);
+      h2{
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .mygroup-grid-header{
+    border-bottom: 1px solid #d2d2d2;
+    @include rem(font-size, 24px);
+    display: none;
+    @include bp($bp-small-plus){
+      display: block;
+    }
+    h3 {
+      font-weight: normal;
+      color: #7a4183;
+      padding: 0 0 15px 0;
+    }
+  }
+  .mygroup-list{
+    .mygroup-item{
+      border-top: 1px solid #d2d2d2;
+      margin-bottom: 5px;
+      padding-top: 22px;
+      &:first-child { border-top: none; }
+      @include bp($bp-small-plus){
+        border-top: 1px solid #f4f2f1;
+        padding-top: 30px;
+        margin-bottom: 25px;
+      }
+      a{
+        color: #426da9;
+      }
+      .mygroup-title{
+        a{
+          display: block;
+          margin-bottom: 8px;
+          @include rem(font-size, 15px);
+          @include bp($bp-small-plus){
+            margin-bottom: 0px;
+          }
+        }
+      }
+      .timestamp{
+        color: #696969;
+        font-family: Arial, sans-serif;
+        @include rem(font-size, 14px);
+        margin-bottom: 0px;
+        @include bp($bp-small-plus){
+          .lastest-post{
+            display: none;
+          }
+        }
+      }
+      .reply-count-wrapper{
+        color: #7a4183;
+        padding: 0 0 8px;
+        @include rem(font-size, 18px);
+        @include bp($bp-small-plus){
+          padding: 0 5px 8px;
+        }
+        .reply-count{
+          @include rem(font-size, 24px);
+          font-weight: bold;
+        }
+        .reply-label{
+          @include bp($bp-small-plus){
+            display: none;
+          }
+        } //.reply-label
+      } // .reply-count-wrapper
+    } // .mygroup-item
+  } // .mygroup-list
+} // .account-mygroups

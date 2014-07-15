@@ -1,0 +1,265 @@
+/**
+ * SASS partial for my-account-nav module.
+ */
+
+$account-nav-blue: #426da9;
+$account-hover-blue: #298fc2;
+$account-nav-border: #208ec4;
+$account-font-purple: #7a4183;
+$account-font-gray: #696969;
+$account-border-gray: #f4f2f1;
+
+.my-account-nav {
+  @include rem(font-size, 17px);
+  color: $account-font-gray;
+  position: relative;
+  margin: 40px 0 0;
+
+  @include bp($bp-small-plus) {
+    margin-top: 0;
+  }
+
+  @include bp($bp-large) {
+    top: -20px;
+  }
+
+
+  .account-top-wrapper {
+    position: relative;
+  }
+  .account-photo,
+  .account-info { display: inline-block; }
+
+  .account-photo {
+    float: left;
+    margin-right: 20px;
+    margin-left: 15px;
+    margin-bottom: 40px;
+    position: relative;
+    width: 100px;
+    z-index: 10;
+
+    img { max-width: 100%; }
+
+    @include bp($bp-small-plus) {
+      margin-right: 50px;
+      margin-left: 0;
+      width: 150px;
+      margin-bottom: 0;
+    }
+
+    @include bp($bp-large){
+      top: 12px;
+    }
+  }// .account-photo
+
+  .account-info {
+    margin-top: 20px;
+    @include bp($bp-small-plus){
+      margin-top: 29px;
+    }
+  }
+  .account-username {
+    color: $account-font-purple;
+    font-weight: bold;
+    @include rem(font-size, 17px);
+    @include rem(line-height, 24px);
+
+    @include bp($bp-small) {
+      @include rem(font-size, 22px);
+      @include rem(line-height, 22px);
+      margin-bottom: 3px;
+    }
+  }
+  .account-links {
+    display: block;
+    margin: 40px 0 10px 15px;
+    clear: left;
+    @include bp($bp-small-plus) {
+      clear: none;
+    }
+    @include bp($bp-large) {
+      display: inline-block;
+      margin: 36px 0 0 0;
+      max-width: 375px;
+      position: absolute;
+      right: 24px;
+      top: 0px;
+      width: 100%;
+
+      @include old-ie {
+        width: auto;
+      }
+
+    }
+  }// .account-links
+
+  .account-nav-wrapper {
+    background-color: $account-nav-blue;
+    clear: both;
+    display: block;
+    height: 50px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 9;
+
+    @include bp($bp-small-plus) { height: 100px; }
+    @include bp($bp-medium) {
+      margin-right: 50px;
+      text-align: right;
+    }
+    @include bp($bp-large) { top: -60px; }
+
+    .row { max-height: 100px; }
+  }// .account-nav-wrapper
+
+  .account-nav {
+    display: inline-block;
+    margin: auto;
+    @include bp($bp-medium) {
+      margin-bottom: -10px;
+      position: relative;
+      left: -9px;
+    }
+
+    i {
+      background-image: image_url('sprite.icon.account.nav.png');
+      background-size: 202px 81px;
+      display: inline-block;
+      height: 33px;
+      width: 35px;
+    }
+    a {
+      border-right: 1px solid $account-nav-border;
+      display: table-cell;
+      height: 50px;
+      text-align: center;
+      vertical-align: middle;
+      width: 66px;
+      &:first-child { border-left: none; }
+
+      @include bp($bp-small-plus) {
+        border: none;
+        height: 100px;
+        width: 140px;
+      }
+      &:hover, &:focus {
+        background-color: $account-hover-blue;
+        outline-width: 0;
+      }
+      &:hover + a .icon-wrapper,
+      &:focus + a .icon-wrapper { border-left: 1px solid transparent; }
+    }
+    a.active {
+      background-color: $account-border-gray;
+
+      &:focus {
+        outline-width: thin;
+      }
+    }
+
+    span {
+      color: #fff;
+      display: none;
+      margin-top: 7px;
+      font-weight: bold;
+      @include rem(font-size, 14px);
+      @include bp($bp-small-plus) { display: block; }
+    }
+    a.active span { color: #000; }
+
+    .icon-wrapper {
+      @include bp($bp-small-plus) {
+        border-left: 1px solid $account-nav-border;
+        display: inline-block;
+        width: 100%;
+      }
+    }
+    .connections-link .icon-wrapper { border-right: 1px solid $account-nav-border; }
+    a.active .icon-wrapper { border: none; }
+  }// .account-nav
+  i.icon-account-groups { width: 35px; }
+  i.icon-account-events {
+    background-position: -43px 0px;
+    width: 29px;
+  }
+  i.icon-account-comments {
+    background-position: -80px 0px;
+    width: 36px;
+  }
+  i.icon-account-saved {
+    background-position: -125px 0px;
+    width: 31px;
+  }
+  i.icon-account-connections {
+    background-position: -168px 0px;
+    width: 32px;
+  }
+
+  .icon-wrapper i {
+    margin-top: 5px;
+
+    @include bp($bp-small-plus) {
+      margin-top: 0;
+    }
+  }
+
+  .active {
+    i.icon-account-groups { background-position: 0px -46px; }
+    i.icon-account-events { background-position: -43px -46px; }
+    i.icon-account-saved { background-position: -125px -46px; }
+    i.icon-account-connections { background-position: -168px -46px; }
+    i.icon-account-comments { background-position: -80px -46px; }
+  }
+
+  .button {
+    @include rem(font-size, 16px);
+    display: inline-block;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+    max-width: 144px;
+    width: 43%;
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+
+    @include bp($bp-small-plus) {
+      margin-left: 20px;
+      min-width: 150px;
+      width: 100%;
+      &:first-child {
+        margin: 0 20px 0 0;
+        border-left: none;
+      }
+    }
+  }// .button
+
+  .button-wrapper {
+    @include bp($bp-medium) {
+      border-left: 1px solid $account-border-gray;
+      display: inline-block;
+      padding-left: 25px;
+    }
+  }
+
+  .notifications-link { position: relative; }
+  .notification-count {
+    @include rem(font-size, 13px);
+    @include rounded-corners(26px);
+    background-color: $account-font-purple;
+    color: #fff;
+    display: inline-block;
+    position: absolute;
+    height: 26px;
+    line-height: 26px;
+    right: 0px;
+    top: -16px;
+    width: 26px;
+    @include bp($bp-large) {
+      right: -10px;
+    }
+  }
+}

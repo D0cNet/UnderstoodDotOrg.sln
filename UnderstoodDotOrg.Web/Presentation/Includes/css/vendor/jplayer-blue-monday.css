@@ -13,7 +13,7 @@
  * Skin Version: 4.3 (jPlayer 2.2.0)
  * Date: 19th November 2012
  */
-/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 19, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio,
 div.jp-audio-stream,
 div.jp-video {
@@ -30,27 +30,27 @@ div.jp-video {
   background-color: #eee;
 }
 
-/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 33, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio {
   width: 420px;
 }
 
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 36, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio-stream {
   width: 182px;
 }
 
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 39, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-270p {
   width: 480px;
 }
 
-/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 42, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-360p {
   width: 640px;
 }
 
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 45, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-full {
   /* Rules for IE6 (full-screen) */
   width: 480px;
@@ -61,12 +61,12 @@ div.jp-video-full {
 }
 
 /* The z-index rule is defined in this manner to enable Popcorn plugins that add overlays to video area. EG. Subtitles. */
-/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 54, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-full div div {
   z-index: 1000;
 }
 
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 58, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-full div.jp-jplayer {
   top: 0;
   left: 0;
@@ -76,7 +76,7 @@ div.jp-video-full div.jp-jplayer {
   overflow: hidden;
 }
 
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 65, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-full div.jp-gui {
   position: fixed !important;
   position: static;
@@ -89,7 +89,7 @@ div.jp-video-full div.jp-gui {
   /* 1 layer above the others. */
 }
 
-/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 74, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-full div.jp-interface {
   position: absolute !important;
   position: relative;
@@ -98,35 +98,35 @@ div.jp-video-full div.jp-interface {
   left: 0;
 }
 
-/* line 81, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 80, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-interface {
   position: relative;
   background-color: #eee;
   width: 100%;
 }
 
-/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 86, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-type-single div.jp-interface {
   height: 80px;
 }
 
-/* line 90, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 89, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-type-playlist div.jp-interface {
   height: 80px;
 }
 
-/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 93, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio-stream div.jp-type-single div.jp-interface {
   height: 80px;
 }
 
-/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 97, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video div.jp-interface {
   border-top: 1px solid #009be3;
 }
 
 /* @group CONTROLS */
-/* line 104, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 103, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-controls-holder {
   clear: both;
   width: 440px;
@@ -137,7 +137,7 @@ div.jp-controls-holder {
   /* This negative value depends on the size of the text in jp-currentTime and jp-duration */
 }
 
-/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 112, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-interface ul.jp-controls {
   list-style-type: none;
   margin: 0;
@@ -145,138 +145,138 @@ div.jp-interface ul.jp-controls {
   overflow: hidden;
 }
 
-/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 119, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio ul.jp-controls {
   width: 380px;
   padding: 20px 20px 0 20px;
 }
 
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 124, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio-stream ul.jp-controls {
   width: 142px;
   padding: 20px 20px 0 20px;
 }
 
-/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 129, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video div.jp-type-single ul.jp-controls {
   width: 78px;
   margin-left: 200px;
 }
 
-/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 134, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video div.jp-type-playlist ul.jp-controls {
   width: 134px;
   margin-left: 172px;
 }
 
-/* line 140, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 139, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video ul.jp-controls,
 div.jp-interface ul.jp-controls li {
   display: inline;
   float: left;
 }
 
-/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 144, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-interface ul.jp-controls a {
   display: block;
   overflow: hidden;
   text-indent: -9999px;
 }
 
-/* line 151, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 150, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-play,
 a.jp-pause {
   width: 40px;
   height: 40px;
 }
 
-/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 155, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-play {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 0 no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 0 no-repeat;
 }
 
-/* line 159, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 158, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-play:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -41px 0 no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -41px 0 no-repeat;
 }
 
-/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 161, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-pause {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -42px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -42px no-repeat;
   display: none;
 }
 
-/* line 166, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 165, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-pause:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -41px -42px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -41px -42px no-repeat;
 }
 
-/* line 170, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 169, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-stop, a.jp-previous, a.jp-next {
   width: 28px;
   height: 28px;
   margin-top: 6px;
 }
 
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 175, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-stop {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -83px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -83px no-repeat;
   margin-left: 10px;
 }
 
-/* line 181, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 180, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-stop:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -29px -83px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -29px -83px no-repeat;
 }
 
-/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 184, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-previous {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -112px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -112px no-repeat;
 }
 
-/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 187, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-previous:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -29px -112px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -29px -112px no-repeat;
 }
 
-/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 191, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-next {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -141px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -141px no-repeat;
 }
 
-/* line 195, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 194, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-next:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -29px -141px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -29px -141px no-repeat;
 }
 
 /* @end */
 /* @group progress bar */
-/* line 203, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 202, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-progress {
   overflow: hidden;
   background-color: #ddd;
 }
 
-/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 206, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-progress {
   position: absolute;
   top: 32px;
   height: 15px;
 }
 
-/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 211, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-type-single div.jp-progress {
   left: 110px;
   width: 186px;
 }
 
-/* line 216, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 215, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-type-playlist div.jp-progress {
   left: 166px;
   width: 130px;
 }
 
-/* line 220, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 219, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video div.jp-progress {
   top: 0px;
   left: 0px;
@@ -284,30 +284,30 @@ div.jp-video div.jp-progress {
   height: 10px;
 }
 
-/* line 226, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 225, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-seek-bar {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -202px repeat-x;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -202px repeat-x;
   width: 0px;
   height: 100%;
   cursor: pointer;
 }
 
-/* line 232, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 231, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-play-bar {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -218px repeat-x;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -218px repeat-x;
   width: 0px;
   height: 100%;
 }
 
 /* The seeking class is added/removed inside jPlayer */
-/* line 239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 238, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-seeking-bg {
   background: url("../../images/jplayer.blue.monday.seeking.gif");
 }
 
 /* @end */
 /* @group volume controls */
-/* line 250, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 249, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-mute,
 a.jp-unmute,
 a.jp-volume-max {
@@ -316,31 +316,31 @@ a.jp-volume-max {
   margin-top: 12px;
 }
 
-/* line 257, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 256, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-type-single a.jp-mute,
 div.jp-audio div.jp-type-single a.jp-unmute {
   margin-left: 210px;
 }
 
-/* line 261, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 260, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-type-playlist a.jp-mute,
 div.jp-audio div.jp-type-playlist a.jp-unmute {
   margin-left: 154px;
 }
 
-/* line 266, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 265, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio-stream div.jp-type-single a.jp-mute,
 div.jp-audio-stream div.jp-type-single a.jp-unmute {
   margin-left: 10px;
 }
 
-/* line 271, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 270, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio a.jp-volume-max,
 div.jp-audio-stream a.jp-volume-max {
   margin-left: 56px;
 }
 
-/* line 277, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 276, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video a.jp-mute,
 div.jp-video a.jp-unmute,
 div.jp-video a.jp-volume-max {
@@ -349,104 +349,104 @@ div.jp-video a.jp-volume-max {
   margin-top: 0;
 }
 
-/* line 284, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 283, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video a.jp-mute,
 div.jp-video a.jp-unmute {
   left: 50px;
 }
 
-/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 287, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video a.jp-volume-max {
   left: 134px;
 }
 
-/* line 292, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 291, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-mute {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -170px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -170px no-repeat;
 }
 
-/* line 295, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 294, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-mute:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -19px -170px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -19px -170px no-repeat;
 }
 
-/* line 298, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 297, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-unmute {
-  background: url("../../images/jplayer.blue.monday.jpg") -60px -170px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -60px -170px no-repeat;
   display: none;
 }
 
-/* line 302, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 301, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-unmute:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -79px -170px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -79px -170px no-repeat;
 }
 
-/* line 305, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 304, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-volume-max {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -186px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -186px no-repeat;
 }
 
-/* line 308, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 307, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-volume-max:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -19px -186px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -19px -186px no-repeat;
 }
 
-/* line 312, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 311, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-volume-bar {
   position: absolute;
   overflow: hidden;
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -250px repeat-x;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -250px repeat-x;
   width: 46px;
   height: 5px;
   cursor: pointer;
 }
 
-/* line 320, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 319, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-volume-bar {
   top: 37px;
   left: 330px;
 }
 
-/* line 324, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 323, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio-stream div.jp-volume-bar {
   top: 37px;
   left: 92px;
 }
 
-/* line 328, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 327, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video div.jp-volume-bar {
   top: 17px;
   left: 72px;
 }
 
-/* line 332, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 331, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-volume-bar-value {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -256px repeat-x;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -256px repeat-x;
   width: 0px;
   height: 5px;
 }
 
 /* @end */
 /* @group current time and duration */
-/* line 342, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 341, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-time-holder {
   position: absolute;
   top: 50px;
 }
 
-/* line 346, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 345, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-type-single div.jp-time-holder {
   left: 110px;
   width: 186px;
 }
 
-/* line 350, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 349, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio div.jp-type-playlist div.jp-time-holder {
   left: 166px;
   width: 130px;
 }
 
-/* line 356, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 355, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-current-time,
 div.jp-duration {
   width: 60px;
@@ -454,38 +454,38 @@ div.jp-duration {
   font-style: oblique;
 }
 
-/* line 361, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 360, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-current-time {
   float: left;
   display: inline;
 }
 
-/* line 365, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 364, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-duration {
   float: right;
   display: inline;
   text-align: right;
 }
 
-/* line 371, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 370, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video div.jp-current-time {
   margin-left: 20px;
 }
 
-/* line 374, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 373, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video div.jp-duration {
   margin-right: 20px;
 }
 
 /* @end */
 /* @group playlist */
-/* line 382, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 381, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-title {
   font-weight: bold;
   text-align: center;
 }
 
-/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 387, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-title,
 div.jp-playlist {
   width: 100%;
@@ -493,14 +493,14 @@ div.jp-playlist {
   border-top: 1px solid #009be3;
 }
 
-/* line 395, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 394, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-single div.jp-title,
 div.jp-type-playlist div.jp-title,
 div.jp-type-single div.jp-playlist {
   border-top: none;
 }
 
-/* line 399, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 398, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-title ul,
 div.jp-playlist ul {
   list-style-type: none;
@@ -509,54 +509,54 @@ div.jp-playlist ul {
   font-size: .72em;
 }
 
-/* line 406, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 405, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-title li {
   padding: 5px 0;
   font-weight: bold;
 }
 
-/* line 410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 409, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-playlist li {
   padding: 5px 0 4px 20px;
   border-bottom: 1px solid #eee;
 }
 
-/* line 415, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 414, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-playlist li div {
   display: inline;
 }
 
 /* Note that the first-child (IE6) and last-child (IE6/7/8) selectors do not work on IE */
-/* line 421, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 420, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist li:last-child {
   padding: 5px 0 5px 20px;
   border-bottom: none;
 }
 
-/* line 425, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 424, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
   list-style-type: square;
   list-style-position: inside;
   padding-left: 7px;
 }
 
-/* line 430, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 429, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist a {
   color: #333;
   text-decoration: none;
 }
 
-/* line 434, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 433, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist a:hover {
   color: #0d88c1;
 }
 
-/* line 437, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 436, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist a.jp-playlist-current {
   color: #0d88c1;
 }
 
-/* line 441, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 440, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist a.jp-playlist-item-remove {
   float: right;
   display: inline;
@@ -566,12 +566,12 @@ div.jp-type-playlist div.jp-playlist a.jp-playlist-item-remove {
   color: #666;
 }
 
-/* line 449, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 448, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist a.jp-playlist-item-remove:hover {
   color: #0d88c1;
 }
 
-/* line 452, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 451, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist span.jp-free-media {
   float: right;
   display: inline;
@@ -579,24 +579,24 @@ div.jp-type-playlist div.jp-playlist span.jp-free-media {
   margin-right: 10px;
 }
 
-/* line 458, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 457, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist span.jp-free-media a {
   color: #666;
 }
 
-/* line 461, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 460, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-type-playlist div.jp-playlist span.jp-free-media a:hover {
   color: #0d88c1;
 }
 
-/* line 464, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 463, ../../css.source/vendor/jplayer-blue-monday.scss */
 span.jp-artist {
   font-size: .8em;
   color: #666;
 }
 
 /* @end */
-/* line 471, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 470, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-play {
   width: 100%;
   overflow: hidden;
@@ -606,24 +606,24 @@ div.jp-video-play {
   /* Makes IE9 work with the active area over the whole video area. IE6/7/8 only have the button as active area. */
 }
 
-/* line 477, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 476, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-270p div.jp-video-play {
   margin-top: -270px;
   height: 270px;
 }
 
-/* line 481, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 480, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-360p div.jp-video-play {
   margin-top: -360px;
   height: 360px;
 }
 
-/* line 485, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 484, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-full div.jp-video-play {
   height: 100%;
 }
 
-/* line 488, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 487, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-video-play-icon {
   position: relative;
   display: block;
@@ -637,26 +637,26 @@ a.jp-video-play-icon {
   text-indent: -9999px;
 }
 
-/* line 502, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 501, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video-play:hover a.jp-video-play-icon {
   background: url("../../images/jplayer.blue.monday.video.play.png") 0 -100px no-repeat;
 }
 
-/* line 511, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 510, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-jplayer audio,
 div.jp-jplayer {
   width: 0px;
   height: 0px;
 }
 
-/* line 516, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 515, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-jplayer {
   background-color: #000000;
 }
 
 /* @group TOGGLES */
 /* The audio toggles are nested inside jp-time-holder */
-/* line 528, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 527, ../../css.source/vendor/jplayer-blue-monday.scss */
 ul.jp-toggles {
   list-style-type: none;
   padding: 0;
@@ -664,12 +664,12 @@ ul.jp-toggles {
   overflow: hidden;
 }
 
-/* line 535, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 534, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio .jp-type-single ul.jp-toggles {
   width: 25px;
 }
 
-/* line 538, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 537, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-audio .jp-type-playlist ul.jp-toggles {
   width: 55px;
   margin: 0;
@@ -678,19 +678,19 @@ div.jp-audio .jp-type-playlist ul.jp-toggles {
   top: 50px;
 }
 
-/* line 546, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 545, ../../css.source/vendor/jplayer-blue-monday.scss */
 div.jp-video ul.jp-toggles {
   margin-top: 10px;
   width: 100px;
 }
 
-/* line 551, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 550, ../../css.source/vendor/jplayer-blue-monday.scss */
 ul.jp-toggles li {
   display: block;
   float: right;
 }
 
-/* line 556, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 555, ../../css.source/vendor/jplayer-blue-monday.scss */
 ul.jp-toggles li a {
   display: block;
   width: 25px;
@@ -700,73 +700,73 @@ ul.jp-toggles li a {
   /* need this for IE6 */
 }
 
-/* line 564, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 563, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-full-screen {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -310px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -310px no-repeat;
   margin-left: 20px;
 }
 
-/* line 569, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 568, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-full-screen:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -30px -310px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -30px -310px no-repeat;
 }
 
-/* line 573, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 572, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-restore-screen {
-  background: url("../../images/jplayer.blue.monday.jpg") -60px -310px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -60px -310px no-repeat;
   margin-left: 20px;
 }
 
-/* line 578, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 577, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-restore-screen:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -90px -310px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -90px -310px no-repeat;
 }
 
-/* line 582, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 581, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-repeat {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -290px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -290px no-repeat;
 }
 
-/* line 586, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 585, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-repeat:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -30px -290px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -30px -290px no-repeat;
 }
 
-/* line 590, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 589, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-repeat-off {
-  background: url("../../images/jplayer.blue.monday.jpg") -60px -290px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -60px -290px no-repeat;
 }
 
-/* line 594, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 593, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-repeat-off:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -90px -290px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -90px -290px no-repeat;
 }
 
-/* line 598, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 597, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-shuffle {
-  background: url("../../images/jplayer.blue.monday.jpg") 0 -270px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') 0 -270px no-repeat;
   margin-left: 5px;
 }
 
-/* line 603, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 602, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-shuffle:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -30px -270px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -30px -270px no-repeat;
 }
 
-/* line 607, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 606, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-shuffle-off {
-  background: url("../../images/jplayer.blue.monday.jpg") -60px -270px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -60px -270px no-repeat;
   margin-left: 5px;
 }
 
-/* line 612, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 611, ../../css.source/vendor/jplayer-blue-monday.scss */
 a.jp-shuffle-off:hover {
-  background: url("../../images/jplayer.blue.monday.jpg") -90px -270px no-repeat;
+  background: url('../../images/jplayer.blue.monday.jpg?1404390952') -90px -270px no-repeat;
 }
 
 /* @end */
 /* @group NO SOLUTION error feedback */
-/* line 621, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 620, ../../css.source/vendor/jplayer-blue-monday.scss */
 .jp-no-solution {
   padding: 5px;
   font-size: .8em;
@@ -776,12 +776,12 @@ a.jp-shuffle-off:hover {
   display: none;
 }
 
-/* line 630, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 629, ../../css.source/vendor/jplayer-blue-monday.scss */
 .jp-no-solution a {
   color: #000;
 }
 
-/* line 634, /Users/justin/projects.dp/poses/source/Presentation/includes/css/vendor/jplayer-blue-monday.scss */
+/* line 633, ../../css.source/vendor/jplayer-blue-monday.scss */
 .jp-no-solution span {
   font-size: 1em;
   display: block;

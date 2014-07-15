@@ -1,0 +1,195 @@
+/**
+ * SASS partial for partners-carousel module.
+ */
+
+.partners-carousel {
+  padding: 0;
+
+  .rsContainer {
+    min-height: 197px;
+  }
+
+  @include bp($bp-small-plus) {
+    padding: 48px 6.5% 0;
+  }
+
+  @include bp($bp-medium) {
+    height: 230px !important;
+    padding: 48px 0;
+  }
+
+  #partners-slides-container {
+
+    margin: 0 0 22px;
+
+    @include bp($bp-small-plus) {
+      margin-top: -30px;
+      height: 220px !important;
+    }
+
+  }// #partners-slides-container 
+
+  .rsOverflow {
+    border-bottom: 1px solid #c6c5c5;
+
+    @include bp($bp-small) {
+      height: 85% !important;
+      width: 100% !important;
+    }
+
+    @include bp($bp-small-plus) {
+      height: 90% !important;
+    }
+
+  }// .rsOverflow
+
+  .rsSlide {
+    @include bp($bp-small) {
+      position: absolute;
+    }
+
+  }// .rsSlide
+
+  ul {
+    list-style: none;
+    margin: 0 0 0 6%;
+    padding: 0;
+
+    @include bp($bp-small) {
+      margin-left: 4%;
+    }
+
+    @include bp($bp-small-plus) {
+      margin-left: 0%;
+    }
+
+    li {
+      display: inline-block;
+      margin: 15% 0 105px 16%;
+      position: relative;
+      vertical-align: middle;
+      width: 38%;
+
+      @include bp($bp-small) {
+        margin: 8% 10% 0 0;
+        width: 15%;
+      }
+
+      @include bp($bp-small-plus) {
+        margin: 15% 0 0 5%;
+        width: 20%;
+      }
+
+      @include bp($bp-medium) {
+        margin: 75px 3% 5%;
+        width: 19%;
+      }
+
+      @include bp($bp-large) {
+        margin-top: 90px;
+        width: 11%;
+      }
+
+      &:nth-child(2n+1) {
+        margin-left: 0;
+
+        @include bp($bp-small-plus) {
+          margin-left: 5%;
+        }
+
+        @include bp($bp-medium) {
+          margin-left: 3%;
+        }
+
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      a {
+        display: block;
+        height: auto;
+        width: auto;
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 3px #426da9;
+        }
+      }
+
+      img {
+        height: auto;
+        width: 100%;
+        display: block;
+
+        @include bp($bp-small){
+          max-width: 100%;
+        }
+
+      }// img
+
+    }// li
+
+  }// #partners-slides-container .ul
+
+  .viewAll {
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 111px;
+    font-size: 16px;
+    color: #298fc2;
+    
+    @include bp($bp-medium) {
+      display: block;
+      right: 45px;
+    }
+
+  }// .viewAll
+
+  .rsArrowIcn {
+    z-index: 2;
+    
+    @include bp($bp-small-plus){
+      top: 0;
+      bottom: initial;
+    }
+
+  }
+
+  .rsArrowLeft .rsArrowIcn {
+
+    top: auto;
+    bottom: 26px;
+    right: 50%;
+    margin-right: 15px;
+       
+    @include bp($bp-small-plus){
+      margin-right: 0;
+      top: 0;
+      right: 54px;
+    }
+
+    @include bp($bp-medium) {
+      right: 119px;
+    }
+
+  }// .rsArrowLeft
+
+  .rsArrowRight .rsArrowIcn {
+    top: auto;
+    bottom: 26px;
+    right: auto;
+    left: 50%;
+    margin-left: 15px;
+
+    @include bp($bp-small-plus) {
+      left: auto;
+      margin-left: 0;
+      top: 0;
+      right: 0;
+    }
+
+  }// .rsArrowRight
+
+}// .partners-carousel

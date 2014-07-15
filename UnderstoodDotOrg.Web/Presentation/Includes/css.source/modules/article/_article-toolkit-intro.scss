@@ -1,0 +1,15 @@
+  .toolkit-overlay {
+
+   p {
+    font-family: Arial, sans-serif;
+    color: #696969;
+    @include rem(font-size, 16px);
+    @include rem(line-height, 27px);
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+    }
+
+  }
+  
+}

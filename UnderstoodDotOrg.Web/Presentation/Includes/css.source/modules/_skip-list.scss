@@ -1,0 +1,184 @@
+.skip-list {
+  text-decoration: none;
+  position: absolute;
+  width: inherit;
+  margin: 0;
+  top: 0;
+  li {
+    position: absolute;
+    display: block;
+    width: auto;
+    min-width: 200px;
+    z-index: 11;
+    padding: 10px 10px;
+    left: 8px;
+    top: 8px;
+  }
+  .skip-link {
+    position: absolute;
+    width: auto;
+    @include opacity(0);
+    top: 5px;
+    left: 10px;
+    display: inline;
+    left: -99999px;
+    &:focus {
+      left: 10px;
+    }
+    &:focus {
+      @include opacity(1);
+    }
+  }
+}
+.skip-link-secondary, .skip-list {
+  .skip-link {
+    @include rem(font-size, 16px);
+    @include rem(line-height, 16px);
+    padding: 5px;
+  }
+}
+.skiplink-content, .skiplink-sidebar {
+  position: relative;
+}
+.skip-list-secondary-menu {
+  position: absolute;
+  list-style: none;
+  width: 200px;
+  text-decoration: none;
+  top: 0;
+  left: 0;
+}
+.secondary-navigation-link {
+  @include opacity(0);
+  position: absolute;
+  left: -999999px;
+  top: -30px;
+  &:focus {
+    @include opacity(1);
+    left: 0;
+  }
+}
+.skiplink-sidebar {
+  .secondary-navigation-link {
+    top: -38px;
+  }
+}
+
+.skiplink-feature, .skiplink-content, .skiplink-sidebar, .skiplink-toolbar, .skiplink-comments, .skiplink-dashboard {
+  position: relative;
+}
+
+//page-specific styling
+
+.toolkit-thumbnails-container .inner-container #toolkit-thumbnails .thumbnail.skiplink-content .skip-link {
+  @include rem(font-size, 16px);
+  @include rem(line-height, 16px);
+}
+
+.profile-bar-container .secondary-navigation-link,
+.community-q-a .featured-parent-questions .secondary-navigation-link {
+  top: 0;
+}
+
+.l-search-box-container .skip-link-secondary .secondary-navigation-link {
+  top: 5px;
+}
+
+.parent-toolkit .secondary-navigation-link {
+  top: 10px;
+}
+
+.assistive-tech-results .secondary-navigation-link,
+.donate-create-wrap .secondary-navigation-link {
+  top: 15px;
+}
+
+.container.listing .skiplink-content .secondary-navigation-link {
+  top: -24px;
+}
+
+.skiplink-dashboard .secondary-navigation-link {
+  top: -75px;
+}
+
+.event-container {
+  .secondary-navigation-link {
+    left: 30px;
+  }
+  .skiplink-sidebar .secondary-navigation-link {
+    left: 5px;
+  }
+}
+
+.registration-profile {
+  .secondary-navigation-link {
+    left: 14px;
+  }
+  &.community-profile .secondary-navigation-link {
+    left: 45px;
+  }
+}
+
+.experts-page {
+  .archive {
+    .secondary-navigation-link {
+      top: 5px;
+      left: 7px;
+    }
+  }
+  &.experts-landing .archive header.col-24 {
+    margin-top: 40px;
+    overflow: visible;
+  }
+  &.chat.past .skiplink-content .secondary-navigation-link {
+    left: 0px;
+  }
+  &.archive-results .archive .secondary-navigation-link {
+    top: -31px;
+    left: 44px;
+  }
+}
+
+.archive-results .archive .secondary-navigation-link {
+  left: 46px;
+}
+
+.guide-me-inner.skiplink-toolbar .secondary-navigation-link,
+.mini-tools-wrap .secondary-navigation-link,
+.behavior-advice-wrapper.skiplink-toolbar .secondary-navigation-link,
+.at-search-tool-wrapper .secondary-navigation-link,
+.page-not-found-search .secondary-navigation-link,
+.l-thank-you-social .secondary-navigation-link{
+  background-color: #298fc2;
+  color: #ffffff;
+}
+
+.community-parents .parents-member-cards .secondary-navigation-link {
+  top: -38px;
+}
+
+.community-my-blogs .blog-author-posts .secondary-navigation-link,
+.mini-tools-wrap .secondary-navigation-link,
+.article-listing-container .sidebar .secondary-navigation-link {
+  left: 5px;
+}
+
+.community-my-blogs .blog-comments .secondary-navigation-link {
+  left: 29px;
+}
+
+.parent-groups {
+  .individual-group .skip-list-secondary-menu {
+    left: 4.1%;
+  }
+  &.individual-board .individual-group .secondary-navigation-link,
+  .skiplink-feature .secondary-navigation-link {
+    left: 5px;
+  }
+}
+
+.skiplink-toolbar {
+  .secondary-navigation-link {
+    left: 79px;
+  }
+}

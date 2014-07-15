@@ -1,0 +1,53 @@
+.l-sign-up-confirm{
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0 15px 30px;
+  @include bp($bp-small-plus){
+    padding:0 0 56px;
+  }
+  header{
+    h1{
+      color:#7a4183;
+      @include rem(font-size, 36px);
+      @include rem(line-height, 32px);
+      font-weight: bold;
+      margin-bottom: 21px;
+      padding-top: 27px;
+      @include bp($bp-small-plus){
+        margin-bottom: 24px;
+        padding-top: 45px;
+      }
+    }
+    p{
+      color: #696969;
+      // This font size is 1px smaller than mock to preserve accurate line spacing
+      @include rem(font-size, 17px);
+      @include rem(line-height, 28px);
+      margin-bottom: 21px;
+      padding-right: 23px;
+      @include bp($bp-small-plus){
+        @include rem(font-size, 18px);
+        margin-bottom: 40px;
+        span{
+          // Paragraph is two lines at full width
+          display: block;
+        }//span
+      }
+      a{
+        text-decoration: underline;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    } //p
+  }//header
+  .row{
+    border-bottom: 1px solid #d2d2d2;
+  }
+  .social-wrap{
+    padding-bottom: 37px;
+    @include bp($bp-small-plus){
+      padding-bottom: 65px;
+    }
+  }
+} // .l-sign-up-confirm

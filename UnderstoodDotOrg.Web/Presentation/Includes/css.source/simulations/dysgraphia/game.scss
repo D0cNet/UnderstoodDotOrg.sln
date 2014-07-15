@@ -1,0 +1,72 @@
+#gameboard.dysgraphia_game {
+    font-size: 24px;
+    background-color: #f3f1f1;
+}
+.breakpoint_phone #gameboard {
+    font-size: 18px;
+}
+#gameboard.dysgraphia_game .SSGame_modal_standalone_decoration {
+    background-image: image_url('simulations/dysgraphia/desktop/standalone_icon.png');
+}
+
+#dysgraphia_challenge {
+    position: absolute;
+    top: 100px;
+    text-align: center;
+    width: 100%;
+}
+#dysgraphia_prompt {
+    margin: 0 50px;
+    color: #288dc0;
+    font-size: 42px;
+    line-height: 60px;
+}
+.breakpoint_phone #dysgraphia_prompt {
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0 10px;
+}
+#dysgraphia_input {
+    margin: 20px 50px 0;
+    font-size: 28px;
+    line-height: 36px;
+    color: #231f20;
+    border: 4px solid #288dc0;
+    padding: 10px;
+    background-color: #FFF;
+}
+.breakpoint_phone #dysgraphia_input {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 10px 10px 0;
+}
+#dysgraphia_challenge textarea {
+    font-size: inherit;
+    line-height: inherit;
+    border-width: 0;
+    background-color: transparent;
+    -webkit-appearance:none;
+    outline: none;
+    box-shadow: none !important;
+    width: 100%;
+}
+
+#dysgraphia_score {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+}
+#gameboard.dysgraphia_game #wtfinput_mirror {
+    border: 1px solid black;
+    background-color: white;
+    min-height: 10px;
+}
+
+/* Clear the board when the textarea is in focus on phones */
+.breakpoint_phone.infocus #dysgraphia_score, .breakpoint_phone.infocus #SSGame_timer {
+    display: none;
+}
+.breakpoint_phone.infocus #dysgraphia_challenge {
+    top: 10px;
+}

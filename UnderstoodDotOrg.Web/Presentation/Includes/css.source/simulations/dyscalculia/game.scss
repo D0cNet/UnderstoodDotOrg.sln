@@ -1,0 +1,513 @@
+#gameboard.dyscalculia_game .SSGame_modal_standalone_decoration {
+    background-image: image_url('simulations/dyscalculia/desktop/standalone_icon.png');
+}
+
+#dyscalculia_key {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 405px;
+    height: 130px;
+    background-color: #7a4183;
+    color: white;
+}
+.breakpoint_tablet #dyscalculia_key {
+    width: 315px;
+}
+.breakpoint_phone #dyscalculia_key {
+    top: auto;
+    bottom: 0px;
+    height: 60px;
+    width: 320px;
+}
+#dyscalculia_key h2 {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 50px;
+    margin-left: 25px;
+    font-size: 30px;
+    width: 100px;
+}
+.breakpoint_tablet #dyscalculia_key h2 {
+    margin-left: 5px;
+    width: 60px;
+}
+.breakpoint_phone #dyscalculia_key h2 {
+    display: none;
+}
+#dyscalculia_key .coin {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 30px;
+    width: 65px;
+    background-position: center;
+}
+.breakpoint_tablet #dyscalculia_key .coin {
+    width: 60px;
+}
+.breakpoint_phone #dyscalculia_key .coin {
+    margin-top: 8px;
+    width: 77px;
+}
+#dyscalculia_key .coin div {
+    float: left;
+    margin-top: 65px;
+    text-align: center;
+    font-size: 22px;
+    width: 100%;
+}
+.breakpoint_phone #dyscalculia_key .coin div {
+    float: none;
+    margin-top: 14px;
+    font-size: 16px;
+    width: 30px;
+    margin-left: 47px;
+}
+.breakpoint_phone #dyscalculia_key .penny {
+    background-position: 14px center;
+}
+.breakpoint_phone #dyscalculia_key .nickel {
+    background-position: 10px center;
+}
+.breakpoint_phone #dyscalculia_key .dime {
+    background-position: 14px center;
+}
+.breakpoint_phone #dyscalculia_key .quarter {
+    background-position: 10px center;
+}
+#dyscalculia_coins {
+    position: absolute;
+    top: 131px;
+    left: 0;
+    width: 405px;
+    height: 350px; /* Can prob. go a little higher */
+    overflow: hidden;
+}
+.breakpoint_tablet #dyscalculia_coins {
+    height: 250px;
+    width: 315px;
+}
+.breakpoint_phone #dyscalculia_coins {
+    width: 100%;
+    height: 125px;/* Technically should be 135, but we cheat down a little to accommodate coin scatter */
+    top: auto;
+    bottom: 60px;
+}
+#dyscalculia_score {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 100%;
+}
+.breakpoint_tablet #dyscalculia_score {
+    width: 325px;
+}
+.breakpoint_phone #dyscalculia_score {
+    display: none;
+}
+#dyscalculia_counter {
+    position: absolute;
+    top: 0;
+    left: 406px;
+    width: 320px;
+    height: 534px;
+    background-color: #F6F6F6;
+    color: #D2D2D2;
+}
+.breakpoint_tablet #dyscalculia_counter {
+    left: 315px;
+    width: 230px;
+    height: 432px;
+}
+.breakpoint_phone #dyscalculia_counter {
+    top: 105px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+}
+#dyscalculia_counter h2 {
+    position: absolute;
+    top: 200px;
+    left: 85px;
+    width: 150px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+.breakpoint_tablet #dyscalculia_counter h2 {
+    top: 170px;
+    left: 40px;
+}
+.breakpoint_phone #dyscalculia_counter h2 {
+    top: 50px;
+    left: 40px;
+    font-size: 24px;
+    text-align: left;
+}
+#dyscalculia_coins_selected {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 370px;
+}
+.breakpoint_tablet #dyscalculia_coins_selected {
+    height: 320px;
+}
+.breakpoint_phone #dyscalculia_coins_selected {
+    width: 200px;
+    height: 100%;
+}
+
+
+#dyscalculia_tally {
+    position: absolute;
+    bottom: 106px;
+    left: 93px;
+}
+.breakpoint_tablet #dyscalculia_tally {
+    bottom: 53px;
+    left: 48px;
+}
+.breakpoint_phone #dyscalculia_tally {
+    top: 43px;
+    left: auto;
+    right: 20px;
+    width: 90px;
+    height: 30px;
+    font-size: 24px;
+    line-height: 24px;
+    padding: 0;
+}
+#dyscalculia_store {
+    position: absolute;
+    background-color: #298FC2;
+    top: 0;
+    right: 0;
+    width: 223px;
+    height: 534px;
+    background-position: 40px 30px;
+    overflow: hidden;
+}
+
+.breakpoint_tablet #dyscalculia_store {
+    width: 183px;
+    height: 432px;
+    background-position: 10px 20px;
+}
+.breakpoint_phone #dyscalculia_store {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105px;
+}
+.dyscalculia_game #SSGame_timer {
+    top: 20px;
+    right: 30px;
+    width: 145px;
+    background-image: image_url('simulations/dyscalculia/desktop/clock_clear.png');
+}
+.dyscalculia_game.breakpoint_tablet #SSGame_timer {
+    top: 10px;
+    right: 20px;
+}
+.dyscalculia_game.breakpoint_phone #SSGame_timer {
+    top: 10px;
+    right: 15px;
+    width: 115px;
+    background-image: image_url('simulations/dyscalculia/phone/clock_clear.png');
+}
+.dyscalculia_game #SSGame_timer .timer {
+    position: absolute;
+    left: 50px;
+    font-size: 32px;
+    font-weight: normal;
+    text-align: left;
+}
+.breakpoint_tablet.dyscalculia_game #SSGame_timer .timer {
+    top: 0;
+    left: 50px;
+}
+.breakpoint_phone.dyscalculia_game #SSGame_timer .timer {
+    font-size: 24px;
+    left: 40px;
+}
+.dyscalculia_game #SSGame_timer .timer span {
+    width: 0.65em;
+}
+.dyscalculia_game #SSGame_timer span:nth-child(2) {
+    width: auto;
+}
+#dyscalculia_item {
+    position: absolute;
+    top: 110px;
+    width: 100%;
+}
+.breakpoint_tablet #dyscalculia_item {
+    top: 60px;
+}
+.breakpoint_phone #dyscalculia_item {
+    top: 0px;
+    left: 0px;
+    width: 180px;
+    height: 105px;
+}
+#dyscalculia_item .item {
+    text-align: center;
+}
+#dyscalculia_item .item_picture {
+    height: 205px;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.breakpoint_phone #dyscalculia_item .item_picture {
+    height: 65px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#dyscalculia_item .item_name,
+#dyscalculia_item .item_value {
+    margin: 0;
+    padding: 0;
+    line-height: auto;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+}
+.breakpoint_phone #dyscalculia_item .item_name,
+.breakpoint_phone #dyscalculia_item .item_value {
+    display: inline;
+    padding: 5px;
+    font-size: 16px;
+}
+#dyscalculia_item .item_name {
+    margin-top: 20px;
+}
+.breakpoint_tablet #dyscalculia_item .item_name {
+    margin-top: 10px;
+}
+#dyscalculia_item .item_value {
+    margin-top: 3px;
+}
+#dyscalculia_item .icecream .item_picture {
+    background-image: image_url('simulations/dyscalculia/desktop/icecream.png');
+}
+.breakpoint_phone #dyscalculia_item .icecream .item_picture {
+    background-image: image_url('simulations/dyscalculia/phone/icecream.png');
+}
+#dyscalculia_item .apple .item_picture {
+    background-image: image_url('simulations/dyscalculia/desktop/apple.png');
+}
+.breakpoint_phone #dyscalculia_item .apple .item_picture {
+    background-image: image_url('simulations/dyscalculia/phone/apple.png');
+}
+#dyscalculia_item .banana .item_picture {
+    background-image: image_url('simulations/dyscalculia/desktop/banana.png');
+}
+.breakpoint_phone #dyscalculia_item .banana .item_picture {
+    background-image: image_url('simulations/dyscalculia/phone/banana.png');
+}
+#dyscalculia_item .cherry .item_picture {
+    background-image: image_url('simulations/dyscalculia/desktop/cherry.png');
+}
+.breakpoint_phone #dyscalculia_item .cherry .item_picture {
+    background-image: image_url('simulations/dyscalculia/phone/cherry.png');
+}
+#dyscalculia_item .milk .item_picture {
+    background-image: image_url('simulations/dyscalculia/desktop/milk.png');
+}
+.breakpoint_phone #dyscalculia_item .milk .item_picture {
+    background-image: image_url('simulations/dyscalculia/phone/milk.png');
+}
+#dyscalculia_item .pretzel .item_picture {
+    background-image: image_url('simulations/dyscalculia/desktop/pretzel.png');
+}
+.breakpoint_phone #dyscalculia_item .pretzel .item_picture {
+    background-image: image_url('simulations/dyscalculia/phone/pretzel.png');
+}
+#dyscalculia_item .paybuttontarget {
+    margin-top: 40px;
+    width: 100%;
+    height: 1px;
+}
+.breakpoint_tablet #dyscalculia_item .paybuttontarget {
+    margin-top: 10px;
+}
+#dyscalculia_item .paybutton,
+#dyscalculia_item .feedback {
+    margin-left: 45px;
+    width: 145px;
+    height: 60px;
+}
+.breakpoint_tablet #dyscalculia_item .paybutton,
+.breakpoint_tablet #dyscalculia_item .feedback {
+    margin-left: 35px;
+    width: 120px;
+}
+.breakpoint_phone #dyscalculia_item .paybutton,
+.breakpoint_phone #dyscalculia_item .feedback {
+    position: absolute;
+    top: 53px;
+    right: -120px;
+    width: 110px;
+    height: 40px;
+}
+#dyscalculia_item .paybutton {
+    background-color: #F2AF00;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    color: black;
+}
+.breakpoint_phone #dyscalculia_item .paybutton {
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#dyscalculia_item .feedback {
+    padding-top: 10px;
+    font-size: 32px;
+    color: white;
+}
+.breakpoint_phone #dyscalculia_item .feedback {
+    padding-top: 0px;
+    font-size: 24px;
+}
+
+.dyscalculia_game .coin {
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.breakpoint_phone.dyscalculia_game .coin {
+    width: 45px;
+    height: 45px;
+}
+.dyscalculia_game .penny {
+    background-image: image_url('simulations/dyscalculia/desktop/coins/penny.png');
+}
+.breakpoint_phone.dyscalculia_game .penny {
+    background-image: image_url('simulations/dyscalculia/phone/coins/penny.png');
+}
+.dyscalculia_game .nickel {
+    background-image: image_url('simulations/dyscalculia/desktop/coins/nickel.png');
+}
+.breakpoint_phone.dyscalculia_game .nickel {
+    background-image: image_url('simulations/dyscalculia/phone/coins/nickel.png');
+}
+.dyscalculia_game .dime {
+    background-image: image_url('simulations/dyscalculia/desktop/coins/dime.png');
+}
+.breakpoint_phone.dyscalculia_game .dime {
+    background-image: image_url('simulations/dyscalculia/phone/coins/dime.png');
+}
+.dyscalculia_game .quarter {
+    background-image: image_url('simulations/dyscalculia/desktop/coins/quarter.png');
+}
+.breakpoint_phone.dyscalculia_game .quarter {
+    background-image: image_url('simulations/dyscalculia/phone/coins/quarter.png');
+}
+
+.coin_anim {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    background-repeat: no-repeat;
+    background-position: left;
+    z-index: 70; /* Coins start at 10 and get +1 for each, so this gives us room */
+}
+.coin_anim_phone {
+    width: 90px;
+    height: 90px;
+}
+.quarter_anim {
+    background-image: image_url('simulations/dyscalculia/desktop/coins/quarter_seq.png');
+}
+.dime_anim {
+    background-image: image_url('simulations/dyscalculia/desktop/coins/dime_seq.png');
+}
+.nickel_anim {
+    background-image: image_url('simulations/dyscalculia/desktop/coins/nickel_seq.png');
+}
+.penny_anim {
+    background-image: image_url('simulations/dyscalculia/desktop/coins/penny_seq.png');
+}
+.coin_anim_phone.quarter_anim {
+    background-image: image_url('simulations/dyscalculia/phone/coins/quarter_seq.png');
+}
+.coin_anim_phone.dime_anim {
+    background-image: image_url('simulations/dyscalculia/phone/coins/dime_seq.png');
+}
+.coin_anim_phone.nickel_anim {
+    background-image: image_url('simulations/dyscalculia/phone/coins/nickel_seq.png');
+}
+.coin_anim_phone.penny_anim {
+    background-image: image_url('simulations/dyscalculia/phone/coins/penny_seq.png');
+}
+
+
+.dyscalculia_spinner {
+    background-color: white;
+    width: 136px;
+    height: 54px;
+    border: 2px solid #278DC1;
+    color: #278DC1;
+    font-size: 28px;
+    font-weight: bold;
+}
+.breakpoint_phone .dyscalculia_spinner {
+    width: 90px;
+    height: 30px;
+    font-size: 24px;
+    line-height: 24px;
+}
+.dyscalculia_spinner_right {
+    color: #8fad15;
+}
+.dyscalculia_spinner_wrong {
+    color: red;
+}
+.dyscalculia_spinner div {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: top;
+    text-align: center;
+}
+.breakpoint_phone .dyscalculia_spinner div {
+    height: 26px;
+    line-height: 26px;
+}
+.dyscalculia_spinner_static {
+    width: .5em;
+}
+.breakpoint_phone .dyscalculia_spinner_static {
+    width: .5em;
+}
+.dyscalculia_spinner_currency {
+    margin-left: 10px;
+    width: .75em;
+}
+.breakpoint_phone .dyscalculia_spinner_currency {
+    margin-left: 0;
+    width: .75em;
+}
+.dyscalculia_spinner_wheel {
+    width: .75em;
+    overflow: hidden;
+}
+.breakpoint_phone .dyscalculia_spinner_wheel {
+    width: .75em;
+}
+.dyscalculia_spinner_mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(39, 141, 193, 0.75);
+}

@@ -4,7 +4,7 @@
 /**
  * SASS mixin for cross-platform border-radius.
  */
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tip-detail.scss */
+/* line 1, ../css.source/modules/behavior-tool/_behavior-tip-detail.scss */
 .behavior-tip-detail {
   margin-top: 24px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
@@ -13,11 +13,11 @@
   padding: 48px 38px;
   margin-bottom: 48px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .behavior-tip-detail {
   outline: solid 1px #dfdfdf;
 }
-/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tip-detail.scss */
+/* line 10, ../css.source/modules/behavior-tool/_behavior-tip-detail.scss */
 .behavior-tip-detail h2 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -28,19 +28,19 @@
   font-size: 2.5rem;
   margin-bottom: 42px;
 }
-/* line 21, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tip-detail.scss */
+/* line 21, ../css.source/modules/behavior-tool/_behavior-tip-detail.scss */
 .behavior-tip-detail section {
   border-bottom: 1px solid #d2d2d2;
   margin-bottom: 38px;
   padding-bottom: 24px;
 }
-/* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tip-detail.scss */
+/* line 26, ../css.source/modules/behavior-tool/_behavior-tip-detail.scss */
 .behavior-tip-detail section:last-child {
   margin-bottom: 0px;
   border-bottom: none;
   padding-bottom: 0px;
 }
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tip-detail.scss */
+/* line 32, ../css.source/modules/behavior-tool/_behavior-tip-detail.scss */
 .behavior-tip-detail section h3 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -48,12 +48,12 @@
   color: #8c3e84;
   margin-bottom: 20px;
 }
-/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tip-detail.scss */
+/* line 38, ../css.source/modules/behavior-tool/_behavior-tip-detail.scss */
 .behavior-tip-detail section h3.first-sub-header {
   display: none;
   display: block;
 }
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tip-detail.scss */
+/* line 45, ../css.source/modules/behavior-tool/_behavior-tip-detail.scss */
 .behavior-tip-detail section p {
   color: #696969;
   list-style: none;
@@ -67,41 +67,41 @@
 /**
  * SASS partial for Behavior Tool related articles module.
  */
-/* line 7, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 6, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .assistive-tool-related-articles-large .assistive-tool-related-articles {
   padding: 20px;
   padding-bottom: 0px;
 }
 
-/* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 14, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .assistive-tool-related-articles-small .assistive-tool-related-articles {
   padding: 6px 15px 5px;
   padding: 20px;
 }
 
-/* line 24, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 23, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .behavior-tool-related-articles-large .behavior-tool-related-articles {
   padding: 20px;
   padding-bottom: 0px;
 }
 
-/* line 33, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 32, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .behavior-tool-related-articles-small .behavior-tool-related-articles {
   padding: 18px 15px 18px;
   padding: 20px;
 }
-/* line 35, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 34, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .behavior-tool-related-articles-small .behavior-tool-related-articles li {
   margin-bottom: 3px;
 }
 
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 45, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .tool-related-articles-wrap,
 .assistive-tool-related-articles-small,
 .behavior-tool-related-articles-small {
   background: #426da9;
 }
-/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 47, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .tool-related-articles-wrap ul,
 .assistive-tool-related-articles-small ul,
 .behavior-tool-related-articles-small ul {
@@ -109,11 +109,11 @@
   padding: 0;
   margin-left: 10px;
 }
-/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 54, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .tool-related-articles-wrap ul li,
 .assistive-tool-related-articles-small ul li,
 .behavior-tool-related-articles-small ul li {
-  background-image: url("../images/icon.tools.related-articles.png");
+  background-image: url('../images/icon.tools.related-articles.png?1404390952');
   background-size: 15px 20px;
   background-repeat: no-repeat;
   background-position: 0;
@@ -122,13 +122,13 @@
   padding-top: 18px;
   padding-top: 16px;
 }
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 65, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .no-backgroundsize .tool-related-articles-wrap ul li, .no-backgroundsize
 .assistive-tool-related-articles-small ul li, .no-backgroundsize
 .behavior-tool-related-articles-small ul li {
-  background-image: url("../images/icon.tools.related-articles.lo-res.png");
+  background-image: url('../images/icon.tools.related-articles.lo-res.png?1404390952');
 }
-/* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 68, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .tool-related-articles-wrap ul li a,
 .assistive-tool-related-articles-small ul li a,
 .behavior-tool-related-articles-small ul li a {
@@ -136,7 +136,7 @@
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-tool-related-articles.scss */
+/* line 71, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .tool-related-articles-wrap ul li a:hover,
 .assistive-tool-related-articles-small ul li a:hover,
 .behavior-tool-related-articles-small ul li a:hover {
@@ -147,17 +147,17 @@
  * SASS partial for behavior-advice module.
  * Templates affected: b1 and b2
  */
-/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 10, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice-layout {
   background: #f4f2f1;
   padding: 0 15px;
 }
 
-/* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 18, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice-container-wrapper {
   background: #f4f2f1;
 }
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 22, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice-container-wrapper .behavior-advice-container-pull .behavior-advice-wrapper {
   position: relative;
   top: -31px;
@@ -167,11 +167,11 @@
   margin: 0 0 35px 0;
 }
 
-/* line 38, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 37, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice-container {
   position: relative;
 }
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 39, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice-container .behavior-advice-wrapper {
   background: #fff;
   padding: 0 20px;
@@ -180,14 +180,14 @@
   margin: 0;
 }
 
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 53, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice {
   margin: auto;
   max-width: 600px;
   padding: 15px 0 15px 0;
   padding: 33px 20px 15px 20px;
 }
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 61, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice .behavior-advice-title {
   color: #7b3f84;
   font-size: 15px;
@@ -197,16 +197,16 @@
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 71, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice .advice-question-wrapper {
   margin-bottom: 10px;
 }
-/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 77, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice .advice-question-bottom .advice-question-wrapper {
   width: 71% !important;
   float: left;
 }
-/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 83, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice .advice-question-bottom .behavior-advice-actions {
   display: block;
   margin: 0;
@@ -214,11 +214,11 @@
   float: right;
   width: 27%;
 }
-/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 91, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice .advice-question-bottom .behavior-advice-actions .submit-button {
   width: 100%;
 }
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 98, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice .advice-more-link {
   color: #426da9;
   font-size: 14px;
@@ -230,7 +230,7 @@
   font-size: 1rem;
   margin-top: 5px;
 }
-/* line 111, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_behavior-advice.scss */
+/* line 110, ../css.source/modules/behavior-tool/_behavior-advice.scss */
 .behavior-advice .button span {
   max-height: 50px;
 }
@@ -238,7 +238,7 @@
 /**
  * SASS partial for comment-gallery module.
  */
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 5, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery {
   background-color: #f4f2f1;
   padding: 22px 0 30px 0;
@@ -247,46 +247,46 @@
   margin-bottom: 45px;
   padding-bottom: 0;
 }
-/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 19, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .slider-col {
   width: 75%;
   margin: 0 auto;
   width: 100%;
   width: 90%;
 }
-/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 33, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .rsArrow .rsArrowIcn {
   top: auto;
   bottom: 0;
 }
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 39, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .rsArrowLeft .rsArrowIcn {
   right: 55%;
   right: 60%;
   right: -50px;
   top: -40px;
 }
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 53, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .rsArrowRight .rsArrowIcn {
   right: 30%;
   right: 35%;
   right: -90px;
   top: -40px;
 }
-/* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 68, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .rsOverflow {
   overflow: visible;
   height: 120% !important;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .comment-gallery .rsOverflow {
   height: 500px !important;
 }
-/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 78, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .rsOverflow .rsSlide {
   overflow: visible;
 }
-/* line 84, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 83, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery h2 {
   color: #7a4183;
   font-weight: normal;
@@ -296,19 +296,23 @@
   text-align: left;
   margin-bottom: 20px;
 }
-/* line 96, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 95, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .comment-gallery-container {
   margin: 0 auto;
   height: 400px !important;
 }
-/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 101, ../css.source/modules/behavior-tool/_comment-gallery.scss */
+.comment-gallery .comment-gallery-container .rsContainer {
+  height: auto;
+}
+/* line 105, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .comment-gallery-container ul {
   margin: 22px 0 0;
   padding: 0;
   list-style: none;
   white-space: nowrap;
 }
-/* line 108, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 111, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .comment-gallery-container ul li {
   width: 96%;
   white-space: normal;
@@ -325,7 +329,7 @@
   width: 230px;
   margin: 0 30px;
 }
-/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 133, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .comment-gallery-container ul li p {
   color: #696969;
   font-family: Arial, sans-serif;
@@ -334,7 +338,7 @@
   line-height: 22px;
   min-height: 150px;
 }
-/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 141, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .comment-gallery-container ul li .count-comments {
   background-color: #fff;
   padding-bottom: 20px;
@@ -343,11 +347,11 @@
   display: block;
   margin-left: 0;
 }
-/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 149, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .comment-gallery-container ul li .count-comments a {
   border-top: none;
 }
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 155, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .comment-gallery-container ul li h4 {
   color: #646464;
   font-family: Arial, sans-serif;
@@ -356,7 +360,7 @@
   line-height: 24px;
   font-weight: bold;
 }
-/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_comment-gallery.scss */
+/* line 163, ../css.source/modules/behavior-tool/_comment-gallery.scss */
 .comment-gallery .comment-gallery-container ul li > a {
   color: #426da9;
   font-size: 16px;
@@ -365,12 +369,12 @@
   margin-top: 5px;
 }
 
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .ie-padding {
   padding-bottom: 80px;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_first-next-prev-menu.scss */
+/* line 1, ../css.source/modules/behavior-tool/_first-next-prev-menu.scss */
 .first-next-prev-menu {
   display: none;
   float: right;
@@ -393,11 +397,11 @@
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .first-next-prev-menu {
   outline: solid 1px #dfdfdf;
 }
-/* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_first-next-prev-menu.scss */
+/* line 17, ../css.source/modules/behavior-tool/_first-next-prev-menu.scss */
 .first-next-prev-menu:before {
   content: "";
   width: 100%;
@@ -408,30 +412,30 @@
   left: 0px;
   z-index: 2;
 }
-/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_first-next-prev-menu.scss */
+/* line 27, ../css.source/modules/behavior-tool/_first-next-prev-menu.scss */
 .first-next-prev-menu span {
   width: 65px;
   margin-right: 108px;
   display: inline-block;
 }
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_first-next-prev-menu.scss */
+/* line 32, ../css.source/modules/behavior-tool/_first-next-prev-menu.scss */
 .first-next-prev-menu .rsArrowLeft .rsArrowIcn {
   right: 76px;
   top: 23px;
 }
-/* line 36, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_first-next-prev-menu.scss */
+/* line 36, ../css.source/modules/behavior-tool/_first-next-prev-menu.scss */
 .first-next-prev-menu .rsArrowRight .rsArrowIcn {
   right: 35px;
   top: 23px;
 }
 
-/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_first-next-prev-menu.scss */
+/* line 42, ../css.source/modules/behavior-tool/_first-next-prev-menu.scss */
 .left-of-first-next-prev-menu {
   position: relative;
   bottom: 10px;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_second-next-prev-menu.scss */
+/* line 1, ../css.source/modules/behavior-tool/_second-next-prev-menu.scss */
 .second-next-prev-menu {
   overflow: hidden;
   position: relative;
@@ -443,15 +447,15 @@
   border-radius: 4px;
   max-width: 320px;
 }
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_second-next-prev-menu.scss */
+/* line 4, ../css.source/modules/behavior-tool/_second-next-prev-menu.scss */
 .second-next-prev-menu .second-next-prev-menu-slider .rsOverflow {
   overflow: visible;
 }
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_second-next-prev-menu.scss */
+/* line 6, ../css.source/modules/behavior-tool/_second-next-prev-menu.scss */
 .second-next-prev-menu .second-next-prev-menu-slider .rsOverflow .rsArrowIcn {
   top: -30px;
 }
-/* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_second-next-prev-menu.scss */
+/* line 16, ../css.source/modules/behavior-tool/_second-next-prev-menu.scss */
 .second-next-prev-menu span {
   color: #7a4184;
   font-size: 18px;
@@ -464,7 +468,7 @@
   margin-bottom: 34px;
   margin-bottom: 0px;
 }
-/* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_second-next-prev-menu.scss */
+/* line 30, ../css.source/modules/behavior-tool/_second-next-prev-menu.scss */
 .second-next-prev-menu .rsArrowLeft .rsArrowIcn {
   right: 86px;
   top: 6px;
@@ -475,7 +479,7 @@
   left: auto;
   top: 6px;
 }
-/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_second-next-prev-menu.scss */
+/* line 44, ../css.source/modules/behavior-tool/_second-next-prev-menu.scss */
 .second-next-prev-menu .rsArrowRight .rsArrowIcn {
   right: 15px;
   top: 6px;
@@ -486,13 +490,13 @@
   left: auto;
   top: 6px;
 }
-/* line 58, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_second-next-prev-menu.scss */
+/* line 58, ../css.source/modules/behavior-tool/_second-next-prev-menu.scss */
 .second-next-prev-menu p.next-prev-title {
   margin-top: 18px;
   max-width: 180px;
   max-width: 100%;
 }
-/* line 64, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_second-next-prev-menu.scss */
+/* line 64, ../css.source/modules/behavior-tool/_second-next-prev-menu.scss */
 .second-next-prev-menu p.next-prev-title a {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -503,7 +507,7 @@
 /**
  * SASS partial for in-this-video module.
  */
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_in-this-video.scss */
+/* line 5, ../css.source/modules/behavior-tool/_in-this-video.scss */
 .expert-advice-wrapper {
   padding-top: 20px;
   margin-top: 24px;
@@ -512,16 +516,16 @@
   -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
   box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .expert-advice-wrapper {
   outline: solid 1px #dfdfdf;
 }
 
-/* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_in-this-video.scss */
+/* line 14, ../css.source/modules/behavior-tool/_in-this-video.scss */
 .expert-video {
   width: 100%;
 }
-/* line 17, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_in-this-video.scss */
+/* line 16, ../css.source/modules/behavior-tool/_in-this-video.scss */
 .expert-video h2 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -539,17 +543,17 @@
   margin-left: 40px;
   padding-bottom: 40px;
 }
-/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_in-this-video.scss */
+/* line 33, ../css.source/modules/behavior-tool/_in-this-video.scss */
 .expert-video img {
   width: 100%;
 }
 
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_in-this-video.scss */
+/* line 39, ../css.source/modules/behavior-tool/_in-this-video.scss */
 .in-this-video {
   margin-bottom: 30px;
   margin-bottom: 25px;
 }
-/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_in-this-video.scss */
+/* line 46, ../css.source/modules/behavior-tool/_in-this-video.scss */
 .in-this-video h2 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -558,7 +562,7 @@
   margin: 30px 0 10px 0px;
   margin: 50px 0 10px 40px;
 }
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_in-this-video.scss */
+/* line 58, ../css.source/modules/behavior-tool/_in-this-video.scss */
 .in-this-video ul {
   border-bottom: 1px solid #ccc;
   color: #696969;
@@ -569,7 +573,7 @@
   border-bottom: none;
   margin: 0 40px;
 }
-/* line 72, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_in-this-video.scss */
+/* line 71, ../css.source/modules/behavior-tool/_in-this-video.scss */
 .in-this-video ul li {
   border-bottom: 1px solid #e8e8e8;
   font-size: 16px;
@@ -579,7 +583,7 @@
   line-height: 1.5rem;
   padding: 14px 15px 14px 0;
 }
-/* line 79, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_in-this-video.scss */
+/* line 78, ../css.source/modules/behavior-tool/_in-this-video.scss */
 .in-this-video ul li:last-child {
   border-bottom: 0;
 }
@@ -587,17 +591,17 @@
 /**
  * SASS partial for advice-results module.
  */
-/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 10, ../css.source/modules/behavior-tool/_advice-results.scss */
 .behavior-results {
   background: #f4f2f1;
 }
 
-/* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 14, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results {
   background-color: #f4f2f1;
   padding-top: 40px;
 }
-/* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 18, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results header {
   margin-bottom: 40px;
   position: relative;
@@ -606,7 +610,7 @@
   margin-bottom: 10px;
   text-align: left;
 }
-/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 30, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results header h3 {
   font-size: 18px;
   font-size: 1.125rem;
@@ -619,7 +623,7 @@
   font-weight: normal;
   margin-bottom: 0px;
 }
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 44, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results header .how-to-use {
   line-height: 36px;
   line-height: 2.25rem;
@@ -629,7 +633,7 @@
   top: 10px;
   display: inline-block;
 }
-/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 54, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .results-wrapper {
   text-align: center;
   margin-left: -30px;
@@ -639,11 +643,11 @@
   margin-left: -65px;
   text-align: center;
 }
-/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 66, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .results-wrapper .search-result {
   text-align: center;
 }
-/* line 77, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 76, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .search-result {
   background-color: #fff;
   display: inline-block;
@@ -656,11 +660,11 @@
   margin: 35px 0px 35px 60px;
   margin-left: 62px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .advice-results .search-result {
   max-width: 230px;
 }
-/* line 98, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 97, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-body {
   background-color: #7a4183;
   padding: 20px 20px 65px 20px;
@@ -672,15 +676,15 @@
   max-height: 190px;
   min-height: 190px;
 }
-/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 109, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-body.open .result-hover {
   display: block;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .advice-results .result-body {
   padding: 20px 20px 10px 20px;
 }
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 118, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-info {
   position: absolute;
   bottom: 15px;
@@ -689,7 +693,7 @@
   position: relative;
   margin-top: 15px;
 }
-/* line 130, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 129, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover {
   background-color: #f4f2f1;
   border-collapse: separate;
@@ -701,7 +705,7 @@
   left: 0px;
   width: 100%;
 }
-/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 141, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .hover-link-wrapper a {
   font-size: 16px;
   font-size: 1rem;
@@ -712,38 +716,38 @@
   width: 100%;
   vertical-align: top;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .advice-results .result-hover .hover-link-wrapper a {
   display: inline-block;
 }
-/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 154, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .hover-link-wrapper .tip-save {
   border-bottom: 1px solid #e8e6e5;
   padding: 0 0 6px 0;
   vertical-align: bottom;
 }
-/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 159, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .hover-link-wrapper .tip-save:hover, .advice-results .result-hover .hover-link-wrapper .tip-save:focus {
   text-decoration: none;
   color: #426da9;
 }
-/* line 167, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 166, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .hover-link-wrapper .tip-remind-me:hover, .advice-results .result-hover .hover-link-wrapper .tip-remind-me:focus {
   text-decoration: none;
   color: #426da9;
 }
-/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 172, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .hover-link-wrapper .tip-save > span, .advice-results .result-hover .hover-link-wrapper .tip-remind-me > span {
   height: 33px;
   display: inline-block;
   padding-top: 4px;
   padding-left: 5px;
 }
-/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 181, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .hover-link-wrapper {
   display: table-row;
 }
-/* line 186, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 185, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-tip {
   margin-top: 6px;
   margin-bottom: 22px;
@@ -759,19 +763,19 @@
   margin-top: 25px;
   margin-bottom: 0px;
 }
-/* line 201, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 200, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .icon-advice-like,
 .advice-results .tip-comment {
-  background-image: url("../images/sprite.advice.results.png");
+  background-image: url('../images/sprite.advice.results.png?1404390952');
   background-size: 86px 29px;
   display: inline-block;
 }
-/* line 206, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 205, ../css.source/modules/behavior-tool/_advice-results.scss */
 .no-backgroundsize .advice-results .icon-advice-like, .no-backgroundsize
 .advice-results .tip-comment {
-  background-image: url("../images/sprite.advice.results.lo-res.png");
+  background-image: url('../images/sprite.advice.results.lo-res.png?1404390952');
 }
-/* line 211, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 210, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .tip-comment {
   font-size: 17px;
   font-size: 1.0625rem;
@@ -782,7 +786,7 @@
   text-align: center;
   width: 32px;
 }
-/* line 221, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 220, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .tip-like {
   font-size: 17px;
   font-size: 1.0625rem;
@@ -791,34 +795,34 @@
   font-size: 1.5625rem;
   font-weight: bold;
 }
-/* line 229, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 228, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .tip-like .icon-advice-like {
   background-position: -33px 11px;
   height: 29px;
   margin-right: 8px;
   width: 18px;
 }
-/* line 239, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 238, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save:focus i.icon-advice-save, .advice-results .result-hover .tip-remind-me:focus i.icon-advice-save {
   margin-top: 5px;
-  background: url("../images/sprite.icons.article-tips.png") 0px -35px no-repeat;
+  background: url('../images/sprite.icons.article-tips.png?1404390952') 0px -35px no-repeat;
   background-size: 145px 145px;
 }
-/* line 244, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 243, ../css.source/modules/behavior-tool/_advice-results.scss */
 .no-backgroundsize .advice-results .result-hover .tip-save:focus i.icon-advice-save, .no-backgroundsize .advice-results .result-hover .tip-remind-me:focus i.icon-advice-save {
-  background-image: url("../images/sprite.icons.article-tips.145.png");
+  background-image: url('../images/sprite.icons.article-tips.145.png?1404390952');
 }
-/* line 249, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 248, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save:focus i.icon-advice-bell, .advice-results .result-hover .tip-remind-me:focus i.icon-advice-bell {
   margin-top: 4px;
-  background: url("../images/sprite.icons.article-tips.png") -46px -35px no-repeat;
+  background: url('../images/sprite.icons.article-tips.png?1404390952') -46px -35px no-repeat;
   background-size: 145px 145px;
 }
-/* line 254, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 253, ../css.source/modules/behavior-tool/_advice-results.scss */
 .no-backgroundsize .advice-results .result-hover .tip-save:focus i.icon-advice-bell, .no-backgroundsize .advice-results .result-hover .tip-remind-me:focus i.icon-advice-bell {
-  background-image: url("../images/sprite.icons.article-tips.145.png");
+  background-image: url('../images/sprite.icons.article-tips.145.png?1404390952');
 }
-/* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 261, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-save, .advice-results .result-hover .tip-save i.icon-advice-bell, .advice-results .result-hover .tip-remind-me i.icon-advice-save, .advice-results .result-hover .tip-remind-me i.icon-advice-bell {
   display: inline-block;
   float: left;
@@ -826,7 +830,7 @@
   width: 25px;
   margin-right: 0px;
 }
-/* line 273, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 272, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-save,
 .advice-results .result-hover .tip-save i.icon-advice-save.active,
 .advice-results .result-hover .tip-save i.icon-advice-bell,
@@ -834,11 +838,11 @@
 .advice-results .result-hover .tip-remind-me i.icon-advice-save.active,
 .advice-results .result-hover .tip-remind-me i.icon-advice-bell,
 .advice-results .result-hover .tip-remind-me i.icon-advice-bell.active {
-  background-image: url("../images/sprite.icons.article-tips.png");
+  background-image: url('../images/sprite.icons.article-tips.png?1404390952');
   background-repeat: no-repeat;
   background-size: 145px 145px;
 }
-/* line 281, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 280, ../css.source/modules/behavior-tool/_advice-results.scss */
 .no-backgroundsize .advice-results .result-hover .tip-save i.icon-advice-save, .no-backgroundsize
 .advice-results .result-hover .tip-save i.icon-advice-save.active, .no-backgroundsize
 .advice-results .result-hover .tip-save i.icon-advice-bell, .no-backgroundsize
@@ -846,51 +850,51 @@
 .advice-results .result-hover .tip-remind-me i.icon-advice-save.active, .no-backgroundsize
 .advice-results .result-hover .tip-remind-me i.icon-advice-bell, .no-backgroundsize
 .advice-results .result-hover .tip-remind-me i.icon-advice-bell.active {
-  background-image: url("../images/sprite.icons.article-tips.145.png");
+  background-image: url('../images/sprite.icons.article-tips.145.png?1404390952');
 }
-/* line 287, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 286, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-save, .advice-results .result-hover .tip-remind-me i.icon-advice-save {
   background-position: 0px 0px;
   margin-top: 5px;
 }
-/* line 291, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 290, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-save.is-hover, .advice-results .result-hover .tip-remind-me i.icon-advice-save.is-hover {
   margin-top: 5px;
   background-position: 0px -35px;
 }
-/* line 297, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 296, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-save.active, .advice-results .result-hover .tip-remind-me i.icon-advice-save.active {
   background-position: 0px -70px;
   margin-top: 0px;
 }
-/* line 301, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 300, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-save.active.is-hover, .advice-results .result-hover .tip-remind-me i.icon-advice-save.active.is-hover {
   margin-top: 0px;
   background-position: 0px -120px;
 }
-/* line 309, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 308, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-bell, .advice-results .result-hover .tip-remind-me i.icon-advice-bell {
   background-position: -46px 0px;
   margin-top: 4px;
 }
-/* line 313, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 312, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-bell.is-hover, .advice-results .result-hover .tip-remind-me i.icon-advice-bell.is-hover {
   margin-top: 4px;
   background-position: -46px -35px;
 }
-/* line 320, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 319, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-bell.active, .advice-results .result-hover .tip-remind-me i.icon-advice-bell.active {
   background-position: -46px -70px;
   margin-top: 0px;
 }
-/* line 324, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 323, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-bell.active.is-hover, .advice-results .result-hover .tip-remind-me i.icon-advice-bell.active.is-hover {
   margin-top: 0px;
   background-position: -46px -120px;
 }
-/* line 336, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 335, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .icon-results-more {
-  background-image: url("../images/sprite.icon.arrows.png");
+  background-image: url('../images/sprite.icon.arrows.png?1404390952');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150px 150px;
@@ -899,7 +903,7 @@
   margin-left: 20px;
   width: 18px;
 }
-/* line 347, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 346, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .tip-view {
   font-size: 18px;
   font-size: 1.125rem;
@@ -907,11 +911,11 @@
   margin-top: 25px;
   text-decoration: underline;
 }
-/* line 353, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 352, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .tip-view:hover, .advice-results .tip-view:focus {
   text-decoration: none;
 }
-/* line 358, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 357, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .rsArrowWrapper {
   bottom: 60px;
   margin-bottom: 10px;
@@ -921,24 +925,24 @@
   width: 100%;
   z-index: 9999;
 }
-/* line 367, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 366, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .rsVisibleNearbyWrap {
   min-height: 354px;
 }
-/* line 370, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 369, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .rsArrow .rsArrowIcn {
   top: -8px;
 }
-/* line 373, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 372, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .rsArrowRight .rsArrowIcn {
   margin-right: -16px;
   right: 5px;
 }
-/* line 377, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 376, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .rsArrowLeft .rsArrowIcn {
   right: 58px;
 }
-/* line 380, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 379, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .results-more-link {
   display: none;
   text-align: center;
@@ -952,17 +956,17 @@
   display: block;
   padding-bottom: 45px;
 }
-/* line 389, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 388, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .results-more-link span {
   display: inline-block;
 }
-/* line 393, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 392, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .results-more-link:hover span {
   text-decoration: underline;
 }
-/* line 402, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 401, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .icon-tooltip {
-  background-image: url("../images/sprite.tooltip.info.png");
+  background-image: url('../images/sprite.tooltip.info.png?1404390952');
   background-size: 44px 22px;
   cursor: pointer;
   display: inline-block;
@@ -971,32 +975,32 @@
   width: 22px;
   display: none;
 }
-/* line 410, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 409, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .icon-tooltip:hover {
   background-position: -22px 0px;
 }
-/* line 416, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 415, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results footer {
   display: none;
   position: relative;
   text-align: right;
   display: block;
 }
-/* line 422, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 421, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results footer p {
   color: dimgrey;
 }
-/* line 423, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 422, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results footer p, .advice-results footer .suggest-challenge {
   display: inline-block;
 }
-/* line 427, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_advice-results.scss */
+/* line 426, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .show-more {
   display: none;
   display: block;
 }
 
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_suggest-a-behavior.scss */
+/* line 3, ../css.source/modules/behavior-tool/_suggest-a-behavior.scss */
 #suggest-a-behavior .modal-body {
   padding: 20px 16px;
   font-size: 14px;
@@ -1008,7 +1012,7 @@
   font-size: 1rem;
   padding: 50px 36px;
 }
-/* line 13, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_suggest-a-behavior.scss */
+/* line 13, ../css.source/modules/behavior-tool/_suggest-a-behavior.scss */
 #suggest-a-behavior .modal-body .alert-message {
   border: 1px solid #faebcc;
   color: #8a6d3b;
@@ -1016,11 +1020,11 @@
   padding: 15px;
   margin-bottom: 20px;
 }
-/* line 20, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_suggest-a-behavior.scss */
+/* line 20, ../css.source/modules/behavior-tool/_suggest-a-behavior.scss */
 #suggest-a-behavior .modal-body .submit-button {
   max-width: 200px;
 }
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_suggest-a-behavior.scss */
+/* line 23, ../css.source/modules/behavior-tool/_suggest-a-behavior.scss */
 #suggest-a-behavior .modal-body h3 {
   color: #7a4183;
   font-size: 20px;
@@ -1030,19 +1034,19 @@
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_suggest-a-behavior.scss */
+/* line 32, ../css.source/modules/behavior-tool/_suggest-a-behavior.scss */
 #suggest-a-behavior .modal-body p {
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 26px;
 }
-/* line 36, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_suggest-a-behavior.scss */
+/* line 36, ../css.source/modules/behavior-tool/_suggest-a-behavior.scss */
 #suggest-a-behavior .modal-body textarea {
   display: block;
   margin-bottom: 20px;
   height: 8em;
   margin-bottom: 12px;
 }
-/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_suggest-a-behavior.scss */
+/* line 44, ../css.source/modules/behavior-tool/_suggest-a-behavior.scss */
 #suggest-a-behavior .modal-body input[type=submit] {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -1053,12 +1057,12 @@
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_suggest-a-behavior.scss */
+/* line 54, ../css.source/modules/behavior-tool/_suggest-a-behavior.scss */
 #suggest-a-behavior .modal-body .sign-up {
   display: inline-block;
   float: right;
 }
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_suggest-a-behavior.scss */
+/* line 59, ../css.source/modules/behavior-tool/_suggest-a-behavior.scss */
 #suggest-a-behavior .modal-body .sign-up a {
   color: #426da9;
   text-decoration: underline;
@@ -1067,15 +1071,15 @@
   margin-top: 14px;
 }
 
-/* line 2, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 2, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts {
   padding: 174px 22px;
 }
-/* line 4, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 4, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts .modal-dialog, #meet-the-experts .modal-content {
   width: 673px;
 }
-/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 10, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts .modal-body {
   padding: 20px 16px;
   font-size: 14px;
@@ -1088,22 +1092,22 @@
   padding: 33px 39px 40px;
 }
 
-/* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 26, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts .slide {
   display: none;
 }
-/* line 29, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 29, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts .active {
   display: block;
 }
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 32, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts .change-slide-buttons {
   position: relative;
   top: 0;
   right: 0;
 }
 
-/* line 41, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 41, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts h2 {
   color: #7b3f84;
   font-size: 20px;
@@ -1117,17 +1121,17 @@
   line-height: 30px;
   line-height: 1.875rem;
 }
-/* line 52, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 52, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts img {
   float: left;
   padding: 3px 20px 20px 2px;
   padding: 3px 38px 0 2px;
 }
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 59, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts .expert-name {
   margin-bottom: 10px;
 }
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/behavior-tool/_meet-the-experts.scss */
+/* line 62, ../css.source/modules/behavior-tool/_meet-the-experts.scss */
 #meet-the-experts .expert-description {
   font-family: Arial, sans-serif;
   font-size: 15px;
@@ -1138,13 +1142,13 @@
   color: #696969;
 }
 
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_keep-reading.scss */
+/* line 1, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading {
   margin: 0px 0px 30px 0px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_keep-reading.scss */
+/* line 3, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading h3 {
-  background-image: url("../images/icon.book.read-me.png");
+  background-image: url('../images/icon.book.read-me.png?1404390952');
   background-repeat: no-repeat;
   background-size: contain;
   height: 34px;
@@ -1157,37 +1161,37 @@
   margin: 0 0 28px 0;
   width: 80%;
 }
-/* line 18, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_keep-reading.scss */
+/* line 18, ../css.source/modules/article/_keep-reading.scss */
 .no-backgroundsize .keep-reading h3 {
-  background-image: url("../images/icon.book.read-me.lo-res.png");
+  background-image: url('../images/icon.book.read-me.lo-res.png?1404390952');
 }
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_keep-reading.scss */
+/* line 23, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-/* line 26, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_keep-reading.scss */
+/* line 26, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading ul li {
   padding: 16px 10px 16px 0;
   border-bottom: 1px solid #f4f2f0;
   line-height: 20px;
   line-height: 1.25rem;
 }
-/* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_keep-reading.scss */
+/* line 30, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading ul li a {
   font-size: 18px;
   font-weight: normal;
   /* book */
   padding: 20px 0;
 }
-/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_keep-reading.scss */
+/* line 39, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading ul li.last-child {
   /* using class instead of pseudo class for ie8 compatibility */
   border-bottom: none;
 }
 
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/article/_keep-reading.scss */
+/* line 45, ../css.source/modules/article/_keep-reading.scss */
 .knowledge-quiz-page .keep-reading {
   display: none;
   display: block;

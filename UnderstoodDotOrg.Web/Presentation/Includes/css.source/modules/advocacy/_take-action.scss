@@ -1,0 +1,107 @@
+/**
+ * SASS partial for advocacy take action module.
+ */
+ .l-take-action{
+  margin: 0;
+
+  @include bp($bp-small){
+    margin: 0 15px;
+  }
+
+  @include bp($bp-small-plus){
+
+    > .row{
+      border-bottom: 1px solid #c6c5c5;
+      margin-bottom: 53px;
+    }
+
+  }
+
+ }
+
+ .take-action{
+    h2{
+      color: #7a4183;
+      @include rem(font-size, 20px);
+      @include rem(line-height, 28px);
+      font-weight: normal;
+      margin: 10px 15px 27px;
+      @include bp($bp-small){
+        @include rem(font-size, 36px);
+        margin: 4px 0px 45px;
+      }
+    }
+    .action-items{
+      margin-bottom: 35px;
+    }
+    .action-item{
+      margin-bottom: 26px;
+      @include bp($bp-small){
+        margin-bottom: 35px;
+      }
+      .action-header{
+        margin: 0 15px;
+        @include bp($bp-small){
+          margin: 0;
+        }
+        .action-image{
+          float: left;
+          margin: 4px 20px 10px 0px;
+          max-width: 290px;
+          width: 43%;
+          @include bp($bp-small){
+            margin: 4px 8% 20px 1px;
+            max-width: 190px;
+            width: 30%;
+          }
+          img{
+            width: 100%;
+          }
+        }
+        .action-description{
+          color: #696969;
+          @include rem(font-size, 15px);
+          @include rem(line-height, 24px);
+          margin-bottom: 18px;
+          @include bp($bp-small){
+            @include rem(font-size, 16px);
+            margin-bottom : 7px;
+            margin-left: 38%;
+          }
+        }
+        .action-title{
+          @include rem(font-size, 17px);
+          @include rem(line-height, 22px);
+          font-weight: normal;
+          @include bp($bp-small){
+            margin-bottom: 18px;
+            margin-left: 38%;
+          }
+        }// action-title
+      }
+      .action-button-wrap{
+        background: #f4f2f1;
+        margin-bottom: 15px;
+        padding: 13px 0 3px;
+        text-align: center;
+        @include bp($bp-small){
+          background: #ffffff;
+          margin-left: 38%;
+          text-align: left;
+        }
+        button{
+          @include rem(font-size, 14px);
+          @include rem(line-height, 36px);
+          height: 35px;
+          margin-right: 5px;
+          width: 132px;
+          @include bp($bp-small){
+            @include rem(font-size, 16px);
+            @include rem(line-height, 38px);
+            height: 40px;
+            width: 100px
+          }
+        }
+      }
+    }
+ }

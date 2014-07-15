@@ -2486,7 +2486,6 @@
     <Content Include="Presentation\Includes\images\logo.partner.readingrockets.png" />
     <Content Include="Presentation\Includes\images\logo.partner.verisign.png" />
     <Content Include="Presentation\Includes\images\logo.u.large.lo-res.png" />
-    <Content Include="Presentation\Includes\images\mid-dot.png" />
     <Content Include="Presentation\Includes\images\overlay-background.png" />
     <Content Include="Presentation\Includes\images\overlay-close.png" />
     <Content Include="Presentation\Includes\images\pay-by-check-sample.gif" />
@@ -2633,7 +2632,7 @@
     <Content Include="Presentation\Includes\images\simulations\common\phone\clock.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\apple.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\banana.png" />
-    <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\cherries.png" />
+    <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\cherry.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\clock_clear.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\coins\dime.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\coins\dime_seq.png" />

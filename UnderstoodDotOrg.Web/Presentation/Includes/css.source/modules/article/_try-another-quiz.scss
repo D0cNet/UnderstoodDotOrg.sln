@@ -1,0 +1,103 @@
+@import 'config';
+
+.try-another-quiz {
+  background: #f4f2f1;
+  margin:0 0 25px 0;
+  padding:15px;
+
+  @include bp($bp-small-plus) {
+    padding: 50px 15px;
+    margin:0 0 45px 0;
+  }
+
+  h2 {
+    color: #794382;
+    @include rem(font-size, 20px);
+    margin:20px 0;
+    text-align:center;
+    font-weight:normal;
+    @include bp($bp-small-plus) {
+      text-align:left;
+      @include rem(font-size, 36px);
+      margin:0 0 40px 0;
+    }
+  }
+  .quiz {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 0;
+      min-height: 200px;
+      padding: 20px 5px 15px 20px;
+    }
+    @include bp($bp-medium) {
+      padding: 40px 20px 30px 40px;
+    }
+    .quiz-image {
+      margin-bottom: 20px;
+      max-width: 150px;
+      max-height: 84px;
+      img {
+        width: 100%;
+        @include bp($bp-small-plus) {
+          max-width: 100%;
+          width: auto;
+        }
+      }
+      @include bp($bp-small-plus){
+        float: left;
+        margin-bottom: 0;
+        width: 44%;
+      }
+    }
+    .quiz-text {
+      @include bp($bp-small-plus) {
+        float: left;
+        margin-left: 7%;
+        width: 49%;
+      }
+      h4 {
+        color: #7a4183;
+        @include rem(font-size, 20px);
+        @include rem(line-height, 28px);
+        font-weight: normal;
+        margin-bottom: 10px;
+        @include bp($bp-small-plus) {
+          margin-bottom: 40px;
+        }
+      }
+      .more-link {
+        @include rem(font-size, 16px);
+        @include rem(line-height, 22px);
+        text-decoration: underline;
+        @include bp($bp-small-plus) {
+          bottom: 15px;
+          position: absolute;
+        }
+        @include bp($bp-medium) {
+          bottom: 30px;
+        }
+      }
+    }
+  }
+  &.alt-layout {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    @include bp($bp-small-plus) {
+      margin-bottom: 45px;
+      padding-bottom: 50px;
+    }
+
+  }
+//  .quiz.clearfix{
+//    padding:20px;
+//    .quiz-image{
+//      margin-bottom:10px;
+//      img{
+//        width:auto;
+//      }
+//    }
+//  }
+}

@@ -1,0 +1,77 @@
+/**
+ * SASS partial for transcript-control module.
+ */
+.transcript-container {
+
+  margin: 45px 0;
+
+  .col {
+    text-align: center;
+  }
+
+  h2 {
+    @include rem(font-size, 24px);
+    color: #6c4282;
+    font-weight: normal;
+    margin-bottom: 50px;
+  }
+
+  h3 {
+    margin: 5px 0;
+  }
+
+  p {
+    margin-bottom: 30px;
+    color:#696969;
+    font-family:Arial, sans-serif;
+  }
+
+  a, .transcript-trigger-button, .mobile-close p {
+    @include rem(font-size, 24px);
+    text-align: center;
+    color: #446ea7;
+
+    .icon-arrow-down-blue {
+      margin-left: 18px;
+    }
+    .icon-arrow-up-blue{
+      margin-left: 15px;
+    }
+  }
+
+  .transcript-wrap {
+    @include rem(font-size, 14px);
+    @include rem(line-height, 24px);
+    font-family: Arial, sans-serif;
+    position: relative;
+    max-width: 550px;
+  }
+  .transcript-trigger-button {
+    cursor: pointer;
+  }
+}
+.read-more {
+  background: #fff;
+  color: #333;
+  text-align: center;
+}
+.icon-arrow-up-blue {
+  width: 18px;
+  height: 15px;
+  display: inline-block;
+  background: image-url("sprite.icon.arrows.png") 0 0 no-repeat;
+  .no-backgroundsize & {
+    background-image: image-url("sprite.icon.arrows.lo-res.png");
+  }
+  background-size: 150px 150px;
+  background-position:  -52px 0;
+  .no-backgroundsize & {
+    background-image: image-url('sprite.icon.arrows.lo-res.png');
+  }
+}
+.l-about-understood .read-more {
+  margin-bottom: 30px;
+  @include bp($bp-small-plus) {
+    margin-bottom: 35px;
+  }
+}

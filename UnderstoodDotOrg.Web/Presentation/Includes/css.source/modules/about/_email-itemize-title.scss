@@ -1,0 +1,39 @@
+/**
+ * SASS partial for email-itemize-title modules.
+ */
+
+.l-itemize-your-child-header{
+  background-color: #f4f2f1;
+
+  .email-itemize-title{
+    margin: 30px 15px 0;
+
+    @include bp($bp-small-plus){
+      margin: 32px 0px 34px;
+    }
+
+    h1{
+      @include rem(font-size, 32px);
+      @include rem(line-height, 34px);
+      color: #7a4183;
+      font-weight: bold;
+      margin-bottom: 13px;
+      @include bp($bp-small-plus){
+        @include rem(line-height, 48px);
+        margin-bottom: 7px;
+      }
+    }
+    p{
+      @include rem(font-size, 18px);
+      @include rem(line-height, 26px);
+      color: #696969;
+      font-weight: normal;
+      margin-bottom: 35px;
+      @include bp($bp-small-plus){
+        @include rem(line-height, 28px);
+        margin-bottom: 53px;
+      }
+    }
+  } // .email-itemize-title
+
+} // .l-itemize-your-child-header

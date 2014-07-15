@@ -1,0 +1,60 @@
+/**
+ * SASS partial for advocacy-signup
+ */
+
+.advocacy-article{
+  margin-bottom: 44px;
+  .article-header{
+    @include bp($bp-small-plus){
+      margin-bottom: 53px;
+    }
+    p{
+      margin-top: 20px;
+      margin-bottom: 15px;
+      @include bp($bp-small-plus){
+        margin-top: -7px;
+        margin-bottom: 15px;
+      }
+    }
+    .share-save-container{
+      position: relative;
+      @include bp($bp-large){
+        left: -36px;
+      }
+    }
+  }
+  .article-callout{
+    margin-bottom: 32px;
+    @include bp($bp-small-plus){
+      margin-bottom: 50px;
+    }
+    .article-callout-item{
+      margin-bottom: 15px;
+      @include bp($bp-small-plus){
+        margin-bottom: 25px;
+      }
+      .article-callout-title{
+        color:#7a4183;
+        @include rem(font-size, 24px);
+        @include rem(line-height, 30px);
+        font-weight: normal;
+        margin-bottom: 5px;
+        @include bp($bp-small-plus){
+           @include rem(font-size, 28px);
+           @include rem(line-height, 36px);
+           margin-bottom: 16px;
+        }
+      }
+    }
+  }
+  .article-call-to-action{
+    margin-bottom: 45px;
+  }
+  p{
+    color: #696969;
+    font-family: Arial, sans-serif;
+    @include rem(font-size, 15px);
+    @include rem(line-height, 26px);
+    font-weight: normal;
+  }
+}

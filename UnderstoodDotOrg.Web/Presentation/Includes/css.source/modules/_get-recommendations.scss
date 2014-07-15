@@ -1,0 +1,238 @@
+/**
+ * SASS partial for getRecommendations module.
+ */
+
+.container.better-recommendations {
+  @include bp($bp-small-plus) {
+    margin: 0;
+  }
+}
+
+.get-better-recommendations-container {
+  margin-right: 0px;
+  margin-bottom: 14px;
+}
+
+.get-better-recommendations {
+  background-color: #536ba7;
+  padding: 28px 21px 22px;
+  color: #FFF;
+  position: relative;
+
+  @include bp($bp-small-plus) {
+    margin: 0 0 30px 0;
+    padding: 28px 65px 22px;
+  }
+
+  @include bp($bp-medium) {
+    padding: 28px 34px 22px;
+  }
+
+  &.split {
+
+    @include bp($bp-small-plus) {
+      padding: 28px 34px 22px;
+    }
+
+  }
+
+  .get-recommendations {
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 108%;
+    }
+
+    @include bp($bp-small) {
+      width: 100%;
+    }
+
+    li {
+
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 10px;
+      min-width: 58px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:nth-child(3) {
+        margin-right: 0;
+        @include bp($bp-medium) {
+          margin-right: 8px;
+        }
+      }
+
+      &.complete-profile {
+        margin-left: 36px;
+        margin-top: 30px;
+
+        @include bp($bp-medium) {
+          width: 100px;
+          margin-bottom: 10px;
+          margin-top: 0;
+          margin-left: 9px;
+        }
+
+        a {
+          display: inline-block;;
+          color: #FFF;
+          text-decoration: underline;
+          @include rem(font-size, 14px);
+          vertical-align: middle;
+
+          &:hover {
+            text-decoration: none;
+          }
+          
+        }
+
+      }// li.complete-profile
+
+    }// li
+
+    h4 {
+      margin-bottom: 20px;
+      @include rem(font-size, 14px);
+
+      @include bp($bp-small){
+        @include rem(font-size, 18px);
+      }
+
+      @include bp($bp-small-plus){
+        @include rem(font-size, 14px);
+        @include rem(line-height, 20px);
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      @include bp($bp-medium){
+        @include rem(font-size, 18px);
+        @include rem(line-height, 21px);
+        margin-bottom: 12px;
+      }
+
+    }
+
+    h3 {
+      font-weight: normal; 
+      margin-bottom: 26px;
+
+      @include rem(font-size, 22px);
+      @include rem(line-height, 26px);
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 20px);
+        @include rem(line-height, 26px);
+      }
+
+      @include bp($bp-medium){
+        @include rem(font-size, 24px);
+        @include rem(line-height, 30px);
+      }
+      
+    }
+
+  }// .get-recommendations
+
+  &.split .get-recommendations h3 {
+
+    @include bp($bp-small-plus) {
+     
+    }
+
+  }
+
+  .thank-you {
+    display: none;
+    padding: 30px 25px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #536ba7;
+
+    h4 {
+      margin-bottom: 18px;
+      @include rem(font-size, 30px);
+    }
+
+    p {
+      @include rem(font-size, 20px);
+    }
+
+    a.button {
+      display: inline-block;
+    }
+
+  }
+
+  // position the module on page topic pages
+  .page-topic & {
+    width: 470px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    z-index: 10;
+    @include bp($bp-medium) {
+      width: 454px;
+    }
+    @include bp($bp-large) {
+      width: 470px;
+    }
+  }
+
+  a.button {
+    font-weight: bold;
+  }
+
+  .icon-question-mark.tooltip {
+    @include opacity(.4);
+    top: 0px;
+    left: 0px;
+    &:hover {
+      @include opacity(1);
+    }
+    
+  }
+
+  //popovers
+  .popover-link{
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    margin-left: 6px;
+    width: 22px;
+    height: 22px;
+
+    @include old-ie {
+      height: 40px;
+    }
+
+  }
+  .get-recommendations {
+    .popover {
+      .popover-content {
+        @include bp($bp-large) {
+          min-width: 320px;
+        }
+
+        p{
+          margin: 0px;
+          padding: 0px;
+          color: #696969;
+          @include rem(font-size, 16px);
+          @include rem(line-height, 24px);
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+}// .get-better-recommendations

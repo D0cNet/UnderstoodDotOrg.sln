@@ -1,20 +1,20 @@
-/* line 1, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 1, ../../../css.source/simulations/executive/game.scss */
 #gameboard.executive_game {
   font-weight: bold;
   background-color: #FAFAFA;
 }
 
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 5, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #gameboard {
   font-size: 18px;
 }
 
-/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 8, ../../../css.source/simulations/executive/game.scss */
 #gameboard.executive_game .SSGame_modal_standalone_decoration {
-  background-image: url("../../../images/simulations/executive/desktop/standalone_icon.png");
+  background-image: url('../../../images/simulations/executive/desktop/standalone_icon.png?1404354095');
 }
 
-/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 12, ../../../css.source/simulations/executive/game.scss */
 #executive_board {
   position: absolute;
   top: 105px;
@@ -23,19 +23,19 @@
   z-index: 1;
 }
 
-/* line 19, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 19, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_desktop #executive_board {
   left: 145px;
   height: 380px;
 }
 
-/* line 23, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 23, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_tablet #executive_board {
   left: 34px;
   height: 286px;
 }
 
-/* line 27, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 27, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_board {
   top: 70px;
   left: 10px;
@@ -43,7 +43,7 @@
   width: 320px;
 }
 
-/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 34, ../../../css.source/simulations/executive/game.scss */
 .executive_game_prompt {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
@@ -58,18 +58,18 @@
   text-align: center;
 }
 
-/* line 47, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 47, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_tablet .executive_game_prompt {
   top: 10px;
 }
 
-/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 50, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone .executive_game_prompt {
   width: 250px;
   left: 25px;
 }
 
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 54, ../../../css.source/simulations/executive/game.scss */
 .executive_game_prompt h3 {
   font-weight: normal;
   font-size: .75em;
@@ -77,13 +77,13 @@
   margin-bottom: 10px;
 }
 
-/* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 60, ../../../css.source/simulations/executive/game.scss */
 .executive_game_prompt p {
   font-size: 1.25em;
   color: #63428e;
 }
 
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 66, ../../../css.source/simulations/executive/game.scss */
 #executive_board .channel {
   position: relative;
   display: inline-block;
@@ -94,18 +94,18 @@
   cursor: pointer;
 }
 
-/* line 75, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 75, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_tablet #executive_board .channel {
   height: 258px;
 }
 
-/* line 78, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 78, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_board .channel {
   width: 50px;
   height: 300px;
 }
 
-/* line 82, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 82, ../../../css.source/simulations/executive/game.scss */
 #executive_board .channel > div {
   position: absolute;
   margin: 0 7px;
@@ -116,24 +116,24 @@
   overflow: hidden;
 }
 
-/* line 91, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 91, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_board .channel > div {
   margin: 0 5px;
   width: 40px;
 }
 
-/* line 95, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 95, ../../../css.source/simulations/executive/game.scss */
 #executive_board .channel > div:hover {
   border-color: #EAEAEA;
 }
 
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 99, ../../../css.source/simulations/executive/game.scss */
 #executive_board .channel.targetted > div,
 #executive_board .channel.targetted > div:hover {
   border-color: #298FC2;
 }
 
-/* line 102, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 102, ../../../css.source/simulations/executive/game.scss */
 #executive_board .channel .feedback {
   position: absolute;
   width: 100%;
@@ -142,7 +142,7 @@
   font-size: 1.25em;
 }
 
-/* line 110, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 110, ../../../css.source/simulations/executive/game.scss */
 #executive_trap {
   position: absolute;
   bottom: 0px;
@@ -151,33 +151,33 @@
   background-color: blue;
   z-index: 5;
   cursor: pointer;
-  background: url("../../../images/simulations/executive/desktop/paddle_purple.png") no-repeat 0 -4px;
+  background: url('../../../images/simulations/executive/desktop/paddle_purple.png?1401924832') no-repeat 0 -4px;
 }
 
-/* line 120, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 120, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_trap {
   width: 60px;
   height: 27px;
-  background: url("../../../images/simulations/executive/phone/paddle_purple.png") no-repeat 0 -4px;
+  background: url('../../../images/simulations/executive/phone/paddle_purple.png?1401924832') no-repeat 0 -4px;
 }
 
-/* line 125, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 125, ../../../css.source/simulations/executive/game.scss */
 #executive_trap_rear {
   position: absolute;
   bottom: 32px;
   width: 116px;
   height: 5px;
   z-index: 2;
-  background: url("../../../images/simulations/executive/desktop/paddle_purple.png") no-repeat 0 0;
+  background: url('../../../images/simulations/executive/desktop/paddle_purple.png?1401924832') no-repeat 0 0;
 }
 
-/* line 133, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 133, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_trap_rear {
   bottom: 25px;
-  background: url("../../../images/simulations/executive/phone/paddle_purple.png") no-repeat 0 0;
+  background: url('../../../images/simulations/executive/phone/paddle_purple.png?1401924832') no-repeat 0 0;
 }
 
-/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 138, ../../../css.source/simulations/executive/game.scss */
 #executive_trap .bg_red, #executive_trap .bg_green,
 #executive_trap_rear .bg_red, #executive_trap_rear .bg_green {
   width: 100%;
@@ -188,37 +188,37 @@
   background-repeat: no-repeat;
 }
 
-/* line 146, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 146, ../../../css.source/simulations/executive/game.scss */
 #executive_trap .bg_red, #executive_trap .bg_green {
   background-position: 0 -4px;
 }
 
-/* line 149, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 149, ../../../css.source/simulations/executive/game.scss */
 #executive_trap_rear .bg_red, #executive_trap_rear .bg_green {
   background-position: 0 0;
 }
 
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 152, ../../../css.source/simulations/executive/game.scss */
 #executive_trap .bg_red, #executive_trap_rear .bg_red {
-  background-image: url("../../../images/simulations/executive/desktop/paddle_red.png");
+  background-image: url('../../../images/simulations/executive/desktop/paddle_red.png?1401924832');
 }
 
-/* line 155, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 155, ../../../css.source/simulations/executive/game.scss */
 #executive_trap .bg_green, #executive_trap_rear .bg_green {
-  background-image: url("../../../images/simulations/executive/desktop/paddle_green.png");
+  background-image: url('../../../images/simulations/executive/desktop/paddle_green.png?1401924832');
 }
 
-/* line 158, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 158, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_trap .bg_red, .breakpoint_phone #executive_trap_rear .bg_red {
-  background-image: url("../../../images/simulations/executive/phone/paddle_red.png");
+  background-image: url('../../../images/simulations/executive/phone/paddle_red.png?1401924832');
 }
 
-/* line 161, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 161, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_trap .bg_green, .breakpoint_phone #executive_trap_rear .bg_green {
-  background-image: url("../../../images/simulations/executive/phone/paddle_green.png");
+  background-image: url('../../../images/simulations/executive/phone/paddle_green.png?1401924832');
 }
 
-/* line 165, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 165, ../../../css.source/simulations/executive/game.scss */
 #executive_board .ball {
   position: absolute;
   z-index: 4;
@@ -228,62 +228,62 @@
   background-size: cover;
 }
 
-/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 173, ../../../css.source/simulations/executive/game.scss */
 #executive_board .executive_star {
   left: 19px;
 }
 
-/* line 176, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 176, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_board .ball {
   left: 5px;
 }
 
-/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 179, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_board .executive_star {
   left: 2px;
 }
 
-/* line 182, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 182, ../../../css.source/simulations/executive/game.scss */
 .executive_circle {
-  background-image: url("../../../images/simulations/executive/desktop/executive_circles.png");
+  background-image: url('../../../images/simulations/executive/desktop/executive_circles.png?1401924832');
 }
 
-/* line 185, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 185, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone .executive_circle {
-  background-image: url("../../../images/simulations/executive/phone/executive_circles.png");
+  background-image: url('../../../images/simulations/executive/phone/executive_circles.png?1401924832');
 }
 
-/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 188, ../../../css.source/simulations/executive/game.scss */
 .executive_square {
-  background-image: url("../../../images/simulations/executive/desktop/executive_squares.png");
+  background-image: url('../../../images/simulations/executive/desktop/executive_squares.png?1401924832');
 }
 
-/* line 191, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 191, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone .executive_square {
-  background-image: url("../../../images/simulations/executive/phone/executive_squares.png");
+  background-image: url('../../../images/simulations/executive/phone/executive_squares.png?1401924832');
 }
 
-/* line 194, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 194, ../../../css.source/simulations/executive/game.scss */
 .executive_star {
-  background-image: url("../../../images/simulations/executive/desktop/executive_stars.png");
+  background-image: url('../../../images/simulations/executive/desktop/executive_stars.png?1401924832');
 }
 
-/* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 197, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone .executive_star {
-  background-image: url("../../../images/simulations/executive/phone/executive_stars.png");
+  background-image: url('../../../images/simulations/executive/phone/executive_stars.png?1401924832');
 }
 
-/* line 200, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 200, ../../../css.source/simulations/executive/game.scss */
 .executive_triangle {
-  background-image: url("../../../images/simulations/executive/desktop/executive_triangles.png");
+  background-image: url('../../../images/simulations/executive/desktop/executive_triangles.png?1401924832');
 }
 
-/* line 203, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 203, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone .executive_triangle {
-  background-image: url("../../../images/simulations/executive/phone/executive_triangles.png");
+  background-image: url('../../../images/simulations/executive/phone/executive_triangles.png?1401924832');
 }
 
-/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 207, ../../../css.source/simulations/executive/game.scss */
 #executive_score {
   position: absolute;
   top: 40px;
@@ -291,7 +291,7 @@
   font-size: 1.25em;
 }
 
-/* line 213, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/executive/game.scss */
+/* line 213, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_score {
   top: 25px;
   left: 15px;

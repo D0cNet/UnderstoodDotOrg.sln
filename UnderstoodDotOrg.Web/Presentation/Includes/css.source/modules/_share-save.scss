@@ -1,0 +1,557 @@
+/**
+ * SASS partial for share-save module.
+ */
+
+.share-save-container {
+
+  text-align: center;
+  position: relative;
+  margin-top: 5px;
+  @include bp($bp-small-plus) {
+    margin-top:0;
+  }
+
+  @include bp($bp-small-plus) {
+    text-align: left;
+    width: 282px;
+    float: right;
+  }
+
+  @include bp($bp-medium) {
+    width: 302px;
+  }
+
+  h3 {
+    @include rem(font-size, 16px);
+    font-weight: normal;
+    color: #696969;
+    padding-bottom: 7px;
+    padding-left: 3px;
+  }
+
+  div.share-save-icon {
+    width: 200px;
+    margin: -33px auto 0;
+
+    @include bp($bp-small-plus){
+      width: 220px;
+      margin: 18px 0 0;
+      float: right;
+    }
+
+    @include bp($bp-medium) {
+      width: 240px;
+    }
+
+    .icon {
+      background-image: image-url('sprite.share-save.social.png');
+      background-size: 521px 78px;
+      display: block;
+      height: 35px;
+      display: inline-block;
+      margin-right: 6px;
+      padding: 0;
+      text-indent: -9999px;
+      width: 35px;
+
+      .no-backgroundsize & {
+        background-image: image-url('sprite.share-save.social.lo-res.png');
+      }
+
+    }
+
+    .icon-share {
+      background-position: 0 0;
+
+      &.active,
+      &.active:hover {
+        background-position: -360px 0;
+      }
+
+      &:hover {
+        background-position: 0 -40px;
+      }
+
+    }
+
+    .icon-email {
+      background-position: -40px 0;
+
+      &:hover {
+        background-position: -40px -40px;
+      }
+
+    }
+
+    .icon-save {
+      background-position: -80px 0;
+
+      &:hover {
+        background-position: -80px -40px;
+      }
+
+      &.active:hover {
+        background-position: -440px -40px;
+      }
+
+      &.active {
+        background-position: -440px 0px;
+        .touch & {
+          background-position: -440px 0px;
+        }
+      }
+
+    }
+
+    .icon-print {
+      background-position: -120px 0;
+
+      &:hover {
+        background-position: -120px -40px;
+      }
+
+    }
+    .icon-remind {
+      background-position: -160px 0;
+      margin-right: 0;
+
+      &:hover {
+        background-position: -160px -40px;
+      }
+
+      &.active:hover {
+        background-position: -482px -40px;
+      }
+
+      &.active {
+        background-position: -482px 0px;
+        .touch & {
+          background-position: -482px 0px;
+        }
+      }
+
+    }
+
+    .icon-rss {
+      background-position: -400px 0;
+      margin-right: 0;
+      display: none;
+
+      &:hover {
+        background-position: -400px -40px;
+      }
+    }
+
+    &.is-open .tools {
+      @include opacity(0);
+
+      @include bp($bp-small-plus) {
+        @include opacity(1);
+      }
+
+    }
+  }
+//
+//  .touch div.share-save-icon  .icon-save.active {
+//    background-position: -440px 0px !important;
+//  }
+
+  div.share-save-social-icon {
+    display: inline-block;
+    position: relative;
+    top: -23px;
+    height: 38px;
+    z-index: 9;
+    margin: 0 auto;
+
+    br {
+      display: none;
+
+      @include bp($bp-small-plus) {
+        display: inline-block;
+      }
+    }
+
+    .toggle {
+      width: 170px;
+      margin: 0;
+      display: none;
+      position: absolute;
+      left: -62px;
+      top: 57px;
+
+
+      @include bp($bp-small-plus) {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: auto;
+        margin: 0;
+      }
+    }
+
+    @include bp($bp-small-plus) {
+      width: auto;
+      position: absolute;
+    }
+
+    .icon-facebook {
+      background-position: -200px 0;
+
+      &:hover {
+        background-position: -200px -40px;
+      }
+
+    }
+
+    .icon-twitter {
+      background-position: -240px 0;
+
+
+      &:hover {
+        background-position: -240px -40px;
+      }
+
+    }
+    .icon-googleplus {
+      background-position: -280px 0;
+
+
+      &:hover {
+        background-position: -280px -40px;
+      }
+
+    }
+    .icon-pinterest {
+      background-position: -320px 0;
+
+
+      &:hover {
+        background-position: -320px -40px;
+      }
+
+    }
+
+    .socicon {
+      background-image: image-url('sprite.share-save.social.png');
+      background-size: 435px 78px;
+      display: inline-block;
+      height: 38px;
+      padding: 0;
+      text-indent: -9999px;
+      width: 38px;
+      margin-right: 0px;
+
+      @include bp($bp-small-plus) {
+        display: block;
+      }
+
+      .no-backgroundsize & {
+        background-image: image-url('sprite.share-save.social.lo-res.png');
+      }
+
+    }
+
+    @include bp($bp-small-plus) {
+      left: 0px;
+      top: 0;
+      z-index: 0;
+      display: inline-block;
+      margin-right: 0;
+
+      .icon-facebook {
+        background-position: -200px 0;
+        margin-top: -10px;
+        margin-left: 25px;
+
+        &:hover {
+          background-position: -200px -40px;
+        }
+
+      }
+      .icon-twitter {
+        background-position: -240px 0;
+        margin-top: -30px;
+        margin-left: 0px;
+
+        &:hover {
+          background-position: -240px -40px;
+        }
+
+      }
+      .icon-googleplus {
+        background-position: -280px 0;
+        margin-top: -22px;
+        margin-left: 0px;
+
+        &:hover {
+          background-position: -280px -40px;
+        }
+
+      }
+
+      .icon-pinterest {
+        background-position: -320px 0;
+        margin-top: -32px;
+        margin-left: 25px;
+        // margin-left: -32px \9;
+
+        &:hover {
+          background-position: -320px -40px;
+        }
+      }
+
+      .icon-pinterest, x:-moz-any-link, x:default {
+        // margin-left: 32px;
+      }
+
+    }
+  }
+}
+
+.community-main-header div.share-save-social-icon .toggle {
+  left: -78px;
+  top: 57px;
+
+  @include bp($bp-small-plus) {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: auto;
+    margin: 0;
+  }
+}
+
+.community-main-header .share-save-container div.share-save-icon {
+  width: 240px;
+
+  .icon-remind {
+    margin-right: 5px;
+  }
+
+  .icon-rss {
+    margin-right: 0;
+    display: inline-block;
+  }
+}
+
+@include bp($bp-small-plus){
+  .page-topic.with-share {
+    > .row{
+      > div.offset-1:first-child{
+        display: table-cell;
+        float: none;
+        padding-left: 4.166666%;
+      }
+      > div.col-14:first-child{
+        width: 68%;
+      }
+      > div:last-child{
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+      }
+    }
+  }
+}
+
+//* Additional Share-Save for Article Deep-Dive
+.share-save-dd-container {
+  text-align: center;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  height: 60px;
+  top: -60px;
+  display: none;
+
+  @include bp($bp-small-plus){
+    display: block;
+    text-align: left;
+    top: -30px;
+  }
+
+  h3 {
+    @include rem(font-size, 16px);
+    font-weight: normal;
+    color: #696969;
+    padding-bottom: 10px;
+  }
+
+  div.share-save-dd-icon {
+    min-width: 190px;
+
+
+    .icon {
+      background-image: image-url('sprite.share-save.social.png');
+      background-size: 468px 70px;
+      display: block;
+      height: 32px;
+      display: inline-block;
+      margin-right: 5px;
+      padding: 0;
+      text-indent: -9999px;
+      width: 29px;
+
+      .no-backgroundsize & {
+        background-image: image-url('sprite.share-save.social.390.png');
+      }
+
+    }
+
+    .icon-share-dd {
+      background-position: -2px 0px;
+
+      &.active-dd,
+      &.active-dd:hover {
+        background-position: -325px 0px;
+      }
+
+      &:hover {
+        background-position: -2px -36px;
+      }
+    }
+
+    .icon-email {
+      background-position: -38px -0px;
+
+      &:hover {
+        background-position: -38px -36px;
+      }
+    }
+
+    .icon-save {
+      background-position: -74px -0px;
+
+      &:hover {
+        background-position: -74px -36px;
+      }
+
+      &.active:hover {
+        background-position: -397px -36px;
+      }
+
+      &.active {
+        background-position: -397px 0px;
+        .touch & {
+          background-position: -397px 0px;
+        }
+      }
+    }
+
+    .icon-print {
+      background-position: -109.5px 0px;
+
+      &:hover {
+        background-position: -109.5px -36px;
+      }
+    }
+
+    .icon-remind {
+      background-position: -145.5px 0px;
+
+      &:hover {
+        background-position: -145.5px -36px;
+      }
+
+      &.active:hover {
+        background-position: -434px -36px;
+      }
+
+      &.active {
+        background-position: -434px 0px;
+        .touch & {
+          background-position: -434px 0px;
+        }
+      }
+    }
+
+    .icon-rss {
+      background-position: -360.5px 0px;
+      margin-right: 0;
+      display: none;
+
+      &:hover {
+        background-position: -360.5px -36px;
+      }
+    }
+
+    &.is-open-dd .tools {
+      @include opacity(0);
+    }
+  }
+
+  div.share-save-dd-social-icon {
+    display: inline-block;
+    position: relative;
+    width: 152px;
+    height: 38px;
+    z-index: 9;
+    margin: 0 auto;
+
+    br {
+      display: none;
+    }
+
+    .toggle-dd {
+      min-width: 152px;
+      max-width: 152px;
+      margin: 0;
+      display: none;
+      position: absolute;
+      left: 15px;
+      top: 70px;
+
+      @include bp($bp-small-plus){
+        left: 32px;
+      }
+    }
+
+    .icon-facebook {
+      background-position: -181px -2px;
+
+      &:hover {
+        background-position: -181px -37px;
+      }
+    }
+
+    .icon-twitter {
+      background-position: -217px -2px;
+
+      &:hover {
+        background-position: -217px -37px;
+      }
+    }
+
+    .icon-googleplus {
+      background-position: -253px -2px;
+      &:hover {
+        background-position: -253px -37px;
+      }
+    }
+
+    .icon-pinterest {
+      background-position: -289px -2px;
+
+      &:hover {
+        background-position: -289px -37px;
+      }
+    }
+
+    .socicon {
+      background-image: image-url('sprite.share-save.social.png');
+      background-size: 390px 70px;
+      display: inline-block;
+      height: 31px;
+      padding: 0;
+      text-indent: -9999px;
+      width: 31px;
+      margin-right: 0px;
+
+      .no-backgroundsize & {
+        background-image: image-url('sprite.share-save.social.390.png');
+      }
+
+    }
+  }
+}

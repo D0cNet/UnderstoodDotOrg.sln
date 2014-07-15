@@ -1,0 +1,200 @@
+/**
+ * SASS partial for about-experts-event-carousel module.
+ */
+
+//VARIABLES
+$event-carousel-purple: #7a4183;
+$event-carousel-purple2: #7b3f84;
+$event-carousel-gray-bg: #f4f2f1;
+$event-carousel-gray: #696969;
+$event-carousel-blue: #406bab;
+$event-carousel-white: #ffffff;
+
+
+.about-experts-event-carousel{
+  padding: 34px 15px;
+  background-color: $event-carousel-gray-bg;
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 2px;
+
+  @include bp($bp-small-plus){
+    background-color: $event-carousel-white;
+    padding: 0px;
+    margin-bottom: 50px;
+  }
+
+  h3{
+    position: absolute;
+    top: 34px;
+    left: 15px;
+    background-color: $event-carousel-gray-bg;
+    color: $event-carousel-purple;
+    font-weight: normal;
+    @include rem(font-size, 24px);
+    @include rem(line-height, 28px);
+    @include bp($bp-small-plus){
+      top: 0;
+      left: 0;
+      background-color: $event-carousel-white;
+      margin-right: 80px;
+    }
+  } // .h3
+
+  .event-carousel{
+    width: 100%;
+    min-height: 268px; //needed for royalslider
+
+    .rsOverflow {
+
+      //height needs to be constrained in IE8
+      @include old-ie {
+        height: 300px !important;
+      }
+
+    }
+
+    button.rsArrowIcn{
+      z-index: 2; //accessibility fix
+    }
+
+    .about-expert{
+      margin-top: 60px;
+
+      @include bp($bp-large){
+        margin-top: 44px;
+      }
+
+      .about-expert-data{
+        background-color: $event-carousel-gray-bg;
+
+        @include bp($bp-small-plus){
+          padding: 20px;
+          min-height: 190px;
+        }
+        @include bp($bp-large){
+          padding: 40px;
+          min-height: 231px;
+        }
+
+        .event-carousel-image{
+          float: left;
+          position: relative;
+          width: 100px;
+
+          @include bp($bp-medium){
+            width: 125px;
+          }
+          @include bp($bp-large){
+            width: 150px;
+          }
+
+          img{
+            display: block;
+            height: auto;
+            max-width: 100%;
+            -webkit-backface-visibility: visible;
+          }
+          .caption{
+            padding-top: 5px;
+            padding-bottom: 5px;
+            text-align: center;
+            background-color: $event-carousel-blue;
+            color: $event-carousel-white;
+            font-weight: normal;
+            @include rem(font-size, 16px);
+            @include rem(line-height, 22px);
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+          }
+        } // .event-carousel-image
+
+        .event-carousel-details{
+          margin-left: 120px;
+
+          @include bp($bp-medium){
+            margin-left: 145px;
+          }
+          @include bp($bp-large){
+            margin-left: 170px;
+          }
+
+          .date{
+            margin: 0 0 18px 0;
+            padding: 0;
+            color: $event-carousel-purple2;
+            font-weight: bold;
+            @include rem(font-size, 16px);
+            @include rem(line-height, 16px);
+          }
+
+          .chat-with{
+            margin: 0 0 10px 0;
+            padding: 0;
+            color: $event-carousel-blue;
+            font-weight: normal;
+            @include rem(font-size, 16px);
+            @include rem(line-height, 16px);
+          }
+
+          h4{
+            margin: 0 0 16px 0;
+            padding: 0;
+            color: $event-carousel-blue;
+            font-weight: normal;
+            word-wrap: break-word;
+            @include rem(font-size, 24px);
+            @include rem(line-height, 24px);
+
+            @include bp($bp-small-plus){
+              margin-bottom: 10px;
+            }
+
+          }
+
+          .credentials{
+            margin: 0;
+            padding: 0;
+            color: $event-carousel-gray;
+            font-weight: normal;
+            @include rem(font-size, 15px);
+            @include rem(line-height, 21px);
+          }
+        } // .event-carousel-details
+
+      } // .about-expert-data
+
+    } // .about-expert
+
+    .rsArrow.rsArrowLeft{
+      .rsArrowIcn{
+        top: 226px;
+        right: 55%;
+        @include bp($bp-small){
+          right: 54%;
+        }
+        @include bp($bp-small-plus){
+          top: 0px;
+          right: 44px;
+        }
+      }
+    } // .rsArrow.rsArrowLeft
+
+    .rsArrow.rsArrowRight{
+      .rsArrowIcn{
+        top: 226px;
+        right: 30%;
+        @include bp($bp-small){
+          right: 37%;
+        }
+        @include bp($bp-small-plus){
+          top: 0px;
+          right: 0px;
+        }
+      }
+    } // .rsArrow.rsArrowRight
+
+  } // .event-carousel
+
+} // .about-experts-event-carousel

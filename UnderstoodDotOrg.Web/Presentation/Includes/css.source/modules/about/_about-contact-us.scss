@@ -1,0 +1,38 @@
+/**
+ * SASS partial for about-contact-us module.
+ */
+
+.about-contact-block {
+  padding: 40px 20px;
+  background-color: #f4f2f1;
+  margin: 0 15px 15px 15px;
+
+  @include bp($bp-small-plus) {
+    margin: 0 0 40px 5px;
+    max-width: 271px;
+  }
+
+  h2 {
+    color: #7a4183;
+    font-weight: normal;
+    @include rem(font-size, 22px);
+    @include rem(line-height, 22px);
+    margin-bottom: 12px;
+  }
+  h3 {
+    color: #696969;
+    font-weight: normal;
+    @include rem(font-size, 18px);
+    @include rem(line-height, 26px);
+    margin-top: 13px;
+    margin-bottom: 4px;
+  }
+  a {
+    @include rem(font-size, 15px);
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

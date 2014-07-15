@@ -1,0 +1,149 @@
+/**
+ * SASS partial for Profile Saved - Questions module.
+ */
+.profile-bar-container {
+  margin-bottom: 0px;
+  background: #f4f2f1;
+  padding-bottom: 25px;
+
+  @include bp($bp-small-plus) {
+    margin-bottom: 44px;
+  }
+
+    ul.profile-slide {
+      position: relative;
+      padding: 0;
+      margin: 0 auto;
+      margin-top: 35px;
+      list-style: none;
+
+      @include bp($bp-small-plus) {
+        width: 50%;
+        margin-top: 0px;
+        min-width: 650px;
+        height: 230px;
+      }
+
+      @include bp($bp-medium) {
+        min-width: 796px;
+        height: 230px;
+       }
+
+      li {
+        width: 100%;
+        float: left;
+        padding: 0 15px 0 15px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+
+        @include bp($bp-small-plus) {
+          display: inline;
+          min-width: 100px;
+          max-width: 190px;
+          padding-right: 5px;
+          padding-left: 5px;
+          margin-bottom: 25px;
+        }
+
+        @include bp($bp-medium) {
+          max-width: 231px;
+        }
+
+        @include bp($bp-large) {
+          margin-right: 50px;
+        }
+
+        a {
+          display: none;
+
+          @include bp($bp-small-plus) {
+            display: block;
+            margin: 34px 0 0 0;
+            @include rem(font-size, 18px);
+            @include rem(line-height, 26px);
+            text-align: center;
+            color: #298fc2;
+            text-decoration: underline;
+
+            &:hover, &:focus {
+              text-decoration: none;
+            }
+          }
+        }
+
+        div {
+          height: 95px;
+          background-color: #FFF;
+          @include dropshadow;
+
+          @include bp($bp-small-plus) {
+            height: 180px;
+          }
+
+          @include bp($bp-medium) {
+            height: 180px;
+          }
+
+          &.icon {
+            background-size: 50px 50px;
+            background-position: 50% 10px;
+
+            @include bp($bp-small-plus) {
+              background-size: 90px 90px;
+              background-position: 50% 24px;
+            }
+          }
+
+          a {
+            padding: 65px 10px 10px 10px;
+            display: block;
+            height: 100%;
+            @include rem(font-size, 12px);
+            @include rem(line-height, 12px);
+            text-align: center;
+            color: #7a4183;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+
+            @include bp($bp-small-plus) {
+              padding: 130px 10px 10px 10px;
+              @include rem(font-size, 18px);
+              @include rem(line-height, 18px);
+            }
+
+            @include bp($bp-medium) {
+              padding-top: 136px;
+            }
+          }
+        }
+    } // ul.profile-slide
+  }
+  @include old-ie {
+    ul.profile-slide {
+      margin-top: 60px;
+      div {
+        a {
+          margin-top: 0;
+        }
+      }
+      li {
+        margin-right: 0;
+        margin-left: 35px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+    .rs_skip {
+      margin-top: 34px;
+    }
+  }
+
+}// .profile-bar-container

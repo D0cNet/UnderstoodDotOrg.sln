@@ -141,22 +141,22 @@
   font-style: italic;
 }
 
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 6, ../css.source/base.scss */
 * {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 10, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 10, ../css.source/base.scss */
 html {
   font-family: Circular, Arial, sans-serif;
 }
 
-/* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 14, ../css.source/base.scss */
 body {
   overflow-x: hidden;
 }
 
-/* line 32, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 32, ../css.source/base.scss */
 address,
 button,
 h1,
@@ -176,7 +176,7 @@ td {
   padding: 0;
 }
 
-/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 39, ../css.source/base.scss */
 *,
 *:before,
 *:after {
@@ -185,31 +185,31 @@ td {
   box-sizing: border-box;
 }
 
-/* line 45, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 45, ../css.source/base.scss */
 td, th {
   vertical-align: top;
 }
 
-/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 49, ../css.source/base.scss */
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 55, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 55, ../css.source/base.scss */
 p {
   margin-bottom: 1em;
 }
 
-/* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 60, ../css.source/base.scss */
 ul,
 ol {
   margin-top: 0;
   margin-bottom: 1em;
 }
 
-/* line 68, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 68, ../css.source/base.scss */
 ul ul,
 ol ul,
 ul ol,
@@ -217,7 +217,7 @@ ol ol {
   margin-bottom: 0;
 }
 
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 83, ../css.source/base.scss */
 h1,
 h2,
 h3,
@@ -233,79 +233,79 @@ h6,
   line-height: 1.1;
 }
 
-/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 88, ../css.source/base.scss */
 blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* line 92, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 92, ../css.source/base.scss */
 a {
   text-decoration: none;
 }
 
 /* Atomic styles */
 /* Zen Coding (Emmet) syntax http://docs.emmet.io/cheat-sheet/ */
-/* line 100, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 100, ../css.source/base.scss */
 .m-0 {
   margin: 0 !important;
 }
 
-/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 103, ../css.source/base.scss */
 .mt-0 {
   margin-top: 0 !important;
 }
 
-/* line 106, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 106, ../css.source/base.scss */
 .mr-0 {
   margin-right: 0 !important;
 }
 
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 109, ../css.source/base.scss */
 .mb-0 {
   margin-bottom: 0 !important;
 }
 
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 112, ../css.source/base.scss */
 .ml-0 {
   margin-left: 0 !important;
 }
 
-/* line 117, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 117, ../css.source/base.scss */
 .bd-n {
   border: none !important;
 }
 
-/* line 121, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 121, ../css.source/base.scss */
 .fl-l {
   float: left !important;
 }
 
-/* line 124, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 124, ../css.source/base.scss */
 .fl-r {
   float: right !important;
 }
 
-/* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 127, ../css.source/base.scss */
 .fl-n {
   float: none !important;
 }
 
-/* line 131, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 131, ../css.source/base.scss */
 .ta-l {
   text-align: left !important;
 }
 
-/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 134, ../css.source/base.scss */
 .ta-r {
   text-align: right !important;
 }
 
-/* line 137, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 137, ../css.source/base.scss */
 .ta-c {
   text-align: center !important;
 }
 
-/* line 141, /Users/justin/projects.dp/poses/source/Presentation/includes/css/base.scss */
+/* line 141, ../css.source/base.scss */
 .whs-nw {
   white-space: nowrap;
 }

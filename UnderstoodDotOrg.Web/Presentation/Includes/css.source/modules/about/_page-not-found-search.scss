@@ -1,0 +1,59 @@
+.l-page-not-found-search{
+  position: relative;
+  // Margin bottom and top should be equal to avoid whitespace at the bottom
+  // Pull the container up over the hero image
+  margin-bottom: -32px;
+  top: -32px;
+  @include bp($bp-small-plus){
+    margin-bottom: -25px;
+    top: -25px;
+  }
+  @include bp($bp-large){
+    margin-bottom: -87px;
+    top: -87px;
+  }
+}
+
+.page-not-found-search{
+  background-color: #f4f2f1;
+  max-width: 630px;
+  margin-bottom: 42px;
+  padding: 30px 20px 15px;
+  @include bp($bp-small-plus){
+    padding: 35px 39px 13px;
+  }
+  h2{
+    color: #794382;
+    @include rem(font-size, 24px);
+    @include rem(line-height, 30px);
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+
+  fieldset{
+    margin-bottom: 16px;
+    .search-input-wrap{
+      margin-bottom: 10px;
+      @include bp($bp-small-plus){
+        float:left;
+        margin-bottom: 0px;
+        width: 70.5%;
+      }
+    }
+    .search-button-wrap{
+      @include bp($bp-small-plus){
+        float: right;
+        width: 27.5%;
+      }
+      input.search-button{
+        @include rem(font-size, 16px);
+        @include rem(line-height, 40px);
+        @include bp($bp-small-plus){
+          @include rem(font-size, 18px);
+          @include rem(line-height, 50px);
+        }
+      }
+    } //buttons
+  } //fieldset
+
+} //.page-not-found-search

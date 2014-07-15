@@ -1,0 +1,48 @@
+.back-button {
+  @include bp($bp-small-plus) {
+    margin-bottom: 30px;
+  }
+  .rating-container {
+    float: left;
+    min-width: 245px;
+    div {
+      color: #606060;
+      @include rem(font-size, 15px);
+      @include rem(line-height, 43px);
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 14px);
+      }
+    }
+    @include bp($bp-small-plus) {
+      float: right;
+    }
+    @include bp($bp-medium) {
+      padding-left: 10px;
+    }
+    img {
+      margin-left: 18px;
+      display: block;
+      @include bp($bp-small-plus) {
+        margin-left: 3px;
+      }
+    }
+    div, img {
+      float: left;
+    }
+  }
+
+  .icon-arrow-left-blue {
+    padding-right: 11px;
+  }
+  a {
+    display: block;
+    margin-bottom: 10px;
+    padding-top: 60px;
+
+    @include bp($bp-small-plus) {
+      padding-top: 20px;
+      margin: 0;
+    }
+  }
+}

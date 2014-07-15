@@ -2,23 +2,23 @@
  * Purple: 7A4182
  * Blue: 298FC2
  */
-/* line 5, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 5, ../../../css.source/simulations/dyslexia/game.scss */
 #gameboard.dyslexia_game {
   font-size: 24px;
   font-weight: bold;
 }
 
-/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 9, ../../../css.source/simulations/dyslexia/game.scss */
 .breakpoint_phone #gameboard {
   font-size: 18px;
 }
 
-/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 12, ../../../css.source/simulations/dyslexia/game.scss */
 #gameboard.dyslexia_game .SSGame_modal_standalone_decoration {
-  background-image: url("../../../images/simulations/dyslexia/desktop/standalone_icon.png");
+  background-image: url('../../../images/simulations/dyslexia/desktop/standalone_icon.png?1404354095');
 }
 
-/* line 16, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 16, ../../../css.source/simulations/dyslexia/game.scss */
 #dyslexia_swaps_ctr {
   position: absolute;
   top: 0;
@@ -26,7 +26,7 @@
   background-color: #7A4182;
 }
 
-/* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 22, ../../../css.source/simulations/dyslexia/game.scss */
 .breakpoint_phone #dyslexia_swaps_ctr {
   top: auto;
   bottom: 0;
@@ -34,7 +34,7 @@
   width: 100%;
 }
 
-/* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 28, ../../../css.source/simulations/dyslexia/game.scss */
 #dyslexia_swaps {
   color: #FFF;
   line-height: 30px;
@@ -42,19 +42,19 @@
   min-width: 175px;
 }
 
-/* line 34, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 34, ../../../css.source/simulations/dyslexia/game.scss */
 .breakpoint_phone #dyslexia_swaps {
   line-height: 21px;
   margin: 10px 15px;
   min-width: 0px;
 }
 
-/* line 39, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 39, ../../../css.source/simulations/dyslexia/game.scss */
 #dyslexia_swaps .rule {
   padding: 0 10px 0 0;
 }
 
-/* line 42, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 42, ../../../css.source/simulations/dyslexia/game.scss */
 #dyslexia_sentence {
   position: absolute;
   top: 130px;
@@ -63,37 +63,37 @@
   text-align: left;
 }
 
-/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 49, ../../../css.source/simulations/dyslexia/game.scss */
 .breakpoint_phone #dyslexia_sentence {
   top: 80px;
   width: 100%;
   padding: 0;
 }
 
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 54, ../../../css.source/simulations/dyslexia/game.scss */
 #dyslexia_sentence .word {
   display: inline-block;
   white-space: nowrap;
   margin: 15px 10px;
 }
 
-/* line 59, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 59, ../../../css.source/simulations/dyslexia/game.scss */
 .breakpoint_phone #dyslexia_sentence .word {
   margin: 5px 10px;
 }
 
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 62, ../../../css.source/simulations/dyslexia/game.scss */
 #dyslexia_sentence .punctuation {
   font-size: 42px;
   color: #7A4182;
 }
 
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 66, ../../../css.source/simulations/dyslexia/game.scss */
 .breakpoint_phone #dyslexia_sentence .punctuation {
   font-size: 30px;
 }
 
-/* line 69, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 69, ../../../css.source/simulations/dyslexia/game.scss */
 #dyslexia_sentence .letter {
   cursor: pointer;
   display: inline-block;
@@ -106,7 +106,7 @@
   margin: 0 5px;
 }
 
-/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 80, ../../../css.source/simulations/dyslexia/game.scss */
 .breakpoint_phone #dyslexia_sentence .letter {
   min-width: 30px;
   max-width: 36px;
@@ -116,7 +116,7 @@
   margin: 0 2px;
 }
 
-/* line 94, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 94, ../../../css.source/simulations/dyslexia/game.scss */
 #dyslexia_score {
   position: absolute;
   bottom: 40px;
@@ -124,7 +124,7 @@
   text-align: center;
 }
 
-/* line 100, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 100, ../../../css.source/simulations/dyslexia/game.scss */
 .breakpoint_phone #dyslexia_score {
   top: 18px;
   left: 20px;
@@ -132,21 +132,21 @@
   text-align: left;
 }
 
-/* line 107, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 107, ../../../css.source/simulations/dyslexia/game.scss */
 .thumbsup {
   width: 52px;
   height: 52px;
-  background: url("../../../images/simulations/dyslexia/desktop/thumbs_up.png") no-repeat;
+  background: url('../../../images/simulations/dyslexia/desktop/thumbs_up.png?1398292479') no-repeat;
 }
 
-/* line 112, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 112, ../../../css.source/simulations/dyslexia/game.scss */
 .thumbsdown {
   width: 52px;
   height: 52px;
-  background: url("../../../images/simulations/dyslexia/desktop/thumbs_down.png") no-repeat;
+  background: url('../../../images/simulations/dyslexia/desktop/thumbs_down.png?1398292479') no-repeat;
 }
 
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/simulations/dyslexia/game.scss */
+/* line 119, ../../../css.source/simulations/dyslexia/game.scss */
 #gameboard.breakpoint_phone .response {
   margin: 0 3px;
 }

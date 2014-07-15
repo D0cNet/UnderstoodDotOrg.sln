@@ -7,12 +7,12 @@
 /**
  * SASS partial for behaviorTool module.
  */
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
+/* line 5, ../css.source/modules/homepage/_behavior-tool-module.scss */
 .behavior-tool {
   padding: 0 26px 32px;
   padding: 0;
 }
-/* line 14, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
+/* line 13, ../css.source/modules/homepage/_behavior-tool-module.scss */
 .behavior-tool:after {
   content: '';
   width: 1px;
@@ -22,7 +22,7 @@
   right: -21.5%;
   top: 0;
 }
-/* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
+/* line 27, ../css.source/modules/homepage/_behavior-tool-module.scss */
 .behavior-tool .behavior-form {
   background: #fff;
   margin: 0 0px;
@@ -32,7 +32,7 @@
   height: 410px;
   padding: 26px 40px 40px;
 }
-/* line 46, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
+/* line 45, ../css.source/modules/homepage/_behavior-tool-module.scss */
 .behavior-tool .behavior-form h3 {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -44,7 +44,7 @@
   line-height: 1.15;
   letter-spacing: -1px;
 }
-/* line 60, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
+/* line 59, ../css.source/modules/homepage/_behavior-tool-module.scss */
 .behavior-tool .behavior-form p {
   font-size: 12px;
   font-size: 0.75rem;
@@ -55,7 +55,7 @@
   font-size: 1rem;
   margin-bottom: 26px;
 }
-/* line 73, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
+/* line 72, ../css.source/modules/homepage/_behavior-tool-module.scss */
 .behavior-tool .behavior-form .selector {
   margin-bottom: 10px;
   font-size: 12px;
@@ -65,7 +65,7 @@
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 86, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_behavior-tool-module.scss */
+/* line 85, ../css.source/modules/homepage/_behavior-tool-module.scss */
 .behavior-tool .behavior-form .submit-button {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -80,17 +80,17 @@
 /**
  * SASS mixin for cross-platform border-radius.
  */
-/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
+/* line 7, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me {
   margin: 0;
   position: relative;
   background: #f4f2f1;
 }
-/* line 12, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
+/* line 11, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .row {
   max-width: 1200px;
 }
-/* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
+/* line 14, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner {
   margin: 0 27px -29px;
   padding: 15px 14px 20px;
@@ -112,7 +112,7 @@
   padding-top: 30px;
   padding: 30px 40px;
 }
-/* line 40, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
+/* line 39, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .col-12 {
   width: auto;
   float: none;
@@ -123,7 +123,7 @@
   float: left;
   left: auto;
 }
-/* line 54, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
+/* line 53, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .button {
   width: 100%;
   text-align: left;
@@ -131,7 +131,7 @@
   font-weight: bold;
   font-size: 15px;
   font-size: 0.9375rem;
-  background-image: url("../images/arrow.down.000.20.png");
+  background-image: url('../images/arrow.down.000.20.png?1404390951');
   background-repeat: no-repeat;
   background-size: 13px 13px;
   background-position: 94% 50%;
@@ -147,35 +147,35 @@
   display: inline-block;
   margin: 0;
 }
-/* line 80, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
+/* line 79, ../css.source/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .button {
-  background-image: url("../images/arrow.down.000.10.png");
+  background-image: url('../images/arrow.down.000.10.png?1404390951');
 }
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
+/* line 82, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .button:focus {
   outline: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
   box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .guide-me .guide-me-inner .button:focus {
   outline: solid 1px #dfdfdf;
 }
-/* line 88, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
+/* line 87, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .icon {
   display: none;
   display: inline-block;
   width: 43px;
   height: 51px;
-  background-image: url("../images/icon.guide-me.86.png");
+  background-image: url('../images/icon.guide-me.86.png?1404390952');
   background-size: 43px 51px;
   vertical-align: middle;
   margin-right: 15px;
 }
-/* line 99, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me.scss */
+/* line 98, ../css.source/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .icon {
-  background-image: url("../images/icon.guide-me.43.png");
+  background-image: url('../images/icon.guide-me.43.png?1404390952');
 }
 
 /**
@@ -184,7 +184,7 @@
 /**
  * SASS mixin for cross-platform border-radius.
  */
-/* line 8, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 7, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay {
   display: none;
   z-index: 100;
@@ -201,9 +201,9 @@
   top: 200px;
   top: 0;
 }
-/* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 29, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .close-guide {
-  background: url("../images/icon.close.overlay.44.png") 0 2px no-repeat;
+  background: url('../images/icon.close.overlay.44.png?1404390952') 0 2px no-repeat;
   background-size: 16px 36px;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -227,25 +227,25 @@
   right: 30%;
   right: 60%;
 }
-/* line 44, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 43, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .close-guide:hover {
   text-decoration: none;
   color: #426da9;
   background-position: 0 -18px;
 }
-/* line 50, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 49, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .no-backgroundsize .container-guide-me-overlay .close-guide {
-  background-image: url("../images/icon.close.overlay.16.png");
+  background-image: url('../images/icon.close.overlay.16.png?1404390952');
 }
-/* line 62, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 61, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .close-guide:hover {
   background-position: 0 -22px;
 }
-/* line 66, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 65, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .no-backgroundsize .container-guide-me-overlay .close-guide {
-  background-image: url("../images/icon.close.overlay.22.png");
+  background-image: url('../images/icon.close.overlay.22.png?1404390952');
 }
-/* line 83, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 82, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay h3 {
   font-size: 36px;
   font-size: 2.25rem;
@@ -257,14 +257,14 @@
   display: none;
   display: block;
 }
-/* line 97, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 96, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .module {
   padding: 0 14px;
   padding: 0 16px;
   padding: 0 6px 0 6px;
   padding: 0 40px;
 }
-/* line 114, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 113, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay h4, .container-guide-me-overlay legend {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -283,23 +283,23 @@
   margin-top: 0;
   padding-right: 0;
 }
-/* line 127, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 126, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay h4.mobile, .container-guide-me-overlay legend.mobile {
   display: block;
   display: none;
 }
-/* line 135, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 134, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay h4.desktop, .container-guide-me-overlay legend.desktop {
   display: none;
   display: block;
 }
-/* line 156, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 155, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 162, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 161, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-behavior {
   border-right: none;
   margin-bottom: 40px;
@@ -309,33 +309,33 @@
   padding-left: 5%;
   padding-left: 20%;
 }
-/* line 180, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 179, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-behavior li {
   display: table;
   padding-bottom: 18px;
   padding-bottom: 24px;
   padding-bottom: 16px;
 }
-/* line 192, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 191, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-behavior li:last-child {
   padding-bottom: 0;
 }
-/* line 197, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 196, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-behavior .checkbox-wrap {
   display: table-cell;
   vertical-align: top;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .container-guide-me-overlay .select-behavior .checkbox-wrap {
   display: inline-block;
   float: left;
   width: 25px;
 }
-/* line 207, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 206, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-behavior .checkbox-wrap input {
   cursor: pointer;
 }
-/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 211, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-behavior label {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -356,26 +356,26 @@
   padding-left: 14px;
   top: 0;
 }
-/* line 234, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 233, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-grade {
   margin-bottom: 30px;
   margin-bottom: 40px;
 }
-/* line 242, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 241, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-grade .selector {
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
   display: none;
 }
-/* line 252, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 251, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-grade nav {
   float: left;
   width: 100%;
   display: none;
   display: block;
 }
-/* line 262, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 261, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-grade .grade {
   width: 47%;
   height: 44px;
@@ -401,33 +401,33 @@
   width: 170px;
   padding: 0;
 }
-/* line 288, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 287, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-grade .grade:hover, .container-guide-me-overlay .select-grade .grade:focus {
   background: #bcbdc0;
   text-decoration: none;
   outline: none;
 }
-/* line 294, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 293, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-grade .grade.active {
   background: #7a4183;
   color: #fff;
 }
-/* line 299, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 298, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-grade .grade.active:hover {
   background: #9850a2;
   color: #fff;
 }
-/* line 304, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 303, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .select-grade .grade:last-child {
   margin-bottom: 0;
 }
-/* line 310, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 309, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay footer {
   margin: 0 14px;
   margin: 0 auto;
   margin: 0 auto 40px;
 }
-/* line 321, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 320, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay footer .col {
   width: 100%;
   text-align: center;
@@ -436,18 +436,18 @@
   width: 33.333333%;
   margin-left: 33.33333%;
 }
-/* line 333, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 332, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay footer .col-6 {
   width: 25%;
   margin-left: 0;
 }
-/* line 340, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 339, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay footer .submit-button-wrap {
   text-align: center;
   margin-bottom: 26px;
   margin-bottom: 0px;
 }
-/* line 348, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 347, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay footer .submit-button-wrap input {
   width: 100%;
   padding: 0 24px;
@@ -459,13 +459,13 @@
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 364, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 363, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay footer .complete-profile {
   text-align: center;
   margin-bottom: 32px;
   margin-bottom: 0px;
 }
-/* line 372, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 371, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay footer .complete-profile a {
   font-size: 12px;
   font-size: 0.75rem;
@@ -482,7 +482,7 @@
   line-height: 22px;
   line-height: 1.375rem;
 }
-/* line 388, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/homepage/_guide-me-overlay.scss */
+/* line 387, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay footer .complete-profile a:hover {
   text-decoration: none;
 }
@@ -490,12 +490,12 @@
 /**
  * SASS partial for hero carousel module.
  */
-/* line 6, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 5, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel {
   margin: 0;
   position: relative;
 }
-/* line 11, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 10, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel:before {
   content: '';
   display: block;
@@ -506,17 +506,18 @@
   height: 58px;
   background: #F4F2F1;
 }
-/* line 22, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 21, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel .row {
   max-width: 1200px;
   padding: 0;
 }
 
-/* line 28, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 27, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner {
   position: relative;
+  /* Making Button 10px Larger and centering image so increase clickable area on touch devices */
 }
-/* line 31, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 32, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .play-pause {
   display: block;
   z-index: 2;
@@ -524,38 +525,40 @@
   position: absolute;
   bottom: 40px;
   right: 10px;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   background-size: 34px auto;
   text-indent: -9999px;
-  background-image: url("../images/sprite.btn.carousel.play-pause.png");
+  background-image: url('../images/sprite.btn.carousel.play-pause.png?1405464591');
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
   bottom: 10px;
 }
-/* line 49, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
-.hero-carousel-inner .play-pause:hover {
-  background-position: 0 -36.5px;
+/* line 52, ../css.source/modules/carousel/_hero-carousel.scss */
+.no-touch .hero-carousel-inner .play-pause:hover {
+  background-position: 5px -36.5px;
 }
-/* line 53, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 56, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .play-pause.play {
-  background-position: 0 -73px;
+  background-position: 5px -78px;
 }
-/* line 56, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
-.hero-carousel-inner .play-pause.play:hover {
-  background-position: 0 -109.5px;
+/* line 59, ../css.source/modules/carousel/_hero-carousel.scss */
+.no-touch .hero-carousel-inner .play-pause.play:hover {
+  background-position: 5px -119.5px;
 }
-/* line 61, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 64, ../css.source/modules/carousel/_hero-carousel.scss */
 .no-backgroundsize .hero-carousel-inner .play-pause {
-  background-image: url("../images/sprite.btn.carousel.play-pause.lo-res.png");
+  background-image: url('../images/sprite.btn.carousel.play-pause.lo-res.png?1405464591');
 }
-/* line 67, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 70, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-keyboard-trigger {
   border: none;
   background: none;
   position: absolute;
   left: -99999px;
 }
-/* line 74, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 77, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers {
   list-style-type: none;
   height: 0;
@@ -566,7 +569,7 @@
   display: none;
   display: block;
 }
-/* line 87, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 90, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrow {
   position: absolute;
   width: 48px;
@@ -581,42 +584,42 @@
   -ms-transition: opacity .4s;
   transition: opacity .4s;
 }
-/* line 103, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 106, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers.active .rsArrow {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 107, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 110, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowLeft {
   left: 0;
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 112, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowLeft .rsArrowIcn {
   background-position: 0 0;
 }
-/* line 113, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 116, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowRight {
   right: 0;
 }
-/* line 115, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 118, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowRight .rsArrowIcn {
   background-position: 100% 0;
 }
-/* line 119, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 122, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-pagers .rsArrowIcn {
   border: none;
   background-color: transparent;
   position: static;
   width: 12px;
   height: 21px;
-  background-image: url("../images/sprite.icon.arrows.next-prev.24.png");
+  background-image: url('../images/sprite.icon.arrows.next-prev.24.png?1404390952');
   background-size: 25px 21px;
 }
-/* line 128, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 131, ../css.source/modules/carousel/_hero-carousel.scss */
 .no-backgroundsize .hero-carousel-inner .carousel-pagers .rsArrowIcn {
-  background-image: url("../images/sprite.icon.arrows.next-prev.12.png");
+  background-image: url('../images/sprite.icon.arrows.next-prev.12.png?1404390952');
 }
-/* line 134, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 137, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-navigation {
   display: none;
   display: block;
@@ -626,12 +629,12 @@
   text-align: center;
   z-index: 2;
 }
-/* line 145, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 148, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-navigation li {
   display: inline-block;
   margin: 0 14px;
 }
-/* line 150, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 153, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-navigation .navigation-link {
   border: none;
   text-indent: -9999px;
@@ -641,23 +644,23 @@
   border-radius: 50%;
   cursor: pointer;
 }
-/* line 160, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 163, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-navigation .navigation-link:hover, .hero-carousel-inner .carousel-navigation .navigation-link:focus {
   background: #bcbdc0;
 }
-/* line 164, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 167, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-navigation .navigation-link.selected {
   background: #7a4183;
   cursor: default;
 }
 
-/* line 173, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 176, ../css.source/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper {
   width: 100%;
   height: 200px;
   height: 400px;
 }
-/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 182, ../css.source/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide {
   background-position: 50% 0;
   background-size: 600px 200px;
@@ -666,9 +669,10 @@
   height: 400px;
   background-size: auto;
 }
-/* line 188, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 191, ../css.source/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide .text {
   font-weight: bold;
+  max-width: 125px;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.111;
@@ -679,6 +683,7 @@
   line-height: 40px;
   line-height: 2.5rem;
   padding: 36px 0 0 30px;
+  max-width: 325px;
   padding-left: 45px;
   max-width: 350px;
   position: absolute;
@@ -686,15 +691,15 @@
   margin-left: -435px;
   padding-left: 0;
 }
-/* line 209, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 217, ../css.source/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide .text p {
   margin-bottom: 0.778em;
 }
-/* line 212, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 220, ../css.source/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide .text.text-color-white {
   color: #fff;
 }
-/* line 215, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_hero-carousel.scss */
+/* line 223, ../css.source/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide .text.text-color-purple {
   color: #7a4183;
 }
@@ -705,14 +710,14 @@
 /**
  * SASS partial for featured-recommended module.
  */
-/* line 9, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 9, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended ul,
 .more-carousel ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 15, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 15, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended h2,
 .more-carousel h2 {
   margin-bottom: 15px;
@@ -720,23 +725,23 @@
   margin-bottom: 40px;
   margin-left: 0;
 }
-/* line 30, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 30, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container,
 .more-carousel #featured-slides-container {
   height: 235px !important;
   margin-bottom: 60px;
 }
-/* line 37, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 37, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container .rsOverflow,
 .more-carousel #featured-slides-container .rsOverflow {
   position: inherit;
 }
-/* line 43, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 43, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container .rsContent,
 .more-carousel #featured-slides-container .rsContent {
   text-align: center;
 }
-/* line 48, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 48, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container .rsArrowLeft .rsArrowIcn,
 .more-carousel #featured-slides-container .rsArrowLeft .rsArrowIcn {
   top: auto;
@@ -751,7 +756,7 @@
   margin-right: 0;
   right: 44px;
 }
-/* line 70, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 70, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container .rsArrowRight .rsArrowIcn,
 .more-carousel #featured-slides-container .rsArrowRight .rsArrowIcn {
   top: auto;
@@ -768,7 +773,7 @@
   right: 0;
   margin-right: 0;
 }
-/* line 93, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 93, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container ul,
 .more-carousel #featured-slides-container ul {
   list-style: none;
@@ -780,7 +785,7 @@
   padding: 0 0 0 6.5%;
   padding: 0 0 0 4%;
 }
-/* line 109, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 109, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container ul li,
 .more-carousel #featured-slides-container ul li {
   display: inline-block;
@@ -797,17 +802,19 @@
   width: 24.89%;
   margin: 0 44px;
 }
-/* line 3, /Users/justin/projects.dp/poses/source/Presentation/includes/css/mixins/_old-ie.scss */
+/* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .featured-recommended #featured-slides-container ul li, .old-ie
 .more-carousel #featured-slides-container ul li {
   width: 23.5%;
 }
-/* line 138, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 138, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container ul li:first-child,
 .more-carousel #featured-slides-container ul li:first-child {
-  margin-left: 0;
+  margin-left: 0px;
+  margin-left: 8px;
+  margin-left: 2px;
 }
-/* line 142, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 148, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container ul li img,
 .more-carousel #featured-slides-container ul li img {
   width: 100%;
@@ -815,7 +822,7 @@
   bottom: 0;
   left: 0;
 }
-/* line 152, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 158, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container ul li p,
 .more-carousel #featured-slides-container ul li p {
   vertical-align: top;
@@ -831,13 +838,13 @@
   line-height: 28px;
   line-height: 1.75rem;
 }
-/* line 165, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 171, ../css.source/modules/carousel/_featured-carousel.scss */
 .featured-recommended #featured-slides-container ul li a,
 .more-carousel #featured-slides-container ul li a {
   display: block;
 }
 
-/* line 179, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 185, ../css.source/modules/carousel/_featured-carousel.scss */
 .more-carousel {
   clear: both;
   border-bottom: solid 1px #e2e2e2;
@@ -846,15 +853,15 @@
   padding-bottom: 0;
   margin-bottom: 0;
 }
-/* line 190, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 196, ../css.source/modules/carousel/_featured-carousel.scss */
 .more-carousel .col {
   border-bottom: solid 1px #e2e2e2;
 }
-/* line 196, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 202, ../css.source/modules/carousel/_featured-carousel.scss */
 .more-carousel.more-carousel-no-border-bottom {
   border-bottom: none;
 }
-/* line 198, /Users/justin/projects.dp/poses/source/Presentation/includes/css/modules/carousel/_featured-carousel.scss */
+/* line 204, ../css.source/modules/carousel/_featured-carousel.scss */
 .more-carousel.more-carousel-no-border-bottom .col {
   border-bottom: none;
 }

@@ -1,0 +1,399 @@
+/**
+ * SASS partial for miniTools module.
+ */
+
+// mini-tool (for standalone mini-tools)
+
+.mini-tool {
+  background: #f4f2f1;
+  margin: 0 15px 14px;
+  padding: 24px 20px 1px;
+
+  @include bp($bp-small-plus) {
+    padding: 27px 17px 16px;
+    margin: 0 0 38px;
+  }
+
+  @include bp($bp-large) {
+    padding: 30px 20px 18px 20px;
+  }
+
+  header {
+
+    h3 {
+      @include rem(font-size, 21px);
+      line-height: 1;
+      font-weight: normal;
+      color: #6c4282;
+      margin-bottom: 14px;
+      padding-right: 5px;
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 21px);
+      }
+
+      @include bp(650px 702px) {
+        min-height: 81px;
+      }
+
+      @include bp($bp-medium) {
+        min-height: 54px;
+      }
+
+    }
+
+    p {
+      font-family: Arial, sans-serif;
+      @include rem(font-size, 16px);
+      color: #696969;
+      margin-bottom: 20px;
+      padding-right: 5px;
+
+      @include bp($bp-small-plus) {
+        @include rem(font-size, 14px);
+        margin-bottom: 14px;
+      }
+
+      @include bp($bp-large) {
+        @include rem(font-size, 16px);
+      }
+    } //p
+
+  }// header
+
+
+  .selector {
+    @include rem(font-size, 16px);
+    padding-left: 15px;
+    margin-bottom: 10px;
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 11px);
+      padding-left: 10px;
+    }
+    @include bp($bp-medium) {
+      @include rem(font-size, 13px);
+      padding-left: 20px;
+    }
+    @include bp($bp-large) {
+      @include rem(font-size, 16px);
+    }
+  }// .selector
+
+  input {
+    padding-left: 15px;
+    margin-bottom: 10px;
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 12px);
+      padding-left: 10px;
+    }
+    @include bp($bp-medium) {
+      @include rem(font-size, 12px);
+      padding-left: 20px;
+    }
+    @include bp($bp-large) {
+      @include rem(font-size, 14px);
+    }
+  }
+
+  .submit-button-wrap {
+    margin-bottom: 14px;
+    @include bp($bp-small-plus) { margin-bottom: 4px; }
+
+    .button {
+      @include rem(font-size, 18px);
+      @include bp($bp-small-plus) { @include rem(font-size, 16px); }
+      @include bp($bp-large) { @include rem(font-size, 18px); }
+    }
+  }// .submit-button-wrap
+
+
+  footer.powered-by {
+    text-align: center;
+
+    h5 {
+      @include rem(font-size, 12px);
+      color: #696969;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    img {
+      max-width: 60%;
+      margin-bottom: 24px;
+
+      @include bp($bp-small-plus) {
+        margin-bottom: 0px;
+        max-width: 70%;
+      }
+
+      @include bp($bp-large) {
+        max-width: 80%;
+      }
+
+    }
+  }// footer.powered-by
+
+  .tabs {
+    margin: 8px 0 18px;
+    width: 100%;
+    white-space: nowrap;
+    a {
+      @include rem(font-size, 12px);
+      font-weight: bold;
+      color: #a9a9a9;
+      display: inline-block;
+      width: 50%;
+      height: 38px;
+      text-align: center;
+      line-height: 38px;
+      background: #f3f2f1;
+      border: solid 1px #f3f2f1;
+      border-top: solid 1px #d3d2d1;
+
+      &:last-child {
+        border-left: solid 1px #d3d2d1;
+      }
+
+      &.active, &.active:hover, &.active:focus {
+        background: #7a4183;
+        border: solid 1px #7a4183;
+        color: #fff;
+        cursor: default;
+      }
+
+      &:hover,
+      &:focus {
+        background: #fff;
+        border: solid 1px #d3d2d1;
+        text-decoration: none;
+      }
+      
+    }
+  }// .tabs
+
+  .tab-content-wrap {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: none;
+      padding: 0;
+      margin: 0;
+    }
+  }// .tab-content-wrap
+
+  .decision-guide {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include rem(font-size, 21px);
+    color: #696969;
+    margin-bottom: 30px;
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 24px);
+    }
+
+    li {
+      border-bottom: solid 1px #c6c5c5;
+      padding: 10px 0;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+    }
+
+  }
+
+
+}// .mini-tool
+
+
+
+// mini-tools wrapper (for the 3 tool layout)
+.mini-tools-wrap {
+  padding-top: 14px;
+  background: #f4f2f1;
+  margin: 0px;
+  // fix to prevent 1px shifting in Chrome, due to royal slider defect
+  -webkit-backface-visibility: hidden;
+
+  // .mini-tools-wrap uses an inline style for background image; image needs to be removed for mobile
+  // use '!important' to override the inline style in most browsers
+  // use .canvas to target all browsers except IE8; IE8 is not able to override 'background-image: none !important;'
+
+  html.canvas & {
+    @include bp(max-width 649px) {
+      background-image: none !important;
+    }
+  }
+
+  @include bp($bp-small-plus) {
+
+    background: {
+      color: #fff;
+      position: center top;
+      repeat: no-repeat;
+    }
+    
+    padding: 222px 5px 0;
+    margin-bottom: 10px;
+  }
+
+  @include bp($bp-medium) {
+    padding: 258px 0 0;
+  }
+
+  .row {
+
+    @include bp($bp-small-plus) {
+      padding: 0 4.16666666667%;
+    }
+
+    @include bp($bp-large) {
+      padding: 0 5px;
+    }
+  }
+
+  .row .col {
+
+    @include bp($bp-medium) {
+      padding: 0 8px;
+    }
+
+    @include bp($bp-large) {
+      padding: 0 5px;
+    }
+  }
+  
+
+
+// use this child class for specifically within the 3 column mini-tool layout
+
+  .mini-tool {
+
+    background: #fff;
+    margin-bottom: 14px;
+    padding: 24px 20px 1px;
+
+    @include bp($bp-small-plus) {
+      padding: 27px 17px;
+      margin-bottom: 0;
+    }
+
+    @include bp($bp-large) {
+      padding: 27px 40px;
+    }
+
+    header {
+      @include bp($bp-small-plus) {
+        min-height: 165px;
+      }
+      @include bp($bp-medium) {
+        min-height: 140px;
+      }
+      @include bp(769px 825px) {
+        min-height: 175px;
+      }
+      @include bp($bp-large) {
+        min-height: 154px;
+      }
+
+      h3 {
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 24px);
+          line-height: 1.15;
+        }
+
+        @include bp($bp-large) {
+          margin-bottom: 17px;
+        }
+      }
+
+      p {
+        @include bp($bp-small-plus) {
+          margin-bottom: 0;
+        }
+        @include bp($bp-large) {
+          padding-right: 35px;
+        }
+      }
+
+    } //header
+
+    .form {
+
+      .selector {
+
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 12px);
+        }
+
+        @include bp($bp-medium) {
+          @include rem(font-size, 14px);
+        }
+
+        @include bp($bp-large) {
+          @include rem(font-size, 16px);
+        }
+
+      }// .selector
+
+    }// .form
+
+    fieldset,
+    .decision-guide {
+
+      @include bp($bp-small-plus) {
+        min-height: 256px;
+        margin-bottom: 0;
+      }
+
+    }// fieldset
+  }// .mini-tool
+
+}// .mini-tools-wrap
+
+// make height for ratings module smaller to accommodate for tabs
+#mini-tool-ratings fieldset {
+  @include bp($bp-small-plus) {
+    min-height: 192px;
+  }
+}
+
+.mini-tools-sidebar {
+
+  .mini-tool {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+.hide-school-ratings {
+  #mini-tool-ratings {
+    display: none;
+    @include bp(min-width 650px) {
+      display: block;
+    }
+  }
+}
+
+// hide platform select until tech select is chosen
+#uniform-tool-tech-platforms {
+  display: none;
+
+  @include bp($bp-small-plus) {
+    margin-bottom: 0;
+  }
+
+  .sidebar & {
+    margin-bottom: 10px;
+  }
+
+}
+

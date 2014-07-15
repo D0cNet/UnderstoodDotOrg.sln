@@ -1,0 +1,446 @@
+@import 'config';
+/* ==========================================================================
+   Print styles.
+   ========================================================================== */
+
+@media print {
+
+  // page margins
+  @page {
+    margin: .5in .25in !important;
+  }
+
+  // LAYOUT/GRID/GLOBAL
+  body {
+    width: 8in !important;
+  }
+
+  a[href]:after {
+    font-size: 10px;
+  }
+
+  // show logo
+  .logo-u-main img {
+    display: block !important;
+    filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    filter: grayscale(100%); /* Current draft standard */
+    -webkit-filter: grayscale(100%); /* New WebKit */
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%); 
+    -o-filter: grayscale(100%);
+  }
+
+  // Uniform checkboxes, radios
+  .checker,
+  .radio {
+    display: inline-block !important;
+    border: solid 1px #999 !important;
+    height: 15px !important;
+    width: 15px !important;
+    border-radius: 50%;
+  }
+  .selector,
+  .button {
+    border: solid 1px #d2d2d2 !important;
+  }
+
+  // HIDE GLOBAL ELEMENTS ->
+
+  // top nav - submenu
+  #header-page .nav-main > ul > li ul,
+
+  // reading assist
+  #rsToggle,
+
+  // all modals by default 
+  .modal,
+
+  // more to explore/featured/more like this/ what parents saying carousel, hide third slide
+  .more-to-explore .more-to-explore-container ul li:nth-child(3),
+  .featured-recommended #featured-slides-container ul li:nth-child(3),
+  .more-carousel #featured-slides-container ul li:nth-child(3),
+  .comment-gallery .comment-gallery-container ul li:nth-child(3),
+  .parents-are-saying .parents-are-saying-container ul li:nth-child(3),
+
+  // articles > find this helpful and poll question (show answer (question/results)
+  .find-this-helpful.content, .find-this-helpful.persist,
+  .article-poll .poll-question,
+
+  //secondary menu - submenu
+  .nav-secondary .submenu,
+
+  //language selection
+  .language-selection,
+
+  //video
+  .player-container
+
+  {display: none !important;}
+
+  // <- HIDE GLOBAL ELEMENTS
+
+
+  // GLOBAL ELEMENTS
+
+  // 2 columns layout that has the sidebar border (remove height from content heavy first column)
+  .row-equal-heights .col:first-child {
+    height: auto !important;
+  }
+
+
+  // TEMPLATE LEVEL ELEMENTS
+  // G1
+  .hero-carousel {
+  	height:200px;
+  	overflow: hidden;
+    background: #fff !important;
+  }
+
+  #hero-carousel-wrapper .slide {
+    background: none !important;
+    
+    .text {
+      position: static !important;
+      margin-left: 30px !important;
+      max-width: 100% !important;
+      margin-top: 40px;
+    }
+    
+  }
+
+  .guide-me {
+  	display: none !important;
+    background: #fff !important;
+  }
+
+  .parent-toolkit {
+    background: #fff !important;
+    
+    .header-parent-toolkit {
+      width: 100% !important;
+    }
+
+    .rsOverflow {
+      width: 400px !important;
+    }
+
+  }
+
+  //G2
+  .page-topic .get-better-recommendations,
+
+  //G3
+  .carousel-tertiary #topic-carousel 
+
+  {display: none !important;}
+
+  // ACCOUNT HEADER
+  .my-account-nav .account-nav-wrapper {
+    height: 150px !important;
+    top: 0 !important;
+  }
+
+  .my-account-nav .account-links {
+    position: static !important;
+    float: right !important;
+    margin: 0 !important;
+  }
+
+  //MC2
+  .terms-wrapper .terms-container .terms-content {
+    height: auto !important;
+  }
+
+  //M6
+  .large-landing-module .landing-modules {
+    height: auto !important;
+    float: left !important;
+  }
+
+  .landing-events.landing-modules {
+    width: 279px !important;
+    float: left !important;
+  }
+
+  //M9
+  .account-notifications-tab-text-form textarea {
+    height: 300px !important;
+    max-width: 100% !important;
+  }
+
+  // USER PROFILE POPOVERS
+  .member-card-info {
+    height: auto !important;
+  }
+
+  .member-card-specialties a[href]:after {
+    content: " " !important;
+  }
+
+  //C2 CAROUSEL
+  .upcoming-events {
+
+    .rsOverflow {
+      width: 800px !important;
+      overflow: visible !important;
+    }
+
+    .event-cards {
+      margin-left: 0 !important;
+    }
+    
+    .event-card {
+      width: 360px !important;
+    }
+
+    .event-card-title {
+      height: auto !important;
+    }
+
+    .event-card-image a[href]:after {
+      content: " " !important;
+    }
+
+  }//.upcoming-events 
+
+  //C2 CAROUSEL
+  .recent-questions {
+
+    .rsOverflow {
+      width: 800px !important;
+      overflow: visible !important;
+    }
+
+    .question-card-info {
+      padding-left: 0 !important;
+      height: auto !important;
+    }
+
+  }//.recent-questions
+
+  //C2 CAROUSEL
+  .community-members {
+    height: 500px !important;
+    page-break-before: always;
+
+    .rsAutoHeight {
+      height: auto !important;
+    }
+
+    .rsOverflow {
+      height: auto !important;
+      width: 800px !important;
+      overflow: visible !important;
+    }
+
+    .member-cards .member-card-info {
+      height: auto !important;
+      page-break-after : always;
+    }
+
+  }//.community-members
+
+  //C2 CAROUSEL
+  .community-groups {
+    
+    .rsOverflow {
+      width: 800px !important;
+      overflow: visible !important;
+    }
+
+    .group-cards {
+      margin-left: 0 !important;
+    }
+
+    .group-card-image a[href]:after {
+      content: " " !important;
+    }
+
+  }//.community-groups
+
+  //C2 CAROUSEL
+  .community-blogs {
+
+    .rsOverflow {
+      width: 800px !important;
+      overflow: visible !important;
+    }
+
+    .blog-card-info {
+      padding-left: 0 !important;
+    }
+
+  }//.community-blogs
+
+  //C3 CAROUSEL
+  .live-chat {
+
+    .rsOverflow {
+      width: 800px !important;
+      overflow: visible !important;
+    }
+
+    .event-card-info {
+      height: auto !important;
+    }
+
+    .event-card-upper {
+      margin-left: 0 !important;
+    }
+
+  }//.live-chat
+
+  //C4 
+  .calendar-grid .grid-row > .day {
+    border: solid 1px #d2d2d2;
+  }
+
+  //C12
+  .community-parents .community-parents-carousel .member-cards .rsContent > ul > li:nth-child(4) {
+    display: none !important;
+  }
+
+  //C17,C18,C19
+  .mobile-search-box {
+    display: none !important;
+  }
+
+  .discussion-box {
+    padding: 0 !important; 
+    border: none !important;
+    
+    h4 {
+      font-size: 20px !important;
+    }
+
+    .summary {width: 18% !important; min-width: 0 !important; clear: none !important;}
+    .board {width: 10% !important; min-width: 0 !important; clear: none !important;}
+    .started-by {width: 8% !important; min-width: 0 !important; clear: none !important;}
+    .replies {width: 8% !important; min-width: 0 !important; clear: none !important;}
+    .latest-post, .latest-post-tabular {width: 18% !important; min-width: 0 !important; clear: none !important;}
+
+  }//.discussion-box
+
+  //C20
+ 
+  .individual-discussion .discussion-contributer {
+    margin-right: 0 !important;
+  }
+
+  //C21
+  .community-blogs-more {
+
+    .rsOverflow {
+      width: 800px !important;
+      overflow: visible !important;
+    }
+
+    .blog-card-wrapper {
+      padding-left: 0 !important;
+    }
+
+    .author-image a[href]:after {
+      content: " " !important;
+    }
+
+  }//.community-blogs-more 
+
+  //C22
+  .community-blog-post-list .blog-post-list {
+    margin-left: 0 !important;
+  }
+
+  //AB3
+  .partners-list-rs-wrapper {
+    margin-bottom: 20px !important;
+  }
+  .about-partners-list .partner-block {
+    clear: both !important;
+    overflow: hidden !important;
+  }
+
+  //AB5 
+  .l-about-experts-intro-carousel {
+    .row .offset-1 {
+      margin-left: 0 !important;
+    }
+  }
+
+  //DL1, B2
+  .dl-list-results .search-result,
+  .advice-results .search-result {
+    border: solid 1px #d2d2d2 !important;
+  }
+
+  //SP1, R1, R3 (Page Title)
+  .page-topic.support .title-wrapper h1,
+  .page-topic.support .title-wrapper .page-subtitle,
+  .page-topic.recommendations h1,
+  .page-topic.recommendations .page-subtitle {
+    padding-left: 0 !important;
+  }
+  .page-topic.support .title-wrapper:before,
+  .page-topic.recommendations h1:before {
+    width: 0 !important;
+  }
+
+  //R3 Carousels
+  .recos-for-you {
+
+    .rsOverflow {
+      width: 760px !important;
+      overflow: visible !important;
+    }
+
+    li {
+      height: auto !important;
+      padding-left: 0 !important;
+    }
+
+  }//recos-for-you
+
+  //R3 Carousels
+  .recos-upcoming-events {
+
+    .rsOverflow {
+      width: 760px !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+
+    .rsAutoHeight {
+      height: 500px !important;
+    }
+
+    li {
+      height: auto !important;
+      padding-right: 0 !important;
+    }
+
+    .event-wrapper {
+      padding-left: 0 !important;
+    }
+
+  }//recos-upcoming-events 
+
+  //R3 Carousels
+  .recos-ask-parents {
+
+    .rsOverflow {
+      width: 760px !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+
+    li {
+      height: auto !important;
+      padding-right: 0 !important;
+    }
+
+    .parents-wrapper {
+      padding-left: 0 !important;
+    }
+
+  }//recos-ask-parents
+
+}// @media print

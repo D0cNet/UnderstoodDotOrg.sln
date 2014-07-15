@@ -1,0 +1,381 @@
+.help-content-wrapper {
+  height: 100%;
+  &.resize {
+    @include transition(height, 50ms, ease-in-out);
+  }
+}
+.help-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  .list-element {
+    border: none;
+    background: transparent;
+    position: absolute;
+    .status, .start-over, .done-this, .skip-this {
+      border: none;
+      background: transparent;
+    }
+  }
+  @include bp ($bp-small-plus) {
+    width: 570px;
+    margin: 0 auto;
+  }
+  @include bp ($bp-large) {
+    width: 100%;
+  }
+  .list-element-outer-wrapper {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    @include bp ($bp-small-plus) {
+      float: left;
+      margin: 0px 0px 30px 30px;
+    }
+    @include bp ($bp-large) {
+      margin: 0px 0px 30px 30px;
+    }
+    &.first {
+      @include bp (min-width 988px) {
+        margin-left: 0;
+      }
+    }
+    &.tablet-first {
+      @include bp ($bp-small-plus) {
+        margin: 0px 0px 30px 0px;
+      }
+      @include bp ($bp-large) {
+        margin: 0px 0px 30px 30px;
+      }
+    }
+    &.first.tablet-first {
+      @include bp (min-width 988px) {
+        margin-left: 0;
+      }
+    }
+  }
+  .list-element-wrapper {
+    height: 290px;
+    width: 270px;
+    display: table;
+    background-color: #f4f2f1;
+    position: relative;
+    padding: 30px;
+    margin: 0 auto;
+    opacity: 1;
+    &.fadeOutInitContent {
+      @include transition(opacity, 0.2s, ease-in-out);
+    }
+    &.animateaway {
+      height: 0;
+      h3, a, button {
+        display: none;
+      }
+    }
+    @include bp ($bp-small-plus) {
+      margin: auto;
+    }
+    h3, .detail {
+      margin: 0 auto;
+      text-align: center;
+    }
+    h3 {
+      color: #7a4183;
+      @include rem (font-size, 24px);
+      margin: 50px 0 25px 0;
+    }
+    &.accessibility, &.hover {
+      &.done .status, &.skipped .status {
+        display: none;
+      }
+      .detail, .done-this, .skip-this {
+        display: block;
+      }
+      h3 {
+        margin: 0 0 17px 0;
+      }
+    }
+    .detail, .done-this, .skip-this, .start-over {
+      display: none;
+    }
+    .detail {
+      color: #696969;
+      @include rem (font-size, 16px);
+      margin-bottom: 18px;
+    }
+    .activity-action {
+      position: absolute;
+      width: 210px;
+      top: 157px;
+    }
+    &.done, &.skipped {
+      h3 {
+        color: #FFFFFF;
+      }
+    }
+    &.done .status, &.skipped .status {
+      display: block;
+    }
+    .status, .list-element {
+      text-indent: -9999px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .status {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      height: 31px;
+      width: 31px;
+      border: none;
+      background: transparent;
+    }
+    &.done .status:before, &.skipped .status:before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 31px;
+      width: 31px;
+      background-size: 31px 31px;
+      background-repeat: no-repeat;
+    }
+    &.done {
+      background-color: #7a4183;
+      .status:before {
+        background: image-url('sprite.support.plan.png');
+        background-repeat: no-repeat;
+        background-position: -9px -4px;
+        background-size: 168.5px;
+        .no-backgroundsize & {
+          background-image: image-url('sprite.support.plan.lowres.png');
+          background-position: 0px -4px;
+        }
+      }
+      .activity-action {
+        opacity: .5;
+      }
+      &.accessibility, &.hover {
+        .activity-action {
+          opacity: 1;
+        }
+        .status, .done-this {
+          display: none;
+        }
+        .detail, .skip-this {
+          color: #FFFFFF;
+        }
+        .skip-this {
+          &:before {
+            background: image-url('sprite.support.plan.png');
+            background-repeat: no-repeat;
+            background-position: -88px -83px;
+            background-size: 168.5px;
+            .no-backgroundsize & {
+              background-image: image-url('sprite.support.plan.lowres.png');
+              background-position: -80px -83px;
+            }
+          }
+          &:hover {
+            color: #426da9;
+            &:before {
+              background: image-url('sprite.support.plan.png');
+              background-repeat: no-repeat;
+              background-position: -88px -44px;
+              background-size: 168.5px;
+              .no-backgroundsize & {
+                background-image: image-url('sprite.support.plan.lowres.png');
+                background-position: -80px -44px;
+              }
+            }
+          }
+        }
+        .done-this {
+          display: none;
+        }
+        .start-over {
+          display: block;
+        }
+      }
+    }
+    &.skipped {
+      background-color: #298fc2;
+      .activity-action {
+        opacity: .5;
+      }
+      .detail {
+        color: #FFFFFF;
+      }
+      .status:before {
+        background: image-url('sprite.support.plan.png');
+        background-repeat: no-repeat;
+        background-position: -88px -4px;
+        background-size: 168.5px;
+        .no-backgroundsize & {
+          background-image: image-url('sprite.support.plan.lowres.png');
+          background-position: -68px -4px;
+        }
+      }
+      &.hover, &.accessibility {
+        .status, .skip-this {
+          display: none;
+        }
+        .activity-action {
+          opacity: 1;
+        }
+        .done-this {
+          color: #FFFFFF;
+          &:before {
+            background: image-url('sprite.support.plan.png');
+            background-repeat: no-repeat;
+            background-position: -48px -83px;
+            background-size: 168.5px;
+            .no-backgroundsize & {
+              background-image: image-url('sprite.support.plan.lowres.png');
+              background-position: -42px -78px;
+            }
+          }
+          &:hover:before {
+            background: image-url('sprite.support.plan.png');
+            background-repeat: no-repeat;
+            background-position: -8px -44px;
+            background-size: 168.5px;
+            .no-backgroundsize & {
+              background-image: image-url('sprite.support.plan.lowres.png');
+              background-position: -2px -38px;
+            }
+          }
+        }
+      }
+    }
+    .done-this, .skip-this, .start-over {
+      @include rem (font-size, 14px);
+      color: #696969;
+      width: 95px;
+      padding-left: 35px;
+      height: 33px;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 33px;
+        width: 33px;
+      }
+      &:hover {
+        color: #426da9;
+      }
+    }
+    .done-this, .start-over {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      border: none;
+      background: transparent;
+    }
+    .done-this {
+      &:before {
+        background: image-url('sprite.support.plan.png');
+        background-repeat: no-repeat;
+        background-position: -48px -4px;
+        background-size: 168.5px;
+        .no-backgroundsize & {
+          background-image: image-url('sprite.support.plan.lowres.png');
+          background-position: -42px 4px;
+        }
+      }
+      &:hover:before {
+        background: image-url('sprite.support.plan.png');
+        background-repeat: no-repeat;
+        background-position: -48px -44px;
+        background-size: 168.5px;
+        .no-backgroundsize & {
+          background-image: image-url('sprite.support.plan.lowres.png');
+          background-position: -43px -36px;
+        }
+      }
+    }
+    .start-over {
+      width: 110px;
+      height: 34px;
+      color: #FFFFFF;
+      &:before {
+        background: image-url('sprite.support.plan.png');
+        background-repeat: no-repeat;
+        background-position: -128px -44px;
+        background-size: 168.5px;
+        .no-backgroundsize & {
+          background-image: image-url('sprite.support.plan.lowres.png');
+          background-position: -125px -44px;
+        }
+      }
+      &:hover:before {
+        background: image-url('sprite.support.plan.png');
+        background-repeat: no-repeat;
+        background-position: -128px -4px;
+        background-size: 168.5px;
+        .no-backgroundsize & {
+          background-image: image-url('sprite.support.plan.lowres.png');
+          background-position: -125px -4px;
+        }
+      }
+    }
+    .skip-this {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      height: 34px;
+      border: none;
+      background: transparent;
+      &:before {
+        background: image-url('sprite.support.plan.png');
+        background-repeat: no-repeat;
+        background-position: -88px -4px;
+        background-size: 168.5px;
+        .no-backgroundsize & {
+          background-image: image-url('sprite.support.plan.lowres.png');
+          background-position: -83px -4px;
+        }
+      }
+      &:hover{
+        color: #426da9;
+        &:before {
+          background: image-url('sprite.support.plan.png');
+          background-repeat: no-repeat;
+          background-position: -88px -44px;
+          background-size: 168.5px;
+          .no-backgroundsize & {
+            background-image: image-url('sprite.support.plan.lowres.png');
+            background-position: -83px -44px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.old-ie .help-list li {
+  .done-this, .skip-this, .start-over {
+    &:before {
+      height: 41px;
+      width: 38px;
+    }
+  }
+  &.done {
+    .skip-this, .done-this, .status {
+      &:before {
+        height: 41px;
+        width: 38px;
+      }
+    }
+  }
+  .status {
+    height: 46px;
+    width: 35px;
+  }
+  .status:before {
+    height: 46px;
+    width: 48px;
+  }
+}

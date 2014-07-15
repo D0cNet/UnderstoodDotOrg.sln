@@ -1,0 +1,371 @@
+.breadcrumb-menu {
+  float: left;
+  margin-bottom: 17px;
+  @include bp ($bp-small-plus) {
+    margin-bottom: 45px;
+  }
+}
+
+.toolbar-wrapper {
+  .print-button, .print-button-mobile {
+    height: 50px;
+  }
+  .print-button {
+    display: none;
+    float: right;
+    padding: 0 30px;
+    width: auto;
+    margin: 2px 0 40px 0;
+    @include bp ($bp-small-plus) {
+      display: block;
+    }
+  }
+  .print-button-mobile {
+    display: block;
+    width: 100%;
+    margin: 2px 0 25px 0;
+    @include bp ($bp-small-plus) {
+      display: none;
+    }
+  }
+  .no-goals-toolbar & {
+    margin-bottom: 14px;
+    @include bp ($bp-small-plus) {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #c6c5c5;
+      margin-bottom: 39px;
+    }
+    .toolbar-heading {
+      width: 100%;
+    }
+    .action-toolbar {
+      margin-top: 25px;
+      @include bp ($bp-small-plus) {
+        margin-top: 11px;
+      }
+    }
+    h2 {
+      width: 180px;
+      @include bp (min-width 400px) {
+        width: 220px;
+      }
+      @include bp ($bp-small-plus) {
+        width: 280px;
+      }
+    }
+  }
+  .goals-toolbar & {
+    margin-bottom: 22px;
+    @include bp ($bp-small-plus) {
+      margin-bottom: 37px;
+    }
+    h2 {
+      margin-bottom: 10px;
+      width: 240px;
+    }
+    .action-toolbar {
+      margin-top: 0px;
+      @include bp ($bp-small) {
+        margin-top: 11px;
+      }
+    }
+  }
+  .toolbar-heading {
+    clear: both;
+    width: 100%;
+    float: left;
+    margin: 0;
+    h2 {
+      color: #7b3f84;
+      @include rem (font-size, 21px);
+      font-weight: bold;
+      width: 65%;
+      display: inline-block;
+      @include bp ($bp-small) {
+        width: 100%;
+        @include rem (font-size, 32px);
+        font-weight: normal;
+      }
+    }
+    .heading-tag {
+      color: #696969;
+      @include rem (font-size, 18px);
+      margin-bottom: 0px;
+    }
+  }
+  .action-toolbar {
+    list-style: none;
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: auto;
+    margin-top: 26px;
+    float: right;
+    @include bp ($bp-small-plus) {
+      margin-top: 0px;
+      height: 26px;
+      float: right;
+      display: block;
+      width: 320px;
+    }
+    .my-progress {
+      z-index: 1;
+      @include bp ($bp-small-plus) {
+        position: relative;
+      }
+      h4 {
+        color: #7b3f84;
+        @include rem (font-size, 18px);
+        font-weight: normal;
+      }
+      &.hover, &.focus {
+        .progress-toggle-outer-wrapper, .progress-toggle-wrapper {
+          display: block;
+        }
+      }
+    }
+    .progress-toggle-outer-wrapper {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 150px;
+      top: 77px;
+      left: 0;
+      z-index: 1;
+      @include bp ($bp-small) {
+        top: 120px;
+      }
+      @include bp ($bp-small-plus) {
+        width: 450px;
+        top: 20px;
+        left: -101%;
+      }
+    }
+    .progress-toggle-wrapper {
+      display: none;
+      width: 100%;
+      height: 127px;
+      background-color: #FFFFFF;
+      @include dropshadow;
+      padding: 30px 36px;
+      position: relative;
+      top: 20px;
+      @include bp ($bp-small-plus) {
+        width: 450px;
+        top: 15px;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        right: 79px;
+        top: -13px;
+        margin-left: -13px;
+        width: 0;
+        height: 0;
+        border-left: 13px solid transparent;
+        border-right: 13px solid transparent;
+        border-bottom: 13px solid white;
+        @include bp ($bp-small-plus) {
+          left: 50%;
+        }
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        right: 82px;
+        top: -9px;
+        margin-left: -10px;
+        height: 20px;
+        width: 20px;
+        z-index: -1;
+        @include dropshadow;
+        @include transform(rotate(-45deg));
+        @include bp ($bp-small-plus) {
+          left: 50%;
+        }
+      }
+      .choice-list {
+        list-style: none;
+      }
+      .toggle-wrapper {
+        .ez-checkbox {
+          width: 100%;
+        }
+        .switch-wrapper {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .my-progress.hover .progress-toggle {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &.has-tagline {
+      @include bp ($bp-small-plus) {
+        margin-top: 70px;
+      }
+    }
+    li {
+      float: left;
+      padding: 0;
+      height: 18px;
+      width: 24px;
+      margin-left: 15px;
+      &:first-child {
+        margin-left: 0px;
+      }
+      @include bp ($bp-small-plus) {
+        padding: 0px 15px;
+        position: relative;
+        margin-left: 0;
+        height: auto;
+        width: auto;
+      }
+      &.my-progress a, &.print a, &.email a {
+        display: none;
+        @include bp ($bp-small-plus) {
+          display: block;
+        }
+      }
+      &:after {
+        @include bp ($bp-small-plus) {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 26px;
+          background-color: #d3d1d0;
+          top: -2px;
+          left: 0px;
+        }
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 17px;
+        background: image-url('sprite.icons.article-tips.png');
+        background-repeat: no-repeat;
+        @include bp ($bp-small) {
+          bottom: 0;
+        }
+        @include bp ($bp-small-plus) {
+          bottom: 4px;
+        }
+        .no-backgroundsize & {
+          background-image: image-url('sprite.icons.article-tips.145.png');
+        }
+      }
+      &.my-progress {
+        padding-left: 0px;
+        &:before {
+          background-position: -119px -75px;
+          background-size: 145px 145px;
+        }
+        &:hover:before, &:focus:before, &.icon-email:focus:before {
+          background-position: -119px -127px;
+          background-size: 145px 145px;
+        }
+      }
+      &.print {
+        &:before {
+          background-position: -78px 0px;
+          background-size: 145px 145px;
+        }
+        &:hover:before, &:focus:before, &.icon-print:focus:before {
+          background-position: -78px -35px;
+          background-size: 145px 145px;
+        }
+      }
+      &.email {
+        padding-right: 0px;
+        &:before {
+          background-position: -77px -74px;
+          background-size: 145px 145px;
+        }
+        &:hover:before, &:focus:before, &.icon-email:focus:before {
+          background-position: -77px -126px;
+          background-size: 145px 145px;
+        }
+      }
+      &.first {
+        &:after {
+          display: none;
+        }
+      }
+      a {
+        text-decoration: underline;
+        @include rem (font-size, 16px);
+        color: #426da9;
+        padding-left: 32px;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.print-plan-toolbar {
+  .toolbar-wrapper {
+    border-bottom: 1px solid #c6c5c5;
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.action-plan-email-modal {
+  padding: 40px;
+  h1 {
+    @include rem (font-size, 24px);
+    font-weight: normal;
+    color: #7a4183;
+    margin-bottom: 22px;
+    @include bp ($bp-small-plus) {
+      margin-bottom: 34px;
+    }
+  }
+  .email-info {
+    border: 2px solid #d2d2d2;
+    margin-bottom: 10px;
+  }
+  .comment-box {
+    height: 168px;
+    width: 100%;
+    margin-bottom: 25px;
+    @include bp ($bp-small-plus) {
+      margin-bottom: 40px;
+    }
+  }
+  .modal-header {
+    padding: 0;
+    border: none;
+    height: auto;
+    min-height: 0;
+  }
+  .modal-body {
+    overflow: hidden;
+    padding: 22px 18px;
+    @include bp ($bp-small-plus) {
+      padding: 20px;
+    }
+    @include bp ($bp-large) {
+      padding: 40px;
+    }
+  }
+  .button {
+    padding: 0 66px;
+    float: left;
+    width: inherit;
+  }
+}
+
+.goals-toolbar .skiplink-toolbar .secondary-navigation-link {
+  left: 0;
+}

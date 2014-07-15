@@ -1,0 +1,151 @@
+/**
+* SASS partial for About Partners List module.
+*/
+.about-partners-list {
+  max-width: 856px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  @include bp($bp-small-plus) {
+    margin-bottom: 35px;
+  }
+  h2 {
+    @include rem(font-size, 28px);
+    font-weight: normal;
+    color: #696969;
+    margin-bottom: 15px;
+    @include bp($bp-small-plus) {
+        padding-top: 20px;
+        margin-bottom: 25px;
+    }
+  } // end .about-partners-list h2
+  p {
+      font-family: Arial, sans-serif;
+      @include rem(font-size, 15px);
+      @include rem(line-height, 26px);
+      color: #696969;
+      margin-bottom: 0;
+    } // end .about-partners-list p
+  &:first-child div.partner-block {
+      @include bp($bp-small-plus) {
+        padding-top: 20px;
+      }
+    }
+  .partner-block {
+    height: auto;
+    padding: 30px 0;
+    display: table;
+    margin: 0 auto;
+    border-bottom: 1px solid #d2d2d2;
+    @include bp($bp-small-plus) {
+      padding: 40px 0;
+    }
+
+    &.last {
+      border-bottom: 0px;
+    }
+
+    .partner-intro {
+      padding: 0;
+      @include bp($bp-small-plus) {
+        margin-top: -39px;
+        padding-left: 10px;
+      }
+      @include bp($bp-medium) {
+        margin-top: -56px;
+      }
+      @include bp($bp-large) {
+        margin-top: -85px;
+      }
+    }
+    .partner-logo {
+      padding: 0;
+      @include bp($bp-small-plus) {
+        margin-top: 10px;
+      }
+    }
+    .partner-block-logo, .partner-block-text {
+      display: block;
+      float: left;
+      padding: 0;
+      vertical-align: top;
+      @include bp($bp-small-plus) {
+        display: table-cell;
+        float: none;
+      }
+    }
+    .partner-block-logo {
+      width: 100%;
+      margin-bottom: 20px;
+      a {
+        display: block;
+        text-align: center;
+        @include bp($bp-small) {
+          text-align: left;
+        }
+      }
+      @include bp($bp-small-plus) {
+        margin-bottom: 0;
+        width: auto;
+      }
+      img {
+        width: 270px;
+        height: auto;
+        @include bp($bp-small) {
+          max-width: 270px;
+        }
+      }
+    } // end .partner-block-logo
+    .partner-head {
+      @include bp($bp-small-plus) {
+        margin-top: 9px;
+        padding: 0px;
+      }
+    }
+    .partner-block-text {
+      padding: 0 0 21px 0;
+      position: relative;
+      width: 100%;
+      @include bp($bp-small-plus) {
+        min-height: 231px;
+        padding-left: 25px;
+        padding-bottom: 21px;
+      }
+      @include bp($bp-medium) {
+        padding-left: 49px;
+      }
+      @include bp($bp-large) {
+        min-width: 536px;
+      }
+
+      h3 {
+        margin-bottom: 15px;
+        display: block;
+        text-transform: capitalize;
+        @include rem(font-size, 24px);
+        @include rem(line-height, 24px);
+        font-weight: normal;
+        a {
+          color: #7a4183;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .partner-block-read-more {
+        display: table-cell;
+        vertical-align: bottom;
+        position: absolute;
+        bottom: -4px;
+        a {
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      } // end .partner-block-read-more
+    } // end .partner-block-text
+  } // end .partner-block
+} // end .about-partners-list

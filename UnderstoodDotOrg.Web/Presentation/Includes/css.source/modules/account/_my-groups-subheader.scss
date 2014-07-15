@@ -1,0 +1,52 @@
+// This inherets properties from my-groups-subheader
+.my-account-subheader.groups-subheader{
+  padding: 14px 13px 15px;
+  @include bp($bp-small-plus) {
+    padding: 44px 13px 30px;
+  }
+  h1{
+    margin-bottom: 14px;
+    @include bp($bp-small-plus) {
+      margin-bottom: 10px;
+    }
+  }
+  .my-groups-dropdown-label{
+    @include bp($bp-small-plus) {
+      text-align : right;
+    }
+    span{
+      color: #696969;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 11px;
+      @include bp($bp-small-plus) {
+        margin-top: 12px;
+      }
+    }
+  }
+  .select-container {
+    display: block;
+    width: auto;
+
+    @include bp($bp-small-plus) {
+      display: inline-block;
+      margin-left: 4px;
+      margin-bottom: 0px;
+    }
+
+    &.filter-group {
+      @include bp($bp-small-plus) {
+        float:right;
+        width: 320px;
+      }
+    }
+
+    @include old-ie {
+      .selector {
+        width: 100% !important;
+      }
+    }
+
+  } // .select-container
+}

@@ -1,0 +1,20 @@
+/**
+ * SASS partial to style Article Intro Text Toolkit
+ */
+
+.article-intro-text-toolkit {
+  h2 {
+    color: #7a4183;
+    margin-bottom: 10px;
+    @include rem(font-size, 34px);
+    font-weight: bold;
+    @include rem(line-height, 40px);
+    padding-bottom: 10px;
+
+    @include bp($bp-small-plus) {
+      @include rem(font-size, 36px);
+      margin-bottom: 40px;
+      padding: 0;
+    }
+  }
+}

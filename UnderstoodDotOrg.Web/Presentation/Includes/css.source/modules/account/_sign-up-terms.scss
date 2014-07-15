@@ -1,0 +1,141 @@
+/**
+ * SASS partial for My Account Terms and Conditions agreement module.
+ */
+
+.sign-up-link .signed-up {
+  margin-right: 15px;
+  @include bp($bp-small-plus) {
+    margin: 0;
+  }
+}
+
+.sign-up-terms.container {
+  background: #f4f2f1;
+}
+
+.terms-wrapper {
+  padding: 0 15px;
+  position: relative;
+  text-align: center;
+  background: #f4f2f1;
+  width: 100%;
+
+  .terms-container {
+    top: 0;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+
+    @include bp($bp-small-plus) {
+      width: 570px;
+      padding: 20px 0 0 30px;
+    }
+
+    .terms-head {
+      text-align: left;
+      h1 {
+        @include rem(font-size, 24px);
+        font-weight: normal;
+        @include rem(line-height, 36px);
+        color: #7a4183;
+        padding: 5px 0 5px 0;
+
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 32px);
+          @include rem(line-height, 42px);
+          padding-top: 20px;
+        }
+      } // end h2
+      h2 {
+        @include rem(font-size, 16px);
+        font-weight: normal;
+        @include rem(line-height, 20px);
+        color: #696969;
+        padding: 5px 0 15px 0;
+        margin: 0;
+
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 18px);
+          @include rem(line-height, 22px);
+          padding: 10px 0 30px 0;
+        }
+      } // end h3
+    } //end .terms-head
+
+    .terms-content {
+      height: 120px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      color: #696969;
+      background: #fff;
+      text-align: left;
+      overflow: scroll;
+      overflow-y:scroll;
+      overflow-x:hidden;
+      top: 0;
+      margin: 0 15px 20px;
+      padding: 10px;
+      @include rem(font-size, 16px);
+      @include rem(line-height, 22px);
+
+      // START bring scrollbar back in iOS
+      &::-webkit-scrollbar {
+        width:9px;
+      }
+      &::-webkit-scrollbar-track {
+        -webkit-border-radius:5px;
+        border-radius:5px;
+        background:rgba(0,0,0,0.1);
+      }
+      &::-webkit-scrollbar-thumb {
+        -webkit-border-radius:5px;
+        border-radius:5px;
+        background:rgba(0,0,0,0.2);
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background:rgba(0,0,0,0.4);
+      }
+      &::-webkit-scrollbar-thumb:window-inactive {
+        background:rgba(0,0,0,0.05);
+      }
+      // END bring scrollbar back in iOS
+
+      @include bp($bp-small-plus) {
+        height: 451px;
+        width: 470px;
+        margin: 0 0 20px;
+        padding: 20px 20px 0 20px;
+      }
+    } // end .terms-content
+
+    .terms-buttons {
+      margin: 10px 15px 10px;
+      padding-bottom: 20px;
+      @include rem(font-size, 18px);
+      font-weight: bold;
+
+      @include bp($bp-small-plus) {
+        width: 470px;
+        margin: 30px 0 30px 0;
+      }
+      .button {
+        @include rem(font-size, 13px);
+        margin: 0;
+        width: 45%;
+        @include bp($bp-small-plus) {
+          @include rem(font-size, 16px);
+          margin: 0 4px 0 4px;
+          width: 150px;
+        }
+      }
+      .answer-agree {
+        float: left;
+        @include bp($bp-small-plus) { float: none; }
+      }
+      .answer-do-not-agree {
+        float: right;
+        @include bp($bp-small-plus) { float: none; }
+      }
+    } // end .terms-buttons
+  } //end .terms-container
+} //end .terms-wrapper

@@ -1,0 +1,70 @@
+#suggest-a-behavior{
+
+  .modal-body{
+    padding: 20px 16px;
+    @include rem(font-size, 14px);
+    font-weight: normal;
+    color: #696969;
+    margin: 0px;
+    @include bp($bp-small-plus){
+      @include rem(font-size, 16px);
+      padding: 50px 36px;
+    }
+    .alert-message{
+      border: 1px solid #faebcc;
+      color: #8a6d3b;
+      background-color: #fcf8e3;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .submit-button{
+      max-width: 200px;
+    }
+    h3{
+      color: #7a4183;
+      @include rem(font-size, 20px);
+      margin-bottom: 18px;
+      font-weight: normal;
+      @include bp($bp-small-plus){
+        @include rem(font-size, 24px);
+      }
+    }
+    p{
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 26px;
+    }
+    textarea{
+      display: block;
+      margin-bottom: 20px;
+      height: 8em;
+      @include bp($bp-small-plus){
+        margin-bottom: 12px;
+      }
+    }
+    input[type=submit]{
+      @include rem(font-size, 15px);
+      font-weight: bold;
+      color: #000000;
+      padding-left: 28px;
+      padding-right: 28px;
+      @include bp($bp-small-plus){
+        @include rem(font-size, 18px);
+      }
+    }
+    .sign-up{
+      @include bp($bp-small-plus){
+        display: inline-block;
+        float: right;
+      }
+      a{
+        @include link-colors(#426da9);
+        text-decoration: underline;
+        @include bp($bp-small-plus){
+          display: inline-block;
+          float: right;
+          margin-top: 14px;
+        }
+      }
+    }
+  }// end .modal-body
+}// end #suggest-a-behavior

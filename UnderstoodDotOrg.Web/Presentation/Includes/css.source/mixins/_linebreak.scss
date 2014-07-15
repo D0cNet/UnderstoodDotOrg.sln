@@ -1,0 +1,9 @@
+@mixin linebreak {
+  content: '\a';
+  white-space: pre;
+}
+
+@mixin clear_linebreak {
+  content: '';
+  white-space: normal;
+}

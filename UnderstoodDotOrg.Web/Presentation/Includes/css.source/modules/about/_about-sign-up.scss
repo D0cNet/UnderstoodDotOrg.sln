@@ -1,0 +1,176 @@
+// Text container
+.signup-intro-container {
+  background-color: #fafafa;
+  padding: 18px 15px 120px 15px;
+  @include bp($bp-small-plus){
+    padding: 38px 0px 120px 0px;
+  }
+  // The section title
+  .about-signup-header{
+    width: 240px;
+    @include bp($bp-small){
+      width: 100%;
+      position: relative;
+      top: 20px;
+    }
+    @include bp($bp-small-plus){
+      margin-left: 200px;
+      position: relative;
+      top: 0px;
+    }
+    h1{
+      color: #7a4183;
+      @include rem(font-size, 30px);
+      @include rem(line-height, 36px);
+      margin-bottom: 7px;
+      @include bp($bp-small-plus){
+        @include rem(font-size, 36px);
+        @include rem(line-height, 44px);
+        margin-bottom: 8px;
+      }
+    }
+  } //.about-signup-header
+
+  // The paragraph text
+  .about-signup-intro{
+    float: left;
+    margin-bottom: 6px;
+    @include bp($bp-small-plus){
+      margin-left: 200px;
+    }
+    h3{
+      color: #696969;
+      @include rem(font-size, 16px);
+      @include rem(line-height, 27px);
+      font-weight: normal;
+      margin-bottom: 16px;
+      @include bp($bp-small-plus){
+        @include rem(font-size, 18px);
+        @include rem(line-height, 28px);
+        margin-bottom: 29px;
+      }
+    }
+
+    ul{
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+      li{
+        color: #696969;
+        @include rem(font-size, 16px);
+        @include rem(line-height, 20px);
+        margin-bottom: 10px;
+        padding-left: 14px;
+        text-indent: -14px;
+        &:before {
+          content: "• ";
+          color: #406bab;
+          font-size: 10px;
+          padding-right: 0px;
+          position : relative;
+          top: -2px;
+        }
+      } //li
+    } //ul
+  } //.about-signup-intro
+
+  // The container with the envelope icon
+  .icon-newsletter-wrap{
+    float: left;
+    margin: 13px 18px 0px 0px;
+    @include bp($bp-small-plus){
+      margin: 10px 52px 0px 18px;
+      height: 0px;
+      overflow: visible;
+      width: 0px;
+    }
+    .icon-newsletter-signup{
+      background-image: image-url('icon.newsletter.130.png');
+      background-repeat: no-repeat;
+      background-size: 80px 52px;
+      height: 70px;
+      width: 85px;
+      @include bp($bp-small-plus){
+        background-size: 131px 85px;
+        height: 87px;
+        width: 130px;
+      }
+    }
+  } //.icon-newsletter-wrap
+
+} // .signup-intro
+
+// Form container
+.signup-newsletter-container{
+  background-color: #f4f2f1;
+  padding: 40px 15px 17px 15px;
+  @include bp($bp-small-plus){
+    padding: 40px 0px 4px 0px;
+  }
+  .form{
+    background-color: #426da9;
+    padding: 30px 20px 27px;
+    position: relative;
+    // Margin and padding should match to avoid whitespace at the bottom
+    margin: 0 auto -145px;
+    top: -145px;
+    max-width: 630px;
+    @include bp($bp-small-plus){
+      padding: 48px 40px 45px;
+      margin: 0 auto -100px;
+    }
+
+    .safe-information {
+      display: none;
+    }
+
+    .safe-information-wrapper{
+      a.safe-information-link{
+        color: #fff;
+        @include rem(font-size, 15px);
+        @include rem(line-height, 21px);
+        padding: 5px 0px;
+        text-decoration: underline;
+
+        &:hover {text-decoration: none;}
+      }
+      .popover {
+        @include rem(font-size, 16px);
+        @include rem(line-height, 22px);
+        @include bp($bp-small-plus){
+          max-width: 450px;
+        }
+        a{
+          text-decoration: underline;
+
+          &:hover {text-decoration: none;}
+        }
+      } //popover
+    }
+    fieldset{
+      margin-bottom: 16px;
+      .newsletter-input-wrap{
+        margin-bottom: 10px;
+        @include bp($bp-small-plus){
+          float:left;
+          margin-bottom: 0px;
+          width: 70.5%;
+        }
+      }
+      .newsletter-button-wrap{
+        @include bp($bp-small-plus){
+          float: right;
+          width: 27.5%;
+        }
+        input{
+          @include rem(font-size, 16px);
+          @include rem(line-height, 40px);
+          @include bp($bp-small-plus){
+            @include rem(font-size, 18px);
+            @include rem(line-height, 50px);
+          }
+        }
+      } //buttons
+    } //fieldset
+  }//.form
+}

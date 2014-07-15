@@ -1,0 +1,84 @@
+.col.recommendations-sample {
+  margin-bottom: 30px;
+
+  @include bp($bp-small-plus) {
+    margin-right: 4.166666%;
+    margin-bottom: 0;
+  }
+
+  > img {
+    display: none;
+
+    @include bp($bp-small-plus) {
+      display: block;
+      width: 100%;
+      max-width: 388px;
+    }
+  }
+}
+
+.col.recommendations-usage {
+  @include bp($bp-small-plus) {
+    padding-left: 4.166666%;
+    border-left: 1px solid #e2e2e2;
+  }
+
+  h3 {
+    @include rem(font-size, 24px);
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #7a4183;
+  }
+
+  dl {
+    display: table;
+    margin-bottom: 33px;
+  }
+
+  dt, dd {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  dt {
+    width: 80px;
+
+    .count {
+      display: block;
+      width: 55px;
+      height: 55px;
+      @include rem(line-height, 56px);
+      @include rem(font-size, 32px);
+      color: #7a4183;
+      text-align: center;
+      background-image: image-url('icon.circle.110x110.png');
+      background-size: 55px auto;
+      background-repeat: no-repeat;
+      font-weight: 700;
+
+      .no-backgroundsize & {
+        background-image: image-url('icon.circle.55x55.png');
+      }
+    }
+  }
+
+  dd {
+    color: #696969;
+    @include rem(line-height, 24px);
+    padding: 0;
+  }
+
+  .buttons {
+    padding-left: 80px;
+
+    .button {
+      display: inline-block;
+      width: 45%;
+      margin-bottom: 0;
+    }
+
+    .sign-up {
+      margin-right: 0;
+    }
+  }
+}

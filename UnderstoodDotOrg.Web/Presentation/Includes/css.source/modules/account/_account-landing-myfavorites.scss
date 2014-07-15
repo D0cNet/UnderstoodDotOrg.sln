@@ -1,0 +1,35 @@
+/**
+* SASS partial for account landing global notifiation module.
+* This dependent on account-landing.scss
+*/
+.landing-myfavorites.landing-modules{
+  border-top-color: #5caa7f;
+  @include bp($bp-small-plus) {
+    width: 96%
+  }
+  @include bp($bp-medium) {
+    margin-left: 7px;
+  }
+  h3 {
+    @include rem(font-size, 22px);
+    @include rem(line-height, 30px);
+  }
+  .landing-module-count{
+    color: #5caa7f;
+  }
+  ul{
+    display: table;
+    border-collapse: collapse;
+  }
+  li {
+    @include rem(line-height, 18px);
+    padding: 0 !important;
+    height: 77px;
+    overflow: hidden;
+    display: table-row;
+    a{
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
