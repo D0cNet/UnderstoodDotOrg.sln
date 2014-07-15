@@ -38,6 +38,10 @@
                 </div>
                 <!-- .question-wrapper -->
 
+                <div>
+                    <asp:Literal runat="server" ID="uxErrorMessage"></asp:Literal>
+                </div>
+
                 <div class="form-actions">
                     <%--<input type="submit" CssClass="button" value="Join Group">--%>
                     <asp:Button runat="server" CssClass="button rs_skip" Text="" ID="btnRegister" OnClick="btnRegister_Click" />

@@ -43,7 +43,7 @@ namespace UnderstoodDotOrg.Framework.UI
                         if (String.IsNullOrEmpty(page.CurrentMember.ScreenName))
                         {
                             //redirect to community sign-up
-                            page.Page.Response.Redirect(page.CurrentMember.GetCommuityRegistrationProfile());
+                            page.Page.Response.Redirect(RegisterCommunityProfileItem.GetRegisterCommunityProfilePage().GetUrl());
                         }
                     }
                     break;

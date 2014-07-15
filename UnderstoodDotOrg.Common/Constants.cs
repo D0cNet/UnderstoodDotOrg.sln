@@ -518,6 +518,10 @@ namespace UnderstoodDotOrg.Common
             {
                 get { return new Guid("{C052673C-2BFC-47A9-AC13-F178E63D8086}"); }
             }
+            public static Guid RegisterCommunityProfile
+            {
+                get { return new Guid("{EE8EF105-6F7D-4389-B20D-4ECAD8703F70}"); }
+            }
         }
 
         #endregion
