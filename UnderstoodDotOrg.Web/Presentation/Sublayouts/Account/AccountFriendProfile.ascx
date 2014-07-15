@@ -6,7 +6,7 @@
             <div class="children-container">
                 <div class="row">
                     <div class="col col-5">
-                        <h3>Children</h3>
+                        <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.ChildrenLabel %></h3>
                     </div>
                     <div class="col col-19">
                         <asp:PlaceHolder ID="groupPlaceholder" runat="server" />
@@ -43,7 +43,7 @@
 
             <div class="row children-interests rs_read_this friends-view-rs-wrapper">
                 <div class="col col-5">
-                    <h3>Interests</h3>
+                    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.InterestsLabel %></h3>
                 </div>
                 <div class="col col-19">
                     <ul>
@@ -65,7 +65,7 @@
             <hr />
             <div class="row children-groups rs_read_this friends-view-rs-wrapper">
                 <div class="col col-5">
-                    <h3>Groups</h3>
+                    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.GroupsFragment %></h3>
                 </div>
                 <div class="col col-19">
                     <ul>

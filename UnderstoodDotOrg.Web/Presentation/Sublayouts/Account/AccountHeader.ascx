@@ -34,7 +34,7 @@
                                     <ul>
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <span class="visuallyhidden">grade level</span>
+                                <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.GradeLevelLabel %></span>
                                 <li class="specialty-long"><a href="#"><asp:Literal ID="litGrade" runat="server" /></a>
 
                                     <div class="card-child-info popover rs_skip">
@@ -67,7 +67,7 @@
                                 </li>
                             </ItemTemplate>
                             <FooterTemplate>
-                                        <li class="specialty specialty-final"><span class="visuallyhidden">additional information</span><span tabindex='0' data-tabbable='true'>&nbsp;</span></li>
+                                        <li class="specialty specialty-final"><span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.AdditionalInformationLabel %></span><span tabindex='0' data-tabbable='true'>&nbsp;</span></li>
                                     </ul>
                                 </div>
                             </FooterTemplate>

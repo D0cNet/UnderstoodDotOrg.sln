@@ -34,7 +34,7 @@
                         <div class="member-view-children">
                             <div class="row">
                                 <div class="col col-6 section-label">
-                                    <h3>Children</h3>
+                                    <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.ChildrenLabel %></h3>
                                 </div>
                                 <div class="col col-18">
 
@@ -75,7 +75,7 @@
 
                         <div class="row member-view-interests rs_read_this">
                             <div class="col col-6 section-label">
-                                <h3>Interests</h3>
+                                <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.InterestsLabel %></h3>
                             </div>
                             <div class="col col-18">
                                 <ul>
@@ -100,7 +100,7 @@
 
                         <div class="row member-view-groups rs_read_this">
                             <div class="col col-6 section-label">
-                                <h3>Groups</h3>
+                                <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.GroupsFragment %></h3>
                             </div>
                             <div class="col col-18">
                                 <ul>

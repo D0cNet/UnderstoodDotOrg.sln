@@ -13,6 +13,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Exception Text
 
+        public static string Account_ThisUserIsNotConnectingMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Account_This User Is Not Connecting Message");
+            }
+        }
+
         public static string MyProfile_SelectIEPText
         {
             get
@@ -1705,6 +1713,22 @@ namespace UnderstoodDotOrg.Common
         #endregion Article Labels
 
         #region MyAccount Labels
+
+        public static string InterestsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Interests Label");
+            }
+        }
+
+        public static string ChildrenLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Children Label");
+            }
+        }
 
         public static string MyCommentsLabel
         {
