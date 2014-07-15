@@ -288,8 +288,11 @@ namespace UnderstoodDotOrg.Domain.Importer
                 {
                     if (i.Fields["Content Title"].ToString().ToLower().Trim() == MappedValue.ToLower())
                     {
-                        ret.Add(i.ID.ToString());
-                        break;
+                        if(!ret.Contains(i.ID.ToString()))
+                        {
+                            ret.Add(i.ID.ToString());
+                            break;
+                        }
                     }
                 }
             }
