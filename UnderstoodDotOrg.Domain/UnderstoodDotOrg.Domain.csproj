@@ -237,6 +237,8 @@
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\BehaviorAdvicePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\ContentPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\DefaultArticlePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\ArticleEntryMessageFolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\ArticleEntryMessageFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\DecisionTool\DecisionAnswersFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\DecisionTool\DecisionAnswersFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\DecisionTool\DecisionIndicationQuestionsFolderItem.base.cs" />

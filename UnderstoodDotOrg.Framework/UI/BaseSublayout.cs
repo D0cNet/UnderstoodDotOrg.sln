@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG;
 using Sitecore.Data;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+using System.Web;
 namespace UnderstoodDotOrg.Framework.UI
 {
     public class BaseSublayout : System.Web.UI.UserControl
@@ -233,8 +234,12 @@ namespace UnderstoodDotOrg.Framework.UI
         /// <param name="value">Value for cookie</param>
         public void setCookie(string cookieName, string value)
         {
+            HttpCookie theCookie = new HttpCookie(cookieName);
+            theCookie.Value = value;
+            theCookie.Expires = DateTime.Now.AddYears(10);
+
             Request.Cookies.Remove(cookieName);
-            Request.Cookies.Set(new System.Web.HttpCookie(cookieName, value) { Expires = DateTime.Now.AddYears(10) });
+            Response.Cookies.Add(theCookie);
         }
 
         /// <summary>

@@ -11,6 +11,9 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Domain.Membership;
 using System.Web.UI.HtmlControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -18,33 +21,50 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            frContent.Item = DataSource;
-            frChildEnrolledLabel.Item = DataSource;
-            frChildNeedsHelpLabel.Item = DataSource;
-            frChildsNameIs.Item = DataSource;
-            frChildsNameLabel.Item = DataSource;
-            frCloseLabel.Item = DataSource;
-            frContent.Item = DataSource;
-            frNoThanksButtonLabel.Item = DataSource;
-            frPersonalizeLabel.Item = DataSource;
-            frPersonalizeLabel2.Item = DataSource;
-            frSubmitButtonLabel.Item = DataSource;
-            frYesButtonLabel.Item = DataSource;
-
-            var childIssues = FormHelper.GetIssues();
-            rptChildIssues.Visible = true;
-            rptChildIssues.DataSource = childIssues;
-            rptChildIssues.DataBind();
-
-            var grades = FormHelper.GetGrades();
-            ddlGrade.DataSource = grades.Select(g => new ListItem
+            if (Request.Cookies["Entry Message"] == null && CameFromOutsideSite() && Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
-                Text = g.Name.Raw,
-                Value = g.ID.ToString()
-            });
-            ddlGrade.DataTextField = "Text";
-            ddlGrade.DataValueField = "Value";
-            ddlGrade.DataBind();
+                Item content = MainsectionItem.GetGlobals().GetArticleEntryMessagesFolder().GetArticleEntryMessageContentItem();
+                frContent.Item = content;
+                frChildEnrolledLabel.Item = content;
+                frChildNeedsHelpLabel.Item = content;
+                frChildsNameIs.Item = content;
+                frChildsNameLabel.Item = content;
+                frCloseLabel.Item = content;
+                frContent.Item = content;
+                frNoThanksButtonLabel.Item = content;
+                frPersonalizeLabel.Item = content;
+                frPersonalizeLabel2.Item = content;
+                frSubmitButtonLabel.Item = content;
+                frYesButtonLabel.Item = content;
+
+                var childIssues = FormHelper.GetIssues();
+                rptChildIssues.Visible = true;
+                rptChildIssues.DataSource = childIssues;
+                rptChildIssues.DataBind();
+
+                var grades = FormHelper.GetGrades();
+                ddlGrade.DataSource = grades.Select(g => new ListItem
+                {
+                    Text = g.Name.Raw,
+                    Value = g.ID.ToString()
+                });
+                ddlGrade.DataTextField = "Text";
+                ddlGrade.DataValueField = "Value";
+                ddlGrade.DataBind();
+
+                setCookie("Entry Message", "viewed");
+            }
+            else
+                this.Visible = false;
+        }
+
+        private bool CameFromOutsideSite()
+        {
+            if (Request.UrlReferrer != null)
+            {
+                return !Request.UrlReferrer.ToString().Contains(HttpContext.Current.Request.Url.Host);
+            }
+            return true;
         }
 
         protected void rptChildIssues_ItemDataBound(object sender, RepeaterItemEventArgs e)
