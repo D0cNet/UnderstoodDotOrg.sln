@@ -26,7 +26,7 @@
     font-family:Arial, sans-serif;
   }
 
-  a, .transcript-trigger-button, .mobile-close p {
+  a, .transcript-trigger-button, .mobile-close p, .show-more-link {
     @include rem(font-size, 24px);
     text-align: center;
     color: #446ea7;
@@ -46,8 +46,33 @@
     position: relative;
     max-width: 550px;
   }
+
   .transcript-trigger-button {
     cursor: pointer;
+  }
+
+  .show-more-link {
+    @include bp($bp-small-plus) {
+      display: none;
+    }
+  }
+
+  .mobile-hidden {
+    display: none;
+
+    @include bp($bp-small-plus) {
+      display: block;
+    }
+  }
+
+  &.open {
+    .read-more {
+      display: none;
+
+      @include bp($bp-small-plus) {
+        display: block;
+      }
+    }
   }
 }
 .read-more {

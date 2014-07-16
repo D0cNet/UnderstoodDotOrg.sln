@@ -1918,7 +1918,7 @@ html.canvas .mini-tools-wrap {
   height: 44px;
   background-size: 34px auto;
   text-indent: -9999px;
-  background-image: url('../images/sprite.btn.carousel.play-pause.png?1405464591');
+  background-image: url('../images/sprite.btn.carousel.play-pause.png?1405539201');
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: 5px 5px;
@@ -1937,7 +1937,7 @@ html.canvas .mini-tools-wrap {
 }
 /* line 60, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .no-backgroundsize .carousel-tertiary .play-pause {
-  background-image: url('../images/sprite.btn.carousel.play-pause.lo-res.png?1405464591');
+  background-image: url('../images/sprite.btn.carousel.play-pause.lo-res.png?1405539201');
 }
 /* line 67, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsBullets {
@@ -3446,7 +3446,7 @@ html.canvas .mini-tools-wrap {
 }
 /* line 46, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-icon .icon {
-  background-image: url('../images/sprite.share-save.social.png?1405464591');
+  background-image: url('../images/sprite.share-save.social.png?1405539201');
   background-size: 521px 78px;
   display: block;
   height: 35px;
@@ -3458,7 +3458,7 @@ html.canvas .mini-tools-wrap {
 }
 /* line 57, ../css.source/modules/_share-save.scss */
 .no-backgroundsize .share-save-container div.share-save-icon .icon {
-  background-image: url('../images/sprite.share-save.social.lo-res.png?1405464591');
+  background-image: url('../images/sprite.share-save.social.lo-res.png?1405539201');
 }
 /* line 63, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-icon .icon-share {
@@ -3615,7 +3615,7 @@ html.canvas .mini-tools-wrap {
 }
 /* line 235, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .socicon {
-  background-image: url('../images/sprite.share-save.social.png?1405464591');
+  background-image: url('../images/sprite.share-save.social.png?1405539201');
   background-size: 435px 78px;
   display: inline-block;
   height: 38px;
@@ -3627,7 +3627,7 @@ html.canvas .mini-tools-wrap {
 }
 /* line 249, ../css.source/modules/_share-save.scss */
 .no-backgroundsize .share-save-container div.share-save-social-icon .socicon {
-  background-image: url('../images/sprite.share-save.social.lo-res.png?1405464591');
+  background-image: url('../images/sprite.share-save.social.lo-res.png?1405539201');
 }
 /* line 262, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .icon-facebook {
@@ -3739,7 +3739,7 @@ html.canvas .mini-tools-wrap {
 }
 /* line 385, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon {
-  background-image: url('../images/sprite.share-save.social.png?1405464591');
+  background-image: url('../images/sprite.share-save.social.png?1405539201');
   background-size: 468px 70px;
   display: block;
   height: 32px;
@@ -3751,7 +3751,7 @@ html.canvas .mini-tools-wrap {
 }
 /* line 396, ../css.source/modules/_share-save.scss */
 .no-backgroundsize .share-save-dd-container div.share-save-dd-icon .icon {
-  background-image: url('../images/sprite.share-save.social.390.png?1405464591');
+  background-image: url('../images/sprite.share-save.social.390.png?1405539201');
 }
 /* line 402, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-share-dd {
@@ -3894,7 +3894,7 @@ html.canvas .mini-tools-wrap {
 }
 /* line 541, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .socicon {
-  background-image: url('../images/sprite.share-save.social.png?1405464591');
+  background-image: url('../images/sprite.share-save.social.png?1405539201');
   background-size: 390px 70px;
   display: inline-block;
   height: 31px;
@@ -3905,7 +3905,7 @@ html.canvas .mini-tools-wrap {
 }
 /* line 551, ../css.source/modules/_share-save.scss */
 .no-backgroundsize .share-save-dd-container div.share-save-dd-social-icon .socicon {
-  background-image: url('../images/sprite.share-save.social.390.png?1405464591');
+  background-image: url('../images/sprite.share-save.social.390.png?1405539201');
 }
 
 /* line 3, ../css.source/modules/_share-email.scss */
@@ -7970,18 +7970,18 @@ header.about-donate-rs-wrapper .rsbtn_player,
   font-family: Arial, sans-serif;
 }
 /* line 29, ../css.source/modules/_transcript-control.scss */
-.transcript-container a, .transcript-container .transcript-trigger-button, .transcript-container .mobile-close p {
+.transcript-container a, .transcript-container .transcript-trigger-button, .transcript-container .mobile-close p, .transcript-container .show-more-link {
   font-size: 24px;
   font-size: 1.5rem;
   text-align: center;
   color: #446ea7;
 }
 /* line 34, ../css.source/modules/_transcript-control.scss */
-.transcript-container a .icon-arrow-down-blue, .transcript-container .transcript-trigger-button .icon-arrow-down-blue, .transcript-container .mobile-close p .icon-arrow-down-blue {
+.transcript-container a .icon-arrow-down-blue, .transcript-container .transcript-trigger-button .icon-arrow-down-blue, .transcript-container .mobile-close p .icon-arrow-down-blue, .transcript-container .show-more-link .icon-arrow-down-blue {
   margin-left: 18px;
 }
 /* line 37, ../css.source/modules/_transcript-control.scss */
-.transcript-container a .icon-arrow-up-blue, .transcript-container .transcript-trigger-button .icon-arrow-up-blue, .transcript-container .mobile-close p .icon-arrow-up-blue {
+.transcript-container a .icon-arrow-up-blue, .transcript-container .transcript-trigger-button .icon-arrow-up-blue, .transcript-container .mobile-close p .icon-arrow-up-blue, .transcript-container .show-more-link .icon-arrow-up-blue {
   margin-left: 15px;
 }
 /* line 42, ../css.source/modules/_transcript-control.scss */
@@ -7994,19 +7994,33 @@ header.about-donate-rs-wrapper .rsbtn_player,
   position: relative;
   max-width: 550px;
 }
-/* line 49, ../css.source/modules/_transcript-control.scss */
+/* line 50, ../css.source/modules/_transcript-control.scss */
 .transcript-container .transcript-trigger-button {
   cursor: pointer;
 }
+/* line 54, ../css.source/modules/_transcript-control.scss */
+.transcript-container .show-more-link {
+  display: none;
+}
+/* line 60, ../css.source/modules/_transcript-control.scss */
+.transcript-container .mobile-hidden {
+  display: none;
+  display: block;
+}
+/* line 69, ../css.source/modules/_transcript-control.scss */
+.transcript-container.open .read-more {
+  display: none;
+  display: block;
+}
 
-/* line 53, ../css.source/modules/_transcript-control.scss */
+/* line 78, ../css.source/modules/_transcript-control.scss */
 .read-more {
   background: #fff;
   color: #333;
   text-align: center;
 }
 
-/* line 58, ../css.source/modules/_transcript-control.scss */
+/* line 83, ../css.source/modules/_transcript-control.scss */
 .icon-arrow-up-blue {
   width: 18px;
   height: 15px;
@@ -8015,16 +8029,16 @@ header.about-donate-rs-wrapper .rsbtn_player,
   background-size: 150px 150px;
   background-position: -52px 0;
 }
-/* line 63, ../css.source/modules/_transcript-control.scss */
+/* line 88, ../css.source/modules/_transcript-control.scss */
 .no-backgroundsize .icon-arrow-up-blue {
   background-image: url('../images/sprite.icon.arrows.lo-res.png?1404390952');
 }
-/* line 68, ../css.source/modules/_transcript-control.scss */
+/* line 93, ../css.source/modules/_transcript-control.scss */
 .no-backgroundsize .icon-arrow-up-blue {
   background-image: url('../images/sprite.icon.arrows.lo-res.png?1404390952');
 }
 
-/* line 72, ../css.source/modules/_transcript-control.scss */
+/* line 97, ../css.source/modules/_transcript-control.scss */
 .l-about-understood .read-more {
   margin-bottom: 30px;
   margin-bottom: 35px;

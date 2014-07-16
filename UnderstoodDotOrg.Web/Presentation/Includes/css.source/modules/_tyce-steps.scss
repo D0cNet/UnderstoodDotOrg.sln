@@ -638,6 +638,9 @@
     color: #fff;
     &:hover {
       background: #9850a2;
+      .touch & {
+        background: #7a4183;
+      }
     }
   }
 

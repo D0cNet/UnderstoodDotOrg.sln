@@ -2503,19 +2503,24 @@
 .input-buttons input[type="radio"]:checked + label:hover {
   background: #9850a2;
 }
-/* line 645, ../css.source/modules/_tyce-steps.scss */
+/* line 641, ../css.source/modules/_tyce-steps.scss */
+.touch .input-buttons input[type="checkbox"]:checked + label:hover, .touch
+.input-buttons input[type="radio"]:checked + label:hover {
+  background: #7a4183;
+}
+/* line 648, ../css.source/modules/_tyce-steps.scss */
 .input-buttons input[type="checkbox"]:focus + label,
 .input-buttons input[type="radio"]:focus + label {
   outline: thin dotted;
   outline-offset: -2px;
 }
-/* line 650, ../css.source/modules/_tyce-steps.scss */
+/* line 653, ../css.source/modules/_tyce-steps.scss */
 .modal .input-buttons {
   padding: 0;
   margin-bottom: 20px;
 }
 @media (min-width: 650px), print {
-  /* line 650, ../css.source/modules/_tyce-steps.scss */
+  /* line 653, ../css.source/modules/_tyce-steps.scss */
   .modal .input-buttons {
     width: 400px;
     padding-top: 20px;
@@ -2523,7 +2528,7 @@
   }
 }
 @media (min-width: 650px), print {
-  /* line 658, ../css.source/modules/_tyce-steps.scss */
+  /* line 661, ../css.source/modules/_tyce-steps.scss */
   .modal .input-buttons label {
     width: 190px;
     font-size: 18px;
@@ -2532,14 +2537,14 @@
   }
 }
 
-/* line 669, ../css.source/modules/_tyce-steps.scss */
+/* line 672, ../css.source/modules/_tyce-steps.scss */
 .tyce-issues {
   margin: 0;
   padding: 5px 0 0;
   list-style: none;
 }
 @media (min-width: 960px), print {
-  /* line 669, ../css.source/modules/_tyce-steps.scss */
+  /* line 672, ../css.source/modules/_tyce-steps.scss */
   .tyce-issues {
     *zoom: 1;
     padding: 0;
@@ -2551,7 +2556,7 @@
     clear: both;
   }
 }
-/* line 677, ../css.source/modules/_tyce-steps.scss */
+/* line 680, ../css.source/modules/_tyce-steps.scss */
 .tyce-issues .issue {
   color: #696969;
   border-bottom: 1px solid #d7d7d7;
@@ -2561,13 +2566,13 @@
   margin-bottom: 28px;
   padding-bottom: 23px;
 }
-/* line 685, ../css.source/modules/_tyce-steps.scss */
+/* line 688, ../css.source/modules/_tyce-steps.scss */
 .tyce-issues .issue:last-child {
   border: 0;
   margin-bottom: 10px;
 }
 @media (min-width: 960px), print {
-  /* line 677, ../css.source/modules/_tyce-steps.scss */
+  /* line 680, ../css.source/modules/_tyce-steps.scss */
   .tyce-issues .issue {
     font-size: 14px;
     font-size: 0.875rem;
@@ -2580,21 +2585,21 @@
     width: 230px;
     margin: 0 0 50px 50px;
   }
-  /* line 701, ../css.source/modules/_tyce-steps.scss */
+  /* line 704, ../css.source/modules/_tyce-steps.scss */
   .no-rgba .tyce-issues .issue, .no-box-shadow .tyce-issues .issue {
     border: 1px solid #f2f2f2;
   }
-  /* line 705, ../css.source/modules/_tyce-steps.scss */
+  /* line 708, ../css.source/modules/_tyce-steps.scss */
   .tyce-issues .issue:nth-child(3n+1) {
     margin-left: 0;
     clear: left;
   }
 }
-/* line 711, ../css.source/modules/_tyce-steps.scss */
+/* line 714, ../css.source/modules/_tyce-steps.scss */
 .tyce-issues .issue p {
   margin: 0;
 }
-/* line 716, ../css.source/modules/_tyce-steps.scss */
+/* line 719, ../css.source/modules/_tyce-steps.scss */
 .tyce-issues h3 {
   font-size: 18px;
   font-size: 1.125rem;
@@ -2603,14 +2608,14 @@
   margin-bottom: 10px;
 }
 @media (min-width: 650px), print {
-  /* line 716, ../css.source/modules/_tyce-steps.scss */
+  /* line 719, ../css.source/modules/_tyce-steps.scss */
   .tyce-issues h3 {
     font-size: 20px;
     font-size: 1.25rem;
   }
 }
 @media (min-width: 960px), print {
-  /* line 716, ../css.source/modules/_tyce-steps.scss */
+  /* line 719, ../css.source/modules/_tyce-steps.scss */
   .tyce-issues h3 {
     line-height: 1.2;
     min-height: 2.4em;
