@@ -64,11 +64,11 @@ public CustomImageField FacebookSigninImage
 }
 
 
-public CustomTextField PTagNotAMemberText
+public CustomTextField NotaMemberText
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["P Tag Not A Member Text"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Not a Member Text"]);
 	}
 }
 

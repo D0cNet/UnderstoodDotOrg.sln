@@ -9,16 +9,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var $signUpMessage = $("div.sign-up-link>.row>.col>p");
-        var signUpLinkText = "<%= UnderstoodDotOrg.Common.DictionaryConstants.SignInButtonText %>";
-        var signUpLinkUrl = "<%= SignUpUrl %>";
-        var signUpMarkup = $signUpMessage.html()
-            .replace('{{sign-up}}', '<a href="' + signUpLinkUrl + '">' + signUpLinkText + '</a>');
-        $signUpMessage.html(signUpMarkup);
-    });
-</script>
 <div class="container myaccount-sign-in">
     <div class="row">
         <div class="col col-14 centered">
