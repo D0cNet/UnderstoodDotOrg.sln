@@ -31,6 +31,42 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Registration {
         protected global::System.Web.UI.WebControls.DropDownList ddlGrades;
         
         /// <summary>
+        /// valGrade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valGrade;
+        
+        /// <summary>
+        /// uxBoy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton uxBoy;
+        
+        /// <summary>
+        /// uxGirl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton uxGirl;
+        
+        /// <summary>
+        /// valGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator valGender;
+        
+        /// <summary>
         /// lblChildNickname control.
         /// </summary>
         /// <remarks>
@@ -47,6 +83,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Registration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtChildNickname;
+        
+        /// <summary>
+        /// valNickname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valNickname;
         
         /// <summary>
         /// btnSubmit control.

@@ -3,11 +3,16 @@ using Sitecore.Data.Items;
 using System.Collections.Generic;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount
 {
-public partial class RegisterChildInformationItem 
-{
-
-}
+    public partial class RegisterChildInformationItem
+    {
+        public static RegisterChildInformationItem GetRegisterChildInfoPage()
+        {
+            return Sitecore.Context.Database.GetItem(Constants.Pages.RegisterChildInfo);
+        }
+    }
 }
