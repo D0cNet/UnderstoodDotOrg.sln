@@ -37,7 +37,7 @@
                 <!-- BEGIN PARTIAL: community/groups_private_heading -->
                 <!--groups private partial-->
                 <div class="col groups-private">
-                    <p class="col">Only members can see the conversations</p>
+                    <p class="col"><%= UnderstoodDotOrg.Common.DictionaryConstants.OnlyMembersCanSeeLabel %></p>
                     <i class="icon"></i>
                 </div>
                 <!-- END PARTIAL: community/groups_private_heading -->
@@ -61,7 +61,7 @@
                             </p>
                         </div>
                         <footer class="discussion-footer rs_skip">
-                            <h4>Show your support</h4>
+                            <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowYourSupportLabel %></h4>
                             <ul class="support-menu">
                                 <li>
                                     <uc1:ThanksButton runat="server" ID="ThanksButton" />
@@ -94,17 +94,17 @@
                         <div class="discussion">
                             <i class="number-bubble-icon">
                                 <asp:Literal ID="litMemberCount" runat="server"></asp:Literal></i>
-                            <p class="parents-in-discussion">Parents in this Discussion</p>
+                            <p class="parents-in-discussion"><%= UnderstoodDotOrg.Common.DictionaryConstants.ParentsInThisDiscussionLabel %></p>
                         </div>
                         <!-- end .discussion -->
                         <div class="replies">
                             <i class="replies-bubble-icon">
                                 <asp:Literal Text="" ID="litNumReplies" runat="server" /></i>
-                            <p class="replies">Replies</p>
+                            <p class="replies"><%= UnderstoodDotOrg.Common.DictionaryConstants.RepliesLabel %></p>
                         </div>
                         <!-- end .replies -->
-                        <p class="something-to-add">Do you have something to add?</p>
-                        <a href="#joinlink" class="button rs_skip">Join Discussion</a>
+                        <p class="something-to-add"><%= UnderstoodDotOrg.Common.DictionaryConstants.DoYouHaveSomethingToAddLabel %></p>
+                        <a href="#joinlink" class="button rs_skip"><%= UnderstoodDotOrg.Common.DictionaryConstants.JoinDiscussionLabel %></a>
                     </div>
                     <!-- end .discussion-meta -->
                 </div>
@@ -112,11 +112,11 @@
             </div>
             <div class="col col-16 offset-2 join-discussion" id="joinlink">
                 <fieldset>
-                    <label for="join-discussion-text" class="visuallyhidden">Join the discussion</label>
+                    <label for="join-discussion-text" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.JoinDiscussionLabel %></label>
                     <%--<textarea class="comment" id="join-discussion-text" placeholder="Join the discussion"></textarea>--%>
                     <asp:TextBox CssClass="comment" Columns="40" Rows="40" ID="txtBody" runat="server" ViewStateMode="Enabled"></asp:TextBox>
                     <%--<a href="REPLACE" class="button rs_skip">Submit</a>--%>
-                    <asp:LinkButton CssClass="button rs_skip" OnClick="lbSubmitReply_Click" Text="Submit" ID="lbSubmitReply" runat="server" />
+                    <asp:LinkButton CssClass="button rs_skip" OnClick="lbSubmitReply_Click" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.SubmitButtonText %>" ID="lbSubmitReply" runat="server" />
                 </fieldset>
             </div>
             <!-- end .join-discussion -->

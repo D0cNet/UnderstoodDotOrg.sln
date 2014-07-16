@@ -49,8 +49,8 @@
             </div>
         </div>
         <div class="col col-6 statistics">
-                <p class="members"><%#Eval("NumOfMembers") %> Members</p>
-                <p class="discussions"><%#Eval("NumOfDiscussions") %> Discussions</p>
+                <p class="members"><%#Eval("NumOfMembers") %> <%= UnderstoodDotOrg.Common.DictionaryConstants.MembersLabel %></p>
+                <p class="discussions"><%#Eval("NumOfDiscussions") %> <%= UnderstoodDotOrg.Common.DictionaryConstants.DiscussionsLabel %></p>
             <div class="submit-button-wrap">
             <%--<a href="<%#Eval("JoinUrl") %>" class="button rs_skip">Join this Group</a>--%>
           <%--          <asp:LinkButton ID="btnJoinGroup" OnClick="btnJoinGroup_Click" CssClass="button rs_skip" runat="server" Text=""></asp:LinkButton>--%>

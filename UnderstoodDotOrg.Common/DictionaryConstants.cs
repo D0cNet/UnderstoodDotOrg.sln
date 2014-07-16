@@ -113,6 +113,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
+        public static string ShowAllMembersButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Show All Members Button Text");
+            }
+        }
+
         public static string RSSFeedButtonText
         {
             get
@@ -1813,6 +1821,97 @@ namespace UnderstoodDotOrg.Common
 
 
         #endregion MyAccount Labels
+
+        public static string SeeAllModeratorsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "See All Moderators Label");
+            }
+        }
+
+
+
+        public static string CommunityModeratorsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Community Moderators Label");
+            }
+        }
+
+        public static string JoinThisDiscussionLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Join This Discussion Label");
+            }
+        }
+
+        public static string ParentsInThisDiscussionLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Parents In This Discussion Label");
+            }
+        }
+
+        public static string JoinDiscussionLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Join Discussion Label");
+            }
+        }
+
+        public static string DoYouHaveSomethingToAddLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Do You Have Something To Add Label");
+            }
+        }
+
+
+        public static string OnlyMembersCanSeeLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Only Members Can See Label");
+            }
+        }
+
+        public static string SeeAllMembersLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "See All Members Label");
+            }
+        }
+
+        public static string MyFriendsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "My Friends Label");
+            }
+        }
+
+        public static string TheAnswersLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "The Answers Label");
+            }
+        }
+
+        public static string MostHelpfulLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Most Helpful Label");
+            }
+        }
 
         public static string MoreBloggersLabel
         {

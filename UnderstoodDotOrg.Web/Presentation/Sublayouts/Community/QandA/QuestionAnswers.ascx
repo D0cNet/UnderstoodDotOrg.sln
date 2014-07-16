@@ -6,14 +6,14 @@
         <div class="sort-options">
             <div class="dropdown">
                 <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-                    <span class="current-filter">Most helpful</span>
-                    <span class="dropdown-title">Sort By</span>
+                    <span class="current-filter"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostHelpfulLabel %></span>
+                    <span class="dropdown-title"><%= UnderstoodDotOrg.Common.DictionaryConstants.SortByLabel %></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
 
-                    <li role="presentation" class="filter selected" data-sort-by="helpful"><a role="menuitem">Most helpful</a></li>
+                    <li role="presentation" class="filter selected" data-sort-by="helpful"><a role="menuitem"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostHelpfulLabel %></a></li>
 
-                    <li role="presentation" class="filter " data-sort-by="date"><a role="menuitem">Most recent</a></li>
+                    <li role="presentation" class="filter " data-sort-by="date"><a role="menuitem"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostRecentLabel %></a></li>
 
                 </ul>
             </div>

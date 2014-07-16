@@ -83,7 +83,7 @@
                 <div class="container show-more rs_skip">
                     <div class="row">
                         <div class="col col-24">
-                            <a class="show-more-link " href="#" data-path="about/search-results" data-container="about-search-results" data-item="search-result-container" data-count="5">Show More<i class="icon-arrow-down-blue"></i></a>
+                            <a class="show-more-link " href="#" data-path="about/search-results" data-container="about-search-results" data-item="search-result-container" data-count="5"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
                         </div>
                     </div>
                 </div>

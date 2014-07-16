@@ -50,22 +50,22 @@
             switch (Request.QueryString["a"])
             {
                 case "all":
-                    litFilter.Text = "Community";
+                    litFilter.Text = DictionaryConstants.CommunityLabel;
                     break;
                 case "blog":
-                    litFilter.Text = "Blogs";
+                    litFilter.Text =  DictionaryConstants.BlogsFragment;
                     break;
                 case "group":
-                    litFilter.Text = "Groups";
+                    litFilter.Text =  DictionaryConstants.GroupsFragment;
                     break;
                 case "question":
-                    litFilter.Text = "Q & A";
+                    litFilter.Text =  DictionaryConstants.QAFragment;
                     break;
                 case "expert":
-                    litFilter.Text = "Experts";
+                    litFilter.Text = DictionaryConstants.ExpertsFragment;
                     break;
                 default:
-                    litFilter.Text = "Community";
+                    litFilter.Text = DictionaryConstants.CommunityLabel;
                     break;
             }
         }

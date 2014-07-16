@@ -14,7 +14,7 @@
     <div class="card card-discover rs_read_this">
         <h2><sc:Text Field="Discover Label" runat="server" /></h2>
         <span class="description"><sc:Text Field="Discover Description" runat="server" /><br />
-            the answers</span>
+            <%= UnderstoodDotOrg.Common.DictionaryConstants.TheAnswersLabel %></span>
         <a class="button rs_preserve" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAnsweredQuestionsLabel %></a>
     </div>
 </div>

@@ -10,8 +10,8 @@
         <div class="row">
             <div class="container">
                 <div class="col col-24 skiplink-feature">
-                    <h2>Featured</h2>
-                    <a href="REPLACE" id="ref_allParents" runat="server" class="link-recommended">Show all members</a>
+                    <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.Featured %></h2>
+                    <a href="REPLACE" id="ref_allParents" runat="server" class="link-recommended"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowAllMembersButtonText %></a>
                     <div class="callout-featured">
                         <div class="callout-image">
                            <%-- <img alt="430x241 Placeholder" src="http://placehold.it/430x241" />--%>
@@ -29,11 +29,11 @@
         </div>
         <div class="row">
             <div class="col col-24 container community-parents-carousel">
-                <h2>Community Moderators</h2>
+                <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.CommunityModeratorsLabel %></h2>
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
 <div class="arrows members next-prev-menu arrows-gray">
     
-    <a class="view-all" href="REPLACE">See all moderators</a>
+    <a class="view-all" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllModeratorsLabel %></a>
     
     <div class="rsArrow rsArrowLeft"><button class="rsArrowIcn"></button></div>
     <div class="rsArrow rsArrowRight"><button class="rsArrowIcn"></button></div>

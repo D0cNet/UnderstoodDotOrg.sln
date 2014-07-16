@@ -3,12 +3,12 @@
 <div id="divFriends" class="community-members" runat="server">
     <div class="row">
         <div class="col col-24 community-members-wrapper">
-            <h2 class="rs_read_this">My Friends</h2>
+            <h2 class="rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.MyFriendsLabel %></h2>
             <div class="carousel-arrow-wrapper">
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows members next-prev-menu arrows-gray">
 
-                    <a class="view-all" href="REPLACE">See all members</a>
+                    <a class="view-all" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllMembersLabel %></a>
 
                     <div id="arrowLeft" class="rsArrow rsArrowLeft" runat="server">
                         <button class="rsArrowIcn"></button>
