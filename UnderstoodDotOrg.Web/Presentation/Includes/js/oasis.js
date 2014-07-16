@@ -694,3 +694,57 @@ $(document).ready(function () {
 		});
 	});
 })(jQuery);
+
+// Public Profile Comments
+(function ($) {
+    var currentPage = 1;
+    var inProgress = false;
+    var $container, $showMoreContainer, path, lang, screenName;
+
+    function init() {
+        var $trigger = $("#profile-comment-activity-show-more");
+        if ($trigger.length > 0) {
+            path = $trigger.data('path');
+            lang = $trigger.data('lang');
+            screenName = $trigger.data('screenname');
+            $container = $("#" + $trigger.data('container'));
+            $showMoreContainer = $trigger.closest(".show-more");
+
+            $trigger.on("click", showMore_clickHandler);
+        }
+    }
+
+    function showMore_clickHandler(e) {
+        e.preventDefault();
+
+        if (inProgress) {
+            return;
+        }
+
+        inProgress = true;
+
+        $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
+
+        var data = {
+            'page': currentPage + 1,
+            'lang': lang,
+            'screenName': screenName
+        };
+
+        $.ajax({
+            url: path,
+            data: data,
+            method: 'GET'
+        }).done(function (data) {
+            currentPage++;
+            if ($(data).filter('input[type="hidden"]').length == 0) {
+                $showMoreContainer.hide();
+            }
+            $container.append(data);
+        }).always(function () {
+            inProgress = false;
+        });
+    }
+
+    $(document).ready(init);
+})(jQuery);

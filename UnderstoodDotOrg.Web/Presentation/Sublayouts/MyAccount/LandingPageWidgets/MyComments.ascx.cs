@@ -38,9 +38,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent
 
                 int totalComments;
 
-                List<Services.Models.Telligent.Comment> comments = TelligentService.GetUserComments(CurrentMember.ScreenName, 1, 2, out totalComments);
+                List<Services.Models.Telligent.Comment> comments = TelligentService.GetUserCommentsByScreenName(CurrentMember.ScreenName, 1, 2, out totalComments);
 
-                // TODO: comment count needs to retrieved from the TotalCount attribute, this returns the number of paged results
                 litCount.Text = totalComments.ToString();
 
                 if (comments.Any())

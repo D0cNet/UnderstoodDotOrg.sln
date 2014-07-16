@@ -8,56 +8,56 @@ namespace UnderstoodDotOrg.Common.Helpers
 {
      public class DataFormatHelper
     {
-         public static string FormatDate(string dateTime)
-         {
-             string[] d = dateTime.Split('T');
-             DateTime date = DateTime.Parse(d[0]);
-             DateTime now = DateTime.Now;
-             TimeSpan s = now.Subtract(date);
-             int span = (int)s.TotalDays;
-             string timeSince = span.ToString();
-             string publishedDate = timeSince + " days ago";
-             if (timeSince.Equals("1"))
-             {
-                 publishedDate = "yesterday";
-             }
+        public static string FormatDate(DateTime dateTime)
+        {
+            // TODO: localize fragments
+            DateTime now = DateTime.Now;
+            TimeSpan s = now.Subtract(dateTime.Date);
+            int span = (int)s.TotalDays;
+            string timeSince = span.ToString();
+            string publishedDate = timeSince + " days ago";
+            if (timeSince.Equals("1"))
+            {
+                publishedDate = "yesterday";
+            }
 
-             if (timeSince.Equals("0"))
-             {
-                 if(d.Count() <2)
-                    date = DateTime.Parse(d[0]);
-                 else
-                     date = DateTime.Parse(d[1]);
+            if (timeSince.Equals("0"))
+            {
+                s = now.TimeOfDay.Subtract(dateTime.TimeOfDay);
+                span = (int)s.TotalSeconds;
+                if (span < 60)
+                {
+                    return "just now";
+                }
 
-                 s = now.TimeOfDay.Subtract(date.TimeOfDay);
-                 span = (int)s.TotalSeconds;
-                 if (span < 60)
-                 {
-                     return "just now";
-                 }
+                if (span < 120)
+                {
+                    return "1 minute ago";
+                }
 
-                 if (span < 120)
-                 {
-                     return "1 minute ago";
-                 }
+                if (span < 3600)
+                {
+                    return string.Format("{0} minutes ago", Math.Floor((double)span / 60));
+                }
 
-                 if (span < 3600)
-                 {
-                     return string.Format("{0} minutes ago", Math.Floor((double)span / 60));
-                 }
+                if (span < 7200)
+                {
+                    return "1 hour ago";
+                }
 
-                 if (span < 7200)
-                 {
-                     return "1 hour ago";
-                 }
+                if (span < 86400)
+                {
+                    return string.Format("{0} hours ago", Math.Floor((double)span / 3600));
+                }
+            }
+            return publishedDate;
+        }
 
-                 if (span < 86400)
-                 {
-                     return string.Format("{0} hours ago", Math.Floor((double)span / 3600));
-                 }
-             }
-             return publishedDate;
-         }
+        public static string FormatDate(string dateTime)
+        {
+            return FormatDate(DateTime.Parse(dateTime));
+        }
+
          public static string FormatString100(string inputString)
          {
              if (inputString.Length >= 100)

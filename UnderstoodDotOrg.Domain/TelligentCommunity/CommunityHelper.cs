@@ -48,53 +48,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             };
         }
 
-        public static string FormatDate(string dateTime)
-        {
-            string[] d = dateTime.Split('T');
-            DateTime date = DateTime.Parse(d[0]);
-            DateTime now = DateTime.Now;
-            TimeSpan s = now.Subtract(date);
-            int span = (int)s.TotalDays;
-            string timeSince = span.ToString();
-            string publishedDate = timeSince + " days ago";
-            if (timeSince.Equals("1"))
-            {
-                publishedDate = "yesterday";
-            }
-
-            if (timeSince.Equals("0"))
-            {
-                date = DateTime.Parse(d[1]);
-                s = now.TimeOfDay.Subtract(date.TimeOfDay);
-                span = (int)s.TotalSeconds;
-                if (span < 60)
-                {
-                    return "just now";
-                }
-
-                if (span < 120)
-                {
-                    return "1 minute ago";
-                }
-
-                if (span < 3600)
-                {
-                    return string.Format("{0} minutes ago", Math.Floor((double)span / 60));
-                }
-
-                if (span < 7200)
-                {
-                    return "1 hour ago";
-                }
-
-                if (span < 86400)
-                {
-                    return string.Format("{0} hours ago", Math.Floor((double)span / 3600));
-                }
-            }
-            return publishedDate;
-        }
-
+        
         /// <summary>
         /// Formats the input string to show only the first 100 characters
         /// </summary>
@@ -258,7 +212,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         ContentTypeId = node["ContentTypeId"].InnerText,
                         ContentUrl = node["Url"].InnerText,
                         BlogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText),
-                        PublishedDate = CommunityHelper.FormatDate(node["PublishedDate"].InnerText),
+                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(node["PublishedDate"].InnerText),
                         Author = auth["DisplayName"].InnerText
                     };
 
@@ -466,7 +420,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     Question question = new Question()
                     {
                         Title = xn["Title"].InnerText,
-                        PublishedDate = FormatDate(xn["CreatedDate"].InnerText),
+                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["CreatedDate"].InnerText),
                         Body = xn["Body"].InnerText,
                         WikiPageId = xn["Id"].InnerText,
                         ContentId = xn["ContentId"].InnerText,
@@ -516,7 +470,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     Question question = new Question()
                     {
                         Title = xn["Title"].InnerText,
-                        PublishedDate = FormatDate(xn["CreatedDate"].InnerText),
+                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["CreatedDate"].InnerText),
                         Body = xn["Body"].InnerText,
                         WikiPageId = xn["Id"].InnerText,
                         ContentId = xn["ContentId"].InnerText,
@@ -557,7 +511,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     question = new Question()
                     {
                         Title = page["Title"].InnerText,
-                        PublishedDate = FormatDate(page["CreatedDate"].InnerText),
+                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(page["CreatedDate"].InnerText),
                         Body = page["Body"].InnerText,
                         Author = user["Username"].InnerText,
                         Group = app["HtmlName"].InnerText,
@@ -590,7 +544,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     XmlNode user = xn.SelectSingleNode("Author");
                     Answer answer = new Answer()
                     {
-                        PublishedDate = FormatDate(xn["PublishedDate"].InnerText),
+                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["PublishedDate"].InnerText),
                         Body = xn["Body"].InnerText,
                         Author = user["Username"].InnerText,
                         AuthorAvatar = user["AvatarUrl"].InnerText,
@@ -690,7 +644,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Title = node["Title"].InnerText,
                         ContentId = node["ContentId"].InnerText,
                         Body = FormatString100(node["Body"].InnerText),
-                        PublishedDate = FormatDate(node["PublishedDate"].InnerText),
+                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(node["PublishedDate"].InnerText),
                         BlogName = blogName,
                         Author = author["DisplayName"].InnerText,
                         // TODO: Fix this logic a lot
@@ -1333,7 +1287,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         var replyCount = xn["ReplyCount"].InnerText;
                         var commentContentTypeId = xn["CommentContentTypeId"].InnerText;
                         var body = xn["Body"].InnerText;
-                        var publishedDate = CommunityHelper.FormatDate(xn["CreatedDate"].InnerText);
+                        var publishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["CreatedDate"].InnerText);
                         var authorId = author["Id"].InnerText;
                         var authorAvatarUrl = author["AvatarUrl"].InnerText;
                         var authorDisplayName = author["DisplayName"].InnerText;

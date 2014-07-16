@@ -73,13 +73,13 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
                 CommentId = commentId;
                 CommentContentTypeId = xn["CommentContentTypeId"].InnerText;
                 Body = xn["Body"].InnerText;
-                PublishedDate = CommunityHelper.FormatDate(commentDate);
+                PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(commentDate);
                 AuthorId = author["Id"].InnerText;
                 AuthorAvatarUrl = author["AvatarUrl"].InnerText;
                 AuthorDisplayName = author["DisplayName"].InnerText;
                 AuthorProfileUrl = author["ProfileUrl"].InnerText;
                 AuthorUsername = author["Username"].InnerText;
-                Likes = CommunityHelper.GetTotalLikes(commentId).ToString();
+                Likes = TelligentService.TelligentService.GetTotalLikes(commentId).ToString();
                 //ParentTitle = xn["Content"]["Application"]["Container"]["HtmlName"].InnerText;
                 //CommentTitle = xn["Content"]["HtmlName"].InnerText;
                 Guid sitecoreGuid = Guid.Empty;

@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
+namespace UnderstoodDotOrg.Web.Presentation.AjaxData {
     
     
-    public partial class AccountFriendComments {
+    public partial class UserComments {
         
         /// <summary>
         /// ucCommentList control.
@@ -22,12 +22,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
         protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common.CommentList ucCommentList;
         
         /// <summary>
-        /// pnlShowMore control.
+        /// phMoreResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlShowMore;
+        protected global::System.Web.UI.WebControls.PlaceHolder phMoreResults;
     }
 }

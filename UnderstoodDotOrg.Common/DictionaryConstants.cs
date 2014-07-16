@@ -2690,5 +2690,6 @@ namespace UnderstoodDotOrg.Common
         public static string ConnectionsLabel { get { return Translate.TextByDomain(PosesDictionary, "Connections Label"); } }
 
         public static string RecommendedGroupsLabel { get { return Translate.TextByDomain(PosesDictionary, "Recommended Groups Label"); } }
+        public static string LastUpdatedLabel { get { return Translate.TextByDomain(PosesDictionary, "Last Updated Label"); } }
     }
 }

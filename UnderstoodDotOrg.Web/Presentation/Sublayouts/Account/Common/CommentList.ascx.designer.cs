@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account {
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common {
     
     
-    public partial class AccountFriendComments {
+    public partial class CommentList {
         
         /// <summary>
-        /// ucCommentList control.
+        /// rptComments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Common.CommentList ucCommentList;
-        
-        /// <summary>
-        /// pnlShowMore control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlShowMore;
+        protected global::System.Web.UI.WebControls.Repeater rptComments;
     }
 }

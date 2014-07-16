@@ -26,52 +26,6 @@ namespace UnderstoodDotOrg.Services.TelligentService
 {
     public class TelligentService
     {
-        public static string FormatDate(string dateTime)
-        {
-            string[] d = dateTime.Split('T');
-            DateTime date = DateTime.Parse(d[0]);
-            DateTime now = DateTime.Now;
-            TimeSpan s = now.Subtract(date);
-            int span = (int)s.TotalDays;
-            string timeSince = span.ToString();
-            string publishedDate = timeSince + " days ago";
-            if (timeSince.Equals("1"))
-            {
-                publishedDate = "yesterday";
-            }
-
-            if (timeSince.Equals("0"))
-            {
-                date = DateTime.Parse(d[1]);
-                s = now.TimeOfDay.Subtract(date.TimeOfDay);
-                span = (int)s.TotalSeconds;
-                if (span < 60)
-                {
-                    return "just now";
-                }
-
-                if (span < 120)
-                {
-                    return "1 minute ago";
-                }
-
-                if (span < 3600)
-                {
-                    return string.Format("{0} minutes ago", Math.Floor((double)span / 60));
-                }
-
-                if (span < 7200)
-                {
-                    return "1 hour ago";
-                }
-
-                if (span < 86400)
-                {
-                    return string.Format("{0} hours ago", Math.Floor((double)span / 3600));
-                }
-            }
-            return publishedDate;
-        }
         public static string FormatString100(string inputString)
         {
             if (inputString.Length >= 100)
@@ -327,7 +281,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return commentList;
         }
 
-        public static bool LikeComment(string screenName, string contentId, string contentTypeId)
+        public static bool LikeContent(string screenName, string contentId, string contentTypeId)
         {
             var requestUrl = GetApiEndPoint("likes.xml");
             var values = new NameValueCollection
@@ -717,18 +671,16 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return totalEntries;
         }
 
-        public static List<Comment> GetUserComments(string userName, int page, int pageSize, out int totalComments)
+        public static List<Comment> GetUserCommentsByUserId(string userId, int page, int pageSize, out int totalComments)
         {
             List<Comment> comments = new List<Comment>();
 
-            // TODO: revise user model to store user id instead of doing an extra lookup
-            string userId = ReadUserId(userName);
             int totalEntries = 0;
             int pageIndex = page - 1;
 
             MakeApiRequest(wc =>
             {
-                string address = GetApiEndPoint(String.Format("comments.xml?PageIndex={0}&PageSize={1}&UserId={2}&SortBy=CreatedUtcDate&SortOrder=Descending", 
+                string address = GetApiEndPoint(String.Format("comments.xml?PageIndex={0}&PageSize={1}&UserId={2}&SortBy=CreatedUtcDate&SortOrder=Descending",
                     pageIndex, pageSize, userId));
 
                 string xml = wc.DownloadString(address);
@@ -749,6 +701,14 @@ namespace UnderstoodDotOrg.Services.TelligentService
             totalComments = totalEntries;
 
             return comments;
+        }
+
+        // TODO: we shouldn't have to look up user id, refactor member model to store user id
+        public static List<Comment> GetUserCommentsByScreenName(string userName, int page, int pageSize, out int totalComments)
+        {
+            string userId = ReadUserId(userName);
+
+            return GetUserCommentsByUserId(userId, page, pageSize, out totalComments);
         }
 
         public static List<int> GetUserRoles(string Username)
@@ -1202,7 +1162,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 var node = ReadThreads(forumID);
                 foreach (XmlNode childNode in node)
                 {
-                    ThreadModel t = new ThreadModel(childNode,FormatDate,FormatString100,ReadReplies);
+                    ThreadModel t = new ThreadModel(childNode,DataFormatHelper.FormatDate,FormatString100,ReadReplies);
                     th.Add(t);
                 }
             }
@@ -1410,7 +1370,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     XmlNode childNode = document.SelectSingleNode("Response/Thread");
                     if (childNode != null)
                     {
-                        model = new ThreadModel(childNode,FormatDate,FormatString100,ReadReplies);
+                        model = new ThreadModel(childNode,DataFormatHelper.FormatDate,FormatString100,ReadReplies);
                     }
                 }
                 catch(Exception ex)
@@ -2480,7 +2440,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             string body = result["Body"].InnerText;
                             string type = result["ContentType"].InnerText;
                             string typeTransformed = string.Empty;
-                            string date = FormatDate(result["Date"].InnerText);
+                            string date = DataFormatHelper.FormatDate(result["Date"].InnerText);
                             string url = string.Empty;
                             bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
                             bestMatchTitle = Regex.Replace(title, "</em>", "</strong>");

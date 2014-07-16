@@ -26,7 +26,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
            
            XmlNode node =TelligentService.TelligentService.ReadThread(forumId, threadId);
 
-           ThreadModel th = new ThreadModel(node,TelligentService.TelligentService.FormatDate,TelligentService.TelligentService.FormatString100,TelligentService.TelligentService.ReadReplies);
+           ThreadModel th = new ThreadModel(node, Common.Helpers.DataFormatHelper.FormatDate,TelligentService.TelligentService.FormatString100,TelligentService.TelligentService.ReadReplies);
 
            return th;
 

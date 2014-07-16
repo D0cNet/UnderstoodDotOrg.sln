@@ -25,6 +25,7 @@ namespace UnderstoodDotOrg.Common
         public const int ARTICLE_COMMENTS_PER_PAGE = 5;
         public const int HOMEPAGE_FEATURED_ARTICLES = 6;
         public const int BEHAVIOR_TOOLS_FEATURED_ARTICLES = 9;
+        public const int PUBLIC_PROFILE_COMMENTS_PER_PAGE = 5;
 
         #region Query Strings
 
@@ -908,6 +909,7 @@ namespace UnderstoodDotOrg.Common
             public static string ContentServiceEndpoint = "ContentServiceEndpoint";
             public static string BehaviorToolSuggestionEmail = "BehaviorToolSuggestionEmail";
             public static string WildcardUrlPlaceholder = "WildcardUrlPlaceholder";
+            public static string UserCommentsEndpoint = "UserCommentsEndpoint";
 
             #region Salesforce
             private static string SalesforceUsername = ConfigurationManager.AppSettings[Constants.Settings.SalesforceUsername];

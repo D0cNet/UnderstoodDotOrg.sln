@@ -14,7 +14,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
         {
             this.AuthorName = node.SelectSingleNode("Author/Username").InnerText;
             this.Body = CommunityHelper.FormatString100(node.SelectSingleNode("Body").InnerText);
-            this.ReplyDate = CommunityHelper.FormatDate(node.SelectSingleNode("Date").InnerText);
+            this.ReplyDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(node.SelectSingleNode("Date").InnerText);
             this.Date = Convert.ToDateTime((node.SelectSingleNode("Date").InnerText));
         }
         private MemberCardModel _author = null;

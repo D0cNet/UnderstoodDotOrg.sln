@@ -58,7 +58,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 CommentId = commentId;
                 CommentContentTypeId = xn["CommentContentTypeId"].InnerText;
                 Body = xn["Body"].InnerText;
-                PublishedDate = CommunityHelper.FormatDate(commentDate);
+                PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(commentDate);
                 AuthorId = author["Id"].InnerText;
                 AuthorAvatarUrl = author["AvatarUrl"].InnerText;
                 AuthorDisplayName = author["DisplayName"].InnerText;

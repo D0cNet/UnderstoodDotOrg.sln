@@ -88,7 +88,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
                     DateTime dateStamp = ((BlogsPostPageItem)e.Item.DataItem).Date.DateTime;
                     if (dateStamp != null)
                     {
-                        string friendlyDate = UnderstoodDotOrg.Domain.TelligentCommunity.CommunityHelper.FormatDate(dateStamp.ToString());
+                        string friendlyDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(dateStamp.ToString());
                         char [] delim ={' '};
                         string [] timePieces  =friendlyDate.Split(delim,StringSplitOptions.RemoveEmptyEntries);
                         if (timePieces.Count() > 1)

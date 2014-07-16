@@ -37,7 +37,7 @@ namespace UnderstoodDotOrg.Web.Handlers
             if (result.IsLoggedIn)
             {
                 var member = (Member)Session[Constants.currentMemberKey];
-                result.IsSuccessful = TelligentService.LikeComment(member.ScreenName, contentId, contentTypeId);
+                result.IsSuccessful = TelligentService.LikeContent(member.ScreenName, contentId, contentTypeId);
                 result.HelpfulCount = TelligentService.GetTotalLikes(contentId);
             }
 

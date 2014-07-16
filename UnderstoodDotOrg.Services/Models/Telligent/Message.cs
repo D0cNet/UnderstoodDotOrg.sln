@@ -33,7 +33,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
                 Subject = node.SelectSingleNode("Subject").InnerText;
                 Body = node.SelectSingleNode("Body").InnerText;
                 CreatedDate = Convert.ToDateTime(node.SelectSingleNode("CreatedDate").InnerText);
-                HowLong = CommunityHelper.FormatDate(node.SelectSingleNode("CreatedDate").InnerText);
+                HowLong = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(node.SelectSingleNode("CreatedDate").InnerText);
                 AuthorName = node.SelectSingleNode("Author/Username").InnerText;
                 AuthorAvatar = node.SelectSingleNode("Author/AvatarUrl").InnerText;
                 Time = CreatedDate.ToString("hh:mm tt");
