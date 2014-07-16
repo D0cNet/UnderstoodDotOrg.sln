@@ -45,8 +45,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
 
                 btnConnect.LoadState(this.Member.UserName);
 
-                rptChildCard.DataSource = this.Member.Children;
-                rptChildCard.DataBind();
+                if (this.Member.Children != null && this.Member.Children.Count > 0)
+                {
+                    rptChildCard.DataSource = this.Member.Children;
+                    rptChildCard.DataBind();
+                }
+
             }
 
         }
