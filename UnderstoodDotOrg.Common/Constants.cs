@@ -523,6 +523,10 @@ namespace UnderstoodDotOrg.Common
             {
                 get { return new Guid("{EE8EF105-6F7D-4389-B20D-4ECAD8703F70}"); }
             }
+            public static Guid RegisterChildInfo
+            {
+                get { return new Guid("{CED5327F-B3BA-4D11-B514-CA5943BAFAAC}"); }
+            }
             public static Guid ResetPassword
             {
                 get { return new Guid("{328F5121-EFF8-441B-AFB6-A3DF41F7BFA4}"); }
