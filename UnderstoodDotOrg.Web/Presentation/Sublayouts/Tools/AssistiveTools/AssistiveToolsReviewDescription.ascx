@@ -13,8 +13,8 @@
                         <a href="#tabs2-parent-reviews"><asp:Label ID="lblParentReviews" runat="server" Text="" /></a></li>
                 </ul>
                 <div class="tab-container rs_read_this">
-                    <span class="visuallyhidden">What You Need To Know</span>
-                    <span class="visuallyhidden">Parent Reviews</span>
+                    <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.WhatYouNeedToKnowLabel %></span>
+                    <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.ParentReviewsLabel %></span>
                 </div>
                 <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Tools/AssistiveTools/ReviewTabs/WhatYouNeedToKnowTab.ascx" />
                 <!-- end .tabs1-what-you-need-to-know -->

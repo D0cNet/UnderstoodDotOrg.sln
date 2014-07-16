@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AssistiveToolsReviewDetails.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.AssistiveToolsReviewDetails" %>
-
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container tech-results-single-container">
     <div class="row">
         <!-- article -->
@@ -8,8 +8,8 @@
             <!-- Back Button -->
             <div class="back-button">
                 <div class="rating-container">
-                    <div>Review and ratings by</div>
-                    <img alt="Common Sense Media" src="/Presentation/Includes/images/logo.partner.commonsense2.png" />
+                    <div><sc:FieldRenderer ID="frRandRby" runat="server" FieldName="Review and ratings by Text" /></div>
+                    <sc:Image ID="SponsorImage" Field="Sponsor Image" runat="server" />
                 </div>
                 <div class="back-results-container">
                     <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i><asp:label ID="lblBackToResults" runat="server" Text="" /></a>
@@ -39,7 +39,7 @@
                                 <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom">
                                     <%= Model.ThumbnailImage.Rendered %>
                                 </a>
-                                <span class="icon-search rs_preserve">search</span>
+                                <span class="icon-search rs_preserve"><%= UnderstoodDotOrg.Common.DictionaryConstants.SearchLabel %></span>
                             </div>
                             <!-- BEGIN PARTIAL: assistive-tech-screenshots-popover -->
                             <!-- popover hidden content -->
@@ -50,7 +50,7 @@
                                     <div class="change-slide-buttons arrows-gray rs_skip">
                                         <span class="count">
                                             <span class="curr">1</span>
-                                            of <%= Model.Screenshots.ListItems.Count %></span>
+                                            <%= UnderstoodDotOrg.Common.DictionaryConstants.ofFragment %> <%= Model.Screenshots.ListItems.Count %></span>
                                         <div class="rsArrow rsArrowRight">
                                             <div class="rsArrowIcn"></div>
                                         </div>
@@ -94,7 +94,7 @@
                                     <div class="rating-grade-container">
                                         <div class="rating-label"><asp:label ID="lblGrade" runat="server" Text="" /></div>
                                         <div class="grade-scale-wrapper">
-                                            <span class="visuallyhidden">rating</span>
+                                            <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
                                             <div class="grade-scale">
                                                 <div class="selection grade<%= Model.TargetGrade.Rendered %>"><%= Model.TargetGrade.Rendered %></div>
                                                 <asp:Repeater ID="rptrAppropriateGrades" runat="server">
@@ -144,7 +144,7 @@
                                         <div class="quality-scale-container">
                                             <div class="rating-label"><asp:label ID="lblQuality" runat="server" Text="" /></div>
                                             <div class="quality-scale-wrapper">
-                                                <span class="visuallyhidden">rating</span>
+                                                <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
                                                 <div class="quality-scale">
                                                     <!-- BEGIN PARTIAL: results-slider -->
                                                     <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>" 
@@ -209,8 +209,8 @@
                                             </div>
                                         </div>
                                         <div class="learning-scale-container">
-                                            <div class="rating-label">Learning</div>
-                                            <span class="visuallyhidden">rating</span>
+                                            <div class="rating-label"><%= UnderstoodDotOrg.Common.DictionaryConstants.Learningfragment %></div>
+                                            <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
                                             <div class="learning-scale-wrapper">
                                                 <div class="learning-scale">
                                                     <!-- BEGIN PARTIAL: results-slider -->
@@ -224,7 +224,7 @@
                                                     </div>
                                                     <!-- BEGIN PARTIAL: popover-learning-info -->
                                                     <div class="learning-tooltip popover-container">
-                                                        <div class="tooltip-title">Learning Rating</div>
+                                                        <div class="tooltip-title"><%= UnderstoodDotOrg.Common.DictionaryConstants.Learningfragment %> <%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></div>
                                                         <div class="ratings-wrapper">
                                                             <div class="rating">
                                                                 <div class="rating-icon">
@@ -293,16 +293,16 @@
                         <div class="col col-6 offset-1">
                             <!-- BEGIN PARTIAL: get-this-app -->
                             <div class="get-this-app">
-                                <div class="purchase">Purchase</div>
-                                <div class="price">Price: <%= Model.Price.Rendered %></div>
+                                <div class="purchase"><%= UnderstoodDotOrg.Common.DictionaryConstants.PurchaseLabel %></div>
+                                <div class="price"><%= UnderstoodDotOrg.Common.DictionaryConstants.PriceLabel %> <%= Model.Price.Rendered %></div>
                                 <% if (Model.AppleAppStoreID != string.Empty) { %>
                                 <a href="https://itunes.apple.com/app/<%= Model.AppleAppStoreID.Rendered %>">
-                                    <img alt="Available in the app store" src="/Presentation/Includes/images/app-store.png" />
+                                    <sc:Image ID="AppleImage" Field="App Store Image" runat="server" />
                                 </a>
                                 <% } 
                                    if (Model.AppleAppStoreID != string.Empty) { %>
                                 <a href="https://play.google.com/store/apps/details?id=<%= Model.GooglePlayStoreID.Rendered %>">
-                                    <img alt="Get it on Google Play" src="/Presentation/Includes/images/play-store.png" />
+                                    <sc:Image ID="GoogleImage" Field="Google Store Image" runat="server" />
                                 </a>
                                 <% } %>
                             </div>

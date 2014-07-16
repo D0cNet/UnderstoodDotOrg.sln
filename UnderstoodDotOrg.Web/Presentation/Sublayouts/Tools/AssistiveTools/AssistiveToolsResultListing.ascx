@@ -113,9 +113,9 @@
 
     <div class="result-ratings show-popover col col-10">
         <div class="rating-label"><asp:Label ID="lblGrade1" runat="server" Text="" /></div>
-        <span class="visuallyhidden">rating</span>
+        <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
         <div class="grade-scale-wrapper">
-            <span class="visuallyhidden">rating</span>
+            <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
             <div class="grade-scale">
                 <div class="selection grade<%= Model.TargetGrade.Rendered %>"><%= Model.TargetGrade.Rendered %></div>
                 <asp:Repeater ID="rptrAppropriateGrades2" runat="server">
@@ -160,7 +160,7 @@
 
         <div class="rating-label"><asp:Label ID="lblQuality1" runat="server" Text="" /></div>
         <div class="quality-scale-wrapper">
-            <span class="visuallyhidden">rating</span>
+            <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
             <div class="quality-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
                 <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>" aria-label="<%= Model.Quality.Integer %>"><%= Model.Quality.Integer %></div>
@@ -219,12 +219,12 @@
             </div>
             <!-- .quality-tooltip -->
             <!-- END PARTIAL: popover-quality-info -->
-            <a class="quality-review-link" href="<%= Model.GetUrl()+"#tabs2-parent-reviews" %>"><asp:Literal ID="litNumReviews" runat="server"></asp:Literal> Reviews</a>
+            <a class="quality-review-link" href="<%= Model.GetUrl()+"#tabs2-parent-reviews" %>"><asp:Literal ID="litNumReviews" runat="server"></asp:Literal> <%= UnderstoodDotOrg.Common.DictionaryConstants.ReviewsLabel %></a>
         </div>
 
         <div class="rating-label"><asp:Label ID="lblLearningFragment1" runat="server" Text="" /></div>
         <div class="learning-scale-wrapper">
-            <span class="visuallyhidden">rating</span>
+            <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
             <div class="learning-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
                 <div class="results-slider purple-<%= SpelledNumbers[Model.Learning.Integer] %>" aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>

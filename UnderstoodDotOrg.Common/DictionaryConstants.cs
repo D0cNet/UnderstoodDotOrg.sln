@@ -1822,6 +1822,38 @@ namespace UnderstoodDotOrg.Common
 
         #endregion MyAccount Labels
 
+        public static string PriceLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Price Label");
+            }
+        }
+
+        public static string PurchaseLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Purchase Label");
+            }
+        }
+
+        public static string ReviewsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Reviews Label");
+            }
+        }
+
+        public static string RatingLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Rating Label");
+            }
+        }
+
         public static string SeeAllModeratorsLabel
         {
             get
@@ -1829,8 +1861,6 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "See All Moderators Label");
             }
         }
-
-
 
         public static string CommunityModeratorsLabel
         {

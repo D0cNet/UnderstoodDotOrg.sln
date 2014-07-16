@@ -850,6 +850,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Cards\MemberProfileCard.ascx.cs">
       <DependentUpon>MemberProfileCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Cards\MemberProfileCard.ascx.designer.cs">
       <DependentUpon>MemberProfileCard.ascx</DependentUpon>
