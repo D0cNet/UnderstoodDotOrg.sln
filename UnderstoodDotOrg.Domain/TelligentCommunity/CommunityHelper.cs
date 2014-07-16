@@ -1294,7 +1294,8 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         var authorProfileUrl = author["ProfileUrl"].InnerText;
                         var authorUsername = author["Username"].InnerText;
                         var parentTitle = content["HtmlName"].InnerText;
-                        if (app["HtmlName"].InnerText != "Articles" && app["HtmlName"].InnerText != "General")
+                        if (app["HtmlName"].InnerText != "Articles" && app["HtmlName"].InnerText != "General"
+                            && app["HtmlName"].InnerText != "Assistive Tools")
                         {
                             Comment comment = new Comment()
                             {

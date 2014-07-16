@@ -21,8 +21,19 @@
             catch { }
 
             var dataSource = CommunityHelper.GetFriends(user);
-            rptFriends.DataSource = dataSource;
-            rptFriends.DataBind();
+            if (dataSource.Count < 4)
+            {
+                divFriends.Visible = false;
+            }
+            else
+            {
+                if (dataSource.Count == 4)
+                {
+                    arrowLeft.Visible = arrowRight.Visible = false;
+                }
+                rptFriends.DataSource = dataSource;
+                rptFriends.DataBind();
+            }
         }
 
         protected void rptFriends_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)

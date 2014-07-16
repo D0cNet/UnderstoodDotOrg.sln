@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyFriends.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening.MyFriends" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-<div class="community-members">
+<div id="divFriends" class="community-members" runat="server">
     <div class="row">
         <div class="col col-24 community-members-wrapper">
             <h2 class="rs_read_this">My Friends</h2>
@@ -10,10 +10,10 @@
 
                     <a class="view-all" href="REPLACE">See all members</a>
 
-                    <div class="rsArrow rsArrowLeft">
+                    <div id="arrowLeft" class="rsArrow rsArrowLeft" runat="server">
                         <button class="rsArrowIcn"></button>
                     </div>
-                    <div class="rsArrow rsArrowRight">
+                    <div id="arrowRight" class="rsArrow rsArrowRight" runat="server">
                         <button class="rsArrowIcn"></button>
                     </div>
                 </div>

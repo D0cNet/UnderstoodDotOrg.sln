@@ -19,7 +19,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             litAuthor.Text = commentsList[0].AuthorDisplayName;
             litCommentSnippet.Text = CommunityHelper.FormatString100(commentsList[0].Body);
             litDateTime.Text = commentsList[0].PublishedDate;
-            litTitle.Text = commentsList[0].ParentTitle;
+            string[] s = commentsList[0].ParentTitle.Split('{');
+            litTitle.Text = s[0];
             linkReadMore.HRef = linkTitle.HRef = commentsList[0].Url;
         }
     }

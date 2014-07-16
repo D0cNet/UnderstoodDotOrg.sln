@@ -21,13 +21,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
         protected void Page_Load(object sender, EventArgs e)
         {
             string blogId = Settings.GetSetting(Constants.Settings.TelligentBlogIds);
-            var dataSource = CommunityHelper.ListBlogPosts(blogId, "6");
+            var dataSource = CommunityHelper.ListBlogPosts(blogId, "3");
             foreach (var item in dataSource)
             {
                 BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
                 if (blogPost != null)
                 {
                     item.Author = blogPost.Author.Rendered;
+                    string[] s = item.Title.Split('{');
+                    item.Title = s[0];
                     item.ContentTypeId = blogPost.ContentTypeId;
                     item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
                     var author = Sitecore.Context.Database.GetItem("/sitecore/content/Home/Community and Events/Blogs/Author/" + item.Author);

@@ -13,6 +13,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
     public partial class MyFriends {
         
         /// <summary>
+        /// divFriends control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divFriends;
+        
+        /// <summary>
+        /// arrowLeft control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl arrowLeft;
+        
+        /// <summary>
+        /// arrowRight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl arrowRight;
+        
+        /// <summary>
         /// rptFriends control.
         /// </summary>
         /// <remarks>
