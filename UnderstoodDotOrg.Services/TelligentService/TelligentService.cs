@@ -2366,7 +2366,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     user = new User()
                     {
                         AvatarUrl = node["AvatarUrl"].InnerText,
-                        Username = node["Username"].InnerText,
+                        Username = node["Username"].InnerText
                     };
                 }
             }
@@ -2375,6 +2375,56 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 Sitecore.Diagnostics.Log.Error("Error retrieving telligent user", ex);
             }
             return user;
+        }
+
+        public static List<User> GetFriends(string userName, int page, int pageSize, out int totalFriends)
+        {
+            List<User> friends = new List<User>();
+            int friendsCount = 0;
+
+            if (!userName.IsNullOrEmpty())
+            {
+                try
+                {
+                    MakeApiRequest(wc =>
+                    {
+                        int pageIndex = page - 1;
+
+                        string url = GetApiEndPoint(String.Format("users/{0}/friends.xml?PageIndex={1}&PageSize={2}", userName, pageIndex, pageSize));
+
+                        string response = wc.DownloadString(url);
+
+                        XmlDocument xml = new XmlDocument();
+                        xml.LoadXml(response);
+
+                        var container = xml.SelectSingleNode("Response/Friendships");
+                        friendsCount = Convert.ToInt32(container.Attributes["TotalCount"].InnerText);
+
+                        XmlNodeList nodes = container.SelectNodes("Friendship");
+                        foreach (XmlNode node in nodes)
+                        {
+                            XmlNode friend = node.SelectSingleNode("User");
+
+                            // TODO: why isn't entire user being populated
+                            User user = new User()
+                            {
+                                AvatarUrl = friend["AvatarUrl"].InnerText,
+                                DisplayName = friend["DisplayName"].InnerText,
+                                Username = friend["Username"].InnerText,
+                            };
+
+                            friends.Add(user);
+                        }
+                    });
+                }
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error("Error retrieving friends from Telligent", ex, typeof(TelligentService));
+                }
+            }
+
+            totalFriends = friendsCount;
+            return friends;
         }
 
         /// <summary>

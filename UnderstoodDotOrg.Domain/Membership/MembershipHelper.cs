@@ -88,6 +88,20 @@ namespace UnderstoodDotOrg.Domain.Membership
         public static string GetPublicProfileUrl(Member member)
         {
             return GetPublicProfileUrl(member.ScreenName);
-        }        
+        }
+
+        public static string GetPublicProfileActivityUrl(string screenName)
+        {
+            string url = GetPublicProfileUrl(screenName);
+            if (!string.IsNullOrEmpty(url))
+            {
+                url = String.Format("{0}?{1}={2}", 
+                    url, 
+                    Constants.QueryStrings.PublicProfile.View, 
+                    Constants.QueryStrings.PublicProfile.ViewComments);
+            }
+
+            return url;
+        }
     }
 }

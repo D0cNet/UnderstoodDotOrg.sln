@@ -26,6 +26,9 @@ namespace UnderstoodDotOrg.Common
         public const int HOMEPAGE_FEATURED_ARTICLES = 6;
         public const int BEHAVIOR_TOOLS_FEATURED_ARTICLES = 9;
         public const int PUBLIC_PROFILE_COMMENTS_PER_PAGE = 5;
+        public const int WHATS_HAPPENING_MY_FRIENDS_ENTRIES = 8;
+        public const int MY_CONNECTIONS_FRIENDS_PER_PAGE = 16;
+        public const int MY_ACCOUNT_CONNECTIONS_WIDGET_ENTRIES = 3;
 
         #region Query Strings
 

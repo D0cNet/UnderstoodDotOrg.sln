@@ -12,43 +12,29 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets
 {
-    public partial class MyConnections : BaseSublayout
+    public partial class MyConnections : BaseSublayout<MyAccountItem>
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             MyAccountItem context = (MyAccountItem)Sitecore.Context.Item;
             var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccountConnections);
             hypConnectionsTab.NavigateUrl = Sitecore.Links.LinkManager.GetItemUrl(item);
-            hypConnectionsTab.Text = context.SeeAllConnectionsText;
+            hypConnectionsTab.Text = Model.SeeAllConnectionsText;
 
-            var dataSource = CommunityHelper.GetFriends(this.CurrentMember.ScreenName);
-            rptFriends.DataSource = dataSource;
-            rptFriends.DataBind();
-            ltFriendCount.Text = dataSource.Count().ToString();
-        }
+            int totalFriends;
 
-        protected void rptFriends_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
-        {
-            User user = (User)e.Item.DataItem;
-            HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
-            hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(user);
+            var friends = TelligentService.GetFriends(this.CurrentMember.ScreenName, 1, Constants.MY_ACCOUNT_CONNECTIONS_WIDGET_ENTRIES, out totalFriends);
 
-            var member = TelligentService.GetPosesMember(user.Username);
-            if (member != null)
+            ltFriendCount.Text = totalFriends.ToString(); 
+            
+            if (friends.Any())
             {
-                Literal litLocation = (Literal)e.Item.FindControl("litLocation");
-                if (litLocation != null)
-                {
-                    if (member.ZipCode != null)
-                    {
-                        litLocation.Text = UnderstoodDotOrg.Services.CommunityServices.GeoTargeting.GetStateByZip(member.ZipCode);
-                        //userloc.Text = ((MemberCardModel)e.Item.DataItem).UserLocation;
-                    }
-
-                }
+                rptFriends.DataSource = friends;
+                rptFriends.DataBind();
             }
         }
     }

@@ -1,52 +1,46 @@
-﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
-{
-    using System;
-    using System.Web.UI.WebControls;
-    using UnderstoodDotOrg.Common;
-    using UnderstoodDotOrg.Common.Extensions;
-    using UnderstoodDotOrg.Domain.Membership;
-    using UnderstoodDotOrg.Domain.SitecoreCIG;
-    using UnderstoodDotOrg.Domain.TelligentCommunity;
-    using UnderstoodDotOrg.Framework.UI;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Services.TelligentService;
 
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
+{
     public partial class MyFriends : BaseSublayout
     {
         private void Page_Load(object sender, EventArgs e)
         {
-            var user = string.Empty;
-            try
+            if (IsUserLoggedIn && !string.IsNullOrEmpty(CurrentMember.ScreenName)) 
             {
-                user = this.CurrentMember.ScreenName;
+                PopulateContent();
             }
-            catch { }
+        }
 
-            var dataSource = CommunityHelper.GetFriends(user);
-            if (dataSource.Count < 4)
+        private void PopulateContent()
+        {
+            int totalFriends = 0;
+            List<User> friends = TelligentService.GetFriends(CurrentMember.ScreenName, 1, Constants.WHATS_HAPPENING_MY_FRIENDS_ENTRIES, out totalFriends);
+
+            if (friends.Any())
             {
-                divFriends.Visible = false;
-            }
-            else
-            {
-                if (dataSource.Count == 4)
-                {
-                    arrowLeft.Visible = arrowRight.Visible = false;
-                }
-                rptFriends.DataSource = dataSource;
+                rptFriends.DataSource = friends;
                 rptFriends.DataBind();
             }
         }
 
         protected void rptFriends_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
         {
-            var item = (User)e.Item.DataItem;
-            HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
+            if (e.IsItem())
+            {
+                User user = (User)e.Item.DataItem;
 
-            var membershipManager = new MembershipManager();
-
-            hypUserProfileLink.NavigateUrl = string.Format(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetUrl()
-                + "?{0}={1}",
-                Constants.ACCOUNT_EMAIL,
-                CommunityHelper.ReadUserEmail(item.Username));
+                
+            }
         }
     }
 }
