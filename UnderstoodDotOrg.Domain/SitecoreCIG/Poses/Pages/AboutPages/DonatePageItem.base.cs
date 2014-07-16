@@ -109,6 +109,15 @@ public CustomTextField GiftforSomeoneHeader
 }
 
 
+public CustomTextField ConvioDonationEcardID
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Convio Donation Ecard ID"]);
+	}
+}
+
+
 public CustomTextField ConvioDonationAPIKey
 {
 	get

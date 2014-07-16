@@ -27,6 +27,7 @@
     var donationApiKey = $("#hfDonationApiKey").val();
     var donationFormId = $("#hfDonationFormId").val();
     var donationLevelId = $("#hfDonationLevelId").val();
+    var donationEcardId = $("#hfDonationEcardId").val();
     var donationSuccessUrl = $("#hfDonationSuccessUrl").val();
 
     if (donationApiKey && donationFormId && donationLevelId && donationSuccessUrl) {
@@ -49,6 +50,7 @@
             //Gift for Someone
             this.sendEcard = false;
             this.ecardInfo = {
+                "id": donationEcardId,
                 "name": "",
                 "email": "",
                 "message": ""
@@ -131,9 +133,10 @@
                         "&ach_routing=" + this.checkInfo.routing_number;
                 }
 
-                //Gift for Someone - TODO
                 if (this.sendEcard) {
-                    //qs += "&ecard.send=true&"
+                    qs += "&ecard.send=true&ecard.id=" + this.ecardInfo.id + 
+                        "&ecard.message=" + this.ecardInfo.message +
+                        "&ecard.recipients=" + this.ecardInfo.name + "<" + this.ecardInfo.email + ">";
                 }
                 return qs;
             };
@@ -156,7 +159,7 @@
         var $btnDonateEcard = $donateWrapper.find("div.gift-for-section button.ecard-button");
 
         $btnDonateEcard.on("click", function () {
-            donation.sendEcard = $(this).hasClass(".send-ecard-false");
+            donation.sendEcard = $(this).hasClass("send-ecard-true");
         });
 
         //Recurring Gift
@@ -188,7 +191,7 @@
             if (donation.sendEcard) {
                 donation.ecardInfo.name = $("#donate-ecard-name").val();
                 donation.ecardInfo.email = $("#donate-ecard-email").val();
-                donation.ecardInfo.message = $("#donate-ecard-Message").val();
+                donation.ecardInfo.message = $("#donate-ecard-message").val();
             }
 
             //Payment

@@ -3,6 +3,7 @@
 <input type="hidden" id="hfDonationFormId" value="<%= Model.ConvioDonationFormID.Rendered %>" />
 <input type="hidden" id="hfDonationLevelId" value="<%= Model.ConvioDonationLevelID.Rendered %>" />
 <input type="hidden" id="hfDonationSuccessUrl" value="<%= ThankYouPageUrl %>" />
+<input type="hidden" id="hfDonationEcardId" value="<%= Model.ConvioDonationEcardID.Rendered %>" />
 <div class="container flush donate-create-wrap">
     <div class="row">
         <div class="col col-24 skiplink-content" aria-role="main">
