@@ -272,7 +272,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM2ParentToolkitENID, 0);
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM2ParentToolkitENID, Constants.EmailIDs.EM2ParentToolkitSPID);
 
 			try
 			{
@@ -324,7 +324,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM1WelcomeToUnderstoodENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM1WelcomeToUnderstoodENID, Constants.EmailIDs.EM1WelcomeToUnderstoodSPID);
 
 			try
 			{
@@ -380,7 +380,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM10WebinarConfirmationENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM10WebinarConfirmationENID, Constants.EmailIDs.EM10WebinarConfirmationSPID);
 
 			try
 			{
@@ -436,7 +436,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM11DonationAcknowledgementENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM11DonationAcknowledgementENID, Constants.EmailIDs.EM11DonationAcknowledgementSPID);
 
 			try
 			{
@@ -560,7 +560,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM12ThankYouForContactingUsENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM12ThankYouForContactingUsENID, Constants.EmailIDs.EM12ThankYouForContactingUSSPID);
 
 			try
 			{
@@ -618,7 +618,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM15HappyHolidaysENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM15HappyHolidaysENID, Constants.EmailIDs.EM15HappyHolidaysSPID);
 
 			try
 			{
@@ -668,7 +668,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM3ExploreTheCommunityENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM3ExploreTheCommunityENID, Constants.EmailIDs.EM3ExploreTheCommunitySPID);
 
 			try
 			{
@@ -729,7 +729,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM4LearnActENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM4LearnActENID, Constants.EmailIDs.EM4LearnActSPID);
 
 			try
 			{
@@ -826,7 +826,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM6HolidayDonationsENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM6HolidayDonationsENID, Constants.EmailIDs.EM6HolidayDonationsSPID);
 
 			try
 			{
@@ -881,7 +881,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM7NewsletterConfirmationENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM7NewsletterConfirmationENID, Constants.EmailIDs.EM7NewsletterConfirmationSPID);
 
 			try
 			{
@@ -942,7 +942,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM8SubscriptionConfirmedENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM8SubscriptionConfirmedENID, Constants.EmailIDs.EM8SubscriptionConfirmedSPID);
 
 			try
 			{
@@ -997,7 +997,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM9GroupWelcomeENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM9GroupWelcomeENID, Constants.EmailIDs.EM9GroupWelcomeSPID);
 
 			try
 			{
@@ -1067,7 +1067,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM16ContentReminderENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM16ContentReminderENID, Constants.EmailIDs.EM16ContentReminderSPID);
 
 			try
 			{
@@ -1142,7 +1142,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM17ObservationLogReminderENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM17ObservationLogReminderENID, Constants.EmailIDs.EM17ObservationLogReminderSPID);
 
 			try
 			{
@@ -1201,7 +1201,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM18UpdateProfileReminderENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM18UpdateProfileReminderENID, Constants.EmailIDs.EM18UpdateProfileReminderSPID);
 
 			try
 			{
@@ -1275,7 +1275,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM19WebinarReminderENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM19WebinarReminderENID, Constants.EmailIDs.EM19WebinarReminderSPID);
 
 			try
 			{
@@ -1330,7 +1330,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM21PrivateMessageENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM21PrivateMessageENID, Constants.EmailIDs.EM21PrivateMessageSPID);
 
 			try
 			{
@@ -1397,7 +1397,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM22ForgotPasswordENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM22ForgotPasswordENID, Constants.EmailIDs.EM22ForgotPasswordSPID);
 
 			try
 			{
@@ -1457,7 +1457,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM23PasswordResetConfirmationENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM23PasswordResetConfirmationENID, Constants.EmailIDs.EM23PasswordResetConfirmationSPID);
 
 			try
 			{
@@ -1520,7 +1520,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM24ContentSharedWithAFriendENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM24ContentSharedWithAFriendENID, Constants.EmailIDs.EM24ContentSharedWithAFriendSPID);
 
 			try
 			{
@@ -1599,7 +1599,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM25WebinarSharedWithAFriendENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM25WebinarSharedWithAFriendENID, Constants.EmailIDs.EM25WebinarSharedWithAFriendSPID);
 
 			try
 			{
@@ -1662,7 +1662,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM28AppsTechnologySharedWithAFriendENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM28AppsTechnologySharedWithAFriendENID, Constants.EmailIDs.EM28AppsTechnologySharedWithAFriendSPID);
 
 			try
 			{
@@ -1757,7 +1757,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM13ActivityFromTodayENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM13ActivityFromTodayENID, Constants.EmailIDs.EM13ActivityFromTodaySPID);
 
 			try
 			{
@@ -1828,7 +1828,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			StringBuilder sbReturnString = new StringBuilder();
 
 			Guid preferredLanguage = request.PreferredLanguage;
-            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM14ActivityFromThisWeekENID, 0);
+			int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM14ActivityFromThisWeekENID, Constants.EmailIDs.EM14ActivityFromThisWeekSPID);
 
 			try
 			{
@@ -1871,104 +1871,6 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.Attributes[4] = new etAPI.Attribute();
 						newSub.Attributes[4].Name = "view_messages_link";
 						newSub.Attributes[4].Value = request.ViewMessageLink;
-
-						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
-
-						reply.Successful = true;
-					}
-				}
-			}
-			catch (Exception exc)
-			{
-				string message = "Unable to send welcome email.";
-
-				reply.Successful = false;
-				reply.Message = message;
-
-				Log.Error(exc.ToString(), "something went wrong");
-			}
-
-			return reply;
-		}
-
-
-		//test newsletter sends
-		public static BaseReply InvokeNewsletterSendEN(BaseRequest request)
-		{
-			BaseReply reply = new BaseReply();
-
-			SoapClient client = ExactTargetService.GetInstance();
-
-			StringBuilder sbReturnString = new StringBuilder();
-
-			try
-			{
-				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1058, request.ToEmail, "newsletter test en");
-
-				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
-
-				if (cStatus == "OK")
-				{
-					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
-					tsd.TriggeredSendStatusSpecified = true; //required
-
-					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
-
-					if (uStatus == "OK")
-					{
-						// *** SEND THE TRIGGER EMAIL
-						Subscriber newSub = new Subscriber();
-						newSub.EmailAddress = request.ToEmail;
-						newSub.SubscriberKey = request.ToEmail;
-
-
-						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
-
-						reply.Successful = true;
-					}
-				}
-			}
-			catch (Exception exc)
-			{
-				string message = "Unable to send welcome email.";
-
-				reply.Successful = false;
-				reply.Message = message;
-
-				Log.Error(exc.ToString(), "something went wrong");
-			}
-
-			return reply;
-		}
-		public static BaseReply InvokeNewsletterSendSP(BaseRequest request)
-		{
-			BaseReply reply = new BaseReply();
-
-			SoapClient client = ExactTargetService.GetInstance();
-
-			StringBuilder sbReturnString = new StringBuilder();
-
-			try
-			{
-				//Create a GUID for ESD to ensure a unique name and customer key
-				TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), 1059, request.ToEmail, "newsletter send test sp");
-
-				string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
-
-				if (cStatus == "OK")
-				{
-					tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
-					tsd.TriggeredSendStatusSpecified = true; //required
-
-					string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
-
-					if (uStatus == "OK")
-					{
-						// *** SEND THE TRIGGER EMAIL
-						Subscriber newSub = new Subscriber();
-						newSub.EmailAddress = request.ToEmail;
-						newSub.SubscriberKey = request.ToEmail;
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 

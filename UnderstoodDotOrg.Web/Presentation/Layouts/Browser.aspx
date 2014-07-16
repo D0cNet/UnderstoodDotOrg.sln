@@ -61,7 +61,7 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1"  runat="server" />
         <asp:PlaceHolder ID="phWelcomeTour" runat="server" Visible="false">
-            <div data-show-welcome-tour="true" id="community-page"></div>
+            <div data-show-welcome-tour="true" id="community-page" data-lang="<%= Sitecore.Context.Language.Name %>"></div>
         </asp:PlaceHolder>
 
 

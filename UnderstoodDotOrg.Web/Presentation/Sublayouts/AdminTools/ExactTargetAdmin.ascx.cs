@@ -41,7 +41,7 @@
 
 		protected void btnEM2_Click(object sender, EventArgs e)
 		{
-			BaseReply reply = ExactTargetService.InvokeEM2ParentToolkit(new InvokeEM2ParentToolkitRequest { PreferredLanguage = new Guid(ddlLanguages.SelectedValue), ToEmail = tbxSubscriberEmail1.Text });
+			BaseReply reply = ExactTargetService.InvokeEM2ParentToolkit(new InvokeEM2ParentToolkitRequest { PreferredLanguage = new Guid(ddlLanguages.SelectedValue), ToEmail = tbxSubscriberEmail1.Text });//new Guid(ddlLanguages.SelectedValue)
 			lblMessage.Text = reply.Message;
 		}
 
@@ -230,14 +230,14 @@
 
 		protected void newsletter_sp_Click(object sender, EventArgs e)
 		{
-			BaseReply reply = ExactTargetService.InvokeNewsletterSendEN(new BaseRequest { PreferredLanguage = new Guid(ddlLanguages.SelectedValue), ToEmail = tbxSubscriberEmail1.Text });
-			lblMessage.Text = reply.Message;
+			//BaseReply reply = ExactTargetService.InvokeNewsletterSendEN(new BaseRequest { PreferredLanguage = new Guid(ddlLanguages.SelectedValue), ToEmail = tbxSubscriberEmail1.Text });
+			//lblMessage.Text = reply.Message;
 		}
 
 		protected void newsletter_en_Click(object sender, EventArgs e)
 		{
-			BaseReply reply = ExactTargetService.InvokeNewsletterSendSP(new BaseRequest { PreferredLanguage = new Guid(ddlLanguages.SelectedValue), ToEmail = tbxSubscriberEmail1.Text });
-			lblMessage.Text = reply.Message;
+			//BaseReply reply = ExactTargetService.InvokeNewsletterSendSP(new BaseRequest { PreferredLanguage = new Guid(ddlLanguages.SelectedValue), ToEmail = tbxSubscriberEmail1.Text });
+			//lblMessage.Text = reply.Message;
 		}
 
 

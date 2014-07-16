@@ -119,7 +119,7 @@ namespace UnderstoodDotOrg.Common
 			public static int EM3ExploreTheCommunitySPID = 1721;
 			public static int EM4LearnActSPID = 1706;
 			public static int EM6HolidayDonationsSPID = 1707;
-			public static int EM7NewsletterConfirmationID = 1722;
+			public static int EM7NewsletterConfirmationSPID = 1722;
 			public static int EM8SubscriptionConfirmedSPID = 1723;
 			public static int EM9GroupWelcomeSPID = 1724;
 			public static int EM10WebinarConfirmationSPID = 1692;

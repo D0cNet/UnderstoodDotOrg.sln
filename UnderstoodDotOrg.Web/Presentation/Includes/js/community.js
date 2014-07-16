@@ -250,7 +250,7 @@
         self.fetch = function() {
             if (self.model.tourEnabled) {
                 ///modal.welcome-tour.c1a.html
-                $.get('/Presentation/AjaxData/WelcomeTour.aspx').done(self.renderLightbox);
+            	$.get('/Presentation/AjaxData/WelcomeTour.aspx?lang=' + self.dom.communityPage.data("lang")).done(self.renderLightbox);
             }
         };
 
