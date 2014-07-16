@@ -100,12 +100,15 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
-        private static Expression<Func<Article, bool>> GetMemberInterestsPredicate(Member member)
+        private static Expression<Func<Article, bool>> GetMemberInterestsPredicate(Member member, bool explicitMatchSearch = false)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
 
-            // Include un-mapped interests
-            pred = pred.Or(a => a.ParentInterests.Contains(ID.Parse(Guid.Empty)));
+            if (!explicitMatchSearch)
+            {
+                // Include un-mapped interests
+                pred = pred.Or(a => a.ParentInterests.Contains(ID.Parse(Guid.Empty)));
+            }
 
             // Include member interests
             foreach (var interest in member.Interests)
@@ -136,12 +139,15 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
-        private static Expression<Func<Article, bool>> GetChildIEP504Predicate(Child child)
+        private static Expression<Func<Article, bool>> GetChildIEP504Predicate(Child child, bool explicitMatchSearch = false)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
 
-            // Unmapped
-            pred = pred.Or(a => a.ApplicableEvaluations.Contains(ID.Parse(Guid.Empty)));
+            if (!explicitMatchSearch)
+            {
+                // Unmapped
+                pred = pred.Or(a => a.ApplicableEvaluations.Contains(ID.Parse(Guid.Empty)));
+            }
 
             Expression<Func<Article, bool>> innerPred = PredicateBuilder.True<Article>();
 
@@ -191,15 +197,18 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
-        private static Expression<Func<Article, bool>> GetChildDiagnosisPredicate(Child child)
+        private static Expression<Func<Article, bool>> GetChildDiagnosisPredicate(Child child, bool explicitMatchSearch = false)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
 
-            // Include un tagged
-            pred = pred.Or(a => a.ChildDiagnoses.Contains(ID.Parse(Guid.Empty)));
+            if (!explicitMatchSearch)
+            {
+                // Include un tagged
+                pred = pred.Or(a => a.ChildDiagnoses.Contains(ID.Parse(Guid.Empty)));
 
-            // Include content tagged with All
-            pred = pred.Or(a => a.ChildDiagnoses.Contains(ID.Parse(Constants.ArticleTags.AllChildDiagnosis)));
+                // Include content tagged with All
+                pred = pred.Or(a => a.ChildDiagnoses.Contains(ID.Parse(Constants.ArticleTags.AllChildDiagnosis)));
+            }
 
             foreach (var diagnosis in child.Diagnoses)
             {
@@ -211,15 +220,18 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
-        private static Expression<Func<Article, bool>> GetChildGradesPredicate(Child child)
+        private static Expression<Func<Article, bool>> GetChildGradesPredicate(Child child, bool explicitMatchSearch = false)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
 
-            // Include un tagged
-            pred = pred.Or(a => a.ChildGrades.Contains(ID.Parse(Guid.Empty)));
-            
-            // Include content tagged with All
-            pred = pred.Or(a => a.ChildGrades.Contains(ID.Parse(Constants.ArticleTags.AllChildGrades)));
+            if (!explicitMatchSearch)
+            {
+                // Include un tagged
+                pred = pred.Or(a => a.ChildGrades.Contains(ID.Parse(Guid.Empty)));
+
+                // Include content tagged with All
+                pred = pred.Or(a => a.ChildGrades.Contains(ID.Parse(Constants.ArticleTags.AllChildGrades)));
+            }
 
             foreach (var grades in child.Grades)
             {
@@ -231,15 +243,18 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
-        private static Expression<Func<Article, bool>> GetChildIssuesPredicate(Child child)
+        private static Expression<Func<Article, bool>> GetChildIssuesPredicate(Child child, bool explicitMatchSearch = false)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
 
-            // Include un tagged
-            pred = pred.Or(a => a.ChildIssues.Contains(ID.Parse(Guid.Empty)));
-            
-            // Include content tagged with All
-            pred = pred.Or(a => a.ChildIssues.Contains(ID.Parse(Constants.ArticleTags.AllChildIssues)));
+            if (!explicitMatchSearch)
+            {
+                // Include un tagged
+                pred = pred.Or(a => a.ChildIssues.Contains(ID.Parse(Guid.Empty)));
+
+                // Include content tagged with All
+                pred = pred.Or(a => a.ChildIssues.Contains(ID.Parse(Constants.ArticleTags.AllChildIssues)));
+            }
 
             foreach (var issues in child.Issues)
             {
@@ -654,27 +669,46 @@ namespace UnderstoodDotOrg.Domain.Search
                     toProcess.AddRange(timelyArticles);
                 }
 
-                // The buckets diagrammed by Digital Pulp all contain inclusive search terms
-                // Additional filtering is broken out to match diagram, but effectively does no
-                // extra filtering save for timely, must read, and backfill
+                // Initial query contains all/none mapping, 
+                // buckets should exclude the all/none mappings
 
                 // 1 - Child Grade
-                var firstQuery = matchingArticlesQuery
-                                    .Filter(GetExcludeArticlesPredicate(toProcess));
-
-                AddFromBucket(firstQuery, ref toProcess);
+                if (child.Grades.Any())
+                {
+                    var firstQuery = matchingArticlesQuery
+                                        .Filter(GetChildGradesPredicate(child, true))
+                                        .Filter(GetExcludeArticlesPredicate(toProcess));
+                    AddFromBucket(firstQuery, ref toProcess);
+                }
 
                 // 2 - Child Issues / Diagnosis
-                var secondQuery = matchingArticlesQuery
-                                    .Filter(GetExcludeArticlesPredicate(toProcess));
+                bool hasIssues = child.Issues.Any();
+                bool hasDiagnoses = child.Diagnoses.Any();
 
-                AddFromBucket(secondQuery, ref toProcess);
+                if (hasIssues || hasDiagnoses)
+                {
+                    var secondQuery = matchingArticlesQuery.Filter(GetExcludeArticlesPredicate(toProcess));
+                    if (hasIssues) 
+                    {
+                        secondQuery = secondQuery.Filter(GetChildIssuesPredicate(child, true));
+                    }
+                    if (hasDiagnoses)
+                    {
+                        secondQuery = secondQuery.Filter(GetChildDiagnosisPredicate(child, true));
+                    }
+
+                    AddFromBucket(secondQuery, ref toProcess);
+                }
 
                 // 3 - Parent interest
-                var thirdQuery = matchingArticlesQuery
-                                    .Filter(GetExcludeArticlesPredicate(toProcess));
+                if (member.Interests.Any())
+                {
+                    var thirdQuery = matchingArticlesQuery
+                                        .Filter(GetMemberInterestsPredicate(member, true))
+                                        .Filter(GetExcludeArticlesPredicate(toProcess));
 
-                AddFromBucket(thirdQuery, ref toProcess);
+                    AddFromBucket(thirdQuery, ref toProcess);
+                }
 
                 // 4 - Must read
                 var fourthQuery = matchingArticlesQuery
@@ -685,6 +719,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 // 5 - IEP/504
                 var fifthQuery = matchingArticlesQuery
+                                    .Filter(GetChildIEP504Predicate(child, true))
                                     .Filter(GetExcludeArticlesPredicate(toProcess));
 
                 AddFromBucket(fifthQuery, ref toProcess);
