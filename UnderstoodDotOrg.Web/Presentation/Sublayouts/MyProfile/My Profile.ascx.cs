@@ -14,6 +14,7 @@
     using UnderstoodDotOrg.Domain.SitecoreCIG;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
     using UnderstoodDotOrg.Framework.UI;
 
@@ -318,6 +319,24 @@
                 + "&" + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ChildIndex + "=" + Container.DataItemIndex;
 
             return ret;
+        }
+
+        public string MapToSitecoreIssue(string GUID)
+        {
+            ChildIssueItem temp = Sitecore.Context.Database.GetItem(new Guid(GUID));
+            if (temp != null)
+                return temp.IssueName;
+
+            return "";
+        }
+
+        public string MapToSitecoreInterest(string GUID)
+        {
+            ParentInterestItem temp = Sitecore.Context.Database.GetItem(new Guid(GUID));
+            if (temp != null)
+                return temp.InterestName;
+
+            return "";
         }
     }
 }

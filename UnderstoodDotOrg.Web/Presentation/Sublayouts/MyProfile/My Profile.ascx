@@ -75,7 +75,7 @@
                                         </LayoutTemplate>
                                         <ItemTemplate>
                                             <li>
-                                                <%# Eval("Value") %>
+                                                <%# MapToSitecoreInterest(Eval("Key").ToString()) %>
                                             </li>
                                         </ItemTemplate>
                                     </asp:ListView>
@@ -119,7 +119,7 @@
                                                     </ul>
                                                 </LayoutTemplate>
                                                 <ItemTemplate>
-                                                    <li class="children-list"><%# Eval("Value") %></li>
+                                                    <li class="children-list"><%# MapToSitecoreIssue(Eval("Key").ToString()) %></li>
                                                 </ItemTemplate>
                                             </asp:ListView>
                                         </div>
