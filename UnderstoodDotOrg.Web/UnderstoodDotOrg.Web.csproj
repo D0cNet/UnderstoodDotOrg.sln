@@ -568,6 +568,13 @@
     <Compile Include="Presentation\Sublayouts\Articles\AudioArticle.ascx.designer.cs">
       <DependentUpon>AudioArticle.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\Article Poll.ascx.cs">
+      <DependentUpon>Article Poll.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Articles\Shared\Article Poll.ascx.designer.cs">
+      <DependentUpon>Article Poll.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx.cs">
       <DependentUpon>Author Bio.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3035,6 +3042,7 @@
     <Content Include="Presentation\Sublayouts\Articles\Articles Landing Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Assessment Quiz.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\AudioArticle.ascx" />
+    <Content Include="Presentation\Sublayouts\Articles\Shared\Article Poll.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\Author Bio.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\BasicArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx" />
