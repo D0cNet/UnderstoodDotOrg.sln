@@ -87,9 +87,12 @@ namespace UnderstoodDotOrg.Services.CommunityServices
            strb.Append(strValues).Append("]") ;
            
            //Use sitecore fast query to perform search
-           Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("web");
-           Item[] grps = masterDb.SelectItems(strb.ToString());
-           results = grps.Select(x => GroupCardModelFactory(new GroupItem(x))).OrderByDescending(x => x.NumOfMembers).ToList<GroupCardModel>();
+           Item[] grps = Sitecore.Context.Database.SelectItems(strb.ToString());
+           results = grps
+               .Select(x => GroupCardModelFactory(new GroupItem(x)))
+               .Where(x => x != null)
+               .OrderByDescending(x => x.NumOfMembers)
+               .ToList<GroupCardModel>();
 
 
            return results;
@@ -101,8 +104,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
        public static Item ConvertGroupIDtoSitecoreItem(string id)
        {
            Item groupItem = null;
-           Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
-           groupItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Groups.GroupTemplateID + "' and @GroupID = '" + id + "']");
+           groupItem = Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Groups.GroupTemplateID + "' and @GroupID = '" + id + "']");
 
            return groupItem;
        }
