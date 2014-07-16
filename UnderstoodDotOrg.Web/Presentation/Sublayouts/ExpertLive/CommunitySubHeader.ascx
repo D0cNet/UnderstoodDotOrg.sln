@@ -33,7 +33,7 @@
 
                 <!-- BEGIN ELEMENT: Menu -->
 
-                <div class="label-menu"><span>Menu</span></div>
+                <div class="label-menu"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.MenuFragment %></span></div>
                 <ul class="menu" aria-label="secondary-navigation" aria-role="navigation">
                     <li class="submenu">
                         <div class="inner">
