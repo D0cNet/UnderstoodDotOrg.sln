@@ -599,6 +599,8 @@ namespace UnderstoodDotOrg.Common
             {
                 return new Dictionary<Guid, string>
                 {
+                    
+                    {Guid.Parse("{45ce350d-46d2-4346-9ccc-92c48c557dc1}"), "Kindergarten"},
                     {Guid.Parse("{E26222FB-07CD-413B-9127-9050B6D2D037}"), "1"},
                     {Guid.Parse("{0CDA88F1-5F69-485C-AE6B-50E8D5C265EB}"), "2"},
                     {Guid.Parse("{67AA2A29-E6FF-49B2-9F9E-D29F07C19C23}"), "3"},
@@ -611,6 +613,7 @@ namespace UnderstoodDotOrg.Common
                     {Guid.Parse("{E0B459C0-548A-4E6C-854A-E8F475416F12}"), "10"},
                     {Guid.Parse("{9FFF9854-5951-4A7F-94A5-4F8507800916}"), "11"},
                     {Guid.Parse("{0762C21C-2B35-439C-A45F-A4FCEF5C87B7}"), "12"},
+                    {Guid.Parse("{A1354149-C308-4AEA-A74E-E31EA0B4142F}"), "After Highschool"},
                 };
             }
         }
@@ -621,6 +624,7 @@ namespace UnderstoodDotOrg.Common
             {
                 return new Dictionary<string, Guid> 
                 { 
+                    {"Kindergarten", Guid.Parse("{45ce350d-46d2-4346-9ccc-92c48c557dc1}")},
                     {"1", Guid.Parse("{E26222FB-07CD-413B-9127-9050B6D2D037}")},
                     {"2", Guid.Parse("{0CDA88F1-5F69-485C-AE6B-50E8D5C265EB}")},
                     {"3", Guid.Parse("{67AA2A29-E6FF-49B2-9F9E-D29F07C19C23}")},
@@ -633,6 +637,7 @@ namespace UnderstoodDotOrg.Common
                     {"10", Guid.Parse("{E0B459C0-548A-4E6C-854A-E8F475416F12}")},
                     {"11", Guid.Parse("{9FFF9854-5951-4A7F-94A5-4F8507800916}")},
                     {"12", Guid.Parse("{0762C21C-2B35-439C-A45F-A4FCEF5C87B7}")},
+                    {"After Highschool", Guid.Parse("{A1354149-C308-4AEA-A74E-E31EA0B4142F}")},
                 };
             }
         }
