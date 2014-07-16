@@ -837,7 +837,8 @@ namespace UnderstoodDotOrg.Common
             Blogger,
             Expert,
             InternationalUser,
-            AgreedToTerms
+            AgreedToTerms,
+            CanPersonalize
         }
 
         #region Notification templates and types

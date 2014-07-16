@@ -43,7 +43,7 @@ namespace UnderstoodDotOrg.Framework.UI
                         if (String.IsNullOrEmpty(page.CurrentMember.ScreenName))
                         {
                             //redirect to community sign-up
-                            page.Page.Response.Redirect(RegisterCommunityProfileItem.GetRegisterCommunityProfilePage().GetUrl());
+                            redirect(page, RegisterCommunityProfileItem.GetRegisterCommunityProfilePage().GetUrl());
                         }
                     }
                     break;
@@ -52,7 +52,7 @@ namespace UnderstoodDotOrg.Framework.UI
                     if (page.CurrentMember == null)
                     {
                         //not logged in, please log in
-                        page.Page.Response.Redirect(SignInPageItem.GetSignInPage().GetUrl());
+                        redirect(page, SignInPageItem.GetSignInPage().GetUrl());
                     }
                     break;
                 case Constants.UserPermission.AnonymousUser:
@@ -69,15 +69,29 @@ namespace UnderstoodDotOrg.Framework.UI
                     //redirect to international user page
                     if (page.isInternationalUser == Constants.GeoIPLookup.InternationalStatus.UnknownInternationalUser)
                     {
-                        page.Page.Response.Redirect(InternationalUserPageItem.GetInternationalUserPage().GetUrl());
+                        redirect(page, InternationalUserPageItem.GetInternationalUserPage().GetUrl());
                     }                        
                     break;
                 case Constants.UserPermission.AgreedToTerms:
                     //redirect to T&C if they have not agreed yet
                     if (page.CurrentMember != null && !page.CurrentMember.AgreedToSignUpTerms)
                     {
-                        page.Page.Response.Redirect(TermsandConditionsItem.GetTermsAndConditionsPage().GetUrl());
+                        redirect(page, TermsandConditionsItem.GetTermsAndConditionsPage().GetUrl());
                     }
+                    break;
+                case Constants.UserPermission.CanPersonalize:
+                    if (page.CurrentMember == null)
+                    {
+                        redirect(page, SignInPageItem.GetSignInPage().GetUrl());
+                    }
+                    else
+                    {
+                        if (page.CurrentMember.Children == null || page.CurrentMember.Children.Count == 0)
+                        {
+                            redirect(page, RegisterChildInformationItem.GetRegisterChildInfoPage().GetUrl());
+                        }
+                    }
+
                     break;
                 default:
                     break;
@@ -88,28 +102,38 @@ namespace UnderstoodDotOrg.Framework.UI
 
             if (!String.IsNullOrEmpty(UrlToGoto))
             {
-                page.Page.Response.Redirect(UrlToGoto);
+                redirect(page, UrlToGoto);
             }
+        }
+
+        /// <summary>
+        /// Internal method for redirecting, no need to keep writing this out all the time
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="Url"></param>
+        static private void redirect(BaseSublayout page, string Url)
+        {
+            page.Page.Response.Redirect(Url, true);
         }
 
         /// <summary>
         /// Function to retrieve referral page from session
         /// </summary>
-        /// <param name="contextPage"></param>
+        /// <param name="page"></param>
         /// <returns></returns>
-        static public void ReturnRedirect(this BaseSublayout contextPage)
+        static public void ReturnRedirect(this BaseSublayout page)
         {
             string url = null;
-            if (contextPage.Page.Session[Constants.SessionPreviousUrl] != null)
+            if (page.Page.Session[Constants.SessionPreviousUrl] != null)
             {
-                url = contextPage.Page.Session[Constants.SessionPreviousUrl].ToString();
+                url = page.Page.Session[Constants.SessionPreviousUrl].ToString();
                 if (!String.IsNullOrEmpty(url))
                 {
                     //url = contextPage.Page.Session[redirectSessionKey].ToString();
 
                     //Reset the session reference
-                    contextPage.Page.Session[Constants.SessionPreviousUrl] = null;
-                    contextPage.Page.Response.Redirect(url);
+                    page.Page.Session[Constants.SessionPreviousUrl] = null;
+                    redirect(page, url);
                 }
             }
         }
