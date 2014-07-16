@@ -2439,6 +2439,7 @@
     <Content Include="Presentation\Includes\images\icon.lock.lo-res.png" />
     <Content Include="Presentation\Includes\images\icon.logo.assistive-technology-search-tool.lo-res.png" />
     <Content Include="Presentation\Includes\images\icon.logo.assistive-technology-search-tool.png" />
+    <Content Include="Presentation\Includes\images\icon.mobile.avatar.signed-in.png" />
     <Content Include="Presentation\Includes\images\icon.my-goals.png" />
     <Content Include="Presentation\Includes\images\icon.my.goals.lowres.png" />
     <Content Include="Presentation\Includes\images\icon.my.goals.mobile.lowres.png" />
@@ -2481,6 +2482,7 @@
     <Content Include="Presentation\Includes\images\jplayer.blue.monday.jpg" />
     <Content Include="Presentation\Includes\images\jplayer.blue.monday.seeking.gif" />
     <Content Include="Presentation\Includes\images\jplayer.blue.monday.video.play.png" />
+    <Content Include="Presentation\Includes\images\jquery.fs.zoomer-loading.gif" />
     <Content Include="Presentation\Includes\images\logo.partner.bookshare.gray.png" />
     <Content Include="Presentation\Includes\images\logo.partner.bookshare.png" />
     <Content Include="Presentation\Includes\images\logo.partner.commonsense.png" />
@@ -2835,7 +2837,20 @@
     <Content Include="Presentation\Includes\images\temp.bg.slide.1200.02.jpg" />
     <Content Include="Presentation\Includes\images\temp.bg.slide.1200.03.jpg" />
     <Content Include="Presentation\Includes\images\temp.epm.bg.checklist-modal.png" />
+    <Content Include="Presentation\Includes\images\temp.infographic-fpo.jpg" />
+    <Content Include="Presentation\Includes\images\temp.largest-bankruptcies-infographic.jpg" />
     <Content Include="Presentation\Includes\images\temp.user.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-1.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-1.low-res.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-2.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-2.low-res.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-3.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-3.low-res.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-4.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-4.low-res.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-5.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-5.low-res.jpg" />
+    <Content Include="Presentation\Includes\images\welcome\welcome-modal-6.jpg" />
     <Content Include="Presentation\Includes\js\community.js" />
     <Content Include="Presentation\Includes\js\about.js" />
     <Content Include="Presentation\Includes\js\account.js" />
