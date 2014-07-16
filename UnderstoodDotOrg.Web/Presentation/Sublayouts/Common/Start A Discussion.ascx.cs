@@ -191,7 +191,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                         }
                         else
                         {
-                            var msg = "Error validation failed selecting forum.";
+                            var msg = DictionaryConstants.ErrorSelectingForumMessage;
                             Sitecore.Diagnostics.Error.LogError(msg);
                             error_msg.Text = msg;
                             error_msg.Visible = true;
@@ -237,7 +237,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                                 {
                                     //Delete from Telligent
                                     TelligentService.DeleteForumThread(frmItemID, thModel.ThreadID);
-                                    error_msg.Text = "Failed to create discussion.";
+                                    error_msg.Text = DictionaryConstants.FailedToCreateDiscussionError;
                                     error_msg.Visible = true;
                                     ShowClientSideForm(HiddenText);
                                 }
@@ -247,7 +247,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                             else
                             {
                                 //The assumption is that if the Thread is null, then there was an error in telligent API call and nothing was created
-                                error_msg.Text = "Failed to create discussion.";
+                                error_msg.Text = DictionaryConstants.FailedToCreateDiscussionError;
                                 error_msg.Visible = true;
                                 ShowClientSideForm(HiddenText);
                             }
@@ -257,7 +257,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                         catch (Exception ex)
                         {
                             Sitecore.Diagnostics.Error.LogError(ex.Message);
-                            error_msg.Text = "Failed to create discussion.";
+                            error_msg.Text = DictionaryConstants.FailedToCreateDiscussionError;
                             error_msg.Visible = true;
                             ShowClientSideForm(HiddenText);
                         }
@@ -266,7 +266,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 catch (Exception ex)
                 {
                     Sitecore.Diagnostics.Error.LogError("Error creating forum item in btnSubmit_Click.\nError:\n " + ex.Message);
-                    error_msg.Text = "Critical Error creating discussion.";
+                    error_msg.Text = DictionaryConstants.DiscussionCriticalErrorMessage;
                     error_msg.Visible = true;
                     ShowClientSideForm(HiddenText);
                 }

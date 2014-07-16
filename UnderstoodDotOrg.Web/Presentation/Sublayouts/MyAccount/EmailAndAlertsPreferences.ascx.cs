@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
@@ -62,7 +63,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             {
                 uxMessage.Text = ex.Message ;
             }
-            uxMessage.Text += "Preferences Saved";
+            uxMessage.Text += DictionaryConstants.MyAccount_PreferencesSavedLabel;
         }
     }
 }

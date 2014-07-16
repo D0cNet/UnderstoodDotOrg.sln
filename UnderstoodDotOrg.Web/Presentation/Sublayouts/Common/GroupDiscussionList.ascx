@@ -18,7 +18,7 @@
             <p><%# Eval("Body") %></p>
         </div>
         <footer class="discussion-footer rs_skip">
-            <h4>Show your support</h4>
+            <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowYourSupportLabel %></h4>
             <ul class="support-menu">
                 <li>
                     <uc1:ThanksButton runat="server" ID="btnThanks" />

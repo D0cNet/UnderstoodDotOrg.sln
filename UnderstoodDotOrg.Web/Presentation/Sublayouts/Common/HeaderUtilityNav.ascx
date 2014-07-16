@@ -95,7 +95,7 @@
                     <sc:FieldRenderer ID="frSearchLabel2" runat="server" FieldName="Link" />
                 </label>
                 <input type="text" id="search-term" placeholder='<%= SearchLabel %>' data-path="<%= SearchPath %>">
-                <input type="submit" value="Go">
+                <input type="submit" value="<%# UnderstoodDotOrg.Common.DictionaryConstants.GoButtonText %>">
             </span>
         </fieldset>
     </div>

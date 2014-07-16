@@ -13,6 +13,38 @@ namespace UnderstoodDotOrg.Common
 
         #region Exception Text
 
+            public static string YouAreNotLoggedOnErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "You Are Not Logged On Error Message");
+            }
+        }
+
+        public static string DiscussionCriticalErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Discussion Critical Error Message");
+            }
+        }
+
+        public static string ErrorSelectingForumMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Error Selecting Forum Message");
+            }
+        }
+
+        public static string FailedToCreateDiscussionError
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Failed To Create Discussion Error");
+            }
+        }
+
         public static string Account_ThisUserIsNotConnectingMessage
         {
             get
@@ -1286,6 +1318,14 @@ namespace UnderstoodDotOrg.Common
         #endregion
 
         #region Core Labels
+
+            public static string MyAccount_PreferencesSavedLabel
+		{
+			get
+			{
+                return Translate.TextByDomain(PosesDictionary, "MyAccount_Preferences Saved Label");
+			}
+		}
 
 		public static string Core_EmailSentLabel
 		{
