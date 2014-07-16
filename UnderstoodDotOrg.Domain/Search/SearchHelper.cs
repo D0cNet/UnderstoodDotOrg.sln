@@ -628,6 +628,16 @@ namespace UnderstoodDotOrg.Domain.Search
             }   
         }
 
+        public static Article GetArticle(ID itemId)
+        {
+            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            using (var ctx = index.CreateSearchContext())
+            {
+                return GetCurrentCultureQueryable<Article>(ctx)
+                                .Where(a => a.ItemId == ID.Parse(itemId)).FirstOrDefault();
+            }
+        }
+
         /// <summary>
         /// Retrieves articles based on personalization flow
         /// </summary>

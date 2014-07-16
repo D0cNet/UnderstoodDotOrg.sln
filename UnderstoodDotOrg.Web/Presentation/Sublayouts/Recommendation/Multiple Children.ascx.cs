@@ -14,6 +14,9 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Search;
+using System.Text;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 {
@@ -110,6 +113,110 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 
                     Image imgThumbnail = e.FindControlAs<Image>("imgThumbnail");
                     imgThumbnail.ImageUrl = item.GetArticleThumbnailUrl(150, 85);
+
+                    // DEBUG - START
+                    Literal litDebugTag = e.FindControlAs<Literal>("litDebugTag");
+
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("");
+                    sb.AppendLine("Sitecore web db tagging:");
+                    sb.AppendLine("Grades:");
+
+                    foreach (var grade in item.ChildGrades.ListItems)
+                    {
+                        GradeLevelItem gli = grade;
+                        sb.AppendLine(HttpUtility.HtmlDecode(gli.Name.Raw));
+                    }
+
+                    sb.AppendLine("");
+
+                    sb.AppendLine("Issues:");
+
+                    foreach (var issue in item.ChildIssues.ListItems)
+                    {
+                        ChildIssueItem cii = issue;
+                        sb.AppendLine(HttpUtility.HtmlDecode(cii.IssueName.Raw));
+                    }
+
+                    sb.AppendLine("");
+
+                    sb.AppendLine("Diagnoses:");
+
+                    foreach (var diagnosis in item.ChildDiagnoses.ListItems)
+                    {
+                        ChildDiagnosisItem cdi = diagnosis;
+                        sb.AppendLine(HttpUtility.HtmlDecode(cdi.DiagnosisName.Raw));
+                    }
+
+                    sb.AppendLine("");
+
+                    sb.AppendLine("Interests:");
+
+                    foreach (var interest in item.ApplicableInterests.ListItems)
+                    {
+                        ParentInterestItem pii = interest;
+                        sb.AppendLine(HttpUtility.HtmlDecode(pii.InterestName.Raw));
+                    }
+
+                    sb.AppendLine("");
+
+                    Article article = SearchHelper.GetArticle(item.ID);
+                    if (article != null)
+                    {
+                        sb.AppendLine("Solr index:");
+                        sb.AppendLine("Grades:");
+
+                        foreach (var grade in article.ChildGrades)
+                        {
+                            GradeLevelItem gli = Sitecore.Context.Database.GetItem(grade.Guid);
+                            if (gli != null)
+                            {
+                                sb.AppendLine(HttpUtility.HtmlDecode(gli.Name.Raw));
+                            }
+                        }
+
+                        sb.AppendLine("");
+
+                        sb.AppendLine("Issues:");
+
+                        foreach (var issue in article.ChildIssues)
+                        {
+                            ChildIssueItem cii = Sitecore.Context.Database.GetItem(issue.Guid);
+                            if (cii != null)
+                            {
+                                sb.AppendLine(HttpUtility.HtmlDecode(cii.IssueName.Raw));
+                            }
+                        }
+
+                        sb.AppendLine("");
+
+                        sb.AppendLine("Diagnoses:");
+
+                        foreach (var diagnosis in article.ChildDiagnoses)
+                        {
+                            ChildDiagnosisItem cdi = Sitecore.Context.Database.GetItem(diagnosis.Guid);
+                            if (cdi != null)
+                            {
+                                sb.AppendLine(HttpUtility.HtmlDecode(cdi.DiagnosisName.Raw));
+                            }
+                        }
+
+                        sb.AppendLine("");
+
+                        sb.AppendLine("Interests:");
+
+                        foreach (var interest in article.ParentInterests)
+                        {
+                            ParentInterestItem pii = Sitecore.Context.Database.GetItem(interest.Guid);
+                            if (pii != null)
+                            {
+                                sb.AppendLine(HttpUtility.HtmlDecode(pii.InterestName.Raw));
+                            }
+                        }
+                    }
+
+                    litDebugTag.Text = String.Format("<!--{0}-->", sb.ToString());
+                    // DEBUG - END
                 }
             }
         }

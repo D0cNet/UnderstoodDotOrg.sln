@@ -80,6 +80,8 @@
                                                                 <button class="icon-bell">remind<%= UnderstoodDotOrg.Common.DictionaryConstants.RemindButtonText %></button>
                                                             </div>
                                                         </div>
+                                                        
+                                                        <asp:Literal ID="litDebugTag" runat="server" />
                                                     </li>
                                                 </ItemTemplate>
                                             </asp:Repeater>
