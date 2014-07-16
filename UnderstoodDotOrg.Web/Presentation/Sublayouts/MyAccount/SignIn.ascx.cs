@@ -16,6 +16,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 {
     public partial class SignIn : BaseRegistration
     {
+        private string _signUpUrl;
+        protected string SignUpUrl
+        {
+            get
+            {
+                return _signUpUrl ?? (_signUpUrl = SignUpPageItem.GetSignUpPage().GetUrl());
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -30,10 +39,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             uxEmailAddress.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
             uxPassword.Attributes["placeholder"] = DictionaryConstants.EnterPasswordWatermark;
             uxSignIn.Text = DictionaryConstants.SignInButtonText;
-            uxRegisterLink.Text = DictionaryConstants.SignUpButtonText;
            
             SignInPageItem context = (SignInPageItem)Sitecore.Context.Item;
-            uxRegisterLink.NavigateUrl = SignUpPageItem.GetSignUpPage().GetUrl();
             uxForgotPassword.NavigateUrl = ForgotPasswordItem.GetForgotPassword().GetUrl();
             uxForgotPassword.Text = context.ForgotPasswordText;
 
