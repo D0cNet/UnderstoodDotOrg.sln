@@ -13,6 +13,7 @@ using Sitecore.Data.Items;
 using System.Web.UI.HtmlControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 using UnderstoodDotOrg.Common.Comparers;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
@@ -24,6 +25,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Sitecore.Context.Language.Name == "es-MX")
+            {
+                frNoSpanishWarning.Item = MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage();
+                pnlNotInSpansih.Visible = true;
+            }
+
             if (!Page.IsPostBack)
             {
 				lblBrowseBy.Text = DictionaryConstants.BrowseByLabel;

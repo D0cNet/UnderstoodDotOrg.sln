@@ -76,6 +76,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
         protected global::System.Web.UI.WebControls.Repeater rptrDynPlatformDropdowns;
         
         /// <summary>
+        /// pnlNotInSpansih control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNotInSpansih;
+        
+        /// <summary>
+        /// frNoSpanishWarning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoSpanishWarning;
+        
+        /// <summary>
         /// btnBrowseFind control.
         /// </summary>
         /// <remarks>

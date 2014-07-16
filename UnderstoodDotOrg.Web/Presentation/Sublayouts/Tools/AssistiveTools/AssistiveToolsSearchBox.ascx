@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AssistiveToolsSearchBox.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.AssistiveToolsSearchBox" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN PARTIAL: at-search-tool -->
 <div class="">
     <div class="">
@@ -49,6 +50,19 @@
                                 </select>
                             </ItemTemplate>
                         </asp:Repeater>
+                        <asp:Panel ID="pnlNotInSpansih" runat="server" CssClass="no-spanish" Visible="false">
+                            <p><sc:FieldRenderer ID="frNoSpanishWarning" runat="server" FieldName="No Spanish Warning Text" /></p>
+                        </asp:Panel>
+                        <style>
+                            .no-spanish {
+                                border: 2px solid #de5a02;
+                                padding-left: 5px;
+                                padding-top: 5px;
+                                width: 73%;
+                                display: inline-block;
+                                font-family: 'Circular', Arial, sans-serif;
+                            }
+                        </style>
                         <div class="submit-button-container">
                             <asp:Button ID="btnBrowseFind" runat="server" OnClick="btnFindSubmit_Click" CssClass="button" Text="Find"
                                 ValidationGroup="vgLearningToolBrowse"></asp:Button>
