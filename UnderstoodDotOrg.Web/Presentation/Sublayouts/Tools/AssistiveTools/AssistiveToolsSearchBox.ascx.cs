@@ -139,7 +139,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 var issues = issuesFolder.GetIssues()
                     .Select(issue => new
                     {
-                        Text = issue.Metadata.ContentTitle.Rendered,
+                        Text = issue.Metadata.ContentTitle.Raw,
                         Value = issue.ID.ToString()
                     });
                 ddlIssues.DataSource = issues;
@@ -156,7 +156,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 var grades = gradesFolder.GetGradeRanges()
                     .Select(grade => new
                     {
-                        Text = grade.Metadata.ContentTitle.Rendered,
+                        Text = grade.Metadata.ContentTitle.Raw,
                         Value = grade.ID.ToString()
                     });
                 ddlGrades.DataSource = grades;
@@ -173,7 +173,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                 var techTypes = typesFolder.GetTechTypes()
                     .Select(grade => new
                     {
-                        Text = grade.Metadata.ContentTitle.Rendered,
+                        Text = grade.Metadata.ContentTitle.Raw,
                         Value = grade.ID.ToString()
                     });
                 ddlTechTypes.DataSource = techTypes;
