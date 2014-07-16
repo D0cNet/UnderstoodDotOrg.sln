@@ -1,12 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Footer.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Footer" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <!-- BEGIN MODULE: Newsletter Signup -->
-<div class="container">
+<div class="container newsletter-signup">
     <div class="row">
 
         <!-- FIXME: discard this div and move the .newsletter-signup class to div.container element for consistency -->
-        <div class="newsletter-signup">
-
             <div class="col col-12 newsletter-signup-rs-wrapper rs_read_this">
 
                 <header>
@@ -35,10 +33,7 @@
                 </div>
 
             </div>
-            <!-- .col -->
-
-        </div>
-        <!-- .newsletter-signup -->
+    <!-- .newsletter-signup -->
 
     </div>
     <!-- .row -->
