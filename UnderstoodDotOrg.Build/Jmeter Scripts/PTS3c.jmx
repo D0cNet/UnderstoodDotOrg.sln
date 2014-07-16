@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.6" jmeter="2.11 r1554548">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="PTS3c" enabled="true">
+      <stringProp name="TestPlan.comments">Create user</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">5</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">300</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">30</stringProp>
+        <longProp name="ThreadGroup.start_time">1363247040000</longProp>
+        <longProp name="ThreadGroup.end_time">1363247040000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://qa.understood.org/" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">qa.understood.org</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">2</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0(Macintosh;IntelMacOSX10_9_2)AppleWebKit/537.36(KHTML,likeGecko)Chrome/35.0.1916.153Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip,deflate,sdch</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">0.0</stringProp>
+            <stringProp name="ConstantTimer.delay">0.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://qa.understood.org/en/my-account/sign-in" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">qa.understood.org</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">en/my-account/sign-in</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">2</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0(Macintosh;IntelMacOSX10_9_2)AppleWebKit/537.36(KHTML,likeGecko)Chrome/35.0.1916.153Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://qa.understood.org/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip,deflate,sdch</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">2146.4</stringProp>
+            <stringProp name="ConstantTimer.delay">4292.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qa.understood.org/en/my-account/sign-up" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">qa.understood.org</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">en/my-account/sign-up</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">2</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0(Macintosh;IntelMacOSX10_9_2)AppleWebKit/537.36(KHTML,likeGecko)Chrome/35.0.1916.153Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.understood.org/en/my-account/sign-in</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip,deflate,sdch</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">2012.4</stringProp>
+            <stringProp name="ConstantTimer.delay">4024.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qa.understood.org/en/my-account/sign-up" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="MediaFramework_ItemId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">MediaFramework_ItemId</stringProp>
+                <stringProp name="Argument.value">B313DB7F1EB445AFB448C1091239A91B</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="__EVENTARGUMENT" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">__EVENTARGUMENT</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="__EVENTTARGET" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">__EVENTTARGET</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="__EVENTVALIDATION" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">__EVENTVALIDATION</stringProp>
+                <stringProp name="Argument.value">/wEdAA53WSbmfVLS0lMyhZ3ls1cgxQDdxKI+H9VC74svMYOMEjLezSBXYweUe7zLhMQExd5J50HiXVBYj5siwqIjN09Z37pUqczQQhfV1Xs4Ej+GFrKa0I/9oa4HUZla8dxtZvzqhm2s7cPUAlBxhKIH1w2u4oxs4KIZXyLgMeMUziU4tx0jN4ly8VHx8Nji2Cv6Via4Z2nReTtp6D4uAS3LmN/7W4FsZTi0s5VkqjM8v98qZdWmOFD5qa9zglBlPaebS+WgSxEDQRNwpZD1u0FninkMTyKPhRYzLqVFdOV50m1tKbweWuUIu7uFmUqg+WO+Kk3TtZbIdZJ9QyiaOM+yBpT2</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="__VIEWSTATE" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">__VIEWSTATE</stringProp>
+                <stringProp name="Argument.value">/wEPDwUKLTI1NTk3Njg5OQ8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBFgQCAQ9kFgICEQ8WAh4EVGV4dAVHPGxpbmsgaHJlZj0iL1ByZXNlbnRhdGlvbi9JbmNsdWRlcy9jc3MvYWNjb3VudC5jc3MiIHJlbD0ic3R5bGVzaGVldCIgLz5kAgMQZGQWDgIFDxYCHwEFEUNsb3NlIEJ1dHRvbiBUZXh0ZAIHDxYCHwEFCUxhbmd1YWdlP2QCCQ8WAh4LXyFJdGVtQ291bnQCAhYEZg9kFgICAQ8PFgQeC05hdmlnYXRlVXJsBRYvZW4vbXktYWNjb3VudC9zaWduLXVwHwEFB0VuZ2xpc2hkZAIBD2QWAgIBDw8WBB8DBRkvZXMtbXgvbXktYWNjb3VudC9zaWduLXVwHwEFCEVzcGHDsW9sZGQCCw9kFgJmD2QWAmYPZBYGZg8WAh8BBbwDPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPihmdW5jdGlvbihpLHMsbyxnLHIsYSxtKXtpWydHb29nbGVBbmFseXRpY3NPYmplY3QnXT1yO2lbcl09aVtyXXx8ZnVuY3Rpb24oKXsNCiAgKGlbcl0ucT1pW3JdLnF8fFtdKS5wdXNoKGFyZ3VtZW50cyl9LGlbcl0ubD0xKm5ldyBEYXRlKCk7YT1zLmNyZWF0ZUVsZW1lbnQobyksDQogIG09cy5nZXRFbGVtZW50c0J5VGFnTmFtZShvKVswXTthLmFzeW5jPTE7YS5zcmM9ZzttLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGEsbSkNCiAgfSkod2luZG93LGRvY3VtZW50LCdzY3JpcHQnLCcvL3d3dy5nb29nbGUtYW5hbHl0aWNzLmNvbS9hbmFseXRpY3MuanMnLCdnYScpOw0KDQogIGdhKCdjcmVhdGUnLCAnVUEtNTEwNDU3MTYtMScsICd3ZWJzdGFnZXNpdGUuY29tJyk7DQogIGdhKCdzZW5kJywgJ3BhZ2V2aWV3Jyk7PC9zY3JpcHQ+ZAICD2QWAmYPZBYIZg8PFgIfAwUDL2VuZBYCAgMPDxYCHghJbWFnZVVybAUuL34vbWVkaWEvaW1hZ2VzL3Bvc2VzL2hlYWRlci9sb2dvdWRlZmF1bHQuYXNoeGRkAgEPFgIfAgICFgQCAQ9kFgICAQ8PFgQfAQUDRW5nHwMFFi9lbi9teS1hY2NvdW50L3NpZ24tdXAWBB4FdGl0bGUFB0VuZ2xpc2geBWNsYXNzBQlpcy1hY3RpdmVkAgIPZBYCAgEPDxYEHwEFA0VzcB8DBRkvZXMtbXgvbXktYWNjb3VudC9zaWduLXVwFgIfBQUIRXNwYcOxb2xkAgIPFgIfAgIDZAIDDw8WAh8BBQhTaWduIE91dGRkAgYPZBYCZg9kFgICAQ8UKwACDxYEHgtfIURhdGFCb3VuZGcfAgIIZGQWAmYPZBYGAgEPZBYGAgEPZBYCAgEPD2QWAh4Fc3R5bGUFa2JhY2tncm91bmQtaW1hZ2U6dXJsKC9+L21lZGlhL2ltYWdlcy9wb3Nlcy9oZWFkZXIvaWNvbnRvb2xraXRjaGlsZHN3b3JsZC5hc2h4KTtiYWNrZ3JvdW5kLXJlcGVhdDpuby1yZXBlYXQ7ZAICD2QWAgIBDw9kFgIfCAVrYmFja2dyb3VuZC1pbWFnZTp1cmwoL34vbWVkaWEvaW1hZ2VzL3Bvc2VzL2hlYWRlci9pY29udG9vbGtpdG9ic2VydmF0aW9uLmFzaHgpO2JhY2tncm91bmQtcmVwZWF0Om5vLXJlcGVhdDtkAgMPZBYCAgEPD2QWAh8IBVFiYWNrZ3JvdW5kLWltYWdlOnVybCgvfi9tZWRpYS9pY29uX3N1cHBvcnRwbGFuLmFzaHgpO2JhY2tncm91bmQtcmVwZWF0Om5vLXJlcGVhdDtkAgIPZBYGAgEPZBYCAgEPD2QWAh8IBWtiYWNrZ3JvdW5kLWltYWdlOnVybCgvfi9tZWRpYS9pbWFnZXMvcG9zZXMvaGVhZGVyL2ljb250b29sa2l0b2JzZXJ2YXRpb24uYXNoeCk7YmFja2dyb3VuZC1yZXBlYXQ6bm8tcmVwZWF0O2QCAg9kFgICAQ8PZBYCHwgFaWJhY2tncm91bmQtaW1hZ2U6dXJsKC9+L21lZGlhL2ltYWdlcy9wb3Nlcy9oZWFkZXIvaWNvbnRvb2xraXRkZWNpc2lvbnMuYXNoeCk7YmFja2dyb3VuZC1yZXBlYXQ6bm8tcmVwZWF0O2QCAw9kFgICAQ8PZBYCHwgFZGJhY2tncm91bmQtaW1hZ2U6dXJsKC9+L21lZGlhL2ltYWdlcy9wb3Nlcy9oZWFkZXIvaWNvbnRvb2xraXRmaW5kLmFzaHgpO2JhY2tncm91bmQtcmVwZWF0Om5vLXJlcGVhdDtkAgMPZBYEAgEPZBYCAgEPD2QWAh8IBWdiYWNrZ3JvdW5kLWltYWdlOnVybCgvfi9tZWRpYS9pbWFnZXMvcG9zZXMvaGVhZGVyL2ljb250b29sa2l0cmF0aW5ncy5hc2h4KTtiYWNrZ3JvdW5kLXJlcGVhdDpuby1yZXBlYXQ7ZAICD2QWAgIBDw9kFgIfCAVQYmFja2dyb3VuZC1pbWFnZTp1cmwoL34vbWVkaWEvaWNvbl9qdXN0Zm9yeW91LmFzaHgpO2JhY2tncm91bmQtcmVwZWF0Om5vLXJlcGVhdDtkAg0PZBYCZg9kFgJmD2QWIgIBDw8WBB8BBQdTaWduIEluHwMFFi9lbi9teS1hY2NvdW50L3NpZ24taW5kZAIEDw9kFgIeC3BsYWNlaG9sZGVyBQpGaXJzdCBuYW1lZAIFDw8WAh4MRXJyb3JNZXNzYWdlBR4qIFBsZWFzZSBlbnRlciB5b3VyIGZpcnN0IG5hbWVkZAIGDw9kFgIfCQUTRW50ZXIgZW1haWwgYWRkcmVzc2QCBw8PFgIfCgVCKiBJdCBsb29rcyBsaWtlIHlvdSBtaXN0eXBlZCB5b3VyIGVtYWlsIGFkZHJlc3MuIFBsZWFzZSB0cnkgYWdhaW4uZGQCCA8PFgQfCgVCKiBJdCBsb29rcyBsaWtlIHlvdSBtaXN0eXBlZCB5b3VyIGVtYWlsIGFkZHJlc3MuIFBsZWFzZSB0cnkgYWdhaW4uHhRWYWxpZGF0aW9uRXhwcmVzc2lvbgUsXHcrKFstKy4nXVx3KykqQFx3KyhbLS5dXHcrKSpcLlx3KyhbLS5dXHcrKSpkZAIJDw9kFgIfCQUORW50ZXIgUGFzc3dvcmRkAgoPDxYCHwoFXCogUGxlYXNlIGNyZWF0ZSBhIHBhc3N3b3JkIHRoYXQgaGFzIDYgb3IgbW9yZSBjaGFyYWN0ZXIuIFlvdSBjYW4gdXNlIGxldHRlcnMgYW5kL29yIG51bWJlcnMuZGQCCw8PFgQfCwUKW1xzXFNdezYsfR8KBVwqIFBsZWFzZSBjcmVhdGUgYSBwYXNzd29yZCB0aGF0IGhhcyA2IG9yIG1vcmUgY2hhcmFjdGVyLiBZb3UgY2FuIHVzZSBsZXR0ZXJzIGFuZC9vciBudW1iZXJzLmRkAgwPDxYCHwoFKEl0IGxvb2tzIGxpa2UgeW91ciBwYXNzd29yZHMgZG9uJ3QgbWF0Y2hkZAINDw9kFgIfCQUVUmUtZW50ZXIgbmV3IHBhc3N3b3JkZAIODw8WAh8KBVwqIFBsZWFzZSBjcmVhdGUgYSBwYXNzd29yZCB0aGF0IGhhcyA2IG9yIG1vcmUgY2hhcmFjdGVyLiBZb3UgY2FuIHVzZSBsZXR0ZXJzIGFuZC9vciBudW1iZXJzLmRkAg8PDxYEHwsFCltcc1xTXXs2LH0fCgVcKiBQbGVhc2UgY3JlYXRlIGEgcGFzc3dvcmQgdGhhdCBoYXMgNiBvciBtb3JlIGNoYXJhY3Rlci4gWW91IGNhbiB1c2UgbGV0dGVycyBhbmQvb3IgbnVtYmVycy5kZAIQDw8WAh8KBShJdCBsb29rcyBsaWtlIHlvdXIgcGFzc3dvcmRzIGRvbid0IG1hdGNoZGQCEQ8PZBYCHwkFCFppcCBDb2RlZAISDw8WBB8KBT0qIEl0IGxvb2tzIGxpa2UgeW91IG1pc3R5cGVkIHlvdXIgemlwIGNvZGUuIFBsZWFzZSB0cnkgYWdhaW4uHwsFDlxkezV9KC1cZHs0fSk/ZGQCFw8PFgIfAQUGU3VibWl0ZGQCEQ9kFgJmD2QWAmYPZBYCZg9kFgQCAQ9kFgoCAQ9kFgJmDxYCHwEFG1BsZWFzZSBmaWxsIG91dCBhbGwgZmllbGRzLmQCBQ8PZBYCHwkFD0VudGVyIFlvdXIgTmFtZWQCCw8PZBYCHwkFEEVudGVyIFlvdXIgRW1haWxkAhEPD2QWAh8JBRNFbnRlciBGcmllbmRzIEVtYWlsZAIXDw9kFgIfCQUwSSBzYXcgdGhpcyBhbmQgdGhvdWdodCB5b3UgbWlnaHQgZmluZCBpdCBoZWxwZnVsZAIDD2QWAmYPFgIfAQU6VGhhbmsgeW91IGZvciBzaGFyaW5nIHRoaXMgY29udGVudCB3aXRoIGZyaWVuZHMgYW5kIGZhbWlseWQCEw8WAh8BBTw8c2NyaXB0IHNyYz0iL1ByZXNlbnRhdGlvbi9JbmNsdWRlcy9qcy9BY2NvdW50LmpzIj48L3NjcmlwdD5kGAIFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBRltYWluXzAkdXhOZXdzbGV0dGVyU2lnbnVwBR5oZWFkZXJfMCRjdGwwNSRsdlBhcmVudFRvb2xraXQPFCsADmRkZAIDZGRkPCsACAACCGRkZGYC/////w9kdaW70WDUUIBW2NE6TQqvUDGhLfMN1t9wXpTooJfMRWk=</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="ctl28$txtRecipientEmail" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ctl28$txtRecipientEmail</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="ctl28$txtThoughts" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ctl28$txtThoughts</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="ctl28$txtYourEmail" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ctl28$txtYourEmail</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="ctl28$txtYourName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ctl28$txtYourName</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="main_0$uxEmailAddress" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">main_0$uxEmailAddress</stringProp>
+                <stringProp name="Argument.value">${EMAIL}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="main_0$uxFirstName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">main_0$uxFirstName</stringProp>
+                <stringProp name="Argument.value">${FNAME}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="main_0$uxNewsletterSignup" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">main_0$uxNewsletterSignup</stringProp>
+                <stringProp name="Argument.value">on</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="main_0$uxPassword" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">main_0$uxPassword</stringProp>
+                <stringProp name="Argument.value">${PASS}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="main_0$uxPasswordConfirm" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">main_0$uxPasswordConfirm</stringProp>
+                <stringProp name="Argument.value">${PASS2}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="main_0$uxSubmit" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">main_0$uxSubmit</stringProp>
+                <stringProp name="Argument.value">Submit</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="main_0$uxZipCode" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">main_0$uxZipCode</stringProp>
+                <stringProp name="Argument.value">${ZIP}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="personalized-email-email" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">personalized-email-email</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">qa.understood.org</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">en/my-account/sign-up</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">2</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.understood.org</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0(Macintosh;IntelMacOSX10_9_2)AppleWebKit/537.36(KHTML,likeGecko)Chrome/35.0.1916.153Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.understood.org/en/my-account/sign-up</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip,deflate,sdch</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">10582.800000000001</stringProp>
+            <stringProp name="ConstantTimer.delay">21165.600000000002</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">Newusers</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">FNAME, EMAIL, PASS, PASS2, ZIP</stringProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qa.understood.org/en/my-account/terms-and-conditions" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">qa.understood.org</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">en/my-account/terms-and-conditions</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">2</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0(Macintosh;IntelMacOSX10_9_2)AppleWebKit/537.36(KHTML,likeGecko)Chrome/35.0.1916.153Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.understood.org/en/my-account/sign-up</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip,deflate,sdch</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">71.2</stringProp>
+            <stringProp name="ConstantTimer.delay">142.4</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qa.understood.org/en/my-account/terms-and-conditions" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="MediaFramework_ItemId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">MediaFramework_ItemId</stringProp>
+                <stringProp name="Argument.value">307399BC63C442FDA9D33E7289DF4AD6</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="__EVENTARGUMENT" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">__EVENTARGUMENT</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="__EVENTTARGET" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">__EVENTTARGET</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="__EVENTVALIDATION" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">__EVENTVALIDATION</stringProp>
+                <stringProp name="Argument.value">/wEdAAup0Qn9r35h2E2SkbShBV2i8ciHRnwzqbRYFzjYnSP+LsG9jOeTBCdRUGUrRbthpfkurycJxf3EL+sBGb8vA0+BDzVHh04qPRcJ4XJVmImkvh0jN4ly8VHx8Nji2Cv6Via4Z2nReTtp6D4uAS3LmN/7W4FsZTi0s5VkqjM8v98qZdWmOFD5qa9zglBlPaebS+WgSxEDQRNwpZD1u0FninkMTyKPhRYzLqVFdOV50m1tKaif7EIRbjAmcOaZoOVSC8C1Puyp3aUOZ5s7jZTkBsTW</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="__VIEWSTATE" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">__VIEWSTATE</stringProp>
+                <stringProp name="Argument.value">/wEPDwUKLTI1NTk3Njg5OQ8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBFgQCAQ9kFgICEQ8WAh4EVGV4dAVHPGxpbmsgaHJlZj0iL1ByZXNlbnRhdGlvbi9JbmNsdWRlcy9jc3MvYWNjb3VudC5jc3MiIHJlbD0ic3R5bGVzaGVldCIgLz5kAgMQZGQWEAIFDxYCHwEFEUNsb3NlIEJ1dHRvbiBUZXh0ZAIHDxYCHwEFCUxhbmd1YWdlP2QCCQ8WAh4LXyFJdGVtQ291bnQCAhYEZg9kFgICAQ8PFgQeC05hdmlnYXRlVXJsBSMvZW4vbXktYWNjb3VudC90ZXJtcy1hbmQtY29uZGl0aW9ucx8BBQdFbmdsaXNoZGQCAQ9kFgICAQ8PFgQfAwUmL2VzLW14L215LWFjY291bnQvdGVybXMtYW5kLWNvbmRpdGlvbnMfAQUIRXNwYcOxb2xkZAILD2QWAmYPZBYCZg9kFgZmDxYCHwEFvAM8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+KGZ1bmN0aW9uKGkscyxvLGcscixhLG0pe2lbJ0dvb2dsZUFuYWx5dGljc09iamVjdCddPXI7aVtyXT1pW3JdfHxmdW5jdGlvbigpew0KICAoaVtyXS5xPWlbcl0ucXx8W10pLnB1c2goYXJndW1lbnRzKX0saVtyXS5sPTEqbmV3IERhdGUoKTthPXMuY3JlYXRlRWxlbWVudChvKSwNCiAgbT1zLmdldEVsZW1lbnRzQnlUYWdOYW1lKG8pWzBdO2EuYXN5bmM9MTthLnNyYz1nO20ucGFyZW50Tm9kZS5pbnNlcnRCZWZvcmUoYSxtKQ0KICB9KSh3aW5kb3csZG9jdW1lbnQsJ3NjcmlwdCcsJy8vd3d3Lmdvb2dsZS1hbmFseXRpY3MuY29tL2FuYWx5dGljcy5qcycsJ2dhJyk7DQoNCiAgZ2EoJ2NyZWF0ZScsICdVQS01MTA0NTcxNi0xJywgJ3dlYnN0YWdlc2l0ZS5jb20nKTsNCiAgZ2EoJ3NlbmQnLCAncGFnZXZpZXcnKTs8L3NjcmlwdD5kAgIPZBYCZg9kFgpmDw8WAh8DBQMvZW5kFgICAw8PFgIeCEltYWdlVXJsBS4vfi9tZWRpYS9pbWFnZXMvcG9zZXMvaGVhZGVyL2xvZ291ZGVmYXVsdC5hc2h4ZGQCAQ8WAh8CAgIWBAIBD2QWAgIBDw8WBB8BBQNFbmcfAwUjL2VuL215LWFjY291bnQvdGVybXMtYW5kLWNvbmRpdGlvbnMWBB4FdGl0bGUFB0VuZ2xpc2geBWNsYXNzBQlpcy1hY3RpdmVkAgIPZBYCAgEPDxYEHwEFA0VzcB8DBSYvZXMtbXgvbXktYWNjb3VudC90ZXJtcy1hbmQtY29uZGl0aW9ucxYCHwUFCEVzcGHDsW9sZAICDxYCHwICA2QCAw8PFgQfAQUIU2lnbiBPdXQeB1Zpc2libGVnZGQCBA8PFgIfB2hkZAIGD2QWAmYPZBYCAgEPFCsAAg8WBB4LXyFEYXRhQm91bmRnHwICCGRkFgJmD2QWBgIBD2QWBgIBD2QWAgIBDw9kFgIeBXN0eWxlBWtiYWNrZ3JvdW5kLWltYWdlOnVybCgvfi9tZWRpYS9pbWFnZXMvcG9zZXMvaGVhZGVyL2ljb250b29sa2l0Y2hpbGRzd29ybGQuYXNoeCk7YmFja2dyb3VuZC1yZXBlYXQ6bm8tcmVwZWF0O2QCAg9kFgICAQ8PZBYCHwkFa2JhY2tncm91bmQtaW1hZ2U6dXJsKC9+L21lZGlhL2ltYWdlcy9wb3Nlcy9oZWFkZXIvaWNvbnRvb2xraXRvYnNlcnZhdGlvbi5hc2h4KTtiYWNrZ3JvdW5kLXJlcGVhdDpuby1yZXBlYXQ7ZAIDD2QWAgIBDw9kFgIfCQVRYmFja2dyb3VuZC1pbWFnZTp1cmwoL34vbWVkaWEvaWNvbl9zdXBwb3J0cGxhbi5hc2h4KTtiYWNrZ3JvdW5kLXJlcGVhdDpuby1yZXBlYXQ7ZAICD2QWBgIBD2QWAgIBDw9kFgIfCQVrYmFja2dyb3VuZC1pbWFnZTp1cmwoL34vbWVkaWEvaW1hZ2VzL3Bvc2VzL2hlYWRlci9pY29udG9vbGtpdG9ic2VydmF0aW9uLmFzaHgpO2JhY2tncm91bmQtcmVwZWF0Om5vLXJlcGVhdDtkAgIPZBYCAgEPD2QWAh8JBWliYWNrZ3JvdW5kLWltYWdlOnVybCgvfi9tZWRpYS9pbWFnZXMvcG9zZXMvaGVhZGVyL2ljb250b29sa2l0ZGVjaXNpb25zLmFzaHgpO2JhY2tncm91bmQtcmVwZWF0Om5vLXJlcGVhdDtkAgMPZBYCAgEPD2QWAh8JBWRiYWNrZ3JvdW5kLWltYWdlOnVybCgvfi9tZWRpYS9pbWFnZXMvcG9zZXMvaGVhZGVyL2ljb250b29sa2l0ZmluZC5hc2h4KTtiYWNrZ3JvdW5kLXJlcGVhdDpuby1yZXBlYXQ7ZAIDD2QWBAIBD2QWAgIBDw9kFgIfCQVnYmFja2dyb3VuZC1pbWFnZTp1cmwoL34vbWVkaWEvaW1hZ2VzL3Bvc2VzL2hlYWRlci9pY29udG9vbGtpdHJhdGluZ3MuYXNoeCk7YmFja2dyb3VuZC1yZXBlYXQ6bm8tcmVwZWF0O2QCAg9kFgICAQ8PZBYCHwkFUGJhY2tncm91bmQtaW1hZ2U6dXJsKC9+L21lZGlhL2ljb25fanVzdGZvcnlvdS5hc2h4KTtiYWNrZ3JvdW5kLXJlcGVhdDpuby1yZXBlYXQ7ZAIND2QWAmYPZBYCZg9kFgQCCw8PFgIfAQUHSSBBZ3JlZWRkAg0PDxYCHwEFDkkgRG8gTm90IEFncmVlZGQCDw9kFgJmD2QWAmYPZBYCAgQPFgIfAgIHFg4CAQ9kFgICAQ9kFgJmD2QWAgIFDw8WAh8HZ2RkAgIPZBYCAgEPZBYCZg9kFgICBQ8PFgIfB2dkZAIDD2QWAgIBD2QWAmYPZBYCAgUPDxYCHwdnZGQCBA9kFgICAQ9kFgJmD2QWAgIFDw8WAh8HZ2RkAgUPZBYCAgEPZBYCZg9kFgICBQ8PFgIfB2dkZAIGD2QWAgIBD2QWAmYPZBYEAgMPFgIfAQUhUmFpbiBvciBzaGluZSEgU2VwIDEydGggYXQgMzo1N3BtZAIHDw8WBB8BBRpUZXN0aW5nIEV2ZW50IFByb21vIFRpbGUgMR8DBUIvZW4vY29tbXVuaXR5LWFuZC1ldmVudHMvZXhwZXJ0cy1saXZlLzIwMTQvc2VwdGVtYmVyLzEyL21hcmtzLXRlc3RkZAIHD2QWAgIBD2QWAmYPZBYEAgMPFgIfAQUhUmFpbiBvciBzaGluZSEgU2VwIDEydGggYXQgMzo1N3BtZAIHDw8WBB8BBRpUZXN0aW5nIEV2ZW50IFByb21vIFRpbGUgMh8DBUIvZW4vY29tbXVuaXR5LWFuZC1ldmVudHMvZXhwZXJ0cy1saXZlLzIwMTQvc2VwdGVtYmVyLzEyL21hcmtzLXRlc3RkZAIRD2QWAmYPZBYCZg9kFgJmD2QWBAIBD2QWCgIBD2QWAmYPFgIfAQUbUGxlYXNlIGZpbGwgb3V0IGFsbCBmaWVsZHMuZAIFDw9kFgIeC3BsYWNlaG9sZGVyBQ9FbnRlciBZb3VyIE5hbWVkAgsPD2QWAh8KBRBFbnRlciBZb3VyIEVtYWlsZAIRDw9kFgIfCgUTRW50ZXIgRnJpZW5kcyBFbWFpbGQCFw8PZBYCHwoFMEkgc2F3IHRoaXMgYW5kIHRob3VnaHQgeW91IG1pZ2h0IGZpbmQgaXQgaGVscGZ1bGQCAw9kFgJmDxYCHwEFOlRoYW5rIHlvdSBmb3Igc2hhcmluZyB0aGlzIGNvbnRlbnQgd2l0aCBmcmllbmRzIGFuZCBmYW1pbHlkAhMPFgIfAQU8PHNjcmlwdCBzcmM9Ii9QcmVzZW50YXRpb24vSW5jbHVkZXMvanMvQWNjb3VudC5qcyI+PC9zY3JpcHQ+ZBgBBR5oZWFkZXJfMCRjdGwwNSRsdlBhcmVudFRvb2xraXQPFCsADmRkZAIDZGRkPCsACAACCGRkZGYC/////w9k40fyR/GhY0d6pjhon7NODyDRFfN02ySBxsXE/G/s1WI=</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="ctl28$txtRecipientEmail" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ctl28$txtRecipientEmail</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="ctl28$txtThoughts" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ctl28$txtThoughts</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="ctl28$txtYourEmail" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ctl28$txtYourEmail</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="ctl28$txtYourName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ctl28$txtYourName</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="main_0$btnAgree" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">main_0$btnAgree</stringProp>
+                <stringProp name="Argument.value">IAgree</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="personalized-email-email" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">personalized-email-email</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">qa.understood.org</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">en/my-account/terms-and-conditions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">2</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.understood.org</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0(Macintosh;IntelMacOSX10_9_2)AppleWebKit/537.36(KHTML,likeGecko)Chrome/35.0.1916.153Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.understood.org/en/my-account/terms-and-conditions</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip,deflate,sdch</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">2712.0</stringProp>
+            <stringProp name="ConstantTimer.delay">5424.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://qa.understood.org/en/my-account/myaccount" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">qa.understood.org</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">en/my-account/myaccount</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">2</stringProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0(Macintosh;IntelMacOSX10_9_2)AppleWebKit/537.36(KHTML,likeGecko)Chrome/35.0.1916.153Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.understood.org/en/my-account/terms-and-conditions</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip,deflate,sdch</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">244.8</stringProp>
+            <stringProp name="ConstantTimer.delay">489.6</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="true">
+        <stringProp name="FileSaver.filename">PTS3c</stringProp>
+        <boolProp name="FileSaver.errorsonly">false</boolProp>
+        <boolProp name="FileSaver.skipautonumber">false</boolProp>
+        <boolProp name="FileSaver.skipsuffix">false</boolProp>
+        <boolProp name="FileSaver.successonly">false</boolProp>
+      </ResultSaver>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
