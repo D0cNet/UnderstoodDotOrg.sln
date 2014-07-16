@@ -115,7 +115,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
                         {
                             Id = c.ChildId,
                             Label = gradeItem != null ? 
-                                c.Nickname + ", " + gradeItem.ChildDemographic.NavigationTitle.Rendered :
+                                c.Nickname.TrimEnd() + ", " + gradeItem.ChildDemographic.NavigationTitle.Rendered :
                                 c.Nickname,
                             GradeParam = gradeParam,
                             IssueParams = issueParams
