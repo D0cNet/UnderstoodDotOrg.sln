@@ -76,13 +76,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.WebControls.Button bntSearch;
         
         /// <summary>
-        /// groupList control.
+        /// rptGroupCards control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder groupList;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.GroupSummaryList rptGroupCards;
         
         /// <summary>
         /// linkShowMore control.

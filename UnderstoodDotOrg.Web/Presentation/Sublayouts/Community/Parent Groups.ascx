@@ -1,5 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Groups.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Groups" %>
-  <div class="container group-summary-wrapper skiplink-content ">
+<%@ Register Src="~/Presentation/Sublayouts/Common/GroupSummaryList.ascx" TagPrefix="GroupSummaryList" TagName="GroupSummaryList" %>
+
+
+ <div class="container group-summary-wrapper skiplink-content ">
     <div class="row">
       <div class="container">
             <header class="groups-heading rs_read_this">
@@ -173,7 +176,8 @@
     <div class="group-summary-container">
       <div class="row skiplink-content">
         <!-- BEGIN PARTIAL: community/group_summary -->
-          <asp:PlaceHolder ID="groupList" runat="server"/>
+          
+          <GroupSummaryList:GroupSummaryList runat="server" ID="rptGroupCards" />
        </div>
 <!-- END PARTIAL: community/group_summary -->
       </div>

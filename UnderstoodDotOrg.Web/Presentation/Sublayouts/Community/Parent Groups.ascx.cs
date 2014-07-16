@@ -18,22 +18,41 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
     public partial class Parent_Groups : System.Web.UI.UserControl
     {
-        GroupSummaryList rptGroupCards;
+        //GroupSummaryList rptGroupCards;
+
+        protected override void OnLoad(EventArgs e)
+        {
+
+            //groupList.Controls.Clear();
+            //rptGroupCards = (GroupSummaryList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupSummaryList.ascx");
+            //rptGroupCards.ID = "rptGroupCards";
+            //rptGroupCards.Attributes.Add("runat", "Server");
+            //rptGroupCards.EnableViewState = true;
+            //rptGroupCards.Visible = true;
+            //groupList.Controls.Add(rptGroupCards);
+
+            base.OnLoad(e);
+        }
 
         protected override void OnInit(EventArgs e)
         {
             Item parentItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.ParentsGroupRecommended));
             string itemHref = Sitecore.Links.LinkManager.GetItemUrl(parentItem);
             ref_recommended_group.HRef = itemHref;
+
+
             base.OnInit(e);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            rptGroupCards = (GroupSummaryList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupSummaryList.ascx");
-            rptGroupCards.ID = "rptGroupCards";
-            groupList.Controls.Add(rptGroupCards);
+           
             if (!IsPostBack)
             {
+            
+                // groupList.DataBind();
+
+
+
                 ///Search criteria
                 ///Checking
                 Item currItem = Sitecore.Context.Item;
@@ -109,15 +128,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 //List<GroupItem> groups = currItem.Children.Where(x => x.TemplateID.ToString().Equals(Constants.Groups.GroupTemplateID)).Select(x => new GroupItem(x)).ToList<GroupItem>();
                 
                 //Convert sitecore group items to GroupCardModels
-              
 
+                var grpItems = Groups.FindGroups();
+
+                Session["groupItems"] = grpItems;
+
+                rptGroupCards.DataSource = grpItems.Take(10).ToList();
+                rptGroupCards.DataBind();
             }
-            var grpItems = Groups.FindGroups();// groups.Select(x => new GroupCardModel(x)).ToList<GroupCardModel>();
-            //use FindGroups(new string[0],new string[0],new string[0],new string[0],new string[0]) instead
-            Session["groupItems"] = grpItems;
-            rptGroupCards.DataSource = grpItems.Take(10).ToList();
-            rptGroupCards.DataBind();
-           
+
+          
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -135,8 +155,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
             //Perform search using criteria
             var groupResult = Groups.FindGroups( issue, topic, grade,state,partner);
+
+           // rptGroupCards = (GroupSummaryList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupSummaryList.ascx");
+            //rptGroupCards.ID = "rptGroupCards";
+            
             rptGroupCards.DataSource = groupResult.Take(10).ToList();
             rptGroupCards.DataBind();
+
         }
 
         protected void ShowMore(object sender, EventArgs e)
