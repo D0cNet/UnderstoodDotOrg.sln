@@ -13,8 +13,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 {
     public partial class CommunityRecommendationIcons : BaseSublayout //System.Web.UI.UserControl
     {
-        public List<Guid> MatchingChildrenIds { get; set; }
-        public bool HasMatchingParentInterest { get; set; }
+        public List<Guid> MatchingChildrenIds
+        {
+            get
+            {
+                return (List<Guid>)ViewState["_matchingChildrenIds"];
+            }
+            set
+            {
+                ViewState["_matchingChildrenIds"] = value;
+            }
+        }
+        public bool HasMatchingParentInterest
+        {
+            get
+            {
+                try
+                {
+                    var ret = (bool)ViewState["_hasMatchingParentInterest"];
+                    return ret;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            set
+            {
+                ViewState["_hasMatchingParentInterest"] = value;
+            }
+        }
 
         private string child = @"<li><i class=""child-{1}"" title=""{0}""></i></li>";
         static string myString = DictionaryConstants.Core_ParentLabel;
@@ -23,7 +51,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
         protected void Page_Load(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
-            if (this.CurrentMember != null && this.CurrentMember.Children.Count > 0)
+            if (this.MatchingChildrenIds != null && this.CurrentMember != null && this.CurrentMember.Children.Count > 0 && this.MatchingChildrenIds.Count > 0)
             {
                 for (int i = 0; i < this.CurrentMember.Children.Count(); i++)
                 {
