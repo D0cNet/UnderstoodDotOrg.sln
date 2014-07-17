@@ -386,13 +386,6 @@
     <Compile Include="Presentation\Sublayouts\About\Widgets\ThankYouSocial.ascx.designer.cs">
       <DependentUpon>ThankYouSocial.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\AccountBody.ascx.cs">
-      <DependentUpon>AccountBody.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\AccountBody.ascx.designer.cs">
-      <DependentUpon>AccountBody.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Account\AccountFriendComments.ascx.cs">
       <DependentUpon>AccountFriendComments.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -414,19 +407,18 @@
     <Compile Include="Presentation\Sublayouts\Account\AccountFriendProfile.ascx.designer.cs">
       <DependentUpon>AccountFriendProfile.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountHeader.ascx.cs">
+      <DependentUpon>AccountHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Account\AccountHeader.ascx.designer.cs">
+      <DependentUpon>AccountHeader.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Account\AccountNonFriendProfile.ascx.cs">
       <DependentUpon>AccountNonFriendProfile.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Account\AccountNonFriendProfile.ascx.designer.cs">
       <DependentUpon>AccountNonFriendProfile.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\AccountHeader.ascx.cs">
-      <DependentUpon>AccountHeader.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\AccountHeader.ascx.designer.cs">
-      <DependentUpon>AccountHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Account\AccountProfile.ascx.cs">
       <DependentUpon>AccountProfile.ascx</DependentUpon>
@@ -462,34 +454,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Account\Common\NotConnectingMessage.ascx.designer.cs">
       <DependentUpon>NotConnectingMessage.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx.cs">
-      <DependentUpon>Comments.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx.designer.cs">
-      <DependentUpon>Comments.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Tabs\Connections.ascx.cs">
-      <DependentUpon>Connections.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Tabs\Connections.ascx.designer.cs">
-      <DependentUpon>Connections.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Tabs\Profile.ascx.cs">
-      <DependentUpon>Profile.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Tabs\Profile.ascx.designer.cs">
-      <DependentUpon>Profile.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Tabs\TabMenu.ascx.cs">
-      <DependentUpon>TabMenu.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Account\Tabs\TabMenu.ascx.designer.cs">
-      <DependentUpon>TabMenu.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx.cs">
       <DependentUpon>ExactTargetAdmin.ascx</DependentUpon>
@@ -3030,21 +2994,16 @@
     <Content Include="Presentation\Sublayouts\About\SearchResults.ascx" />
     <Content Include="Presentation\Sublayouts\About\Widgets\Donate.ascx" />
     <Content Include="Presentation\Sublayouts\About\Widgets\ThankYouSocial.ascx" />
-    <Content Include="Presentation\Sublayouts\Account\AccountBody.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountFriendComments.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountFriendConnections.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountFriendProfile.ascx" />
-    <Content Include="Presentation\Sublayouts\Account\AccountNonFriendProfile.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountHeader.ascx" />
+    <Content Include="Presentation\Sublayouts\Account\AccountNonFriendProfile.ascx" />
     <Content Include="Presentation\Sublayouts\Account\AccountProfile.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Common\CommentList.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Common\ConnectButton.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Common\PrivateMessageButton.ascx" />
     <Content Include="Presentation\Sublayouts\Account\Common\NotConnectingMessage.ascx" />
-    <Content Include="Presentation\Sublayouts\Account\Tabs\Comments.ascx" />
-    <Content Include="Presentation\Sublayouts\Account\Tabs\Connections.ascx" />
-    <Content Include="Presentation\Sublayouts\Account\Tabs\Profile.ascx" />
-    <Content Include="Presentation\Sublayouts\Account\Tabs\TabMenu.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\ExactTargetAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\PersonalizationAdmin.ascx" />
     <Content Include="Presentation\Sublayouts\AdminTools\SalesforceContactAdmin.ascx" />
