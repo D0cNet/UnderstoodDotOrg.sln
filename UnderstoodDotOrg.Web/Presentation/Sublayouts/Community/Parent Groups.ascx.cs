@@ -34,7 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.ProfileRedirect(Constants.UserPermission.CommunityUser);
+           // this.ProfileRedirect(Constants.UserPermission.CommunityUser);
            
             if (!IsPostBack)
             {
