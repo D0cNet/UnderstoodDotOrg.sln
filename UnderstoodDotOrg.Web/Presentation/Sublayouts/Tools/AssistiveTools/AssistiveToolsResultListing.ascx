@@ -49,7 +49,7 @@
                     ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsSubjectItem">
                     <ItemTemplate>
                         <li>
-                            <a href="REPLACE"><%# Item.Metadata.ContentTitle.Rendered %></a>
+                            <%# Item.Metadata.ContentTitle.Rendered %>
                         </li>
                     </ItemTemplate>
                 </asp:Repeater>

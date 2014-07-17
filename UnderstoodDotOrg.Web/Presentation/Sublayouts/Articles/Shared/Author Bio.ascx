@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Author Bio.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Author_Bio" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<%@ Register Src="~/Presentation/Sublayouts/Recommendation/ArticleRecommendationIcons.ascx" TagPrefix="udo" TagName="ArticleRecommendationIcons" %>
 
 <div class="container skiplink-feature">
     <!-- BEGIN PARTIAL: about/expert-bio -->
@@ -53,91 +54,54 @@
 
         <div class="expert-blog-post-container">
 
-            <div class="row expert-blog-post rs_read_this">
+            <asp:Repeater ID="rptAuthorArticles" runat="server" OnItemDataBound="rptAuthorArticles_ItemDataBound">
+                <HeaderTemplate>
 
-                <div class="col col-6 offset-1">
-                    <div class="expert-blog-post-image">
-                        <a href="REPLACE">
-                            <img alt="FPO content image" src="http://placehold.it/230x129&amp;text=230x129" /></a>
-                    </div>
-                    <!-- /.expert-blog-post-image -->
-                </div>
-                <!-- /.col -->
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <div class="row expert-blog-post rs_read_this">
 
-                <div class="col col-3 push-13">
-                    <div class="expert-blog-post-type">
-                        <h4>72</h4>
-                        <p class="comments"><%= UnderstoodDotOrg.Common.DictionaryConstants.CommentsLabel %></p>
-                    </div>
-                    <!-- /.expert-blog-post-type -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col col-1 push-9 border-col">
-                    <div>&nbsp;</div>
-                </div>
-
-                <div class="col col-11 offset-1 pull-4">
-                    <div class="expert-blog-post-details">
-                        <a href="REPLACE" class="event-title">Helicopter Parent or ADHD Advocate?</a>
-                        <p class="post-meta">Posted by <a href="REPLACE" class="author">Robert Cunningham</a> on Jun 26, 2013</p>
-                        <p class="excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi en&hellip; <a href="REPLACE">Read more</a></p>
-                        <div class="blog-shapes">
-                            <i class="child-a"></i>
-                            <i class="child-c"></i>
+                        <div class="col col-6 offset-1">
+                            <div class="expert-blog-post-image">
+                                <asp:HyperLink ID="hypImageLink" runat="server"></asp:HyperLink>
+                            </div>
+                            <!-- /.expert-blog-post-image -->
                         </div>
-                    </div>
-                    <!-- /.expert-blog-post-details -->
-                </div>
-                <!-- /.col -->
+                        <!-- /.col -->
 
-            </div>
-            <!-- /.row -->
-
-            <div class="row expert-blog-post rs_read_this">
-
-                <div class="col col-6 offset-1">
-                    <div class="expert-blog-post-image">
-                        <a href="REPLACE">
-                            <img alt="FPO content image" src="http://placehold.it/230x129&amp;text=230x129" /></a>
-                    </div>
-                    <!-- /.expert-blog-post-image -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col col-3 push-13">
-                    <div class="expert-blog-post-type">
-                        <h4>72</h4>
-                        <p class="comments">Comments</p>
-                    </div>
-                    <!-- /.expert-blog-post-type -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col col-1 push-9 border-col">
-                    <div>&nbsp;</div>
-                </div>
-
-                <div class="col col-11 offset-1 pull-4">
-                    <div class="expert-blog-post-details">
-                        <a href="REPLACE" class="event-title">Helicopter Parent or ADHD Advocate?</a>
-                        <p class="post-meta">Posted by <a href="REPLACE" class="author">Robert Cunningham</a> on Jun 26, 2013</p>
-                        <p class="excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi en&hellip; <a href="REPLACE">Read more</a></p>
-                        <div class="blog-shapes">
-                            <i class="child-b"></i>
+                        <div class="col col-3 push-13">
+                            <div class="expert-blog-post-type">
+                                <h4><asp:Literal ID="litCommentCount" runat="server"></asp:Literal></h4>
+                                <p class="comments"><%= UnderstoodDotOrg.Common.DictionaryConstants.CommentsLabel %></p>
+                            </div>
+                            <!-- /.expert-blog-post-type -->
                         </div>
+                        <!-- /.col -->
+
+                        <div class="col col-1 push-9 border-col">
+                            <div>&nbsp;</div>
+                        </div>
+
+                        <div class="col col-11 offset-1 pull-4">
+                            <div class="expert-blog-post-details">
+                                <a href="REPLACE" class="event-title"><asp:Literal ID="litArticleTitle" runat="server"></asp:Literal></a>
+                                <p class="post-meta">Posted by <asp:HyperLink ID="hypAuthor" runat="server"></asp:HyperLink> on <asp:Literal ID="litDatePosted" runat="server"></asp:Literal></p>
+                                <p class="excerpt"><asp:Literal ID="litAbstract" runat="server"></asp:Literal> <asp:Hyperlink ID="hypReadMore" runat="server">Read More</asp:Hyperlink></p>
+                                <udo:ArticleRecommendationIcons ID="articleRecommendationIcons" runat="server" />
+                            </div>
+                            <!-- /.expert-blog-post-details -->
+                        </div>
+                        <!-- /.col -->
                     </div>
-                    <!-- /.expert-blog-post-details -->
-                </div>
-                <!-- /.col -->
+                </ItemTemplate>
+                <FooterTemplate>
 
-            </div>
-            <!-- /.row -->
-
+                </FooterTemplate>
+            </asp:Repeater>
         </div>
         <!-- /.expert-blog-post-container -->
 
-        <div class="row blog-shapes">
+       <%-- <div class="row blog-shapes">
             <!-- BEGIN PARTIAL: children-key -->
             <div class="container child-content-indicator ">
                 <!-- Key -->
@@ -160,7 +124,7 @@
             </div>
             <!-- .child-content-indicator -->
             <!-- END PARTIAL: children-key -->
-        </div>
+        </div>--%>
         <!-- /.row /.shapes -->
 
     </div>

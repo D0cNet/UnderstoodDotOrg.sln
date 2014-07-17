@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
@@ -89,6 +90,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
             rptrSubjects.DataSource = subjects;
             rptrSubjects.DataBind();
+
+            litNumReviews.Text = CSMUserReviewExtensions.GetReviews(Model.ID.ToGuid()).Count().ToString();
         }
     }
 }
