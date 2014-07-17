@@ -563,7 +563,7 @@
 }
 /* line 150, ../css.source/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz .correctness-headline span.correct-incorrect {
-  background-image: url('../images/sprite.knowledge-quiz.correct-incorrect.png?1404390952');
+  background-image: url('../images/sprite.knowledge-quiz.correct-incorrect.png?b7a55a7c');
   background-repeat: no-repeat;
   width: 32px;
   height: 27px;
@@ -596,7 +596,7 @@
 }
 /* line 176, ../css.source/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz div.results-indicators span.results-indicator {
-  background-image: url('../images/sprite.knowledge-quiz.results-indicator.png?1404390952');
+  background-image: url('../images/sprite.knowledge-quiz.results-indicator.png?d91b974a');
   background-repeat: no-repeat;
   width: 40px;
   height: 40px;
@@ -605,7 +605,7 @@
 }
 /* line 178, ../css.source/modules/decision-lite/_dl-quiz.scss */
 .no-backgroundsize .dl-quiz div.results-indicators span.results-indicator {
-  background-image: url('../images/sprite.knowledge-quiz.results-indicator.lo-res.png?1404390952');
+  background-image: url('../images/sprite.knowledge-quiz.results-indicator.lo-res.png?4b222f86');
 }
 /* line 186, ../css.source/modules/decision-lite/_dl-quiz.scss */
 .dl-quiz div.results-indicators span.results-indicator.correct {

@@ -11,7 +11,7 @@
 
 /* line 8, ../../../css.source/simulations/executive/game.scss */
 #gameboard.executive_game .SSGame_modal_standalone_decoration {
-  background-image: url('../../../images/simulations/executive/desktop/standalone_icon.png?1404354095');
+  background-image: url('../../../images/simulations/executive/desktop/standalone_icon.png?1a3a7b4a');
 }
 
 /* line 12, ../../../css.source/simulations/executive/game.scss */
@@ -151,14 +151,14 @@
   background-color: blue;
   z-index: 5;
   cursor: pointer;
-  background: url('../../../images/simulations/executive/desktop/paddle_purple.png?1401924832') no-repeat 0 -4px;
+  background: url('../../../images/simulations/executive/desktop/paddle_purple.png?6ffa5032') no-repeat 0 -4px;
 }
 
 /* line 120, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_trap {
   width: 60px;
   height: 27px;
-  background: url('../../../images/simulations/executive/phone/paddle_purple.png?1401924832') no-repeat 0 -4px;
+  background: url('../../../images/simulations/executive/phone/paddle_purple.png?60810b3e') no-repeat 0 -4px;
 }
 
 /* line 125, ../../../css.source/simulations/executive/game.scss */
@@ -168,13 +168,13 @@
   width: 116px;
   height: 5px;
   z-index: 2;
-  background: url('../../../images/simulations/executive/desktop/paddle_purple.png?1401924832') no-repeat 0 0;
+  background: url('../../../images/simulations/executive/desktop/paddle_purple.png?6ffa5032') no-repeat 0 0;
 }
 
 /* line 133, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_trap_rear {
   bottom: 25px;
-  background: url('../../../images/simulations/executive/phone/paddle_purple.png?1401924832') no-repeat 0 0;
+  background: url('../../../images/simulations/executive/phone/paddle_purple.png?60810b3e') no-repeat 0 0;
 }
 
 /* line 138, ../../../css.source/simulations/executive/game.scss */
@@ -200,22 +200,22 @@
 
 /* line 152, ../../../css.source/simulations/executive/game.scss */
 #executive_trap .bg_red, #executive_trap_rear .bg_red {
-  background-image: url('../../../images/simulations/executive/desktop/paddle_red.png?1401924832');
+  background-image: url('../../../images/simulations/executive/desktop/paddle_red.png?9c8d95b8');
 }
 
 /* line 155, ../../../css.source/simulations/executive/game.scss */
 #executive_trap .bg_green, #executive_trap_rear .bg_green {
-  background-image: url('../../../images/simulations/executive/desktop/paddle_green.png?1401924832');
+  background-image: url('../../../images/simulations/executive/desktop/paddle_green.png?02311853');
 }
 
 /* line 158, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_trap .bg_red, .breakpoint_phone #executive_trap_rear .bg_red {
-  background-image: url('../../../images/simulations/executive/phone/paddle_red.png?1401924832');
+  background-image: url('../../../images/simulations/executive/phone/paddle_red.png?477c6bc2');
 }
 
 /* line 161, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone #executive_trap .bg_green, .breakpoint_phone #executive_trap_rear .bg_green {
-  background-image: url('../../../images/simulations/executive/phone/paddle_green.png?1401924832');
+  background-image: url('../../../images/simulations/executive/phone/paddle_green.png?f46ddde1');
 }
 
 /* line 165, ../../../css.source/simulations/executive/game.scss */
@@ -245,42 +245,42 @@
 
 /* line 182, ../../../css.source/simulations/executive/game.scss */
 .executive_circle {
-  background-image: url('../../../images/simulations/executive/desktop/executive_circles.png?1401924832');
+  background-image: url('../../../images/simulations/executive/desktop/executive_circles.png?e95d3b45');
 }
 
 /* line 185, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone .executive_circle {
-  background-image: url('../../../images/simulations/executive/phone/executive_circles.png?1401924832');
+  background-image: url('../../../images/simulations/executive/phone/executive_circles.png?285fcf46');
 }
 
 /* line 188, ../../../css.source/simulations/executive/game.scss */
 .executive_square {
-  background-image: url('../../../images/simulations/executive/desktop/executive_squares.png?1401924832');
+  background-image: url('../../../images/simulations/executive/desktop/executive_squares.png?2fcdff55');
 }
 
 /* line 191, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone .executive_square {
-  background-image: url('../../../images/simulations/executive/phone/executive_squares.png?1401924832');
+  background-image: url('../../../images/simulations/executive/phone/executive_squares.png?337a89c2');
 }
 
 /* line 194, ../../../css.source/simulations/executive/game.scss */
 .executive_star {
-  background-image: url('../../../images/simulations/executive/desktop/executive_stars.png?1401924832');
+  background-image: url('../../../images/simulations/executive/desktop/executive_stars.png?5b7f3989');
 }
 
 /* line 197, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone .executive_star {
-  background-image: url('../../../images/simulations/executive/phone/executive_stars.png?1401924832');
+  background-image: url('../../../images/simulations/executive/phone/executive_stars.png?6f3912a6');
 }
 
 /* line 200, ../../../css.source/simulations/executive/game.scss */
 .executive_triangle {
-  background-image: url('../../../images/simulations/executive/desktop/executive_triangles.png?1401924832');
+  background-image: url('../../../images/simulations/executive/desktop/executive_triangles.png?574970e3');
 }
 
 /* line 203, ../../../css.source/simulations/executive/game.scss */
 .breakpoint_phone .executive_triangle {
-  background-image: url('../../../images/simulations/executive/phone/executive_triangles.png?1401924832');
+  background-image: url('../../../images/simulations/executive/phone/executive_triangles.png?51569fab');
 }
 
 /* line 207, ../../../css.source/simulations/executive/game.scss */

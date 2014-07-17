@@ -151,7 +151,7 @@
 .tool-related-articles-wrap ul li,
 .assistive-tool-related-articles-small ul li,
 .behavior-tool-related-articles-small ul li {
-  background-image: url('../images/icon.tools.related-articles.png?1404390952');
+  background-image: url('../images/icon.tools.related-articles.png?edeff317');
   background-size: 15px 20px;
   background-repeat: no-repeat;
   background-position: 0;
@@ -171,7 +171,7 @@
 .no-backgroundsize .tool-related-articles-wrap ul li, .no-backgroundsize
 .assistive-tool-related-articles-small ul li, .no-backgroundsize
 .behavior-tool-related-articles-small ul li {
-  background-image: url('../images/icon.tools.related-articles.lo-res.png?1404390952');
+  background-image: url('../images/icon.tools.related-articles.lo-res.png?12c21c33');
 }
 /* line 68, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .tool-related-articles-wrap ul li a,
@@ -1013,14 +1013,14 @@
 /* line 200, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .icon-advice-like,
 .advice-results .tip-comment {
-  background-image: url('../images/sprite.advice.results.png?1404390952');
+  background-image: url('../images/sprite.advice.results.png?d0502cf2');
   background-size: 86px 29px;
   display: inline-block;
 }
 /* line 205, ../css.source/modules/behavior-tool/_advice-results.scss */
 .no-backgroundsize .advice-results .icon-advice-like, .no-backgroundsize
 .advice-results .tip-comment {
-  background-image: url('../images/sprite.advice.results.lo-res.png?1404390952');
+  background-image: url('../images/sprite.advice.results.lo-res.png?dfe3fbf7');
 }
 /* line 210, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .tip-comment {
@@ -1057,22 +1057,22 @@
 /* line 238, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save:focus i.icon-advice-save, .advice-results .result-hover .tip-remind-me:focus i.icon-advice-save {
   margin-top: 5px;
-  background: url('../images/sprite.icons.article-tips.png?1404390952') 0px -35px no-repeat;
+  background: url('../images/sprite.icons.article-tips.png?59038a1e') 0px -35px no-repeat;
   background-size: 145px 145px;
 }
 /* line 243, ../css.source/modules/behavior-tool/_advice-results.scss */
 .no-backgroundsize .advice-results .result-hover .tip-save:focus i.icon-advice-save, .no-backgroundsize .advice-results .result-hover .tip-remind-me:focus i.icon-advice-save {
-  background-image: url('../images/sprite.icons.article-tips.145.png?1404390952');
+  background-image: url('../images/sprite.icons.article-tips.145.png?f7770ff5');
 }
 /* line 248, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save:focus i.icon-advice-bell, .advice-results .result-hover .tip-remind-me:focus i.icon-advice-bell {
   margin-top: 4px;
-  background: url('../images/sprite.icons.article-tips.png?1404390952') -46px -35px no-repeat;
+  background: url('../images/sprite.icons.article-tips.png?59038a1e') -46px -35px no-repeat;
   background-size: 145px 145px;
 }
 /* line 253, ../css.source/modules/behavior-tool/_advice-results.scss */
 .no-backgroundsize .advice-results .result-hover .tip-save:focus i.icon-advice-bell, .no-backgroundsize .advice-results .result-hover .tip-remind-me:focus i.icon-advice-bell {
-  background-image: url('../images/sprite.icons.article-tips.145.png?1404390952');
+  background-image: url('../images/sprite.icons.article-tips.145.png?f7770ff5');
 }
 /* line 261, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-save, .advice-results .result-hover .tip-save i.icon-advice-bell, .advice-results .result-hover .tip-remind-me i.icon-advice-save, .advice-results .result-hover .tip-remind-me i.icon-advice-bell {
@@ -1090,7 +1090,7 @@
 .advice-results .result-hover .tip-remind-me i.icon-advice-save.active,
 .advice-results .result-hover .tip-remind-me i.icon-advice-bell,
 .advice-results .result-hover .tip-remind-me i.icon-advice-bell.active {
-  background-image: url('../images/sprite.icons.article-tips.png?1404390952');
+  background-image: url('../images/sprite.icons.article-tips.png?59038a1e');
   background-repeat: no-repeat;
   background-size: 145px 145px;
 }
@@ -1102,7 +1102,7 @@
 .advice-results .result-hover .tip-remind-me i.icon-advice-save.active, .no-backgroundsize
 .advice-results .result-hover .tip-remind-me i.icon-advice-bell, .no-backgroundsize
 .advice-results .result-hover .tip-remind-me i.icon-advice-bell.active {
-  background-image: url('../images/sprite.icons.article-tips.145.png?1404390952');
+  background-image: url('../images/sprite.icons.article-tips.145.png?f7770ff5');
 }
 /* line 286, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .result-hover .tip-save i.icon-advice-save, .advice-results .result-hover .tip-remind-me i.icon-advice-save {
@@ -1146,7 +1146,7 @@
 }
 /* line 335, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .icon-results-more {
-  background-image: url('../images/sprite.icon.arrows.png?1404390952');
+  background-image: url('../images/sprite.icon.arrows.png?d45175d1');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150px 150px;
@@ -1223,7 +1223,7 @@
 }
 /* line 401, ../css.source/modules/behavior-tool/_advice-results.scss */
 .advice-results .icon-tooltip {
-  background-image: url('../images/sprite.tooltip.info.png?1404390952');
+  background-image: url('../images/sprite.tooltip.info.png?77537a01');
   background-size: 44px 22px;
   cursor: pointer;
   display: inline-block;
@@ -1464,7 +1464,7 @@
 }
 /* line 3, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading h3 {
-  background-image: url('../images/icon.book.read-me.png?1404390952');
+  background-image: url('../images/icon.book.read-me.png?928d1cee');
   background-repeat: no-repeat;
   background-size: contain;
   height: 34px;
@@ -1484,7 +1484,7 @@
 }
 /* line 18, ../css.source/modules/article/_keep-reading.scss */
 .no-backgroundsize .keep-reading h3 {
-  background-image: url('../images/icon.book.read-me.lo-res.png?1404390952');
+  background-image: url('../images/icon.book.read-me.lo-res.png?1724919e');
 }
 /* line 23, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading ul {

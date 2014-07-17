@@ -15,7 +15,7 @@ http://uniformjs.com/
 /* General settings */
 /* line 174, ../css.source/vendor/uniform-base.scss */
 div.selector, div.selector span, div.checker span, div.radio span, div.uploader, div.uploader span.action, div.button, div.button span {
-  background-image: url(../images/sprite.uniform.600.png?1404390952);
+  background-image: url(../images/sprite.uniform.600.png?62e97178);
   background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
 }
@@ -692,7 +692,7 @@ input.uniform-input, input.uniform-input:focus {
 @media only screen and (min-resolution: 124dpi), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 4 / 3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx) {
   /* line 56, ../css.source/vendor/uniform-base.scss */
   div.selector, div.selector span, div.checker span, div.radio span, div.uploader, div.uploader span.action, div.button, div.button span {
-    background-image: url(../images/sprite.uniform.1200.png?1404390952);
+    background-image: url(../images/sprite.uniform.1200.png?27d7788d);
     background-size: 600px;
   }
 

@@ -20,13 +20,13 @@
   top: 0;
   width: 96px;
   height: 100px;
-  background-image: url('../images/icon.planner.png?1404390952');
+  background-image: url('../images/icon.planner.png?0156a8c2');
   background-size: 88px auto;
   background-repeat: no-repeat;
 }
 /* line 18, ../css.source/modules/support/_support-header.scss */
 .no-backgroundsize .page-topic.support .title-wrapper:before {
-  background-image: url('../images/icon.planner.lo-res.png?1404390952');
+  background-image: url('../images/icon.planner.lo-res.png?13a1247b');
 }
 /* line 22, ../css.source/modules/support/_support-header.scss */
 .page-topic.support .title-wrapper h1 {
@@ -444,7 +444,7 @@
 }
 /* line 113, ../css.source/modules/support/_issues-recommended.scss */
 .issues-recommended-modal .modal-close {
-  background: url('../images/icon.close.overlay.44.png?1404390952') 0 2px no-repeat;
+  background: url('../images/icon.close.overlay.44.png?8df3ed84') 0 2px no-repeat;
   background-size: 16px 36px;
   color: #696969;
   cursor: pointer;
@@ -466,7 +466,7 @@
 }
 /* line 133, ../css.source/modules/support/_issues-recommended.scss */
 .no-backgroundsize .issues-recommended-modal .modal-close {
-  background-image: url('../images/icon.close.overlay.16.png?1404390952');
+  background-image: url('../images/icon.close.overlay.16.png?8d29d0bf');
 }
 @media (min-width: 650px), print {
   /* line 113, ../css.source/modules/support/_issues-recommended.scss */
@@ -485,7 +485,7 @@
   }
   /* line 149, ../css.source/modules/support/_issues-recommended.scss */
   .no-backgroundsize .issues-recommended-modal .modal-close {
-    background-image: url('../images/icon.close.overlay.22.png?1404390952');
+    background-image: url('../images/icon.close.overlay.22.png?79e7ebd7');
   }
 }
 /* line 156, ../css.source/modules/support/_issues-recommended.scss */
@@ -682,7 +682,7 @@
   left: 0px;
   width: 17px;
   height: 68px;
-  background: url('../images/icon.my.goals.mobile.png?1404390952');
+  background: url('../images/icon.my.goals.mobile.png?716cea2c');
   background-repeat: no-repeat;
   background-color: white;
   background-position: 0 8px;
@@ -691,7 +691,7 @@
 }
 /* line 69, ../css.source/modules/support/_my-goals.scss */
 .no-backgroundsize .action-plan-graph-wrapper .my-goals h3:before {
-  background-image: url('../images/icon.my.goals.mobile.lowres.png?1404390952');
+  background-image: url('../images/icon.my.goals.mobile.lowres.png?206e6ad8');
   background-position: 0 8px;
 }
 @media (min-width: 650px), print {
@@ -700,13 +700,13 @@
     padding: 0;
     z-index: 0;
     height: 96px;
-    background: url('../images/icon.my.goals.png?1404390952');
+    background: url('../images/icon.my.goals.png?db241258');
     background-repeat: no-repeat;
     background-size: 19px;
   }
   /* line 80, ../css.source/modules/support/_my-goals.scss */
   .no-backgroundsize .action-plan-graph-wrapper .my-goals h3:before {
-    background-image: url('../images/icon.my.goals.lowres.png?1404390952');
+    background-image: url('../images/icon.my.goals.lowres.png?f9c34a82');
     background-position: 0 8px;
   }
 }
@@ -728,14 +728,14 @@
   position: absolute;
   bottom: -16px;
   right: -3px;
-  background: url('../images/icon.graph-axis-arrow.png?1404390952');
+  background: url('../images/icon.graph-axis-arrow.png?1afbed00');
   background-size: 14px 27px;
   height: 27px;
   width: 14px;
 }
 /* line 106, ../css.source/modules/support/_my-goals.scss */
 .no-backgroundsize .action-plan-graph-wrapper .graph-wrapper:after {
-  background-image: url('../images/icon.graph-axis-arrow.lo-res.png?1404390952');
+  background-image: url('../images/icon.graph-axis-arrow.lo-res.png?c7be3ba2');
 }
 /* line 110, ../css.source/modules/support/_my-goals.scss */
 .action-plan-graph-wrapper .graph-wrapper .grid-background {
@@ -1571,14 +1571,14 @@
 }
 /* line 146, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done .status:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -9px -4px;
   background-size: 168.5px;
 }
 /* line 151, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.done .status:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: 0px -4px;
 }
 /* line 156, ../css.source/modules/support/_help-list.scss */
@@ -1599,14 +1599,14 @@
 }
 /* line 170, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .skip-this:before, .help-list .list-element-wrapper.done.hover .skip-this:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -88px -83px;
   background-size: 168.5px;
 }
 /* line 175, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.done.accessibility .skip-this:before, .no-backgroundsize .help-list .list-element-wrapper.done.hover .skip-this:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -80px -83px;
 }
 /* line 180, ../css.source/modules/support/_help-list.scss */
@@ -1615,14 +1615,14 @@
 }
 /* line 182, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.done.accessibility .skip-this:hover:before, .help-list .list-element-wrapper.done.hover .skip-this:hover:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -88px -44px;
   background-size: 168.5px;
 }
 /* line 187, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.done.accessibility .skip-this:hover:before, .no-backgroundsize .help-list .list-element-wrapper.done.hover .skip-this:hover:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -80px -44px;
 }
 /* line 194, ../css.source/modules/support/_help-list.scss */
@@ -1647,14 +1647,14 @@
 }
 /* line 210, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped .status:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -88px -4px;
   background-size: 168.5px;
 }
 /* line 215, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.skipped .status:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -68px -4px;
 }
 /* line 221, ../css.source/modules/support/_help-list.scss */
@@ -1671,26 +1671,26 @@
 }
 /* line 229, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped.hover .done-this:before, .help-list .list-element-wrapper.skipped.accessibility .done-this:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -48px -83px;
   background-size: 168.5px;
 }
 /* line 234, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.skipped.hover .done-this:before, .no-backgroundsize .help-list .list-element-wrapper.skipped.accessibility .done-this:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -42px -78px;
 }
 /* line 239, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper.skipped.hover .done-this:hover:before, .help-list .list-element-wrapper.skipped.accessibility .done-this:hover:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -8px -44px;
   background-size: 168.5px;
 }
 /* line 244, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper.skipped.hover .done-this:hover:before, .no-backgroundsize .help-list .list-element-wrapper.skipped.accessibility .done-this:hover:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -2px -38px;
 }
 /* line 252, ../css.source/modules/support/_help-list.scss */
@@ -1725,26 +1725,26 @@
 }
 /* line 278, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .done-this:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -48px -4px;
   background-size: 168.5px;
 }
 /* line 283, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .done-this:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -42px 4px;
 }
 /* line 288, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .done-this:hover:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -48px -44px;
   background-size: 168.5px;
 }
 /* line 293, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .done-this:hover:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -43px -36px;
 }
 /* line 299, ../css.source/modules/support/_help-list.scss */
@@ -1755,26 +1755,26 @@
 }
 /* line 303, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .start-over:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -128px -44px;
   background-size: 168.5px;
 }
 /* line 308, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .start-over:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -125px -44px;
 }
 /* line 313, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .start-over:hover:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -128px -4px;
   background-size: 168.5px;
 }
 /* line 318, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .start-over:hover:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -125px -4px;
 }
 /* line 324, ../css.source/modules/support/_help-list.scss */
@@ -1788,14 +1788,14 @@
 }
 /* line 331, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .skip-this:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -88px -4px;
   background-size: 168.5px;
 }
 /* line 336, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .skip-this:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -83px -4px;
 }
 /* line 341, ../css.source/modules/support/_help-list.scss */
@@ -1804,14 +1804,14 @@
 }
 /* line 343, ../css.source/modules/support/_help-list.scss */
 .help-list .list-element-wrapper .skip-this:hover:before {
-  background: url('../images/sprite.support.plan.png?1404390952');
+  background: url('../images/sprite.support.plan.png?3438f191');
   background-repeat: no-repeat;
   background-position: -88px -44px;
   background-size: 168.5px;
 }
 /* line 348, ../css.source/modules/support/_help-list.scss */
 .no-backgroundsize .help-list .list-element-wrapper .skip-this:hover:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -83px -44px;
 }
 
@@ -2009,7 +2009,7 @@
 }
 /* line 119, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content dt .count {
-  background-image: url('../images/icon.circle.white.90x90.png?1404390952');
+  background-image: url('../images/icon.circle.white.90x90.png?ac7a587f');
   background-color: transparent;
 }
 /* line 126, ../css.source/modules/support/_help-action-content.scss */
@@ -2085,7 +2085,7 @@
 }
 /* line 174, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this:before {
-  background: url('../images/sprite.support.helptoolbar.png?1404390952');
+  background: url('../images/sprite.support.helptoolbar.png?27230fd7');
   background-repeat: no-repeat;
   background-position: -2px -4px;
   background-size: 56px;
@@ -2093,7 +2093,7 @@
 }
 /* line 180, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.done-this:before {
-  background-image: url('../images/sprite.support.helptoolbar.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.helptoolbar.lowres.png?40768af5');
   background-position: -2px -4px;
 }
 /* line 185, ../css.source/modules/support/_help-action-content.scss */
@@ -2102,14 +2102,14 @@
 }
 /* line 187, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.done-this:hover:before {
-  background: url('../images/sprite.support.helptoolbar.png?1404390952');
+  background: url('../images/sprite.support.helptoolbar.png?27230fd7');
   background-repeat: no-repeat;
   background-position: -2px -34px;
   background-size: 56px;
 }
 /* line 192, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.done-this:hover:before {
-  background-image: url('../images/sprite.support.helptoolbar.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.helptoolbar.lowres.png?40768af5');
   background-position: -2px -34px;
 }
 /* line 199, ../css.source/modules/support/_help-action-content.scss */
@@ -2125,7 +2125,7 @@
 }
 /* line 205, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:before {
-  background: url('../images/sprite.support.helptoolbar.png?1404390952');
+  background: url('../images/sprite.support.helptoolbar.png?27230fd7');
   background-repeat: no-repeat;
   background-position: -28px -4px;
   background-size: 56px;
@@ -2133,7 +2133,7 @@
 }
 /* line 211, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.skip-this:before {
-  background-image: url('../images/sprite.support.helptoolbar.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.helptoolbar.lowres.png?40768af5');
   background-position: -28px -4px;
 }
 /* line 216, ../css.source/modules/support/_help-action-content.scss */
@@ -2142,14 +2142,14 @@
 }
 /* line 218, ../css.source/modules/support/_help-action-content.scss */
 .help-action-content .get-help-toolbar li.skip-this:hover:before {
-  background: url('../images/sprite.support.helptoolbar.png?1404390952');
+  background: url('../images/sprite.support.helptoolbar.png?27230fd7');
   background-repeat: no-repeat;
   background-position: -28px -34px;
   background-size: 56px;
 }
 /* line 223, ../css.source/modules/support/_help-action-content.scss */
 .no-backgroundsize .help-action-content .get-help-toolbar li.skip-this:hover:before {
-  background-image: url('../images/sprite.support.helptoolbar.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.helptoolbar.lowres.png?40768af5');
   background-position: -28px -34px;
 }
 /* line 229, ../css.source/modules/support/_help-action-content.scss */
@@ -2808,7 +2808,7 @@
   position: absolute;
   width: 24px;
   height: 17px;
-  background: url('../images/sprite.icons.article-tips.png?1404390952');
+  background: url('../images/sprite.icons.article-tips.png?59038a1e');
   background-repeat: no-repeat;
 }
 @media (min-width: 480px), print {
@@ -2825,7 +2825,7 @@
 }
 /* line 260, ../css.source/modules/support/_action-plan-toolbar.scss */
 .no-backgroundsize .toolbar-wrapper .action-toolbar li:before {
-  background-image: url('../images/sprite.icons.article-tips.145.png?1404390952');
+  background-image: url('../images/sprite.icons.article-tips.145.png?f7770ff5');
 }
 /* line 264, ../css.source/modules/support/_action-plan-toolbar.scss */
 .toolbar-wrapper .action-toolbar li.my-progress {
@@ -3045,7 +3045,7 @@
 }
 /* line 60, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li.completed:before, .activity-topic-wrapper .topics li.key-completed:before, .print-activity-key li.completed:before, .print-activity-key li.key-completed:before {
-  background: url('../images/sprite.print.plan.png?1404390952');
+  background: url('../images/sprite.print.plan.png?ef5ed1ea');
   background-repeat: no-repeat;
   background-position: 0px -1px;
   background-size: 26px;
@@ -3053,7 +3053,7 @@
 @media (min-width: 650px), print {
   /* line 60, ../css.source/modules/support/_print-activity-topic.scss */
   .activity-topic-wrapper .topics li.completed:before, .activity-topic-wrapper .topics li.key-completed:before, .print-activity-key li.completed:before, .print-activity-key li.key-completed:before {
-    background: url('../images/sprite.support.plan.png?1404390952');
+    background: url('../images/sprite.support.plan.png?3438f191');
     background-repeat: no-repeat;
     background-position: -48px -4px;
     background-size: 168.5px;
@@ -3061,12 +3061,12 @@
 }
 /* line 71, ../css.source/modules/support/_print-activity-topic.scss */
 .no-backgroundsize .activity-topic-wrapper .topics li.completed:before, .no-backgroundsize .activity-topic-wrapper .topics li.key-completed:before, .no-backgroundsize .print-activity-key li.completed:before, .no-backgroundsize .print-activity-key li.key-completed:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -44px -4px;
 }
 /* line 78, ../css.source/modules/support/_print-activity-topic.scss */
 .activity-topic-wrapper .topics li.skipped:before, .activity-topic-wrapper .topics li.key-skipped:before, .print-activity-key li.skipped:before, .print-activity-key li.key-skipped:before {
-  background: url('../images/sprite.print.plan.png?1404390952');
+  background: url('../images/sprite.print.plan.png?ef5ed1ea');
   background-repeat: no-repeat;
   background-position: 0px -29px;
   background-size: 26px;
@@ -3074,7 +3074,7 @@
 @media (min-width: 650px), print {
   /* line 78, ../css.source/modules/support/_print-activity-topic.scss */
   .activity-topic-wrapper .topics li.skipped:before, .activity-topic-wrapper .topics li.key-skipped:before, .print-activity-key li.skipped:before, .print-activity-key li.key-skipped:before {
-    background: url('../images/sprite.support.plan.png?1404390952');
+    background: url('../images/sprite.support.plan.png?3438f191');
     background-repeat: no-repeat;
     background-position: -88px -4px;
     background-size: 168.5px;
@@ -3082,7 +3082,7 @@
 }
 /* line 89, ../css.source/modules/support/_print-activity-topic.scss */
 .no-backgroundsize .activity-topic-wrapper .topics li.skipped:before, .no-backgroundsize .activity-topic-wrapper .topics li.key-skipped:before, .no-backgroundsize .print-activity-key li.skipped:before, .no-backgroundsize .print-activity-key li.key-skipped:before {
-  background-image: url('../images/sprite.support.plan.lowres.png?1404390952');
+  background-image: url('../images/sprite.support.plan.lowres.png?90938fcd');
   background-position: -83px -4px;
 }
 
@@ -3435,14 +3435,14 @@
 }
 /* line 240, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-comment, .account-notification-tabs i.icon-notification-reminder, .account-notification-tabs i.icon-notification-link {
-  background-image: url('../images/sprite.icon.notifications.png?1404390952');
+  background-image: url('../images/sprite.icon.notifications.png?16484451');
   background-size: 57px 19px;
   display: inline-block;
   height: 18px;
 }
 /* line 245, ../css.source/modules/account/_account-notification-tabs.scss */
 .no-backgroundsize .account-notification-tabs i.icon-notification-comment, .no-backgroundsize .account-notification-tabs i.icon-notification-reminder, .no-backgroundsize .account-notification-tabs i.icon-notification-link {
-  background-image: url('../images/sprite.icon.notifications.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.notifications.lo-res.png?d81aaaa4');
 }
 /* line 250, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-comment {
@@ -3460,7 +3460,7 @@
 }
 /* line 261, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-results-more {
-  background-image: url('../images/sprite.icon.arrows.png?1404390952');
+  background-image: url('../images/sprite.icon.arrows.png?d45175d1');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150px 150px;
@@ -3706,7 +3706,7 @@
 .account-notification-tabs .showmore-footer a i {
   width: 18px;
   height: 11px;
-  background: url('../images/sprite.icon.arrows.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.icon.arrows.png?d45175d1') 0 0 no-repeat;
   background-size: 150px 150px;
 }
 
@@ -3964,7 +3964,7 @@
   height: 41px;
   top: 13px;
   left: 40px;
-  background-image: url('../images/sprite.icon.reco.play-button.png?1404390952');
+  background-image: url('../images/sprite.icon.reco.play-button.png?1d13524b');
   background-size: 41px auto;
   background-repeat: no-repeat;
   display: block;
@@ -3972,7 +3972,7 @@
 }
 /* line 74, ../css.source/modules/_additional-recommendations.scss */
 .no-backgroundsize .additional-recommendations .recommendations-promos .thumb .play:after {
-  background-image: url('../images/sprite.icon.reco.play-button.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.reco.play-button.lo-res.png?0c10e910');
 }
 @media (min-width: 650px), print {
   /* line 62, ../css.source/modules/_additional-recommendations.scss */
@@ -4059,14 +4059,14 @@
   font-size: 1.5rem;
   padding-top: 105px;
   background-size: 114px auto;
-  background-image: url('../images/icon.recommendations.parenting.coach.png?1404390952');
+  background-image: url('../images/icon.recommendations.parenting.coach.png?60848426');
   background-position: center top;
   background-repeat: no-repeat;
   margin-bottom: 10px;
 }
 /* line 161, ../css.source/modules/_additional-recommendations.scss */
 .no-backgroundsize .additional-recommendations .related-tool .tool-name {
-  background-image: url('../images/icon.recommendations.parenting.coach.lo-res.png?1404390952');
+  background-image: url('../images/icon.recommendations.parenting.coach.lo-res.png?ddd1e3f5');
 }
 /* line 167, ../css.source/modules/_additional-recommendations.scss */
 .additional-recommendations .child-content-indicator {
@@ -4155,14 +4155,14 @@
   font-size: 2rem;
   color: #7a4183;
   text-align: center;
-  background-image: url('../images/icon.circle.110x110.png?1404390952');
+  background-image: url('../images/icon.circle.110x110.png?f1397eb8');
   background-size: 55px auto;
   background-repeat: no-repeat;
   font-weight: 700;
 }
 /* line 59, ../css.source/modules/_landing.scss */
 .no-backgroundsize .col.recommendations-usage dt .count {
-  background-image: url('../images/icon.circle.55x55.png?1404390952');
+  background-image: url('../images/icon.circle.55x55.png?6680b6b3');
 }
 /* line 65, ../css.source/modules/_landing.scss */
 .col.recommendations-usage dd {

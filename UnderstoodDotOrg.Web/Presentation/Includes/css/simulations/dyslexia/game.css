@@ -15,7 +15,7 @@
 
 /* line 12, ../../../css.source/simulations/dyslexia/game.scss */
 #gameboard.dyslexia_game .SSGame_modal_standalone_decoration {
-  background-image: url('../../../images/simulations/dyslexia/desktop/standalone_icon.png?1404354095');
+  background-image: url('../../../images/simulations/dyslexia/desktop/standalone_icon.png?2e3a67f0');
 }
 
 /* line 16, ../../../css.source/simulations/dyslexia/game.scss */
@@ -136,14 +136,14 @@
 .thumbsup {
   width: 52px;
   height: 52px;
-  background: url('../../../images/simulations/dyslexia/desktop/thumbs_up.png?1398292479') no-repeat;
+  background: url('../../../images/simulations/dyslexia/desktop/thumbs_up.png?49b2c7f4') no-repeat;
 }
 
 /* line 112, ../../../css.source/simulations/dyslexia/game.scss */
 .thumbsdown {
   width: 52px;
   height: 52px;
-  background: url('../../../images/simulations/dyslexia/desktop/thumbs_down.png?1398292479') no-repeat;
+  background: url('../../../images/simulations/dyslexia/desktop/thumbs_down.png?6a32bab0') no-repeat;
 }
 
 /* line 119, ../../../css.source/simulations/dyslexia/game.scss */

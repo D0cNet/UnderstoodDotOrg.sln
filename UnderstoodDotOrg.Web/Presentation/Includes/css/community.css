@@ -13,7 +13,7 @@
 
 /* line 6, ../css.source/modules/community/_community.scss */
 .search-button {
-  background: url('../images/sprite.icon.search.32.png?1404390952') 50% 2px no-repeat;
+  background: url('../images/sprite.icon.search.32.png?fa93fad1') 50% 2px no-repeat;
   background-size: 16px 41px;
   border: 0;
   float: right;
@@ -24,7 +24,7 @@
 }
 /* line 16, ../css.source/modules/community/_community.scss */
 .no-backgroundsize .search-button {
-  background-image: url('../images/sprite.icon.search.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.search.lo-res.png?ffa3839f');
 }
 
 /* line 22, ../css.source/modules/community/_community.scss */
@@ -3739,14 +3739,14 @@ div.selector.fixedWidth {
 }
 /* line 2099, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i {
-  background: url('../images/sprite.btn.thanks.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.thanks.png?3e08b1a4') 0 0 no-repeat;
   background-size: 25px 50px;
   height: 25px;
   width: 25px;
 }
 /* line 2105, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i {
-  background: url('../images/sprite.btn.thanks.lo-res.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.thanks.lo-res.png?8f6d6a68') 0 0 no-repeat;
 }
 /* line 2110, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:hover i {
@@ -3765,14 +3765,14 @@ div.selector.fixedWidth {
 }
 /* line 2121, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i {
-  background: url('../images/sprite.btn.thinkingofyou.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.thinkingofyou.png?2c6bd533') 0 0 no-repeat;
   background-size: 18px 56px;
   height: 28px;
   width: 18px;
 }
 /* line 2127, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i {
-  background: url('../images/sprite.btn.thinkingofyou.lo-res.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.thinkingofyou.lo-res.png?5860ffb6') 0 0 no-repeat;
 }
 /* line 2132, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:hover i {
@@ -3809,14 +3809,14 @@ div.selector.fixedWidth {
 }
 /* line 2154, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i {
-  background: url('../images/sprite.btn.helpful.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.helpful.png?48edb9ab') 0 0 no-repeat;
   background-size: 16px 36px;
   height: 18px;
   width: 16px;
 }
 /* line 2160, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i {
-  background: url('../images/sprite.btn.helpful.lo-res.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.helpful.lo-res.png?ee8ce76b') 0 0 no-repeat;
 }
 /* line 2165, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes:hover i {
@@ -4117,7 +4117,7 @@ div.selector.fixedWidth {
   border: 0;
   width: 20px;
   height: 20px;
-  background: url('../images/sprite.icon.search.32.png?1404390952') 50% 2px no-repeat;
+  background: url('../images/sprite.icon.search.32.png?fa93fad1') 50% 2px no-repeat;
   background-size: 16px 41px;
   text-indent: -999em;
   margin-top: 15px;
@@ -4140,7 +4140,7 @@ div.selector.fixedWidth {
 }
 /* line 2372, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .group-search-form .group-search-button, .no-backgroundsize .mobile-group-search-form .group-search-button {
-  background-image: url('../images/sprite.icon.search.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.search.lo-res.png?ffa3839f');
 }
 
 /* line 2377, ../css.source/modules/community/_groups.scss */
@@ -7843,7 +7843,7 @@ div.selector.fixedWidth {
   width: 70px;
   height: 67px;
   background-color: transparent;
-  background-image: url('../images/sprite.icon.mobile-rss.png?1404390952');
+  background-image: url('../images/sprite.icon.mobile-rss.png?81a8d5ed');
   background-position: 0 0;
   background-size: 70px auto;
 }
@@ -7857,7 +7857,7 @@ div.selector.fixedWidth {
     width: 35px;
     height: 39px;
     background-color: transparent;
-    background-image: url('../images/sprite.icon.rss-blog.png?1404390952');
+    background-image: url('../images/sprite.icon.rss-blog.png?b3ccead7');
     background-position: 0 0;
     background-size: 35px auto;
     margin: 6px 0 0 3px;
@@ -7868,7 +7868,7 @@ div.selector.fixedWidth {
   }
   /* line 1185, ../css.source/modules/community/_blogs.scss */
   .no-backgroundsize .community-blog-post-list .blog-feature .blog-feature-follow-blog .rss {
-    background: url('../images/sprite.icon.rss-blog.lo-res.png?1404390952') 0 0 no-repeat;
+    background: url('../images/sprite.icon.rss-blog.lo-res.png?83bcca66') 0 0 no-repeat;
   }
 }
 /* line 1194, ../css.source/modules/community/_blogs.scss */
@@ -9218,7 +9218,7 @@ div.selector.fixedWidth {
 }
 /* line 2188, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-inappropriate {
-  background-image: url('../images/sprite.icon.comments.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.png?5c246d54');
   background-repeat: no-repeat;
   background-size: 54px 36px;
   display: inline-block;
@@ -9228,7 +9228,7 @@ div.selector.fixedWidth {
 }
 /* line 2197, ../css.source/modules/community/_blogs.scss */
 .no-backgroundsize .blog-post .blog-comments .comment .comment-inappropriate {
-  background-image: url('../images/sprite.icon.comments.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.lo-res.png?ae2e7d25');
 }
 @media (min-width: 650px), print {
   /* line 2188, ../css.source/modules/community/_blogs.scss */
@@ -9307,13 +9307,13 @@ div.selector.fixedWidth {
 /* line 2264, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.thanks button {
   padding: 0 0 0 30px;
-  background: url('../images/sprite.btn.thanks.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.thanks.png?3e08b1a4') 0 0 no-repeat;
   background-size: 25px 50px;
   height: 25px;
 }
 /* line 2270, ../css.source/modules/community/_blogs.scss */
 .no-backgroundsize .blog-post .blog-comments .comment-footer .comment-actions li.thanks button {
-  background: url('../images/sprite.btn.thanks.lo-res.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.thanks.lo-res.png?8f6d6a68') 0 0 no-repeat;
 }
 /* line 2274, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.thanks button:hover {
@@ -9323,13 +9323,13 @@ div.selector.fixedWidth {
 /* line 2282, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.thinking-of-you button {
   padding: 0 0 0 25px;
-  background: url('../images/sprite.btn.thinkingofyou.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.thinkingofyou.png?2c6bd533') 0 0 no-repeat;
   background-size: 18px 56px;
   height: 28px;
 }
 /* line 2288, ../css.source/modules/community/_blogs.scss */
 .no-backgroundsize .blog-post .blog-comments .comment-footer .comment-actions li.thinking-of-you button {
-  background: url('../images/sprite.btn.thinkingofyou.lo-res.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.thinkingofyou.lo-res.png?5860ffb6') 0 0 no-repeat;
 }
 /* line 2292, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.thinking-of-you button:hover {
@@ -9377,7 +9377,7 @@ div.selector.fixedWidth {
 .blog-post .blog-comments .comment-footer .comment-actions li.helpful-count div:before {
   content: "";
   position: absolute;
-  background: url('../images/sprite.btn.helpful.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.helpful.png?48edb9ab') 0 0 no-repeat;
   background-size: 16px 36px;
   height: 18px;
   width: 16px;
@@ -9386,7 +9386,7 @@ div.selector.fixedWidth {
 }
 /* line 2333, ../css.source/modules/community/_blogs.scss */
 .no-backgroundsize .blog-post .blog-comments .comment-footer .comment-actions li.helpful-count div:before {
-  background: url('../images/sprite.btn.helpful.lo-res.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.btn.helpful.lo-res.png?ee8ce76b') 0 0 no-repeat;
 }
 /* line 2347, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li button {
@@ -10855,7 +10855,7 @@ div.selector.fixedWidth {
 }
 /* line 352, ../css.source/modules/community/_parents.scss */
 .community-parents .callout-featured li {
-  background-image: url('../images/bullet.png?1404390952');
+  background-image: url('../images/bullet.png?5bf6e1e8');
   background-position: 0 13px;
   background-repeat: no-repeat;
   color: #696969;
@@ -12460,7 +12460,7 @@ div.selector.fixedWidth {
 /* line 597, ../css.source/modules/community/_questions.scss */
 .community-q-a-details-answers .card-answer .question-answer-info .icon-comment-like,
 .community-q-a-details-answers .card-answer .question-answer-info .icon-comment-flag {
-  background-image: url('../images/sprite.icon.comments.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.png?5c246d54');
   background-repeat: no-repeat;
   background-size: 54px 36px;
   display: inline-block;
@@ -12471,7 +12471,7 @@ div.selector.fixedWidth {
 /* line 606, ../css.source/modules/community/_questions.scss */
 .no-backgroundsize .community-q-a-details-answers .card-answer .question-answer-info .icon-comment-like, .no-backgroundsize
 .community-q-a-details-answers .card-answer .question-answer-info .icon-comment-flag {
-  background-image: url('../images/sprite.icon.comments.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.lo-res.png?ae2e7d25');
 }
 /* line 612, ../css.source/modules/community/_questions.scss */
 .community-q-a-details-answers .card-answer .question-answer-info .icon-comment-flag {
@@ -13060,7 +13060,7 @@ div.selector.fixedWidth {
 }
 /* line 3, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading h3 {
-  background-image: url('../images/icon.book.read-me.png?1404390952');
+  background-image: url('../images/icon.book.read-me.png?928d1cee');
   background-repeat: no-repeat;
   background-size: contain;
   height: 34px;
@@ -13080,7 +13080,7 @@ div.selector.fixedWidth {
 }
 /* line 18, ../css.source/modules/article/_keep-reading.scss */
 .no-backgroundsize .keep-reading h3 {
-  background-image: url('../images/icon.book.read-me.lo-res.png?1404390952');
+  background-image: url('../images/icon.book.read-me.lo-res.png?1724919e');
 }
 /* line 23, ../css.source/modules/article/_keep-reading.scss */
 .keep-reading ul {

@@ -63,7 +63,7 @@
 }
 /* line 67, ../css.source/modules/assistive-tech/_at-search-tool.scss */
 #search-by-tool-tabs .powered-by-logo {
-  background-image: url('../images/icon.logo.assistive-technology-search-tool.png?1404390952');
+  background-image: url('../images/icon.logo.assistive-technology-search-tool.png?fa4d9ac0');
   display: block;
   position: relative;
   margin: 5px auto 20px auto;
@@ -90,7 +90,7 @@
 }
 /* line 93, ../css.source/modules/assistive-tech/_at-search-tool.scss */
 .no-backgroundsize #search-by-tool-tabs .powered-by-logo {
-  background-image: url('../images/icon.logo.assistive-technology-search-tool.lo-res.png?1404390952');
+  background-image: url('../images/icon.logo.assistive-technology-search-tool.lo-res.png?9ff9d611');
 }
 /* line 97, ../css.source/modules/assistive-tech/_at-search-tool.scss */
 #search-by-tool-tabs ul {
@@ -348,7 +348,7 @@
 }
 /* line 83, ../css.source/modules/assistive-tech/_at-detail-thumb.scss */
 .screenshot-wrapper .screenshot-thumbs .screenshot-thumbs-wrapper .rsArrow .rsArrowIcn {
-  background-image: url('../images/sprite.nav-arrows.carousel-grey.png?1404390952');
+  background-image: url('../images/sprite.nav-arrows.carousel-grey.png?a44e73f1');
   background-size: 70px 65px;
   width: 35px;
   height: 35px;
@@ -362,7 +362,7 @@
 }
 /* line 100, ../css.source/modules/assistive-tech/_at-detail-thumb.scss */
 .no-backgroundsize .screenshot-wrapper .screenshot-thumbs .screenshot-thumbs-wrapper .rsArrow .rsArrowIcn {
-  background-image: url('../images/sprite.nav-arrows.carousel-grey.lo-res.png?1404390952');
+  background-image: url('../images/sprite.nav-arrows.carousel-grey.lo-res.png?a6c6f130');
 }
 /* line 104, ../css.source/modules/assistive-tech/_at-detail-thumb.scss */
 .screenshot-wrapper .screenshot-thumbs .screenshot-thumbs-wrapper .rsArrowLeft .rsArrowIcn {
@@ -804,7 +804,7 @@
 }
 /* line 438, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span.review-report i {
-  background-image: url('../images/sprite.icon.comments.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.png?5c246d54');
   background-repeat: no-repeat;
   background-position: -36px 0;
   background-size: 54px 36px;
@@ -815,7 +815,7 @@
 }
 /* line 448, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .no-backgroundsize .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span.review-report i {
-  background-image: url('../images/sprite.icon.comments.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.lo-res.png?ae2e7d25');
 }
 /* line 454, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span.review-report:hover i {
@@ -831,7 +831,7 @@
 }
 /* line 464, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report .write-review i {
-  background-image: url('../images/sprite.icon.comments.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.png?5c246d54');
   background-repeat: no-repeat;
   background-size: 54px 36px;
   background-position: -20px 0;
@@ -842,7 +842,7 @@
 }
 /* line 474, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .no-backgroundsize .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report .write-review i {
-  background-image: url('../images/sprite.icon.comments.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.lo-res.png?ae2e7d25');
 }
 /* line 480, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report .write-review:hover i {
@@ -1546,7 +1546,7 @@
 .tool-related-articles-wrap ul li,
 .assistive-tool-related-articles-small ul li,
 .behavior-tool-related-articles-small ul li {
-  background-image: url('../images/icon.tools.related-articles.png?1404390952');
+  background-image: url('../images/icon.tools.related-articles.png?edeff317');
   background-size: 15px 20px;
   background-repeat: no-repeat;
   background-position: 0;
@@ -1559,7 +1559,7 @@
 .no-backgroundsize .tool-related-articles-wrap ul li, .no-backgroundsize
 .assistive-tool-related-articles-small ul li, .no-backgroundsize
 .behavior-tool-related-articles-small ul li {
-  background-image: url('../images/icon.tools.related-articles.lo-res.png?1404390952');
+  background-image: url('../images/icon.tools.related-articles.lo-res.png?12c21c33');
 }
 /* line 68, ../css.source/modules/behavior-tool/_behavior-tool-related-articles.scss */
 .tool-related-articles-wrap ul li a,
@@ -1848,7 +1848,7 @@
 .tech-search-results .grade-scale .selection {
   font-size: 13px;
   font-size: 0.8125rem;
-  background-image: url('../images/rating.slider.selection.png?1404390952');
+  background-image: url('../images/rating.slider.selection.png?97d90595');
   background-size: 36px 36px;
   display: inline-block;
   height: 36px;
@@ -1965,7 +1965,7 @@
 }
 /* line 434, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .icon-tooltip {
-  background-image: url('../images/sprite.tooltip.info.png?1404390952');
+  background-image: url('../images/sprite.tooltip.info.png?77537a01');
   background-size: 44px 22px;
   cursor: pointer;
   display: inline-block;
@@ -1981,7 +1981,7 @@
 }
 /* line 447, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .no-backgroundsize .tech-search-results .icon-tooltip {
-  background-image: url('../images/sprite.tooltip.info.lo-res.png?1404390952');
+  background-image: url('../images/sprite.tooltip.info.lo-res.png?c7b09934');
 }
 /* line 453, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-image {
@@ -2003,7 +2003,7 @@
 }
 /* line 468, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-image .result-image-inner .icon-search {
-  background: url('../images/sprite.icon.search-white.png?1404390952') 0px 0px no-repeat;
+  background: url('../images/sprite.icon.search-white.png?8eb9240d') 0px 0px no-repeat;
   background-size: 16px 66px;
   cursor: pointer;
   display: block;
@@ -2016,12 +2016,12 @@
 }
 /* line 479, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-image .result-image-inner .icon-search:hover, .tech-search-results .result-image .result-image-inner .icon-search.is-hover {
-  background: url('../images/sprite.icon.search-white.png?1404390952') 0px -25px no-repeat;
+  background: url('../images/sprite.icon.search-white.png?8eb9240d') 0px -25px no-repeat;
   background-size: 16px 66px;
 }
 /* line 483, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .no-backgroundsize .tech-search-results .result-image .result-image-inner .icon-search {
-  background: url('../images/sprite.icon.search-white.lo-res.png?1404390952');
+  background: url('../images/sprite.icon.search-white.lo-res.png?8d619958');
 }
 /* line 485, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .no-backgroundsize .tech-search-results .result-image .result-image-inner .icon-search:hover, .no-backgroundsize .tech-search-results .result-image .result-image-inner .icon-search.is-hover {
@@ -2105,7 +2105,7 @@
 }
 /* line 566, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .icon-results-more {
-  background-image: url('../images/sprite.icon.arrows.png?1404390952');
+  background-image: url('../images/sprite.icon.arrows.png?d45175d1');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150px 150px;
@@ -2200,7 +2200,7 @@
 /* line 1, ../css.source/modules/assistive-tech/_results-slider.scss */
 .results-slider {
   background-color: transparent;
-  background-image: url('../images/sprite.rating-sliders@2x.png?1404390952');
+  background-image: url('../images/sprite.rating-sliders@2x.png?6af07a06');
   background-size: 301px 212px;
   background-repeat: no-repeat;
   display: inline-block;
@@ -2210,7 +2210,7 @@
 }
 /* line 11, ../css.source/modules/assistive-tech/_results-slider.scss */
 .no-backgroundsize .results-slider {
-  background-image: url('../images/sprite.rating-sliders.png?1404390952');
+  background-image: url('../images/sprite.rating-sliders.png?484013fd');
 }
 /* line 15, ../css.source/modules/assistive-tech/_results-slider.scss */
 .results-slider .slider-button {

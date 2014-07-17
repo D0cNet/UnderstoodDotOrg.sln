@@ -200,7 +200,7 @@
   font-weight: bold;
   font-size: 15px;
   font-size: 0.9375rem;
-  background-image: url('../images/arrow.down.000.20.png?1404390951');
+  background-image: url('../images/arrow.down.000.20.png?f9490520');
   background-repeat: no-repeat;
   background-size: 13px 13px;
   background-position: 94% 50%;
@@ -228,7 +228,7 @@
 }
 /* line 79, ../css.source/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .button {
-  background-image: url('../images/arrow.down.000.10.png?1404390951');
+  background-image: url('../images/arrow.down.000.10.png?f1df820b');
 }
 /* line 82, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .button:focus {
@@ -247,7 +247,7 @@
     display: inline-block;
     width: 43px;
     height: 51px;
-    background-image: url('../images/icon.guide-me.86.png?1404390952');
+    background-image: url('../images/icon.guide-me.86.png?ef55a5a0');
     background-size: 43px 51px;
     vertical-align: middle;
     margin-right: 15px;
@@ -255,7 +255,7 @@
 }
 /* line 98, ../css.source/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .icon {
-  background-image: url('../images/icon.guide-me.43.png?1404390952');
+  background-image: url('../images/icon.guide-me.43.png?0feb53d9');
 }
 
 /**
@@ -298,7 +298,7 @@
 }
 /* line 29, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .container-guide-me-overlay .close-guide {
-  background: url('../images/icon.close.overlay.44.png?1404390952') 0 2px no-repeat;
+  background: url('../images/icon.close.overlay.44.png?8df3ed84') 0 2px no-repeat;
   background-size: 16px 36px;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -320,7 +320,7 @@
 }
 /* line 49, ../css.source/modules/homepage/_guide-me-overlay.scss */
 .no-backgroundsize .container-guide-me-overlay .close-guide {
-  background-image: url('../images/icon.close.overlay.16.png?1404390952');
+  background-image: url('../images/icon.close.overlay.16.png?8d29d0bf');
 }
 @media (min-width: 650px), print {
   /* line 29, ../css.source/modules/homepage/_guide-me-overlay.scss */
@@ -339,7 +339,7 @@
   }
   /* line 65, ../css.source/modules/homepage/_guide-me-overlay.scss */
   .no-backgroundsize .container-guide-me-overlay .close-guide {
-    background-image: url('../images/icon.close.overlay.22.png?1404390952');
+    background-image: url('../images/icon.close.overlay.22.png?79e7ebd7');
   }
 }
 @media (min-width: 769px), print {
@@ -780,7 +780,7 @@
   height: 44px;
   background-size: 34px auto;
   text-indent: -9999px;
-  background-image: url('../images/sprite.btn.carousel.play-pause.png?1405464591');
+  background-image: url('../images/sprite.btn.carousel.play-pause.png?180a1726');
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: 5px 5px;
@@ -805,7 +805,7 @@
 }
 /* line 64, ../css.source/modules/carousel/_hero-carousel.scss */
 .no-backgroundsize .hero-carousel-inner .play-pause {
-  background-image: url('../images/sprite.btn.carousel.play-pause.lo-res.png?1405464591');
+  background-image: url('../images/sprite.btn.carousel.play-pause.lo-res.png?c529550b');
 }
 /* line 70, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-keyboard-trigger {
@@ -875,12 +875,12 @@
   position: static;
   width: 12px;
   height: 21px;
-  background-image: url('../images/sprite.icon.arrows.next-prev.24.png?1404390952');
+  background-image: url('../images/sprite.icon.arrows.next-prev.24.png?7aca9b63');
   background-size: 25px 21px;
 }
 /* line 131, ../css.source/modules/carousel/_hero-carousel.scss */
 .no-backgroundsize .hero-carousel-inner .carousel-pagers .rsArrowIcn {
-  background-image: url('../images/sprite.icon.arrows.next-prev.12.png?1404390952');
+  background-image: url('../images/sprite.icon.arrows.next-prev.12.png?ab2f5d7c');
 }
 /* line 137, ../css.source/modules/carousel/_hero-carousel.scss */
 .hero-carousel-inner .carousel-navigation {

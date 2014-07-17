@@ -752,7 +752,7 @@
 }
 /* line 122, ../css.source/modules/about/_about-search-results.scss */
 .about-search-results-more .show-more a i.icon-show-more {
-  background-image: url('../images/sprite.icon.arrows.png?1404390952');
+  background-image: url('../images/sprite.icon.arrows.png?d45175d1');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150px 150px;
@@ -850,7 +850,7 @@
 }
 /* line 87, ../css.source/modules/about/_about-sign-up.scss */
 .signup-intro-container .icon-newsletter-wrap .icon-newsletter-signup {
-  background-image: url('../images/icon.newsletter.130.png?1404390952');
+  background-image: url('../images/icon.newsletter.130.png?c865a8df');
   background-repeat: no-repeat;
   background-size: 80px 52px;
   height: 70px;
@@ -1873,7 +1873,7 @@
 }
 /* line 577, ../css.source/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .icon-tooltip-dark {
-  background-image: url('../images/sprite.tooltip.info-dark.png?1404390952');
+  background-image: url('../images/sprite.tooltip.info-dark.png?03daf47c');
   background-size: 44px 22px;
   cursor: pointer;
   display: inline-block;
@@ -1888,7 +1888,7 @@
 }
 /* line 590, ../css.source/modules/about/_donate-create.scss */
 .no-backgroundsize .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .cvv-info-wrapper .icon-tooltip-dark {
-  background-image: url('../images/sprite.tooltip.info-dark.lo-res.png?1404390952');
+  background-image: url('../images/sprite.tooltip.info-dark.lo-res.png?03145a41');
 }
 /* line 596, ../css.source/modules/about/_donate-create.scss */
 .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group label, .donate-create-wrap .how-pay-section .how-pay-form-wrapper .form-group .label {
@@ -2675,7 +2675,7 @@
 .partner-facebook-container .facebook-follow-block .facebook-follow {
   float: left;
   margin: 10px 21px 0 9px;
-  background-image: url('../images/sprite.social.footer.png?1404390952');
+  background-image: url('../images/sprite.social.footer.png?19630b6e');
   background-repeat: no-repeat;
   background-size: 141px 68px;
   display: inline-block;
@@ -2687,7 +2687,7 @@
 }
 /* line 144, ../css.source/modules/about/_partners-facebook.scss */
 .no-backgroundsize .partner-facebook-container .facebook-follow-block .facebook-follow {
-  background-image: url('../images/sprite.social.footer.141.png?1404390952');
+  background-image: url('../images/sprite.social.footer.141.png?b0ba1600');
 }
 
 /**
@@ -2882,7 +2882,7 @@
 .partner-twitter-container .twitter-follow-block .twitter-follow {
   float: left;
   margin: 10px 21px 0 9px;
-  background-image: url('../images/sprite.social.footer.png?1404390952');
+  background-image: url('../images/sprite.social.footer.png?19630b6e');
   background-repeat: no-repeat;
   background-size: 141px 68px;
   display: inline-block;
@@ -2894,7 +2894,7 @@
 }
 /* line 119, ../css.source/modules/about/_partners-twitter.scss */
 .no-backgroundsize .partner-twitter-container .twitter-follow-block .twitter-follow {
-  background-image: url('../images/sprite.social.footer.141.png?1404390952');
+  background-image: url('../images/sprite.social.footer.141.png?b0ba1600');
 }
 
 /* line 1, ../css.source/modules/about/_results-and-filter.scss */
@@ -3029,7 +3029,7 @@
   position: absolute;
   right: 76px;
   text-indent: -999em;
-  background-image: url('../images/icon.search.56.png?1404390952');
+  background-image: url('../images/icon.search.56.png?2aee321c');
   background-repeat: no-repeat;
   background-size: 14px 14px;
   background-position: 50% 50%;
@@ -3059,7 +3059,7 @@
   height: 20px;
   margin-top: 12px;
   background-color: transparent;
-  background-image: url('../images/sprite.icon.search.32.png?1404390952');
+  background-image: url('../images/sprite.icon.search.32.png?fa93fad1');
   background-repeat: no-repeat;
   background-position: 50% 3px;
   background-size: 16px 41px;
@@ -3067,7 +3067,7 @@
 }
 /* line 55, ../css.source/modules/about/_search-box-module.scss */
 .no-backgroundsize .l-search-box-container .search-box-module input[type="submit"] {
-  background-image: url('../images/sprite.icon.search.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.search.lo-res.png?ffa3839f');
 }
 /* line 58, ../css.source/modules/about/_search-box-module.scss */
 .l-search-box-container .search-box-module input[type="submit"]:focus, .l-search-box-container .search-box-module input[type="submit"]:active {
@@ -3229,7 +3229,7 @@
 }
 /* line 75, ../css.source/modules/about/_thank-you-social.scss */
 .thank-you-social a span.icon {
-  background: url('../images/sprite.icon.thank-you.png?1404390952');
+  background: url('../images/sprite.icon.thank-you.png?2b828ea7');
   background-repeat: no-repeat;
   background-size: 20px 66px;
   display: block;
@@ -3238,7 +3238,7 @@
 }
 /* line 82, ../css.source/modules/about/_thank-you-social.scss */
 .no-backgroundsize .thank-you-social a span.icon {
-  background-image: url('../images/sprite.icon.thank-you.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.thank-you.lo-res.png?a675db51');
 }
 /* line 85, ../css.source/modules/about/_thank-you-social.scss */
 .thank-you-social a span.icon.icon-envelope {

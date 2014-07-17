@@ -77,7 +77,7 @@ body:after {
   width: 16px;
   vertical-align: text-bottom;
   cursor: pointer;
-  background-image: url('../images/icon.close.white.64.png?1404390952');
+  background-image: url('../images/icon.close.white.64.png?a1412f71');
   background-size: 16px 16px;
   height: 32px;
   width: 32px;
@@ -315,7 +315,7 @@ body:after {
 }
 /* line 323, ../css.source/layout.scss */
 #header-page .sign-in .user-info.my-account {
-  background-image: url('../images/icon.mobile.avatar.signed-in.png?1405464590');
+  background-image: url('../images/icon.mobile.avatar.signed-in.png?6931be1c');
   background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: center;
@@ -386,7 +386,7 @@ body:after {
   width: 25px;
   height: 25px;
   text-indent: -999em;
-  background-image: url('../images/avatar.signed-out.png?1404390952');
+  background-image: url('../images/avatar.signed-out.png?f1a988ae');
   background-size: 25px 25px;
   width: 50px;
   height: 50px;
@@ -492,7 +492,7 @@ body:after {
   display: block;
   width: 230px;
   height: 73px;
-  background-image: url('../images/logo.u.large.png?1404390952');
+  background-image: url('../images/logo.u.large.png?8b6eeda8');
   background-size: contain;
 }
 /* line 529, ../css.source/layout.scss */
@@ -503,7 +503,7 @@ body:after {
 }
 /* line 538, ../css.source/layout.scss */
 .no-backgroundsize .logo-u-main a {
-  background-image: url('../images/logo.u.large.lo-res.png?1404390952');
+  background-image: url('../images/logo.u.large.lo-res.png?9075f13d');
 }
 
 /* line 544, ../css.source/layout.scss */
@@ -533,7 +533,7 @@ body:after {
   right: 76px;
   top: -45px;
   text-indent: -999em;
-  background-image: url('../images/icon.search.56.png?1404390952');
+  background-image: url('../images/icon.search.56.png?2aee321c');
   background-repeat: no-repeat;
   background-size: 14px 14px;
   background-position: 50% 50%;
@@ -637,7 +637,7 @@ body:after {
   height: 20px;
   margin-top: 2px;
   background-color: transparent;
-  background-image: url('../images/sprite.icon.search.32.png?1404390952');
+  background-image: url('../images/sprite.icon.search.32.png?fa93fad1');
   background-repeat: no-repeat;
   background-position: 50% 2px;
   background-size: 16px 41px;
@@ -654,7 +654,7 @@ body:after {
 }
 /* line 682, ../css.source/layout.scss */
 .no-backgroundsize #search-site input[type="submit"] {
-  background-image: url('../images/sprite.icon.search.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.search.lo-res.png?ffa3839f');
 }
 /* line 686, ../css.source/layout.scss */
 .is-search-active #search-site input[type="submit"] {
@@ -688,7 +688,7 @@ body:after {
   font-size: 9px;
   font-size: 0.5625rem;
   line-height: 1.222;
-  background-image: url('../images/arrow.down.fff.24.png?1404390951');
+  background-image: url('../images/arrow.down.fff.24.png?7a7b3e7e');
   background-repeat: no-repeat;
   background-size: 6px 4px;
   background-position: 64px 21px;
@@ -737,19 +737,19 @@ body:after {
 }
 /* line 771, ../css.source/layout.scss */
 .no-backgroundsize #toolkit > button {
-  background-image: url('../images/arrow.down.fff.12.png?1404390951');
+  background-image: url('../images/arrow.down.fff.12.png?77b0482f');
 }
 /* line 779, ../css.source/layout.scss */
 #toolkit.is-open > span {
   color: #7a4183;
   background-color: #fdfdfd;
-  background-image: url('../images/arrow.up.fff.24.png?1404390952');
+  background-image: url('../images/arrow.up.fff.24.png?f92c32e4');
   padding: 13px 35px 0 20px;
   border-top: 5px solid #7a4183;
 }
 /* line 789, ../css.source/layout.scss */
 .no-backgroundsize #toolkit.is-open > span {
-  background-image: url('../images/arrow.up.fff.12.png?1404390952');
+  background-image: url('../images/arrow.up.fff.12.png?adba2643');
 }
 
 /* line 798, ../css.source/layout.scss */
@@ -764,7 +764,7 @@ body:after {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  background-image: url('../images/sprite.icon.menu.88.png?1404390952');
+  background-image: url('../images/sprite.icon.menu.88.png?51c9ee70');
   background-size: 22px 82px;
   background-position: 17px 14px;
   background-repeat: no-repeat;
@@ -972,7 +972,7 @@ body:after {
 #drawermenu .nav-main .button-more {
   width: 22px;
   height: 22px;
-  background-image: url('../images/icon.nav-arrow.68.png?1404390952');
+  background-image: url('../images/icon.nav-arrow.68.png?da6be4f8');
   background-size: 22px 22px;
   position: absolute;
   right: 19px;
@@ -987,7 +987,7 @@ body:after {
 #drawermenu .nav-main .icon-back {
   width: 22px;
   height: 22px;
-  background-image: url('../images/sprite.nav-back.68.png?1404390952');
+  background-image: url('../images/sprite.nav-back.68.png?43513ae5');
   background-size: 22px 44px;
   position: absolute;
   left: 2px;
@@ -1192,7 +1192,7 @@ footer#footer-page .icon {
   width: 49px;
   height: 48px;
   display: inline-block;
-  background-image: url('../images/sprite.social.footer.png?1404390952');
+  background-image: url('../images/sprite.social.footer.png?19630b6e');
   background-repeat: no-repeat;
   background-size: 219px 106px;
   text-indent: -119988px;
@@ -1209,7 +1209,7 @@ footer#footer-page .icon {
 .no-backgroundsize footer#footer-page .icon {
   width: 42px;
   height: 42px;
-  background: url('../images/sprite.social.footer.lo-res.png?1404390952');
+  background: url('../images/sprite.social.footer.lo-res.png?a77aa48c');
 }
 /* line 1322, ../css.source/layout.scss */
 footer#footer-page .icon-facebook {

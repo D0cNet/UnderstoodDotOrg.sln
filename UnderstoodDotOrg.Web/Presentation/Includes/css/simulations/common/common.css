@@ -16,7 +16,7 @@
 /* line 14, ../../../css.source/simulations/common/common.scss */
 #gameboard .response {
   display: inline-block;
-  background: url('../../../images/simulations/common/desktop/answer.png?1398292479') no-repeat;
+  background: url('../../../images/simulations/common/desktop/answer.png?861e480e') no-repeat;
   width: 24px;
   height: 24px;
   margin: 0 6px;
@@ -29,13 +29,13 @@
 
 /* line 27, ../../../css.source/simulations/common/common.scss */
 #gameboard .response.correct {
-  background-image: url('../../../images/simulations/common/desktop/answer_correct.png?1398292479');
+  background-image: url('../../../images/simulations/common/desktop/answer_correct.png?1c2364f1');
   color: white;
 }
 
 /* line 31, ../../../css.source/simulations/common/common.scss */
 #gameboard .response.incorrect {
-  background-image: url('../../../images/simulations/common/desktop/answer_wrong.png?1398292479');
+  background-image: url('../../../images/simulations/common/desktop/answer_wrong.png?fa0d986e');
   color: white;
 }
 
@@ -227,13 +227,13 @@
   line-height: 55px;
   text-align: right;
   color: #FFF;
-  background: url('../../../images/simulations/common/desktop/clock.png?1398292479') no-repeat;
+  background: url('../../../images/simulations/common/desktop/clock.png?a1ce9cf5') no-repeat;
   font-weight: bold;
 }
 
 /* line 169, ../../../css.source/simulations/common/common.scss */
 .breakpoint_phone #SSGame_timer {
-  background-image: url('../../../images/simulations/common/phone/clock.png?1398292479');
+  background-image: url('../../../images/simulations/common/phone/clock.png?138fd8dc');
   top: 15px;
   right: 15px;
   width: 100px;

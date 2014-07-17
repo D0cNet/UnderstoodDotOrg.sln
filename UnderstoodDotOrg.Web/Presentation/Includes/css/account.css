@@ -168,7 +168,7 @@
 }
 /* line 126, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav i {
-  background-image: url('../images/sprite.icon.account.nav.png?1404390952');
+  background-image: url('../images/sprite.icon.account.nav.png?b00528ba');
   background-size: 202px 81px;
   display: inline-block;
   height: 33px;
@@ -870,14 +870,14 @@
 }
 /* line 240, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-comment, .account-notification-tabs i.icon-notification-reminder, .account-notification-tabs i.icon-notification-link {
-  background-image: url('../images/sprite.icon.notifications.png?1404390952');
+  background-image: url('../images/sprite.icon.notifications.png?16484451');
   background-size: 57px 19px;
   display: inline-block;
   height: 18px;
 }
 /* line 245, ../css.source/modules/account/_account-notification-tabs.scss */
 .no-backgroundsize .account-notification-tabs i.icon-notification-comment, .no-backgroundsize .account-notification-tabs i.icon-notification-reminder, .no-backgroundsize .account-notification-tabs i.icon-notification-link {
-  background-image: url('../images/sprite.icon.notifications.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.notifications.lo-res.png?d81aaaa4');
 }
 /* line 250, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-notification-comment {
@@ -895,7 +895,7 @@
 }
 /* line 261, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notification-tabs i.icon-results-more {
-  background-image: url('../images/sprite.icon.arrows.png?1404390952');
+  background-image: url('../images/sprite.icon.arrows.png?d45175d1');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150px 150px;
@@ -1141,7 +1141,7 @@
 .account-notification-tabs .showmore-footer a i {
   width: 18px;
   height: 11px;
-  background: url('../images/sprite.icon.arrows.png?1404390952') 0 0 no-repeat;
+  background: url('../images/sprite.icon.arrows.png?d45175d1') 0 0 no-repeat;
   background-size: 150px 150px;
 }
 
@@ -2062,7 +2062,7 @@
 }
 /* line 61, ../css.source/modules/account/_account-landing-notifications.scss */
 .landing-notifications.landing-modules ul.landing-module-items li i {
-  background-image: url('../images/sprite.icon.notifications.png?1404390952');
+  background-image: url('../images/sprite.icon.notifications.png?16484451');
   background-size: 57px 19px;
   display: inline-block;
   height: 18px;
@@ -2088,7 +2088,7 @@
 }
 /* line 82, ../css.source/modules/account/_account-landing-notifications.scss */
 .landing-notifications.landing-modules ul.landing-module-items li i.icon-results-more {
-  background-image: url('../images/sprite.icon.arrows.png?1404390952');
+  background-image: url('../images/sprite.icon.arrows.png?d45175d1');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150px 150px;
@@ -2099,7 +2099,7 @@
 }
 /* line 92, ../css.source/modules/account/_account-landing-notifications.scss */
 .no-backgroundsize .landing-notifications.landing-modules ul.landing-module-items li i {
-  background-image: url('../images/sprite.icon.notifications.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.notifications.lo-res.png?d81aaaa4');
 }
 /* line 96, ../css.source/modules/account/_account-landing-notifications.scss */
 .landing-notifications.landing-modules ul.landing-module-items li p.notification-item {
@@ -2676,13 +2676,13 @@
 /* line 265, ../css.source/modules/account/_my-events-tabs.scss */
 .my-events-tabs .panel-container .event-content .event-shapes .shape {
   display: inline-block;
-  background-image: url('../images/child.content.indicator.png?1405464591');
+  background-image: url('../images/child.content.indicator.png?3c3177bb');
   width: 14px;
   height: 14px;
 }
 /* line 268, ../css.source/modules/account/_my-events-tabs.scss */
 .no-backgroundsize .my-events-tabs .panel-container .event-content .event-shapes .shape {
-  background-image: url('../images/child.content.indicator.lo-res.png?1405464591');
+  background-image: url('../images/child.content.indicator.lo-res.png?4e848502');
 }
 /* line 274, ../css.source/modules/account/_my-events-tabs.scss */
 .my-events-tabs .panel-container .event-content .event-shapes .shape1 {
@@ -3465,7 +3465,7 @@
 }
 /* line 108, ../css.source/modules/account/_friends-view-tabs.scss */
 .friends-view-tabs .comment-number {
-  background-image: url('../images/sprite.friends-view-tabs.comment-bg.png?1404390952');
+  background-image: url('../images/sprite.friends-view-tabs.comment-bg.png?ada06834');
   background-position: 0px 0px;
   background-size: 52px 26px;
   background-repeat: no-repeat;
@@ -3483,7 +3483,7 @@
 }
 /* line 110, ../css.source/modules/account/_friends-view-tabs.scss */
 .no-backgroundsize .friends-view-tabs .comment-number {
-  background-image: url('../images/sprite.friends-view-tabs.comment-bg.lo-res.png?1404390952');
+  background-image: url('../images/sprite.friends-view-tabs.comment-bg.lo-res.png?15438e81');
 }
 /* line 124, ../css.source/modules/account/_friends-view-tabs.scss */
 .friends-view-tabs .tab.active {
@@ -3704,7 +3704,7 @@
 }
 /* line 274, ../css.source/modules/account/_friends-view-tabs.scss */
 .friends-view-tabs .comments-panel .comments-col-right footer button {
-  background-image: url('../images/sprite.assistive-technology.review-flag.png?1404390952');
+  background-image: url('../images/sprite.assistive-technology.review-flag.png?967386a1');
   background-position: 0px 3px;
   background-size: 100px 28px;
   background-repeat: no-repeat;
@@ -3723,7 +3723,7 @@
 }
 /* line 291, ../css.source/modules/account/_friends-view-tabs.scss */
 .no-backgroundsize .friends-view-tabs .comments-panel .comments-col-right footer button {
-  background-image: url('../images/sprite.assistive-technology.review-flag.lo-res.png?1404390952');
+  background-image: url('../images/sprite.assistive-technology.review-flag.lo-res.png?4515e393');
 }
 /* line 298, ../css.source/modules/account/_friends-view-tabs.scss */
 .friends-view-tabs .comments-panel .showmore-footer {
@@ -3819,8 +3819,8 @@
 }
 /* line 59, ../css.source/modules/account/_account-mycomments.scss */
 .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes i.icon-comment-like {
-  background: url('../images/sprite.icon.comments.png?1404390952') -20px 0px no-repeat;
-  background-image: url('../images/sprite.icon.comments.png?1404390952');
+  background: url('../images/sprite.icon.comments.png?5c246d54') -20px 0px no-repeat;
+  background-image: url('../images/sprite.icon.comments.png?5c246d54');
   background-size: 54px 36px;
   display: inline-block;
   height: 18px;
@@ -3831,16 +3831,16 @@
 }
 /* line 70, ../css.source/modules/account/_account-mycomments.scss */
 .no-backgroundsize .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes i.icon-comment-like {
-  background-image: url('../images/sprite.icon.comments.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.lo-res.png?ae2e7d25');
 }
 /* line 75, ../css.source/modules/account/_account-mycomments.scss */
 .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes:focus i.icon-comment-like, .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes i.icon-comment-like:hover {
-  background: url('../images/sprite.icon.comments.png?1404390952') -20px -18px no-repeat;
+  background: url('../images/sprite.icon.comments.png?5c246d54') -20px -18px no-repeat;
   background-size: 54px 36px;
 }
 /* line 79, ../css.source/modules/account/_account-mycomments.scss */
 .no-backgroundsize .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes:focus i.icon-comment-like, .no-backgroundsize .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes i.icon-comment-like:hover {
-  background-image: url('../images/sprite.icon.comments.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.comments.lo-res.png?ae2e7d25');
 }
 /* line 84, ../css.source/modules/account/_account-mycomments.scss */
 .account-mycomments .mycomment-list .mycomment-item .comment-details .comment-likes .comment-likes-count {
@@ -4207,14 +4207,14 @@
 }
 /* line 145, ../css.source/modules/account/_account-view-header.scss */
 .account-view-header .account-show-support i, .account-view-header .account-show-support .icon-account-smiley {
-  background-image: url('../images/sprite.icon.support.png?1404390952');
+  background-image: url('../images/sprite.icon.support.png?834b231f');
   background-size: 43px 28px;
   height: 25px;
   width: 25px;
 }
 /* line 150, ../css.source/modules/account/_account-view-header.scss */
 .no-backgroundsize .account-view-header .account-show-support i, .no-backgroundsize .account-view-header .account-show-support .icon-account-smiley {
-  background-image: url('../images/sprite.icon.support.lo-res.png?1404390952');
+  background-image: url('../images/sprite.icon.support.lo-res.png?9a44663c');
 }
 /* line 154, ../css.source/modules/account/_account-view-header.scss */
 .account-view-header .account-show-support .icon-account-flower {
@@ -4860,7 +4860,7 @@
 }
 /* line 49, ../css.source/modules/account/_account-myfavorites.scss */
 .account-myfavorites .myfavorites-item .favorite-toolbar .favorite-comment-count a span {
-  background-image: url('../images/sprite.helpful-count.png?1404390952');
+  background-image: url('../images/sprite.helpful-count.png?28f9df57');
   background-size: 72px 74px;
   background-repeat: no-repeat;
   background-position: -40px 0px;
@@ -4876,7 +4876,7 @@
 }
 /* line 64, ../css.source/modules/account/_account-myfavorites.scss */
 .no-backgroundsize .account-myfavorites .myfavorites-item .favorite-toolbar .favorite-comment-count a span {
-  background-image: url('../images/sprite.helpful-count.lo-res.png?1404390952');
+  background-image: url('../images/sprite.helpful-count.lo-res.png?65916da0');
 }
 /* line 69, ../css.source/modules/account/_account-myfavorites.scss */
 .account-myfavorites .myfavorites-item .favorite-toolbar .favorite-comment-count a:hover, .account-myfavorites .myfavorites-item .favorite-toolbar .favorite-comment-count a:focus {
@@ -6060,7 +6060,7 @@
 }
 /* line 569, ../css.source/modules/account/_profile-questions.scss */
 .profile-questions.step-2b .icon-wrapper .icon-tooltip {
-  background-image: url('../images/sprite.tooltip.info.png?1404390952');
+  background-image: url('../images/sprite.tooltip.info.png?77537a01');
   background-size: 44px 22px;
   cursor: pointer;
   display: inline-block;
@@ -6074,7 +6074,7 @@
 }
 /* line 579, ../css.source/modules/account/_profile-questions.scss */
 .no-backgroundsize .profile-questions.step-2b .icon-wrapper .icon-tooltip {
-  background-image: url('../images/sprite.tooltip.info.lo-res.png?1404390952');
+  background-image: url('../images/sprite.tooltip.info.lo-res.png?c7b09934');
 }
 /* line 581, ../css.source/modules/account/_profile-questions.scss */
 .no-backgroundsize .profile-questions.step-2b .icon-wrapper .icon-tooltip:hover {
