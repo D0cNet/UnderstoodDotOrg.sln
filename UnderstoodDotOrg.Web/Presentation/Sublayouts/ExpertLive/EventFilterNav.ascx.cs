@@ -63,7 +63,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             }
 
             // Filters
-            var childIssues = FormHelper.GetIssues(DictionaryConstants.ChildIssueLabel);
+            var childIssues = FormHelper.GetIssues(DictionaryConstants.ChildIssuesLabel);
             var grades = FormHelper.GetGrades(DictionaryConstants.GradeLabel);
             var topics = FormHelper.GetParentInterests(DictionaryConstants.TopicLabel);
 

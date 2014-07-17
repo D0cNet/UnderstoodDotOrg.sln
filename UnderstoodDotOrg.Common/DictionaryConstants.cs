@@ -113,6 +113,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Button Text
 
+        public static string SearchButtonText
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Search Button Text");
+            }
+        }
+
         public static string ShowAllMembersButtonText
         {
             get
@@ -1822,6 +1830,23 @@ namespace UnderstoodDotOrg.Common
 
         #endregion MyAccount Labels
 
+        public static string PartnerLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Partner Label");
+            }
+        }
+
+        public static string StateLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "State Label");
+            }
+        }
+
+
         public static string PriceLabel
         {
             get
@@ -2201,11 +2226,11 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-        public static string ChildIssueLabel
+        public static string ChildIssuesLabel
         {
             get
             {
-                return Translate.TextByDomain(PosesDictionary, "Child Issue Label");
+                return Translate.TextByDomain(PosesDictionary, "Child Issues Label");
             }
         }
 

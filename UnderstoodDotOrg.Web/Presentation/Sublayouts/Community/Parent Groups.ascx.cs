@@ -34,6 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
            // this.ProfileRedirect(Constants.UserPermission.CommunityUser);
            
             if (!IsPostBack)
@@ -46,6 +47,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 ///Search criteria
                 ///Checking
                 Item currItem = Sitecore.Context.Item;
+
                 Item[] items = null;
                 //Child Issue Drop List
                 Sitecore.Data.Fields.MultilistField childIssues = currItem.Fields["ChildIssues"];
@@ -59,6 +61,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     }
 
                     ddlChildIssues.DataBind();
+
+                    ddlChildIssues.Items.Insert(0, new ListItem() { Text = DictionaryConstants.ChildIssuesLabel, Value = string.Empty });
                 }
                 //Topic Drop List
                 Sitecore.Data.Fields.MultilistField topics = currItem.Fields["Topics"];
@@ -72,6 +76,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     }
 
                     ddlTopics.DataBind();
+
+                    ddlTopics.Items.Insert(0, new ListItem() { Text = DictionaryConstants.TopicLabel, Value = string.Empty });
+
                 }
                 //Grades Drop List
                 Sitecore.Data.Fields.MultilistField grades = currItem.Fields["Grades"];
@@ -85,6 +92,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     }
 
                     ddlGrades.DataBind();
+
+                    ddlGrades.Items.Insert(0, new ListItem() { Text = DictionaryConstants.GradeLabel, Value = string.Empty });
+
                 }
                 
                 //States Drop List
@@ -99,6 +109,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     }
 
                     ddlStates.DataBind();
+
+                    ddlStates.Items.Insert(0, new ListItem() { Text = DictionaryConstants.StateLabel, Value = string.Empty });
+
                 }
 
                 //Partners Drop List
@@ -113,6 +126,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     }
 
                     ddlPartners.DataBind();
+
+                    ddlPartners.Items.Insert(0, new ListItem() { Text = DictionaryConstants.PartnerLabel, Value = string.Empty });
+
                 }
                 //Get all groups under parent folder
                 //List<GroupItem> groups = currItem.Children.Where(x => x.TemplateID.ToString().Equals(Constants.Groups.GroupTemplateID)).Select(x => new GroupItem(x)).ToList<GroupItem>();

@@ -1,21 +1,21 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Parent Groups.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Parent_Groups" %>
 <%@ Register Src="~/Presentation/Sublayouts/Common/GroupSummaryList.ascx" TagPrefix="GroupSummaryList" TagName="GroupSummaryList" %>
-
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
  <div class="container group-summary-wrapper skiplink-content ">
     <div class="row">
       <div class="container">
             <header class="groups-heading rs_read_this">
               <div class="col title">
-                <h2>Parent Groups<span></span></h2>
+                <h2><sc:FieldRenderer ID="frParentGroupsText" FieldName="Parent Groups Text" runat="server"/><span></span></h2>
               </div>
               <div class="col show-groups rs_skip">
-                <a href="REPLACE" id="ref_recommended_group" runat="server">Show groups that match my profile</a>
+                <a href="REPLACE" id="ref_recommended_group" runat="server"><sc:FieldRenderer ID="frGroupsThatMatch" FieldName="Groups That Match My Profile Text" runat="server"/></a>
               </div>
               <!-- BEGIN PARTIAL: community/groups_private_heading -->
 <!--groups private partial-->
 <div class="col groups-private">
-  <p class="col">Groups are private - only a member of the group can see your conversations</p>
+  <p class="col"><sc:FieldRenderer ID="frGroupsArePrivate" FieldName="Groups Are Private Text" runat="server"/></p>
   <i class="icon"></i>
 </div>
 <!-- END PARTIAL: community/groups_private_heading -->
@@ -36,7 +36,7 @@
                     <option>visual processing issues</option>
                   </select>--%>
                    <asp:DropDownList name="parentgroupstool-issue"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Id" ID="ddlChildIssues" aria-required="true" runat="server">
-                        <asp:ListItem  Value="">Child's Issue</asp:ListItem>
+                        <asp:ListItem  Value=""></asp:ListItem>
                        
                     </asp:DropDownList>
 
@@ -59,7 +59,7 @@
                     <option>After High School</option>
                   </select>--%>
                   <asp:DropDownList name="parentgroupstool-grade"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Id" ID="ddlGrades" aria-required="true" runat="server">
-                        <asp:ListItem  Value="" >Grade</asp:ListItem>
+                        <asp:ListItem  Value="" ></asp:ListItem>
                        
                     </asp:DropDownList>
 
@@ -80,7 +80,7 @@
                     <option>Father</option>
                   </select>--%>
                   <asp:DropDownList name="parentgroupstool-topics" DataTextField="Name" AppendDataBoundItems="true" DataValueField="Id" ID="ddlTopics" aria-required="true" runat="server">
-                        <asp:ListItem Value="">Topic</asp:ListItem>
+                        <asp:ListItem Value=""></asp:ListItem>
                        
                     </asp:DropDownList>
 
@@ -138,7 +138,7 @@
                     <option>Wyoming</option>
                   </select>--%>
                    <asp:DropDownList name="parentgroupstool-state" DataTextField="Name" AppendDataBoundItems="true" DataValueField="Id" ID="ddlStates" aria-required="true" runat="server">
-                        <asp:ListItem Value="">State</asp:ListItem>
+                        <asp:ListItem Value=""></asp:ListItem>
                        
                     </asp:DropDownList>
                   <%--<select name="parentgroupstool-partner" id="parentgroupstool-partner" aria-required="true">
@@ -160,12 +160,12 @@
                     <option>Tower Foundation</option>
                   </select>--%>
                    <asp:DropDownList name="parentgroupstool-partner" DataTextField="Name" AppendDataBoundItems="true" DataValueField="Id" ID="ddlPartners" aria-required="true" runat="server">
-                        <asp:ListItem Value="">Partner</asp:ListItem>
+                        <asp:ListItem Value=""></asp:ListItem>
                        
                     </asp:DropDownList>
                   <div class="submit-button-wrap">
                     <%--<input class="button rs_skip" type="submit" value="Search">--%>
-                      <asp:Button CssClass="button rs_skip" ID="bntSearch" Text="Search" runat="server" OnClick="btnSearch_Click" />
+                      <asp:Button CssClass="button rs_skip" ID="bntSearch" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.SearchButtonText %>" runat="server" OnClick="btnSearch_Click" />
                   </div>
 
               </div>
@@ -186,7 +186,7 @@
             <div class="container show-more rs_skip">
               <div class="row">
                 <div class="col col-24">
-                  <a  runat="server"  id="linkShowMore"  onserverClick="ShowMore"  href="#" data-path="community/group-summary" data-container="group-summary-container" data-item="row" data-count="6">Show More<i class="icon-arrow-down-blue"></i></a>
+                  <a  runat="server"  id="linkShowMore"  onserverClick="ShowMore"  href="#" data-path="community/group-summary" data-container="group-summary-container" data-item="row" data-count="6"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
                 </div>
               </div>
             </div><!-- .show-more -->

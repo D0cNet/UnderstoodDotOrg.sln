@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     public partial class Parent_Groups {
         
         /// <summary>
+        /// frParentGroupsText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frParentGroupsText;
+        
+        /// <summary>
         /// ref_recommended_group control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ref_recommended_group;
+        
+        /// <summary>
+        /// frGroupsThatMatch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frGroupsThatMatch;
+        
+        /// <summary>
+        /// frGroupsArePrivate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frGroupsArePrivate;
         
         /// <summary>
         /// ddlChildIssues control.
