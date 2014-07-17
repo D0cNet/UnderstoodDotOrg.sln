@@ -929,6 +929,7 @@ namespace UnderstoodDotOrg.Common
             public static string BehaviorToolSuggestionEmail = "BehaviorToolSuggestionEmail";
             public static string WildcardUrlPlaceholder = "WildcardUrlPlaceholder";
             public static string UserCommentsEndpoint = "UserCommentsEndpoint";
+            public static string UserConnectionsEndpoint = "UserConnectionsEndpoint";
 
             #region Salesforce
             private static string SalesforceUsername = ConfigurationManager.AppSettings[Constants.Settings.SalesforceUsername];

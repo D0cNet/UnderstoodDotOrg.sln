@@ -42,7 +42,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
             //var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
             if (IsUserLoggedIn)
             {
-                if ((IsUserLoggedIn) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)) || (((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))))
+                if ((Services.TelligentService.TelligentService.IsApprovedFriend(CurrentMember.ScreenName, thisMember.ScreenName)) || (((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))))
                 {
                     var commentsList = CommunityHelper.ListUserComments(thisMember.ScreenName);
 

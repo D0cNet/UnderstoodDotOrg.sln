@@ -1431,53 +1431,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
-        public static bool CheckFriendship(string currentUsername, string checkedUsername)
-        {
-            string requesteeUserId = string.Empty;
-
-            if (currentUsername.IsNullOrEmpty() || checkedUsername.IsNullOrEmpty())
-            {
-                return false;
-            }
-            try
-            {
-                requesteeUserId = CommunityHelper.ReadUserId(checkedUsername);
-            }
-            catch
-            {
-                return false;
-            }
-            using (var webClient = new WebClient())
-            {
-                try
-                {
-                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-
-                    var requestUrl = GetApiEndPoint(String.Format("users/{1}/friends.xml", "http://telligent.dev01.rax.webstagesite.com/telligent/", currentUsername.Trim()));
-
-                    var xml = webClient.DownloadString(requestUrl);
-
-                    var xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
-
-                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Friendships/Friendship");
-                    foreach (XmlNode node in nodes)
-                    {
-                        XmlNode friend = node.SelectSingleNode("User");
-                        if (checkedUsername.Equals(friend["Username"].InnerText))
-                        {
-                            return true;
-                        }
-                    }
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-            return false;
-        }
-
+        
         public static string ReadUserEmail(string username)
         {
             string email = null;

@@ -2534,5 +2534,26 @@ namespace UnderstoodDotOrg.Services.TelligentService
             catch { }
             return searchResultsList;
         }
+
+        public static bool IsApprovedFriend(string requestorUserName, string requesteeUserName)
+        {
+            // TODO: needs to support paging to handle friends over 100
+            bool isFriend = false;
+
+            MakeApiRequest(wc => 
+            {
+                var url = GetApiEndPoint(String.Format("users/{0}/friends.xml?PageSize=100", requestorUserName));
+
+                var response = wc.DownloadString(url);
+
+                var xml = new XmlDocument();
+                xml.LoadXml(response);
+
+                isFriend = xml.SelectSingleNode(String.Format("Response/Friendships/Friendship/User/Username[text()='{0}']", requesteeUserName)) != null;
+            });
+
+            return isFriend;
+        }
+
     }
 }

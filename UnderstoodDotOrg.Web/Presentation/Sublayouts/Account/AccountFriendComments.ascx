@@ -15,7 +15,7 @@
     <div class="container show-more rs_skip">
         <div class="row">
             <div class="col col-24">
-                <a id="profile-comment-activity-show-more" href="#" data-path="<%= AjaxPath %>" data-container="profile-comment-activity" data-screenname="<%= ProfileMember.ScreenName %>" data-lang="<%= Sitecore.Context.Language.Name %>">Show More<i class="icon-arrow-down-blue"></i></a>
+                <a id="profile-comment-activity-show-more" href="#" data-path="<%= AjaxPath %>" data-container="profile-comment-activity" data-screenname="<%= ProfileMember.ScreenName %>" data-lang="<%= Sitecore.Context.Language.Name %>"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreButtonText %><i class="icon-arrow-down-blue"></i></a>
             </div>
         </div>
     </div>

@@ -5,11 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.AjaxData
 {
-    public partial class UserComments : System.Web.UI.Page
+    public partial class UserConnections : BaseAjaxPage
     {
         private string ResultPage
         {
@@ -34,14 +35,27 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                 Sitecore.Context.SetLanguage(language, false);
             }
 
-            if (int.TryParse(ResultPage, out page) && !string.IsNullOrEmpty(ScreenName))
+            // Ensure friendship
+            if (!IsUserLoggedIn 
+                && !string.IsNullOrEmpty(ScreenName)
+                && !TelligentService.IsApprovedFriend(CurrentMember.ScreenName, ScreenName))
             {
-                int totalComments;
+                return;
+            }
 
-                var comments = TelligentService.GetUserCommentsByScreenName(ScreenName, page, Constants.PUBLIC_PROFILE_COMMENTS_PER_PAGE, out totalComments);
-                ucCommentList.Comments = comments;
+            if (int.TryParse(ResultPage, out page))
+            {
+                int totalFriends;
 
-                phMoreResults.Visible = ((page - 1) * Constants.PUBLIC_PROFILE_COMMENTS_PER_PAGE) + comments.Count() < totalComments;
+                var friends = TelligentService.GetFriends(ScreenName, page, Constants.MY_CONNECTIONS_FRIENDS_PER_PAGE, out totalFriends);
+
+                if (friends.Any())
+                {
+                    rptConnections.DataSource = friends;
+                    rptConnections.DataBind();
+                }
+
+                phMoreResults.Visible = ((page - 1) * Constants.MY_CONNECTIONS_FRIENDS_PER_PAGE) + friends.Count() < totalFriends;
             }
         }
     }

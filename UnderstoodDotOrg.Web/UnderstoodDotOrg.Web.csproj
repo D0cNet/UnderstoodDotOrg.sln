@@ -225,6 +225,13 @@
     <Compile Include="Presentation\AjaxData\UserComments.aspx.designer.cs">
       <DependentUpon>UserComments.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\AjaxData\UserConnections.aspx.cs">
+      <DependentUpon>UserConnections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AjaxData\UserConnections.aspx.designer.cs">
+      <DependentUpon>UserConnections.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\AjaxData\WelcomeTour.aspx.cs">
       <DependentUpon>WelcomeTour.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2307,6 +2314,7 @@
     <Content Include="Presentation\AjaxData\SubtopicArticles.aspx" />
     <Content Include="Presentation\AjaxData\TopicLandingArticles.aspx" />
     <Content Include="Presentation\AjaxData\UserComments.aspx" />
+    <Content Include="Presentation\AjaxData\UserConnections.aspx" />
     <Content Include="Presentation\AjaxData\WelcomeTour.aspx" />
     <Content Include="Presentation\DataImport.aspx">
       <SubType>ASPXCodeBehind</SubType>

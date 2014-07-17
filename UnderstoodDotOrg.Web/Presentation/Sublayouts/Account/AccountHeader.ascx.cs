@@ -116,7 +116,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                     = ScreenName;
 
                 bool isConnected = (IsUserLoggedIn && !string.IsNullOrEmpty(CurrentMember.ScreenName))
-                    ? CommunityHelper.CheckFriendship(CurrentMember.ScreenName, ScreenName)
+                    ? TelligentService.IsApprovedFriend(CurrentMember.ScreenName, ScreenName)
                     : false;
 
                 // Connect/friend button shared with anon and members

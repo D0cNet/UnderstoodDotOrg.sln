@@ -34,17 +34,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
             var thisMember = new Member();
             thisMember = membershipManager.GetMemberByScreenName(userScreenName);
             
-            if (IsUserLoggedIn)
+            if (IsUserLoggedIn 
+                && (Services.TelligentService.TelligentService.IsApprovedFriend(CurrentMember.ScreenName, thisMember.ScreenName)) || (((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))))
             {
-                if ((IsUserLoggedIn) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)) || (((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))))
-                {
-                    var commentsList = CommunityHelper.ListUserComments(thisMember.ScreenName);
-
-                    if ((commentsList != null) && (commentsList.Count != 0))
-                    {
-                        litCommentsCount.Text = commentsList != null ? commentsList.Count.ToString() : "0";
-                    }
-                }
+                litCommentsCount.Text = Services.TelligentService.TelligentService.GetTotalUserComments(thisMember.ScreenName).ToString();
             }
 
             if (Sitecore.Context.Item.TemplateID.ToString() == MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetPublicAccountProfilePage().InnerItem.TemplateID.ToString())

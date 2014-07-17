@@ -43,7 +43,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
             thisMember = membershipManager.GetMemberByScreenName(userScreenName);
             //var thisUser = membershipManager.GetUser(thisMember.MemberId, true);
 
-            if ((IsUserLoggedIn) && (CommunityHelper.CheckFriendship(CurrentMember.ScreenName, thisMember.ScreenName)) || (((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))))
+            if ((IsUserLoggedIn) && (Services.TelligentService.TelligentService.IsApprovedFriend(CurrentMember.ScreenName, thisMember.ScreenName)) || (((CurrentMember.ScreenName == thisMember.ScreenName) && (viewMode == Constants.VIEW_MODE_FRIEND))))
             {
                 ListTotal = thisMember.Children.Count;
                 if (ListTotal != 0)
