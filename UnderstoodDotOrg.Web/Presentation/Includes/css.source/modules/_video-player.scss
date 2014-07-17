@@ -1,13 +1,14 @@
 .player-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 45px;
 }
 
-.BrightcoveExperience,
-.LimelightEmbeddedPlayerFlash {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+// FIXME DP-JH-ASCX: VideoArticle line 8
+.container.article {
+  .player-container {
+    .player {
+      margin-left: 4.16666666667%;
+    }
+  }
 }
+// END FIXME
