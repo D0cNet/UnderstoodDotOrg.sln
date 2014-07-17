@@ -1,17 +1,15 @@
-﻿using Sitecore.Data.Items;
+﻿using Sitecore.Data;
+using Sitecore.Data.Items;
 using Sitecore.Web.UI.WebControls;
-using System.Collections.Specialized;
-using System.Collections.Generic;
-using System.Web.Security;
-using UnderstoodDotOrg.Domain.Membership;
-using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Common.Extensions;
 using System;
-using UnderstoodDotOrg.Domain.SitecoreCIG;
-using Sitecore.Data;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
-using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Web;
+using System.Web.Security;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+
 namespace UnderstoodDotOrg.Framework.UI
 {
     public class BaseSublayout : System.Web.UI.UserControl

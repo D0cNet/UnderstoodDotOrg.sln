@@ -15,9 +15,10 @@ using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Items;
 using System.Text;
+
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
-    public partial class GroupJoinButton : BaseSublayout//System.Web.UI.UserControl
+    public partial class GroupJoinButton : BaseSublayout //System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -88,6 +89,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         protected void btnJoin_Click(object sender, EventArgs e)
         {
+            this.ProfileRedirect(Constants.UserPermission.CommunityUser);
+
             if (CurrentMember != null)
             {
                 if (CurrentMember.ScreenName != null)
