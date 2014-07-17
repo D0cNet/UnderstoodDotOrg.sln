@@ -556,7 +556,7 @@ namespace UnderstoodDotOrg.Domain.Search
                 // Search for terms
                 if (!phraseSearch)
                 {
-                    query = query.Where(a => a.Name.Contains(terms).Boost(3)
+                    query = query.Where(a => a.PageTitle.Contains(terms).Boost(3)
                                         || a.Content.Contains(terms));
                 }
                 else
@@ -564,7 +564,7 @@ namespace UnderstoodDotOrg.Domain.Search
                     // Place quotes around entire term and do equality search
                     terms = String.Format("\"{0}\"", terms.Replace("\\\"", ""));
 
-                    query = query.Where(a => a.Name.Equals(terms).Boost(3)
+                    query = query.Where(a => a.PageTitle.Equals(terms).Boost(3)
                                         || a.Content.Equals(terms));
                 }
 

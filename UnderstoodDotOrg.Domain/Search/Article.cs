@@ -12,6 +12,9 @@ namespace UnderstoodDotOrg.Domain.Search
 {
     public class Article : SearchResultItem
     {
+        [IndexField("page_title")]
+        public string PageTitle { get; set; }
+        
         [IndexField(Constants.SolrFields.ChildGrades)]
         public IEnumerable<ID> ChildGrades { get; set; }
 
