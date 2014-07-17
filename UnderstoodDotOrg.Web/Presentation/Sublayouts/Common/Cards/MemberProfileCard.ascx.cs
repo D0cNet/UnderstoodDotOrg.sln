@@ -52,6 +52,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
         private void PopulateContent()
         {
             litLocation.Text = Services.CommunityServices.GeoTargeting.GetStateByZip(_member.ZipCode);
+            litScreenName.Text = ProfileUser.Username;
 
             // TODO: store avatar at member level
             imgAvatar.ImageUrl = ProfileUser.AvatarUrl;
