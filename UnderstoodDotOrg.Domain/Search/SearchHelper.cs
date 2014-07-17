@@ -42,7 +42,7 @@ namespace UnderstoodDotOrg.Domain.Search
             pred = pred.And(a => a.Language == "en");
 
             // Exclude templates
-            pred = pred.And(a => a.Path.Contains("/sitecore/content/home/")
+            pred = pred.And(a => a.Path.Contains(Constants.Search.ContentSearchPath)
                             && !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
 
             // Include only articles
@@ -404,7 +404,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             List<Article> results = new List<Article>();
 
-            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
             using (var ctx = index.CreateSearchContext())
             {
                 var articlesQuery = GetCurrentCultureQueryable<Article>(ctx)
@@ -423,7 +423,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             List<Article> results = new List<Article>();
 
-            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
             using (var ctx = index.CreateSearchContext())
             {
                 var query = GetCurrentCultureQueryable<Article>(ctx)
@@ -456,7 +456,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             List<Article> results = new List<Article>();
 
-            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
             using (var ctx = index.CreateSearchContext())
             {
                 var allArticlesQuery = GetCurrentCultureQueryable<Article>(ctx)
@@ -500,19 +500,21 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static List<Article> PerformArticleSearch(string terms, string template, int page, out int totalResults)
         {
+            float pageTitleBoost = 3;
+
             // Sitecore implementation does not handle escaping reserved characters
             terms = NormalizeSearchTerm(terms);
 
-            // Remove quotes
+            // Look for quotes to handle phrase search
             bool phraseSearch = terms.Contains("\\\"");
-            
-            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+
+            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
 
             using (var ctx = index.CreateSearchContext())
             {
                 var query = GetCurrentCultureQueryable<Article>(ctx)
                                 .Filter(i => i.Language == Sitecore.Context.Language.Name)
-                                .Filter(a => a.Path.Contains("/sitecore/content/home/")
+                                .Filter(a => a.Path.Contains(Constants.Search.ContentSearchPath)
                                     && a.SourceItem == ID.Parse(Guid.Empty)
                                     && !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
 
@@ -556,15 +558,15 @@ namespace UnderstoodDotOrg.Domain.Search
                 // Search for terms
                 if (!phraseSearch)
                 {
-                    query = query.Where(a => a.PageTitle.Contains(terms).Boost(3)
+                    query = query.Where(a => a.PageTitle.Contains(terms).Boost(pageTitleBoost)
                                         || a.Content.Contains(terms));
                 }
                 else
                 {
-                    // Place quotes around entire term and do equality search
+                    // Strip all quotes and wrap terms for phrase search
                     terms = String.Format("\"{0}\"", terms.Replace("\\\"", ""));
 
-                    query = query.Where(a => a.PageTitle.Equals(terms).Boost(3)
+                    query = query.Where(a => a.PageTitle.Equals(terms).Boost(pageTitleBoost)
                                         || a.Content.Equals(terms));
                 }
 
@@ -581,7 +583,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             return GetCurrentCultureQueryable<BehaviorAdvice>(context)
                         .Filter(i => i.Language == Sitecore.Context.Language.Name)
-                        .Filter(i => i.Path.Contains("/sitecore/content/home/")
+                        .Filter(i => i.Path.Contains(Constants.Search.ContentSearchPath)
                             && !i.Paths.Contains(ID.Parse(Constants.QATestDataContainer)))
                         .Filter(i => i.TemplateId == ID.Parse(BehaviorToolsAdvicePageItem.TemplateId)
                                 || i.TemplateId == ID.Parse(BehaviorToolsAdviceVideoPageItem.TemplateId))
@@ -600,7 +602,7 @@ namespace UnderstoodDotOrg.Domain.Search
         /// <returns></returns>
         public static List<BehaviorAdvice> GetAllBehaviorArticles(string challenge, string grade)
         {
-            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
 
             using (var ctx = index.CreateSearchContext())
             {
@@ -614,7 +616,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static List<BehaviorAdvice> PerformBehaviorArticleSearch(string challenge, string grade, int page, out int totalResults)
         {
-            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
 
             using (var ctx = index.CreateSearchContext())
             {
@@ -630,7 +632,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static Article GetArticle(ID itemId)
         {
-            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
             using (var ctx = index.CreateSearchContext())
             {
                 return GetCurrentCultureQueryable<Article>(ctx)
@@ -649,7 +651,9 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             List<Article> results = new List<Article>();
 
-            var index = ContentSearchManager.GetIndex(Constants.ARTICLE_SEARCH_INDEX_NAME);
+            // NOTE: this may run without Sitecore context, so we must specify web index
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
+
             using (var ctx = index.CreateSearchContext())
             {
                 // Pre-process
@@ -1022,7 +1026,7 @@ namespace UnderstoodDotOrg.Domain.Search
             {
                 var query = GetCurrentCultureQueryable<Expert>(context)
                                 .Filter(i => i.Language == Sitecore.Context.Language.Name
-                                        && i.Path.Contains("/sitecore/content/home/"))
+                                        && i.Path.Contains(Constants.Search.ContentSearchPath))
                                 .Filter(i => i.TemplateId == ID.Parse(ExpertDetailPageItem.TemplateId)
                                         && i.EventParticipation.Contains(ID.Parse(Constants.Events.OpenOfficeHourChat)));
 
@@ -1048,7 +1052,7 @@ namespace UnderstoodDotOrg.Domain.Search
             {
                 var query = GetCurrentCultureQueryable<AssistiveToolReview>(context)
                                 .Filter(i => i.Language == Sitecore.Context.Language.Name
-                                        && i.Path.Contains("/sitecore/content/home/"))
+                                        && i.Path.Contains(Constants.Search.ContentSearchPath))
                                 .Filter(i => i.TemplateId == ID.Parse(AssistiveToolsReviewPageItem.TemplateId));
 
                 // TODO: modify query based on guid values
@@ -1115,6 +1119,31 @@ namespace UnderstoodDotOrg.Domain.Search
                     .Where(i => i.GetItem() != null)
                     .Select(i => new AssistiveToolsReviewPageItem(i.GetItem()));
             }
+        }
+
+        public static IEnumerable<DefaultArticlePageItem> GetArticlesByAuthor(ID authorId, int numArticles)
+        {
+            IEnumerable<DefaultArticlePageItem> articles = Enumerable.Empty<DefaultArticlePageItem>();
+
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            
+            using (var context = index.CreateSearchContext())
+            {
+                var query = GetCurrentCultureQueryable<Article>(context)
+                                .Filter(GetInheritsArticlePredicate())
+                                .Filter(a => a.Language == Sitecore.Context.Language.Name
+                                        && a.Path.Contains(Constants.Search.ContentSearchPath)
+                                        && a.Author == authorId)
+                                .OrderByDescending(a => a.CreatedDate);
+
+                var results = query.Take(numArticles).ToList();
+
+                articles = results.ToList()
+                            .Select(i => (DefaultArticlePageItem)i.GetItem())
+                            .Where(i => i != null);
+            }
+
+            return articles;
         }
 
         #endregion
@@ -1185,7 +1214,7 @@ namespace UnderstoodDotOrg.Domain.Search
         private static Expression<Func<EventPage, bool>> GetBaseEventPredicate()
         {
             return (i => i.Language == Sitecore.Context.Language.Name
-                        && i.Path.Contains("/sitecore/content/home/"));
+                        && i.Path.Contains(Constants.Search.ContentSearchPath));
         }
 
         private static IQueryable<T> GetCurrentCultureQueryable<T>(IProviderSearchContext context) where T : new()

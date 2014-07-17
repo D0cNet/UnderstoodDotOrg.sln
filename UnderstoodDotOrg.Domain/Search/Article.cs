@@ -12,6 +12,9 @@ namespace UnderstoodDotOrg.Domain.Search
 {
     public class Article : SearchResultItem
     {
+        [IndexField("author_name")]
+        public ID Author { get; set; }
+
         [IndexField("page_title")]
         public string PageTitle { get; set; }
         

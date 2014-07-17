@@ -143,8 +143,6 @@ namespace UnderstoodDotOrg.Common
 			public static int EM28AppsTechnologySharedWithAFriendSPID = 1720;
 		}
 
-        public const string ARTICLE_SEARCH_INDEX_NAME = "sitecore_web_index";
-
         public const string ConnectionStringMembership = "membership";
 
         #endregion
@@ -180,6 +178,14 @@ namespace UnderstoodDotOrg.Common
         public static string FacebookMember_Password { get { return "4Sf9suVucReD373HDS!asdxz443#"; } }
 #endregion
 
+        #region Search
+        public static class Search
+        {
+            public const string ArticleSearchIndex = "sitecore_web_index";
+            public const float ArticleSearchPageTitleBoost = 3;
+            public const string ContentSearchPath = "/sitecore/content/home/";
+        }
+        #endregion
 
         #region Container Guid
 
