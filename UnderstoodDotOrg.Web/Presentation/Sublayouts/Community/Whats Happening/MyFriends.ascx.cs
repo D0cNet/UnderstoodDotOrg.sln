@@ -32,15 +32,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 rptFriends.DataBind();
             }
         }
-
-        protected void rptFriends_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
-        {
-            if (e.IsItem())
-            {
-                User user = (User)e.Item.DataItem;
-
-                
-            }
-        }
     }
 }

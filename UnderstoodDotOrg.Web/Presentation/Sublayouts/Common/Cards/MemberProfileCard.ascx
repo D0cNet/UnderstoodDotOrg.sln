@@ -19,7 +19,7 @@
 
             <div class="card-buttons member">
 
-                <button type="button" class="button blue rs_skip"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeActivityLabel %></button>
+                <a href="<%= ProfileActivityUrl %>" class="button blue rs_skip"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeActivityLabel %></a>
 
             </div>
             <!-- end .member.card-buttons -->
