@@ -32,9 +32,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
                 {
                     GroupCardModel thisItem = ((GroupCardModel)e.Item.DataItem);
-                    ThreadModel recentThread= (thisItem.Forums
-                                                    .Where(f=>f.Threads.Count >0 && f.Threads!=null)
-                                                    .Select(x => x.Threads.OrderByDescending(t => t.LastPostDate)).FirstOrDefault()).FirstOrDefault();
+                    ThreadModel recentThread = null;
                     GroupJoinButton joinBtn = e.FindControlAs<GroupJoinButton>("btnJoin");
                     if (joinBtn != null)
                     {
@@ -57,50 +55,64 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 
                     }
 
-                    if (recentThread != null)
+                    if (thisItem.Forums.Count > 0 && thisItem.Forums != null)
                     {
-                        HyperLink hrefDiscussionLink = e.FindControlAs<HyperLink>("hrefDiscussionLink");
-                        if (hrefDiscussionLink != null)
+                        var  recentThreadlist = (thisItem.Forums
+                                                        .Where(f => f.Threads.Count > 0 && f.Threads != null)
+                                                        .Select(x => x.Threads.Where(thread => thread != null)
+                                                                .OrderByDescending(t => t.LastPostDate)).FirstOrDefault());
+
+
+                        if(recentThreadlist!=null)
+                             recentThread = recentThreadlist.FirstOrDefault<ThreadModel>();
+
+                        if (recentThread != null)
                         {
-                            hrefDiscussionLink.NavigateUrl = Threads.ConvertThreadtoSitecoreItem(recentThread.ForumID, recentThread.ThreadID).GetUrl();
+                            HyperLink hrefDiscussionLink = e.FindControlAs<HyperLink>("hrefDiscussionLink");
+                            if (hrefDiscussionLink != null)
+                            {
+                                var threadItem = Threads.ConvertThreadtoSitecoreItem(recentThread.ForumID, recentThread.ThreadID);
+                                if(threadItem!=null)
+                                    hrefDiscussionLink.NavigateUrl = threadItem.GetUrl();
+
+                            }
+                            Literal litDiscussionExcerpt = e.FindControlAs<Literal>("litDiscussionExcerpt");
+                            if (litDiscussionExcerpt != null)
+                            {
+                                litDiscussionExcerpt.Text = recentThread.Subject;
+
+
+                            }
+                            Literal litNumReplies = e.FindControlAs<Literal>("litNumReplies");
+                            if (litNumReplies != null)
+                            {
+                                litNumReplies.Text = recentThread.ReplyCount;
+
+
+                            }
+
+                            Literal litPostUserName = e.FindControlAs<Literal>("litPostUserName");
+                            if (litPostUserName != null)
+                            {
+                                litPostUserName.Text = recentThread.LastPostUser;
+
+
+                            }
+                            HyperLink hrefPostUser = e.FindControlAs<HyperLink>("hrefPostUser");
+                            if (hrefPostUser != null)
+                            {
+                                hrefPostUser.NavigateUrl = MembershipHelper.GetPublicProfileUrl(recentThread.LastPostUser);
+
+                            }
+                            Literal litPostTime = e.FindControlAs<Literal>("litPostTime");
+                            if (litPostTime != null)
+                            {
+                                litPostTime.Text = recentThread.LastPostTime;
+
+
+                            }
 
                         }
-                        Literal litDiscussionExcerpt = e.FindControlAs<Literal>("litDiscussionExcerpt");
-                        if (litDiscussionExcerpt != null)
-                        {
-                            litDiscussionExcerpt.Text = recentThread.Subject;
-
-
-                        }
-                        Literal litNumReplies = e.FindControlAs<Literal>("litNumReplies");
-                        if (litNumReplies != null)
-                        {
-                            litNumReplies.Text = recentThread.ReplyCount;
-
-
-                        }
-                      
-                        Literal litPostUserName = e.FindControlAs<Literal>("litPostUserName");
-                        if (litPostUserName != null)
-                        {
-                            litPostUserName.Text = recentThread.LastPostUser;
-
-
-                        }
-                        HyperLink hrefPostUser = e.FindControlAs<HyperLink>("hrefPostUser");
-                        if (hrefPostUser != null)
-                        {
-                            hrefPostUser.NavigateUrl = MembershipHelper.GetPublicProfileUrl(recentThread.LastPostUser);
-
-                        }
-                        Literal litPostTime = e.FindControlAs<Literal>("litPostTime");
-                        if (litPostTime != null)
-                        {
-                            litPostTime.Text = recentThread.LastPostTime;
-
-
-                        }
-
                     }
                 }
             }
@@ -140,7 +152,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 }
                 var rnd = new Random();
                // var result = source.OrderBy(item => rnd.Next());
-                rptMyGroups.DataSource = grps.OrderBy(c=> rnd.Next()).ToList<GroupCardModel>();
+                rptMyGroups.DataSource = grps.OrderBy(c=> rnd.Next()).Take(2).ToList<GroupCardModel>();
                 rptMyGroups.DataBind();
             }
             
