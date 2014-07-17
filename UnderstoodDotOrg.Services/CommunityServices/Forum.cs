@@ -98,16 +98,16 @@ namespace UnderstoodDotOrg.Services.CommunityServices
         public static Item ConvertForumIDtoSitecoreItem(string id)
         {
             Item forumItem = null;
-            Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
-            forumItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Forums.ForumTemplateID + "' and @ForumID = '" + id + "']");
+           // Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
+            forumItem = Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Forums.ForumTemplateID + "' and @ForumID = '" + id + "']");
 
             return forumItem;
         }
         public static Item ConvertForumNametoSitecoreItem(string name)
         {
             Item forumItem = null;
-            Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
-            forumItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Forums.ForumTemplateID + "' and @@name = '" + name + "']");
+          //  Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
+            forumItem = Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Forums.ForumTemplateID + "' and @@name = '" + name + "']");
 
             return forumItem;
         }

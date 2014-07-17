@@ -12,27 +12,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
     {
         protected void rptDiscussionList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if (e.Item.DataItem is ReplyModel)
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-                var item = e.Item.DataItem as ReplyModel;
-
-                var ProfileCommentCard = e.FindControlAs<ProfileCommentCard>("ProfileCommentCard");
-                if (ProfileCommentCard != null)
+                if (e.Item.DataItem is ReplyModel)
                 {
-                    ProfileCommentCard.Member = item.Author;
-                }
+                    var item = e.Item.DataItem as ReplyModel;
 
-                ThanksButton btnThanks = e.FindControlAs<ThanksButton>("btnThanks");
-                ThinkingOfYouButton btnThink = e.FindControlAs<ThinkingOfYouButton>("btnThinkingOfYou");
-
-                if (btnThanks != null && btnThink != null)
-                {
-                    if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
+                    var ProfileCommentCard = e.FindControlAs<ProfileCommentCard>("ProfileCommentCard");
+                    if (ProfileCommentCard != null)
                     {
-                        if (!String.IsNullOrEmpty(item.Author.UserName))
+                        ProfileCommentCard.Member = item.Author;
+                    }
+
+                    LikeButton btnLikes = e.FindControlAs<LikeButton>("btnLikes");
+                    if (btnLikes != null)
+                    {
+                       // btnLikes.ContentId = item.ContentId;
+                      //  btnLikes.ContentTypeId=item.ContentTypeId;
+                        btnLikes.LoadState(item.ContentId, item.ContentTypeId);
+                        
+                    }
+
+                    ThanksButton btnThanks = e.FindControlAs<ThanksButton>("btnThanks");
+                    ThinkingOfYouButton btnThink = e.FindControlAs<ThinkingOfYouButton>("btnThinkingOfYou");
+
+                    if (btnThanks != null && btnThink != null)
+                    {
+                        if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
                         {
-                            btnThanks.LoadState(item.Author.UserName);
-                            btnThink.LoadState(item.Author.UserName);
+                            if (!String.IsNullOrEmpty(item.Author.UserName))
+                            {
+                                btnThanks.LoadState(item.Author.UserName);
+                                btnThink.LoadState(item.Author.UserName);
+                            }
                         }
                     }
                 }

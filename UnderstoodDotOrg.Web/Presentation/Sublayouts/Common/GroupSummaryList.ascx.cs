@@ -49,44 +49,47 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         void lvGroupCards_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            if (e.Item.DataItem != null)
+            if (e.Item.ItemType == ListViewItemType.DataItem)
             {
-                if (e.Item.DataItem is GroupCardModel)
+                if (e.Item.DataItem != null)
                 {
-                    var item = (GroupCardModel)e.Item.DataItem;
-
-                    bool viewDiscussions = TelligentService.IsUserInGroup(UserID, item.GroupID);
-
-                    GroupJoinButton joinbtn = (GroupJoinButton)e.Item.FindControl("GroupJoinButton");
-                    if (joinbtn != null)
+                    if (e.Item.DataItem is GroupCardModel)
                     {
-                        joinbtn.LoadState(item.GroupID);
-                        //joinView.Text = viewDiscussions ? "View Discussions" : "Join this Group";
-                        //joinView.Text = viewDiscussions ? DictionaryConstants.ViewDiscussionsLabel : DictionaryConstants.JoinThisGroupLabel;
-                        //If the user is to join group, then use Telligent group id, else use sitecore item id
-                        //joinView.CommandArgument = viewDiscussions ? item.ItemID : item.GroupID;
-                       // joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
-                    }
+                        var item = (GroupCardModel)e.Item.DataItem;
 
-                    HtmlAnchor titleLink = (HtmlAnchor)e.Item.FindControl("titleLink");
-                    if (titleLink != null)
-                    {
-                        if (viewDiscussions)
+                        bool viewDiscussions = TelligentService.IsUserInGroup(UserID, item.GroupID);
+
+                        GroupJoinButton joinbtn = (GroupJoinButton)e.Item.FindControl("GroupJoinButton");
+                        if (joinbtn != null)
                         {
-                            if (e.Item.DataItem is GroupCardModel)
-                            {
-                                Item grpItem = Sitecore.Context.Database.GetItem(item.ItemID);
-                                var link = LinkManager.GetItemUrl(grpItem);
+                            joinbtn.LoadState(item.GroupID);
+                            //joinView.Text = viewDiscussions ? "View Discussions" : "Join this Group";
+                            //joinView.Text = viewDiscussions ? DictionaryConstants.ViewDiscussionsLabel : DictionaryConstants.JoinThisGroupLabel;
+                            //If the user is to join group, then use Telligent group id, else use sitecore item id
+                            //joinView.CommandArgument = viewDiscussions ? item.ItemID : item.GroupID;
+                            // joinView.Attributes.Add("name", viewDiscussions ? "view" : "join");
+                        }
 
-                                titleLink.HRef = link;
+                        HtmlAnchor titleLink = (HtmlAnchor)e.Item.FindControl("titleLink");
+                        if (titleLink != null)
+                        {
+                            if (viewDiscussions)
+                            {
+                                if (e.Item.DataItem is GroupCardModel)
+                                {
+                                    Item grpItem = Sitecore.Context.Database.GetItem(item.ItemID);
+                                    var link = LinkManager.GetItemUrl(grpItem);
+
+                                    titleLink.HRef = link;
+                                }
                             }
                         }
-                    }
 
-                    var recommendationIcons = e.Item.FindControl("CommunityRecommendationIcons") as CommunityRecommendationIcons;
-                    if (recommendationIcons != null)
-                    {
-                        recommendationIcons.MatchingChildrenIds = item.GrpItem.GetMatchingChildrenIds(this.CurrentMember);
+                        var recommendationIcons = e.Item.FindControl("CommunityRecommendationIcons") as CommunityRecommendationIcons;
+                        if (recommendationIcons != null)
+                        {
+                            recommendationIcons.MatchingChildrenIds = item.GrpItem.GetMatchingChildrenIds(this.CurrentMember);
+                        }
                     }
                 }
             }

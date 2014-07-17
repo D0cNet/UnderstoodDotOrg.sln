@@ -46,6 +46,26 @@ namespace UnderstoodDotOrg.Web.Handlers
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public HelpfulContentResult FoundReplyHelpful(string contentId, string contentTypeId)
+        {
+            var result = new HelpfulContentResult
+            {
+                IsSuccessful = false,
+                IsLoggedIn = IsLoggedIn()
+            };
+
+            if (result.IsLoggedIn)
+            {
+                var member = (Member)Session[Constants.currentMemberKey];
+                result.IsSuccessful = TelligentService.LikeContent(member.ScreenName, contentId, contentTypeId);
+                result.HelpfulCount = TelligentService.GetTotalLikes(contentId);
+            }
+
+            return result;
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public ContentServiceResult FlagComment(string contentId)
         {
             var result = new ContentServiceResult

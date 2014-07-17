@@ -19,6 +19,51 @@
 
                    }
                });
+      
+            var helpfulInProgress = false;
+
+     
+
+            function helpful_clickHandler(e) {
+                e.preventDefault();
+                var self = this;
+
+                if (helpfulInProgress) {
+                    return;
+                }
+
+                helpfulInProgress = true;
+
+                var data = {
+                    'contentId': $(this).data('content-id'),
+                    'contentTypeId': $(this).data('content-type-id')
+                };
+
+                $.ajax({
+                    url: $(".likes").data('endpoint') + 'FoundReplyHelpful',
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(data),
+                    method: 'POST'
+                }).done(function (data) {
+
+                    var result = data.d;
+
+                    if (result.IsSuccessful) {
+                        $(self).find('p').html(result.HelpfulCount.toString());
+                    } else {
+                        // TODO: display error or redirect to login?
+                    }
+                }).always(function () {
+                    helpfulInProgress = false;
+                });
+                return false;
+            }
+
+            $("button.likes").click(helpful_clickHandler);
+
+    
+
 
     });
 

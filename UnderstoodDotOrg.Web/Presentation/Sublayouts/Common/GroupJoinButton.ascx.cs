@@ -35,7 +35,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             get
             {
-                return ViewState["_groupId"].ToString();
+                return (string)ViewState["_groupId"];
             }
             set
             {

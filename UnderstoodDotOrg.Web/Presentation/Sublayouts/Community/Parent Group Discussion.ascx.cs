@@ -70,7 +70,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             //lblLocation.Text = thModel.Author.UserLocation;
                             litComment.Text = thModel.Body;
                             litNumReplies.Text = thModel.ReplyCount;
-                            litMemberCount.Text = thModel.Members.Count.ToString();
+                            LikeButton.ContentId = thModel.ContentId;
+                            LikeButton.ContentTypeId = thModel.ContentTypeId;
+                            litMemberCount.Text = thModel.Replies.Select(m => m.AuthorName).Distinct().Count().ToString();
+                          //  litMemberCount.Text = thModel.Members.Count.ToString();
                             
                         }
                         catch (Exception ex)

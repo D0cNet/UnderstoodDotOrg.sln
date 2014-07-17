@@ -59,6 +59,8 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                StartedBy = childNode.SelectSingleNode("Author/Username").InnerText??"admin";
                Snippet = formatBodyFunc(childNode.SelectSingleNode("Body").InnerText);
                Body = childNode.SelectSingleNode("Body").InnerText;
+               ContentId = childNode.SelectSingleNode("ContentId").InnerText;
+               ContentTypeId = childNode.SelectSingleNode("ContentTypeId").InnerText;
            }
            else
            {
@@ -104,7 +106,9 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
        public string LastPostBody { get; set; }
        public static string TemplateID { get { return UnderstoodDotOrg.Common.Constants.Threads.ThreadTemplateID; } }
        public string Body { get; set; }
-       public List<MemberCardModel> Members { get; set; }
+       public string ContentId { get; set; }
+       public string ContentTypeId { get; set; }
+      // public List<MemberCardModel> Members { get; set; }
       
     }
 }

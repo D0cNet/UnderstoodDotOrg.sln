@@ -16,6 +16,8 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             this.Body = CommunityHelper.FormatString100(node.SelectSingleNode("Body").InnerText);
             this.ReplyDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(node.SelectSingleNode("Date").InnerText);
             this.Date = Convert.ToDateTime((node.SelectSingleNode("Date").InnerText));
+            this.ContentId = node.SelectSingleNode("ContentId").InnerText;
+            this.ContentTypeId = node.SelectSingleNode("ContentTypeId").InnerText;
         }
         private MemberCardModel _author = null;
         public string Body { get; set; }
@@ -34,5 +36,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                 else return _author;
             }
         }
+        public string ContentId { get; set; }
+        public string ContentTypeId { get; set; }
     }
 }

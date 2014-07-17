@@ -16,8 +16,8 @@ namespace UnderstoodDotOrg.Services.CommunityServices
         public static Item ConvertThreadtoSitecoreItem(string forumid,string threadid)
         {
             Item threadItem = null;
-            Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
-            threadItem = masterDb.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Threads.ThreadTemplateID + "' and @ForumID = '" + forumid + "' and @ThreadID='" + threadid + "' ]");
+           // Database masterDb = global:: Sitecore.Configuration.Factory.GetDatabase("master");
+            threadItem = Sitecore.Context.Database.SelectSingleItem("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Threads.ThreadTemplateID + "' and @ForumID = '" + forumid + "' and @ThreadID='" + threadid + "' ]");
 
             return threadItem;
         }

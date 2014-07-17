@@ -28,7 +28,7 @@
                     <uc1:ThinkingOfYouButton runat="server" ID="btnThinkingOfYou" />
                 </li>
                 <li>
-                    <uc1:LikeButton runat="server" ID="btnLike" />
+                    <uc1:LikeButton runat="server" ID="btnLikes" />
                 </li>
             </ul>
         </footer>

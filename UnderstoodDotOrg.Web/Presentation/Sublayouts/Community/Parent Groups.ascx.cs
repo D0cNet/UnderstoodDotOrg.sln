@@ -136,6 +136,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 rptGroupCards.DataSource = grpItems.Take(10).ToList();
                 rptGroupCards.DataBind();
             }
+            //else
+            //{
+            //    if (Session["groupItems"] != null)
+            //    {
+            //        rptGroupCards.DataSource = (List<GroupCardModel>)Session["groupItems"];
+            //        rptGroupCards.DataBind();
+            //    }
+            //}
 
           
         }
