@@ -11,7 +11,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Visible = false;
         }
     }
 }

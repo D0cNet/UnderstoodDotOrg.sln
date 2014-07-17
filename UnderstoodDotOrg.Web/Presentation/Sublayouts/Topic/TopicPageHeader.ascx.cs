@@ -13,6 +13,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Framework.UI;
 using System.Web.UI.HtmlControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic 
 {
@@ -28,11 +29,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic
         {
             litTitle.Text = Model.ContentPage.PageTitle.Rendered;
 
-            if (Model.InnerItem.Parent != null)
+            if (Model.InnerItem.InheritsTemplate(AuthorItem.TemplateId))
             {
-                SectionLandingPageItem parent = Model.InnerItem.Parent;
-                hlBreadcrumbNav.NavigateUrl = parent.GetUrl();
-                litPreviousLink.Text = parent.ContentPage.BasePageNEW.NavigationTitle.Rendered;
+                Item homepage = MainsectionItem.GetHomePageItem();
+                litPreviousLink.Text = homepage.DisplayName;
+                hlBreadcrumbNav.NavigateUrl = homepage.GetUrl();
+            }
+            else
+            {
+                if (Model.InnerItem.Parent != null)
+                {
+                    SectionLandingPageItem parent = Model.InnerItem.Parent;
+                    hlBreadcrumbNav.NavigateUrl = parent.GetUrl();
+                    litPreviousLink.Text = parent.ContentPage.BasePageNEW.NavigationTitle.Rendered;
+                }
             }
         }
 

@@ -55,7 +55,7 @@
 
 
             <!-- END PARTIAL: keep-reading-mobile -->
-            <sc:sublayout id="Sublayout2" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/Article Poll.ascx" Visibile="False"/>
+            <sc:sublayout id="Sublayout2" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/Article Poll.ascx"/>
             <!-- END PARTIAL: article-poll -->
         </div>
         <div class="col col-1 sidebar-spacer">

@@ -138,8 +138,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
                 ResultCount = 5;
                 if (authorItem != null)
                 {
-
-
                     //Retrieve all BlogPosts with author 
                     List<BlogsPostPageItem> posts = Sitecore.Context.Database.SelectItems("fast:/sitecore/content/Home//*[@@templateid='" + Constants.BlogPost.BlogPostTemplateID + "' and @Author='" + authorItem.Name + "']").Select(x => new BlogsPostPageItem(x)).ToList();
                     var temp = posts.OrderByDescending(x => x.Date.DateTime).ToList();
