@@ -59,7 +59,7 @@
     </asp:Repeater>
     
 
-    <asp:Repeater ID="rptGroups" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.GroupModel">
+    <asp:Repeater ID="rptGroups" runat="server" ItemType="UnderstoodDotOrg.Domain.Understood.Common.GroupCardModel">
         <HeaderTemplate>
 
             <hr />

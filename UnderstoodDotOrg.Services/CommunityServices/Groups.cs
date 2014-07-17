@@ -155,7 +155,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
                            grpModel.GrpItem = grpItem;
                            grpModel.NumOfMembers = int.Parse(childNode.FirstChild.SelectSingleNode("Group/TotalMembers").InnerText);
                            grpModel.Description = childNode.FirstChild.SelectSingleNode("Group/Description").InnerText;
-                           grpModel.Title = childNode.FirstChild.SelectSingleNode("Group/Name").InnerText;
+                           grpModel.Title = grpItem.NavigationTitle.Text; //childNode.FirstChild.SelectSingleNode("Group/Name").InnerText;
                            
                        }
                    }

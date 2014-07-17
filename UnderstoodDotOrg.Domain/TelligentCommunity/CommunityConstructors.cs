@@ -184,14 +184,14 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public Notification() { }
     }
 
-    public class GroupModel
-    {
-        public string Title { get; set; }
-        public string Url { get; set; }
-        public string Id { get; set; }
+    //public class GroupModel
+    //{
+    //    public string Title { get; set; }
+    //    public string Url { get; set; }
+    //    public string Id { get; set; }
         
-        public GroupModel() { }
-    }
+    //    public GroupModel() { }
+    //}
 
     public class FavoritesModel
     {

@@ -12,7 +12,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
-
+using UnderstoodDotOrg.Common.Extensions;
 namespace UnderstoodDotOrg.Domain.Understood.Common
 {
     public class GroupCardModel
@@ -154,7 +154,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
                     return new DateTime();
             }
         }
-       // List<Issue> RelatedIssues { get; set; }
+        public string Url { get { return GrpItem.GetUrl(); } }
     }
 
 

@@ -14,6 +14,7 @@ using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.PublicAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
+using UnderstoodDotOrg.Domain.Understood.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 {
@@ -110,7 +111,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 
         protected void rptGroups_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            var item = (GroupModel)e.Item.DataItem;
+            var item = (GroupCardModel)e.Item.DataItem;
             HyperLink hypGroup = (HyperLink)e.Item.FindControl("hypGroup");
             hypGroup.NavigateUrl = item.Url;
             hypGroup.Text = item.Title;

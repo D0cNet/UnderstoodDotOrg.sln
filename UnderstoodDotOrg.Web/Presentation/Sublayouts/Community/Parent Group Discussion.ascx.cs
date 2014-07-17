@@ -50,30 +50,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
                             //Populate the initial Post
                             ProfileCommentCard.Member = thModel.Author;
-                            //rptChildCard.DataSource = thModel.Author.Children;
-                            //rptChildCard.DataBind();
+
                             rptGroupDiscussion.DataSource = thModel.Replies;
                             rptGroupDiscussion.DataBind();
 
                             if (thModel.Author!=null)
                             {
 
-                                //btnConnect.LoadState(thModel.Author.UserName);
+
                                 ThanksButton.LoadState(thModel.Author.UserName);
                                 ThinkingOfYouButton.LoadState(thModel.Author.UserName);
                             }
                                 
                             lblSubject.Text = thModel.Subject;
-                            //imgAvatar.ImageUrl = thModel.Author.AvatarUrl;
-                            //lblName.Text = thModel.Author.UserName;
-                            //hrefName.HRef = thModel.Author.ProfileLink;
-                            //lblLocation.Text = thModel.Author.UserLocation;
+
                             litComment.Text = thModel.Body;
                             litNumReplies.Text = thModel.ReplyCount;
-                            LikeButton.ContentId = thModel.ContentId;
-                            LikeButton.ContentTypeId = thModel.ContentTypeId;
+                            LikeButton.LoadState(thModel.ContentId, thModel.ContentTypeId);
                             litMemberCount.Text = thModel.Replies.Select(m => m.AuthorName).Distinct().Count().ToString();
-                          //  litMemberCount.Text = thModel.Members.Count.ToString();
+
                             
                         }
                         catch (Exception ex)

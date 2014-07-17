@@ -1190,44 +1190,44 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return commentsList;
         }
 
-        public static List<GroupModel> GetUserGroups(string username)
-        {
-            List<GroupModel> groupsList = new List<GroupModel>();
+        //public static List<GroupModel> GetUserGroups(string username)
+        //{
+        //    List<GroupModel> groupsList = new List<GroupModel>();
 
-            using (var webClient = new WebClient())
-            {
-                if (!String.IsNullOrEmpty(username))
-                {
-                    username = username.Trim();
-                    username = username.ToLower();
-                    string adminKeyBase64 = CommunityHelper.TelligentAuth();
-                    try
-                    {
-                        webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                        //webClient.Headers.Add("Rest-Impersonate-User", userId);
-                        var requestUrl = GetApiEndPoint(String.Format("groups.xml?Username={0}", username));
-                        var xml = webClient.DownloadString(requestUrl);
+        //    using (var webClient = new WebClient())
+        //    {
+        //        if (!String.IsNullOrEmpty(username))
+        //        {
+        //            username = username.Trim();
+        //            username = username.ToLower();
+        //            string adminKeyBase64 = CommunityHelper.TelligentAuth();
+        //            try
+        //            {
+        //                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+        //                //webClient.Headers.Add("Rest-Impersonate-User", userId);
+        //                var requestUrl = GetApiEndPoint(String.Format("groups.xml?Username={0}", username));
+        //                var xml = webClient.DownloadString(requestUrl);
 
-                        var xmlDoc = new XmlDocument();
-                        xmlDoc.LoadXml(xml);
+        //                var xmlDoc = new XmlDocument();
+        //                xmlDoc.LoadXml(xml);
 
-                        XmlNodeList nodes = xmlDoc.SelectNodes("Response/Groups/Group");
-                        foreach (XmlNode xn in nodes)
-                        {
-                            GroupModel group = new GroupModel
-                            {
-                                Title = xn["Name"].InnerText,
-                                Url = "/Community and Events/Groups/" + xn["Name"].InnerText,
-                                Id = xn["Id"].InnerText
-                            };
-                            groupsList.Add(group);
-                        }
-                    }
-                    catch (Exception ex) { groupsList = null; Sitecore.Diagnostics.Error.LogError("GetuserGroups Error:\n" + ex.Message); } // TODO: add logging
-                }
-            }
-            return groupsList;
-        }
+        //                XmlNodeList nodes = xmlDoc.SelectNodes("Response/Groups/Group");
+        //                foreach (XmlNode xn in nodes)
+        //                {
+        //                    GroupModel group = new GroupModel
+        //                    {
+        //                        Title = xn["Name"].InnerText,
+        //                        Url = "/Community and Events/Groups/" + xn["Name"].InnerText,
+        //                        Id = xn["Id"].InnerText
+        //                    };
+        //                    groupsList.Add(group);
+        //                }
+        //            }
+        //            catch (Exception ex) { groupsList = null; Sitecore.Diagnostics.Error.LogError("GetuserGroups Error:\n" + ex.Message); } // TODO: add logging
+        //        }
+        //    }
+        //    return groupsList;
+        //}
 
         public static List<Comment> ReadComments()
         {

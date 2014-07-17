@@ -10,7 +10,9 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 {
@@ -105,7 +107,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 rptInterests.DataBind();
             }
 
-            List<GroupModel> groups = CommunityHelper.GetUserGroups(ProfileMember.ScreenName);
+            List<GroupCardModel> groups = TelligentService.GetUserGroups(ProfileMember.ScreenName);
             if (groups.Any())
             {
                 rptGroups.DataSource = groups;

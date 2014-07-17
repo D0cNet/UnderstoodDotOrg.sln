@@ -8,7 +8,9 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidgets
 {
@@ -16,7 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
+            List<GroupCardModel> groupsList = TelligentService.GetUserGroups(CurrentMember.ScreenName);
             litCount.Text = groupsList != null ? groupsList.Count.ToString() : "0";
 
             if (string.IsNullOrEmpty(CurrentMember.ScreenName))
@@ -45,10 +47,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
 
         protected void rptGroups_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            var item = (GroupModel)e.Item.DataItem as GroupModel;
+            var item = (GroupCardModel)e.Item.DataItem as GroupCardModel;
             HyperLink hypGroupsLink = (HyperLink)e.Item.FindControl("hypGroupsLink");
-            hypGroupsLink.NavigateUrl = ((GroupModel)e.Item.DataItem).Url;
-            hypGroupsLink.Text = ((GroupModel)e.Item.DataItem).Title;
+            hypGroupsLink.NavigateUrl = ((GroupCardModel)e.Item.DataItem).Url;
+            hypGroupsLink.Text = ((GroupCardModel)e.Item.DataItem).Title;
         }
     }
 }

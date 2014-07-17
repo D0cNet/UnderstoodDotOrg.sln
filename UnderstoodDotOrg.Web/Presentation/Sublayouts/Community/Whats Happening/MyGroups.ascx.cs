@@ -55,6 +55,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 
                     }
 
+                    HyperLink hrefGroImageLink = e.FindControlAs<HyperLink>("hrefGroupImageLink");
+                    if(hrefGroImageLink!=null)
+                    {
+                        
+                        hrefGroImageLink.NavigateUrl =  thisItem.GrpItem.GetUrl();
+                    }
+
+                    Image imgGrpImage = e.FindControlAs<Image>("imgGroupImage");
+                    if(imgGrpImage!=null)
+                    {
+                        imgGrpImage.ImageUrl = thisItem.ModeratorAvatarUrl ?? "http://placehold.it/190x107";
+                    }
+
                     if (thisItem.Forums.Count > 0 && thisItem.Forums != null)
                     {
                         var  recentThreadlist = (thisItem.Forums

@@ -12,6 +12,8 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount.PublicAccount;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Domain.Understood.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
 {
@@ -54,7 +56,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
                     rptInterests.DataSource = thisMember.Interests;
                     rptInterests.DataBind();
                 }
-                List<GroupModel> groupsList = CommunityHelper.GetUserGroups(thisMember.ScreenName);
+                List<GroupCardModel> groupsList = TelligentService.GetUserGroups(thisMember.ScreenName);
 
                 if (groupsList != null)
                 {
@@ -117,7 +119,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account.Tabs
 
         protected void rptGroups_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            var item = (GroupModel)e.Item.DataItem;
+            var item = (GroupCardModel)e.Item.DataItem;
             HyperLink hypGroup = (HyperLink)e.Item.FindControl("hypGroup");
             hypGroup.NavigateUrl = item.Url;
             hypGroup.Text = item.Title;

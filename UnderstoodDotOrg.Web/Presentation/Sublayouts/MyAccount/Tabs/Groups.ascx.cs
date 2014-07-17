@@ -31,7 +31,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
                 }
                 else
                 {
-                    List<GroupModel> groupsList = CommunityHelper.GetUserGroups(CurrentMember.ScreenName);
+                    List<GroupCardModel> groupsList = TelligentService.GetUserGroups(CurrentMember.ScreenName);
                     ddlGroups.DataSource = groupsList;
                     ddlGroups.DataValueField = "Url";
                     ddlGroups.DataTextField = "Title";

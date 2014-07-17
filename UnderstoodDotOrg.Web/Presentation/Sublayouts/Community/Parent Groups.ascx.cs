@@ -11,28 +11,17 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Services.CommunityServices;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
-    public partial class Parent_Groups : System.Web.UI.UserControl
+    public partial class Parent_Groups : BaseSublayout//System.Web.UI.UserControl
     {
         //GroupSummaryList rptGroupCards;
 
-        protected override void OnLoad(EventArgs e)
-        {
-
-            //groupList.Controls.Clear();
-            //rptGroupCards = (GroupSummaryList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupSummaryList.ascx");
-            //rptGroupCards.ID = "rptGroupCards";
-            //rptGroupCards.Attributes.Add("runat", "Server");
-            //rptGroupCards.EnableViewState = true;
-            //rptGroupCards.Visible = true;
-            //groupList.Controls.Add(rptGroupCards);
-
-            base.OnLoad(e);
-        }
+        
 
         protected override void OnInit(EventArgs e)
         {
@@ -45,6 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.ProfileRedirect(Constants.UserPermission.CommunityUser);
            
             if (!IsPostBack)
             {

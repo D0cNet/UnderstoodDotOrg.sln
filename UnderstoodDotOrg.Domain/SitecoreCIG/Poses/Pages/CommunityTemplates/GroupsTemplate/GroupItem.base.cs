@@ -63,6 +63,13 @@ public CustomTextField GroupID
 	}
 }
 
+public CustomTextField NavigationTitle
+{
+	get
+	{
+        return new CustomTextField(InnerItem, InnerItem.Fields["Navigation Title"]);
+	}
+}
 
 public CustomTreeListField Issues
 {

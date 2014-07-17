@@ -16,9 +16,13 @@
                     <ItemTemplate>
                         <div class="col col-24 group-card rs_read_this">
                     <div class="group-card-image">
-                        <a href="REPLACE">
+                        <asp:HyperLink ID="hrefGroupImageLink" runat="server" >
+                            <asp:image ID="imgGroupImage" runat="server" />
+
+                        </asp:HyperLink>
+                       <%-- <a href="REPLACE">
                             <img alt="190x107 Placeholder" src="http://placehold.it/190x107" />
-                        </a>
+                        </a>--%>
                     </div><!-- end .group-card-image -->
                     <div class="group-card-info group">
                         <div class="group-card-title">

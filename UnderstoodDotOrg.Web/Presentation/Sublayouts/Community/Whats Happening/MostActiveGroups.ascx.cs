@@ -150,12 +150,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 else
                 {
 
-
-
-
-                    grps = Groups.FindGroups().OrderByDescending(g => g.LastActivityDate)
-                                                             .Take(6)
-                                                             .ToList<GroupCardModel>();
+                    grps = Groups.FindGroups()
+                        .OrderByDescending(g=>g.NumOfDiscussions)
+                        .Take(6)
+                        .OrderByDescending(g => g.LastActivityDate)
+                        .ToList<GroupCardModel>();
 
 
 
