@@ -31,6 +31,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string ReplyCount { get; set; }
         public string IsApproved { get; set; }
         public string AuthorUsername { get; set; }
+        public string SitecoreItemId { get; set; }
         public DateTime CommentDate { get; set; }
         public string Type { get; set; }
 
@@ -68,6 +69,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 CommentDate = parsedDate;
                 ParentTitle = xn["Content"]["Application"]["Container"]["HtmlName"].InnerText;
                 CommentTitle = xn["Content"]["HtmlName"].InnerText;
+                SitecoreItemId = CommentTitle.Substring(CommentTitle.IndexOf("{"));
+                if (!string.IsNullOrEmpty(SitecoreItemId))
+                    CommentTitle = CommentTitle.Replace(SitecoreItemId, "");
                 Type = xn["Content"]["Application"]["HtmlName"].InnerText;
 
                 if (Type.Equals("Articles"))

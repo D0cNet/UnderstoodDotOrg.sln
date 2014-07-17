@@ -10,6 +10,8 @@ using System.Xml;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Extensions;
+using Sitecore.Data.Items;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 {
@@ -62,15 +64,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 
             HtmlGenericControl commentGroupSpan = (HtmlGenericControl)e.Item.FindControl("commentGroupSpan");
             HyperLink hypCommentGroup = (HyperLink)e.Item.FindControl("hypCommentGroup");
-            if (item.ParentTitle.Equals("Site Root"))
+
+            Item parent = Sitecore.Context.Database.GetItem(item.SitecoreItemId);
+
+            if (parent != null)
             {
-                commentGroupSpan.Visible = false;
+                hypCommentGroup.NavigateUrl = parent.GetUrl();
+                hypCommentGroup.Text = parent.DisplayName;
             }
             else
-            {
-                hypCommentGroup.NavigateUrl = "/Community and Events/Groups/" + item.ParentTitle;
-                hypCommentGroup.Text = item.ParentTitle;
-            }
+                commentGroupSpan.Visible = false;
         }
     }
 }
