@@ -32,5 +32,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
         [IndexField("publish_date")]
         public DateTime PublishDate { get; set; }
+
+        [IndexField("target_grade")]
+        public int TargetGrade { get; set; }
     }
 }

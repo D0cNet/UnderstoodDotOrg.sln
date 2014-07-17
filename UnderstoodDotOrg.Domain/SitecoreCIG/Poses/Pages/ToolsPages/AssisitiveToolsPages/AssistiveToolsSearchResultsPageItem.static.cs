@@ -7,17 +7,31 @@ using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Search;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages
 {
     public partial class AssistiveToolsSearchResultsPageItem
     {
-        public static IEnumerable<AssistiveToolsReviewPageItem> GetSearchResults(Guid? issueId = null, Guid? gradeId = null, Guid? technologyId = null, 
+        public static IEnumerable<AssistiveToolsReviewPageItem> GetSearchResults(Guid? issueId = null, Guid? gradeRangeId = null, Guid? technologyId = null, 
             Guid? platformId = null, string searchTerm = null, int page = 1, SearchHelper.SortOptions.AssistiveToolsSortOptions sortOption = 0)
         {
-            // TODO: Implement mapping of dropdown values to data template fields used for tagging in Sitecore
+            int? minGrade = null;
+            int? maxGrade = null;
 
-            return SearchHelper.GetAssitiveToolsReviewPages(issueId, gradeId, technologyId, platformId, searchTerm, page, sortOption);
+            // Lookup grade range in Sitecore
+            if (gradeRangeId.HasValue)
+            {
+                AssistiveToolsGradeRangeItem rangeItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(gradeRangeId));
+
+                if (rangeItem != null)
+                {
+                    minGrade = rangeItem.GradeLowerBound.Integer;
+                    maxGrade = rangeItem.GradeUpperBound.Integer;
+                }
+            }
+
+            return SearchHelper.GetAssitiveToolsReviewPages(issueId, minGrade, maxGrade, technologyId, platformId, searchTerm, page, sortOption);
         }
     }
 }

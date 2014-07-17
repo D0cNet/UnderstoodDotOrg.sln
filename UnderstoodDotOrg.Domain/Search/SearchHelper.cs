@@ -1042,11 +1042,13 @@ namespace UnderstoodDotOrg.Domain.Search
             }
         }
 
-        public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issueId, Guid? gradeId, Guid? technologyId, 
+        public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issueId, int? minGrade, int? maxGrade, Guid? technologyId, 
             Guid? platformId, string searchTerm, int page, SortOptions.AssistiveToolsSortOptions sortOption)
         {
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
             searchTerm = NormalizeSearchTerm(searchTerm);
+
+            bool hasGradeRange = minGrade.HasValue && maxGrade.HasValue;
 
             using (var context = index.CreateSearchContext())
             {
@@ -1055,14 +1057,13 @@ namespace UnderstoodDotOrg.Domain.Search
                                         && i.Path.Contains(Constants.Search.ContentSearchPath))
                                 .Filter(i => i.TemplateId == ID.Parse(AssistiveToolsReviewPageItem.TemplateId));
 
-                // TODO: modify query based on guid values
                 if (issueId.HasValue)
                 {
                     query = query.Where(i => i.Issues.Contains(ID.Parse(issueId.Value)));
                 }
-                if (gradeId.HasValue)
+                if (hasGradeRange)
                 {
-                    
+                    query = query.Where(i => i.TargetGrade >= minGrade && i.TargetGrade <= maxGrade);
                 }
                 if (technologyId.HasValue)
                 {
@@ -1073,7 +1074,7 @@ namespace UnderstoodDotOrg.Domain.Search
                     query = query.Where(i => i.Platforms.Contains(ID.Parse(platformId)));
                 }
 
-                if (issueId.HasValue || gradeId.HasValue || technologyId.HasValue || platformId.HasValue)
+                if (issueId.HasValue || hasGradeRange || technologyId.HasValue || platformId.HasValue)
                 {
                     searchTerm = null;
                 }
