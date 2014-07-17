@@ -753,7 +753,7 @@ $(document).ready(function () {
 (function ($) {
     var helpfulInProgress = false;
     function init() {
-        $("button.likes").click(helpful_clickHandler);
+        $("button.groups-discussion-like-button").click(helpful_clickHandler);
     }
     function helpful_clickHandler(e) {
         e.preventDefault();
@@ -771,7 +771,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: $(".likes").data('endpoint') + 'FoundReplyHelpful',
+            url: $(self).data('endpoint') + 'FoundReplyHelpful',
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data),
