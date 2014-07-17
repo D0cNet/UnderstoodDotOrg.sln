@@ -5,6 +5,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
+using Sitecore.Data.Items;
+using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Domain.TelligentCommunity
 {
@@ -32,6 +34,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public string IsApproved { get; set; }
         public string AuthorUsername { get; set; }
         public string SitecoreItemId { get; set; }
+        public Item SitecoreItem { get; set; }
         public DateTime CommentDate { get; set; }
         public string Type { get; set; }
 
@@ -72,16 +75,12 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 SitecoreItemId = CommentTitle.Substring(CommentTitle.IndexOf("{"));
                 if (!string.IsNullOrEmpty(SitecoreItemId))
                     CommentTitle = CommentTitle.Replace(SitecoreItemId, "");
+                SitecoreItem = !string.IsNullOrEmpty(SitecoreItemId) ? 
+                    Sitecore.Context.Database.GetItem(SitecoreItemId) :
+                    null;
                 Type = xn["Content"]["Application"]["HtmlName"].InnerText;
-
-                if (Type.Equals("Articles"))
-                {
-                    Url = "/";
-                }
-                else
-                {
-                    Url = "/Community and Events/Blogs/" + Type + "/" + CommentTitle;
-                }
+                Url = SitecoreItem != null ? SitecoreItem.GetUrl() : "/";
+                
             }
         
         }
