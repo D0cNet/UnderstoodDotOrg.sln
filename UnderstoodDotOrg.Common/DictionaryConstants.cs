@@ -1109,7 +1109,7 @@ namespace UnderstoodDotOrg.Common
 		{
 			get
 			{
-				return Translate.TextByDomain(PosesDictionary, "Blogs Fragment Fragment");
+				return Translate.TextByDomain(PosesDictionary, "Blogs Fragment");
 			}
 		}
 

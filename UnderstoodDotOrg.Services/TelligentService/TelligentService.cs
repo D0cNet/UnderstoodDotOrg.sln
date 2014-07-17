@@ -2439,31 +2439,11 @@ namespace UnderstoodDotOrg.Services.TelligentService
             var searchResultsList = new List<SearchResult>();
             try
             {
-                string appId = string.Empty;
-                switch (param)
-                {
-                    case "blog":
-                        appId = "blog";
-                        break;
-                    case "group":
-                        appId = "forum";
-                        break;
-                    case "question":
-                        appId = "wiki";
-                        break;
-                    case "expert":
-                        appId = "expert";
-                        break;
-                    case "all":
-                        appId = "";
-                        break;
-
-                }
                 using (var webClient = new WebClient())
                 {
 
                     webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
-                    var requestUrl = string.Format(GetApiEndPoint("search.xml?Query={0}&PageSize=100&Category={1}"), q, appId);
+                    var requestUrl = string.Format(GetApiEndPoint("search.xml?Query={0}&PageSize=100&Category={1}"), q, param);
 
                     var xml = webClient.DownloadString(requestUrl);
 
@@ -2507,7 +2487,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                 case "comment":
                                         typeTransformed = "Blog Comment";
                                         url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + application["HtmlName"].InnerText + "/" + Regex.Replace(title, "Comment on ", "");
-                                        if (appId == "wiki")
+                                        if (param == "wiki")
                                         {
                                             typeTransformed = "Question Answer";
                                         }

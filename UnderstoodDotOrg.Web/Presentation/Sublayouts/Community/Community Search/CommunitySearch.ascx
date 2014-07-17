@@ -33,12 +33,12 @@
             </div>
             <label id="searchFilter" runat="server">
                 <asp:DropDownList ID="ddlFilterSearch" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlFilterSearch_SelectedIndexChanged">
-                    <asp:ListItem Selected="True" Value=""></asp:ListItem>
-                    <asp:ListItem Value="all"></asp:ListItem>
-                    <asp:ListItem Value="blog"></asp:ListItem>
-                    <asp:ListItem Value="group"></asp:ListItem>
-                    <asp:ListItem Value="question"></asp:ListItem>
-                    <asp:ListItem Value="expert"></asp:ListItem>
+                    <asp:ListItem Value=""></asp:ListItem>
+                    <asp:ListItem Value=""></asp:ListItem>
+                    <asp:ListItem Value=""></asp:ListItem>
+                    <asp:ListItem Value=""></asp:ListItem>
+                    <asp:ListItem Value=""></asp:ListItem>
+                    <asp:ListItem Value=""></asp:ListItem>
                 </asp:DropDownList>
             </label>
             <div class="clearfix"></div>

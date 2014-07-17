@@ -46,6 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 litEventDate.Text = item.GetFormattedEventStartDate();
                 hlEventDetail.NavigateUrl = item.GetUrl();
                 hlExpertPicture.NavigateUrl = item.GetUrl();
+                frExpertName.Item = item;
 
                 // Expert details
                 ExpertDetailPageItem expert = item.Expert.Item;
@@ -54,7 +55,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 {
                     imgExpert.ImageUrl = expert.GetThumbnailUrl(150, 150);
                     //litExpertType.Text = expert.GetExpertType();
-                    frExpertName.Item = /*frExpertSubheading.Item = */expert;
                 }
             }
         }

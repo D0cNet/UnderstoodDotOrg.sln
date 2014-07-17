@@ -1141,6 +1141,14 @@ namespace UnderstoodDotOrg.Common
             Weblog,
             Blog
         }
+        public static class TelligentSearchParams
+        {
+            public const string Blog = "blog";
+            public const string Question = "wiki";
+            public const string Group = "forum";
+            public const string Expert = "";
+            public const string All = "";
+        }
         public static class TelligentConversationStatus
         {
             public const string NotSet = "NotSet";

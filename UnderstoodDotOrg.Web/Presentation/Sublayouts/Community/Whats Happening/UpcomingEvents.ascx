@@ -40,7 +40,7 @@
                                     </div>
                                     <!-- end .event-card-datetime -->
                                     <div class="event-card-title">
-                                        <asp:HyperLink ID="hlEventDetail" runat="server">Chat with<br /><sc:FieldRenderer ID="frExpertName" FieldName="Expert Name" runat="server" /></asp:HyperLink>
+                                        <asp:HyperLink ID="hlEventDetail" runat="server"><sc:FieldRenderer ID="frExpertName" FieldName="Event Heading" runat="server" /></asp:HyperLink>
                                     </div>
                                     <!-- end .event-card-title -->
                                     <div class="card-buttons">

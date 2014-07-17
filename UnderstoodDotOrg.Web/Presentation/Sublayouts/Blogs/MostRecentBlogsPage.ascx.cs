@@ -44,7 +44,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             string query = TextHelper.RemoveHTML(txtSearch.Text);
-            Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=blog");
+            Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=" + Constants.TelligentSearchParams.Blog);
         }
     }
 }
