@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
     public partial class Groups {
         
         /// <summary>
+        /// frGroups control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frGroups;
+        
+        /// <summary>
         /// divDdlGroups control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDdlGroups;
+        
+        /// <summary>
+        /// frMyGroupsDD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frMyGroupsDD;
         
         /// <summary>
         /// ddlGroups control.
@@ -40,6 +58,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         protected global::System.Web.UI.WebControls.Panel pnlGroups;
         
         /// <summary>
+        /// frRecentDiscussions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frRecentDiscussions;
+        
+        /// <summary>
         /// hypStartADiscussion control.
         /// </summary>
         /// <remarks>
@@ -47,6 +74,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hypStartADiscussion;
+        
+        /// <summary>
+        /// frStartADiscussion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frStartADiscussion;
         
         /// <summary>
         /// rptComments control.
@@ -67,13 +103,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         protected global::System.Web.UI.WebControls.Panel pnlNoGroups;
         
         /// <summary>
-        /// hypAllGroups control.
+        /// frYouHaveNotJoinedAGroup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypAllGroups;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frYouHaveNotJoinedAGroup;
         
         /// <summary>
         /// pnlNoProfile control.
@@ -85,13 +121,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         protected global::System.Web.UI.WebControls.Panel pnlNoProfile;
         
         /// <summary>
-        /// hypCompleteYourProfile control.
+        /// frNoCommunityProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypCompleteYourProfile;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoCommunityProfile;
         
         /// <summary>
         /// divStartADiscussion control.

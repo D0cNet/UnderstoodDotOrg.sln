@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Groups.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs.Groups" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container my-account-subheader groups-subheader">
     <div class="row">
         <!-- subheader -->
@@ -7,13 +8,13 @@
             <div class="row">
                 <!-- subheader -->
                 <div class="col col-8">
-                    <h2 class="rs_read_this">My Groups</h2>
+                    <h2 class="rs_read_this"><sc:FieldRenderer ID="frGroups" FieldName="My Groups Text" runat="server"/></h2>
                 </div>
                 <div class="col col-16">
                     <div class="row" runat="server" id="divDdlGroups">
                         <div class="col push-5 offset-1 my-groups-dropdown-label">
                             <label for="subheadergroups">
-                                <span>My Groups:</span>
+                                <span><sc:FieldRenderer ID="frMyGroupsDD" FieldName="My Groups Drop Down Label" runat="server"/></span>
                             </label>
                         </div>
                         <div class="col push-5">
@@ -43,11 +44,11 @@
                     <div class="row mygroups-header-wrap">
                         <div class="col col-12">
                             <header>
-                                <h2>Recent Discussions in Parents of Kids with Attention Issues</h2>
+                                <h2><sc:FieldRenderer ID="frRecentDiscussions" FieldName="Recent Discussions Text" runat="server"/></h2>
                             </header>
                         </div>
                         <div class="col col-6 offset-6">
-                            <asp:HyperLink CssClass="button start-discussion rs_skip" ID="hypStartADiscussion" runat="server">Start a Discussion</asp:HyperLink>
+                            <asp:HyperLink CssClass="button start-discussion rs_skip" ID="hypStartADiscussion" runat="server"><sc:FieldRenderer ID="frStartADiscussion" FieldName="Start A Discussion Label" runat="server"/></asp:HyperLink>
                         </div>
                     </div>
 
@@ -107,13 +108,11 @@
             <!-- .account-mygroups container -->
             <asp:Panel runat="server" ID="pnlNoGroups" Visible="false">
                 <p class="empty">
-                    You have not yet joined any groups. Our private discussion groups are a great way to get advice for your situation and to help other parents in need. 
-            <asp:HyperLink ID="hypAllGroups" runat="server">See all discussion groups.</asp:HyperLink>
+                    <sc:FieldRenderer ID="frYouHaveNotJoinedAGroup" FieldName="You Have Not Joined A Group Text" runat="server"/>
                 </p>
             </asp:Panel>
             <asp:Panel runat="server" ID="pnlNoProfile" Visible="false">
-                <p class="empty">You don't have a community profile, to create one please
-                    <asp:HyperLink CssClass="comment-link" ID="hypCompleteYourProfile" runat="server">click here.</asp:HyperLink></p>
+                <sc:FieldRenderer ID="frNoCommunityProfile" FieldName="No Community Profile Text" runat="server"/>
             </asp:Panel>
             <!-- END PARTIAL: account-mygroups -->
         </div>
