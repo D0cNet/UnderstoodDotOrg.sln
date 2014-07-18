@@ -68,7 +68,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         hypImageLink.ImageUrl = article.GetArticleThumbnailUrl(230, 129);
 
                         litArticleTitle.Text = article.DisplayName;
-                        litDatePosted.Text = article.InnerItem.Statistics.Created.ToString("mm dd, yyyy");
+                        litDatePosted.Text = article.InnerItem.Statistics.Created.ToString("MMM dd, yyyy");
                         litAbstract.Text =  UnderstoodDotOrg.Common.Helpers.TextHelper.TruncateText(
                             Sitecore.StringUtil.RemoveTags(HttpUtility.HtmlDecode(article.ContentPage.BodyContent.Raw)), 150);
 
