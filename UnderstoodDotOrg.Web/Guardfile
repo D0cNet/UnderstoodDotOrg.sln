@@ -84,10 +84,11 @@ group :emulate_vs_build do
 		#
 		# NOTE: while this copies the files to the Website folder, the
 		# changes are not picked up by IIS without a restart (via GUI or
-		# iisreset). AO reports they don't have this problem, so i'm
-		# gonna chalk it up to environment differences, with the only
-		# one i can imagine being vmware shared folders. an IIS restart
-		# is still faster than a VS rebuild. *sigh*
+		# iisreset). AO reports they don't have this problem, and MS 
+		# suggests this should work (see <http://msdn.microsoft.com/en-us/library/aa983464(v=vs.110).aspx#sectionToggle4>)
+		# so i'm gonna chalk it up to environment differences, with the
+		# only one i can imagine being vmware shared folders. an IIS 
+		# restart is still faster than a VS rebuild. *sigh*
 		#
 		watch(BE_WATCH_DIR_REGEX) do |m|
 			filename = m[0]
