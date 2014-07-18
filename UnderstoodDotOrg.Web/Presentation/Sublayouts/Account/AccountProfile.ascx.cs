@@ -92,6 +92,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             ucAccountHeader.ProfileMember = ucAccountNonFriendProfile.ProfileMember = _profileMember;
 
             ucAccountHeader.IsImpersonatingVistor = isImpersonatingVisitor;
+            ucAccountHeader.IsImpersonatingMember = isImpersonatingMember;
 
             // Check friendship
             if (IsUserLoggedIn

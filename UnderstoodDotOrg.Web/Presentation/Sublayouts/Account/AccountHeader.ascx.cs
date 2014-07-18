@@ -19,6 +19,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
     {
         protected string ScreenName { get; set; }
         public bool IsImpersonatingVistor { get; set; }
+        public bool IsImpersonatingMember { get; set; }
         public Member ProfileMember { get; set; }
 
         protected string CanConnectCss
@@ -139,7 +140,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
 
         private void ToggleDisabledConnectionMessage()
         {
-            scNotConnectingNarrow.Visible = scNotConnectingWide.Visible = !ProfileMember.allowConnections;
+            bool displayNotConnectingMessage = !ProfileMember.allowConnections;
+
+            // Handle special case when member is viewing own profile and not in impersonation mode
+            if (IsUserLoggedIn 
+                && !IsImpersonatingVistor 
+                && !IsImpersonatingMember
+                && CurrentMember.ScreenName == ProfileMember.ScreenName)
+            {
+                displayNotConnectingMessage = false;
+            }
+
+            scNotConnectingNarrow.Visible = scNotConnectingWide.Visible = displayNotConnectingMessage;
         }
 
         void btnThanks_Click(object sender, EventArgs e)
