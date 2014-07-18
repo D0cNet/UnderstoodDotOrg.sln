@@ -18,7 +18,7 @@
                 <!-- BEGIN PARTIAL: community/groups_private_heading -->
                 <!--groups private partial-->
                 <div class="col groups-private">
-                    <p class="col">Only members can see the conversations</p>
+                    <p class="col"><%= UnderstoodDotOrg.Common.DictionaryConstants.OnlyMembersCanSeeLabel %></p>
                     <i class="icon"></i>
                 </div>
                 <!-- END PARTIAL: community/groups_private_heading -->
@@ -30,14 +30,14 @@
             <div class="col col-24 search-board">
                 <div class="rs_read_this discussion-board-rs-wrapper">
                     <div class="col-16 discussion-boards mobile-group-search-form offset-1 skiplink-toolbar">
-                        <h3>Search this board</h3>
+                        <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.SearchThisBoardLabel %></h3>
 
 
                         <!-- BEGIN PARTIAL: community/groups_search_form -->
                         <!--groups search form-->
                         <asp:Panel runat="server" DefaultButton="btnSearch">
                             <fieldset class="group-search-form mobile-group-search-form">
-                                <label for="group-search-text" class="visuallyhidden" aria-hidden="true">Search</label>
+                                <label for="group-search-text" class="visuallyhidden" aria-hidden="true"><%= UnderstoodDotOrg.Common.DictionaryConstants.SearchLabel %></label>
                                 <asp:TextBox ID="txtSearch" CssClass="group-search" runat="server" placeholder="Enter conversation" />
                                 <asp:Button type="submit" CssClass="group-search-button" ID="btnSearch" value="Go" OnClick="btnSearch_Click" runat="server" />
                             </fieldset>

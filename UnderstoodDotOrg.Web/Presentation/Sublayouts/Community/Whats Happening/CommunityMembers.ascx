@@ -2,12 +2,12 @@
 <div class="community-members">
     <div class="row">
         <div class="col col-24 community-members-wrapper">
-            <h2 class="rs_read_this">Community Moderators</h2>
+            <h2 class="rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.CommunityModeratorsLabel %></h2>
             <div class="carousel-arrow-wrapper">
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows members next-prev-menu arrows-gray">
 
-                    <a class="view-all" href="REPLACE">See all moderators</a>
+                    <a class="view-all" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllModeratorsLabel %></a>
 
                     <div class="rsArrow rsArrowLeft">
                         <button class="rsArrowIcn"></button>

@@ -13,15 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     public partial class Parent_Groups {
         
         /// <summary>
-        /// litParentGroupsLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litParentGroupsLabel;
-        
-        /// <summary>
         /// ref_recommended_group control.
         /// </summary>
         /// <remarks>
@@ -29,24 +20,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ref_recommended_group;
-        
-        /// <summary>
-        /// litShowGroupsMatchLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litShowGroupsMatchLabel;
-        
-        /// <summary>
-        /// litGroupsPrivacyLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litGroupsPrivacyLabel;
         
         /// <summary>
         /// ddlChildIssues control.
@@ -94,13 +67,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.WebControls.DropDownList ddlPartners;
         
         /// <summary>
-        /// btnSearch control.
+        /// bntSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.Button bntSearch;
         
         /// <summary>
         /// rptGroupCards control.
@@ -119,14 +92,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor linkShowMore;
-        
-        /// <summary>
-        /// litShowMore control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litShowMore;
     }
 }

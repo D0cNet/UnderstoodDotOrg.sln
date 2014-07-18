@@ -2,13 +2,12 @@
 <div class="upcoming-events">
     <div class="row">
         <div class="col col-24">
-            <h2>Upcoming Events</h2>
+            <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.UpcomingEventsLabel %></h2>
             <div class="carousel-arrow-wrapper">
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows events next-prev-menu arrows-gray">
 
-                    <a class="view-all" href="REPLACE">See all expert live events</a>
-
+                    <a class="view-all" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllExpertLiveEventsLabel %></a>
                     <div class="rsArrow rsArrowLeft">
                         <button class="rsArrowIcn"></button>
                     </div>

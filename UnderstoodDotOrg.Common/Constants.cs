@@ -129,7 +129,7 @@ namespace UnderstoodDotOrg.Common
 			public static int EM11DonationAcknowledgementSPID = 1695;
 			public static int EM12ThankYouForContactingUSSPID = 1696;
 			public static int EM13ActivityFromTodaySPID = 1708;
-			public static int EM14ActivityFromThisWeekSPID = 534;
+			public static int EM14ActivityFromThisWeekSPID = 1709;
 			public static int EM15HappyHolidaysSPID = 1697;
 			public static int EM16ContentReminderSPID = 1698;
 			public static int EM17ObservationLogReminderSPID = 1710;

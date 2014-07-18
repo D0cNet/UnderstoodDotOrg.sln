@@ -6,8 +6,8 @@
 <div class="container">
         <div class="row">
             <div class="col col-24 skiplink-toolbar">
-                <h2 class="offset-1">All Parents</h2>
-                <a href="REPLACE" id="refRecommended" runat="server" class="link-recommended">Just show parents like me</a>
+                <h2 class="offset-1"><%= UnderstoodDotOrg.Common.DictionaryConstants.AllParentsLabel %></h2>
+                <a href="REPLACE" id="refRecommended" runat="server" class="link-recommended"><%= UnderstoodDotOrg.Common.DictionaryConstants.JustShowParentsLikeMeLabel %></a>
 
                 <div class="options-search">
                     <div class="container-parents-search-zip">
@@ -16,13 +16,13 @@
                         <asp:TextBox ID="txtZipCode" TextMode="Number" MaxLength="5" runat="server" name="parents-search-zip" CssClass="label-text" placeholder="Zip Code"></asp:TextBox>
                     </div>
                     <div class="container-parents-search-distance">
-                        <label for="parents-search-distance" class="label-slider">Miles within zip code:</label>
+                        <label for="parents-search-distance" class="label-slider"><%= UnderstoodDotOrg.Common.DictionaryConstants.MilesWithinZipLabel %></label>
                         <div id="parents-search-distance-slider"></div>
                         <input type="hidden" name="parents-search-distance" id="parents-search-distance" data-start-low="0" data-start-high="20"
                         data-values="0,5,10,15,20,25,30,35,40,45,50" data-labels="0,5,10,15,20,25,30,35,40,45,50+" />
                     </div>
                     <div class="container-parents-search-grade">
-                        <label class="label-slider" for="parents-search-grade">Grade range:</label>
+                        <label class="label-slider" for="parents-search-grade"><%= UnderstoodDotOrg.Common.DictionaryConstants.GradeRangeLabel %></label>
                         <div id="parents-search-grade-slider"></div>
                         <input type="hidden" name="parents-search-grade" id="parents-search-grade" data-collision="2" data-start-low="prek" data-start-high="8" data-values="prek,1,2,3,4,5,6,7,8,9,10,11,12,adult" data-labels="Pre-K,Grade 1,Grade 2,Grade 3,Grade 4,Grade 5,Grade 6,Grade 7,Grade 8,Grade 9,Grade 10,Grade 11,Grade 12,Adult"/>
                     </div>
@@ -79,7 +79,7 @@
     <div class="col col-24">
         
     <%--  <a class="show-more-link " runat="server" id="showmore"  onserverclick="ShowMore_ServerClick" href="#" data-path="community/member-cards" data-container="parents-member-cards" data-item="member-card" data-count="20">Show More<i class="icon-arrow-down-blue"></i></a>--%>
-        <asp:LinkButton   ID="showmore"  ClientIDMode="Static"  data-path="community/member-cards" data-container="parents-member-cards" data-item="member-card" data-count="20"  runat="server" >Show More<i class="icon-arrow-down-blue"></i></asp:LinkButton>
+        <asp:LinkButton   ID="showmore"  ClientIDMode="Static"  data-path="community/member-cards" data-container="parents-member-cards" data-item="member-card" data-count="20"  runat="server" ><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></asp:LinkButton>
     </div>
   </div>
 </div><!-- .show-more -->
