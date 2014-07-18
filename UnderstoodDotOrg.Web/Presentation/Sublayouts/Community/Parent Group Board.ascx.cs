@@ -23,10 +23,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
     public partial class Parent_Group_Board : BaseSublayout//System.Web.UI.UserControl
     {
+        private int ResultCount
+        {
+            get
+            {
+                return (Int32)ViewState["_resultCount"];
+            }
+            set
+            {
+                ViewState["_resultCount"] = value;
+            }
+        }
+        public int ResultSet { get { return 10; } }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                ResultCount = 10;
                 Item currItem = Sitecore.Context.Item;
                 if (currItem != null)
                 {
@@ -41,7 +56,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                         litForumName.Text = frmModel.Name;
                         if (frmModel != null)
                         {
-                            rptThread.DataSource = frmModel.Threads;
+                            Session["_threads"] = frmModel.Threads;
+                            rptThread.DataSource = frmModel.Threads.Take(ResultSet) ;
                             rptThread.DataBind();
                         }
                     }
@@ -175,6 +191,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         {
             string query = TextHelper.RemoveHTML(txtSearch.Text);
             Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=" + Constants.TelligentSearchParams.Group);
+        }
+        protected void ShowMore()
+        {
+            //List<MemberCardModel> m = rptMemberCards.DataSource as List<MemberCardModel>;
+            //if (m != null)
+            //{
+            var mems = (List<ThreadModel>)Session["_threads"];
+
+            if (mems != null)
+            {
+                ResultCount += ResultSet;
+                rptThread.DataSource = mems.Take(ResultCount).ToList();
+                rptThread.DataBind();
+
+                //If at the end of result set
+                if (mems.Count() <= ResultCount)
+                    linkShowMore.Visible = false;
+                   
+            }
+        }
+
+        protected void linkShowMore_ServerClick(object sender, EventArgs e)
+        {
+            ShowMore();
         }
     }
 }

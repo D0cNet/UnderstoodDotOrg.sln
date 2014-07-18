@@ -119,102 +119,7 @@
                             </ul>
                         </FooterTemplate>
                     </asp:Repeater>
-                    <%--<%----%>
-                    <%--<ul class="discussions table-discussions search-results rs_read_this">
-    
-      <!-- BEGIN PARTIAL: community/individual_board_list_item -->
-                <!--individual board list item-->
-                <li>
-                  <div class="col summary">
-                    <h4>Discussion:</h4>
-                    <a href="REPLACE">Vel Illo Debitis Sint Voluptatem Odio Perspiciatis. Vero Nihil Voluptatum Totam Quam Et Dolores Nostrum Occaecati Aliquam Sint Modi Dolorem Suscipit</a>
-                  </div>
-                  <div class="col latest-post rs_skip">
-                    <h4>Latest Post:</h4>
-                    <p class="mins-ago">32 mins ago</p>
-                    <a href="REPLACE">Rem</a>
-                    <p>Neque Officia Adipisci Voluptate Vel Doloremque Ab Et</p>
-                  </div>
-                  <div class="col started-by">
-                    <h4>Started by:</h4>
-                    <a href="REPLACE">Debitis</a>
-                  </div>
-
-                  <div class="col replies">
-                    <h4>Replies:</h4>
-                    <p>16</p>
-                  </div>
-                  <div class="col latest-post-tabular">
-                    <h4>Latest Post:</h4>
-                    <p>58 mins ago</p>
-                    <a href="REPLACE">Ut</a>
-                    <p>Provident Reprehenderit Aperiam Architecto Consequatur Quam Vel Et Consectetur Voluptas Non</p>
-                  </div>
-                </li>
-                <!-- END PARTIAL: community/individual_board_list_item -->
-                      <!-- BEGIN PARTIAL: community/individual_board_list_item -->
-                <!--individual board list item-->
-                <li>
-                  <div class="col summary">
-                    <h4>Discussion:</h4>
-                    <a href="REPLACE">Repudiandae Dolorum Laborum Soluta Voluptatem Nemo Corporis Nihil Itaque Ducimus Voluptas Omnis Quo Amet. Quia Eos Qui Eaque Ipsa Quaerat Ullam Repellendus Facere</a>
-                  </div>
-                  <div class="col latest-post rs_skip">
-                    <h4>Latest Post:</h4>
-                    <p class="mins-ago">38 mins ago</p>
-                    <a href="REPLACE">Sit</a>
-                    <p>Molestias Perferendis Et Ea Officiis Vero Est A Dolor Odit Minima Itaque Accusamus</p>
-                  </div>
-                  <div class="col started-by">
-                    <h4>Started by:</h4>
-                    <a href="REPLACE">Quaerat</a>
-                  </div>
-
-                  <div class="col replies">
-                    <h4>Replies:</h4>
-                    <p>77</p>
-                  </div>
-                  <div class="col latest-post-tabular">
-                    <h4>Latest Post:</h4>
-                    <p>28 mins ago</p>
-                    <a href="REPLACE">Facilis</a>
-                    <p>Debitis Mollitia Id Et Natus</p>
-                  </div>
-                </li>
-                <!-- END PARTIAL: community/individual_board_list_item -->
-                      <!-- BEGIN PARTIAL: community/individual_board_list_item -->
-                <!--individual board list item-->
-                <li>
-                  <div class="col summary">
-                    <h4>Discussion:</h4>
-                    <a href="REPLACE">Perspiciatis Nam Omnis Accusamus Et. Dolores Architecto Quia Quis Et Est Porro Libero Dolorem Eveniet Expedita</a>
-                  </div>
-                  <div class="col latest-post rs_skip">
-                    <h4>Latest Post:</h4>
-                    <p class="mins-ago">52 mins ago</p>
-                    <a href="REPLACE">Rerum</a>
-                    <p>Blanditiis Velit Sit Ut Porro Enim Eum Fugit Nihil Non Soluta Ipsum Quaerat</p>
-                  </div>
-                  <div class="col started-by">
-                    <h4>Started by:</h4>
-                    <a href="REPLACE">Illo</a>
-                  </div>
-
-                  <div class="col replies">
-                    <h4>Replies:</h4>
-                    <p>69</p>
-                  </div>
-                  <div class="col latest-post-tabular">
-                    <h4>Latest Post:</h4>
-                    <p>57 mins ago</p>
-                    <a href="REPLACE">Temporibus</a>
-                    <p>Atque Unde Natus Ut Itaque Quia Mollitia Omnis Non Accusantium</p>
-                  </div>
-                </li>
-                <!-- END PARTIAL: community/individual_board_list_item -->
-    
-
-             </ul>--%>
+             
                     <!-- end .discussions -->
                 </div>
                 <!-- END PARTIAL: community/groups_table -->
@@ -226,7 +131,7 @@
 <div class="container show-more rs_skip">
     <div class="row">
         <div class="col col-24">
-            <a class="show-more-link " data-container="table-discussions" data-count="3" data-item="summary" data-path="community/groups-board-results" href="#">Show More<i class="icon-arrow-down-blue"></i></a>
+            <a runat="server"  id="linkShowMore"  onserverClick="linkShowMore_ServerClick" data-container="table-discussions" data-count="10" data-item="summary" data-path="community/groups-board-results" href="#">Show More<i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
 </div>
