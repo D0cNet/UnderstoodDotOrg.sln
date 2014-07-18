@@ -114,7 +114,9 @@ namespace UnderstoodDotOrg.Web.Handlers
 
             totalResults = srs.Results.Count();
 
-            var pagedArticles = articles.Skip(page - 1).Take(Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE);
+            int offset = (page - 1) * Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE;
+
+            var pagedArticles = articles.Skip(offset).Take(Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE);
 
             var query = from a in pagedArticles
                         let i = new BehaviorAdvicePageItem(a.GetItem())
