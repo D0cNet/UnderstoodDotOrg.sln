@@ -61,12 +61,7 @@
             var item = (Answer)e.Item.DataItem;
             HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
 
-            var membershipManager = new MembershipManager();
-
-            hypUserProfileLink.NavigateUrl = string.Format(MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage().GetUrl()
-                + "?{0}={1}",
-                Constants.ACCOUNT_EMAIL,
-                CommunityHelper.ReadUserEmail(item.Author));
+            hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(item.Author);
         }
 
         protected void LikeButton_Click(object sender, EventArgs e)
