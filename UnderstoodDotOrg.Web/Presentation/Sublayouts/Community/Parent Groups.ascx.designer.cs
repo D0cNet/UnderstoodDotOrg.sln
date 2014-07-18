@@ -13,13 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
     public partial class Parent_Groups {
         
         /// <summary>
-        /// frParentGroupsText control.
+        /// litParentGroupsLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frParentGroupsText;
+        protected global::System.Web.UI.WebControls.Literal litParentGroupsLabel;
         
         /// <summary>
         /// ref_recommended_group control.
@@ -31,22 +31,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ref_recommended_group;
         
         /// <summary>
-        /// frGroupsThatMatch control.
+        /// litShowGroupsMatchLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frGroupsThatMatch;
+        protected global::System.Web.UI.WebControls.Literal litShowGroupsMatchLabel;
         
         /// <summary>
-        /// frGroupsArePrivate control.
+        /// litGroupsPrivacyLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frGroupsArePrivate;
+        protected global::System.Web.UI.WebControls.Literal litGroupsPrivacyLabel;
         
         /// <summary>
         /// ddlChildIssues control.
@@ -119,5 +119,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor linkShowMore;
+        
+        /// <summary>
+        /// litShowMore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litShowMore;
     }
 }

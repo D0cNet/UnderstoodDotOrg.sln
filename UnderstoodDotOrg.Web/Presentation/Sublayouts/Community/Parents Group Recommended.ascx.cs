@@ -71,6 +71,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 String[] topics = CurrentMember.Interests.Select(x => x.Key.ToString("B").ToUpper()).ToArray();
                 String[] states = new string[] { CurrentMember.zipCodeToState() };
                 String[] partners = new string[0]; //Partners not applicable to Member profile
+
+                if(issues.Count()>0 && grades.Count()>0 && topics.Count() >0)
+                {
+                    litViewProfileLink1.Visible = false;
+                }
+                else if((issues.Count()>0 || grades.Count()>0) || topics.Count() >0)
+                {
+                    
+                    //Set message to 
+                    //"For better recommendations, complete your full profile (link to profile process)"
+                    litViewProfileLink1.Visible = true;
+                }
+
                 return Groups.FindGroups(issues,topics,grades,states,partners).OrderByDescending(x=> x.NumOfMembers).ToList();
                 
             }

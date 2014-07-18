@@ -20,11 +20,12 @@
                     </p>
                     <i class="icon"></i>
                 </div>
+           
                 <!-- END PARTIAL: community/groups_private_heading -->
             </header>
             <div class="col col-24 message-box">
                 <p>
-                    <asp:Literal Text="" ID="litViewProfileLink1" runat="server" />
+                    <asp:Literal Text="" Visible="false" ID="litViewProfileLink1" runat="server" />
                 </p>
             </div>
         </div>

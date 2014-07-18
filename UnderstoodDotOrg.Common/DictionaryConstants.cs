@@ -2885,5 +2885,23 @@ namespace UnderstoodDotOrg.Common
 
         public static string RecommendedGroupsLabel { get { return Translate.TextByDomain(PosesDictionary, "Recommended Groups Label"); } }
         public static string LastUpdatedLabel { get { return Translate.TextByDomain(PosesDictionary, "Last Updated Label"); } }
+
+        public static string GroupsPrivacyLabel { get { return Translate.TextByDomain(PosesDictionary, "Groups Privacy Label"); } }
+
+        public static string ParentGroupsLabel { get { return Translate.TextByDomain(PosesDictionary, "Parent Groups Label"); } }
+
+        public static string ShowMatchingGroupsLabel { get { return Translate.TextByDomain(PosesDictionary, "Matching Groups Label"); } }
+
+        public static string TopicsLabel { get { return Translate.TextByDomain(PosesDictionary, "Topics Label"); } }
+
+        public static string GradesLabel { get { return Translate.TextByDomain(PosesDictionary, "Grades Label"); } }
+
+        public static string StatesLabel { get { return Translate.TextByDomain(PosesDictionary, "States Label"); } }
+
+        public static string PartnersLabel { get { return Translate.TextByDomain(PosesDictionary, "Partners Label"); } }
+
+        public static string BetterRecommendations { get { return Translate.TextByDomain(PosesDictionary, "Better Recommendations Label"); } }
+
+
     }
 }

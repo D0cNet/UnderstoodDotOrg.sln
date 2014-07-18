@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
@@ -22,6 +23,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            lbSubmitReply.Text = DictionaryConstants.SubmitButtonText;
+
             rptGroupDiscussion = (GroupDiscussionList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupDiscussionList.ascx");
             rptGroupDiscussion.ID = "rptGroupCards";
             plhGroupDiscussions.Controls.Add(rptGroupDiscussion);

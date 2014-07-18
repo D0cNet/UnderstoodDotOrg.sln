@@ -28,8 +28,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             Item parentItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.ParentsGroupRecommended));
             string itemHref = Sitecore.Links.LinkManager.GetItemUrl(parentItem);
             ref_recommended_group.HRef = itemHref;
-
-
+            litGroupsPrivacyLabel.Text = DictionaryConstants.GroupsPrivacyLabel;
+            litParentGroupsLabel.Text = DictionaryConstants.ParentGroupsLabel;
+            litShowGroupsMatchLabel.Text = DictionaryConstants.ShowMatchingGroupsLabel;
+            litShowMore.Text = DictionaryConstants.ShowMoreLabel;
             base.OnInit(e);
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -54,6 +56,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if (childIssues != null)
                 {
                     items = childIssues.GetItems();
+                    ddlChildIssues.Items.Add(new ListItem() {  Text=DictionaryConstants.ChildIssuesLabel, Value=""});
 
                     foreach (var item in items)
                     {
@@ -69,7 +72,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if (topics != null)
                 {
                     items = topics.GetItems();
-
+                    ddlTopics.Items.Add(new ListItem() { Text = DictionaryConstants.TopicsLabel, Value = "" });
                     foreach (var item in items)
                     {
                         ddlTopics.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
@@ -85,7 +88,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if (grades != null)
                 {
                     items = grades.GetItems();
-
+                    ddlGrades.Items.Add(new ListItem() { Text = DictionaryConstants.GradesLabel, Value = "" });
                     foreach (var item in items)
                     {
                         ddlGrades.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
@@ -103,6 +106,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 {
                     items = states.GetItems();
 
+                    ddlStates.Items.Add(new ListItem() { Text = DictionaryConstants.StatesLabel, Value = "" });
                     foreach (var item in items)
                     {
                         ddlStates.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
@@ -119,7 +123,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if (partners != null)
                 {
                     items = partners.GetItems();
-
+                    ddlPartners.Items.Add(new ListItem() { Text = DictionaryConstants.PartnersLabel, Value = "" });
                     foreach (var item in items)
                     {
                         ddlPartners.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
@@ -142,14 +146,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 rptGroupCards.DataSource = grpItems.Take(10).ToList();
                 rptGroupCards.DataBind();
             }
-            //else
-            //{
-            //    if (Session["groupItems"] != null)
-            //    {
-            //        rptGroupCards.DataSource = (List<GroupCardModel>)Session["groupItems"];
-            //        rptGroupCards.DataBind();
-            //    }
-            //}
+            
 
           
         }
@@ -167,11 +164,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
             string[] partner = String.IsNullOrEmpty(ddlPartners.SelectedValue.ToString()) ? new String[0] : new String[] { ddlPartners.SelectedValue.ToString() }; 
 
+            
+
             //Perform search using criteria
             var groupResult = Groups.FindGroups( issue, topic, grade,state,partner);
 
-           // rptGroupCards = (GroupSummaryList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupSummaryList.ascx");
-            //rptGroupCards.ID = "rptGroupCards";
+            
             
             rptGroupCards.DataSource = groupResult.Take(10).ToList();
             rptGroupCards.DataBind();

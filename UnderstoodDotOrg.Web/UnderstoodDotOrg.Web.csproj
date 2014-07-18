@@ -869,6 +869,9 @@
     <Compile Include="Presentation\Sublayouts\Common\ThinkingOfYouButton.ascx.designer.cs">
       <DependentUpon>ThinkingOfYouButton.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.designer.cs">
+      <DependentUpon>Parent Groups.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\MyGroups.ascx.cs">
       <DependentUpon>MyGroups.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1348,9 +1351,6 @@
     <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.cs">
       <DependentUpon>Parent Groups.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.designer.cs">
-      <DependentUpon>Parent Groups.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parent Search Module.ascx.cs">
       <DependentUpon>Parent Search Module.ascx</DependentUpon>
