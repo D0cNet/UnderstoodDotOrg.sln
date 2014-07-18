@@ -23,8 +23,8 @@
 #####
 
 
-# the dirs we want to watch, represented as a regexp. we currently have
-# the following in the Presentation/includes dir: 
+# the front-end related dirs we want to watch, represented as a regexp.
+# we currently have the following in the Presentation/includes dir:
 # 
 #   - audio       (static audio assets for TYCE)
 #   - css         (compiled CSS)
@@ -38,7 +38,10 @@
 #
 # NOTE: when new folders are added, this regex and these docs need to 
 # be updated.
-WATCH_DIR_REGEX = /^Presentation\/Includes\/(audio|css|images|js)\/.*/
+FE_WATCH_DIR_REGEX = /^Presentation\/Includes\/(audio|css|images|js)\/.*/
+
+# .NET templates
+BE_WATCH_DIR_REGEX = /^Presentation\/.*\.as[cp]x$/
 
 # the Website docroot relative to this dir. it has its own Presentation
 # folder into which we're copying the files.
@@ -57,7 +60,8 @@ group :emulate_vs_build do
 	#
 	guard :shell, :all_on_start => true do
 
-		watch(WATCH_DIR_REGEX) do |m|
+		# front-end code
+		watch(FE_WATCH_DIR_REGEX) do |m|
 			filename = m[0]
 
 			# parent dirs of files register as changed along with the 
@@ -74,6 +78,26 @@ group :emulate_vs_build do
 	 			# puts "#{Time.now.iso8601} - ignoring \'#{filename}\'!"
 			end
 
+		end
+
+		# back-end code (ascx)
+		#
+		# NOTE: while this copies the files to the Website folder, the
+		# changes are not picked up by IIS without a restart (via GUI or
+		# iisreset). AO reports they don't have this problem, so i'm
+		# gonna chalk it up to environment differences, with the only
+		# one i can imagine being vmware shared folders. an IIS restart
+		# is still faster than a VS rebuild. *sigh*
+		#
+		watch(BE_WATCH_DIR_REGEX) do |m|
+			filename = m[0]
+
+			if File.ftype(filename) == 'file'
+				FileUtils.copy(filename, "#{DEST_DIR}/#{filename}")
+
+				# output nice message for visual confirmation
+				puts "#{Time.now.iso8601} - #{filename} changed."
+			end
 
 		end
 
