@@ -268,12 +268,21 @@ namespace UnderstoodDotOrg.Domain.Search
 
         private static Expression<Func<Article, bool>> GetCombinedChildPredicate(Child child)
         {
-            return PredicateBuilder.True<Article>()
-                .And(GetChildGradesPredicate(child))
-                .And(GetChildIssuesPredicate(child))
-                .And(GetChildDiagnosisPredicate(child))
-                .And(GetChildIEP504Predicate(child))
-                .And(GetChildEvaluationPredicate(child));
+            var pred = PredicateBuilder.True<Article>()
+                .And(GetChildGradesPredicate(child));
+
+            if (child.Issues.Any())
+            {
+                pred = pred.And(GetChildIssuesPredicate(child));
+            }
+
+            if (child.Diagnoses.Any()) 
+            {
+                pred = pred.And(GetChildDiagnosisPredicate(child));
+            }
+            
+            return pred.And(GetChildIEP504Predicate(child))
+                       .And(GetChildEvaluationPredicate(child));
         }
 
         private static Expression<Func<Article, bool>> GetMustReadPredicate()
@@ -662,9 +671,13 @@ namespace UnderstoodDotOrg.Domain.Search
                                     .Filter(GetBasePredicate(member));
 
                 // Inclusion/Exclusion processing based on member and child
-                var matchingArticlesQuery = allArticlesQuery
-                                    .Filter(GetMemberInterestsPredicate(member))
-                                    .Filter(GetCombinedChildPredicate(child));
+                var matchingArticlesQuery = allArticlesQuery;
+
+                if (member.Interests.Any()) 
+                {
+                    matchingArticlesQuery = matchingArticlesQuery.Filter(GetMemberInterestsPredicate(member));
+                }
+                matchingArticlesQuery = matchingArticlesQuery.Filter(GetCombinedChildPredicate(child));
 
                 int totalMatches = matchingArticlesQuery.Take(1).GetResults().TotalSearchResults;
 
