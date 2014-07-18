@@ -37,20 +37,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    <!-- Show More -->
-    <!-- BEGIN PARTIAL: community/show_more -->
-    <!--Show More-->
-    <div class="container show-more rs_skip" id="divShowMore" runat="server">
-        <div class="row">
-            <div class="col col-24">
-                <a class="show-more-link " href="#" data-path="community/qa-answers" data-container="answer-list" data-item="card-answer" data-count="6"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
-            </div>
-        </div>
-    </div>
     
-    <!-- .show-more -->
-    <!-- END PARTIAL: community/show_more -->
-    <!-- .show-more -->
 </div>
 
 <script type="text/javascript">
