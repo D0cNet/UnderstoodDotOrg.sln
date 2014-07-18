@@ -30,12 +30,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             {
                 rptFriends.DataSource = friends;
                 rptFriends.DataBind();
+                if (totalFriends <= 4)
+                {
+                    arrowLeft.Visible = arrowRight.Visible = false;
+                }
             }
-            else if (totalFriends <= 4)
-            {
-                arrowLeft.Visible = arrowRight.Visible = false;
-            }
-            else if (!friends.Any())
+            if (!friends.Any())
             {
                 divFriends.Visible = false;
             }
