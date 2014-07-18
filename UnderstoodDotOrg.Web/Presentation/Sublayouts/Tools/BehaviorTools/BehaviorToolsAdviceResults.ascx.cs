@@ -89,11 +89,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         {
             if (e.IsItem())
             {
-                BehaviorAdvicePageItem item = (BehaviorAdvicePageItem)e.Item.DataItem;
+                BasePageNEWItem item = (BasePageNEWItem)e.Item.DataItem;
 
                 HyperLink hlArticleLink = e.FindControlAs<HyperLink>("hlArticleLink");
                 hlArticleLink.NavigateUrl = item.GetUrl();
-                hlArticleLink.Text = item.BasePageNEW.NavigationTitle.Rendered;
+                hlArticleLink.Text = item.NavigationTitle.Rendered;
             }
         }
 
@@ -121,8 +121,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             litChallenge.Text = _challenge.ChallengeName;
 
             var articles = Model.RelatedArticles.ListItems.FilterByContextLanguageVersion()
-                                .Where(i => i.InheritsTemplate(BehaviorAdvicePageItem.TemplateId))
-                                .Select(i => new BehaviorAdvicePageItem(i))
+                                .Where(i => i.InheritsTemplate(BehaviorAdvicePageItem.TemplateId) 
+                                       || i.InheritsTemplate(DefaultArticlePageItem.TemplateId))
                                 .Take(3);
 
             if (articles.Any())
