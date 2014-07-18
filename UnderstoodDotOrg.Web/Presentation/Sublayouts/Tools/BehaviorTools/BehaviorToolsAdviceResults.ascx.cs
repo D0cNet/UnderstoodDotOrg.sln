@@ -89,11 +89,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         {
             if (e.IsItem())
             {
-                BasePageNEWItem item = (BasePageNEWItem)e.Item.DataItem;
-
+                Item item = (Item)e.Item.DataItem;
+                
                 HyperLink hlArticleLink = e.FindControlAs<HyperLink>("hlArticleLink");
                 hlArticleLink.NavigateUrl = item.GetUrl();
-                hlArticleLink.Text = item.NavigationTitle.Rendered;
+                hlArticleLink.Text = ((BasePageNEWItem)item).NavigationTitle.Rendered;
             }
         }
 
