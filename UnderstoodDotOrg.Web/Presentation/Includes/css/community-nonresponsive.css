@@ -3706,7 +3706,7 @@ div.selector.fixedWidth {
   width: 135px;
   margin-bottom: 0;
   margin-right: 26px;
-  width: 90px;
+  width: auto;
 }
 /* line 146, ../css.source/modules/community/_whats-happening-groups.scss */
 .community-groups .group-cards .group-card-info .card-buttons .button:after {
