@@ -25,7 +25,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 
             int totalFriends;
 
-            var friends = TelligentService.GetFriends(this.CurrentMember.ScreenName, 1, Constants.MY_ACCOUNT_CONNECTIONS_WIDGET_ENTRIES, out totalFriends);
+            var friends = TelligentService.GetFriends(this.CurrentMember.ScreenName, 1, Constants.MY_CONNECTIONS_FRIENDS_PER_PAGE, out totalFriends);
 
             if (friends.Any())
             {

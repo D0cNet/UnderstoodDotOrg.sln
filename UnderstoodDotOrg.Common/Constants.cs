@@ -739,6 +739,11 @@ namespace UnderstoodDotOrg.Common
                 public const string ViewConnections = "connections";
                 public const string ViewComments = "comments";
             }
+            public static class CommunitySearch
+            {
+                public const string Query = "q";
+                public const string SearchLocation = "a";
+            }
         }
         public static class UserActivity_Values
         {

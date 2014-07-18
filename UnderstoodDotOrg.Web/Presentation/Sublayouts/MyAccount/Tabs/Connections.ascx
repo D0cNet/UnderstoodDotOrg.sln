@@ -6,7 +6,7 @@
         <!-- subheader -->
         <div class="col col-22 offset-1">
             <!-- BEGIN PARTIAL: my-connections-subheader -->
-            <h2 class="rs_read_this">My Connections</h2>
+            <h2 class="rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.MyConnectionsLabel %></h2>
             <a href="REPLACE" class="separated-link">Activity Feed</a>
             <fieldset>
                 <span class="select-container sort">
@@ -50,7 +50,7 @@
                     <div class="container show-more rs_skip">
                         <div class="row">
                             <div class="col col-24">
-                                <a class="show-more-link show_more" href="#" data-path="my-account/my-connections" data-container="my-connections-list" data-item="my-event-item" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+                                <a class="show-more-link show_more" href="#" data-path="my-account/my-connections" data-container="my-connections-list" data-item="my-event-item" data-count="2"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeMoreLabel %><i class="icon-arrow-down-blue"></i></a>
                             </div>
                         </div>
                     </div>

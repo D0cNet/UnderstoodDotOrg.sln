@@ -30,7 +30,7 @@
             ddlFilterSearch.Items[5].Value = Constants.TelligentSearchParams.Expert;
 
             string q = string.Empty;
-            q = Request.QueryString["q"];
+            q = Request.QueryString[Constants.QueryStrings.CommunitySearch.Query];
             litResultName.Text = q;
 
             if (q.IsNullOrEmpty())
@@ -43,9 +43,9 @@
             if (!q.IsNullOrEmpty())
             {
                 var a = string.Empty;
-                if (Request.QueryString["a"] != null)
+                if (Request.QueryString[Constants.QueryStrings.CommunitySearch.SearchLocation] != null)
                 {
-                    a = Request.QueryString["a"];
+                    a = Request.QueryString[Constants.QueryStrings.CommunitySearch.SearchLocation];
                 }
 
                 var dataSource = TelligentService.CommunitySearch(q, a);
@@ -54,7 +54,7 @@
                 litResultCount.Text = dataSource.Count.ToString();
             }
 
-            switch (Request.QueryString["a"])
+            switch (Request.QueryString[Constants.QueryStrings.CommunitySearch.SearchLocation])
             {
                 case Constants.TelligentSearchParams.All:
                     litFilter.Text = DictionaryConstants.CommunityLabel;
@@ -87,7 +87,7 @@
                 url = u[0];
             }
 
-            Response.Redirect(url + "?q=" + query);
+            Response.Redirect(string.Format("{0}?{1}={2}", url, Constants.QueryStrings.CommunitySearch.Query, query));
         }
 
         protected void ddlFilterSearch_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,11 +101,12 @@
                     {
                         string[] u = Regex.Split(url, "&a");
                         url = u[0];
-                        Response.Redirect(url + "&a=" + ddlFilterSearch.SelectedItem.Value);
+                        Response.Redirect(string.Format("{0}?{1}={2}", url, Constants.QueryStrings.CommunitySearch.SearchLocation, ddlFilterSearch.SelectedItem.Value));
+
                     }
                     else
                     {
-                        Response.Redirect(url + "&a=" + ddlFilterSearch.SelectedItem.Value);
+                        Response.Redirect(string.Format("{0}?{1}={2}", url, Constants.QueryStrings.CommunitySearch.SearchLocation, ddlFilterSearch.SelectedItem.Value));
                     }
                 }
             }
