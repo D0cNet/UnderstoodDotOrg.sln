@@ -31,8 +31,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             IEnumerable<DefaultArticlePageItem> articles = SearchHelper.GetArticlesByAuthor(Sitecore.Context.Item.ID, 2);
 
-            rptAuthorArticles.DataSource = articles;
-            rptAuthorArticles.DataBind();
+            if (articles.Count() > 0)
+            {
+                rptAuthorArticles.DataSource = articles;
+                rptAuthorArticles.DataBind();
+            }
+            else
+                relatedArticlesDiv.Visible = false;
+
             imgExpert.ImageUrl = Model.GetThumbnailUrl(189, 189);
         }
 

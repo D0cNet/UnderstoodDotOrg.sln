@@ -35,7 +35,7 @@
 </div>
 <!-- end .container -->
 
-<div class="container">
+<div id="relatedArticlesDiv" runat="server" class="container">
     <!-- BEGIN PARTIAL: about/expert-blog-posts -->
     <div class="expert-blog-posts">
 
