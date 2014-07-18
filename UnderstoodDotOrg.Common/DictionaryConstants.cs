@@ -1830,6 +1830,14 @@ namespace UnderstoodDotOrg.Common
 
         #endregion MyAccount Labels
 
+        public static string SeeAllQuestionsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "See All Questions Label");
+            }
+        }
+
 
         public static string SearchThisBoardLabel
         {

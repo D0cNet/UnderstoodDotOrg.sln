@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
     public partial class RecentQuestions {
         
         /// <summary>
+        /// frRecentQuestions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frRecentQuestions;
+        
+        /// <summary>
         /// RecentQuestionsRepeater control.
         /// </summary>
         /// <remarks>
