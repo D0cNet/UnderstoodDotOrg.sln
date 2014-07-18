@@ -131,7 +131,7 @@
 
         .button {
           margin-right: 5px;
-          width: 78px;
+          width: auto;
 
           @include bp($bp-small) {
             margin-bottom: 12px;

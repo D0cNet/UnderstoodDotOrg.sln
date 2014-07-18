@@ -5973,7 +5973,7 @@ div.selector.fixedWidth {
 /* line 132, ../css.source/modules/community/_whats-happening-groups.scss */
 .community-groups .group-cards .group-card-info .card-buttons .button {
   margin-right: 5px;
-  width: 78px;
+  width: auto;
 }
 @media (min-width: 480px), print {
   /* line 132, ../css.source/modules/community/_whats-happening-groups.scss */
