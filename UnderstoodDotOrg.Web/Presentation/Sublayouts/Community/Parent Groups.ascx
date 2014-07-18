@@ -57,7 +57,7 @@
                     </asp:DropDownList>
                   <div class="submit-button-wrap">
                     <%--<input class="button rs_skip" type="submit" value="Search">--%>
-                      <asp:Button CssClass="button rs_skip" ID="bntSearch" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.SearchButtonText %>" runat="server" OnClick="btnSearch_Click" />
+                      <asp:Button CssClass="button rs_skip" ID="btnSearch"  runat="server" OnClick="btnSearch_Click" />
                   </div>
 
               </div>
