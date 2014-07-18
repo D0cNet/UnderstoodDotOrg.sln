@@ -2537,20 +2537,52 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
         public static bool IsApprovedFriend(string requestorUserName, string requesteeUserName)
         {
-            // TODO: needs to support paging to handle friends over 100
+            // Requires paging logic to check friendship as there is no direct way to check friends
             bool isFriend = false;
 
-            MakeApiRequest(wc => 
+            bool hasMoreResults = true;
+            int currentIndex = 0;
+            int pageSize = 100;
+
+            try
             {
-                var url = GetApiEndPoint(String.Format("users/{0}/friends.xml?PageSize=100", requestorUserName));
+                MakeApiRequest(wc =>
+                {
+                    while (hasMoreResults)
+                    {
+                        var url = GetApiEndPoint(
+                            String.Format("users/{0}/friends.xml?PageIndex={1}&PageSize={2}", 
+                                requestorUserName, 
+                                currentIndex,
+                                pageSize));
 
-                var response = wc.DownloadString(url);
+                        var response = wc.DownloadString(url);
 
-                var xml = new XmlDocument();
-                xml.LoadXml(response);
+                        var xml = new XmlDocument();
+                        xml.LoadXml(response);
 
-                isFriend = xml.SelectSingleNode(String.Format("Response/Friendships/Friendship/User/Username[text()='{0}']", requesteeUserName)) != null;
-            });
+                        var container = xml.SelectSingleNode("Response/Friendships");
+
+                        int totalFriends = Convert.ToInt32(container.Attributes["TotalCount"].Value);
+                        int resultSize = container.SelectNodes("Friendship").Count;
+
+                        hasMoreResults = (currentIndex * pageSize) + resultSize < totalFriends;
+
+                        isFriend = container.SelectSingleNode(String.Format("Friendship/User/Username[text()='{0}']", requesteeUserName)) != null;
+
+                        if (isFriend)
+                        {
+                            break;
+                        }
+
+                        currentIndex++;
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error("Error checking friendship status in IsApprovedFriend", ex, typeof(TelligentService));
+            }
 
             return isFriend;
         }
