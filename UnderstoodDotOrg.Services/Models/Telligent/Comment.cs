@@ -27,8 +27,10 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string ReplyCount { get; set; }
         public string IsApproved { get; set; }
         public string AuthorUsername { get; set; }
+        public string CommentTitle { get; set; }
         public DateTime CommentDate { get; set; }
         public Guid SitecoreId { get; set; }
+        public string Type { get; set; }
 
         public Comment() { }
 
@@ -79,6 +81,11 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
                 AuthorDisplayName = author["DisplayName"].InnerText;
                 AuthorProfileUrl = author["ProfileUrl"].InnerText;
                 AuthorUsername = author["Username"].InnerText;
+                CommentTitle = xn["Content"]["HtmlName"].InnerText;
+                if (CommentTitle.Contains("{"))
+                {
+                    CommentTitle = CommentTitle.Substring(0, CommentTitle.IndexOf("{"));
+                }
                 Likes = TelligentService.TelligentService.GetTotalLikes(commentId).ToString();
                 //ParentTitle = xn["Content"]["Application"]["Container"]["HtmlName"].InnerText;
                 //CommentTitle = xn["Content"]["HtmlName"].InnerText;
@@ -87,6 +94,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
                 Guid.TryParse(Sitecore.StringUtil.RemoveTags(xn["Content"]["HtmlDescription"].InnerText), out sitecoreGuid);
                 SitecoreId = sitecoreGuid;
                 CommentDate = parsedDate;
+                Type = xn["Content"]["Application"]["HtmlName"].InnerText;
             }
 
         }

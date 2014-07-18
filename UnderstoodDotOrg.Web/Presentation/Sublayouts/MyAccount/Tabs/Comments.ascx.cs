@@ -8,10 +8,11 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Xml;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
-using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Items;
+using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Services.Models.Telligent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 {
@@ -28,7 +29,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             }
             else
             {
-                var commentsList = CommunityHelper.ListUserComments(CurrentMember.ScreenName);
+                int totalComments;
+
+                var commentsList = TelligentService.GetUserCommentsByScreenName(CurrentMember.ScreenName, 1, 2, out totalComments);
 
                 if ((commentsList != null) && (commentsList.Count != 0))
                 {
@@ -65,7 +68,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             HtmlGenericControl commentGroupSpan = (HtmlGenericControl)e.Item.FindControl("commentGroupSpan");
             HyperLink hypCommentGroup = (HyperLink)e.Item.FindControl("hypCommentGroup");
 
-            Item parent = Sitecore.Context.Database.GetItem(item.SitecoreItemId);
+            Item parent = Sitecore.Context.Database.GetItem(item.SitecoreId);
 
             if (parent != null)
             {
