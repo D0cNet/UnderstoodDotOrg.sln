@@ -31,9 +31,17 @@ $assistive-tech-purple: #7a4183;
       margin: 50px 0;
     }
     .selector {
+      max-width: 190px;
       @include bp($bp-large){
         float: right;
       }
+    }
+    // fixes existing AO markup
+    .col-6.push-8 { display: inline-block; }
+    .col-4.pull-6 {
+      display: inline-block;
+      float: right;
+      max-width: 90px;
     }
   }
 
