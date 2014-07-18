@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
@@ -19,6 +20,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
     public partial class AccountNonFriendProfile : BaseSublayout<ViewProfileItem>
     {
         public Member ProfileMember;
+        public bool IsImpersonatingVistor { get; set; }
+        public bool IsImpersonatingMember { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,6 +37,44 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
         {
             lvChildren.ItemDataBound += lvChildren_ItemDataBound;
             rptInterests.ItemDataBound += rptInterests_ItemDataBound;
+        }
+
+        private void InitViews()
+        {
+            if (IsUserLoggedIn && ProfileMember.allowConnections && !IsImpersonatingVistor)
+            {
+                pnlMemberOpen.Visible = true;
+                PopulateContent();
+                return;
+            }
+
+            pnlNoConnections.Visible = !ProfileMember.allowConnections;
+            pnlAnonymousOpen.Visible = ProfileMember.allowConnections;
+            pnlMemberOpen.Visible = false;
+        }
+
+        private void PopulateContent()
+        {
+            if (ProfileMember.Children.Any())
+            {
+                lvChildren.DataSource = ProfileMember.Children;
+                lvChildren.DataBind();
+
+                ((Literal)lvChildren.FindControl("litChildrenHeading")).Text = UnderstoodDotOrg.Common.DictionaryConstants.ChildrenLabel;
+            }
+
+            if (ProfileMember.Interests.Any())
+            {
+                rptInterests.DataSource = ProfileMember.Interests;
+                rptInterests.DataBind();
+            }
+
+            List<GroupCardModel> groups = TelligentService.GetUserGroups(ProfileMember.ScreenName);
+            if (groups.Any())
+            {
+                rptGroups.DataSource = groups;
+                rptGroups.DataBind();
+            }
         }
 
         void rptInterests_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -73,45 +114,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                     rptIssues.DataSource = child.Issues;
                     rptIssues.DataBind();
                 }
-            }
-        }
-
-        private void InitViews()
-        {
-            if (IsUserLoggedIn)
-            {
-                pnlMemberOpen.Visible = true;
-                PopulateContent();
-            }
-            else
-            {
-                pnlAnonymousClosed.Visible = !ProfileMember.allowConnections;
-                pnlAnonymousOpen.Visible = ProfileMember.allowConnections;
-                pnlMemberOpen.Visible = false;
-            }
-        }
-
-        private void PopulateContent()
-        {
-            if (ProfileMember.Children.Any())
-            {
-                lvChildren.DataSource = ProfileMember.Children;
-                lvChildren.DataBind();
-
-                ((Literal)lvChildren.FindControl("litChildrenHeading")).Text = UnderstoodDotOrg.Common.DictionaryConstants.ChildrenLabel;
-            }
-
-            if (ProfileMember.Interests.Any())
-            {
-                rptInterests.DataSource = ProfileMember.Interests;
-                rptInterests.DataBind();
-            }
-
-            List<GroupCardModel> groups = TelligentService.GetUserGroups(ProfileMember.ScreenName);
-            if (groups.Any())
-            {
-                rptGroups.DataSource = groups;
-                rptGroups.DataBind();
             }
         }
 

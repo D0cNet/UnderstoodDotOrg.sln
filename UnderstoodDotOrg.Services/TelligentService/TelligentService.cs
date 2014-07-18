@@ -2436,6 +2436,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
         /// <returns></returns>
         public static List<SearchResult> CommunitySearch(string q, string param)
         {
+            // TODO: store guids in constants file
             var searchResultsList = new List<SearchResult>();
             try
             {

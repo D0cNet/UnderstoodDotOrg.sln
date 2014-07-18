@@ -11,9 +11,6 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
 {
     public partial class PublicAccountFolderItem
     {
-        public PublicAccountItem GetPublicAccountPage()
-        {
-            return InnerItem.Children.FirstOrDefault(i => i.IsOfType(PublicAccountItem.TemplateId));
-        }
+
     }
 }

@@ -15,7 +15,7 @@
 </asp:Panel>
 
 <!-- BEGIN PARTIAL: sign-in-prompt -->
-<asp:Panel ID="pnlAnonymousClosed" runat="server" Visible="false" CssClass="sign-in-prompt">
+<asp:Panel ID="pnlNoConnections" runat="server" Visible="false" CssClass="sign-in-prompt">
     <img alt="Private Profile" src="/Presentation/Includes/images/icon.sign-in-prompt.lock.png" />
     <h3>
         <sc:FieldRenderer runat="server" FieldName="Private User Profile Heading" />

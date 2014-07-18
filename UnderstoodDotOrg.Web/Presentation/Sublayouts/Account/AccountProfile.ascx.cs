@@ -79,14 +79,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
         {
             ProfileUrl = MembershipHelper.GetPublicProfileUrl(_profileMember);
 
+            // Determine if member is viewing own profile and impersonating a view
+            string viewMode = Request.QueryString[Constants.VIEW_MODE] ?? string.Empty;
+            bool isImpersonatingVisitor = false;
+            bool isImpersonatingMember = false;
+            if (IsUserLoggedIn && CurrentMember.ScreenName == _profileMember.ScreenName)
+            {
+                isImpersonatingMember = viewMode == Constants.VIEW_MODE_MEMBER;
+                isImpersonatingVisitor = viewMode == Constants.VIEW_MODE_VISITOR;
+            }
+
             ucAccountHeader.ProfileMember = ucAccountNonFriendProfile.ProfileMember = _profileMember;
+
+            ucAccountHeader.IsImpersonatingVistor = isImpersonatingVisitor;
 
             // Check friendship
             if (IsUserLoggedIn
                 && !string.IsNullOrEmpty(CurrentMember.ScreenName))
             {
-                var status = TelligentService.IsFriend(CurrentMember.ScreenName, _profileMember.ScreenName);
-                if (status == UnderstoodDotOrg.Common.Constants.TelligentFriendStatus.Approved)
+                // Short circuit friends display to visitor/member view
+                if (isImpersonatingVisitor || isImpersonatingMember)
+                {
+                    ucAccountNonFriendProfile.IsImpersonatingMember = isImpersonatingMember;
+                    ucAccountNonFriendProfile.IsImpersonatingVistor = isImpersonatingVisitor;
+                    ucAccountNonFriendProfile.Visible = true;
+                    return;
+                }
+
+                // Display friends view
+                if (CurrentMember.ScreenName == _profileMember.ScreenName
+                    || TelligentService.IsApprovedFriend(CurrentMember.ScreenName, _profileMember.ScreenName))
                 {
                     InitFriendsView();
                     return;

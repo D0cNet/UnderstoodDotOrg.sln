@@ -128,10 +128,9 @@
 
                 if (!string.IsNullOrEmpty(this.CurrentMember.ScreenName))
                 {
-                    var publicAccountPage = MainsectionItem.GetHomePageItem().GetMyAccountFolder().GetPublicAccountFolder().GetPublicAccountPage();
-                    hypViewAsVisitors.NavigateUrl = string.Format(publicAccountPage.GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentMember.ScreenName, Constants.VIEW_MODE, Constants.VIEW_MODE_VISITOR);
-                    hypViewAsMembers.NavigateUrl = string.Format(publicAccountPage.GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentMember.ScreenName, Constants.VIEW_MODE, Constants.VIEW_MODE_MEMBER);
-                    hypViewAsFriends.NavigateUrl = string.Format(publicAccountPage.GetPublicAccountProfilePage().GetUrl() + "?{0}={1}&{2}={3}", Constants.ACCOUNT_EMAIL, CurrentMember.ScreenName, Constants.VIEW_MODE, Constants.VIEW_MODE_FRIEND);    
+                    hypViewAsVisitors.NavigateUrl = MembershipHelper.GetPublicProfileAsVisitorUrl(CurrentMember.ScreenName);
+                    hypViewAsMembers.NavigateUrl = MembershipHelper.GetPublicProfileAsMemberUrl(CurrentMember.ScreenName);
+                    hypViewAsFriends.NavigateUrl = MembershipHelper.GetPublicProfileUrl(CurrentMember.ScreenName);
                 }
                 else
                 {

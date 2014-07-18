@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
@@ -17,6 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
     public partial class AccountHeader : BaseSublayout<ViewProfileItem>
     {
         protected string ScreenName { get; set; }
+        public bool IsImpersonatingVistor { get; set; }
         public Member ProfileMember { get; set; }
 
         protected string CanConnectCss
@@ -88,9 +90,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                 pnlSupport.Visible = ProfileMember.allowConnections;
             }
 
-            // Conditional content for logged in viewers
-            if (!IsUserLoggedIn)
-            {
+            // Conditional content for logged in viewers or impersonating visitor
+            if (!IsUserLoggedIn || IsImpersonatingVistor) {
                 if (ProfileMember.allowConnections && ProfileMember.Children.Any())
                 {
                     rptChildren.DataSource = ProfileMember.Children;

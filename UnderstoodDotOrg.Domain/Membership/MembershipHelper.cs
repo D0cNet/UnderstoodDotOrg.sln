@@ -80,6 +80,21 @@ namespace UnderstoodDotOrg.Domain.Membership
             return string.Empty;
         }
 
+        public static string GetPublicProfileAsVisitorUrl(string screenName)
+        {
+            return GetPublicProfileViewUrl(screenName, Constants.VIEW_MODE_VISITOR);
+        }
+
+        public static string GetPublicProfileAsMemberUrl(string screenName)
+        {
+            return GetPublicProfileViewUrl(screenName, Constants.VIEW_MODE_MEMBER);
+        }
+
+        private static string GetPublicProfileViewUrl(string screenName, string viewMode)
+        {
+            return String.Format("{0}?{1}={2}", GetPublicProfileUrl(screenName), Constants.VIEW_MODE, viewMode);
+        }
+
         public static string GetPublicProfileUrl(Domain.TelligentCommunity.User user)
         {
             return GetPublicProfileUrl(user.Username);
