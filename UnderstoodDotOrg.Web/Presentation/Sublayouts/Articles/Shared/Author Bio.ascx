@@ -101,30 +101,7 @@
         </div>
         <!-- /.expert-blog-post-container -->
 
-       <%-- <div class="row blog-shapes">
-            <!-- BEGIN PARTIAL: children-key -->
-            <div class="container child-content-indicator ">
-                <!-- Key -->
-                <div class="row">
-                    <div class="col col-23 offset-1">
-                        <div class="children-key" aria-hidden="true">
-                            <ul>
-                                <li><i class="child-a"></i>for Michael</li>
-                                <li><i class="child-b"></i>for Elizabeth</li>
-                                <li><i class="child-c"></i>for Ethan</li>
-                                <li><i class="child-d"></i>for Jeremy</li>
-                                <li><i class="child-e"></i>for Franklin</li>
-                            </ul>
-                        </div>
-                        <!-- .children-key -->
-                    </div>
-                    <!-- .col -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .child-content-indicator -->
-            <!-- END PARTIAL: children-key -->
-        </div>--%>
+        <sc:Sublayout ID="Sublayout1" runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
         <!-- /.row /.shapes -->
 
     </div>
