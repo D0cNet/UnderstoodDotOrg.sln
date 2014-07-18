@@ -1830,6 +1830,23 @@ namespace UnderstoodDotOrg.Common
 
         #endregion MyAccount Labels
 
+
+        public static string SearchThisBoardLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Search This Board Label");
+            }
+        }
+
+        public static string StartedByLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Started By Label");
+            }
+        }
+
         public static string PartnerLabel
         {
             get
@@ -2211,14 +2228,6 @@ namespace UnderstoodDotOrg.Common
                 return Translate.TextByDomain(PosesDictionary, "Search Label");
             }
         }
-
-		public static string SearchThisBoardLabel
-		{
-			get
-			{
-				return Translate.TextByDomain(PosesDictionary, "Search This Board Label");
-			}
-		}
 
 		public static string OnlyMembersCanSeeLabel
 		{

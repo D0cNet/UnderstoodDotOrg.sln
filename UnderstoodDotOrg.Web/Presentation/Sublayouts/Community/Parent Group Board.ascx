@@ -71,10 +71,10 @@
     
 
     
-                    <h4 class="col summary">Discussion</h4>
-                    <h4 class="col started-by">Started by</h4>
-                    <h4 class="col replies">Replies</h4>
-                    <h4 class="col latest-post-tabular">Latest Post</h4>
+                    <h4 class="col summary"><%= UnderstoodDotOrg.Common.DictionaryConstants.DiscussionLabel %></h4>
+                    <h4 class="col started-by"><%= UnderstoodDotOrg.Common.DictionaryConstants.StartedByLabel %></h4>
+                    <h4 class="col replies"><%= UnderstoodDotOrg.Common.DictionaryConstants.RepliesLabel %></h4>
+                    <h4 class="col latest-post-tabular"><%= UnderstoodDotOrg.Common.DictionaryConstants.LatestPostLabel %></h4>
     
 
                   </header>
@@ -88,26 +88,26 @@
                             <li>
                                 <div class="col summary">
                                     <asp:HiddenField Value='<%# Eval("Subject") %>' runat="server" ID="hdSubject" />
-                                    <h4>Discussion:</h4>
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.DiscussionLabel %>:</h4>
                                     <a href="REPLACE" id="hrefDiscussion" runat="server"><%# Eval("Snippet") %></a>
                                 </div>
                                 <div class="col latest-post rs_skip">
-                                    <h4>Latest Post:</h4>
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.LatestPostLabel %>:</h4>
                                     <p class="mins-ago"><%# Eval("LastPostTime") %></p>
                                     <a  runat="server" id="hrefProfile2" href="REPLACE"><%# Eval("LastPostUser") %></a>
                                     <p><%# Eval("LastPostBody") %></p>
                                 </div>
                                 <div class="col started-by">
-                                    <h4>Started by:</h4>
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.StartedByLabel %>:</h4>
                                     <a runat="server" id="hrefProfile" href="REPLACE"><%# Eval("StartedBy") %></a>
                                 </div>
 
                                 <div class="col replies">
-                                    <h4>Replies:</h4>
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.RepliesLabel %>:</h4>
                                     <p><%# Eval("ReplyCount") %></p>
                                 </div>
                                 <div class="col latest-post-tabular">
-                                    <h4>Latest Post:</h4>
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.LatestPostLabel %>:</h4>
                                     <p><%# Eval("LastPostTime") %></p>
                                     <a  runat="server" id="hrefProfile3" href="REPLACE"><%# Eval("LastPostUser") %></a>
                                     <p><%# Eval("LastPostBody") %></p>
@@ -131,7 +131,7 @@
 <div class="container show-more rs_skip">
     <div class="row">
         <div class="col col-24">
-            <a runat="server"  id="linkShowMore"  onserverClick="linkShowMore_ServerClick" data-container="table-discussions" data-count="10" data-item="summary" data-path="community/groups-board-results" href="#">Show More<i class="icon-arrow-down-blue"></i></a>
+            <a runat="server"  id="linkShowMore"  onserverClick="linkShowMore_ServerClick" data-container="table-discussions" data-count="10" data-item="summary" data-path="community/groups-board-results" href="#"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
 </div>
