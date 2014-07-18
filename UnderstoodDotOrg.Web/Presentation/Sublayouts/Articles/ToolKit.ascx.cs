@@ -99,8 +99,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             LinkField lf = item.Fields["Link"];
 
-            if (lf != null && lf.TargetItem != null)
-                return Sitecore.Resources.Media.MediaManager.GetMediaUrl(lf.TargetItem);
+            if (lf != null)
+            {
+                if (lf.LinkType.ToLower() == "external")
+                    return lf.Url;
+                else
+                    return Sitecore.Resources.Media.MediaManager.GetMediaUrl(lf.TargetItem);
+            }
             else
                 return "#";
         }
