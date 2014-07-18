@@ -2228,14 +2228,6 @@ namespace UnderstoodDotOrg.Common
 			}
 		}
 
-		public static string OnlyMembersCanSeeLabel
-		{
-			get
-			{
-				return Translate.TextByDomain(PosesDictionary, "Only Members Can See Label");
-			}
-		}
-
         public static string FilterByLabel
         {
             get
