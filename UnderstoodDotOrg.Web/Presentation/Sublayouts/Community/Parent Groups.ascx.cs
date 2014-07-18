@@ -57,7 +57,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if (childIssues != null)
                 {
                     items = childIssues.GetItems();
-                    ddlChildIssues.Items.Add(new ListItem() {  Text=DictionaryConstants.ChildIssuesLabel, Value=""});
+                    //ddlChildIssues.Items.Add(new ListItem() {  Text=DictionaryConstants.ChildIssuesLabel, Value=""});
 
                     foreach (var item in items)
                     {
@@ -73,7 +73,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if (topics != null)
                 {
                     items = topics.GetItems();
-                    ddlTopics.Items.Add(new ListItem() { Text = DictionaryConstants.TopicsLabel, Value = "" });
+                    //ddlTopics.Items.Add(new ListItem() { Text = DictionaryConstants.TopicsLabel, Value = "" });
                     foreach (var item in items)
                     {
                         ddlTopics.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
@@ -89,7 +89,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if (grades != null)
                 {
                     items = grades.GetItems();
-                    ddlGrades.Items.Add(new ListItem() { Text = DictionaryConstants.GradesLabel, Value = "" });
+                    //ddlGrades.Items.Add(new ListItem() { Text = DictionaryConstants.GradesLabel, Value = "" });
                     foreach (var item in items)
                     {
                         ddlGrades.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
@@ -107,7 +107,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 {
                     items = states.GetItems();
 
-                    ddlStates.Items.Add(new ListItem() { Text = DictionaryConstants.StatesLabel, Value = "" });
+                    //ddlStates.Items.Add(new ListItem() { Text = DictionaryConstants.StatesLabel, Value = "" });
                     foreach (var item in items)
                     {
                         ddlStates.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
@@ -124,7 +124,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 if (partners != null)
                 {
                     items = partners.GetItems();
-                    ddlPartners.Items.Add(new ListItem() { Text = DictionaryConstants.PartnersLabel, Value = "" });
+                    //ddlPartners.Items.Add(new ListItem() { Text = DictionaryConstants.PartnersLabel, Value = "" });
                     foreach (var item in items)
                     {
                         ddlPartners.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });

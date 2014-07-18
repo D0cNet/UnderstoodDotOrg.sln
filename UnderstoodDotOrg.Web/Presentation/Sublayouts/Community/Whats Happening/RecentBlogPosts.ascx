@@ -1,13 +1,14 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="RecentBlogPosts.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening.RecentBlogPosts" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="community-blogs">
     <div class="row">
         <div class="col col-24 community-blogs-wrapper">
-            <h2>Recent Blog Posts</h2>
+            <h2><sc:FieldRenderer ID="frRecentBlogPosts" FieldName="Recent Blog Posts Label" runat="server"/></sc:FieldRenderer></h2>
             <div class="carousel-arrow-wrapper">
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows blogs next-prev-menu arrows">
 
-                    <a class="view-all" href="REPLACE">See all blogs</a>
+                    <a class="view-all" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllBlogsLabel %></a>
                     
                     <div class="rsArrow rsArrowLeft">
                         <button class="rsArrowIcn"></button>
@@ -35,8 +36,8 @@
                                     </div>
                                 </div>
                                 <div class="card-buttons">
-                                    <button type="button" class="button">Follow</button>
-                                    <button class="action-skip-this">Skip this</button>
+                                    <button type="button" class="button"><%= UnderstoodDotOrg.Common.DictionaryConstants.FollowBlogPost %></button>
+                                    <button class="action-skip-this"><%= UnderstoodDotOrg.Common.DictionaryConstants.SkipThisLabel %></button>
                                 </div>
                                 <!-- end .card-buttons -->
                             </div>
