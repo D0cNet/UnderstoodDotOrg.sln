@@ -130,6 +130,7 @@ $border-color: #d2d2d2;
 
       @include bp($bp-large) {
         margin: 0;
+        width: 152px;
       }
     }
 
@@ -144,10 +145,12 @@ $border-color: #d2d2d2;
     }
 
     .dropdown-menu {
-      left: 0;
+      left: -1px;
+      width: auto;
 
       a {
         background: #ffffff;
+        width: auto;
 
         &:hover, &:active {
           background: #794381;
