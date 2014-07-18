@@ -2,7 +2,7 @@
 
 <asp:Repeater ID="rptTips" runat="server">
 <HeaderTemplate>
-    <div class="second-next-prev-menu arrows-gray">
+    <div class="second-next-prev-menu arrows-gray" data-start-slide-number="">
         <span class="next-prev-text"><%= UnderstoodDotOrg.Common.DictionaryConstants.NextTipButtonText %></span>
         <div class="second-next-prev-menu-slider">
 </HeaderTemplate>

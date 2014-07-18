@@ -14,6 +14,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.Widge
 {
     public partial class TipCarousel : BaseSublayout
     {
+        protected int StartSlideIndex { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             BindEvents();
@@ -55,13 +57,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.Widge
                     return;
                 }
 
-                var tips = from r in results
-                           let i = r.GetItem()
-                           where i != null
-                           select new BehaviorAdvicePageItem(i);
+                var tips = results
+                    .Select(r => r.GetItem())
+                    .Where(item => item != null)
+                    .Select(item => (BehaviorAdvicePageItem)item);
 
                 if (tips.Any())
                 {
+                    var currentTipIdIndexMapping = tips
+                        .Select((item, i) => new
+                        {
+                            Id = item.ID,
+                            Index = i
+                        })
+                        .FirstOrDefault(iid => iid.Id == Sitecore.Context.Item.ID);
+
+                    StartSlideIndex = currentTipIdIndexMapping != null ? currentTipIdIndexMapping.Index : 0;
+
                     rptTips.DataSource = tips;
                     rptTips.DataBind();
                 }
