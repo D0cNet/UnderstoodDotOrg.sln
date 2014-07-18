@@ -545,7 +545,7 @@
 }
 /* line 28, ../css.source/modules/account/_forgot-password-confirmation.scss */
 .forgot-password-confirmation .confirmation-message .message strong {
-  word-break: break-all;
+  word-wrap: break-word;
   /* email breaks 3 chars in on mobile - forcing it to a new line on smaller displays */
   display: block;
 }
