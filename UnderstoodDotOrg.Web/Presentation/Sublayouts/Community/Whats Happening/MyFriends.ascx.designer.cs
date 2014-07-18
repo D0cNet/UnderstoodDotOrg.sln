@@ -40,21 +40,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl arrowRight;
         
         /// <summary>
-        /// imgUserAvatar control.
+        /// rptFriends control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgUserAvatar;
-        
-        /// <summary>
-        /// hypUserProfileLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypUserProfileLink;
+        protected global::System.Web.UI.WebControls.Repeater rptFriends;
     }
 }

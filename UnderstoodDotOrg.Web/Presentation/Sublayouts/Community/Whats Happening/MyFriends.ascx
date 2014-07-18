@@ -26,7 +26,7 @@
                 <asp:Repeater ID="rptFriends" runat="server"
                     ItemType="UnderstoodDotOrg.Services.Models.Telligent.User">
                     <ItemTemplate>
-                        <uc1:MemberProfileCard runat="server" ProfileUser="<%# Item %>" />
+                        <uc1:MemberProfileCard ID="MemberProfileCard1" runat="server" ProfileUser="<%# Item %>" />
                     </ItemTemplate>
                 </asp:Repeater>
             </div>

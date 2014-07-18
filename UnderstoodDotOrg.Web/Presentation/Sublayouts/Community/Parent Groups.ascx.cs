@@ -32,7 +32,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             litParentGroupsLabel.Text = DictionaryConstants.ParentGroupsLabel;
             litShowGroupsMatchLabel.Text = DictionaryConstants.ShowMatchingGroupsLabel;
             litShowMore.Text = DictionaryConstants.ShowMoreLabel;
-            btnSearch.Text = UnderstoodDotOrg.Common.DictionaryConstants.SearchButtonText;
+			btnSearch.Text = UnderstoodDotOrg.Common.DictionaryConstants.SearchButtonText;
             base.OnInit(e);
         }
         protected void Page_Load(object sender, EventArgs e)

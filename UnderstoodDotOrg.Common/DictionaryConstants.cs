@@ -1117,7 +1117,7 @@ namespace UnderstoodDotOrg.Common
 		{
 			get
 			{
-				return Translate.TextByDomain(PosesDictionary, "Blogs Fragment Fragment");
+				return Translate.TextByDomain(PosesDictionary, "Blogs Fragment");
 			}
 		}
 
@@ -1830,62 +1830,62 @@ namespace UnderstoodDotOrg.Common
 
         #endregion MyAccount Labels
 
-		public static string PartnerLabel
-		{
-			get
-			{
-				return Translate.TextByDomain(PosesDictionary, "Partner Label");
-			}
-		}
+        public static string PartnerLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Partner Label");
+            }
+        }
 
-		public static string StateLabel
-		{
-			get
-			{
-				return Translate.TextByDomain(PosesDictionary, "State Label");
-			}
-		}
+        public static string StateLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "State Label");
+            }
+        }
 
 
-		public static string PriceLabel
-		{
-			get
-			{
-				return Translate.TextByDomain(PosesDictionary, "Price Label");
-			}
-		}
+        public static string PriceLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Price Label");
+            }
+        }
 
-		public static string PurchaseLabel
-		{
-			get
-			{
-				return Translate.TextByDomain(PosesDictionary, "Purchase Label");
-			}
-		}
+        public static string PurchaseLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Purchase Label");
+            }
+        }
 
-		public static string ReviewsLabel
-		{
-			get
-			{
-				return Translate.TextByDomain(PosesDictionary, "Reviews Label");
-			}
-		}
+        public static string ReviewsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Reviews Label");
+            }
+        }
 
-		public static string RatingLabel
-		{
-			get
-			{
-				return Translate.TextByDomain(PosesDictionary, "Rating Label");
-			}
-		}
+        public static string RatingLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Rating Label");
+            }
+        }
 
-		public static string SeeAllModeratorsLabel
-		{
-			get
-			{
-				return Translate.TextByDomain(PosesDictionary, "See All Moderators Label");
-			}
-		}
+        public static string SeeAllModeratorsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "See All Moderators Label");
+            }
+        }
 
 		public static string SeeAllExpertLiveEventsLabel
 		{
@@ -1975,14 +1975,6 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
-
-        public static string OnlyMembersCanSeeLabel
-        {
-            get
-            {
-                return Translate.TextByDomain(PosesDictionary, "Only Members Can See Label");
-            }
-        }
 
         public static string SeeAllMembersLabel
         {
@@ -2225,6 +2217,14 @@ namespace UnderstoodDotOrg.Common
 			get
 			{
 				return Translate.TextByDomain(PosesDictionary, "Search This Board Label");
+			}
+		}
+
+		public static string OnlyMembersCanSeeLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Only Members Can See Label");
 			}
 		}
 
