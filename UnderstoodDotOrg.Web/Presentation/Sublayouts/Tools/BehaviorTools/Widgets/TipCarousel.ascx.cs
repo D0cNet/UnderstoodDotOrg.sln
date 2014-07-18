@@ -51,7 +51,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.Widge
    
             if (hasResults)
             {
-                List<BehaviorAdvice> results = ssr.GetResultsExcluding(Sitecore.Context.Item.ID);
+                List<BehaviorAdvice> results = ssr.GetResultsExcluding(new Sitecore.Data.ID(new Guid()));
                 if (!results.Any()) 
                 {
                     return;
@@ -64,6 +64,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.Widge
 
                 if (tips.Any())
                 {
+                    var ids = tips.Select(i => i.ID);
                     var currentTipIdIndexMapping = tips
                         .Select((item, i) => new
                         {
@@ -72,7 +73,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools.Widge
                         })
                         .FirstOrDefault(iid => iid.Id == Sitecore.Context.Item.ID);
 
-                    StartSlideIndex = currentTipIdIndexMapping != null ? currentTipIdIndexMapping.Index : 0;
+                    StartSlideIndex = currentTipIdIndexMapping != null ? currentTipIdIndexMapping.Index + 1 : 0;
 
                     rptTips.DataSource = tips;
                     rptTips.DataBind();
