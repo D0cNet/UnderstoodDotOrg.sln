@@ -20,21 +20,25 @@
     <!-- END PARTIAL: community/blog_feature_post -->
             <div class="row">
               <div class=" col col-24 blog-featured-author clearfix skiplink-feature">
-                <div class="blog-author-image-card"><sc:Image runat="server" field="avatar" /></div>
-                <div class="blog-author-details">
-                  <h2><sc:FieldRenderer id="BlogBody" runat="server" fieldname="Name" /></h2>
-                  <p class="blog-about-author"><sc:FieldRenderer id="FieldRenderer2" runat="server" fieldname="Biography" /></p>
+                <div class="rs_read_this">
+                  <div class="blog-author-image-card">
+                      <sc:Image runat="server" field="avatar" />
+                  </div>
+                    <div class="blog-author-details">
+                      <h2><sc:FieldRenderer id="BlogBody" runat="server" fieldname="Name" /></h2>
+                      <p class="blog-about-author"><sc:FieldRenderer id="FieldRenderer2" runat="server" fieldname="Biography" /></p>
+                    </div>
                 </div>
               </div>
             </div>
             <div class="col-23 blog-post-list-wrapper blog-author-posts clearfix skiplink-content" aria-role="main" aria-role="main">
-                <h2><sc:Text Field="Recent Posts Text" runat="server" /></h2>
+                <h2 class="rs_read_this"><sc:Text Field="Recent Posts Text" runat="server" /></h2>
                
                   <!-- BEGIN PARTIAL: community/blog_post -->
                 <asp:Repeater ID="rptrBlogPosts" runat="server">
                     <HeaderTemplate> <div class="col blog-post-list"></HeaderTemplate>
                     <ItemTemplate>
-                         <div class="blog-post">
+                         <div class="blog-post rs_read_this">
                             <div class="blog-card-image blog-card-total-comments">
                               <a> <sc:Image id="BlogImg" runat="server"  Field="Blog Image"  ></sc:Image>   <%--<img alt="230x129 Placeholder" src="http://placehold.it/230x129" />--%></a>
       
