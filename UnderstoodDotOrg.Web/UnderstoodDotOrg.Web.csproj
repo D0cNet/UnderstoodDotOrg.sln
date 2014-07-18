@@ -2083,13 +2083,6 @@
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx.designer.cs">
       <DependentUpon>BehaviorToolsCommentGallery.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx.cs">
-      <DependentUpon>BehaviorToolsContainerComments.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx.designer.cs">
-      <DependentUpon>BehaviorToolsContainerComments.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHelpful-Count.ascx.cs">
       <DependentUpon>BehaviorToolsHelpful-Count.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2104,9 +2097,6 @@
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHeroContainer.ascx.designer.cs">
       <DependentUpon>BehaviorToolsHeroContainer.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx.designer.cs">
-      <DependentUpon>BehaviorToolsLandingPage.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsMoreCarousel.ascx.cs">
       <DependentUpon>BehaviorToolsMoreCarousel.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2120,13 +2110,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx.designer.cs">
       <DependentUpon>BehaviorToolsRelatedArticles.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx.cs">
-      <DependentUpon>BehaviorToolsResultsPage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx.designer.cs">
-      <DependentUpon>BehaviorToolsResultsPage.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx.cs">
       <DependentUpon>BehaviorToolsResultsWrapper.ascx</DependentUpon>
@@ -2250,10 +2233,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolAdvicePage.ascx.cs">
       <DependentUpon>BehaviorToolAdvicePage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx.cs">
-      <DependentUpon>BehaviorToolsLandingPage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="XmlRTEControls\QuoteTag.cs" />
@@ -3231,13 +3210,10 @@
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdvice.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsBehaviorAdviceWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsCommentGallery.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsContainerComments.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHelpful-Count.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsHeroContainer.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsLandingPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsMoreCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsRelatedArticles.ascx" />
-    <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsPage.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\BehaviorToolsResultsWrapper.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\HelpfulVote.ascx" />
     <Content Include="Presentation\Sublayouts\Tools\BehaviorTools\Widgets\KeepReading.ascx" />
