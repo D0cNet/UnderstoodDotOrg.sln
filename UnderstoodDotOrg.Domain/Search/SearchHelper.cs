@@ -489,7 +489,7 @@ namespace UnderstoodDotOrg.Domain.Search
             var templateId = ID.Parse(DefaultArticlePageItem.TemplateId).ToShortID().ToString().ToLower();
             var q = new SolrQueryByField("_content", term)
                 && new SolrQueryByField("alltemplates_sm", templateId) { Quoted = false }
-                && new SolrQueryByField("_language", "en") { Quoted = false };
+                && new SolrQueryByField("_language", Sitecore.Context.Language.Name) { Quoted = false };
             
             var serializer = new DefaultQuerySerializer(new DefaultFieldSerializer());
             //var t = serializer.Serialize(q);
