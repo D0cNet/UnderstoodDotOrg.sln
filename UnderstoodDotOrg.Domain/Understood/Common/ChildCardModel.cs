@@ -7,9 +7,10 @@ using UnderstoodDotOrg.Domain.Membership;
 
 namespace UnderstoodDotOrg.Domain.Understood.Common
 {
-
+    [Serializable]
     public class ChildCardModel
     {
+        [Serializable]
         public class Issue
         {
             public string IssueName  { get; set; }

@@ -12,7 +12,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
 {
     public partial class ProfileCommentCard : System.Web.UI.UserControl
     {
-        public MemberCardModel Member
+        public MemberCardModel Member 
+        //{ get; set; }
         {
             get
             {
@@ -20,7 +21,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
             }
             set
             {
-                ViewState["_member"] = value;
+                ViewState["_member"] = new MemberCardModel(value.UserName);
             }
         }
         private string _profileLink;

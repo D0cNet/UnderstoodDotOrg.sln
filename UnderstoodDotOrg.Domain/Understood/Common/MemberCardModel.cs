@@ -11,7 +11,8 @@ using System.Web.Security;
 
 namespace UnderstoodDotOrg.Domain.Understood.Common
 {
-    public class MemberCardModel
+    [Serializable]
+    public class MemberCardModel 
     {
         public  MemberCardModel()
         {
