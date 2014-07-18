@@ -18,7 +18,7 @@
                     <span class="details"><sc:Text ID="Text1" Field="In Text" runat="server" /> <a href="REPLACE" class="topic"><asp:Label ID="GroupLabel" runat="server" /></a> - <sc:Text ID="Text2" Field="Asked By Text" runat="server" /> <a href="REPLACE" class="author"><asp:Label ID="AuthorLabel" runat="server" /></a> <span class="bullet">&bull;</span> <asp:Label ID="DateLabel" runat="server" /></span>
                     <div class="buttons">
                         <a class="button answer" href="javascript:void" onclick="DisplayForm();"><%= UnderstoodDotOrg.Common.DictionaryConstants.AnswerQuestionLabel %></a>
-                        <a class="button follow" href="REPLACE"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.AnswerQuestionLabel %></span></a>
+                        <a class="button follow" href="REPLACE"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.FollowThisQuestionLabel %></span></a>
                     </div>
                 </div>
             </div>
@@ -38,6 +38,22 @@
         </div>
     </div>
 </div>
+
+<!-- Show More -->
+    <!-- BEGIN PARTIAL: community/show_more -->
+    <!--Show More-->
+    <div class="container show-more rs_skip" id="divShowMore" runat="server">
+        <div class="row">
+            <div class="col col-24">
+                <a class="show-more-link " href="#" data-path="community/qa-answers" data-container="answer-list" data-item="card-answer" data-count="6"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- .show-more -->
+    <!-- END PARTIAL: community/show_more -->
+    <!-- .show-more -->
+
 <script type="text/javascript">
     function DisplayForm() {
         var form = document.getElementById("<%=commentsForm.ClientID%>");
