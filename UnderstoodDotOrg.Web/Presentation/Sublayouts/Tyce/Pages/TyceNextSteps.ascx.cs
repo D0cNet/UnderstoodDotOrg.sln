@@ -6,14 +6,24 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Pages;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Common.Extensions;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {
     public partial class TyceNextSteps : BaseSublayout<TyceNextStepsPageItem>
     {
+        private string _signUpPageUrl;
+        protected string SignUpPageUrl
+        {
+            get
+            {
+                return _signUpPageUrl ?? (_signUpPageUrl = SignUpPageItem.GetSignUpPage().GetUrl());
+            }
+        }
         protected TycePlayerPageItem PlayerPageItem { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)

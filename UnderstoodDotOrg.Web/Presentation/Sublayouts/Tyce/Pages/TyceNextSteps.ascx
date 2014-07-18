@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TyceNextSteps.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages.TyceNextSteps" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
+<% if (!IsUserLoggedIn) { %>
 <div class="container tyce-personalize">
     <div class="row">
         <div class="content">
@@ -9,12 +10,15 @@
                 <%= Model.PersonalizationBoxAbstract.Rendered %>
             </div>
             <div class="button-wrap">
-                <button class="button"><%= Model.SaveSettingsButtonText.Rendered %></button>
+                <a href="<%= SignUpPageUrl %>" class="button"><%= Model.CreateProfileButtonText.Rendered %></a>
             </div>
         </div>
     </div>
 </div>
 <!-- .tyce-personalize -->
+<% } else { %>
+<br />&nbsp;<br />
+<% } %>
 
 
 <div class="container tyce-main-feature">

@@ -154,20 +154,20 @@ public CustomTextField ShareItContent
 }
 
 
+public CustomTextField CreateProfileButtonText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Create Profile Button Text"]);
+	}
+}
+
+
 public CustomTextField PlaceholderText
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Placeholder Text"]);
-	}
-}
-
-
-public CustomTextField SaveSettingsButtonText
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Save Settings Button Text"]);
 	}
 }
 
