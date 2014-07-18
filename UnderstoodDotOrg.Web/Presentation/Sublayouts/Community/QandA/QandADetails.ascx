@@ -37,9 +37,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
-</div>
-
-<!-- Show More -->
+    <!-- Show More -->
     <!-- BEGIN PARTIAL: community/show_more -->
     <!--Show More-->
     <div class="container show-more rs_skip" id="divShowMore" runat="server">
@@ -53,6 +51,7 @@
     <!-- .show-more -->
     <!-- END PARTIAL: community/show_more -->
     <!-- .show-more -->
+</div>
 
 <script type="text/javascript">
     function DisplayForm() {
