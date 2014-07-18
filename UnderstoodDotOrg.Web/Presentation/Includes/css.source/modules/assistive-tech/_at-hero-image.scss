@@ -27,7 +27,10 @@
     height: 542px;
   }
   img {
-    margin-left: -17%;
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    /* margin-left: -17%;
     max-height: 100%;
     max-width: 135%;
     min-height: 200px;
@@ -37,7 +40,7 @@
       max-width: 1200px;
       width: 100%;
       height: auto;
-    }
+    } */
   }
   .text-container{
     position:absolute;
@@ -61,7 +64,7 @@
     font-weight: bold;
     margin-bottom: 10px;
     padding-top: 13px;
-    width: 45%;
+    width: 100%;
     @include bp($bp-small-plus) {
       @include rem(font-size, 44px);
       @include rem(line-height, 48px);

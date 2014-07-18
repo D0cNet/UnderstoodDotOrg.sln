@@ -1,6 +1,10 @@
 .rate-this-app-sidebar {
   border-bottom: 0 !important;
-  padding-left: 33px !important;
+  padding-left: 25px !important;
+
+    @include bp($bp-767-and-smaller) {
+      display: none;
+    }
 
   h2 {
     color:#7a4183;

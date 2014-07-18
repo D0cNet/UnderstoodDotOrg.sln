@@ -94,11 +94,13 @@
       background-image: image-url('icon.logo.assistive-technology-search-tool.lo-res.png');
     }
   }
-  ul{
+  ul {
+    @include clearfix();
     margin:0 0 15px 0;
     padding:0;
 
-    li.browse-by-tab, li.search-by-tab{
+    li.browse-by-tab, li.search-by-tab {
+      float: left;
       list-style:none;
       color:#696969;
       @include rem(font-size, 15px);
@@ -179,7 +181,9 @@
   }
 
   .submit-button-container2 {
-    display: inline;
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
 
     .button {
       float: right;
