@@ -13,6 +13,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 {
@@ -31,7 +32,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             {
                 int totalComments;
 
-                var commentsList = TelligentService.GetUserCommentsByScreenName(CurrentMember.ScreenName, 1, 2, out totalComments);
+                var commentsList = TelligentService.GetUserCommentsByScreenName(CurrentMember.ScreenName, 1, Constants.PUBLIC_PROFILE_COMMENTS_PER_PAGE, out totalComments);
 
                 if ((commentsList != null) && (commentsList.Count != 0))
                 {
