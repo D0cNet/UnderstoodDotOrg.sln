@@ -118,15 +118,16 @@ namespace UnderstoodDotOrg.Web.Handlers
 
             var pagedArticles = articles.Skip(offset).Take(Constants.BEHAVIOR_SEARCH_RESULTS_ENTRIES_PER_PAGE);
 
-            var query = from a in pagedArticles
-                        let i = new BehaviorAdvicePageItem(a.GetItem())
-                        select new SearchBehaviorArticle
-                        {
-                            Title = i.TipTitle,
-                            Url = i.GetUrl(),
-                            CommentCount = CommunityHelper.GetTotalComments(i.BlogId, i.BlogPostId),
-                            HelpfulCount = CommunityHelper.GetTotalLikes(i.ContentId)
-                        };
+            var query = pagedArticles
+                .Select(a => (BehaviorAdvicePageItem)a.GetItem())
+                .Where(a => a != null)
+                .Select(a => new SearchBehaviorArticle
+                {
+                    Title = a.TipTitle,
+                    Url = a.GetUrl(),
+                    CommentCount = CommunityHelper.GetTotalComments(a.BlogId, a.BlogPostId),
+                    HelpfulCount = CommunityHelper.GetTotalLikes(a.ContentId)
+                });
 
             results.Matches = query.ToList();
             results.TotalMatches = totalResults;
