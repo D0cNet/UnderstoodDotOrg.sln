@@ -253,7 +253,7 @@
                 <div class="question-wrapper clearfix child-count-question rs_read_this">
                     <h3 class="question-inline">
                         <sc:text id="Text24" field="More Children Question Part 1" runat="server" />
-                        <span class="child-counter"><%= UnderstoodDotOrg.Common.DictionaryConstants. %></span>
+                        <span class="child-counter"><%= UnderstoodDotOrg.Common.DictionaryConstants.SecondFragment %></span>
                         <sc:text id="Text25" field="More Children Question Part 2" runat="server" />
                     </h3>
                     <div class="radio-toggle-wrapper no-margin">
