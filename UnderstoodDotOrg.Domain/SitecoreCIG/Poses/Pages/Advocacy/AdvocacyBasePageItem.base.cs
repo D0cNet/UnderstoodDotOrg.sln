@@ -64,6 +64,15 @@ public CustomGeneralLinkField PoweredbyLink
 }
 
 
+public CustomTextField PoweredbyText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Powered by Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

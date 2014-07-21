@@ -11,10 +11,6 @@
                 <a href="<%= PreviousPageItem.GetUrl() %>" class="back-to-previous">
                     <i class="icon-arrow-left-blue"></i><%= PreviousPageItem.NavigationTitle.Rendered %>
                 </a>
-<%--                <asp:HyperLink ID="hlBackToPreviousPage" runat="server" CssClass="back-to-previous left-of-first-next-prev-menu">
-                    <i class="icon-arrow-left-blue"></i>
-                    <asp:Literal ID="litBackToPreviousPage" runat="server"></asp:Literal>
-                </asp:HyperLink>--%>
 
                 <h1><%= Model.ContentPage.PageTitle.Rendered %></h1>
                 <% if (!IsArticlePage) { %>
@@ -23,7 +19,7 @@
             </div>
         </div>
         <div class="col col-9 partner-image-column">
-            <span class="powered-by">Powered by</span>
+            <span class="powered-by"><%= Model.PoweredbyText.Rendered %></span>
             <a href="<%= Model.PoweredbyLink.Url %>" class="partner-image">
                 <%= Model.PoweredbyLogo.Rendered %>
             </a>
