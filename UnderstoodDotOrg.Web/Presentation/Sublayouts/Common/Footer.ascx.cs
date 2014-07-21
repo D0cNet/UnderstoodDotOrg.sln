@@ -21,6 +21,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class Footer : BaseSublayout<FooterFolderItem>
     {
+        private string _homepageUrl;
+        protected string HomepageUrl
+        {
+            get
+            {
+                return _homepageUrl ?? (_homepageUrl = MainsectionItem.GetHomePageItem().GetUrl());
+            }
+        }
         protected string NewsletterSignUpUrl
         {
             get

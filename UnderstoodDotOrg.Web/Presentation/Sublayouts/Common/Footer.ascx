@@ -165,7 +165,9 @@
         <div class="col col-24">
 
             <%-- <img class="logo-u-footer" alt="Understood U Logo" src="/Presentation/includes/images/logo.u.footer.png" />--%>
-            <sc:FieldRenderer runat="server" ID="scLogoImage" FieldName="Logo" Parameters="class=logo-u-footer&w=24&h=47&as=1" />
+            <a href="<%= HomepageUrl %>">
+                <sc:FieldRenderer runat="server" ID="scLogoImage" FieldName="Logo" Parameters="class=logo-u-footer&w=24&h=47&as=1" />
+            </a>
         </div>
         <!-- .col -->
     </div>
