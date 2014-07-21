@@ -261,7 +261,7 @@ button.rsArrowIcn {
   height: 14px;
   display: inline-block;
   background: url('../images/child.content.indicator.png?3c3177bb') 0 0 no-repeat;
-  background-size: 125px 25px;
+  background-size: 150px 25px;
 }
 /* line 250, ../css.source/globals.scss */
 .no-backgroundsize .child-a, .no-backgroundsize
