@@ -35,34 +35,34 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
         protected void Page_Load(object sender, EventArgs e)
         {
-         
-            //if (!IsPostBack)
-            //{
+
+            if (!IsPostBack)
+            {
                 //TODO: Pull data from notification aggregator
-               // IList<INotification> cnNotifs = TelligentService.ReadFriendshipRequests(CurrentMember.ScreenName);
-            IList<INotification> cnNotifs= new List<INotification>();
+                // IList<INotification> cnNotifs = TelligentService.ReadFriendshipRequests(CurrentMember.ScreenName);
+                IList<INotification> cnNotifs = new List<INotification>();
 
-            if (Notifications != null)
-                cnNotifs = Notifications;
-            else
-                cnNotifs = TelligentService.GetNotifications(CurrentMember.ScreenName); //TelligentService.ReadFriendshipRequests("PosesTony");
+                if (Notifications != null)
+                    cnNotifs = Notifications;
+                else
+                    cnNotifs = TelligentService.GetNotifications(CurrentMember.ScreenName); //TelligentService.ReadFriendshipRequests("PosesTony");
 
-            if (cnNotifs != null && cnNotifs.Count() >0)
-            {
-                pnlPolulatedNotifs.Visible = true;
-                pnlEmptyNotifs.Visible = false;
-                  
+                if (cnNotifs != null && cnNotifs.Count() > 0)
+                {
+                    pnlPolulatedNotifs.Visible = true;
+                    pnlEmptyNotifs.Visible = false;
+
+                }
+                else
+                {
+                    pnlPolulatedNotifs.Visible = false;
+                    pnlEmptyNotifs.Visible = true;
+
+                }
+                FeedsCollection lnf = new FeedsCollection(cnNotifs);
+                lvNotificationFeed.DataSource = lnf;
+                lvNotificationFeed.DataBind();
             }
-            else
-            {
-                pnlPolulatedNotifs.Visible = false;
-                pnlEmptyNotifs.Visible = true;
-                   
-            }
-            FeedsCollection lnf = new FeedsCollection(cnNotifs);
-            lvNotificationFeed.DataSource = lnf;
-            lvNotificationFeed.DataBind();
-            //}
         }
 
         protected void rptNotifications_ItemDataBound(object sender, RepeaterItemEventArgs e)

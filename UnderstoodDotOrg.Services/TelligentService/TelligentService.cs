@@ -22,6 +22,7 @@ using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Common.Extensions;
 using System.IO;
 using UnderstoodDotOrg.Services.CommunityServices;
+using Sitecore.Data.Items;
 namespace UnderstoodDotOrg.Services.TelligentService
 {
     public class TelligentService
@@ -1024,6 +1025,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                    case Constants.NotificationElements.NotificationType.ForumReply:
                                    case Constants.NotificationElements.NotificationType.ForumAuthorReply:
                                        var forumName = notification.SelectSingleNode("Content/Application/HtmlName").InnerText;
+                                       var forumId = System.IO.Path.GetFileNameWithoutExtension(notification.SelectSingleNode("Content/Application/Url").InnerText);
                                        var replyId = notification.SelectSingleNode("TargetUrl").InnerText.Split('#')[1];
                                        var replyUser = notification.SelectSingleNode("Actors/RestNotificationActor[last()]/User/DisplayName").InnerText;
                                        //var createdDate = notification.SelectSingleNode("Actors/RestNotificationActor[last()]/Date").InnerText.Split('.')[0];
@@ -1036,7 +1038,9 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                                ((ForumReplyNotification)notif).Text = replyBody.SelectSingleNode("Body").InnerText;
                                            }
                                        }
-                                       ((ForumReplyNotification)notif).ForumUrl = UnderstoodDotOrg.Services.CommunityServices.Forum.ConvertForumNametoSitecoreItem(forumName).GetUrl();
+                                       Item frm = UnderstoodDotOrg.Services.CommunityServices.Forum.ConvertForumIDtoSitecoreItem(forumId);
+                                       ((ForumReplyNotification)notif).ForumUrl = frm.GetUrl();
+                                       ((ForumReplyNotification)notif).ForumTitle = frm.Name;
                                        notifList.Add(notif);
                                        break;
                                    case Constants.NotificationElements.NotificationType.Comment:

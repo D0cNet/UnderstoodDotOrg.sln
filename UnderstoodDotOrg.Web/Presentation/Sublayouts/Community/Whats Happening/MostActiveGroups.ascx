@@ -50,7 +50,7 @@
                             <asp:Literal ID="litDiscussions" runat="server" /> </span><br />
                         <div class="card-buttons">
                             <uc1:GroupJoinButton runat="server" Class="button rs_skip"  ID="btnJoin" />
-                            <button class="action-skip-this rs_skip">
+                            <button  class="action-skip-this rs_skip">
                                 <asp:Literal ID="litSkipThis" runat="server" /></button>
                         </div>
                         <!-- end .card-buttons -->
