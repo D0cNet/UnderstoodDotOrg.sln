@@ -85,8 +85,8 @@
                         <div class="col col-11 offset-1 pull-4">
                             <div class="expert-blog-post-details">
                                 <a href="REPLACE" class="event-title"><asp:Literal ID="litArticleTitle" runat="server"></asp:Literal></a>
-                                <p class="post-meta">Posted by <asp:HyperLink ID="hypAuthor" runat="server"></asp:HyperLink> on <asp:Literal ID="litDatePosted" runat="server"></asp:Literal></p>
-                                <p class="excerpt"><asp:Literal ID="litAbstract" runat="server"></asp:Literal> <asp:Hyperlink ID="hypReadMore" runat="server">Read More</asp:Hyperlink></p>
+                                <p class="post-meta"><%= UnderstoodDotOrg.Common.DictionaryConstants.PostedByLabel %> <asp:HyperLink ID="hypAuthor" runat="server"></asp:HyperLink> <%= UnderstoodDotOrg.Common.DictionaryConstants.Onfragment %> <asp:Literal ID="litDatePosted" runat="server"></asp:Literal></p>
+                                <p class="excerpt"><asp:Literal ID="litAbstract" runat="server"></asp:Literal> <asp:Hyperlink ID="hypReadMore" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.ReadMoreLabel %></asp:Hyperlink></p>
                                 <udo:ArticleRecommendationIcons ID="articleRecommendationIcons" runat="server" />
                             </div>
                             <!-- /.expert-blog-post-details -->
