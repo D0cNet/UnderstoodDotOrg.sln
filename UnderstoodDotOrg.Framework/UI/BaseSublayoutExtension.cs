@@ -20,7 +20,7 @@ namespace UnderstoodDotOrg.Framework.UI
         /// <param name="currentPage"></param>
         /// <param name="permission">Defines user permission for current action to be performed</param>
         /// <param name="UrlToGoto">Alternative URL to be redirected (Note: Session reference to previous page will be cleared).</param>
-        static public void ProfileRedirect(this BaseSublayout page, UnderstoodDotOrg.Common.Constants.UserPermission permission, string UrlToGoto = null)
+        static public void ProfileRedirect(this BaseSublayout page, UnderstoodDotOrg.Common.Constants.UserPermission permission, string UrlToGoto = null, bool preserveURL = false)
         {
             // only set redirect if we don't already have a place to go back to - this will allow us to "chain" permission checks without losing original return URL
             if (page.Session[Constants.SessionPreviousUrl] == null)
@@ -97,8 +97,11 @@ namespace UnderstoodDotOrg.Framework.UI
                     break;
             }
 
-            //everything's fine, redirect to page if it was passed
-            page.Page.Session[Constants.SessionPreviousUrl] = null;
+            if (!preserveURL)
+            {
+                //everything's fine, redirect to page if it was passed
+                page.Page.Session[Constants.SessionPreviousUrl] = null;
+            }
 
             if (!String.IsNullOrEmpty(UrlToGoto))
             {

@@ -29,7 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         {
             if (!Page.IsPostBack)
             {
-                this.ProfileRedirect(Constants.UserPermission.InternationalUser);
+                this.ProfileRedirect(Constants.UserPermission.InternationalUser, null, true);
             }
             else
             {
@@ -90,13 +90,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.CurrentMember = currentMember;
                     this.CurrentUser = membershipManager.GetUser(currentMember.MemberId, true);
 
-                    this.ProfileRedirect(Constants.UserPermission.AgreedToTerms);
+                    this.ProfileRedirect(Constants.UserPermission.AgreedToTerms, null, true);
 
                     //Redirect used here for profile??
                     this.ReturnRedirect();
 
                     var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount);
-
                     Response.Redirect(Sitecore.Links.LinkManager.GetItemUrl(item));
                 }
             }
