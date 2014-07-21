@@ -2,7 +2,7 @@
 
 <div class="find-this-helpful <%= AdditionalCssClass %>">
    
-  <h4>Did you find this helpful?</h4>
+  <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.DidYouFindThisHelpfulLabel %></h4>
   <ul>
     <li>
       <asp:Button ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button helpful-yes" runat="server"/>

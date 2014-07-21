@@ -79,9 +79,21 @@
     <!-- .nav-utility -->
 
     <!-- BEGIN PARTIAL: user-state -->
-    <div class="sign-in" aria-haspopup="true">
-        <asp:LinkButton ID="lbSignout" OnClick="lbSignout_Click" CssClass="link-sign-in" Visible="false" runat="server"/>
-        <sc:FieldRenderer runat="server" ID="scLinkSignIn" FieldName="Login Link" Parameters="class=link-sign-in" />
+    <div class="sign-in" aria-haspopup="true">		
+		<asp:PlaceHolder ID="phLoggedIn" runat="server" Visible="false">
+			<div class="sign-in" aria-haspopup="true">
+				<a href="<%= MyAccountPageItem.GetUrl() %>" class="user-info">
+					<asp:Image ID="imgUserAvatar" runat="server" alt="User Avatar" class="avatar" />
+					<span class="user-name"><%= CurrentMember.ScreenName %></span>
+					<span class="messages"><asp:Label ID="lblNotificationNumber" runat="server" /></span>
+				</a>
+			</div>
+			<asp:LinkButton ID="lbSignout" OnClick="lbSignout_Click" CssClass="link-sign-in" Visible="false" runat="server"/>
+		</asp:PlaceHolder>
+			
+		<asp:PlaceHolder ID="phNotLoggedIn" runat="server" Visible="false">
+			<sc:FieldRenderer runat="server" ID="scLinkSignIn" FieldName="Login Link" Parameters="class=link-sign-in" />	
+		</asp:PlaceHolder>
     </div>
 
     <!-- END PARTIAL: user-state -->

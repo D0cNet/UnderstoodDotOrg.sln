@@ -58,6 +58,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         protected global::System.Web.UI.WebControls.Repeater rptNavUtility;
         
         /// <summary>
+        /// phLoggedIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phLoggedIn;
+        
+        /// <summary>
+        /// imgUserAvatar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgUserAvatar;
+        
+        /// <summary>
+        /// lblNotificationNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNotificationNumber;
+        
+        /// <summary>
         /// lbSignout control.
         /// </summary>
         /// <remarks>
@@ -65,6 +92,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbSignout;
+        
+        /// <summary>
+        /// phNotLoggedIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phNotLoggedIn;
         
         /// <summary>
         /// scLinkSignIn control.

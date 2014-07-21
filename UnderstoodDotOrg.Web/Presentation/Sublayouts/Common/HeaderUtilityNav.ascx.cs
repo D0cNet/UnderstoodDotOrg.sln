@@ -13,6 +13,9 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+using UnderstoodDotOrg.Services.Models.Telligent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -38,12 +41,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
             if (IsUserLoggedIn)
             {
+				List<INotification> notifs = new List<INotification>();
+				List<Conversation> checkConvos = new List<Conversation>();
+				phLoggedIn.Visible = true;
                 MyAccountPageItem = MyAccountItem.GetMyAccountPage();
 
                 UserDisplayName = !string.IsNullOrWhiteSpace(CurrentMember.FirstName) ?
                     CurrentMember.FirstName.Trim() :
                     "Guest";
+
+
+				//sets up the global hero image along with the notifications
+				var user = TelligentService.GetUser(CurrentMember.ScreenName);
+				imgUserAvatar.ImageUrl = user.AvatarUrl;
+				notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
+				checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
+
+				int TotalNotificationsCount = notifs.Count + checkConvos.Count;
+				lblNotificationNumber.Text = TotalNotificationsCount.ToString();
             }
+			else
+			{
+				phNotLoggedIn.Visible = true;
+			}
 
             GetCompanyLogoDetail();
             SetLanguageItemsRepeater();

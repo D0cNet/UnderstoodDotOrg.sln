@@ -2713,6 +2713,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+		public static string DidYouFindThisHelpfulLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Did You Find This Helpful Label");
+			}
+		}
+
         public static string SelectGradeLabel
         {
             get
