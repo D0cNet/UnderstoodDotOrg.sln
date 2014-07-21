@@ -3123,10 +3123,8 @@ div.selector.fixedWidth {
 .experts-page .archive .event-cards .event-card-details {
   width: 75%;
   padding: 0 0 0 15px;
-  width: inherit;
   border-right: 1px solid #c6c5c5;
   padding: 0 15px;
-  width: inherit;
   padding: 0 30px 0 15px;
 }
 /* line 665, ../css.source/modules/community/_experts.scss */
