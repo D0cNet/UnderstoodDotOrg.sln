@@ -3,29 +3,32 @@
 <!-- BEGIN PARTIAL: account-landing-notifications -->
 <div class="landing-notifications landing-modules rs_read_this">
     <header class="clearfix">
-        <h3><sc:FieldRenderer ID="frNotifications" runat="server" FieldName="Notifications Text"/><span class="landing-module-count"><asp:Literal ID="litNotifCount" Text="0" runat="server"></asp:Literal></span></h3>
+        <h3>
+            <sc:FieldRenderer ID="frNotifications" runat="server" FieldName="Notifications Text" />
+            <span class="landing-module-count">
+                <asp:Literal ID="litNotifCount" Text="0" runat="server"></asp:Literal>
+            </span>
+        </h3>
     </header>
-    <asp:ListView  ID="lvNotifications" OnItemDataBound="lvNotifications_ItemDataBound"  runat="server">
+    <asp:ListView ID="lvNotifications" OnItemDataBound="lvNotifications_ItemDataBound" runat="server">
         <LayoutTemplate>
             <ul class="landing-module-items">
                 <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
             </ul>
         </LayoutTemplate>
         <ItemTemplate>
-
         </ItemTemplate>
         <EmptyDataTemplate>
-           
         </EmptyDataTemplate>
-       
+
     </asp:ListView>
     <asp:Panel ID="pnlEmptyText" Visible="false" runat="server">
-         <p>
-                <asp:Literal Text="" ID="litEmptyText" runat="server" />
-            </p>
+        <p>
+            <asp:Literal Text="" ID="litEmptyText" runat="server" />
+        </p>
     </asp:Panel>
 
-   <%-- <ul class="landing-module-items">
+    <%-- <ul class="landing-module-items">
         <!-- This template for new connections -->
         <li class="new-connection">
             <p class="timestamp">
@@ -65,8 +68,10 @@
     </ul>--%>
 
 
-    <div class="bottom rs_skip"><a id="hrefNotificationsLink" runat="server" >
-        <asp:Literal Text="" ID="litSeeAllNotificationsLabel" runat="server" /></a></div>
+    <div class="bottom rs_skip">
+        <a id="hrefNotificationsLink" runat="server">
+            <asp:Literal Text="" ID="litSeeAllNotificationsLabel" runat="server" /></a>
+    </div>
 </div>
 <!-- /.landing-notifications /.landing-modules -->
 

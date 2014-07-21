@@ -830,6 +830,39 @@ namespace UnderstoodDotOrg.Domain.Membership
             return false;
         }
 
+        public static bool isOpenToConnect(string username)
+        {
+            string sql = "SELECT allowConnections FROM Members WHERE (ScreenName = @Username)";
+            bool ret = false;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                ret = reader.GetBoolean(0);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+
+            return ret;
+        }
+
         #endregion
 
         #endregion

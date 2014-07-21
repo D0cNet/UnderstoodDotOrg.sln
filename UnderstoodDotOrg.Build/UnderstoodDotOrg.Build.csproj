@@ -69,7 +69,9 @@
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\TelligentEvolution.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="EnvironmentSpecifics\DEV01\Web.config" />
+    <None Include="EnvironmentSpecifics\DEV01\Web.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="EnvironmentSpecifics\Local\App_Config\ConnectionStrings.config" />
     <None Include="EnvironmentSpecifics\Local\App_Config\Include\SitecoreSettings.config">
       <SubType>Designer</SubType>
@@ -147,7 +149,9 @@
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\TelligentEvolution.config" />
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\robots.txt.bak" />
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\Web %282%29.config" />
-    <None Include="EnvironmentSpecifics\QA_204.232.148.68\Web.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\Web.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="EnvironmentSpecifics\TelligentDEV\web\caching.config" />
     <None Include="EnvironmentSpecifics\TelligentDEV\web\communityserver.config" />
     <None Include="EnvironmentSpecifics\TelligentDEV\web\communityserver_override.config" />

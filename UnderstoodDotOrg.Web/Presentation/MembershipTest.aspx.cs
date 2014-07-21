@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Data.Entity;
 using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
 
 namespace UnderstoodDotOrg.Web.Presentation
 {
@@ -23,15 +24,11 @@ namespace UnderstoodDotOrg.Web.Presentation
             }
             else
             {
-                un = "everythingisawesome1";
+                un = "everythingisawesome";
             }
 
-            var roles = TelligentService.GetUserRoles(un);
 
-            foreach (var role in roles)
-            {
-                litRoles.Text += role.ToString() + " - " + Constants.TelligentRoles.Roles[role] + "</br>";
-            }
+            litRoles.Text = MembershipManager.isOpenToConnect(un).ToString();
         }
 
     }
