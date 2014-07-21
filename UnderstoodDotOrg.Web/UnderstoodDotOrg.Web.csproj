@@ -2239,6 +2239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="google42b8571379817c0d.html" />
     <Content Include="Handlers\ContentService.asmx" />
     <Content Include="Handlers\FormSubmissionsService.asmx" />
     <Content Include="Handlers\SearchResultsService.asmx" />
