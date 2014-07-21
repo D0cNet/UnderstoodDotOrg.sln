@@ -64,19 +64,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     GroupItem grpItem = new GroupItem(currItem);
                     Session["_item"] = grpItem;
                     GroupCardModel grpModel = Groups.GroupCardModelFactory(grpItem);
-
+                    List<ForumModel> frms =currItem.Children.Select(x => Forum.ForumModelFactory(new ForumItem(x))).ToList<ForumModel>();
                     if (grpModel != null)
                     {
-                       
 
-                        ddlForums.DataSource = grpModel.Forums;
+
+                        ddlForums.DataSource = frms;
                         ddlForums.DataBind();
-                        //rbddlFname.Checked = true;
-                        //rbddlFname.Visible = false;
-                        //rbtxtFname.Checked = false;
-                        //rbtxtFname.Disabled = true;
-                        //rbtxtFname.Visible = false;
-                       //txtFName.Visible = false;
+                    
                     }
                 }
                 else
@@ -90,12 +85,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                         //Disable forum selection and select 
                         ddlForums.Enabled = false;
                         ddlForums.Visible = false;
-                        //rbddlFname.Disabled = true;
-                        //rbddlFname.Visible = false;
-                        //rqdDropDownFName.Enabled = false;
-                        //rbtxtFname.Checked = true;
-                        //rbtxtFname.Disabled = true;
-                        //rbtxtFname.Visible = false;
+                       
                         txtFName.Visible = true;
                         txtFName.Text = frmItem.DisplayName;
                         txtFName.Enabled = false;

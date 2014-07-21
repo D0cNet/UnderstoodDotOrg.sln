@@ -61,13 +61,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     {
                         Session["groupitem"] = grpItem;
                         GroupCardModel grpModel = Groups.GroupCardModelFactory(grpItem);
-                       
+                        List<ForumModel> frms = currItem.Children.Select(x => Forum.ForumModelFactory(new ForumItem(x))).ToList<ForumModel>();
                         if (grpModel != null)
                         {
-                            rptForums.DataSource = grpModel.Forums;
+                            rptForums.DataSource = frms;//grpModel.Forums;
                             rptForums.DataBind();
 
-                            lvJumpto.DataSource = currItem.Children.Select(x => Forum.ForumModelFactory(new ForumItem(x))).ToList<ForumModel>();  //grpModel.Forums;
+                            lvJumpto.DataSource = frms;//currItem.Children.Select(x => Forum.ForumModelFactory(new ForumItem(x))).ToList<ForumModel>();  //grpModel.Forums;
                             lvJumpto.DataBind();
 
                      

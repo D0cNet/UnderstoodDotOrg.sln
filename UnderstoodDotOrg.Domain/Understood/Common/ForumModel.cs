@@ -16,7 +16,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             ForumID = forumItem.ForumID.Text;
             GroupID = forumItem.GroupID.Text;
             Description = forumItem.Description.Text;
-            Name = forumItem.InnerItem.Name;// Name.Text;
+            Name = forumItem.InnerItem.Name;
             readThreadFunc = readThreads;
         }
 
