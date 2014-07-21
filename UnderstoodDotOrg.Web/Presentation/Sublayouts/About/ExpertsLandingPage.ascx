@@ -24,13 +24,13 @@
         <div class="about-expert">
             <div class="about-expert-data rs_read_this">
                 <div class="event-carousel-image">
-                  <asp:Image ID="imgExpert" runat="server" />
+                  <asp:HyperLink ID="hlEventDetail1" runat="server"><asp:Image ID="imgExpert" runat="server" /></asp:HyperLink>
                   <div class="caption"><asp:Literal ID="litExpertType" runat="server" /></div>
                 </div>
                 <div class="event-carousel-details">
                   <p class="date"><asp:Literal ID="litEventDate" runat="server" /></p>
                   <p class="chat-with"><%= UnderstoodDotOrg.Common.DictionaryConstants.ChatWithLabel %></p>
-                  <h4><asp:HyperLink ID="hlEventDetail" runat="server"><sc:FieldRenderer ID="frExpertName" FieldName="Expert Name" runat="server" /></asp:HyperLink></h4>
+                  <h4><asp:HyperLink ID="hlEventDetail2" runat="server"><sc:FieldRenderer ID="frExpertName" FieldName="Expert Name" runat="server" /></asp:HyperLink></h4>
                   <p class="credentials"><sc:FieldRenderer ID="frExpertSubheading" FieldName="Expert Subheading" runat="server" /></p>
                 </div>
             </div>
