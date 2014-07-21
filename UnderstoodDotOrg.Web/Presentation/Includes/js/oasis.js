@@ -142,7 +142,7 @@ jQuery(function () {
 	});
 })(jQuery);
 
-// Topic/Subtopic Landing Page Articles
+// Topic Landing Page Articles
 (function ($) {
 	var currentPage = 1;
 	var inProgress = false;
@@ -197,6 +197,98 @@ jQuery(function () {
 	
 	
 })(jQuery);
+
+// Subtopic Landing Page Articles
+(function ($) {
+    var currentPage = 1;
+    var inProgress = false;
+    var $trigger = $(".subtopic-articles-show-more-link");
+    var $container, $showMoreContainer, path, topic, lang, type, featured;
+
+    function init() {
+        // ajax paging
+        if ($trigger.length > 0) {
+            path = $trigger.data('path');
+            topic = $trigger.data('topic');
+            lang = $trigger.data('lang');
+            type = '';
+            featured = $trigger.data('featured');
+            $container = $("#" + $trigger.data('container'));
+            $showMoreContainer = $trigger.closest(".show-more");
+
+            $trigger.on("click", showMore_clickHandler);
+        }
+
+        // filter nav
+        $("#subtopic-nav-filter a").click(navFilter_clickHandler);
+    }
+
+    function navFilter_clickHandler(e) {
+        e.preventDefault();
+
+        // Set selected state
+        $("#subtopic-nav-filter ul.menu a").removeClass("selected");
+        $(this).addClass("selected");
+
+        type = $(this).data('filter');
+        currentPage = 0;
+
+        loadNextArticles(false);
+    }
+
+    function showMore_clickHandler(e) {
+        e.preventDefault();
+
+        loadNextArticles(true);
+    }
+
+    function loadNextArticles(displayAnimation) {
+        if (inProgress) {
+            return;
+        }
+
+        // if current page is 0, reset content area
+        if (currentPage == 0) {
+            $container.html('');
+            $showMoreContainer.hide();
+        }
+
+        inProgress = true;
+
+        if (displayAnimation) {
+            $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
+        }
+
+        var data = {
+            'topic': topic,
+            'page': currentPage + 1,
+            'lang': lang,
+            'featured': featured,
+            'type': type
+        };
+
+        $.ajax({
+            url: path,
+            data: data,
+            method: 'GET'
+        }).done(function (data) {
+            currentPage++;
+            if ($(data).filter('input[type="hidden"]').length == 0) {
+                $showMoreContainer.hide();
+            } else {
+                $showMoreContainer.show();
+            }
+            $container.append(data);
+        }).always(function () {
+            inProgress = false;
+        });
+    }
+
+    $(document).ready(init);
+
+
+})(jQuery);
+
 
 // Event archive
 (function ($) {

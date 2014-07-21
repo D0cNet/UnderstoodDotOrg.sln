@@ -15,6 +15,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.SubTopics
 {
     public partial class SubTopicArticleListing : BaseSublayout<SubtopicLandingPageItem>
     {
+        protected bool HasFeatured { get; set; }
+
         protected string AjaxEndpoint
         {
             get
@@ -26,9 +28,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.SubTopics
         protected void Page_Load(object sender, EventArgs e) 
         {
             bool hasMoreResults;
-            articleListing.Articles = Model.GetArticles(1, out hasMoreResults);
 
-            pnlShowMore.Visible = hasMoreResults; 
+            // First look for featured articles, otherwise fall back to all articles under this subtopic
+            var featuredArticles = Model.GetFeaturedArticles(1, out hasMoreResults);
+            HasFeatured = featuredArticles.Any();
+
+            articleListing.Articles = HasFeatured
+                ? featuredArticles
+                : Model.GetArticles(1, null, out hasMoreResults);
+
+            if (!hasMoreResults)
+            {
+                pnlShowMore.CssClass += " hidden";
+            }
         }
     }
 }

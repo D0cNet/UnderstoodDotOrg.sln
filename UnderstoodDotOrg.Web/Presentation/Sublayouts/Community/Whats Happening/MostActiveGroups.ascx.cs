@@ -120,7 +120,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
                 {
                     grps = TelligentService.GetUserGroups(CurrentMember.ScreenName);
-                    if (grps.Count > 2)
+                    if (grps != null && grps.Count > 2)
                     {
                         this.Visible = false;
                         return;

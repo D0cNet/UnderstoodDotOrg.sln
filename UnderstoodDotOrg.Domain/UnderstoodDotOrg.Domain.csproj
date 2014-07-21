@@ -225,6 +225,7 @@
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\DefaultArticlePageItem.base.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\DefaultArticlePageItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Base\BasePageItems\JSTemplateItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\AdvocacyLinkFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\AdvocacyLinkFolderItem.instance.cs" />

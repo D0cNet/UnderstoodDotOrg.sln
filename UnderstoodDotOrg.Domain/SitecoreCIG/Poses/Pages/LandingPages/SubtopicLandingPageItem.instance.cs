@@ -7,22 +7,42 @@ using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Common;
+using System.Collections.Specialized;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
 {
     public partial class SubtopicLandingPageItem 
     {
-        public IEnumerable<DefaultArticlePageItem> GetArticles(int page, out bool hasMoreResults)
+        public IEnumerable<DefaultArticlePageItem> GetArticles(int page, Guid? templateId, out bool hasMoreResults)
         {
             var all = InnerItem.GetChildren()
                         .FilterByContextLanguageVersion()
                         .Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId));
 
+            if (templateId.HasValue)
+            {
+                all = all.Where(i => i.TemplateID == Sitecore.Data.ID.Parse(templateId.Value));
+            }
+
+            return GetPagedResultQuery(all, page, out hasMoreResults);
+        }
+
+        public IEnumerable<DefaultArticlePageItem> GetFeaturedArticles(int page, out bool hasMoreResults)
+        {
+            var all = FeaturedArticles.ListItems
+                        .FilterByContextLanguageVersion()
+                        .Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId));
+
+            return GetPagedResultQuery(all, page, out hasMoreResults);
+        }
+
+        private IEnumerable<DefaultArticlePageItem> GetPagedResultQuery(IEnumerable<Item> query, int page, out bool hasMoreResults)
+        {
             int pageSize = Constants.SUBTOPIC_LISTING_ARTICLES_PER_PAGE;
-            int total = all.Count();
+            int total = query.Count();
             int offset = (page - 1) * pageSize;
-            
-            var results = all.Skip(offset)
+
+            var results = query.Skip(offset)
                             .Take(pageSize)
                             .Select(i => new DefaultArticlePageItem(i));
 
@@ -41,6 +61,38 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
             }
 
             return results;
+        }
+
+        public Dictionary<string,string> GetArticleFilters()
+        {
+            var filters = new Dictionary<string, string>();
+
+            filters.Add(string.Empty, DictionaryConstants.Featured);
+
+            var articles = this.InnerItem
+                                .Children
+                                .FilterByContextLanguageVersion();
+            if (articles.Any())
+            {
+                // Grab unique article template ids for this subtopic
+                var templates = articles.Select(x => x.TemplateID)
+                                    .Distinct();
+
+                foreach (Sitecore.Data.ID templateId in templates)
+                {
+                    string label = DefaultArticlePageItem.GetArticleType(templateId);
+                    if (!string.IsNullOrEmpty(label))
+                    {
+                        filters.Add(templateId.ToString(), label);
+                    }
+                    else
+                    {
+                        Sitecore.Diagnostics.Log.Info(String.Format("No article type found for template: {0}", templateId), this);
+                    }
+                }
+            }
+
+            return filters;
         }
     }
 }

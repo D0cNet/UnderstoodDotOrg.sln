@@ -17,3 +17,35 @@
         </div>
     </div>
 </div>
+
+<!-- BEGIN MODULE: Secondary Nav -->
+<nav id="subtopic-nav-filter" class="container nav-secondary">
+  <div class="row">
+    <div class="col col-24">
+
+    <!-- BEGIN ELEMENT: Menu -->
+
+      <div class="label-menu"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.FilterByLabel %></span></div>
+      <ul class="menu" aria-role="navigation" aria-label="secondary-navigation">
+        <li class="title"><span><asp:Literal ID="litFirstFilter" runat="server" /></span> <i class="icon-hide-show-fff"></i></li>
+        <li class="submenu">
+          <div class="inner">
+            <div class="label-more"><button><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreButtonText %> <i class="icon-hide-show-fff"></i></button></div>
+            <ul>
+                <asp:Repeater ID="rptFilters" runat="server">
+                    <ItemTemplate>
+                        <li><span><asp:HyperLink href="#" ID="hlFilter" runat="server" /></span></li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
+          </div><!-- .inner -->
+        </li><!-- .submenu -->
+      </ul><!-- .menu -->
+      
+<!-- END ELEMENT: Menu -->
+
+    </div><!-- .col -->
+  </div><!-- .row -->
+</nav><!-- .container.nav-secondary -->
+
+<!-- END MODULE: Secondary Nav -->

@@ -25,10 +25,32 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
         {
             get { return Request.QueryString["lang"] ?? String.Empty; }
         }
+        private string Featured
+        {
+            get { return Request.QueryString["featured"] ?? String.Empty; }
+        }
+        private string Type
+        {
+            get { return Request.QueryString["type"] ?? String.Empty; }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Guid topic;
+            Guid? typeId = null;
+            bool hasFeatured = false;
+
+            bool.TryParse(Featured, out hasFeatured);
+
+            if (!string.IsNullOrEmpty(Type))
+            {
+                try
+                {
+                    typeId = Guid.Parse(Type);
+                }
+                catch { }
+            }
+
             int page;
             Sitecore.Globalization.Language language;
 
@@ -44,7 +66,17 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                 {
                     SubtopicLandingPageItem topicItem = item;
                     bool hasMoreResults;
-                    articleListing.Articles = topicItem.GetArticles(page, out hasMoreResults);
+
+                    // Handle featured search
+                    if (!typeId.HasValue && hasFeatured)
+                    {
+                        articleListing.Articles = topicItem.GetFeaturedArticles(page, out hasMoreResults);
+                    }
+                    else
+                    {
+                        articleListing.Articles = topicItem.GetArticles(page, typeId, out hasMoreResults);
+                    }
+
                     phMoreResults.Visible = hasMoreResults;
                 }
             }

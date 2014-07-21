@@ -46,6 +46,15 @@ public static implicit operator Item(SubtopicLandingPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomMultiListField FeaturedArticles
+{
+	get
+	{
+		return new CustomMultiListField(InnerItem, InnerItem.Fields["Featured Articles"]);
+	}
+}
+
+
 public CustomTreeListField Widgets
 {
 	get

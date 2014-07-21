@@ -2976,5 +2976,7 @@ namespace UnderstoodDotOrg.Common
         public static string BetterRecommendations { get { return Translate.TextByDomain(PosesDictionary, "Better Recommendations Label"); } }
 
 
+
+        public static string AllLabel { get { return Translate.TextByDomain(PosesDictionary, "All Label"); } }
     }
 }

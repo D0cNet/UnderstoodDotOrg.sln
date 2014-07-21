@@ -119,22 +119,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
 
         public string GetArticleType()
         {
-            var container = Sitecore.Context.Database.GetItem(Constants.ArticleTypesContainer);
-            if (container != null)
-            {
-                var match = container.Children.FilterByContextLanguageVersion()
-                            .Select(i => new ArticleTypeItem(i))
-                            .Where(i => i.ArticleTypeTemplate.Item != null
-                                   && i.ArticleTypeTemplate.Item.ID == InnerItem.TemplateID)
-                            .FirstOrDefault();
-
-                if (match != null)
-                {
-                    return match.ArticleTypeName.Rendered;
-                }
-            }
-
-            return string.Empty;
+            return DefaultArticlePageItem.GetArticleType(InnerItem.TemplateID);
         }
 
         public List<DefaultArticlePageItem> GetMoreLikeThisArticles()
