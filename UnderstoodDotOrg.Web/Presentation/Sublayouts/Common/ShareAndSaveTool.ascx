@@ -30,7 +30,7 @@
     <div class="share-save-icon">
         <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.ShareandSaveText %></h3>
         <!-- leave no white space for layout consistency -->
-        <a href="REPLACE" class="icon icon-share"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShareButtonText %></a>
+        <a href="#" class="icon icon-share"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShareButtonText %></a>
             <span class="tools">
                 <a href="#" class="icon icon-email"><%= UnderstoodDotOrg.Common.DictionaryConstants.EmailButtonText %></a>
 

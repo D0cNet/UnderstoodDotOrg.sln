@@ -55,7 +55,7 @@
                     <h1><%= UnderstoodDotOrg.Common.DictionaryConstants.Core_EmailSentLabel %></h1>
                     <p><asp:Literal ID="litThankYouMessage" runat="server"></asp:Literal></p>
                     <div class="buttons">
-                        <a class="button close" data-dismiss="modal"><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseWindowButtonText %></a>
+                        <button type="button" class="button close" id="closeButton" runat="server" onserverclick="closeButton_ServerClick" data-dismiss="modal"><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseWindowButtonText %></button>
                     </div>
                 </asp:Panel>
           </ContentTemplate>

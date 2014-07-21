@@ -76,5 +76,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 validWarning.Visible = true;
             }
         }
+
+        protected void closeButton_ServerClick(object sender, EventArgs e)
+        {
+            pnlForm.Visible = true;
+            pnlConfirmation.Visible = false;
+            txtYourName.Text = "";
+            txtThoughts.Text = "";
+            txtYourEmail.Text = "";
+            txtRecipientEmail.Text = "";
+        }
     }
 }
