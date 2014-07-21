@@ -9,7 +9,7 @@
     <!-- BEGIN PARTIAL: transcript-control -->
     <div class="transcript-container Video">
         <div class="read-more mobile-close">
-            <a href="REMOVE">
+            <a href="#">
                 <asp:Literal runat="server" ID="ltVideoDetailShow"></asp:Literal><i class="icon-arrow-up-blue"></i></a>
         </div>
         <div class="transcript-wrap clearfix rs_read_this">

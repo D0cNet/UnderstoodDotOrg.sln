@@ -112,7 +112,7 @@
         <!-- BEGIN PARTIAL: transcript-control -->
         <div class="transcript-container Video">
           <div class="read-more mobile-close">
-            <a href="REMOVE">Close Transcript<i class="icon-arrow-up-blue"></i></a>
+            <a href="E">Close Transcript<i class="icon-arrow-up-blue"></i></a>
           </div>
           <div class="transcript-wrap clearfix rs_read_this">
             <div>
