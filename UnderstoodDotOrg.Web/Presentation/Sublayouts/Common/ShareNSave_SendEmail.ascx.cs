@@ -27,6 +27,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
             litValidationMessage.Text = DictionaryConstants.EmailValidationMessage;
             litThankYouMessage.Text = DictionaryConstants.EmailThankYouMessage;
+
+            valRegEmail.ValidationExpression = Constants.Validators.Email;
+
+            valRegEmail2.ValidationExpression = Constants.Validators.Email;
+
         }
 
         protected void btnSend_Click(object sender, EventArgs e)

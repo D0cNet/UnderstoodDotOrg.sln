@@ -25,19 +25,21 @@
 
                     <asp:Label runat="server" AssociatedControlID="txtYourEmail" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.EnterEmailLabel %></asp:Label>
                     <asp:TextBox ID="txtYourEmail" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator id="RequiredFieldValidator2"
+                    <asp:RequiredFieldValidator id="valEmail"
                         controltovalidate="txtYourEmail"
                         validationgroup="vlgEmailForm"
                         runat="server">
                     </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="valRegEmail" runat="server" ControlToValidate="txtYourEmail" CssClass="validationerror"></asp:RegularExpressionValidator>
                     
                     <asp:Label runat="server" AssociatedControlID="txtRecipientEmail" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.FriendsEmailLabel %></asp:Label>
                     <asp:TextBox ID="txtRecipientEmail" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator id="RequiredFieldValidator3"
+                    <asp:RequiredFieldValidator id="valEmail2"
                         controltovalidate="txtRecipientEmail"
                         validationgroup="vlgEmailForm"
                         runat="server">
                     </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="valRegEmail2" runat="server" ControlToValidate="txtRecipientEmail" CssClass="validationerror"></asp:RegularExpressionValidator>
 
                     <asp:Label runat="server" AssociatedControlID="txtThoughts" CssClass="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.EmailTextPlaceholder %></asp:Label>
                     <asp:TextBox ID="txtThoughts" runat="server" TextMode="MultiLine" />
