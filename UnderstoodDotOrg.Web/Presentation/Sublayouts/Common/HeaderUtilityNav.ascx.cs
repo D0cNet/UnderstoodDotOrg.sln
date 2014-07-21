@@ -52,8 +52,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
 
 				//sets up the global hero image along with the notifications
-				var user = TelligentService.GetUser(CurrentMember.ScreenName);
-				imgUserAvatar.ImageUrl = user.AvatarUrl;
+                var user = TelligentService.GetUser(CurrentMember.ScreenName);
+                if (user != null)
+                {
+                    imgUserAvatar.ImageUrl = user.AvatarUrl;
+                }
+                else
+                {
+                    imgUserAvatar.ImageUrl = Constants.Settings.AnonymousAvatar;
+                }
+
 				notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
 				checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
 
