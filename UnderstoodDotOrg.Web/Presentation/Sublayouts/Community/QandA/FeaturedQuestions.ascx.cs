@@ -7,13 +7,14 @@
     using UnderstoodDotOrg.Common.Extensions;
     using UnderstoodDotOrg.Domain.Membership;
     using UnderstoodDotOrg.Domain.SitecoreCIG;
-    using UnderstoodDotOrg.Domain.TelligentCommunity;
+    using UnderstoodDotOrg.Services.Models.Telligent;
+    using UnderstoodDotOrg.Services.TelligentService;
 
     public partial class FeaturedQuestions : System.Web.UI.UserControl
     {
         private void Page_Load(object sender, EventArgs e)
         {
-            List<Question> dataSource = CommunityHelper.GetQuestionsList("2");
+            List<Question> dataSource = TelligentService.GetQuestionsList(2, 100);
             questionsRepeater.DataSource = dataSource;
             questionsRepeater.DataBind();
         }

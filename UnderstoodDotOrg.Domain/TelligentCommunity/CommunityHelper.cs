@@ -388,56 +388,6 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
-        public static List<Question> GetQuestionsList(string wikiId)
-        {
-            int id = 0;
-            List<Question> questionList = new List<Question>();
-
-            if (String.IsNullOrEmpty(wikiId) || !Int32.TryParse(wikiId, out id))
-            {
-                return questionList;
-            }
-
-            using (var webClient = new WebClient())
-            {
-
-                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml?PageSize=6", wikiId));
-
-                var xml = webClient.DownloadString(requestUrl);
-
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-
-                XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
-                foreach (XmlNode xn in nodes)
-                {
-                    XmlNode user = xn.SelectSingleNode("User");
-                    XmlNode app = xn.SelectSingleNode("Content/Application");
-
-                    var queryString = "?wikiId=" + wikiId + "&wikiPageId=" + xn["Id"].InnerText + "&contentId=" + xn["ContentId"].InnerText;
-
-                    Question question = new Question()
-                    {
-                        Title = xn["Title"].InnerText,
-                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["CreatedDate"].InnerText),
-                        Body = xn["Body"].InnerText,
-                        WikiPageId = xn["Id"].InnerText,
-                        ContentId = xn["ContentId"].InnerText,
-                        Author = user["Username"].InnerText,
-                        Group = app["HtmlName"].InnerText,
-                        CommentCount = xn["CommentCount"].InnerText,
-                        AuthorAvatarUrl = user["AvatarUrl"].InnerText,
-                        QueryString = queryString,
-                        // TODO: replace this with constant or guid lookup
-                        Url = "/en/community and events/q and a/q and a details.aspx" + queryString,
-                    };
-                    questionList.Add(question);
-                }
-            }
-            return questionList;
-        }
-
         public static List<Question> GetQuestionsList(string wikiId, int count)
         {
             int id = 0;
