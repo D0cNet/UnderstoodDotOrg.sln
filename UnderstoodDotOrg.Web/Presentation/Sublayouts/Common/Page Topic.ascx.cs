@@ -15,6 +15,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
@@ -41,8 +42,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 if (parent != null 
                     && parent.InheritsTemplate(SubtopicLandingPageItem.TemplateId))
                 {
+                    // Setup user which page view will be logged against
                     var mm = new MembershipManager();
-                    Guid viewer = IsUserLoggedIn ? CurrentMember.MemberId : Guid.Empty;
+                    Guid viewer = Guid.Empty;
+                    if (IsUserLoggedIn)
+                    {
+                        viewer = CurrentMember.MemberId;
+                    }
+                    else
+                    {
+                        // Look up shadow user
+                        var shadowUser = mm.GetMemberByScreenName(Constants.UnauthenticatedMember_ScreeName);
+                        if (shadowUser != null)
+                        {
+                            viewer = shadowUser.MemberId;
+                        }
+                    }
+
                     try
                     {
                         mm.LogSubtopicPageView(viewer, _currentItem.ID.ToGuid(), parent.ID.ToGuid());
