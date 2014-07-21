@@ -74,7 +74,15 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                     }
                     else
                     {
-                        articleListing.Articles = topicItem.GetArticles(page, typeId, out hasMoreResults);
+                        // Handle popular filter
+                        if (typeId == Guid.Empty)
+                        {
+                            articleListing.Articles = topicItem.GetPopularArticles(page, out hasMoreResults);
+                        }
+                        else
+                        {
+                            articleListing.Articles = topicItem.GetArticles(page, typeId, out hasMoreResults);
+                        }
                     }
 
                     phMoreResults.Visible = hasMoreResults;

@@ -2978,5 +2978,7 @@ namespace UnderstoodDotOrg.Common
 
 
         public static string AllLabel { get { return Translate.TextByDomain(PosesDictionary, "All Label"); } }
+
+        public static string PopularLabel { get { return Translate.TextByDomain(PosesDictionary, "Popular Label"); } }
     }
 }

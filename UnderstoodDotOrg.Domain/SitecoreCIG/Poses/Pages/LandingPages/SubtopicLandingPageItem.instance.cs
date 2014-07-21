@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Common;
 using System.Collections.Specialized;
+using UnderstoodDotOrg.Domain.Understood.Activity;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
 {
@@ -32,6 +33,17 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
             var all = FeaturedArticles.ListItems
                         .FilterByContextLanguageVersion()
                         .Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId));
+
+            return GetPagedResultQuery(all, page, out hasMoreResults);
+        }
+
+        public IEnumerable<DefaultArticlePageItem> GetPopularArticles(int page, out bool hasMoreResults)
+        {
+            // TODO: replace with final implementation, 
+            var all = InnerItem.Children
+                        .FilterByContextLanguageVersion()
+                        .Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId))
+                        .OrderByDescending(i => i.Statistics.Created);
 
             return GetPagedResultQuery(all, page, out hasMoreResults);
         }
@@ -69,6 +81,15 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
 
             filters.Add(string.Empty, DictionaryConstants.Featured);
 
+            // Popular
+            var log = new ActivityLog();
+            bool hasPopular = true; // TODO: replace with check for popular articles
+            if (hasPopular)
+            {
+                filters.Add(Guid.Empty.ToString(), DictionaryConstants.PopularLabel);
+            }
+
+            // Article type filter
             var articles = this.InnerItem
                                 .Children
                                 .FilterByContextLanguageVersion();

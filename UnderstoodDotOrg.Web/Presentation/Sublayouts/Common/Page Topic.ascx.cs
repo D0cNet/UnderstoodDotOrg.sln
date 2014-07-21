@@ -13,20 +13,52 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPa
 using Sitecore.Data.Items;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class Page_Topic : BaseSublayout
     {
+        private Item _currentItem;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            _currentItem = Sitecore.Context.Item;
             BindContent();
+            LogViewForPopularity();
+        }
+
+        /// <summary>
+        /// Log page view for subtopic filter nav
+        /// </summary>
+        private void LogViewForPopularity()
+        {
+            if (_currentItem.InheritsTemplate(DefaultArticlePageItem.TemplateId))
+            {
+                // Check for subtopic
+                Item parent = _currentItem.Parent;
+                if (parent != null 
+                    && parent.InheritsTemplate(SubtopicLandingPageItem.TemplateId))
+                {
+                    var mm = new MembershipManager();
+                    Guid viewer = IsUserLoggedIn ? CurrentMember.MemberId : Guid.Empty;
+                    try
+                    {
+                        mm.LogSubtopicPageView(viewer, _currentItem.ID.ToGuid(), parent.ID.ToGuid());
+                    }
+                    catch (Exception ex)
+                    {
+                        Sitecore.Diagnostics.Log.Error("Error saving article view log", ex, this);
+                    }
+                }
+            }
         }
 
         private void BindContent()
         {
-            if (Sitecore.Context.Item.InheritsTemplate(BehaviorAdvicePageItem.TemplateId)
-                    || Sitecore.Context.Item.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsResultsPageItem.TemplateId))
+            if (_currentItem.InheritsTemplate(BehaviorAdvicePageItem.TemplateId)
+                    || _currentItem.TemplateID == Sitecore.Data.ID.Parse(BehaviorToolsResultsPageItem.TemplateId))
             {
                 PopulateBehaviorInfo();
             }
@@ -40,9 +72,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             phAuthorInfo.Visible = false;
 
-            if (Sitecore.Context.Item.InheritsTemplate(DefaultArticlePageItem.TemplateId))
+            if (_currentItem.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
-                DefaultArticlePageItem article = Sitecore.Context.Item;
+                DefaultArticlePageItem article = _currentItem;
 
                 if (article.AuthorName.Item != null)
                 {

@@ -125,8 +125,8 @@ namespace UnderstoodDotOrg.Web.Handlers
                 {
                     Title = a.TipTitle,
                     Url = a.GetUrl(),
-                    CommentCount = CommunityHelper.GetTotalComments(a.BlogId, a.BlogPostId),
-                    HelpfulCount = CommunityHelper.GetTotalLikes(a.ContentId)
+                    CommentCount = Services.TelligentService.TelligentService.GetTotalComments(a.BlogId, a.BlogPostId),
+                    HelpfulCount = Services.TelligentService.TelligentService.GetTotalLikes(a.ContentId)
                 });
 
             results.Matches = query.ToList();

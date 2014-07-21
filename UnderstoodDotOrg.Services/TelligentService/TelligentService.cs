@@ -53,8 +53,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 path = path.TrimStart('/');
             }
 
-            return String.Format("{0}api.ashx/v2/{1}",
-                            Settings.GetSetting(Constants.Settings.TelligentConfig),
+            return String.Format("{0}/api.ashx/v2/{1}",
+                            Settings.GetSetting(Constants.Settings.TelligentConfig).TrimEnd('/'),
                             path);
         }
 
