@@ -2,7 +2,7 @@
 <div class="get-better-recommendations-container">
   <div class="skiplink-toolbar  rs_read_this get-better-recommendations ">
     <div class="get-recommendations">
-        <h4>Get Better Recommendations <button class="popover-link rs_preserve"><i class="icon-question-mark tooltip rs_skip">more information</i></button></h4>
+        <h4>Get Better Recommendations<button class="popover-link rs_preserve"><i class="icon-question-mark tooltip rs_skip">more information</i></button></h4>
         <div class="popover-container rs_skip">
             <p><strong>Why are we asking this?</strong> Lorem ipsum tincidunt ut laoreet dolore magna aliqua quis nostrud exerci tation ullamcorper consequat. Duis autem vel eum iriure consequat, vel illum.</p>
         </div>

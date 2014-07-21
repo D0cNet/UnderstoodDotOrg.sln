@@ -26,12 +26,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             if (context.KeepReadingContent.ListItems.Count != 0)
             {
-                rptKeepReading.DataSource = context.KeepReadingContent.ListItems;
+                rptKeepReading.DataSource = context.KeepReadingContent.ListItems.Take(3);
                 rptKeepReading.DataBind();
             }
             else
             {
-                List<Item> relatedLinks = context.InnerItem.Parent.Children.Where(i => i.InheritsFromType(DefaultArticlePageItem.TemplateId)).Take(3).ToList();
+                List<Item> relatedLinks = context.InnerItem.Parent.Children
+                    .Where(i => i.InheritsFromType(DefaultArticlePageItem.TemplateId))
+                    .Shuffle().Take(3).ToList();
                 rptKeepReading.DataSource = relatedLinks;
                 rptKeepReading.DataBind();
                 if (relatedLinks == null || !(relatedLinks.Count > 0))

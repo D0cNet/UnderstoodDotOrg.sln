@@ -13,5 +13,21 @@ namespace UnderstoodDotOrg.Common.Extensions {
                          select part.AsEnumerable();
             return splits;
         }
+
+        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source, Random generator = null)
+        {
+            if (generator == null)
+            {
+                generator = new Random();
+            }
+
+            var elements = source.ToArray();
+            for (var i = elements.Length - 1; i >= 0; i--)
+            {
+                var swapIndex = generator.Next(i + 1);
+                yield return elements[swapIndex];
+                elements[swapIndex] = elements[i];
+            }
+        }
     }
 }
