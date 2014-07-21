@@ -11,7 +11,7 @@
         <span class="dot"></span>
         <span class="reviewed-by-date">
             <%--12&nbsp;Dec&nbsp;&apos;13 --%>
-            <sc:Date ID="dtReviewedDate" Field="Reviewed Date" runat="server" Format="dd MMM yy" />
+            <sc:Date ID="dtReviewedDate" Field="Reviewed Date" runat="server" Format="dd MMM. `yy" />
         </span>
     </asp:Placeholder>
 </p>
