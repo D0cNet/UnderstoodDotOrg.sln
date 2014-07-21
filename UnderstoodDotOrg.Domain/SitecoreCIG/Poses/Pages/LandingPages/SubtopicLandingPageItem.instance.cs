@@ -39,13 +39,11 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
 
         public IEnumerable<DefaultArticlePageItem> GetPopularArticles(int page, out bool hasMoreResults)
         {
-            // TODO: replace with final implementation, 
-            var all = InnerItem.Children
-                        .FilterByContextLanguageVersion()
-                        .Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId))
-                        .OrderByDescending(i => i.Statistics.Created);
+            var log = new ActivityLog();
+            var articleIds = log.GetMostPopularArticleIdsBySubtopic(InnerItem, page, Constants.SUBTOPIC_LISTING_ARTICLES_PER_PAGE, out hasMoreResults);
 
-            return GetPagedResultQuery(all, page, out hasMoreResults);
+            return articleIds.Select(x => (DefaultArticlePageItem)Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(x)))
+                            .Where(x => x != null);
         }
 
         private IEnumerable<DefaultArticlePageItem> GetPagedResultQuery(IEnumerable<Item> query, int page, out bool hasMoreResults)
@@ -83,8 +81,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages
 
             // Popular
             var log = new ActivityLog();
-            bool hasPopular = true; // TODO: replace with check for popular articles
-            if (hasPopular)
+            if (log.HasPopularArticlesBySubtopic(InnerItem))
             {
                 filters.Add(Guid.Empty.ToString(), DictionaryConstants.PopularLabel);
             }

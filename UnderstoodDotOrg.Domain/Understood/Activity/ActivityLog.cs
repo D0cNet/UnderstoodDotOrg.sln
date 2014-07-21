@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -6,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Domain.Understood.Activity
 {
@@ -86,6 +89,86 @@ namespace UnderstoodDotOrg.Domain.Understood.Activity
                 throw ex;
             }
             return count;
+        }
+
+        private List<Guid> GetSubtopicArticleIds(Item subtopic)
+        {
+            return subtopic.Children.FilterByContextLanguageVersion()
+                                .Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId))
+                                .Select(i => i.ID.ToGuid())
+                                .ToList();
+        }
+
+        public bool HasPopularArticlesBySubtopic(Item subtopic)
+        {
+            List<Guid> articleIds = GetSubtopicArticleIds(subtopic);
+
+            try
+            {
+                using (var mc = new MemberActivityContext())
+                {
+                    string activityType = String.Concat(Constants.UserActivity_Values.SubtopicItemViewed, subtopic.ID.ToGuid().ToString());
+
+                    var query = from ma in mc.MemberActivity
+                                where ma.Value == activityType
+                                    && articleIds.Contains(ma.Key.Value)
+                                select ma.Key;
+
+                    return query.Count() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: log
+            }
+
+            return false;
+        }
+
+        public List<Guid> GetMostPopularArticleIdsBySubtopic(Item subtopic, int page, int pageSize, out bool hasMoreResults)
+        {
+            List<Guid> results = new List<Guid>();
+            hasMoreResults = false;
+
+            // Grab guids for articles under this subtopic to restrict article search
+            List<Guid> articleIds = GetSubtopicArticleIds(subtopic);
+
+            try
+            {
+                using (var mc = new MemberActivityContext())
+                {
+                    string activityType = String.Concat(Constants.UserActivity_Values.SubtopicItemViewed, subtopic.ID.ToGuid().ToString());
+
+                    var query = from ma in mc.MemberActivity
+                                where ma.Value == activityType
+                                    && articleIds.Contains(ma.Key.Value)
+                                group ma by ma.Key into groupView
+                                select new
+                                {
+                                    TotalViews = groupView.Count(),
+                                    ContentId = groupView.Key
+                                };
+
+                    // Limit results that have at least one view
+                    int totalArticles = query.Count();
+
+                    int offset = (page - 1) * pageSize;
+
+                    results = query.OrderByDescending(x => x.TotalViews)
+                                    .Select(x => x.ContentId.Value)
+                                    .Skip(offset)
+                                    .Take(pageSize)
+                                    .ToList();
+
+                    hasMoreResults = results.Count() + offset < totalArticles;
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: log
+            }
+
+            return results;
         }
    
         /// <summary>
