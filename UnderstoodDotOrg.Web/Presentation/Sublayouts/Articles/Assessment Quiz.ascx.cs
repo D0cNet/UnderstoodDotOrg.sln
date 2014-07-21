@@ -49,7 +49,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     btnNextPage.CausesValidation = true;
                     btnNextPage.ValidationGroup = "vlgPageQuestions";
-                    btnPrevPage.CausesValidation = true;
+                    btnPrevPage.CausesValidation = false;
                     btnPrevPage.ValidationGroup = "vlgPageQuestions";
                     btnShowResults.CausesValidation = true;
                     btnShowResults.ValidationGroup = "vlgPageQuestions";
