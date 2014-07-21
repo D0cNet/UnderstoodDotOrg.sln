@@ -31,7 +31,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
         protected void Page_Load(object sender, EventArgs e)
         {
             BindEvents();
-            //this.SetCanonicalUrl();
+            this.SetCanonicalUrl();
 
             if (!IsPostBack)
 			{
@@ -80,22 +80,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
 
         private void SetCanonicalUrl()
         {
-            string url = string.Empty;
+            string url = Request.Url.Scheme + "://" + Request.Url.Host;
 
             if (PageItem.InnerItem.TemplateID.ToString() == UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.HomePageItem.TemplateId)
             {
-                url = "/";
+                url += "/";
             }
             else
             {
-                url = PageItem.GetUrl();
+                url += PageItem.GetUrl();
             }
-
-            if (Request.Path != url)
-            {
-                Response.RedirectPermanent(url);
-            }
-
+            
             var canonicalLink = new HtmlLink();
             canonicalLink.Attributes.Add("rel", "canonical");
             canonicalLink.Attributes.Add("href", url);
