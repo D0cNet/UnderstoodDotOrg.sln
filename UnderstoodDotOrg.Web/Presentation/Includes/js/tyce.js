@@ -258,7 +258,7 @@ $(document).ready(function () {
             bindMobileGradeQuestionSelect();
         }
 
-        function mobileGradeQuestionSelect($ele) {
+        function mobileGradeQuestionSelectChanged($ele) {
             var gradeId = $ele.val();
 
             if (gradeId) {
@@ -270,7 +270,7 @@ $(document).ready(function () {
 
         function bindMobileGradeQuestionSelect() {
             $mobileGradeQuestionSelect.on("change.answer-mobile-grade", function () {
-                mobileGradeQuestionSelect($(this));
+                mobileGradeQuestionSelectChanged($(this));
             });
         };
         bindMobileGradeQuestionSelect();
