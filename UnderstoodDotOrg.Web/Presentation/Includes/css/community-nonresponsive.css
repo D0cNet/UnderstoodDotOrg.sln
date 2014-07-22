@@ -1617,14 +1617,19 @@ div.selector.fixedWidth {
   padding: 0;
 }
 /* line 1293, ../css.source/modules/community/_groups.scss */
+.all-boards .discussion-board-rs-wrapper, .individual-board .discussion-board-rs-wrapper {
+  width: 100%;
+  display: table;
+}
+/* line 1297, ../css.source/modules/community/_groups.scss */
 .all-boards .search-boards, .individual-board .search-boards {
   width: 100%;
 }
-/* line 1297, ../css.source/modules/community/_groups.scss */
+/* line 1301, ../css.source/modules/community/_groups.scss */
 .all-boards .col-24.featured-group.group-summary .topic, .individual-board .col-24.featured-group.group-summary .topic {
   botder-bottom: 0px;
 }
-/* line 1300, ../css.source/modules/community/_groups.scss */
+/* line 1304, ../css.source/modules/community/_groups.scss */
 .all-boards .col-24.featured-group.group-summary .mobile-search-box h3, .individual-board .col-24.featured-group.group-summary .mobile-search-box h3 {
   color: #7a4183;
   font-weight: normal;
@@ -1634,26 +1639,26 @@ div.selector.fixedWidth {
   font-size: 1.5rem;
 }
 
-/* line 1311, ../css.source/modules/community/_groups.scss */
+/* line 1315, ../css.source/modules/community/_groups.scss */
 .search .individual-group .results-for, .search .individual-group h3, .individual-board .individual-group .results-for, .individual-board .individual-group h3 {
   display: inline-block;
 }
-/* line 1314, ../css.source/modules/community/_groups.scss */
+/* line 1318, ../css.source/modules/community/_groups.scss */
 .search .individual-group .results-for, .individual-board .individual-group .results-for {
   color: #696969;
 }
-/* line 1316, ../css.source/modules/community/_groups.scss */
+/* line 1320, ../css.source/modules/community/_groups.scss */
 .search .individual-group .results-for h3, .individual-board .individual-group .results-for h3 {
   float: none;
 }
-/* line 1320, ../css.source/modules/community/_groups.scss */
+/* line 1324, ../css.source/modules/community/_groups.scss */
 .search .individual-group .results-for, .search .individual-group .results-for h3, .individual-board .individual-group .results-for, .individual-board .individual-group .results-for h3 {
   font-size: 18px;
   font-size: 1.125rem;
   font-size: 28px;
   font-size: 1.75rem;
 }
-/* line 1326, ../css.source/modules/community/_groups.scss */
+/* line 1330, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box, .individual-board .individual-group .discussion-box {
   padding: 0;
   margin-bottom: 0;
@@ -1664,7 +1669,7 @@ div.selector.fixedWidth {
   padding: 30px 20px 0px 20px;
   padding: 30px 40px 0px 40px;
 }
-/* line 1343, ../css.source/modules/community/_groups.scss */
+/* line 1347, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .discussions li, .individual-board .individual-group .discussion-box .discussions li {
   clear: both;
   padding: 23px 12px 27px 12px;
@@ -1673,12 +1678,12 @@ div.selector.fixedWidth {
   padding: 0;
   border: 0;
 }
-/* line 1356, ../css.source/modules/community/_groups.scss */
+/* line 1360, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box header .summary, .search .individual-group .discussion-box header .board, .search .individual-group .discussion-box header .started-by, .search .individual-group .discussion-box header .replies, .search .individual-group .discussion-box header .latest-post, .search .individual-group .discussion-box header .latest-post-tabular, .individual-board .individual-group .discussion-box header .summary, .individual-board .individual-group .discussion-box header .board, .individual-board .individual-group .discussion-box header .started-by, .individual-board .individual-group .discussion-box header .replies, .individual-board .individual-group .discussion-box header .latest-post, .individual-board .individual-group .discussion-box header .latest-post-tabular {
   display: none;
   display: block;
 }
-/* line 1364, ../css.source/modules/community/_groups.scss */
+/* line 1368, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary h4, .search .individual-group .discussion-box .board h4, .search .individual-group .discussion-box .started-by h4, .search .individual-group .discussion-box .replies h4, .search .individual-group .discussion-box .latest-post h4, .search .individual-group .discussion-box .latest-post-tabular h4, .individual-board .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .board h4, .individual-board .individual-group .discussion-box .started-by h4, .individual-board .individual-group .discussion-box .replies h4, .individual-board .individual-group .discussion-box .latest-post h4, .individual-board .individual-group .discussion-box .latest-post-tabular h4 {
   display: block;
   font-size: 18px;
@@ -1688,7 +1693,7 @@ div.selector.fixedWidth {
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 1374, ../css.source/modules/community/_groups.scss */
+/* line 1378, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary, .search .individual-group .discussion-box .board, .search .individual-group .discussion-box .started-by, .search .individual-group .discussion-box .replies, .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .summary, .individual-board .individual-group .discussion-box .board, .individual-board .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
   margin: 0px;
   float: left;
@@ -1698,7 +1703,7 @@ div.selector.fixedWidth {
   margin-bottom: 0px;
   clear: none;
 }
-/* line 1383, ../css.source/modules/community/_groups.scss */
+/* line 1387, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary h4, .search .individual-group .discussion-box .board h4, .search .individual-group .discussion-box .started-by h4, .search .individual-group .discussion-box .replies h4, .search .individual-group .discussion-box .latest-post h4, .search .individual-group .discussion-box .latest-post-tabular h4, .individual-board .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .board h4, .individual-board .individual-group .discussion-box .started-by h4, .individual-board .individual-group .discussion-box .replies h4, .individual-board .individual-group .discussion-box .latest-post h4, .individual-board .individual-group .discussion-box .latest-post-tabular h4 {
   float: left;
   margin-right: 4px;
@@ -1707,7 +1712,7 @@ div.selector.fixedWidth {
   line-height: 1.125rem;
   margin-bottom: 17px;
 }
-/* line 1392, ../css.source/modules/community/_groups.scss */
+/* line 1396, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary a, .search .individual-group .discussion-box .summary p, .search .individual-group .discussion-box .board a, .search .individual-group .discussion-box .board p, .search .individual-group .discussion-box .started-by a, .search .individual-group .discussion-box .started-by p, .search .individual-group .discussion-box .replies a, .search .individual-group .discussion-box .replies p, .search .individual-group .discussion-box .latest-post a, .search .individual-group .discussion-box .latest-post p, .search .individual-group .discussion-box .latest-post-tabular a, .search .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary p, .individual-board .individual-group .discussion-box .board a, .individual-board .individual-group .discussion-box .board p, .individual-board .individual-group .discussion-box .started-by a, .individual-board .individual-group .discussion-box .started-by p, .individual-board .individual-group .discussion-box .replies a, .individual-board .individual-group .discussion-box .replies p, .individual-board .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post p, .individual-board .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular p {
   float: left;
   line-height: 18px;
@@ -1723,25 +1728,25 @@ div.selector.fixedWidth {
   line-height: 16px;
   line-height: 1rem;
 }
-/* line 1408, ../css.source/modules/community/_groups.scss */
+/* line 1412, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary a, .search .individual-group .discussion-box .summary h4, .search .individual-group .discussion-box .board a, .search .individual-group .discussion-box .board h4, .search .individual-group .discussion-box .started-by a, .search .individual-group .discussion-box .started-by h4, .search .individual-group .discussion-box .replies a, .search .individual-group .discussion-box .replies h4, .search .individual-group .discussion-box .latest-post a, .search .individual-group .discussion-box .latest-post h4, .search .individual-group .discussion-box .latest-post-tabular a, .search .individual-group .discussion-box .latest-post-tabular h4, .individual-board .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .board a, .individual-board .individual-group .discussion-box .board h4, .individual-board .individual-group .discussion-box .started-by a, .individual-board .individual-group .discussion-box .started-by h4, .individual-board .individual-group .discussion-box .replies a, .individual-board .individual-group .discussion-box .replies h4, .individual-board .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post h4, .individual-board .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular h4 {
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 1416, ../css.source/modules/community/_groups.scss */
+/* line 1420, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary, .individual-board .individual-group .discussion-box .summary {
   width: 23.83%;
   width: 28%;
   margin-right: 35px;
   margin-bottom: 50px;
 }
-/* line 1417, ../css.source/modules/community/_groups.scss */
+/* line 1421, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .summary h4 {
   margin-bottom: 16px;
   margin-bottom: 0px;
   margin-bottom: 17px;
 }
-/* line 1434, ../css.source/modules/community/_groups.scss */
+/* line 1438, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary a {
   line-height: 21px;
   line-height: 1.3125rem;
@@ -1754,7 +1759,7 @@ div.selector.fixedWidth {
   line-height: 20px;
   line-height: 1.25rem;
 }
-/* line 1445, ../css.source/modules/community/_groups.scss */
+/* line 1449, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary p, .individual-board .individual-group .discussion-box .summary p {
   margin-bottom: 0px;
 }
@@ -1762,14 +1767,14 @@ div.selector.fixedWidth {
 .old-ie .search .individual-group .discussion-box .summary, .old-ie .individual-board .individual-group .discussion-box .summary {
   width: 20%;
 }
-/* line 1452, ../css.source/modules/community/_groups.scss */
+/* line 1456, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .started-by {
   width: 20.6%;
   margin-right: 78px;
   min-width: 80px;
   width: 16.64%;
 }
-/* line 1461, ../css.source/modules/community/_groups.scss */
+/* line 1465, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .started-by p, .individual-board .individual-group .discussion-box .started-by p {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -1779,7 +1784,7 @@ div.selector.fixedWidth {
   width: 12%;
   clear: none;
 }
-/* line 1469, ../css.source/modules/community/_groups.scss */
+/* line 1473, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .replies {
   text-align: left;
   margin-bottom: 0px;
@@ -1787,7 +1792,7 @@ div.selector.fixedWidth {
   text-align: center;
   width: 12.16%;
 }
-/* line 1481, ../css.source/modules/community/_groups.scss */
+/* line 1485, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .replies p, .individual-board .individual-group .discussion-box .replies p {
   font-size: 16px;
   font-size: 1rem;
@@ -1802,7 +1807,7 @@ div.selector.fixedWidth {
   width: 8%;
   clear: none;
 }
-/* line 1494, ../css.source/modules/community/_groups.scss */
+/* line 1498, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
   padding: 0px;
   margin-left: 1%;
@@ -1810,12 +1815,12 @@ div.selector.fixedWidth {
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 1503, ../css.source/modules/community/_groups.scss */
+/* line 1507, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post a, .search .individual-group .discussion-box .latest-post p, .search .individual-group .discussion-box .latest-post-tabular a, .search .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post p, .individual-board .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular p {
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 1506, ../css.source/modules/community/_groups.scss */
+/* line 1510, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post p, .search .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .latest-post p, .individual-board .individual-group .discussion-box .latest-post-tabular p {
   color: #696969;
 }
@@ -1824,49 +1829,49 @@ div.selector.fixedWidth {
   width: 10%;
   clear: none;
 }
-/* line 1514, ../css.source/modules/community/_groups.scss */
+/* line 1518, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post {
   display: block;
   width: 61.5%;
   margin-bottom: 50px;
   display: none;
 }
-/* line 1523, ../css.source/modules/community/_groups.scss */
+/* line 1527, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post .mins-ago, .individual-board .individual-group .discussion-box .latest-post .mins-ago {
   width: auto;
   float: left;
   margin-right: 4px;
 }
-/* line 1530, ../css.source/modules/community/_groups.scss */
+/* line 1534, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post a {
   display: block;
   clear: none;
   float: left;
 }
-/* line 1538, ../css.source/modules/community/_groups.scss */
+/* line 1542, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .latest-post-tabular {
   display: none;
   display: block;
 }
-/* line 1543, ../css.source/modules/community/_groups.scss */
+/* line 1547, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post-tabular p, .search .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .latest-post-tabular a {
   float: left;
   clear: both;
   line-height: 20px;
   line-height: 1.25rem;
 }
-/* line 1550, ../css.source/modules/community/_groups.scss */
+/* line 1554, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular a {
   margin-bottom: 2px;
 }
 
-/* line 1558, ../css.source/modules/community/_groups.scss */
+/* line 1562, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .board, .search .individual-group .discussion-box .started-by, .search .individual-group .discussion-box .replies, .search .individual-group .discussion-box .latest-post-tabular {
   margin-left: .45%;
   margin-left: 1%;
   margin-left: 1.8%;
 }
-/* line 1569, ../css.source/modules/community/_groups.scss */
+/* line 1573, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .board {
   width: 13.64%;
   clear: both;
@@ -1880,16 +1885,16 @@ div.selector.fixedWidth {
   width: 10%;
   clear: none;
 }
-/* line 1589, ../css.source/modules/community/_groups.scss */
+/* line 1593, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .started-by {
   margin-left: .5%;
   margin-left: 3.5%;
 }
-/* line 1597, ../css.source/modules/community/_groups.scss */
+/* line 1601, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .replies {
   margin-left: 2%;
 }
-/* line 1601, ../css.source/modules/community/_groups.scss */
+/* line 1605, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .replies p {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -1900,66 +1905,66 @@ div.selector.fixedWidth {
   line-height: 16px;
   line-height: 1rem;
 }
-/* line 1610, ../css.source/modules/community/_groups.scss */
+/* line 1614, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular {
   padding: 0px;
   margin-left: 1%;
   margin-left: 3%;
 }
 
-/* line 1623, ../css.source/modules/community/_groups.scss */
+/* line 1627, ../css.source/modules/community/_groups.scss */
 .individual-board .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .latest-post-tabular {
   margin-left: 3.45%;
   margin-left: 4%;
   margin-left: 6%;
 }
-/* line 1634, ../css.source/modules/community/_groups.scss */
+/* line 1638, ../css.source/modules/community/_groups.scss */
 .individual-board .individual-group .discussion-box .summary, .individual-board .individual-group .discussion-box .started-by {
   width: 29%;
   margin-right: 30px;
 }
-/* line 1640, ../css.source/modules/community/_groups.scss */
+/* line 1644, ../css.source/modules/community/_groups.scss */
 .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .replies {
   width: 63%;
   margin-left: 0px;
 }
-/* line 1646, ../css.source/modules/community/_groups.scss */
+/* line 1650, ../css.source/modules/community/_groups.scss */
 .individual-board .individual-group .discussion-box .started-by {
   clear: both;
   margin-left: 9%;
 }
-/* line 1654, ../css.source/modules/community/_groups.scss */
+/* line 1658, ../css.source/modules/community/_groups.scss */
 .individual-board .individual-group .discussion-box .replies {
   margin-left: 8%;
 }
-/* line 1659, ../css.source/modules/community/_groups.scss */
+/* line 1663, ../css.source/modules/community/_groups.scss */
 .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
   margin-left: 4%;
   margin-left: 8.5%;
 }
 
-/* line 1669, ../css.source/modules/community/_groups.scss */
+/* line 1673, ../css.source/modules/community/_groups.scss */
 .parent-groups .show-more {
   margin-bottom: 50px;
 }
 
-/* line 1674, ../css.source/modules/community/_groups.scss */
+/* line 1678, ../css.source/modules/community/_groups.scss */
 .individual-board .col-24.featured-group.group-summary .topic {
   margin-bottom: 0px;
 }
-/* line 1677, ../css.source/modules/community/_groups.scss */
+/* line 1681, ../css.source/modules/community/_groups.scss */
 .individual-board .groups-heading .title {
   width: 100%;
   width: auto;
 }
-/* line 1683, ../css.source/modules/community/_groups.scss */
+/* line 1687, ../css.source/modules/community/_groups.scss */
 .individual-board .search-board .discussion-boards {
   background-color: #f4f2f1;
   vertical-align: inherit;
   padding: 40px 20px 40px 20px;
   padding: 37px 40px 61px 40px;
 }
-/* line 1693, ../css.source/modules/community/_groups.scss */
+/* line 1697, ../css.source/modules/community/_groups.scss */
 .individual-board .mobile-group-search-form .group-search {
   width: 82%;
   width: 87%;
@@ -1967,17 +1972,17 @@ div.selector.fixedWidth {
   width: 92%;
   width: 93%;
 }
-/* line 1710, ../css.source/modules/community/_groups.scss */
+/* line 1714, ../css.source/modules/community/_groups.scss */
 .individual-board .discussion-box {
   clear: both;
 }
-/* line 1714, ../css.source/modules/community/_groups.scss */
+/* line 1718, ../css.source/modules/community/_groups.scss */
 .individual-board .show-more {
   margin-bottom: 54px;
   margin-top: 26px;
 }
 
-/* line 1719, ../css.source/modules/community/_groups.scss */
+/* line 1723, ../css.source/modules/community/_groups.scss */
 .all-boards .individual-group .discussion-box .replies p {
   font-size: 30px;
   font-size: 1.875rem;
@@ -1985,11 +1990,11 @@ div.selector.fixedWidth {
   line-height: 1.875rem;
 }
 
-/* line 1724, ../css.source/modules/community/_groups.scss */
+/* line 1728, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box {
   padding: 0px;
 }
-/* line 1727, ../css.source/modules/community/_groups.scss */
+/* line 1731, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box header .summary, .parent-groups.all-boards .individual-group .discussion-box header .replies, .parent-groups.all-boards .individual-group .discussion-box header .latest-post {
   display: none;
   display: block;
@@ -1999,11 +2004,11 @@ div.selector.fixedWidth {
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 1740, ../css.source/modules/community/_groups.scss */
+/* line 1744, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box header .latest-post {
   float: right;
 }
-/* line 1747, ../css.source/modules/community/_groups.scss */
+/* line 1751, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .summary h4, .parent-groups.all-boards .individual-group .discussion-box .replies h4, .parent-groups.all-boards .individual-group .discussion-box .latest-post h4 {
   display: block;
   font-size: 18px;
@@ -2013,11 +2018,11 @@ div.selector.fixedWidth {
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 1757, ../css.source/modules/community/_groups.scss */
+/* line 1761, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .summary, .parent-groups.all-boards .individual-group .discussion-box .replies {
   float: left;
 }
-/* line 1762, ../css.source/modules/community/_groups.scss */
+/* line 1766, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .summary {
   width: 38%;
   width: 42%;
@@ -2026,7 +2031,7 @@ div.selector.fixedWidth {
   width: 53.1666667%;
   min-width: 118px;
 }
-/* line 1782, ../css.source/modules/community/_groups.scss */
+/* line 1786, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .replies {
   width: 84px;
   margin-left: 4px;
@@ -2036,7 +2041,7 @@ div.selector.fixedWidth {
   margin-left: 0;
   margin-left: 5%;
 }
-/* line 1796, ../css.source/modules/community/_groups.scss */
+/* line 1800, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .replies:after {
   content: '';
   position: absolute;
@@ -2048,7 +2053,7 @@ div.selector.fixedWidth {
   display: none;
   display: block;
 }
-/* line 1810, ../css.source/modules/community/_groups.scss */
+/* line 1814, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .latest-post {
   width: 65%;
   float: left;
@@ -2059,7 +2064,7 @@ div.selector.fixedWidth {
   min-width: 125px;
   min-width: 146px;
 }
-/* line 1825, ../css.source/modules/community/_groups.scss */
+/* line 1829, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .latest-post p, .parent-groups.all-boards .individual-group .discussion-box .latest-post a {
   float: left;
   clear: both;
@@ -2067,31 +2072,31 @@ div.selector.fixedWidth {
   line-height: 1.25rem;
 }
 
-/* line 1836, ../css.source/modules/community/_groups.scss */
+/* line 1840, ../css.source/modules/community/_groups.scss */
 .individual-discussion .groups-heading {
   margin-bottom: 24px;
 }
-/* line 1838, ../css.source/modules/community/_groups.scss */
+/* line 1842, ../css.source/modules/community/_groups.scss */
 .individual-discussion .groups-heading .back-to-previous {
   margin: 0;
 }
-/* line 1841, ../css.source/modules/community/_groups.scss */
+/* line 1845, ../css.source/modules/community/_groups.scss */
 .individual-discussion .groups-heading .groups-private {
   width: 330px;
 }
-/* line 1845, ../css.source/modules/community/_groups.scss */
+/* line 1849, ../css.source/modules/community/_groups.scss */
 .individual-discussion .groups-heading .groups-private p {
   display: inline-block;
   width: auto;
   margin-left: 39px;
 }
-/* line 1854, ../css.source/modules/community/_groups.scss */
+/* line 1858, ../css.source/modules/community/_groups.scss */
 .individual-discussion .groups-heading .groups-private .icon {
   float: right;
   margin-top: -1px;
   margin-top: -2px;
 }
-/* line 1865, ../css.source/modules/community/_groups.scss */
+/* line 1869, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list {
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
@@ -2115,7 +2120,7 @@ div.selector.fixedWidth {
 .old-ie .individual-discussion .discussion-list {
   outline: solid 1px #dfdfdf;
 }
-/* line 1891, ../css.source/modules/community/_groups.scss */
+/* line 1895, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .title {
   width: 100%;
   padding: 25px 15px 0 15px;
@@ -2123,11 +2128,11 @@ div.selector.fixedWidth {
   border-bottom: 1px solid #d2d2d2;
   padding: 40px;
 }
-/* line 1894, ../css.source/modules/community/_groups.scss */
+/* line 1898, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .title h2 {
   font-weight: bold;
 }
-/* line 1907, ../css.source/modules/community/_groups.scss */
+/* line 1911, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post {
   width: 100%;
   border-bottom: 1px solid #d2d2d2;
@@ -2136,11 +2141,11 @@ div.selector.fixedWidth {
   padding: 20px;
   padding: 40px;
 }
-/* line 1919, ../css.source/modules/community/_groups.scss */
+/* line 1923, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post:last-child {
   border-bottom: none;
 }
-/* line 1923, ../css.source/modules/community/_groups.scss */
+/* line 1927, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer {
   float: left;
   margin-top: 9px;
@@ -2152,18 +2157,18 @@ div.selector.fixedWidth {
   margin-right: 25px;
   margin-right: 50px;
 }
-/* line 1939, ../css.source/modules/community/_groups.scss */
+/* line 1943, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer a {
   display: block;
 }
-/* line 1942, ../css.source/modules/community/_groups.scss */
+/* line 1946, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .name {
   margin-bottom: 0px;
   font-size: 22px;
   font-size: 1.375rem;
   margin-bottom: 3px;
 }
-/* line 1949, ../css.source/modules/community/_groups.scss */
+/* line 1953, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .location {
   margin-bottom: 7px;
   color: #646464;
@@ -2171,7 +2176,7 @@ div.selector.fixedWidth {
   font-size: 0.9375rem;
   margin-bottom: 10px;
 }
-/* line 1957, ../css.source/modules/community/_groups.scss */
+/* line 1961, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .contributer-image img {
   height: 117px;
   width: 117px;
@@ -2180,38 +2185,38 @@ div.selector.fixedWidth {
   width: 150px;
   margin-bottom: 20px;
 }
-/* line 1967, ../css.source/modules/community/_groups.scss */
+/* line 1971, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .member-card-specialties {
   height: 55px;
   width: 140px;
   width: 190px;
 }
-/* line 1975, ../css.source/modules/community/_groups.scss */
+/* line 1979, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .button {
   margin-bottom: 8px;
   padding: 0px;
   margin-bottom: 10px;
 }
-/* line 1984, ../css.source/modules/community/_groups.scss */
+/* line 1988, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-comment {
   color: #646464;
   line-height: 29px;
   line-height: 1.8125rem;
 }
-/* line 1987, ../css.source/modules/community/_groups.scss */
+/* line 1991, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-comment p {
   margin-bottom: 20px;
   margin-bottom: 30px;
   margin-bottom: 39px;
 }
-/* line 1997, ../css.source/modules/community/_groups.scss */
+/* line 2001, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer {
   bottom: 0;
   width: 100%;
   float: right;
   width: 64%;
 }
-/* line 2006, ../css.source/modules/community/_groups.scss */
+/* line 2010, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer h4 {
   color: #696969;
   margin-bottom: 22px;
@@ -2219,7 +2224,7 @@ div.selector.fixedWidth {
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 2012, ../css.source/modules/community/_groups.scss */
+/* line 2016, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu {
   list-style: none;
   overflow: hidden;
@@ -2228,7 +2233,7 @@ div.selector.fixedWidth {
   width: 258px;
   width: 100%;
 }
-/* line 2021, ../css.source/modules/community/_groups.scss */
+/* line 2025, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu button {
   float: left;
   width: 33%;
@@ -2238,11 +2243,11 @@ div.selector.fixedWidth {
   border: none;
   background: inherit;
 }
-/* line 2029, ../css.source/modules/community/_groups.scss */
+/* line 2033, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu button i {
   display: inline-block;
 }
-/* line 2032, ../css.source/modules/community/_groups.scss */
+/* line 2036, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu button p {
   line-height: 15px;
   line-height: 0.9375rem;
@@ -2251,7 +2256,7 @@ div.selector.fixedWidth {
 .old-ie .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu button {
   background-color: transparent;
 }
-/* line 2039, ../css.source/modules/community/_groups.scss */
+/* line 2043, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:after, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:after {
   height: 64px;
   width: 1px;
@@ -2262,41 +2267,41 @@ div.selector.fixedWidth {
   top: 2px;
   top: 0;
 }
-/* line 2051, ../css.source/modules/community/_groups.scss */
+/* line 2055, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:after {
   display: none;
 }
-/* line 2056, ../css.source/modules/community/_groups.scss */
+/* line 2060, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you {
   text-align: center;
   height: 27px;
 }
-/* line 2061, ../css.source/modules/community/_groups.scss */
+/* line 2065, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you p {
   float: left;
 }
-/* line 2066, ../css.source/modules/community/_groups.scss */
+/* line 2070, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you p {
   margin-left: 8px;
   margin-top: 6px;
 }
-/* line 2072, ../css.source/modules/community/_groups.scss */
+/* line 2076, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i {
   height: 27px;
 }
-/* line 2076, ../css.source/modules/community/_groups.scss */
+/* line 2080, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you {
   color: #696969;
   cursor: pointer;
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 2084, ../css.source/modules/community/_groups.scss */
+/* line 2088, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:hover, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:hover p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:hover, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:hover p {
   color: #426da9;
   text-decoration: underline;
 }
-/* line 2089, ../css.source/modules/community/_groups.scss */
+/* line 2093, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks {
   width: 28%;
   padding: 0 22px 0 0;
@@ -2304,43 +2309,43 @@ div.selector.fixedWidth {
   width: 92px;
   padding-right: 7px;
 }
-/* line 2099, ../css.source/modules/community/_groups.scss */
+/* line 2103, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i {
   background: url('../images/sprite.btn.thanks.png?3e08b1a4') 0 0 no-repeat;
   background-size: 25px 50px;
   height: 25px;
   width: 25px;
 }
-/* line 2105, ../css.source/modules/community/_groups.scss */
+/* line 2109, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i {
   background: url('../images/sprite.btn.thanks.lo-res.png?8f6d6a68') 0 0 no-repeat;
 }
-/* line 2110, ../css.source/modules/community/_groups.scss */
+/* line 2114, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:hover i {
   background-position: 0 -25px;
 }
-/* line 2115, ../css.source/modules/community/_groups.scss */
+/* line 2119, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you {
   width: 41%;
   padding: 0 22px;
   width: 56%;
 }
-/* line 2121, ../css.source/modules/community/_groups.scss */
+/* line 2125, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i {
   background: url('../images/sprite.btn.thinkingofyou.png?2c6bd533') 0 0 no-repeat;
   background-size: 18px 56px;
   height: 28px;
   width: 18px;
 }
-/* line 2127, ../css.source/modules/community/_groups.scss */
+/* line 2131, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i {
   background: url('../images/sprite.btn.thinkingofyou.lo-res.png?5860ffb6') 0 0 no-repeat;
 }
-/* line 2132, ../css.source/modules/community/_groups.scss */
+/* line 2136, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:hover i {
   background-position: 0 -28px;
 }
-/* line 2136, ../css.source/modules/community/_groups.scss */
+/* line 2140, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes {
   color: #7a4183;
   padding: 0 0 0 32px;
@@ -2354,27 +2359,27 @@ div.selector.fixedWidth {
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 2148, ../css.source/modules/community/_groups.scss */
+/* line 2152, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes p {
   font-weight: bold;
   margin-top: 0px;
 }
-/* line 2154, ../css.source/modules/community/_groups.scss */
+/* line 2158, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i {
   background: url('../images/sprite.btn.helpful.png?48edb9ab') 0 0 no-repeat;
   background-size: 16px 36px;
   height: 18px;
   width: 16px;
 }
-/* line 2160, ../css.source/modules/community/_groups.scss */
+/* line 2164, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i {
   background: url('../images/sprite.btn.helpful.lo-res.png?ee8ce76b') 0 0 no-repeat;
 }
-/* line 2165, ../css.source/modules/community/_groups.scss */
+/* line 2169, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes:hover i {
   background-position: 0 -18px;
 }
-/* line 2171, ../css.source/modules/community/_groups.scss */
+/* line 2175, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-comment, .individual-discussion .discussion-list .discussion-post .discussion-footer {
   display: inline-block;
   float: right;
@@ -2383,7 +2388,7 @@ div.selector.fixedWidth {
   width: 68.5%;
   width: 64%;
 }
-/* line 2191, ../css.source/modules/community/_groups.scss */
+/* line 2195, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar {
   display: none;
   display: block;
@@ -2397,16 +2402,16 @@ div.selector.fixedWidth {
   margin-right: 4.1%;
   padding: 40px 0 0 0;
 }
-/* line 2217, ../css.source/modules/community/_groups.scss */
+/* line 2221, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .button {
   padding: 0 10px;
 }
-/* line 2222, ../css.source/modules/community/_groups.scss */
+/* line 2226, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .discussion, .individual-discussion .discussion-sidebar .replies {
   width: 100%;
   position: relative;
 }
-/* line 2225, ../css.source/modules/community/_groups.scss */
+/* line 2229, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .discussion p, .individual-discussion .discussion-sidebar .replies p {
   color: #696969;
   font-size: 14px;
@@ -2414,7 +2419,7 @@ div.selector.fixedWidth {
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 2233, ../css.source/modules/community/_groups.scss */
+/* line 2237, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .discussion:after {
   content: '';
   height: 1px;
@@ -2422,16 +2427,16 @@ div.selector.fixedWidth {
   background-color: #f3f2f1;
   position: absolute;
 }
-/* line 2240, ../css.source/modules/community/_groups.scss */
+/* line 2244, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .discussion {
   margin-bottom: 40px;
 }
-/* line 2243, ../css.source/modules/community/_groups.scss */
+/* line 2247, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .replies {
   height: 29px;
   margin-bottom: 49px;
 }
-/* line 2247, ../css.source/modules/community/_groups.scss */
+/* line 2251, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .number-bubble-icon, .individual-discussion .discussion-sidebar .replies-bubble-icon {
   display: block;
   color: white;
@@ -2442,7 +2447,7 @@ div.selector.fixedWidth {
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 2256, ../css.source/modules/community/_groups.scss */
+/* line 2260, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .number-bubble-icon {
   background-image: url('../images/sprites-sb266886836.png');
   background-position: 0 -563px;
@@ -2454,7 +2459,7 @@ div.selector.fixedWidth {
   text-align: center;
   margin-top: 7px;
 }
-/* line 2262, ../css.source/modules/community/_groups.scss */
+/* line 2266, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .replies-bubble-icon {
   background-image: url('../images/sprites-sb266886836.png');
   background-position: 0 -902px;
@@ -2462,7 +2467,7 @@ div.selector.fixedWidth {
   height: 28px;
   width: 32px;
 }
-/* line 2265, ../css.source/modules/community/_groups.scss */
+/* line 2269, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .something-to-add {
   color: #7a4183;
   font-size: 20px;
@@ -2470,11 +2475,11 @@ div.selector.fixedWidth {
   font-size: 22px;
   font-size: 1.375rem;
 }
-/* line 2273, ../css.source/modules/community/_groups.scss */
+/* line 2277, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .button {
   padding: 0;
 }
-/* line 2277, ../css.source/modules/community/_groups.scss */
+/* line 2281, ../css.source/modules/community/_groups.scss */
 .individual-discussion .join-discussion {
   margin: 0 15px 45px 15px;
   margin-left: 4.1%;
@@ -2484,7 +2489,7 @@ div.selector.fixedWidth {
   margin-bottom: 50px;
   width: 61.5%;
 }
-/* line 2293, ../css.source/modules/community/_groups.scss */
+/* line 2297, ../css.source/modules/community/_groups.scss */
 .individual-discussion .join-discussion .comment {
   width: 100%;
   padding: 15px 11px;
@@ -2494,7 +2499,7 @@ div.selector.fixedWidth {
   margin-bottom: 20px;
   padding: 19px 17px;
 }
-/* line 2304, ../css.source/modules/community/_groups.scss */
+/* line 2308, ../css.source/modules/community/_groups.scss */
 .individual-discussion .join-discussion .button {
   width: 100%;
   display: block;
@@ -2504,7 +2509,7 @@ div.selector.fixedWidth {
   float: right;
 }
 
-/* line 2316, ../css.source/modules/community/_groups.scss */
+/* line 2320, ../css.source/modules/community/_groups.scss */
 .group-search-form, .mobile-group-search-form {
   float: left;
   height: 50px;
@@ -2517,14 +2522,14 @@ div.selector.fixedWidth {
   box-sizing: border-box;
   float: right;
 }
-/* line 2327, ../css.source/modules/community/_groups.scss */
+/* line 2331, ../css.source/modules/community/_groups.scss */
 .group-search-form label, .mobile-group-search-form label {
   float: left;
   width: 100%;
   float: none;
   width: auto;
 }
-/* line 2335, ../css.source/modules/community/_groups.scss */
+/* line 2339, ../css.source/modules/community/_groups.scss */
 .group-search-form .group-search, .mobile-group-search-form .group-search {
   margin: 0;
   width: 190px;
@@ -2540,7 +2545,7 @@ div.selector.fixedWidth {
   float: none;
   width: 75%;
 }
-/* line 2354, ../css.source/modules/community/_groups.scss */
+/* line 2358, ../css.source/modules/community/_groups.scss */
 .group-search-form .group-search-button, .mobile-group-search-form .group-search-button {
   border: 0;
   width: 20px;
@@ -2556,12 +2561,12 @@ div.selector.fixedWidth {
   margin-top: 0px;
   vertical-align: middle;
 }
-/* line 2372, ../css.source/modules/community/_groups.scss */
+/* line 2376, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .group-search-form .group-search-button, .no-backgroundsize .mobile-group-search-form .group-search-button {
   background-image: url('../images/sprite.icon.search.lo-res.png?ffa3839f');
 }
 
-/* line 2377, ../css.source/modules/community/_groups.scss */
+/* line 2381, ../css.source/modules/community/_groups.scss */
 .mobile-search-box {
   float: left;
   background-color: #f4f2f1;
@@ -2571,7 +2576,7 @@ div.selector.fixedWidth {
   width: auto;
   padding: 0;
 }
-/* line 2387, ../css.source/modules/community/_groups.scss */
+/* line 2391, ../css.source/modules/community/_groups.scss */
 .mobile-search-box h3 {
   font-size: 20px;
   font-size: 1.25rem;
@@ -2583,7 +2588,7 @@ div.selector.fixedWidth {
   font-size: 1.5rem;
 }
 
-/* line 2401, ../css.source/modules/community/_groups.scss */
+/* line 2405, ../css.source/modules/community/_groups.scss */
 .parent-groups.search .show-more {
   margin-bottom: 102px;
   margin-top: 26px;
