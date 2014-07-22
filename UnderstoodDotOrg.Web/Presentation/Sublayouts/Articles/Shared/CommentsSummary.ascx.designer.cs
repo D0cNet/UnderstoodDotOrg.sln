@@ -49,6 +49,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.WebControls.Literal litAuthorName;
         
         /// <summary>
+        /// bulletSpan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bulletSpan;
+        
+        /// <summary>
         /// litTimeStamp control.
         /// </summary>
         /// <remarks>

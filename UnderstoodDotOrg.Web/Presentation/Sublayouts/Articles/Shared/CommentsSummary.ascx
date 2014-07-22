@@ -10,7 +10,7 @@
             <i class="arrow-quote-bottom"></i>
         </blockquote>
         <span>
-            <strong><asp:Literal Text="" ID="litAuthorName" runat="server" /></strong> &bull; <asp:Literal Text="" ID="litTimeStamp" runat="server" />
+            <strong><asp:Literal Text="" ID="litAuthorName" runat="server" /></strong><span id="bulletSpan" runat="server" style="margin-left: 0px;"> &bull;</span> <asp:Literal Text="" ID="litTimeStamp" runat="server" />
         </span>
     </div>
 

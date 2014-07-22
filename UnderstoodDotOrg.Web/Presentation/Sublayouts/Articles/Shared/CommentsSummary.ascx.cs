@@ -70,7 +70,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     litCommentblurb.Text = recentComment.Body;
                     litAuthorName.Text = recentComment.AuthorDisplayName;
-                    litTimeStamp.Text = recentComment.PublishedDate;
+                    DateTime twoWeeks = DateTime.Now.AddDays(14);
+                    if (DateTime.Now.Ticks < (recentComment.CommentDate.AddDays(14).Ticks))
+                        litTimeStamp.Text = recentComment.PublishedDate;
+                    else
+                    {
+                        litTimeStamp.Visible = false;
+                        bulletSpan.Visible = false;
+                    }
                     pnlCommentTeaser.Visible=  article.ShowComment.Checked;
                 }
                 else
