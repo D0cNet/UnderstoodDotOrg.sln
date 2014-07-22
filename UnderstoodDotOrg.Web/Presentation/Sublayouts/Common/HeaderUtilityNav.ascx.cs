@@ -60,12 +60,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     imgUserAvatar.ImageUrl = Constants.Settings.AnonymousAvatar;
                 }
                 
-                // TODO: review this code if necessary
-                List<INotification> notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
-                List<Conversation> checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
+                // TODO: review this code if necessary				
 
-				int totalNotifications = (notifs != null) ? notifs.Count() : 0;
-                int totalConversations = (checkConvos != null) ? checkConvos.Count() : 0;
+				int totalNotifications = (Notifications != null) ? Notifications.Count() : 0;
+				int totalConversations = (Conversations != null) ? Conversations.Count() : 0;
 				lblNotificationNumber.Text = (totalConversations + totalConversations).ToString();
             }
 			else
