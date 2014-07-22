@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="landing-mycomments landing-modules rs_read_this">
     <header class="clearfix">
-        <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.MyCommentsLabel %><span class="landing-module-count"><asp:Literal ID="litCount" runat="server"></asp:Literal></span></h3>
+        <h3><sc:FieldRenderer ID="frMyComments" runat="server" FieldName="My Comments Header Text" /><span class="landing-module-count"><asp:Literal ID="litCount" runat="server"></asp:Literal></span></h3>
     </header>
     <asp:Placeholder runat="server" ID="pnlComments" Visible="false">
         <ul class="landing-module-items">

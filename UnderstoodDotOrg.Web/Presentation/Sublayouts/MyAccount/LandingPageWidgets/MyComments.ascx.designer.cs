@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Test.Telligent {
     public partial class MyCommentsTest {
         
         /// <summary>
+        /// frMyComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frMyComments;
+        
+        /// <summary>
         /// litCount control.
         /// </summary>
         /// <remarks>
