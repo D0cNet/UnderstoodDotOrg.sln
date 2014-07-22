@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
@@ -34,7 +35,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
                     List<GroupCardModel> groupsList = TelligentService.GetUserGroups(CurrentMember.ScreenName);
                     ddlGroups.DataSource = groupsList;
                     ddlGroups.DataValueField = "Url";
-                    ddlGroups.DataTextField = "Title";
+                    ddlGroups.DataTextField = DictionaryConstants.TitleLabel;
                     ddlGroups.DataBind();
                     if (ddlGroups.Items.Count != 0)
                     {

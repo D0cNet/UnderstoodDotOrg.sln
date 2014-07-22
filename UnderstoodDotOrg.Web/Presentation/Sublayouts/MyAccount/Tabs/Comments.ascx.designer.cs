@@ -13,6 +13,69 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
     public partial class Comments {
         
         /// <summary>
+        /// frMyComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frMyComments;
+        
+        /// <summary>
+        /// frFilterComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frFilterComments;
+        
+        /// <summary>
+        /// frAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAll;
+        
+        /// <summary>
+        /// frDDMostCommented control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frDDMostCommented;
+        
+        /// <summary>
+        /// frDDMostRecentComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frDDMostRecentComments;
+        
+        /// <summary>
+        /// frDDMostRecent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frDDMostRecent;
+        
+        /// <summary>
+        /// frDDOldest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frDDOldest;
+        
+        /// <summary>
         /// pnlComments control.
         /// </summary>
         /// <remarks>
@@ -40,6 +103,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         protected global::System.Web.UI.WebControls.Panel pnlNoComments;
         
         /// <summary>
+        /// frNoComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoComments;
+        
+        /// <summary>
         /// pnlNoProfile control.
         /// </summary>
         /// <remarks>
@@ -49,12 +121,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         protected global::System.Web.UI.WebControls.Panel pnlNoProfile;
         
         /// <summary>
-        /// hypCompleteYourProfile control.
+        /// frNoProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypCompleteYourProfile;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNoProfile;
     }
 }

@@ -1,17 +1,18 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Comments.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs.Comments" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container my-account-subheader comments-subheader">
     <div class="row">
         <!-- subheader -->
         <div class="col col-22 offset-1">
             <!-- BEGIN PARTIAL: my-comments-subheader -->
-            <h2 class="rs_read_this">My Comments</h2>
+            <h2 class="rs_read_this"><sc:FieldRenderer ID="frMyComments" FieldName="My Comments Text" runat="server" /></h2>
 
             <fieldset>
 
                 <span class="select-container filter">
-                    <label for="my-comments-filter" class="visuallyhidden">Filter Comments</label>
+                    <label for="my-comments-filter" class="visuallyhidden"><sc:FieldRenderer ID="frFilterComments" FieldName="Filter Comments Text" runat="server"/></label>
                     <select name="my-comments-filter" id="my-comments-filter">
-                        <option value="">All</option>
+                        <option value=""><sc:FieldRenderer ID="frAll" FieldName="DD All Text" runat="server"/></option>
                         <option>architecto voluptatem amet aliquam</option>
                         <option>temporibus molestias similique</option>
                         <option>quas iste recusandae non</option>
@@ -22,10 +23,10 @@
                 <span class="select-container sort">
                     <label for="my-comments-sort" class="visuallyhidden">Sort Comments</label>
                     <select name="my-comments-sort" id="my-comments-sort">
-                        <option value="">Most Recent</option>
-                        <option>Oldest To Newest</option>
-                        <option>Number Of Comments</option>
-                        <option>Recent Comments</option>
+                        <option><sc:FieldRenderer ID="frDDMostCommented" FieldName="DD Most Commented Text" runat="server"/></option>
+                        <option><sc:FieldRenderer ID="frDDMostRecentComments" FieldName="DD Most Recent Comments Text" runat="server"/></option>
+                        <option><sc:FieldRenderer ID="frDDMostRecent" FieldName="DD Most Recent Text" runat="server"/></option>
+                        <option><sc:FieldRenderer ID="frDDOldest" FieldName="DD Oldest" runat="server"/></option>
                     </select>
                 </span>
 
@@ -63,7 +64,7 @@
                                                 &quot;<asp:Literal ID="litCommentBody" runat="server"></asp:Literal>&quot;
                                             </p>
                                             <div class="comment-details">
-                                                <span class="comment-group" id="commentGroupSpan" runat="server">In
+                                                <span class="comment-group" id="commentGroupSpan" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.InLabel %>
                                                     <asp:HyperLink ID="hypCommentGroup" runat="server"></asp:HyperLink>
                                                 </span>
                                                 <span class="dot">&middot;</span>
@@ -75,7 +76,7 @@
                                                     <span class="comment-likes-count">
                                                         <asp:Literal ID="litLikes" runat="server"></asp:Literal>
                                                     </span>
-                                                    <span class="visuallyhidden">likes</span>
+                                                    <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.LikesLabel %></span>
                                                 </button>
                                             </div>
                                             <!-- /.comment-details -->
@@ -108,11 +109,10 @@
                 <!-- END PARTIAL: account-mycomments -->
             </asp:Panel>
             <asp:Panel runat="server" ID="pnlNoComments" Visible="false">
-                <p class="empty">You have not made any comments</p>
+                <p class="empty"><sc:FieldRenderer ID ="frNoComments" FieldName="No Comments Text" runat="server"/></p>
             </asp:Panel>
             <asp:Panel runat="server" ID="pnlNoProfile" Visible="false">
-                <p class="empty">You don't have a community profile, to create one please
-                    <asp:HyperLink CssClass="comment-link" ID="hypCompleteYourProfile" runat="server">click here.</asp:HyperLink></p>
+                <sc:FieldRenderer ID="frNoProfile" FieldName="No Profile Text"  runat="server"/>
             </asp:Panel>
         </div>
     </div>

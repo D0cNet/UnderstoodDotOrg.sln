@@ -1,19 +1,19 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Connections.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs.Connections" %>
 <%@ Register TagPrefix="uc1" TagName="MemberProfileCard" Src="~/Presentation/Sublayouts/Common/Cards/MemberProfileCard.ascx" %>
-
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <div class="container my-account-subheader connections-subheader">
     <div class="row">
         <!-- subheader -->
         <div class="col col-22 offset-1">
             <!-- BEGIN PARTIAL: my-connections-subheader -->
             <h2 class="rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.MyConnectionsLabel %></h2>
-            <a href="REPLACE" class="separated-link">Activity Feed</a>
+            <a href="REPLACE" class="separated-link"><sc:FieldRenderer ID="frAvtivityFeed" FieldName="Activity Feed Text" runat="server" /></a>
             <fieldset>
                 <span class="select-container sort">
                     <select name="filter" id="filter" class="my-account-dropdown">
-                        <option value="">Show All</option>
-                        <option>Friends Only</option>
-                        <option>Experts, Bloggers and Moderators</option>
+                        <option value=""><sc:FieldRenderer ID="frShowAll" FieldName="DD Show All Text" runat="server" /></option>
+                        <option><sc:FieldRenderer ID="frDDFriendsOnly" FieldName="DD Friends Only Text" runat="server" /></option>
+                        <option><sc:FieldRenderer ID="frDDExpertsBloggersandModerators" runat="server" FieldName="DD Experts Bloggers and Moderators Text" /></option>
                     </select>
                 </span>
             </fieldset>

@@ -53,9 +53,9 @@
                     </div>
 
                     <div class="row mygroup-grid-header clearfix">
-                        <h3 class="col col-15">Discussions</h3>
-                        <h3 class="col col-3 offset-1">Replies</h3>
-                        <h3 class="col col-4 offset-1">Latest Post</h3>
+                        <h3 class="col col-15"><%= UnderstoodDotOrg.Common.DictionaryConstants.DiscussionsLabel %></h3>
+                        <h3 class="col col-3 offset-1"><%= UnderstoodDotOrg.Common.DictionaryConstants.RepliesLabel %></h3>
+                        <h3 class="col col-4 offset-1"><%= UnderstoodDotOrg.Common.DictionaryConstants.LatestPostLabel %></h3>
                     </div>
 
                     <div class="row mygroup-list clearfix">
