@@ -65,29 +65,29 @@
 
     li {
       display: inline-block;
-      margin: 15% 0 105px 16%;
+      margin: 15% 0 105px 10%;
       position: relative;
       vertical-align: middle;
-      width: 38%;
+      width: 45%;
 
       @include bp($bp-small) {
-        margin: 8% 10% 0 0;
-        width: 15%;
+        margin: 8% 5% 0 0;
+        width: 20%;
       }
 
       @include bp($bp-small-plus) {
         margin: 15% 0 0 5%;
-        width: 20%;
+        width: 21%;
       }
 
       @include bp($bp-medium) {
-        margin: 75px 3% 5%;
-        width: 19%;
+        margin: 75px 2% 5%;
+        width: 21%;
       }
 
       @include bp($bp-large) {
         margin-top: 90px;
-        width: 11%;
+        width: 16%;
       }
 
       &:nth-child(2n+1) {
