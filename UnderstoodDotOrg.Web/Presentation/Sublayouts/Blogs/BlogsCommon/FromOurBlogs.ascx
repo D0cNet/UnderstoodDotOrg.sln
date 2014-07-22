@@ -61,9 +61,7 @@
                 </asp:Repeater>
                 <!-- END PARTIAL: community/our_blogs_card -->
             </div>
-
             <sc:sublayout runat="server" path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
-            <a href="REPLACE" class="button-view-all">See all blogs</a>
         </div>
     </div>
 </div>

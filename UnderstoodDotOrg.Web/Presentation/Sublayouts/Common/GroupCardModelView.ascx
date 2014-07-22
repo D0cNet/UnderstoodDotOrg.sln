@@ -38,13 +38,15 @@
           <asp:Literal  ID="litFindConvoLabel" runat="server" /></h3>
         <!-- BEGIN PARTIAL: community/groups_search_form -->
 <!--groups search form-->
-    <fieldset class="group-search-form mobile-group-search-form">
-      <label for="group-search-text" class="visuallyhidden" aria-hidden="true">
-          <asp:Literal ID="litSearchLabel" runat="server" /></label>
-      <input type="text" class="group-search" id="group-search-text" name="group-search" placeholder="Search">
-      <input class="group-search-button" type="submit" value="Go">
-    </fieldset>
-<!-- END PARTIAL: community/groups_search_form -->
+          <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch">
+              <fieldset class="group-search-form mobile-group-search-form">
+                  <label for="group-search-text" class="visuallyhidden" aria-hidden="true">
+                      <asp:Literal ID="litSearchLabel" runat="server" /></label>
+                  <asp:TextBox ID="txtSearch" CssClass="group-search" runat="server" placeholder="Enter conversation" />
+                  <asp:Button type="submit" CssClass="group-search-button" ID="btnSearch" value="Go" OnClick="btnSearch_Click" runat="server" />
+              </fieldset>
+          </asp:Panel>
+          <!-- END PARTIAL: community/groups_search_form -->
       </div>
     </div><!-- end .statistics -->
   </div> <!-- end .featured-group and .group-summary -->
