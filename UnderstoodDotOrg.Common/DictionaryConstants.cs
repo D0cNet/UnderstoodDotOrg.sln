@@ -2929,6 +2929,7 @@ namespace UnderstoodDotOrg.Common
         #region Connect Button Labels
         public static string ConnectBtnText { get { return Translate.TextByDomain(PosesDictionary, "Connect Button Text"); } }
         public static string ViewActivity { get { return Translate.TextByDomain(PosesDictionary, "View Activity Button Text"); } }
+        public static string RequestRecieved { get { return Translate.TextByDomain(PosesDictionary, "Request Recieved Button Text"); } }
         public static string RequestSent { get { return Translate.TextByDomain(PosesDictionary, "Request Sent Button Text"); } }
         public static string UnconnectButtonText { get { return Translate.TextByDomain(PosesDictionary, "Unconnect Button Text"); } }
         public static string PrivateMessageButtonText { get { return Translate.TextByDomain(PosesDictionary, "Private Message Button Text"); } }

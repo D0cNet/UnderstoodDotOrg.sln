@@ -69,30 +69,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     if (CurrentMember != null && CurrentMember.ScreenName != null)
                     {
                         //Check if same user
-                        if (!CurrentMember.ScreenName.Equals(userName) && MembershipManager.isOpenToConnect(userName))
+                        if (!CurrentMember.ScreenName.Equals(userName) && MembershipManager.isOpenToConnect(userName) && MembershipManager.isOpenToConnect(CurrentMember.ScreenName))
                         {
 
                             //Check friendship
                             Status = TelligentService.IsFriend(CurrentMember.ScreenName, UserName);
+                            this.Visible = true;
+                            
                             //Set Text Appropriately
                             switch (Status)
                             {
                                 case Constants.TelligentFriendStatus.NotSpecified:
-                                    Text = DictionaryConstants.ConnectBtnText;
-                                    this.Visible = true;
-
                                     break;
                                 case Constants.TelligentFriendStatus.Pending:
                                     Text = DictionaryConstants.RequestSent;
-                                    this.Visible = true;
-
                                     break;
                                 case Constants.TelligentFriendStatus.Approved:
                                     Text = DictionaryConstants.ViewActivity;
-                                    this.Visible = true;
-
+                                    break;
+                                case Constants.TelligentFriendStatus.Recieved:
+                                    Text = DictionaryConstants.RequestRecieved;
                                     break;
                                 default:
+                                    this.Visible = false;
                                     break;
                             }
                         }

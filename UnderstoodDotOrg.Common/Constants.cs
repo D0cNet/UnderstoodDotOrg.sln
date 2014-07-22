@@ -1202,6 +1202,7 @@ namespace UnderstoodDotOrg.Common
         {
             NotSpecified,
             Pending,
+            Recieved,
             Approved
         }
 
