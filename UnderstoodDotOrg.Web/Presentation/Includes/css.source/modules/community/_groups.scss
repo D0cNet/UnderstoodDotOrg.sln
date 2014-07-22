@@ -815,34 +815,34 @@ div.selector.fixedWidth {
 
   }
   .topic {
-      border-right: 0px;
+    border-right: 0px;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #c6c5c5;
+    overflow: hidden;
+    border-right: 0px;
+    @include bp(($bp-small)(max-width 768px)) {
       width: 100%;
-      padding: 20px 0 20px 0;
-      border-bottom: 1px solid #c6c5c5;
-      overflow: hidden;
-      border-right: 0px;
-      @include bp(($bp-small)(max-width 768px)) {
-        width: 100%;
-        border-bottom: none;
-        padding: 0 0 20px 0;
+      border-bottom: none;
+      padding: 0 0 20px 0;
+    }
+    @include bp($bp-medium) {
+      border-bottom: none;
+      padding: 0 0 20px 0;
+    }
+    @include bp(($bp-small-plus)(max-width 769px)) {
+      width: 71%;
+    }
+    @include bp($bp-medium) {
+      width: 75%;
+    }
+    .feature-image {
+      margin-left: 0px;
+      margin-right: 23px;
+      width: 71px;
+      @include bp($bp-small-plus) {
+        width: 110px;
       }
-      @include bp($bp-medium) {
-        border-bottom: none;
-        padding: 0 0 20px 0;
-      }
-      @include bp(($bp-small-plus)(max-width 769px)) {
-        width: 71%;
-      }
-      @include bp($bp-medium) {
-        width: 75%;
-      }
-      .feature-image {
-        margin-left: 0px;
-        margin-right: 23px;
-        width: 71px;
-        @include bp($bp-small-plus) {
-          width: 110px;
-        }
     }
     .statistics {
       padding: 0;
@@ -999,6 +999,7 @@ div.selector.fixedWidth {
         @include bp($bp-medium) {
           margin-right: 8%;
         }
+
 
         @include bp($bp-large) {
           margin-right: 73px;
@@ -1682,17 +1683,15 @@ div.selector.fixedWidth {
     margin-bottom: 0px;
   }
   .discussion-board-rs-wrapper {
-    @include bp($bp-large) {
+    @include bp($bp-small-plus) {
       display: table;
       width: 100%;
     }
-  }
-  .discussion-boards {
-    @include bp(($bp-small)(max-width 849px)) {
-        width: 65%;
-    }
-    @include bp(min-width 850px) {
-      width: 75%;
+    .start-discussion .button {
+      @include bp((min-width 480px)(max-width 630px)) {
+        line-height: 16px;
+        padding-top: 10px;
+      }
     }
   }
   .col-24.search-board {
@@ -1712,6 +1711,12 @@ div.selector.fixedWidth {
     }
     @include bp($bp-small-plus) {
       padding: 37px 40px 61px 40px;
+    }
+    @include bp(($bp-small)(max-width 849px)) {
+      width: 65%;
+    }
+    @include bp(min-width 850px) {
+      width: 75%;
     }
   }
   .mobile-group-search-form .group-search {
