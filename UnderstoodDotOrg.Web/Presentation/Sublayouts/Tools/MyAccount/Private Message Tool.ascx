@@ -128,7 +128,7 @@
                                    <asp:HiddenField ID="hfConvID" Value='<%# Eval("ConversationID") %>' runat="server" />
                                  <div runat="server" style="telligent-inbox-item selected">
                                     <div class="telligent-avatar-wrap" id="avatarImg">
-                                        <asp:ImageButton ID="imgBtn1" CommandName="Select"  runat="server" class="telligent-avatar"" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
+                                        <asp:ImageButton ID="imgBtn1" CommandName="Select"  runat="server" class="telligent-avatar" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
 
                                     </div>
                                     <div>
