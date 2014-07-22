@@ -8,7 +8,7 @@
             <ul role="menu" aria-role="navigation" aria-label="main-navigation">
     </HeaderTemplate>
     <ItemTemplate>
-        <li class="menu-list-item" role="menuitem" aria-haspopup="true">
+        <li class="menu-list-item <%# GetSelectedState((UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.NavigationLinkItem)Container.DataItem, "is-current current-section") %>" role="menuitem" aria-haspopup="true">
             <span>
                 <sc:FieldRenderer ID="frMainNavigationLink" runat="server" FieldName="Link" />
             </span>

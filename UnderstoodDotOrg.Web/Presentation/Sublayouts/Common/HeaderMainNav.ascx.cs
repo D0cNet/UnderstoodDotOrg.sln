@@ -10,15 +10,19 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using Sitecore.Web.UI.WebControls;
 using Sitecore.Data.Items;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class HeaderMainNav : BaseSublayout
     {
         protected HeaderFolderItem HeaderFolder { get; set; }
+        private Item _levelOne = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            _levelOne = Sitecore.Context.Item.Axes.SelectSingleItem(String.Format("ancestor-or-self::*[@@templateid='{0}']", SectionLandingPageItem.TemplateId));
+
             HeaderFolder = HeaderFolderItem.GetHeader();
             GetMainNavigationItems();
 
@@ -27,6 +31,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             {
                 frParentToolKitHeading.Item = parentToolkitFolder;
             }
+        }
+
+        protected string GetSelectedState(NavigationLinkItem item, string selectedCss)
+        {
+            return (item.Link.Field.TargetItem != null
+                    && item.Link.Field.TargetItem.ID == _levelOne.ID) 
+                    ? selectedCss 
+                    : string.Empty;
         }
 
         private void GetMainNavigationItems()

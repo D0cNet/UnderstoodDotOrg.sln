@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col col-24">
             <sc:Sublayout runat="server" Cacheable="false" Path="~/Presentation/Sublayouts/Common/HeaderUtilityNav.ascx" />
-            <sc:Sublayout runat="server" Cacheable="true" Path="~/Presentation/Sublayouts/Common/HeaderMainNav.ascx" />
+            <sc:Sublayout runat="server" Cacheable="false" Path="~/Presentation/Sublayouts/Common/HeaderMainNav.ascx" />
         </div>
         <!-- .col -->
     </div>
