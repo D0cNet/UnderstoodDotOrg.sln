@@ -26,10 +26,13 @@
                         <div id="parents-search-grade-slider"></div>
                         <input type="hidden" name="parents-search-grade" id="parents-search-grade" data-collision="2" data-start-low="prek" data-start-high="8" data-values="prek,1,2,3,4,5,6,7,8,9,10,11,12,adult" data-labels="Pre-K,Grade 1,Grade 2,Grade 3,Grade 4,Grade 5,Grade 6,Grade 7,Grade 8,Grade 9,Grade 10,Grade 11,Grade 12,Adult"/>
                     </div>
-                    <asp:DropDownList name="parents-search-issue"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Id" ID="ddlChildIssues" aria-required="true" runat="server">
-                        <asp:ListItem  Value=""  >Child's Issue</asp:ListItem>
+                    
+                    <div class="container-parents-child-issue">
+                        <asp:DropDownList name="parents-search-issue"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Id" ID="ddlChildIssues" aria-required="true" runat="server">
+                            <asp:ListItem  Value=""  >Child's Issue</asp:ListItem>
                        
-                    </asp:DropDownList>
+                        </asp:DropDownList>
+                    </div>
    
                    
                       
