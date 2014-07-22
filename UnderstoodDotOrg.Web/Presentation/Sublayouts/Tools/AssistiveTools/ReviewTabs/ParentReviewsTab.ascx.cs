@@ -96,6 +96,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         {
             List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
 
+            int totalReviews = GetTotalReviews(reviews);
+
             if (IsUserLoggedIn)
             {
                 if (reviews.Where(i => i.MemberId == CurrentMember.MemberId).Count() > 0)
@@ -121,7 +123,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 pnlMoreLink.Visible = true;
             }
 
-            litNumberOfReviews.Text = reviews.Count.ToString() + " Reviews of this App";
+            litNumberOfReviews.Text = totalReviews.ToString() + " Reviews of this App";
+        }
+
+        private int GetTotalReviews(List<CSMUserReview> reviews)
+        {
+            int total = 0;
+            foreach (CSMUserReview r in reviews)
+            {
+                Comment comment = comments.Where(i => new Guid(i.CommentId).ToString() == r.TelligentCommentId.ToString()).FirstOrDefault();
+                if (comment != null)
+                    total += 1;
+            }
+
+            return total;
         }
 
         protected void rptReviews_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -262,8 +277,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             }
             else
             {
-                string url = SignUpPageItem.GetSignUpPage().GetUrl();
-                Response.Redirect(url);
+                this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.RegisteredUser);
             }
         }
 

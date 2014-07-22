@@ -81,7 +81,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             }
             else
             {
-                string url = SignUpPageItem.GetSignUpPage().GetUrl();
                 this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.RegisteredUser);
             }
         }
@@ -112,7 +111,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             }
             else
             {
-                string url = SignUpPageItem.GetSignUpPage().GetUrl();
                 this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.RegisteredUser);
             }
         }
