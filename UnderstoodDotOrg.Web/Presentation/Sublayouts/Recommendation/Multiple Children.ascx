@@ -46,7 +46,7 @@
                     <div class="row">
                         <div class="col col-24">
                             <h2><%--For Michael--%>
-                                For <%# Item.Nickname %>
+                                <%= UnderstoodDotOrg.Common.DictionaryConstants.ForFragment %> <%# Item.Nickname %>
                             </h2>
                             <div class="row carousel-container">
                                 <div class="col col-24">

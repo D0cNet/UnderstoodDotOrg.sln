@@ -1049,6 +1049,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Fragments
 
+        public static string ForFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "For Fragment");
+            }
+        }
+
         public static string ofFragment
         {
             get
