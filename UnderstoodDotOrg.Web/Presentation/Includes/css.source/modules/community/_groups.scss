@@ -1199,6 +1199,9 @@ div.selector.fixedWidth {
       @include bp(min-width 850px) {
         width: 66.6666666667%;
       }
+      @include bp($bp-large) {
+        width: 75%;
+      }
       h3 {
         margin-bottom: 21px;
         width: 100%;
@@ -1677,6 +1680,13 @@ div.selector.fixedWidth {
 .individual-board {
   .col-24.featured-group.group-summary .topic {
     margin-bottom: 0px;
+  }
+  .discussion-board-rs-wrapper {
+    display: table;
+    width: 100%;
+  }
+  .col-24.search-board {
+    padding-right: 0;
   }
   .groups-heading .title {
     width: 100%;
