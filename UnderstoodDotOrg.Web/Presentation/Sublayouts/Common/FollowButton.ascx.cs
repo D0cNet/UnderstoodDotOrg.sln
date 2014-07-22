@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sitecore.Links;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -45,7 +46,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         protected void lbtnFollow_Click(object sender, EventArgs e)
         {
             //this.ProfileRedirect(Constants.UserPermission.CommunityUser);
-
+            if (!IsUserLoggedIn)
+            {
+                Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{31F94423-5969-4506-B782-C3B8E5A2F7B9}")));
+            }
             if (Type.Equals(UnderstoodDotOrg.Common.Constants.TelligentContentType.BlogPost))
             {
                 //Call Bookmarking functions
@@ -110,45 +114,60 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             ContentTypeId = contentTypeId;
             Type = type;
             Text = DictionaryConstants.FollowBlog;
-            if (CurrentMember != null)
+
+            switch (type)
             {
-                if (CurrentMember.ScreenName != null) //Additional check in case user bypasses redirect
-                {
-                    //Should be called after properties are set
-                    switch (type)
+                case Constants.TelligentContentType.BlogPost:
+                    //Check if blog is bookmarked
+                    if (CurrentMember != null)
                     {
-                        case Constants.TelligentContentType.BlogPost:
-                            //Check if blog is bookmarked
+                        if (CurrentMember.ScreenName != null)
+                        {
                             if (TelligentService.IsBookmarked(CurrentMember.ScreenName, contentId, contentTypeId, type))
                             {
                                 Text = DictionaryConstants.FollowingBlogPost;
                             }
                             else
+                            {
                                 Text = DictionaryConstants.FollowBlogPost;
-                            break;
-                        case Constants.TelligentContentType.Forum:
-                            break;
-                        case Constants.TelligentContentType.Group:
-                            break;
-                        case Constants.TelligentContentType.Page:
-                            break;
-                        case Constants.TelligentContentType.Weblog:
-                            break;
-                        case Constants.TelligentContentType.Blog:
-                            //Check if blog is bookmarked
+                            }
+                        }
+                    }
+                    else
+                        Text = DictionaryConstants.FollowBlogPost;
+                    break;
+                case Constants.TelligentContentType.Forum:
+                    break;
+                case Constants.TelligentContentType.Group:
+                    break;
+                case Constants.TelligentContentType.Page:
+                    break;
+                case Constants.TelligentContentType.Weblog:
+                    break;
+                case Constants.TelligentContentType.Blog:
+                    //Check if blog is bookmarked
+                    if (CurrentMember != null)
+                    {
+                        if (CurrentMember.ScreenName != null)
+                        {
                             if (TelligentService.IsBookmarked(CurrentMember.ScreenName, contentId, type))
                             {
                                 Text = DictionaryConstants.FollowingBlog;
                             }
                             else
-                                Text = DictionaryConstants.FollowBlog;
-                            break;
-                        default:
-                            break;
+                            {
+                                Text = DictionaryConstants.FollowBlogPost;
+                            }
+                        }
                     }
-                }
+                    else
+                        Text = DictionaryConstants.FollowBlog;
+                    break;
+                default:
+                    break;
             }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
            

@@ -44,6 +44,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
                             }
                         }
                     }
+                    else
+                    {
+                        item.IsFollowing = false;
+                    }
                 }
             }
             BlogPostsRepeater.DataSource = dataSource;

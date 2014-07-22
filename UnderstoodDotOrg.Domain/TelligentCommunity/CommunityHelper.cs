@@ -589,6 +589,20 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                 {
                     XmlNode author = node.SelectSingleNode("Author");
                     var blogName = CommunityHelper.BlogNameById(node["BlogId"].InnerText);
+                    string title = string.Empty;
+                    string sitecoreId = string.Empty;
+                    string url = string.Empty;
+                    if (node["Title"].InnerText.Contains("{"))
+                    {
+                        string[] s = node["Title"].InnerText.Split('{');
+                        title = s[0];
+                        url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{" + s[1]));
+                    }
+                    else
+                    {
+                        url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
+                        "/" + blogName + "/" + node["Title"].InnerText, ".aspx", "");
+                    }
                     BlogPost blogPost = new BlogPost()
                     {
                         Title = node["Title"].InnerText,
@@ -598,8 +612,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         BlogName = blogName,
                         Author = author["DisplayName"].InnerText,
                         // TODO: Fix this logic a lot
-                        Url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
-                        "/" + blogName + "/" + node["Title"].InnerText, ".aspx", ""),
+                        Url = url,
                         ParentUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
                         "/blogposts?BlogId=" + node["BlogId"].InnerText, ".aspx", ""),
                         CommentCount = node["CommentCount"].InnerText,
