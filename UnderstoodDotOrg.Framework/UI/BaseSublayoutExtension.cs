@@ -130,7 +130,7 @@ namespace UnderstoodDotOrg.Framework.UI
             if (page.Page.Session[Constants.SessionPreviousUrl] != null)
             {
                 url = page.Page.Session[Constants.SessionPreviousUrl].ToString();
-                if (!String.IsNullOrEmpty(url))
+                if (!String.IsNullOrEmpty(url) && url != page.Page.Request.RawUrl)
                 {
                     //url = contextPage.Page.Session[redirectSessionKey].ToString();
 

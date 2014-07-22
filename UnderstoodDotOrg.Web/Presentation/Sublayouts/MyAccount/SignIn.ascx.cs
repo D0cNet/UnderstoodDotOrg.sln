@@ -96,6 +96,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                     this.ReturnRedirect();
 
                     var item = Sitecore.Context.Database.GetItem(Constants.Pages.MyAccount);
+                    // if you get this far, clear the redirect session URL 
+
                     Response.Redirect(Sitecore.Links.LinkManager.GetItemUrl(item));
                 }
             }
