@@ -492,6 +492,13 @@
   }
 }
 
+.group-summary-container p {
+  color: #696969;
+    @include bp($bp-large) {
+      margin-left: 4.1%;
+    }
+}
+
 .community-parents-recommended {
   .link-back, h2, .explanation {
     @include bp($bp-large) {

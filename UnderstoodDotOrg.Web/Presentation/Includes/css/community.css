@@ -1427,11 +1427,11 @@ div.selector.fixedWidth {
 /* line 532, ../css.source/modules/community/_groups.scss */
 .col-24.group-summary .statistics .button {
   margin: 0;
-  width: 150px;
+  width: auto;
+  padding: 0 19px;
   height: 41px;
   line-height: 40px;
   line-height: 2.5rem;
-  padding: 0px;
 }
 
 /* line 542, ../css.source/modules/community/_groups.scss */
@@ -2380,12 +2380,11 @@ div.selector.fixedWidth {
   .all-boards .jump-to, .all-boards .search-board, .individual-board .jump-to, .individual-board .search-board {
     margin: 0 0 53px 0;
     display: table;
-    width: 100%;
     width: 91.6666666667%;
     margin-left: 4.1%;
   }
 }
-/* line 1182, ../css.source/modules/community/_groups.scss */
+/* line 1181, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .discussion-boards, .all-boards .search-board .discussion-boards, .individual-board .jump-to .discussion-boards, .individual-board .search-board .discussion-boards {
   background-color: #fafafa;
   height: 100%;
@@ -2395,7 +2394,7 @@ div.selector.fixedWidth {
   padding: 22px 15px 42px 15px;
 }
 @media (min-width: 480px), print {
-  /* line 1182, ../css.source/modules/community/_groups.scss */
+  /* line 1181, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .discussion-boards, .all-boards .search-board .discussion-boards, .individual-board .jump-to .discussion-boards, .individual-board .search-board .discussion-boards {
     float: none;
     display: table-cell;
@@ -2404,30 +2403,30 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 480px) and (max-width: 785px), print {
-  /* line 1182, ../css.source/modules/community/_groups.scss */
+  /* line 1181, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .discussion-boards, .all-boards .search-board .discussion-boards, .individual-board .jump-to .discussion-boards, .individual-board .search-board .discussion-boards {
     padding-right: 0px;
   }
 }
 @media (min-width: 480px) and (max-width: 849px), print {
-  /* line 1182, ../css.source/modules/community/_groups.scss */
+  /* line 1181, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .discussion-boards, .all-boards .search-board .discussion-boards, .individual-board .jump-to .discussion-boards, .individual-board .search-board .discussion-boards {
     width: 55%;
   }
 }
 @media (min-width: 850px), print {
-  /* line 1182, ../css.source/modules/community/_groups.scss */
+  /* line 1181, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .discussion-boards, .all-boards .search-board .discussion-boards, .individual-board .jump-to .discussion-boards, .individual-board .search-board .discussion-boards {
     width: 66.6666666667%;
   }
 }
 @media (min-width: 960px), print {
-  /* line 1182, ../css.source/modules/community/_groups.scss */
+  /* line 1181, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .discussion-boards, .all-boards .search-board .discussion-boards, .individual-board .jump-to .discussion-boards, .individual-board .search-board .discussion-boards {
     width: 75%;
   }
 }
-/* line 1207, ../css.source/modules/community/_groups.scss */
+/* line 1206, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .discussion-boards h3, .all-boards .search-board .discussion-boards h3, .individual-board .jump-to .discussion-boards h3, .individual-board .search-board .discussion-boards h3 {
   margin-bottom: 21px;
   width: 100%;
@@ -2437,34 +2436,34 @@ div.selector.fixedWidth {
   font-size: 1.875rem;
 }
 @media (min-width: 650px), print {
-  /* line 1207, ../css.source/modules/community/_groups.scss */
+  /* line 1206, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .discussion-boards h3, .all-boards .search-board .discussion-boards h3, .individual-board .jump-to .discussion-boards h3, .individual-board .search-board .discussion-boards h3 {
     font-size: 24px;
     font-size: 1.5rem;
   }
 }
-/* line 1217, ../css.source/modules/community/_groups.scss */
+/* line 1216, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .discussion-boards .links, .all-boards .jump-to .discussion-boards .additional-links, .all-boards .search-board .discussion-boards .links, .all-boards .search-board .discussion-boards .additional-links, .individual-board .jump-to .discussion-boards .links, .individual-board .jump-to .discussion-boards .additional-links, .individual-board .search-board .discussion-boards .links, .individual-board .search-board .discussion-boards .additional-links {
   min-width: 180px;
   margin-right: 15px;
 }
 @media (min-width: 480px), print {
-  /* line 1217, ../css.source/modules/community/_groups.scss */
+  /* line 1216, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .discussion-boards .links, .all-boards .jump-to .discussion-boards .additional-links, .all-boards .search-board .discussion-boards .links, .all-boards .search-board .discussion-boards .additional-links, .individual-board .jump-to .discussion-boards .links, .individual-board .jump-to .discussion-boards .additional-links, .individual-board .search-board .discussion-boards .links, .individual-board .search-board .discussion-boards .additional-links {
     width: 43.83333%;
   }
 }
 @media (min-width: 786px), print {
-  /* line 1217, ../css.source/modules/community/_groups.scss */
+  /* line 1216, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .discussion-boards .links, .all-boards .jump-to .discussion-boards .additional-links, .all-boards .search-board .discussion-boards .links, .all-boards .search-board .discussion-boards .additional-links, .individual-board .jump-to .discussion-boards .links, .individual-board .jump-to .discussion-boards .additional-links, .individual-board .search-board .discussion-boards .links, .individual-board .search-board .discussion-boards .additional-links {
     margin-right: 31px;
   }
 }
-/* line 1228, ../css.source/modules/community/_groups.scss */
+/* line 1227, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .discussion-boards .links, .all-boards .search-board .discussion-boards .links, .individual-board .jump-to .discussion-boards .links, .individual-board .search-board .discussion-boards .links {
   padding: 0px;
 }
-/* line 1231, ../css.source/modules/community/_groups.scss */
+/* line 1230, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .discussion-boards .links a, .all-boards .search-board .discussion-boards .links a, .individual-board .jump-to .discussion-boards .links a, .individual-board .search-board .discussion-boards .links a {
   text-decoration: underline;
   float: left;
@@ -2473,21 +2472,21 @@ div.selector.fixedWidth {
   font-size: 0.875rem;
 }
 @media (min-width: 480px), print {
-  /* line 1231, ../css.source/modules/community/_groups.scss */
+  /* line 1230, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .discussion-boards .links a, .all-boards .search-board .discussion-boards .links a, .individual-board .jump-to .discussion-boards .links a, .individual-board .search-board .discussion-boards .links a {
     font-size: 16px;
     font-size: 1rem;
   }
 }
-/* line 1241, ../css.source/modules/community/_groups.scss */
+/* line 1240, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .discussion-boards .links a:hover, .all-boards .jump-to .discussion-boards .links a:focus, .all-boards .search-board .discussion-boards .links a:hover, .all-boards .search-board .discussion-boards .links a:focus, .individual-board .jump-to .discussion-boards .links a:hover, .individual-board .jump-to .discussion-boards .links a:focus, .individual-board .search-board .discussion-boards .links a:hover, .individual-board .search-board .discussion-boards .links a:focus {
   text-decoration: none;
 }
-/* line 1246, ../css.source/modules/community/_groups.scss */
+/* line 1245, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .discussion-boards .links.additional-links, .all-boards .search-board .discussion-boards .links.additional-links, .individual-board .jump-to .discussion-boards .links.additional-links, .individual-board .search-board .discussion-boards .links.additional-links {
   margin-left: 0px;
 }
-/* line 1251, ../css.source/modules/community/_groups.scss */
+/* line 1250, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .start-discussion, .all-boards .search-board .start-discussion, .individual-board .jump-to .start-discussion, .individual-board .search-board .start-discussion {
   background-color: #794381;
   text-align: center;
@@ -2500,7 +2499,7 @@ div.selector.fixedWidth {
   margin-bottom: 36px;
 }
 @media (min-width: 480px), print {
-  /* line 1251, ../css.source/modules/community/_groups.scss */
+  /* line 1250, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .start-discussion, .all-boards .search-board .start-discussion, .individual-board .jump-to .start-discussion, .individual-board .search-board .start-discussion {
     float: none;
     display: table-cell;
@@ -2510,57 +2509,63 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1251, ../css.source/modules/community/_groups.scss */
+  /* line 1250, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .start-discussion, .all-boards .search-board .start-discussion, .individual-board .jump-to .start-discussion, .individual-board .search-board .start-discussion {
     width: 45%;
   }
 }
 @media (min-width: 650px) and (max-width: 849px), print {
-  /* line 1251, ../css.source/modules/community/_groups.scss */
+  /* line 1250, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .start-discussion, .all-boards .search-board .start-discussion, .individual-board .jump-to .start-discussion, .individual-board .search-board .start-discussion {
     width: 35%;
   }
 }
 @media (min-width: 850px), print {
-  /* line 1251, ../css.source/modules/community/_groups.scss */
+  /* line 1250, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .start-discussion, .all-boards .search-board .start-discussion, .individual-board .jump-to .start-discussion, .individual-board .search-board .start-discussion {
     width: 25%;
   }
 }
-/* line 1277, ../css.source/modules/community/_groups.scss */
+/* line 1276, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .start-discussion input, .all-boards .search-board .start-discussion input, .individual-board .jump-to .start-discussion input, .individual-board .search-board .start-discussion input {
   padding: 0 19px;
   width: initial;
 }
 @media (min-width: 480px), print {
-  /* line 1277, ../css.source/modules/community/_groups.scss */
+  /* line 1276, ../css.source/modules/community/_groups.scss */
   .all-boards .jump-to .start-discussion input, .all-boards .search-board .start-discussion input, .individual-board .jump-to .start-discussion input, .individual-board .search-board .start-discussion input {
     padding: 0;
   }
 }
-/* line 1284, ../css.source/modules/community/_groups.scss */
+/* line 1283, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .start-discussion p, .all-boards .search-board .start-discussion p, .individual-board .jump-to .start-discussion p, .individual-board .search-board .start-discussion p {
   margin-bottom: 2px;
   font-size: 22px;
   font-size: 1.375rem;
 }
-/* line 1288, ../css.source/modules/community/_groups.scss */
+/* line 1287, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .start-discussion .want-to-talk, .all-boards .search-board .start-discussion .want-to-talk, .individual-board .jump-to .start-discussion .want-to-talk, .individual-board .search-board .start-discussion .want-to-talk {
   margin-bottom: 18px;
 }
-/* line 1292, ../css.source/modules/community/_groups.scss */
+/* line 1291, ../css.source/modules/community/_groups.scss */
 .all-boards .jump-to .start-discussion .button, .all-boards .search-board .start-discussion .button, .individual-board .jump-to .start-discussion .button, .individual-board .search-board .start-discussion .button {
   padding: 0;
 }
-/* line 1297, ../css.source/modules/community/_groups.scss */
+/* line 1296, ../css.source/modules/community/_groups.scss */
+.all-boards .discussion-board-rs-wrapper, .all-boards .search-board, .individual-board .discussion-board-rs-wrapper, .individual-board .search-board {
+  width: 100%;
+  display: table;
+  padding-right: 0px;
+}
+/* line 1301, ../css.source/modules/community/_groups.scss */
 .all-boards .search-boards, .individual-board .search-boards {
   width: 100%;
 }
-/* line 1301, ../css.source/modules/community/_groups.scss */
+/* line 1305, ../css.source/modules/community/_groups.scss */
 .all-boards .col-24.featured-group.group-summary .topic, .individual-board .col-24.featured-group.group-summary .topic {
   botder-bottom: 0px;
 }
-/* line 1304, ../css.source/modules/community/_groups.scss */
+/* line 1308, ../css.source/modules/community/_groups.scss */
 .all-boards .col-24.featured-group.group-summary .mobile-search-box h3, .individual-board .col-24.featured-group.group-summary .mobile-search-box h3 {
   color: #7a4183;
   font-weight: normal;
@@ -2568,105 +2573,105 @@ div.selector.fixedWidth {
   font-size: 1.25rem;
 }
 @media (min-width: 650px), print {
-  /* line 1304, ../css.source/modules/community/_groups.scss */
+  /* line 1308, ../css.source/modules/community/_groups.scss */
   .all-boards .col-24.featured-group.group-summary .mobile-search-box h3, .individual-board .col-24.featured-group.group-summary .mobile-search-box h3 {
     font-size: 24px;
     font-size: 1.5rem;
   }
 }
 
-/* line 1315, ../css.source/modules/community/_groups.scss */
+/* line 1319, ../css.source/modules/community/_groups.scss */
 .search .individual-group .results-for, .search .individual-group h3, .individual-board .individual-group .results-for, .individual-board .individual-group h3 {
   display: inline-block;
 }
-/* line 1318, ../css.source/modules/community/_groups.scss */
+/* line 1322, ../css.source/modules/community/_groups.scss */
 .search .individual-group .results-for, .individual-board .individual-group .results-for {
   color: #696969;
 }
-/* line 1320, ../css.source/modules/community/_groups.scss */
+/* line 1324, ../css.source/modules/community/_groups.scss */
 .search .individual-group .results-for h3, .individual-board .individual-group .results-for h3 {
   float: none;
 }
-/* line 1324, ../css.source/modules/community/_groups.scss */
+/* line 1328, ../css.source/modules/community/_groups.scss */
 .search .individual-group .results-for, .search .individual-group .results-for h3, .individual-board .individual-group .results-for, .individual-board .individual-group .results-for h3 {
   font-size: 18px;
   font-size: 1.125rem;
 }
 @media (min-width: 480px), print {
-  /* line 1324, ../css.source/modules/community/_groups.scss */
+  /* line 1328, ../css.source/modules/community/_groups.scss */
   .search .individual-group .results-for, .search .individual-group .results-for h3, .individual-board .individual-group .results-for, .individual-board .individual-group .results-for h3 {
     font-size: 28px;
     font-size: 1.75rem;
   }
 }
-/* line 1330, ../css.source/modules/community/_groups.scss */
+/* line 1334, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box, .individual-board .individual-group .discussion-box {
   padding: 0;
   margin-bottom: 0;
   border: 0px;
 }
 @media (min-width: 650px), print {
-  /* line 1330, ../css.source/modules/community/_groups.scss */
+  /* line 1334, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box, .individual-board .individual-group .discussion-box {
     border: 1px solid #e0e0e0;
     margin-bottom: 40px;
   }
 }
 @media (min-width: 650px) and (max-width: 700px), print {
-  /* line 1330, ../css.source/modules/community/_groups.scss */
+  /* line 1334, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box, .individual-board .individual-group .discussion-box {
     padding: 30px 15px 0px 15px;
   }
 }
 @media (min-width: 701px) and (max-width: 768px), print {
-  /* line 1330, ../css.source/modules/community/_groups.scss */
+  /* line 1334, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box, .individual-board .individual-group .discussion-box {
     padding: 30px 20px 0px 20px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1330, ../css.source/modules/community/_groups.scss */
+  /* line 1334, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box, .individual-board .individual-group .discussion-box {
     padding: 30px 40px 0px 40px;
   }
 }
-/* line 1347, ../css.source/modules/community/_groups.scss */
+/* line 1351, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .discussions li, .individual-board .individual-group .discussion-box .discussions li {
   clear: both;
   padding: 23px 12px 27px 12px;
   border: 1px solid #e0e0e0;
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1347, ../css.source/modules/community/_groups.scss */
+  /* line 1351, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .discussions li, .individual-board .individual-group .discussion-box .discussions li {
     padding: 30px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 1347, ../css.source/modules/community/_groups.scss */
+  /* line 1351, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .discussions li, .individual-board .individual-group .discussion-box .discussions li {
     padding: 0;
     border: 0;
   }
 }
-/* line 1360, ../css.source/modules/community/_groups.scss */
+/* line 1364, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box header .summary, .search .individual-group .discussion-box header .board, .search .individual-group .discussion-box header .started-by, .search .individual-group .discussion-box header .replies, .search .individual-group .discussion-box header .latest-post, .search .individual-group .discussion-box header .latest-post-tabular, .individual-board .individual-group .discussion-box header .summary, .individual-board .individual-group .discussion-box header .board, .individual-board .individual-group .discussion-box header .started-by, .individual-board .individual-group .discussion-box header .replies, .individual-board .individual-group .discussion-box header .latest-post, .individual-board .individual-group .discussion-box header .latest-post-tabular {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 1360, ../css.source/modules/community/_groups.scss */
+  /* line 1364, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box header .summary, .search .individual-group .discussion-box header .board, .search .individual-group .discussion-box header .started-by, .search .individual-group .discussion-box header .replies, .search .individual-group .discussion-box header .latest-post, .search .individual-group .discussion-box header .latest-post-tabular, .individual-board .individual-group .discussion-box header .summary, .individual-board .individual-group .discussion-box header .board, .individual-board .individual-group .discussion-box header .started-by, .individual-board .individual-group .discussion-box header .replies, .individual-board .individual-group .discussion-box header .latest-post, .individual-board .individual-group .discussion-box header .latest-post-tabular {
     display: block;
   }
 }
-/* line 1368, ../css.source/modules/community/_groups.scss */
+/* line 1372, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary h4, .search .individual-group .discussion-box .board h4, .search .individual-group .discussion-box .started-by h4, .search .individual-group .discussion-box .replies h4, .search .individual-group .discussion-box .latest-post h4, .search .individual-group .discussion-box .latest-post-tabular h4, .individual-board .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .board h4, .individual-board .individual-group .discussion-box .started-by h4, .individual-board .individual-group .discussion-box .replies h4, .individual-board .individual-group .discussion-box .latest-post h4, .individual-board .individual-group .discussion-box .latest-post-tabular h4 {
   display: block;
   font-size: 18px;
   font-size: 1.125rem;
 }
 @media (min-width: 650px), print {
-  /* line 1368, ../css.source/modules/community/_groups.scss */
+  /* line 1372, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary h4, .search .individual-group .discussion-box .board h4, .search .individual-group .discussion-box .started-by h4, .search .individual-group .discussion-box .replies h4, .search .individual-group .discussion-box .latest-post h4, .search .individual-group .discussion-box .latest-post-tabular h4, .individual-board .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .board h4, .individual-board .individual-group .discussion-box .started-by h4, .individual-board .individual-group .discussion-box .replies h4, .individual-board .individual-group .discussion-box .latest-post h4, .individual-board .individual-group .discussion-box .latest-post-tabular h4 {
     display: none;
     text-align: left;
@@ -2674,7 +2679,7 @@ div.selector.fixedWidth {
     font-size: 1.5rem;
   }
 }
-/* line 1378, ../css.source/modules/community/_groups.scss */
+/* line 1382, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary, .search .individual-group .discussion-box .board, .search .individual-group .discussion-box .started-by, .search .individual-group .discussion-box .replies, .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .summary, .individual-board .individual-group .discussion-box .board, .individual-board .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
   margin: 0px;
   float: left;
@@ -2683,12 +2688,12 @@ div.selector.fixedWidth {
   margin-bottom: 21px;
 }
 @media (min-width: 480px), print {
-  /* line 1378, ../css.source/modules/community/_groups.scss */
+  /* line 1382, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary, .search .individual-group .discussion-box .board, .search .individual-group .discussion-box .started-by, .search .individual-group .discussion-box .replies, .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .summary, .individual-board .individual-group .discussion-box .board, .individual-board .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
     margin-bottom: 0px;
   }
 }
-/* line 1387, ../css.source/modules/community/_groups.scss */
+/* line 1391, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary h4, .search .individual-group .discussion-box .board h4, .search .individual-group .discussion-box .started-by h4, .search .individual-group .discussion-box .replies h4, .search .individual-group .discussion-box .latest-post h4, .search .individual-group .discussion-box .latest-post-tabular h4, .individual-board .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .board h4, .individual-board .individual-group .discussion-box .started-by h4, .individual-board .individual-group .discussion-box .replies h4, .individual-board .individual-group .discussion-box .latest-post h4, .individual-board .individual-group .discussion-box .latest-post-tabular h4 {
   float: left;
   margin-right: 4px;
@@ -2697,19 +2702,19 @@ div.selector.fixedWidth {
   line-height: 1.125rem;
 }
 @media (min-width: 480px) and (max-width: 650px), print {
-  /* line 1387, ../css.source/modules/community/_groups.scss */
+  /* line 1391, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary h4, .search .individual-group .discussion-box .board h4, .search .individual-group .discussion-box .started-by h4, .search .individual-group .discussion-box .replies h4, .search .individual-group .discussion-box .latest-post h4, .search .individual-group .discussion-box .latest-post-tabular h4, .individual-board .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .board h4, .individual-board .individual-group .discussion-box .started-by h4, .individual-board .individual-group .discussion-box .replies h4, .individual-board .individual-group .discussion-box .latest-post h4, .individual-board .individual-group .discussion-box .latest-post-tabular h4 {
     margin-bottom: 17px;
   }
 }
-/* line 1396, ../css.source/modules/community/_groups.scss */
+/* line 1400, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary a, .search .individual-group .discussion-box .summary p, .search .individual-group .discussion-box .board a, .search .individual-group .discussion-box .board p, .search .individual-group .discussion-box .started-by a, .search .individual-group .discussion-box .started-by p, .search .individual-group .discussion-box .replies a, .search .individual-group .discussion-box .replies p, .search .individual-group .discussion-box .latest-post a, .search .individual-group .discussion-box .latest-post p, .search .individual-group .discussion-box .latest-post-tabular a, .search .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary p, .individual-board .individual-group .discussion-box .board a, .individual-board .individual-group .discussion-box .board p, .individual-board .individual-group .discussion-box .started-by a, .individual-board .individual-group .discussion-box .started-by p, .individual-board .individual-group .discussion-box .replies a, .individual-board .individual-group .discussion-box .replies p, .individual-board .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post p, .individual-board .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular p {
   float: left;
   line-height: 18px;
   line-height: 1.125rem;
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1396, ../css.source/modules/community/_groups.scss */
+  /* line 1400, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary a, .search .individual-group .discussion-box .summary p, .search .individual-group .discussion-box .board a, .search .individual-group .discussion-box .board p, .search .individual-group .discussion-box .started-by a, .search .individual-group .discussion-box .started-by p, .search .individual-group .discussion-box .replies a, .search .individual-group .discussion-box .replies p, .search .individual-group .discussion-box .latest-post a, .search .individual-group .discussion-box .latest-post p, .search .individual-group .discussion-box .latest-post-tabular a, .search .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary p, .individual-board .individual-group .discussion-box .board a, .individual-board .individual-group .discussion-box .board p, .individual-board .individual-group .discussion-box .started-by a, .individual-board .individual-group .discussion-box .started-by p, .individual-board .individual-group .discussion-box .replies a, .individual-board .individual-group .discussion-box .replies p, .individual-board .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post p, .individual-board .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular p {
     float: none;
     margin-left: 0;
@@ -2720,7 +2725,7 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 650px), print {
-  /* line 1396, ../css.source/modules/community/_groups.scss */
+  /* line 1400, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary a, .search .individual-group .discussion-box .summary p, .search .individual-group .discussion-box .board a, .search .individual-group .discussion-box .board p, .search .individual-group .discussion-box .started-by a, .search .individual-group .discussion-box .started-by p, .search .individual-group .discussion-box .replies a, .search .individual-group .discussion-box .replies p, .search .individual-group .discussion-box .latest-post a, .search .individual-group .discussion-box .latest-post p, .search .individual-group .discussion-box .latest-post-tabular a, .search .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary p, .individual-board .individual-group .discussion-box .board a, .individual-board .individual-group .discussion-box .board p, .individual-board .individual-group .discussion-box .started-by a, .individual-board .individual-group .discussion-box .started-by p, .individual-board .individual-group .discussion-box .replies a, .individual-board .individual-group .discussion-box .replies p, .individual-board .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post p, .individual-board .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular p {
     float: none;
     margin-left: 0;
@@ -2728,48 +2733,48 @@ div.selector.fixedWidth {
     line-height: 1rem;
   }
 }
-/* line 1412, ../css.source/modules/community/_groups.scss */
+/* line 1416, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary a, .search .individual-group .discussion-box .summary h4, .search .individual-group .discussion-box .board a, .search .individual-group .discussion-box .board h4, .search .individual-group .discussion-box .started-by a, .search .individual-group .discussion-box .started-by h4, .search .individual-group .discussion-box .replies a, .search .individual-group .discussion-box .replies h4, .search .individual-group .discussion-box .latest-post a, .search .individual-group .discussion-box .latest-post h4, .search .individual-group .discussion-box .latest-post-tabular a, .search .individual-group .discussion-box .latest-post-tabular h4, .individual-board .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .board a, .individual-board .individual-group .discussion-box .board h4, .individual-board .individual-group .discussion-box .started-by a, .individual-board .individual-group .discussion-box .started-by h4, .individual-board .individual-group .discussion-box .replies a, .individual-board .individual-group .discussion-box .replies h4, .individual-board .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post h4, .individual-board .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular h4 {
   font-size: 15px;
   font-size: 0.9375rem;
 }
 @media (min-width: 480px), print {
-  /* line 1378, ../css.source/modules/community/_groups.scss */
+  /* line 1382, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary, .search .individual-group .discussion-box .board, .search .individual-group .discussion-box .started-by, .search .individual-group .discussion-box .replies, .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .summary, .individual-board .individual-group .discussion-box .board, .individual-board .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
     clear: none;
   }
 }
-/* line 1421, ../css.source/modules/community/_groups.scss */
+/* line 1425, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .summary h4 {
   margin-bottom: 16px;
 }
 @media (min-width: 480px), print {
-  /* line 1421, ../css.source/modules/community/_groups.scss */
+  /* line 1425, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .summary h4 {
     margin-bottom: 0px;
   }
 }
 @media (min-width: 480px) and (max-width: 650px), print {
-  /* line 1421, ../css.source/modules/community/_groups.scss */
+  /* line 1425, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary h4, .individual-board .individual-group .discussion-box .summary h4 {
     margin-bottom: 17px;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1420, ../css.source/modules/community/_groups.scss */
+  /* line 1424, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary, .individual-board .individual-group .discussion-box .summary {
     width: 23.83%;
   }
 }
 @media (min-width: 480px) and (max-width: 648px), print {
-  /* line 1420, ../css.source/modules/community/_groups.scss */
+  /* line 1424, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary, .individual-board .individual-group .discussion-box .summary {
     width: 28%;
     margin-right: 35px;
     margin-bottom: 50px;
   }
 }
-/* line 1438, ../css.source/modules/community/_groups.scss */
+/* line 1442, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary a {
   line-height: 21px;
   line-height: 1.3125rem;
@@ -2777,7 +2782,7 @@ div.selector.fixedWidth {
   font-size: 1.3125rem;
 }
 @media (min-width: 480px), print {
-  /* line 1438, ../css.source/modules/community/_groups.scss */
+  /* line 1442, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary a {
     font-size: 15px;
     font-size: 0.9375rem;
@@ -2786,18 +2791,18 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1438, ../css.source/modules/community/_groups.scss */
+  /* line 1442, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .summary a, .individual-board .individual-group .discussion-box .summary a {
     line-height: 20px;
     line-height: 1.25rem;
   }
 }
-/* line 1449, ../css.source/modules/community/_groups.scss */
+/* line 1453, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .summary p, .individual-board .individual-group .discussion-box .summary p {
   margin-bottom: 0px;
 }
 @media (min-width: 480px) and (max-width: 648px), print {
-  /* line 1456, ../css.source/modules/community/_groups.scss */
+  /* line 1460, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .started-by {
     width: 20.6%;
     margin-right: 78px;
@@ -2805,47 +2810,47 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 480px), print {
-  /* line 1456, ../css.source/modules/community/_groups.scss */
+  /* line 1460, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .started-by {
     width: 16.64%;
   }
 }
-/* line 1465, ../css.source/modules/community/_groups.scss */
+/* line 1469, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .started-by p, .individual-board .individual-group .discussion-box .started-by p {
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 1473, ../css.source/modules/community/_groups.scss */
+/* line 1477, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .replies {
   text-align: left;
   margin-bottom: 0px;
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1473, ../css.source/modules/community/_groups.scss */
+  /* line 1477, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .replies {
     text-align: left;
   }
 }
 @media (min-width: 650px), print {
-  /* line 1473, ../css.source/modules/community/_groups.scss */
+  /* line 1477, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .replies {
     text-align: center;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1473, ../css.source/modules/community/_groups.scss */
+  /* line 1477, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .replies {
     width: 12.16%;
   }
 }
-/* line 1485, ../css.source/modules/community/_groups.scss */
+/* line 1489, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .replies p, .individual-board .individual-group .discussion-box .replies p {
   font-size: 16px;
   font-size: 1rem;
   color: #696969;
 }
 @media (min-width: 480px), print {
-  /* line 1485, ../css.source/modules/community/_groups.scss */
+  /* line 1489, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .replies p, .individual-board .individual-group .discussion-box .replies p {
     font-size: 30px;
     font-size: 1.875rem;
@@ -2853,52 +2858,52 @@ div.selector.fixedWidth {
     line-height: 1.875rem;
   }
 }
-/* line 1498, ../css.source/modules/community/_groups.scss */
+/* line 1502, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
   padding: 0px;
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1498, ../css.source/modules/community/_groups.scss */
+  /* line 1502, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
     margin-left: 1%;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1498, ../css.source/modules/community/_groups.scss */
+  /* line 1502, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
     width: 19.24%;
     font-size: 24px;
     font-size: 1.5rem;
   }
 }
-/* line 1507, ../css.source/modules/community/_groups.scss */
+/* line 1511, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post a, .search .individual-group .discussion-box .latest-post p, .search .individual-group .discussion-box .latest-post-tabular a, .search .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post p, .individual-board .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular p {
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 1510, ../css.source/modules/community/_groups.scss */
+/* line 1514, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post p, .search .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .latest-post p, .individual-board .individual-group .discussion-box .latest-post-tabular p {
   color: #696969;
 }
-/* line 1518, ../css.source/modules/community/_groups.scss */
+/* line 1522, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post {
   display: block;
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1518, ../css.source/modules/community/_groups.scss */
+  /* line 1522, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post {
     width: 61.5%;
     margin-bottom: 50px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 1518, ../css.source/modules/community/_groups.scss */
+  /* line 1522, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post {
     display: none;
   }
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1527, ../css.source/modules/community/_groups.scss */
+  /* line 1531, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post .mins-ago, .individual-board .individual-group .discussion-box .latest-post .mins-ago {
     width: auto;
     float: left;
@@ -2906,25 +2911,25 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1534, ../css.source/modules/community/_groups.scss */
+  /* line 1538, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post a, .individual-board .individual-group .discussion-box .latest-post a {
     display: block;
     clear: none;
     float: left;
   }
 }
-/* line 1542, ../css.source/modules/community/_groups.scss */
+/* line 1546, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .latest-post-tabular {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 1542, ../css.source/modules/community/_groups.scss */
+  /* line 1546, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post-tabular, .individual-board .individual-group .discussion-box .latest-post-tabular {
     display: block;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1547, ../css.source/modules/community/_groups.scss */
+  /* line 1551, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post-tabular p, .search .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular p, .individual-board .individual-group .discussion-box .latest-post-tabular a {
     float: left;
     clear: both;
@@ -2932,37 +2937,37 @@ div.selector.fixedWidth {
     line-height: 1.25rem;
   }
 }
-/* line 1554, ../css.source/modules/community/_groups.scss */
+/* line 1558, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post-tabular a, .individual-board .individual-group .discussion-box .latest-post-tabular a {
   margin-bottom: 2px;
 }
 
 @media (min-width: 650px) and (max-width: 665px), print {
-  /* line 1562, ../css.source/modules/community/_groups.scss */
+  /* line 1566, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .board, .search .individual-group .discussion-box .started-by, .search .individual-group .discussion-box .replies, .search .individual-group .discussion-box .latest-post-tabular {
     margin-left: .45%;
   }
 }
 @media (min-width: 666px) and (max-width: 710px), print {
-  /* line 1562, ../css.source/modules/community/_groups.scss */
+  /* line 1566, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .board, .search .individual-group .discussion-box .started-by, .search .individual-group .discussion-box .replies, .search .individual-group .discussion-box .latest-post-tabular {
     margin-left: 1%;
   }
 }
 @media (min-width: 711px) and (max-width: 769px), print {
-  /* line 1562, ../css.source/modules/community/_groups.scss */
+  /* line 1566, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .board, .search .individual-group .discussion-box .started-by, .search .individual-group .discussion-box .replies, .search .individual-group .discussion-box .latest-post-tabular {
     margin-left: 1.8%;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1573, ../css.source/modules/community/_groups.scss */
+  /* line 1577, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .board {
     width: 13.64%;
   }
 }
 @media (min-width: 480px) and (max-width: 648px), print {
-  /* line 1573, ../css.source/modules/community/_groups.scss */
+  /* line 1577, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .board {
     clear: both;
     width: 28%;
@@ -2970,36 +2975,36 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 769px) and (max-width: 820px), print {
-  /* line 1573, ../css.source/modules/community/_groups.scss */
+  /* line 1577, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .board {
     margin-left: 2%;
   }
 }
 @media (min-width: 821px), print {
-  /* line 1573, ../css.source/modules/community/_groups.scss */
+  /* line 1577, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .board {
     margin-left: 3%;
   }
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1593, ../css.source/modules/community/_groups.scss */
+  /* line 1597, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .started-by {
     margin-left: .5%;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1593, ../css.source/modules/community/_groups.scss */
+  /* line 1597, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .started-by {
     margin-left: 3.5%;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1601, ../css.source/modules/community/_groups.scss */
+  /* line 1605, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .replies {
     margin-left: 2%;
   }
 }
-/* line 1605, ../css.source/modules/community/_groups.scss */
+/* line 1609, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .replies p {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -3007,7 +3012,7 @@ div.selector.fixedWidth {
   line-height: 1.25rem;
 }
 @media (min-width: 650px), print {
-  /* line 1605, ../css.source/modules/community/_groups.scss */
+  /* line 1609, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .replies p {
     font-size: 16px;
     font-size: 1rem;
@@ -3015,193 +3020,193 @@ div.selector.fixedWidth {
     line-height: 1rem;
   }
 }
-/* line 1614, ../css.source/modules/community/_groups.scss */
+/* line 1618, ../css.source/modules/community/_groups.scss */
 .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular {
   padding: 0px;
 }
 @media (min-width: 770px) and (max-width: 820px), print {
-  /* line 1614, ../css.source/modules/community/_groups.scss */
+  /* line 1618, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular {
     margin-left: 1%;
   }
 }
 @media (min-width: 821px), print {
-  /* line 1614, ../css.source/modules/community/_groups.scss */
+  /* line 1618, ../css.source/modules/community/_groups.scss */
   .search .individual-group .discussion-box .latest-post, .search .individual-group .discussion-box .latest-post-tabular {
     margin-left: 3%;
   }
 }
 
 @media (min-width: 650px) and (max-width: 665px), print {
-  /* line 1627, ../css.source/modules/community/_groups.scss */
+  /* line 1631, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .latest-post-tabular {
     margin-left: 3.45%;
   }
 }
 @media (min-width: 666px) and (max-width: 710px), print {
-  /* line 1627, ../css.source/modules/community/_groups.scss */
+  /* line 1631, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .latest-post-tabular {
     margin-left: 4%;
   }
 }
 @media (min-width: 711px) and (max-width: 769px), print {
-  /* line 1627, ../css.source/modules/community/_groups.scss */
+  /* line 1631, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .started-by, .individual-board .individual-group .discussion-box .replies, .individual-board .individual-group .discussion-box .latest-post-tabular {
     margin-left: 6%;
   }
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1638, ../css.source/modules/community/_groups.scss */
+  /* line 1642, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .summary, .individual-board .individual-group .discussion-box .started-by {
     width: 29%;
     margin-right: 30px;
   }
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1644, ../css.source/modules/community/_groups.scss */
+  /* line 1648, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .replies {
     width: 63%;
     margin-left: 0px;
   }
 }
 @media (min-width: 480px) and (max-width: 650px), print {
-  /* line 1650, ../css.source/modules/community/_groups.scss */
+  /* line 1654, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .started-by {
     clear: both;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1650, ../css.source/modules/community/_groups.scss */
+  /* line 1654, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .started-by {
     margin-left: 9%;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1658, ../css.source/modules/community/_groups.scss */
+  /* line 1662, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .replies {
     margin-left: 8%;
   }
 }
 @media (min-width: 770px) and (max-width: 820px), print {
-  /* line 1663, ../css.source/modules/community/_groups.scss */
+  /* line 1667, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
     margin-left: 4%;
   }
 }
 @media (min-width: 821px), print {
-  /* line 1663, ../css.source/modules/community/_groups.scss */
+  /* line 1667, ../css.source/modules/community/_groups.scss */
   .individual-board .individual-group .discussion-box .latest-post, .individual-board .individual-group .discussion-box .latest-post-tabular {
     margin-left: 8.5%;
   }
 }
 
-/* line 1673, ../css.source/modules/community/_groups.scss */
+/* line 1677, ../css.source/modules/community/_groups.scss */
 .parent-groups .show-more {
   margin-bottom: 50px;
 }
 
-/* line 1678, ../css.source/modules/community/_groups.scss */
+/* line 1682, ../css.source/modules/community/_groups.scss */
 .individual-board .col-24.featured-group.group-summary .topic {
   margin-bottom: 0px;
 }
 @media (min-width: 650px), print {
-  /* line 1681, ../css.source/modules/community/_groups.scss */
+  /* line 1685, ../css.source/modules/community/_groups.scss */
   .individual-board .discussion-board-rs-wrapper {
     display: table;
     width: 100%;
   }
 }
 @media (min-width: 480px) and (max-width: 630px), print {
-  /* line 1686, ../css.source/modules/community/_groups.scss */
+  /* line 1690, ../css.source/modules/community/_groups.scss */
   .individual-board .discussion-board-rs-wrapper .start-discussion .button {
     line-height: 16px;
     padding-top: 10px;
   }
 }
-/* line 1693, ../css.source/modules/community/_groups.scss */
+/* line 1697, ../css.source/modules/community/_groups.scss */
 .individual-board .col-24.search-board {
   padding-right: 0;
 }
-/* line 1696, ../css.source/modules/community/_groups.scss */
+/* line 1700, ../css.source/modules/community/_groups.scss */
 .individual-board .groups-heading .title {
   width: 100%;
 }
 @media (min-width: 480px), print {
-  /* line 1696, ../css.source/modules/community/_groups.scss */
+  /* line 1700, ../css.source/modules/community/_groups.scss */
   .individual-board .groups-heading .title {
     width: auto;
   }
 }
-/* line 1702, ../css.source/modules/community/_groups.scss */
+/* line 1706, ../css.source/modules/community/_groups.scss */
 .individual-board .search-board .discussion-boards {
   background-color: #f4f2f1;
   vertical-align: inherit;
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1702, ../css.source/modules/community/_groups.scss */
+  /* line 1706, ../css.source/modules/community/_groups.scss */
   .individual-board .search-board .discussion-boards {
     padding: 40px 20px 40px 20px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 1702, ../css.source/modules/community/_groups.scss */
+  /* line 1706, ../css.source/modules/community/_groups.scss */
   .individual-board .search-board .discussion-boards {
     padding: 37px 40px 61px 40px;
   }
 }
 @media (min-width: 480px) and (max-width: 849px), print {
-  /* line 1702, ../css.source/modules/community/_groups.scss */
+  /* line 1706, ../css.source/modules/community/_groups.scss */
   .individual-board .search-board .discussion-boards {
     width: 65%;
   }
 }
 @media (min-width: 850px), print {
-  /* line 1702, ../css.source/modules/community/_groups.scss */
+  /* line 1706, ../css.source/modules/community/_groups.scss */
   .individual-board .search-board .discussion-boards {
     width: 75%;
   }
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1718, ../css.source/modules/community/_groups.scss */
+  /* line 1722, ../css.source/modules/community/_groups.scss */
   .individual-board .mobile-group-search-form .group-search {
     width: 82%;
   }
 }
 @media (min-width: 650px) and (max-width: 767px), print {
-  /* line 1718, ../css.source/modules/community/_groups.scss */
+  /* line 1722, ../css.source/modules/community/_groups.scss */
   .individual-board .mobile-group-search-form .group-search {
     width: 87%;
   }
 }
 @media (min-width: 769px) and (max-width: 850px), print {
-  /* line 1718, ../css.source/modules/community/_groups.scss */
+  /* line 1722, ../css.source/modules/community/_groups.scss */
   .individual-board .mobile-group-search-form .group-search {
     width: 90%;
   }
 }
 @media (min-width: 851px) and (max-width: 960px), print {
-  /* line 1718, ../css.source/modules/community/_groups.scss */
+  /* line 1722, ../css.source/modules/community/_groups.scss */
   .individual-board .mobile-group-search-form .group-search {
     width: 92%;
   }
 }
 @media (min-width: 960px), print {
-  /* line 1718, ../css.source/modules/community/_groups.scss */
+  /* line 1722, ../css.source/modules/community/_groups.scss */
   .individual-board .mobile-group-search-form .group-search {
     width: 93%;
   }
 }
-/* line 1735, ../css.source/modules/community/_groups.scss */
+/* line 1739, ../css.source/modules/community/_groups.scss */
 .individual-board .discussion-box {
   clear: both;
 }
-/* line 1739, ../css.source/modules/community/_groups.scss */
+/* line 1743, ../css.source/modules/community/_groups.scss */
 .individual-board .show-more {
   margin-bottom: 54px;
   margin-top: 26px;
 }
 
-/* line 1744, ../css.source/modules/community/_groups.scss */
+/* line 1748, ../css.source/modules/community/_groups.scss */
 .all-boards .individual-group .discussion-box .replies p {
   font-size: 30px;
   font-size: 1.875rem;
@@ -3209,49 +3214,49 @@ div.selector.fixedWidth {
   line-height: 1.875rem;
 }
 
-/* line 1749, ../css.source/modules/community/_groups.scss */
+/* line 1753, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box {
   padding: 0px;
 }
-/* line 1752, ../css.source/modules/community/_groups.scss */
+/* line 1756, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box header .summary, .parent-groups.all-boards .individual-group .discussion-box header .replies, .parent-groups.all-boards .individual-group .discussion-box header .latest-post {
   display: none;
 }
 @media (min-width: 480px), print {
-  /* line 1752, ../css.source/modules/community/_groups.scss */
+  /* line 1756, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box header .summary, .parent-groups.all-boards .individual-group .discussion-box header .replies, .parent-groups.all-boards .individual-group .discussion-box header .latest-post {
     display: block;
     float: left;
   }
 }
 @media (min-width: 480px) and (max-width: 524px), print {
-  /* line 1752, ../css.source/modules/community/_groups.scss */
+  /* line 1756, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box header .summary, .parent-groups.all-boards .individual-group .discussion-box header .replies, .parent-groups.all-boards .individual-group .discussion-box header .latest-post {
     font-size: 20px;
     font-size: 1.25rem;
   }
 }
 @media (min-width: 525px), print {
-  /* line 1752, ../css.source/modules/community/_groups.scss */
+  /* line 1756, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box header .summary, .parent-groups.all-boards .individual-group .discussion-box header .replies, .parent-groups.all-boards .individual-group .discussion-box header .latest-post {
     font-size: 24px;
     font-size: 1.5rem;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1765, ../css.source/modules/community/_groups.scss */
+  /* line 1769, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box header .latest-post {
     float: right;
   }
 }
-/* line 1772, ../css.source/modules/community/_groups.scss */
+/* line 1776, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .summary h4, .parent-groups.all-boards .individual-group .discussion-box .replies h4, .parent-groups.all-boards .individual-group .discussion-box .latest-post h4 {
   display: block;
   font-size: 18px;
   font-size: 1.125rem;
 }
 @media (min-width: 480px), print {
-  /* line 1772, ../css.source/modules/community/_groups.scss */
+  /* line 1776, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .summary h4, .parent-groups.all-boards .individual-group .discussion-box .replies h4, .parent-groups.all-boards .individual-group .discussion-box .latest-post h4 {
     display: none;
     text-align: left;
@@ -3260,54 +3265,54 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 480px), print {
-  /* line 1782, ../css.source/modules/community/_groups.scss */
+  /* line 1786, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .summary, .parent-groups.all-boards .individual-group .discussion-box .replies {
     float: left;
   }
 }
 @media (min-width: 480px) and (max-width: 559px), print {
-  /* line 1787, ../css.source/modules/community/_groups.scss */
+  /* line 1791, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .summary {
     width: 38%;
   }
 }
 @media (min-width: 560px) and (max-width: 649px), print {
-  /* line 1787, ../css.source/modules/community/_groups.scss */
+  /* line 1791, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .summary {
     width: 42%;
   }
 }
 @media (min-width: 650px) and (max-width: 767px), print {
-  /* line 1787, ../css.source/modules/community/_groups.scss */
+  /* line 1791, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .summary {
     width: 45%;
   }
 }
 @media (min-width: 768px) and (max-width: 959px), print {
-  /* line 1787, ../css.source/modules/community/_groups.scss */
+  /* line 1791, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .summary {
     width: 50%;
   }
 }
 @media (min-width: 960px), print {
-  /* line 1787, ../css.source/modules/community/_groups.scss */
+  /* line 1791, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .summary {
     width: 53.1666667%;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1787, ../css.source/modules/community/_groups.scss */
+  /* line 1791, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .summary {
     min-width: 118px;
   }
 }
-/* line 1807, ../css.source/modules/community/_groups.scss */
+/* line 1811, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .replies {
   width: 84px;
   margin-left: 4px;
 }
 @media (min-width: 480px), print {
-  /* line 1807, ../css.source/modules/community/_groups.scss */
+  /* line 1811, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .replies {
     width: 13.33%;
     min-width: 100px;
@@ -3315,18 +3320,18 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 480px) and (max-width: 530px), print {
-  /* line 1807, ../css.source/modules/community/_groups.scss */
+  /* line 1811, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .replies {
     margin-left: 0;
   }
 }
 @media (min-width: 530px), print {
-  /* line 1807, ../css.source/modules/community/_groups.scss */
+  /* line 1811, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .replies {
     margin-left: 5%;
   }
 }
-/* line 1821, ../css.source/modules/community/_groups.scss */
+/* line 1825, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .replies:after {
   content: '';
   position: absolute;
@@ -3338,18 +3343,18 @@ div.selector.fixedWidth {
   display: none;
 }
 @media (max-width: 479px), print {
-  /* line 1821, ../css.source/modules/community/_groups.scss */
+  /* line 1825, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .replies:after {
     display: block;
   }
 }
-/* line 1835, ../css.source/modules/community/_groups.scss */
+/* line 1839, ../css.source/modules/community/_groups.scss */
 .parent-groups.all-boards .individual-group .discussion-box .latest-post {
   width: 65%;
   float: left;
 }
 @media (min-width: 480px), print {
-  /* line 1835, ../css.source/modules/community/_groups.scss */
+  /* line 1839, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .latest-post {
     width: 20.33%;
     float: right;
@@ -3358,19 +3363,19 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 480px) and (max-width: 650px), print {
-  /* line 1835, ../css.source/modules/community/_groups.scss */
+  /* line 1839, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .latest-post {
     min-width: 125px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 1835, ../css.source/modules/community/_groups.scss */
+  /* line 1839, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .latest-post {
     min-width: 146px;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1850, ../css.source/modules/community/_groups.scss */
+  /* line 1854, ../css.source/modules/community/_groups.scss */
   .parent-groups.all-boards .individual-group .discussion-box .latest-post p, .parent-groups.all-boards .individual-group .discussion-box .latest-post a {
     float: left;
     clear: both;
@@ -3379,50 +3384,50 @@ div.selector.fixedWidth {
   }
 }
 
-/* line 1861, ../css.source/modules/community/_groups.scss */
+/* line 1865, ../css.source/modules/community/_groups.scss */
 .individual-discussion .groups-heading {
   margin-bottom: 24px;
 }
-/* line 1863, ../css.source/modules/community/_groups.scss */
+/* line 1867, ../css.source/modules/community/_groups.scss */
 .individual-discussion .groups-heading .back-to-previous {
   margin: 0;
 }
 @media (min-width: 650px), print {
-  /* line 1866, ../css.source/modules/community/_groups.scss */
+  /* line 1870, ../css.source/modules/community/_groups.scss */
   .individual-discussion .groups-heading .groups-private {
     width: 330px;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1870, ../css.source/modules/community/_groups.scss */
+  /* line 1874, ../css.source/modules/community/_groups.scss */
   .individual-discussion .groups-heading .groups-private p {
     display: inline-block;
     width: auto;
   }
 }
 @media (min-width: 650px), print {
-  /* line 1870, ../css.source/modules/community/_groups.scss */
+  /* line 1874, ../css.source/modules/community/_groups.scss */
   .individual-discussion .groups-heading .groups-private p {
     margin-left: 39px;
   }
 }
-/* line 1879, ../css.source/modules/community/_groups.scss */
+/* line 1883, ../css.source/modules/community/_groups.scss */
 .individual-discussion .groups-heading .groups-private .icon {
   float: right;
 }
 @media (min-width: 650px), print {
-  /* line 1879, ../css.source/modules/community/_groups.scss */
+  /* line 1883, ../css.source/modules/community/_groups.scss */
   .individual-discussion .groups-heading .groups-private .icon {
     margin-top: -1px;
   }
 }
 @media (min-width: 480px) and (max-width: 649px), print {
-  /* line 1879, ../css.source/modules/community/_groups.scss */
+  /* line 1883, ../css.source/modules/community/_groups.scss */
   .individual-discussion .groups-heading .groups-private .icon {
     margin-top: -2px;
   }
 }
-/* line 1890, ../css.source/modules/community/_groups.scss */
+/* line 1894, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list {
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
@@ -3433,7 +3438,7 @@ div.selector.fixedWidth {
   margin-bottom: 20px;
 }
 @media (min-width: 480px), print {
-  /* line 1890, ../css.source/modules/community/_groups.scss */
+  /* line 1894, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list {
     padding: 0px;
     margin-right: 4.1%;
@@ -3441,60 +3446,60 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 650px), print {
-  /* line 1890, ../css.source/modules/community/_groups.scss */
+  /* line 1894, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list {
     margin-right: 0px;
   }
 }
 @media (min-width: 650px) and (max-width: 767px), print {
-  /* line 1890, ../css.source/modules/community/_groups.scss */
+  /* line 1894, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list {
     width: 69%;
     margin-bottom: 40px;
   }
 }
 @media (min-width: 768px) and (max-width: 959px), print {
-  /* line 1890, ../css.source/modules/community/_groups.scss */
+  /* line 1894, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list {
     width: 68%;
     margin-bottom: 60px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 1890, ../css.source/modules/community/_groups.scss */
+  /* line 1894, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list {
     width: 70%;
     margin: 0 0 75px 0;
   }
 }
-/* line 1916, ../css.source/modules/community/_groups.scss */
+/* line 1920, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .title {
   width: 100%;
   padding: 25px 15px 0 15px;
 }
-/* line 1919, ../css.source/modules/community/_groups.scss */
+/* line 1923, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .title h2 {
   font-weight: bold;
 }
 @media (min-width: 480px) and (max-width: 769px), print {
-  /* line 1916, ../css.source/modules/community/_groups.scss */
+  /* line 1920, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .title {
     padding: 20px;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1916, ../css.source/modules/community/_groups.scss */
+  /* line 1920, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .title {
     border-bottom: 1px solid #d2d2d2;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1916, ../css.source/modules/community/_groups.scss */
+  /* line 1920, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .title {
     padding: 40px;
   }
 }
-/* line 1932, ../css.source/modules/community/_groups.scss */
+/* line 1936, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post {
   width: 100%;
   border-bottom: 1px solid #d2d2d2;
@@ -3502,22 +3507,22 @@ div.selector.fixedWidth {
   padding: 16px 15px;
 }
 @media (min-width: 480px) and (max-width: 769px), print {
-  /* line 1932, ../css.source/modules/community/_groups.scss */
+  /* line 1936, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post {
     padding: 20px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 1932, ../css.source/modules/community/_groups.scss */
+  /* line 1936, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post {
     padding: 40px;
   }
 }
-/* line 1944, ../css.source/modules/community/_groups.scss */
+/* line 1948, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post:last-child {
   border-bottom: none;
 }
-/* line 1948, ../css.source/modules/community/_groups.scss */
+/* line 1952, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer {
   float: left;
   margin-top: 9px;
@@ -3526,41 +3531,41 @@ div.selector.fixedWidth {
   clear: both;
 }
 @media (min-width: 480px), print {
-  /* line 1948, ../css.source/modules/community/_groups.scss */
+  /* line 1952, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-contributer {
     width: 150px;
     padding: 0;
   }
 }
 @media (min-width: 480px) and (max-width: 768px), print {
-  /* line 1948, ../css.source/modules/community/_groups.scss */
+  /* line 1952, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-contributer {
     margin-right: 25px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 1948, ../css.source/modules/community/_groups.scss */
+  /* line 1952, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-contributer {
     margin-right: 50px;
   }
 }
-/* line 1964, ../css.source/modules/community/_groups.scss */
+/* line 1968, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer a {
   display: block;
 }
-/* line 1967, ../css.source/modules/community/_groups.scss */
+/* line 1971, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .name {
   margin-bottom: 0px;
   font-size: 22px;
   font-size: 1.375rem;
 }
 @media (min-width: 480px), print {
-  /* line 1967, ../css.source/modules/community/_groups.scss */
+  /* line 1971, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-contributer .name {
     margin-bottom: 3px;
   }
 }
-/* line 1974, ../css.source/modules/community/_groups.scss */
+/* line 1978, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .location {
   margin-bottom: 7px;
   color: #646464;
@@ -3568,87 +3573,87 @@ div.selector.fixedWidth {
   font-size: 0.9375rem;
 }
 @media (min-width: 480px), print {
-  /* line 1974, ../css.source/modules/community/_groups.scss */
+  /* line 1978, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-contributer .location {
     margin-bottom: 10px;
   }
 }
-/* line 1982, ../css.source/modules/community/_groups.scss */
+/* line 1986, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .contributer-image img {
   height: 117px;
   width: 117px;
   margin-bottom: 10px;
 }
 @media (min-width: 480px), print {
-  /* line 1982, ../css.source/modules/community/_groups.scss */
+  /* line 1986, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-contributer .contributer-image img {
     height: 150px;
     width: 150px;
     margin-bottom: 20px;
   }
 }
-/* line 1992, ../css.source/modules/community/_groups.scss */
+/* line 1996, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .member-card-specialties {
   height: 55px;
   width: 140px;
 }
 @media (min-width: 960px), print {
-  /* line 1992, ../css.source/modules/community/_groups.scss */
+  /* line 1996, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-contributer .member-card-specialties {
     width: 190px;
   }
 }
-/* line 2000, ../css.source/modules/community/_groups.scss */
+/* line 2004, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-contributer .button {
   margin-bottom: 8px;
   padding: 0px;
 }
 @media (min-width: 480px), print {
-  /* line 2000, ../css.source/modules/community/_groups.scss */
+  /* line 2004, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-contributer .button {
     margin-bottom: 10px;
   }
 }
-/* line 2009, ../css.source/modules/community/_groups.scss */
+/* line 2013, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-comment {
   color: #646464;
   line-height: 29px;
   line-height: 1.8125rem;
 }
-/* line 2012, ../css.source/modules/community/_groups.scss */
+/* line 2016, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-comment p {
   margin-bottom: 20px;
 }
 @media (min-width: 650px) and (max-width: 768px), print {
-  /* line 2012, ../css.source/modules/community/_groups.scss */
+  /* line 2016, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-comment p {
     margin-bottom: 30px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2012, ../css.source/modules/community/_groups.scss */
+  /* line 2016, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-comment p {
     margin-bottom: 39px;
   }
 }
-/* line 2022, ../css.source/modules/community/_groups.scss */
+/* line 2026, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer {
   bottom: 0;
   width: 100%;
 }
 @media (min-width: 730px), print {
-  /* line 2022, ../css.source/modules/community/_groups.scss */
+  /* line 2026, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer {
     float: right;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2022, ../css.source/modules/community/_groups.scss */
+  /* line 2026, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer {
     width: 64%;
   }
 }
-/* line 2031, ../css.source/modules/community/_groups.scss */
+/* line 2035, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer h4 {
   color: #696969;
   margin-bottom: 22px;
@@ -3656,7 +3661,7 @@ div.selector.fixedWidth {
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 2037, ../css.source/modules/community/_groups.scss */
+/* line 2041, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu {
   list-style: none;
   overflow: hidden;
@@ -3665,12 +3670,12 @@ div.selector.fixedWidth {
   width: 258px;
 }
 @media (min-width: 960px), print {
-  /* line 2037, ../css.source/modules/community/_groups.scss */
+  /* line 2041, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu {
     width: 100%;
   }
 }
-/* line 2046, ../css.source/modules/community/_groups.scss */
+/* line 2050, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu button {
   float: left;
   width: 33%;
@@ -3680,16 +3685,16 @@ div.selector.fixedWidth {
   border: none;
   background: inherit;
 }
-/* line 2054, ../css.source/modules/community/_groups.scss */
+/* line 2058, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu button i {
   display: inline-block;
 }
-/* line 2057, ../css.source/modules/community/_groups.scss */
+/* line 2061, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu button p {
   line-height: 15px;
   line-height: 0.9375rem;
 }
-/* line 2064, ../css.source/modules/community/_groups.scss */
+/* line 2068, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:after, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:after {
   height: 64px;
   width: 1px;
@@ -3700,121 +3705,121 @@ div.selector.fixedWidth {
   top: 2px;
 }
 @media (min-width: 960px), print {
-  /* line 2064, ../css.source/modules/community/_groups.scss */
+  /* line 2068, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:after, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:after {
     top: 0;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2076, ../css.source/modules/community/_groups.scss */
+  /* line 2080, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:after {
     display: none;
   }
 }
-/* line 2081, ../css.source/modules/community/_groups.scss */
+/* line 2085, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you {
   text-align: center;
 }
 @media (min-width: 960px), print {
-  /* line 2081, ../css.source/modules/community/_groups.scss */
+  /* line 2085, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you {
     height: 27px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2086, ../css.source/modules/community/_groups.scss */
+  /* line 2090, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you p {
     float: left;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2091, ../css.source/modules/community/_groups.scss */
+  /* line 2095, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you p {
     margin-left: 8px;
     margin-top: 6px;
   }
 }
-/* line 2097, ../css.source/modules/community/_groups.scss */
+/* line 2101, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i {
   height: 27px;
 }
-/* line 2101, ../css.source/modules/community/_groups.scss */
+/* line 2105, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you {
   color: #696969;
   cursor: pointer;
 }
 @media (min-width: 960px), print {
-  /* line 2101, ../css.source/modules/community/_groups.scss */
+  /* line 2105, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you {
     font-size: 15px;
     font-size: 0.9375rem;
   }
 }
-/* line 2109, ../css.source/modules/community/_groups.scss */
+/* line 2113, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:hover, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:hover p, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:hover, .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:hover p {
   color: #426da9;
   text-decoration: underline;
 }
-/* line 2114, ../css.source/modules/community/_groups.scss */
+/* line 2118, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks {
   width: 28%;
   padding: 0 22px 0 0;
 }
 @media (min-width: 960px), print {
-  /* line 2114, ../css.source/modules/community/_groups.scss */
+  /* line 2118, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks {
     padding-left: 0px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2114, ../css.source/modules/community/_groups.scss */
+  /* line 2118, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks {
     width: 92px;
     padding-right: 7px;
   }
 }
-/* line 2124, ../css.source/modules/community/_groups.scss */
+/* line 2128, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i {
   background: url('../images/sprite.btn.thanks.png?3e08b1a4') 0 0 no-repeat;
   background-size: 25px 50px;
   height: 25px;
   width: 25px;
 }
-/* line 2130, ../css.source/modules/community/_groups.scss */
+/* line 2134, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks i {
   background: url('../images/sprite.btn.thanks.lo-res.png?8f6d6a68') 0 0 no-repeat;
 }
-/* line 2135, ../css.source/modules/community/_groups.scss */
+/* line 2139, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thanks:hover i {
   background-position: 0 -25px;
 }
-/* line 2140, ../css.source/modules/community/_groups.scss */
+/* line 2144, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you {
   width: 41%;
   padding: 0 22px;
 }
 @media (min-width: 960px), print {
-  /* line 2140, ../css.source/modules/community/_groups.scss */
+  /* line 2144, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you {
     width: 56%;
   }
 }
-/* line 2146, ../css.source/modules/community/_groups.scss */
+/* line 2150, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i {
   background: url('../images/sprite.btn.thinkingofyou.png?2c6bd533') 0 0 no-repeat;
   background-size: 18px 56px;
   height: 28px;
   width: 18px;
 }
-/* line 2152, ../css.source/modules/community/_groups.scss */
+/* line 2156, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you i {
   background: url('../images/sprite.btn.thinkingofyou.lo-res.png?5860ffb6') 0 0 no-repeat;
 }
-/* line 2157, ../css.source/modules/community/_groups.scss */
+/* line 2161, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .thinking-of-you:hover i {
   background-position: 0 -28px;
 }
-/* line 2161, ../css.source/modules/community/_groups.scss */
+/* line 2165, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes {
   color: #7a4183;
   padding: 0 0 0 32px;
@@ -3823,7 +3828,7 @@ div.selector.fixedWidth {
   font-size: 1.5rem;
 }
 @media (min-width: 960px), print {
-  /* line 2161, ../css.source/modules/community/_groups.scss */
+  /* line 2165, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes {
     float: right;
     width: 60px;
@@ -3833,93 +3838,93 @@ div.selector.fixedWidth {
     font-size: 1.5rem;
   }
 }
-/* line 2173, ../css.source/modules/community/_groups.scss */
+/* line 2177, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes p {
   font-weight: bold;
 }
 @media (min-width: 960px), print {
-  /* line 2173, ../css.source/modules/community/_groups.scss */
+  /* line 2177, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes p {
     margin-top: 0px;
   }
 }
-/* line 2179, ../css.source/modules/community/_groups.scss */
+/* line 2183, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i {
   background: url('../images/sprite.btn.helpful.png?48edb9ab') 0 0 no-repeat;
   background-size: 16px 36px;
   height: 18px;
   width: 16px;
 }
-/* line 2185, ../css.source/modules/community/_groups.scss */
+/* line 2189, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes i {
   background: url('../images/sprite.btn.helpful.lo-res.png?ee8ce76b') 0 0 no-repeat;
 }
-/* line 2190, ../css.source/modules/community/_groups.scss */
+/* line 2194, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-list .discussion-post .discussion-footer .support-menu .likes:hover i {
   background-position: 0 -18px;
 }
 @media (min-width: 730px), print {
-  /* line 2196, ../css.source/modules/community/_groups.scss */
+  /* line 2200, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-comment, .individual-discussion .discussion-list .discussion-post .discussion-footer {
     display: inline-block;
     float: right;
   }
 }
 @media (min-width: 730px) and (max-width: 800px), print {
-  /* line 2196, ../css.source/modules/community/_groups.scss */
+  /* line 2200, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-comment, .individual-discussion .discussion-list .discussion-post .discussion-footer {
     width: 58.5%;
   }
 }
 @media (min-width: 801px) and (max-width: 856px), print {
-  /* line 2196, ../css.source/modules/community/_groups.scss */
+  /* line 2200, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-comment, .individual-discussion .discussion-list .discussion-post .discussion-footer {
     width: 65.5%;
   }
 }
 @media (min-width: 857px) and (max-width: 979px), print {
-  /* line 2196, ../css.source/modules/community/_groups.scss */
+  /* line 2200, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-comment, .individual-discussion .discussion-list .discussion-post .discussion-footer {
     width: 68.5%;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2196, ../css.source/modules/community/_groups.scss */
+  /* line 2200, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-list .discussion-post .discussion-comment, .individual-discussion .discussion-list .discussion-post .discussion-footer {
     width: 64%;
   }
 }
-/* line 2216, ../css.source/modules/community/_groups.scss */
+/* line 2220, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 2216, ../css.source/modules/community/_groups.scss */
+  /* line 2220, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar {
     display: block;
   }
 }
 @media (min-width: 650px) and (max-width: 767px), print {
-  /* line 2216, ../css.source/modules/community/_groups.scss */
+  /* line 2220, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar {
     padding: 20px 0 0 0;
     width: 21%;
   }
 }
 @media (min-width: 650px) and (max-width: 700px), print {
-  /* line 2216, ../css.source/modules/community/_groups.scss */
+  /* line 2220, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar {
     margin: 0 10px 0 10px;
   }
 }
 @media (min-width: 700px) and (max-width: 769px), print {
-  /* line 2216, ../css.source/modules/community/_groups.scss */
+  /* line 2220, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar {
     margin: 0 10px 0 12px;
   }
 }
 @media (min-width: 768px) and (max-width: 959px), print {
-  /* line 2216, ../css.source/modules/community/_groups.scss */
+  /* line 2220, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar {
     margin: 0 10px 0 20px;
     padding: 40px 0 0 0;
@@ -3927,42 +3932,42 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 650px), print {
-  /* line 2216, ../css.source/modules/community/_groups.scss */
+  /* line 2220, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar {
     margin-right: 4.1%;
   }
 }
 @media (min-width: 769px), print {
-  /* line 2216, ../css.source/modules/community/_groups.scss */
+  /* line 2220, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar {
     padding: 40px 0 0 0;
   }
 }
 @media (min-width: 650px) and (max-width: 767px), print {
-  /* line 2242, ../css.source/modules/community/_groups.scss */
+  /* line 2246, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar .button {
     padding: 0 10px;
   }
 }
-/* line 2247, ../css.source/modules/community/_groups.scss */
+/* line 2251, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .discussion, .individual-discussion .discussion-sidebar .replies {
   width: 100%;
   position: relative;
 }
-/* line 2250, ../css.source/modules/community/_groups.scss */
+/* line 2254, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .discussion p, .individual-discussion .discussion-sidebar .replies p {
   color: #696969;
   font-size: 14px;
   font-size: 0.875rem;
 }
 @media (min-width: 768px) and (max-width: 959px), print {
-  /* line 2250, ../css.source/modules/community/_groups.scss */
+  /* line 2254, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar .discussion p, .individual-discussion .discussion-sidebar .replies p {
     font-size: 16px;
     font-size: 1rem;
   }
 }
-/* line 2258, ../css.source/modules/community/_groups.scss */
+/* line 2262, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .discussion:after {
   content: '';
   height: 1px;
@@ -3970,16 +3975,16 @@ div.selector.fixedWidth {
   background-color: #f3f2f1;
   position: absolute;
 }
-/* line 2265, ../css.source/modules/community/_groups.scss */
+/* line 2269, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .discussion {
   margin-bottom: 40px;
 }
-/* line 2268, ../css.source/modules/community/_groups.scss */
+/* line 2272, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .replies {
   height: 29px;
   margin-bottom: 49px;
 }
-/* line 2272, ../css.source/modules/community/_groups.scss */
+/* line 2276, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .number-bubble-icon, .individual-discussion .discussion-sidebar .replies-bubble-icon {
   display: block;
   color: white;
@@ -3990,7 +3995,7 @@ div.selector.fixedWidth {
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 2281, ../css.source/modules/community/_groups.scss */
+/* line 2285, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .number-bubble-icon {
   background-image: url('../images/sprites-sb266886836.png');
   background-position: 0 -563px;
@@ -4002,7 +4007,7 @@ div.selector.fixedWidth {
   text-align: center;
   margin-top: 7px;
 }
-/* line 2287, ../css.source/modules/community/_groups.scss */
+/* line 2291, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .replies-bubble-icon {
   background-image: url('../images/sprites-sb266886836.png');
   background-position: 0 -902px;
@@ -4010,29 +4015,29 @@ div.selector.fixedWidth {
   height: 28px;
   width: 32px;
 }
-/* line 2290, ../css.source/modules/community/_groups.scss */
+/* line 2294, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .something-to-add {
   color: #7a4183;
   font-size: 20px;
   font-size: 1.25rem;
 }
 @media (min-width: 768px) and (max-width: 959px), print {
-  /* line 2290, ../css.source/modules/community/_groups.scss */
+  /* line 2294, ../css.source/modules/community/_groups.scss */
   .individual-discussion .discussion-sidebar .something-to-add {
     font-size: 22px;
     font-size: 1.375rem;
   }
 }
-/* line 2298, ../css.source/modules/community/_groups.scss */
+/* line 2302, ../css.source/modules/community/_groups.scss */
 .individual-discussion .discussion-sidebar .button {
   padding: 0;
 }
-/* line 2302, ../css.source/modules/community/_groups.scss */
+/* line 2306, ../css.source/modules/community/_groups.scss */
 .individual-discussion .join-discussion {
   margin: 0 15px 45px 15px;
 }
 @media (min-width: 480px), print {
-  /* line 2302, ../css.source/modules/community/_groups.scss */
+  /* line 2306, ../css.source/modules/community/_groups.scss */
   .individual-discussion .join-discussion {
     margin-left: 4.1%;
     margin-right: 4.1%;
@@ -4040,24 +4045,24 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 650px), print {
-  /* line 2302, ../css.source/modules/community/_groups.scss */
+  /* line 2306, ../css.source/modules/community/_groups.scss */
   .individual-discussion .join-discussion {
     width: 59.5%;
   }
 }
 @media (min-width: 730px), print {
-  /* line 2302, ../css.source/modules/community/_groups.scss */
+  /* line 2306, ../css.source/modules/community/_groups.scss */
   .individual-discussion .join-discussion {
     margin-bottom: 50px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2302, ../css.source/modules/community/_groups.scss */
+  /* line 2306, ../css.source/modules/community/_groups.scss */
   .individual-discussion .join-discussion {
     width: 61.5%;
   }
 }
-/* line 2318, ../css.source/modules/community/_groups.scss */
+/* line 2322, ../css.source/modules/community/_groups.scss */
 .individual-discussion .join-discussion .comment {
   width: 100%;
   padding: 15px 11px;
@@ -4066,19 +4071,19 @@ div.selector.fixedWidth {
   margin-bottom: 11px;
 }
 @media (min-width: 730px), print {
-  /* line 2318, ../css.source/modules/community/_groups.scss */
+  /* line 2322, ../css.source/modules/community/_groups.scss */
   .individual-discussion .join-discussion .comment {
     margin-bottom: 20px;
     padding: 19px 17px;
   }
 }
-/* line 2329, ../css.source/modules/community/_groups.scss */
+/* line 2333, ../css.source/modules/community/_groups.scss */
 .individual-discussion .join-discussion .button {
   width: 100%;
   display: block;
 }
 @media (min-width: 480px), print {
-  /* line 2329, ../css.source/modules/community/_groups.scss */
+  /* line 2333, ../css.source/modules/community/_groups.scss */
   .individual-discussion .join-discussion .button {
     margin-right: 0px;
     width: auto;
@@ -4087,7 +4092,7 @@ div.selector.fixedWidth {
   }
 }
 
-/* line 2341, ../css.source/modules/community/_groups.scss */
+/* line 2345, ../css.source/modules/community/_groups.scss */
 .group-search-form, .mobile-group-search-form {
   float: left;
   height: 50px;
@@ -4100,24 +4105,24 @@ div.selector.fixedWidth {
   box-sizing: border-box;
 }
 @media (min-width: 480px), print {
-  /* line 2341, ../css.source/modules/community/_groups.scss */
+  /* line 2345, ../css.source/modules/community/_groups.scss */
   .group-search-form, .mobile-group-search-form {
     float: right;
   }
 }
-/* line 2352, ../css.source/modules/community/_groups.scss */
+/* line 2356, ../css.source/modules/community/_groups.scss */
 .group-search-form label, .mobile-group-search-form label {
   float: left;
   width: 100%;
 }
 @media (min-width: 480px), print {
-  /* line 2352, ../css.source/modules/community/_groups.scss */
+  /* line 2356, ../css.source/modules/community/_groups.scss */
   .group-search-form label, .mobile-group-search-form label {
     float: none;
     width: auto;
   }
 }
-/* line 2360, ../css.source/modules/community/_groups.scss */
+/* line 2364, ../css.source/modules/community/_groups.scss */
 .group-search-form .group-search, .mobile-group-search-form .group-search {
   margin: 0;
   width: 190px;
@@ -4130,25 +4135,25 @@ div.selector.fixedWidth {
   box-sizing: border-box;
 }
 @media (min-width: 480px), print {
-  /* line 2360, ../css.source/modules/community/_groups.scss */
+  /* line 2364, ../css.source/modules/community/_groups.scss */
   .group-search-form .group-search, .mobile-group-search-form .group-search {
     width: 88.5%;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2360, ../css.source/modules/community/_groups.scss */
+  /* line 2364, ../css.source/modules/community/_groups.scss */
   .group-search-form .group-search, .mobile-group-search-form .group-search {
     width: 79%;
     float: none;
   }
 }
 @media (min-width: 480px), print {
-  /* line 2360, ../css.source/modules/community/_groups.scss */
+  /* line 2364, ../css.source/modules/community/_groups.scss */
   .group-search-form .group-search, .mobile-group-search-form .group-search {
     width: 75%;
   }
 }
-/* line 2379, ../css.source/modules/community/_groups.scss */
+/* line 2383, ../css.source/modules/community/_groups.scss */
 .group-search-form .group-search-button, .mobile-group-search-form .group-search-button {
   border: 0;
   width: 20px;
@@ -4161,25 +4166,25 @@ div.selector.fixedWidth {
   padding-right: 30px;
 }
 @media (min-width: 480px), print {
-  /* line 2379, ../css.source/modules/community/_groups.scss */
+  /* line 2383, ../css.source/modules/community/_groups.scss */
   .group-search-form .group-search-button, .mobile-group-search-form .group-search-button {
     float: none;
     padding-right: 0px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 2379, ../css.source/modules/community/_groups.scss */
+  /* line 2383, ../css.source/modules/community/_groups.scss */
   .group-search-form .group-search-button, .mobile-group-search-form .group-search-button {
     margin-top: 0px;
     vertical-align: middle;
   }
 }
-/* line 2397, ../css.source/modules/community/_groups.scss */
+/* line 2401, ../css.source/modules/community/_groups.scss */
 .no-backgroundsize .group-search-form .group-search-button, .no-backgroundsize .mobile-group-search-form .group-search-button {
   background-image: url('../images/sprite.icon.search.lo-res.png?ffa3839f');
 }
 
-/* line 2402, ../css.source/modules/community/_groups.scss */
+/* line 2406, ../css.source/modules/community/_groups.scss */
 .mobile-search-box {
   float: left;
   background-color: #f4f2f1;
@@ -4187,14 +4192,14 @@ div.selector.fixedWidth {
   padding: 19px 15px 25px 15px;
 }
 @media (min-width: 480px), print {
-  /* line 2402, ../css.source/modules/community/_groups.scss */
+  /* line 2406, ../css.source/modules/community/_groups.scss */
   .mobile-search-box {
     background-color: #FFF;
     width: auto;
     padding: 0;
   }
 }
-/* line 2412, ../css.source/modules/community/_groups.scss */
+/* line 2416, ../css.source/modules/community/_groups.scss */
 .mobile-search-box h3 {
   font-size: 20px;
   font-size: 1.25rem;
@@ -4203,20 +4208,20 @@ div.selector.fixedWidth {
   color: #7a4183;
 }
 @media (min-width: 480px), print {
-  /* line 2412, ../css.source/modules/community/_groups.scss */
+  /* line 2416, ../css.source/modules/community/_groups.scss */
   .mobile-search-box h3 {
     width: 125px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 2412, ../css.source/modules/community/_groups.scss */
+  /* line 2416, ../css.source/modules/community/_groups.scss */
   .mobile-search-box h3 {
     font-size: 24px;
     font-size: 1.5rem;
   }
 }
 
-/* line 2426, ../css.source/modules/community/_groups.scss */
+/* line 2430, ../css.source/modules/community/_groups.scss */
 .parent-groups.search .show-more {
   margin-bottom: 102px;
   margin-top: 26px;
@@ -10583,7 +10588,13 @@ div.selector.fixedWidth {
     width: 272px;
   }
 }
-/* line 93, ../css.source/modules/community/_parents.scss */
+@media (min-width: 960px), print {
+  /* line 93, ../css.source/modules/community/_parents.scss */
+  .community-parents .options-search .container-parents-child-issue {
+    margin-left: 0px;
+  }
+}
+/* line 99, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .ui-slider {
   background: #bcbdc0;
   border: none;
@@ -10591,13 +10602,13 @@ div.selector.fixedWidth {
   height: 25px;
   margin-bottom: 35px;
 }
-/* line 101, ../css.source/modules/community/_parents.scss */
+/* line 107, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .ui-slider-range {
   background: #526aa9;
   height: 19px;
   top: 3px;
 }
-/* line 107, ../css.source/modules/community/_parents.scss */
+/* line 113, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .ui-slider-handle {
   background: #fff;
   border: 3px solid #e9e9e9;
@@ -10607,7 +10618,7 @@ div.selector.fixedWidth {
   top: -4px;
   width: 14px;
 }
-/* line 116, ../css.source/modules/community/_parents.scss */
+/* line 122, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .ui-slider-handle span {
   color: #696969;
   font-size: 12px;
@@ -10616,27 +10627,27 @@ div.selector.fixedWidth {
   width: 60px;
 }
 @media (min-width: 480px), print {
-  /* line 116, ../css.source/modules/community/_parents.scss */
+  /* line 122, ../css.source/modules/community/_parents.scss */
   .community-parents .options-search .ui-slider-handle span {
     top: 35px;
   }
 }
-/* line 127, ../css.source/modules/community/_parents.scss */
+/* line 133, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .ui-slider-handle span.collide {
   top: 45px;
 }
 @media (min-width: 480px), print {
-  /* line 127, ../css.source/modules/community/_parents.scss */
+  /* line 133, ../css.source/modules/community/_parents.scss */
   .community-parents .options-search .ui-slider-handle span.collide {
     top: 55px;
   }
 }
-/* line 135, ../css.source/modules/community/_parents.scss */
+/* line 141, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .ui-slider-handle span.right-side {
   right: 0;
   text-align: right;
 }
-/* line 148, ../css.source/modules/community/_parents.scss */
+/* line 154, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .dropdown,
 .community-parents .options-search .dropdown-toggle,
 .community-parents .options-search .dropdown-menu > li,
@@ -10646,7 +10657,7 @@ div.selector.fixedWidth {
   min-width: 100%;
 }
 @media (min-width: 960px), print {
-  /* line 148, ../css.source/modules/community/_parents.scss */
+  /* line 154, ../css.source/modules/community/_parents.scss */
   .community-parents .options-search .dropdown,
   .community-parents .options-search .dropdown-toggle,
   .community-parents .options-search .dropdown-menu > li,
@@ -10658,50 +10669,44 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 960px), print {
-  /* line 157, ../css.source/modules/community/_parents.scss */
+  /* line 163, ../css.source/modules/community/_parents.scss */
   .community-parents .options-search select {
     width: 142px;
   }
 }
-/* line 163, ../css.source/modules/community/_parents.scss */
+/* line 169, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .selector {
   background-position: 0 -350px;
   display: block;
   margin: 12px 0;
 }
 @media (min-width: 480px), print {
-  /* line 163, ../css.source/modules/community/_parents.scss */
+  /* line 169, ../css.source/modules/community/_parents.scss */
   .community-parents .options-search .selector {
     float: left;
   }
 }
 @media (min-width: 960px), print {
-  /* line 163, ../css.source/modules/community/_parents.scss */
+  /* line 169, ../css.source/modules/community/_parents.scss */
   .community-parents .options-search .selector {
     margin: 21px 8px;
   }
 }
-/* line 176, ../css.source/modules/community/_parents.scss */
+/* line 182, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .selector span {
   background-position: right -100px;
 }
-/* line 180, ../css.source/modules/community/_parents.scss */
+/* line 186, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .selector select {
   width: 100%;
 }
-/* line 184, ../css.source/modules/community/_parents.scss */
+/* line 190, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .selector.selected {
   background-position: 0 -450px;
 }
-/* line 187, ../css.source/modules/community/_parents.scss */
+/* line 193, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .selector.selected span {
   background-position: right -200px;
-}
-@media (min-width: 960px), print {
-  /* line 193, ../css.source/modules/community/_parents.scss */
-  .community-parents .options-search #uniform-parents-search-issue {
-    margin-left: 0;
-  }
 }
 @media (min-width: 480px), print {
   /* line 199, ../css.source/modules/community/_parents.scss */
@@ -10738,55 +10743,59 @@ div.selector.fixedWidth {
     width: 148px;
   }
 }
-/* line 228, ../css.source/modules/community/_parents.scss */
+/* line 227, ../css.source/modules/community/_parents.scss */
+.community-parents .options-search .checkbox label {
+  margin-left: 3px;
+}
+/* line 232, ../css.source/modules/community/_parents.scss */
 .community-parents .options-search .button {
   width: 100%;
   margin-top: 12px;
 }
 @media (min-width: 960px), print {
-  /* line 228, ../css.source/modules/community/_parents.scss */
+  /* line 232, ../css.source/modules/community/_parents.scss */
   .community-parents .options-search .button {
     height: 50px;
     margin-top: 5px;
     width: 150px;
   }
 }
-/* line 240, ../css.source/modules/community/_parents.scss */
+/* line 244, ../css.source/modules/community/_parents.scss */
 .community-parents .parents-member-cards {
   position: relative;
 }
-/* line 243, ../css.source/modules/community/_parents.scss */
+/* line 247, ../css.source/modules/community/_parents.scss */
 .community-parents .parents-member-cards .member-card-container {
   display: inline-block;
   float: left;
   width: 50%;
 }
 @media (min-width: 480px), print {
-  /* line 243, ../css.source/modules/community/_parents.scss */
+  /* line 247, ../css.source/modules/community/_parents.scss */
   .community-parents .parents-member-cards .member-card-container {
     width: 33.3333333%;
   }
 }
 @media (min-width: 650px), print {
-  /* line 243, ../css.source/modules/community/_parents.scss */
+  /* line 247, ../css.source/modules/community/_parents.scss */
   .community-parents .parents-member-cards .member-card-container {
     width: 25%;
   }
 }
-/* line 258, ../css.source/modules/community/_parents.scss */
+/* line 262, ../css.source/modules/community/_parents.scss */
 .community-parents .member-card {
   float: none;
   height: 320px;
   margin: 0 auto;
 }
 @media (min-width: 769px), print {
-  /* line 258, ../css.source/modules/community/_parents.scss */
+  /* line 262, ../css.source/modules/community/_parents.scss */
   .community-parents .member-card {
     margin-bottom: 12px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 258, ../css.source/modules/community/_parents.scss */
+  /* line 262, ../css.source/modules/community/_parents.scss */
   .community-parents .member-card {
     height: 355px;
     margin-bottom: 78px;
@@ -10795,66 +10804,66 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 960px), print {
-  /* line 274, ../css.source/modules/community/_parents.scss */
+  /* line 278, ../css.source/modules/community/_parents.scss */
   .community-parents .member-card .member-card-info {
     height: 273px;
     width: 150px;
   }
 }
-/* line 282, ../css.source/modules/community/_parents.scss */
+/* line 286, ../css.source/modules/community/_parents.scss */
 .community-parents .member-card .member-card-specialties {
   margin-top: 12px;
 }
 @media (min-width: 960px), print {
-  /* line 282, ../css.source/modules/community/_parents.scss */
+  /* line 286, ../css.source/modules/community/_parents.scss */
   .community-parents .member-card .member-card-specialties {
     width: 190px;
   }
 }
-/* line 291, ../css.source/modules/community/_parents.scss */
+/* line 295, ../css.source/modules/community/_parents.scss */
 .community-parents .callout-featured {
   background-color: #f4f2f1;
   margin-top: 12px;
   padding: 16px;
 }
 @media (min-width: 960px), print {
-  /* line 291, ../css.source/modules/community/_parents.scss */
+  /* line 295, ../css.source/modules/community/_parents.scss */
   .community-parents .callout-featured {
     display: table;
     padding: 40px;
   }
 }
-/* line 301, ../css.source/modules/community/_parents.scss */
+/* line 305, ../css.source/modules/community/_parents.scss */
 .community-parents .callout-featured .callout-image {
   text-align: center;
 }
 @media (min-width: 960px), print {
-  /* line 301, ../css.source/modules/community/_parents.scss */
+  /* line 305, ../css.source/modules/community/_parents.scss */
   .community-parents .callout-featured .callout-image {
     display: table-cell;
     vertical-align: top;
     width: 50%;
   }
 }
-/* line 310, ../css.source/modules/community/_parents.scss */
+/* line 314, ../css.source/modules/community/_parents.scss */
 .community-parents .callout-featured .callout-image img {
   margin-bottom: 12px;
   width: 260px;
 }
 @media (min-width: 480px), print {
-  /* line 310, ../css.source/modules/community/_parents.scss */
+  /* line 314, ../css.source/modules/community/_parents.scss */
   .community-parents .callout-featured .callout-image img {
     width: 420px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 310, ../css.source/modules/community/_parents.scss */
+  /* line 314, ../css.source/modules/community/_parents.scss */
   .community-parents .callout-featured .callout-image img {
     width: 430px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 324, ../css.source/modules/community/_parents.scss */
+  /* line 328, ../css.source/modules/community/_parents.scss */
   .community-parents .callout-featured .callout-details {
     display: table-cell;
     padding: 0 48px;
@@ -10862,7 +10871,7 @@ div.selector.fixedWidth {
     width: 50%;
   }
 }
-/* line 333, ../css.source/modules/community/_parents.scss */
+/* line 337, ../css.source/modules/community/_parents.scss */
 .community-parents .callout-featured h3 {
   color: #7b3f84;
   font-size: 20px;
@@ -10873,7 +10882,7 @@ div.selector.fixedWidth {
   margin-bottom: 20px;
 }
 @media (min-width: 960px), print {
-  /* line 333, ../css.source/modules/community/_parents.scss */
+  /* line 337, ../css.source/modules/community/_parents.scss */
   .community-parents .callout-featured h3 {
     font-size: 24px;
     font-size: 1.5rem;
@@ -10881,13 +10890,13 @@ div.selector.fixedWidth {
     line-height: 2rem;
   }
 }
-/* line 346, ../css.source/modules/community/_parents.scss */
+/* line 350, ../css.source/modules/community/_parents.scss */
 .community-parents .callout-featured ul {
   list-style: none;
   margin: 0 0 33px 0;
   padding: 0;
 }
-/* line 352, ../css.source/modules/community/_parents.scss */
+/* line 356, ../css.source/modules/community/_parents.scss */
 .community-parents .callout-featured li {
   background-image: url('../images/bullet.png?5bf6e1e8');
   background-position: 0 13px;
@@ -10900,7 +10909,7 @@ div.selector.fixedWidth {
   padding-left: 25px;
 }
 @media (min-width: 960px), print {
-  /* line 352, ../css.source/modules/community/_parents.scss */
+  /* line 356, ../css.source/modules/community/_parents.scss */
   .community-parents .callout-featured li {
     background-position: 0 10px;
     font-size: 18px;
@@ -10909,32 +10918,32 @@ div.selector.fixedWidth {
     line-height: 1.75rem;
   }
 }
-/* line 368, ../css.source/modules/community/_parents.scss */
+/* line 372, ../css.source/modules/community/_parents.scss */
 .community-parents .callout-featured .button {
   font-weight: bold;
   width: 100%;
 }
 @media (min-width: 960px), print {
-  /* line 368, ../css.source/modules/community/_parents.scss */
+  /* line 372, ../css.source/modules/community/_parents.scss */
   .community-parents .callout-featured .button {
     height: 40px;
     line-height: 40px;
     width: 150px;
   }
 }
-/* line 380, ../css.source/modules/community/_parents.scss */
+/* line 384, ../css.source/modules/community/_parents.scss */
 .community-parents .community-parents-carousel {
   margin-top: 32px;
   position: relative;
   padding: 0;
 }
 @media (min-width: 650px), print {
-  /* line 384, ../css.source/modules/community/_parents.scss */
+  /* line 388, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel .next-prev-menu.arrows {
     top: 7px;
   }
 }
-/* line 390, ../css.source/modules/community/_parents.scss */
+/* line 394, ../css.source/modules/community/_parents.scss */
 .community-parents .community-parents-carousel h2 {
   border: none;
   color: #7b3f84;
@@ -10944,7 +10953,7 @@ div.selector.fixedWidth {
   margin-bottom: 22px;
 }
 @media (min-width: 480px), print {
-  /* line 390, ../css.source/modules/community/_parents.scss */
+  /* line 394, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel h2 {
     font-size: 28px;
     font-size: 1.75rem;
@@ -10952,106 +10961,117 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 650px), print {
-  /* line 390, ../css.source/modules/community/_parents.scss */
+  /* line 394, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel h2 {
     margin-bottom: 0;
   }
 }
 @media (min-width: 960px), print {
-  /* line 390, ../css.source/modules/community/_parents.scss */
+  /* line 394, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel h2 {
     font-size: 36px;
     font-size: 2.25rem;
   }
 }
 @media (min-width: 480px), print {
-  /* line 413, ../css.source/modules/community/_parents.scss */
+  /* line 417, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel .members.next-prev-menu.arrows .view-all {
     margin: 0;
     width: 100%;
   }
 }
 @media (min-width: 769px), print {
-  /* line 413, ../css.source/modules/community/_parents.scss */
+  /* line 417, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel .members.next-prev-menu.arrows .view-all {
     line-height: 31px;
   }
 }
-/* line 426, ../css.source/modules/community/_parents.scss */
+/* line 430, ../css.source/modules/community/_parents.scss */
 .community-parents .community-parents-carousel .member-cards {
   position: relative;
   margin-top: 32px;
 }
 @media (min-width: 960px), print {
-  /* line 426, ../css.source/modules/community/_parents.scss */
+  /* line 430, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel .member-cards {
     margin: 50px 0 50px 62px;
     position: relative;
   }
 }
-/* line 444, ../css.source/modules/community/_parents.scss */
+/* line 448, ../css.source/modules/community/_parents.scss */
 .community-parents .community-parents-carousel .member-cards .rsContent > ul > li {
   display: inline-block;
   vertical-align: top;
   width: 50%;
 }
 @media (min-width: 480px), print {
-  /* line 444, ../css.source/modules/community/_parents.scss */
+  /* line 448, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel .member-cards .rsContent > ul > li {
     width: 33.3333333333%;
   }
 }
 @media (min-width: 960px), print {
-  /* line 444, ../css.source/modules/community/_parents.scss */
+  /* line 448, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel .member-cards .rsContent > ul > li {
     width: 25%;
   }
 }
-/* line 458, ../css.source/modules/community/_parents.scss */
+/* line 462, ../css.source/modules/community/_parents.scss */
 .community-parents .community-parents-carousel .member-cards .member-card {
   float: none;
   margin: 0 auto;
 }
 @media (max-width: 649px), print {
-  /* line 458, ../css.source/modules/community/_parents.scss */
+  /* line 462, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel .member-cards .member-card {
     width: 100%;
   }
 }
 @media (min-width: 650px), print {
-  /* line 458, ../css.source/modules/community/_parents.scss */
+  /* line 462, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel .member-cards .member-card {
     height: 333px;
   }
 }
 @media (min-width: 960px), print {
-  /* line 458, ../css.source/modules/community/_parents.scss */
+  /* line 462, ../css.source/modules/community/_parents.scss */
   .community-parents .community-parents-carousel .member-cards .member-card {
     padding: 0;
     width: auto;
     height: 355px;
   }
 }
-/* line 480, ../css.source/modules/community/_parents.scss */
+/* line 484, ../css.source/modules/community/_parents.scss */
 .community-parents .show-more {
   margin-bottom: 6px;
   position: relative;
   top: 6px;
 }
 @media (min-width: 960px), print {
-  /* line 480, ../css.source/modules/community/_parents.scss */
+  /* line 484, ../css.source/modules/community/_parents.scss */
   .community-parents .show-more {
     top: -16px;
   }
 }
 
+/* line 495, ../css.source/modules/community/_parents.scss */
+.group-summary-container p {
+  color: #696969;
+}
 @media (min-width: 960px), print {
-  /* line 492, ../css.source/modules/community/_parents.scss */
+  /* line 495, ../css.source/modules/community/_parents.scss */
+  .group-summary-container p {
+    margin-left: 4.1%;
+  }
+}
+
+@media (min-width: 960px), print {
+  /* line 503, ../css.source/modules/community/_parents.scss */
   .community-parents-recommended .link-back, .community-parents-recommended h2, .community-parents-recommended .explanation {
     margin-left: 4.1%;
   }
 }
-/* line 497, ../css.source/modules/community/_parents.scss */
+/* line 508, ../css.source/modules/community/_parents.scss */
 .community-parents-recommended .link-back {
   color: #426da9;
   display: block;
@@ -11059,12 +11079,12 @@ div.selector.fixedWidth {
   font-size: 1rem;
   margin-bottom: 36px;
 }
-/* line 502, ../css.source/modules/community/_parents.scss */
+/* line 513, ../css.source/modules/community/_parents.scss */
 .community-parents-recommended .link-back .icon-arrow-left-blue {
   margin-right: 11px;
 }
 @media (min-width: 960px), print {
-  /* line 506, ../css.source/modules/community/_parents.scss */
+  /* line 517, ../css.source/modules/community/_parents.scss */
   .community-parents-recommended h2 {
     border-right: none;
     font-size: 36px;
@@ -11072,13 +11092,13 @@ div.selector.fixedWidth {
     margin-bottom: 20px;
   }
 }
-/* line 514, ../css.source/modules/community/_parents.scss */
+/* line 525, ../css.source/modules/community/_parents.scss */
 .community-parents-recommended .explanation {
   color: #696969;
   margin-bottom: 26px;
 }
 @media (min-width: 960px), print {
-  /* line 514, ../css.source/modules/community/_parents.scss */
+  /* line 525, ../css.source/modules/community/_parents.scss */
   .community-parents-recommended .explanation {
     width: 600px;
   }
@@ -11294,7 +11314,13 @@ div.selector.fixedWidth {
   height: 150px;
   position: relative;
 }
-/* line 172, ../css.source/modules/community/_chat-webinar.scss */
+/* line 171, ../css.source/modules/community/_chat-webinar.scss */
+.experts-page.chat .event-image .thumbnail img,
+.experts-page.webinar .event-image .thumbnail img {
+  width: 150px;
+  height: 150px;
+}
+/* line 178, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-image .recommended-for,
 .experts-page.webinar .event-image .recommended-for {
   display: table-cell;
@@ -11304,13 +11330,13 @@ div.selector.fixedWidth {
   padding: 0 10px;
 }
 @media (min-width: 650px), print {
-  /* line 172, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 178, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .event-image .recommended-for,
   .experts-page.webinar .event-image .recommended-for {
     display: none;
   }
 }
-/* line 183, ../css.source/modules/community/_chat-webinar.scss */
+/* line 189, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-image .recommended-for .children-key li,
 .experts-page.webinar .event-image .recommended-for .children-key li {
   float: none;
@@ -11318,29 +11344,29 @@ div.selector.fixedWidth {
   font-size: 0;
   margin: 0 4px;
 }
-/* line 193, ../css.source/modules/community/_chat-webinar.scss */
+/* line 199, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .live-chat-content .event-cards,
 .experts-page.webinar .live-chat-content .event-cards {
   height: auto !important;
 }
-/* line 206, ../css.source/modules/community/_chat-webinar.scss */
+/* line 212, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .live-chat-content .children-key li,
 .experts-page.webinar .live-chat-content .children-key li {
   margin-bottom: 10px;
 }
-/* line 211, ../css.source/modules/community/_chat-webinar.scss */
+/* line 217, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .archive-button,
 .experts-page.webinar .archive-button {
   padding: 0 15px;
 }
-/* line 215, ../css.source/modules/community/_chat-webinar.scss */
+/* line 221, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .see-calendar,
 .experts-page.webinar .see-calendar {
   float: none;
   margin: 40px auto 0 auto;
 }
 @media (min-width: 650px), print {
-  /* line 215, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 221, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .see-calendar,
   .experts-page.webinar .see-calendar {
     clear: both;
@@ -11350,41 +11376,41 @@ div.selector.fixedWidth {
     width: 190px;
   }
 }
-/* line 228, ../css.source/modules/community/_chat-webinar.scss */
+/* line 234, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-cards + .child-content-indicator,
 .experts-page.webinar .event-cards + .child-content-indicator {
   margin: 40px 0 0;
 }
-/* line 231, ../css.source/modules/community/_chat-webinar.scss */
+/* line 237, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-cards + .child-content-indicator .offset-1,
 .experts-page.webinar .event-cards + .child-content-indicator .offset-1 {
   margin: 0;
 }
-/* line 235, ../css.source/modules/community/_chat-webinar.scss */
+/* line 241, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-cards + .child-content-indicator .children-key li,
 .experts-page.webinar .event-cards + .child-content-indicator .children-key li {
   margin-right: 0;
 }
-/* line 240, ../css.source/modules/community/_chat-webinar.scss */
+/* line 246, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-container .image-label,
 .experts-page.webinar .event-container .image-label {
   font-size: 18px;
   font-size: 1.125rem;
   width: 150px;
 }
-/* line 245, ../css.source/modules/community/_chat-webinar.scss */
+/* line 251, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar,
 .experts-page.webinar .event-sidebar {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 245, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 251, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .event-sidebar,
   .experts-page.webinar .event-sidebar {
     display: block;
   }
 }
-/* line 252, ../css.source/modules/community/_chat-webinar.scss */
+/* line 258, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .children-key,
 .experts-page.webinar .event-sidebar .children-key {
   padding: 12px;
@@ -11394,14 +11420,14 @@ div.selector.fixedWidth {
   margin-bottom: 30px;
 }
 @media (min-width: 910px), print {
-  /* line 260, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 266, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .event-sidebar .was-this-helpful,
   .experts-page.webinar .event-sidebar .was-this-helpful {
     padding: 0;
     border: none;
   }
 }
-/* line 266, ../css.source/modules/community/_chat-webinar.scss */
+/* line 272, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful h4,
 .experts-page.webinar .event-sidebar .was-this-helpful h4 {
   border-top: none;
@@ -11409,14 +11435,14 @@ div.selector.fixedWidth {
   margin: 0 0 30px;
 }
 @media (min-width: 910px), print {
-  /* line 266, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 272, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .event-sidebar .was-this-helpful h4,
   .experts-page.webinar .event-sidebar .was-this-helpful h4 {
     line-height: inherit;
     height: auto;
   }
 }
-/* line 277, ../css.source/modules/community/_chat-webinar.scss */
+/* line 283, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful .helpful-count,
 .experts-page.webinar .event-sidebar .was-this-helpful .helpful-count {
   display: block;
@@ -11424,7 +11450,7 @@ div.selector.fixedWidth {
   background: none;
   height: auto;
 }
-/* line 285, ../css.source/modules/community/_chat-webinar.scss */
+/* line 291, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful .button.yes,
 .experts-page.chat .event-sidebar .was-this-helpful .button.no,
 .experts-page.webinar .event-sidebar .was-this-helpful .button.yes,
@@ -11432,59 +11458,59 @@ div.selector.fixedWidth {
   width: 100%;
   margin: 0 0 10px;
 }
-/* line 290, ../css.source/modules/community/_chat-webinar.scss */
+/* line 296, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful .button.no,
 .experts-page.webinar .event-sidebar .was-this-helpful .button.no {
   background-color: #bcbdc0;
 }
-/* line 292, ../css.source/modules/community/_chat-webinar.scss */
+/* line 298, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful .button.no:hover, .experts-page.chat .event-sidebar .was-this-helpful .button.no:focus,
 .experts-page.webinar .event-sidebar .was-this-helpful .button.no:hover,
 .experts-page.webinar .event-sidebar .was-this-helpful .button.no:focus {
   background-color: #ffffff;
 }
-/* line 299, ../css.source/modules/community/_chat-webinar.scss */
+/* line 305, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-date-time,
 .experts-page.webinar .event-date-time {
   font-weight: 700;
   margin-bottom: 10px;
 }
-/* line 305, ../css.source/modules/community/_chat-webinar.scss */
+/* line 311, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.upcoming .event-date-time,
 .experts-page.webinar.upcoming .event-date-time {
   color: #794382;
 }
-/* line 309, ../css.source/modules/community/_chat-webinar.scss */
+/* line 315, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.upcoming .child-content-indicator,
 .experts-page.webinar.upcoming .child-content-indicator {
   margin-bottom: 40px;
 }
-/* line 313, ../css.source/modules/community/_chat-webinar.scss */
+/* line 319, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.upcoming .see-calendar,
 .experts-page.webinar.upcoming .see-calendar {
   margin: 0 0 30px;
 }
 @media (min-width: 650px), print {
-  /* line 313, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 319, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat.upcoming .see-calendar,
   .experts-page.webinar.upcoming .see-calendar {
     margin: 0;
     clear: none;
   }
 }
-/* line 322, ../css.source/modules/community/_chat-webinar.scss */
+/* line 328, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.upcoming .events-chat .see-calendar,
 .experts-page.webinar.upcoming .events-chat .see-calendar {
   margin: 50px 0;
 }
 @media (min-width: 650px), print {
-  /* line 326, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 332, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat.upcoming .children-key li,
   .experts-page.webinar.upcoming .children-key li {
     margin-bottom: 0;
   }
 }
-/* line 333, ../css.source/modules/community/_chat-webinar.scss */
+/* line 339, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-host-name,
 .experts-page.webinar .event-host-name {
   color: #794382;
@@ -11492,24 +11518,24 @@ div.selector.fixedWidth {
   font-size: 22px;
   font-size: 1.375rem;
 }
-/* line 339, ../css.source/modules/community/_chat-webinar.scss */
+/* line 345, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-host-title,
 .experts-page.webinar .event-host-title {
   font-size: 14px;
   font-size: 0.875rem;
 }
-/* line 343, ../css.source/modules/community/_chat-webinar.scss */
+/* line 349, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-topics-subhead,
 .experts-page.webinar .event-topics-subhead {
   font-weight: 700;
   margin-bottom: 0;
 }
-/* line 348, ../css.source/modules/community/_chat-webinar.scss */
+/* line 354, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .was-this-helpful,
 .experts-page.webinar .was-this-helpful {
   margin-bottom: 50px;
 }
-/* line 351, ../css.source/modules/community/_chat-webinar.scss */
+/* line 357, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .was-this-helpful h4,
 .experts-page.webinar .was-this-helpful h4 {
   font-size: 22px;
@@ -11518,18 +11544,18 @@ div.selector.fixedWidth {
   color: #696969;
   font-weight: 300;
 }
-/* line 359, ../css.source/modules/community/_chat-webinar.scss */
+/* line 365, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .was-this-helpful .button,
 .experts-page.webinar .was-this-helpful .button {
   width: 47%;
   float: left;
 }
-/* line 364, ../css.source/modules/community/_chat-webinar.scss */
+/* line 370, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .was-this-helpful .button.no,
 .experts-page.webinar .was-this-helpful .button.no {
   float: right;
 }
-/* line 370, ../css.source/modules/community/_chat-webinar.scss */
+/* line 376, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .helpful-count,
 .experts-page.webinar .helpful-count {
   line-height: 30px;
@@ -11538,7 +11564,7 @@ div.selector.fixedWidth {
   background: #f4f2f1;
   margin-bottom: 30px;
 }
-/* line 377, ../css.source/modules/community/_chat-webinar.scss */
+/* line 383, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .helpful-count em,
 .experts-page.webinar .helpful-count em {
   font-style: normal;
@@ -11552,7 +11578,7 @@ div.selector.fixedWidth {
   margin: 0 10px 0 0;
   border-radius: 100%;
 }
-/* line 391, ../css.source/modules/community/_chat-webinar.scss */
+/* line 397, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video,
 .experts-page.webinar .webinar-video {
   width: 100%;
@@ -11562,21 +11588,21 @@ div.selector.fixedWidth {
   -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
   box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
 }
-/* line 397, ../css.source/modules/community/_chat-webinar.scss */
+/* line 403, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .webinar-actions,
 .experts-page.webinar .webinar-video .webinar-actions {
   padding: 15px;
   width: 100%;
 }
 @media (min-width: 650px), print {
-  /* line 397, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 403, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .webinar-video .webinar-actions,
   .experts-page.webinar .webinar-video .webinar-actions {
     padding: 30px;
     border-top: none;
   }
 }
-/* line 408, ../css.source/modules/community/_chat-webinar.scss */
+/* line 414, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .find-this-helpful,
 .experts-page.webinar .webinar-video .find-this-helpful {
   margin-left: auto;
@@ -11585,20 +11611,20 @@ div.selector.fixedWidth {
   margin-bottom: 0;
 }
 @media (min-width: 650px), print {
-  /* line 408, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 414, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .webinar-video .find-this-helpful,
   .experts-page.webinar .webinar-video .find-this-helpful {
     margin-bottom: 45px;
   }
 }
-/* line 420, ../css.source/modules/community/_chat-webinar.scss */
+/* line 426, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .was-this-helpful,
 .experts-page.webinar .webinar-video .was-this-helpful {
   width: auto;
   margin: 0 0 30px;
 }
 @media (min-width: 850px), print {
-  /* line 420, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 426, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .webinar-video .was-this-helpful,
   .experts-page.webinar .webinar-video .was-this-helpful {
     display: block;
@@ -11606,7 +11632,7 @@ div.selector.fixedWidth {
     margin: 0;
   }
 }
-/* line 430, ../css.source/modules/community/_chat-webinar.scss */
+/* line 436, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .was-this-helpful h4,
 .experts-page.webinar .webinar-video .was-this-helpful h4 {
   font-size: 20px;
@@ -11621,7 +11647,7 @@ div.selector.fixedWidth {
   text-align: center;
 }
 @media (min-width: 480px), print {
-  /* line 430, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 436, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .webinar-video .was-this-helpful h4,
   .experts-page.webinar .webinar-video .was-this-helpful h4 {
     font-size: 22px;
@@ -11629,7 +11655,7 @@ div.selector.fixedWidth {
   }
 }
 @media (min-width: 650px), print {
-  /* line 430, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 436, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .webinar-video .was-this-helpful h4,
   .experts-page.webinar .webinar-video .was-this-helpful h4 {
     margin: 0 20px 0 0;
@@ -11637,7 +11663,7 @@ div.selector.fixedWidth {
     width: auto;
   }
 }
-/* line 453, ../css.source/modules/community/_chat-webinar.scss */
+/* line 459, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .was-this-helpful .button,
 .experts-page.chat .webinar-video .was-this-helpful .button.no,
 .experts-page.webinar .webinar-video .was-this-helpful .button,
@@ -11648,7 +11674,7 @@ div.selector.fixedWidth {
   padding: 0;
 }
 @media (min-width: 650px), print {
-  /* line 453, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 459, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .webinar-video .was-this-helpful .button,
   .experts-page.chat .webinar-video .was-this-helpful .button.no,
   .experts-page.webinar .webinar-video .was-this-helpful .button,
@@ -11658,7 +11684,7 @@ div.selector.fixedWidth {
     padding: 0 50px;
   }
 }
-/* line 467, ../css.source/modules/community/_chat-webinar.scss */
+/* line 473, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .transcript,
 .experts-page.webinar .webinar-video .transcript {
   float: none;
@@ -11666,7 +11692,7 @@ div.selector.fixedWidth {
   margin: 0 auto;
 }
 @media (min-width: 850px), print {
-  /* line 467, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 473, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .webinar-video .transcript,
   .experts-page.webinar .webinar-video .transcript {
     padding-left: 30px;
@@ -11677,7 +11703,7 @@ div.selector.fixedWidth {
     width: auto;
   }
 }
-/* line 483, ../css.source/modules/community/_chat-webinar.scss */
+/* line 489, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat iframe,
 .experts-page.webinar iframe {
   border: none;
@@ -11685,44 +11711,44 @@ div.selector.fixedWidth {
   display: block;
 }
 @media (min-width: 960px), print {
-  /* line 483, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 489, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat iframe,
   .experts-page.webinar iframe {
     min-height: 532px;
   }
 }
-/* line 493, ../css.source/modules/community/_chat-webinar.scss */
+/* line 499, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.past .archive > .row,
 .experts-page.webinar.past .archive > .row {
   padding-top: 40px;
   border-top: 1px solid #d2d2d2;
 }
-/* line 498, ../css.source/modules/community/_chat-webinar.scss */
+/* line 504, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat,
 .experts-page.webinar .events-chat {
   background: #f4f2f1;
   padding: 50px 0 0;
 }
-/* line 502, ../css.source/modules/community/_chat-webinar.scss */
+/* line 508, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .row,
 .experts-page.webinar .events-chat .row {
   padding: 0 15px;
 }
 @media (min-width: 960px), print {
-  /* line 502, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 508, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .events-chat .row,
   .experts-page.webinar .events-chat .row {
     padding: 0;
   }
 }
-/* line 510, ../css.source/modules/community/_chat-webinar.scss */
+/* line 516, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .container .event-cards,
 .experts-page.webinar .events-chat .container .event-cards {
   width: 100%;
   margin: 0 0 50px;
 }
 @media (min-width: 650px), print {
-  /* line 510, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 516, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .events-chat .container .event-cards,
   .experts-page.webinar .events-chat .container .event-cards {
     width: 50%;
@@ -11730,13 +11756,13 @@ div.selector.fixedWidth {
     margin: 0;
   }
 }
-/* line 520, ../css.source/modules/community/_chat-webinar.scss */
+/* line 526, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .container .event-cards h2,
 .experts-page.webinar .events-chat .container .event-cards h2 {
   margin-bottom: 10px;
   min-width: 0;
 }
-/* line 526, ../css.source/modules/community/_chat-webinar.scss */
+/* line 532, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .event-card,
 .experts-page.webinar .events-chat .event-card {
   background: #fff;
@@ -11744,14 +11770,14 @@ div.selector.fixedWidth {
   margin: 0;
 }
 @media (min-width: 650px), print {
-  /* line 526, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 532, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .events-chat .event-card,
   .experts-page.webinar .events-chat .event-card {
     padding: 30px;
     width: 100%;
   }
 }
-/* line 537, ../css.source/modules/community/_chat-webinar.scss */
+/* line 543, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .calendar-button,
 .experts-page.webinar .events-chat .calendar-button {
   padding: 50px 15px;
@@ -11759,20 +11785,20 @@ div.selector.fixedWidth {
   width: 190px;
 }
 @media (min-width: 480px), print {
-  /* line 537, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 543, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .events-chat .calendar-button,
   .experts-page.webinar .events-chat .calendar-button {
     width: auto;
   }
 }
 @media (min-width: 960px), print {
-  /* line 537, ../css.source/modules/community/_chat-webinar.scss */
+  /* line 543, ../css.source/modules/community/_chat-webinar.scss */
   .experts-page.chat .events-chat .calendar-button,
   .experts-page.webinar .events-chat .calendar-button {
     padding: 50px 0;
   }
 }
-/* line 549, ../css.source/modules/community/_chat-webinar.scss */
+/* line 555, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .calendar-button .button,
 .experts-page.webinar .events-chat .calendar-button .button {
   display: block;
@@ -11780,13 +11806,13 @@ div.selector.fixedWidth {
   margin: 0;
   width: 190px;
 }
-/* line 558, ../css.source/modules/community/_chat-webinar.scss */
+/* line 564, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .upcoming-webinar.archive > .row,
 .experts-page.webinar .upcoming-webinar.archive > .row {
   border-top: none;
   padding-top: 0;
 }
-/* line 563, ../css.source/modules/community/_chat-webinar.scss */
+/* line 569, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .archive .event-cards .event-card,
 .experts-page.webinar .archive .event-cards .event-card {
   padding: 0;
