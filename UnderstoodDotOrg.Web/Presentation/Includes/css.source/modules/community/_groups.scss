@@ -1290,9 +1290,10 @@ div.selector.fixedWidth {
       }
     }
   }
-  .discussion-board-rs-wrapper {
+  .discussion-board-rs-wrapper, .search-board {
     width: 100%;
     display: table;
+    padding-right: 0px;
   }
   .search-boards {
     width: 100%;
