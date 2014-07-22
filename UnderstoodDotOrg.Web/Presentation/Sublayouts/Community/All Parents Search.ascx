@@ -6,8 +6,10 @@
 <div class="container community-parents">
         <div class="row">
             <div class="col col-24 skiplink-toolbar">
-                <h2 class="offset-1"><%= UnderstoodDotOrg.Common.DictionaryConstants.AllParentsLabel %></h2>
-                <a href="REPLACE" id="refRecommended" runat="server" class="link-recommended"><%= UnderstoodDotOrg.Common.DictionaryConstants.JustShowParentsLikeMeLabel %></a>
+                <div class="community-parents-heading-wrapper rs_read_this">
+                    <h2 class="offset-1"><%= UnderstoodDotOrg.Common.DictionaryConstants.AllParentsLabel %></h2>
+                    <a href="REPLACE" id="refRecommended" runat="server" class="link-recommended"><%= UnderstoodDotOrg.Common.DictionaryConstants.JustShowParentsLikeMeLabel %></a>
+                </div>
 
                 <div class="options-search">
                     <div class="container-parents-search-zip">
@@ -15,13 +17,13 @@
                         <input name="parents-search-zip" id="parents-search-zip" placeholder="Zip Code" type="text" aria-required="true" />--%>
                         <asp:TextBox ID="txtZipCode" TextMode="Number" MaxLength="5" runat="server" name="parents-search-zip" CssClass="label-text" placeholder="Zip Code"></asp:TextBox>
                     </div>
-                    <div class="container-parents-search-distance">
+                    <div class="container-parents-search-distance rs_preserve">
                         <label for="parents-search-distance" class="label-slider"><%= UnderstoodDotOrg.Common.DictionaryConstants.MilesWithinZipLabel %></label>
                         <div id="parents-search-distance-slider"></div>
                         <input type="hidden" name="parents-search-distance" id="parents-search-distance" data-start-low="0" data-start-high="20"
                         data-values="0,5,10,15,20,25,30,35,40,45,50" data-labels="0,5,10,15,20,25,30,35,40,45,50+" />
                     </div>
-                    <div class="container-parents-search-grade">
+                    <div class="container-parents-search-grade rs_preserve">
                         <label class="label-slider" for="parents-search-grade"><%= UnderstoodDotOrg.Common.DictionaryConstants.GradeRangeLabel %></label>
                         <div id="parents-search-grade-slider"></div>
                         <input type="hidden" name="parents-search-grade" id="parents-search-grade" data-collision="2" data-start-low="prek" data-start-high="8" data-values="prek,1,2,3,4,5,6,7,8,9,10,11,12,adult" data-labels="Pre-K,Grade 1,Grade 2,Grade 3,Grade 4,Grade 5,Grade 6,Grade 7,Grade 8,Grade 9,Grade 10,Grade 11,Grade 12,Adult"/>
