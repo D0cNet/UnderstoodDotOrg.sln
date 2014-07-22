@@ -123,7 +123,7 @@ namespace UnderstoodDotOrg.Web.Handlers
                 .Where(a => a != null)
                 .Select(a => new SearchBehaviorArticle
                 {
-                    Title = a.TipTitle,
+                    Title = a.TipTitle.Raw,
                     Url = a.GetUrl(),
                     CommentCount = Services.TelligentService.TelligentService.GetTotalComments(a.BlogId, a.BlogPostId),
                     HelpfulCount = Services.TelligentService.TelligentService.GetTotalLikes(a.ContentId)
