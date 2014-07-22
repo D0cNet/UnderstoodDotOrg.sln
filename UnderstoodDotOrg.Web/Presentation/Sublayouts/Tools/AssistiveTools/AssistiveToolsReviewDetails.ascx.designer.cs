@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
     public partial class AssistiveToolsReviewDetails {
         
         /// <summary>
+        /// sbShareTool control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbShareTool;
+        
+        /// <summary>
         /// frRandRby control.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frRandRby;
         
         /// <summary>
-        /// SponsorImage control.
+        /// frSponsorImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Image SponsorImage;
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frSponsorImage;
         
         /// <summary>
         /// anchorBackLink control.
@@ -38,6 +47,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor anchorBackLink;
+        
+        /// <summary>
+        /// arrowDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl arrowDiv;
         
         /// <summary>
         /// lblBackToResults control.

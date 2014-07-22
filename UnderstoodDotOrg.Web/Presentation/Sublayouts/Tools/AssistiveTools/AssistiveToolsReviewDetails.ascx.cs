@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
@@ -21,12 +22,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
         protected void Page_Load(object sender, EventArgs e) 
         {
             if (Session["Search Query"] != null)
+            {
                 anchorBackLink.Attributes.Add("href", Session["Search Query"].ToString());
+                Session["Search Query"] = null;
+                lblBackToResults.Text = DictionaryConstants.BackToResultsLabel;
+            }
             else
-                anchorBackLink.Visible = false;
+                arrowDiv.Visible = false;
+
+            AssistiveToolsSearchResultsPageItem searchPage = MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage();
+
+            frSponsorImage.Item = searchPage.InnerItem.Parent;
+            frRandRby.Item = searchPage.InnerItem.Parent;
 
 			lblAboutOurRatingSystem.Text = DictionaryConstants.AboutOurRatingSystemLabel;
-			lblBackToResults.Text = DictionaryConstants.BackToResultsLabel;
 			lblBestFragment.Text = DictionaryConstants.BestFragment;
 			lblContentIsAppropriate.Text = DictionaryConstants.ContentIsAppropriateLabel;
 			lblDisappointing.Text = DictionaryConstants.DisappointingLabel;

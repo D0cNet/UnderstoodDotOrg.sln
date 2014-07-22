@@ -1,5 +1,23 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AssistiveToolsReviewDetails.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.AssistiveToolsReviewDetails" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+
+<!-- Page Title -->
+<div class="container page-topic">
+    <div class="row">
+        <div class="col col-14 offset-1">
+            <div class="rs_read_this">
+                <h1><%= Model.AssistiveToolsBasePage.ContentPage.PageTitle %></h1>
+                <%= Model.AssistiveToolsBasePage.ContentPage.BodyContent %>
+            </div>
+        </div>
+        <div class="col col-9">
+            <!-- BEGIN PARTIAL: share-save -->
+            <sc:Sublayout ID="sbShareTool" runat="server" Path="~/Presentation/Sublayouts/Common/ShareAndSaveTool.ascx" />
+            <!-- END PARTIAL: share-save -->
+        </div>
+    </div>
+</div>
+
 <div class="container tech-results-single-container">
     <div class="row">
         <!-- article -->
@@ -9,10 +27,10 @@
             <div class="back-button">
                 <div class="rating-container">
                     <div><sc:FieldRenderer ID="frRandRby" runat="server" FieldName="Review and ratings by Text" /></div>
-                    <sc:Image ID="SponsorImage" Field="Sponsor Image" runat="server" />
+                    <sc:FieldRenderer ID="frSponsorImage" runat="server" FieldName="Sponsor Image" />
                 </div>
                 <div class="back-results-container">
-                    <a id="anchorBackLink" runat="server" class="back-to-previous"><i class="icon-arrow-left-blue"></i><asp:label ID="lblBackToResults" runat="server" Text="" /></a>
+                    <a id="anchorBackLink" runat="server" class="back-to-previous"><i id="arrowDiv" runat="server" class="icon-arrow-left-blue"></i><asp:label ID="lblBackToResults" runat="server" Text="" /></a>
                 </div>
             </div>
             <!-- .container -->

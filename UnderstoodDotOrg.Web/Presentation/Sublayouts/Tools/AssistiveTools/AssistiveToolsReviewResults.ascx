@@ -72,7 +72,7 @@
                                     <%# Eval("CategoryResultDisplayCount") %></span> 
                                     of
                                     <%# Eval("CategoryResultTotalCount") %> results</span>
-                            </div>5
+                            </div>
                         </header>
                         <div class="tech-results-wrapper at-bottom container<%# Eval("CategoryId") %>">
                             <asp:Repeater ID="rptrResults" runat="server" 
