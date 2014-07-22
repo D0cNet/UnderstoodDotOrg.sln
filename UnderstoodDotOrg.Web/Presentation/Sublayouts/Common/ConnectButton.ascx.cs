@@ -125,11 +125,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                         //TODO: send connection email
                     }
                     break;
+                case Constants.TelligentFriendStatus.Recieved:
+                    //accept request
+                    if (TelligentService.UpdateFriendRequest(CurrentMember.ScreenName, UserName, "Approved"))
+                    {
+                        Response.Redirect(Request.RawUrl, true);
+                    }
+                    break;
                 case Constants.TelligentFriendStatus.Pending:
                     //Nothing to do but wait until friendship request approved
                     break;
                 case Constants.TelligentFriendStatus.Approved:
                     //View user activity
+
+
 
                     break;
                 default:
