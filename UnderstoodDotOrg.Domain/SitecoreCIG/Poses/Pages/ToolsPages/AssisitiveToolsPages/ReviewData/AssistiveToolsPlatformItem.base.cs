@@ -46,11 +46,11 @@ public static implicit operator Item(AssistiveToolsPlatformItem customItem)
 #region Field Instance Methods
 
 
-public CustomLookupField CorrespondingType
+public CustomTreeListField CorrespondingTypes
 {
 	get
 	{
-		return new CustomLookupField(InnerItem, InnerItem.Fields["Corresponding Type"]);
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Corresponding Types"]);
 	}
 }
 

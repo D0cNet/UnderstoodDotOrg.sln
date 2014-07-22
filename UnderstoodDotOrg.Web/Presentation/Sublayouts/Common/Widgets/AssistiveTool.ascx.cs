@@ -21,7 +21,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
     public partial class AssistiveTool : BaseSublayout<AssistiveToolWidgetItem>
     {
         private static string AssistiveToolsGlobalsFolderId = "{493EB983-FDE9-46E4-85C8-EE45EABFE91B}";
-        private Item AssistiveToolsGlobalsFolder { get; set; }
+        private Item AssistiveToolsGlobalsFolder
+        {
+            get;
+            set;
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,74 +59,64 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
 
             var issuesFolder = (AssistiveToolsIssueFolderItem)AssistiveToolsGlobalsFolder.Children
                 .FirstOrDefault(i => i.IsOfType(AssistiveToolsIssueFolderItem.TemplateId));
-            if (issuesFolder != null)
-            {
-                var issues = issuesFolder.GetIssues()
-                    .Select(issue => new
-                    {
-                        Text = issue.Metadata.ContentTitle.Rendered,
-                        Value = issue.ID.ToString()
-                    });
-                ddlIssues.DataSource = issues;
-                ddlIssues.DataTextField = "Text";
-                ddlIssues.DataValueField = "Value";
-                ddlIssues.DataBind();
-                ddlIssues.Items.Insert(0, new ListItem(DictionaryConstants.SelectBehaviorLabel, string.Empty));
-            }
+            var issues = issuesFolder.GetIssues()
+                .Select(issue => new
+                {
+                    Text = issue.Metadata.ContentTitle.Rendered,
+                    Value = issue.ID.ToString()
+                });
+            ddlIssues.DataSource = issues;
+            ddlIssues.DataTextField = "Text";
+            ddlIssues.DataValueField = "Value";
+            ddlIssues.DataBind();
+            ddlIssues.Items.Insert(0, new ListItem(DictionaryConstants.SelectBehaviorLabel, string.Empty));
 
             var gradesFolder = (AssistiveToolsGradesFolderItem)AssistiveToolsGlobalsFolder.Children
                 .FirstOrDefault(i => i.IsOfType(AssistiveToolsGradesFolderItem.TemplateId));
-            if (gradesFolder != null)
-            {
-                var grades = gradesFolder.GetGradeRanges()
-                    .Select(grade => new
-                    {
-                        Text = grade.Metadata.ContentTitle.Rendered,
-                        Value = grade.ID.ToString()
-                    });
-                ddlGrades.DataSource = grades;
-                ddlGrades.DataTextField = "Text";
-                ddlGrades.DataValueField = "Value";
-                ddlGrades.DataBind();
-                ddlGrades.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
-            }
+            var grades = gradesFolder.GetGradeRanges()
+                .Select(grade => new
+                {
+                    Text = grade.Metadata.ContentTitle.Rendered,
+                    Value = grade.ID.ToString()
+                });
+            ddlGrades.DataSource = grades;
+            ddlGrades.DataTextField = "Text";
+            ddlGrades.DataValueField = "Value";
+            ddlGrades.DataBind();
+            ddlGrades.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
 
             var typesFolder = (AssistiveToolsTypeFolderItem)AssistiveToolsGlobalsFolder.Children
                 .FirstOrDefault(i => i.IsOfType(AssistiveToolsTypeFolderItem.TemplateId));
-            if (typesFolder != null)
-            {
-                var techTypes = typesFolder.GetTechTypes()
-                    .Select(grade => new
-                    {
-                        Text = grade.Metadata.ContentTitle.Rendered,
-                        Value = grade.ID.ToString()
-                    });
-                ddlTechTypes.DataSource = techTypes;
-                ddlTechTypes.DataTextField = "Text";
-                ddlTechTypes.DataValueField = "Value";
-                ddlTechTypes.DataBind();
-                ddlTechTypes.Items.Insert(0, new ListItem(DictionaryConstants.AllTechnologyLabel, string.Empty));
-            }
+            var techTypeItems = typesFolder.GetTechTypes();
+
+            var techTypes = techTypeItems
+                .Select(techType => new
+                {
+                    Text = techType.Metadata.ContentTitle.Raw,
+                    Value = techType.ID.ToString()
+                });
+            ddlTechTypes.DataSource = techTypes;
+            ddlTechTypes.DataTextField = "Text";
+            ddlTechTypes.DataValueField = "Value";
+            ddlTechTypes.DataBind();
+            ddlTechTypes.Items.Insert(0, new ListItem(DictionaryConstants.AllTechnologyLabel, "All"));
+            ddlTechTypes.Items.Insert(0, new ListItem(DictionaryConstants.SelectTechnologyLabel, string.Empty));
 
             var platformsFolder = (AssistiveToolsPlatformFolderItem)AssistiveToolsGlobalsFolder.Children
                 .FirstOrDefault(i => i.IsOfType(AssistiveToolsPlatformFolderItem.TemplateId));
-            if (platformsFolder != null)
-            {
-                var platforms = platformsFolder.GetPlatforms()
-                    .Where(i => i.IsOfType(AssistiveToolsPlatformItem.TemplateId))
-                    .Select(i => (AssistiveToolsPlatformItem)i)
-                    .Where(platform => platform.CorrespondingType.Item != null)
-                    .GroupBy(platform => platform.CorrespondingType.Item, new BaseItemComparer())
-                    .Select(group => new
-                    {
-                        TypeId = group.Key.ID.ToString(),
-                        Platforms = group.AsEnumerable()
-                    });
+            var platformItems = platformsFolder.GetPlatforms();
 
-                rptrDynPlatformDropdowns.DataSource = platforms;
-                rptrDynPlatformDropdowns.ItemDataBound += rptrDynPlatformDropdowns_ItemDataBound;
-                rptrDynPlatformDropdowns.DataBind();
-            }
+            var platforms = techTypeItems
+                .Select(techType => new
+                {
+                    TypeId = techType.ID.ToString(),
+                    Platforms = platformItems
+                        .Where(platform => platform.CorrespondingTypes.ListItems.Contains(techType.InnerItem, new BaseItemComparer()))
+                });
+
+            rptrDynPlatformDropdowns.DataSource = platforms;
+            rptrDynPlatformDropdowns.ItemDataBound += rptrDynPlatformDropdowns_ItemDataBound;
+            rptrDynPlatformDropdowns.DataBind();
         }
 
         void rptrDynPlatformDropdowns_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -163,7 +157,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
             }
 
             string url = Model.ToolWidget.WidgetButtonLink.Url;
-            if (!string.IsNullOrEmpty(url)) 
+            if (!string.IsNullOrEmpty(url))
             {
                 Response.Redirect(HttpHelper.AssembleUrl(url, qs));
             }

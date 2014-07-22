@@ -63,7 +63,17 @@
         self.atSearchSelect = $('#browse-by select');
 
         // make select boxes go 100%
-        self.atSearchSelect.siblings('span').css('width', '100%').parent('.selector').css('width', '100%');
+        self.atSearchSelect.each(function () {
+            var $this = $(this);
+            $this.siblings('span').css('width', '100%');
+
+            var $parent = $this.parent(".selector");
+            var parentStyle = $parent.attr("style");
+            parentStyle = !parentStyle.length || parentStyle.endsWith(";") ? parentStyle : parentStyle + ";";
+
+            var parentWidthProp = $this.hasClass("small-width") ? "75% !important;" : "100% !important;";
+            $parent.attr("style",  parentStyle + "width: " + parentWidthProp);
+        });
 
         if ($techTypeSelect.val()) {
             var $initialPlatformSelect = showPlatformSelect($techTypeSelect.val());
