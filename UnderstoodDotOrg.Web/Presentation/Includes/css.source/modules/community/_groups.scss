@@ -1688,7 +1688,12 @@ div.selector.fixedWidth {
     }
   }
   .discussion-boards {
-    width: 75%;
+    @include bp(($bp-small)(max-width 849px)) {
+        width: 65%;
+    }
+    @include bp(min-width 850px) {
+      width: 75%;
+    }
   }
   .col-24.search-board {
     padding-right: 0;
