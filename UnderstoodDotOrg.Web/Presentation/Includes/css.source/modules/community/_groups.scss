@@ -1682,8 +1682,13 @@ div.selector.fixedWidth {
     margin-bottom: 0px;
   }
   .discussion-board-rs-wrapper {
-    display: table;
-    width: 100%;
+    @include bp($bp-large) {
+      display: table;
+      width: 100%;
+    }
+  }
+  .discussion-boards {
+    width: 75%;
   }
   .col-24.search-board {
     padding-right: 0;
