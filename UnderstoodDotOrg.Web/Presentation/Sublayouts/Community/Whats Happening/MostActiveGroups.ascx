@@ -1,6 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MostActiveGroups.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening.Most_Active_Groups" %>
 <%@ Register Src="~/Presentation/Sublayouts/Common/GroupJoinButton.ascx" TagPrefix="uc1" TagName="GroupJoinButton" %>
 
+<asp:UpdatePanel runat="server">
+    <ContentTemplate>
+
+
+ 
 <div class="community-groups">
     <div class="row">
         <div class="col col-24 community-groups-wrapper">
@@ -50,8 +55,10 @@
                             <asp:Literal ID="litDiscussions" runat="server" /> </span><br />
                         <div class="card-buttons">
                             <uc1:GroupJoinButton runat="server" Class="button rs_skip"  ID="btnJoin" />
-                            <button  class="action-skip-this rs_skip">
-                                <asp:Literal ID="litSkipThis" runat="server" /></button>
+                            <asp:LinkButton CssClass="link-remove-fade"  CommandName="RemoveGroup" ID="btnSkip" OnCommand="btnSkip_Command" CommandArgument='<%# Eval("GroupID") %>'  CausesValidation="false"  runat="server" >
+                                <asp:Literal ID="litSkipThis" runat="server" /></asp:LinkButton>
+                            <%--<button runat="server" id="btnSkip"  class="action-skip-this rs_skip">
+                                </button>--%>
                         </div>
                         <!-- end .card-buttons -->
                     </div>
@@ -68,3 +75,5 @@
     <!-- end .row -->
 </div>
 <!-- end .community-groups -->
+           </ContentTemplate>
+</asp:UpdatePanel>

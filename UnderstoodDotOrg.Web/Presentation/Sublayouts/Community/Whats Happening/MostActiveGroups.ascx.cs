@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Services.CommunityServices;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
 using UnderstoodDotOrg.Services.TelligentService;
+using System.Web.UI.HtmlControls;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 {
@@ -21,15 +22,58 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             litMostActiveGroupsLabel.Text = DictionaryConstants.MostActiveGroupsLabel;
             litSeeAllGroups.Text = DictionaryConstants.SeeAllGroupsLabel;
             rptAllGroups.ItemDataBound += rptAllGroups_ItemDataBound;
+           // rptAllGroups.ItemCommand += rptAllGroups_ItemCommand;
             hrefAllGroups.NavigateUrl = Sitecore.Context.Database.GetItem(Constants.Pages.ParentsGroups).GetUrl();
             base.OnInit(e);
         }
+
+       //protected void rptAllGroups_ItemCommand(object source, RepeaterCommandEventArgs e)
+       // {
+       //     if (e.CommandName == "RemoveGroup")
+       //     {
+       //         if (e.CommandArgument != null)
+       //         {
+       //             string id = (string)e.CommandArgument;
+       //             selectedGroups = selectedGroups.Where(x => x.GroupID != id).ToList<GroupCardModel>();
+       //         }
+       //     }
+       // }
+
+        //protected void rptAllGroups_ItemCreated(object sender, RepeaterItemEventArgs e)
+        //{
+        //    if (e.Item != null)
+        //    {
+        //        if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+        //        {
+        //            GroupCardModel thisItem = ((GroupCardModel)e.Item.DataItem);
+        //            if (thisItem != null)
+        //            {
+        //                HtmlButton btnSkip = e.FindControlAs<HtmlButton>("btnSkip");
+        //                if (btnSkip != null)
+        //                {
+        //                    btnSkip.Attributes.Add("data-group-id", thisItem.GroupID);
+
+        //                    btnSkip.ServerClick += (obj, ev) =>
+        //                    {
+        //                        HtmlButton btn = (HtmlButton)obj;
+        //                        string id = (string)btn.Attributes["data-group-id"];
+        //                        if (!String.IsNullOrEmpty(id))
+        //                            selectedGroups = selectedGroups.Where(x => x.GroupID != id).ToList<GroupCardModel>();
+        //                    };
+
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
         List<GroupCardModel> selectedGroups
         {
             get { return Session["_selectedGroups"] as List<GroupCardModel>; }
             set { Session["_selectedGroups"] = value; }
         }
+
+    
 
         protected void rptAllGroups_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -113,10 +157,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
              Show the 6 most active groups by total # of posts in a gallery.
              Order the groups by most recent activity/post. *
              * */
-          
+            List<GroupCardModel> grps = new List<GroupCardModel>();
             if (!IsPostBack)
             {
-                List<GroupCardModel> grps = new List<GroupCardModel>();
+                
                 if (IsUserLoggedIn && !String.IsNullOrEmpty(CurrentMember.ScreenName))
                 {
                     grps = TelligentService.GetUserGroups(CurrentMember.ScreenName);
@@ -129,7 +173,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                     {
                         this.Visible = true;
                         litMostActiveGroupsLabel.Text = DictionaryConstants.RecommendedGroupsLabel;
-                        if (selectedGroups == null)
+                        if (selectedGroups == null )
                         {
 
 
@@ -149,26 +193,62 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 }
                 else
                 {
+                    if (selectedGroups == null)
+                    {
+                        grps = Groups.FindGroups()
+                            .OrderByDescending(g => g.NumOfDiscussions)
+                            .Take(6)
+                            .OrderByDescending(g => g.LastActivityDate)
+                            .ToList<GroupCardModel>();
 
-                    grps = Groups.FindGroups()
-                        .OrderByDescending(g=>g.NumOfDiscussions)
-                        .Take(6)
-                        .OrderByDescending(g => g.LastActivityDate)
-                        .ToList<GroupCardModel>();
-
-
+                        selectedGroups = grps;
+                    }else
+                        grps = selectedGroups as List<GroupCardModel>;
 
                 }
-                if (grps == null || grps.Count == 0)
+               
+                //else
+                //{
+                //    rptAllGroups.DataSource = grps;
+                //    rptAllGroups.DataBind();
+                //}
+            }
+            else
+            {
+                grps = selectedGroups as List<GroupCardModel>;
+            }
+            if (grps == null || grps.Count == 0)
+            {
+
+                this.Visible = false;
+
+            }
+            else
+            {
+                rptAllGroups.DataSource = grps;
+                rptAllGroups.DataBind();
+            }
+        }
+
+        protected void btnSkip_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "RemoveGroup")
+            {
+                if (e.CommandArgument != null)
                 {
-                    this.Visible = false;
-                }
-                else
-                {
-                    rptAllGroups.DataSource = grps;
+                    string id = (string)e.CommandArgument;
+                    selectedGroups = selectedGroups.Where(x => x.GroupID != id).ToList<GroupCardModel>();
+                    if (selectedGroups.Count < 1)
+                    {
+                        this.Visible = false;
+                        return;
+                    }
+                    rptAllGroups.DataSource = selectedGroups;
                     rptAllGroups.DataBind();
                 }
             }
         }
+
+       
     }
 }

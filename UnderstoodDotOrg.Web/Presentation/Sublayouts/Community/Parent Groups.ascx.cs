@@ -61,7 +61,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
                     foreach (var item in items)
                     {
-                        ddlChildIssues.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
+
+                        ddlChildIssues.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString().Equals("{9E988E8F-4036-49E7-B9ED-687C99A669F9}") ? string.Empty: item.ID.ToString() });
                     }
 
                     ddlChildIssues.DataBind();
@@ -92,7 +93,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                     //ddlGrades.Items.Add(new ListItem() { Text = DictionaryConstants.GradesLabel, Value = "" });
                     foreach (var item in items)
                     {
-                        ddlGrades.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
+                        ddlGrades.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString().Equals("{7DD838FD-8BD3-4861-8E1E-540E6ED9BBE9}") ? string.Empty : item.ID.ToString() });
                     }
 
                     ddlGrades.DataBind();

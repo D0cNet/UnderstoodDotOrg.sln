@@ -65,6 +65,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             //blow out any existing member when someone tries to sign in
             try
             {
+                //Reset session backed my groups from Whats Happening Now
+                Session["_selectedGroups"] = null;
                
                 //lets make sure to reset all user&member info before we start inflating it
                 this.FlushCurrentMemberUser();
