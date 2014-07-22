@@ -41,8 +41,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             get { return Request.QueryString[Constants.CHALLENGE_QUERY_STRING] ?? String.Empty; }
         }
 
+        private BehaviorSearchCalloutItem Model { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (this.DataSource != null)
+            {
+                Model = new BehaviorSearchCalloutItem(this.DataSource);
+            }
+
             BindEvents();
             BindContent();
             
@@ -76,17 +83,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             btnSubmit.Text = DictionaryConstants.GoButtonText;
             txtSuggestion.Attributes.Add("placeholder", DictionaryConstants.EnterSuggestionWatermark);
             
-            if (this.DataSource != null)
+            if (Model != null)
             {
                 frSuggestionTitle.Item = frSuggestionInstructions.Item =
                         frSuccessTitle.Item = frSuccessText.Item = frSuccessSignupLink.Item =
-                        frCalloutTitle.Item = frCalloutLinkText.Item = this.DataSource;
+                        frCalloutTitle.Item = frCalloutLinkText.Item = Model.InnerItem;
 
-                BehaviorSearchCalloutItem callout = new BehaviorSearchCalloutItem(this.DataSource);
-
-                rfvChallenges.Text = callout.CalloutChallengeRequiredFieldMessage.Text;
-                rfvGrades.Text = callout.CalloutGradeRequiredFieldMessage.Text;
-                litSuggestError.Text = callout.SuggestionRequiredFieldMessage.Text;
+                rfvChallenges.Text = Model.CalloutChallengeRequiredFieldMessage.Text;
+                rfvGrades.Text = Model.CalloutGradeRequiredFieldMessage.Text;
+                litSuggestError.Text = Model.SuggestionRequiredFieldMessage.Text;
 
                 hlSignUp.NavigateUrl = SignUpPageItem.GetSignUpPage().GetUrl();
             }
@@ -94,17 +99,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 
         private void BindControls()
         {
-            ddlGrades.DataSource = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
-            ddlGrades.DataTextField = "Text";
-            ddlGrades.DataValueField = "Value";
-            ddlGrades.DataBind();
-            ddlGrades.SelectedIndex = ddlGrades.GetSelectedIndex(SelectedGrade);         
-
             ddlChallenges.DataSource = FormHelper.GetChallenges(DictionaryConstants.SelectChallengeLabel);
             ddlChallenges.DataTextField = "Text";
             ddlChallenges.DataValueField = "Value";
             ddlChallenges.DataBind();
             ddlChallenges.SelectedIndex = ddlChallenges.GetSelectedIndex(SelectedChallenge);
+
+            if (Model != null)
+            {
+                ddlGrades.DataSource = Model.GetGradeChoices();
+                ddlGrades.DataTextField = "Text";
+                ddlGrades.DataValueField = "Value";
+                ddlGrades.DataBind();
+                ddlGrades.SelectedIndex = ddlGrades.GetSelectedIndex(SelectedGrade);
+            }
         }
     }
 }

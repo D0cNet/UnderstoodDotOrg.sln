@@ -637,6 +637,7 @@
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentRoleItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\BaseTemplate\Parent\ParentRoleItem.static.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Tools\BehaviorTool\BehaviorSearchCalloutItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Shared\Tools\BehaviorTool\BehaviorSearchCalloutItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\AssistiveToolWidgetItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\Base\ToolWidgetItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Shared\Widgets\Base\ToolWidgetItem.static.cs" />

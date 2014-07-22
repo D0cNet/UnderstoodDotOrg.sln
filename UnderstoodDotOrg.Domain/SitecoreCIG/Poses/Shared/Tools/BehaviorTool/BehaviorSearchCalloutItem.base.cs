@@ -137,6 +137,15 @@ public CustomTextField SuggestionRequiredFieldMessage
 }
 
 
+public CustomMultiListField CalloutGradeChoices
+{
+	get
+	{
+		return new CustomMultiListField(InnerItem, InnerItem.Fields["Callout Grade Choices"]);
+	}
+}
+
+
 public CustomTextField SuggestionSubmitFailedMessage
 {
 	get
