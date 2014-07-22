@@ -35,7 +35,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         protected string GetSelectedState(NavigationLinkItem item, string selectedCss)
         {
-            return (item.Link.Field.TargetItem != null
+            return (_levelOne != null
+                    && item.Link.Field.TargetItem != null
                     && item.Link.Field.TargetItem.ID == _levelOne.ID) 
                     ? selectedCss 
                     : string.Empty;
