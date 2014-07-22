@@ -12,7 +12,7 @@
                         <asp:Repeater ID="rptrPlatforms" runat="server"
                             ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsPlatformItem">
                             <ItemTemplate>
-                                <a href="REPLACE"><%# Item.Metadata.ContentTitle.Rendered %></a>
+                                <%# Item.Metadata.ContentTitle.Rendered %>
                             </ItemTemplate>
                         </asp:Repeater>
                         <%--<a href="REPLACE">iPhone</a>,
