@@ -41,24 +41,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                         else
                             Notifications = new List<INotification>();
                     }
-                    
 
-                     if (Session["conversations"] !=null)
+
+                    if (Conversations != null)
                      {
-                         checkConvos = Session["conversations"] as List<Conversation>;
+                         checkConvos = Conversations;
                      }
                      else
                      {
                          checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
                          if (checkConvos != null)
                          {
-                             Session["conversations"] = checkConvos;
+                             Conversations= checkConvos;
                          }
                          else
                          {
                              
                              checkConvos = new List<Conversation>();
-                             Session["conversations"] = checkConvos;
+                            Conversations= checkConvos;
                          }
                      }
 				    

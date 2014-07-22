@@ -9,6 +9,7 @@ using System.Web.Security;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Models.TelligentCommunity;
+using UnderstoodDotOrg.Services.Models.Telligent;
 
 namespace UnderstoodDotOrg.Framework.UI
 {
@@ -27,7 +28,19 @@ namespace UnderstoodDotOrg.Framework.UI
                 Session["_notifications"] = _notifications = value;
             }
         }
+        private List<Conversation> _conversations;
+        public List<Conversation> Conversations
+        {
+            get
+            {
+                return _conversations = _conversations ?? Session["_conversations"] as List<Conversation>;
+            }
 
+            set
+            {
+                Session["_conversations"] = _conversations = value;
+            }
+        }
         private Item _dataSource = null;
         public Item DataSource
         {

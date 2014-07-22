@@ -77,12 +77,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                             notifs = Notifications;
                         }
 
-                        if (Session["conversations"]==null)
+                        if (Conversations==null)
                         {
                             checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
                             if (checkConvos != null && checkConvos.Count() > 0)
                             {
-                                Session["conversations"] = checkConvos;
+                                Conversations = checkConvos;
                             }
                             else
                             {
@@ -91,7 +91,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                         }
                         else
                         {
-                            checkConvos = Session["conversations"] as List<Conversation>;
+                            checkConvos = Conversations;
                             
                         }
                         int totalNotifs = notifs.Count() + checkConvos.Count();
