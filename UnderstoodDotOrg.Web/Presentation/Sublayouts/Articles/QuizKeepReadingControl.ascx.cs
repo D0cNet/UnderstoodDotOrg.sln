@@ -33,7 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 List<Item> relatedLinks = context.InnerItem.Parent.Children
                     .Where(i => i.InheritsFromType(DefaultArticlePageItem.TemplateId))
-                    .Shuffle().Take(3).ToList();
+                    .Shuffle().Where(i => i.ID != context.ID).Take(3).ToList();
                 rptKeepReading.DataSource = relatedLinks;
                 rptKeepReading.DataBind();
                 if (relatedLinks == null || !(relatedLinks.Count > 0))
