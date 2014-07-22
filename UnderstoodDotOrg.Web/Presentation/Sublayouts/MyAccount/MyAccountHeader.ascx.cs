@@ -50,7 +50,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                 if (CurrentMember.ZipCode != null)
                 {
-                    litLocation.Text = Services.CommunityServices.GeoTargeting.GetStateByZip(CurrentMember.ZipCode);
+                    if(!string.IsNullOrEmpty(CurrentMember.ScreenName))
+                        litLocation.Text = Services.CommunityServices.GeoTargeting.GetStateByZip(CurrentMember.ZipCode);
                 }
                 
                     if (!String.IsNullOrEmpty(CurrentMember.ScreenName))
