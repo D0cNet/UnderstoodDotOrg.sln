@@ -91,7 +91,9 @@
     }
 
     .container-parents-child-issue {
-      margin-left: 0px;
+      @include bp($bp-large) {
+        margin-left: 0px;
+      }
     }
 
     .ui-slider {
@@ -191,12 +193,6 @@
         span {
           background-position: right -200px;
         }
-      }
-    }
-
-    #uniform-parents-search-issue {
-      @include bp($bp-large) {
-        margin-left: 0;
       }
     }
 
