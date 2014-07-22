@@ -91,7 +91,7 @@
     <div class="row">
         <asp:Repeater ID="rptrSchools" runat="server">
             <ItemTemplate>
-                <div class="col col-4 offset-1">
+                <div class="col col-7 offset-1">
                     <p>
                         <%# Eval("Title.Rendered") %><br>
                         <%# Eval("EducationLevel.Rendered") %><br>
