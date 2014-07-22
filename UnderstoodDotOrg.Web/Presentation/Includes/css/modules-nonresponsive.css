@@ -791,7 +791,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -1039,7 +1039,7 @@ html.canvas .mini-tools-wrap {
   list-style: none;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit .slide ul:after {
   content: "";
   display: table;
@@ -1500,15 +1500,17 @@ html.canvas .mini-tools-wrap {
   margin-bottom: 25px;
   font-size: 16px;
   font-size: 1rem;
+  width: 100%;
   padding: 0 80px;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 24px;
   margin-bottom: 20px;
+  width: 100%;
   padding: 0;
-  width: 50%;
+  width: 48%;
 }
-/* line 79, ../css.source/modules/_newsletter-signup.scss */
+/* line 81, ../css.source/modules/_newsletter-signup.scss */
 .newsletter-signup .form.personalized-email-form {
   display: table;
   width: 100%;
@@ -1519,36 +1521,36 @@ html.canvas .mini-tools-wrap {
   right: 0;
   top: 35px;
 }
-/* line 98, ../css.source/modules/_newsletter-signup.scss */
+/* line 100, ../css.source/modules/_newsletter-signup.scss */
 .newsletter-signup .form.personalized-email-form input {
   margin-bottom: 10px;
 }
-/* line 102, ../css.source/modules/_newsletter-signup.scss */
+/* line 104, ../css.source/modules/_newsletter-signup.scss */
 .newsletter-signup .form.personalized-email-form .input-wrap {
   float: left;
   width: 70%;
   padding-right: 10px;
 }
-/* line 110, ../css.source/modules/_newsletter-signup.scss */
+/* line 112, ../css.source/modules/_newsletter-signup.scss */
 .newsletter-signup .form.personalized-email-form .submit-button-wrap {
   margin-bottom: 20px;
   float: left;
   margin-bottom: 0;
   width: 30%;
 }
-/* line 119, ../css.source/modules/_newsletter-signup.scss */
+/* line 121, ../css.source/modules/_newsletter-signup.scss */
 .newsletter-signup .form.personalized-email-form .submit-button-wrap input {
   font-size: 15px;
   font-size: 0.9375rem;
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 130, ../css.source/modules/_newsletter-signup.scss */
+/* line 132, ../css.source/modules/_newsletter-signup.scss */
 .newsletter-signup .col.col-12 {
   float: none;
-  width: auto;
   padding: 0;
-  position: relative;
+  position: static;
+  width: 100%;
 }
 
 /**
@@ -1813,7 +1815,7 @@ html.canvas .mini-tools-wrap {
   *zoom: 1;
   margin-bottom: 50px;
 }
-/* line 22, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-listing-container .article:after {
   content: "\0020";
   display: block;
@@ -4207,7 +4209,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";

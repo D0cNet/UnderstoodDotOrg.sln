@@ -58,6 +58,7 @@
 
         @include bp($bp-small) {
           @include rem(font-size, 16px);
+        	width:100%;
           padding: 0 80px;
         }
 
@@ -65,11 +66,12 @@
           @include rem(font-size, 18px);
           line-height: 24px;
           margin-bottom: 20px;
+        	width:100%;
           padding: 0;
         }
 
         @include bp($bp-large) {
-          width: 50%;
+        	width:48%;
         }
 
       } //p
@@ -129,12 +131,9 @@
 
     .col.col-12 {
       float: none;
-      width: auto;
-      padding: 0;
-
-      @include bp($bp-large) {
-        position: relative;
-      }
+			padding:0;
+			position:static;
+			width:100%;
     } //.col.col-12
 
 }// .newsletter-signup
