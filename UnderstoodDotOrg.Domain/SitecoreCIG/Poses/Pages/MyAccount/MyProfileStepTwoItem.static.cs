@@ -14,5 +14,14 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount
         {
             return Sitecore.Context.Database.GetItem(Constants.Pages.Registration2);
         }
+
+        public static string GetChildEditLink(int childIndex)
+        {
+            string ret = MyProfileStepTwoItem.GetCompleteMyProfileStepTwo().GetUrl()
+                + '?' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.Mode + '=' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ModeEdit
+                + "&" + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ChildIndex + "=" + childIndex;
+
+            return ret;
+        }
     }
 }

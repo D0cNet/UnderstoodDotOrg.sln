@@ -128,7 +128,7 @@
                                                     <%# Item.Nickname %>:
                                                 </h4>
                                                 <ul class="list">
-                                                    <asp:Repeater ID="rptChildIssuesList" DataSource="<%# Item.Issues %>" ItemType="UnderstoodDotOrg.Domain.Membership.Issue" runat="server" OnItemDataBound="rptChildIssuesList_ItemDataBound">
+                                                    <asp:Repeater ID="rptChildIssuesList" DataSource="<%# Item.Issues %>" ItemType="UnderstoodDotOrg.Domain.Membership.Issue" runat="server">
                                                         <ItemTemplate>
                                                             <li>
                                                                 <%# Item.Value %>

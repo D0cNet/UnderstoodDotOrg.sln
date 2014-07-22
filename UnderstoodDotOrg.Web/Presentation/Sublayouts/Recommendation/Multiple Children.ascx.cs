@@ -17,6 +17,7 @@ using UnderstoodDotOrg.Domain.Search;
 using System.Text;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 {
@@ -64,6 +65,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
             if (e.IsItem())
             {
                 Child child = (Child)e.Item.DataItem;
+
+                HyperLink hlReplaceMatchingIssues = e.FindControlAs<HyperLink>("hlReplaceMatchingIssues");
+                hlReplaceMatchingIssues.NavigateUrl = MyProfileStepTwoItem.GetChildEditLink(e.Item.ItemIndex);
 
                 Literal litChildGrade = e.FindControlAs<Literal>("litChildGrade");
                 if (child.Grades != null && child.Grades.Any())
@@ -217,21 +221,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 
                     litDebugTag.Text = String.Format("<!--{0}-->", sb.ToString());
                     // DEBUG - END
-                }
-            }
-        }
-
-        protected void rptChildIssuesList_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.IsItem())
-            {
-                //ChildIssue ObjChildIssue = e.Item.DataItem as ChildIssue;
-                {
-                    HyperLink hlReplaceMatchingIssues = e.FindControlAs<HyperLink>("hlReplaceMatchingIssues");
-                    if (hlReplaceMatchingIssues != null)
-                    {
-                        //hlReplaceMatchingIssues.NavigateUrl= Navigate to page where Usrer can edit childs related Info;
-                    }
                 }
             }
         }

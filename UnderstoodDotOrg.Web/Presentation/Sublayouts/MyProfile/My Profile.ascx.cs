@@ -313,11 +313,7 @@
 
         protected string getChildEditLink(ListViewDataItem Container)
         {
-            string ret = MyProfileStepTwoItem.GetCompleteMyProfileStepTwo().GetUrl()
-                + '?' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.Mode + '=' + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ModeEdit
-                + "&" + UnderstoodDotOrg.Common.Constants.QueryStrings.Registration.ChildIndex + "=" + Container.DataItemIndex;
-
-            return ret;
+            return MyProfileStepTwoItem.GetChildEditLink(Container.DataItemIndex);
         }
 
         public string MapToSitecoreIssue(string GUID)
