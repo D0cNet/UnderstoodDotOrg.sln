@@ -58,15 +58,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// upThread control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upThread;
-        
-        /// <summary>
         /// rptThread control.
         /// </summary>
         /// <remarks>
@@ -82,15 +73,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton linkShowMore;
-        
-        /// <summary>
-        /// updateProgress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress updateProgress;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkShowMore;
     }
 }

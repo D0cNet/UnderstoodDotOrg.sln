@@ -78,53 +78,48 @@
     
 
                   </header>
-                    <asp:UpdatePanel ID="upThread" runat="server">
-                        <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="linkShowMore" EventName="Click" />
-                        </Triggers>
-                        <ContentTemplate>
-                            <asp:Repeater ID="rptThread" OnItemDataBound="rptThread_ItemDataBound" runat="server">
-                                <HeaderTemplate>
-                                    <ul class="discussions table-discussions search-results rs_read_this">
-                                </HeaderTemplate>
-                                <ItemTemplate>
-                                    <li>
-                                        <div class="col summary">
-                                            <asp:HiddenField Value='<%# Eval("Subject") %>' runat="server" ID="hdSubject" />
-                                            <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.DiscussionLabel %>:</h4>
-                                            <a href="REPLACE" id="hrefDiscussion" runat="server"><%# Eval("Snippet") %></a>
-                                        </div>
-                                        <div class="col latest-post rs_skip">
-                                            <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.LatestPostLabel %>:</h4>
-                                            <p class="mins-ago"><%# Eval("LastPostTime") %></p>
-                                            <a runat="server" id="hrefProfile2" href="REPLACE"><%# Eval("LastPostUser") %></a>
-                                            <p><%# Eval("LastPostBody") %></p>
-                                        </div>
-                                        <div class="col started-by">
-                                            <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.StartedByLabel %>:</h4>
-                                            <a runat="server" id="hrefProfile" href="REPLACE"><%# Eval("StartedBy") %></a>
-                                        </div>
 
-                                        <div class="col replies">
-                                            <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.RepliesLabel %>:</h4>
-                                            <p><%# Eval("ReplyCount") %></p>
-                                        </div>
-                                        <div class="col latest-post-tabular">
-                                            <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.LatestPostLabel %>:</h4>
-                                            <p><%# Eval("LastPostTime") %></p>
-                                            <a runat="server" id="hrefProfile3" href="REPLACE"><%# Eval("LastPostUser") %></a>
-                                            <p><%# Eval("LastPostBody") %></p>
-                                        </div>
+                    <asp:Repeater ID="rptThread" OnItemDataBound="rptThread_ItemDataBound" runat="server">
 
-                                    </li>
-                                </ItemTemplate>
-                                <FooterTemplate>
-                                    </ul>
-                                </FooterTemplate>
-                            </asp:Repeater>
+                        <HeaderTemplate>
+                            <ul class="discussions table-discussions search-results rs_read_this">
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <li>
+                                <div class="col summary">
+                                    <asp:HiddenField Value='<%# Eval("Subject") %>' runat="server" ID="hdSubject" />
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.DiscussionLabel %>:</h4>
+                                    <a href="REPLACE" id="hrefDiscussion" runat="server"><%# Eval("Snippet") %></a>
+                                </div>
+                                <div class="col latest-post rs_skip">
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.LatestPostLabel %>:</h4>
+                                    <p class="mins-ago"><%# Eval("LastPostTime") %></p>
+                                    <a  runat="server" id="hrefProfile2" href="REPLACE"><%# Eval("LastPostUser") %></a>
+                                    <p><%# Eval("LastPostBody") %></p>
+                                </div>
+                                <div class="col started-by">
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.StartedByLabel %>:</h4>
+                                    <a runat="server" id="hrefProfile" href="REPLACE"><%# Eval("StartedBy") %></a>
+                                </div>
 
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+                                <div class="col replies">
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.RepliesLabel %>:</h4>
+                                    <p><%# Eval("ReplyCount") %></p>
+                                </div>
+                                <div class="col latest-post-tabular">
+                                    <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.LatestPostLabel %>:</h4>
+                                    <p><%# Eval("LastPostTime") %></p>
+                                    <a  runat="server" id="hrefProfile3" href="REPLACE"><%# Eval("LastPostUser") %></a>
+                                    <p><%# Eval("LastPostBody") %></p>
+                                </div>
+
+                            </li>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </ul>
+                        </FooterTemplate>
+                    </asp:Repeater>
+             
                     <!-- end .discussions -->
                 </div>
                 <!-- END PARTIAL: community/groups_table -->
@@ -136,16 +131,10 @@
 <div class="container show-more rs_skip">
     <div class="row">
         <div class="col col-24">
-            <asp:LinkButton runat="server" id="linkShowMore" OnClick="linkShowMore_ServerClick" ><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></asp:LinkButton>
+            <a runat="server"  id="linkShowMore"  onserverClick="linkShowMore_ServerClick" data-container="table-discussions" data-count="10" data-item="summary" data-path="community/groups-board-results" href="#"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
         </div>
     </div>
 </div>
-<asp:UpdateProgress id="updateProgress" runat="server">
-    <ProgressTemplate>
-        <div style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #000000; opacity: 0.8;">
-            <span style="border-width: 0px; position: fixed; padding: 50px; background-color: #FFFFFF; font-size: 36px; left: 40%; top: 40%;">Loading...</span>
-        </div>
-    </ProgressTemplate>
-</asp:UpdateProgress>
+
 
 <!-- END PARTIAL: community/main_header -->
