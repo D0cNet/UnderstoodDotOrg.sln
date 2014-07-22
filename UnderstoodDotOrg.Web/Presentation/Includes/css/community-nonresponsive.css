@@ -7404,7 +7404,13 @@ div.selector.fixedWidth {
   height: 150px;
   position: relative;
 }
-/* line 172, ../css.source/modules/community/_chat-webinar.scss */
+/* line 171, ../css.source/modules/community/_chat-webinar.scss */
+.experts-page.chat .event-image .thumbnail img,
+.experts-page.webinar .event-image .thumbnail img {
+  width: 150px;
+  height: 150px;
+}
+/* line 178, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-image .recommended-for,
 .experts-page.webinar .event-image .recommended-for {
   display: table-cell;
@@ -7414,7 +7420,7 @@ div.selector.fixedWidth {
   padding: 0 10px;
   display: none;
 }
-/* line 183, ../css.source/modules/community/_chat-webinar.scss */
+/* line 189, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-image .recommended-for .children-key li,
 .experts-page.webinar .event-image .recommended-for .children-key li {
   float: none;
@@ -7422,7 +7428,7 @@ div.selector.fixedWidth {
   font-size: 0;
   margin: 0 4px;
 }
-/* line 193, ../css.source/modules/community/_chat-webinar.scss */
+/* line 199, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .live-chat-content .event-cards,
 .experts-page.webinar .live-chat-content .event-cards {
   height: auto !important;
@@ -7432,23 +7438,23 @@ div.selector.fixedWidth {
 .experts-page.webinar .live-chat-content .event-cards {
   height: 300px !important;
 }
-/* line 199, ../css.source/modules/community/_chat-webinar.scss */
+/* line 205, ../css.source/modules/community/_chat-webinar.scss */
 .old-ie .experts-page.chat .live-chat-content .event-cards .rsOverflow, .old-ie .experts-page.chat .live-chat-content .event-cards .rsAutoHeight, .old-ie
 .experts-page.webinar .live-chat-content .event-cards .rsOverflow, .old-ie
 .experts-page.webinar .live-chat-content .event-cards .rsAutoHeight {
   height: 300px !important;
 }
-/* line 206, ../css.source/modules/community/_chat-webinar.scss */
+/* line 212, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .live-chat-content .children-key li,
 .experts-page.webinar .live-chat-content .children-key li {
   margin-bottom: 10px;
 }
-/* line 211, ../css.source/modules/community/_chat-webinar.scss */
+/* line 217, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .archive-button,
 .experts-page.webinar .archive-button {
   padding: 0 15px;
 }
-/* line 215, ../css.source/modules/community/_chat-webinar.scss */
+/* line 221, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .see-calendar,
 .experts-page.webinar .see-calendar {
   float: none;
@@ -7459,35 +7465,35 @@ div.selector.fixedWidth {
   margin: 40px 0 0;
   width: 190px;
 }
-/* line 228, ../css.source/modules/community/_chat-webinar.scss */
+/* line 234, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-cards + .child-content-indicator,
 .experts-page.webinar .event-cards + .child-content-indicator {
   margin: 40px 0 0;
 }
-/* line 231, ../css.source/modules/community/_chat-webinar.scss */
+/* line 237, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-cards + .child-content-indicator .offset-1,
 .experts-page.webinar .event-cards + .child-content-indicator .offset-1 {
   margin: 0;
 }
-/* line 235, ../css.source/modules/community/_chat-webinar.scss */
+/* line 241, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-cards + .child-content-indicator .children-key li,
 .experts-page.webinar .event-cards + .child-content-indicator .children-key li {
   margin-right: 0;
 }
-/* line 240, ../css.source/modules/community/_chat-webinar.scss */
+/* line 246, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-container .image-label,
 .experts-page.webinar .event-container .image-label {
   font-size: 18px;
   font-size: 1.125rem;
   width: 150px;
 }
-/* line 245, ../css.source/modules/community/_chat-webinar.scss */
+/* line 251, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar,
 .experts-page.webinar .event-sidebar {
   display: none;
   display: block;
 }
-/* line 252, ../css.source/modules/community/_chat-webinar.scss */
+/* line 258, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .children-key,
 .experts-page.webinar .event-sidebar .children-key {
   padding: 12px;
@@ -7496,13 +7502,13 @@ div.selector.fixedWidth {
   background: #f4f2f1;
   margin-bottom: 30px;
 }
-/* line 260, ../css.source/modules/community/_chat-webinar.scss */
+/* line 266, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful,
 .experts-page.webinar .event-sidebar .was-this-helpful {
   padding: 0;
   border: none;
 }
-/* line 266, ../css.source/modules/community/_chat-webinar.scss */
+/* line 272, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful h4,
 .experts-page.webinar .event-sidebar .was-this-helpful h4 {
   border-top: none;
@@ -7511,7 +7517,7 @@ div.selector.fixedWidth {
   line-height: inherit;
   height: auto;
 }
-/* line 277, ../css.source/modules/community/_chat-webinar.scss */
+/* line 283, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful .helpful-count,
 .experts-page.webinar .event-sidebar .was-this-helpful .helpful-count {
   display: block;
@@ -7519,7 +7525,7 @@ div.selector.fixedWidth {
   background: none;
   height: auto;
 }
-/* line 285, ../css.source/modules/community/_chat-webinar.scss */
+/* line 291, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful .button.yes,
 .experts-page.chat .event-sidebar .was-this-helpful .button.no,
 .experts-page.webinar .event-sidebar .was-this-helpful .button.yes,
@@ -7527,51 +7533,51 @@ div.selector.fixedWidth {
   width: 100%;
   margin: 0 0 10px;
 }
-/* line 290, ../css.source/modules/community/_chat-webinar.scss */
+/* line 296, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful .button.no,
 .experts-page.webinar .event-sidebar .was-this-helpful .button.no {
   background-color: #bcbdc0;
 }
-/* line 292, ../css.source/modules/community/_chat-webinar.scss */
+/* line 298, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-sidebar .was-this-helpful .button.no:hover, .experts-page.chat .event-sidebar .was-this-helpful .button.no:focus,
 .experts-page.webinar .event-sidebar .was-this-helpful .button.no:hover,
 .experts-page.webinar .event-sidebar .was-this-helpful .button.no:focus {
   background-color: #ffffff;
 }
-/* line 299, ../css.source/modules/community/_chat-webinar.scss */
+/* line 305, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-date-time,
 .experts-page.webinar .event-date-time {
   font-weight: 700;
   margin-bottom: 10px;
 }
-/* line 305, ../css.source/modules/community/_chat-webinar.scss */
+/* line 311, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.upcoming .event-date-time,
 .experts-page.webinar.upcoming .event-date-time {
   color: #794382;
 }
-/* line 309, ../css.source/modules/community/_chat-webinar.scss */
+/* line 315, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.upcoming .child-content-indicator,
 .experts-page.webinar.upcoming .child-content-indicator {
   margin-bottom: 40px;
 }
-/* line 313, ../css.source/modules/community/_chat-webinar.scss */
+/* line 319, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.upcoming .see-calendar,
 .experts-page.webinar.upcoming .see-calendar {
   margin: 0 0 30px;
   margin: 0;
   clear: none;
 }
-/* line 322, ../css.source/modules/community/_chat-webinar.scss */
+/* line 328, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.upcoming .events-chat .see-calendar,
 .experts-page.webinar.upcoming .events-chat .see-calendar {
   margin: 50px 0;
 }
-/* line 326, ../css.source/modules/community/_chat-webinar.scss */
+/* line 332, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.upcoming .children-key li,
 .experts-page.webinar.upcoming .children-key li {
   margin-bottom: 0;
 }
-/* line 333, ../css.source/modules/community/_chat-webinar.scss */
+/* line 339, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-host-name,
 .experts-page.webinar .event-host-name {
   color: #794382;
@@ -7579,24 +7585,24 @@ div.selector.fixedWidth {
   font-size: 22px;
   font-size: 1.375rem;
 }
-/* line 339, ../css.source/modules/community/_chat-webinar.scss */
+/* line 345, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-host-title,
 .experts-page.webinar .event-host-title {
   font-size: 14px;
   font-size: 0.875rem;
 }
-/* line 343, ../css.source/modules/community/_chat-webinar.scss */
+/* line 349, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .event-topics-subhead,
 .experts-page.webinar .event-topics-subhead {
   font-weight: 700;
   margin-bottom: 0;
 }
-/* line 348, ../css.source/modules/community/_chat-webinar.scss */
+/* line 354, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .was-this-helpful,
 .experts-page.webinar .was-this-helpful {
   margin-bottom: 50px;
 }
-/* line 351, ../css.source/modules/community/_chat-webinar.scss */
+/* line 357, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .was-this-helpful h4,
 .experts-page.webinar .was-this-helpful h4 {
   font-size: 22px;
@@ -7605,18 +7611,18 @@ div.selector.fixedWidth {
   color: #696969;
   font-weight: 300;
 }
-/* line 359, ../css.source/modules/community/_chat-webinar.scss */
+/* line 365, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .was-this-helpful .button,
 .experts-page.webinar .was-this-helpful .button {
   width: 47%;
   float: left;
 }
-/* line 364, ../css.source/modules/community/_chat-webinar.scss */
+/* line 370, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .was-this-helpful .button.no,
 .experts-page.webinar .was-this-helpful .button.no {
   float: right;
 }
-/* line 370, ../css.source/modules/community/_chat-webinar.scss */
+/* line 376, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .helpful-count,
 .experts-page.webinar .helpful-count {
   line-height: 30px;
@@ -7625,7 +7631,7 @@ div.selector.fixedWidth {
   background: #f4f2f1;
   margin-bottom: 30px;
 }
-/* line 377, ../css.source/modules/community/_chat-webinar.scss */
+/* line 383, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .helpful-count em,
 .experts-page.webinar .helpful-count em {
   font-style: normal;
@@ -7639,7 +7645,7 @@ div.selector.fixedWidth {
   margin: 0 10px 0 0;
   border-radius: 100%;
 }
-/* line 391, ../css.source/modules/community/_chat-webinar.scss */
+/* line 397, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video,
 .experts-page.webinar .webinar-video {
   width: 100%;
@@ -7654,7 +7660,7 @@ div.selector.fixedWidth {
 .experts-page.webinar .webinar-video {
   outline: solid 1px #dfdfdf;
 }
-/* line 397, ../css.source/modules/community/_chat-webinar.scss */
+/* line 403, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .webinar-actions,
 .experts-page.webinar .webinar-video .webinar-actions {
   padding: 15px;
@@ -7662,7 +7668,7 @@ div.selector.fixedWidth {
   padding: 30px;
   border-top: none;
 }
-/* line 408, ../css.source/modules/community/_chat-webinar.scss */
+/* line 414, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .find-this-helpful,
 .experts-page.webinar .webinar-video .find-this-helpful {
   margin-left: auto;
@@ -7671,7 +7677,7 @@ div.selector.fixedWidth {
   margin-bottom: 0;
   margin-bottom: 45px;
 }
-/* line 420, ../css.source/modules/community/_chat-webinar.scss */
+/* line 426, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .was-this-helpful,
 .experts-page.webinar .webinar-video .was-this-helpful {
   width: auto;
@@ -7680,7 +7686,7 @@ div.selector.fixedWidth {
   float: left;
   margin: 0;
 }
-/* line 430, ../css.source/modules/community/_chat-webinar.scss */
+/* line 436, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .was-this-helpful h4,
 .experts-page.webinar .webinar-video .was-this-helpful h4 {
   font-size: 20px;
@@ -7699,7 +7705,7 @@ div.selector.fixedWidth {
   text-align: left;
   width: auto;
 }
-/* line 453, ../css.source/modules/community/_chat-webinar.scss */
+/* line 459, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .was-this-helpful .button,
 .experts-page.chat .webinar-video .was-this-helpful .button.no,
 .experts-page.webinar .webinar-video .was-this-helpful .button,
@@ -7712,7 +7718,7 @@ div.selector.fixedWidth {
   float: left;
   padding: 0 50px;
 }
-/* line 467, ../css.source/modules/community/_chat-webinar.scss */
+/* line 473, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .webinar-video .transcript,
 .experts-page.webinar .webinar-video .transcript {
   float: none;
@@ -7725,7 +7731,7 @@ div.selector.fixedWidth {
   clear: none;
   width: auto;
 }
-/* line 483, ../css.source/modules/community/_chat-webinar.scss */
+/* line 489, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat iframe,
 .experts-page.webinar iframe {
   border: none;
@@ -7733,25 +7739,25 @@ div.selector.fixedWidth {
   display: block;
   min-height: 532px;
 }
-/* line 493, ../css.source/modules/community/_chat-webinar.scss */
+/* line 499, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat.past .archive > .row,
 .experts-page.webinar.past .archive > .row {
   padding-top: 40px;
   border-top: 1px solid #d2d2d2;
 }
-/* line 498, ../css.source/modules/community/_chat-webinar.scss */
+/* line 504, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat,
 .experts-page.webinar .events-chat {
   background: #f4f2f1;
   padding: 50px 0 0;
 }
-/* line 502, ../css.source/modules/community/_chat-webinar.scss */
+/* line 508, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .row,
 .experts-page.webinar .events-chat .row {
   padding: 0 15px;
   padding: 0;
 }
-/* line 510, ../css.source/modules/community/_chat-webinar.scss */
+/* line 516, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .container .event-cards,
 .experts-page.webinar .events-chat .container .event-cards {
   width: 100%;
@@ -7760,13 +7766,13 @@ div.selector.fixedWidth {
   float: left;
   margin: 0;
 }
-/* line 520, ../css.source/modules/community/_chat-webinar.scss */
+/* line 526, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .container .event-cards h2,
 .experts-page.webinar .events-chat .container .event-cards h2 {
   margin-bottom: 10px;
   min-width: 0;
 }
-/* line 526, ../css.source/modules/community/_chat-webinar.scss */
+/* line 532, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .event-card,
 .experts-page.webinar .events-chat .event-card {
   background: #fff;
@@ -7775,7 +7781,7 @@ div.selector.fixedWidth {
   padding: 30px;
   width: 100%;
 }
-/* line 537, ../css.source/modules/community/_chat-webinar.scss */
+/* line 543, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .calendar-button,
 .experts-page.webinar .events-chat .calendar-button {
   padding: 50px 15px;
@@ -7784,7 +7790,7 @@ div.selector.fixedWidth {
   width: auto;
   padding: 50px 0;
 }
-/* line 549, ../css.source/modules/community/_chat-webinar.scss */
+/* line 555, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .events-chat .calendar-button .button,
 .experts-page.webinar .events-chat .calendar-button .button {
   display: block;
@@ -7792,13 +7798,13 @@ div.selector.fixedWidth {
   margin: 0;
   width: 190px;
 }
-/* line 558, ../css.source/modules/community/_chat-webinar.scss */
+/* line 564, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .upcoming-webinar.archive > .row,
 .experts-page.webinar .upcoming-webinar.archive > .row {
   border-top: none;
   padding-top: 0;
 }
-/* line 563, ../css.source/modules/community/_chat-webinar.scss */
+/* line 569, ../css.source/modules/community/_chat-webinar.scss */
 .experts-page.chat .archive .event-cards .event-card,
 .experts-page.webinar .archive .event-cards .event-card {
   padding: 0;
