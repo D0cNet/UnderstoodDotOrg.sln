@@ -670,13 +670,23 @@ namespace UnderstoodDotOrg.Domain.Search
                 var allArticlesQuery = GetCurrentCultureQueryable<Article>(ctx)
                                     .Filter(GetBasePredicate(member));
 
-                // Inclusion/Exclusion processing based on member and child
+                // Start Inclusion/Exclusion processing based on member and child
                 var matchingArticlesQuery = allArticlesQuery;
 
-                if (member.Interests.Any()) 
+                // Check if child has positive diagnosis for either IEP/504
+                bool childHasPositiveEvaluation = child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPYes)
+                            || child.Section504Status == Guid.Parse(Constants.ChildEvaluation.Status504Yes);
+
+                // PFF-1710: Skip parental interests if child is IEP/504 evaluated
+                if (!childHasPositiveEvaluation)
                 {
-                    matchingArticlesQuery = matchingArticlesQuery.Filter(GetMemberInterestsPredicate(member));
+                    // Parental interests match
+                    if (member.Interests.Any())
+                    {
+                        matchingArticlesQuery = matchingArticlesQuery.Filter(GetMemberInterestsPredicate(member));
+                    }
                 }
+
                 matchingArticlesQuery = matchingArticlesQuery.Filter(GetCombinedChildPredicate(child));
 
                 int totalMatches = matchingArticlesQuery.Take(1).GetResults().TotalSearchResults;
