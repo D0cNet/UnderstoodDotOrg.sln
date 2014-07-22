@@ -20,6 +20,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void Page_Load(object sender, EventArgs e) 
         {
+            if (Session["Search Query"] != null)
+                anchorBackLink.Attributes.Add("href", Session["Search Query"].ToString());
+            else
+                anchorBackLink.Visible = false;
 
 			lblAboutOurRatingSystem.Text = DictionaryConstants.AboutOurRatingSystemLabel;
 			lblBackToResults.Text = DictionaryConstants.BackToResultsLabel;

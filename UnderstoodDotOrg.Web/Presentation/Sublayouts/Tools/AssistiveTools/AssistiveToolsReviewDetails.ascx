@@ -12,7 +12,7 @@
                     <sc:Image ID="SponsorImage" Field="Sponsor Image" runat="server" />
                 </div>
                 <div class="back-results-container">
-                    <a href="REPLACE" class="back-to-previous"><i class="icon-arrow-left-blue"></i><asp:label ID="lblBackToResults" runat="server" Text="" /></a>
+                    <a id="anchorBackLink" runat="server" class="back-to-previous"><i class="icon-arrow-left-blue"></i><asp:label ID="lblBackToResults" runat="server" Text="" /></a>
                 </div>
             </div>
             <!-- .container -->

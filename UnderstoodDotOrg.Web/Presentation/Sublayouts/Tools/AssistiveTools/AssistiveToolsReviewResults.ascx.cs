@@ -24,6 +24,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["Search Query"] = Request.RawUrl;
 
             var defaultSortValue = (int)SearchHelper.SortOptions.AssistiveToolsSortOptions.Relevance;
             SortOption = Request.QueryString[Constants.QueryStrings.LearningTool.SortOption]
