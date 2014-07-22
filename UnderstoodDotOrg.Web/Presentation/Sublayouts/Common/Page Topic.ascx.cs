@@ -35,6 +35,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         /// </summary>
         private void LogViewForPopularity()
         {
+            if (Sitecore.Context.PageMode.IsPreview)
+            {
+                return;
+            }
             if (_currentItem.InheritsTemplate(DefaultArticlePageItem.TemplateId))
             {
                 // Check for subtopic
