@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon {
     public partial class FromOurBlogs {
         
         /// <summary>
+        /// upBlogPosts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upBlogPosts;
+        
+        /// <summary>
         /// BlogPostsRepeater control.
         /// </summary>
         /// <remarks>

@@ -24,11 +24,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             var dataSource = CommunityHelper.ListBlogPosts(blogId, "3");
             foreach (var item in dataSource)
             {
-                BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
+                string[] s = item.Title.Split('{');
+                BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + s[0]);
                 if (blogPost != null)
                 {
                     item.Author = blogPost.Author.Rendered;
-                    string[] s = item.Title.Split('{');
                     item.Title = s[0];
                     item.ContentTypeId = blogPost.ContentTypeId;
                     item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
