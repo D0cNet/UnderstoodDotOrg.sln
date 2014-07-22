@@ -1175,7 +1175,7 @@
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -1526,7 +1526,7 @@
   list-style: none;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit .slide ul:after {
   content: "";
   display: table;
@@ -2776,7 +2776,7 @@
   margin-bottom: 34px;
   *zoom: 1;
 }
-/* line 22, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-listing-container .article:after {
   content: "\0020";
   display: block;
@@ -5949,7 +5949,7 @@
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -10735,6 +10735,23 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
+/* line 47, ../css.source/mixins/_rs-play-button.scss */
+.community-blog-posts-author-specific .blog-post-content-rs-wrapper .about-the-author .rsbtn_player {
+  top: 7px;
+}
+@media (min-width: 650px), print {
+  /* line 47, ../css.source/mixins/_rs-play-button.scss */
+  .community-blog-posts-author-specific .blog-post-content-rs-wrapper .about-the-author .rsbtn_player {
+    top: 7px;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 47, ../css.source/mixins/_rs-play-button.scss */
+  .community-blog-posts-author-specific .blog-post-content-rs-wrapper .about-the-author .rsbtn_player {
+    top: 16px;
+  }
+}
+
 /* line 2, ../css.source/mixins/_rs-play-button.scss */
 .blog-featured-author .rsbtn_player {
   left: 2px;
@@ -10802,7 +10819,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 976, ../css.source/modules/_readspeaker-layout.scss */
+/* line 979, ../css.source/modules/_readspeaker-layout.scss */
 .results-slider {
   text-indent: -99999px;
 }
@@ -11106,7 +11123,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 1048, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1051, ../css.source/modules/_readspeaker-layout.scss */
 .expert-event-container .expert-event, .expert-event-container .expert-blog-post, .expert-blog-post-container .expert-event, .expert-blog-post-container .expert-blog-post {
   position: relative;
 }
@@ -11176,7 +11193,7 @@ h3.rs_read_this .rsbtn_player {
     top: -20px;
   }
 }
-/* line 1062, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1065, ../css.source/modules/_readspeaker-layout.scss */
 .personalize-interests-rs-wrapper.social-emotional-rs-wrapper, .personalize-interests-rs-wrapper.home-life-rs-wrapper, .itemize-child-rs-wrapper.social-emotional-rs-wrapper, .itemize-child-rs-wrapper.home-life-rs-wrapper {
   position: relative;
 }
@@ -11247,7 +11264,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 @media (min-width: 1028px), print {
-  /* line 1075, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 1078, ../css.source/modules/_readspeaker-layout.scss */
   .l-about-hero-intro .rsbtn_player {
     left: -36px;
   }
@@ -11270,7 +11287,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 1087, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1090, ../css.source/modules/_readspeaker-layout.scss */
 .about-donate-rs-wrapper {
   position: relative;
 }
@@ -11298,7 +11315,7 @@ h3.rs_read_this .rsbtn_player {
 }
 
 @media (min-width: 769px), print {
-  /* line 1095, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 1098, ../css.source/modules/_readspeaker-layout.scss */
   .pay-by-check.about-donate-rs-wrapper .rsbtn_player,
   .pay-by-credit.about-donate-rs-wrapper .rsbtn_player,
   .form-group-rs-wrapper .rsbtn_player {
@@ -11340,7 +11357,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 1112, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1115, ../css.source/modules/_readspeaker-layout.scss */
 #rsToggle {
   z-index: 9999;
 }
@@ -11431,12 +11448,12 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 1137, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1140, ../css.source/modules/_readspeaker-layout.scss */
 .skiplink-sidebar {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 1137, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 1140, ../css.source/modules/_readspeaker-layout.scss */
   .skiplink-sidebar {
     display: block;
   }

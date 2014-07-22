@@ -13,9 +13,10 @@
         <!-- END PARTIAL: comments-count -->
     </div>
 </div>
-
-<div class="find-this-helpful sidebar rs_read_thi" id="count-helpful-sidebar">
-    <h4>Did you find this helpful?</h4>
-    <asp:LinkButton ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button yes rs_skip" runat="server">Yes</asp:LinkButton>
-    <asp:LinkButton ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button no gray rs_skip" runat="server">No</asp:LinkButton>
+<div class="find-this-helpful-large">
+    <div class="find-this-helpful sidebar rs_skip" id="count-helpful-sidebar">
+        <h4>Did you find this helpful?</h4>
+        <asp:LinkButton ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button yes rs_skip" runat="server">Yes</asp:LinkButton>
+        <asp:LinkButton ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button no gray rs_skip" runat="server">No</asp:LinkButton>
+    </div>
 </div>

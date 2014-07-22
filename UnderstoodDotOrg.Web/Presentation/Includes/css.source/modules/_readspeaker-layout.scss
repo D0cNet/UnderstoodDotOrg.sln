@@ -957,6 +957,9 @@ h3.rs_read_this {
   @include top_rs_btn_responsive(7px, 7px, 16px);
   @include left_rs_btn_responsive(-13px, 0px, -36px);
 }
+.community-blog-posts-author-specific .blog-post-content-rs-wrapper .about-the-author {
+  @include top_rs_btn_responsive(7px, 7px, 16px);
+}
 
 .blog-featured-author {
   @include left_rs_btn_responsive(2px, 0px, 20px);
