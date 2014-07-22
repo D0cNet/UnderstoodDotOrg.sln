@@ -974,11 +974,11 @@ div.selector.fixedWidth {
 /* line 532, ../css.source/modules/community/_groups.scss */
 .col-24.group-summary .statistics .button {
   margin: 0;
-  width: 150px;
+  width: auto;
+  padding: 0 19px;
   height: 41px;
   line-height: 40px;
   line-height: 2.5rem;
-  padding: 0px;
 }
 
 /* line 542, ../css.source/modules/community/_groups.scss */

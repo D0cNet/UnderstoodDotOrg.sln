@@ -2,7 +2,7 @@
 <%@ Register Src="~/Presentation/Sublayouts/Common/GroupSummaryList.ascx" TagPrefix="GroupSummaryList" TagName="GroupSummaryList" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
- <div class="container group-summary-wrapper skiplink-content ">
+ <div class="container group-summary-wrapper skiplink-content parent-groups">
     <div class="row">
       <div class="container">
             <header class="groups-heading rs_read_this">

@@ -531,10 +531,10 @@ div.selector.fixedWidth {
     }
     .button {
       margin: 0;
-      width: 150px;
+      width: auto;
+      padding: 0 19px;
       height: 41px;
       @include rem(line-height, 40px);
-      padding: 0px;
     }
   }
 }
