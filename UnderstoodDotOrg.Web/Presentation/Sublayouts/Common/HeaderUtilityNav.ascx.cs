@@ -41,8 +41,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
             if (IsUserLoggedIn)
             {
-				List<INotification> notifs = new List<INotification>();
-				List<Conversation> checkConvos = new List<Conversation>();
 				phLoggedIn.Visible = true;
                 MyAccountPageItem = MyAccountItem.GetMyAccountPage();
 
@@ -61,12 +59,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 {
                     imgUserAvatar.ImageUrl = Constants.Settings.AnonymousAvatar;
                 }
+                
+                // TODO: review this code if necessary
+                List<INotification> notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
+                List<Conversation> checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
 
-				notifs = TelligentService.GetNotifications(CurrentMember.ScreenName);
-				checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
-
-				int TotalNotificationsCount = notifs.Count + checkConvos.Count;
-				lblNotificationNumber.Text = TotalNotificationsCount.ToString();
+				int totalNotifications = (notifs != null) ? notifs.Count() : 0;
+                int totalConversations = (checkConvos != null) ? checkConvos.Count() : 0;
+				lblNotificationNumber.Text = (totalConversations + totalConversations).ToString();
             }
 			else
 			{
