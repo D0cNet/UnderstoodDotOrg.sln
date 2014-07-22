@@ -33,16 +33,17 @@ namespace UnderstoodDotOrg.Services.LocationServices
             string _database = Sitecore.Configuration.Settings.GetSetting(Constants.GeoIPLookup.GeoIPDatabaseName);
             string _dataFolder = Sitecore.Configuration.Settings.DataFolder;
 
-            var reader = new DatabaseReader(_dataFolder + "\\" + _database);
 
             try
             {
+                var reader = new DatabaseReader(_dataFolder + "\\" + _database);
+
                 var country = reader.Country(ClientIP);
                 return country.Country.IsoCode;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return ex.Message;
+                return "US";
             }
             
         }
