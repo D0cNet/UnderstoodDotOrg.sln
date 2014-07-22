@@ -49,6 +49,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 
         private void BindControls()
         {
+            // Video transcript
+            pnlTranscript.Visible = !string.IsNullOrEmpty(Model.VideoEmbed.Raw);
+
             // Section Pages
             IEnumerable<AboutSectionPageItem> pages = Model.GetSectionPages();
             if (pages.Any())

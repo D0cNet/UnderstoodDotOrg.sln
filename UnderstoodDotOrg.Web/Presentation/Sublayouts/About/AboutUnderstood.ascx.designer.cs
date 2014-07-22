@@ -31,6 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frVideoEmbed;
         
         /// <summary>
+        /// pnlTranscript control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlTranscript;
+        
+        /// <summary>
         /// FrVideoTranscript control.
         /// </summary>
         /// <remarks>

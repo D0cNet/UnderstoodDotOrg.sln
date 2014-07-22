@@ -17,7 +17,7 @@
             <!-- end about-video-container -->
             <!-- END PARTIAL: about-understood-video -->
             <!-- BEGIN PARTIAL: transcript-control -->
-            <div class="transcript-container Video">
+            <asp:Panel ID="pnlTranscript" runat="server" Visible="false" CssClass="transcript-container Video">
                 <%--<div class="read-more mobile-close">
                     <a href="REMOVE">Close Transcript<i class="icon-arrow-up-blue"></i></a>
                 </div> --%>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="read-more read-more-bottom"></div>
-            </div>
+            </asp:Panel>
             <!-- END PARTIAL: transcript-control -->
             <!-- BEGIN PARTIAL: about-understood-listing -->
             <asp:Repeater ID="rptSectionPages" runat="server">
