@@ -55,11 +55,23 @@ public CustomTextField NoResultsLabel
 }
 
 
-public CustomGeneralLinkField LearnAboutPlatformsLink
+//Could not find Field Type for Learn About Platforms Link
+
+
+public CustomTextField NoSpanishWarningText
 {
 	get
 	{
-		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Learn About Platforms Link"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["No Spanish Warning Text"]);
+	}
+}
+
+
+public CustomTreeListField RelatedArticles
+{
+	get
+	{
+		return new CustomTreeListField(InnerItem, InnerItem.Fields["Related Articles"]);
 	}
 }
 

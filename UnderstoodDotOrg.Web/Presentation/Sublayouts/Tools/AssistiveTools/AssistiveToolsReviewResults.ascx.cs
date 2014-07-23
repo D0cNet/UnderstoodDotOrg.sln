@@ -14,6 +14,7 @@ using UnderstoodDotOrg.Domain.Search;
 using System.Collections.Specialized;
 using Sitecore.Web.UI.WebControls;
 using Sitecore.Data.Items;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
@@ -21,10 +22,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
     {
         protected SearchHelper.SortOptions.AssistiveToolsSortOptions SortOption { get; set; }
 		private string _assistiveToolsGuid = string.Empty;
+        AssistiveToolsSearchResultsPageItem context = (AssistiveToolsSearchResultsPageItem)Sitecore.Context.Item;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["Search Query"] = Request.RawUrl;
+
+            if(context.RelatedArticles.ListItems.Count() > 0)
+            {
+                rptRelatedArticles.DataSource = context.RelatedArticles.ListItems.Select(i => (DefaultArticlePageItem)i);
+                rptRelatedArticles.DataBind();
+            }
 
             var defaultSortValue = (int)SearchHelper.SortOptions.AssistiveToolsSortOptions.Relevance;
             var rawSortOption = Request.QueryString[Constants.QueryStrings.LearningTool.SortOption];
@@ -151,6 +159,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             qs = "?" + qs + (qsCollection[Constants.QueryStrings.LearningTool.Keyword] != null ? "#search-by" : string.Empty);
 
             Response.Redirect(Model.GetUrl() + qs);
+        }
+
+        protected void rptRelatedArticles_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                DefaultArticlePageItem article = (DefaultArticlePageItem)e.Item.DataItem;
+
+                if (article != null)
+                {
+                    HyperLink hypArticle = e.FindControlAs<HyperLink>("hypArticle");
+                    hypArticle.NavigateUrl = article.GetUrl();
+                    hypArticle.Text = article.DisplayName;
+                }
+            }
         }
     }
 }

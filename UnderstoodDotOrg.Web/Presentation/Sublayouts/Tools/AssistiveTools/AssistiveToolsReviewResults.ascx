@@ -134,12 +134,19 @@
 <div class="assistive-tool-related-articles-small">
     <!-- BEGIN PARTIAL: assistive-tool-related-articles -->
     <div class="assistive-tool-related-articles">
-        <ul>
-            <li><a href="REPLACE">10 Questions to ask about behavior issues</a></li>
-            <li><a href="REPLACE">10 Questions to ask about behavior issues</a></li>
-            <li><a href="REPLACE">10 Questions to ask about behavior issues</a></li>
-            <li><a href="REPLACE">10 Questions to ask about behavior issues</a></li>
-        </ul>
+        <asp:Repeater ID="rptRelatedArticles" runat="server" OnItemDataBound="rptRelatedArticles_ItemDataBound">
+            <HeaderTemplate>
+                    <ul>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <li>
+                    <asp:HyperLink ID="hypArticle" runat="server"></asp:HyperLink>
+                </li>
+            </ItemTemplate>
+            <FooterTemplate>
+                    </ul>
+            </FooterTemplate>
+        </asp:Repeater>
     </div>
     <!-- .tool-related-articles -->
     <!-- END PARTIAL: assistive-tool-related-articles -->
