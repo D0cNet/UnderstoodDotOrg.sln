@@ -51,7 +51,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
         {
             var item = e.Item.DataItem as Comment;
             HyperLink hypCommentLink = (HyperLink)e.Item.FindControl("hypCommentLink");
-            hypCommentLink.NavigateUrl = item.Url;
             hypCommentLink.Text = item.CommentTitle;
 
             Literal litSection = (Literal)e.Item.FindControl("litSection");
@@ -73,7 +72,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
 
             if (parent != null)
             {
-                hypCommentGroup.NavigateUrl = parent.GetUrl();
+                hypCommentGroup.NavigateUrl = hypCommentLink.NavigateUrl = parent.GetUrl();
                 hypCommentGroup.Text = parent.DisplayName;
             }
             else
