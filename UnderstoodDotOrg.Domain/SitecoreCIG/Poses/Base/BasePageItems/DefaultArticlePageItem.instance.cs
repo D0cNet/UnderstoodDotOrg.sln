@@ -145,6 +145,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
                     results = SearchHelper.GetRandomMoreLikeThisArticles(parent.ID, InnerItem.ID)
                                     .Where(i => i.GetItem() != null)
                                     .Select(i => new DefaultArticlePageItem(i.GetItem()))
+                                    .Take(Constants.MORE_LIKE_THIS_ENTRIES)
                                     .ToList();
                 }
             }
