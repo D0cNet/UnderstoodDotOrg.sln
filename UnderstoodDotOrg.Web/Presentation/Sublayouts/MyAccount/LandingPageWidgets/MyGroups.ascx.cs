@@ -21,6 +21,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.LandingPageWidg
             List<GroupCardModel> groupsList = TelligentService.GetUserGroups(CurrentMember.ScreenName);
             litCount.Text = groupsList != null ? groupsList.Count.ToString() : "0";
 
+            if (litCount.Text == "0")
+                litCount.Visible = false;
+
             if (string.IsNullOrEmpty(CurrentMember.ScreenName))
             {
                 pnlNoProfile.Visible = true;
