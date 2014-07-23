@@ -13,6 +13,42 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A {
     public partial class QandA {
         
         /// <summary>
+        /// ddlChildIssues control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlChildIssues;
+        
+        /// <summary>
+        /// ddlGrades control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGrades;
+        
+        /// <summary>
+        /// ddlTopics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTopics;
+        
+        /// <summary>
+        /// litSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litSearch;
+        
+        /// <summary>
         /// txtSearch control.
         /// </summary>
         /// <remarks>

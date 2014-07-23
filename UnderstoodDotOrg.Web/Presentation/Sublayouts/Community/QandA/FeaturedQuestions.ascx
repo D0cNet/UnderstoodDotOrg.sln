@@ -3,7 +3,7 @@
     <h2><sc:Text Field="Featured Questions Label Text" runat="server" /></h2>
 
     <div class="parent-questions">
-        <asp:Repeater ID="questionsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Question" runat="server" OnItemDataBound="questionsRepeater_ItemDataBound">
+        <asp:Repeater ID="questionsRepeater" ItemType="UnderstoodDotOrg.Services.Models.Telligent.Question" runat="server" OnItemDataBound="questionsRepeater_ItemDataBound">
             <ItemTemplate>
                 <!-- BEGIN PARTIAL: community/parent_question_card -->
                 <div class="card-parent-question clearfix repeater-item">

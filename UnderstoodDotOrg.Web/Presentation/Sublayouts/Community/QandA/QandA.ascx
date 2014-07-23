@@ -32,35 +32,21 @@
                     </div>
                 </div>
                 <label for="question-search-issue" class="visuallyhidden">Child's Issue</label>
-                <select name="question-search-issue" id="question-search-issue" aria-required="true">
-                    <option value="">Child's Issue</option>
-                    <option>Issue 1</option>
-                    <option>Issue 2</option>
-                    <option>Issue 3</option>
-                    <option>Issue 4</option>
-                </select>
+                   <asp:DropDownList name="parentgroupstool-issue"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Id" ID="ddlChildIssues" aria-required="true" runat="server">
+                   </asp:DropDownList>
 
                 <label for="question-search-grade" class="visuallyhidden">Grade</label>
-                <select name="question-search-grade" id="question-search-grade" aria-required="true">
-                    <option value="">Grade</option>
-                    <option>Grade 1</option>
-                    <option>Grade 2</option>
-                    <option>Grade 3</option>
-                    <option>Grade 4</option>
-                </select>
+                  <asp:DropDownList name="question-search-grade"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Id" ID="ddlGrades" aria-required="true" runat="server">                       
+                  </asp:DropDownList>
+
 
                 <label for="question-search-topic" class="visuallyhidden">Topic</label>
-                <select name="question-search-topic" id="question-search-topic" aria-required="true">
-                    <option value="">Topic</option>
-                    <option>Topic 1</option>
-                    <option>Topic 2</option>
-                    <option>Topic 3</option>
-                    <option>Topic 4</option>
-                </select>
+                  <asp:DropDownList name="parentgroupstool-topics" DataTextField="Name" AppendDataBoundItems="true" DataValueField="Id" ID="ddlTopics" aria-required="true" runat="server">                                            
+                  </asp:DropDownList>
 
                 <asp:Panel runat="server" DefaultButton="btnSearch">
                     <fieldset class="question-search-form">
-                        <label for="question-search-text" class="visuallyhidden">Search</label>
+                        <label for="question-search-text" class="visuallyhidden"><asp:Literal ID="litSearch" runat="server" /></label>
                         <asp:TextBox CssClass="question-search" ID="txtSearch" placeholder="Search" runat="server" />
                         <asp:Button CssClass="search-button" ID="btnSearch" OnClick="btnSearch_Click" runat="server" />
                     </fieldset>
