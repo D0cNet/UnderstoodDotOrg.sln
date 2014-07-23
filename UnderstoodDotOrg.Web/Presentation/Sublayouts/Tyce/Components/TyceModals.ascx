@@ -137,8 +137,8 @@
       <div class="modal-body rs_read_this">
         <h2><%= OtherChallengesHeader %></h2>
         <%= OtherChallengesContent %>
-          <a href="REPLACE" class="button button-close">OK</a>
         <div class="actions rs_preserve rs_skip">
+          <a href="#" class="button button-close">OK</a>
         </div>
       </div><!-- /.modal-body -->
     </div><!-- /.modal-content -->
@@ -151,8 +151,8 @@
       <div class="modal-body rs_read_this">
         <h2><%= AfterHighSchoolHeader %></h2>
         <%= AfterHighSchoolContent %>
-          <a href="REPLACE" class="button button-close">OK</a>
         <div class="actions rs_preserve rs_skip">
+          <a href="#" class="button button-close">OK</a>
         </div>
       </div><!-- /.modal-body -->
     </div><!-- /.modal-content -->
