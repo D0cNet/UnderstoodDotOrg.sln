@@ -11,5 +11,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA {
     
     
     public partial class QuestionToolbar {
+        
+        /// <summary>
+        /// litAsk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litAsk;
+        
+        /// <summary>
+        /// litAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litAnswer;
+        
+        /// <summary>
+        /// litDiscover control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litDiscover;
     }
 }

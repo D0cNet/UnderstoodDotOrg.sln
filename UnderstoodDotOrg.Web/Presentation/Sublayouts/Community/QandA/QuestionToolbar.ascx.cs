@@ -12,6 +12,15 @@
 
     public partial class QuestionToolbar : BaseSublayout
     {
+        protected override void OnInit(EventArgs e)
+        {
+            litAsk.Text = UnderstoodDotOrg.Common.DictionaryConstants.AskLabel;
+            litAnswer.Text = UnderstoodDotOrg.Common.DictionaryConstants.AnswerLabel;
+            litDiscover.Text = UnderstoodDotOrg.Common.DictionaryConstants.DiscoverLabel;
+
+            base.OnInit(e);
+        }
+
         private void Page_Load(object sender, EventArgs e)
         {
             // Put user code to initialize the page here

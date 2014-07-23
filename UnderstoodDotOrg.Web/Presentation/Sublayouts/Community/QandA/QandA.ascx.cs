@@ -15,6 +15,14 @@
 
     public partial class QandA : System.Web.UI.UserControl
     {
+        protected override void OnInit(EventArgs e)
+        {
+            //Item parentItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.ParentsGroupRecommended));
+            //string itemHref = Sitecore.Links.LinkManager.GetItemUrl(parentItem);
+            litSearch.Text = UnderstoodDotOrg.Common.DictionaryConstants.SearchButtonText;
+            base.OnInit(e);
+        }
+
         private void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -76,13 +84,18 @@
 
                 }
 
-                litSearch.Text = UnderstoodDotOrg.Common.DictionaryConstants.SearchButtonText;
 
             }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            string[] issue = String.IsNullOrEmpty(ddlChildIssues.SelectedValue) ? new String[0] : new String[] { ddlChildIssues.SelectedValue };
+
+            string[] topic = String.IsNullOrEmpty(ddlTopics.SelectedValue.ToString()) ? new String[0] : new String[] { ddlTopics.SelectedValue.ToString() };
+
+            string[] grade = String.IsNullOrEmpty(ddlGrades.SelectedValue.ToString()) ? new String[0] : new String[] { ddlGrades.SelectedValue.ToString() }; 
+
             string query = TextHelper.RemoveHTML(txtSearch.Text);
             Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=" + Constants.TelligentSearchParams.Question);
 
