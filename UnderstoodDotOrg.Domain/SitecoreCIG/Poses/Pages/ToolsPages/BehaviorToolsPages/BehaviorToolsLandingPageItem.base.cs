@@ -73,6 +73,15 @@ public CustomTreeListField CarouselRelatedArticlesItems
 }
 
 
+public CustomMultiListField GradeDropdownChoices
+{
+	get
+	{
+		return new CustomMultiListField(InnerItem, InnerItem.Fields["Grade Dropdown Choices"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

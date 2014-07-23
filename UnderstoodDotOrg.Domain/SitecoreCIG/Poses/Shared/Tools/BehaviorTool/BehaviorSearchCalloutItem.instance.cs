@@ -13,25 +13,6 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Tools.BehaviorTool
 {
     public partial class BehaviorSearchCalloutItem 
     {
-        public List<ListItem> GetGradeChoices()
-        {
-            var choices = new List<ListItem>();
-            choices.Add(new ListItem(DictionaryConstants.SelectChallengeLabel, string.Empty));
-
-            var grades = CalloutGradeChoices.ListItems.FilterByContextLanguageVersion()
-                            .Select(x => new GradeLevelItem(x))
-                            .Select(x => new ListItem
-                            {
-                                Text = x.Name.Raw, 
-                                Value = x.ID.ToString()
-                            });
-
-            if (grades.Any())
-            {
-                choices.AddRange(grades);
-            }
-
-            return choices;
-        }
+        
     }
 }

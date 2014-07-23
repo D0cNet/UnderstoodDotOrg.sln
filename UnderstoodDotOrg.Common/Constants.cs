@@ -217,7 +217,7 @@ namespace UnderstoodDotOrg.Common
 
         public static Guid BehaviorToolLandingArticlesContainer
         {
-            get { return new Guid("{18EB3BFE-EE11-4202-AB18-8EE7BEF68C8A}"); }
+            get { return new Guid("{87387425-6863-4C9C-818F-4CDCC0A66B5E}"); }
         }
 
         // Temporary

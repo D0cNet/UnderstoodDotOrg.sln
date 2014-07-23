@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Widgets;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
 {
@@ -39,10 +40,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
 
         private void BindControls()
         {
-            var grades = FormHelper.GetGrades(DictionaryConstants.SelectGradeLabel);
-            if (grades.Any())
+            BehaviorToolsLandingPageItem landingPage = Sitecore.Context.Database.GetItem(Constants.BehaviorToolLandingArticlesContainer);
+            if (landingPage != null)
             {
-                ddlGrades.DataSource = grades;
+                ddlGrades.DataSource = landingPage.GetGradeChoices();
                 ddlGrades.DataTextField = "Text";
                 ddlGrades.DataValueField = "Value";
                 ddlGrades.DataBind();

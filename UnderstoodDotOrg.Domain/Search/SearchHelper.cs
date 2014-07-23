@@ -1017,7 +1017,9 @@ namespace UnderstoodDotOrg.Domain.Search
                                 .Filter(i => i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) 
                                         || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
                                 .Filter(i => i.EventEndDateUtc < DateTime.UtcNow
-                                        && i.EventEndDateUtc != DateTime.MinValue);
+                                        && i.EventEndDateUtc != DateTime.MinValue)
+                                .OrderByDescending(i => i.EventStartDate)
+                                .AsQueryable();
 
                 if (optionalPredicate != null)
                 {
@@ -1031,9 +1033,7 @@ namespace UnderstoodDotOrg.Domain.Search
                     query = query.Skip((page - 1) * pageSize);
                 }
 
-                query = query.Take(pageSize).OrderByDescending(i => i.EventStartDate);
-
-                var results = query.ToList();
+                var results = query.Take(pageSize).ToList();
 
                 return results.Where(i => i.GetItem() != null)
                               .Select(i => new BaseEventDetailPageItem(i.GetItem()))

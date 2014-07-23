@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Tools.BehaviorTool;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
 {
@@ -105,9 +106,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
             ddlChallenges.DataBind();
             ddlChallenges.SelectedIndex = ddlChallenges.GetSelectedIndex(SelectedChallenge);
 
-            if (Model != null)
+            BehaviorToolsLandingPageItem landingPage = Sitecore.Context.Database.GetItem(Constants.BehaviorToolLandingArticlesContainer);
+            if (landingPage != null)
             {
-                ddlGrades.DataSource = Model.GetGradeChoices();
+                ddlGrades.DataSource = landingPage.GetGradeChoices();
                 ddlGrades.DataTextField = "Text";
                 ddlGrades.DataValueField = "Value";
                 ddlGrades.DataBind();
