@@ -40,12 +40,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
         protected global::System.Web.UI.WebControls.Repeater rptrScreenshots;
         
         /// <summary>
-        /// rptrSubjects control.
+        /// rptrSubjectsAndSkills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptrSubjects;
+        protected global::System.Web.UI.WebControls.Repeater rptrSubjectsAndSkills;
     }
 }

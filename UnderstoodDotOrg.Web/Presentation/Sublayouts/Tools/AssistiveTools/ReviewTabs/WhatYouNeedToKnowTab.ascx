@@ -58,10 +58,10 @@
                 <p><%= Model.WhatKidsCanLearn.Rendered %></p>
                 <h5>Subjects</h5>
                 <ul class="kids-subjects">
-                    <asp:Repeater ID="rptrSubjects" runat="server" 
-                        ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsSubjectItem">
+                    <asp:Repeater ID="rptrSubjectsAndSkills" runat="server" 
+                        ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.MetadataItem">
                         <ItemTemplate>
-                            <li><%# Item.Metadata.ContentTitle.Rendered %></li>
+                            <li><%# Item.ContentTitle.Rendered %></li>
                         </ItemTemplate>
                     </asp:Repeater>
                 </ul>

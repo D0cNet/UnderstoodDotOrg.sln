@@ -39,12 +39,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             rptrPlatforms.DataSource = platforms;
             rptrPlatforms.DataBind();
 
-            var subjects = Model.Subjects.ListItems
+            var subjectsAndSkills = Model.Subjects.ListItems
                 .Where(i => i != null)
-                .Select(i => (AssistiveToolsSubjectItem)i).ToList();
+                .Select(i => (MetadataItem)i).ToList();
+            subjectsAndSkills.AddRange(Model.Skills.ListItems
+                .Where(i => i != null)
+                .Select(i => (MetadataItem)i));
 
-            rptrSubjects.DataSource = subjects;
-            rptrSubjects.DataBind();
+            rptrSubjectsAndSkills.DataSource = subjectsAndSkills;
+            rptrSubjectsAndSkills.DataBind();
 
             frPlatformsLink.Item = MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage();
         }
