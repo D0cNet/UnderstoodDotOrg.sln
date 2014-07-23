@@ -577,7 +577,7 @@ $account-circle-gray: #bcbdc0;
   // inner container
   #main_2_mynotifications_1_pnlTool {
     width: 100%;
-    @include clearifx();
+    @include clearfix();
   }
   // inbox panel
   .telligent-inbox {

@@ -1,94 +1,3338 @@
-/*
-Syntax error: Undefined mixin 'clearifx'.
-        on line 580 of /Users/jhiemstra/Sites/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/modules/account/_account-notification-tabs.scss, in `clearifx'
-        from line 580 of /Users/jhiemstra/Sites/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/modules/account/_account-notification-tabs.scss
-        from line 3 of /Users/jhiemstra/Sites/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/tyce.scss
+/**
+ * SASS mixin for cross-platform border-radius.
+ */
+/**
+ * SASS partial for account-notification-tabs module.
+ */
+/* line 12, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs-container {
+  margin: -50px 0 0 0;
+}
 
-Backtrace:
-/Users/jhiemstra/Sites/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/modules/account/_account-notification-tabs.scss:580:in `clearifx'
-/Users/jhiemstra/Sites/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/modules/account/_account-notification-tabs.scss:580
-/Users/jhiemstra/Sites/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/tyce.scss:3
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:227:in `block in visit_import'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:227:in `map'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:227:in `visit_import'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/root_node.rb:20:in `render'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/engine.rb:315:in `_render'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.19/lib/sass/engine.rb:262:in `render'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:139:in `block (2 levels) in compile'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:126:in `timed'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:138:in `block in compile'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/logger.rb:45:in `red'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:137:in `compile'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:118:in `compile_if_required'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:101:in `each'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:101:in `block in run'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:126:in `timed'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/compiler.rb:100:in `run'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/commands/watch_project.rb:147:in `recompile'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block in run'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/commands/watch_project.rb:87:in `perform'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/commands/base.rb:18:in `execute'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/commands/project_base.rb:19:in `execute'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/bin/compass:30:in `block in <top (required)>'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/bin/compass:44:in `call'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/bin/compass:44:in `<top (required)>'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/bin/compass:23:in `load'
-/Users/jhiemstra/.rbenv/versions/2.0.0-p247/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'clearifx'.\A         on line 580 of /Users/jhiemstra/Sites/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/modules/account/_account-notification-tabs.scss, in `clearifx'\A         from line 580 of /Users/jhiemstra/Sites/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/modules/account/_account-notification-tabs.scss\A         from line 3 of /Users/jhiemstra/Sites/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/tyce.scss"; }
+/* line 16, ../css.source/modules/account/_account-notification-tabs.scss */
+.my-notifications-page-header {
+  clear: both;
+  -webkit-box-shadow: inset 0px -5px 9px -9px #555555;
+  -moz-box-shadow: inset 0px -5px 9px -9px #555555;
+  box-shadow: inset 0px -5px 9px -9px #555555;
+  width: 100%;
+  height: 179px;
+  background: #f4f2f1;
+  margin: -20px 0 0 0;
+}
+@media (min-width: 960px), print {
+  /* line 16, ../css.source/modules/account/_account-notification-tabs.scss */
+  .my-notifications-page-header {
+    margin-top: -60px;
+  }
+}
+/* line 27, ../css.source/modules/account/_account-notification-tabs.scss */
+.my-notifications-page-header h1 {
+  background: #f4f2f1;
+  margin-left: 15px;
+  font-size: 36px;
+  font-size: 2.25rem;
+  color: #7a4183;
+  margin: 40px 0 23px 0;
+}
+@media (min-width: 650px), print {
+  /* line 27, ../css.source/modules/account/_account-notification-tabs.scss */
+  .my-notifications-page-header h1 {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 27, ../css.source/modules/account/_account-notification-tabs.scss */
+  .my-notifications-page-header h1 {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+}
+
+/* line 43, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs {
+  position: relative;
+  color: dimgrey;
+  /* .checkbox-wrapper */
+  /* .showmore-footer */
+}
+/* line 47, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs header {
+  position: relative;
+  top: 0;
+}
+/* line 52, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs h2, .account-notification-tabs h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #7a4183;
+  font-weight: normal;
+  margin: 15px 0 0 0;
+  padding-bottom: 15px;
+}
+@media (min-width: 960px), print {
+  /* line 52, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs h2, .account-notification-tabs h3 {
+    margin: 55px 0 20px 0;
+  }
+}
+/* line 63, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs h3 {
+  border-bottom: 1px solid #d1d1d1;
+  margin-top: 15px;
+}
+/* line 67, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs header {
+  background-color: #f4f2f1;
+}
+/* line 69, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .header-wrapper {
+  margin: 20px 0px;
+  width: 100%;
+}
+@media (min-width: 650px), print {
+  /* line 69, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .header-wrapper {
+    display: table;
+  }
+}
+/* line 74, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs h2.inline, .account-notification-tabs .mobile-number {
+  display: inline-block;
+}
+@media (min-width: 650px), print {
+  /* line 74, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs h2.inline, .account-notification-tabs .mobile-number {
+    display: table-cell;
+  }
+}
+/* line 78, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .mobile-number {
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+@media (min-width: 650px), print {
+  /* line 78, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .mobile-number {
+    text-align: right;
+  }
+}
+/* line 82, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .mobile-number strong {
+  color: #000;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+@media (min-width: 650px), print {
+  /* line 82, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .mobile-number strong {
+    margin: 0 20px 0 15px;
+  }
+}
+/* line 89, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .mobile-number a {
+  text-decoration: underline;
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+/* line 95, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .circle {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
+  border-radius: 18px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-color: #bcbdc0;
+  color: #fff;
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  width: 18px;
+}
+@media (min-width: 650px), print {
+  /* line 95, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .circle {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    -ms-border-radius: 26px;
+    -o-border-radius: 26px;
+    border-radius: 26px;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
+    height: 26px;
+    line-height: 26px;
+    width: 26px;
+  }
+}
+/* line 124, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .active .circle,
+.account-notification-tabs .circle.purple {
+  background-color: #7a4183;
+}
+/* line 128, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs {
+  display: block;
+}
+/* line 131, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs ul {
+  display: block;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 137, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li {
+  -webkit-box-shadow: inset 0px -5px 9px -9px #555555;
+  -moz-box-shadow: inset 0px -5px 9px -9px #555555;
+  box-shadow: inset 0px -5px 9px -9px #555555;
+  background-color: #e6e6e6;
+  border-top: 4px solid #f4f2f1;
+  display: table;
+  float: left;
+  height: 50px;
+  width: 33.3333333%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+/* line 149, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li a {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  line-height: 13px;
+  line-height: 0.8125rem;
+  min-height: 26px;
+  font-weight: bold;
+  color: dimgrey;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 46px;
+  padding: 0 30px 0 10px;
+  border-left: 1px solid #d1d1d1;
+  text-decoration: none;
+}
+/* line 163, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li a:hover {
+  text-decoration: none;
+  background: #298fc2;
+  color: #fff;
+}
+/* line 168, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li a:hover span.circle {
+  background: #fff;
+  color: #298fc2;
+}
+@media (min-width: 650px), print {
+  /* line 149, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .notifications-section-tabs li a {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+    padding: 0 50px 0 20px;
+  }
+}
+/* line 183, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active {
+  -webkit-box-shadow: -5px 1px 1px -4px #d1d1d1;
+  -moz-box-shadow: -5px 1px 1px -4px #d1d1d1;
+  box-shadow: -5px 1px 1px -4px #d1d1d1;
+  background-color: #fff;
+  border-top: 4px solid #7a4183;
+}
+/* line 188, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active a {
+  color: #7a4183;
+  cursor: default;
+}
+/* line 192, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active a:hover {
+  background: #fff;
+}
+/* line 195, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active a:hover span.circle {
+  background: #7a4183;
+  color: #fff;
+}
+/* line 201, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active .circle {
+  background-color: #7a4183;
+}
+/* line 204, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li.active + li {
+  cursor: default;
+}
+/* line 208, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs li:first-child a {
+  border-left: none;
+}
+/* line 214, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notifications-section-tabs .circle {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+@media (min-width: 650px), print {
+  /* line 214, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .notifications-section-tabs .circle {
+    right: 15px;
+    top: 10px;
+  }
+}
+/* line 227, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .account-body-wrapper {
+  clear: both;
+  padding: 15px;
+}
+@media (min-width: 650px), print {
+  /* line 227, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .account-body-wrapper {
+    padding: 40px 0;
+  }
+}
+/* line 240, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-notification-comment, .account-notification-tabs i.icon-notification-reminder, .account-notification-tabs i.icon-notification-link {
+  background-image: url('../images/sprite.icon.notifications.png?16484451');
+  background-size: 57px 19px;
+  display: inline-block;
+  height: 18px;
+}
+/* line 245, ../css.source/modules/account/_account-notification-tabs.scss */
+.no-backgroundsize .account-notification-tabs i.icon-notification-comment, .no-backgroundsize .account-notification-tabs i.icon-notification-reminder, .no-backgroundsize .account-notification-tabs i.icon-notification-link {
+  background-image: url('../images/sprite.icon.notifications.lo-res.png?d81aaaa4');
+}
+/* line 250, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-notification-comment {
+  width: 21px;
+}
+/* line 253, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-notification-link {
+  background-position: -40px 0px;
+  width: 16px;
+}
+/* line 257, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-notification-reminder {
+  background-position: -22px 0px;
+  width: 16px;
+}
+/* line 261, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs i.icon-results-more {
+  background-image: url('../images/sprite.icon.arrows.png?d45175d1');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+  display: inline-block;
+  height: 11px;
+  margin-left: 20px;
+  width: 18px;
+}
+/* line 271, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .results-more-link {
+  font-size: 24px;
+  font-size: 1.5rem;
+  display: block;
+  position: relative;
+  top: 57px;
+  margin-bottom: 37px;
+  text-align: center;
+}
+@media (min-width: 769px), print {
+  /* line 271, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .results-more-link {
+    top: 55px;
+    margin: 70px 0;
+  }
+}
+/* line 282, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .results-more-link span {
+  display: inline-block;
+}
+/* line 285, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-item {
+  border-bottom: 1px solid #d1d1d1;
+  padding: 15px 0px 30px 0px;
+}
+/* line 288, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-item p {
+  margin: 1em 0 0 0;
+}
+@media (min-width: 650px), print {
+  /* line 285, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .notification-item {
+    padding: 0px 0px 15px 0px;
+  }
+}
+/* line 294, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header {
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+/* line 296, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header h4 {
+  font-weight: normal;
+}
+/* line 299, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label {
+  margin-bottom: 13px;
+}
+/* line 301, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label i {
+  margin-right: 10px;
+  position: relative;
+}
+/* line 304, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label i.icon-notification-comment {
+  top: 7px;
+}
+/* line 307, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label i.icon-notification-link {
+  top: 4px;
+}
+/* line 310, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label i.icon-notification-reminder {
+  top: 4px;
+}
+/* line 314, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label a.notification-link {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  margin-left: 35px;
+}
+@media (min-width: 650px), print {
+  /* line 314, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .notification-header .notification-label a.notification-link {
+    display: inline;
+    margin-left: 0px;
+  }
+}
+/* line 324, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-header .notification-label .timestamp {
+  color: #bcbdc0;
+  display: none;
+  float: right;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+@media (min-width: 650px), print {
+  /* line 324, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .notification-header .notification-label .timestamp {
+    display: block;
+  }
+}
+/* line 337, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-body .notification-action {
+  margin-top: 0px;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+/* line 340, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-body .notification-action a {
+  text-decoration: underline;
+}
+/* line 342, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-body .notification-action a:hover {
+  text-decoration: none;
+}
+/* line 347, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .notification-body .button {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  max-width: 110px;
+}
+@media (min-width: 650px), print {
+  /* line 347, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .notification-body .button {
+    margin-bottom: 5px;
+  }
+}
+/* line 358, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .paragraph-widget {
+  display: block;
+}
+@media (min-width: 480px), print {
+  /* line 358, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .paragraph-widget {
+    display: none;
+  }
+}
+/* line 362, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .textarea-widget {
+  display: none;
+}
+@media (min-width: 480px), print {
+  /* line 362, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .textarea-widget {
+    display: block;
+  }
+}
+/* line 367, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper {
+  display: block;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 99%;
+}
+@media (min-width: 769px), print {
+  /* line 367, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .checkbox-wrapper {
+    text-align: right;
+  }
+}
+/* line 376, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper label {
+  display: inline-block;
+}
+/* line 378, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper label:first-child {
+  margin-right: 42px;
+}
+/* line 380, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper label span, .account-notification-tabs .checkbox-wrapper label .radio {
+  font-size: 18px;
+  font-size: 1.125rem;
+  display: block;
+  float: left;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+/* line 386, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .checkbox-wrapper label input {
+  margin-right: 10px;
+}
+/* line 391, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .account-notifications-tab-notifications-empty p {
+  color: #7a4183;
+  font-size: 24px;
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d1d1d1;
+}
+/* line 399, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .private-message-tool {
+  background: #f4f2f1;
+  text-align: center;
+  color: #7a4183;
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 300px;
+  height: 300px;
+}
+@media (min-width: 769px), print {
+  /* line 399, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .private-message-tool {
+    font-size: 36px;
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 399, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .private-message-tool {
+    height: 700px;
+    line-height: 700px;
+  }
+}
+/* line 416, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .showmore-footer {
+  border-top: none;
+  padding: 60px 0 0 0;
+}
+@media (min-width: 769px), print {
+  /* line 416, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .showmore-footer {
+    padding-top: 100px;
+  }
+}
+/* line 424, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .showmore-footer .show-more {
+  margin-bottom: -20px;
+}
+@media (min-width: 769px), print {
+  /* line 424, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notification-tabs .showmore-footer .show-more {
+    margin-bottom: 0;
+  }
+}
+/* line 431, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notification-tabs .showmore-footer a i {
+  width: 18px;
+  height: 11px;
+  background: url('../images/sprite.icon.arrows.png?d45175d1') 0 0 no-repeat;
+  background-size: 150px 150px;
+}
+
+/* line 442, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form p.instructions {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+/* line 445, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form p.please-read, .account-notifications-tab-text-form legend.please-read {
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+@media (min-width: 650px), print {
+  /* line 445, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notifications-tab-text-form p.please-read, .account-notifications-tab-text-form legend.please-read {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+/* line 451, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form legend.please-read {
+  margin-bottom: 1em;
+}
+/* line 455, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form input[type=text],
+.account-notifications-tab-text-form textarea {
+  max-width: 470px;
+}
+/* line 459, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form input[type=text] {
+  margin-bottom: 30px;
+}
+@media (min-width: 650px), print {
+  /* line 459, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notifications-tab-text-form input[type=text] {
+    margin-bottom: 40px;
+  }
+}
+/* line 468, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form textarea {
+  background-color: #f4f2f1 !important;
+  border: none !important;
+  height: 185px;
+  padding: 20px;
+}
+/* line 475, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form label {
+  display: block;
+  margin: 20px 0 40px 0;
+}
+/* line 480, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form .mobile-phone-number {
+  display: inline;
+  margin: 0px;
+}
+/* line 485, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-text-form .button {
+  margin-bottom: 40px;
+  margin-right: 0px;
+}
+@media (min-width: 480px), print {
+  /* line 485, ../css.source/modules/account/_account-notification-tabs.scss */
+  .account-notifications-tab-text-form .button {
+    max-width: 230px;
+  }
+}
+
+/* line 492, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggles-wrapper {
+  margin-bottom: 50px;
+}
+
+/* line 497, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper {
+  display: block;
+  margin-bottom: 20px;
+}
+/* line 501, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper label {
+  cursor: pointer;
+  display: table;
+  width: 100%;
+}
+/* line 506, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper label > span, .toggle-wrapper label .ez-checkbox {
+  display: table-cell;
+  vertical-align: top;
+  width: 48%;
+}
+/* line 510, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper label > span:first-child, .toggle-wrapper label .ez-checkbox:first-child {
+  padding-right: 20px;
+}
+/* line 514, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .ez-checkbox {
+  text-align: right;
+}
+/* line 515, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .ez-hide {
+  display: none;
+}
+/* line 516, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .switch-wrapper {
+  display: inline-block;
+  width: 155px;
+}
+/* line 521, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .btn-toggle {
+  display: inline-block;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 30px;
+  height: 30px;
+  width: 75px;
+  position: relative;
+}
+/* line 530, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .btn-toggle button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+/* line 543, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .btn-right {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  -moz-box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  background-color: #f4f2f1;
+  color: dimgrey;
+}
+/* line 550, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .btn-left,
+.toggle-wrapper .ez-checked .btn-right {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #7a4183;
+  color: #fff;
+  height: 32px;
+  line-height: 32px;
+}
+/* line 558, ../css.source/modules/account/_account-notification-tabs.scss */
+.toggle-wrapper .ez-checked .btn-left {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  -moz-box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  box-shadow: inset 0px 4px 2px -2px #d3d2d1;
+  background-color: #f4f2f1;
+  color: dimgrey;
+  height: 30px;
+  line-height: 30px;
+}
+
+/* line 571, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages {
+  width: 110%;
+  position: relative;
+  height: 700px;
+  margin-left: -5%;
+}
+/* line 578, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages #main_2_mynotifications_1_pnlTool {
+  width: 100%;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 583, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-inbox {
+  width: 30%;
+  height: 700px;
+  float: left;
+}
+/* line 591, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-coversation {
+  width: 70%;
+  height: 700px;
+  float: right;
+  position: relative;
+  padding-bottom: 150px;
+}
+/* line 601, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-inbox-title,
+.account-notifications-tab-messages .telligent-conversation-delete {
+  width: 100%;
+  height: 60px;
+  background-color: #298fc2;
+  padding: 15px 20px 15px 20px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 608, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-inbox-title span,
+.account-notifications-tab-messages .telligent-conversation-delete span {
+  font-size: 18px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 8px;
+  float: left;
+}
+/* line 616, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-inbox-title {
+  border-right: 1px solid #fff;
+}
+/* line 620, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-inbox-item {
+  height: 83px;
+}
+/* line 624, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-reply-editor {
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+}
+/* line 630, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-reply-editor .cke_2.cke_chrome {
+  border: 0px;
+}
+/* line 635, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-reply-editor .cke_top,
+.account-notifications-tab-messages .telligent-reply-editor .cke_toolgroup {
+  background-image: none;
+  background: none;
+  border: 0px;
+}
+/* line 640, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-reply-editor .cke-bottom {
+  display: none;
+}
+/* line 645, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-new-message-button,
+.account-notifications-tab-messages .telligent-conversation-delete-button,
+.account-notifications-tab-messages .telligent-reply-button {
+  font-size: 18px;
+  font-size: 1.125rem;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: #f2af00;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  max-width: 150px;
+}
+/* line 663, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-new-message-button:focus,
+.account-notifications-tab-messages .telligent-conversation-delete-button:focus,
+.account-notifications-tab-messages .telligent-reply-button:focus {
+  background-color: #ffbc0d;
+  color: black;
+  text-decoration: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  outline: none;
+}
+/* line 670, ../css.source/modules/account/_account-notification-tabs.scss */
+.touch .account-notifications-tab-messages .telligent-new-message-button:focus, .touch
+.account-notifications-tab-messages .telligent-conversation-delete-button:focus, .touch
+.account-notifications-tab-messages .telligent-reply-button:focus {
+  background-color: #f2af00;
+}
+/* line 675, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-new-message-button:hover,
+.account-notifications-tab-messages .telligent-conversation-delete-button:hover,
+.account-notifications-tab-messages .telligent-reply-button:hover {
+  background-color: #ffbc0d;
+  color: black;
+  text-decoration: none;
+}
+/* line 680, ../css.source/modules/account/_account-notification-tabs.scss */
+.touch .account-notifications-tab-messages .telligent-new-message-button:hover, .touch
+.account-notifications-tab-messages .telligent-conversation-delete-button:hover, .touch
+.account-notifications-tab-messages .telligent-reply-button:hover {
+  background-color: #f2af00;
+}
+/* line 687, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-new-message-button.disabled, .account-notifications-tab-messages .telligent-new-message-button.disabled:hover, .account-notifications-tab-messages .telligent-new-message-button[disabled], .account-notifications-tab-messages .telligent-new-message-button[disabled]:hover,
+.account-notifications-tab-messages .telligent-conversation-delete-button.disabled,
+.account-notifications-tab-messages .telligent-conversation-delete-button.disabled:hover,
+.account-notifications-tab-messages .telligent-conversation-delete-button[disabled],
+.account-notifications-tab-messages .telligent-conversation-delete-button[disabled]:hover,
+.account-notifications-tab-messages .telligent-reply-button.disabled,
+.account-notifications-tab-messages .telligent-reply-button.disabled:hover,
+.account-notifications-tab-messages .telligent-reply-button[disabled],
+.account-notifications-tab-messages .telligent-reply-button[disabled]:hover {
+  background-color: #f7c84c;
+  color: #4c4c4c;
+  cursor: default;
+}
+
+/* line 1, ../css.source/modules/_tyce.scss */
+.tyce-page-topic {
+  background: #f4f2f1;
+  margin: 0;
+  padding: 17px 15px 33px;
+  position: relative;
+}
+@media (min-width: 650px), print {
+  /* line 1, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic {
+    padding: 0 0 33px;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 1, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic {
+    padding-bottom: 24px;
+  }
+}
+/* line 13, ../css.source/modules/_tyce.scss */
+.tyce-page-topic .col {
+  position: static;
+}
+/* line 17, ../css.source/modules/_tyce.scss */
+.tyce-page-topic .back-to-previous {
+  display: none;
+}
+@media (min-width: 650px), print {
+  /* line 17, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic .back-to-previous {
+    color: #426da9;
+    margin: 34px 0 10px;
+    display: inline-block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1;
+  }
+}
+/* line 27, ../css.source/modules/_tyce.scss */
+.tyce-page-topic .back-to-previous i {
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+/* line 35, ../css.source/modules/_tyce.scss */
+.tyce-page-topic .icon.globe {
+  background-size: 103px 103px;
+  width: 103px;
+  height: 103px;
+  margin-top: 22px;
+  float: none;
+}
+/* line 43, ../css.source/modules/_tyce.scss */
+.tyce-page-topic .share-save-container {
+  margin: 5px auto 10px;
+  float: none;
+  z-index: 3;
+}
+@media (min-width: 650px), print {
+  /* line 43, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic .share-save-container {
+    margin-top: 0;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 43, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic .share-save-container {
+    position: absolute;
+    top: -19px;
+    left: 50%;
+    margin: 0 0 0 179px;
+  }
+}
+/* line 56, ../css.source/modules/_tyce.scss */
+.tyce-page-topic .share-save-container h3 {
+  text-align: center;
+}
+@media (min-width: 650px), print {
+  /* line 56, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic .share-save-container h3 {
+    visibility: hidden;
+  }
+}
+/* line 64, ../css.source/modules/_tyce.scss */
+.tyce-page-topic .text {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+  color: #696969;
+  position: relative;
+}
+@media (min-width: 650px), print {
+  /* line 64, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic .text {
+    font-size: 21px;
+    font-size: 1.3125rem;
+    line-height: 1.333;
+    max-width: 790px;
+    padding: 17px 0 0 320px;
+    background: url('../images/icon.toolkit.childs.world.png?309296d8') 70px 6px no-repeat;
+    background-size: 147px 147px;
+    min-height: 157px;
+  }
+}
+/* line 79, ../css.source/modules/_tyce.scss */
+.tyce-page-topic .text p {
+  margin-bottom: 8px;
+}
+/* line 84, ../css.source/modules/_tyce.scss */
+.tyce-page-topic .text-small {
+  position: relative;
+}
+@media (min-width: 650px), print {
+  /* line 84, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic .text-small {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.556;
+  }
+  /* line 89, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic .text-small h1 {
+    margin-bottom: 6px;
+  }
+}
+/* line 95, ../css.source/modules/_tyce.scss */
+.tyce-page-topic h1 {
+  font-weight: normal;
+  color: #794381;
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  padding-left: 98px;
+  background: url('../images/icon.toolkit.childs.world.png?309296d8') -14px 0 no-repeat;
+  background-size: 103px 103px;
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+@media (min-width: 650px), print {
+  /* line 95, ../css.source/modules/_tyce.scss */
+  .tyce-page-topic h1 {
+    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 1.333;
+    margin-bottom: 12px;
+    padding: 0;
+    background: none;
+    min-height: 0;
+  }
+}
+
+/* line 117, ../css.source/modules/_tyce.scss */
+.tyce-personalize {
+  margin: 0 0 35px;
+  position: relative;
+  padding: 0 15px;
+}
+@media (min-width: 650px), print {
+  /* line 117, ../css.source/modules/_tyce.scss */
+  .tyce-personalize {
+    margin-bottom: 45px;
+  }
+}
+/* line 124, ../css.source/modules/_tyce.scss */
+.tyce-personalize:before {
+  content: '';
+  display: block;
+  height: 54px;
+  width: 100%;
+  background: #f4f2f1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 650px), print {
+  /* line 124, ../css.source/modules/_tyce.scss */
+  .tyce-personalize:before {
+    left: 0;
+    height: 50px;
+  }
+}
+/* line 139, ../css.source/modules/_tyce.scss */
+.tyce-personalize .row {
+  position: relative;
+  z-index: 2;
+  padding: 16px 20px 20px;
+  background-color: #426da9;
+  color: #FFF;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+  max-width: 950px;
+}
+@media (min-width: 650px), print {
+  /* line 139, ../css.source/modules/_tyce.scss */
+  .tyce-personalize .row {
+    padding: 30px 0 33px;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.333;
+  }
+}
+@media (min-width: 650px), print {
+  /* line 155, ../css.source/modules/_tyce.scss */
+  .tyce-personalize .content {
+    display: table;
+    width: 100%;
+  }
+}
+/* line 160, ../css.source/modules/_tyce.scss */
+.tyce-personalize .content .text {
+  padding-bottom: 26px;
+}
+@media (min-width: 650px), print {
+  /* line 160, ../css.source/modules/_tyce.scss */
+  .tyce-personalize .content .text {
+    display: table-cell;
+    width: 58.9%;
+    padding: 0 1.6% 0 4.2%;
+    height: 91px;
+    vertical-align: middle;
+  }
+}
+/* line 169, ../css.source/modules/_tyce.scss */
+.tyce-personalize .content .text p {
+  margin: 0;
+}
+@media (min-width: 650px), print {
+  /* line 173, ../css.source/modules/_tyce.scss */
+  .tyce-personalize .content .button-wrap {
+    display: table-cell;
+    width: 41.1%;
+    vertical-align: middle;
+    padding: 0 8.4%;
+  }
+}
+/* line 180, ../css.source/modules/_tyce.scss */
+.tyce-personalize .content .button-wrap .button {
+  width: 100%;
+}
+/* line 186, ../css.source/modules/_tyce.scss */
+.tyce-personalize h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+@media (min-width: 650px), print {
+  /* line 186, ../css.source/modules/_tyce.scss */
+  .tyce-personalize h2 {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+}
+/* line 194, ../css.source/modules/_tyce.scss */
+.tyce-personalize .button {
+  font-weight: bold;
+}
+
+/* line 200, ../css.source/modules/_tyce.scss */
+.tyce-on-demand {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+  line-height: 22px;
+  color: #696969;
+  margin-bottom: 25px;
+  position: relative;
+}
+@media (min-width: 650px), print {
+  /* line 200, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand {
+    margin-bottom: 20px;
+  }
+}
+/* line 211, ../css.source/modules/_tyce.scss */
+.tyce-on-demand h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+  color: #7a4183;
+}
+@media (min-width: 650px), print {
+  /* line 211, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand h2 {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+}
+
+/* line 221, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+  color: #696969;
+  margin-bottom: 35px;
+}
+@media (min-width: 650px), print {
+  /* line 221, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.438;
+    margin-bottom: 40px;
+  }
+}
+/* line 232, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .row {
+  position: relative;
+}
+/* line 236, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container h3 {
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: #7a4183;
+}
+/* line 244, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.tyce-on-demand-container .item-5:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 650px), print {
+  /* line 244, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container .item-5 {
+    padding-right: 1.1%;
+  }
+}
+/* line 253, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li {
+  width: 46.4%;
+  float: left;
+}
+@media (min-width: 650px), print {
+  /* line 253, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container .item-5 li {
+    font-size: 14px;
+    font-size: 0.875rem;
+    padding: 0 3.3% 0 0;
+    width: 20%;
+    float: left !important;
+    clear: none !important;
+  }
+}
+/* line 263, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li:nth-child(odd) {
+  float: left;
+  clear: both;
+}
+/* line 267, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li:nth-child(even) {
+  float: right;
+}
+/* line 271, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li h4 {
+  font-weight: normal;
+}
+@media (min-width: 650px), print {
+  /* line 271, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container .item-5 li h4 {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.125;
+    min-height: 3.375em;
+    margin-bottom: 2px;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 271, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container .item-5 li h4 {
+    line-height: 1.375;
+    min-height: 3.5em;
+  }
+}
+@media (min-width: 650px), print {
+  /* line 284, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container .item-5 li h4 br {
+    display: none;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 284, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container .item-5 li h4 br {
+    display: inline;
+  }
+}
+/* line 293, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li h4 abbr {
+  border: 0;
+}
+/* line 298, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .item-5 li img {
+  width: 100%;
+}
+/* line 307, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations {
+  border-bottom: 1px solid #d7d7d7;
+  position: relative;
+}
+@media (min-width: 650px), print {
+  /* line 307, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.simulations {
+    border: 0;
+  }
+}
+@media (min-width: 650px), print {
+  /* line 313, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.simulations .row {
+    background-color: #f4f2f1;
+  }
+}
+@media (min-width: 650px), print {
+  /* line 318, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.simulations h3 {
+    margin-top: 35px;
+  }
+}
+/* line 323, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .item-5 {
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+@media (min-width: 650px), print {
+  /* line 323, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.simulations .item-5 {
+    padding-top: 12px;
+    padding-bottom: 23px;
+  }
+}
+/* line 331, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations h4 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.111;
+  min-height: 2.222em;
+  margin-bottom: 15px;
+}
+/* line 337, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block {
+  display: block;
+  background: #7a4183;
+  padding-top: 56%;
+  position: relative;
+}
+/* line 343, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block b {
+  display: block;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') no-repeat;
+  background-size: 1000%;
+  width: 32%;
+  height: 52.4%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -14.7% 0 0 -16%;
+}
+/* line 355, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block.writing-issues b {
+  background-position: 11% 0;
+}
+/* line 359, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block.math-issues b {
+  background-position: 22% 0;
+}
+/* line 363, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block.organization-time b {
+  background-position: 33.33% 0;
+}
+/* line 367, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations .icon-block.attention-issues b {
+  background-position: 44% 0;
+}
+/* line 371, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li {
+  margin-bottom: 17px;
+}
+/* line 374, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li:nth-child(2) .icon-block {
+  background: #6f5091;
+}
+/* line 377, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li:nth-child(3) .icon-block {
+  background: #5a5d9c;
+}
+/* line 380, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li:nth-child(4) .icon-block {
+  background: #426da9;
+}
+/* line 383, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li:nth-child(5) .icon-block {
+  background: #298fc2;
+}
+/* line 387, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.simulations li > a {
+  display: block;
+}
+@media (min-width: 650px), print {
+  /* line 396, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.stories h3 {
+    float: left;
+    margin-top: 7px;
+  }
+}
+@media (max-width: 649px), print {
+  /* line 402, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.stories .row {
+    display: block !important;
+  }
+}
+/* line 408, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories .title {
+  color: #7a4183;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1;
+  margin-top: 10px;
+}
+@media (min-width: 650px), print {
+  /* line 408, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.stories .title {
+    display: none;
+  }
+}
+/* line 418, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories .item-5 {
+  margin-bottom: 12px;
+  padding-top: 15px;
+}
+@media (min-width: 650px), print {
+  /* line 418, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.stories .item-5 {
+    padding-top: 40px;
+    margin: 0;
+  }
+}
+/* line 426, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li {
+  margin-bottom: 21px;
+}
+@media (min-width: 650px), print {
+  /* line 426, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.stories li {
+    margin: 0;
+  }
+}
+/* line 431, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li > a {
+  display: block;
+  position: relative;
+}
+/* line 434, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li > a img {
+  display: block;
+  border: 4px solid #7a4183;
+}
+/* line 438, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li > a .icon.play {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') -450px 0 no-repeat;
+  background-size: 500px 100px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+/* line 450, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li > a:hover .icon.play {
+  background-position: -400px 0;
+}
+/* line 457, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li p {
+  color: #646464;
+  margin: 16px 0 0;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media (min-width: 650px), print {
+  /* line 457, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container.stories li p {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+/* line 466, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li:nth-child(2) > a img {
+  border-color: #6f5091;
+}
+/* line 469, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li:nth-child(3) > a img {
+  border-color: #5a5d9c;
+}
+/* line 472, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li:nth-child(4) > a img {
+  border-color: #426da9;
+}
+/* line 475, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories li:nth-child(5) > a img {
+  border-color: #298fc2;
+}
+/* line 480, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container.stories h4 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.125;
+  min-height: 2.25em;
+  margin-bottom: 6px;
+}
+/* line 488, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .tab-controls {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: none;
+}
+@media (min-width: 650px), print {
+  /* line 488, ../css.source/modules/_tyce.scss */
+  .tyce-on-demand-container .tab-controls {
+    display: block;
+    float: right;
+  }
+}
+/* line 498, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .tab-controls li {
+  display: inline-block;
+  min-width: 150px;
+  text-align: center;
+  margin-left: 6px;
+}
+/* line 504, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .tab-controls li a {
+  display: block;
+  background: #f4f2f1;
+  color: #696969;
+  line-height: 2.5;
+  padding: 0 2px;
+  border-radius: 4px;
+}
+/* line 512, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .tab-controls li a.active, .tyce-on-demand-container .tab-controls li a:hover {
+  background: #7a4183;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 524, ../css.source/modules/_tyce.scss */
+.tyce-player-header .row {
+  padding: 20px 0;
+}
+/* line 528, ../css.source/modules/_tyce.scss */
+.tyce-player-header h1 {
+  color: #7b3f84;
+  font-size: 34px;
+  font-size: 2.125rem;
+  line-height: 38px;
+  line-height: 2.375rem;
+}
+@media (min-width: 650px), print {
+  /* line 528, ../css.source/modules/_tyce.scss */
+  .tyce-player-header h1 {
+    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 48px;
+    line-height: 3rem;
+  }
+}
+/* line 539, ../css.source/modules/_tyce.scss */
+.tyce-player-header a.back-to-previous {
+  color: #426da9;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+@media (min-width: 650px), print {
+  /* line 539, ../css.source/modules/_tyce.scss */
+  .tyce-player-header a.back-to-previous {
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 539, ../css.source/modules/_tyce.scss */
+  .tyce-player-header a.back-to-previous {
+    margin-bottom: 17px;
+  }
+}
+@media (min-width: 480px), print {
+  /* line 539, ../css.source/modules/_tyce.scss */
+  .tyce-player-header a.back-to-previous {
+    margin-bottom: 18px;
+  }
+}
+/* line 555, ../css.source/modules/_tyce.scss */
+.tyce-player-header a.back-to-previous i {
+  margin-right: 7px;
+  margin-bottom: -1px;
+}
+
+/* line 564, ../css.source/modules/_tyce.scss */
+.captions {
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: top;
+}
+/* line 570, ../css.source/modules/_tyce.scss */
+.captions > span {
+  display: block;
+  margin-bottom: 16px;
+}
+/* line 575, ../css.source/modules/_tyce.scss */
+.captions .toggle-wrapper label .ez-checkbox {
+  width: auto;
+}
+/* line 579, ../css.source/modules/_tyce.scss */
+.captions .switch {
+  display: inline-block;
+  background-color: #f4f2f1;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding: 3px 0;
+  cursor: pointer;
+}
+/* line 587, ../css.source/modules/_tyce.scss */
+.captions .switch span {
+  padding: 6px 15px 4px 15px;
+}
+/* line 591, ../css.source/modules/_tyce.scss */
+.captions .switch .is-active {
+  color: #FFF;
+  background-color: #794382;
+  border-radius: 3px;
+  padding-bottom: 6px;
+  padding: 6px 20px 6px 20px;
+}
+
+/* line 603, ../css.source/modules/_tyce.scss */
+.help {
+  display: none;
+  vertical-align: top;
+  cursor: pointer;
+}
+@media (min-width: 769px), print {
+  /* line 603, ../css.source/modules/_tyce.scss */
+  .help {
+    display: inline-block;
+  }
+}
+/* line 612, ../css.source/modules/_tyce.scss */
+.help > span {
+  display: block;
+  margin-bottom: 16px;
+}
+/* line 617, ../css.source/modules/_tyce.scss */
+.help .icon {
+  display: inline-block;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') 0 0 no-repeat;
+  background-size: 500px 100px;
+}
+/* line 622, ../css.source/modules/_tyce.scss */
+.help .icon.help {
+  width: 30px;
+  height: 30px;
+  background-position: -400px -50px;
+}
+/* line 627, ../css.source/modules/_tyce.scss */
+.help .icon.help.is-open {
+  background-position: -450px -50px;
+}
+
+/* line 643, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .icon.globe {
+  background: url('../images/icon.toolkit.childs.world.png?309296d8') 0 0 no-repeat;
+  background-size: 100px 100px;
+  width: 100px;
+  height: 100px;
+  float: left;
+  display: inline-block;
+}
+/* line 652, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .icon.reading-issues {
+  width: 21px;
+  height: 21px;
+  background-position: -250px 0;
+  float: right;
+  display: inline-block;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') 0 0 no-repeat;
+  background-size: 500px 100px;
+}
+/* line 662, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .icon.writing-issues {
+  width: 18px;
+  height: 18px;
+  background-position: -275px 0;
+  float: right;
+  display: inline-block;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') 0 0 no-repeat;
+  background-size: 500px 100px;
+}
+/* line 672, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .icon.math-issues {
+  width: 24px;
+  height: 22px;
+  background-position: -250px -25px;
+  float: right;
+  display: inline-block;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') 0 0 no-repeat;
+  background-size: 500px 100px;
+}
+/* line 682, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .icon.organization-time {
+  width: 21px;
+  height: 21px;
+  background-position: -275px -25px;
+  float: right;
+  display: inline-block;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') 0 0 no-repeat;
+  background-size: 500px 100px;
+}
+/* line 692, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .icon.attention-issues {
+  width: 21px;
+  height: 22px;
+  background-position: -300px 0;
+  float: right;
+  display: inline-block;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') 0 0 no-repeat;
+  background-size: 500px 100px;
+}
+/* line 702, ../css.source/modules/_tyce.scss */
+.tyce-on-demand-container .icon.help {
+  width: 30px;
+  height: 30px;
+  background-position: -400px -50px;
+  display: inline-block;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') 0 0 no-repeat;
+  background-size: 500px 100px;
+}
+
+/* line 1, ../css.source/modules/_tyce-steps.scss */
+.tyce-main-feature {
+  color: #696969;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+@media (min-width: 650px), print {
+  /* line 1, ../css.source/modules/_tyce-steps.scss */
+  .tyce-main-feature {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.333;
+    margin-bottom: 75px;
+  }
+}
+/* line 12, ../css.source/modules/_tyce-steps.scss */
+.tyce-main-feature img.pic {
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+@media (min-width: 650px), print {
+  /* line 12, ../css.source/modules/_tyce-steps.scss */
+  .tyce-main-feature img.pic {
+    margin-top: 4px;
+  }
+}
+@media (max-width: 649px), print {
+  /* line 21, ../css.source/modules/_tyce-steps.scss */
+  .tyce-main-feature .col:first-of-type {
+    margin: 0 -15px;
+  }
+}
+/* line 27, ../css.source/modules/_tyce-steps.scss */
+.tyce-main-feature h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  margin-bottom: 9px;
+  color: #7a4183;
+}
+@media (min-width: 650px), print {
+  /* line 27, ../css.source/modules/_tyce-steps.scss */
+  .tyce-main-feature h2 {
+    font-size: 30px;
+    font-size: 1.875rem;
+    margin-bottom: 19px;
+  }
+}
+/* line 37, ../css.source/modules/_tyce-steps.scss */
+.tyce-main-feature p a {
+  text-decoration: underline;
+}
+
+/* line 42, ../css.source/modules/_tyce-steps.scss */
+.tyce-module-3 {
+  background: #f4f2f1;
+  padding-top: 20px;
+  margin: 0;
+}
+@media (min-width: 650px), print {
+  /* line 42, ../css.source/modules/_tyce-steps.scss */
+  .tyce-module-3 {
+    margin-bottom: 66px;
+  }
+}
+/* line 50, ../css.source/modules/_tyce-steps.scss */
+.tyce-module-3 .row {
+  padding: 0 15px;
+}
+@media (min-width: 650px), print {
+  /* line 50, ../css.source/modules/_tyce-steps.scss */
+  .tyce-module-3 .row {
+    padding: 0;
+    margin: 0 -5px;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 50, ../css.source/modules/_tyce-steps.scss */
+  .tyce-module-3 .row {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 650px), print {
+  /* line 60, ../css.source/modules/_tyce-steps.scss */
+  .tyce-module-3 .module-wrap {
+    display: table;
+    width: 100%;
+  }
+}
+/* line 66, ../css.source/modules/_tyce-steps.scss */
+.tyce-module-3 .module {
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 17px 20px 10px;
+  color: #696969;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.467;
+}
+@media (min-width: 650px), print {
+  /* line 66, ../css.source/modules/_tyce-steps.scss */
+  .tyce-module-3 .module {
+    padding: 25px 2.2% 0;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.375;
+    display: table-cell;
+    width: 33.33%;
+    border-left: 5px solid #f4f2f1;
+    border-right: 5px solid #f4f2f1;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 66, ../css.source/modules/_tyce-steps.scss */
+  .tyce-module-3 .module {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+/* line 87, ../css.source/modules/_tyce-steps.scss */
+.tyce-module-3 .module p {
+  margin-bottom: 18px;
+}
+/* line 89, ../css.source/modules/_tyce-steps.scss */
+.tyce-module-3 .module p a {
+  text-decoration: underline;
+}
+/* line 99, ../css.source/modules/_tyce-steps.scss */
+.tyce-module-3 .module .field {
+  margin-bottom: 20px;
+}
+@media (min-width: 650px), print {
+  /* line 99, ../css.source/modules/_tyce-steps.scss */
+  .tyce-module-3 .module .field {
+    margin-top: 37px;
+  }
+}
+/* line 105, ../css.source/modules/_tyce-steps.scss */
+.tyce-module-3 .module .button {
+  margin-bottom: 20px;
+}
+/* line 110, ../css.source/modules/_tyce-steps.scss */
+.tyce-module-3 h2 {
+  font-weight: normal;
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #794382;
+}
+@media (min-width: 650px), print {
+  /* line 110, ../css.source/modules/_tyce-steps.scss */
+  .tyce-module-3 h2 {
+    font-size: 24px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}
+/* line 120, ../css.source/modules/_tyce-steps.scss */
+.tyce-module-3 textarea {
+  background: #f4f2f1;
+  border: 0;
+  width: 100%;
+  padding: 15px 0 0 20px;
+  height: 9em;
+}
+/* line 3, ../css.source/mixins/_placeholder.scss */
+.tyce-module-3 textarea.placeholder {
+  color: #696969;
+}
+/* line 4, ../css.source/mixins/_placeholder.scss */
+.tyce-module-3 textarea:-moz-placeholder {
+  color: #696969;
+  opacity: 1;
+}
+/* line 5, ../css.source/mixins/_placeholder.scss */
+.tyce-module-3 textarea::-moz-placeholder {
+  color: #696969;
+  opacity: 1;
+}
+/* line 6, ../css.source/mixins/_placeholder.scss */
+.tyce-module-3 textarea:-ms-input-placeholder {
+  color: #696969;
+}
+/* line 7, ../css.source/mixins/_placeholder.scss */
+.tyce-module-3 textarea::-webkit-input-placeholder {
+  color: #696969;
+}
+
+/* line 133, ../css.source/modules/_tyce-steps.scss */
+.share-tools {
+  margin: 25px 0 5px -15px;
+  padding: 0;
+  list-style: none;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.share-tools:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 650px), print {
+  /* line 133, ../css.source/modules/_tyce-steps.scss */
+  .share-tools {
+    margin-top: 34px;
+    margin-left: -5px;
+  }
+}
+/* line 143, ../css.source/modules/_tyce-steps.scss */
+.share-tools li {
+  float: left;
+  margin: 0 0 15px 15px;
+  line-height: 0;
+}
+@media (min-width: 650px), print {
+  /* line 143, ../css.source/modules/_tyce-steps.scss */
+  .share-tools li {
+    margin: 0 0 5px 5px;
+  }
+}
+/* line 151, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  width: 36px;
+  height: 36px;
+  display: block;
+  background-image: url('../images/sprite.social.footer.png?19630b6e');
+  background-repeat: no-repeat;
+  background-size: 165px 80px;
+}
+/* line 160, ../css.source/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon {
+  background: url('../images/sprite.social.footer.lo-res.png?a77aa48c');
+}
+@media (min-width: 650px), print {
+  /* line 151, ../css.source/modules/_tyce-steps.scss */
+  .share-tools .icon {
+    width: 42px;
+    height: 42px;
+    background-size: 193px 93px;
+  }
+}
+/* line 171, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-facebook {
+  background-position: 0 0;
+}
+/* line 173, ../css.source/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-facebook {
+  background-position: 0 0;
+}
+/* line 176, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-facebook:hover {
+  background-position: 0 -43px;
+}
+@media (min-width: 650px), print {
+  /* line 176, ../css.source/modules/_tyce-steps.scss */
+  .share-tools .icon-facebook:hover {
+    background-position: 0 -50px;
+  }
+}
+/* line 184, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-twitter {
+  background-position: -43px 0;
+}
+@media (min-width: 650px), print {
+  /* line 184, ../css.source/modules/_tyce-steps.scss */
+  .share-tools .icon-twitter {
+    background-position: -50px 0;
+  }
+}
+/* line 189, ../css.source/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-twitter {
+  background-position: -50px 0;
+}
+/* line 192, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-twitter:hover {
+  background-position: -43px -43px;
+}
+@media (min-width: 650px), print {
+  /* line 192, ../css.source/modules/_tyce-steps.scss */
+  .share-tools .icon-twitter:hover {
+    background-position: -50px -50px;
+  }
+}
+/* line 200, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-google {
+  background-position: -86px 0;
+}
+@media (min-width: 650px), print {
+  /* line 200, ../css.source/modules/_tyce-steps.scss */
+  .share-tools .icon-google {
+    background-position: -100px 0;
+  }
+}
+/* line 206, ../css.source/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-google {
+  background-position: -100px 0;
+}
+/* line 209, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-google:hover {
+  background-position: -86px -43px;
+}
+@media (min-width: 650px), print {
+  /* line 209, ../css.source/modules/_tyce-steps.scss */
+  .share-tools .icon-google:hover {
+    background-position: -100px -50px;
+  }
+}
+/* line 217, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-pinterest {
+  background-position: -129px 0;
+}
+@media (min-width: 650px), print {
+  /* line 217, ../css.source/modules/_tyce-steps.scss */
+  .share-tools .icon-pinterest {
+    background-position: -150px 0;
+  }
+}
+/* line 222, ../css.source/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-pinterest {
+  background-position: -150px 0;
+}
+/* line 225, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-pinterest:hover {
+  background-position: -129px -43px;
+}
+@media (min-width: 650px), print {
+  /* line 225, ../css.source/modules/_tyce-steps.scss */
+  .share-tools .icon-pinterest:hover {
+    background-position: -150px -50px;
+  }
+}
+/* line 233, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-email {
+  background: url('../images/sprite.icon.email.84.png?515b319e');
+  background-size: 36px 79px;
+}
+@media (min-width: 650px), print {
+  /* line 233, ../css.source/modules/_tyce-steps.scss */
+  .share-tools .icon-email {
+    background-size: 42px 92px;
+  }
+}
+/* line 239, ../css.source/modules/_tyce-steps.scss */
+.no-backgroundsize .share-tools .icon-email {
+  background: url('../images/sprite.icon.email.42.png?75b052a1');
+}
+/* line 242, ../css.source/modules/_tyce-steps.scss */
+.share-tools .icon-email:hover {
+  background-position: 0 100%;
+}
+
+/* line 249, ../css.source/modules/_tyce-steps.scss */
+.tyce-addresses {
+  margin: 0;
+  padding: 7px 15px 0;
+  background: #F4F2F1;
+  color: #696969;
+}
+@media (min-width: 650px), print {
+  /* line 249, ../css.source/modules/_tyce-steps.scss */
+  .tyce-addresses {
+    background: none;
+    padding: 0;
+  }
+}
+/* line 259, ../css.source/modules/_tyce-steps.scss */
+.tyce-addresses .col-7 {
+  padding-left: 0;
+}
+/* line 263, ../css.source/modules/_tyce-steps.scss */
+.tyce-addresses .row {
+  background: #F4F2F1;
+  max-width: 950px;
+  padding: 0;
+}
+/* line 267, ../css.source/modules/_tyce-steps.scss */
+.tyce-addresses .row:last-of-type {
+  padding-bottom: 10px;
+}
+@media (min-width: 650px), print {
+  /* line 267, ../css.source/modules/_tyce-steps.scss */
+  .tyce-addresses .row:last-of-type {
+    padding-bottom: 4px;
+  }
+}
+@media (min-width: 650px), print {
+  /* line 275, ../css.source/modules/_tyce-steps.scss */
+  .tyce-addresses header {
+    padding-top: 25px;
+  }
+}
+/* line 281, ../css.source/modules/_tyce-steps.scss */
+.tyce-addresses .message {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: #7b3f84;
+}
+@media (min-width: 650px), print {
+  /* line 281, ../css.source/modules/_tyce-steps.scss */
+  .tyce-addresses .message {
+    margin-bottom: 22px;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 281, ../css.source/modules/_tyce-steps.scss */
+  .tyce-addresses .message {
+    font-size: 22px;
+    font-size: 1.375rem;
+  }
+}
+/* line 293, ../css.source/modules/_tyce-steps.scss */
+.tyce-addresses p {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  margin-bottom: 23px;
+}
+@media (min-width: 650px), print {
+  /* line 293, ../css.source/modules/_tyce-steps.scss */
+  .tyce-addresses p {
+    font-size: 13px;
+    font-size: 0.8125rem;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 293, ../css.source/modules/_tyce-steps.scss */
+  .tyce-addresses p {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 293, ../css.source/modules/_tyce-steps.scss */
+  .tyce-addresses p {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+
+/* line 309, ../css.source/modules/_tyce-steps.scss */
+.tyce-step-wrap {
+  background: #F4F2F1;
+  margin: 0;
+  padding: 0 15px 30px;
+}
+@media (min-width: 650px), print {
+  /* line 309, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step-wrap {
+    padding: 0 0 55px;
+  }
+}
+
+/* line 318, ../css.source/modules/_tyce-steps.scss */
+.tyce-step {
+  background: #fff;
+  margin-bottom: 20px;
+  position: relative;
+}
+@media (min-width: 650px), print {
+  /* line 318, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step {
+    margin-bottom: 15px;
+  }
+}
+/* line 328, ../css.source/modules/_tyce-steps.scss */
+.tyce-step.is-inactive header, .tyce-step.is-inactive .body {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+/* line 332, ../css.source/modules/_tyce-steps.scss */
+.tyce-step .button {
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #000;
+}
+/* line 340, ../css.source/modules/_tyce-steps.scss */
+.tyce-step header {
+  background: #fff;
+  padding: 20px 20px 15px;
+}
+@media (min-width: 650px), print {
+  /* line 340, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step header {
+    padding: 25px 40px;
+    min-height: 46px;
+    *zoom: 1;
+  }
+  /* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .tyce-step header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+/* line 349, ../css.source/modules/_tyce-steps.scss */
+.tyce-step header .button {
+  background: #f4f2f1;
+  margin: 25px 0 15px;
+}
+@media (min-width: 650px), print {
+  /* line 349, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step header .button {
+    width: 150px;
+    float: right;
+    margin: 0 0 0 15px;
+  }
+}
+/* line 357, ../css.source/modules/_tyce-steps.scss */
+.tyce-step header .button:hover {
+  background: #ffbc0d;
+}
+/* line 360, ../css.source/modules/_tyce-steps.scss */
+.touch .tyce-step header .button:hover {
+  background: #f4f2f1;
+}
+/* line 365, ../css.source/modules/_tyce-steps.scss */
+.tyce-step header .button.active {
+  background: #f2af00;
+}
+/* line 368, ../css.source/modules/_tyce-steps.scss */
+.touch .tyce-step header .button.active {
+  background: #f4f2f1;
+}
+/* line 375, ../css.source/modules/_tyce-steps.scss */
+.tyce-step .body {
+  background: #fff;
+  padding: 0 20px 30px;
+}
+@media (min-width: 650px), print {
+  /* line 375, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step .body {
+    padding: 0 40px 40px;
+  }
+}
+/* line 382, ../css.source/modules/_tyce-steps.scss */
+.tyce-step .body .button {
+  margin: 0;
+  width: 100%;
+}
+@media (min-width: 650px), print {
+  /* line 382, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step .body .button {
+    width: 230px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+/* line 393, ../css.source/modules/_tyce-steps.scss */
+.tyce-step h2 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: normal;
+  color: #794382;
+}
+@media (min-width: 650px), print {
+  /* line 393, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step h2 {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-left: 57px;
+    position: relative;
+    float: left;
+    min-height: 39px;
+    margin-top: 6px;
+    max-width: 64%;
+  }
+}
+@media (min-width: 769px), print {
+  /* line 393, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step h2 {
+    max-width: 71%;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 393, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step h2 {
+    font-size: 24px;
+    font-size: 1.5rem;
+    max-width: 600px;
+  }
+}
+/* line 415, ../css.source/modules/_tyce-steps.scss */
+.tyce-step h2 .num {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #f4f2f1;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 16px;
+}
+@media (min-width: 650px), print {
+  /* line 415, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step h2 .num {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    margin: 0;
+  }
+}
+/* line 432, ../css.source/modules/_tyce-steps.scss */
+.tyce-step h2 .instructions {
+  display: block;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1;
+  margin-top: 13px;
+}
+@media (min-width: 650px), print {
+  /* line 432, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step h2 .instructions {
+    margin-top: 5px;
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+/* line 444, ../css.source/modules/_tyce-steps.scss */
+.tyce-step .info {
+  text-align: center;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  padding-top: 15px;
+}
+@media (min-width: 650px), print {
+  /* line 444, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step .info {
+    font-size: 16px;
+    font-size: 1rem;
+    padding-top: 16px;
+    text-align: left;
+    float: right;
+    clear: none;
+  }
+}
+/* line 455, ../css.source/modules/_tyce-steps.scss */
+.tyce-step .info a {
+  text-decoration: underline;
+}
+@media (min-width: 960px), print {
+  /* line 455, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step .info a {
+    white-space: nowrap;
+  }
+}
+/* line 464, ../css.source/modules/_tyce-steps.scss */
+.tyce-step .action {
+  text-align: center;
+  padding-top: 20px;
+}
+@media (min-width: 650px), print {
+  /* line 464, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step .action {
+    padding-top: 30px;
+    text-align: left;
+    width: 470px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 464, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step .action {
+    text-align: center;
+    width: auto;
+    padding-left: 6%;
+  }
+}
+/* line 478, ../css.source/modules/_tyce-steps.scss */
+.tyce-step .action .button {
+  margin-bottom: 25px;
+}
+@media (min-width: 650px), print {
+  /* line 478, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step .action .button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 50px 0 0;
+  }
+}
+/* line 486, ../css.source/modules/_tyce-steps.scss */
+.tyce-step .action a {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  text-decoration: underline;
+}
+@media (min-width: 650px), print {
+  /* line 486, ../css.source/modules/_tyce-steps.scss */
+  .tyce-step .action a {
+    font-size: 16px;
+    font-size: 1rem;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    max-width: 185px;
+  }
+}
+
+@media (min-width: 650px), print {
+  /* line 500, ../css.source/modules/_tyce-steps.scss */
+  .reponsive-select-mobile {
+    display: none;
+  }
+}
+
+/* line 505, ../css.source/modules/_tyce-steps.scss */
+#uniform-personalize-grade-mobile {
+  display: block !important;
+}
+/* line 507, ../css.source/modules/_tyce-steps.scss */
+#uniform-personalize-grade-mobile.selector {
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+@media (min-width: 650px), print {
+  /* line 505, ../css.source/modules/_tyce-steps.scss */
+  #uniform-personalize-grade-mobile {
+    display: none !important;
+  }
+}
+
+/* line 517, ../css.source/modules/_tyce-steps.scss */
+.reponsive-select-full-options {
+  display: none;
+}
+@media (min-width: 650px), print {
+  /* line 517, ../css.source/modules/_tyce-steps.scss */
+  .reponsive-select-full-options {
+    display: block;
+    *zoom: 1;
+    padding: 4px 0 0;
+    margin: 0 auto;
+    list-style: none;
+    width: 480px;
+  }
+  /* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .reponsive-select-full-options:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 517, ../css.source/modules/_tyce-steps.scss */
+  .reponsive-select-full-options {
+    width: 800px;
+    margin: 0 -5px;
+  }
+}
+/* line 532, ../css.source/modules/_tyce-steps.scss */
+.reponsive-select-full-options li {
+  float: left;
+  margin: 0 5px 10px;
+}
+/* line 537, ../css.source/modules/_tyce-steps.scss */
+.reponsive-select-full-options .grade {
+  display: table-cell;
+  vertical-align: middle;
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: #000;
+  background: #f4f2f1;
+  font-weight: bold;
+  border-radius: 2px;
+  border: 0;
+}
+/* line 553, ../css.source/modules/_tyce-steps.scss */
+.reponsive-select-full-options .grade:hover, .reponsive-select-full-options .grade:focus {
+  background: #bcbdc0;
+  text-decoration: none;
+}
+/* line 558, ../css.source/modules/_tyce-steps.scss */
+.reponsive-select-full-options .grade.active {
+  background: #7a4183;
+  color: #fff;
+}
+/* line 563, ../css.source/modules/_tyce-steps.scss */
+.reponsive-select-full-options .grade.active:hover {
+  background: #9850a2;
+  color: #fff;
+}
+
+/* line 570, ../css.source/modules/_tyce-steps.scss */
+.input-buttons {
+  margin: 0;
+  padding: 12px 0 0;
+  list-style: none;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.input-buttons:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 650px), print {
+  /* line 570, ../css.source/modules/_tyce-steps.scss */
+  .input-buttons {
+    width: 480px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 570, ../css.source/modules/_tyce-steps.scss */
+  .input-buttons {
+    width: auto;
+    margin: 0 -5px 0 35px;
+    padding-top: 22px;
+  }
+}
+/* line 587, ../css.source/modules/_tyce-steps.scss */
+.input-buttons input[type="checkbox"],
+.input-buttons input[type="radio"] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  position: absolute;
+}
+/* line 592, ../css.source/modules/_tyce-steps.scss */
+.input-buttons li {
+  display: table;
+  width: 100%;
+  margin: 0 0 10px;
+  position: relative;
+}
+@media (min-width: 650px), print {
+  /* line 592, ../css.source/modules/_tyce-steps.scss */
+  .input-buttons li {
+    margin: 0 5px 10px;
+    float: left;
+    display: block;
+    width: auto;
+  }
+}
+/* line 605, ../css.source/modules/_tyce-steps.scss */
+.input-buttons label {
+  display: table-cell;
+  vertical-align: middle;
+  height: 50px;
+  width: 100%;
+  padding: 0 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: #000;
+  background: #f4f2f1;
+  font-weight: bold;
+  border-radius: 4px;
+}
+@media (min-width: 650px), print {
+  /* line 605, ../css.source/modules/_tyce-steps.scss */
+  .input-buttons label {
+    width: 230px;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.125;
+  }
+}
+/* line 625, ../css.source/modules/_tyce-steps.scss */
+.no-touch .input-buttons label:hover {
+  background: #bcbdc0;
+  text-decoration: none;
+}
+/* line 630, ../css.source/modules/_tyce-steps.scss */
+.input-buttons label br {
+  display: none;
+}
+@media (min-width: 650px), print {
+  /* line 630, ../css.source/modules/_tyce-steps.scss */
+  .input-buttons label br {
+    display: inline;
+  }
+}
+/* line 640, ../css.source/modules/_tyce-steps.scss */
+.input-buttons input[type="checkbox"]:checked + label,
+.input-buttons input[type="radio"]:checked + label {
+  background: #7a4183;
+  color: #fff;
+}
+/* line 643, ../css.source/modules/_tyce-steps.scss */
+.input-buttons input[type="checkbox"]:checked + label:hover,
+.input-buttons input[type="radio"]:checked + label:hover {
+  background: #9850a2;
+}
+/* line 645, ../css.source/modules/_tyce-steps.scss */
+.touch .input-buttons input[type="checkbox"]:checked + label:hover, .touch
+.input-buttons input[type="radio"]:checked + label:hover {
+  background: #7a4183;
+}
+/* line 652, ../css.source/modules/_tyce-steps.scss */
+.input-buttons input[type="checkbox"]:focus + label,
+.input-buttons input[type="radio"]:focus + label {
+  outline: thin dotted;
+  outline-offset: -2px;
+}
+/* line 657, ../css.source/modules/_tyce-steps.scss */
+.modal .input-buttons {
+  padding: 0;
+  margin-bottom: 20px;
+}
+@media (min-width: 650px), print {
+  /* line 657, ../css.source/modules/_tyce-steps.scss */
+  .modal .input-buttons {
+    width: 400px;
+    padding-top: 20px;
+    margin: 0 -5px 30px;
+  }
+}
+@media (min-width: 650px), print {
+  /* line 665, ../css.source/modules/_tyce-steps.scss */
+  .modal .input-buttons label {
+    width: 190px;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1;
+  }
+}
+
+/* line 676, ../css.source/modules/_tyce-steps.scss */
+.tyce-issues {
+  margin: 0;
+  padding: 5px 0 0;
+  list-style: none;
+}
+@media (min-width: 960px), print {
+  /* line 676, ../css.source/modules/_tyce-steps.scss */
+  .tyce-issues {
+    *zoom: 1;
+    padding: 0;
+  }
+  /* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .tyce-issues:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+/* line 684, ../css.source/modules/_tyce-steps.scss */
+.tyce-issues .issue {
+  color: #696969;
+  border-bottom: 1px solid #d7d7d7;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  padding-bottom: 23px;
+}
+/* line 692, ../css.source/modules/_tyce-steps.scss */
+.tyce-issues .issue:last-child {
+  border: 0;
+  margin-bottom: 10px;
+}
+@media (min-width: 960px), print {
+  /* line 684, ../css.source/modules/_tyce-steps.scss */
+  .tyce-issues .issue {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.714;
+    border: 0;
+    padding: 20px 20px 10px;
+    min-height: 300px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    float: left;
+    width: 230px;
+    margin: 0 0 50px 50px;
+  }
+  /* line 708, ../css.source/modules/_tyce-steps.scss */
+  .no-rgba .tyce-issues .issue, .no-box-shadow .tyce-issues .issue {
+    border: 1px solid #f2f2f2;
+  }
+  /* line 712, ../css.source/modules/_tyce-steps.scss */
+  .tyce-issues .issue:nth-child(3n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+}
+/* line 718, ../css.source/modules/_tyce-steps.scss */
+.tyce-issues .issue p {
+  margin: 0;
+}
+/* line 723, ../css.source/modules/_tyce-steps.scss */
+.tyce-issues h3 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #7b3f84;
+  margin-bottom: 10px;
+}
+@media (min-width: 650px), print {
+  /* line 723, ../css.source/modules/_tyce-steps.scss */
+  .tyce-issues h3 {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 723, ../css.source/modules/_tyce-steps.scss */
+  .tyce-issues h3 {
+    line-height: 1.2;
+    min-height: 2.4em;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 1, ../css.source/modules/_tyce-player.scss */
+  html.tyce {
+    height: 100%;
+    width: 100%;
+  }
+}
+/* line 8, ../css.source/modules/_tyce-player.scss */
+html.tyce #rotation-overlay {
+  display: none;
+}
+/* line 12, ../css.source/modules/_tyce-player.scss */
+html.tyce.landscape {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 16, ../css.source/modules/_tyce-player.scss */
+html.tyce.landscape body {
+  height: auto;
+  overflow: hidden;
+}
+/* line 21, ../css.source/modules/_tyce-player.scss */
+html.tyce.landscape #wrapper {
+  overflow: hidden;
+}
+/* line 23, ../css.source/modules/_tyce-player.scss */
+html.tyce.landscape form {
+  overflow: hidden;
+}
+/* line 25, ../css.source/modules/_tyce-player.scss */
+html.tyce.landscape #rotation-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #FFF;
+  color: #000;
+  z-index: 9999;
+  display: block;
+  text-align: center;
+}
+/* line 35, ../css.source/modules/_tyce-player.scss */
+html.tyce.landscape #rotation-overlay div {
+  display: table-cell;
+  width: 50%;
+  vertical-align: middle;
+  padding: 0 20px;
+}
+/* line 41, ../css.source/modules/_tyce-player.scss */
+html.tyce.landscape #rotation-overlay img {
+  display: inline;
+  width: 100%;
+}
+/* line 46, ../css.source/modules/_tyce-player.scss */
+html.tyce.landscape #rotation-overlay h2 {
+  display: inline;
+  color: #696969;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+/* line 56, ../css.source/modules/_tyce-player.scss */
+html.tyce.landscape .modal,
+html.tyce.landscape .modal-backdrop {
+  display: none !important;
+}
+
+/* line 68, ../css.source/modules/_tyce-player.scss */
+.tyce-player-container {
+  margin-bottom: 150px;
+}
+@media (max-width: 767px) {
+  /* line 68, ../css.source/modules/_tyce-player.scss */
+  .tyce-player-container {
+    margin-bottom: 0;
+  }
+}
+/* line 75, ../css.source/modules/_tyce-player.scss */
+.tyce-player-container .player-content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+/* line 81, ../css.source/modules/_tyce-player.scss */
+.tyce-player-container .player-content #player {
+  padding-bottom: 56.2%;
+}
+/* line 84, ../css.source/modules/_tyce-player.scss */
+.tyce-player-container .player-content #player .BrightcoveExperience {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 98, ../css.source/modules/_tyce-player.scss */
+.tyce-player-container .btn-skip.button {
+  position: absolute;
+  bottom: 90px;
+  right: 40px;
+  width: 70px;
+  height: 34px;
+  background: #dcdcde;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 34px;
+  line-height: 2.125rem;
+  margin: 0;
+}
+
+/* line 113, ../css.source/modules/_tyce-player.scss */
+#container-sim {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-bottom: 56.2%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  overflow: hidden;
+  background-color: #FFF;
+}
+@media (max-width: 767px) {
+  /* line 113, ../css.source/modules/_tyce-player.scss */
+  #container-sim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    z-index: 9999;
+  }
+}
+/* line 133, ../css.source/modules/_tyce-player.scss */
+#container-sim.is-visible {
+  left: 0;
+}
+/* line 137, ../css.source/modules/_tyce-player.scss */
+#container-sim .sim-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 149, ../css.source/modules/_tyce-player.scss */
+.controls {
+  height: 50px;
+}
+@media (max-width: 767px) {
+  /* line 149, ../css.source/modules/_tyce-player.scss */
+  .controls {
+    display: none;
+  }
+}
+/* line 156, ../css.source/modules/_tyce-player.scss */
+.controls ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: table;
+  width: 100%;
+}
+/* line 163, ../css.source/modules/_tyce-player.scss */
+.controls ul li {
+  display: table-cell;
+  background-color: #f2af00;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 172, ../css.source/modules/_tyce-player.scss */
+.controls ul li.steps li {
+  color: #696969;
+  background-color: #f4f2f1;
+}
+/* line 177, ../css.source/modules/_tyce-player.scss */
+.controls ul li.steps li:hover, .controls ul li.steps li.is-active {
+  background-color: #7a4183;
+  color: #FFF;
+}
+/* line 182, ../css.source/modules/_tyce-player.scss */
+.controls ul li.steps li.has-played {
+  background-color: #298fc2;
+  color: #FFF;
+}
+/* line 187, ../css.source/modules/_tyce-player.scss */
+.controls ul li.steps li span {
+  display: none;
+}
+@media (min-width: 650px) {
+  /* line 187, ../css.source/modules/_tyce-player.scss */
+  .controls ul li.steps li span {
+    display: block;
+  }
+}
+/* line 198, ../css.source/modules/_tyce-player.scss */
+.controls ul li.play-pause {
+  width: 50px;
+  overflow: hidden;
+}
+/* line 204, ../css.source/modules/_tyce-player.scss */
+.controls ul li.play-pause.is-playing .icon {
+  width: 16px;
+  height: 18px;
+  background-position: -300px -25px;
+  top: 4px;
+}
+/* line 213, ../css.source/modules/_tyce-player.scss */
+.controls ul li.play-pause.is-disabled {
+  cursor: default;
+}
+/* line 215, ../css.source/modules/_tyce-player.scss */
+.controls ul li.play-pause.is-disabled .icon {
+  opacity: 0.2;
+}
+/* line 223, ../css.source/modules/_tyce-player.scss */
+.controls ul li.volume {
+  width: 50px;
+  position: relative;
+}
+/* line 227, ../css.source/modules/_tyce-player.scss */
+.controls ul li.volume:hover {
+  background-color: #FFF;
+}
+/* line 230, ../css.source/modules/_tyce-player.scss */
+.controls ul li.volume:hover i {
+  background-position: -350px -63px;
+}
+/* line 236, ../css.source/modules/_tyce-player.scss */
+.controls ul li.volume.is-disabled {
+  cursor: default;
+}
+/* line 239, ../css.source/modules/_tyce-player.scss */
+.controls ul li.volume.is-disabled:hover {
+  background-color: #f2af00;
+}
+/* line 242, ../css.source/modules/_tyce-player.scss */
+.controls ul li.volume.is-disabled:hover i {
+  background-position: -350px -25px;
+}
+/* line 247, ../css.source/modules/_tyce-player.scss */
+.controls ul li.volume.is-disabled i {
+  opacity: 0.2;
+}
+/* line 254, ../css.source/modules/_tyce-player.scss */
+.controls ul li.fullscreen {
+  width: 50px;
+}
+/* line 257, ../css.source/modules/_tyce-player.scss */
+.no-fullscreen .controls ul li.fullscreen {
+  cursor: default;
+}
+/* line 267, ../css.source/modules/_tyce-player.scss */
+.controls .icon {
+  display: inline-block;
+  position: relative;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') no-repeat;
+  background-size: 500px 100px;
+}
+/* line 273, ../css.source/modules/_tyce-player.scss */
+.controls .icon.play {
+  width: 16px;
+  height: 18px;
+  background-position: -325px 0;
+  top: 4px;
+}
+/* line 280, ../css.source/modules/_tyce-player.scss */
+.controls .icon.pause {
+  width: 16px;
+  height: 18px;
+  background-position: -300px -25px;
+  top: 4px;
+}
+/* line 287, ../css.source/modules/_tyce-player.scss */
+.controls .icon.volume {
+  width: 26px;
+  height: 27px;
+  background-position: -350px -25px;
+  top: 8px;
+}
+/* line 294, ../css.source/modules/_tyce-player.scss */
+.controls .icon.fullscreen {
+  width: 25px;
+  height: 25px;
+  background-position: -325px -25px;
+  top: 7px;
+}
+/* line 300, ../css.source/modules/_tyce-player.scss */
+.no-fullscreen .controls .icon.fullscreen {
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+/* line 313, ../css.source/modules/_tyce-player.scss */
+.volume-slider {
+  position: absolute;
+  top: -150px;
+  width: 100%;
+  height: 150px;
+  padding: 20px 0 10px 0;
+  background-color: #FFF;
+  display: none;
+  z-index: 101;
+}
+/* line 323, ../css.source/modules/_tyce-player.scss */
+.volume-slider .ui-slider-vertical {
+  width: 8px;
+  height: 120px;
+  left: 50%;
+  margin-left: -4px;
+  background-color: #f4f2f1;
+}
+/* line 330, ../css.source/modules/_tyce-player.scss */
+.volume-slider .ui-slider-vertical .ui-slider-handle {
+  left: 50%;
+  margin-left: -10px;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: url('../images/sprite.icons.tyce.png?4dfe81aa') -375px 0;
+  background-size: 500px 100px;
+  outline: none;
+  border: none;
+}
+/* line 342, ../css.source/modules/_tyce-player.scss */
+.volume-slider .ui-slider-vertical .ui-slider-range {
+  left: 0;
+  width: 100%;
+}
+/* line 346, ../css.source/modules/_tyce-player.scss */
+.volume-slider .ui-slider-vertical .ui-slider-range-min {
+  background-color: #7a4183;
+}
+/* line 349, ../css.source/modules/_tyce-player.scss */
+.volume-slider .ui-widget-content {
+  border: none;
+}
+
+/* line 356, ../css.source/modules/_tyce-player.scss */
+.tyce-tooltip {
+  background-color: #426da9;
+}
+
+/* line 361, ../css.source/modules/_tyce-player.scss */
+.tyce-menu-container {
+  float: right;
+}
+/* line 364, ../css.source/modules/_tyce-player.scss */
+.tyce-menu-container .icon-tyce-menu {
+  width: 72px;
+  height: 30px;
+  background: url('../images/icon.tyce.menu.png?83196bad') 0 0 no-repeat;
+  background-size: 72px 30px;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  border: none;
+}
+
+/* line 376, ../css.source/modules/_tyce-player.scss */
+.tyce #header-page {
+  display: none;
+}
+@media (max-width: 768px) {
+  /* line 376, ../css.source/modules/_tyce-player.scss */
+  .tyce #header-page {
+    display: block;
+  }
+}
+/* line 383, ../css.source/modules/_tyce-player.scss */
+.tyce #header-page.is-open {
+  display: block;
+}
+
+/* line 389, ../css.source/modules/_tyce-player.scss */
+#header-tyce {
+  display: none;
+  padding-top: 15px;
+}
+@media (min-width: 769px) {
+  /* line 389, ../css.source/modules/_tyce-player.scss */
+  #header-tyce {
+    display: block;
+  }
+}
+/* line 397, ../css.source/modules/_tyce-player.scss */
+#header-tyce .logo-u-main {
+  padding: 0 0 0 0;
+}
+/* line 401, ../css.source/modules/_tyce-player.scss */
+#header-tyce.is-open .logo-u-main {
+  display: none;
+}
+/* line 405, ../css.source/modules/_tyce-player.scss */
+#header-tyce .logo-u-main {
+  padding-top: 0;
+}
+/* line 408, ../css.source/modules/_tyce-player.scss */
+#header-tyce .logo-u-main a {
+  background: none;
+}
+/* line 410, ../css.source/modules/_tyce-player.scss */
+#header-tyce .logo-u-main img {
+  display: block;
+  width: 132px;
+}
+
+/* line 418, ../css.source/modules/_tyce-player.scss */
+html.tyce #button-drawermenu {
+  display: block;
+}
+@media (min-width: 769px) {
+  /* line 418, ../css.source/modules/_tyce-player.scss */
+  html.tyce #button-drawermenu {
+    display: none;
+  }
+}
+
+/* line 426, ../css.source/modules/_tyce-player.scss */
+.help-overlay {
+  display: none;
+  width: 100%;
+  position: absolute;
+  z-index: 102;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.85);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9FFFFFF,endColorstr=#D9FFFFFF);
+  zoom: 1;
+}
+/* line 435, ../css.source/modules/_tyce-player.scss */
+.help-overlay .instructions {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+/* line 442, ../css.source/modules/_tyce-player.scss */
+.help-overlay .instructions h4 {
+  color: #794382;
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+/* line 448, ../css.source/modules/_tyce-player.scss */
+.help-overlay .instructions p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  color: #696969;
+}
+/* line 454, ../css.source/modules/_tyce-player.scss */
+.help-overlay .instructions .button.close {
+  width: 192px;
+  display: inline-block;
+}
+/* line 460, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble {
+  background: #426da9;
+  color: #fff;
+  position: absolute;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 22px;
+  line-height: 1.375rem;
+  width: 200px;
+  height: 100px;
+  padding: 0 20px;
+  font-weight: bold;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  padding: 16px 14px;
+}
+/* line 473, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+/* line 481, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble.captions {
+  top: 24px;
+  right: 170px;
+}
+/* line 485, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble.captions:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #426da9;
+  top: -6px;
+  right: 13px;
+}
+/* line 495, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble.pause {
+  bottom: 24px;
+  left: 16px;
+}
+/* line 499, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble.pause:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #426da9;
+  bottom: -6px;
+  left: 10px;
+}
+/* line 509, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble.progress {
+  bottom: 24px;
+  left: 316px;
+}
+/* line 513, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble.progress:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #426da9;
+  bottom: -6px;
+  left: 48%;
+}
+/* line 523, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble.skip {
+  bottom: 100px;
+  right: 16px;
+}
+/* line 527, ../css.source/modules/_tyce-player.scss */
+.help-overlay .bubble.skip:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #426da9;
+  right: 44px;
+  bottom: -6px;
+}
+@media (min-width: 960px), print {
+  /* line 523, ../css.source/modules/_tyce-player.scss */
+  .help-overlay .bubble.skip {
+    bottom: 24px;
+    right: 142px;
+  }
+  /* line 539, ../css.source/modules/_tyce-player.scss */
+  .help-overlay .bubble.skip:after {
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid #426da9;
+    border-right: none;
+    right: -6px;
+    bottom: 25px;
+  }
+}
