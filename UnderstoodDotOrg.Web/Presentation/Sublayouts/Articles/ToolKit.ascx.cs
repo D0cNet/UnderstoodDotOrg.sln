@@ -34,6 +34,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 FieldRenderer frTitle = e.FindControlAs<FieldRenderer>("frTitle");
                 HtmlGenericControl iconType = e.FindControlAs<HtmlGenericControl>("iconType");
                 HtmlGenericControl fileSize = e.FindControlAs<HtmlGenericControl>("fileSize");
+                Literal litFileSize = e.FindControlAs<Literal>("litFileSize");
                 HyperLink hypActionLink = e.FindControlAs<HyperLink>("hypActionLink");
                 HyperLink hypTitle = e.FindControlAs<HyperLink>("hypTitle");
                 LinkField lf = dataItem.Fields["Link"];
@@ -54,13 +55,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     iconType.Attributes.Add("class", "pdf");
 
+                    string fileSizeText = GetFileSize(dataItem);
+                    if (fileSizeText != "0")
+                        litFileSize.Text = fileSizeText;
+
                     itemLink = ResolveMediaURL(dataItem);
+                    hypActionLink.Attributes.Add("download", "download");
                 }
                 else if (dataItem.IsOfType(VideoToolkitResourceItem.TemplateId))
                 {
                     iconType.Attributes.Add("class", "video");
 
-                    //itemLink = ResolveMediaURL(dataItem);
                     if (lf.TargetItem != null)
                         itemLink = LinkManager.GetItemUrl(lf.TargetItem);
                 }
@@ -68,7 +73,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     iconType.Attributes.Add("class", "audio");
 
-                    //itemLink = ResolveMediaURL(dataItem);
                     if (lf.TargetItem != null)
                         itemLink = LinkManager.GetItemUrl(lf.TargetItem);
                 }
@@ -87,12 +91,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
                     //LinkField lf = dataItem.Fields["Link"];
 
-                    if (lf.TargetItem != null)
-                        itemLink = LinkManager.GetItemUrl(lf.TargetItem);
+                    itemLink = ResolveMediaURL(dataItem);
                 }
 
                 hypActionLink.NavigateUrl = hypTitle.NavigateUrl = itemLink;
             }
+        }
+
+        private string GetFileSize(Item item)
+        {
+            LinkField lf = item.Fields["Link"];
+
+            if (lf.LinkType.ToLower() == "media")
+            {
+                MediaItem mediaItem = new MediaItem(lf.TargetItem);
+                return mediaItem.Size.ToString();
+            }
+
+            return "0";
         }
 
         private string ResolveMediaURL(Item item)
@@ -103,6 +119,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 if (lf.LinkType.ToLower() == "external")
                     return lf.Url;
+                else if(lf.LinkType.ToLower() == "internal")
+                    return lf.TargetItem.GetUrl();
                 else
                     return Sitecore.Resources.Media.MediaManager.GetMediaUrl(lf.TargetItem);
             }

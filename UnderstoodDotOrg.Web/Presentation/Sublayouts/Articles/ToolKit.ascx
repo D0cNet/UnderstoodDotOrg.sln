@@ -49,7 +49,7 @@
                                     <i id="iconType" runat="server"></i>
                                     <asp:HyperLink ID="hypActionLink" runat="server"></asp:HyperLink>
                                     <%--this has to be wired up--%>
-                                    <span id="fileSize" runat="server">125K</span>
+                                    <span id="fileSize" runat="server"><asp:Literal ID="litFileSize" runat="server"></asp:Literal></span>
                                 </div>
                             </div>
                         </ItemTemplate>
