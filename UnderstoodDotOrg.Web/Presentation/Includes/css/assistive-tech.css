@@ -310,14 +310,22 @@
   position: absolute;
   text-align: left;
   top: 0;
+  width: 170px;
 }
 @media (min-width: 650px), print {
   /* line 51, ../css.source/modules/assistive-tech/_at-hero-image.scss */
   .hero-content {
     padding-left: 0px;
+    width: 370px;
   }
 }
-/* line 60, ../css.source/modules/assistive-tech/_at-hero-image.scss */
+@media (min-width: 769px), print {
+  /* line 51, ../css.source/modules/assistive-tech/_at-hero-image.scss */
+  .hero-content {
+    width: 470px;
+  }
+}
+/* line 67, ../css.source/modules/assistive-tech/_at-hero-image.scss */
 .hero-content h1 {
   color: #7a4183;
   font-size: 18px;
@@ -330,7 +338,7 @@
   width: 100%;
 }
 @media (min-width: 650px), print {
-  /* line 60, ../css.source/modules/assistive-tech/_at-hero-image.scss */
+  /* line 67, ../css.source/modules/assistive-tech/_at-hero-image.scss */
   .hero-content h1 {
     font-size: 44px;
     font-size: 2.75rem;
@@ -341,7 +349,7 @@
     width: 60%;
   }
 }
-/* line 76, ../css.source/modules/assistive-tech/_at-hero-image.scss */
+/* line 83, ../css.source/modules/assistive-tech/_at-hero-image.scss */
 .hero-content h2 {
   color: #7a4183;
   font-size: 14px;
@@ -353,7 +361,7 @@
   width: 60%;
 }
 @media (min-width: 650px), print {
-  /* line 76, ../css.source/modules/assistive-tech/_at-hero-image.scss */
+  /* line 83, ../css.source/modules/assistive-tech/_at-hero-image.scss */
   .hero-content h2 {
     font-size: 21px;
     font-size: 1.3125rem;

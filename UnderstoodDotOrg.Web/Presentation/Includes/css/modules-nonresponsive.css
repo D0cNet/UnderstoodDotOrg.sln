@@ -3369,9 +3369,12 @@ html.canvas .mini-tools-wrap {
   position: absolute;
   text-align: left;
   top: 0;
+  width: 170px;
   padding-left: 0px;
+  width: 370px;
+  width: 470px;
 }
-/* line 56, ../css.source/modules/_hero-image.scss */
+/* line 63, ../css.source/modules/_hero-image.scss */
 .hero-text h1 {
   color: #7a4183;
   font-size: 18px;
@@ -3388,7 +3391,7 @@ html.canvas .mini-tools-wrap {
   margin-bottom: 12px;
   padding-top: 34px;
 }
-/* line 71, ../css.source/modules/_hero-image.scss */
+/* line 78, ../css.source/modules/_hero-image.scss */
 .hero-text h2.hero-subheader {
   color: #7a4183;
   font-size: 14px;
@@ -3404,7 +3407,7 @@ html.canvas .mini-tools-wrap {
   line-height: 1.75rem;
   width: 100%;
 }
-/* line 84, ../css.source/modules/_hero-image.scss */
+/* line 91, ../css.source/modules/_hero-image.scss */
 .hero-text a.meet-the-experts-link {
   color: #426da9;
   font-size: 14px;

@@ -4958,14 +4958,22 @@
   position: absolute;
   text-align: left;
   top: 0;
+  width: 170px;
 }
 @media (min-width: 650px), print {
   /* line 47, ../css.source/modules/_hero-image.scss */
   .hero-text {
     padding-left: 0px;
+    width: 370px;
   }
 }
-/* line 56, ../css.source/modules/_hero-image.scss */
+@media (min-width: 769px), print {
+  /* line 47, ../css.source/modules/_hero-image.scss */
+  .hero-text {
+    width: 470px;
+  }
+}
+/* line 63, ../css.source/modules/_hero-image.scss */
 .hero-text h1 {
   color: #7a4183;
   font-size: 18px;
@@ -4977,7 +4985,7 @@
   padding-top: 13px;
 }
 @media (min-width: 650px), print {
-  /* line 56, ../css.source/modules/_hero-image.scss */
+  /* line 63, ../css.source/modules/_hero-image.scss */
   .hero-text h1 {
     font-size: 36px;
     font-size: 2.25rem;
@@ -4987,7 +4995,7 @@
     padding-top: 34px;
   }
 }
-/* line 71, ../css.source/modules/_hero-image.scss */
+/* line 78, ../css.source/modules/_hero-image.scss */
 .hero-text h2.hero-subheader {
   color: #7a4183;
   font-size: 14px;
@@ -4999,7 +5007,7 @@
   width: 54%;
 }
 @media (min-width: 650px), print {
-  /* line 71, ../css.source/modules/_hero-image.scss */
+  /* line 78, ../css.source/modules/_hero-image.scss */
   .hero-text h2.hero-subheader {
     font-size: 21px;
     font-size: 1.3125rem;
@@ -5008,14 +5016,14 @@
     width: 100%;
   }
 }
-/* line 84, ../css.source/modules/_hero-image.scss */
+/* line 91, ../css.source/modules/_hero-image.scss */
 .hero-text a.meet-the-experts-link {
   color: #426da9;
   font-size: 14px;
   font-size: 0.875rem;
 }
 @media (min-width: 650px), print {
-  /* line 84, ../css.source/modules/_hero-image.scss */
+  /* line 91, ../css.source/modules/_hero-image.scss */
   .hero-text a.meet-the-experts-link {
     font-size: 16px;
     font-size: 1rem;

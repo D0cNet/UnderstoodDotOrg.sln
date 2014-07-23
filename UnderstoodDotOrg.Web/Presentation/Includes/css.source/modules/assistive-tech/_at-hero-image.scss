@@ -53,8 +53,15 @@
   position: absolute;
   text-align: left;
   top: 0;
+  width: 170px;
+
   @include bp($bp-small-plus){
     padding-left: 0px;
+    width: 370px;
+  }
+
+  @include bp($bp-medium) {
+    width: 470px;
   }
 
   h1 {
