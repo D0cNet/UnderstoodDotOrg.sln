@@ -3,7 +3,7 @@
 <div class="container tyce-personalize">
     <div class="row">
         <div class="content">
-            <div class="text">
+            <div class="text rs_read_this">
                 <h2><%= Model.PersonalizationBoxTitle.Rendered %></h2>
                 <%= Model.PersonalizationBoxAbstract.Rendered %>
             </div>
@@ -16,7 +16,7 @@
 <!-- .tyce-personalize -->
 <div class="container tyce-on-demand">
     <div class="row">
-        <div class="col col-22 offset-1">
+        <div class="col col-22 offset-1 rs_read_this">
             <h2>On-Demand</h2>
             <%= Model.TyceBasePage.ContentPage.BodyContent.Rendered %>
         </div>
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col col-23 offset-1">
+        <div class="col col-23 offset-1 rs_read_this">
             <ul class="item-5">
                 <asp:Repeater ID="rptrSimulations" runat="server" 
                     ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components.ChildLearningIssueItem">
@@ -53,7 +53,7 @@
 <!-- .tyce-on-demand-container -->
 <div class="container tyce-on-demand-container stories">
     <div class="row">
-        <div class="col col-23 offset-1">
+        <div class="col col-23 offset-1 rs_read_this">
             <h3>Children's Stories</h3>
             <ul class="tab-controls">
                 <%--<li>

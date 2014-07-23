@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         <div class="col col-22 offset-1">
-            <div class="text text-small">
+            <div class="text text-small rs_read_this">
                 <h1><%= PageItem.ContentPage.PageTitle.Rendered %></h1>
                 <%= PageItem.ContentPage.BodyContent.Rendered %>
             </div>
