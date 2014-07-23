@@ -82,8 +82,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
                     GradeLevelItem gli = Sitecore.Context.Database.GetItem(grade.Key);
                     if (gli != null)
                     {
-                        litGrade.Text = gli.Name.Rendered;
-                        childPrefix = String.Concat(gli.Name.Rendered, ", ");
+                        litGrade.Text = gli.AbbreviatedGrade.Raw;
+                        childPrefix = String.Concat(gli.Name.Raw, ", ");
                     }
                 }
 

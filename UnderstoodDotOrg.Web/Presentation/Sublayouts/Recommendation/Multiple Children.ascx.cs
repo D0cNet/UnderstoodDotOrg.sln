@@ -18,6 +18,7 @@ using System.Text;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 {
@@ -164,6 +165,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 
                     sb.AppendLine("");
 
+                    sb.AppendLine("Evaluations:");
+
+                    foreach (var itemEval in item.OtherApplicableEvaluations.ListItems)
+                    {
+                        sb.AppendLine(itemEval.Name);
+                    }
+
+                    sb.AppendLine("");
+
+                    bool excluded = item.OverrideType.ListItems
+                        .Where(x => x.ID == Sitecore.Data.ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization))
+                        .FirstOrDefault() != null;
+
+                    sb.AppendLine(String.Format("Exclude from Personalization: {0}", excluded.ToString().ToLower()));
+
+                    sb.AppendLine("");
+
                     Article article = SearchHelper.GetArticle(item.ID);
                     if (article != null)
                     {
@@ -217,6 +235,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
                                 sb.AppendLine(HttpUtility.HtmlDecode(pii.InterestName.Raw));
                             }
                         }
+
+                        sb.AppendLine("");
+
+                        sb.AppendLine("Evaluations:");
+
+                        foreach (var itemEval in article.ApplicableEvaluations)
+                        {
+                            Item i = Sitecore.Context.Database.GetItem(itemEval);
+                            if (i != null)
+                            {
+                                sb.AppendLine(i.Name);
+                            }
+                        }
+
+                        sb.AppendLine("");
+
+                        bool excludedTag = article.OverrideTypes.Contains(Sitecore.Data.ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization));
+
+                        sb.AppendLine(String.Format("Exclude from Personalization: {0}", excludedTag.ToString().ToLower()));
                     }
 
                     litDebugTag.Text = String.Format("<!--{0}-->", sb.ToString());
