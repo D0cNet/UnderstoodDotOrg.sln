@@ -588,12 +588,13 @@ $account-circle-gray: #bcbdc0;
 
   }
   // conversation panel
-  .telligent-coversation {
+  .telligent-conversation {
     width: 70%;
     height: 700px;
     float: right;
     position: relative;
-    padding-bottom: 150px;
+    padding-bottom: 200px;
+    background: #f4f2f1;
 
   }
   // title boxes
@@ -606,19 +607,33 @@ $account-circle-gray: #bcbdc0;
     @include clearfix();
 
     span {
-      font-size: 18px;
+      font-size: 20px;
       color: #fff;
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 5px;
       float: left;
+      font-weight: bold;
     }
   }
   .telligent-inbox-title {
     border-right: 1px solid #fff;
   }
-  // inbox item
+  // inbox inbox item
   .telligent-inbox-item {
     height: 83px;
+    padding: 10px 20px 10px 20px;
+  }
+  // telligent avatar
+  .telligent-avatar-wrap {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .telligent-avatar {
+    width: 30px;
+    height: 30px;
+
   }
   // reply wysiwyg editor
   .telligent-reply-editor {
@@ -637,13 +652,13 @@ $account-circle-gray: #bcbdc0;
       background: none;
       border: 0px;
     }
-    .cke-bottom { display: none; }
+    .cke_bottom { display: none; }
   }
   // cta buttons - imported from global & edited
   .telligent-new-message-button,
   .telligent-conversation-delete-button,
   .telligent-reply-button {
-    @include rem(font-size, 18px);
+    @include rem(font-size, 16px);
     @include rounded-corners(2px);
     background-color: #f2af00;
     border: none;
@@ -690,6 +705,10 @@ $account-circle-gray: #bcbdc0;
         cursor: default;
       }
     }
+  }
+  .telligent-reply-button {
+    float: left;
+    margin-top: 10px;
   }
 
 }

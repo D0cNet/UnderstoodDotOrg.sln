@@ -79,7 +79,7 @@
             <asp:Panel ID="pnlTool" runat="server">
 
                 <div id="left_pane" class="telligent-inbox">
-                    <div class="telligent-inbox-title" ><span>Inbox (<asp:Literal Text="" ID="litMsgs" runat="server" />)</span>
+                    <div class="telligent-inbox-title" ><span>Inbox <span class="telligent-inbox-total"><asp:Literal Text="" ID="litMsgs" runat="server" /></span></span>
 
                         <input type="button" title="New Message" id="btn-new-message" value="New Message"  class="telligent-new-message-button"  />
 
