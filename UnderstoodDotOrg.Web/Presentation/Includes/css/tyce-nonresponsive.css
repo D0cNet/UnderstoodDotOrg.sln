@@ -663,30 +663,31 @@
   font-size: 20px;
   color: #fff;
   display: inline-block;
-  margin-top: 5px;
   float: left;
   font-weight: bold;
 }
-/* line 618, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 617, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-inbox-title {
   border-right: 1px solid #fff;
 }
-/* line 622, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 621, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-inbox-item {
-  height: 83px;
-  padding: 10px 20px 10px 20px;
+  height: 84px;
+  padding: 20px;
 }
-/* line 627, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 626, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-avatar-wrap {
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   overflow: hidden;
+  display: inline-block;
 }
 /* line 633, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-avatar {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
+  margin: -3px 0 0 -9px;
 }
 /* line 639, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-reply-editor {
@@ -725,6 +726,7 @@
   border-top-right-radius: 2px;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+  background: none;
   background-color: #f2af00;
   border: none;
   color: black;
@@ -735,11 +737,11 @@
   display: block;
   float: right;
   height: 30px;
-  line-height: 30px;
+  line-height: normal;
   width: 100%;
   max-width: 150px;
 }
-/* line 678, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 679, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-new-message-button:focus,
 .account-notifications-tab-messages .telligent-conversation-delete-button:focus,
 .account-notifications-tab-messages .telligent-reply-button:focus {
@@ -757,13 +759,13 @@
 .account-notifications-tab-messages .telligent-reply-button:focus {
   outline: solid 1px #dfdfdf;
 }
-/* line 685, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 686, ../css.source/modules/account/_account-notification-tabs.scss */
 .touch .account-notifications-tab-messages .telligent-new-message-button:focus, .touch
 .account-notifications-tab-messages .telligent-conversation-delete-button:focus, .touch
 .account-notifications-tab-messages .telligent-reply-button:focus {
   background-color: #f2af00;
 }
-/* line 690, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 691, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-new-message-button:hover,
 .account-notifications-tab-messages .telligent-conversation-delete-button:hover,
 .account-notifications-tab-messages .telligent-reply-button:hover {
@@ -771,13 +773,13 @@
   color: black;
   text-decoration: none;
 }
-/* line 695, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 696, ../css.source/modules/account/_account-notification-tabs.scss */
 .touch .account-notifications-tab-messages .telligent-new-message-button:hover, .touch
 .account-notifications-tab-messages .telligent-conversation-delete-button:hover, .touch
 .account-notifications-tab-messages .telligent-reply-button:hover {
   background-color: #f2af00;
 }
-/* line 702, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 703, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-new-message-button.disabled, .account-notifications-tab-messages .telligent-new-message-button.disabled:hover, .account-notifications-tab-messages .telligent-new-message-button[disabled], .account-notifications-tab-messages .telligent-new-message-button[disabled]:hover,
 .account-notifications-tab-messages .telligent-conversation-delete-button.disabled,
 .account-notifications-tab-messages .telligent-conversation-delete-button.disabled:hover,
@@ -791,7 +793,7 @@
   color: #4c4c4c;
   cursor: default;
 }
-/* line 709, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 710, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-reply-button {
   float: left;
   margin-top: 10px;
