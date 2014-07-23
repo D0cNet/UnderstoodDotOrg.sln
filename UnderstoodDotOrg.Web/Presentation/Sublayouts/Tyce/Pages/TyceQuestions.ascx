@@ -2,7 +2,7 @@
 <div class="container tyce-step-wrap">
     <div class="row">
         <div class="col col-22 offset-1">
-            <div class="tyce-step" id="tyce-step-1">
+            <div class="tyce-step rs_read_this" id="tyce-step-1">
                 <header>
                     <h2>
                         <span class="num">1</span>
@@ -11,7 +11,7 @@
                         <span class="instructions"><%= Model.QuestionOneInstructions.Rendered %></span>
                     </h2>
                     <div class="info tyce-step-why">
-                        <a href="REPLACE"><%= Model.WhyAreWeAskingText.Rendered %></a>
+                        <a href="REPLACE" class="rs_preserve"><%= Model.WhyAreWeAskingText.Rendered %></a>
                     </div>
                     <a href="REPLACE" class="button tyce-step-change" style="display: none;">Change</a>
                 </header>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <!-- #tyce-step-1 -->
-            <div class="tyce-step" id="tyce-step-2">
+            <div class="tyce-step rs_read_this" id="tyce-step-2">
                 <header>
                     <h2>
                         <span class="num">2</span>

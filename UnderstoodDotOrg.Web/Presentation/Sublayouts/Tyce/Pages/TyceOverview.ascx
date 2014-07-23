@@ -76,7 +76,7 @@
             <%--<div class="row<%# Container.ItemIndex == 0 ? " active" : string.Empty %>" id="cs<%# Item.ID.ToShortID().ToString() %>"
                 style="display: <%# Container.ItemIndex == 0 ? "block" : "none" %>;">--%>
             <div class="row" id="cs<%# Item.ID.ToShortID().ToString() %>">
-            <div class="col col-23 offset-1">
+            <div class="col col-23 offset-1 rs_read_this">
                 <div class="title"><%# Item.Title.Rendered %></div></div>
                 <ul class="item-5">
                     <asp:Repeater ID="rptrIssues" runat="server">

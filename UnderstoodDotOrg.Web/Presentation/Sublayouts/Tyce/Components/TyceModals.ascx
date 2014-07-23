@@ -60,7 +60,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <button type="button" class="close-overlay" data-dismiss="modal" aria-hidden="true">Close</button>
-            <div class="modal-body">
+            <div class="modal-body rs_preserve rs_skip">
                 <h2>Select your Child</h2>
                 <p>Your profile contains <%= IsUserLoggedIn ? CurrentMember.Children.Count : 0 %> children. 
                    <%= PleaseSelectChild %></p>
@@ -88,7 +88,7 @@
                         </li>--%>
                     </ul>
                 </fieldset>
-                <div class="actions">
+                <div class="actions rs_preserve rs_skip">
                     <a href="<%= TyceQuestionsPageUrl %>" class="button to-player-link">Ok let's go</a>
                     <a href="<%= TyceQuestionsPageUrl %>" class="button gray to-questions-link">Let Me Customize</a>
                 </div>
@@ -134,11 +134,11 @@
 <div class="modal fade modal-standard" id="tyce-modal-no-challenge" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-body">
+      <div class="modal-body rs_read_this">
         <h2><%= OtherChallengesHeader %></h2>
         <%= OtherChallengesContent %>
-        <div class="actions">
           <a href="REPLACE" class="button button-close">OK</a>
+        <div class="actions rs_preserve rs_skip">
         </div>
       </div><!-- /.modal-body -->
     </div><!-- /.modal-content -->
@@ -148,11 +148,11 @@
 <div class="modal fade modal-standard" id="tyce-modal-after-hs" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-body">
+      <div class="modal-body rs_read_this">
         <h2><%= AfterHighSchoolHeader %></h2>
         <%= AfterHighSchoolContent %>
-        <div class="actions">
           <a href="REPLACE" class="button button-close">OK</a>
+        <div class="actions rs_preserve rs_skip">
         </div>
       </div><!-- /.modal-body -->
     </div><!-- /.modal-content -->

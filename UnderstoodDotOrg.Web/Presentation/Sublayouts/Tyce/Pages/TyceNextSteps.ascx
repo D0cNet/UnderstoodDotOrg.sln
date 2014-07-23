@@ -5,7 +5,7 @@
 <div class="container tyce-personalize">
     <div class="row">
         <div class="content">
-            <div class="text">
+            <div class="text rs_read_this">
                 <h2><%= Model.PersonalizationBoxTitle.Rendered %></h2>
                 <%= Model.PersonalizationBoxAbstract.Rendered %>
             </div>
