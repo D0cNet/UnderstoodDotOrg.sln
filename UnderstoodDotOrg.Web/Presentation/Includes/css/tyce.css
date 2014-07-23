@@ -2803,7 +2803,7 @@
     border: 1px solid #f2f2f2;
   }
   /* line 712, ../css.source/modules/_tyce-steps.scss */
-  .tyce-issues .issue:nth-child(3n+1) {
+  .tyce-issues .issue.row-start {
     margin-left: 0;
     clear: left;
   }

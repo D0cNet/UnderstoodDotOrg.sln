@@ -709,9 +709,9 @@
         border: 1px solid #f2f2f2;
       }
 
-      &:nth-child(3n+1) {
+      &.row-start {
         margin-left: 0;
-        clear: left;
+        clear: left; 
       }
     }
     
