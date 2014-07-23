@@ -1,9 +1,10 @@
 .infographic {
   position: relative;
   margin-bottom: 46px;
+  padding-top: 60px;
   .infographic-zoom {
     position: absolute;
-    min-width: 320px;
+    min-width: 305px0px;
     margin: 0;
     top: 0;
     @include bp($bp-small){

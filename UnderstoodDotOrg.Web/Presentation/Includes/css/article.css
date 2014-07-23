@@ -2127,21 +2127,22 @@
 .infographic {
   position: relative;
   margin-bottom: 46px;
+  padding-top: 60px;
 }
-/* line 4, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 5, ../css.source/modules/article/_infographic-zoom.scss */
 .infographic .infographic-zoom {
   position: absolute;
-  min-width: 320px;
+  min-width: 305px0px;
   margin: 0;
   top: 0;
 }
 @media (min-width: 480px), print {
-  /* line 4, ../css.source/modules/article/_infographic-zoom.scss */
+  /* line 5, ../css.source/modules/article/_infographic-zoom.scss */
   .infographic .infographic-zoom {
     right: 0;
   }
 }
-/* line 13, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 14, ../css.source/modules/article/_infographic-zoom.scss */
 .infographic .infographic-zoom .infographic-zoom-icon {
   background-image: url('../images/sprite.infographic-zoom.png?830b3a18');
   background-size: 305px 120px;
@@ -2153,43 +2154,43 @@
   text-indent: -9999px;
   width: 73px;
 }
-/* line 23, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 24, ../css.source/modules/article/_infographic-zoom.scss */
 .infographic .infographic-zoom .infographic-zoom-icon:hover, .infographic .infographic-zoom .infographic-zoom-icon:focus {
   background-position-y: -60px;
 }
 @media (min-width: 480px), print {
-  /* line 13, ../css.source/modules/article/_infographic-zoom.scss */
+  /* line 14, ../css.source/modules/article/_infographic-zoom.scss */
   .infographic .infographic-zoom .infographic-zoom-icon {
     width: 75px;
   }
 }
-/* line 31, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 32, ../css.source/modules/article/_infographic-zoom.scss */
 .no-backgroundsize .infographic .infographic-zoom .infographic-zoom-icon {
   background-image: url('../images/sprite.infographic-zoom.lo-res.png?ef5bd24a');
 }
-/* line 36, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 37, ../css.source/modules/article/_infographic-zoom.scss */
 .infographic .infographic-zoom .infographic-zoom-icon-embed {
   background-position: 0 0;
 }
-/* line 39, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 40, ../css.source/modules/article/_infographic-zoom.scss */
 .infographic .infographic-zoom .infographic-zoom-icon-download {
   background-position: -75px 0;
 }
-/* line 42, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 43, ../css.source/modules/article/_infographic-zoom.scss */
 .infographic .infographic-zoom .infographic-zoom-icon-zoom-in {
   background-position: -150px 0;
 }
-/* line 45, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 46, ../css.source/modules/article/_infographic-zoom.scss */
 .infographic .infographic-zoom .infographic-zoom-icon-zoom-out {
   background-position: -225px 0;
 }
-/* line 50, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 51, ../css.source/modules/article/_infographic-zoom.scss */
 .infographic .zoom-container {
   width: 100%;
   height: auto;
   overflow: hidden;
 }
-/* line 55, ../css.source/modules/article/_infographic-zoom.scss */
+/* line 56, ../css.source/modules/article/_infographic-zoom.scss */
 .infographic .zoom-container img {
   max-width: 100%;
 }
