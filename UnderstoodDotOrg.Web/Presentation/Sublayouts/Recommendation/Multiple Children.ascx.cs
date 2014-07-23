@@ -145,7 +145,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 
                     sb.AppendLine("");
 
-                    sb.AppendLine("Diagnoses:");
+                    sb.AppendLine("Child Diagnoses:");
 
                     foreach (var diagnosis in item.ChildDiagnoses.ListItems)
                     {
@@ -174,13 +174,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 
                     sb.AppendLine("");
 
+                    sb.AppendLine("Diagnosed:");
+
+                    foreach (var diag in item.DiagnosedCondition.ListItems)
+                    {
+                        sb.AppendLine(diag.Name);
+                    }
+
+                    sb.AppendLine("");
+
                     bool excluded = item.OverrideType.ListItems
                         .Where(x => x.ID == Sitecore.Data.ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization))
                         .FirstOrDefault() != null;
 
                     sb.AppendLine(String.Format("Exclude from Personalization: {0}", excluded.ToString().ToLower()));
 
+                    bool mustRead = item.ImportanceLevel.ListItems
+                        .Where(x => x.ID == Sitecore.Data.ID.Parse(Constants.ArticleTags.MustRead))
+                        .FirstOrDefault() != null;
+
+                    sb.AppendLine(String.Format("Must read: {0}", mustRead.ToString().ToLower()));
+
                     sb.AppendLine("");
+
+
 
                     Article article = SearchHelper.GetArticle(item.ID);
                     if (article != null)
@@ -212,7 +229,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 
                         sb.AppendLine("");
 
-                        sb.AppendLine("Diagnoses:");
+                        sb.AppendLine("Child Diagnoses:");
 
                         foreach (var diagnosis in article.ChildDiagnoses)
                         {
@@ -251,9 +268,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 
                         sb.AppendLine("");
 
+                        sb.AppendLine("Diagnosed:");
+
+                        foreach (var diag in article.DiagnosedConditions)
+                        {
+                            Item i = Sitecore.Context.Database.GetItem(diag);
+                            if (i != null)
+                            {
+                                sb.AppendLine(i.Name);
+                            }
+                        }
+
+                        sb.AppendLine("");
+
                         bool excludedTag = article.OverrideTypes.Contains(Sitecore.Data.ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization));
 
                         sb.AppendLine(String.Format("Exclude from Personalization: {0}", excludedTag.ToString().ToLower()));
+
+                        bool mustReadTag = article.ImportanceLevels.Contains(Sitecore.Data.ID.Parse(Constants.ArticleTags.MustRead));
+                        sb.AppendLine(String.Format("Must read: {0}", mustReadTag.ToString().ToLower()));
                     }
 
                     litDebugTag.Text = String.Format("<!--{0}-->", sb.ToString());
