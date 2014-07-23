@@ -15,9 +15,11 @@ namespace UnderstoodDotOrg.Web.Presentation
 {
     public partial class MembershipTest : System.Web.UI.Page
     {
+        public string un { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            var un = string.Empty;
+            //var un = string.Empty;
 
             if (!string.IsNullOrEmpty(Request.QueryString["un"]))
             {
@@ -25,25 +27,40 @@ namespace UnderstoodDotOrg.Web.Presentation
             }
             else
             {
-                un = "everythingisawesome";
+                un = "changemyemail@mailinator.com";
             }
 
 
-            //litRoles.Text = MembershipManager.isOpenToConnect(un).ToString();
+
+            ////litRoles.Text = MembershipManager.isOpenToConnect(un).ToString();
             var membershipManager = new MembershipManager();
-            var sb = new StringBuilder();
-            var output = @"Method: {0}:{1}</br>";
-            var member = membershipManager.GetMemberByScreenName(un);
-            var memberId = member.MemberId;
+            //var sb = new StringBuilder();
+            //var output = @"Method: {0}:{1}</br>";
+            var member = membershipManager.GetMember(un);
+            //var memberId = member.MemberId;
 
-            sb.Append(string.Format(output, "membershipManager.GetMemberByScreenName(un).Email", membershipManager.GetMemberByScreenName(un).Email));
-            sb.Append(string.Format(output, "membershipManager.GetMember(memberId).Email", membershipManager.GetMember(memberId).Email));
-            sb.Append(string.Format(output, "membershipManager.GetMember('q1q1q1@q1.q1').Email", membershipManager.GetMember("q1q1q1@q1.q1").Email));
-            //sb.Append(string.Format(output, "membershipManager.GetMember('q1q1q1@q1.q1').Email", membershipManager.GetMembers().FirstOrDefault(x => x.Email == "q1q1q1@q1.q1").Email));
-            sb.Append(string.Format(output, "membershipManager.GetMembers().FirstOrDefault(x => x.MemberId == memberId).Email", membershipManager.GetMembers().FirstOrDefault(x => x.MemberId == memberId).Email));
-            sb.Append(string.Format(output, "membershipManager.GetUser(memberId).Email", membershipManager.GetUser(memberId).Email));
+            //sb.Append(string.Format(output, "membershipManager.GetMemberByScreenName(un).Email", membershipManager.GetMemberByScreenName(un).Email));
+            //sb.Append(string.Format(output, "membershipManager.GetMember(memberId).Email", membershipManager.GetMember(memberId).Email));
+            //sb.Append(string.Format(output, "membershipManager.GetMember('q1q1q1@q1.q1').Email", membershipManager.GetMember("q1q1q1@q1.q1").Email));
+            ////sb.Append(string.Format(output, "membershipManager.GetMember('q1q1q1@q1.q1').Email", membershipManager.GetMembers().FirstOrDefault(x => x.Email == "q1q1q1@q1.q1").Email));
+            //sb.Append(string.Format(output, "membershipManager.GetMembers().FirstOrDefault(x => x.MemberId == memberId).Email", membershipManager.GetMembers().FirstOrDefault(x => x.MemberId == memberId).Email));
+            //sb.Append(string.Format(output, "membershipManager.GetUser(memberId).Email", membershipManager.GetUser(memberId).Email));
 
-            litRoles.Text = sb.ToString();
+            //litRoles.Text = sb.ToString();
+            litEmail.Text = member.Email;
+        }
+
+        protected void btnGo_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtEmail.Text))
+            {
+                var membershipManager = new MembershipManager();
+                var member = membershipManager.GetMember(un);
+
+                var success = membershipManager.UpdateEmail(member, txtEmail.Text);
+
+                Response.Write(success.ToString());
+            }
         }
 
     }

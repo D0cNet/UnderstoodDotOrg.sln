@@ -10,6 +10,7 @@ using System.Web.Security;
 using UnderstoodDotOrg.Domain.Understood.Quiz;
 using UnderstoodDotOrg.Common.Helpers;
 using MembershipProvider = System.Web.Security.Membership;
+using System.Data;
 
 
 namespace UnderstoodDotOrg.Domain.Membership
@@ -571,6 +572,81 @@ namespace UnderstoodDotOrg.Domain.Membership
                 }
                 throw ex;
             }
+        }
+
+        public bool UpdateEmail(Member Member, string newEmail)
+        {
+            var ret = false;
+
+            if (!string.IsNullOrEmpty(Member.Email) && !string.IsNullOrEmpty(newEmail) && Member.Email != newEmail)
+            {
+                try
+                {
+                    var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+                    var user = provider.GetUser(Member.MemberId, false);
+
+                    //update username via stored procedure
+                    ret = this.updateEmail(provider.ApplicationName, user.UserName, newEmail);
+
+                    if (ret)
+                    {
+                        user = provider.GetUser(Member.MemberId, false);
+
+                        user.Email = newEmail;
+
+                        //update email property on ASP.Net user
+                        provider.UpdateUser(user);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            }
+
+            return ret;
+        }
+
+        private bool updateEmail(string applicationName, string oldUsername, string newUsername)
+        {
+            using (SqlConnection myConnection = new SqlConnection())
+            {
+                myConnection.ConnectionString = ConfigurationManager.ConnectionStrings["membership"].ConnectionString;
+
+                SqlCommand myCommand = new SqlCommand();
+                myCommand.Connection = myConnection;
+                myCommand.CommandText = "usp_ChangeUsername";
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                myCommand.Parameters.AddWithValue("@ApplicationName", applicationName);
+                myCommand.Parameters.AddWithValue("@OldUserName", oldUsername);
+                myCommand.Parameters.AddWithValue("@NewUserName", newUsername);
+
+                SqlParameter retValParam = new SqlParameter("@ReturnValue", SqlDbType.Int);
+                retValParam.Direction = ParameterDirection.ReturnValue;
+                myCommand.Parameters.Add(retValParam);
+
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
+
+                int returnValue = -1;
+                if (retValParam.Value != null)
+                {
+                    returnValue = Convert.ToInt32(retValParam.Value);
+                }
+
+                if (returnValue != 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
         }
 
         #endregion

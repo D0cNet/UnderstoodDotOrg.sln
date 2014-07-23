@@ -9,7 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Literal runat="server" ID="litRoles"></asp:Literal>
+            Old Email: <asp:Literal runat="server" ID="litEmail"></asp:Literal><br />
+            New Email: <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox> <br />
+            <asp:Button ID="btnGo" runat="server" Text="Update" OnClick="btnGo_Click" />
         </div>
     </form>
 </body>
