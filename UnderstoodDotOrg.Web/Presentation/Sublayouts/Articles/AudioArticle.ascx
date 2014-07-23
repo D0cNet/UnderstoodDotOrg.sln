@@ -10,7 +10,7 @@
             <!-- BEGIN PARTIAL: audio-pull-quote -->
             <div class="audio-quote">
                 <div class="audio-quote-img">
-                    <sc:Image ID="imgThumbnail" runat="server" Field="Content Thumbnail" Parameters="mw=290&mh=163" />
+                    <sc:Image ID="imgThumbnail" runat="server" Field="Featured Image" Parameters="mw=290&mh=163" />
                 </div>
                 <div class="audio-quote-text">
                     <%--<p class="audio-quote-content">"Best quote from the audio file gets shown here dolor sit amet, consectetuer adipiscing elit. Best quote from the audio file gets shown her dolor sit amet, consect etuer adipiscing elit. Best quote from the audio file gets shown her dolor sit amet, consectetuer adipiscing elit."</p>
