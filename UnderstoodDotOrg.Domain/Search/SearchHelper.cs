@@ -1066,7 +1066,7 @@ namespace UnderstoodDotOrg.Domain.Search
         }
 
         public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issueId, int? minGrade, int? maxGrade, Guid? technologyId, 
-            Guid? platformId, string searchTerm, int page, SortOptions.AssistiveToolsSortOptions sortOption)
+            Guid? platformId, string searchTerm, SortOptions.AssistiveToolsSortOptions sortOption)
         {
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
             searchTerm = NormalizeSearchTerm(searchTerm);
@@ -1109,16 +1109,6 @@ namespace UnderstoodDotOrg.Domain.Search
                         .Where(i => i.Content.Contains(searchTerm));
                 }
 
-                var total = query.Take(1).GetResults().TotalSearchResults;
-
-                int pageSize = Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE;
-                int offset = (page - 1) * pageSize;
-
-                if (page > 1)
-                {
-                    query = query.Skip(offset);
-                }
-
                 // Sort
                 switch (sortOption)
                 {
@@ -1136,12 +1126,15 @@ namespace UnderstoodDotOrg.Domain.Search
                         break;
                 }
 
+                var total = query.Take(1).GetResults().TotalSearchResults;
+
                 // Execute solr query
-                var results = query.Take(pageSize).ToList();
+                var results = query.Take(total).ToList();
 
                 return results
-                    .Where(i => i.GetItem() != null)
-                    .Select(i => new AssistiveToolsReviewPageItem(i.GetItem()));
+                    .Select(res => res.GetItem())
+                    .Where(i => i != null)
+                    .Select(i => new AssistiveToolsReviewPageItem(i));
             }
         }
 

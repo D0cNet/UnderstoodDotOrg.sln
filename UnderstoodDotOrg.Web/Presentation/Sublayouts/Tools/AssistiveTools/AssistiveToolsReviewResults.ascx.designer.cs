@@ -31,6 +31,60 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
         protected global::Sitecore.Web.UI.WebControls.Placeholder Placeholder2;
         
         /// <summary>
+        /// hfAssistiveTechResultsIssueId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfAssistiveTechResultsIssueId;
+        
+        /// <summary>
+        /// hfAssistiveTechResultsGradeId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfAssistiveTechResultsGradeId;
+        
+        /// <summary>
+        /// hfAssistiveTechResultsTechTypeId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfAssistiveTechResultsTechTypeId;
+        
+        /// <summary>
+        /// hfAssistiveTechResultsPlatformId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfAssistiveTechResultsPlatformId;
+        
+        /// <summary>
+        /// hfAssistiveTechResultsKeyword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfAssistiveTechResultsKeyword;
+        
+        /// <summary>
+        /// hfAssistiveTechResultsSortOption control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfAssistiveTechResultsSortOption;
+        
+        /// <summary>
         /// rptrSearchResultsSections control.
         /// </summary>
         /// <remarks>

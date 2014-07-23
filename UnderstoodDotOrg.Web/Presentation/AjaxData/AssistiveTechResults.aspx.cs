@@ -19,6 +19,11 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
         protected Guid SearchPageId { get; set; }
         protected Guid CategoryId { get; set; }
         protected SearchHelper.SortOptions.AssistiveToolsSortOptions SortOption { get; set; }
+        protected string Keyword { get; set; }
+        protected Guid? IssueId { get; set; }
+        protected Guid? GradeId { get; set; }
+        protected Guid? TechTypeId { get; set; }
+        protected Guid? PlatformId { get; set; }
 
         protected AssistiveToolsSearchResultsPageItem SearchPage
         {
@@ -35,13 +40,27 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                 SearchPageId = Request["pageId"].AsNGuid().Value;
                 CategoryId = Request["categoryId"].AsNGuid().Value;
                 ClickCount = Request["count"].AsInt();
+                Keyword = Request["keyword"];
+                if (!string.IsNullOrEmpty(Keyword))
+                {
+                    IssueId = Request["issueId"].AsNGuid();
+                    GradeId = Request["gradeId"].AsNGuid();
+                    TechTypeId = Request["techTypeId"].AsNGuid();
+                    PlatformId = Request["platformId"].AsNGuid();
+                }
 
                 var defaultSortValue = (int)SearchHelper.SortOptions.AssistiveToolsSortOptions.Relevance;
                 SortOption = Request["sortOption"].AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>(defaultValue: defaultSortValue);
 
-                SearchResults = SearchPage.InnerItem.Parent.Children
-                    .Where(i => i.IsOfType(AssistiveToolsReviewPageItem.TemplateId))
-                    .Select(i => (AssistiveToolsReviewPageItem)i)
+                SearchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(
+                    IssueId, 
+                    GradeId, 
+                    TechTypeId, 
+                    PlatformId, 
+                    Keyword, 
+                    SortOption);
+
+                SearchResults = SearchResults
                     .Where(i => i.Category.Item != null && i.Category.Item.ID.Guid == CategoryId)
                     .Skip(ClickCount * Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE)
                     .Take(Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE);

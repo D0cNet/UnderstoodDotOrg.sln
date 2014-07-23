@@ -38,7 +38,12 @@
     <!-- .row -->
 </div>
 <!-- .container -->
-
+<asp:HiddenField ID="hfAssistiveTechResultsIssueId" runat="server" ClientIDMode="Static" />
+<asp:HiddenField ID="hfAssistiveTechResultsGradeId" runat="server" ClientIDMode="Static" />
+<asp:HiddenField ID="hfAssistiveTechResultsTechTypeId" runat="server" ClientIDMode="Static" />
+<asp:HiddenField ID="hfAssistiveTechResultsPlatformId" runat="server" ClientIDMode="Static" />
+<asp:HiddenField ID="hfAssistiveTechResultsKeyword" runat="server" ClientIDMode="Static" />
+<asp:HiddenField ID="hfAssistiveTechResultsSortOption" runat="server" ClientIDMode="Static" />
 <asp:Repeater ID="rptrSearchResultsSections" runat="server">
     <ItemTemplate>
         <div class="container select-inverted-mobile<%# Container.ItemIndex % 2 == 0 ? string.Empty : " assistive-tech-results" %>">
@@ -68,10 +73,11 @@
                                 </fieldset>
                             </div>
                             <div class="col col-4 pull-6">
-                                <span class="result-count"><span class="category-display-count" data-category-id="<%# Eval("CategoryId") %>">
-                                    <%# Eval("CategoryResultDisplayCount") %></span> 
+                                <span class="result-count">
+                                    <span class="category-display-count" data-category-id="<%# Eval("CategoryId") %>"><%# Eval("CategoryResultDisplayCount") %></span> 
                                     of
-                                    <%# Eval("CategoryResultTotalCount") %> results</span>
+                                    <%# Eval("CategoryResultTotalCount") %> results
+                                </span>
                             </div>
                         </header>
                         <div class="tech-results-wrapper at-bottom container<%# Eval("CategoryId") %>">
@@ -91,11 +97,10 @@
                             <div class="container show-more rs_skip">
                                 <div class="row"<%# (bool)Eval("HasMoreResults") ? string.Empty : " style=\"display:none;\"" %>>
                                     <div class="col col-24">
-                                        <a class="show-more-link " href="#" data-path="AssistiveTechResults" data-category-id="<%# Eval("CategoryId") %>" 
+                                        <a class="at-show-more-link " href="#" data-path="AssistiveTechResults" data-category-id="<%# Eval("CategoryId") %>" 
                                             data-item="search-results" data-page-id="<%= Model.ID.Guid.ToString() %>" data-count="1" 
                                             data-container="container<%# Eval("CategoryId") %>" data-max-results="<%# Eval("CategoryResultTotalCount") %>"
-                                            data-results-per-click="<%= UnderstoodDotOrg.Common.Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE %>"
-                                            data-sort-option="<%= SortOption %>">
+                                            data-results-per-click="<%= UnderstoodDotOrg.Common.Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE %>">
                                             <%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %>
                                             <i class="icon-arrow-down-blue"></i>
                                         </a>

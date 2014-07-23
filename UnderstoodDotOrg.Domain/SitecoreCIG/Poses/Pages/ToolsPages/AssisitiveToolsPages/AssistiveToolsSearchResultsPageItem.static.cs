@@ -14,7 +14,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveT
     public partial class AssistiveToolsSearchResultsPageItem
     {
         public static IEnumerable<AssistiveToolsReviewPageItem> GetSearchResults(Guid? issueId = null, Guid? gradeRangeId = null, Guid? technologyId = null, 
-            Guid? platformId = null, string searchTerm = null, int page = 1, SearchHelper.SortOptions.AssistiveToolsSortOptions sortOption = 0)
+            Guid? platformId = null, string searchTerm = null, SearchHelper.SortOptions.AssistiveToolsSortOptions sortOption = 0)
         {
             int? minGrade = null;
             int? maxGrade = null;
@@ -31,7 +31,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveT
                 }
             }
 
-            return SearchHelper.GetAssitiveToolsReviewPages(issueId, minGrade, maxGrade, technologyId, platformId, searchTerm, page, sortOption);
+            return SearchHelper.GetAssitiveToolsReviewPages(issueId, minGrade, maxGrade, technologyId, platformId, searchTerm, sortOption);
         }
     }
 }

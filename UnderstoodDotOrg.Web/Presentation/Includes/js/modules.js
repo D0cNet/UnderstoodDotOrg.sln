@@ -531,13 +531,13 @@ the callbacks passed to the module.
             var $dataFile = $showMore.data('path');
 
             // data count (from button data attribute)
-            var $dataCount = $showMore.data('count');
+            var $dataCount = $showMore.attr('data-count');
 
             // data page id (from button data attribute)
             var $dataPageId = $showMore.data("page-id");
 
             // data category id (from button data attribute)
-            var $dataCategoryId = $showMore.data("category-id");
+            var $dataCategoryId = $showMore.attr("data-category-id");
 
             // data max results (from button data attribute)
             var $dataMaxResults = $showMore.data("max-results");
@@ -546,30 +546,46 @@ the callbacks passed to the module.
             var $dataResultsPerClick = $showMore.data("results-per-click");
 
             //data sort option (from button data attribute)
-            var $dataSortOption = $showMore.data("sort-option");
+            var $dataSortOption = $showMore.attr("data-sort-option");
 
             //number visible to user, reflecting number of displayed results
             var $categoryDisplayCount = $(".category-display-count").filter("[data-category-id='" + $dataCategoryId + "']");
 
+            //search parameters
+            var keyword = $("#hfAssistiveTechResultsKeyword").val();
+            if (!keyword) {
+                var issueId = $("#hfAssistiveTechResultsIssueId").val();
+                var gradeId = $("#hfAssistiveTechResultsGradeId").val();
+                var techTypeId = $("#hfAssistiveTechResultsTechTypeId").val();
+                var platformId = $("#hfAssistiveTechResultsPlatformId").val();
+            }
+            //var sortOption = $("#hfAssistiveTechResultsSortOption").val(); CURRENTLY NOT USED - WILL NEED TO IMPLEMENT
+
             // scroll to top of newly loaded items
             $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
 
-            var qs = "?count=" + $dataCount + "&pageId=" + $dataPageId + "&categoryId=" + $dataCategoryId + "&sortOption=" + $dataSortOption;
+            var qs = "?count=" + $dataCount +
+                "&pageId=" + $dataPageId +
+                "&categoryId=" + $dataCategoryId +
+                "&sortOption=" + $dataSortOption +
+                (keyword ?
+                    "&keyword=" + keyword :
+                    "&issueId=" + issueId + "&gradeId=" + gradeId + "&techTypeId=" + techTypeId + "&platformId=" + platformId);
+
+            var clickCount = parseInt($dataCount, 10) + 1;
+            $showMore.attr("data-count", clickCount);
+
+            var maxResults = parseInt($dataMaxResults, 10);
+            var resultsPerClick = parseInt($dataResultsPerClick, 10);
+            if (clickCount > Math.ceil(maxResults / resultsPerClick)) {
+                $showMore.parent().parent().hide();
+            }
+
             // Ajax load items
             $.get($dataPath + $dataFile + '.aspx' + qs, function (data) {
                 var newContent = $(data);                
                 $dataContainer.append(newContent);
                 newContent.find(':focusable').eq(0).focus();
-
-                var clickCount = parseInt($dataCount, 10) + 1;
-                $showMore.attr("data-count", clickCount);
-
-                var maxResults = parseInt($dataMaxResults, 10);
-                var resultsPerClick = parseInt($dataResultsPerClick, 10);
-
-                if (clickCount >= Math.ceil(maxResults / resultsPerClick)) {
-                    $showMore.parent().parent().hide();
-                }
 
                 $categoryDisplayCount.html(Math.min(resultsPerClick * clickCount, maxResults));
 
@@ -587,7 +603,7 @@ the callbacks passed to the module.
         // show / hide more button
         // we're delegating this because the show-more function isn't always loaded on initial page load.
         function showHideMore() {
-            $body.on('click', '.show-more-link', requestMore);
+            $body.on('click', '.at-show-more-link', requestMore);
         }
 
         init();

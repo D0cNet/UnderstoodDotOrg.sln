@@ -20,33 +20,45 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
     public partial class AssistiveToolsReviewResults : BaseSublayout<AssistiveToolsSearchResultsPageItem>
     {
         protected SearchHelper.SortOptions.AssistiveToolsSortOptions SortOption { get; set; }
-		private string assistiveToolsGuid = string.Empty;
+		private string _assistiveToolsGuid = string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["Search Query"] = Request.RawUrl;
 
             var defaultSortValue = (int)SearchHelper.SortOptions.AssistiveToolsSortOptions.Relevance;
-            SortOption = Request.QueryString[Constants.QueryStrings.LearningTool.SortOption]
-                .AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>(defaultValue: defaultSortValue);
+            var rawSortOption = Request.QueryString[Constants.QueryStrings.LearningTool.SortOption];
+            SortOption = rawSortOption.AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>(defaultValue: defaultSortValue);
 
             IEnumerable<AssistiveToolsReviewPageItem> searchResults;
 
             var keyword = Request.QueryString[Constants.QueryStrings.LearningTool.Keyword];
             if (!string.IsNullOrEmpty(keyword))
             {
+                hfAssistiveTechResultsKeyword.Value = keyword;
                 searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(searchTerm: keyword, sortOption: SortOption);
             }
             else
             {
-                var issueId = Request.QueryString[Constants.QueryStrings.LearningTool.IssueId].AsNGuid();
-                var gradeId = Request.QueryString[Constants.QueryStrings.LearningTool.GradeId].AsNGuid();
-                var typeId = Request.QueryString[Constants.QueryStrings.LearningTool.TypeId].AsNGuid();
-                var platformId = Request.QueryString[Constants.QueryStrings.LearningTool.PlatformId].AsNGuid();
+                var rawIssueId = Request.QueryString[Constants.QueryStrings.LearningTool.IssueId];
+                var rawGradeId = Request.QueryString[Constants.QueryStrings.LearningTool.GradeId];
+                var rawTypeId = Request.QueryString[Constants.QueryStrings.LearningTool.TypeId];
+                var rawPlatformId = Request.QueryString[Constants.QueryStrings.LearningTool.PlatformId];
+
+                var issueId = rawIssueId.AsNGuid();
+                var gradeId = rawGradeId.AsNGuid();
+                var typeId = rawTypeId.AsNGuid();
+                var platformId = rawPlatformId.AsNGuid();
 
                 if (issueId.HasValue || gradeId.HasValue || typeId.HasValue || platformId.HasValue)
                 {
-                    searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(issueId, gradeId, typeId, platformId);
+                    hfAssistiveTechResultsIssueId.Value = rawIssueId ?? string.Empty;
+                    hfAssistiveTechResultsGradeId.Value = rawGradeId ?? string.Empty;
+                    hfAssistiveTechResultsTechTypeId.Value = rawTypeId ?? string.Empty;
+                    hfAssistiveTechResultsPlatformId.Value = rawPlatformId ?? string.Empty;
+
+                    searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(issueId, gradeId, typeId, platformId, 
+                        sortOption: SortOption);
                 }
                 else
                 {
@@ -54,6 +66,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                     return;
                 }
             }
+
+            hfAssistiveTechResultsSortOption.Value = rawSortOption ?? string.Empty;
 			
             if (!Page.IsPostBack)
             {
@@ -88,7 +102,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                     rptrSearchResultsSections.DataBind();
                 }
                 else
+                {
                     pnlNoResults.Visible = true;
+                }
             }
         }
 
