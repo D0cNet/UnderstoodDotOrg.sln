@@ -73,7 +73,6 @@
                     <ContentTemplate>
                     <asp:Panel ScrollBars="Vertical"  ID="pnlUserNames" runat="server" Height="84px">
                        <asp:CheckBoxList ID="chklUsernames"  runat="server" AppendDataBoundItems="true"  DataTextField="Username" DataValueField="Username" RepeatColumns="3" RepeatDirection="Horizontal" Width="500px">
-                       
                         </asp:CheckBoxList>
                      </asp:Panel>
                     <asp:LinkButton   ID="lbLoadMore" runat="server" />
@@ -85,7 +84,7 @@
                 <asp:Label ID="lblSubject" Text="Subject" runat="server" /><br />
                 <asp:TextBox runat="server"  ValidationGroup="NewMessage" ID="txtSubject"/><asp:RequiredFieldValidator  ValidationGroup="NewMessage" ID="RequiredFieldValidator2" ControlToValidate="txtSubject" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator> <br />
                 <asp:Label Text="Message" ID="lblMsg" runat="server" /><br />
-                <CKEditor:CKEditorControl ID="CKEditorControl1"  runat="server" Enabled="true"   ValidationGroup="NewMessage" BasePath="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor" ContentsCss="../../Presentation/includes/css/contents.css" Height="127px" ResizeEnabled="False" TemplatesFiles="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/plugins/templates/templates/default.js" Toolbar="Basic" 
+                <CKEditor:CKEditorControl ID="CKEditorControl1"  runat="server" Enabled="true"   ValidationGroup="NewMessage" BasePath="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor" ContentsCss="../../Presentation/includes/css/contents.css" Height="127px" ResizeEnabled="False" TemplatesFiles="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/plugins/templates/templates/default.js" Toolbar="Basic"
                      ToolbarBasic="Bold|Italic|-|NumberedList|BulletedList|-|Link|Unlink|-|About" UIColor="#CC99FF" BasicEntities="True"></CKEditor:CKEditorControl><asp:RequiredFieldValidator ID="RequiredFieldValidator3"  ValidationGroup="NewMessage" ControlToValidate="CKEditorControl1" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
                 <div><asp:Button Text="Send Message"  UseSubmitBehavior="false" ID="btnSendNewMessage"  ValidationGroup="NewMessage"  OnClick="btnSendNewMessage_Click"  runat="server" /></div>
             </div>
@@ -94,9 +93,9 @@
 
                 <div id="left_pane" style="width:300px;height:615px; float:left;">
                     <div style="float:left;height:50px; width:100%;" ><span>
-                        <asp:Literal ID="litInboxText" runat="server" /> (<asp:Literal Text="" ID="litMsgs" runat="server" />)</span> 
+                        <asp:Literal ID="litInboxText" runat="server" /> (<asp:Literal Text="" ID="litMsgs" runat="server" />)</span>
 
-                        <input type="button" title="New Message" id="btn_new_message" value="New Message" runat="server" ClientIDMode="Static"  style="float:right;margin-right:20px;"  /> 
+                        <input type="button" title="New Message" id="btn_new_message" value="New Message" runat="server" ClientIDMode="Static"  style="float:right;margin-right:20px;"  />
 
                     </div>
 
@@ -159,7 +158,7 @@
                 </div>
 
                 <div id="right_pane" style="height:455px; float:right;width:580px;">
-                   <div style="top:0px;clear:both;height:50px;" > <span><asp:Label ID="lblName" Text="" runat="server"></asp:Label> 
+                   <div style="top:0px;clear:both;height:50px;" > <span><asp:Label ID="lblName" Text="" runat="server"></asp:Label>
                     <asp:Button Text="Delete"  ID="btnDelete" OnClientClick="javascript:return confirm('<%= DeleteConversationMessage %>');" OnClick="btnDelete_Click" style="float:right;padding-right:5px;" runat="server" /></span>
 
                     </div>
@@ -184,8 +183,6 @@
                     <div style="bottom:0px;">
                         <CKEditor:CKEditorControl ID="CKEditor1"  runat="server"  BasePath="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor" ContentsCss="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/contents.css" Height="127px" ResizeEnabled="False" TemplatesFiles="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/plugins/templates/templates/default.js" Toolbar="Basic"
                           ToolbarBasic="Bold|Italic|-|NumberedList|BulletedList|-|Link|Unlink|-|About" UIColor="#CC99FF"></CKEditor:CKEditorControl>
-
-                   
                     </div>
                     <asp:Button Text="Submit Reply" ID="btnReply" runat="server"  OnClick="btnReply_Click" />
               </div>
