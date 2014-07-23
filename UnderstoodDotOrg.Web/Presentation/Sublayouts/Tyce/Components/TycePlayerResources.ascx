@@ -58,17 +58,25 @@
 
     // config for experience
     var experienceConfig = {
+        // whether or not this is a personalized experience
         isPersonalized: true,
+        // start step of the experience, should always be set at 0
         start: 0,
+        // steps for experience
         steps: [
           {
+              // type: video or sim
               type: 'video',
+              // vid: object with default and hardcoded id
               vid: {
+                  // id of defaut vid
                   'default': '<%= IntroductionVideo.WithoutSubtitlesVideoId %>',
+                  // if of vid with hardcoded subtitles
                   'hardcoded': '<%= IntroductionVideo.WithSubtitlesVideoId %>'
               }
           },
           {
+              // simulation type
               type: 'sim'
           },
           {
@@ -86,7 +94,17 @@
               }
           }
         ],
-        next: '<%= NextPagePath %>'
+        // path to where the next button should take user at the end of the simulation
+        next: '<%= NextPagePath %>',
+        // config for simulation
+        simConfig : {
+          // the language of the sim
+          // language: 'en' or 'es'
+          language: 'en',
+          // the mode of the presentation
+          // presentationMode: 'normal' or 'standalone'
+          presentationMode: 'normal'
+        }
     };
 
     // on dom ready init the experience
