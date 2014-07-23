@@ -665,17 +665,35 @@
   display: inline-block;
   float: left;
   font-weight: bold;
+  position: relative;
 }
 /* line 617, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-inbox-title .telligent-inbox-total,
+.account-notifications-tab-messages .telligent-conversation-delete .telligent-inbox-total {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #fff;
+  background-color: #426da9;
+  position: absolute;
+  top: 3px;
+  right: -30px;
+}
+/* line 631, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-inbox-title {
   border-right: 1px solid #fff;
 }
-/* line 621, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 635, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-inbox-item {
   height: 84px;
   padding: 20px;
+  overflow: hidden;
+  *zoom: 1;
 }
-/* line 626, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 641, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-avatar-wrap {
   width: 44px;
   height: 44px;
@@ -683,40 +701,55 @@
   overflow: hidden;
   display: inline-block;
 }
-/* line 633, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 648, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-avatar {
   width: 60px;
   height: 60px;
-  margin: -3px 0 0 -9px;
+  margin: -3px 0 0 -8px;
 }
-/* line 639, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 654, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-inbox-summary {
+  display: inline-block;
+  width: 75%;
+  float: right;
+}
+/* line 659, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-inbox-subject {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+  white-space: nowrap;
+}
+/* line 665, ../css.source/modules/account/_account-notification-tabs.scss */
+.account-notifications-tab-messages .telligent-inbox-timestamp {
+  font-size: 14px;
+}
+/* line 670, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-reply-editor {
   width: 100%;
   padding: 20px;
   position: absolute;
   bottom: 0;
 }
-/* line 645, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 676, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-reply-editor .cke_2.cke_chrome {
   border: 0px;
 }
-/* line 650, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 681, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-reply-editor .cke_top,
 .account-notifications-tab-messages .telligent-reply-editor .cke_toolgroup {
   background-image: none;
   background: none;
   border: 0px;
 }
-/* line 655, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 686, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-reply-editor .cke_bottom {
   display: none;
 }
-/* line 660, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 691, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-new-message-button,
 .account-notifications-tab-messages .telligent-conversation-delete-button,
 .account-notifications-tab-messages .telligent-reply-button {
-  font-size: 16px;
-  font-size: 1rem;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
@@ -726,22 +759,24 @@
   border-top-right-radius: 2px;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  background: none;
-  background-color: #f2af00;
   border: none;
   color: black;
   cursor: pointer;
-  font-weight: bold;
   text-align: center;
   text-decoration: none;
+  font-size: 14px;
+  font-size: 0.875rem;
+  background: none;
+  background-color: #f2af00;
   display: block;
   float: right;
   height: 30px;
-  line-height: normal;
+  line-height: 1;
   width: 100%;
-  max-width: 150px;
+  max-width: 120px;
+  font-weight: normal;
 }
-/* line 679, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 711, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-new-message-button:focus,
 .account-notifications-tab-messages .telligent-conversation-delete-button:focus,
 .account-notifications-tab-messages .telligent-reply-button:focus {
@@ -759,13 +794,13 @@
 .account-notifications-tab-messages .telligent-reply-button:focus {
   outline: solid 1px #dfdfdf;
 }
-/* line 686, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 718, ../css.source/modules/account/_account-notification-tabs.scss */
 .touch .account-notifications-tab-messages .telligent-new-message-button:focus, .touch
 .account-notifications-tab-messages .telligent-conversation-delete-button:focus, .touch
 .account-notifications-tab-messages .telligent-reply-button:focus {
   background-color: #f2af00;
 }
-/* line 691, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 723, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-new-message-button:hover,
 .account-notifications-tab-messages .telligent-conversation-delete-button:hover,
 .account-notifications-tab-messages .telligent-reply-button:hover {
@@ -773,13 +808,13 @@
   color: black;
   text-decoration: none;
 }
-/* line 696, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 728, ../css.source/modules/account/_account-notification-tabs.scss */
 .touch .account-notifications-tab-messages .telligent-new-message-button:hover, .touch
 .account-notifications-tab-messages .telligent-conversation-delete-button:hover, .touch
 .account-notifications-tab-messages .telligent-reply-button:hover {
   background-color: #f2af00;
 }
-/* line 703, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 735, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-new-message-button.disabled, .account-notifications-tab-messages .telligent-new-message-button.disabled:hover, .account-notifications-tab-messages .telligent-new-message-button[disabled], .account-notifications-tab-messages .telligent-new-message-button[disabled]:hover,
 .account-notifications-tab-messages .telligent-conversation-delete-button.disabled,
 .account-notifications-tab-messages .telligent-conversation-delete-button.disabled:hover,
@@ -793,7 +828,7 @@
   color: #4c4c4c;
   cursor: default;
 }
-/* line 710, ../css.source/modules/account/_account-notification-tabs.scss */
+/* line 742, ../css.source/modules/account/_account-notification-tabs.scss */
 .account-notifications-tab-messages .telligent-reply-button {
   float: left;
   margin-top: 10px;

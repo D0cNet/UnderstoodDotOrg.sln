@@ -612,6 +612,20 @@ $account-circle-gray: #bcbdc0;
       display: inline-block;
       float: left;
       font-weight: bold;
+      position: relative;
+    }
+    .telligent-inbox-total {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      font-size: 16px;
+      line-height: 21px;
+      text-align: center;
+      color: #fff;
+      background-color: #426da9;
+      position: absolute;
+      top: 3px;
+      right: -30px;
     }
   }
   .telligent-inbox-title {
@@ -621,6 +635,7 @@ $account-circle-gray: #bcbdc0;
   .telligent-inbox-item {
     height: 84px;
     padding: 20px;
+    @include clearfix();
   }
   // telligent avatar
   .telligent-avatar-wrap {
@@ -633,7 +648,23 @@ $account-circle-gray: #bcbdc0;
   .telligent-avatar {
     width: 60px;
     height: 60px;
-    margin: -3px 0 0 -9px;
+    margin: -3px 0 0 -8px;
+  }
+  // inbox item information
+  .telligent-inbox-summary {
+    display: inline-block;
+    width: 75%;
+    float: right;
+  }
+  .telligent-inbox-subject {
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .telligent-inbox-timestamp {
+    font-size: 14px;
+
   }
   // reply wysiwyg editor
   .telligent-reply-editor {
@@ -658,23 +689,24 @@ $account-circle-gray: #bcbdc0;
   .telligent-new-message-button,
   .telligent-conversation-delete-button,
   .telligent-reply-button {
-    @include rem(font-size, 16px);
     @include rounded-corners(2px);
-    background: none;
-    background-color: #f2af00;
     border: none;
     color: black;
     cursor: pointer;
-    font-weight: bold;
     text-align: center;
     text-decoration: none;
+
     // telligent edits
+    @include rem(font-size, 14px);
+    background: none;
+    background-color: #f2af00;
     display: block;
     float: right;
     height: 30px;
-    line-height: normal;
+    line-height: 1;
     width: 100%;
-    max-width: 150px;
+    max-width: 120px;
+    font-weight: normal;
 
     &:focus {
       background-color: #ffbc0d;

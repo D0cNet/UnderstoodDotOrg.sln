@@ -118,9 +118,9 @@
                                         <asp:ImageButton  CommandName="Select" runat="server" ID="imgBtn1"   style="height:30px;width:30px;" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
 
                                     </div>
-                                    <div>
-                                        <span><%# Eval("Subject") %></span><br />
-                                        <span><%# Eval("HowLong") %></span>
+                                    <div class="telligent-inbox-summary">
+                                        <h6 class="telligent-inbox-subject"><%# Eval("Subject") %></h6>
+                                        <span class="telligent-inbox-timestamp"><%# Eval("HowLong") %></span>
                                     </div>
                                   </asp:Panel>
                             </ItemTemplate>
