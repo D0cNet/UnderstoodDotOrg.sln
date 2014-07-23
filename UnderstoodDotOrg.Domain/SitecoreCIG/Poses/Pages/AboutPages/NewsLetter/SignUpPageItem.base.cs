@@ -73,6 +73,15 @@ public CustomTextField SecureDataDetails
 }
 
 
+public CustomTextField UnauthenticatedMemberError
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Unauthenticated Member Error"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

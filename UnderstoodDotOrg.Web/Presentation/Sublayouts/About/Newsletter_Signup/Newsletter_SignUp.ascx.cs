@@ -21,6 +21,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             // Clear out session
             Session[Constants.SessionNewsletterKey] = null;
 
+            // Skip process for existing members
+            if (IsUserLoggedIn)
+            {
+                HandleAuthenticatedMember();
+            }
+
             BindContent();
             BindEvents();
 
@@ -31,17 +37,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 if (!String.IsNullOrEmpty(email))
                 {
                     txtEmail.Text = email;
-                    Page.Validate();
-                    ProcessEmail();
-					//Response.Redirect("/");
+                    Page.Validate("NewsletterSignup");
+                    if (Page.IsValid)
+                    {
+                        ProcessEmail();
+                    }
                 }
             }
+        }
+
+        private void HandleAuthenticatedMember()
+        {
+            if (!CurrentMember.allowNewsletter)
+            {
+                CurrentMember.allowNewsletter = true;
+                MembershipManager mm = new MembershipManager();
+                mm.UpdateMember(CurrentMember);
+            }
+            var confirmationPage = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.NewsletterConfirmation.ToString()));
+            Response.Redirect(confirmationPage.GetUrl());
         }
 
         private void BindContent()
         {
             revEmail.ValidationExpression = Sitecore.Configuration.Settings.GetSetting("EmailValidation");
-            revEmail.Text = Model.InvalidEmailError;
+            revEmail.Text = Model.InvalidEmailError.Rendered;
             txtEmail.Attributes["placeholder"] = DictionaryConstants.EnterEmailAddressWatermark;
             btnSignup.Text = DictionaryConstants.SubscribeButtonText;
         }
@@ -53,40 +73,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 
         private void ProcessEmail()
         {
-            if (Page.IsValid)
+            // TODO: validate email
+            string email = txtEmail.Text.Trim();
+            MembershipManager mm = new MembershipManager();
+            MembershipUser checkValidity = mm.GetUser(email);
+
+            if (checkValidity != null)
             {
-                // TODO: validate email
-                string email = txtEmail.Text.Trim();
-				MembershipManager mbrShadowUser = new MembershipManager();
-				MembershipUser checkValidity = mbrShadowUser.GetUser(email);
+                litErrorMessage.Text = Model.UnauthenticatedMemberError.Rendered;
+            }
+            else
+            {
+                Submission submission = new Submission
+                {
+                    Email = email
+                };
 
-				if (checkValidity != null && !string.IsNullOrEmpty(checkValidity.Email))
-				{
-					lblEmailFail.Text = "It appears you already have an Email with us. Please sign in first.";								
-				}
-				else
-				{
-					Submission submission = new Submission
-					{
-						Email = email
-					};
+                Session[Constants.SessionNewsletterKey] = submission;
 
-					Session[Constants.SessionNewsletterKey] = submission;
-
-					//if (string.IsNullOrEmpty(CurrentMember.MemberId.ToString()))
-					{
-						var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.NewsletterChildInfo.ToString()));
-						Response.Redirect(item.GetUrl());
-					}
-				}
+                var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.NewsletterChildInfo.ToString()));
+                Response.Redirect(item.GetUrl());
             }
         }
 
-		protected void btnSignup_Click(object sender, EventArgs e)
+		private void btnSignup_Click(object sender, EventArgs e)
 		{
-			ProcessEmail();
+            Page.Validate("NewsletterSignup");
+            if (Page.IsValid)
+            {
+                ProcessEmail();
+            }
 		}
-
-       
     }
 }
