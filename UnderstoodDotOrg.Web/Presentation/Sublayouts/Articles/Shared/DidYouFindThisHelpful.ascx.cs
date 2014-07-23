@@ -80,7 +80,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             }
             else
             {
-                Response.Redirect(SignUpPageItem.GetSignUpPage().GetUrl());
+                Page.Session[Constants.SessionPreviousUrl] = null;
+                this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.RegisteredUser);
             }
         }
 
@@ -184,7 +185,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
             }
             else
             {
-                Response.Redirect(SignUpPageItem.GetSignUpPage().GetUrl());
+                Page.Session[Constants.SessionPreviousUrl] = null;
+                this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.RegisteredUser);
             }
         }
     }
