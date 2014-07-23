@@ -3,7 +3,7 @@
 <div class="community-blogs-more">
     <div class="row">
         <div class="col col-24 container">
-            <h2><sc:Text Field="More Blogs Text" runat="server" /></h2>
+            <h2 class="rs_read_this"><sc:Text Field="More Blogs Text" runat="server" /></h2>
             <!-- BEGIN PARTIAL: community/carousel_arrows -->
             <div class="arrows more-blogs next-prev-menu arrows">
 
@@ -20,7 +20,7 @@
                 <!-- BEGIN PARTIAL: community/more_blogs_card -->
                 <asp:Repeater ID="BlogRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Blog" runat="server">
                     <ItemTemplate>
-                        <div class="col col-24 blog-card">
+                        <div class="col col-24 blog-card rs_read_this">
                             <div class="blog-card-wrapper">
                                 <div class="author-image">
                                     <a href="<%# Item.Url %>">
@@ -36,7 +36,7 @@
                                     <div class="blog-card-post-excerpt">
                                         <%# Item.Description %>
                                     </div>
-                                    <a href="<%# Item.Url %>" class="link-see-more">Read <%# Item.Title %></a>
+                                    <a href="<%# Item.Url %>" class="link-see-more rs_skip">Read <%# Item.Title %></a>
                                 </div>
                                 <!-- end .blog-card-info -->
                             </div>

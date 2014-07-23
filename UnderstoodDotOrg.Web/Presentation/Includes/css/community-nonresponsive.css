@@ -4774,11 +4774,10 @@ div.selector.fixedWidth {
   line-height: 40px;
   line-height: 2.5rem;
   margin: 25px auto 0;
-  width: 100px;
   margin: 25px 0 0;
   width: 150px;
 }
-/* line 958, ../css.source/modules/community/_blogs.scss */
+/* line 957, ../css.source/modules/community/_blogs.scss */
 .community-our-blogs .blog-card-author-info .button:hover, .community-blog-post-list .blog-card-author-info .button:hover {
   background-color: #ffffff;
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
@@ -4789,14 +4788,14 @@ div.selector.fixedWidth {
 .old-ie .community-our-blogs .blog-card-author-info .button:hover, .old-ie .community-blog-post-list .blog-card-author-info .button:hover {
   outline: solid 1px #dfdfdf;
 }
-/* line 965, ../css.source/modules/community/_blogs.scss */
+/* line 964, ../css.source/modules/community/_blogs.scss */
 .community-our-blogs .button-view-all, .community-blog-post-list .button-view-all {
   height: 40px;
   margin: 0 auto;
   width: 150px;
 }
 
-/* line 973, ../css.source/modules/community/_blogs.scss */
+/* line 972, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-filter-wrapper {
   margin: 0 15px;
   width: auto;
@@ -4804,13 +4803,13 @@ div.selector.fixedWidth {
   margin: 0 10px;
   margin: 0;
 }
-/* line 984, ../css.source/modules/community/_blogs.scss */
+/* line 983, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-filter {
   width: 100%;
   width: 91.6666666667%;
   margin-left: 4.1%;
 }
-/* line 991, ../css.source/modules/community/_blogs.scss */
+/* line 990, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature {
   padding: 30px 15px;
   background-color: #f4f2f1;
@@ -4825,7 +4824,7 @@ div.selector.fixedWidth {
   width: 100%;
   margin: 0 0 45px 0;
 }
-/* line 1017, ../css.source/modules/community/_blogs.scss */
+/* line 1016, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-info {
   width: 100%;
   background-color: #f4f2f1;
@@ -4840,7 +4839,7 @@ div.selector.fixedWidth {
   width: 70%;
   width: 73.5%;
 }
-/* line 1036, ../css.source/modules/community/_blogs.scss */
+/* line 1035, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-info .blog-feature-image {
   width: 100%;
   float: left;
@@ -4851,7 +4850,7 @@ div.selector.fixedWidth {
   float: none;
   margin-bottom: 0px;
 }
-/* line 1047, ../css.source/modules/community/_blogs.scss */
+/* line 1046, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-info .blog-feature-image a {
   margin: 0 auto;
   width: 150px;
@@ -4859,7 +4858,7 @@ div.selector.fixedWidth {
   width: auto;
   margin: 0;
 }
-/* line 1057, ../css.source/modules/community/_blogs.scss */
+/* line 1056, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-info .blog-feature-description {
   float: left;
   width: 100%;
@@ -4873,21 +4872,21 @@ div.selector.fixedWidth {
   padding: 0 30px 0 25px;
   padding: 0 60px 0 50px;
 }
-/* line 1077, ../css.source/modules/community/_blogs.scss */
+/* line 1076, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-info .blog-feature-description h2, .community-blog-post-list .blog-feature .blog-feature-info .blog-feature-description .back-to-previous {
   margin-bottom: 10px;
 }
-/* line 1080, ../css.source/modules/community/_blogs.scss */
+/* line 1079, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-info .blog-feature-description h2 {
   font-weight: bold;
   margin-top: 20px;
 }
-/* line 1084, ../css.source/modules/community/_blogs.scss */
+/* line 1083, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-info .blog-feature-description .back-to-previous {
   display: block;
   position: relative;
 }
-/* line 1087, ../css.source/modules/community/_blogs.scss */
+/* line 1086, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-info .blog-feature-description .back-to-previous i {
   margin-right: 7px;
   margin-bottom: -1px;
@@ -4897,7 +4896,7 @@ div.selector.fixedWidth {
   left: -12px;
   left: -26px;
 }
-/* line 1103, ../css.source/modules/community/_blogs.scss */
+/* line 1102, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-follow-blog {
   width: 100%;
   float: left;
@@ -4912,12 +4911,12 @@ div.selector.fixedWidth {
   padding: 0 0 0 25px;
   padding: 0 0 0 38px;
 }
-/* line 1126, ../css.source/modules/community/_blogs.scss */
+/* line 1125, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-follow-blog .button, .community-blog-post-list .blog-feature .blog-feature-follow-blog .rss {
   display: block;
   float: left;
 }
-/* line 1132, ../css.source/modules/community/_blogs.scss */
+/* line 1131, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-follow-blog .button {
   margin: 0 auto 30px;
   width: 150px;
@@ -4936,7 +4935,7 @@ div.selector.fixedWidth {
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 1156, ../css.source/modules/community/_blogs.scss */
+/* line 1155, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-follow-blog .rss {
   border: none;
   background-color: transparent;
@@ -4956,54 +4955,54 @@ div.selector.fixedWidth {
   background-size: 35px auto;
   margin: 6px 0 0 3px;
 }
-/* line 1168, ../css.source/modules/community/_blogs.scss */
+/* line 1167, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-follow-blog .rss:hover {
   background-position: 0 -67px;
 }
-/* line 1181, ../css.source/modules/community/_blogs.scss */
+/* line 1180, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-feature .blog-feature-follow-blog .rss:hover {
   background-position: 0 -39px;
 }
-/* line 1185, ../css.source/modules/community/_blogs.scss */
+/* line 1184, ../css.source/modules/community/_blogs.scss */
 .no-backgroundsize .community-blog-post-list .blog-feature .blog-feature-follow-blog .rss {
   background: url('../images/sprite.icon.rss-blog.lo-res.png?83bcca66') 0 0 no-repeat;
 }
-/* line 1194, ../css.source/modules/community/_blogs.scss */
+/* line 1193, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-wrapper {
   padding: 0 15px;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 5px;
 }
-/* line 1202, ../css.source/modules/community/_blogs.scss */
+/* line 1201, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list {
   float: left;
   width: 73%;
   width: 70.3%;
   margin-left: 4.1%;
 }
-/* line 1216, ../css.source/modules/community/_blogs.scss */
+/* line 1215, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post {
   float: left;
   margin-top: 50px;
   display: table;
 }
-/* line 1221, ../css.source/modules/community/_blogs.scss */
+/* line 1220, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post:first-child {
   margin-top: 0;
 }
-/* line 1225, ../css.source/modules/community/_blogs.scss */
+/* line 1224, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post .blog-card-image, .community-blog-post-list .blog-post .blog-card-info {
   display: table-cell;
   float: none;
   vertical-align: top;
 }
-/* line 1231, ../css.source/modules/community/_blogs.scss */
+/* line 1230, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-image {
   width: 131px;
   width: 230px;
 }
-/* line 1236, ../css.source/modules/community/_blogs.scss */
+/* line 1235, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-image img {
   width: 131px;
   height: 74px;
@@ -5011,11 +5010,11 @@ div.selector.fixedWidth {
   width: 230px;
   height: 129px;
 }
-/* line 1245, ../css.source/modules/community/_blogs.scss */
+/* line 1244, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-image a {
   display: block;
 }
-/* line 1249, ../css.source/modules/community/_blogs.scss */
+/* line 1248, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-total-comments .blog-card-comments {
   display: none;
   display: block;
@@ -5023,12 +5022,12 @@ div.selector.fixedWidth {
   font-size: 1rem;
   color: #7c7c7c;
 }
-/* line 1255, ../css.source/modules/community/_blogs.scss */
+/* line 1254, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-total-comments .blog-card-comments .number-of-comments {
   color: #8d5994;
   margin-right: 9px;
 }
-/* line 1261, ../css.source/modules/community/_blogs.scss */
+/* line 1260, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-info {
   border-right: 0px;
   padding-right: 0px;
@@ -5037,12 +5036,12 @@ div.selector.fixedWidth {
   padding-left: 15px;
   padding-left: 52px;
 }
-/* line 1269, ../css.source/modules/community/_blogs.scss */
+/* line 1268, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-info p {
   margin-bottom: 0px;
   display: inline-block;
 }
-/* line 1273, ../css.source/modules/community/_blogs.scss */
+/* line 1272, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-info .blog-card-title {
   margin-bottom: 3px;
   line-height: 15px;
@@ -5051,7 +5050,7 @@ div.selector.fixedWidth {
   line-height: 30px;
   line-height: 1.875rem;
 }
-/* line 1282, ../css.source/modules/community/_blogs.scss */
+/* line 1281, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-info .blog-card-title a {
   margin-bottom: 3px;
   font-size: 15px;
@@ -5062,32 +5061,32 @@ div.selector.fixedWidth {
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 1294, ../css.source/modules/community/_blogs.scss */
+/* line 1293, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-info .blog-card-post-info {
   margin-bottom: 3px;
   margin-bottom: 13px;
 }
-/* line 1300, ../css.source/modules/community/_blogs.scss */
+/* line 1299, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-info .blog-posted, .community-blog-post-list .blog-card-info .blog-by {
   display: none;
   display: inline-block;
 }
-/* line 1307, ../css.source/modules/community/_blogs.scss */
+/* line 1306, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-card-info .blog-card-post-excerpt {
   display: none;
   display: inline-block;
 }
-/* line 1315, ../css.source/modules/community/_blogs.scss */
+/* line 1314, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .child-content-indicator .children-key {
   margin: 0 15px;
   margin: 0;
 }
-/* line 1321, ../css.source/modules/community/_blogs.scss */
+/* line 1320, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .children-key ul {
   margin-top: 0px;
   margin-top: 12px;
 }
-/* line 1327, ../css.source/modules/community/_blogs.scss */
+/* line 1326, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar {
   display: none;
   width: 24%;
@@ -5096,29 +5095,29 @@ div.selector.fixedWidth {
   display: block;
   margin-left: 40;
 }
-/* line 1338, ../css.source/modules/community/_blogs.scss */
+/* line 1337, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar h3, .community-blog-post-list .blog-post-list-sidebar h4 {
   font-weight: normal;
 }
-/* line 1341, ../css.source/modules/community/_blogs.scss */
+/* line 1340, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar h3 {
   font-size: 24px;
   font-size: 1.5rem;
   color: #7a4183;
 }
-/* line 1345, ../css.source/modules/community/_blogs.scss */
+/* line 1344, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-most-shared, .community-blog-post-list .blog-post-list-sidebar .blog-most-recent {
   padding-bottom: 35px;
 }
-/* line 1347, ../css.source/modules/community/_blogs.scss */
+/* line 1346, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-most-shared h3, .community-blog-post-list .blog-post-list-sidebar .blog-most-recent h3 {
   margin-bottom: 21px;
 }
-/* line 1352, ../css.source/modules/community/_blogs.scss */
+/* line 1351, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-parents-talking h3 {
   margin-bottom: 21px;
 }
-/* line 1356, ../css.source/modules/community/_blogs.scss */
+/* line 1355, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar h4 {
   font-size: 18px;
   font-size: 1.125rem;
@@ -5126,36 +5125,36 @@ div.selector.fixedWidth {
   border-top: 1px solid #f4f2f1;
   padding: 20px 0;
 }
-/* line 1362, ../css.source/modules/community/_blogs.scss */
+/* line 1361, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar h4.first {
   border-top: 0;
   padding-top: 0;
 }
-/* line 1367, ../css.source/modules/community/_blogs.scss */
+/* line 1366, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-parents-talking {
   margin-bottom: 31px;
 }
-/* line 1369, ../css.source/modules/community/_blogs.scss */
+/* line 1368, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-parents-talking h4 {
   border-top: 0px;
 }
-/* line 1372, ../css.source/modules/community/_blogs.scss */
+/* line 1371, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-parents-talking .blog-comment-author, .community-blog-post-list .blog-post-list-sidebar .blog-parents-talking .blog-comment-timelapsed {
   display: inline;
   color: #696969;
 }
-/* line 1376, ../css.source/modules/community/_blogs.scss */
+/* line 1375, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-parents-talking .blog-comment-author {
   padding: 0 13px 0 20px;
   font-weight: bold;
   position: relative;
   padding: 0 13px 0 0;
 }
-/* line 1384, ../css.source/modules/community/_blogs.scss */
+/* line 1383, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-parents-talking .blog-comment-timelapsed {
   padding: 0 0 0 5px;
 }
-/* line 1387, ../css.source/modules/community/_blogs.scss */
+/* line 1386, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-parents-talking .blog-comment-author:after {
   content: '';
   height: 4px;
@@ -5168,14 +5167,14 @@ div.selector.fixedWidth {
   margin-left: 10px;
   right: 0;
 }
-/* line 1400, ../css.source/modules/community/_blogs.scss */
+/* line 1399, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-comment-snippet-box p, .community-blog-post-list .blog-post-list-sidebar .blog-comment-snippet-box a, .community-blog-post-list .blog-post-list-sidebar .blog-comment-author, .community-blog-post-list .blog-post-list-sidebar .blog-comment-timelapsed, .community-blog-post-list .blog-post-list-sidebar .call-to-action a {
   font-size: 13px;
   font-size: 0.8125rem;
   font-size: 14px;
   font-size: 0.875rem;
 }
-/* line 1406, ../css.source/modules/community/_blogs.scss */
+/* line 1405, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-comment-snippet-box {
   background-color: #f4f2f0;
   border-radius: 5px;
@@ -5184,7 +5183,7 @@ div.selector.fixedWidth {
   margin-bottom: 19px;
   color: #696969;
 }
-/* line 1413, ../css.source/modules/community/_blogs.scss */
+/* line 1412, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-comment-snippet-box:after {
   content: '';
   width: 0;
@@ -5196,78 +5195,78 @@ div.selector.fixedWidth {
   border-right: 14px solid transparent;
   border-top: 14px solid #f4f2f0;
 }
-/* line 1424, ../css.source/modules/community/_blogs.scss */
+/* line 1423, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-comment-snippet-box p {
   display: inline;
 }
-/* line 1427, ../css.source/modules/community/_blogs.scss */
+/* line 1426, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-comment-snippet-box a {
   text-decoration: underline;
   display: inline;
 }
-/* line 1431, ../css.source/modules/community/_blogs.scss */
+/* line 1430, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-comment-snippet-box a:hover, .community-blog-post-list .blog-post-list-sidebar .blog-comment-snippet-box a:focus {
   text-decoration: none;
 }
-/* line 1436, ../css.source/modules/community/_blogs.scss */
+/* line 1435, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .blog-read-article {
   margin-bottom: 12px;
   display: block;
 }
-/* line 1440, ../css.source/modules/community/_blogs.scss */
+/* line 1439, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .blog-post-list-sidebar .button {
   padding: 0 9px;
 }
-/* line 1447, ../css.source/modules/community/_blogs.scss */
+/* line 1446, ../css.source/modules/community/_blogs.scss */
 .community-blog-post-list .show-more {
   margin-bottom: 30px;
   padding-top: 41px;
 }
 
-/* line 1453, ../css.source/modules/community/_blogs.scss */
+/* line 1452, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific {
   margin: 0;
 }
-/* line 1456, ../css.source/modules/community/_blogs.scss */
+/* line 1455, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-main-header {
   margin-bottom: 10px;
 }
-/* line 1460, ../css.source/modules/community/_blogs.scss */
+/* line 1459, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-feature {
   padding: 30px 15px;
   padding: 40px;
 }
-/* line 1465, ../css.source/modules/community/_blogs.scss */
+/* line 1464, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-feature .button {
   font-weight: normal;
 }
-/* line 1469, ../css.source/modules/community/_blogs.scss */
+/* line 1468, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-feature .blog-feature-info .blog-feature-image {
   width: 72px;
   padding-left: 0px;
 }
-/* line 1474, ../css.source/modules/community/_blogs.scss */
+/* line 1473, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-feature .blog-feature-info .blog-feature-image a {
   width: 72px;
 }
-/* line 1478, ../css.source/modules/community/_blogs.scss */
+/* line 1477, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-feature .blog-feature-info .blog-feature-description {
   width: 73%;
   margin-left: 15px;
   width: auto;
 }
-/* line 1484, ../css.source/modules/community/_blogs.scss */
+/* line 1483, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-feature .blog-feature-info .blog-feature-description .back-to-previous {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 20px;
 }
-/* line 1488, ../css.source/modules/community/_blogs.scss */
+/* line 1487, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-feature .blog-feature-info .blog-feature-description .blog-description-blurb {
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 1494, ../css.source/modules/community/_blogs.scss */
+/* line 1493, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-featured-author {
   padding: 25px 15px;
   border-bottom: 1px solid #d3d1d0;
@@ -5277,7 +5276,7 @@ div.selector.fixedWidth {
   margin-bottom: 45px;
   padding: 5px 40px 50px;
 }
-/* line 1508, ../css.source/modules/community/_blogs.scss */
+/* line 1507, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-featured-author h2 {
   font-size: 30px;
   font-size: 1.875rem;
@@ -5285,7 +5284,7 @@ div.selector.fixedWidth {
   font-size: 2.25rem;
   margin-bottom: 30px;
 }
-/* line 1515, ../css.source/modules/community/_blogs.scss */
+/* line 1514, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-featured-author .blog-author-image-card {
   height: 270px;
   width: 100%;
@@ -5296,7 +5295,7 @@ div.selector.fixedWidth {
   display: table-cell;
   padding-left: 40px;
 }
-/* line 1528, ../css.source/modules/community/_blogs.scss */
+/* line 1527, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-featured-author .blog-author-image-card img {
   height: 270px;
   width: 270px;
@@ -5304,7 +5303,7 @@ div.selector.fixedWidth {
   margin: 0 auto;
   margin: 0;
 }
-/* line 1538, ../css.source/modules/community/_blogs.scss */
+/* line 1537, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-featured-author .blog-author-details {
   width: 100%;
   float: left;
@@ -5318,21 +5317,21 @@ div.selector.fixedWidth {
   padding-left: 25px;
   padding: 0 40px 0 50px;
 }
-/* line 1557, ../css.source/modules/community/_blogs.scss */
+/* line 1556, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-featured-author .blog-author-details h2 {
   margin-top: 0px;
 }
-/* line 1561, ../css.source/modules/community/_blogs.scss */
+/* line 1560, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-featured-author .blog-about-author {
   color: #696969;
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 1566, ../css.source/modules/community/_blogs.scss */
+/* line 1565, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-author-posts {
   margin-bottom: 45px;
 }
-/* line 1568, ../css.source/modules/community/_blogs.scss */
+/* line 1567, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-author-posts h2 {
   margin: 0 0 20px 0;
   font-size: 30px;
@@ -5341,12 +5340,12 @@ div.selector.fixedWidth {
   font-size: 36px;
   font-size: 2.25rem;
 }
-/* line 1577, ../css.source/modules/community/_blogs.scss */
+/* line 1576, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list {
   width: 100%;
   margin-left: 0px;
 }
-/* line 1582, ../css.source/modules/community/_blogs.scss */
+/* line 1581, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-post {
   background-color: #f4f2f1;
   margin-bottom: 10px;
@@ -5356,13 +5355,13 @@ div.selector.fixedWidth {
   margin-top: 0px;
   padding: 35px 40px 50px 40px;
 }
-/* line 1592, ../css.source/modules/community/_blogs.scss */
+/* line 1591, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-post .blog-card-image {
   padding-right: 20px;
   margin-left: 0px;
   padding-right: 0px;
 }
-/* line 1600, ../css.source/modules/community/_blogs.scss */
+/* line 1599, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-card-info {
   background-color: transparent;
   display: table-cell;
@@ -5383,20 +5382,20 @@ div.selector.fixedWidth {
   padding-left: 50px;
   padding-right: 122px;
 }
-/* line 1635, ../css.source/modules/community/_blogs.scss */
+/* line 1634, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-card-info .blog-card-title {
   margin-bottom: 13px;
 }
-/* line 1640, ../css.source/modules/community/_blogs.scss */
+/* line 1639, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-card-info .blog-card-post-excerpt {
   display: block;
   margin-bottom: 10px;
 }
-/* line 1646, ../css.source/modules/community/_blogs.scss */
+/* line 1645, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-card-info .blog-card-title, .community-blog-posts-author-specific .blog-post-list .blog-card-info .blog-card-post-excerpt {
   margin-bottom: 10px;
 }
-/* line 1650, ../css.source/modules/community/_blogs.scss */
+/* line 1649, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp {
   padding: 0;
   width: 130px;
@@ -5417,40 +5416,40 @@ div.selector.fixedWidth {
   padding: 0px 10px 0 26px;
   padding: 0px 10px 0 46px;
 }
-/* line 1679, ../css.source/modules/community/_blogs.scss */
+/* line 1678, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp .blog-posted {
   color: #794382;
 }
-/* line 1682, ../css.source/modules/community/_blogs.scss */
+/* line 1681, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp .blog-time-units, .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp .blog-timestamp-posted {
   color: #696969;
 }
-/* line 1685, ../css.source/modules/community/_blogs.scss */
+/* line 1684, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp .blog-timestamp-posted {
   font-size: 18px;
   font-size: 1.125rem;
   font-size: 26px;
   font-size: 1.625rem;
 }
-/* line 1691, ../css.source/modules/community/_blogs.scss */
+/* line 1690, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp .blog-time-units, .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp .blog-posted {
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 1694, ../css.source/modules/community/_blogs.scss */
+/* line 1693, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp .blog-time-units, .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp .blog-posted, .community-blog-posts-author-specific .blog-post-list .blog-post-timestamp .blog-timestamp-posted {
   margin-bottom: 0px;
 }
-/* line 1699, ../css.source/modules/community/_blogs.scss */
+/* line 1698, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific.community-blogs-main .button {
   width: auto;
 }
-/* line 1703, ../css.source/modules/community/_blogs.scss */
+/* line 1702, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific.community-blogs-main .add-comment .button {
   float: right;
   margin-right: 0;
 }
-/* line 1708, ../css.source/modules/community/_blogs.scss */
+/* line 1707, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more {
   background-color: #ffffff;
   margin: 0 15px 25px 15px;
@@ -5458,7 +5457,7 @@ div.selector.fixedWidth {
   margin: 0;
   margin: 0 15px 60px 15px;
 }
-/* line 1718, ../css.source/modules/community/_blogs.scss */
+/* line 1717, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more h3 {
   color: #7b3f84;
   font-size: 30px;
@@ -5471,7 +5470,7 @@ div.selector.fixedWidth {
   font-size: 36px;
   font-size: 2.25rem;
 }
-/* line 1726, ../css.source/modules/community/_blogs.scss */
+/* line 1725, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more h3:before {
   height: 1px;
   width: 100%;
@@ -5481,15 +5480,15 @@ div.selector.fixedWidth {
   top: 0;
   left: 0;
 }
-/* line 1739, ../css.source/modules/community/_blogs.scss */
+/* line 1738, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more .rsArrowIcn {
   top: 50px;
 }
-/* line 1743, ../css.source/modules/community/_blogs.scss */
+/* line 1742, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more .view-all {
   display: none;
 }
-/* line 1746, ../css.source/modules/community/_blogs.scss */
+/* line 1745, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more .blogger-card-image, .community-blog-posts-author-specific .community-bloggers-more .blogger-card-image img {
   height: 119px;
   width: 119px;
@@ -5497,7 +5496,7 @@ div.selector.fixedWidth {
   height: 150px;
   width: 150px;
 }
-/* line 1756, ../css.source/modules/community/_blogs.scss */
+/* line 1755, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more .blogger-card {
   float: left;
   width: 50%;
@@ -5509,16 +5508,16 @@ div.selector.fixedWidth {
   width: 33%;
   width: 25%;
 }
-/* line 1772, ../css.source/modules/community/_blogs.scss */
+/* line 1771, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more .blogger-card a {
   display: block;
 }
-/* line 1775, ../css.source/modules/community/_blogs.scss */
+/* line 1774, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more .blogger-card img {
   margin-bottom: 15px;
   margin-bottom: 30px;
 }
-/* line 1781, ../css.source/modules/community/_blogs.scss */
+/* line 1780, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .community-bloggers-more .blogger-card h4 {
   color: #446ea7;
   font-size: 22px;
@@ -5529,26 +5528,26 @@ div.selector.fixedWidth {
 .old-ie .community-blog-posts-author-specific .community-bloggers-more .rsOverflow {
   height: 250px !important;
 }
-/* line 1805, ../css.source/modules/community/_blogs.scss */
+/* line 1804, ../css.source/modules/community/_blogs.scss */
 .community-blog-posts-author-specific .show-more {
   margin-bottom: 40px;
   padding-top: 0;
 }
 
-/* line 1811, ../css.source/modules/community/_blogs.scss */
+/* line 1810, ../css.source/modules/community/_blogs.scss */
 .blog-filter {
   background-color: #f4f2f1;
   margin-bottom: 40px;
   background-color: #ffffff;
 }
-/* line 1817, ../css.source/modules/community/_blogs.scss */
+/* line 1816, ../css.source/modules/community/_blogs.scss */
 .blog-filter .filters {
   padding: 5px 15px 30px;
   position: relative;
   float: left;
   padding: 0;
 }
-/* line 1824, ../css.source/modules/community/_blogs.scss */
+/* line 1823, ../css.source/modules/community/_blogs.scss */
 .blog-filter .filters ul {
   list-style: none;
   -webkit-margin-after: 0;
@@ -5556,7 +5555,7 @@ div.selector.fixedWidth {
   -webkit-padding-start: 0;
   padding: 0;
 }
-/* line 1833, ../css.source/modules/community/_blogs.scss */
+/* line 1832, ../css.source/modules/community/_blogs.scss */
 .blog-filter .dropdown,
 .blog-filter .dropdown-toggle,
 .blog-filter .dropdown-menu > li,
@@ -5565,31 +5564,31 @@ div.selector.fixedWidth {
   position: relative;
   min-width: inherit;
 }
-/* line 1840, ../css.source/modules/community/_blogs.scss */
+/* line 1839, ../css.source/modules/community/_blogs.scss */
 .blog-filter .dropdown {
   display: block;
   margin-bottom: 20px;
 }
-/* line 1843, ../css.source/modules/community/_blogs.scss */
+/* line 1842, ../css.source/modules/community/_blogs.scss */
 .blog-filter .dropdown li:first-child {
   padding-left: 0px;
 }
-/* line 1849, ../css.source/modules/community/_blogs.scss */
+/* line 1848, ../css.source/modules/community/_blogs.scss */
 .blog-filter .dropdown-menu li {
   width: 240px;
 }
-/* line 1854, ../css.source/modules/community/_blogs.scss */
+/* line 1853, ../css.source/modules/community/_blogs.scss */
 .blog-filter .dropdown-toggle {
   background: #fff;
   border: none;
   color: #696969;
   display: none;
 }
-/* line 1862, ../css.source/modules/community/_blogs.scss */
+/* line 1861, ../css.source/modules/community/_blogs.scss */
 .blog-filter .open .dropdown-toggle .current-filter {
   display: none;
 }
-/* line 1865, ../css.source/modules/community/_blogs.scss */
+/* line 1864, ../css.source/modules/community/_blogs.scss */
 .blog-filter .dropdown-toggle:after {
   background-image: url('../images/sprites-sb266886836.png');
   background-position: 0 -2010px;
@@ -5597,7 +5596,7 @@ div.selector.fixedWidth {
   height: 6px;
   width: 9px;
 }
-/* line 1869, ../css.source/modules/community/_blogs.scss */
+/* line 1868, ../css.source/modules/community/_blogs.scss */
 .blog-filter .dropdown-toggle:hover:after, .blog-filter .open .dropdown-toggle:after {
   background-image: url('../images/sprites-sb266886836.png');
   background-position: 0 -2066px;
@@ -5605,7 +5604,7 @@ div.selector.fixedWidth {
   height: 6px;
   width: 9px;
 }
-/* line 1873, ../css.source/modules/community/_blogs.scss */
+/* line 1872, ../css.source/modules/community/_blogs.scss */
 .blog-filter .filter {
   border-left: 1px solid #c6c5c5;
   color: #428BCA;
@@ -5615,20 +5614,20 @@ div.selector.fixedWidth {
   padding: 7px 24px;
   text-decoration: underline;
 }
-/* line 1882, ../css.source/modules/community/_blogs.scss */
+/* line 1881, ../css.source/modules/community/_blogs.scss */
 .blog-filter .filter:first-child {
   border-left: none;
 }
-/* line 1885, ../css.source/modules/community/_blogs.scss */
+/* line 1884, ../css.source/modules/community/_blogs.scss */
 .blog-filter .filter.selected, .blog-filter .filter.selected a {
   color: black;
   text-decoration: none;
 }
-/* line 1890, ../css.source/modules/community/_blogs.scss */
+/* line 1889, ../css.source/modules/community/_blogs.scss */
 .blog-filter .filter:hover, .blog-filter .filter:focus {
   text-decoration: none;
 }
-/* line 1896, ../css.source/modules/community/_blogs.scss */
+/* line 1895, ../css.source/modules/community/_blogs.scss */
 .blog-filter .mobile-search-box {
   float: none;
   height: 94px;
@@ -5640,11 +5639,11 @@ div.selector.fixedWidth {
   padding: 0;
   width: auto;
 }
-/* line 1913, ../css.source/modules/community/_blogs.scss */
+/* line 1912, ../css.source/modules/community/_blogs.scss */
 .blog-filter .mobile-search-box .group-search-form {
   position: relative;
 }
-/* line 1917, ../css.source/modules/community/_blogs.scss */
+/* line 1916, ../css.source/modules/community/_blogs.scss */
 .blog-filter .mobile-search-box .group-search-button {
   right: 10px;
   position: absolute;
@@ -5652,7 +5651,7 @@ div.selector.fixedWidth {
   top: 14px;
 }
 
-/* line 1932, ../css.source/modules/community/_blogs.scss */
+/* line 1931, ../css.source/modules/community/_blogs.scss */
 .button-view-all {
   background-color: #f4f2f1;
   border-radius: 2px;
@@ -5673,13 +5672,13 @@ div.selector.fixedWidth {
   margin-top: 0;
   position: absolute;
 }
-/* line 1953, ../css.source/modules/community/_blogs.scss */
+/* line 1952, ../css.source/modules/community/_blogs.scss */
 .button-view-all:hover {
   background-color: #208ec4;
   color: #fff;
 }
 
-/* line 1960, ../css.source/modules/community/_blogs.scss */
+/* line 1959, ../css.source/modules/community/_blogs.scss */
 .blog-post h2 {
   color: #794382;
   margin-bottom: 15px;
@@ -5690,67 +5689,67 @@ div.selector.fixedWidth {
   font-size: 1.875rem;
   margin-bottom: 24px;
 }
-/* line 1972, ../css.source/modules/community/_blogs.scss */
+/* line 1971, ../css.source/modules/community/_blogs.scss */
 .blog-post p {
   color: #696969;
 }
-/* line 1976, ../css.source/modules/community/_blogs.scss */
+/* line 1975, ../css.source/modules/community/_blogs.scss */
 .blog-post .byline {
   margin-bottom: 15px;
   margin-bottom: 24px;
 }
-/* line 1983, ../css.source/modules/community/_blogs.scss */
+/* line 1982, ../css.source/modules/community/_blogs.scss */
 .blog-post .byline a {
   text-decoration: underline;
 }
-/* line 1986, ../css.source/modules/community/_blogs.scss */
+/* line 1985, ../css.source/modules/community/_blogs.scss */
 .blog-post .byline a:hover, .blog-post .byline a:focus {
   text-decoration: none;
 }
-/* line 1992, ../css.source/modules/community/_blogs.scss */
+/* line 1991, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-container {
   margin-bottom: 25px;
   margin-bottom: 45px;
 }
-/* line 2001, ../css.source/modules/community/_blogs.scss */
+/* line 2000, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-post-sidebar {
   display: none;
   padding-left: 0;
   display: block;
 }
-/* line 2009, ../css.source/modules/community/_blogs.scss */
+/* line 2008, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-post-sidebar .button {
   width: 100%;
 }
-/* line 2015, ../css.source/modules/community/_blogs.scss */
+/* line 2014, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-post-content {
   padding: 0 15px;
   padding: 0;
 }
-/* line 2024, ../css.source/modules/community/_blogs.scss */
+/* line 2023, ../css.source/modules/community/_blogs.scss */
 .blog-post .post {
   margin-bottom: 50px;
 }
-/* line 2027, ../css.source/modules/community/_blogs.scss */
+/* line 2026, ../css.source/modules/community/_blogs.scss */
 .blog-post .post p {
   line-height: 30px;
   line-height: 1.875rem;
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 2032, ../css.source/modules/community/_blogs.scss */
+/* line 2031, ../css.source/modules/community/_blogs.scss */
 .blog-post .post img {
   width: 100%;
   margin-bottom: 30px;
 }
-/* line 2038, ../css.source/modules/community/_blogs.scss */
+/* line 2037, ../css.source/modules/community/_blogs.scss */
 .blog-post .about-the-author {
   padding-top: 50px;
   border-top: 1px solid #d2d2d2;
   margin-right: 0;
   margin-right: 0;
 }
-/* line 2048, ../css.source/modules/community/_blogs.scss */
+/* line 2047, ../css.source/modules/community/_blogs.scss */
 .blog-post .about-the-author h4 {
   color: #794382;
   margin-bottom: 15px;
@@ -5758,22 +5757,22 @@ div.selector.fixedWidth {
   font-size: 1.5rem;
   margin-bottom: 30px;
 }
-/* line 2058, ../css.source/modules/community/_blogs.scss */
+/* line 2057, ../css.source/modules/community/_blogs.scss */
 .blog-post .about-the-author .author-image {
   float: left;
   margin-right: 15px;
   margin-right: 20px;
 }
-/* line 2061, ../css.source/modules/community/_blogs.scss */
+/* line 2060, ../css.source/modules/community/_blogs.scss */
 .blog-post .about-the-author .author-image img {
   margin: 7px 0 0 0;
 }
-/* line 2069, ../css.source/modules/community/_blogs.scss */
+/* line 2068, ../css.source/modules/community/_blogs.scss */
 .blog-post .about-the-author .author-details {
   float: left;
   width: 75%;
 }
-/* line 2073, ../css.source/modules/community/_blogs.scss */
+/* line 2072, ../css.source/modules/community/_blogs.scss */
 .blog-post .about-the-author .author-name:after {
   content: "•";
   padding: 0 7px;
@@ -5781,44 +5780,44 @@ div.selector.fixedWidth {
   font-size: 0.5625rem;
   color: #000;
 }
-/* line 2081, ../css.source/modules/community/_blogs.scss */
+/* line 2080, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments {
   background: #fafafa;
   padding: 50px 0;
   /* end .comments-header */
 }
-/* line 2085, ../css.source/modules/community/_blogs.scss */
+/* line 2084, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .row {
   padding: 0 15px;
   padding: 0 30px;
 }
-/* line 2093, ../css.source/modules/community/_blogs.scss */
+/* line 2092, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments div.selector {
   background-position: 0 -300px;
 }
-/* line 2095, ../css.source/modules/community/_blogs.scss */
+/* line 2094, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments div.selector.selected {
   background-position: 0 -450px;
 }
-/* line 2097, ../css.source/modules/community/_blogs.scss */
+/* line 2096, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments div.selector.selected span {
   background-position: right -200px;
 }
-/* line 2103, ../css.source/modules/community/_blogs.scss */
+/* line 2102, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments div.selector span {
   background-position: right -50px;
 }
-/* line 2107, ../css.source/modules/community/_blogs.scss */
+/* line 2106, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comments {
   padding: 0;
   list-style-type: none;
 }
-/* line 2113, ../css.source/modules/community/_blogs.scss */
+/* line 2112, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment ul {
   padding: 0;
   list-style-type: none;
 }
-/* line 2118, ../css.source/modules/community/_blogs.scss */
+/* line 2117, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment button {
   border: none;
   color: #696969;
@@ -5828,14 +5827,14 @@ div.selector.fixedWidth {
   display: block;
   outline: none;
 }
-/* line 2128, ../css.source/modules/community/_blogs.scss */
+/* line 2127, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-wrapper {
   margin-bottom: 30px;
   display: table;
   padding-bottom: 30px;
   border-bottom: 1px solid #d2d2d2;
 }
-/* line 2136, ../css.source/modules/community/_blogs.scss */
+/* line 2135, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-image,
 .blog-post .blog-comments .comment .comment-content {
   display: table-cell;
@@ -5845,17 +5844,17 @@ div.selector.fixedWidth {
 .old-ie .blog-post .blog-comments .comment .comment-content {
   padding-left: 15px;
 }
-/* line 2149, ../css.source/modules/community/_blogs.scss */
+/* line 2148, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-image {
   width: 65px;
   margin-right: 15px;
 }
-/* line 2154, ../css.source/modules/community/_blogs.scss */
+/* line 2153, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-footer {
   margin-left: -80px;
   margin-left: 0;
 }
-/* line 2163, ../css.source/modules/community/_blogs.scss */
+/* line 2162, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-author,
 .blog-post .blog-comments .comment .comment-inappropriate {
   font-size: 14px;
@@ -5864,16 +5863,16 @@ div.selector.fixedWidth {
   line-height: 1.25rem;
   height: 20px;
 }
-/* line 2169, ../css.source/modules/community/_blogs.scss */
+/* line 2168, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-author {
   font-weight: 700;
   float: left;
 }
-/* line 2176, ../css.source/modules/community/_blogs.scss */
+/* line 2175, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-author .date-time {
   font-weight: 300;
 }
-/* line 2179, ../css.source/modules/community/_blogs.scss */
+/* line 2178, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-author .date-time:before {
   content: "•";
   display: inline-block;
@@ -5881,7 +5880,7 @@ div.selector.fixedWidth {
   font-size: 0.625rem;
   padding: 0 7px;
 }
-/* line 2188, ../css.source/modules/community/_blogs.scss */
+/* line 2187, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-inappropriate {
   background-image: url('../images/sprite.icon.comments.png?5c246d54');
   background-repeat: no-repeat;
@@ -5892,20 +5891,20 @@ div.selector.fixedWidth {
   padding-left: 23px;
   float: right;
 }
-/* line 2197, ../css.source/modules/community/_blogs.scss */
+/* line 2196, ../css.source/modules/community/_blogs.scss */
 .no-backgroundsize .blog-post .blog-comments .comment .comment-inappropriate {
   background-image: url('../images/sprite.icon.comments.lo-res.png?ae2e7d25');
 }
-/* line 2204, ../css.source/modules/community/_blogs.scss */
+/* line 2203, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment .comment-inappropriate:hover {
   color: #436da9;
   background-position: -36px -18px;
 }
-/* line 2211, ../css.source/modules/community/_blogs.scss */
+/* line 2210, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comments-header {
   margin-bottom: 50px;
 }
-/* line 2214, ../css.source/modules/community/_blogs.scss */
+/* line 2213, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comments-header h4 {
   font-size: 24px;
   font-size: 1.5rem;
@@ -5916,29 +5915,29 @@ div.selector.fixedWidth {
   line-height: 50px;
   height: 50px;
 }
-/* line 2227, ../css.source/modules/community/_blogs.scss */
+/* line 2226, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comments-header .selector {
   float: right;
 }
-/* line 2234, ../css.source/modules/community/_blogs.scss */
+/* line 2233, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comments-header .selector,
 .blog-post .blog-comments .comments-header .selector > span {
   min-width: 100%;
   min-width: inherit;
 }
-/* line 2244, ../css.source/modules/community/_blogs.scss */
+/* line 2243, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer h5 {
   color: #696969;
   font-size: 16px;
   font-size: 1rem;
   margin-bottom: 12px;
 }
-/* line 2250, ../css.source/modules/community/_blogs.scss */
+/* line 2249, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li {
   float: left;
   display: block;
 }
-/* line 2254, ../css.source/modules/community/_blogs.scss */
+/* line 2253, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.thanks {
   padding-right: 8px;
   margin-right: 8px;
@@ -5946,39 +5945,39 @@ div.selector.fixedWidth {
   padding-right: 15px;
   margin-right: 15px;
 }
-/* line 2264, ../css.source/modules/community/_blogs.scss */
+/* line 2263, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.thanks button {
   padding: 0 0 0 30px;
   background: url('../images/sprite.btn.thanks.png?3e08b1a4') 0 0 no-repeat;
   background-size: 25px 50px;
   height: 25px;
 }
-/* line 2270, ../css.source/modules/community/_blogs.scss */
+/* line 2269, ../css.source/modules/community/_blogs.scss */
 .no-backgroundsize .blog-post .blog-comments .comment-footer .comment-actions li.thanks button {
   background: url('../images/sprite.btn.thanks.lo-res.png?8f6d6a68') 0 0 no-repeat;
 }
-/* line 2274, ../css.source/modules/community/_blogs.scss */
+/* line 2273, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.thanks button:hover {
   background-position: 0 -25px;
   text-decoration: underline;
 }
-/* line 2282, ../css.source/modules/community/_blogs.scss */
+/* line 2281, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.thinking-of-you button {
   padding: 0 0 0 25px;
   background: url('../images/sprite.btn.thinkingofyou.png?2c6bd533') 0 0 no-repeat;
   background-size: 18px 56px;
   height: 28px;
 }
-/* line 2288, ../css.source/modules/community/_blogs.scss */
+/* line 2287, ../css.source/modules/community/_blogs.scss */
 .no-backgroundsize .blog-post .blog-comments .comment-footer .comment-actions li.thinking-of-you button {
   background: url('../images/sprite.btn.thinkingofyou.lo-res.png?5860ffb6') 0 0 no-repeat;
 }
-/* line 2292, ../css.source/modules/community/_blogs.scss */
+/* line 2291, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.thinking-of-you button:hover {
   text-decoration: underline;
   background-position: 0 -28px;
 }
-/* line 2299, ../css.source/modules/community/_blogs.scss */
+/* line 2298, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.helpful-count {
   float: left;
   margin-left: 8px;
@@ -5989,7 +5988,7 @@ div.selector.fixedWidth {
   padding: 0;
   border: none;
 }
-/* line 2312, ../css.source/modules/community/_blogs.scss */
+/* line 2311, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.helpful-count div {
   padding: 0 0 0 20px;
   color: #7a4183;
@@ -6005,7 +6004,7 @@ div.selector.fixedWidth {
   }
   */
 }
-/* line 2323, ../css.source/modules/community/_blogs.scss */
+/* line 2322, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li.helpful-count div:before {
   content: "";
   position: absolute;
@@ -6016,11 +6015,11 @@ div.selector.fixedWidth {
   left: 0;
   top: 6px;
 }
-/* line 2333, ../css.source/modules/community/_blogs.scss */
+/* line 2332, ../css.source/modules/community/_blogs.scss */
 .no-backgroundsize .blog-post .blog-comments .comment-footer .comment-actions li.helpful-count div:before {
   background: url('../images/sprite.btn.helpful.lo-res.png?ee8ce76b') 0 0 no-repeat;
 }
-/* line 2347, ../css.source/modules/community/_blogs.scss */
+/* line 2346, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .comment-footer .comment-actions li button {
   font-size: 14px;
   font-size: 0.875rem;
@@ -6031,18 +6030,18 @@ div.selector.fixedWidth {
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 2360, ../css.source/modules/community/_blogs.scss */
+/* line 2359, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .add-your-comment {
   width: 100%;
   height: 155px;
   margin: 0 0 20px 0;
 }
-/* line 2366, ../css.source/modules/community/_blogs.scss */
+/* line 2365, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .submit-comment {
   float: right;
   padding: 0 40px;
 }
-/* line 2371, ../css.source/modules/community/_blogs.scss */
+/* line 2370, ../css.source/modules/community/_blogs.scss */
 .blog-post .blog-comments .more-comments .show-more {
   margin-bottom: 43px;
 }
@@ -7217,17 +7216,11 @@ div.selector.fixedWidth {
   top: -16px;
 }
 
-/* line 495, ../css.source/modules/community/_parents.scss */
-.group-summary-container p {
-  color: #696969;
-  margin-left: 4.1%;
-}
-
-/* line 503, ../css.source/modules/community/_parents.scss */
+/* line 496, ../css.source/modules/community/_parents.scss */
 .community-parents-recommended .link-back, .community-parents-recommended h2, .community-parents-recommended .explanation {
   margin-left: 4.1%;
 }
-/* line 508, ../css.source/modules/community/_parents.scss */
+/* line 501, ../css.source/modules/community/_parents.scss */
 .community-parents-recommended .link-back {
   color: #426da9;
   display: block;
@@ -7235,18 +7228,18 @@ div.selector.fixedWidth {
   font-size: 1rem;
   margin-bottom: 36px;
 }
-/* line 513, ../css.source/modules/community/_parents.scss */
+/* line 506, ../css.source/modules/community/_parents.scss */
 .community-parents-recommended .link-back .icon-arrow-left-blue {
   margin-right: 11px;
 }
-/* line 517, ../css.source/modules/community/_parents.scss */
+/* line 510, ../css.source/modules/community/_parents.scss */
 .community-parents-recommended h2 {
   border-right: none;
   font-size: 36px;
   font-size: 2.25rem;
   margin-bottom: 20px;
 }
-/* line 525, ../css.source/modules/community/_parents.scss */
+/* line 518, ../css.source/modules/community/_parents.scss */
 .community-parents-recommended .explanation {
   color: #696969;
   margin-bottom: 26px;

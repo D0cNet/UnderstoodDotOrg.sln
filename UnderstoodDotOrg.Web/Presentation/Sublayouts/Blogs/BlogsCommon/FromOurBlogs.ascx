@@ -4,7 +4,7 @@
 <div class="community-our-blogs">
     <div class="row">
         <div class="col col-24 container skiplink-content" aria-role="main">
-            <h2><sc:Text Field="From Our Blogs Text" runat="server" /></h2>
+            <h2 class="rs_read_this"><sc:Text Field="From Our Blogs Text" runat="server" /></h2>
             <div class="row blogs-more">
                 <asp:UpdatePanel ID="upBlogPosts" runat="server">
                     <%--<Triggers>
@@ -13,7 +13,7 @@
                     <ContentTemplate>
                 <asp:Repeater ID="BlogPostsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" OnItemDataBound="BlogPostRepeater_OnItemDataBound" runat="server">
                     <ItemTemplate>
-                        <div class="col col-24 blog-card clearfix">
+                        <div class="col col-24 blog-card clearfix rs_read_this">
                             <div class="blog-card-image">
                                 <a href="<%# Item.Url %>">
                                     <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />

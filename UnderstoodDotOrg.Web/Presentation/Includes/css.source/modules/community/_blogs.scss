@@ -948,7 +948,6 @@
       height: 40px;
       @include rem(line-height, 40px);
       margin: 25px auto 0;
-      width: 100px;
 
       @include bp($bp-large) {
         margin: 25px 0 0;
