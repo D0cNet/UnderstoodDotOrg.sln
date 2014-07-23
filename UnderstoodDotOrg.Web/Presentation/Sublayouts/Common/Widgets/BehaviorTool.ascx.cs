@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Widgets;
 using UnderstoodDotOrg.Domain.Understood.Helper;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
 {
@@ -44,6 +46,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
                 ddlGrades.DataTextField = "Text";
                 ddlGrades.DataValueField = "Value";
                 ddlGrades.DataBind();
+
+                if (IsUserLoggedIn)
+                {
+                    var youngestGrade = CurrentMember.Children
+                        .Select(child => child.Grades.FirstOrDefault())
+                        .Where(grade => grade != null)
+                        .Select(grade => Sitecore.Context.Database.GetItemAs<GradeLevelItem>(grade.Key))
+                        .OrderBy(gradeItem => gradeItem.GradeNumber.Integer)
+                        .FirstOrDefault();
+                    if (youngestGrade != null)
+                    {
+                        ddlGrades.SelectedValue = youngestGrade.ID.ToString();
+                    }
+                }
             }
 
             var issues = FormHelper.GetChallenges(DictionaryConstants.SelectChallengeLabel);

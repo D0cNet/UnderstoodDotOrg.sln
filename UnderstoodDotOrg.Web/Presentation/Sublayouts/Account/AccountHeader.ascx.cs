@@ -202,7 +202,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
                     GradeLevelItem gli = Sitecore.Context.Database.GetItem(grade.Key);
                     if (gli != null)
                     {
-                        string abbreviation = gli.AbbreviatedGrade.Rendered;
+                        string abbreviation = gli.Name.Rendered;
 
                         gradePrefix = abbreviation + ", ";
 
