@@ -71,6 +71,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                             else
                             {
                                 notifs = new List<INotification>();
+                                Notifications = notifs;
                             }
                         }
                         else
@@ -80,7 +81,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
 
                         if (Conversations==null)
                         {
-                            checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
+                            checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName, Constants.TelligentConversationStatus.Unread);
                             if (checkConvos != null && checkConvos.Count() > 0)
                             {
                                 Conversations = checkConvos;
@@ -88,6 +89,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                             else
                             {
                                 checkConvos = new List<Conversation>();
+                                Conversations = checkConvos;
                             }
                         }
                         else

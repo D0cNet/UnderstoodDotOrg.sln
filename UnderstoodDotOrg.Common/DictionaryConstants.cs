@@ -3000,10 +3000,27 @@ namespace UnderstoodDotOrg.Common
 
         public static string BetterRecommendations { get { return Translate.TextByDomain(PosesDictionary, "Better Recommendations Label"); } }
 
-
-
         public static string AllLabel { get { return Translate.TextByDomain(PosesDictionary, "All Label"); } }
 
         public static string PopularLabel { get { return Translate.TextByDomain(PosesDictionary, "Popular Label"); } }
+
+
+
+
+        public static string InboxLabel { get { return Translate.TextByDomain(PosesDictionary, "Inbox Label"); } }
+
+        public static string NewMessageLabel { get { return Translate.TextByDomain(PosesDictionary, "New Message Label"); } }
+
+        public static string DeleteButtonLabel { get { return Translate.TextByDomain(PosesDictionary, "Delete Button Label"); } }
+
+        public static string SubmitReplyButtonLabel { get { return Translate.TextByDomain(PosesDictionary, "Submit Reply Label"); } }
+         
+        public static string DeleteConfirmationLabel {get { return Translate.TextByDomain(PosesDictionary, "Delete Button Confirmation Label"); } }
+
+
+        public static string SendMessageButtonLabel { get { return Translate.TextByDomain(PosesDictionary, "Send Message Button Label"); } }
+
+
+        public static string SendPrivateMessageLabel { get { return Translate.TextByDomain(PosesDictionary, "Send Private Message Title"); } }
     }
 }

@@ -22,22 +22,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// ddlUserNames control.
+        /// pnlUserNames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUserNames;
+        protected global::System.Web.UI.WebControls.Panel pnlUserNames;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// chklUsernames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.CheckBoxList chklUsernames;
+        
+        /// <summary>
+        /// lbLoadMore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLoadMore;
         
         /// <summary>
         /// lblSubject control.
@@ -112,6 +121,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount {
         protected global::System.Web.UI.WebControls.Panel pnlTool;
         
         /// <summary>
+        /// litInboxText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litInboxText;
+        
+        /// <summary>
         /// litMsgs control.
         /// </summary>
         /// <remarks>
@@ -119,6 +137,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litMsgs;
+        
+        /// <summary>
+        /// btn_new_message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btn_new_message;
         
         /// <summary>
         /// lvLastMessages control.

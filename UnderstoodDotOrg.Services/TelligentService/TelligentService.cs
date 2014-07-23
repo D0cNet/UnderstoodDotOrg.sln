@@ -2647,5 +2647,46 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             return questionList;
         }
+
+        public static bool MarkConversationRead(string conversationOwner,string conversationID)
+        {
+            bool success=false;
+            string address=String.Empty;
+              if (!conversationID.IsNullOrEmpty() && !String.IsNullOrEmpty(conversationOwner))
+            {
+                try
+                {
+                    MakeApiRequest(wc =>
+                    {
+                        wc.Headers.Add("Rest-Method", "PUT");
+                        wc.Headers.Add("Rest-Impersonate-User", conversationOwner);
+
+                        address = string.Format(GetApiEndPoint("conversations/{0}/read.xml "), conversationID);
+                        NameValueCollection data = new NameValueCollection();
+
+                        data["HasRead"] = "True";
+                        string xml = Encoding.UTF8.GetString(wc.UploadValues(address, data));
+                        XmlDocument document = new XmlDocument();
+                        document.LoadXml(xml);
+                        XmlNode childNode = document.SelectSingleNode("Response");
+                        if (childNode != null)
+                        {
+                            if (!childNode.SelectSingleNode("HasRead").InnerText.Equals("true"))
+                            {
+                                success = false;
+                            }
+                        }
+
+                    });
+                }catch(Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error("Error retrieving Marking Conversations as Read in Telligent", ex, typeof(TelligentService));
+                }
+              }
+
+
+            return success;
+            
+        }
     }
 }

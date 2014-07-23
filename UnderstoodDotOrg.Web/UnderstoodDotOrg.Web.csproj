@@ -2326,6 +2326,7 @@
     <Content Include="Presentation\Includes\css\behavior-tool.css" />
     <Content Include="Presentation\Includes\css\community-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\community.css" />
+    <Content Include="Presentation\Includes\css\contents.css" />
     <Content Include="Presentation\Includes\css\decision-lite-nonresponsive.css" />
     <Content Include="Presentation\Includes\css\decision-lite.css" />
     <Content Include="Presentation\Includes\css\fonts\lineto-circular-black.svg" />

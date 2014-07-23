@@ -49,7 +49,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                      }
                      else
                      {
-                         checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName);
+                         checkConvos = TelligentService.GetConversations(CurrentMember.ScreenName,Constants.TelligentConversationStatus.Unread);
                          if (checkConvos != null)
                          {
                              Conversations= checkConvos;

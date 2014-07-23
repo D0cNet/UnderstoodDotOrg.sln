@@ -46,24 +46,58 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
 				return Settings.GetSetting(Constants.Settings.TelligentConfig);
 			}
 		}
-        public string UnreadMessages
+        private int FriendPageIndex
         {
-            get
-            {
-                string sessConv = Session["UnreadConversations"] as String;
-                if ( sessConv!= null)
-                    return sessConv;
-                else
-                {
-                  var test =  TelligentService.GetConversations(ScreenName, Constants.TelligentConversationStatus.Unread);
-                  if(test!=null){
-                      sessConv = test.Count().ToString();
-                    Session["UnreadConversations"]= sessConv;
+            get { return (int)ViewState["_friend_page_count"]; }
+            set { ViewState["_friend_page_count"] = value; }
+        }
+     
+        private int TotalFriends
+        {
+            get {return  (int)ViewState["_total_friends"];}
+            set { ViewState["_total_friends"] =value; }
+        }
+        //public string UnreadMessages
+        //{
+        //    get
+        //    {
+        //        string sessConv = Session["UnreadConversations"] as String;
+        //        if ( sessConv!= null)
+        //            return sessConv;
+        //        else
+        //        {
+        //          var test =  TelligentService.GetConversations(ScreenName, Constants.TelligentConversationStatus.Unread);
+        //          if(test!=null){
+        //              sessConv = test.Count().ToString();
+        //            Session["UnreadConversations"]= sessConv;
                   
-                  }
-                  return sessConv??"0";
-                }
-            }
+        //          }
+        //          return sessConv??"0";
+        //        }
+        //    }
+        //}
+
+        public string DeleteConversationMessage { get { return DictionaryConstants.DeleteConfirmationLabel; } }
+        public string CancelButtonText { get { return DictionaryConstants.CancelButtonText; } }
+        public string PopUpTitleText { get { return DictionaryConstants.SendPrivateMessageLabel; } }
+
+        protected override void OnInit(EventArgs e)
+        {
+            lbLoadMore.Click += lbLoadMore_Click;
+            lbLoadMore.Text = DictionaryConstants.ShowMoreLabel;
+            litInboxText.Text = DictionaryConstants.InboxLabel;
+            btn_new_message.Attributes.Add("title", DictionaryConstants.NewMessageLabel);
+            btn_new_message.Value = DictionaryConstants.NewMessageLabel;
+            btnDelete.Text = DictionaryConstants.DeleteButtonLabel;
+            btnReply.Text = DictionaryConstants.SubmitReplyButtonLabel;
+            btnSendNewMessage.Text = DictionaryConstants.SendMessageButtonLabel;
+
+            base.OnInit(e);
+        }
+
+        void lbLoadMore_Click(object sender, EventArgs e)
+        {
+            LoadFriends();
         }
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -74,15 +108,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                     lblName.Text = Name;
                     litMsgs.Text = "0";
                     BindConversations(true);
-
+                    FriendPageIndex = 1;
                     ///TODO:Enable multiuser selection
-                    //MembershipManager memMan = new MembershipManager();
-                    //var usernames = memMan.GetMembers().Where(x=>!String.IsNullOrEmpty(x.ScreenName)).Select(x => new { Username = x.ScreenName.Trim() }).ToList<object>();
-                    //ddlUserNames.Items.Add(new ListItem() { Text = "", Value = "" });
-                    var usernames = TelligentService.GetUserNames().Select(x=> new {Username=x});
-                    ddlUserNames.Items.Add(new ListItem() { Text = "", Value = "" });
-                    ddlUserNames.DataSource = usernames;
-                    ddlUserNames.DataBind();
+                    LoadFriends();
+                  
                 }catch(Exception ex)
                 {
                     Sitecore.Diagnostics.Error.LogError("Private Message Tool (PageLoad):\n" +ex.Message);
@@ -91,16 +120,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
 
 		}
 
+        private void LoadFriends()
+        {
+           
+            int totalFriends = 0;
+            var usernames = TelligentService.GetFriends(CurrentMember.ScreenName, FriendPageIndex, 10, out totalFriends).Select(x => new { Username = x.Username }); //TelligentService.GetUserNames().Select(x=> new {Username=x});
+
+            if (usernames.Count() < totalFriends)
+                FriendPageIndex++;
+
+            TotalFriends = totalFriends;
+
+            chklUsernames.DataSource = usernames;
+            chklUsernames.DataBind();
+        }
+
         private void BindConversations(bool forceRefresh=false)
         {
             if (forceRefresh)
-                Session["conversations"] = null;
+                Session["_currentConvos"] = null;
 
             List<Message> messages = new List<Message>();
-            if (Conversations != null)
+            if (PMConversations != null)
             {
                 
-                foreach (Conversation item in Conversations)
+                foreach (Conversation item in PMConversations)
                 {
                     //Get the latest message
                     Message m = item.Messages.OrderByDescending(x => x.CreatedDate).First();
@@ -118,12 +162,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
             lvLastMessages.DataSource = messages;
             lvLastMessages.DataBind();
         }
-		public List<Conversation> Conversations
+		public List<Conversation> PMConversations
 		{
 			get
 			{
-                
-			    List<Conversation> checkConvos = Session["conversations"] as List<Conversation>;
+
+                List<Conversation> checkConvos = Session["_currentConvos"] as List<Conversation>;
 			    if (checkConvos != null)
 			    {
 
@@ -133,7 +177,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
 			    {
 
 				    checkConvos = TelligentService.GetConversations(ScreenName);
-				    Session["conversations"] = checkConvos;
+                    Session["_currentConvos"] = checkConvos;
 				    return checkConvos;
 			    }
 
@@ -156,14 +200,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                 if (hdfield != null)
                 {
                     //Extract the conversation messages from conversation list item
-                    if (Conversations != null)
+                    if (PMConversations != null)
                     {
-                        List<Message> msgs = Conversations.Where(c => c.ID.Equals(hdfield.Value)).First<Conversation>().Messages;
+                        List<Message> msgs = PMConversations.Where(c => c.ID.Equals(hdfield.Value)).First<Conversation>().Messages;
                                               
 
                         rptMessages.DataSource = msgs;
                         rptMessages.DataBind();
 
+                        //Mark conversation as read
+                        TelligentService.MarkConversationRead( CurrentMember.ScreenName, hdfield.Value);
+                        Conversations = null;
                     }
 
 
@@ -192,6 +239,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                             rptMessages.DataBind();
                             CKEditor1.Text = String.Empty;
                             lvLastMessages.SelectedIndex = -1;
+                            Conversations = null;
                             
                         }
                     }
@@ -230,8 +278,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
         }
         protected void btnSendNewMessage_Click(object sender, EventArgs e)
         {
-            string newConvID = TelligentService.CreateConversation(ScreenName, txtSubject.Text, CKEditorControl1.Text, ddlUserNames.SelectedValue);
-            string usernames = ddlUserNames.SelectedValue;
+            string usernames = String.Join(",", chklUsernames.Items.Cast<ListItem>()
+                .Where(li => li.Selected)
+                .Select(li => li.Value).ToArray());
+            string newConvID = TelligentService.CreateConversation(ScreenName, txtSubject.Text, CKEditorControl1.Text, usernames);
+           
             if (!String.IsNullOrEmpty(newConvID))
             {
                 try
@@ -271,7 +322,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                 
                 txtSubject.Text = String.Empty;
                 CKEditorControl1.Text = String.Empty;
-                ddlUserNames.SelectedIndex = -1;
+                chklUsernames.Items.Cast<ListItem>()
+                    .ToList().ForEach(i => { i.Selected = false; }); 
             }
         }
 

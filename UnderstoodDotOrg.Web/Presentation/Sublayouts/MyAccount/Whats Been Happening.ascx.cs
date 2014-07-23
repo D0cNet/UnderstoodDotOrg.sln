@@ -36,19 +36,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
-            {
+           // if (!IsPostBack)
+           // {
                 //TODO: Pull data from notification aggregator
                 // IList<INotification> cnNotifs = TelligentService.ReadFriendshipRequests(CurrentMember.ScreenName);
-                IList<INotification> cnNotifs = new List<INotification>();
+                List<INotification> cnNotifs = new List<INotification>();
 
-                if (Notifications != null)
-                    cnNotifs = Notifications;
-                else
-                    cnNotifs = TelligentService.GetNotifications(CurrentMember.ScreenName); //TelligentService.ReadFriendshipRequests("PosesTony");
-
+                //if (Notifications != null)
+                //    cnNotifs = Notifications;
+                //else
+                cnNotifs = TelligentService.GetNotifications(CurrentMember.ScreenName); //TelligentService.ReadFriendshipRequests("PosesTony");
+                Notifications = cnNotifs;
                 if (cnNotifs != null && cnNotifs.Count() > 0)
                 {
+
                     pnlPolulatedNotifs.Visible = true;
                     pnlEmptyNotifs.Visible = false;
 
@@ -62,14 +63,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
                 FeedsCollection lnf = new FeedsCollection(cnNotifs);
                 lvNotificationFeed.DataSource = lnf;
                 lvNotificationFeed.DataBind();
-            }
+           // }
         }
 
         protected void rptNotifications_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item != null)
             {
-                if (e.Item.ItemType == ListItemType.Item)
+                if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
                 {
                     var aspxItem = e.Item;
                     var dataItem = (INotification)e.Item.DataItem;
