@@ -9,6 +9,7 @@ using System.Data.Entity;
 using UnderstoodDotOrg.Services.TelligentService;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
+using System.Text;
 
 namespace UnderstoodDotOrg.Web.Presentation
 {
@@ -28,7 +29,21 @@ namespace UnderstoodDotOrg.Web.Presentation
             }
 
 
-            litRoles.Text = MembershipManager.isOpenToConnect(un).ToString();
+            //litRoles.Text = MembershipManager.isOpenToConnect(un).ToString();
+            var membershipManager = new MembershipManager();
+            var sb = new StringBuilder();
+            var output = @"Method: {0}:{1}</br>";
+            var member = membershipManager.GetMemberByScreenName(un);
+            var memberId = member.MemberId;
+
+            sb.Append(string.Format(output, "membershipManager.GetMemberByScreenName(un).Email", membershipManager.GetMemberByScreenName(un).Email));
+            sb.Append(string.Format(output, "membershipManager.GetMember(memberId).Email", membershipManager.GetMember(memberId).Email));
+            sb.Append(string.Format(output, "membershipManager.GetMember('q1q1q1@q1.q1').Email", membershipManager.GetMember("q1q1q1@q1.q1").Email));
+            //sb.Append(string.Format(output, "membershipManager.GetMember('q1q1q1@q1.q1').Email", membershipManager.GetMembers().FirstOrDefault(x => x.Email == "q1q1q1@q1.q1").Email));
+            sb.Append(string.Format(output, "membershipManager.GetMembers().FirstOrDefault(x => x.MemberId == memberId).Email", membershipManager.GetMembers().FirstOrDefault(x => x.MemberId == memberId).Email));
+            sb.Append(string.Format(output, "membershipManager.GetUser(memberId).Email", membershipManager.GetUser(memberId).Email));
+
+            litRoles.Text = sb.ToString();
         }
 
     }

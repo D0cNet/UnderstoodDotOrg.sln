@@ -362,6 +362,14 @@ namespace UnderstoodDotOrg.Domain.Membership
                 member = FillMember_ExtendedPropertiesFromDb(member);
                 member = FillMember_AlertPreferences(member);
 
+                //now with email!
+                var user = this.GetUser(member.MemberId);
+                if (user != null)
+                {
+                    member.Email = user.Email;
+                }
+                //refactor this later, move email to first-class citizen in the Membership database
+
                 return trimFields(member);
             }
 
@@ -475,7 +483,7 @@ namespace UnderstoodDotOrg.Domain.Membership
 
         #endregion
 
-        #region Updats
+        #region Updates
         /// <summary>
         /// Updates information about an existing member
         /// </summary>
@@ -568,7 +576,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         #endregion
 
         #region Support Methods
-        
+
         #region Private
         /// <summary>
         /// Private method that maps a potentially Entity-disconnected Member to a known-connected instance
@@ -597,22 +605,22 @@ namespace UnderstoodDotOrg.Domain.Membership
             tMember.ScreenName = Member.ScreenName.RemoveHTML();
             tMember.UserId = Member.UserId;
 
-			if (!string.IsNullOrEmpty(Member.FirstName))
-			{
-				tMember.FirstName = Member.FirstName.RemoveHTML();
-			}
-			if (!string.IsNullOrEmpty(Member.LastName))
-			{
-				tMember.LastName = Member.LastName.RemoveHTML();
-			}
-			if (Member.Phone != null)
-			{
-				tMember.Phone = Member.Phone;
-			}
-			if (!string.IsNullOrEmpty(Member.ZipCode))
-			{
-				tMember.ZipCode = Member.ZipCode.RemoveHTML();
-			}
+            if (!string.IsNullOrEmpty(Member.FirstName))
+            {
+                tMember.FirstName = Member.FirstName.RemoveHTML();
+            }
+            if (!string.IsNullOrEmpty(Member.LastName))
+            {
+                tMember.LastName = Member.LastName.RemoveHTML();
+            }
+            if (Member.Phone != null)
+            {
+                tMember.Phone = Member.Phone;
+            }
+            if (!string.IsNullOrEmpty(Member.ZipCode))
+            {
+                tMember.ZipCode = Member.ZipCode.RemoveHTML();
+            }
 
             tMember.Interests.Clear();
             tMember.Journeys.Clear();
@@ -715,7 +723,7 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             return tChild;
         }
-        
+
         #endregion
 
         #region Public
@@ -830,6 +838,11 @@ namespace UnderstoodDotOrg.Domain.Membership
             return false;
         }
 
+        /// <summary>
+        /// Returns trus or false based on the user's connection settings
+        /// </summary>
+        /// <param name="username">Username to check</param>
+        /// <returns>true if user is open to connecting, false if the user is not open to connect or does not exist</returns>
         public static bool isOpenToConnect(string username)
         {
             string sql = "SELECT allowConnections FROM Members WHERE (ScreenName = @Username)";
@@ -856,7 +869,7 @@ namespace UnderstoodDotOrg.Domain.Membership
             }
             catch (Exception ex)
             {
-                
+
                 throw ex;
             }
 
@@ -1254,7 +1267,7 @@ namespace UnderstoodDotOrg.Domain.Membership
 
             }
             success = true;
-            return success; 
+            return success;
 
         }
 
@@ -1263,12 +1276,12 @@ namespace UnderstoodDotOrg.Domain.Membership
             bool success = false;
             //if the vote already exists then we drop the existing vote and insert a new one
             ClearHelpfulVote(MemberId, ContentId, Activity, ActivityType);
-            
+
             //insert the vote
             LogMemberActivity(MemberId, ContentId, Activity, ActivityType);
 
             success = true;
-            return success ;
+            return success;
         }
         /// <summary>
         /// Records in our activity log a page view of a specific item within a specific subtopic
@@ -1283,7 +1296,7 @@ namespace UnderstoodDotOrg.Domain.Membership
                                 ContentId,
                                 UnderstoodDotOrg.Common.Constants.UserActivity_Values.SubtopicItemViewed + Subtopic.ToString(),
                                 UnderstoodDotOrg.Common.Constants.UserActivity_Types.ContentRelated);
-                
+
         }
 
         /// <summary>
@@ -1298,7 +1311,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             bool success = false;
 
-           
+
             try
             {
 
