@@ -314,16 +314,17 @@ U.searchSite = function() {
 	self.init = function() {
 
 		self.$hdr_page = $('#header-page');
+		self.$search_term = $('#search-term');
 		self.$search_site = $('#search-site');
 		self.$logo = self.$hdr_page.find('.logo-u-main img');
 		self.input_text = self.$search_site.find('input[placeholder]');
 		self.input_submit = self.$search_site.find('input[type="submit"]');
 		self.viewport_size = null;
-		self.placeholder_text_default = 'Enter Search Term';
-		self.placeholder_text_large = 'Search';
-		self.submit_value_default = 'Go';
-		self.submit_value_medium = 'Submit';
-
+		self.placeholder_text_default = self.input_text.data("textDefault");
+		self.placeholder_text_large = self.input_text.data("textLarge");
+		self.submit_value_default = self.input_submit.data("valueDefault");
+		self.submit_value_medium = self.input_submit.data("valueMedium");
+	
 		var $dataPath = self.input_text.data('path');
 
 		// START - OASIS
@@ -413,7 +414,17 @@ U.searchSite = function() {
 	};
 
 	self.searchDisplay = function() {
+		var classname = 'is-search-active',
+			isOpen = self.$hdr_page.hasClass(classname);
 		self.$hdr_page.toggleClass('is-search-active');
+
+
+		/* See UN-4070 - Clearing value of field on close as workaround for android */
+		/* bug where input occasionally being displaced by placeholder text */
+		/* SG */
+		if (isOpen) {
+			self.$search_term.val('');
+		}
 	};
 
 	self.init();
@@ -718,11 +729,11 @@ U.readSpeaker = function() {
 
 	var self = {};
 
-	self.carousels = new Array();
+	self.carousels = [];
 
 	self.queueCarousel = function(c) {
 		self.carousels.push(c);
-	}
+	};
 
 	self.renderCarouselFocusables = function() {
 		ReadSpeaker.q(function() {
@@ -730,7 +741,7 @@ U.readSpeaker = function() {
 				U.carousels.accessibleSlide(e);
 			});
 		});
-	}
+	};
 
 	//Runs when the dom is ready
 	self.init = function() {
@@ -756,7 +767,7 @@ U.readSpeaker = function() {
 			}
 
 		});
-	}
+	};
 
 	return self;
 };
@@ -840,18 +851,12 @@ $(document).ready(function() {
 
 	//var articleListing = new U.articleListing();
 	var expertListing = new U.expertListing();
-	//new U.readSpeaker().init();
+
+	new U.readSpeaker().init();
 
 	// input placeholder fix for IE
 	$('input:text').placeholder();
 	$('textarea').placeholder();
-
-
-	// event handler for FPO URLs to prevent navigating to 404s
-	// FIXME: this is temporary and needs to be removed during integration
-	jQuery('a[href=REPLACE]').on('click', function() {
-		return false;
-	});
 
 
 });

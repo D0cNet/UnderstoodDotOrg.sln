@@ -106,8 +106,9 @@
                 <label for="search-term" class="visuallyhidden" aria-hidden="true">
                     <sc:FieldRenderer ID="frSearchLabel2" runat="server" FieldName="Link" />
                 </label>
-                <input type="text" id="search-term" placeholder='<%= SearchLabel %>' data-path="<%= SearchPath %>">
-                <input type="submit" value="<%# UnderstoodDotOrg.Common.DictionaryConstants.GoButtonText %>">
+                <%# FIXME: data-text-default and data-value-medium attrs below need language keys created in sitecore and integrated here by AO. unsure why DictionaryConstantsis commented out. -JB/DP %>
+                <input type="text" id="search-term" placeholder='<%= SearchLabel %>' data-text-default="Enter Search Term" data-text-large="<%= SearchLabel %>" data-path="<%= SearchPath %>">
+                <input type="submit" value="<%# UnderstoodDotOrg.Common.DictionaryConstants.GoButtonText %>"  data-value-default="<%# UnderstoodDotOrg.Common.DictionaryConstants.GoButtonText %>" data-value-medium="Submit">
             </span>
         </fieldset>
     </div>
