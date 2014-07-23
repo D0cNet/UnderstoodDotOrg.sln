@@ -30,6 +30,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             uxSelectGrade1.Items.AddRange(gradeList.ToArray());
             uxSelectGrade1.DataBind();
+            uxSelectGrade1.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
 
             uxSelectGrade2.Items.AddRange(gradeList.ToArray());
             uxSelectGrade2.DataBind();
