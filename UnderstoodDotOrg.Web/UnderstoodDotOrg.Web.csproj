@@ -3328,6 +3328,7 @@
     <Content Include="Presentation\Includes\audio\simulations\executive\vo\en\catchOnlyTrianglesAndHearts.ogg" />
     <Content Include="Presentation\Includes\js\vendor\readspeaker\skins\controller\gcontroller.eot" />
     <Content Include="Presentation\Includes\audio\simulations\executive\vo\en\backgroundTrack.ogg" />
+    <None Include="Properties\PublishProfiles\John.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml">
       <SubType>Designer</SubType>
     </None>

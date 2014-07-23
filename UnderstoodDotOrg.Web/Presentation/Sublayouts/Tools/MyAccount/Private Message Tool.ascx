@@ -73,10 +73,10 @@
                 <asp:Label Text="Message" ID="lblMsg" runat="server" /><br />
                 <CKEditor:CKEditorControl ID="CKEditorControl1"  runat="server" Enabled="true"   ValidationGroup="NewMessage" BasePath="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor" ContentsCss="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/contents.css" Height="127px" ResizeEnabled="False" TemplatesFiles="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/plugins/templates/templates/default.js" Toolbar="Basic"
                      ToolbarBasic="Bold|Italic|-|NumberedList|BulletedList|-|Link|Unlink|-|About" UIColor="#CC99FF" BasicEntities="True"></CKEditor:CKEditorControl><asp:RequiredFieldValidator ID="RequiredFieldValidator3"  ValidationGroup="NewMessage" ControlToValidate="CKEditorControl1" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator><br />
-                <div><asp:Button Text="Send Message"  UseSubmitBehavior="false" style="margin-right:10px;" ID="btnSendNewMessage"  ValidationGroup="NewMessage"  OnClick="btnSendNewMessage_Click"  runat="server" /></div>
+                <div><asp:Button Text="Send Message"  UseSubmitBehavior="false" ID="btnSendNewMessage"  ValidationGroup="NewMessage"  OnClick="btnSendNewMessage_Click"  runat="server" /></div>
             </div>
 
-            <asp:Panel Width="880px" Height="620px" ID="pnlTool" runat="server">
+            <asp:Panel ID="pnlTool" runat="server">
 
                 <div id="left_pane" class="telligent-inbox">
                     <div class="telligent-inbox-title" ><span>Inbox (<asp:Literal Text="" ID="litMsgs" runat="server" />)</span>
@@ -112,7 +112,7 @@
 
                             <AlternatingItemTemplate>
                                  <asp:HiddenField ID="hfConvID" Value='<%# Eval("ConversationID") %>' runat="server" />
-                                 <asp:Panel  id="bkDiv" runat="server"  style="telligent-inbox-item">
+                                 <asp:Panel  id="bkDiv" runat="server">
                                     <div class="telligent-avatar-wrap" id="avatarImg">
                                          <asp:ImageButton ID="imgBtn1" CommandName="Select"  runat="server" class="telligent-avatar" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
 
@@ -144,8 +144,8 @@
                 </div>
 
                 <div id="right_pane" class="telligent-conversation" >
-                   <div class="telligent-conversation-delete" > <span><asp:Label ID="lblName" Text="" runat="server"></asp:Label>
-                    <asp:Button Text="Delete"  ID="btnDelete" OnClientClick="javascript:return confirm('Are you sure you want to delete this conversation?');" OnClick="btnDelete_Click" class="telligent-conversation-delete-button" runat="server" /></span>
+                   <div class="telligent-conversation-delete" ><asp:Label ID="lblName" Text="" runat="server"></asp:Label>
+                    <asp:Button Text="Delete"  ID="btnDelete" OnClientClick="javascript:return confirm('Are you sure you want to delete this conversation?');" OnClick="btnDelete_Click" class="telligent-conversation-delete-button" runat="server" />
 
                     </div>
                     <div id="messages_view" class="telligent-conversation-wrapper" >
@@ -170,8 +170,8 @@
                         <CKEditor:CKEditorControl ID="CKEditor1"  runat="server"  BasePath="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor" ContentsCss="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/contents.css" Height="127px" ResizeEnabled="False" TemplatesFiles="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/plugins/templates/templates/default.js" Toolbar="Basic"
                           ToolbarBasic="Bold|Italic|-|NumberedList|BulletedList|-|Link|Unlink|-|About" UIColor="#CC99FF"></CKEditor:CKEditorControl>
 
+                        <asp:Button Text="Submit Reply" ID="btnReply" class="telligent-reply-button" runat="server"  OnClick="btnReply_Click" />
                     </div>
-                    <asp:Button Text="Submit Reply" ID="btnReply" class="telligent-reply-button" runat="server"  OnClick="btnReply_Click" />
               </div>
         </asp:Panel>
            </ContentTemplate>

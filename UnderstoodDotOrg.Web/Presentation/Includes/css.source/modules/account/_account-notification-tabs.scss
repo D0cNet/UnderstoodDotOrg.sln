@@ -564,3 +564,132 @@ $account-circle-gray: #bcbdc0;
     line-height: 30px;
   }
 }// .toggle-wrapper
+
+
+// ==================== Telligent Private Messaging =================== //
+// outer container
+.account-notifications-tab-messages {
+  width: 110%;
+  position: relative;
+  height: 700px;
+  margin-left: -5%;
+
+  // inner container
+  #main_2_mynotifications_1_pnlTool {
+    width: 100%;
+    @include clearifx();
+  }
+  // inbox panel
+  .telligent-inbox {
+    width: 30%;
+    height: 700px;
+    float: left;
+
+
+  }
+  // conversation panel
+  .telligent-coversation {
+    width: 70%;
+    height: 700px;
+    float: right;
+    position: relative;
+    padding-bottom: 150px;
+
+  }
+  // title boxes
+  .telligent-inbox-title,
+  .telligent-conversation-delete {
+    width: 100%;
+    height: 60px;
+    background-color: #298fc2;
+    padding: 15px 20px 15px 20px;
+    @include clearfix();
+
+    span {
+      font-size: 18px;
+      color: #fff;
+      display: inline-block;
+      margin-top: 8px;
+      float: left;
+    }
+  }
+  .telligent-inbox-title {
+    border-right: 1px solid #fff;
+  }
+  // inbox item
+  .telligent-inbox-item {
+    height: 83px;
+  }
+  // reply wysiwyg editor
+  .telligent-reply-editor {
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+
+    .cke_2.cke_chrome {
+      border:0px;
+    }
+    // reset WYSIWYG 'theme'
+    .cke_top,
+    .cke_toolgroup {
+      background-image: none;
+      background: none;
+      border: 0px;
+    }
+    .cke-bottom { display: none; }
+  }
+  // cta buttons - imported from global & edited
+  .telligent-new-message-button,
+  .telligent-conversation-delete-button,
+  .telligent-reply-button {
+    @include rem(font-size, 18px);
+    @include rounded-corners(2px);
+    background-color: #f2af00;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    // telligent edits
+    display: block;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    max-width: 150px;
+
+    &:focus {
+      background-color: #ffbc0d;
+      color: black;
+      text-decoration: none;
+      @include dropshadow(.8);
+      outline: none;
+
+      .touch & {
+        background-color: #f2af00;
+      }
+    }
+
+    &:hover {
+      background-color: #ffbc0d;
+      color: black;
+      text-decoration: none;
+
+      .touch & {
+        background-color: #f2af00;
+      }
+    }
+
+    &.disabled,
+    &[disabled] {
+      &, &:hover {
+        background-color: #f7c84c;
+        color: #4c4c4c;
+        cursor: default;
+      }
+    }
+  }
+
+}
