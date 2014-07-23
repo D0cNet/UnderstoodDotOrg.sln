@@ -277,6 +277,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             }
             else
             {
+                Page.Session[Constants.SessionPreviousUrl] = null;
                 this.ProfileRedirect(UnderstoodDotOrg.Common.Constants.UserPermission.RegisteredUser);
             }
         }

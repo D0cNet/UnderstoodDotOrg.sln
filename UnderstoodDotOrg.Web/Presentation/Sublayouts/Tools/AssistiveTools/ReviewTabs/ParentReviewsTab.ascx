@@ -293,6 +293,16 @@
                     <button class="slider-button">4</button>
                     <button class="slider-button">5</button>
                 </div>
+                <script>
+                    $(function(){
+                        if(<%= (!IsUserLoggedIn).ToString().ToLower() %>)
+                        {
+                            setTimeout(function(){
+                                $('.results-slider').off('click');
+                            }, 2000);
+                        }
+                    })
+                </script>
                 <!-- END PARTIAL: results-slider-ratings -->
             </section>
             <!-- END PARTIAL: rate-this-app-sidebar -->
