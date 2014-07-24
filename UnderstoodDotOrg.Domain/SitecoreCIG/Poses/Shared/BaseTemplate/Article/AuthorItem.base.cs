@@ -17,6 +17,8 @@ public static readonly string TemplateId = "{3F153988-B0C9-4C5D-9234-D9ADC2A3D55
 
 #region Inherited Base Templates
 
+private readonly ContentPageItem _ContentPageItem;
+public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 private readonly BasePageNEWItem _BasePageNEWItem;
 public BasePageNEWItem BasePageNEW { get { return _BasePageNEWItem; } }
 
@@ -26,6 +28,7 @@ public BasePageNEWItem BasePageNEW { get { return _BasePageNEWItem; } }
 
 public AuthorItem(Item innerItem) : base(innerItem)
 {
+	_ContentPageItem = new ContentPageItem(innerItem);
 	_BasePageNEWItem = new BasePageNEWItem(innerItem);
 
 }
@@ -69,6 +72,15 @@ public CustomImageField AuthorImage
 	get
 	{
 		return new CustomImageField(InnerItem, InnerItem.Fields["Author Image"]);
+	}
+}
+
+
+public CustomTextField AuthorBioAbstract
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Author Bio Abstract"]);
 	}
 }
 

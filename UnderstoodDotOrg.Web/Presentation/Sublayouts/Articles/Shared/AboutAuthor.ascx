@@ -19,10 +19,9 @@
             </h3>
             <p>
                 <%--Lorem ipsum dolor sit amet, consectetuer laoreet dolore adipiscing elit, sed diam nonummy nibh euismod tincidunt ut dolore.--%>
-                <sc:fieldrenderer id="frAuthorBio" runat="server" fieldname="Author Biodata" />
+                <asp:Literal ID="litBioSentence" runat="server"></asp:Literal>
             </p>
-            <asp:HyperLink ID="hlAuthorMorePost" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.Articles_MorePostsbythisAuthorText %>" Visible="false">
-            </asp:HyperLink>
+            <asp:HyperLink ID="hlAuthorMorePost" runat="server"></asp:HyperLink>
             <%--<a href="REPLACE">More Posts by this Author</a>--%>
         </div>
     </section>

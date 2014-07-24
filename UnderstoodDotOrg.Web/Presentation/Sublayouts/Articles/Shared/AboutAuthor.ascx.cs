@@ -16,6 +16,8 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.SimpleExpertArticle;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.Advocacy;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Article;
+using System.Text.RegularExpressions;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
 {
@@ -34,12 +36,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                 if (ObjDefaultArticle.AuthorName.Item != null)
                 {
                     frAuthorName.Item = ObjDefaultArticle.AuthorName.Item;
-                    frAuthorBio.Item = ObjDefaultArticle.AuthorName.Item;
                     frAuthorImage.Item = ObjDefaultArticle.AuthorName.Item;
                     hlAuthorImage.Visible = true;
-                    hlAuthorImage.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.ContentPath;
-                    hlAuthorMorePost.Visible = true;
-                    hlAuthorMorePost.NavigateUrl = ObjDefaultArticle.AuthorName.Item.Paths.FullPath;
+                    hlAuthorImage.NavigateUrl = ObjDefaultArticle.AuthorName.Item.GetUrl();
+                    hlAuthorMorePost.Text = UnderstoodDotOrg.Common.DictionaryConstants.Articles_MorePostsbythisAuthorText;
+                    hlAuthorMorePost.NavigateUrl = ObjDefaultArticle.AuthorName.Item.GetUrl();
+
+                    AuthorItem author = (AuthorItem)ObjDefaultArticle.AuthorName.Item;
+
+                    litBioSentence.Text = author.AuthorBioAbstract.Raw;
                 }
                 else
                     this.Visible = false;

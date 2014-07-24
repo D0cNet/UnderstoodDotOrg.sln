@@ -49,13 +49,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorName;
         
         /// <summary>
-        /// frAuthorBio control.
+        /// litBioSentence control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAuthorBio;
+        protected global::System.Web.UI.WebControls.Literal litBioSentence;
         
         /// <summary>
         /// hlAuthorMorePost control.
