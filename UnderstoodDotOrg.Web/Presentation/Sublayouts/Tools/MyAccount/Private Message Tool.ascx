@@ -154,7 +154,9 @@
 
                 <div id="right_pane" class="telligent-conversation">
                    <div class="telligent-conversation-delete" > <span><asp:Label ID="lblName" Text="" runat="server"></asp:Label>
-                    <asp:Button Text="Delete"  ID="btnDelete" class="telligent-conversation-delete-button" OnClientClick="javascript:return confirm('<%= DeleteConversationMessage %>');" OnClick="btnDelete_Click"  runat="server" /></span>
+
+                    <asp:Button Text="Delete"  ID="btnDelete" OnClientClick="javascript:return confirm('<%= DeleteConversationMessage %>');" OnClick="btnDelete_Click"  class="telligent-conversation-delete-button" runat="server" /></span>
+
 
                     </div>
                     <div id="messages_view" class="telligent-conversation-wrapper"  >
