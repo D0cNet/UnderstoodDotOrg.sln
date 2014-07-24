@@ -322,9 +322,10 @@ $assistive-tech-purple: #7a4183;
 
     .selection.grade1 {
       left: -1%;
+      padding-left: 0;
 
       @include bp($bp-small) {
-        left: -1%;
+        left: -1%;  
       }
     }
     .selection.grade2 {
@@ -399,6 +400,7 @@ $assistive-tech-purple: #7a4183;
     }
     .selection.grade12 {
       left: 90%;
+      padding-right: 0;
 
       @include bp($bp-small) {
         left: 88%;

@@ -2523,6 +2523,7 @@
 /* line 323, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade1 {
   left: -1%;
+  padding-left: 0;
 }
 @media (min-width: 480px), print {
   /* line 323, ../css.source/modules/assistive-tech/_tech-search-results.scss */
@@ -2530,117 +2531,118 @@
     left: -1%;
   }
 }
-/* line 330, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 331, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade2 {
   left: 7%;
 }
 @media (min-width: 480px), print {
-  /* line 330, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 331, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade2 {
     left: 7%;
   }
 }
-/* line 337, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 338, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade3 {
   left: 15%;
 }
 @media (min-width: 480px), print {
-  /* line 337, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 338, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade3 {
     left: 14%;
   }
 }
-/* line 344, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 345, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade4 {
   left: 23%;
 }
 @media (min-width: 480px), print {
-  /* line 344, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 345, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade4 {
     left: 23%;
   }
 }
-/* line 351, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 352, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade5 {
   left: 32%;
 }
 @media (min-width: 480px), print {
-  /* line 351, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 352, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade5 {
     left: 31%;
   }
 }
-/* line 358, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 359, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade6 {
   left: 39%;
 }
 @media (min-width: 480px), print {
-  /* line 358, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 359, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade6 {
     left: 39%;
   }
 }
-/* line 365, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 366, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade7 {
   left: 48%;
 }
 @media (min-width: 480px), print {
-  /* line 365, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 366, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade7 {
     left: 47%;
   }
 }
-/* line 372, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 373, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade8 {
   left: 57%;
 }
 @media (min-width: 480px), print {
-  /* line 372, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 373, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade8 {
     left: 55%;
   }
 }
-/* line 379, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 380, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade9 {
   left: 65%;
 }
 @media (min-width: 480px), print {
-  /* line 379, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 380, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade9 {
     left: 63%;
   }
 }
-/* line 386, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 387, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade10 {
   left: 73%;
 }
 @media (min-width: 480px), print {
-  /* line 386, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 387, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade10 {
     left: 71%;
   }
 }
-/* line 393, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 394, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade11 {
   left: 81%;
 }
 @media (min-width: 480px), print {
-  /* line 393, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 394, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade11 {
     left: 79%;
   }
 }
-/* line 400, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 401, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-scale .selection.grade12 {
   left: 90%;
+  padding-right: 0;
 }
 @media (min-width: 480px), print {
-  /* line 400, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 401, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-scale .selection.grade12 {
     left: 88%;
   }
 }
-/* line 410, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 412, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .circle {
   -webkit-border-radius: 24px;
   -moz-border-radius: 24px;
@@ -2651,40 +2653,40 @@
   height: 24px;
   width: 24px;
 }
-/* line 417, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 419, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade.red,
 .tech-search-results .circle.red {
   background-color: #f85d4d;
 }
-/* line 419, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 421, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade.yellow,
 .tech-search-results .circle.yellow {
   background-color: #f2af00;
 }
-/* line 421, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 423, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade.green,
 .tech-search-results .circle.green {
   background-color: #5caa7f;
 }
-/* line 423, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 425, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .popover-trigger-container {
   margin-left: 10px;
 }
-/* line 429, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 431, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .see-rating .popover-trigger-container {
   margin-left: 0;
 }
-/* line 434, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 436, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .grade-info-wrapper .popover-trigger-container {
   margin-left: 0;
 }
 @media (min-width: 650px), print {
-  /* line 434, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 436, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .grade-info-wrapper .popover-trigger-container {
     margin-left: 9px;
   }
 }
-/* line 442, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 444, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .icon-tooltip {
   background-image: url('../images/sprite.tooltip.info.png?77537a01');
   background-size: 44px 22px;
@@ -2696,15 +2698,15 @@
   width: 22px;
   vertical-align: text-bottom;
 }
-/* line 452, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 454, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .icon-tooltip:hover {
   background-position: -22px 0px;
 }
-/* line 455, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 457, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .no-backgroundsize .tech-search-results .icon-tooltip {
   background-image: url('../images/sprite.tooltip.info.lo-res.png?c7b09934');
 }
-/* line 461, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 463, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-image {
   float: left;
   margin-top: 8px;
@@ -2713,21 +2715,21 @@
   width: 20%;
 }
 @media (min-width: 650px), print {
-  /* line 461, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 463, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .result-image {
     margin-right: 0;
     width: auto;
   }
 }
-/* line 471, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 473, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-image img {
   max-width: 100%;
 }
-/* line 474, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 476, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-image .result-image-inner {
   position: relative;
 }
-/* line 476, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 478, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-image .result-image-inner .icon-search {
   background: url('../images/sprite.icon.search-white.png?8eb9240d') 0px 0px no-repeat;
   background-size: 16px 66px;
@@ -2740,20 +2742,20 @@
   margin-left: 5px;
   text-indent: -9999px;
 }
-/* line 487, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 489, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-image .result-image-inner .icon-search:hover, .tech-search-results .result-image .result-image-inner .icon-search.is-hover {
   background: url('../images/sprite.icon.search-white.png?8eb9240d') 0px -25px no-repeat;
   background-size: 16px 66px;
 }
-/* line 491, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 493, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .no-backgroundsize .tech-search-results .result-image .result-image-inner .icon-search {
   background: url('../images/sprite.icon.search-white.lo-res.png?8d619958');
 }
-/* line 493, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 495, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .no-backgroundsize .tech-search-results .result-image .result-image-inner .icon-search:hover, .no-backgroundsize .tech-search-results .result-image .result-image-inner .icon-search.is-hover {
   background-position: 0 -25px;
 }
-/* line 499, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 501, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-image .result-type {
   color: #696969;
   font-size: 15px;
@@ -2761,7 +2763,7 @@
   margin-top: 10px;
 }
 @media (min-width: 650px), print {
-  /* line 499, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 501, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .result-image .result-type {
     text-align: center;
     margin-top: 20px;
@@ -2769,7 +2771,7 @@
     font-size: 0.875rem;
   }
 }
-/* line 512, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 514, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .tooltip-title,
 .tech-search-results .result-title {
   font-size: 24px;
@@ -2779,15 +2781,15 @@
   min-width: 300px;
   font-weight: normal;
 }
-/* line 520, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 522, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-title {
   display: inline;
 }
-/* line 522, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 524, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-title a {
   margin-bottom: 10px;
 }
-/* line 527, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 529, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .result-description {
   font-family: Arial, sans-serif;
   padding: 0px 15px 15px 0;
@@ -2797,7 +2799,7 @@
   line-height: 1.625rem;
 }
 @media (min-width: 650px), print {
-  /* line 527, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 529, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .result-description {
     font-size: 16px;
     font-size: 1rem;
@@ -2805,27 +2807,27 @@
     line-height: 1.375rem;
   }
 }
-/* line 538, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 540, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .popover-link {
   text-decoration: underline;
   text-indent: -9999px;
 }
-/* line 544, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 546, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .rating {
   border-top: 1px solid #e1e1e1;
   margin-bottom: 15px;
   padding-top: 15px;
 }
-/* line 549, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 551, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .rating:first-child {
   border-top: none;
 }
-/* line 551, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 553, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .rating .rating-icon {
   padding-top: 5px;
   display: inline-block;
 }
-/* line 556, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 558, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .rating .rating-info {
   display: inline-block;
   padding: 0 5px 5px;
@@ -2833,13 +2835,13 @@
   width: 35%;
 }
 @media (min-width: 650px), print {
-  /* line 556, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 558, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .rating .rating-info {
     padding-left: 25px;
     width: 50%;
   }
 }
-/* line 568, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 570, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .results-more-link {
   font-size: 24px;
   font-size: 1.5rem;
@@ -2848,16 +2850,16 @@
   margin-bottom: 40px;
 }
 @media (min-width: 650px), print {
-  /* line 568, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 570, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .results-more-link {
     margin-bottom: 50px;
   }
 }
-/* line 576, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 578, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .results-more-link span {
   display: inline-block;
 }
-/* line 581, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 583, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .icon-results-more {
   background-image: url('../images/sprite.icon.arrows.png?d45175d1');
   background-position: top left;
@@ -2869,36 +2871,36 @@
   width: 18px;
 }
 @media (min-width: 650px), print {
-  /* line 592, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 594, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results fieldset {
     float: right;
   }
 }
-/* line 598, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 600, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .select-container {
   display: block;
   width: auto;
 }
 @media (min-width: 650px), print {
-  /* line 601, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 603, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .select-container.sort {
     width: 150px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 601, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 603, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .select-container.sort {
     width: 190px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 610, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 612, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .quality-learning-scale-wrap {
     min-width: 384px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 615, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 617, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .learning-scale-container {
     display: inline-block;
     min-width: 182px;
@@ -2906,18 +2908,18 @@
   }
 }
 @media (min-width: 650px), print {
-  /* line 622, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 624, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .quality-scale-container {
     display: inline-block;
     min-width: 182px;
   }
 }
-/* line 628, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 630, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results .rating-grade-container {
   padding-top: 1px;
 }
 @media (min-width: 480px), print {
-  /* line 628, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 630, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .rating-grade-container {
     padding-top: 25px;
     display: inline-block;
@@ -2925,67 +2927,67 @@
   }
 }
 @media (min-width: 650px), print {
-  /* line 628, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 630, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results .rating-grade-container {
     padding: 0;
   }
 }
-/* line 643, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 645, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results.single .result-keywords {
   margin-bottom: 45px;
   font-size: 16px;
   font-size: 1rem;
 }
-/* line 647, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 649, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results.single .result-keywords li:first-child {
   margin-right: 10px;
 }
 @media (min-width: 650px), print {
-  /* line 652, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 654, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results.single .result-type {
     display: none;
   }
 }
 @media (min-width: 650px), print {
-  /* line 657, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 659, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results.single .result-ratings-wrap {
     width: 43%;
   }
 }
-/* line 661, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 663, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results.single .result-ratings-wrap .result-ratings {
   padding-left: 0;
   width: 100%;
 }
-/* line 664, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 666, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results.single .result-ratings-wrap .result-ratings .result-details {
   width: 100%;
   margin-left: 0;
 }
-/* line 668, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 670, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results.single .result-ratings-wrap .result-ratings .tech-search-results-ratings {
   clear: left;
 }
 
-/* line 678, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 680, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results.multi .result-keywords,
 .tech-search-results.multi .result-ratings.show-popover {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 678, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 680, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results.multi .result-keywords,
   .tech-search-results.multi .result-ratings.show-popover {
     display: block;
   }
 }
 
-/* line 688, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+/* line 690, ../css.source/modules/assistive-tech/_tech-search-results.scss */
 .tech-search-results.multi .see-rating {
   display: block;
 }
 @media (min-width: 650px), print {
-  /* line 688, ../css.source/modules/assistive-tech/_tech-search-results.scss */
+  /* line 690, ../css.source/modules/assistive-tech/_tech-search-results.scss */
   .tech-search-results.multi .see-rating {
     display: none;
   }
