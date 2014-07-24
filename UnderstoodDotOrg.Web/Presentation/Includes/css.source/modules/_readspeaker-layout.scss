@@ -300,8 +300,14 @@ h2.rs_read_this {
   @include left_rs_btn_responsive(2px, 2px, -20px);
 }
 
-.results .dl-list-results h2.rs_read_this {
-  @include top_rs_btn_responsive(15px, 15px, 15px);
+.landing.dl-wrapper h1.rs_read_this {
+  @include top_rs_btn_responsive(-35px, -35px, -33px);
+  @include left_rs_btn_responsive(-13px, -34px, -34px);
+}
+
+.results .dl-list-results .result-section h2.rs_read_this {
+  @include top_rs_btn_responsive(-44px, -32px, -32px);
+  @include left_rs_btn_responsive(-33px, -33px, -30px);
 }
 
 .community-blog-posts-author-specific .blog-post-list-wrapper h2.rs_read_this {
@@ -309,7 +315,6 @@ h2.rs_read_this {
 }
 
 //profile questions container
-.results .dl-list-results h2.rs_read_this,
 .profile-questions h2
 {
   @include left_rs_btn_responsive(2px, 2px, -30px);

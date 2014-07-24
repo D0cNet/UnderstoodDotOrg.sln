@@ -7719,19 +7719,68 @@ h2.rs_read_this .rsbtn_player {
 }
 
 /* line 47, ../css.source/mixins/_rs-play-button.scss */
-.results .dl-list-results h2.rs_read_this .rsbtn_player {
-  top: 15px;
+.landing.dl-wrapper h1.rs_read_this .rsbtn_player {
+  top: -35px;
 }
 @media (min-width: 650px), print {
   /* line 47, ../css.source/mixins/_rs-play-button.scss */
-  .results .dl-list-results h2.rs_read_this .rsbtn_player {
-    top: 15px;
+  .landing.dl-wrapper h1.rs_read_this .rsbtn_player {
+    top: -35px;
   }
 }
 @media (min-width: 960px), print {
   /* line 47, ../css.source/mixins/_rs-play-button.scss */
-  .results .dl-list-results h2.rs_read_this .rsbtn_player {
-    top: 15px;
+  .landing.dl-wrapper h1.rs_read_this .rsbtn_player {
+    top: -33px;
+  }
+}
+/* line 2, ../css.source/mixins/_rs-play-button.scss */
+.landing.dl-wrapper h1.rs_read_this .rsbtn_player {
+  left: -13px;
+}
+@media (min-width: 650px), print {
+  /* line 2, ../css.source/mixins/_rs-play-button.scss */
+  .landing.dl-wrapper h1.rs_read_this .rsbtn_player {
+    left: -34px;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 2, ../css.source/mixins/_rs-play-button.scss */
+  .landing.dl-wrapper h1.rs_read_this .rsbtn_player {
+    left: -34px;
+  }
+}
+
+/* line 47, ../css.source/mixins/_rs-play-button.scss */
+.results .dl-list-results .result-section h2.rs_read_this .rsbtn_player {
+  top: -44px;
+}
+@media (min-width: 650px), print {
+  /* line 47, ../css.source/mixins/_rs-play-button.scss */
+  .results .dl-list-results .result-section h2.rs_read_this .rsbtn_player {
+    top: -32px;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 47, ../css.source/mixins/_rs-play-button.scss */
+  .results .dl-list-results .result-section h2.rs_read_this .rsbtn_player {
+    top: -32px;
+  }
+}
+/* line 2, ../css.source/mixins/_rs-play-button.scss */
+.results .dl-list-results .result-section h2.rs_read_this .rsbtn_player {
+  left: -33px;
+}
+@media (min-width: 650px), print {
+  /* line 2, ../css.source/mixins/_rs-play-button.scss */
+  .results .dl-list-results .result-section h2.rs_read_this .rsbtn_player {
+    left: -33px;
+  }
+}
+@media (min-width: 960px), print {
+  /* line 2, ../css.source/mixins/_rs-play-button.scss */
+  .results .dl-list-results .result-section h2.rs_read_this .rsbtn_player {
+    left: -30px;
   }
 }
 
@@ -7759,20 +7808,17 @@ h2.rs_read_this .rsbtn_player {
 }
 
 /* line 2, ../css.source/mixins/_rs-play-button.scss */
-.results .dl-list-results h2.rs_read_this .rsbtn_player,
 .profile-questions h2 .rsbtn_player {
   left: 2px;
 }
 @media (min-width: 650px), print {
   /* line 2, ../css.source/mixins/_rs-play-button.scss */
-  .results .dl-list-results h2.rs_read_this .rsbtn_player,
   .profile-questions h2 .rsbtn_player {
     left: 2px;
   }
 }
 @media (min-width: 960px), print {
   /* line 2, ../css.source/mixins/_rs-play-button.scss */
-  .results .dl-list-results h2.rs_read_this .rsbtn_player,
   .profile-questions h2 .rsbtn_player {
     left: -30px;
   }
@@ -7873,7 +7919,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 334, ../css.source/modules/_readspeaker-layout.scss */
+/* line 339, ../css.source/modules/_readspeaker-layout.scss */
 .community-bloggers-more .blogger-card .rsbtn_player {
   left: -10px;
   top: 0;
@@ -7896,11 +7942,11 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 347, ../css.source/modules/_readspeaker-layout.scss */
+/* line 352, ../css.source/modules/_readspeaker-layout.scss */
 .about-the-author.rs_read_this, .blog-post-content-rs-wrapper.rs_read_this, .blog-feature.rs_read_this, .blog-post-content-rs-wrapper.rs_read_this {
   position: relative;
 }
-/* line 350, ../css.source/modules/_readspeaker-layout.scss */
+/* line 355, ../css.source/modules/_readspeaker-layout.scss */
 .about-the-author .rs_read_this, .blog-post-content-rs-wrapper .rs_read_this, .blog-feature .rs_read_this, .blog-post-content-rs-wrapper .rs_read_this {
   position: relative;
 }
@@ -7983,12 +8029,12 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 370, ../css.source/modules/_readspeaker-layout.scss */
+/* line 375, ../css.source/modules/_readspeaker-layout.scss */
 .article-basic-sidebar-rs-wrapper .rsbtn_player {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 370, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 375, ../css.source/modules/_readspeaker-layout.scss */
   .article-basic-sidebar-rs-wrapper .rsbtn_player {
     display: block;
   }
@@ -8371,7 +8417,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 459, ../css.source/modules/_readspeaker-layout.scss */
+/* line 464, ../css.source/modules/_readspeaker-layout.scss */
 .notification-item .icon-play, .notification-item .icon-pause, .account-notifications-tab-notifications-empty .icon-play, .account-notifications-tab-notifications-empty .icon-pause, .account-notifications-tab-text-form .icon-play, .account-notifications-tab-text-form .icon-pause, .account-notifications-tab-email .icon-play, .account-notifications-tab-email .icon-pause {
   background-image: none;
 }
@@ -8621,7 +8667,7 @@ h3.rs_read_this .rsbtn_player {
 }
 
 @media (min-width: 650px), print {
-  /* line 517, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 522, ../css.source/modules/_readspeaker-layout.scss */
   .account-connect-links {
     position: inherit;
   }
@@ -8659,7 +8705,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 @media (min-width: 480px) and (min-width: 650px), print {
-  /* line 523, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 528, ../css.source/modules/_readspeaker-layout.scss */
   .account-connect-links .rsbtn_player {
     top: -24px;
   }
@@ -8889,22 +8935,22 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 @media (max-width: 649px), print {
-  /* line 575, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 580, ../css.source/modules/_readspeaker-layout.scss */
   .inner-container .rsbtn_player {
     display: none;
   }
 }
 
-/* line 583, ../css.source/modules/_readspeaker-layout.scss */
+/* line 588, ../css.source/modules/_readspeaker-layout.scss */
 .toolkit-thumbnails-container .thumbnail .rsbtn_player {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 583, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 588, ../css.source/modules/_readspeaker-layout.scss */
   .toolkit-thumbnails-container .thumbnail .rsbtn_player {
     display: block;
   }
-  /* line 589, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 594, ../css.source/modules/_readspeaker-layout.scss */
   .toolkit-thumbnails-container .thumbnail .rsbtn_player.rshidden {
     display: none;
   }
@@ -9424,7 +9470,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 696, ../css.source/modules/_readspeaker-layout.scss */
+/* line 701, ../css.source/modules/_readspeaker-layout.scss */
 .grid-row .rs_read_this {
   position: static;
 }
@@ -10228,7 +10274,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 852, ../css.source/modules/_readspeaker-layout.scss */
+/* line 857, ../css.source/modules/_readspeaker-layout.scss */
 .community-q-a h2.rs_read_this, .community-parents h2.rs_read_this, .community-blogs-more h2.rs_read_this, .community-our-blogs h2.rs_read_this, .community-blogs-main h2.rs_read_this {
   position: relative;
 }
@@ -10276,7 +10322,7 @@ h3.rs_read_this .rsbtn_player {
     top: -28px;
   }
 }
-/* line 857, ../css.source/modules/_readspeaker-layout.scss */
+/* line 862, ../css.source/modules/_readspeaker-layout.scss */
 .community-q-a .card, .community-parents .card, .community-blogs-more .card, .community-our-blogs .card, .community-blogs-main .card {
   position: relative;
 }
@@ -10496,12 +10542,12 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 906, ../css.source/modules/_readspeaker-layout.scss */
+/* line 911, ../css.source/modules/_readspeaker-layout.scss */
 .individual-board .search-board {
   float: left;
 }
 @media (min-width: 960px), print {
-  /* line 906, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 911, ../css.source/modules/_readspeaker-layout.scss */
   .individual-board .search-board {
     float: none;
   }
@@ -10857,7 +10903,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 984, ../css.source/modules/_readspeaker-layout.scss */
+/* line 989, ../css.source/modules/_readspeaker-layout.scss */
 .results-slider {
   text-indent: -99999px;
 }
@@ -11161,7 +11207,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 1056, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1061, ../css.source/modules/_readspeaker-layout.scss */
 .expert-event-container .expert-event, .expert-event-container .expert-blog-post, .expert-blog-post-container .expert-event, .expert-blog-post-container .expert-blog-post {
   position: relative;
 }
@@ -11231,7 +11277,7 @@ h3.rs_read_this .rsbtn_player {
     top: -20px;
   }
 }
-/* line 1070, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1075, ../css.source/modules/_readspeaker-layout.scss */
 .personalize-interests-rs-wrapper.social-emotional-rs-wrapper, .personalize-interests-rs-wrapper.home-life-rs-wrapper, .itemize-child-rs-wrapper.social-emotional-rs-wrapper, .itemize-child-rs-wrapper.home-life-rs-wrapper {
   position: relative;
 }
@@ -11302,7 +11348,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 @media (min-width: 1028px), print {
-  /* line 1083, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 1088, ../css.source/modules/_readspeaker-layout.scss */
   .l-about-hero-intro .rsbtn_player {
     left: -36px;
   }
@@ -11325,7 +11371,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 1095, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1100, ../css.source/modules/_readspeaker-layout.scss */
 .about-donate-rs-wrapper {
   position: relative;
 }
@@ -11353,7 +11399,7 @@ h3.rs_read_this .rsbtn_player {
 }
 
 @media (min-width: 769px), print {
-  /* line 1103, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 1108, ../css.source/modules/_readspeaker-layout.scss */
   .pay-by-check.about-donate-rs-wrapper .rsbtn_player,
   .pay-by-credit.about-donate-rs-wrapper .rsbtn_player,
   .form-group-rs-wrapper .rsbtn_player {
@@ -11395,7 +11441,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 1120, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1125, ../css.source/modules/_readspeaker-layout.scss */
 #rsToggle {
   z-index: 9999;
 }
@@ -11486,12 +11532,12 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-/* line 1145, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1150, ../css.source/modules/_readspeaker-layout.scss */
 .skiplink-sidebar {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 1145, ../css.source/modules/_readspeaker-layout.scss */
+  /* line 1150, ../css.source/modules/_readspeaker-layout.scss */
   .skiplink-sidebar {
     display: block;
   }
