@@ -132,7 +132,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             foreach (CSMUserReview r in reviews)
             {
                 Comment comment = comments.Where(i => new Guid(i.CommentId).ToString() == r.TelligentCommentId.ToString()).FirstOrDefault();
-                if (comment != null)
+                if (comment != null && !string.IsNullOrEmpty(comment.Body))
                     total += 1;
             }
 
@@ -248,10 +248,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                     }
 
                     if (txbReviewTitle.Text != null)
-                        review.ReviewTitle = txbReviewTitle.Text;
+                        review.ReviewTitle = Sitecore.StringUtil.RemoveTags(txbReviewTitle.Text);
 
                     if (txbWhatYouThink != null)
-                        review.ReviewBody = txbWhatYouThink.Text;
+                        review.ReviewBody = Sitecore.StringUtil.RemoveTags(txbWhatYouThink.Text);
 
                     review.CSMItemId = pageItem.ID.ToGuid();
                     review.MemberId = CurrentMember.MemberId;
