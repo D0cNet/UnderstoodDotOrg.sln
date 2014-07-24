@@ -158,6 +158,18 @@ namespace UnderstoodDotOrg.Common.Extensions
         }
 
         /// <summary>
+        /// Gets the item cast to the specified CustomItem type.
+        /// </summary>
+        /// <typeparam name="T">The CustomItem type the returned item will be cast to</typeparam>
+        /// <param name="database">The database.</param>
+        /// <param name="id">The Guid ID of the item.</param>
+        /// <returns></returns>
+        public static T GetItemAs<T>(this Database database, ID id) where T : CustomItem
+        {
+            return (T)(Activator.CreateInstance(typeof(T), database.GetItem(id)));
+        }
+
+        /// <summary>
         /// Filter Item collection by context language version
         /// </summary>
         /// <param name="item"></param>

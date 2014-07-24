@@ -14,6 +14,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Brightcove;
 using CustomItemGenerator.Fields.ListTypes;
+using Sitecore.Data.Managers;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 {
@@ -36,13 +37,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
         protected VideoIdPair ChildStoryVideo { get; set; }
         protected VideoIdPair ExpertSummaryVideo { get; set; }
 
+        protected VideoIdPair OnDemandVideo { get; set; }
+
+        protected bool IsPersonalized { get; set; }
+        protected bool IsStandaloneSimulation { get; set; }
+        protected bool IsStandaloneVideo { get; set; }
+
+        private LanguageItem _contextLanguage;
+        protected LanguageItem ContextLanuguage
+        {
+            get
+            {
+                if (_contextLanguage == null)
+                {
+                    var langId = LanguageManager.GetLanguageItemId(Sitecore.Context.Language, Sitecore.Context.Database);
+                    if (langId != (Sitecore.Data.ID)null)
+                    {
+                        _contextLanguage = Sitecore.Context.Database.GetItemAs<LanguageItem>(langId);
+                    }
+                }
+                return _contextLanguage;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
                 HomepageUrl = MainsectionItem.GetHomePageItem().GetUrl();
                 ProcessQueryString();
-                InitializeVideoIdPairs();
+                if (!IsStandaloneSimulation)
+                {
+                    InitializeVideoIdPairs();
+                }
                 AddResourcesToPage();
             }
             catch
@@ -53,9 +80,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 
         private void ProcessQueryString()
         {
+            var standalone = Request.QueryString["standalone"];
+            IsPersonalized = string.IsNullOrEmpty(standalone) || standalone.ToLower() != bool.TrueString.ToLower();
+
             var simq = Request.QueryString["simq"];
             var gradeId = Request.QueryString["gradeId"];
-            if (!(string.IsNullOrEmpty(simq) || string.IsNullOrEmpty(gradeId)))
+            
+            var hasSimq = !string.IsNullOrEmpty(simq);
+            var hasGradeId = !string.IsNullOrEmpty(gradeId);
+
+            IsStandaloneSimulation = !IsPersonalized && !hasGradeId;
+            IsStandaloneVideo = !IsStandaloneSimulation && !IsPersonalized;
+
+            if (hasSimq && ((IsPersonalized && hasGradeId) || IsStandaloneSimulation || IsStandaloneVideo))
             {
                 var simIds = simq.Split(',');
                 if (!simIds.Any())
@@ -65,14 +102,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 
                 var issueId = simIds.First();
                 IssueItem = Sitecore.Context.Database.GetItem(issueId);
-                GradeItem = Sitecore.Context.Database.GetItem(gradeId);
+                GradeItem = hasGradeId ? Sitecore.Context.Database.GetItem(gradeId) : null;
 
-                if (IssueItem == null || GradeItem == null)
+                if (IssueItem == null || (hasGradeId && GradeItem == null))
                 {
                     Response.Redirect(HomepageUrl);
                 }
 
-                if (simIds.Count() > 1)
+                if (!IsPersonalized)
+                {
+                    var 
+                    NextPagePath = Model.TyceBasePage.GetOverviewPage().GetUrl();
+                }
+                else if (simIds.Count() > 1)
                 {
                     NextPagePath = Request.Url.GetLeftPart(UriPartial.Path) + "?";
                     var nextSimIds = simIds.Skip(1);
@@ -110,7 +152,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 
         private void AddResourcesToPage()
         {
-            if (IssueItem != null)
+            if (IssueItem != null && (IsPersonalized || IsStandaloneSimulation))
             {
                 JSResources = string.Empty;
                 IssueItem.SimulationJS.ListItems
@@ -149,14 +191,31 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
             var videoGradeSet = IssueItem.InnerItem.Children
                 .Where(i => i.IsOfType(TyceVideoGradeSetsItem.TemplateId))
                 .Select(i => (TyceVideoGradeSetsItem)i)
-                .Where(vgs => 
+                .Where(vgs =>
                     vgs.GradeGroup.Item != null &&
                     vgs.GradeGroup.Item.IsOfType(TYCEGradeGroupItem.TemplateId))
-                .First(vgs => 
+                .First(vgs =>
                     ((TYCEGradeGroupItem)vgs.GradeGroup.Item).Grades.ListItems
                         .Select(i => i.ID)
                         .Contains(GradeItem.ID));
 
+            if (IsPersonalized)
+            {
+                InitializePersonalizedVideoIdPairs(videoGradeSet);
+            }
+            else
+            {
+                InitializeStandaloneVideoIdPairs(videoGradeSet);
+            }
+        }
+
+        protected void InitializeStandaloneVideoIdPairs(TyceVideoGradeSetsItem videoGradeSet)
+        {
+            OnDemandVideo = new VideoIdPair(videoGradeSet.OnDemandWithSubtitles, videoGradeSet.OnDemandWithoutSubtitles);
+        }
+
+        protected void InitializePersonalizedVideoIdPairs(TyceVideoGradeSetsItem videoGradeSet)
+        {
             IntroductionVideo = new VideoIdPair(videoGradeSet.IntroductionWithSubtitles, videoGradeSet.IntroductionWithoutSubtitles);
             ChildStoryVideo = new VideoIdPair(videoGradeSet.ChildStoryWithSubtitles, videoGradeSet.ChildStoryWithoutSubtitles);        
             ExpertSummaryVideo = new VideoIdPair(IssueItem.ExpertSummaryWithSubtitles, IssueItem.ExpertSummaryWithoutSubtitles);

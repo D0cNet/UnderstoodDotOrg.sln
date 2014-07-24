@@ -64,24 +64,7 @@
                 <div id="player"></div>
                 <div id="container-sim">
                     <div class="sim-inner">
-                        <!-- class needs to be applied here per game 
-                            .executive_game, .dyslexia_game, .dygraphia_game, .attention_game, or .dyscalculia_game
-                        -->
-                        <div id="gameboard">
-                            <!-- this needs to be output for the dyslexia game
-
-                                <header>Scrambled Letters</header>
-                                <article>
-                                  <div id="dyslexia_article_inner">
-                                    <div id="dyslexia_rules">
-                                      <p id="dyslexia_rules_swaps"></p>
-                                    </div>
-                                    <div id="dyslexia_sentence"></div>
-                                  </div>
-                                </article>
-                                <footer></footer>
-                            --> 
-                        </div>
+                        <%= IssueItem.GameboardMarkup.Rendered %>
                         <!-- #gameboard -->
                     </div>
                     <!-- .sim-inner -->
