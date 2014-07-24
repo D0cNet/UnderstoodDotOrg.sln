@@ -116,7 +116,6 @@
 <!-- BEGIN MODULE: Footer -->
 <footer class="container" id="footer-page">
     <div class="row footer-social">
-
         <asp:Repeater runat="server" ID="rptSocialMedias" OnItemDataBound="rptSocialMedias_ItemDataBound">
             <HeaderTemplate>
                 <div class="col col-7 push-17">
@@ -155,12 +154,17 @@
                 <%--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id congue nibh, sit amet aliquet nisi. Donec velit nunc, semper a faucibus at, varius sit amet metus. Maecenas id magna condimentum, vehicula sapien ac, laoreet elit. In hac habitasse platea dictumst.--%>
                 <sc:FieldRenderer ID="frAbstract" runat="server" FieldName="Abstract" />
             </p>
+
+            <div class="print-more-info">
+                <%-- TODO: render the 'more-info' as localized text from sitecore --%>
+                <p>For more information like this, visit <a href="<%= HomepageUrl %>">Understood.org</a></p>
+            </div>
         </div>
         <!-- .col -->
 
+
     </div>
     <!-- .row .footer-social -->
-
     <div class="row">
         <div class="col col-24">
 

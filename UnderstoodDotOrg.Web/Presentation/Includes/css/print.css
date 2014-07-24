@@ -414,4 +414,9 @@
   .recos-ask-parents .parents-wrapper {
     padding-left: 0 !important;
   }
+
+  /* line 446, ../css.source/print.scss */
+  footer .print-more-info {
+    display: block;
+  }
 }
