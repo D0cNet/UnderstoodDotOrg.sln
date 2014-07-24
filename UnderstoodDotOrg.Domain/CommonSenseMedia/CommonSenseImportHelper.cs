@@ -320,17 +320,17 @@ namespace UnderstoodDotOrg.Domain.Importer
                 case "receptive language disorder":
                     return "Listening Comprehension";
                 case "sensory processing issue":
-                    return "Social Skills, Including Conversation";
+                    return "Motor skills";
                 case "auditory processing issue":
                     return "Listening Comprehension";
                 case "dyspraxia":
-                    return "Social Skills, Including Conversation";
+                    return "Motor skills";
                 case "social pragmatic language disorder":
                     return "Social Skills, Including Conversation";
                 case "executive functioning issue":
                     return "Organization, Planning, Time Management";
                 case "nonverbal learning issues":
-                    return "Reading";
+                    return "Social Skills, Including Conversation";
                 case "visual processing issue":
                     return "Reading";
                 default:
