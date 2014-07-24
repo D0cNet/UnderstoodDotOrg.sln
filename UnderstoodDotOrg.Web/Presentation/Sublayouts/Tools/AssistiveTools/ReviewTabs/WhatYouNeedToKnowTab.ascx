@@ -47,7 +47,7 @@
             <!-- .screenshot-wrapper -->
             <!-- END PARTIAL: at-detail-thumb-mobile -->
             <section class="rs_read_this what-you-need-to-know-rs-wrapper">
-                <h3>What can kids learn</h3>
+                <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.WhatCanKidsLearnLabel %></h3>
                 <span class="visuallyhidden">learning rating</span>
                 <span class="slider-position">
                     <!-- BEGIN PARTIAL: results-slider -->
@@ -56,7 +56,7 @@
                     <!-- END PARTIAL: results-slider -->
                 </span>
                 <p><%= Model.WhatKidsCanLearn.Rendered %></p>
-                <h5>Subjects</h5>
+                <h5><%= UnderstoodDotOrg.Common.DictionaryConstants.SubjectsLabel %></h5>
                 <ul class="kids-subjects">
                     <asp:Repeater ID="rptrSubjectsAndSkills" runat="server" 
                         ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General.MetadataItem">
@@ -68,11 +68,11 @@
                 <div class="clearfix"></div>
             </section>
             <section class="rs_read_this what-you-need-to-know-rs-wrapper">
-                <h3>What is it about?</h3>
+                <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.WhatIsItAboutLabel %></h3>
                 <p><%= Model.Description.Rendered %></p>
             </section>
             <section class="rs_read_this what-you-need-to-know-rs-wrapper">
-                <h3>Is it any good?</h3>
+                <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.IsItAnyGoodLabel %></h3>
                 <span class="visuallyhidden">quality rating</span>
                 <span class="slider-position">
                     <!-- BEGIN PARTIAL: results-slider -->
@@ -83,7 +83,7 @@
                 <p><%= Model.AnyGood.Rendered %></p>
             </section>
             <section class="rs_read_this what-you-need-to-know-rs-wrapper">
-                <h3>How parents can help</h3>
+                <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.HowParentsCanHelpLabel %></h3>
                 <p><%= Model.HowParentsCanHelp.Rendered %></p>
             </section>
             <footer>

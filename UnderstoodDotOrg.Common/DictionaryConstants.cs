@@ -1854,6 +1854,38 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+		public static string WhatIsItAboutLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "What Is It About Label");
+			}
+		}
+
+		public static string HowParentsCanHelpLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "How Parents Can Help Label");
+			}
+		}
+
+		public static string WhatKidsCanLearnLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "What Kids Can Learn Label");
+			}
+		}
+
+		public static string SubjectsLabel
+		{
+			get
+			{
+				return Translate.TextByDomain(PosesDictionary, "Subjects Label");
+			}
+		}
+
         public static string SeeAllQuestionsLabel
         {
             get
