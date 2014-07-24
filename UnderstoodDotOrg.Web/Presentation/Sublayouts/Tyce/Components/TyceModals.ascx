@@ -6,7 +6,8 @@
             tabs: '.tab-controls li'
         });
 
-        $('.tyce-personalize').find('.button').on('click', function () {
+        $('.tyce-personalize').find('.button').on('click', function (e) {
+            e.preventDefault();
             $("#tyce-modal-select-child").modal('show');
             $(window).trigger('resize');
         });
