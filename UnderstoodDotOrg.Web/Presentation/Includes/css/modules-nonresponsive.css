@@ -6138,6 +6138,19 @@ h3.rs_read_this .rsbtn_player {
   top: -20px;
 }
 
+/* line 47, ../css.source/mixins/_rs-play-button.scss */
+.behavior-page-topic .rsbtn_player {
+  top: -38px;
+  top: -38px;
+  top: -31px;
+}
+/* line 2, ../css.source/mixins/_rs-play-button.scss */
+.behavior-page-topic .rsbtn_player {
+  left: -13px;
+  left: -31px;
+  left: -34px;
+}
+
 /* line 2, ../css.source/mixins/_rs-play-button.scss */
 .at-search-tool-wrapper .rsbtn_player .rsbtn_player {
   left: 8px;
@@ -6243,7 +6256,7 @@ h3.rs_read_this .rsbtn_player {
   top: -34px;
 }
 
-/* line 691, ../css.source/modules/_readspeaker-layout.scss */
+/* line 696, ../css.source/modules/_readspeaker-layout.scss */
 .grid-row .rs_read_this {
   position: static;
 }
@@ -6541,7 +6554,7 @@ h3.rs_read_this .rsbtn_player {
   left: -20px;
 }
 
-/* line 847, ../css.source/modules/_readspeaker-layout.scss */
+/* line 852, ../css.source/modules/_readspeaker-layout.scss */
 .community-q-a h2.rs_read_this, .community-parents h2.rs_read_this, .community-blogs-more h2.rs_read_this, .community-our-blogs h2.rs_read_this, .community-blogs-main h2.rs_read_this {
   position: relative;
 }
@@ -6559,7 +6572,7 @@ h3.rs_read_this .rsbtn_player {
   top: -40px;
   top: -28px;
 }
-/* line 852, ../css.source/modules/_readspeaker-layout.scss */
+/* line 857, ../css.source/modules/_readspeaker-layout.scss */
 .community-q-a .card, .community-parents .card, .community-blogs-more .card, .community-our-blogs .card, .community-blogs-main .card {
   position: relative;
 }
@@ -6649,7 +6662,7 @@ h3.rs_read_this .rsbtn_player {
   left: 2px;
 }
 
-/* line 901, ../css.source/modules/_readspeaker-layout.scss */
+/* line 906, ../css.source/modules/_readspeaker-layout.scss */
 .individual-board .search-board {
   float: left;
   float: none;
@@ -6795,7 +6808,7 @@ h3.rs_read_this .rsbtn_player {
   top: -8px;
 }
 
-/* line 979, ../css.source/modules/_readspeaker-layout.scss */
+/* line 984, ../css.source/modules/_readspeaker-layout.scss */
 .results-slider {
   text-indent: -99999px;
 }
@@ -6919,7 +6932,7 @@ h3.rs_read_this .rsbtn_player {
   left: 28px;
 }
 
-/* line 1051, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1056, ../css.source/modules/_readspeaker-layout.scss */
 .expert-event-container .expert-event, .expert-event-container .expert-blog-post, .expert-blog-post-container .expert-event, .expert-blog-post-container .expert-blog-post {
   position: relative;
 }
@@ -6949,7 +6962,7 @@ h3.rs_read_this .rsbtn_player {
   top: -20px;
   top: -20px;
 }
-/* line 1065, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1070, ../css.source/modules/_readspeaker-layout.scss */
 .personalize-interests-rs-wrapper.social-emotional-rs-wrapper, .personalize-interests-rs-wrapper.home-life-rs-wrapper, .itemize-child-rs-wrapper.social-emotional-rs-wrapper, .itemize-child-rs-wrapper.home-life-rs-wrapper {
   position: relative;
 }
@@ -6979,7 +6992,7 @@ h3.rs_read_this .rsbtn_player {
   top: 4px;
   top: 4px;
 }
-/* line 1078, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1083, ../css.source/modules/_readspeaker-layout.scss */
 .l-about-hero-intro .rsbtn_player {
   left: -36px;
 }
@@ -6991,7 +7004,7 @@ h3.rs_read_this .rsbtn_player {
   left: -32px;
 }
 
-/* line 1090, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1095, ../css.source/modules/_readspeaker-layout.scss */
 .about-donate-rs-wrapper {
   position: relative;
 }
@@ -7003,7 +7016,7 @@ h3.rs_read_this .rsbtn_player {
   left: -36px;
 }
 
-/* line 1098, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1103, ../css.source/modules/_readspeaker-layout.scss */
 .pay-by-check.about-donate-rs-wrapper .rsbtn_player,
 .pay-by-credit.about-donate-rs-wrapper .rsbtn_player,
 .form-group-rs-wrapper .rsbtn_player {
@@ -7024,7 +7037,7 @@ h3.rs_read_this .rsbtn_player {
   left: -35px;
 }
 
-/* line 1115, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1120, ../css.source/modules/_readspeaker-layout.scss */
 #rsToggle {
   z-index: 9999;
 }
@@ -7060,7 +7073,7 @@ h3.rs_read_this .rsbtn_player {
   top: -20px;
 }
 
-/* line 1140, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1145, ../css.source/modules/_readspeaker-layout.scss */
 .skiplink-sidebar {
   display: none;
   display: block;

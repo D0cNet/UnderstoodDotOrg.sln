@@ -632,6 +632,11 @@ h3.rs_read_this {
   @include top_rs_btn_responsive(-84px, -20px, -20px);
 }
 
+.behavior-page-topic {
+  @include top_rs_btn_responsive(-38px, -38px, -31px);
+  @include left_rs_btn_responsive(-13px, -31px, -34px);
+}
+
 //at1a toolbar and at2a toolbar
 .at-search-tool-wrapper .rsbtn_player {
   @include left_rs_btn_responsive(8px, 0px, -13px);
