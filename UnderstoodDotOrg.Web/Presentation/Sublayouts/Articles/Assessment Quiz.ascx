@@ -139,7 +139,7 @@
 
 <!-- BEGIN PARTIAL: tools -->
 <!-- Tools -->
-<sc:Sublayout ID="Sublayout4" Path="~/Presentation/Sublayouts/Articles/QuizTryMoreQuizzes.ascx" runat="server"></sc:Sublayout>
+<sc:Sublayout ID="sbMoreQuizzes" Path="~/Presentation/Sublayouts/Articles/QuizTryMoreQuizzes.ascx" runat="server" Visible="false"></sc:Sublayout>
 
 <sc:Sublayout ID="Sublayout5" Path="~/Presentation/Sublayouts/Section/SectionTools.ascx" runat="server"></sc:Sublayout>
 <!-- .container -->

@@ -139,13 +139,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout3;
         
         /// <summary>
-        /// Sublayout4 control.
+        /// sbMoreQuizzes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout4;
+        protected global::Sitecore.Web.UI.WebControls.Sublayout sbMoreQuizzes;
         
         /// <summary>
         /// Sublayout5 control.

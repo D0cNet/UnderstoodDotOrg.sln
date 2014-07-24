@@ -6,21 +6,21 @@
         <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_TryAnotherQuizText %></h2>
         <asp:Repeater ID="rptTryMoreQuizzes" runat="server" OnItemDataBound="rptTryMoreQuizzes_ItemDataBound">
             <HeaderTemplate>
-                <div class="col col-11 offset-1">
-                    <div class="quiz clearfix">
             </HeaderTemplate>
             <ItemTemplate>
-                <div class="quiz-image">
-                    <sc:FieldRenderer ID="frQuizImage" runat="server" FieldName="Content Thumbnail"></sc:FieldRenderer>
-                </div>
-                <div class="quiz-text">
-                    <h4><sc:FieldRenderer ID="frQuizName" runat="server" FieldName="Page Title"></sc:FieldRenderer></h4>
-                    <span><asp:Hyperlink CssClass="more-link" ID="hypMoreLink" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_TaketheQuizText %></asp:Hyperlink></span>
+                <div class="col col-11 offset-1">
+                    <div class="quiz clearfix">
+                        <div class="quiz-image">
+                            <sc:FieldRenderer ID="frQuizImage" runat="server" FieldName="Content Thumbnail"></sc:FieldRenderer>
+                        </div>
+                        <div class="quiz-text">
+                            <h4><sc:FieldRenderer ID="frQuizName" runat="server" FieldName="Page Title"></sc:FieldRenderer></h4>
+                            <span><asp:Hyperlink CssClass="more-link" ID="hypMoreLink" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_TaketheQuizText %></asp:Hyperlink></span>
+                        </div>
+                    </div>
                 </div>
             </ItemTemplate>
             <FooterTemplate>
-                   </div>
-                </div>
             </FooterTemplate>
         </asp:Repeater>
     </div>

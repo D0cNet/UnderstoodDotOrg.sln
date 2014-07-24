@@ -119,6 +119,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 SaveQuiz();
 
             Reset();
+
+            sbMoreQuizzes.Visible = true;
         }
 
         private void SaveQuiz()
