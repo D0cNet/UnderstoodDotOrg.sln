@@ -79,9 +79,11 @@
             <asp:Panel ID="pnlTool" runat="server">
 
                 <div id="left_pane" class="telligent-inbox">
-                    <div class="telligent-inbox-title" ><span>Inbox <span class="telligent-inbox-total"><asp:Literal Text="" ID="litMsgs" runat="server" /></span></span>
 
-                        <input type="button" title="New Message" id="btn-new-message" value="New Message"  class="telligent-new-message-button"  />
+                    <div class="telligent-inbox-title" ><span>
+                        <asp:Literal ID="litInboxText" runat="server" /> <span class="telligent-inbox-total"><asp:Literal Text="" ID="litMsgs" runat="server" /></span></span>
+
+                        <input type="button" title="New Message" id="btn_new_message" value="New Message" runat="server" ClientIDMode="Static" class="telligent-new-message-button"  />
 
                     </div>
 
@@ -100,7 +102,9 @@
                                 <asp:HiddenField ID="hfConvID" Value='<%# Eval("ConversationID") %>' runat="server" />
                                  <asp:Panel id="bkDiv" runat="server"  class="telligent-inbox-item">
                                     <div class="telligent-avatar-wrap" id="avatarImg">
-                                        <asp:ImageButton  CommandName="Select" runat="server" ID="imgBtn1"  class="telligent-avatar" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
+
+                                        <asp:ImageButton  CommandName="Select" runat="server" ID="imgBtn1"   class="telligent-avatar" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
+
 
                                     </div>
                                     <div class="telligent-inbox-summary">
@@ -112,28 +116,32 @@
 
                             <AlternatingItemTemplate>
                                  <asp:HiddenField ID="hfConvID" Value='<%# Eval("ConversationID") %>' runat="server" />
-                                 <asp:Panel  id="bkDiv" runat="server">
+
+                                 <asp:Panel  id="bkDiv" runat="server"  class="telligent-inbox-item alt">
                                     <div class="telligent-avatar-wrap" id="avatarImg">
-                                         <asp:ImageButton ID="imgBtn1" CommandName="Select"  runat="server" class="telligent-avatar" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
+                                         <asp:ImageButton ID="imgBtn1" CommandName="Select"  runat="server"   class="telligent-avatar" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
+
 
                                     </div>
                                     <div>
-                                        <span><%# Eval("Subject") %></span><br />
-                                        <span><%# Eval("HowLong") %></span>
+                                        <h6 class="telligent-inbox-subject"><%# Eval("Subject") %></h6>
+                                        <span class="telligent-inbox-timestamp"><%# Eval("HowLong") %></span>
                                     </div>
                                 </asp:Panel>
                             </AlternatingItemTemplate>
 
                             <SelectedItemTemplate>
                                    <asp:HiddenField ID="hfConvID" Value='<%# Eval("ConversationID") %>' runat="server" />
-                                 <div runat="server" style="telligent-inbox-item selected">
+
+                                 <div runat="server" class="telligent-inbox-item selected">
                                     <div class="telligent-avatar-wrap" id="avatarImg">
-                                        <asp:ImageButton ID="imgBtn1" CommandName="Select"  runat="server" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
+                                        <asp:ImageButton ID="imgBtn1" CommandName="Select"  runat="server"  class="telligent-avatar"  ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
+
 
                                     </div>
                                     <div>
-                                        <span><%# Eval("Subject") %></span><br />
-                                        <span><%# Eval("HowLong") %></span>
+                                        <h6 class="telligent-inbox-subject"><%# Eval("Subject") %></h6>
+                                        <span class="telligent-inbox-timestamp"><%# Eval("HowLong") %></span>
                                     </div>
                                 </div>
 
@@ -143,23 +151,26 @@
 
                 </div>
 
-                <div id="right_pane" class="telligent-conversation" >
-                   <div class="telligent-conversation-delete" ><asp:Label ID="lblName" Text="" runat="server"></asp:Label>
-                    <asp:Button Text="Delete"  ID="btnDelete" OnClientClick="javascript:return confirm('Are you sure you want to delete this conversation?');" OnClick="btnDelete_Click" class="telligent-conversation-delete-button" runat="server" />
+
+                <div id="right_pane" class="telligent-conversation">
+                   <div class="telligent-conversation-delete" > <span><asp:Label ID="lblName" Text="" runat="server"></asp:Label>
+                    <asp:Button Text="Delete"  ID="btnDelete" class="telligent-conversation-delete-button" OnClientClick="javascript:return confirm('<%= DeleteConversationMessage %>');" OnClick="btnDelete_Click"  runat="server" /></span>
 
                     </div>
-                    <div id="messages_view" class="telligent-conversation-wrapper" >
+                    <div id="messages_view" class="telligent-conversation-wrapper"  >
+
                         <asp:Repeater ID="rptMessages" runat="server">
                             <ItemTemplate>
                                  <div id="Div1"  runat="server"  class="telligent-conversation-item">
                                     <div class="telliget-avatar-wrap" id="avatarImg">
-                                        <asp:Image  runat="server" ID="imgBtn1"  class="telligent-avatar" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
+
+                                        <asp:Image  runat="server" ID="imgBtn1"   class="telligent-avatar" ImageUrl='<%# Eval("AuthorAvatar") %>' AlternateText ='<%# Eval("AuthorName")%>' />
 
                                     </div>
                                      <div class="telligent-timestamp"><span><%# Eval("Time") %></span></div>
                                     <div>
-                                       <h1> <span><%# Eval("AuthorName") %></span></h1><br />
-                                        <span><%# Eval("Body") %></span>
+                                       <h1 class="telligent-conversation-author"><%# Eval("AuthorName") %></h1>
+                                        <span class="telligent-conversation-body"><%# Eval("Body") %></span>
                                     </div>
                                   </div>
                                 <div class="telligent-clearing-div"></div>
@@ -170,7 +181,9 @@
                         <CKEditor:CKEditorControl ID="CKEditor1"  runat="server"  BasePath="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor" ContentsCss="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/contents.css" Height="127px" ResizeEnabled="False" TemplatesFiles="~/Presentation/Sublayouts/Tools/MyAccount/ckeditor/plugins/templates/templates/default.js" Toolbar="Basic"
                           ToolbarBasic="Bold|Italic|-|NumberedList|BulletedList|-|Link|Unlink|-|About" UIColor="#CC99FF"></CKEditor:CKEditorControl>
 
-                        <asp:Button Text="Submit Reply" ID="btnReply" class="telligent-reply-button" runat="server"  OnClick="btnReply_Click" />
+
+                    <asp:Button Text="Submit Reply" ID="btnReply" runat="server"  class="telligent-reply-button" OnClick="btnReply_Click" />
+
                     </div>
               </div>
         </asp:Panel>
