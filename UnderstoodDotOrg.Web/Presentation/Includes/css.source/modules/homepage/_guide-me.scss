@@ -37,17 +37,39 @@
     }
 
     .col-12 {
+			i {
+				display:block;
+				float:left;
+				margin-right:20px;
+			}
+			p {
+				display:block;
+				float:left;
+				max-width:247px;
+				padding-top:8px;
+				line-height:38px;
+				margin-bottom:0em;
+			}
       @include bp($bp-small-plus){
         width: auto;
         float: none;
         left: 0;
         margin: 0;
         padding: 0;
+
+				p {
+					max-width:100%;
+				}
       }
       @include bp($bp-medium){
         width: 50%;
         float: left;
         left: auto;
+      }
+      @include bp($bp-large){
+				p {
+					max-width:247px;
+				}
       }
     }
     .button {

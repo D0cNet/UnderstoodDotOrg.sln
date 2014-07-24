@@ -174,6 +174,21 @@
     padding: 30px 40px;
   }
 }
+/* line 40, ../css.source/modules/homepage/_guide-me.scss */
+.guide-me .guide-me-inner .col-12 i {
+  display: block;
+  float: left;
+  margin-right: 20px;
+}
+/* line 45, ../css.source/modules/homepage/_guide-me.scss */
+.guide-me .guide-me-inner .col-12 p {
+  display: block;
+  float: left;
+  max-width: 247px;
+  padding-top: 8px;
+  line-height: 38px;
+  margin-bottom: 0em;
+}
 @media (min-width: 650px), print {
   /* line 39, ../css.source/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner .col-12 {
@@ -182,6 +197,10 @@
     left: 0;
     margin: 0;
     padding: 0;
+  }
+  /* line 60, ../css.source/modules/homepage/_guide-me.scss */
+  .guide-me .guide-me-inner .col-12 p {
+    max-width: 100%;
   }
 }
 @media (min-width: 769px), print {
@@ -192,7 +211,13 @@
     left: auto;
   }
 }
-/* line 53, ../css.source/modules/homepage/_guide-me.scss */
+@media (min-width: 960px), print {
+  /* line 70, ../css.source/modules/homepage/_guide-me.scss */
+  .guide-me .guide-me-inner .col-12 p {
+    max-width: 247px;
+  }
+}
+/* line 75, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .button {
   width: 100%;
   text-align: left;
@@ -209,7 +234,7 @@
   line-height: 50px;
 }
 @media (min-width: 650px), print {
-  /* line 53, ../css.source/modules/homepage/_guide-me.scss */
+  /* line 75, ../css.source/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner .button {
     padding: 0 22px;
     height: 55px;
@@ -220,29 +245,29 @@
   }
 }
 @media (min-width: 769px), print {
-  /* line 53, ../css.source/modules/homepage/_guide-me.scss */
+  /* line 75, ../css.source/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner .button {
     display: inline-block;
     margin: 0;
   }
 }
-/* line 79, ../css.source/modules/homepage/_guide-me.scss */
+/* line 101, ../css.source/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .button {
   background-image: url('../images/arrow.down.000.10.png?f1df820b');
 }
-/* line 82, ../css.source/modules/homepage/_guide-me.scss */
+/* line 104, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .button:focus {
   outline: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
   box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
 }
-/* line 87, ../css.source/modules/homepage/_guide-me.scss */
+/* line 109, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .icon {
   display: none;
 }
 @media (min-width: 960px), print {
-  /* line 87, ../css.source/modules/homepage/_guide-me.scss */
+  /* line 109, ../css.source/modules/homepage/_guide-me.scss */
   .guide-me .guide-me-inner .icon {
     display: inline-block;
     width: 43px;
@@ -253,7 +278,7 @@
     margin-right: 15px;
   }
 }
-/* line 98, ../css.source/modules/homepage/_guide-me.scss */
+/* line 120, ../css.source/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .icon {
   background-image: url('../images/icon.guide-me.43.png?0feb53d9');
 }

@@ -162,7 +162,7 @@
             <div class="row guide-me-inner skiplink-toolbar">
                 <div class="col col-12">
                     <i class="icon"></i>
-                    <asp:Literal Text="" ID="litHelpmsg" runat="server" />
+                    <p><asp:Literal Text="" ID="litHelpmsg" runat="server" /></p>
                 </div>
                 <!-- .col -->
                 <div class="col col-12">

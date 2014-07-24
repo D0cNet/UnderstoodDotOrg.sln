@@ -123,7 +123,30 @@
   float: left;
   left: auto;
 }
-/* line 53, ../css.source/modules/homepage/_guide-me.scss */
+/* line 40, ../css.source/modules/homepage/_guide-me.scss */
+.guide-me .guide-me-inner .col-12 i {
+  display: block;
+  float: left;
+  margin-right: 20px;
+}
+/* line 45, ../css.source/modules/homepage/_guide-me.scss */
+.guide-me .guide-me-inner .col-12 p {
+  display: block;
+  float: left;
+  max-width: 247px;
+  padding-top: 8px;
+  line-height: 38px;
+  margin-bottom: 0em;
+}
+/* line 60, ../css.source/modules/homepage/_guide-me.scss */
+.guide-me .guide-me-inner .col-12 p {
+  max-width: 100%;
+}
+/* line 70, ../css.source/modules/homepage/_guide-me.scss */
+.guide-me .guide-me-inner .col-12 p {
+  max-width: 247px%;
+}
+/* line 75, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .button {
   width: 100%;
   text-align: left;
@@ -147,11 +170,11 @@
   display: inline-block;
   margin: 0;
 }
-/* line 79, ../css.source/modules/homepage/_guide-me.scss */
+/* line 101, ../css.source/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .button {
   background-image: url('../images/arrow.down.000.10.png?f1df820b');
 }
-/* line 82, ../css.source/modules/homepage/_guide-me.scss */
+/* line 104, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .button:focus {
   outline: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
@@ -162,7 +185,7 @@
 .old-ie .guide-me .guide-me-inner .button:focus {
   outline: solid 1px #dfdfdf;
 }
-/* line 87, ../css.source/modules/homepage/_guide-me.scss */
+/* line 109, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .icon {
   display: none;
   display: inline-block;
@@ -173,7 +196,7 @@
   vertical-align: middle;
   margin-right: 15px;
 }
-/* line 98, ../css.source/modules/homepage/_guide-me.scss */
+/* line 120, ../css.source/modules/homepage/_guide-me.scss */
 .no-backgroundsize .guide-me .guide-me-inner .icon {
   background-image: url('../images/icon.guide-me.43.png?0feb53d9');
 }
