@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using UnderstoodDotOrg.Domain.CommonSenseMedia;
 using Sitecore.ContentSearch;
 using Sitecore.Buckets.Client;
+using System.Xml.Linq;
 
 
 namespace UnderstoodDotOrg.Web.Presentation
@@ -19,7 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation
     public partial class DataImport : System.Web.UI.Page
     {
         public static string ConnectionString = "Data Source=AODEV02\\SQL2008R2;Initial Catalog=Poses_Understood_DataImport;User ID=sa;Password=OasisD8A";
-
+        public string Log = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             int totalEntries = 0;
@@ -32,260 +33,193 @@ namespace UnderstoodDotOrg.Web.Presentation
 
             string exeDir = System.IO.Path.GetDirectoryName(exeLocation);
 
-            XmlTextReader apps = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/apps.xml"));
-            XmlTextReader games = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/games.xml"));
-            XmlTextReader websites = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/websites.xml"));
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    XmlTextReader apps = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/apps.xml"));
+                    XmlTextReader games = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/games.xml"));
+                    XmlTextReader websites = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/websites.xml"));
 
-            totalEntries += ImportCategory(apps);
-            totalEntries += ImportCategory(games);
-            totalEntries += ImportCategory(websites);
+                    totalEntries += ImportCategory(GetEntries(apps));
+                    totalEntries += ImportCategory(GetEntries(games));
+                    totalEntries += ImportCategory(GetEntries(websites));
+                }
+                catch
+                { 
+                    
+                }
+            }
+
+            //totalEntries += ImportCategory(apps);
+            //totalEntries += ImportCategory(games);
+            //totalEntries += ImportCategory(websites);
 
             litCount.Text = "Completed " + totalEntries.ToString() + " total imports.";
+            litLog.Text = Log;
         }
 
-        public int ImportCategory(XmlTextReader reader)
+        public XmlNodeList GetEntries(XmlTextReader xml)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(xml);
+
+            //Create an XmlNamespaceManager for resolving namespaces.
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
+            nsmgr.AddNamespace("bk", "http://www.w3.org/2005/Atom");
+
+            //Select the book node with the matching attribute value.
+            XmlElement root = doc.DocumentElement;
+            return root.SelectNodes("//bk:entry", nsmgr);
+        }
+
+        public int ImportCategory(XmlNodeList nodes)
         {
             ReviewManager reviewManager = new ReviewManager();
-            bool insideEntry = false;
 
             int count = 0;
-            while (reader.ReadToFollowing("entry"))
+
+            foreach (XmlNode x in nodes)
             {
-                if (reader.NodeType == XmlNodeType.Element)
+                ReviewModel newItem = new ReviewModel();
+                try
                 {
-                    ReviewModel newItem = new ReviewModel();
-                    if (reader.Name == "entry")
+                    XmlNodeList temp;
+                    if (x["id"] != null)
+                        newItem.CommonSenseMediaID = x["id"].InnerText;
+                    if (x["link"] != null)
+                        newItem.ExternalLink = x["link"].GetAttribute("href");
+                    if (x["category"] != null)
+                        newItem.Type = x["category"].GetAttribute("term");
+                    if (x["published"] != null)
+                        newItem.Published = Sitecore.DateUtil.ToIsoDate(DateTime.Parse(x["published"].InnerText));
+                    if (x["title"] != null)
+                        newItem.Title = x["title"].InnerText;
+                    if (x["summary"] != null)
+                        newItem.Summary = x["summary"].InnerText;
+                    if (x["csm:product"] != null)
                     {
-                        insideEntry = true;
-                        reader.ReadToFollowing("id");
-                    }
-
-                    if (insideEntry)
-                    {
-                        if (reader.Name == "id")
+                        if (x["csm:product"]["csm:references"] != null)
                         {
-                            newItem.CommonSenseMediaID = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToNextSibling("link");
-
-                        if (reader.Name == "link")
-                        {
-                            newItem.ExternalLink = reader.GetAttribute("href");
-                        }
-                        reader.ReadToNextSibling("category");
-
-                        if (reader.Name == "category")
-                        {
-                            newItem.Type = reader.GetAttribute("term");
-                        }
-                        reader.ReadToNextSibling("published");
-
-                        if (reader.Name == "published")
-                        {
-                            newItem.Published = Sitecore.DateUtil.ToIsoDate(DateTime.Parse(reader.ReadElementContentAsString()));
-                        }
-                        reader.ReadToNextSibling("title");
-
-                        if (reader.Name == "title")
-                        {
-                            newItem.Title = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToNextSibling("summary");
-
-                        if (reader.Name == "summary")
-                        {
-                            newItem.Summary = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToFollowing("csm:references");
-
-                        if (reader.Name == "csm:references")
-                        {
-                            reader.ReadToDescendant("csm:reference");
-                            int depth = reader.Depth;
-                            if (reader.Name == "csm:reference")
+                            temp = x["csm:product"]["csm:references"].ChildNodes;
+                            foreach (XmlNode t in temp)
                             {
-                                while (reader.Depth == depth)
+                                if (t.Attributes["type"].InnerText == "itunes")
                                 {
-                                    if (reader.GetAttribute("type") == "itunes")
-                                    {
-                                        newItem.AppleAppStoreID = reader.ReadElementContentAsString();
-                                    }
-                                    else if (reader.GetAttribute("type") == "googleplay")
-                                    {
-                                        newItem.GooglePlayStoreID = reader.ReadElementContentAsString();
-                                    }
-
-                                    reader.Read();
+                                    newItem.AppleAppStoreID = t.InnerText;
+                                }
+                                else if (t.Attributes["type"].InnerText == "googleplay")
+                                {
+                                    newItem.GooglePlayStoreID = t.InnerText;
                                 }
                             }
                         }
-                        reader.ReadToFollowing("csm:images");
 
-                        if (reader.Name == "csm:images")
+                        if (x["csm:product"]["csm:images"] != null)
                         {
+                            temp = x["csm:product"]["csm:images"].ChildNodes;
                             List<ReviewImageModel> images = new List<ReviewImageModel>();
-                            reader.ReadToDescendant("csm:image");
-                            int depth = reader.Depth;
-                            if (reader.Name == "csm:image")
+                            foreach (XmlNode t in temp)
                             {
-                                while (reader.Depth == depth)
+                                if (t.Attributes["type"].InnerText == "screenshot")
                                 {
-                                    if (reader.GetAttribute("type") == "screenshot")
-                                    {
-                                        ReviewImageModel image = new ReviewImageModel();
-                                        image.URL = reader.ReadElementContentAsString();
-                                        image.Name = newItem.Title+"-screenshot-"+(images.Count+1).ToString();
-                                        image.AltText = "Screenshot";
-                                        images.Add(image);
-                                    }
-                                    else if (reader.GetAttribute("type") == "product")
-                                    {
-                                        ReviewImageModel image = new ReviewImageModel();
-                                        image.URL = reader.ReadElementContentAsString();
-                                        image.Name = newItem.Title + "-screenshot-" + (images.Count + 1).ToString();
-                                        image.AltText = "Screenshot";
-                                        newItem.Thumbnail = image;
-                                    }
-
-                                    reader.ReadToNextSibling("csm:image");
+                                    ReviewImageModel image = new ReviewImageModel();
+                                    image.URL = t.InnerText;
+                                    image.Name = newItem.Title + "-screenshot-" + (images.Count + 1).ToString();
+                                    image.AltText = "Screenshot";
+                                    images.Add(image);
                                 }
-                            }
-
-                            newItem.Screenshots = images;
-                        }
-                        reader.ReadToFollowing("csm:genre");
-
-                        if (reader.Name == "csm:genre")
-                        {
-                            newItem.Genres = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToFollowing("csm:platforms");
-
-                        if (reader.Name == "csm:platforms")
-                        {
-                            reader.ReadToDescendant("csm:platform");
-                            int depth = reader.Depth;
-                            if (reader.Name == "csm:platform")
-                            {
-                                while (reader.Depth == depth)
+                                else if (t.Attributes["type"].InnerText == "product")
                                 {
-                                    newItem.Platforms += reader.ReadElementContentAsString()+",";
-
-                                    reader.ReadToNextSibling("csm:platform");
-                                }
-                            }
-                        }
-                        reader.ReadToFollowing("csm:prices");
-
-                        if (reader.Name == "csm:prices")
-                        {
-                            reader.ReadToDescendant("csm:price");
-                            newItem.Price = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToFollowing("csm:review");
-
-                        if (reader.Name == "csm:review")
-                        {
-                            newItem.QualityRank = reader.GetAttribute("star_rating");
-                        }
-                        reader.ReadToFollowing("csm:slider");
-
-                        if (reader.Name == "csm:slider")
-                        {
-                            newItem.TargetGrade = ResolveGrade(reader.GetAttribute("target_age"));
-                            newItem.OffGrade = ResolveGrade(reader.GetAttribute("off_age"));
-                            newItem.OnGrade = ResolveGrade(reader.GetAttribute("on_age"));
-                        }
-                        reader.ReadToFollowing("csm:parents_need_to_know");
-
-                        if (reader.Name == "csm:parents_need_to_know")
-                        {
-                            newItem.ParentsNeedToKnow = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToFollowing("csm:description");
-
-                        if (reader.Name == "csm:description")
-                        {
-                            newItem.Description = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToFollowing("csm:any_good");
-
-                        if (reader.Name == "csm:any_good")
-                        {
-                            newItem.AnyGood = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToFollowing("csm:learning_rating");
-
-                        if (reader.Name == "csm:learning_rating")
-                        {
-                            newItem.LearningRank = reader.GetAttribute("value");
-                        }
-                        reader.ReadToFollowing("csm:what_kids_can_learn");
-
-                        if (reader.Name == "csm:what_kids_can_learn")
-                        {
-                            newItem.WhatKidsCanLearn = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToFollowing("csm:how_parents_help");
-
-                        if (reader.Name == "csm:how_parents_help")
-                        {
-                            newItem.HowParentsCanHelp = reader.ReadElementContentAsString();
-                        }
-                        reader.ReadToFollowing("csm:subjects");
-
-                        if (reader.Name == "csm:subjects")
-                        {
-                            reader.ReadToDescendant("csm:category");
-                            int depth = reader.Depth;
-                            if (reader.Name == "csm:category")
-                            {
-                                while (reader.Depth == depth)
-                                {
-                                    newItem.Subjects += reader.GetAttribute("name") + ",";
-
-                                    reader.ReadToNextSibling("csm:category");
-                                }
-                            }
-                        }
-                        reader.ReadToFollowing("csm:skills");
-
-                        if (reader.Name == "csm:skills")
-                        {
-                            reader.ReadToDescendant("csm:category");
-                            int depth = reader.Depth;
-                            if (reader.Name == "csm:category")
-                            {
-                                while (reader.Depth == depth)
-                                {
-                                    newItem.Skills += reader.GetAttribute("name")+ ",";
-
-                                    reader.ReadToNextSibling("csm:category");
-                                }
-                            }
-                        }
-                        reader.ReadToFollowing("csm:special_needs");
-
-                        if (reader.Name == "csm:special_needs")
-                        {
-                            newItem.Category = reader.GetAttribute("assistive");
-                            reader.ReadToDescendant("csm:category");
-                            int depth = reader.Depth;
-                            if (reader.Name == "csm:category")
-                            {
-                                while (reader.Depth == depth)
-                                {
-                                    newItem.Issues += reader.GetAttribute("name") + ",";
-
-                                    reader.ReadToNextSibling("csm:category");
+                                    ReviewImageModel image = new ReviewImageModel();
+                                    image.URL = t.InnerText;
+                                    image.Name = newItem.Title + "-screenshot-" + (images.Count + 1).ToString();
+                                    image.AltText = "Screenshot";
+                                    newItem.Thumbnail = image;
                                 }
                             }
                         }
 
-                        count++;
-                        reviewManager.Add(newItem);
-                        insideEntry = false;
+                        if (x["csm:product"]["csm:platforms"] != null)
+                        {
+                            temp = x["csm:product"]["csm:platforms"].ChildNodes;
+                            foreach (XmlNode t in temp)
+                            {
+                                newItem.Platforms += t.InnerText + ",";
+                            }
+                        }
+
+                        if (x["csm:product"]["csm:prices"] != null && x["csm:product"]["csm:prices"]["csm:price"] != null)
+                            newItem.Price = x["csm:product"]["csm:prices"]["csm:price"].InnerText;
+                        if (x["csm:product"]["csm:genre"] != null)
+                            newItem.Genres = x["csm:product"]["csm:genre"].InnerText;
                     }
+
+                    if (x["csm:review"] != null)
+                    {
+                        newItem.QualityRank = x["csm:review"].GetAttribute("star_rating");
+                        if (x["csm:review"]["csm:slider"] != null)
+                        {
+                            newItem.TargetGrade = ResolveGrade(x["csm:review"]["csm:slider"].GetAttribute("target_age"));
+                            newItem.OffGrade = ResolveGrade(x["csm:review"]["csm:slider"].GetAttribute("off_age"));
+                            newItem.OnGrade = ResolveGrade(x["csm:review"]["csm:slider"].GetAttribute("on_age"));
+                        }
+                        if (x["csm:review"]["csm:parents_need_to_know"] != null)
+                            newItem.ParentsNeedToKnow = x["csm:review"]["csm:parents_need_to_know"].InnerText;
+                        if (x["csm:review"]["csm:description"] != null)
+                            newItem.Description = x["csm:review"]["csm:description"].InnerText;
+                        if (x["csm:review"]["csm:any_good"] != null)
+                            newItem.AnyGood = x["csm:review"]["csm:any_good"].InnerText;
+                        if (x["csm:review"]["csm:learning_rating"] != null)
+                        {
+                            newItem.LearningRank = x["csm:review"]["csm:learning_rating"].GetAttribute("value");
+                            if (x["csm:review"]["csm:learning_rating"]["csm:what_kids_can_learn"] != null)
+                                newItem.WhatKidsCanLearn = x["csm:review"]["csm:learning_rating"]["csm:what_kids_can_learn"].InnerText;
+                            if (x["csm:review"]["csm:learning_rating"]["csm:how_parents_help"] != null)
+                                newItem.HowParentsCanHelp = x["csm:review"]["csm:learning_rating"]["csm:how_parents_help"].InnerText;
+
+                            if (x["csm:review"]["csm:learning_rating"]["csm:subjects"] != null)
+                            {
+                                temp = x["csm:review"]["csm:learning_rating"]["csm:subjects"].ChildNodes;
+                                foreach (XmlNode t in temp)
+                                {
+                                    newItem.Subjects += t.Attributes["name"] + ",";
+                                }
+                            }
+
+                            if (x["csm:review"]["csm:learning_rating"]["csm:skills"] != null)
+                            {
+                                temp = x["csm:review"]["csm:learning_rating"]["csm:skills"].ChildNodes;
+                                foreach (XmlNode t in temp)
+                                {
+                                    newItem.Skills += t.Attributes["name"] + ",";
+                                }
+                            }
+                        }
+
+                        if (x["csm:review"]["csm:special_needs"] != null)
+                        {
+                            temp = x["csm:review"]["csm:special_needs"].ChildNodes;
+                            foreach (XmlNode t in temp)
+                            {
+                                newItem.Issues += t.Attributes["name"] + ",";
+                            }
+                        }
+                    }
+                }
+                catch(Exception e)
+                {
+                    Log += e.Message+"<br><br><b>";
+                }
+
+                try
+                {
+                    reviewManager.Add(newItem);
+                    count++;
+                }
+                catch
+                { 
+                    
                 }
             }
 

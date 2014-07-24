@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 {
@@ -10,7 +11,13 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         /// <summary>
         /// Title of review. Also used for Name (with punctuation removed)
         /// </summary>
-        public string Title { get; set; }
+        private string _title;
+        public string Title { get{ return _title; } set{ _title = removePunctuation(value); } }
+
+        public static string removePunctuation(string s)
+        {
+            return Regex.Replace(s, @"[^a-zA-Z0-9]", " ").Trim();
+        }
 
         public string Price { get; set; }
 
