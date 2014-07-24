@@ -421,8 +421,12 @@ body:after {
         padding-top: 5px;
       }
     } // .link-sign-in
-    &.link-sign-out {
+    .link-sign-out {
       background-image: image-url('icon.mobile.avatar.signed-in.png');
+      display: none;
+      @include bp($bp-small-plus) {
+        display: inline-block;
+      }
     }
   } // .sign-in
   &.is-search-active {
