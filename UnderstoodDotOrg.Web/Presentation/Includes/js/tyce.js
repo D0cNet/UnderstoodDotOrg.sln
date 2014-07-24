@@ -28,8 +28,8 @@
 
 			var toggle_switch = $(
 				'<div class="switch-wrapper">' +
-				'<span class="btn-toggle btn-left"><button>No</button></span>' +
-				'<span class="btn-toggle btn-right"><button>Yes</button></span>' +
+				'<span class="btn-toggle btn-left"><button>Off</button></span>' +
+				'<span class="btn-toggle btn-right"><button>On</button></span>' +
 				'</div>'
 			);
 
@@ -39,12 +39,16 @@
 
 			$('.toggle-wrapper .ez-checkbox').find('.btn-toggle').on('click', function(e) {
 				e.preventDefault();
-
-				// This will work in all browsers except ie8
-				//$(this).parent().click();
-
-				// This will work in all browsers including ie8
-				$(this).parent().parent().toggleClass('ez-checked');
+				// This fixes issues with checked property not being set on the inputs and works cross browser
+				$(this).closest('.ez-checkbox').toggleClass('ez-checked');
+				// get the checkbox wrapper and see if it has the checked class
+				if ($(this).closest('.ez-checkbox').hasClass('ez-checked')) {
+					// if it does set the prop on the input checkbox to true
+					$(this).closest('.ez-checkbox').find('input[type=checkbox]').prop('checked', true);
+				} else {
+					// else set the checked property to false
+					$(this).closest('.ez-checkbox').find('input[type=checkbox]').prop('checked', false);
+				};
 			});
 
 		};
@@ -339,7 +343,6 @@ var TYCE = (function() {
 	var opts,
 		videotype,
 		currentstep,
-		currentlang,
 		nextstep = 0,
 		numberofsteps,
 		steps,
@@ -348,6 +351,7 @@ var TYCE = (function() {
 		_player,
 		APIModules,
 		VP,
+		fapiPlayer,
 		experienceModule,
 		contentModule,
 		captionsModule,
@@ -368,7 +372,6 @@ var TYCE = (function() {
 	function init(options) {
 		opts = options;
 		videotype = Modernizr.ishardcoded ? 'hardcoded' : 'default';
-		currentlang = $('html').attr('lang');
 		currentstep = opts.start;
 		numberofsteps = opts.steps.length;
 		steps = opts.steps;
@@ -408,18 +411,21 @@ var TYCE = (function() {
 		$volume = $('li.volume');
 		$fullscreen = $('li.fullscreen');
 		$skip = $tyceplayercontainer.find('.btn-skip');
-		$captionswitch = $('.captions .toggle');
+		$captionswitch = $('.captions button');
 		$helpToggle = $('.icon.help');
 		$helpClose = $('.help-overlay .close');
+
 
 		$('.slider').slider({
 			orientation: "vertical",
 			range: "min",
 			slide: function(event, ui) {
-				VP.setVolume(ui.value / 100)
-				console.log(ui.value / 100);
+				fapiPlayer.fapiSetVolume(ui.value / 100);
 			}
 		});
+
+
+		$('.slider').slider('value', 100);
 
 		// This is not fully baked, as rules need to be established if we want to allow the user to
 		// navigate to any step in the flow.
@@ -483,8 +489,8 @@ var TYCE = (function() {
 			});
 		}
 
-		$captionswitch.on('change', function(e) {
-			if ($(this).prop('checked')) {
+		$captionswitch.on('click', function(e) {
+			if (!$(this).closest('.ez-checkbox').hasClass('ez-checked')) {
 				captionsModule.setCaptionsEnabled(true);
 			} else {
 				captionsModule.setCaptionsEnabled(false);
@@ -492,7 +498,7 @@ var TYCE = (function() {
 		});
 
 		// if experience hasn't started 
-		if (!isstarted) {
+		if (!isstarted && opts.isPersonalized) {
 
 			// trigger resize to center modal
 			// FIXME : This needs to be fixed as this shouldn't be necessary
@@ -516,6 +522,11 @@ var TYCE = (function() {
 				playVideo();
 			});
 
+		} else if (!isstarted && !opts.isPersonalized) {
+
+			// run the stepper to start things up
+			stepper(steps[currentstep]);
+
 		}
 
 		// if a touch device is being used
@@ -535,14 +546,36 @@ var TYCE = (function() {
 
 		// help overlay toggle
 		$helpToggle.on('click', function() {
+			// if the help isn't open
 			if (!$playerContent.hasClass('help-open')) {
+				$(this).addClass('is-open');
 				$('.help-overlay').fadeIn();
 				$playerContent.addClass('help-open');
-				pauseVideo();
+
+				// if the step is a video
+				if (opts.steps[currentstep].type == 'video') {
+					VP.getIsPlaying(function(e) {
+						if (e) {
+							VP.getIsPlaying(playPauseVideo);
+						}
+					});
+
+					// if the step is a sim
+				} else if (opts.steps[currentstep].type == 'sim') {
+					pauseSimulation();
+				}
+				// if the help is open
 			} else {
 				$('.help-overlay').fadeOut();
 				$playerContent.removeClass('help-open');
-				playVideo();
+				$(this).removeClass('is-open');
+				// if the step is a video
+				if (opts.steps[currentstep].type == 'video') {
+					VP.getIsPlaying(playPauseVideo);
+					// if the step is a sim
+				} else if (opts.steps[currentstep].type == 'sim') {
+					resumeSimulation();
+				}
 			}
 		});
 
@@ -550,7 +583,14 @@ var TYCE = (function() {
 		$helpClose.on('click', function() {
 			$('.help-overlay').fadeOut();
 			$playerContent.removeClass('help-open');
-			playVideo();
+			$helpToggle.removeClass('is-open');
+
+			if (opts.steps[currentstep].type == 'video') {
+				VP.getIsPlaying(playPauseVideo);
+			} else if (opts.steps[currentstep].type == 'sim') {
+				resumeSimulation();
+			}
+
 		});
 
 	};
@@ -710,10 +750,21 @@ var TYCE = (function() {
 	};
 
 	function playPauseVideo(playing) {
+
 		if (playing) {
 			pauseVideo();
 		} else {
+
+			// if(opts.steps[currentstep].type == 'video'){
 			playVideo();
+
+			if ($playerContent.hasClass('help-open')) {
+				$('.help-overlay').fadeOut();
+				$playerContent.removeClass('help-open');
+				$helpToggle.removeClass('is-open');
+			}
+
+			// }
 		}
 	};
 
@@ -748,6 +799,7 @@ var TYCE = (function() {
 			VP.addEventListener(brightcove.api.events.MediaEvent.CHANGE, onMediaChange);
 			VP.addEventListener(brightcove.api.events.MediaEvent.PLAY, onMediaPlay);
 			VP.addEventListener(brightcove.api.events.MediaEvent.STOP, onMediaStop);
+			fapiPlayer = document.getElementById(e.target.experience.id);
 
 			if (Modernizr.mq('(max-width: 767px)')) {
 				$('#container-sim').appendTo('body');
@@ -821,9 +873,15 @@ var TYCE = (function() {
 
 	// start the sim
 	function startSimulation() {
-		simulation.run({
-			lang: currentlang
-		});
+		simulation.run(opts.simConfig);
+	};
+
+	function pauseSimulation() {
+		simulation.timer.pause();
+	};
+
+	function resumeSimulation() {
+		simulation.timer.resume();
 	};
 
 	// open the modal
