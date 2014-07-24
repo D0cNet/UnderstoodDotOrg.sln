@@ -517,6 +517,13 @@ $assistive-tech-purple: #7a4183;
     font-weight: normal;
   }
 
+  .result-title {
+    display: inline;
+    a {
+      margin-bottom: 10px;
+    }
+  }
+
   .result-description{
     font-family: Arial, sans-serif;
     padding: 0px 15px 15px 0;
