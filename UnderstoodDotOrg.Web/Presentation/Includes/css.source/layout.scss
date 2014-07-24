@@ -396,18 +396,22 @@ body:after {
     a {
       color: #426da9;
     }
-    .link-sign-in {
+    .link-sign-in, link-sign-out {
       display: inline-block;
       overflow: hidden;
-      width: 25px;
-      height: 25px;
+      width: 45px;
+      height: 45px;
       text-indent: -999em;
       background-image: image-url('avatar.signed-out.png');
       background-size: 25px 25px;
+      background-position: center;
+      background-repeat: no-repeat;
+
       @include bp($bp-small-plus) {
         width: 50px;
         height: 50px;
         background-size: 50px 50px;
+        background-image: image-url('avatar.signed-out.png');
       }
       @include bp($bp-medium) {
         width: auto;
@@ -417,6 +421,9 @@ body:after {
         padding-top: 5px;
       }
     } // .link-sign-in
+    &.link-sign-out {
+      background-image: image-url('icon.mobile.avatar.signed-in.png');
+    }
   } // .sign-in
   &.is-search-active {
     height: 115px;

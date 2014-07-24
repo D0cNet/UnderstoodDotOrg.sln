@@ -81,14 +81,12 @@
     <!-- BEGIN PARTIAL: user-state -->
     <div class="sign-in" aria-haspopup="true">		
 		<asp:PlaceHolder ID="phLoggedIn" runat="server" Visible="false">
-			<div class="sign-in" aria-haspopup="true">
-				<a href="<%= MyAccountPageItem.GetUrl() %>" class="user-info">
-					<asp:Image ID="imgUserAvatar" runat="server" alt="User Avatar" class="avatar" />
-					<span class="user-name"><%= CurrentMember.ScreenName %></span>
-					<span class="messages"><asp:Label ID="lblNotificationNumber" runat="server" /></span>
-				</a>
-			</div>
-			<asp:LinkButton ID="lbSignout" OnClick="lbSignout_Click" CssClass="link-sign-in" Visible="false" runat="server"/>
+			<a href="<%= MyAccountPageItem.GetUrl() %>" class="user-info my-account">
+				<asp:Image ID="imgUserAvatar" runat="server" alt="User Avatar" class="avatar" />
+				<span class="user-name"><%= CurrentMember.ScreenName %></span>
+				<span class="messages"><asp:Label ID="lblNotificationNumber" runat="server" /></span>
+			</a>
+			<asp:LinkButton ID="lbSignout" OnClick="lbSignout_Click" CssClass="link-sign-out" Visible="false" runat="server"/>
 		</asp:PlaceHolder>
 			
 		<asp:PlaceHolder ID="phNotLoggedIn" runat="server" Visible="false">
