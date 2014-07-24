@@ -34,6 +34,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             get { return DictionaryConstants.SearchLabel; }
         }
+        protected string EnterSearchTerm
+        {
+            get { return DictionaryConstants.EnterSearchTermWatermark; }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
