@@ -1,5 +1,6 @@
 ﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA
 {
+    using Sitecore.Web.UI.HtmlControls;
     using System;
     using System.Collections.Generic;
     using System.Web.UI.WebControls;
@@ -26,6 +27,44 @@
             {
                 dataSource = dataSource.FindAll(q => q.CommentCount == "0");
             }
+
+            var control = Page.FindControl("main_0$ddlChildIssues") as DropDownList;
+
+            String childIssues = String.Empty;
+            String grades = String.Empty;
+            String topics = String.Empty;
+            String search = String.Empty;
+
+            if (control != null && !String.IsNullOrEmpty(control.SelectedValue))
+            {
+                childIssues = control.SelectedItem.Text;
+            }
+
+            control = Page.FindControl("main_0$ddlGrades") as DropDownList;
+
+            if (control != null && !String.IsNullOrEmpty(control.SelectedValue))
+            {
+                grades = control.SelectedItem.Text;
+            }
+
+            control = Page.FindControl("main_0$ddlTopics") as DropDownList;
+
+            if (control != null && !String.IsNullOrEmpty(control.SelectedValue))
+            {
+                topics = control.SelectedItem.Text;
+            }
+
+            var searchControl = Page.FindControl("main_0$txtSearch") as TextBox;
+
+            if (searchControl != null && !String.IsNullOrEmpty(searchControl.Text))
+            {
+                search = searchControl.Text;
+
+                dataSource = dataSource.FindAll(q => q.Title.ToLower().Contains(search.ToLower()));
+
+            }
+
+
 
             questionsRepeater.DataSource = dataSource;
             questionsRepeater.DataBind();

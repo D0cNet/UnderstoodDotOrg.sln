@@ -123,8 +123,15 @@
                     {
                         Session["Q&A_Filter"] = "Answered";
                     }
+                    else if (target == "main_0$questiontoolbar_0$lnkAnswer")
+                    {
+                        Session["Q&A_Filter"] = "Need Answers";
+                    }
+                    else if (target == "main_0$questiontoolbar_0$lnkDiscover")
+                    {
+                        Session["Q&A_Filter"] = "Answered";
+                    }
                 }
-
             }
 
             SetSelectMenu();
