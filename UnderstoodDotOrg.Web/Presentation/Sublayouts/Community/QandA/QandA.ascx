@@ -7,25 +7,25 @@
                 <div class="dropdown-container">
                     <div class="dropdown">
                         <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-                            <span class="current-page">Featured</span>
-                            <span class="dropdown-title">Filter By</span>
+                            <span class="current-page"><asp:Literal ID="litSelectedMenu" runat="server" /></span>
+                            <span class="dropdown-title"><asp:Literal ID="litFilterBy" runat="server" /></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
 
                             <li role="presentation" class="current-page">
-                                <a role="menuitem" href="REPLACE">Featured</a>
+                                <asp:LinkButton ID="lnkFeatured" runat="server" ><asp:Literal ID="litFeatured" runat="server" /></asp:LinkButton>
                             </li>
 
                             <li role="presentation" class="">
-                                <a role="menuitem" href="REPLACE">Recommended</a>
+                                <asp:LinkButton ID="lnkNeedAnswers" runat="server" ><asp:Literal ID="litNeedAnswers" runat="server" /></asp:LinkButton>
                             </li>
 
                             <li role="presentation" class="">
-                                <a role="menuitem" href="REPLACE">Calendar</a>
+                                <asp:LinkButton ID="lnkAnswered" runat="server" ><asp:Literal ID="litAnswered" runat="server" /></asp:LinkButton>
                             </li>
 
                             <li role="presentation" class="">
-                                <a role="menuitem" href="REPLACE">Archive</a>
+                                <asp:LinkButton ID="lnkRecommended" runat="server" ><asp:Literal ID="litRecommended" runat="server" /></asp:LinkButton>
                             </li>
 
                         </ul>

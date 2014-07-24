@@ -15,6 +15,18 @@
         private void Page_Load(object sender, EventArgs e)
         {
             List<Question> dataSource = TelligentService.GetQuestionsList(2, 100);
+
+            var filter = Session["Q&A_Filter"] as String;
+
+            if (filter == "Answered")
+            {
+                dataSource = dataSource.FindAll(q => q.CommentCount != "0");
+            }
+            else if (filter == "Need Answers")
+            {
+                dataSource = dataSource.FindAll(q => q.CommentCount == "0");
+            }
+
             questionsRepeater.DataSource = dataSource;
             questionsRepeater.DataBind();
         }

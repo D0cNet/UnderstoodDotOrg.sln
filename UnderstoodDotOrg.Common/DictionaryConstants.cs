@@ -2753,6 +2753,22 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string ChildsGradeLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Childs Grade Label");
+            }
+        }
+
+        public static string QuestionTopicLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Question Topic Label");
+            }
+        }
+
         public static string ChatWithLabel
         {
             get
@@ -2892,6 +2908,10 @@ namespace UnderstoodDotOrg.Common
 
         public static string AnswerLabel { get { return Translate.TextByDomain(PosesDictionary, "Answer Label"); } }
 
+        public static string NeedAnswersLabel { get { return Translate.TextByDomain(PosesDictionary, "Need Answers Label"); } }
+
+        public static string AnsweredLabel { get { return Translate.TextByDomain(PosesDictionary, "Answered Label"); } }
+
         public static string DiscoverLabel { get { return Translate.TextByDomain(PosesDictionary, "Discover Label"); } }
 
         public static string SubmitYourQuestionLabel { get { return Translate.TextByDomain(PosesDictionary, "Submit Your Question Label"); } }
@@ -2933,6 +2953,8 @@ namespace UnderstoodDotOrg.Common
         public static string ReadBlogLabel { get { return Translate.TextByDomain(PosesDictionary, "Read Blog Label"); } }
 
         public static string RepliesLabel { get { return Translate.TextByDomain(PosesDictionary, "Replies Label"); } }
+
+        public static string RecommendedLabel { get { return Translate.TextByDomain(PosesDictionary, "Recommended Label"); } }
 
         #region Connect Button Labels
         public static string ConnectBtnText { get { return Translate.TextByDomain(PosesDictionary, "Connect Button Text"); } }

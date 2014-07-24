@@ -9,7 +9,7 @@
     <div class="card card-answer rs_read_this">
         <h2><asp:Literal ID="litAnswer" runat="server" /></h2>
         <span class="description"><sc:Text Field="Answer Description" runat="server" /></span>
-        <a class="button rs_preserve" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeOpenQuestionsLabel %></a>
+        <a class="button rs_preserve" href="?ask=true"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeOpenQuestionsLabel %></a>
     </div>
     <div class="card card-discover rs_read_this">
         <h2><asp:Literal ID="litDiscover" runat="server" /></h2>

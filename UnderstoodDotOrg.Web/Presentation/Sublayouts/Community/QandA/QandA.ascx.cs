@@ -20,6 +20,14 @@
             //Item parentItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.ParentsGroupRecommended));
             //string itemHref = Sitecore.Links.LinkManager.GetItemUrl(parentItem);
             litSearch.Text = UnderstoodDotOrg.Common.DictionaryConstants.SearchButtonText;
+            litFilterBy.Text = UnderstoodDotOrg.Common.DictionaryConstants.FilterByLabel;
+            litFeatured.Text = UnderstoodDotOrg.Common.DictionaryConstants.Featured;
+            litNeedAnswers.Text = UnderstoodDotOrg.Common.DictionaryConstants.NeedAnswersLabel;
+            litAnswered.Text = UnderstoodDotOrg.Common.DictionaryConstants.AnsweredLabel;
+            litRecommended.Text = UnderstoodDotOrg.Common.DictionaryConstants.RecommendedLabel;
+
+            SetSelectMenu();
+
             base.OnInit(e);
         }
 
@@ -27,6 +35,8 @@
         {
             if (!IsPostBack)
             {
+                Session["Q&A_Filter"] = null;
+
                 Item currItem = Sitecore.Context.Item;
 
                 Item[] items = null;
@@ -86,7 +96,70 @@
 
 
             }
+            else
+            {
+                string target = Request.Params.Get("__EVENTTARGET") ?? String.Empty;
+
+                // Check controls
+                if (!string.IsNullOrEmpty(target))
+                {
+
+                    if (target.Contains("Featured"))
+                    {
+                        Session["Q&A_Filter"] = "Featured";
+
+                    }
+                    else if (target.Contains("Recommended"))
+                    {
+                        Session["Q&A_Filter"] = "Recommended";
+            
+                    }
+                    else if (target.Contains("NeedAnswers"))
+                    {
+                        Session["Q&A_Filter"] = "Need Answers";
+
+                    }
+                    else if (target.Contains("Answered"))
+                    {
+                        Session["Q&A_Filter"] = "Answered";
+                    }
+                }
+
+            }
+
+            SetSelectMenu();
+
         }
+
+        /*
+        protected void lnkFeatured_Click(object sender, EventArgs e)
+        {
+            Session["Q&A_Filter"] = "Featured";
+
+            SetSelectMenu();
+        }
+
+        protected void lnkRecommended_Click(object sender, EventArgs e)
+        {
+            Session["Q&A_Filter"] = "Recommended";
+
+            SetSelectMenu();
+        }
+
+        protected void lnkNeedAnswers_Click(object sender, EventArgs e)
+        {            
+            Session["Q&A_Filter"] = "Need Answers";
+
+            SetSelectMenu();
+        }
+
+        protected void lnkAnswered_Click(object sender, EventArgs e)
+        {
+            Session["Q&A_Filter"] = "Answered";
+
+            SetSelectMenu();
+        }
+        */
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
@@ -97,8 +170,23 @@
             string[] grade = String.IsNullOrEmpty(ddlGrades.SelectedValue.ToString()) ? new String[0] : new String[] { ddlGrades.SelectedValue.ToString() }; 
 
             string query = TextHelper.RemoveHTML(txtSearch.Text);
-            Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=" + Constants.TelligentSearchParams.Question);
+            //Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=" + Constants.TelligentSearchParams.Question);
 
         }
+
+        private void SetSelectMenu()
+        {
+            var filter = Session["Q&A_Filter"] as String;
+
+            if (String.IsNullOrEmpty(filter))
+            {
+                litSelectedMenu.Text = UnderstoodDotOrg.Common.DictionaryConstants.FilterByLabel;
+            }
+            else
+            {
+                litSelectedMenu.Text = filter;
+            }
+        }
+
     }
 }
