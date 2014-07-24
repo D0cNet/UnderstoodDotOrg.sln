@@ -356,6 +356,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\AboutUnderstoodItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonatePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonatePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationAmountItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\DonationConfirmationPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\ExpertDetailPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\ExpertDetailPageItem.instance.cs" />

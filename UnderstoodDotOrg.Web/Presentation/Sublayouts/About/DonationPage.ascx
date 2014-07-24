@@ -16,54 +16,26 @@
                 <div class="choose-gift-section rs_read_this about-donate-rs-wrapper">
                     <h2>1. <%= Model.AmountHeader.Rendered %></h2>
                     <div class="choose-gift-wrapper">
-                        <div class="gift-group clearfix rs_preserve">
-                            <label>
-                                <input type="radio" name="gift-amount" data-other="false" value="">
-                                <span>
-                                    <button type="button" class="donate-amount-button" data-param-value="25">
-                                        <span class="number">$25</span>
-                                        <span class="gift-description">Can provide education for 1 parents.</span>
-                                        <span class="icon-check">
-                                            <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
-                                    </button>
-                                </span>
-                            </label>
-                            <label>
-                                <input type="radio" name="gift-amount" data-other="false" value="">
-                                <span>
-                                    <button type="button" class="donate-amount-button" data-param-value="50">
-                                        <span class="number">$50</span>
-                                        <span class="gift-description">Can provide education for 2 parents.</span>
-                                        <span class="icon-check">
-                                            <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
-                                    </button>
-                                </span>
-                            </label>
-                        </div>
-                        <div class="gift-group clearfix rs_preserve">
-                            <label>
-                                <input type="radio" name="gift-amount" data-other="false" value="">
-                                <span>
-                                    <button type="button" class="donate-amount-button" data-param-value="100">
-                                        <span class="number">$100</span>
-                                        <span class="gift-description">Can provide education for 4 parents.</span>
-                                        <span class="icon-check">
-                                            <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
-                                    </button>
-                                </span>
-                            </label>
-                            <label>
-                                <input type="radio" name="gift-amount" data-other="true" value="">
-                                <span>
-                                    <button type="button" class="donate-amount-button" data-param-value="">
-                                        <span class="number">Other</span>
-                                        <span class="gift-description">Can provide education for x parents.</span>
-                                        <span class="icon-check">
-                                            <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
-                                    </button>
-                                </span>
-                            </label>
-                        </div>
+                        <asp:Repeater ID="rptrDonationAmounts" runat="server" 
+                            ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.DonationAmountItem">
+                            <ItemTemplate>
+                                <%# Container.ItemIndex % 2 == 0 ? "<div class=\"gift-group clearfix rs_preserve\">" : string.Empty %>
+                                <label>
+                                    <input type="radio" name="gift-amount" data-other="<%# Item.IsCustomAmount.Checked.ToString().ToLower() %>" 
+                                        value="">
+                                    <span>
+                                        <button type="button" class="donate-amount-button" 
+                                            data-param-value="<%# Item.IsCustomAmount.Checked ? string.Empty : Item.Amount.Integer.ToString() %>">
+                                            <span class="number"><%# Item.DisplayAmount.Rendered %></span>
+                                            <span class="gift-description"><%# Item.ShortDescription.Rendered %></span>
+                                            <span class="icon-check">
+                                                <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
+                                        </button>
+                                    </span>
+                                </label>
+                                <%# Container.ItemIndex % 2 != 0 ? "</div>" : string.Empty %>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
                     <!-- .choose-gift-wrapper -->
                     <!-- BEGIN PARTIAL: about-donate-other-amount -->

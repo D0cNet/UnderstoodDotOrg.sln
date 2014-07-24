@@ -100,6 +100,15 @@ public CustomTextField ConvioDonationLevelID
 }
 
 
+public CustomMultiListField DonationAmounts
+{
+	get
+	{
+		return new CustomMultiListField(InnerItem, InnerItem.Fields["Donation Amounts"]);
+	}
+}
+
+
 public CustomTextField GiftforSomeoneHeader
 {
 	get

@@ -19,6 +19,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
             Response.AppendHeader("Access-Control-Allow-Origin", "*");
 
             ThankYouPageUrl = Model.GetConfirmationPage().GetUrl();
+
+            var donationAmounts = Model.DonationAmounts.ListItems
+                .Where(i => i != null)
+                .Select(i => (DonationAmountItem)i);
+            rptrDonationAmounts.DataSource = donationAmounts;
+            rptrDonationAmounts.DataBind();
         }
     }
 }
