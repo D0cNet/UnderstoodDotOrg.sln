@@ -1,6 +1,7 @@
 ﻿using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Linq.Utilities;
 using Sitecore.ContentSearch.SearchTypes;
+using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Links;
@@ -40,10 +41,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
         {
             BindEvents();
 
-            string featured = HttpHelper.GetQueryString(Constants.EVENT_FEATURED_FILTER_QUERY_STRING);
-            Issue = HttpHelper.GetQueryString(Constants.EVENT_ISSUE_FILTER_QUERY_STRING).Trim();
-            Grade = HttpHelper.GetQueryString(Constants.EVENT_GRADE_FILTER_QUERY_STRING).Trim();
-            Topic = HttpHelper.GetQueryString(Constants.EVENT_TOPIC_FILTER_QUERY_STRING).Trim();
+            string featured = HttpHelper.GetQueryString(UnderstoodDotOrg.Common.Constants.EVENT_FEATURED_FILTER_QUERY_STRING);
+            Issue = HttpHelper.GetQueryString(UnderstoodDotOrg.Common.Constants.EVENT_ISSUE_FILTER_QUERY_STRING).Trim();
+            Grade = HttpHelper.GetQueryString(UnderstoodDotOrg.Common.Constants.EVENT_GRADE_FILTER_QUERY_STRING).Trim();
+            Topic = HttpHelper.GetQueryString(UnderstoodDotOrg.Common.Constants.EVENT_TOPIC_FILTER_QUERY_STRING).Trim();
 
             IsFeatured = featured.ToLower() == "true";
 
@@ -55,11 +56,42 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             rptUpcomingWebinars.ItemDataBound += rptUpcomingWebinars_ItemDataBound;
             rptExpertChat.ItemDataBound += rptExpertChat_ItemDataBound;
         }
+        private Boolean FilterFound(BaseEventDetailPageItem it,string GradeID,string IssueID,string TopicID)
+        {
+            bool found = false;
+            if( !String.IsNullOrEmpty(Grade))
+            {
+                found = it.Grade.ListItems.Where(lItem => lItem.ID.ToString().Equals(GradeID)).Any();
+            }
+             
+             if(!String.IsNullOrEmpty(Issue))
+            {
 
+                found = it.ChildIssue.ListItems
+                                    .Where(lItem => lItem.ID.ToString().Equals(IssueID)).Any();
+             }
+
+             if (!String.IsNullOrEmpty(Topic))
+             {
+                 found = it.ParentInterest.ListItems
+                                          .Where(lItem => lItem.ID.ToString().Equals(TopicID)).Any();
+             }
+
+             return found;
+
+        }
         private void PopulateUpcomingEvents()
         {
+            Item currItem = Sitecore.Context.Item;
+            var condition = String.IsNullOrEmpty(Issue)?(String.IsNullOrEmpty(Grade)?(String.IsNullOrEmpty(Topic)?"":Topic):Grade):Issue;
             // Chats
-            var chats = SearchHelper.GetUpcomingChats(Grade, Issue, Topic);
+            var chats = ((ExpertLivePageItem)currItem).FeaturedChat.ListItems
+                .Select(it=> new BaseEventDetailPageItem(it))
+                .ToList();
+            if (!String.IsNullOrEmpty(condition))
+                chats = chats.Where(it => FilterFound(it,Grade,Issue,Topic)).ToList();
+
+            //var chat = UnderstoodDotOrg.Domain.Search.SearchHelper.GetUpcomingChats(Grade, Issue, Topic);
             bool hasChats = chats.Any();
             pnlNoChatMessage.Visible = !hasChats;
 
@@ -70,7 +102,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             }
 
             // Webinars
-            var webinars = SearchHelper.GetUpcomingWebinars(Grade, Issue, Topic);
+            //var webinars = UnderstoodDotOrg.Domain.Search.SearchHelper.GetUpcomingWebinars(Grade, Issue, Topic);
+            
+          
+            
+            // Chats
+            var webinars = ((ExpertLivePageItem)currItem).FeaturedEvent.ListItems
+                        .Select(it => new BaseEventDetailPageItem(it))
+                       .ToList();
+            if (!String.IsNullOrEmpty(condition))
+                webinars = webinars.Where(it => FilterFound(it, Grade, Issue, Topic)).ToList();
             bool hasWebinars = webinars.Any();
             pnlNoWebinars.Visible = !hasWebinars;
 

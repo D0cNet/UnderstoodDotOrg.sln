@@ -123,49 +123,65 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                         hasMatch = Request.Url.PathAndQuery.StartsWith(assembledUrl);
                     }
 
-                    if (hasMatch) 
-                    {
+                    //if (hasMatch) 
+                    //{
                         litSelectedMenu.Text = lf.Text;
-                    }
+                    //}
                 }
             }
         }
 
         private void ddlIssue_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Redirect(new Dictionary<string,string>
+            ddlGrade.SelectedValue = String.Empty;
+            ddlTopics.SelectedValue = String.Empty;
+            //if (!String.IsNullOrEmpty(ddlIssue.SelectedValue))
+            //{
+                Redirect(new Dictionary<string, string>
             {
                 { Constants.EVENT_ISSUE_FILTER_QUERY_STRING, ddlIssue.SelectedValue }
             });
+           // }
         }
 
         private void ddlGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Redirect(new Dictionary<string, string>
+            ddlIssue.SelectedValue = String.Empty;
+            ddlTopics.SelectedValue = String.Empty;
+            //if (!String.IsNullOrEmpty(ddlGrade.SelectedValue))
+            //{
+                Redirect(new Dictionary<string, string>
             {
                 { Constants.EVENT_GRADE_FILTER_QUERY_STRING, ddlGrade.SelectedValue }
             });
+          //  }
         }
 
         private void ddlTopics_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Redirect(new Dictionary<string, string>
+            ddlGrade.SelectedValue = String.Empty;
+            ddlIssue.SelectedValue = String.Empty;
+            //if (!String.IsNullOrEmpty(ddlTopics.SelectedValue))
+            //{
+                Redirect(new Dictionary<string, string>
             {
                 { Constants.EVENT_TOPIC_FILTER_QUERY_STRING, ddlTopics.SelectedValue }
             });
+          //  }
         }
 
         private void Redirect(Dictionary<string, string> keys)
         {
             string baseUrl = String.Concat(Request.Url.AbsolutePath, "?");
 
-            string vars = String.Join("&", 
-                keys.Where(x => !String.IsNullOrEmpty(x.Value))
-                    .Select(x => String.Format("{0}={1}", x.Key, x.Value))
-                );
-
+           
+                string vars =keys.Count >0? String.Join("&",
+                    keys.Where(x => !String.IsNullOrEmpty(x.Value))
+                        .Select(x => String.Format("{0}={1}", x.Key, x.Value))
+                        ):String.Empty;
+            
             string parameters = (IsFeatured)
-                ? String.Format("{0}=true&{1}", Constants.EVENT_FEATURED_FILTER_QUERY_STRING, vars)
+                ? String.Format("{0}=true"+ (String.IsNullOrEmpty(vars) ? "": "&{1}"), Constants.EVENT_FEATURED_FILTER_QUERY_STRING, vars)
                 : vars;
 
             Response.Redirect(String.Concat(baseUrl, parameters));

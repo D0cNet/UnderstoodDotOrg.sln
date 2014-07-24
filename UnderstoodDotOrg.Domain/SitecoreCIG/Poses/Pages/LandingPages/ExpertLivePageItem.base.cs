@@ -72,6 +72,13 @@ public CustomTreeListField FeaturedEvent
 	}
 }
 
+public CustomTreeListField FeaturedChat
+{
+    get
+    {
+        return new CustomTreeListField(InnerItem, InnerItem.Fields["Featured Chat"]);
+    }
+}
 
 public CustomTextField LiveChatHeading
 {
