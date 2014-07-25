@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.LearningTool;
 
@@ -69,15 +70,17 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
 
         public AssistiveToolsSkillFolderItem GetSkillsFolder()
         {
+            // TODO: move guid to constants
             return InnerItem.Children.FirstOrDefault(i => i.ID.ToString() == "{7E804EB1-88F4-44B9-937A-5D84FF892970}")
-                .Children.FirstOrDefault(i => i.ID.ToString() == "{493EB983-FDE9-46E4-85C8-EE45EABFE91B}")
+                .Children.FirstOrDefault(i => i.ID.ToGuid() == Constants.AssistiveToolsGlobalContainer)
                 .Children.FirstOrDefault(i => i.IsOfType(AssistiveToolsSkillFolderItem.TemplateId));
         }
 
         public AssistiveToolsSkillFolderItem GetIssuesFolder()
         {
+            // TODO: move guid to constants
             return InnerItem.Children.FirstOrDefault(i => i.ID.ToString() == "{7E804EB1-88F4-44B9-937A-5D84FF892970}")
-                .Children.FirstOrDefault(i => i.ID.ToString() == "{493EB983-FDE9-46E4-85C8-EE45EABFE91B}")
+                .Children.FirstOrDefault(i => i.ID.ToGuid() == Constants.AssistiveToolsGlobalContainer)
                 .Children.FirstOrDefault(i => i.IsOfType(AssistiveToolsIssueFolderItem.TemplateId));
         }
 

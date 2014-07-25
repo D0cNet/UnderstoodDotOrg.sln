@@ -1,40 +1,42 @@
-﻿using Sitecore.Data.Items;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Comparers;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.LearningTool;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Widgets;
 using UnderstoodDotOrg.Framework.UI;
-using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
-using UnderstoodDotOrg.Common.Comparers;
-using System.Collections.Specialized;
-using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Domain.Understood.Helper;
-using UnderstoodDotOrg.Common.Helpers;
 
-namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Tiles
 {
-    public partial class AssistiveTool : BaseSublayout<AssistiveToolWidgetItem>
+    public partial class MiniAssistiveTool : BaseSublayout<ExploreToolTileItem>
     {
-        private Item AssistiveToolsGlobalsFolder
-        {
-            get;
-            set;
-        }
+        private AssistiveToolWidgetItem _widget;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindEvents();
-            BindContent();
+            _widget = Model.ToolWidget.Item;
+            slHeader.DataSource = Model.ID.ToString();
 
+            // TODO: refactor this mini widget and sidebar widget as code is cut/pasted from assitive tech landing page
+            BindContent();
+            BindEvents();
             if (!IsPostBack)
             {
                 BindControls();
             }
+        }
+
+        private void BindContent()
+        {
+            btnSubmit.Text = _widget.ToolWidget.WidgetButtonText.Raw;
         }
 
         private void BindEvents()
@@ -42,21 +44,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
             btnSubmit.Click += btnSubmit_Click;
         }
 
-        private void BindContent()
-        {
-            btnSubmit.Text = Model.ToolWidget.WidgetButtonText.Raw;
-            imgFooterLogo.ImageUrl = Model.ToolWidget.WidgetFooterLogo.MediaItem.GetImageUrl();
-
-            frWidgetCopy.Item = frWidgetTitle.Item = frWidgetFooterHeading.Item
-                = Model;
-        }
-
         private void BindControls()
         {
-            // TODO: refactor so code can be re-used with landing page
-            AssistiveToolsGlobalsFolder = Sitecore.Context.Database.GetItem(Constants.AssistiveToolsGlobalContainer);
+            // TODO: refactor so code can be re-used with landing page and sidebar widget
+            var folder = Sitecore.Context.Database.GetItem(Constants.AssistiveToolsGlobalContainer);
 
-            var issuesFolder = (AssistiveToolsIssueFolderItem)AssistiveToolsGlobalsFolder.Children
+            var issuesFolder = (AssistiveToolsIssueFolderItem)folder.Children
                 .FirstOrDefault(i => i.IsOfType(AssistiveToolsIssueFolderItem.TemplateId));
             var issues = issuesFolder.GetIssues()
                 .Select(issue => new
@@ -70,7 +63,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
             ddlIssues.DataBind();
             ddlIssues.Items.Insert(0, new ListItem(DictionaryConstants.SelectBehaviorLabel, string.Empty));
 
-            var gradesFolder = (AssistiveToolsGradesFolderItem)AssistiveToolsGlobalsFolder.Children
+            var gradesFolder = (AssistiveToolsGradesFolderItem)folder.Children
                 .FirstOrDefault(i => i.IsOfType(AssistiveToolsGradesFolderItem.TemplateId));
             var grades = gradesFolder.GetGradeRanges()
                 .Select(grade => new
@@ -84,7 +77,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
             ddlGrades.DataBind();
             ddlGrades.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
 
-            var typesFolder = (AssistiveToolsTypeFolderItem)AssistiveToolsGlobalsFolder.Children
+            var typesFolder = (AssistiveToolsTypeFolderItem)folder.Children
                 .FirstOrDefault(i => i.IsOfType(AssistiveToolsTypeFolderItem.TemplateId));
             var techTypeItems = typesFolder.GetTechTypes();
 
@@ -101,7 +94,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
             ddlTechTypes.Items.Insert(0, new ListItem(DictionaryConstants.AllTechnologyLabel, "All"));
             ddlTechTypes.Items.Insert(0, new ListItem(DictionaryConstants.SelectTechnologyLabel, string.Empty));
 
-            var platformsFolder = (AssistiveToolsPlatformFolderItem)AssistiveToolsGlobalsFolder.Children
+            var platformsFolder = (AssistiveToolsPlatformFolderItem)folder.Children
                 .FirstOrDefault(i => i.IsOfType(AssistiveToolsPlatformFolderItem.TemplateId));
             var platformItems = platformsFolder.GetPlatforms();
 
@@ -155,7 +148,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
                 qs.Add(Constants.QueryStrings.LearningTool.PlatformId, platformId);
             }
 
-            string url = Model.ToolWidget.WidgetButtonLink.Url;
+            // Lookup destination url on linked widget
+            string url = _widget.ToolWidget.WidgetButtonLink.Url;
             if (!string.IsNullOrEmpty(url))
             {
                 Response.Redirect(HttpHelper.AssembleUrl(url, qs));

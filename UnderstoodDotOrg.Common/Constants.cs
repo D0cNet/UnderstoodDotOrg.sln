@@ -189,6 +189,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Container Guid
 
+        public static Guid AssistiveToolsGlobalContainer
+        {
+            get
+            {
+                return new Guid("{493EB983-FDE9-46E4-85C8-EE45EABFE91B}");
+            }
+        }
+
         public static Guid GradeContainer
         {
             get

@@ -19,7 +19,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
     public partial class AssistiveToolsSearchBox : BaseSublayout<AssistiveToolsBasePageItem>
     {
-        private static string AssistiveToolsGlobalsFolderId = "{493EB983-FDE9-46E4-85C8-EE45EABFE91B}";
         private Item AssistiveToolsGlobalsFolder
         {
             get;
@@ -138,7 +137,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void PopulateDropDowns()
         {
-            AssistiveToolsGlobalsFolder = Sitecore.Context.Database.GetItem(AssistiveToolsGlobalsFolderId);
+            AssistiveToolsGlobalsFolder = Sitecore.Context.Database.GetItem(Constants.AssistiveToolsGlobalContainer);
 
             var issuesFolder = (AssistiveToolsIssueFolderItem)AssistiveToolsGlobalsFolder.Children
                 .FirstOrDefault(i => i.IsOfType(AssistiveToolsIssueFolderItem.TemplateId));

@@ -7,13 +7,15 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.Widgets;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 {
     public partial class MoreToExplore : System.Web.UI.UserControl
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
+            // Repeaters may contain forms with post-back so bind repeater in init so viewstate is not lost
             GlobalsItem globalItem = MainsectionItem.GetGlobals();
             if (globalItem != null)
             {
@@ -48,6 +50,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 else if (dataItem.InheritsFromType(ExploreEventTileItem.TemplateId))
                 {
                     slTile.Path = "~/Presentation/Sublayouts/Common/Tiles/EventTile.ascx";
+                }
+                else if (dataItem.TemplateID == Sitecore.Data.ID.Parse(ExploreToolTileItem.TemplateId))
+                {
+                    slTile.Path = ((ExploreToolTileItem)dataItem).GetSublayoutPath();
                 }
             }
         }

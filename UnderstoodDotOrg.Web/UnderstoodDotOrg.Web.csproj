@@ -841,6 +841,27 @@
     <Compile Include="Presentation\Sublayouts\Common\GroupJoinButton.ascx.designer.cs">
       <DependentUpon>GroupJoinButton.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\MiniAssistiveTool.ascx.cs">
+      <DependentUpon>MiniAssistiveTool.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\MiniAssistiveTool.ascx.designer.cs">
+      <DependentUpon>MiniAssistiveTool.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\MiniBehaviorTool.ascx.cs">
+      <DependentUpon>MiniBehaviorTool.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\MiniBehaviorTool.ascx.designer.cs">
+      <DependentUpon>MiniBehaviorTool.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\ToolTileHeader.ascx.cs">
+      <DependentUpon>ToolTileHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Common\Tiles\ToolTileHeader.ascx.designer.cs">
+      <DependentUpon>ToolTileHeader.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Community Search\CommunitySearch.ascx.cs">
       <DependentUpon>CommunitySearch.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3034,6 +3055,9 @@
     <Content Include="Presentation\Sublayouts\Common\Cards\MemberProfileCard.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Cards\ProfileCommentCard.ascx" />
     <Content Include="Presentation\Sublayouts\Common\GroupJoinButton.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Tiles\MiniAssistiveTool.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Tiles\MiniBehaviorTool.ascx" />
+    <Content Include="Presentation\Sublayouts\Common\Tiles\ToolTileHeader.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Community Search\CommunitySearch.ascx" />
     <Content Include="Presentation\Sublayouts\Common\LikeButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ThanksButton.ascx" />
