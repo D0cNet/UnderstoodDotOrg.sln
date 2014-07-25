@@ -791,7 +791,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -1039,7 +1039,7 @@ html.canvas .mini-tools-wrap {
   list-style: none;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit .slide ul:after {
   content: "";
   display: table;
@@ -1815,7 +1815,7 @@ html.canvas .mini-tools-wrap {
   *zoom: 1;
   margin-bottom: 50px;
 }
-/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-listing-container .article:after {
   content: "\0020";
   display: block;
@@ -4212,7 +4212,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -5367,6 +5367,19 @@ h2.rs_read_this,
 }
 
 /* line 47, ../css.source/mixins/_rs-play-button.scss */
+.experts-page .event .event-sidebar .rsbtn_player {
+  top: 0;
+  top: -25px;
+  top: -25px;
+}
+/* line 2, ../css.source/mixins/_rs-play-button.scss */
+.experts-page .event .event-sidebar .rsbtn_player {
+  left: 0;
+  left: -25px;
+  left: -25px;
+}
+
+/* line 47, ../css.source/mixins/_rs-play-button.scss */
 .deep-dive-article-container .rsbtn_player {
   top: -20px;
   top: -40px;
@@ -5404,7 +5417,7 @@ h2.rs_read_this .rsbtn_player,
   top: -40px;
 }
 
-/* line 216, ../css.source/modules/_readspeaker-layout.scss */
+/* line 222, ../css.source/modules/_readspeaker-layout.scss */
 h3.rs_read_this .rsbtn_player {
   margin-top: 0px;
   margin-left: 0px;
@@ -5547,7 +5560,7 @@ h2.rs_read_this .rsbtn_player {
   left: -38px;
 }
 
-/* line 282, ../css.source/modules/_readspeaker-layout.scss */
+/* line 288, ../css.source/modules/_readspeaker-layout.scss */
 .l-thank-you-recommended .recommended-grid h2.rs_read_this .rsbtn_player {
   top: -40px;
   left: 2px;
@@ -5651,7 +5664,7 @@ h3.rs_read_this .rsbtn_player {
   top: 18px;
 }
 
-/* line 339, ../css.source/modules/_readspeaker-layout.scss */
+/* line 345, ../css.source/modules/_readspeaker-layout.scss */
 .community-bloggers-more .blogger-card .rsbtn_player {
   left: -10px;
   top: 0;
@@ -5664,11 +5677,11 @@ h3.rs_read_this .rsbtn_player {
   left: -30px;
 }
 
-/* line 352, ../css.source/modules/_readspeaker-layout.scss */
+/* line 358, ../css.source/modules/_readspeaker-layout.scss */
 .about-the-author.rs_read_this, .blog-post-content-rs-wrapper.rs_read_this, .blog-feature.rs_read_this, .blog-post-content-rs-wrapper.rs_read_this {
   position: relative;
 }
-/* line 355, ../css.source/modules/_readspeaker-layout.scss */
+/* line 361, ../css.source/modules/_readspeaker-layout.scss */
 .about-the-author .rs_read_this, .blog-post-content-rs-wrapper .rs_read_this, .blog-feature .rs_read_this, .blog-post-content-rs-wrapper .rs_read_this {
   position: relative;
 }
@@ -5701,7 +5714,7 @@ h3.rs_read_this .rsbtn_player {
   top: -37px;
 }
 
-/* line 375, ../css.source/modules/_readspeaker-layout.scss */
+/* line 381, ../css.source/modules/_readspeaker-layout.scss */
 .article-basic-sidebar-rs-wrapper .rsbtn_player {
   display: none;
   display: block;
@@ -5864,7 +5877,11 @@ h3.rs_read_this .rsbtn_player {
   left: -11px;
 }
 
+<<<<<<< Updated upstream
 /* line 469, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 470, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .notification-item .icon-play, .notification-item .icon-pause, .account-notifications-tab-notifications-empty .icon-play, .account-notifications-tab-notifications-empty .icon-pause, .account-notifications-tab-text-form .icon-play, .account-notifications-tab-text-form .icon-pause, .account-notifications-tab-email .icon-play, .account-notifications-tab-email .icon-pause {
   background-image: none;
 }
@@ -5963,7 +5980,11 @@ h3.rs_read_this .rsbtn_player {
   top: 9px;
 }
 
+<<<<<<< Updated upstream
 /* line 527, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 528, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .account-connect-links {
   position: inherit;
 }
@@ -5979,7 +6000,11 @@ h3.rs_read_this .rsbtn_player {
   left: -22px;
   left: -40px;
 }
+<<<<<<< Updated upstream
 /* line 533, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 534, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .account-connect-links .rsbtn_player {
   top: -24px;
 }
@@ -6072,17 +6097,29 @@ h3.rs_read_this .rsbtn_player {
   top: 10px;
   top: 10px;
 }
+<<<<<<< Updated upstream
 /* line 585, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 586, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .inner-container .rsbtn_player {
   display: none;
 }
 
+<<<<<<< Updated upstream
 /* line 593, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 594, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .toolkit-thumbnails-container .thumbnail .rsbtn_player {
   display: none;
   display: block;
 }
+<<<<<<< Updated upstream
 /* line 599, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 600, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .toolkit-thumbnails-container .thumbnail .rsbtn_player.rshidden {
   display: none;
 }
@@ -6287,7 +6324,11 @@ h3.rs_read_this .rsbtn_player {
   top: -34px;
 }
 
+<<<<<<< Updated upstream
 /* line 706, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 707, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .grid-row .rs_read_this {
   position: static;
 }
@@ -6585,7 +6626,11 @@ h3.rs_read_this .rsbtn_player {
   left: -20px;
 }
 
+<<<<<<< Updated upstream
 /* line 862, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 863, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .community-q-a h2.rs_read_this, .community-parents h2.rs_read_this, .community-blogs-more h2.rs_read_this, .community-our-blogs h2.rs_read_this, .community-blogs-main h2.rs_read_this {
   position: relative;
 }
@@ -6603,7 +6648,11 @@ h3.rs_read_this .rsbtn_player {
   top: -40px;
   top: -28px;
 }
+<<<<<<< Updated upstream
 /* line 867, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 868, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .community-q-a .card, .community-parents .card, .community-blogs-more .card, .community-our-blogs .card, .community-blogs-main .card {
   position: relative;
 }
@@ -6693,7 +6742,11 @@ h3.rs_read_this .rsbtn_player {
   left: 2px;
 }
 
+<<<<<<< Updated upstream
 /* line 916, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 917, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .individual-board .search-board {
   float: left;
   float: none;
@@ -6839,7 +6892,11 @@ h3.rs_read_this .rsbtn_player {
   top: -8px;
 }
 
+<<<<<<< Updated upstream
 /* line 994, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 995, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .results-slider {
   text-indent: -99999px;
 }
@@ -6963,7 +7020,11 @@ h3.rs_read_this .rsbtn_player {
   left: 28px;
 }
 
+<<<<<<< Updated upstream
 /* line 1066, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 1067, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .expert-event-container .expert-event, .expert-event-container .expert-blog-post, .expert-blog-post-container .expert-event, .expert-blog-post-container .expert-blog-post {
   position: relative;
 }
@@ -6993,7 +7054,11 @@ h3.rs_read_this .rsbtn_player {
   top: -20px;
   top: -20px;
 }
+<<<<<<< Updated upstream
 /* line 1080, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 1081, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .personalize-interests-rs-wrapper.social-emotional-rs-wrapper, .personalize-interests-rs-wrapper.home-life-rs-wrapper, .itemize-child-rs-wrapper.social-emotional-rs-wrapper, .itemize-child-rs-wrapper.home-life-rs-wrapper {
   position: relative;
 }
@@ -7023,7 +7088,11 @@ h3.rs_read_this .rsbtn_player {
   top: 4px;
   top: 4px;
 }
+<<<<<<< Updated upstream
 /* line 1093, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 1094, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .l-about-hero-intro .rsbtn_player {
   left: -36px;
 }
@@ -7035,7 +7104,11 @@ h3.rs_read_this .rsbtn_player {
   left: -32px;
 }
 
+<<<<<<< Updated upstream
 /* line 1105, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 1106, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .about-donate-rs-wrapper {
   position: relative;
 }
@@ -7047,7 +7120,11 @@ h3.rs_read_this .rsbtn_player {
   left: -36px;
 }
 
+<<<<<<< Updated upstream
 /* line 1113, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 1114, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .pay-by-check.about-donate-rs-wrapper .rsbtn_player,
 .pay-by-credit.about-donate-rs-wrapper .rsbtn_player,
 .form-group-rs-wrapper .rsbtn_player {
@@ -7068,7 +7145,11 @@ h3.rs_read_this .rsbtn_player {
   left: -35px;
 }
 
+<<<<<<< Updated upstream
 /* line 1130, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 1131, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 #rsToggle {
   z-index: 9999;
 }
@@ -7104,7 +7185,11 @@ h3.rs_read_this .rsbtn_player {
   top: -20px;
 }
 
+<<<<<<< Updated upstream
 /* line 1155, ../css.source/modules/_readspeaker-layout.scss */
+=======
+/* line 1156, ../css.source/modules/_readspeaker-layout.scss */
+>>>>>>> Stashed changes
 .skiplink-sidebar {
   display: none;
   display: block;

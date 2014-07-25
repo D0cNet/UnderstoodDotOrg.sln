@@ -94,7 +94,7 @@
                 <!-- END PARTIAL: helpful-count -->
                 
                 <!-- BEGIN PARTIAL: find-helpful -->
-                <div class="find-this-helpful sidebar rs_read_this" id="count-helpful-sidebar">
+                <div class="find-this-helpful sidebar" id="count-helpful-sidebar">
                     <h4>Did you find this helpful?</h4>
                     <ul>
                         <li>
