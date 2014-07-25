@@ -2393,9 +2393,10 @@
 /* line 5, ../css.source/modules/about/_partners-detail-copy.scss */
 .partner-copy {
   float: left;
-  max-width: 62.5%;
+  width: 100%;
+  padding-right: 12.5%;
 }
-/* line 12, ../css.source/modules/about/_partners-detail-copy.scss */
+/* line 13, ../css.source/modules/about/_partners-detail-copy.scss */
 .partner-copy p {
   font-family: arial, sans-serif;
   color: #696969;
@@ -2406,7 +2407,7 @@
   font-weight: normal;
   margin-bottom: 30px;
 }
-/* line 22, ../css.source/modules/about/_partners-detail-copy.scss */
+/* line 23, ../css.source/modules/about/_partners-detail-copy.scss */
 .partner-copy p:last-child {
   margin-bottom: 80px;
 }
@@ -2414,20 +2415,38 @@
 /**
  * SASS partial for partners-detail-header module.
  */
-/* line 5, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 6, ../css.source/modules/about/_partners-detail-header.scss */
 .lower-border {
   margin-bottom: 50px !important;
   border-bottom: 1px solid #d2d2d2;
 }
 
-/* line 11, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 12, ../css.source/modules/about/_partners-detail-header.scss */
+.partner-detail-container {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 13, ../css.source/modules/about/_partners-detail-header.scss */
+.partner-detail-body {
+  width: 70%;
+  float: left;
+}
+
+/* line 17, ../css.source/modules/about/_partners-detail-header.scss */
+.partner-detail-sidebar {
+  width: 30%;
+  float: right;
+}
+
+/* line 22, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading {
   margin-bottom: 20px;
   float: left;
   max-width: 62.5%;
   margin-top: 1px;
 }
-/* line 20, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 31, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading h1.partner-name {
   color: #7a4183;
   font-size: 30px;
@@ -2439,7 +2458,7 @@
   font-size: 36px;
   font-size: 2.25rem;
 }
-/* line 32, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 43, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading h2.partner-tagline {
   color: #696969;
   font-size: 20px;
@@ -2451,7 +2470,7 @@
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 44, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 55, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.return-all-partners {
   display: block;
   font-size: 16px;
@@ -2462,16 +2481,16 @@
   margin-bottom: 5px;
   margin-bottom: 15px;
 }
-/* line 55, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 66, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.return-all-partners a {
   color: #7a4183;
   text-decoration: none;
 }
-/* line 59, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 70, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.return-all-partners a:hover {
   text-decoration: underline;
 }
-/* line 65, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 76, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.partner-link {
   font-size: 16px;
   font-size: 1rem;
@@ -2479,11 +2498,11 @@
   line-height: 1.625rem;
   font-weight: normal;
 }
-/* line 70, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 81, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.partner-link a {
   text-decoration: underline;
 }
-/* line 73, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 84, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.partner-link a:hover {
   text-decoration: none;
 }
@@ -2493,14 +2512,17 @@
  */
 /* line 5, ../css.source/modules/about/_partners-detail-logo.scss */
 .partner-logo {
-  margin-bottom: 20px;
-  float: right;
-  max-width: 30%;
-  margin-top: 2px;
-}
-/* line 14, ../css.source/modules/about/_partners-detail-logo.scss */
-.partner-logo img {
   width: 100%;
+  background: #f4f2f1;
+  padding: 15px 0 15px 0;
+  margin-bottom: 40px;
+}
+/* line 11, ../css.source/modules/about/_partners-detail-logo.scss */
+.partner-logo img {
+  display: block;
+  margin: auto;
+  width: auto;
+  max-width: 80%;
   max-width: 270px;
 }
 
@@ -2509,15 +2531,13 @@
  */
 /* line 5, ../css.source/modules/about/_partners-donate.scss */
 .partner-donate {
+  width: 100%;
   background: #f4f2f1;
   text-align: center;
   padding: 40px 34px 30px 34px;
-  margin-bottom: 20px;
-  padding-left: 24px;
-  padding-right: 24px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
-/* line 17, ../css.source/modules/about/_partners-donate.scss */
+/* line 12, ../css.source/modules/about/_partners-donate.scss */
 .partner-donate h2 {
   color: #7a4183;
   font-size: 22px;
@@ -2528,7 +2548,7 @@
   margin-bottom: 15px;
   margin-bottom: 20px;
 }
-/* line 29, ../css.source/modules/about/_partners-donate.scss */
+/* line 24, ../css.source/modules/about/_partners-donate.scss */
 .partner-donate a {
   width: 146px;
   height: 50px;
@@ -2740,16 +2760,13 @@
  */
 /* line 5, ../css.source/modules/about/_partners-newsletter-signup.scss */
 .partner-newsletter {
+  width: 100%;
   background: #f4f2f1;
   text-align: center;
   padding: 40px 34px 30px 34px;
-  margin-bottom: 20px;
-  margin-top: -30px;
   margin-bottom: 40px;
-  padding-left: 24px;
-  padding-right: 24px;
 }
-/* line 18, ../css.source/modules/about/_partners-newsletter-signup.scss */
+/* line 12, ../css.source/modules/about/_partners-newsletter-signup.scss */
 .partner-newsletter h2 {
   color: #7a4183;
   font-size: 22px;
@@ -2760,7 +2777,7 @@
   margin-bottom: 15px;
   margin-bottom: 20px;
 }
-/* line 30, ../css.source/modules/about/_partners-newsletter-signup.scss */
+/* line 24, ../css.source/modules/about/_partners-newsletter-signup.scss */
 .partner-newsletter a {
   width: 146px;
   height: 50px;

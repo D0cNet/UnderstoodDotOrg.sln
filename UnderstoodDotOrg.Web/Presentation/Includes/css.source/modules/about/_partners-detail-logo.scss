@@ -3,16 +3,16 @@
  */
 
 .partner-logo {
-  margin-bottom: 20px;
-
-  @include bp($bp-small-plus) {
-    float: right;
-    max-width: 30%;
-    margin-top: 2px;
-  }
+  width: 100%;
+  background: #f4f2f1;
+  padding: 15px 0 15px 0;
+  margin-bottom: 40px;
 
   img {
-    width: 100%;
+    display: block;
+    margin: auto;
+    width: auto;
+    max-width: 80%;
 
     @include bp ($bp-small) {
       max-width: 270px;

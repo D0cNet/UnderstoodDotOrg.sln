@@ -3,17 +3,11 @@
  */
 
 .partner-newsletter {
+  width: 100%;
   background: #f4f2f1;
   text-align: center;
   padding: 40px 34px 30px 34px;
-  margin-bottom: 20px;
-
-  @include bp($bp-small-plus) {
-    margin-top: -30px;
-    margin-bottom: 40px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+  margin-bottom: 40px;
 
   h2 {
     color: #7a4183;

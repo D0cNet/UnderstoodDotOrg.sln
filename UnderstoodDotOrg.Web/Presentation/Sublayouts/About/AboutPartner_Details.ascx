@@ -14,41 +14,41 @@
     <div class="row">
         <div class="col col-24 lower-border">
             <!-- added lower-border in partner-detail-header.scss to create hr -->
-            <div class="col col-23 offset-1 skiplink-content" aria-role="main">
-                <!-- BEGIN PARTIAL: about/partners-detail-header -->
-                <div class="partner-heading rs_read_this">
-                    <span class="return-all-partners"><asp:HyperLink ID="hlPartnersLanding" runat="server" /></span>
-                    <h1 class="partner-name">
-                        <sc:FieldRenderer ID="frPartnerName" runat="server" FieldName="Partner Name" />
-                    </h1>
-                   <h2 class="partner-tagline">
-                        <sc:FieldRenderer ID="frSubHeadline" runat="server" FieldName="Partner Tagline" />
-                    </h2>
-                    <span class="partner-link">
-                        <sc:Link ID="lnkPartner" runat="server" Field="Partner Link" />
-                    </span>
-                </div>
+            <div class="col col-23 offset-1 skiplink-content partner-detail-container" aria-role="main">
+                <div class="partner-detail-body">
+                    <div class="partner-heading rs_read_this">
+                        <span class="return-all-partners"><asp:HyperLink ID="hlPartnersLanding" runat="server" /></span>
+                        <h1 class="partner-name">
+                            <sc:FieldRenderer ID="frPartnerName" runat="server" FieldName="Partner Name" />
+                        </h1>
+                       <h2 class="partner-tagline">
+                            <sc:FieldRenderer ID="frSubHeadline" runat="server" FieldName="Partner Tagline" />
+                        </h2>
+                        <span class="partner-link">
+                            <sc:Link ID="lnkPartner" runat="server" Field="Partner Link" />
+                        </span>
+                    </div>
+                    <div class="partner-copy rs_read_this">
+                        <sc:FieldRenderer ID="frPartnerBio" runat="server" FieldName="Partner Bio" />
+                    </div>
+                </div><!-- end body -->
 
-                 <div class="partner-logo rs_read_this">
-                    <sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Partner Logo" Parameters="mw=270&mh=130" />
-                </div>
+                <div class="partner-detail-sidebar">
+                    <div class="partner-logo rs_read_this">
+                        <sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Partner Logo" Parameters="mw=270&mh=130" />
+                    </div>
 
-                <div class="partner-copy rs_read_this">
-                    <sc:FieldRenderer ID="frPartnerBio" runat="server" FieldName="Partner Bio" />
-                </div>
+                    <asp:Panel ID="pnlNewsletter" runat="server" Visible="false" CssClass="partner-newsletter">
+                        <h2><sc:FieldRenderer ID="frNewsletterHeading" FieldName="Partner Newsletter Heading" runat="server" /></h2>
+                        <sc:FieldRenderer ID="frNewsletterLink" FieldName="Partner Newsletter Link" Parameters="class=button" runat="server" />
+                    </asp:Panel>
 
-                <asp:Panel ID="pnlNewsletter" runat="server" Visible="false" CssClass="partner-newsletter">
-                    <h2><sc:FieldRenderer ID="frNewsletterHeading" FieldName="Partner Newsletter Heading" runat="server" /></h2>
-                    <sc:FieldRenderer ID="frNewsletterLink" FieldName="Partner Newsletter Link" Parameters="class=button" runat="server" />
-                </asp:Panel>
-
-                <asp:Panel ID="pnlDonate" runat="server" Visible="false" CssClass="partner-donate">
-                    <h2><sc:FieldRenderer ID="frDonationHeading" FieldName="Partner Donation Heading" runat="server" /></h2>
-                    <sc:FieldRenderer ID="frDonationLink" FieldName="Partner Donation Link" Parameters="class=button" runat="server" />
-                </asp:Panel>
-
-                <!-- END PARTIAL: about/partners-donate -->
-            </div>
+                    <asp:Panel ID="pnlDonate" runat="server" Visible="false" CssClass="partner-donate">
+                        <h2><sc:FieldRenderer ID="frDonationHeading" FieldName="Partner Donation Heading" runat="server" /></h2>
+                        <sc:FieldRenderer ID="frDonationLink" FieldName="Partner Donation Link" Parameters="class=button" runat="server" />
+                    </asp:Panel>
+                </div><!-- end sidebar -->
+            </div><!-- end main -->
         </div>
     </div>
     <!-- end .row -->
@@ -98,7 +98,7 @@
                 <h2><sc:FieldRenderer ID="frFacebookHeading" runat="server" FieldName="Facebook Heading" /></h2>
 
                 <sc:FieldRenderer ID="frFacebookWidget" runat="server" FieldName="Facebook Widget" />
-                
+
                 <div class="facebook-follow-block">
                     <asp:HyperLink ID="hlFacebook" runat="server"><i class="facebook-follow"></i><%= FacebookLinkText %></asp:HyperLink>
                 </div>

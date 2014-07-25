@@ -6,7 +6,8 @@
 
   @include bp($bp-small-plus) {
       float: left;
-      max-width: 62.5%;
+      width: 100%;
+      padding-right: 12.5%;
     }
 
   p {
