@@ -1175,7 +1175,7 @@
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -1526,7 +1526,7 @@
   list-style: none;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit .slide ul:after {
   content: "";
   display: table;
@@ -2773,7 +2773,7 @@
   margin-bottom: 34px;
   *zoom: 1;
 }
-/* line 22, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-listing-container .article:after {
   content: "\0020";
   display: block;
@@ -5954,7 +5954,7 @@
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -8483,11 +8483,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-<<<<<<< Updated upstream
-/* line 469, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 470, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 475, ../css.source/modules/_readspeaker-layout.scss */
 .notification-item .icon-play, .notification-item .icon-pause, .account-notifications-tab-notifications-empty .icon-play, .account-notifications-tab-notifications-empty .icon-pause, .account-notifications-tab-text-form .icon-play, .account-notifications-tab-text-form .icon-pause, .account-notifications-tab-email .icon-play, .account-notifications-tab-email .icon-pause {
   background-image: none;
 }
@@ -8538,7 +8534,7 @@ h3.rs_read_this .rsbtn_player {
 @media (min-width: 960px), print {
   /* line 47, ../css.source/mixins/_rs-play-button.scss */
   .account-notifications-tab-notifications-empty .rsbtn_player {
-    top: 22px;
+    top: -30px;
   }
 }
 
@@ -8737,11 +8733,7 @@ h3.rs_read_this .rsbtn_player {
 }
 
 @media (min-width: 650px), print {
-<<<<<<< Updated upstream
-  /* line 527, ../css.source/modules/_readspeaker-layout.scss */
-=======
-  /* line 528, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+  /* line 533, ../css.source/modules/_readspeaker-layout.scss */
   .account-connect-links {
     position: inherit;
   }
@@ -8779,11 +8771,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 @media (min-width: 480px) and (min-width: 650px), print {
-<<<<<<< Updated upstream
-  /* line 533, ../css.source/modules/_readspeaker-layout.scss */
-=======
-  /* line 534, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+  /* line 539, ../css.source/modules/_readspeaker-layout.scss */
   .account-connect-links .rsbtn_player {
     top: -24px;
   }
@@ -9013,38 +9001,22 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 @media (max-width: 649px), print {
-<<<<<<< Updated upstream
-  /* line 585, ../css.source/modules/_readspeaker-layout.scss */
-=======
-  /* line 586, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+  /* line 591, ../css.source/modules/_readspeaker-layout.scss */
   .inner-container .rsbtn_player {
     display: none;
   }
 }
 
-<<<<<<< Updated upstream
-/* line 593, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 594, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 599, ../css.source/modules/_readspeaker-layout.scss */
 .toolkit-thumbnails-container .thumbnail .rsbtn_player {
   display: none;
 }
 @media (min-width: 650px), print {
-<<<<<<< Updated upstream
-  /* line 593, ../css.source/modules/_readspeaker-layout.scss */
-  .toolkit-thumbnails-container .thumbnail .rsbtn_player {
-    display: block;
-  }
   /* line 599, ../css.source/modules/_readspeaker-layout.scss */
-=======
-  /* line 594, ../css.source/modules/_readspeaker-layout.scss */
   .toolkit-thumbnails-container .thumbnail .rsbtn_player {
     display: block;
   }
-  /* line 600, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+  /* line 605, ../css.source/modules/_readspeaker-layout.scss */
   .toolkit-thumbnails-container .thumbnail .rsbtn_player.rshidden {
     display: none;
   }
@@ -9564,11 +9536,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-<<<<<<< Updated upstream
-/* line 706, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 707, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 712, ../css.source/modules/_readspeaker-layout.scss */
 .grid-row .rs_read_this {
   position: static;
 }
@@ -10372,11 +10340,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-<<<<<<< Updated upstream
-/* line 862, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 863, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 868, ../css.source/modules/_readspeaker-layout.scss */
 .community-q-a h2.rs_read_this, .community-parents h2.rs_read_this, .community-blogs-more h2.rs_read_this, .community-our-blogs h2.rs_read_this, .community-blogs-main h2.rs_read_this {
   position: relative;
 }
@@ -10424,11 +10388,7 @@ h3.rs_read_this .rsbtn_player {
     top: -28px;
   }
 }
-<<<<<<< Updated upstream
-/* line 867, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 868, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 873, ../css.source/modules/_readspeaker-layout.scss */
 .community-q-a .card, .community-parents .card, .community-blogs-more .card, .community-our-blogs .card, .community-blogs-main .card {
   position: relative;
 }
@@ -10648,20 +10608,12 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-<<<<<<< Updated upstream
-/* line 916, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 917, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 922, ../css.source/modules/_readspeaker-layout.scss */
 .individual-board .search-board {
   float: left;
 }
 @media (min-width: 960px), print {
-<<<<<<< Updated upstream
-  /* line 916, ../css.source/modules/_readspeaker-layout.scss */
-=======
-  /* line 917, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+  /* line 922, ../css.source/modules/_readspeaker-layout.scss */
   .individual-board .search-board {
     float: none;
   }
@@ -11017,11 +10969,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-<<<<<<< Updated upstream
-/* line 994, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 995, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 1000, ../css.source/modules/_readspeaker-layout.scss */
 .results-slider {
   text-indent: -99999px;
 }
@@ -11325,11 +11273,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-<<<<<<< Updated upstream
-/* line 1066, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 1067, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 1072, ../css.source/modules/_readspeaker-layout.scss */
 .expert-event-container .expert-event, .expert-event-container .expert-blog-post, .expert-blog-post-container .expert-event, .expert-blog-post-container .expert-blog-post {
   position: relative;
 }
@@ -11399,11 +11343,7 @@ h3.rs_read_this .rsbtn_player {
     top: -20px;
   }
 }
-<<<<<<< Updated upstream
-/* line 1080, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 1081, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 1086, ../css.source/modules/_readspeaker-layout.scss */
 .personalize-interests-rs-wrapper.social-emotional-rs-wrapper, .personalize-interests-rs-wrapper.home-life-rs-wrapper, .itemize-child-rs-wrapper.social-emotional-rs-wrapper, .itemize-child-rs-wrapper.home-life-rs-wrapper {
   position: relative;
 }
@@ -11474,11 +11414,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 @media (min-width: 1028px), print {
-<<<<<<< Updated upstream
-  /* line 1093, ../css.source/modules/_readspeaker-layout.scss */
-=======
-  /* line 1094, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+  /* line 1099, ../css.source/modules/_readspeaker-layout.scss */
   .l-about-hero-intro .rsbtn_player {
     left: -36px;
   }
@@ -11501,11 +11437,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-<<<<<<< Updated upstream
-/* line 1105, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 1106, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 1111, ../css.source/modules/_readspeaker-layout.scss */
 .about-donate-rs-wrapper {
   position: relative;
 }
@@ -11533,11 +11465,7 @@ h3.rs_read_this .rsbtn_player {
 }
 
 @media (min-width: 769px), print {
-<<<<<<< Updated upstream
-  /* line 1113, ../css.source/modules/_readspeaker-layout.scss */
-=======
-  /* line 1114, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+  /* line 1119, ../css.source/modules/_readspeaker-layout.scss */
   .pay-by-check.about-donate-rs-wrapper .rsbtn_player,
   .pay-by-credit.about-donate-rs-wrapper .rsbtn_player,
   .form-group-rs-wrapper .rsbtn_player {
@@ -11579,11 +11507,7 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-<<<<<<< Updated upstream
-/* line 1130, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 1131, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 1136, ../css.source/modules/_readspeaker-layout.scss */
 #rsToggle {
   z-index: 9999;
 }
@@ -11674,20 +11598,12 @@ h3.rs_read_this .rsbtn_player {
   }
 }
 
-<<<<<<< Updated upstream
-/* line 1155, ../css.source/modules/_readspeaker-layout.scss */
-=======
-/* line 1156, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+/* line 1161, ../css.source/modules/_readspeaker-layout.scss */
 .skiplink-sidebar {
   display: none;
 }
 @media (min-width: 650px), print {
-<<<<<<< Updated upstream
-  /* line 1155, ../css.source/modules/_readspeaker-layout.scss */
-=======
-  /* line 1156, ../css.source/modules/_readspeaker-layout.scss */
->>>>>>> Stashed changes
+  /* line 1161, ../css.source/modules/_readspeaker-layout.scss */
   .skiplink-sidebar {
     display: block;
   }
