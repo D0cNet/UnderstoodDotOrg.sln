@@ -23,7 +23,7 @@ namespace UnderstoodDotOrg.Framework.UI
         static public void ProfileRedirect(this BaseSublayout page, UnderstoodDotOrg.Common.Constants.UserPermission permission, string UrlToGoto = null, bool preserveURL = false)
         {
             // only set redirect if we don't already have a place to go back to - this will allow us to "chain" permission checks without losing original return URL
-            if (page.Session[Constants.SessionPreviousUrl] == null)
+            if (page.Session[Constants.SessionPreviousUrl] == null && !preserveURL)
             {
                 page.Session[Constants.SessionPreviousUrl] = page.Page.Request.RawUrl;    
             }
