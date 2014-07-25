@@ -54,68 +54,56 @@
 <script type="text/javascript" src="http://files.brightcove.com/markup.min.js"></script>
 <script type="text/javascript">
 
+    $("#gameboard").addClass("<%= IssueItem.SimulationCssClass.Raw %>");
+
     // config for experience
     var experienceConfig = {
         // whether or not this is a personalized experience
-        isPersonalized: <%= IsPersonalized.ToString().ToLower() %>,
+        isPersonalized: true,
         // start step of the experience, should always be set at 0
         start: 0,
         // steps for experience
         steps: [
-            <% if (IsPersonalized) { %>
-            {
-                // type: video or sim
-                type: 'video',
-                // vid: object with default and hardcoded id
-                vid: {
-                    // id of defaut vid
-                    'default': '<%= IntroductionVideo.WithoutSubtitlesVideoId %>',
-                    // id of vid with hardcoded subtitles
-                    'hardcoded': '<%= IntroductionVideo.WithSubtitlesVideoId %>'
-                }
-            },
-            {
-                // simulation type
-                type: 'sim'
-            },
-            {
-                type: 'video',
-                vid: {
-                    'default': '<%= ExpertSummaryVideo.WithoutSubtitlesVideoId %>',
-                    'hardcoded': '<%= ExpertSummaryVideo.WithSubtitlesVideoId %>'
-                }
-            },
-            {
-                type: 'video',
-                vid: {
-                    'default': '<%= ChildStoryVideo.WithoutSubtitlesVideoId %>',
-                    'hardcoded': '<%= ChildStoryVideo.WithSubtitlesVideoId %>'
-                }
-            }
-            <% } else if (IsStandaloneSimulation) { %>
-            {
-                type: 'sim'
-            }
-            <% } else { %>
-            {
-                type: 'video',
-                vid: {
-                    'default': '<%= OnDemandVideo.WithoutSubtitlesVideoId %>',
-                    'hardcoded': '<%= OnDemandVideo.WithSubtitlesVideoId %>'
-                }
-            }
-            <% } %>
+          {
+              // type: video or sim
+              type: 'video',
+              // vid: object with default and hardcoded id
+              vid: {
+                  // id of defaut vid
+                  'default': '<%= IntroductionVideo.WithoutSubtitlesVideoId %>',
+                  // if of vid with hardcoded subtitles
+                  'hardcoded': '<%= IntroductionVideo.WithSubtitlesVideoId %>'
+              }
+          },
+          {
+              // simulation type
+              type: 'sim'
+          },
+          {
+              type: 'video',
+              vid: {
+                  'default': '<%= ExpertSummaryVideo.WithoutSubtitlesVideoId %>',
+                  'hardcoded': '<%= ExpertSummaryVideo.WithSubtitlesVideoId %>'
+              }
+          },
+          {
+              type: 'video',
+              vid: {
+                  'default': '<%= ChildStoryVideo.WithoutSubtitlesVideoId %>',
+                  'hardcoded': '<%= ChildStoryVideo.WithSubtitlesVideoId %>'
+              }
+          }
         ],
         // path to where the next button should take user at the end of the simulation
         next: '<%= NextPagePath %>',
         // config for simulation
         simConfig : {
-            // the language of the sim
-            // language: 'en' or 'es'
-            language: '<%= ContextLanuguage.InnerItem["Iso"] %>',
-            // the mode of the presentation
-            // presentationMode: 'normal' or 'standalone'
-            presentationMode: '<%= IsPersonalized ? "normal" : "standalone" %>'
+          // the language of the sim
+          // language: 'en' or 'es'
+          language: 'en',
+          // the mode of the presentation
+          // presentationMode: 'normal' or 'standalone'
+          presentationMode: 'normal'
         }
     };
 

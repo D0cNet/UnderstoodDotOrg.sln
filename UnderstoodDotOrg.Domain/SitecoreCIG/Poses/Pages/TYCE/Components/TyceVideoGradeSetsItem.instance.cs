@@ -38,20 +38,6 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components
                 return new CustomMultiListField(InnerItem, InnerItem.Fields["Child Story Without Subtitles"]);
             }
         }
-        public CustomMultiListField OnDemandWithSubtitles
-        {
-            get
-            {
-                return new CustomMultiListField(InnerItem, InnerItem.Fields["On Demand With Subtitles"]);
-            }
-        }
-        public CustomMultiListField OnDemandWithoutSubtitles
-        {
-            get
-            {
-                return new CustomMultiListField(InnerItem, InnerItem.Fields["On Demand Without Subtitles"]);
-            }
-        }
         #endregion
     }
 }

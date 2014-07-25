@@ -59,12 +59,6 @@ public CustomLookupField GradeGroup
 //Could not find Field Type for Child Story Without Subtitles
 
 
-//Could not find Field Type for On Demand With Subtitles
-
-
-//Could not find Field Type for On Demand Without Subtitles
-
-
 #endregion //Field Instance Methods
 }
 }

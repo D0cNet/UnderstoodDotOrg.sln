@@ -6,7 +6,7 @@ using Sitecore.Web.UI.WebControls;
 using CustomItemGenerator.Fields.LinkTypes;
 using CustomItemGenerator.Fields.ListTypes;
 using CustomItemGenerator.Fields.SimpleTypes;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components
 {
@@ -79,11 +79,11 @@ public CustomTreeListField SimulationCSS
 }
 
 
-public CustomTextField GameboardMarkup
+public CustomTextField SimulationCssClass
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Gameboard Markup"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Simulation CssClass"]);
 	}
 }
 

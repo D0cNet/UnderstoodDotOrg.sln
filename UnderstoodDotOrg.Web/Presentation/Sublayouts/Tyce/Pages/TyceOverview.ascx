@@ -37,7 +37,7 @@
                     ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components.ChildLearningIssueItem">
                     <ItemTemplate>
                         <li>
-                            <a href="<%= PlayerPageItem.GetUrl() %>?simq=<%# Item.ID.Guid %>&standalone=true">
+                            <a href="<%= QuestionsPageItem.GetUrl() %>?simq=<%# Item.ID.Guid %>">
                                 <h4>
                                     <%# Item.ChildDemographic.NavigationTitle.Rendered %>
                                 </h4>
@@ -82,7 +82,7 @@
                     <asp:Repeater ID="rptrIssues" runat="server">
                         <ItemTemplate>
                             <li>
-                                <a href="<%= PlayerPageItem.GetUrl() %>?simq=<%# Eval("Issue.ID.Guid") %>&gradeId=<%# Eval("InRangeGradeId") %>&standalone=true">
+                                <a href="<%= PlayerPageItem.GetUrl() %>?simq=<%# Eval("Issue.ID.Guid") %>&gradeId=<%# Eval("InRangeGradeId") %>">
                                     <h4><%# Eval("Issue.ChildDemographic.NavigationTitle.Rendered") %></h4>
                                     <img alt="FPO content image" src="http://placehold.it/150x84&amp;text=150x84" /><i class="icon play"></i>
                                 </a>
