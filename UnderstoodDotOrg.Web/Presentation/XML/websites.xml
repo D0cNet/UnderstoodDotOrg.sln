@@ -1,15 +1,185 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:csm="http://www.commonsensemedia.org/feed/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
   <title>Common Sense Media</title>
   <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org"/>
   <link rel="self" type="application/atom+xml" href="http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&amp;channel=website&amp;special_needs=1"/>
-  <updated>2014-06-13T10:38:48-07:00</updated>
+  <updated>2014-07-25T08:33:43-07:00</updated>
   <author>
     <name>Common Sense Media</name>
     <email>feeds@commonsensemedia.org</email>
     <uri>http://www.commonsensemedia.org</uri>
   </author>
   <id>"http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&amp;channel=website&amp;special_needs=1"</id>
+  <entry>
+    <id>urn:nid:4839001</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/dragon-naturallyspeaking-home-12"/>
+    <category term="website"/>
+    <published>2014-02-10T09:51:00-08:00</published>
+    <updated>2014-07-15T16:30:01-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[Dragon NaturallySpeaking Home 12]]></title>
+    <summary><![CDATA[Talk instead of type with stellar speech-to-text tool.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/ss1-dns-logo.jpeg?itok=hRvt1eRk</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss2-dns-word-example.gif?itok=ZbVt3fxc</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss3-dns-help.gif?itok=SOFQq-E5</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss4-dns-formatting-choices.gif?itok=MJuP-xWZ</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss5-dns-dragon-bar.gif?itok=ttrJgE6r</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>www.Nuance.com</csm:url>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="8" off_age="5" on_age="8" rating="on">OK for kids 8+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Dragon NaturallySpeaking (DNS) is a very powerful program that can turn dictation into text with typing as fast as 60 words per minute with up to 98 percent accuracy. However, you'll want to be aware that these results depend on very careful and rigorous training in a very quiet environment. DNS can be really helpful for any kid who is having difficulty physically using a mouse and/or keyboard. It can replace those tools, is faster than any other alternate input method, and can rival or exceed typical typing speeds. Kids' success depends on very careful initial training, with all word and pronunciation errors fully corrected; otherwise the program will keep repeating its early mistakes. For this reason, kids can often find it frustrating, but the end result is worth the pain.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Consumerism" rating="1"><![CDATA[The program costs $99.99 (but discounts can be found at various outlets).]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[Not applicable]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="4"><![CDATA[Nuance requests to collect speech information for the purposes of improving their speech-recognition engine. They state that they do not collect or save any of the content. Users can opt out of any data collection.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[DRAGON NATURALLYSPEAKING (DNS) is a speech-to-text program that lets kids interact with the computer by voice. They can dictate or change documents, spreadsheets, and emails or browse online, often faster than by using the keyboard and mouse. Also, kids who have difficulty with the keyboard or mouse can completely control the computer via voice. It's software, so you'll install DNS onto your computer, then follow instructions for setup. Since we all speak uniquely, DNS asks kids to read passages into the microphone to "train" it to their voices. Recognition also continues to improve over time but only if corrected every time the software makes a mistake. There are training materials available including an online tutorial, videos, a sidebar with commands, a print manual, a workbook, and "cheat sheets."]]></csm:description>
+      <csm:any_good><![CDATA[DNS is very good and the most popular voice-recognition program available. It's a very powerful program that does require careful training and use in an environment that controls ambient noise for best results. It's a really valuable tool for any child having difficulty using a traditional keyboard or mouse, and it could also be of use to kids with learning disabilities. The controls work very well. DNS can be trained initially to a new user's voice in about half an hour, which is good enough for beginning dictation. It continues to "learn" a user's voice, however, so rigorous corrections are essential. (Parents will definitely have to help with this part.) Complete computer control by voice is possible with DNS, but it requires learning numerous commands and has a steeper learning curve. As with many sophisticated computer programs, kids will master the part of it that they use regularly and figure out the rest as needed.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Work with your child for the initial training session(s). Encourage them to talk in a normal voice. Make sure their voice profile isn't saved until all corrections have been made.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[If your kid has difficulty reading the training text, whisper it to them so they can repeat it in a normal voice.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="5">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Kids will learn the power of controlling a computer by voice. Many will stop at being able to dictate, correct, format and print text, while others, including those with motor disabilities, will want or need to completely control the computer by voice. For this, they'll have to learn additional commands and strategies. Command options can be continuously displayed in a sidebar, so they don't have to memorize if they don't want to. It's also critical for kids to learn how to make voice corrections; otherwise accuracy is very quickly reduced to frustrating levels. Dragon Naturally Speaking is an outstanding tool that can suit lots of kids' needs, giving them more freedom on a computer and in the world.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="spelling" id="21747"/>
+            <csm:category name="vocabulary" id="21767"/>
+            <csm:category name="writing" id="21771"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="5"><![CDATA[All kids are intrigued by the possibility of talking to the computer -- it's fun! Kids with disabilities who can't use a mouse and a keyboard are the most excited and the most likely to work through any early frustration.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="5"><![CDATA[After initial training, kids get immediate feedback on whether their speech was recognized correctly or not. For many, the first opportunity to control a computer is very empowering.]]></csm:dimension>
+          <csm:dimension name="Support" rating="5"><![CDATA[There are built-in tutorials as well as a wealth of online support. Kids can use a sidebar with command choices to increase dictation accuracy.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="ADHD" id="21512">
+          <csm:category name="Disinhibitions" id="21514"/>
+          <csm:category name="Disorganization" id="21516"/>
+          <csm:category name="Distractability" id="21515"/>
+          <csm:category name="Hyperactivity" id="21518"/>
+          <csm:category name="Impulsivity" id="21513"/>
+          <csm:category name="Inattention" id="21517"/>
+        </csm:category>
+        <csm:category name="Dysgraphia" id="21533">
+          <csm:category name="Fine motor issues" id="21535"/>
+          <csm:category name="Language processing" id="21536"/>
+          <csm:category name="Spelling issues" id="21537"/>
+          <csm:category name="Visual/spatial issues" id="21534"/>
+        </csm:category>
+        <csm:category name="Dyspraxia" id="21574">
+          <csm:category name="Fine motor issues" id="21575"/>
+          <csm:category name="Gross motor issues" id="21576"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
+  <entry>
+    <id>urn:nid:4841946</id>
+    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/bookshare"/>
+    <category term="website"/>
+    <published>2014-02-14T12:59:00-08:00</published>
+    <updated>2014-07-15T16:10:02-07:00</updated>
+    <author>
+      <name>ADK AccessAbility</name>
+    </author>
+    <title><![CDATA[Bookshare]]></title>
+    <summary><![CDATA[Welcome kids with print disabilities to the world of books.]]></summary>
+    <csm:product xs:type="website">
+      <csm:awards>
+      </csm:awards>
+      <csm:images>
+        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/bookshare-home-page.png?itok=MDlcpNIC</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-getting-started.png?itok=A1GuJzWZ</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-book-description.png?itok=ESFP1YKj</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-book-selection.png?itok=g_2Ixr0g</csm:image>
+        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-membership-options.png?itok=yBqoGyIS</csm:image>
+      </csm:images>
+      <csm:genre id="20233">Educational</csm:genre>
+      <csm:url>https://www.bookshare.org/</csm:url>
+    </csm:product>
+    <csm:review star_rating="5">
+      <csm:slider not_for_kids="0" target_age="5" off_age="4" on_age="5" rating="on">OK for kids 5+</csm:slider>
+      <csm:parents_need_to_know><![CDATA[Parents need to know that Bookshare is an outstanding online library of digital books for kids with print disabilities. Bookshare membership is available to kids who provide proof of their print disability, such as blindness or low vision, a learning disability, or a physical disability that makes it difficult or impossible to read standard print. Downloaded books (including textbooks, kid-friendly novels, and more) can be read with a Web browser, free computer applications, or mobile device apps. Used with these tools, Bookshare allows kids to independently read more than 200,000 titles that they may not have been able to access otherwise.]]></csm:parents_need_to_know>
+      <csm:content_grid>
+        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Bookshare is a digital library containing books of all types including those with violent content. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Bookshare is a digital library containing books of all types including those with sexual content. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Language" rating="0"><![CDATA[Bookshare is a digital library containing books of all types including those with adult language. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[There's nothing for sale except Bookshare's initial membership, which is free for the majority of kids using it.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Bookshare is a library containing books of all types including those with adult content. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
+        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[No personal data leaves the Bookshare website. Schools provide the roster of eligible students to Bookshare but have the option of using student pseudonyms or numbers.]]></csm:content_grid_item>
+      </csm:content_grid>
+      <csm:description><![CDATA[Bookshare is an online library of digital books for people with print disabilities. Once membership is set up (which is free for all qualifying kids), logging in and learning to use the Bookshare website is straightforward. Kids will use their mobile device or computer to browse a huge library of books and choose one to download to read or have it read to them when and how they want. Books come in two file formats, DAISY (Digital Accessible Information System) and BRF (Braille Refreshable Format); you'll need corresponding programs to read each type. There's a Getting Started section that covers how to find, download, and read books, as well as reading tools available.]]></csm:description>
+      <csm:any_good><![CDATA[Bookshare is a fantastic resource and the only digital library of its kind. There are other sources of digital textbooks and educational material out there, but Bookshare opens the door to all types of reading, even the fun stuff. New books and publications are added frequently, so kids won't feel behind their peers on the latest addition to the Percy Jackson or Diary of a Wimpy Kid series. Plus, thanks to a Department of Education grant, it's totally free for kids who qualify. This digital equivalent of the public library really levels the playing field for kids with print disabilities.]]></csm:any_good>
+      <csm:talking_points>
+        <csm:talking_point><![CDATA[Turn your kid's school onto Bookshare so it can get an organizational membership.]]></csm:talking_point>
+        <csm:talking_point><![CDATA[Help your kid find books on their favorite subjects; they'll be excited to browse the wide selection.]]></csm:talking_point>
+      </csm:talking_points>
+      <csm:themes>
+      </csm:themes>
+      <csm:alternatives>
+        <csm:item id="4395311">
+          <csm:title><![CDATA[LitPick]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/website-reviews/litpick</csm:url>
+        </csm:item>
+        <csm:item id="3186761">
+          <csm:title><![CDATA[Reading Rainbow]]></csm:title>
+          <csm:url>http://www.commonsensemedia.org/app-reviews/reading-rainbow</csm:url>
+        </csm:item>
+      </csm:alternatives>
+      <csm:hidden_gem/>
+      <csm:learning_rating value="5">
+        <csm:author>ADK AccessAbility</csm:author>
+        <csm:what_kids_can_learn><![CDATA[Once they qualify for a membership and have access to the entire library at their fingertips, kids can learn absolutely anything. Bookshare's selection has nearly everything a standard library does, from astronomy to zebras, and kids can explore their favorite subjects with ease. This level of accessibility can rekindle enthusiasm for many kids who struggle with reading traditionally, including those with learning disabilities, cognitive disabilities, physical limitations or vision-related issues. Bookshare is an incredible digital library service that provides a powerful sense of independence for many kids.]]></csm:what_kids_can_learn>
+        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
+        <csm:subjects>
+          <csm:category name="Language &amp; Reading" id="21641">
+            <csm:category name="reading comprehension" id="21728"/>
+          </csm:category>
+        </csm:subjects>
+        <csm:skills>
+          <csm:category name="Self-Direction" id="21651">
+            <csm:category name="personal growth" id="21809"/>
+            <csm:category name="working efficiently" id="21831"/>
+          </csm:category>
+        </csm:skills>
+        <csm:dimensions>
+          <csm:dimension name="Engagement" rating="5"><![CDATA[It's as engaging as browsing in a library or bookstore  kids who love to read will be thrilled at the selection.]]></csm:dimension>
+          <csm:dimension name="Learning Approach" rating="5"><![CDATA[Kids can search the library by subject, author, or title, making choices and gaining a new sense of empowerment and equity with their peers.]]></csm:dimension>
+          <csm:dimension name="Support" rating="5"><![CDATA[Excellent online help and an FAQ page are available on the website, as well links to demonstration videos on membership, searching, downloading and reading.]]></csm:dimension>
+        </csm:dimensions>
+      </csm:learning_rating>
+      <csm:special_needs assistive="1">
+        <csm:category name="Visual processing issue" id="21553">
+          <csm:category name="Visual discrimination" id="21554"/>
+        </csm:category>
+      </csm:special_needs>
+    </csm:review>
+  </entry>
   <entry>
     <id>urn:nid:1263334</id>
     <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/zisboombah"/>
@@ -484,86 +654,6 @@
     </csm:review>
   </entry>
   <entry>
-    <id>urn:nid:4841946</id>
-    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/bookshare"/>
-    <category term="website"/>
-    <published>2014-02-14T12:59:00-08:00</published>
-    <updated>2014-04-17T11:10:01-07:00</updated>
-    <author>
-      <name>ADK AccessAbility</name>
-    </author>
-    <title><![CDATA[Bookshare]]></title>
-    <summary><![CDATA[Welcome kids with print disabilities to the world of books.]]></summary>
-    <csm:product xs:type="website">
-      <csm:awards>
-      </csm:awards>
-      <csm:images>
-        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/bookshare-home-page.png?itok=MDlcpNIC</csm:image>
-        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-getting-started.png?itok=A1GuJzWZ</csm:image>
-        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-book-description.png?itok=ESFP1YKj</csm:image>
-        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-book-selection.png?itok=g_2Ixr0g</csm:image>
-        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/bookshare-membership-options.png?itok=yBqoGyIS</csm:image>
-      </csm:images>
-      <csm:genre id="20233">Educational</csm:genre>
-      <csm:url>https://www.bookshare.org/</csm:url>
-    </csm:product>
-    <csm:review star_rating="5">
-      <csm:slider not_for_kids="0" target_age="5" off_age="4" on_age="5" rating="on">OK for kids 5+</csm:slider>
-      <csm:parents_need_to_know><![CDATA[Parents need to know that Bookshare is an outstanding online library of digital books for kids with print disabilities. Bookshare membership is available to kids who provide proof of their print disability, such as blindness or low vision, a learning disability, or a physical disability that makes it difficult or impossible to read standard print. Downloaded books (including textbooks, kid-friendly novels, and more) can be read with a Web browser, free computer applications, or mobile device apps. Used with these tools, Bookshare allows kids to independently read more than 200,000 titles that they may not have been able to access otherwise.]]></csm:parents_need_to_know>
-      <csm:content_grid>
-        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Bookshare is a digital library containing books of all types including those with violent content. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
-        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Bookshare is a digital library containing books of all types including those with sexual content. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
-        <csm:content_grid_item name="Language" rating="0"><![CDATA[Bookshare is a digital library containing books of all types including those with adult language. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
-        <csm:content_grid_item name="Consumerism" rating="0"><![CDATA[There's nothing for sale except Bookshare's initial membership, which is free for the majority of kids using it.]]></csm:content_grid_item>
-        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Bookshare is a library containing books of all types including those with adult content. These are tagged "adult content". Members under the age of 18 can only download books with adult content on the written request of their parent or guardian.]]></csm:content_grid_item>
-        <csm:content_grid_item name="Privacy &amp; safety" rating="5"><![CDATA[No personal data leaves the Bookshare website. Schools provide the roster of eligible students to Bookshare but have the option of using student pseudonyms or numbers.]]></csm:content_grid_item>
-      </csm:content_grid>
-      <csm:description><![CDATA[Bookshare is an online library of digital books for people with print disabilities. Once membership is set up (which is free for all qualifying kids), logging in and learning to use the Bookshare website is straightforward. Kids will use their mobile device or computer to browse a huge library of books and choose one to download to read or have it read to them when and how they want. Books come in two file formats, DAISY (Digital Accessible Information System) and BRF (Braille Refreshable Format); you'll need corresponding programs to read each type. There's a Getting Started section that covers how to find, download, and read books, as well as reading tools available.]]></csm:description>
-      <csm:any_good><![CDATA[Bookshare is a fantastic resource and the only digital library of its kind. There are other sources of digital textbooks and educational material out there, but Bookshare opens the door to all types of reading, even the fun stuff. New books and publications are added frequently, so kids won't feel behind their peers on the latest addition to the Percy Jackson or Diary of a Wimpy Kid series. Plus, thanks to a Department of Education grant, it's totally free for kids who qualify. This digital equivalent of the public library really levels the playing field for kids with print disabilities.]]></csm:any_good>
-      <csm:talking_points>
-        <csm:talking_point><![CDATA[Turn your kid's school onto Bookshare so it can get an organizational membership.]]></csm:talking_point>
-        <csm:talking_point><![CDATA[Help your kid find books on their favorite subjects; they'll be excited to browse the wide selection.]]></csm:talking_point>
-      </csm:talking_points>
-      <csm:themes>
-      </csm:themes>
-      <csm:alternatives>
-        <csm:item id="4395311">
-          <csm:title><![CDATA[LitPick]]></csm:title>
-          <csm:url>http://www.commonsensemedia.org/website-reviews/litpick</csm:url>
-        </csm:item>
-        <csm:item id="3186761">
-          <csm:title><![CDATA[Reading Rainbow]]></csm:title>
-          <csm:url>http://www.commonsensemedia.org/app-reviews/reading-rainbow</csm:url>
-        </csm:item>
-      </csm:alternatives>
-      <csm:hidden_gem/>
-      <csm:learning_rating value="5">
-        <csm:author>ADK AccessAbility</csm:author>
-        <csm:what_kids_can_learn><![CDATA[Once they qualify for a membership and have access to the entire library at their fingertips, kids can learn absolutely anything. Bookshare's selection has nearly everything a standard library does, from astronomy to zebras, and kids can explore their favorite subjects with ease. This level of accessibility can rekindle enthusiasm for many kids who struggle with reading traditionally, including those with learning disabilities, cognitive disabilities, physical limitations or vision-related issues. Bookshare is an incredible digital library service that provides a powerful sense of independence for many kids.]]></csm:what_kids_can_learn>
-        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
-        <csm:subjects>
-          <csm:category name="Language &amp; Reading" id="21641">
-            <csm:category name="reading" id="21726"/>
-            <csm:category name="reading comprehension" id="21728"/>
-          </csm:category>
-        </csm:subjects>
-        <csm:skills>
-          <csm:category name="Self-Direction" id="21651"/>
-        </csm:skills>
-        <csm:dimensions>
-          <csm:dimension name="Engagement" rating="5"><![CDATA[It's as engaging as browsing in a library or bookstore  kids who love to read will be thrilled at the selection.]]></csm:dimension>
-          <csm:dimension name="Learning Approach" rating="5"><![CDATA[Kids can search the library by subject, author, or title, making choices and gaining a new sense of empowerment and equity with their peers.]]></csm:dimension>
-          <csm:dimension name="Support" rating="5"><![CDATA[Excellent online help and an FAQ page are available on the website, as well links to demonstration videos on membership, searching, downloading and reading.]]></csm:dimension>
-        </csm:dimensions>
-      </csm:learning_rating>
-      <csm:special_needs assistive="1">
-        <csm:category name="Visual processing issue" id="21553">
-          <csm:category name="Visual discrimination" id="21554"/>
-        </csm:category>
-      </csm:special_needs>
-    </csm:review>
-  </entry>
-  <entry>
     <id>urn:nid:4839106</id>
     <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/read-write-gold-11"/>
     <category term="website"/>
@@ -808,95 +898,6 @@
         <csm:category name="Visual processing issue" id="21553">
           <csm:category name="Letter and symbol reversal problems" id="21561"/>
           <csm:category name="Visual discrimination" id="21554"/>
-        </csm:category>
-      </csm:special_needs>
-    </csm:review>
-  </entry>
-  <entry>
-    <id>urn:nid:4839001</id>
-    <link rel="alternate" type="text/html" href="http://www.commonsensemedia.org/website-reviews/dragon-naturallyspeaking-home-12"/>
-    <category term="website"/>
-    <published>2014-02-10T09:51:00-08:00</published>
-    <updated>2014-03-20T00:18:07-07:00</updated>
-    <author>
-      <name>ADK AccessAbility</name>
-    </author>
-    <title><![CDATA[Dragon NaturallySpeaking Home 12]]></title>
-    <summary><![CDATA[Talk instead of type with stellar speech-to-text tool.]]></summary>
-    <csm:product xs:type="website">
-      <csm:awards>
-      </csm:awards>
-      <csm:images>
-        <csm:image type="product">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_product_large/public/product-images/csm-website/ss1-dns-logo.jpeg?itok=hRvt1eRk</csm:image>
-        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss2-dns-word-example.gif?itok=ZbVt3fxc</csm:image>
-        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss3-dns-help.gif?itok=SOFQq-E5</csm:image>
-        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss4-dns-formatting-choices.gif?itok=MJuP-xWZ</csm:image>
-        <csm:image type="screenshot">http://d2e111jq13me73.cloudfront.net/sites/default/files/styles/api_screenshot/public/screenshots/csm-website/ss5-dns-dragon-bar.gif?itok=ttrJgE6r</csm:image>
-      </csm:images>
-      <csm:genre id="20233">Educational</csm:genre>
-      <csm:url>www.Nuance.com</csm:url>
-    </csm:product>
-    <csm:review star_rating="5">
-      <csm:slider not_for_kids="0" target_age="8" off_age="5" on_age="8" rating="on">OK for kids 8+</csm:slider>
-      <csm:parents_need_to_know><![CDATA[Dragon NaturallySpeaking (DNS) is a very powerful program that can turn dictation into text with typing as fast as 60 words per minute with up to 98 percent accuracy. However, you'll want to be aware that these results depend on very careful and rigorous training in a very quiet environment. DNS can be really helpful for any kid who is having difficulty physically using a mouse and/or keyboard. It can replace those tools, is faster than any other alternate input method, and can rival or exceed typical typing speeds. Kids' success depends on very careful initial training, with all word and pronunciation errors fully corrected; otherwise the program will keep repeating its early mistakes. For this reason, kids can often find it frustrating, but the end result is worth the pain.]]></csm:parents_need_to_know>
-      <csm:content_grid>
-        <csm:content_grid_item name="Violence &amp; scariness" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
-        <csm:content_grid_item name="Sexy Stuff" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
-        <csm:content_grid_item name="Language" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
-        <csm:content_grid_item name="Consumerism" rating="1"><![CDATA[The program costs $99.99 (but discounts can be found at various outlets).]]></csm:content_grid_item>
-        <csm:content_grid_item name="Drinking, drugs, &amp; smoking" rating="0"><![CDATA[Not applicable]]></csm:content_grid_item>
-        <csm:content_grid_item name="Ease of play" rating="4"><![CDATA[Not applicable]]></csm:content_grid_item>
-        <csm:content_grid_item name="Privacy &amp; safety" rating="4"><![CDATA[Nuance requests to collect speech information for the purposes of improving their speech-recognition engine. They state that they do not collect or save any of the content. Users can opt out of any data collection.]]></csm:content_grid_item>
-      </csm:content_grid>
-      <csm:description><![CDATA[DRAGON NATURALLYSPEAKING (DNS) is a speech-to-text program that lets kids interact with the computer by voice. They can dictate or change documents, spreadsheets, and emails or browse online, often faster than by using the keyboard and mouse. Also, kids who have difficulty with the keyboard or mouse can completely control the computer via voice. It's software, so you'll install DNS onto your computer, then follow instructions for setup. Since we all speak uniquely, DNS asks kids to read passages into the microphone to "train" it to their voices. Recognition also continues to improve over time but only if corrected every time the software makes a mistake. There are training materials available including an online tutorial, videos, a sidebar with commands, a print manual, a workbook, and "cheat sheets."]]></csm:description>
-      <csm:any_good><![CDATA[DNS is very good and the most popular voice-recognition program available. It's a very powerful program that does require careful training and use in an environment that controls ambient noise for best results. It's a really valuable tool for any child having difficulty using a traditional keyboard or mouse, and it could also be of use to kids with learning disabilities. The controls work very well. DNS can be trained initially to a new user's voice in about half an hour, which is good enough for beginning dictation. It continues to "learn" a user's voice, however, so rigorous corrections are essential. (Parents will definitely have to help with this part.) Complete computer control by voice is possible with DNS, but it requires learning numerous commands and has a steeper learning curve. As with many sophisticated computer programs, kids will master the part of it that they use regularly and figure out the rest as needed.]]></csm:any_good>
-      <csm:talking_points>
-        <csm:talking_point><![CDATA[Work with your child for the initial training session(s). Encourage them to talk in a normal voice. Make sure their voice profile isn't saved until all corrections have been made.]]></csm:talking_point>
-        <csm:talking_point><![CDATA[If your kid has difficulty reading the training text, whisper it to them so they can repeat it in a normal voice.]]></csm:talking_point>
-      </csm:talking_points>
-      <csm:themes>
-      </csm:themes>
-      <csm:alternatives>
-      </csm:alternatives>
-      <csm:hidden_gem/>
-      <csm:learning_rating value="5">
-        <csm:author>ADK AccessAbility</csm:author>
-        <csm:what_kids_can_learn><![CDATA[Kids will learn the power of controlling a computer by voice. Many will stop at being able to dictate, correct, format and print text, while others, including those with motor disabilities, will want or need to completely control the computer by voice. For this, they'll have to learn additional commands and strategies. Command options can be continuously displayed in a sidebar, so they don't have to memorize if they don't want to. It's also critical for kids to learn how to make voice corrections; otherwise accuracy is very quickly reduced to frustrating levels. Dragon Naturally Speaking is an outstanding tool that can suit lots of kids' needs, giving them more freedom on a computer and in the world.]]></csm:what_kids_can_learn>
-        <csm:how_parents_help><![CDATA[]]></csm:how_parents_help>
-        <csm:subjects>
-          <csm:category name="Language &amp; Reading" id="21641">
-            <csm:category name="speaking" id="21745"/>
-            <csm:category name="spelling" id="21747"/>
-            <csm:category name="vocabulary" id="21767"/>
-            <csm:category name="writing" id="21771"/>
-          </csm:category>
-        </csm:subjects>
-        <csm:skills>
-        </csm:skills>
-        <csm:dimensions>
-          <csm:dimension name="Engagement" rating="5"><![CDATA[All kids are intrigued by the possibility of talking to the computer -- it's fun! Kids with disabilities who can't use a mouse and a keyboard are the most excited and the most likely to work through any early frustration.]]></csm:dimension>
-          <csm:dimension name="Learning Approach" rating="5"><![CDATA[After initial training, kids get immediate feedback on whether their speech was recognized correctly or not. For many, the first opportunity to control a computer is very empowering.]]></csm:dimension>
-          <csm:dimension name="Support" rating="5"><![CDATA[There are built-in tutorials as well as a wealth of online support. Kids can use a sidebar with command choices to increase dictation accuracy.]]></csm:dimension>
-        </csm:dimensions>
-      </csm:learning_rating>
-      <csm:special_needs assistive="1">
-        <csm:category name="ADHD" id="21512">
-          <csm:category name="Disinhibitions" id="21514"/>
-          <csm:category name="Disorganization" id="21516"/>
-          <csm:category name="Distractability" id="21515"/>
-          <csm:category name="Hyperactivity" id="21518"/>
-          <csm:category name="Impulsivity" id="21513"/>
-          <csm:category name="Inattention" id="21517"/>
-        </csm:category>
-        <csm:category name="Dysgraphia" id="21533">
-          <csm:category name="Fine motor issues" id="21535"/>
-          <csm:category name="Language processing" id="21536"/>
-          <csm:category name="Spelling issues" id="21537"/>
-          <csm:category name="Visual/spatial issues" id="21534"/>
-        </csm:category>
-        <csm:category name="Dyspraxia" id="21574">
-          <csm:category name="Fine motor issues" id="21575"/>
-          <csm:category name="Gross motor issues" id="21576"/>
         </csm:category>
       </csm:special_needs>
     </csm:review>
@@ -1806,4 +1807,5 @@
       </csm:special_needs>
     </csm:review>
   </entry>
+
 </feed>
