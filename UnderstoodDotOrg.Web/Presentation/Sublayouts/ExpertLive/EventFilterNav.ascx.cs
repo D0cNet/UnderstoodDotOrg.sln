@@ -22,18 +22,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
         public string Issue { get; set; }
         public string Grade { get; set; }
         public string Topic { get; set; }
-
+        public bool IsRecommended { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             BindEvents();
 
             string featured = HttpHelper.GetQueryString(Constants.EVENT_FEATURED_FILTER_QUERY_STRING).Trim();
             IsFeatured = featured.ToLower() == "true";
-
+            string recommended = HttpHelper.GetQueryString(UnderstoodDotOrg.Common.Constants.EVENT_RECOMMENDED_FILTER_QUERY_STRING);
+            IsRecommended = recommended.ToLower() == "true";
             Issue = HttpHelper.GetQueryString(Constants.EVENT_ISSUE_FILTER_QUERY_STRING).Trim();
             Grade = HttpHelper.GetQueryString(Constants.EVENT_GRADE_FILTER_QUERY_STRING).Trim();
             Topic = HttpHelper.GetQueryString(Constants.EVENT_TOPIC_FILTER_QUERY_STRING).Trim();
-
+            litSelectedMenu.Text = DictionaryConstants.FilterByLabel;
             if (!IsPostBack)
             {
                 BindControls();
@@ -110,7 +111,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 if (Sitecore.Context.Item.ID == lf.TargetItem.ID)
                 {
                     bool hasMatch = false;
-
+         
                     // Selected state of filter item
                     if (string.IsNullOrEmpty(lf.QueryString))
                     {
@@ -119,15 +120,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                     else
                     {
                         // Handle featured
-                        string assembledUrl = String.Format("{0}?{1}", lf.TargetItem.GetUrl(), lf.QueryString);
-                        hasMatch = Request.Url.PathAndQuery.StartsWith(assembledUrl);
+                        //string assembledUrl = String.Format("{0}?{1}", lf.TargetItem.GetUrl(), lf.QueryString);
+                        //hasMatch = Request.Url.PathAndQuery.StartsWith(assembledUrl);
+                        hasMatch = Request.Url.PathAndQuery.Contains(lf.QueryString);
                     }
 
-                    //if (hasMatch) 
-                    //{
+                    if (hasMatch)
+                    {
                         litSelectedMenu.Text = lf.Text;
-                    //}
+                    }
+                  
+                     
                 }
+                
             }
         }
 
@@ -180,9 +185,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                         .Select(x => String.Format("{0}={1}", x.Key, x.Value))
                         ):String.Empty;
             
-            string parameters = (IsFeatured)
+            string parameters = 
+                (IsFeatured  )
                 ? String.Format("{0}=true"+ (String.IsNullOrEmpty(vars) ? "": "&{1}"), Constants.EVENT_FEATURED_FILTER_QUERY_STRING, vars)
-                : vars;
+                : (IsRecommended) ? String.Format("{0}=true" + (String.IsNullOrEmpty(vars) ? "" : "&{1}"), Constants.EVENT_RECOMMENDED_FILTER_QUERY_STRING, vars) : vars;
 
             Response.Redirect(String.Concat(baseUrl, parameters));
         }
