@@ -4,7 +4,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <div class="modal-close close"><i class="icon-close"></i><span>Close</span></div>
+                <div class="modal-close close"><i class="icon-close"></i><span><asp:Literal ID="litClose" runat="server" /></span></div>
 
 
             </div>
@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <!-- BEGIN PARTIAL: community/qa_already_asked_question -->
                 <div class="community-ask-question already-asked">
-                    <p class="already-asked-header">It looks like parents have already answered some questions like yours. See if these answers help.</p>
+                    <p class="already-asked-header"><sc:Text Field="Already Asked" runat="server" /></p>
 
                     <ul class="similar-answers">
                         <!-- BEGIN PARTIAL: community/question-asked -->
@@ -112,103 +112,60 @@
                     <!-- .show-more -->
 
                     <a class="button continue" href="REPLACE">
-                        <span>Still need help?</span>
-                        <span>Submit Your Question</span>
+                        <span><sc:Text Field="Already Asked" runat="server" /></span>
+                        <span><sc:Text Field="Still Need Help" runat="server" /></span>
                     </a>
                 </div>
                 <!-- END PARTIAL: community/qa_already_asked_question -->
                 <!-- BEGIN PARTIAL: community/qa_submit_question -->
                 <form id="Form1" runat="server">
                 <div class="community-ask-question submit-question">  
-                    <h1>Submit Your Question</h1>
-                    <h4 class="subhead">Add Your Question</h4>
+                    <h1><sc:Text Field="Submit Your Question" runat="server" /></h1>
+                    <h4 class="subhead"><sc:Text Field="Ask Your Question" runat="server" /></h4>
                     <asp:TextBox ID="EnterQuestionTextBox" class="question" minlength="100" MaxLength="1000" aria-required="required" required="required" placeholder="Enter your question..." runat="server" />
 
-                    <h4 class="subhead">Give your Question a Title</h4>
-                    <p>Write a short title that will help others understand what the question is about. e.g. Lorem ipsum dolor sit amet?</p>
+                    <h4 class="subhead"><sc:Text Field="Question Title" runat="server" /></h4>
+                    <p><sc:Text Field="Question Title Description" runat="server" /></p>
 
                     <asp:TextBox ID="QuestionTitleTextBox" class="question-title" minlength="100" MaxLength="100" aria-required="required" required="required" placeholder="Enter your question's title..." runat="server" />
-                    <p class="legend">Your title can be up to 100 characters</p>
+                    <p class="legend"><sc:Text Field="Question Title Length" runat="server" /></p>
 
                     <fieldset class="related-issues">
-                        <h4>Related issues (select all that apply):</h4>
+                        <h4><sc:Text Field="Related Issues Title" runat="server" />:</h4>
 
                         <div class="checkboxes">
-                            <div class="checkbox">
-                                <input type="checkbox" name="issues-reading" id="issues-reading" />
-                                <label for="issues-reading" class="label-checkbox">Reading</label>
-                            </div>
+                            <asp:ListView ID="uxIssues" runat="server" ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child.ChildIssueItem" OnItemDataBound="uxIssues_ItemDataBound">
+                                <ItemTemplate>
+                                    <div class="checkbox">
+                                        <label>
+                                            <asp:CheckBox ID="uxIssueCheckbox" runat="server" />
+                                            <label for="issues-reading" class="label-checkbox"><%# Item.IssueName %></label>
+                                            <asp:HiddenField ID="uxIssueHidden" runat="server" />
 
-                            <div class="checkbox">
-                                <input type="checkbox" name="issues-math" id="issues-math" />
-                                <label for="issues-math" class="label-checkbox">Math</label>
-                            </div>
+                                        </label>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:ListView>
 
-                            <div class="checkbox">
-                                <input type="checkbox" name="issues-writing" id="issues-writing" />
-                                <label for="issues-writing" class="label-checkbox">Writing</label>
-                            </div>
-
-                            <div class="checkbox">
-                                <input type="checkbox" name="issues-attention" id="issues-attention" />
-                                <label for="issues-attention" class="label-checkbox">Attention Issues</label>
-                            </div>
-
-                            <div class="checkbox">
-                                <input type="checkbox" name="issues-organization" id="issues-organization" />
-                                <label for="issues-organization" class="label-checkbox">Organization + Planning</label>
-                            </div>
                         </div>
 
-                        <div class="checkboxes">
-                            <div class="checkbox">
-                                <input type="checkbox" name="issues-oral" id="issues-oral" />
-                                <label for="issues-oral" class="label-checkbox">Oral Expression</label>
-                            </div>
-
-                            <div class="checkbox">
-                                <input type="checkbox" name="issues-listening" id="issues-listening" />
-                                <label for="issues-listening" class="label-checkbox">Listening Comprehension</label>
-                            </div>
-
-                            <div class="checkbox">
-                                <input type="checkbox" name="issues-social-skills" id="issues-social-skills" />
-                                <label for="issues-social-skills" class="label-checkbox">Social Skills</label>
-                            </div>
-
-                            <div class="checkbox">
-                                <input type="checkbox" name="issues-motor-skills" id="issues-motor-skills" />
-                                <label for="issues-motor-skills" class="label-checkbox">Motor Skills</label>
-                            </div>
-                        </div>
                     </fieldset>
 
                     <fieldset>
-                        <label class="selector-label" for="grade-selection">Chide&rsquo;s Grade</label>
-                        <select id="grade-selection" name="grade-selection" aria-required="true">
-                            <option value="">Child's Grade</option>
-                            <option>Grade 1</option>
-                            <option>Grade 2</option>
-                            <option>Grade 3</option>
-                            <option>Grade 4</option>
-                            <option>None of These</option>
-                        </select>
+                        <label class="selector-label" for="grade-selection"><asp:Literal ID="litChildsGradeText" runat="server" />:</label>
+                        <asp:DropDownList name="grade-selection"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Id" ID="ddlGrades" aria-required="true" runat="server">                       
+                        </asp:DropDownList>
 
-                        <label class="selector-label" for="question-topic">Question Topic</label>
-                        <select id="question-topic" name="question-topic" aria-required="true">
-                            <option value="">Child's Grade</option>
-                            <option>Studying</option>
-                            <option>Grade 2</option>
-                            <option>Grade 3</option>
-                            <option>Grade 4</option>
-                            <option>None of These</option>
-                        </select>
+                        <label class="selector-label" for="question-topic"><asp:Literal ID="litQuestionText" runat="server" />:</label>
+                      <asp:DropDownList name="question-topic"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Id" ID="ddlTopics" aria-required="true" runat="server">                       
+                      </asp:DropDownList>
+
                     </fieldset>
 
                     <div class="button-group">
-                        <a href="REPLACE" class="button gray close desktop">Cancel</a>
-                        <button onserverclick="SubmitQuestionButton_Click" class="button" runat="server">Submit Your Question</button>
-                        <a href="REPLACE" class="button gray close mobile">Cancel</a>
+                        <a href="REPLACE" class="button gray close desktop"><asp:Literal ID="litCancel" runat="server" /></a>
+                        <button onserverclick="SubmitQuestionButton_Click" class="button" runat="server"><sc:Text Field="Submit Your Question" runat="server" /></button>
+                        <a href="REPLACE" class="button gray close mobile"><asp:Literal ID="litCancel2" runat="server" /></a>
                     </div>
                 </div>   
                  </form>

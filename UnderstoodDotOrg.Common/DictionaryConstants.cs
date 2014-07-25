@@ -2003,6 +2003,16 @@ namespace UnderstoodDotOrg.Common
 			}
 		}
 
+        
+
+		public static string NoneOfTheseLabel
+		{
+			get
+			{
+                return Translate.TextByDomain(PosesDictionary, "None of These Label");
+			}
+		}
+
 		public static string GradeRangeLabel
 		{
 			get
