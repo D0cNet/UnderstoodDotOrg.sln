@@ -132,15 +132,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                         Response.Redirect(Request.RawUrl, true);
                     }
                     break;
-                case Constants.TelligentFriendStatus.Pending:
-                    //Nothing to do but wait until friendship request approved
-                    break;
                 case Constants.TelligentFriendStatus.Approved:
                     //View user activity
 
-
+                    Response.Redirect(MembershipHelper.GetPublicProfileActivityUrl(UserName));
 
                     break;
+                case Constants.TelligentFriendStatus.Pending: //Nothing to do but wait until friendship request approved
                 default:
                     break;
             }
