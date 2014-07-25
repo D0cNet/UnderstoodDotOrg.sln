@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <!-- Page Title -->
-<div class="container page-topic">
+<div class="container page-topic assistive-tech-topic-wrapper">
     <div class="row">
         <div class="col col-14 offset-1">
             <div class="rs_read_this">

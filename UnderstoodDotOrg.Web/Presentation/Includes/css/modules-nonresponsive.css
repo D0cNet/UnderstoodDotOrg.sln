@@ -5816,6 +5816,19 @@ h3.rs_read_this .rsbtn_player {
   left: -20px;
 }
 
+/* line 47, ../css.source/mixins/_rs-play-button.scss */
+.assistive-tech-topic-wrapper .rsbtn_player {
+  top: -34px;
+  top: -34px;
+  top: -34px;
+}
+/* line 2, ../css.source/mixins/_rs-play-button.scss */
+.assistive-tech-topic-wrapper .rsbtn_player {
+  left: -13px;
+  left: -33px;
+  left: -37px;
+}
+
 /* line 59, ../css.source/mixins/_rs-play-button.scss */
 .at3-wrapper .tab-container .rsbtn_player {
   top: -35px;
@@ -5851,7 +5864,7 @@ h3.rs_read_this .rsbtn_player {
   left: -11px;
 }
 
-/* line 464, ../css.source/modules/_readspeaker-layout.scss */
+/* line 469, ../css.source/modules/_readspeaker-layout.scss */
 .notification-item .icon-play, .notification-item .icon-pause, .account-notifications-tab-notifications-empty .icon-play, .account-notifications-tab-notifications-empty .icon-pause, .account-notifications-tab-text-form .icon-play, .account-notifications-tab-text-form .icon-pause, .account-notifications-tab-email .icon-play, .account-notifications-tab-email .icon-pause {
   background-image: none;
 }
@@ -5950,7 +5963,7 @@ h3.rs_read_this .rsbtn_player {
   top: 9px;
 }
 
-/* line 522, ../css.source/modules/_readspeaker-layout.scss */
+/* line 527, ../css.source/modules/_readspeaker-layout.scss */
 .account-connect-links {
   position: inherit;
 }
@@ -5966,7 +5979,7 @@ h3.rs_read_this .rsbtn_player {
   left: -22px;
   left: -40px;
 }
-/* line 528, ../css.source/modules/_readspeaker-layout.scss */
+/* line 533, ../css.source/modules/_readspeaker-layout.scss */
 .account-connect-links .rsbtn_player {
   top: -24px;
 }
@@ -6059,17 +6072,17 @@ h3.rs_read_this .rsbtn_player {
   top: 10px;
   top: 10px;
 }
-/* line 580, ../css.source/modules/_readspeaker-layout.scss */
+/* line 585, ../css.source/modules/_readspeaker-layout.scss */
 .inner-container .rsbtn_player {
   display: none;
 }
 
-/* line 588, ../css.source/modules/_readspeaker-layout.scss */
+/* line 593, ../css.source/modules/_readspeaker-layout.scss */
 .toolkit-thumbnails-container .thumbnail .rsbtn_player {
   display: none;
   display: block;
 }
-/* line 594, ../css.source/modules/_readspeaker-layout.scss */
+/* line 599, ../css.source/modules/_readspeaker-layout.scss */
 .toolkit-thumbnails-container .thumbnail .rsbtn_player.rshidden {
   display: none;
 }
@@ -6274,7 +6287,7 @@ h3.rs_read_this .rsbtn_player {
   top: -34px;
 }
 
-/* line 701, ../css.source/modules/_readspeaker-layout.scss */
+/* line 706, ../css.source/modules/_readspeaker-layout.scss */
 .grid-row .rs_read_this {
   position: static;
 }
@@ -6572,7 +6585,7 @@ h3.rs_read_this .rsbtn_player {
   left: -20px;
 }
 
-/* line 857, ../css.source/modules/_readspeaker-layout.scss */
+/* line 862, ../css.source/modules/_readspeaker-layout.scss */
 .community-q-a h2.rs_read_this, .community-parents h2.rs_read_this, .community-blogs-more h2.rs_read_this, .community-our-blogs h2.rs_read_this, .community-blogs-main h2.rs_read_this {
   position: relative;
 }
@@ -6590,7 +6603,7 @@ h3.rs_read_this .rsbtn_player {
   top: -40px;
   top: -28px;
 }
-/* line 862, ../css.source/modules/_readspeaker-layout.scss */
+/* line 867, ../css.source/modules/_readspeaker-layout.scss */
 .community-q-a .card, .community-parents .card, .community-blogs-more .card, .community-our-blogs .card, .community-blogs-main .card {
   position: relative;
 }
@@ -6680,7 +6693,7 @@ h3.rs_read_this .rsbtn_player {
   left: 2px;
 }
 
-/* line 911, ../css.source/modules/_readspeaker-layout.scss */
+/* line 916, ../css.source/modules/_readspeaker-layout.scss */
 .individual-board .search-board {
   float: left;
   float: none;
@@ -6826,7 +6839,7 @@ h3.rs_read_this .rsbtn_player {
   top: -8px;
 }
 
-/* line 989, ../css.source/modules/_readspeaker-layout.scss */
+/* line 994, ../css.source/modules/_readspeaker-layout.scss */
 .results-slider {
   text-indent: -99999px;
 }
@@ -6950,7 +6963,7 @@ h3.rs_read_this .rsbtn_player {
   left: 28px;
 }
 
-/* line 1061, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1066, ../css.source/modules/_readspeaker-layout.scss */
 .expert-event-container .expert-event, .expert-event-container .expert-blog-post, .expert-blog-post-container .expert-event, .expert-blog-post-container .expert-blog-post {
   position: relative;
 }
@@ -6980,7 +6993,7 @@ h3.rs_read_this .rsbtn_player {
   top: -20px;
   top: -20px;
 }
-/* line 1075, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1080, ../css.source/modules/_readspeaker-layout.scss */
 .personalize-interests-rs-wrapper.social-emotional-rs-wrapper, .personalize-interests-rs-wrapper.home-life-rs-wrapper, .itemize-child-rs-wrapper.social-emotional-rs-wrapper, .itemize-child-rs-wrapper.home-life-rs-wrapper {
   position: relative;
 }
@@ -7010,7 +7023,7 @@ h3.rs_read_this .rsbtn_player {
   top: 4px;
   top: 4px;
 }
-/* line 1088, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1093, ../css.source/modules/_readspeaker-layout.scss */
 .l-about-hero-intro .rsbtn_player {
   left: -36px;
 }
@@ -7022,7 +7035,7 @@ h3.rs_read_this .rsbtn_player {
   left: -32px;
 }
 
-/* line 1100, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1105, ../css.source/modules/_readspeaker-layout.scss */
 .about-donate-rs-wrapper {
   position: relative;
 }
@@ -7034,7 +7047,7 @@ h3.rs_read_this .rsbtn_player {
   left: -36px;
 }
 
-/* line 1108, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1113, ../css.source/modules/_readspeaker-layout.scss */
 .pay-by-check.about-donate-rs-wrapper .rsbtn_player,
 .pay-by-credit.about-donate-rs-wrapper .rsbtn_player,
 .form-group-rs-wrapper .rsbtn_player {
@@ -7055,7 +7068,7 @@ h3.rs_read_this .rsbtn_player {
   left: -35px;
 }
 
-/* line 1125, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1130, ../css.source/modules/_readspeaker-layout.scss */
 #rsToggle {
   z-index: 9999;
 }
@@ -7091,7 +7104,7 @@ h3.rs_read_this .rsbtn_player {
   top: -20px;
 }
 
-/* line 1150, ../css.source/modules/_readspeaker-layout.scss */
+/* line 1155, ../css.source/modules/_readspeaker-layout.scss */
 .skiplink-sidebar {
   display: none;
   display: block;

@@ -8,7 +8,7 @@
 
 
 <!-- Page Title -->
-<div class="container page-topic no-bottom-margin">
+<div class="container page-topic assistive-tech-topic-wrapper no-bottom-margin">
     <div class="row">
         <div class="col col-14 offset-1">
             <div class="rs_read_this">
