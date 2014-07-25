@@ -16,7 +16,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         /// Get main navigation folder
         /// </summary>
         /// <returns></returns>
-        public MainNavigationFolderItem GetMainNavigationFolder() {
+        public MainNavigationFolderItem GetMainNavigationFolder()
+        {
             return (MainNavigationFolderItem)InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(MainNavigationFolderItem.TemplateId)).FirstOrDefault();
         }
 
@@ -24,7 +25,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         /// Get utility navigation folder
         /// </summary>
         /// <returns></returns>
-        public UtilityNavigationFolderItem GetUtilityNavigationFolder() {
+        public UtilityNavigationFolderItem GetUtilityNavigationFolder()
+        {
             return (UtilityNavigationFolderItem)InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(UtilityNavigationFolderItem.TemplateId)).FirstOrDefault();
         }
 
@@ -32,7 +34,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         /// Get social media folder
         /// </summary>
         /// <returns></returns>
-        public SocialMediaFolderItem GetSocialMediaFolder() {
+        public SocialMediaFolderItem GetSocialMediaFolder()
+        {
             return (SocialMediaFolderItem)InnerItem.GetChildren().FilterByContextLanguageVersion().Where(i => i.IsOfType(SocialMediaFolderItem.TemplateId)).FirstOrDefault();
         }
 
@@ -40,7 +43,8 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         /// Get partner folder
         /// </summary>
         /// <returns></returns>
-        public List<PartnerInfoItem> GetPartnerLinks() {
+        public List<PartnerInfoItem> GetPartnerLinks()
+        {
             List<PartnerInfoItem> results = new List<PartnerInfoItem>();
             Item container = Sitecore.Context.Database.GetItem(Constants.Pages.Partners);
             if (container != null)
@@ -52,6 +56,11 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                             .ToList();
             }
             return results;
+        }
+
+        public IEnumerable<PartnerInfoItem> GetRandomizedPartnerLinks()
+        {
+            return GetPartnerLinks().Shuffle();
         }
     }
 }

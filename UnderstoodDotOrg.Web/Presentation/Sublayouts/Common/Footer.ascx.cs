@@ -100,7 +100,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 hlViewAllPartners.NavigateUrl = item.GetUrl();
             }
             
-            List<PartnerInfoItem> partners = Model.GetPartnerLinks();
+            IEnumerable<PartnerInfoItem> partners = Model.GetRandomizedPartnerLinks();
             if (partners.Any())
             {
                 rptPartnerships.DataSource = partners;
