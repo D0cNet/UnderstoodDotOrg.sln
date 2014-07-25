@@ -65,10 +65,10 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         {
             if(searchPage.InnerItem.Children.Count > 0)
             {
-                foreach (AssistiveToolsReviewPageItem i in searchPage.InnerItem.Children)
+                foreach (Item i in searchPage.InnerItem.Children)
                 {
-                    if (i.CSMID == CSMId)
-                        return i.InnerItem;
+                    if (i.Fields["CSM ID"].ToString() == CSMId)
+                        return i;
                 }
             }
 
