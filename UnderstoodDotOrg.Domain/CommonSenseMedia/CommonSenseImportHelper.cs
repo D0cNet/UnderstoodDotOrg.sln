@@ -389,7 +389,7 @@ namespace UnderstoodDotOrg.Domain.Importer
                     options.Destination = string.Format("{0}/{1}", mediaFolder.Paths.FullPath, Name);
                     options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
 
-                    foreach (Item i in mediaFolder.Children)
+                    foreach (Item i in Sitecore.Data.Database.GetDatabase("master").SelectItems("/sitecore/Media Library/Common Sense Media Folder//*[@@templatename='Image'or @@templatename='Jpeg']"))
                     {
                         if (i.Fields["title"].ToString() == Name)
                         {
