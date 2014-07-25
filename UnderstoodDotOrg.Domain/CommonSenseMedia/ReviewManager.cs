@@ -8,6 +8,7 @@ using Sitecore.Data.Fields;
 using Sitecore.Links;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages;
+using System.Collections.Generic;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 {
@@ -65,7 +66,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         {
             if(searchPage.InnerItem.Children.Count > 0)
             {
-                foreach (Item i in searchPage.InnerItem.Children)
+                foreach (Item i in Sitecore.Data.Database.GetDatabase("master").SelectItems("/sitecore/content/Home/Tools/Assistive Technology//*[@@templatename='Assistive Tools Review Page']"))
                 {
                     if (i.Fields["CSM ID"].ToString() == CSMId)
                         return i;
