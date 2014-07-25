@@ -57,45 +57,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 
         protected void btnStartSimulation_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Response.Write("click handled<br/>");
-            }
-            catch (Exception ex)
-            {
-                Response.Write("Response.Write(\"click handled<br/>\");<br/>" + ex.Message + "<br/>" + ex.StackTrace + "<br/>");
-            }
-            try
-            {
-                Response.Write(hfGradeId.Value + "<br/>");
-            }
-            catch (Exception ex)
-            {
-                Response.Write("Response.Write(hfGradeId.Value + \"<br/>\");<br/>" + ex.Message + "<br/>" + ex.StackTrace + "<br/>");
-            }
-            try
-            {
-                Response.Write(hfIssueIds.Value + "<br/>");
-            }
-            catch (Exception ex)
-            {
-                Response.Write("Response.Write(hfIssueIds.Value + \"<br/>\");<br/>" + ex.Message + "<br/>" + ex.StackTrace + "<br/>");
-            }
-            try
-            {
-                var playerItem = Sitecore.Context.Item.Parent.Children
-                    .First(i => i.IsOfType(TycePlayerPageItem.TemplateId));
-                Response.Write("player item ID: " + playerItem.ID.ToString() + "<br/>");
-                var url = playerItem.GetUrl() + "?simq=" + hfIssueIds.Value + "&gradeId=" + hfGradeId.Value;
-                Response.Write(url + "<br/>");
-            }
-            catch (Exception ex)
-            {
-                Response.Write("Response.Write(\"player item ID: \" + playerItem.ID.ToString() + \"<br/>\");<br/>" + ex.Message + "<br/>" + ex.StackTrace + "<br/>");
-                Response.Write("Response.Write(url + \"<br/>\");<br/>" + ex.Message + "<br/>" + ex.StackTrace + "<br/>");
-            }
-            Response.End();
-            //Response.Redirect(url);
+            var playerItem = Sitecore.Context.Item.Parent.Children
+                .First(i => i.IsOfType(TycePlayerPageItem.TemplateId));
+            var url = playerItem.GetUrl() + "?simq=" + hfIssueIds.Value + "&gradeId=" + hfGradeId.Value;
+
+            Response.Redirect(url);
         }
     }
 }
