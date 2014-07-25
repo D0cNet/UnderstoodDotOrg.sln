@@ -7,6 +7,7 @@ using System;
 using Sitecore.Data.Fields;
 using Sitecore.Links;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages;
 
 namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 {
@@ -29,9 +30,17 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 
                 using (new SecurityDisabler())
                 {
-                    TemplateItem reviewTemplate = Sitecore.Configuration.Factory.GetDatabase("master").GetTemplate(ReviewItem.TemplateId);
+                    Item newReview;
 
-                    Item newReview = Get(MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage().ID.ToString()).Add(Review.Title, reviewTemplate);
+                    AssistiveToolsSearchResultsPageItem searchPage = MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage();
+
+                    newReview = GetReviewIfAlreadyExists(Review.CommonSenseMediaID, searchPage);
+
+                    if (newReview == null)
+                    {
+                        TemplateItem reviewTemplate = Sitecore.Configuration.Factory.GetDatabase("master").GetTemplate(ReviewItem.TemplateId);
+                        newReview = Get(searchPage.ID.ToString()).Add(Review.Title, reviewTemplate);
+                    }
 
                     newReview.Editing.BeginEdit();
 
@@ -50,6 +59,20 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
             {
                 return null;
             }
+        }
+
+        private Item GetReviewIfAlreadyExists(string CSMId, AssistiveToolsSearchResultsPageItem searchPage)
+        {
+            if(searchPage.InnerItem.Children.Count > 0)
+            {
+                foreach (ReviewItem i in searchPage.InnerItem.Children)
+                {
+                    if (i.CSMID == CSMId)
+                        return i.InnerItem;
+                }
+            }
+
+            return null;
         }
 
         /// <summary>
