@@ -47,7 +47,7 @@
             <!-- .screenshot-wrapper -->
             <!-- END PARTIAL: at-detail-thumb-mobile -->
             <section class="rs_read_this what-you-need-to-know-rs-wrapper">
-                <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.WhatCanKidsLearnLabel %></h3>
+                <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.WhatKidsCanLearnLabel %></h3>
                 <span class="visuallyhidden">learning rating</span>
                 <span class="slider-position">
                     <!-- BEGIN PARTIAL: results-slider -->
