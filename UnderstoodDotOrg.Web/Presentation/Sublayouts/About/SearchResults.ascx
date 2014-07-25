@@ -73,7 +73,9 @@
         <ItemTemplate>
             <div class="row search-result-container rs_read_this">
                 <div class="col col-6 search-image">
-                <img alt="" src="<%#: Item.Thumbnail %>" />
+                    <a href="<%#: Item.Url %>">
+                        <img alt="" src="<%#: Item.Thumbnail %>" />
+                    </a>
                 </div>
 
                 <div class="col col-11 offset-1 search-content">
