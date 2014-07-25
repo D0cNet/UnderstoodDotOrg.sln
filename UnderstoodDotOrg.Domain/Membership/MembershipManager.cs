@@ -578,7 +578,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         {
             var ret = false;
 
-            if (!string.IsNullOrEmpty(Member.Email) && !string.IsNullOrEmpty(newEmail) && Member.Email != newEmail)
+            if (!string.IsNullOrEmpty(Member.Email) && !string.IsNullOrEmpty(newEmail))
             {
                 try
                 {
@@ -608,7 +608,30 @@ namespace UnderstoodDotOrg.Domain.Membership
             return ret;
         }
 
-        
+        public bool UpdatePassword(Member Member, string oldPassword, string newPassword)
+        {
+            var ret = false;
+
+            var provider = MembershipProvider.Providers[UnderstoodDotOrg.Common.Constants.MembershipProviderName];
+            var user = provider.GetUser(Member.MemberId, false);
+
+            try
+            {
+                ret = user.ChangePassword(oldPassword, newPassword);
+                
+                if (!ret)
+                {
+                    //provided wrong password
+                    throw new Exception("Password reset failed, please try again");
+                }
+            }
+            catch (Exception ex)
+            { 
+                throw ex;
+            }
+
+            return ret;
+        }
 
         private bool updateEmail(string applicationName, string oldUsername, string newUsername)
         {

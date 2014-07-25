@@ -375,7 +375,9 @@
 
                 if (!string.IsNullOrEmpty(this.txtOldPassword.Text) && !string.IsNullOrEmpty(this.txtNewPassword.Text) && !string.IsNullOrEmpty(this.txtConfirmNewPassword.Text))
                 {
-                    if (this.txtNewPassword.Text != this.txtConfirmNewPassword.Text)
+                    if (this.txtNewPassword.Text == this.txtConfirmNewPassword.Text 
+                        && Regex.IsMatch(this.txtNewPassword.Text, Constants.Validators.Password) 
+                        && Regex.IsMatch(this.txtOldPassword.Text, Constants.Validators.Password))
                     {
                         if (this.UpdatePassword())
                         {
@@ -421,7 +423,9 @@
         {
             var ret = false;
 
+            var membershipManager = new MembershipManager();
 
+            ret = membershipManager.UpdatePassword(this.CurrentMember, txtOldPassword.Text, txtNewPassword.Text);
 
             return ret;
         }
