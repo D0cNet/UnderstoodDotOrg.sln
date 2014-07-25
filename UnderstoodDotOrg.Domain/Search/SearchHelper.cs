@@ -783,6 +783,14 @@ namespace UnderstoodDotOrg.Domain.Search
                     finalList.AddRange(timelyArticles);
                     toProcess = toProcess.Except(timelyArticles).ToList();
                 }
+
+                // Shift other articles that may have timely content during bucket filling
+                List<Article> otherTimely = toProcess.AsQueryable().Where(GetTimelyPredicate(date)).ToList();
+                if (otherTimely.Any())
+                {
+                    finalList.AddRange(otherTimely);
+                    toProcess = toProcess.Except(otherTimely).ToList();
+                }
                 
                 // Shift must read next
                 List<Article> mustRead = toProcess.AsQueryable().Where(GetMustReadPredicate()).ToList();

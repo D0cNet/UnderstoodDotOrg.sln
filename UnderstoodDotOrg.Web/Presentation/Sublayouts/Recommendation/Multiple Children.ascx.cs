@@ -194,6 +194,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
                         .FirstOrDefault() != null;
 
                     sb.AppendLine(String.Format("Must read: {0}", mustRead.ToString().ToLower()));
+                    
+                    sb.AppendLine(String.Format("Timely: {0}", IsTimely(item.DateStart.DateTime, item.DateEnd.DateTime).ToString()));
 
                     sb.AppendLine("");
 
@@ -287,12 +289,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
 
                         bool mustReadTag = article.ImportanceLevels.Contains(Sitecore.Data.ID.Parse(Constants.ArticleTags.MustRead));
                         sb.AppendLine(String.Format("Must read: {0}", mustReadTag.ToString().ToLower()));
+
+                        sb.AppendLine(String.Format("Timely: {0}", IsTimely(article.TimelyStart, article.TimelyEnd)));
                     }
 
                     litDebugTag.Text = String.Format("<!--{0}-->", sb.ToString());
                     // DEBUG - END
                 }
             }
+        }
+
+        private bool IsTimely(DateTime start, DateTime end)
+        {
+            DateTime now = DateTime.Now;
+            return (start != DateTime.MinValue && end == DateTime.MinValue
+                    && start <= now)
+                    || (start == DateTime.MinValue && end != DateTime.MinValue
+                        && end >= now)
+                    || (start != DateTime.MinValue && end != DateTime.MinValue
+                        && start <= now && end >= now);
         }
 
         protected void btnRunPersonalied_Click(object sender, EventArgs e)
