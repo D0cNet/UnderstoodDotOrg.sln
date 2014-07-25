@@ -20,7 +20,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared
                 if (reviewer != null && !reviewer.ReviewerName.Rendered.IsNullOrEmpty())
                 {
                     frReviewedBy.Item = reviewer;
-                    hlReviewedBy.NavigateUrl = reviewer.GetUrl();
 
                     if (item.ReviewedDate.DateTime != null
                         && item.ReviewedDate.DateTime != DateTime.MinValue)

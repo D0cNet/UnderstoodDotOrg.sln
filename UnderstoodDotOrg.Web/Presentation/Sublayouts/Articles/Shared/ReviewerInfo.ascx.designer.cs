@@ -13,15 +13,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared {
     public partial class ReviewerInfo {
         
         /// <summary>
-        /// hlReviewedBy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlReviewedBy;
-        
-        /// <summary>
         /// frReviewedBy control.
         /// </summary>
         /// <remarks>
