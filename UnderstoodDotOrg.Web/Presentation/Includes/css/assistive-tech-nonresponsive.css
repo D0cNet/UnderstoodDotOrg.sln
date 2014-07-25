@@ -551,8 +551,9 @@
 .what-you-need-to-know-tabs section ul {
   padding-left: 20px;
   display: inline-block;
+  width: 100%;
 }
-/* line 150, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 151, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs section ul li {
   width: 225px;
   margin-right: 24px;
@@ -565,13 +566,13 @@
   margin-top: 15px;
   width: 45%;
 }
-/* line 168, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 169, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs section ul.kids-subjects {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 173, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 174, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs section ul.kids-subjects li:before {
   content: " ";
   line-height: 26px;
@@ -592,7 +593,7 @@
 .old-ie .what-you-need-to-know-tabs section ul.kids-subjects {
   width: 508px;
 }
-/* line 195, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 196, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs h3 {
   color: #7a4183;
   font-size: 24px;
@@ -603,7 +604,7 @@
   display: inline-block;
   margin-top: 25px;
 }
-/* line 207, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 208, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs h5 {
   color: #696969;
   font-size: 18px;
@@ -611,7 +612,7 @@
   font-weight: normal;
   margin-bottom: 15px;
 }
-/* line 214, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 215, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs p {
   color: #696969;
   font-size: 15px;
@@ -621,7 +622,7 @@
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 20px;
 }
-/* line 223, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 224, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs .platform-list a, .what-you-need-to-know-tabs .about-platforms a {
   color: #426cab;
   font-size: 14px;
@@ -629,13 +630,13 @@
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
 }
-/* line 231, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 232, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs .about-platforms {
   display: block;
   display: inline;
   margin-left: 40px;
 }
-/* line 240, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 241, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs footer p {
   color: #696969;
   font-size: 11px;
@@ -644,12 +645,12 @@
   line-height: 0.9375rem;
   font-weight: 600;
 }
-/* line 245, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 246, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs footer p a {
   color: #426cab;
   text-decoration: underline;
 }
-/* line 252, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 253, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs .review-intro {
   background: #f0f0f0;
   padding: 15px;
@@ -658,17 +659,17 @@
   padding: 40px;
   margin-top: 0;
 }
-/* line 262, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 263, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs .review-intro .review-rating {
   width: 230px;
   float: left;
   margin-top: 10px;
 }
-/* line 267, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 268, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs .review-intro .review-rating p {
   margin-bottom: 0;
 }
-/* line 271, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 272, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs .review-intro .review-rating h4 {
   color: #7a4182;
   font-size: 20px;
@@ -677,7 +678,7 @@
   line-height: 1.5rem;
   margin-top: 15px;
 }
-/* line 278, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 279, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs .review-intro .review-rating-sort {
   width: 230px;
   float: left;
@@ -686,7 +687,7 @@
   margin: 0;
   margin-top: 11px;
 }
-/* line 291, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 292, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs .review-intro .review-rating-sort > label {
   color: #696969;
   font-size: 16px;
@@ -695,7 +696,7 @@
   margin: 15px 0 10px;
   display: inline-block;
 }
-/* line 299, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 300, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs .review-intro .review-rating-sort div.selector, .what-you-need-to-know-tabs .review-intro .review-rating-sort div.selector span {
   width: 100%;
   font-size: 16px;
@@ -703,28 +704,28 @@
   font-size: 14px;
   font-size: 0.875rem;
 }
-/* line 311, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 312, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews .row .col.col-17 {
   padding-right: 36px;
   padding-left: 36px;
 }
-/* line 313, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 314, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews .row .col.col-17 .rate-this-app {
   margin-top: 10px;
 }
-/* line 321, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 322, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews .parent-reviews {
   padding-left: 10px;
   padding-left: 0;
 }
-/* line 328, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 329, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section {
   margin-top: 25px;
   padding-bottom: 25px;
   margin-top: 50px;
   padding-bottom: 50px;
 }
-/* line 337, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 338, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section:last-child {
   border-bottom: none;
   padding-bottom: 10px;
@@ -732,30 +733,30 @@
   padding-bottom: 40px;
   margin-bottom: 40px;
 }
-/* line 348, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 349, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .link-separator {
   text-decoration: underline;
   padding: 0 10px;
   border-left: 1px solid #d3d1d0;
   padding: 0 18px;
 }
-/* line 353, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 354, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .link-separator:hover {
   text-decoration: none;
 }
-/* line 360, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 361, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-section-title {
   margin-bottom: 13px;
   margin: 0;
 }
-/* line 367, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 368, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-section {
   display: inline-block;
   color: #696969;
   font-size: 14px;
   font-size: 0.875rem;
 }
-/* line 373, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 374, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-section.grade span.review-grade.four {
   background: #5caa7f;
   -webkit-border-radius: 50px;
@@ -771,7 +772,7 @@
   text-align: center;
   padding-top: 5px;
 }
-/* line 386, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 387, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-section.quality {
   margin-top: 8px;
   margin-left: 0;
@@ -780,18 +781,18 @@
   margin-left: 32px;
   margin-bottom: 25px;
 }
-/* line 397, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 398, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-section.quality .results-slider {
   margin-left: 10px;
   vertical-align: middle;
 }
-/* line 403, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 404, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-section.date {
   margin-left: 0;
   margin-left: 10px;
   margin-left: 100px;
 }
-/* line 415, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 416, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span {
   color: #696969;
   font-size: 14px;
@@ -799,23 +800,23 @@
   border-left: 1px solid #d3d1d0;
   padding: 0;
 }
-/* line 421, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 422, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span:first-child {
   border-left: none;
 }
-/* line 425, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 426, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span.review-report {
   padding-left: 10px;
   padding-left: 20px;
 }
-/* line 432, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 433, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span.review-report a {
   color: #696969;
   text-decoration: none;
   border: none;
   padding-right: 0;
 }
-/* line 438, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 439, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span.review-report i {
   background-image: url('../images/sprite.icon.comments.png?5c246d54');
   background-repeat: no-repeat;
@@ -826,23 +827,23 @@
   height: 18px;
   margin-right: 10px;
 }
-/* line 448, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 449, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .no-backgroundsize .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span.review-report i {
   background-image: url('../images/sprite.icon.comments.lo-res.png?ae2e7d25');
 }
-/* line 454, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 455, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span.review-report:hover i {
   background-position: -36px -18px;
 }
-/* line 457, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 458, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report span.review-report:hover a {
   color: #426da9;
 }
-/* line 463, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 464, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report .write-review {
   margin-right: 15px;
 }
-/* line 464, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 465, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report .write-review i {
   background-image: url('../images/sprite.icon.comments.png?5c246d54');
   background-repeat: no-repeat;
@@ -853,27 +854,27 @@
   height: 18px;
   margin-right: 10px;
 }
-/* line 474, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 475, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .no-backgroundsize .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report .write-review i {
   background-image: url('../images/sprite.icon.comments.lo-res.png?ae2e7d25');
 }
-/* line 480, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 481, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report .write-review:hover i {
   background-position: -20px -18px;
 }
-/* line 483, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 484, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report .write-review:hover a {
   color: #426da9;
   text-decoration: none;
 }
-/* line 491, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 492, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews section .review-report .write-review a {
   color: #696969;
   text-decoration: none;
   border: none;
   padding-right: 8px;
 }
-/* line 502, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
+/* line 503, ../css.source/modules/assistive-tech/_what-you-need-to-know-tabs.scss */
 .what-you-need-to-know-tabs #tabs2-parent-reviews .screenshot-wrapper .screenshot-thumbs hr {
   margin-top: 0px;
 }
