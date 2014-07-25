@@ -64,6 +64,9 @@
                     <button type="button" runat="server" id="btnTakeQuizAgain" onserverclick="btnTakeQuizAgain_Click" class="button" visible="false" ><%= UnderstoodDotOrg.Common.DictionaryConstants.Quizzes_TakeQuizAgain %></button>
                 </div>
             </div>
+
+
+            <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
         </div>
 
         <div class="col col-1 sidebar-spacer"></div>
