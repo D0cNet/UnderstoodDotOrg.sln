@@ -55,7 +55,7 @@
                     <asp:Repeater ID="rptRecentBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
                         <ItemTemplate>
                             <!-- BEGIN PARTIAL: community/blog_post -->
-                            <div class="blog-post">
+                            <div class="blog-post rs_read_this">
                                 <div class="blog-card-image blog-card-total-comments">
                                     <a>
                                         <img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>
@@ -98,7 +98,7 @@
             <sc:Sublayout CssStyle="display: none" ID="sbMostShared" runat="server" Path="~/Presentation/SubLayouts/Blogs/SortBlogsRecent.ascx" />--%>
 
             <!-- BEGIN PARTIAL: community/blog_sidebar -->
-            <div id="skipLinkSidebar" class="blog-post-list-sidebar skiplink-sidebar">
+            <div id="skipLinkSidebar" class="blog-post-list-sidebar skiplink-sidebar rs_read_this">
                 <sc:Placeholder ID="Sidebar" Key="Blogs-Sidebar" runat="server" />
             </div>
 
@@ -136,7 +136,7 @@
             <asp:Repeater ID="rptMostTalkedBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
                 <ItemTemplate>
                     <!-- BEGIN PARTIAL: community/blog_post -->
-                    <div class="blog-post">
+                    <div class="blog-post rs_read_this">
                         <div class="blog-card-image blog-card-total-comments">
                             <a>
                                 <img alt="230x129 Placeholder" src="http://placehold.it/230x129" /></a>

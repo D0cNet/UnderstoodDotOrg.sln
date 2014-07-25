@@ -5,7 +5,9 @@
     <asp:Repeater ID="rptMostShared" runat="server"
         ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
         <ItemTemplate>
-            <h4><a href="<%# Item.Url %>"><%# Item.Title %></a></h4>
+            <h4 class="<%# Container.ItemIndex == 0 ? "first" : "" %>">
+                <a href="<%# Item.Url %>"><%# Item.Title %></a>
+            </h4>
         </ItemTemplate>
     </asp:Repeater>
 </div>
