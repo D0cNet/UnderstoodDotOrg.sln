@@ -68,7 +68,6 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
             </div>
-
             <sc:sublayout runat="server" path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
         </div>
     </div>
