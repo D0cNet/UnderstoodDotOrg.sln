@@ -24,6 +24,7 @@
 </div>
 <!-- .container -->
 
+<%-- 
 <div class="container flush l-sign-up-recommended">
     <div class="row">
         <div class="col col-24 skiplink-feature">
@@ -92,3 +93,4 @@
     <!-- .row -->
 </div>
 <!-- .container -->
+--%>

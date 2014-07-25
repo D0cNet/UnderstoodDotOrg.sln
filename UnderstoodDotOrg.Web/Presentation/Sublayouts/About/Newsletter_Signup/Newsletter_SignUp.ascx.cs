@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Domain.Understood.Newsletter;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages.Newsletter;
 using UnderstoodDotOrg.Domain.Membership;
 using System.Web.Security;
+using UnderstoodDotOrg.Domain.ExactTarget;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
 {
@@ -54,6 +55,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 MembershipManager mm = new MembershipManager();
                 mm.UpdateMember(CurrentMember);
             }
+
+            RedirectToConfirmation();
+        }
+
+        private void RedirectToConfirmation()
+        {
+            // TODO: wire up exact target call
+
             var confirmationPage = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.NewsletterConfirmation.ToString()));
             Response.Redirect(confirmationPage.GetUrl());
         }
@@ -76,14 +85,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
             // TODO: validate email
             string email = txtEmail.Text.Trim();
             MembershipManager mm = new MembershipManager();
-            MembershipUser checkValidity = mm.GetUser(email);
+            MembershipUser subscriber = mm.GetUser(email);
 
-            if (checkValidity != null)
+            if (subscriber != null && subscriber.Comment != Constants.UnauthenticatedMember_Flag)
             {
                 litErrorMessage.Text = Model.UnauthenticatedMemberError.Rendered;
             }
             else
             {
+                // temporarily skip personalized questions
+                if (subscriber == null)
+                {
+                    Member member = new Member
+                    {
+                        Email = email,
+                        allowNewsletter = true
+                    };
+
+                    mm.AddUnauthorizedMember(member);
+                    mm.UpdateMember_ExtendedProperties(member);
+                }
+                else
+                {
+                    Member member = mm.GetMember(email);
+                    member.allowNewsletter = true;
+                    mm.UpdateMember(member);
+                }
+
+                RedirectToConfirmation();
+
+                /*
                 Submission submission = new Submission
                 {
                     Email = email
@@ -92,7 +123,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 Session[Constants.SessionNewsletterKey] = submission;
 
                 var item = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.NewsletterChildInfo.ToString()));
-                Response.Redirect(item.GetUrl());
+                Response.Redirect(item.GetUrl());*/
             }
         }
 
