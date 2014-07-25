@@ -1857,6 +1857,14 @@ namespace UnderstoodDotOrg.Common
 
         #endregion MyAccount Labels
 
+        public static string SelectLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Select Label");
+            }
+        }
+
         public static string TitleLabel
         {
             get
