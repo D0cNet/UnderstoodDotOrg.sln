@@ -17,6 +17,9 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string Date { get; set; }
         public string TypeTransformed { get; set; }
         public string Url { get; set; }
+        public string GroupName { get; set; }
+        public string Author { get; set; }
+        public string ReplyCount { get; set; }
 
         public SearchResult() { }
     }

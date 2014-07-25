@@ -890,6 +890,13 @@
     <Compile Include="Presentation\Sublayouts\Common\ThinkingOfYouButton.ascx.designer.cs">
       <DependentUpon>ThinkingOfYouButton.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Groups Search.ascx.cs">
+      <DependentUpon>Groups Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Groups Search.ascx.designer.cs">
+      <DependentUpon>Groups Search.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.designer.cs">
       <DependentUpon>Parent Groups.ascx</DependentUpon>
     </Compile>
@@ -3062,6 +3069,7 @@
     <Content Include="Presentation\Sublayouts\Common\LikeButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ThanksButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ThinkingOfYouButton.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Groups Search.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\MyGroups.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplate.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplateFront.ascx" />
