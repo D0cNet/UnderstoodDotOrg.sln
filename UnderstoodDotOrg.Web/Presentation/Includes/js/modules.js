@@ -1802,7 +1802,7 @@ the callbacks passed to the module.
 
             // Initially hide transcript and add read transcript button
             $wrap.slideUp();
-            $readMore.append('<a href="REMOVE">Read Transcript<i class="icon-arrow-down-blue"></i></a>');
+            $readMore.append('<a href="#">Read Transcript<i class="icon-arrow-down-blue"></i></a>');
             var $readMoreBtn = $readMore.children('a');
 
             // click functionality for site
