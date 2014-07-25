@@ -72,9 +72,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
                 }
                 AddResourcesToPage();
             }
-            catch
+            catch (Exception ex)
             {
-                Response.Redirect(HomepageUrl);
+                Response.Write(ex.Message + "<br/>" + ex.StackTrace);
+                Response.End();
+                //Response.Redirect(HomepageUrl);
             }
         }
 
@@ -106,7 +108,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 
                 if (IssueItem == null || (hasGradeId && GradeItem == null))
                 {
-                    Response.Redirect(HomepageUrl);
+                    Response.Redirect("111");
+                    Response.End();
+                    //Response.Redirect(HomepageUrl);
                 }
 
                 if (!IsPersonalized)
@@ -131,7 +135,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
                     }
                     else
                     {
-                        Response.Redirect(HomepageUrl);
+                        Response.Write("138");
+                        Response.End();
+                        //Response.Redirect(HomepageUrl);
                     }
                 }
 
@@ -146,7 +152,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
             }
             else
             {
-                Response.Redirect(HomepageUrl);
+                Response.Write("155");
+                Response.End();
+                //Response.Redirect(HomepageUrl);
             }
         }
 
