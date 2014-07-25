@@ -343,7 +343,7 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// </summary>
         /// <param name="image">Image to add to Sitecore</param>
         /// <returns>Returns GUID of the image that was added to Sitecore</returns>
-        public static MediaItem addMedia(ReviewImageModel image)
+        public static Item addMedia(ReviewImageModel image)
         {
             return addMedia(image.URL, removePunctuation(image.Name), image.AltText);
         }
@@ -359,7 +359,7 @@ namespace UnderstoodDotOrg.Domain.Importer
 
             foreach (var item in images)
             {
-                MediaItem temp = addMedia(item);
+                Item temp = addMedia(item);
                 if(temp != null)
                     ret.Add(temp.ID.ToString());
             }
@@ -374,7 +374,7 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// <param name="Name">Name to use for the image</param>
         /// <param name="alt">Alt text to use for the image</param>
         /// <returns>GUID of the new image</returns>
-        private static MediaItem addMedia(string URL, string Name, string alt = "")
+        private static Item addMedia(string URL, string Name, string alt = "")
         {
             try
             {
@@ -389,6 +389,14 @@ namespace UnderstoodDotOrg.Domain.Importer
                     options.Destination = string.Format("{0}/{1}", mediaFolder.Paths.FullPath, Name);
                     options.FileBased = Sitecore.Configuration.Settings.Media.UploadAsFiles;
 
+                    foreach (Item i in mediaFolder.Children)
+                    {
+                        if (i.Fields["title"].ToString() == Name)
+                        {
+                            return i;
+                        }
+                    }
+
                     MediaCreator creator = new MediaCreator();
                     MediaItem image = creator.CreateFromStream(getStream(URL), Name + getExtension(URL), options);
 
@@ -402,7 +410,7 @@ namespace UnderstoodDotOrg.Domain.Importer
                     PublishItem(image, options.Database);
                     PublishItem(image, Sitecore.Configuration.Factory.GetDatabase("web"));
 
-                    return image;
+                    return image.InnerItem;
                 }
             }
             catch (Exception e)
