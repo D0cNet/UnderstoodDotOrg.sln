@@ -1783,41 +1783,28 @@
 
 /* line 23, ../css.source/modules/article/_article-copy.scss */
 .article-copy ul {
-  list-style: none;
-  margin: 0 0 30px;
+  list-style: disc;
+  margin: 0 0 30px 30px;
   padding: 0;
 }
 /* line 29, ../css.source/modules/article/_article-copy.scss */
 .article-copy li {
   color: #696969;
-  font-size: 15px;
-  font-size: 0.9375rem;
-  line-height: 23px;
-  line-height: 1.4375rem;
+  font-size: 16px;
+  font-size: 1rem;
+  font-family: arial, sans-serif;
+  line-height: 1.2rem;
   position: relative;
-  border-top: 1px solid #e8e8e8;
   margin-top: 12px;
-  padding: 12px 0 0 20px;
+  padding: 0px 0 0 0px;
   font-size: 15px;
   font-size: 0.9375rem;
-  line-height: 23px;
-  line-height: 1.4375rem;
 }
-/* line 43, ../css.source/modules/article/_article-copy.scss */
+/* line 42, ../css.source/modules/article/_article-copy.scss */
 .article-copy li:first-child {
   border-top: 0;
   margin-top: 0;
   padding-top: 0;
-}
-/* line 49, ../css.source/modules/article/_article-copy.scss */
-.article-copy li:before {
-  font-family: Circular, arial, sans-serif;
-  content: "• ";
-  color: #426da9;
-  font-size: 13px;
-  font-size: 0.8125rem;
-  position: absolute;
-  left: 0;
 }
 
 /* line 1, ../css.source/modules/article/_article-table-source.scss */
