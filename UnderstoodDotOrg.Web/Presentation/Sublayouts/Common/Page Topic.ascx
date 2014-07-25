@@ -15,6 +15,7 @@
                     <p class="page-subtitle">
                         <%--Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla egestas --%>
                         <%--<sc:FieldRenderer ID="frSummary" runat="server" FieldName="Page Summary" />--%>
+                        <%= UnderstoodDotOrg.Common.DictionaryConstants.ByFragment %> 
                         <asp:HyperLink ID="hlAuthorName" runat="server">
                             <sc:FieldRenderer ID="frAuthorName" runat="server" FieldName="Author Name" />
                         </asp:HyperLink>

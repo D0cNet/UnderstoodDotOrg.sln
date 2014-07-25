@@ -1068,6 +1068,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string ByFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "By Fragment");
+            }
+        }
+
         public static string ofFragment
         {
             get
