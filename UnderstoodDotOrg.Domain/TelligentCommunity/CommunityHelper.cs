@@ -260,42 +260,42 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return contentId;
         }
 
-        public static string CreateQuestion(string title, string body, string currentUser)
-        {
-            using (var webClient = new WebClient())
-            {
-                try
-                {
-                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                    currentUser = currentUser.Trim().ToLower();
-                    webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
+        //public static string CreateQuestion(string title, string body, string currentUser)
+        //{
+        //    using (var webClient = new WebClient())
+        //    {
+        //        try
+        //        {
+        //            webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+        //            currentUser = currentUser.Trim().ToLower();
+        //            webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
 
-                    // TODO: change to constant
-                    var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", "2"));
+        //            // TODO: change to constant
+        //            var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", "2"));
 
-                    var values = new NameValueCollection();
-                    values["Title"] = title;
-                    values["Body"] = body;
+        //            var values = new NameValueCollection();
+        //            values["Title"] = title;
+        //            values["Body"] = body;
 
-                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+        //            var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
 
-                    Console.WriteLine(xml);
+        //            Console.WriteLine(xml);
 
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xml);
+        //            XmlDocument xmlDoc = new XmlDocument();
+        //            xmlDoc.LoadXml(xml);
 
-                    XmlNode node = xmlDoc.SelectSingleNode("Response/WikiPage");
-                    string contentId = node["ContentId"].InnerText;
-                    string wikiPageId = node["Id"].InnerText;
-                    string queryString = "?wikiId=2&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
-                    return queryString;
-                }
-                catch (Exception e)
-                {
-                    return null;
-                }
-            }
-        }
+        //            XmlNode node = xmlDoc.SelectSingleNode("Response/WikiPage");
+        //            string contentId = node["ContentId"].InnerText;
+        //            string wikiPageId = node["Id"].InnerText;
+        //            string queryString = "?wikiId=2&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
+        //            return queryString;
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            return null;
+        //        }
+        //    }
+        //}
 
         public static string GetApiEndPoint(string path)
         {

@@ -70,7 +70,42 @@ namespace UnderstoodDotOrg.Services.TelligentService
             adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
             return adminKeyBase64;
         }
+        public static string CreateQuestion(string title, string body, string currentUser)
+        {
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                    currentUser = currentUser.Trim().ToLower();
+                    webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
 
+                    // TODO: change to constant
+                    var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", "2"));
+
+                    var values = new NameValueCollection();
+                    values["Title"] = title;
+                    values["Body"] = body;
+
+                    var xml = Encoding.UTF8.GetString(webClient.UploadValues(requestUrl, values));
+
+                    Console.WriteLine(xml);
+
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNode node = xmlDoc.SelectSingleNode("Response/WikiPage");
+                    string contentId = node["ContentId"].InnerText;
+                    string wikiPageId = node["Id"].InnerText;
+                    string queryString = "?wikiId=2&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
+                    return queryString;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+            }
+        }
         public static bool PostComment(int blogId, int blogPostId, string body, string currentUser)
         {
             if (currentUser == "admin")
@@ -576,40 +611,40 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             return blog;
         }
-        public static List<Answer> GetAnswers(string wikiId, string wikiPageId)
-        {
-            List<Answer> answerList = new List<Answer>();
-            using (var webClient = new WebClient())
-            {
+        //public static List<Answer> GetAnswers(string wikiId, string wikiPageId, string contentId)
+        //{
+        //    string likes = GetTotalLikes(contentId).ToString();
+        //    List<Answer> answerList = new List<Answer>();
+        //    using (var webClient = new WebClient())
+        //    {
+        //        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+        //        var requestUrl = GetApiEndPoint(string.Format("wikis/{0}/pages/{1}/comments.xml", wikiId, wikiPageId));
 
-                var adminKey = String.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-                var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
+        //        var xml = webClient.DownloadString(requestUrl);
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-                var requestUrl = string.Format("{0}api.ashx/v2/wikis/{1}/pages/{2}/comments.xml", Settings.GetSetting(Constants.Settings.TelligentConfig), wikiId, wikiPageId);
+        //        XmlDocument xmlDoc = new XmlDocument();
+        //        xmlDoc.LoadXml(xml);
 
-                var xml = webClient.DownloadString(requestUrl);
-
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-
-                XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
-                int count = 0;
-                foreach (XmlNode xn in nodes)
-                {
-                    XmlNode user = xmlDoc.SelectSingleNode("Response/Comments/Comment/Author");
-                    Answer answer = new Answer()
-                    {
-                        PublishedDate = DataFormatHelper.FormatDate(xn["PublishedDate"].InnerText),
-                        Body = xn["Body"].InnerText,
-                        Author = user["Username"].InnerText
-                    };
-                    answerList.Add(answer);
-                    count++;
-                }
-            }
-            return answerList;
-        }
+        //        XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+        //        int count = 0;
+        //        foreach (XmlNode xn in nodes)
+        //        {
+        //            XmlNode user = xn.SelectSingleNode("Author");
+        //            Answer answer = new Answer()
+        //            {
+        //                PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["PublishedDate"].InnerText),
+        //                Body = xn["Body"].InnerText,
+        //                Author = user["Username"].InnerText,
+        //                AuthorAvatar = user["AvatarUrl"].InnerText,
+        //                Count = nodes.Count.ToString(),
+        //                Likes = likes,
+        //            };
+        //            answerList.Add(answer);
+        //            count++;
+        //        }
+        //    }
+        //    return answerList;
+        //}
         public static List<MemberCardModel> GetModerators()
         {
             var webClient = new WebClient();

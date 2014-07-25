@@ -9,6 +9,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
 {
@@ -140,7 +141,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
                 }
             }
 
-            var url = "/en/Community and Events/Q and A/Q and A Details.aspx" + CommunityHelper.CreateQuestion(title, body, user);
+            var url = "/en/Community and Events/Q and A/Q and A Details.aspx" + TelligentService.CreateQuestion(title, body, user);
             Response.Redirect(url);
 
         }
