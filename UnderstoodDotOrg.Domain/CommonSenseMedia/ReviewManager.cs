@@ -38,7 +38,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 
                     if (newReview == null)
                     {
-                        TemplateItem reviewTemplate = Sitecore.Configuration.Factory.GetDatabase("master").GetTemplate(ReviewItem.TemplateId);
+                        TemplateItem reviewTemplate = Sitecore.Configuration.Factory.GetDatabase("master").GetTemplate(AssistiveToolsReviewPageItem.TemplateId);
                         newReview = Get(searchPage.ID.ToString()).Add(Review.Title, reviewTemplate);
                     }
 
@@ -65,7 +65,7 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
         {
             if(searchPage.InnerItem.Children.Count > 0)
             {
-                foreach (ReviewItem i in searchPage.InnerItem.Children)
+                foreach (AssistiveToolsReviewPageItem i in searchPage.InnerItem.Children)
                 {
                     if (i.CSMID == CSMId)
                         return i.InnerItem;
