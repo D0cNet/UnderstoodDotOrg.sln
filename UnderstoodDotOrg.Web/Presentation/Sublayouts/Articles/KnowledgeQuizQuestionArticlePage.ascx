@@ -49,8 +49,8 @@
                 <asp:Panel ID="pnlResult" runat="server" Visible="false">
                     <p class="correctness-headline">
                         <span id="spanCurrentAnswerResult" runat="server" class="correct-incorrect correct"></span>
-                        <asp:Label ID="lblCorrect" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.CorrectText %>"></asp:Label>
-                        <asp:Label ID="lblIncorrect" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.IncorrectText %>"></asp:Label>
+                        <asp:Literal ID="litCorrect" runat="server" ></asp:Literal>
+                        <asp:Literal ID="litIncorrect" runat="server" ></asp:Literal>
                     </p>
                     <p class="explanation">
                         <sc:FieldRenderer ID="frExplanation" runat="server" FieldName="Answer Explanation" />

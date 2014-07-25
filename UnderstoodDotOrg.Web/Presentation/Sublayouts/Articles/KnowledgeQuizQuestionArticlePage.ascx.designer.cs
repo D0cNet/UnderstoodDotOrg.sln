@@ -139,22 +139,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanCurrentAnswerResult;
         
         /// <summary>
-        /// lblCorrect control.
+        /// litCorrect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCorrect;
+        protected global::System.Web.UI.WebControls.Literal litCorrect;
         
         /// <summary>
-        /// lblIncorrect control.
+        /// litIncorrect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIncorrect;
+        protected global::System.Web.UI.WebControls.Literal litIncorrect;
         
         /// <summary>
         /// frExplanation control.

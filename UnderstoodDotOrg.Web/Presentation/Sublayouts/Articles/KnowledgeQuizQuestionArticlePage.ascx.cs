@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Folders.KnowledgeQuizArticlePage;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.PageResources.Items.KnowledgeQuizArticlePage;
 using System.Web.UI.HtmlControls;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 {
@@ -35,6 +36,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void Page_Load(object sender, EventArgs e)
         {
             JumpToAnswer = false;
+            litCorrect.Text = DictionaryConstants.CorrectText;
+            litIncorrect.Text = DictionaryConstants.IncorrectText;
 
             Item questionsFolder = PageResources.Children.ToList().Where(i => i.IsOfType(KnowledgeQuizQuestionsFolderItem.TemplateId)).FirstOrDefault();
             if (questionsFolder != null)
@@ -149,13 +152,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 Answer.Result = true;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect correct");
-                lblIncorrect.Visible = false;
+                litIncorrect.Visible = false;
             }
             else
             {
                 Answer.Result = false;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect incorrect");
-                lblCorrect.Visible = false;
+                litCorrect.Visible = false;
             }
 
             UpdateAnswers(Answer);
@@ -169,13 +172,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 Answer.Result = true;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect correct");
-                lblIncorrect.Visible = false;
+                litIncorrect.Visible = false;
             }
             else
             {
                 Answer.Result = false;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect incorrect");
-                lblCorrect.Visible = false;
+                litCorrect.Visible = false;
             }
 
             UpdateAnswers(Answer);
@@ -189,13 +192,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             {
                 Answer.Result = true;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect correct");
-                lblIncorrect.Visible = false;
+                litIncorrect.Visible = false;
             }
             else
             {
                 Answer.Result = false;
                 spanCurrentAnswerResult.Attributes.Add("class", "correct-incorrect incorrect");
-                lblCorrect.Visible = false;
+                litCorrect.Visible = false;
             }
 
             UpdateAnswers(Answer);
