@@ -29,7 +29,7 @@
                                             <span class="number"><%# Item.DisplayAmount.Rendered %></span>
                                             <span class="gift-description"><%# Item.ShortDescription.Rendered %></span>
                                             <span class="icon-check">
-                                                <img class="check-img" alt="Check mark" src="/Presentation/includes/images/icon-check.png" /></span>
+                                                <img class="check-img" src="/Presentation/includes/images/icon-check.png" /></span>
                                         </button>
                                     </span>
                                 </label>
