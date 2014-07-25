@@ -5918,16 +5918,16 @@ h3.rs_read_this .rsbtn_player {
 }
 
 /* line 2, ../css.source/mixins/_rs-play-button.scss */
-.profile-wrap .children-section .rsbtn_player, .profile-wrap .community-section .rsbtn_player, .profile-wrap .privacy-section .rsbtn_player, .profile-wrap .contact-section .rsbtn_player, .profile-wrap .login-section .rsbtn_player {
+div.profile-wrap .profile-section.children-section .rsbtn_player, div.profile-wrap .profile-section.community-section .rsbtn_player, div.profile-wrap .profile-section.privacy-section .rsbtn_player, div.profile-wrap .profile-section.email-password-section .rsbtn_player, div.profile-wrap .profile-section.contact-section .rsbtn_player, div.profile-wrap .profile-section.login-section .rsbtn_player {
   left: -13px;
   left: -30px;
-  left: -42px;
+  left: -30px;
 }
 /* line 47, ../css.source/mixins/_rs-play-button.scss */
-.profile-wrap .children-section .rsbtn_player, .profile-wrap .community-section .rsbtn_player, .profile-wrap .privacy-section .rsbtn_player, .profile-wrap .contact-section .rsbtn_player, .profile-wrap .login-section .rsbtn_player {
+div.profile-wrap .profile-section.children-section .rsbtn_player, div.profile-wrap .profile-section.community-section .rsbtn_player, div.profile-wrap .profile-section.privacy-section .rsbtn_player, div.profile-wrap .profile-section.email-password-section .rsbtn_player, div.profile-wrap .profile-section.contact-section .rsbtn_player, div.profile-wrap .profile-section.login-section .rsbtn_player {
   top: -11px;
   top: -5px;
-  top: -5px;
+  top: 0px;
 }
 
 /* line 2, ../css.source/mixins/_rs-play-button.scss */

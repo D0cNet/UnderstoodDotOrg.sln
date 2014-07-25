@@ -495,10 +495,10 @@ h3.rs_read_this {
 }
 
 //m10
-.profile-wrap {
-  .children-section, .community-section, .privacy-section, .contact-section, .login-section {
-    @include left_rs_btn_responsive(-13px, -30px, -42px);
-    @include top_rs_btn_responsive(-11px, -5px, -5px);
+div.profile-wrap {
+  .profile-section.children-section, .profile-section.community-section, .profile-section.privacy-section, .profile-section.email-password-section, .profile-section.contact-section, .profile-section.login-section {
+    @include left_rs_btn_responsive(-13px, -30px, -30px);
+    @include top_rs_btn_responsive(-11px, -5px, 0px);
   }
 }
 

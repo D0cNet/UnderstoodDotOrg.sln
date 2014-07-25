@@ -30,7 +30,7 @@
             <!-- BEGIN PARTIAL: my-profile-content -->
             <!-- Begin About Me -->
             <div class="profile-wrap">
-                <div class="profile-section">
+                <div class="profile-section rs_read_this">
                     <div class="row profile-row">
                         <div class="col col-4">
                             <h2>
@@ -90,7 +90,7 @@
                 <!-- profile-section -->
                 <!-- End About Me -->
 
-                <div class="profile-section children-section">
+                <div class="profile-section children-section rs_read_this">
                     <div class="row profile-row">
                         <div class="col col-4 section-label">
                             <h2>
@@ -139,7 +139,7 @@
                 <!-- profile-section -->
                 <!-- End My Children -->
 
-                <div class="profile-section community-section">
+                <div class="profile-section community-section rs_read_this">
                     <div class="row profile-row">
                         <div class="col col-4">
                             <h2>
@@ -194,7 +194,7 @@
                 <!-- profile-section -->
                 <!-- End Community -->
 
-                <div class="profile-section privacy-section">
+                <div class="profile-section privacy-section rs_read_this">
                     <div class="row profile-row">
                         <div class="col col-4">
                             <h2>
@@ -243,7 +243,7 @@
                 <!-- profile-section -->
                 <!-- End Privacy -->
 
-                <div class="profile-section">
+                <div class="profile-section email-password-section rs_read_this">
                     <div class="row profile-row">
                         <div class="col col-4">
                             <h2>
@@ -309,7 +309,7 @@
                 <!-- profile-section -->
                 <!-- End Email and Password -->
 
-                <div class="profile-section contact-section">
+                <div class="profile-section contact-section rs_read_this">
                     <div class="row profile-row">
                         <div class="col col-4">
                             <h2>
