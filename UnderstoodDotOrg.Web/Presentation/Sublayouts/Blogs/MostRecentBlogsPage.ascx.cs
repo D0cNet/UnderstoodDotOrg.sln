@@ -20,6 +20,53 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnMostRead.Text = UnderstoodDotOrg.Common.DictionaryConstants.MostReadLabel;
+            btnMostShared.Text = UnderstoodDotOrg.Common.DictionaryConstants.MostSharedLabel;
+            btnMostRecent.Text = UnderstoodDotOrg.Common.DictionaryConstants.MostRecentLabel;
+            btnMostTalked.Text = UnderstoodDotOrg.Common.DictionaryConstants.MostTalkedLabel;
+
+            var dataSource = InitContent();
+
+            rptRecentBlogInfo.DataSource = dataSource;
+            rptRecentBlogInfo.DataBind();
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string query = TextHelper.RemoveHTML(txtSearch.Text);
+            Response.Redirect(String.Format("{}?q={}&a={}", LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")), query, Constants.TelligentSearchParams.Blog));
+        }
+
+        protected void btnMostRecent_Click(object sender, EventArgs e)
+        {
+            var dataSource = InitContent();
+
+            rptRecentBlogInfo.DataSource = dataSource;
+            rptRecentBlogInfo.DataBind();
+        }
+
+        protected void btnMostTalked_Click(object sender, EventArgs e)
+        {
+            var dataSource = InitContent();
+
+            var mostTalkedDataSource = dataSource;
+            mostTalkedDataSource.Sort((x, y) => -1 * x.CommentCount.CompareTo(y.CommentCount));
+            rptRecentBlogInfo.DataSource = mostTalkedDataSource;
+            rptRecentBlogInfo.DataBind();
+        }
+
+        protected void btnMostShared_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnMostRead_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected List<BlogPost> InitContent()
+        {
             string blogId = Request.QueryString["BlogId"];
             List<UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId, "100");
             foreach (var item in dataSource)
@@ -27,24 +74,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
                 BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
                 item.Author = blogPost.Author.Rendered;
                 item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
-                item.AuthorUrl = "/Community and Events/Blogs/Author/" + item.Author;
+                item.AuthorUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{5DF5183F-DDC8-4A10-897C-9C93593CF159}")) + item.Author;
             }
-
-            //Bind most recent posts
-            rptRecentBlogInfo.DataSource = dataSource;
-            rptRecentBlogInfo.DataBind();
-
-            //Bind most talked about posts
-            var mostTalkedDataSource = dataSource;
-            mostTalkedDataSource.Sort((x, y) => -1 * x.CommentCount.CompareTo(y.CommentCount));
-            rptMostTalkedBlogInfo.DataSource = mostTalkedDataSource;
-            rptMostTalkedBlogInfo.DataBind();
-        }
-
-        protected void btnSearch_Click(object sender, EventArgs e)
-        {
-            string query = TextHelper.RemoveHTML(txtSearch.Text);
-            Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=" + Constants.TelligentSearchParams.Blog);
+            return dataSource;
         }
     }
 }

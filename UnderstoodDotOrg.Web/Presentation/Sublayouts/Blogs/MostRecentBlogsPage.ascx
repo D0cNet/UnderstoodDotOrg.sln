@@ -31,13 +31,13 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
 
-                                    <li id="Recent" role="presentation" class="filter selected" data-sort-by="date"><a role="menuitem" onclick="showRecent();" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostRecentLabel %></a></li>
+                                    <li id="Recent" role="presentation" class="filter selected" data-sort-by="date"><asp:LinkButton role="menuitem" ID="btnMostRecent" OnClick="btnMostRecent_Click" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.MostRecentLabel %>" runat="server" /></li>
 
-                                    <li id="Read" role="presentation" class="filter " data-sort-by="read"><a role="menuitem" onclick="" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostReadLabel %></a></li>
+                                    <li id="Read" role="presentation" class="filter " data-sort-by="read"><asp:LinkButton role="menuitem" ID="btnMostRead" OnClick="btnMostRead_Click" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.MostReadLabel %>" /></li>
 
-                                    <li id="Shared" role="presentation" class="filter " data-sort-by="shared"><a role="menuitem" onclick="" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostSharedLabel %></a></li>
+                                    <li id="Shared" role="presentation" class="filter " data-sort-by="shared"><asp:LinkButton role="menuitem" ID="btnMostShared" OnClick="btnMostShared_Click" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.MostSharedLabel %>" /></li>
 
-                                    <li id="TalkedAbout" role="presentation" class="filter " data-sort-by="talkedabout"><a role="menuitem" onclick="showTalkedAbout();" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.MostTalkedLabel %></a></li>
+                                    <li id="TalkedAbout" role="presentation" class="filter " data-sort-by="talkedabout"><asp:LinkButton role="menuitem" ID="btnMostTalked" OnClick="btnMostTalked_Click" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.MostTalkedLabel %>" /></li>
 
                                 </ul>
                             </div>
@@ -52,6 +52,14 @@
         <div id="sort" class="col-23 clearfix blog-post-list-wrapper">
             <div id="sbMostRecent" class="col blog-post-list skiplink-content" aria-role="main">
                 <div class="blog-post-list-inner">
+                    <asp:UpdatePanel runat="server" ID="upBlogPosts">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="btnMostRecent" EventName="Click" />
+                            <asp:AsyncPostBackTrigger ControlID="btnMostRead" EventName="Click" />
+                            <asp:AsyncPostBackTrigger ControlID="btnMostShared" EventName="Click" />
+                            <asp:AsyncPostBackTrigger ControlID="btnMostTalked" EventName="Click" />
+                        </Triggers>
+                        <ContentTemplate>
                     <asp:Repeater ID="rptRecentBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
                         <ItemTemplate>
                             <!-- BEGIN PARTIAL: community/blog_post -->
@@ -91,9 +99,17 @@
                             <!-- END PARTIAL: community/blog_post -->
                         </ItemTemplate>
                     </asp:Repeater>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                 </div>
             </div>
-
+            <asp:UpdateProgress ID="updateProgress" runat="server">
+                <ProgressTemplate>
+                    <div style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #000000; opacity: 0.8;">
+                        <span style="border-width: 0px; position: fixed; padding: 50px; background-color: #FFFFFF; font-size: 36px; left: 40%; top: 40%;">Loading...</span>
+                    </div>
+                </ProgressTemplate>
+            </asp:UpdateProgress>
             <%--<sc:Sublayout CssStyle="display: none" ID="sbMostRead" runat="server" Path="~/Presentation/SubLayouts/Blogs/SortBlogsRecent.ascx" />
             <sc:Sublayout CssStyle="display: none" ID="sbMostShared" runat="server" Path="~/Presentation/SubLayouts/Blogs/SortBlogsRecent.ascx" />--%>
 
@@ -130,7 +146,7 @@
     <!-- END PARTIAL: children-key -->--%>
     <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 </div>
-<div style="display: none" id="hide">
+<%--<div style="display: none" id="hide">
     <div id="sbMostTalkedAbout" class="col blog-post-list skiplink-content" aria-role="main">
         <div class="blog-post-list-inner">
             <asp:Repeater ID="rptMostTalkedBlogInfo" runat="server" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost">
@@ -172,7 +188,7 @@
                     <!-- END PARTIAL: community/blog_post -->
                 </ItemTemplate>
             </asp:Repeater>
-        </div>
+        </div>--%>
 
         <!-- Show More -->
         <!-- BEGIN PARTIAL: community/show_more -->
@@ -190,14 +206,3 @@
 
     </div>
 </div>
-
-<script type="text/javascript">
-    function showRecent() {
-        $('#sbMostTalkedAbout').detach().appendTo('#hide');
-        $('#sbMostRecent').detach().prependTo('#sort');
-    }
-    function showTalkedAbout() {
-        $('#sbMostRecent').detach().appendTo('#hide');
-        $('#sbMostTalkedAbout').detach().prependTo('#sort');
-    }
-</script>

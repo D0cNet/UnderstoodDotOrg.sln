@@ -40,6 +40,51 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
+        /// btnMostRecent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnMostRecent;
+        
+        /// <summary>
+        /// btnMostRead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnMostRead;
+        
+        /// <summary>
+        /// btnMostShared control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnMostShared;
+        
+        /// <summary>
+        /// btnMostTalked control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnMostTalked;
+        
+        /// <summary>
+        /// upBlogPosts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upBlogPosts;
+        
+        /// <summary>
         /// rptRecentBlogInfo control.
         /// </summary>
         /// <remarks>
@@ -49,6 +94,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
         protected global::System.Web.UI.WebControls.Repeater rptRecentBlogInfo;
         
         /// <summary>
+        /// updateProgress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress updateProgress;
+        
+        /// <summary>
         /// Sidebar control.
         /// </summary>
         /// <remarks>
@@ -56,14 +110,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Placeholder Sidebar;
-        
-        /// <summary>
-        /// rptMostTalkedBlogInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptMostTalkedBlogInfo;
     }
 }
