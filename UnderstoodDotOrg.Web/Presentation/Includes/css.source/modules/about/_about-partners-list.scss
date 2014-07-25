@@ -20,14 +20,14 @@
   } // end .about-partners-list h2
   p {
       font-family: Arial, sans-serif;
-      @include rem(font-size, 15px);
+      @include rem(font-size, 18px);
       @include rem(line-height, 26px);
       color: #696969;
       margin-bottom: 0;
     } // end .about-partners-list p
   &:first-child div.partner-block {
       @include bp($bp-small-plus) {
-        padding-top: 20px;
+        padding-top: 40px;
       }
     }
   .partner-block {
@@ -95,12 +95,6 @@
         }
       }
     } // end .partner-block-logo
-    .partner-head {
-      @include bp($bp-small-plus) {
-        margin-top: 9px;
-        padding: 0px;
-      }
-    }
     .partner-block-text {
       padding: 0 0 21px 0;
       position: relative;
@@ -121,8 +115,8 @@
         margin-bottom: 15px;
         display: block;
         text-transform: capitalize;
-        @include rem(font-size, 24px);
-        @include rem(line-height, 24px);
+        @include rem(font-size, 29px);
+        @include rem(line-height, 29px);
         font-weight: normal;
         a {
           color: #7a4183;
