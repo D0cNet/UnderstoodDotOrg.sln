@@ -1211,7 +1211,6 @@
         // only above 960 viewport or nonresponsive
         if(Modernizr.mq('(min-width: 960px)') || !Modernizr.mq('only all')){
           self.dom.html.on('equalHeights', function() {
-            alert('foo');
             self.triggerEqualHeights();
           });
         }
