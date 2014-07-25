@@ -41,8 +41,8 @@ namespace UnderstoodDotOrg.Web.Presentation
                     XmlTextReader games = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/games.xml"));
                     XmlTextReader websites = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/websites.xml"));
 
-                    //totalEntries += ImportCategory(GetEntries(apps));
-                    //totalEntries += ImportCategory(GetEntries(games));
+                    totalEntries += ImportCategory(GetEntries(apps));
+                    totalEntries += ImportCategory(GetEntries(games));
                     totalEntries += ImportCategory(GetEntries(websites));
                 }
                 catch
