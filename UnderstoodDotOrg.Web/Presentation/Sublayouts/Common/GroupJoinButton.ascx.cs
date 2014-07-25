@@ -102,7 +102,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                             Item grpItem = Groups.ConvertGroupIDtoSitecoreItem(GroupID);
                         
                             string itemUrl = grpItem.GetUrl();
-                            Sitecore.Web.WebUtil.Redirect(itemUrl);
+                            Response.Redirect(itemUrl, true);
                         }
                         catch (Exception ex)
                         {
