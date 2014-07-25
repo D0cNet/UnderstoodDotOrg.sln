@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Components;
 using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Brightcove;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
 {
@@ -60,6 +61,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
                     .Select(ti => new
                     {
                         Issue = ti,
+                        VideoGradeSet = ti.GetVideoGradeSets()
+                            .FirstOrDefault(i => i.GradeGroup.Item.ID == gradeGroup.ID)
+                    })
+                    .Where(ivgs => ivgs.VideoGradeSet != null)
+                    .Select(ivgs => new
+                    {
+                        Issue = ivgs.Issue,
+                        OnDemandVideo = ivgs.VideoGradeSet.OnDemandWithSubtitles.ListItems.FirstOrDefault(),
+                    })
+                    .Where(iodv => iodv.OnDemandVideo != null && iodv.OnDemandVideo.IsOfType(BrightcoveVideoItem.TemplateId))
+                    .Select(iodv => new {
+                        Issue = iodv.Issue,
+                        OnDemandVideo = (BrightcoveVideoItem)iodv.OnDemandVideo
+                    })
+                    .Select(iodv => new
+                    {
+                        IssueId = iodv.Issue.ID.Guid,
+                        NavigationTitle = iodv.Issue.ChildDemographic.NavigationTitle.Rendered,
+                        CssClass = iodv.Issue.ChildDemographic.CssClass.Rendered,
+                        Image = iodv.OnDemandVideo.VideoStillUrl,
+                        ChildName = iodv.OnDemandVideo.BrightcoveMediaElement.Title.Rendered,
                         InRangeGradeId = inRangeGradeId
                     });
 

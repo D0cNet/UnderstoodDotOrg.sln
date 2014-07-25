@@ -82,11 +82,11 @@
                     <asp:Repeater ID="rptrIssues" runat="server">
                         <ItemTemplate>
                             <li>
-                                <a href="<%= PlayerPageItem.GetUrl() %>?simq=<%# Eval("Issue.ID.Guid") %>&gradeId=<%# Eval("InRangeGradeId") %>&standalone=true">
-                                    <h4><%# Eval("Issue.ChildDemographic.NavigationTitle.Rendered") %></h4>
-                                    <img alt="FPO content image" src="http://placehold.it/150x84&amp;text=150x84" /><i class="icon play"></i>
+                                <a href="<%= PlayerPageItem.GetUrl() %>?simq=<%# Eval("IssueId") %>&gradeId=<%# Eval("InRangeGradeId") %>&standalone=true">
+                                    <h4><%# Eval("NavigationTitle") %></h4>
+                                    <img alt="<%# Eval("NavigationTitle") %>" src="<%# Eval("Image") %>" /><i class="icon play"></i>
                                 </a>
-                                <p>Dylan <i class="icon <%# Eval("Issue.ChildDemographic.CssClass.Rendered") %>"></i></p>
+                                <p><%# Eval("ChildName") %> <i class="icon <%# Eval("CssClass") %>"></i></p>
                             </li>
                         </ItemTemplate>
                     </asp:Repeater>

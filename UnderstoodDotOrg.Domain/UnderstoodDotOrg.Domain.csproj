@@ -212,6 +212,7 @@
     <Compile Include="Search\SessionSearchResult.cs" />
     <Compile Include="SitecoreCIG\Brightcove\BrightcoveMediaElementItem.base.cs" />
     <Compile Include="SitecoreCIG\Brightcove\BrightcoveVideoItem.base.cs" />
+    <Compile Include="SitecoreCIG\Brightcove\BrightcoveVideoItem.instance.cs" />
     <Compile Include="SitecoreCIG\Common\MediaElementItem.base.cs" />
     <Compile Include="SitecoreCIG\FolderItem.base.cs" />
     <Compile Include="SitecoreCIG\LanguageItem.base.cs" />

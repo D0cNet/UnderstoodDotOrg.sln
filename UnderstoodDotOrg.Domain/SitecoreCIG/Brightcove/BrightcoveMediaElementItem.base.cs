@@ -79,6 +79,15 @@ public CustomTextField ShortDescription
 }
 
 
+public CustomTextField Title
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Title"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
