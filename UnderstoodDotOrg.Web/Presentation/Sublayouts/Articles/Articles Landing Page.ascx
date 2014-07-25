@@ -6,16 +6,16 @@
     <ItemTemplate>
         <asp:Repeater ID="rptRow" runat="server" OnItemDataBound="rptRow_ItemDataBound">
             <HeaderTemplate>
-                <div class="container common-questions">
+                <div class="common-questions">
                     <div class="row">
             </HeaderTemplate>
             <ItemTemplate>
-                <figure class="col col-5 offset-<%# Container.ItemIndex + 1 %>">
+                <div class="col col-5 offset-1 image-left">
                     <asp:HyperLink ID="hypThumbnail" runat="server">
                     <asp:Image ID="imgThumbnail" runat="server" />
                     </asp:HyperLink>
-                </figure>
-                <div class="col col-4 offset-1 question">
+                </div>
+                <div class="col col-5 offset-1 question-right">
                     <asp:HyperLink ID="hypArticleLink" runat="server"></asp:HyperLink>
                 </div>
             </ItemTemplate>
