@@ -41,8 +41,8 @@ namespace UnderstoodDotOrg.Web.Presentation
                     XmlTextReader games = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/games.xml"));
                     XmlTextReader websites = new XmlTextReader(Path.Combine(exeDir, "../Presentation/XML/websites.xml"));
 
-                    totalEntries += ImportCategory(GetEntries(apps));
-                    totalEntries += ImportCategory(GetEntries(games));
+                    //totalEntries += ImportCategory(GetEntries(apps));
+                    //totalEntries += ImportCategory(GetEntries(games));
                     totalEntries += ImportCategory(GetEntries(websites));
                 }
                 catch
@@ -50,10 +50,6 @@ namespace UnderstoodDotOrg.Web.Presentation
                     
                 }
             }
-
-            //totalEntries += ImportCategory(apps);
-            //totalEntries += ImportCategory(games);
-            //totalEntries += ImportCategory(websites);
 
             litCount.Text = "Completed " + totalEntries.ToString() + " total imports.";
             litLog.Text = Log;
@@ -138,6 +134,8 @@ namespace UnderstoodDotOrg.Web.Presentation
                                     newItem.Thumbnail = image;
                                 }
                             }
+
+                            newItem.Screenshots = images;
                         }
 
                         if (x["csm:product"]["csm:platforms"] != null)
@@ -183,7 +181,7 @@ namespace UnderstoodDotOrg.Web.Presentation
                                 temp = x["csm:review"]["csm:learning_rating"]["csm:subjects"].ChildNodes;
                                 foreach (XmlNode t in temp)
                                 {
-                                    newItem.Subjects += t.Attributes["name"] + ",";
+                                    newItem.Subjects += t.Attributes["name"].InnerText + ",";
                                 }
                             }
 
@@ -192,7 +190,7 @@ namespace UnderstoodDotOrg.Web.Presentation
                                 temp = x["csm:review"]["csm:learning_rating"]["csm:skills"].ChildNodes;
                                 foreach (XmlNode t in temp)
                                 {
-                                    newItem.Skills += t.Attributes["name"] + ",";
+                                    newItem.Skills += t.Attributes["name"].InnerText + ",";
                                 }
                             }
                         }
@@ -202,7 +200,7 @@ namespace UnderstoodDotOrg.Web.Presentation
                             temp = x["csm:review"]["csm:special_needs"].ChildNodes;
                             foreach (XmlNode t in temp)
                             {
-                                newItem.Issues += t.Attributes["name"] + ",";
+                                newItem.Issues += t.Attributes["name"].InnerText + ",";
                             }
                         }
                     }
