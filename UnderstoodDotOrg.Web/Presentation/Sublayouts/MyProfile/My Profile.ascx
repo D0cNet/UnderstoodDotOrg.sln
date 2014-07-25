@@ -11,7 +11,7 @@
                     <div class="col col-22 offset-1 group">
                         <%--<h2>My Profile</h2>--%>
                         <h2>
-                            <sc:text field="Page Title" runat="server" />
+                            <sc:Text Field="Page Title" runat="server" />
                         </h2>
                     </div>
                 </div>
@@ -132,7 +132,8 @@
                     <!-- .row -->
                     <div class="profile-notice inline">
                         <p>
-                            <asp:Literal ID="ltlNicknameReminderText" runat="server"></asp:Literal></p>
+                            <asp:Literal ID="ltlNicknameReminderText" runat="server"></asp:Literal>
+                        </p>
                     </div>
                 </div>
                 <!-- profile-section -->
@@ -186,7 +187,8 @@
                     <!-- .row -->
                     <div class="row profile-notice inline">
                         <p>
-                            <asp:Literal ID="ltlZipcodeReminderText" runat="server"></asp:Literal></p>
+                            <asp:Literal ID="ltlZipcodeReminderText" runat="server"></asp:Literal>
+                        </p>
                     </div>
                 </div>
                 <!-- profile-section -->
@@ -208,11 +210,20 @@
                                     <div class="col col-18 profile-detail-information">
                                         <ul>
                                             <li>
-                                                <asp:HyperLink ID="hypViewAsVisitors" runat="server"><sc:FieldRenderer ID="frVisitors" FieldName="Visitors Text" runat="server"/> <i class="icon-arrow-right-blue"></i></asp:HyperLink></li>
+                                                <asp:HyperLink ID="hypViewAsVisitors" runat="server">
+                                                    <sc:FieldRenderer ID="frVisitors" FieldName="Visitors Text" runat="server" />
+                                                    <i class="icon-arrow-right-blue"></i>
+                                                </asp:HyperLink></li>
                                             <li>
-                                                <asp:HyperLink ID="hypViewAsMembers" runat="server"><sc:FieldRenderer ID="frMembers" FieldName="Members Text" runat="server"/> <i class="icon-arrow-right-blue"></i></asp:HyperLink></li>
+                                                <asp:HyperLink ID="hypViewAsMembers" runat="server">
+                                                    <sc:FieldRenderer ID="frMembers" FieldName="Members Text" runat="server" />
+                                                    <i class="icon-arrow-right-blue"></i>
+                                                </asp:HyperLink></li>
                                             <li>
-                                                <asp:HyperLink ID="hypViewAsFriends" runat="server"><sc:FieldRenderer ID="frFriends" FieldName="Friends Text" runat="server"/> <i class="icon-arrow-right-blue"></i></asp:HyperLink></li>
+                                                <asp:HyperLink ID="hypViewAsFriends" runat="server">
+                                                    <sc:FieldRenderer ID="frFriends" FieldName="Friends Text" runat="server" />
+                                                    <i class="icon-arrow-right-blue"></i>
+                                                </asp:HyperLink></li>
                                         </ul>
                                     </div>
                                 </asp:PlaceHolder>
@@ -237,7 +248,9 @@
                         <div class="col col-4">
                             <h2>
                                 <asp:Literal ID="ltlEmailAndPasswordLabel" runat="server"></asp:Literal></h2>
-                            <a href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.EditFragment %></a>
+                            <a href="#" class="btnEdit"><%= UnderstoodDotOrg.Common.DictionaryConstants.EditFragment %></a>
+                            <a href="#" class="btnCancel"><%= UnderstoodDotOrg.Common.DictionaryConstants.CancelFragment %></a>
+                            <asp:LinkButton ID="lbSaveEmailPassword" CssClass="lbSave" CausesValidation="true" ValidationGroup="EmailPassword" OnClientClick="Page_ClientValidate('EmailPassword')" OnClick="lbSaveEmailPassword_Click" runat="server"></asp:LinkButton>
                         </div>
                         <div class="col col-20 profile-details">
                             <div class="row">
@@ -247,8 +260,13 @@
                                 </div>
                                 <div class="col col-18 profile-detail-information">
                                     <%--<span>sonya.mik@email.com</span>--%>
-                                    <span>
+                                    <span class="cnt">
                                         <asp:Literal ID="uxEmailAddress" runat="server"></asp:Literal></span>
+                                    <span class="form-field">
+                                        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                                    </span>
+
+                                    <asp:RegularExpressionValidator ID="valEmail" runat="server" ControlToValidate="txtEmail" CssClass="validationerror" Display="Dynamic" ValidationGroup="EmailPassword"></asp:RegularExpressionValidator>
                                 </div>
                             </div>
                             <!-- .row -->
@@ -258,11 +276,31 @@
                                         <asp:Literal ID="ltlPasswordLabel" runat="server"></asp:Literal></h3>
                                 </div>
                                 <div class="col col-18 profile-detail-information">
-                                    <span class="password">
+                                    <span class="password cnt">
                                         <asp:Literal runat="server" ID="uxPassword"></asp:Literal></span>
+                                    <span class="form-field">
+                                        <asp:TextBox ID="txtOldPassword" runat="server" TextMode="Password"></asp:TextBox>
+                                        <asp:RegularExpressionValidator ID="valOldPassword" runat="server" ControlToValidate="txtOldPassword" CssClass="validationerror" Display="Dynamic" ValidationGroup="EmailPassword"></asp:RegularExpressionValidator>
+                                    </span>
+                                    <span class="form-field">
+                                        <asp:TextBox ID="txtNewPassword" runat="server" TextMode="Password"></asp:TextBox>
+                                        <asp:RegularExpressionValidator ID="valNewPassword" runat="server" ControlToValidate="txtNewPassword" CssClass="validationerror" Display="Dynamic" ValidationGroup="EmailPassword"></asp:RegularExpressionValidator>
+                                    </span>
+                                    <span class="form-field">
+                                        <asp:TextBox ID="txtConfirmNewPassword" runat="server" TextMode="Password"></asp:TextBox>
+                                        <asp:RegularExpressionValidator ID="valConfirmNewPassword" runat="server" ControlToValidate="txtConfirmNewPassword" CssClass="validationerror" Display="Dynamic" ValidationGroup="EmailPassword"></asp:RegularExpressionValidator>
+                                        <asp:CompareValidator ID="valComparePassword" runat="server" ControlToCompare="txtNewPassword" ControlToValidate="txtConfirmNewPassword" CssClass="validationerror" Display="Dynamic" ValidationGroup="EmailPassword"></asp:CompareValidator>
+                                    </span>
                                 </div>
                             </div>
                             <!-- .row -->
+                            <div class="row">
+                                <div class="col col-5 offset-1">
+                                </div>
+                                <div class="col col-18 profile-detail-information-error">
+                                    <asp:Literal runat="server" ID="litEmailPasswordError"></asp:Literal>
+                                </div>
+                            </div>
                         </div>
                         <!-- .col -->
                     </div>
@@ -278,7 +316,7 @@
                                 <asp:Literal ID="ltlContactLabel" runat="server"></asp:Literal></h2>
                             <a href="#" class="btnEdit"><%= UnderstoodDotOrg.Common.DictionaryConstants.EditFragment %></a>
                             <a href="#" class="btnCancel"><%= UnderstoodDotOrg.Common.DictionaryConstants.CancelFragment %></a>
-                            <asp:LinkButton ID="lbSave_PhoneNumber" CssClass="lbSave" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.SaveButtonText %>" OnClick="lbSave_PhoneNumber_Click" runat="server"></asp:LinkButton>
+                            <asp:LinkButton ID="lbSave_PhoneNumber" CssClass="lbSave" OnClick="lbSave_PhoneNumber_Click" runat="server"></asp:LinkButton>
                         </div>
                         <div class="col col-20 profile-details">
                             <div class="row">
@@ -300,7 +338,8 @@
                     <!-- .row -->
                     <div class="row profile-notice">
                         <p>
-                            <asp:Literal ID="ltlContactReminderText" runat="server"></asp:Literal></p>
+                            <asp:Literal ID="ltlContactReminderText" runat="server"></asp:Literal>
+                        </p>
                     </div>
                 </div>
                 <!-- profile-section -->

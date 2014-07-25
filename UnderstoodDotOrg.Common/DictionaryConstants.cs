@@ -697,6 +697,9 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string EnterOldPasswordWatermark { get { return Translate.TextByDomain(PosesDictionary, "Enter Old Password Watermark"); } }
+
+
         public static string EnterPasswordWatermark
         {
             get

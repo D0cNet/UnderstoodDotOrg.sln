@@ -17,6 +17,7 @@
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
     using UnderstoodDotOrg.Framework.UI;
+    using System.Text.RegularExpressions;
 
     public partial class My_Profile : BaseSublayout
     {
@@ -73,7 +74,8 @@
 
                 SetInterests();
 
-                uxEmailAddress.Text = this.CurrentUser.UserName;
+                uxEmailAddress.Text = txtEmail.Text = this.CurrentUser.UserName;
+
 
                 SetJourney();
 
@@ -229,6 +231,26 @@
             ltlPasswordLabel.Text = DictionaryConstants.PasswordLabel;
             ltlPrivacyLabel.Text = DictionaryConstants.PrivacyLabel;
             ltlZipcodeReminderText.Text = DictionaryConstants.ZipcodeReminderText;
+            lbSave_PhoneNumber.Text = lbSaveEmailPassword.Text = DictionaryConstants.SaveButtonText;
+
+            //set placeholders
+            txtOldPassword.Attributes["placeholder"] = DictionaryConstants.EnterOldPasswordWatermark;
+            txtNewPassword.Attributes["placeholder"] = DictionaryConstants.EnterNewPasswordWatermark;
+            txtConfirmNewPassword.Attributes["placeholder"] = DictionaryConstants.ReEnterNewPasswordWatermark;
+
+            //set validators
+            valEmail.ValidationExpression = Constants.Validators.Email;
+            valOldPassword.ValidationExpression = Constants.Validators.Password;
+            valNewPassword.ValidationExpression = Constants.Validators.Password;
+            valConfirmNewPassword.ValidationExpression = Constants.Validators.Password;
+
+            //set error messages
+            valEmail.ErrorMessage = DictionaryConstants.EmailValidationMessage;
+            valOldPassword.ErrorMessage = DictionaryConstants.PasswordErrorMessage;
+            valNewPassword.ErrorMessage = DictionaryConstants.PasswordErrorMessage;
+            valConfirmNewPassword.ErrorMessage = DictionaryConstants.PasswordErrorMessage;
+            valComparePassword.ErrorMessage = DictionaryConstants.PasswordMatchError;
+
         }
 
         private string replacePassword(string password)
@@ -309,6 +331,99 @@
             membershipmManager.UpdateMember(this.CurrentMember);
 
             Response.Redirect(Request.Url.ToString());
+        }
+
+        protected void lbSaveEmailPassword_Click(object sender, EventArgs e)
+        {
+            var action = false;
+
+            try
+            {
+                if (!string.IsNullOrEmpty(this.txtEmail.Text))
+                {
+                    if (Regex.IsMatch(this.txtEmail.Text, Constants.Validators.Email))
+                    {
+                        //matched regex
+                        if (this.UpdateEmail())
+                        {
+                            action = true;
+                            
+                            var membershipManager = new MembershipManager();
+
+                            this.CurrentMember = membershipManager.GetMember(this.CurrentMember.MemberId);
+                            this.CurrentUser = membershipManager.GetUser(this.CurrentMember.MemberId, true);
+                        }
+                        else
+                        {
+                            throw new Exception(DictionaryConstants.SomethingFailedError);
+                        }
+                    }
+                    else
+                    {
+                        //did not match regex and not empty
+                        throw new Exception(DictionaryConstants.PasswordErrorMessage);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                litEmailPasswordError.Text += ex.Message;
+            }
+
+            try
+            {
+
+                if (!string.IsNullOrEmpty(this.txtOldPassword.Text) && !string.IsNullOrEmpty(this.txtNewPassword.Text) && !string.IsNullOrEmpty(this.txtConfirmNewPassword.Text))
+                {
+                    if (this.txtNewPassword.Text != this.txtConfirmNewPassword.Text)
+                    {
+                        if (this.UpdatePassword())
+                        {
+                            action = true;
+                        }
+                        else
+                        {
+                            throw new Exception(DictionaryConstants.SomethingFailedError);
+                        }
+                    }
+                    else
+                    {
+                        //new passwords don't match
+                        throw new Exception(DictionaryConstants.PasswordMatchError);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                litEmailPasswordError.Text += ex.Message;
+            }
+
+
+            if (action)
+            {
+                Response.Redirect(Request.RawUrl, true);
+            }
+        }
+
+        private bool UpdateEmail()
+        {
+            var ret = false;
+
+            //email is not empty, passes regex
+            var membershipManager = new MembershipManager();
+
+            ret = membershipManager.UpdateEmail(this.CurrentMember, txtEmail.Text);
+
+            return ret;
+        }
+
+        private bool UpdatePassword()
+        {
+            var ret = false;
+
+
+
+            return ret;
         }
 
         protected string getChildEditLink(ListViewDataItem Container)

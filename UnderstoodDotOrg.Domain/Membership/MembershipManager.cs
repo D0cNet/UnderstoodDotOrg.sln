@@ -608,6 +608,8 @@ namespace UnderstoodDotOrg.Domain.Membership
             return ret;
         }
 
+        
+
         private bool updateEmail(string applicationName, string oldUsername, string newUsername)
         {
             using (SqlConnection myConnection = new SqlConnection())
