@@ -477,6 +477,10 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\CommentItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\LiveChatEventPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\LiveChatEventPageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\MonthlyEventsCalendarViewItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\MonthlyEventsCalendarViewItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\MonthlyEventsListViewItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\MonthlyEventsListViewItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\WebinarEventPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ExpertLive\WebinarEventPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\HomePageItem.base.cs" />
