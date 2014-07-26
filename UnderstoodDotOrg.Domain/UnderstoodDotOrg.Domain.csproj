@@ -367,6 +367,8 @@
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\ExpertLandingPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\ExpertLandingPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\ExpertLandingPageItem.static.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\GenericAboutPageItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\GenericAboutPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ChildInformationPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ChildInformationPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\AboutPages\Newsletter\ChildInformationPageItem.static.cs" />

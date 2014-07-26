@@ -295,6 +295,13 @@
     <Compile Include="Presentation\Sublayouts\About\AboutUnderstood.ascx.designer.cs">
       <DependentUpon>AboutUnderstood.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\About\GenericAboutPage.ascx.cs">
+      <DependentUpon>GenericAboutPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\About\GenericAboutPage.ascx.designer.cs">
+      <DependentUpon>GenericAboutPage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\About\Widgets\ContactUs.ascx.cs">
       <DependentUpon>ContactUs.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3004,6 +3011,7 @@
     <Content Include="Presentation\Sublayouts\About\AboutPartners.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutPartner_Details.ascx" />
     <Content Include="Presentation\Sublayouts\About\AboutUnderstood.ascx" />
+    <Content Include="Presentation\Sublayouts\About\GenericAboutPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\Widgets\ContactUs.ascx" />
     <Content Include="Presentation\Sublayouts\About\DonationConfirmationPage.ascx" />
     <Content Include="Presentation\Sublayouts\About\DonationPage.ascx" />
