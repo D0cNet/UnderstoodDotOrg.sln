@@ -910,6 +910,32 @@ namespace UnderstoodDotOrg.Domain.Search
 
         }
 
+        public static IEnumerable<BaseEventDetailPageItem> GetEventsByMonthAndYear(int month, int year)
+        {
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+
+            DateTime startDate = new DateTime(year, month, 1);
+            DateTime endDate = startDate.AddMonths(1);
+
+            using (var context = index.CreateSearchContext())
+            {
+                var query = GetCurrentCultureQueryable<EventPage>(context)
+                                    .Filter(GetBaseEventPredicate())
+                                    .Filter(i => (i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) 
+                                                  || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
+                                            && i.EventStartDate >= startDate
+                                            && i.EventStartDate < endDate)
+                                    .OrderBy(i => i.EventStartDate);
+
+                int totalResults = query.Take(1).GetResults().TotalSearchResults;
+
+                // Exclude out of synch indexed items
+                return query.Take(totalResults).ToList()
+                            .Select(i => (BaseEventDetailPageItem)i.GetItem())
+                            .Where(i => i != null);
+            }
+        }
+
         public static IEnumerable<BaseEventDetailPageItem> GetUpcomingEvents(int totalResults)
         {
             // TODO: refactor to use GetUpcomingEvents
