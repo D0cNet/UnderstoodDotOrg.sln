@@ -55,6 +55,51 @@ public CustomImageField Hero
 }
 
 
+public CustomTextField ReviewandratingsbyText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Review and ratings by Text"]);
+	}
+}
+
+
+public CustomImageField AppStoreImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["App Store Image"]);
+	}
+}
+
+
+public CustomImageField GooglePlayImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Google Play Image"]);
+	}
+}
+
+
+public CustomImageField SponsorImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Sponsor Image"]);
+	}
+}
+
+
+public CustomImageField ContentThumbnail
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Content Thumbnail"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

@@ -27,6 +27,8 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPa
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 using System.ComponentModel;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Pages;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -558,10 +560,14 @@ namespace UnderstoodDotOrg.Domain.Search
                     }
                 }
                 
-                // Fallback to all articles
+                // Fallback to all articles and tools
                 if (!hasTemplateMappings) 
                 {
-                    query = query.Filter(GetInheritsArticlePredicate());
+                    query = query.Filter(a => a.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId))
+                                         || a.TemplateId == ID.Parse(BehaviorToolsLandingPageItem.TemplateId)
+                                         || a.TemplateId == ID.Parse(AssistiveToolsLandingPageItem.TemplateId)
+                                         || a.TemplateId == ID.Parse(DecisionToolLandingPageItem.TemplateId)
+                                         || a.TemplateId == ID.Parse(TyceOverviewPageItem.TemplateId));
                 }
 
                 // Search for terms

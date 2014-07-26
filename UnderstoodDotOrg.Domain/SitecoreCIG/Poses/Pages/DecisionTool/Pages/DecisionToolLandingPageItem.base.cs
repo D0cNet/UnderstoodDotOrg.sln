@@ -46,6 +46,15 @@ public static implicit operator Item(DecisionToolLandingPageItem customItem)
 #region Field Instance Methods
 
 
+public CustomImageField ContentThumbnail
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Content Thumbnail"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

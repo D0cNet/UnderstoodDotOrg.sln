@@ -17,8 +17,8 @@ public static readonly string TemplateId = "{00F8825A-95C3-47D4-80E1-ACA70FAD282
 
 #region Inherited Base Templates
 
-private readonly BasePageNEWItem _BasePageNEWItem;
-public BasePageNEWItem BasePageNEW { get { return _BasePageNEWItem; } }
+private readonly ContentPageItem _ContentPageItem;
+public ContentPageItem ContentPage { get { return _ContentPageItem; } }
 
 #endregion
 
@@ -26,7 +26,7 @@ public BasePageNEWItem BasePageNEW { get { return _BasePageNEWItem; } }
 
 public BehaviorToolsLandingPageItem(Item innerItem) : base(innerItem)
 {
-	_BasePageNEWItem = new BasePageNEWItem(innerItem);
+	_ContentPageItem = new ContentPageItem(innerItem);
 
 }
 
@@ -78,6 +78,15 @@ public CustomMultiListField GradeDropdownChoices
 	get
 	{
 		return new CustomMultiListField(InnerItem, InnerItem.Fields["Grade Dropdown Choices"]);
+	}
+}
+
+
+public CustomImageField ContentThumbnail
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Content Thumbnail"]);
 	}
 }
 
