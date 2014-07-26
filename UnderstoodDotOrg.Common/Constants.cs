@@ -755,7 +755,7 @@ namespace UnderstoodDotOrg.Common
             }
         }
         #region User Activty Tracking
-        public static class UserActivity_Values
+        public static class UserActivity_Values 
         {
             public const string SetReminder = "Reminder Set";
             public const string Favorited = "Item Favorited";

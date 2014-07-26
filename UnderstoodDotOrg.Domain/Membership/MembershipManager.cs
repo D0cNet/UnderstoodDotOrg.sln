@@ -1380,7 +1380,7 @@ namespace UnderstoodDotOrg.Domain.Membership
         /// <param name="Activity">Use Constants. UserActivity_Values</param>
         /// <param name="ActivityType">Use Constants. UserActivity_Types</param>
         /// <param name="SpecialFilter">Use Constatnts. UserActivity_SpecialFilters to provide context of WHERE this was found helpful.</param>
-        /// <returns></returns>
+        /// <returns></returns> 
         public bool LogMemberHelpfulVote (Guid MemberId, Guid ContentId, 
                                         string Activity, int ActivityType, 
                                         string SpecialFilter)

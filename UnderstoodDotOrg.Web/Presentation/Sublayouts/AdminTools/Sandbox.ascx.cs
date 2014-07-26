@@ -288,7 +288,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                 Response.Write("<h1>" + g.ToString() + "</h1>" + Environment.NewLine);
             }
 
-        }
+        } 
 
         protected void btnLogHelpfulQuestion_Click(object sender, EventArgs e)
         {
