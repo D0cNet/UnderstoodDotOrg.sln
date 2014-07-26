@@ -916,6 +916,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecommendedBlogs.ascx.cs">
       <DependentUpon>RecommendedBlogs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecommendedBlogs.ascx.designer.cs">
       <DependentUpon>RecommendedBlogs.ascx</DependentUpon>

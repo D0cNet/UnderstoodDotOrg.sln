@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 {
-    public partial class RecommendedBlogs : System.Web.UI.UserControl
+    public partial class RecommendedBlogs : BaseSublayout //System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
