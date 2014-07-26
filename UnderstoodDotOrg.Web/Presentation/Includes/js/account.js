@@ -3,12 +3,47 @@
     // Initialize the module on page load.
     $(document).ready(function () {
         new U.user_profile();
+
+        // FIXME : This is Upload Image UX fix, encapsulate this properly
+        // get elements
+        var uploadForm = $('#uploadAvatar'),
+            uploadTrigger = $('#main_0_userAvatar');
+        if (uploadForm.length === 1) {
+
+            // create custom element
+            var inputProxy = ('<div class="input-proxy choose">Upload New Image</div>');
+            uploadForm.append(inputProxy);
+            // show on hover
+            uploadForm.hover(
+                function() {
+                    uploadForm.addClass('over');
+                }, function() {
+                    uploadForm.removeClass('over');
+                }
+            );
+            // trigger clicks
+            var proxyInstance = $('.input-proxy.choose'),
+                chooseFile = $('#main_0_fuUserAvatar'),
+                uploadPic = $('#main_0_btnUpload');
+
+            proxyInstance.on('click', function(){
+                console.log('yes');
+                // click 'choose file'
+                chooseFile.trigger('click');
+                // click upload
+                chooseFile.change(function(){
+                    uploadPic.trigger('click');
+                });
+            });
+
+        }
     });
 
     U.user_profile = function () {
         var self = this;
 
         U.user_profile.showHoverCard = function ($destination, $cardSelector, displayTargetSelector) {
+
             return function (event) {
                 var $body = $('body');
                 $body.trigger('click.card-close');
@@ -808,7 +843,7 @@
             self.childCount++;
             //$('.child-count-question span').html(self.numberAdjectives[self.childCount]);
             $('span.child-counter').html(self.numberAdjectives[self.childCount]);
-            
+
             if (kidCount >= 6) {
                 $('div.child-count-question').addClass('hidden');
             }
@@ -1026,7 +1061,7 @@ window.fbAsyncInit = function () {
     //        // the user is logged in and has authenticated your
     //        // app, and response.authResponse supplies
     //        // the user's ID, a valid access token, a signed
-    //        // request, and the time the access token 
+    //        // request, and the time the access token
     //        // and signed request each expire
     //        var uid = response.authResponse.userID;
     //        var accessToken = response.authResponse.accessToken;
@@ -1056,7 +1091,7 @@ window.fbAsyncInit = function () {
     //        }
 
     //    } else if (response.status === 'not_authorized') {
-    //        // the user is logged in to Facebook, 
+    //        // the user is logged in to Facebook,
     //        // but has not authenticated your app
     //    } else {
     //        // the user isn't logged in to Facebook.

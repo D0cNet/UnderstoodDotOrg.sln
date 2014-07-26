@@ -23,7 +23,7 @@
                 <asp:FileUpload ID="fuUserAvatar" runat="server" AllowMultiple="false" />
                 <asp:Button ID="btnUpload" OnClick="FileUpload" Text="Upload Avatar" runat="server" />
                     </div>
-                    <img style="height:150px; width:150px;" alt="150x150 Placeholder" id="userAvatar" runat="server" onclick="DisplayForm()" src="http://placehold.it/150x150" />
+                    <img style="height:150px; width:150px;" alt="150x150 Placeholder" id="userAvatar" runat="server" src="http://placehold.it/150x150" />
             </div>
             <div class="account-info">
                 <h1 class="account-username"><%= CurrentMember.ScreenName %></h1>
@@ -60,13 +60,4 @@
     </div>
 </div>
 <!-- END PARTIAL: my-account-nav -->
-<script>
-    function DisplayForm() {
-        var form = document.getElementById("uploadAvatar");
-        if (form.style.display == "none") {
-            form.style.display = "block";
-        }
-        else
-            form.style.display = "none";
-    }
-</script>
+

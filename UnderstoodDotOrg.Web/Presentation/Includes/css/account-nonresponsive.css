@@ -42,16 +42,128 @@
   margin-bottom: 0;
   top: 12px;
 }
-/* line 42, ../css.source/modules/account/_my-account-nav.scss */
+/* line 44, ../css.source/modules/account/_my-account-nav.scss */
+.my-account-nav .account-photo #uploadAvatar {
+  display: block !important;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  opacity: 0;
+  -moz-transition: all 200ms ease 0s;
+  -ms-transition: all 200ms ease 0s;
+  -webkit-transition: all 200ms ease 0s;
+  transition: all 200ms ease 0s;
+}
+/* line 60, ../css.source/modules/account/_my-account-nav.scss */
+.my-account-nav .account-photo #uploadAvatar input,
+.my-account-nav .account-photo #uploadAvatar .input-proxy {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 60px;
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  left: 10%;
+  top: 45px;
+  opacity: 0;
+  z-index: -1;
+  -webkit-appearance: none;
+  padding: 10px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: #f2af00;
+  border: 0px;
+  color: black;
+  cursor: pointer;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+}
+/* line 85, ../css.source/modules/account/_my-account-nav.scss */
+.my-account-nav .account-photo #uploadAvatar input:focus,
+.my-account-nav .account-photo #uploadAvatar .input-proxy:focus {
+  background-color: #ffbc0d;
+  color: black;
+  text-decoration: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  outline: none;
+}
+/* line 3, ../css.source/mixins/_old-ie.scss */
+.old-ie .my-account-nav .account-photo #uploadAvatar input:focus, .old-ie
+.my-account-nav .account-photo #uploadAvatar .input-proxy:focus {
+  outline: solid 1px #dfdfdf;
+}
+/* line 92, ../css.source/modules/account/_my-account-nav.scss */
+.touch .my-account-nav .account-photo #uploadAvatar input:focus, .touch
+.my-account-nav .account-photo #uploadAvatar .input-proxy:focus {
+  background-color: #f2af00;
+}
+/* line 97, ../css.source/modules/account/_my-account-nav.scss */
+.my-account-nav .account-photo #uploadAvatar input:hover,
+.my-account-nav .account-photo #uploadAvatar .input-proxy:hover {
+  background-color: #ffbc0d;
+  color: black;
+  text-decoration: none;
+}
+/* line 102, ../css.source/modules/account/_my-account-nav.scss */
+.touch .my-account-nav .account-photo #uploadAvatar input:hover, .touch
+.my-account-nav .account-photo #uploadAvatar .input-proxy:hover {
+  background-color: #f2af00;
+}
+/* line 109, ../css.source/modules/account/_my-account-nav.scss */
+.my-account-nav .account-photo #uploadAvatar input.disabled, .my-account-nav .account-photo #uploadAvatar input.disabled:hover, .my-account-nav .account-photo #uploadAvatar input[disabled], .my-account-nav .account-photo #uploadAvatar input[disabled]:hover,
+.my-account-nav .account-photo #uploadAvatar .input-proxy.disabled,
+.my-account-nav .account-photo #uploadAvatar .input-proxy.disabled:hover,
+.my-account-nav .account-photo #uploadAvatar .input-proxy[disabled],
+.my-account-nav .account-photo #uploadAvatar .input-proxy[disabled]:hover {
+  background-color: #f7c84c;
+  color: #4c4c4c;
+  cursor: default;
+}
+/* line 118, ../css.source/modules/account/_my-account-nav.scss */
+.my-account-nav .account-photo #uploadAvatar input[type="file"]::webkit-file-upload-button {
+  -webkit-appearance: none;
+}
+/* line 126, ../css.source/modules/account/_my-account-nav.scss */
+.my-account-nav .account-photo #uploadAvatar.over {
+  opacity: 1;
+  z-index: 1;
+}
+/* line 131, ../css.source/modules/account/_my-account-nav.scss */
+.my-account-nav .account-photo #uploadAvatar.over .input-proxy.choose {
+  -webkit-appearance: none;
+  opacity: 1;
+  z-index: 1;
+}
+/* line 137, ../css.source/modules/account/_my-account-nav.scss */
+.my-account-nav .account-photo #uploadAvatar.over .input-proxy.choose #shadow-root input {
+  -webkit-appearance: none;
+}
+/* line 148, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-photo img {
   max-width: 100%;
 }
-/* line 56, ../css.source/modules/account/_my-account-nav.scss */
+/* line 162, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-info {
   margin-top: 20px;
   margin-top: 29px;
 }
-/* line 62, ../css.source/modules/account/_my-account-nav.scss */
+/* line 168, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-username {
   color: #7a4183;
   font-weight: bold;
@@ -65,7 +177,7 @@
   line-height: 1.375rem;
   margin-bottom: 3px;
 }
-/* line 74, ../css.source/modules/account/_my-account-nav.scss */
+/* line 180, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-links {
   display: block;
   margin: 40px 0 10px 15px;
@@ -83,7 +195,7 @@
 .old-ie .my-account-nav .account-links {
   width: auto;
 }
-/* line 97, ../css.source/modules/account/_my-account-nav.scss */
+/* line 203, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav-wrapper {
   background-color: #426da9;
   clear: both;
@@ -98,11 +210,11 @@
   text-align: right;
   top: -60px;
 }
-/* line 114, ../css.source/modules/account/_my-account-nav.scss */
+/* line 220, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav-wrapper .row {
   max-height: 100px;
 }
-/* line 117, ../css.source/modules/account/_my-account-nav.scss */
+/* line 223, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav {
   display: inline-block;
   margin: auto;
@@ -110,7 +222,7 @@
   position: relative;
   left: -9px;
 }
-/* line 126, ../css.source/modules/account/_my-account-nav.scss */
+/* line 232, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav i {
   background-image: url('../images/sprite.icon.account.nav.png?b00528ba');
   background-size: 202px 81px;
@@ -118,7 +230,7 @@
   height: 33px;
   width: 35px;
 }
-/* line 133, ../css.source/modules/account/_my-account-nav.scss */
+/* line 239, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav a {
   border-right: 1px solid #208ec4;
   display: table-cell;
@@ -130,28 +242,28 @@
   height: 100px;
   width: 140px;
 }
-/* line 140, ../css.source/modules/account/_my-account-nav.scss */
+/* line 246, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav a:first-child {
   border-left: none;
 }
-/* line 147, ../css.source/modules/account/_my-account-nav.scss */
+/* line 253, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav a:hover, .my-account-nav .account-nav a:focus {
   background-color: #298fc2;
   outline-width: 0;
 }
-/* line 152, ../css.source/modules/account/_my-account-nav.scss */
+/* line 258, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav a:hover + a .icon-wrapper, .my-account-nav .account-nav a:focus + a .icon-wrapper {
   border-left: 1px solid transparent;
 }
-/* line 154, ../css.source/modules/account/_my-account-nav.scss */
+/* line 260, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav a.active {
   background-color: #f4f2f1;
 }
-/* line 157, ../css.source/modules/account/_my-account-nav.scss */
+/* line 263, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav a.active:focus {
   outline-width: thin;
 }
-/* line 162, ../css.source/modules/account/_my-account-nav.scss */
+/* line 268, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav span {
   color: #fff;
   display: none;
@@ -161,74 +273,74 @@
   font-size: 0.875rem;
   display: block;
 }
-/* line 170, ../css.source/modules/account/_my-account-nav.scss */
+/* line 276, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav a.active span {
   color: #000;
 }
-/* line 172, ../css.source/modules/account/_my-account-nav.scss */
+/* line 278, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav .icon-wrapper {
   border-left: 1px solid #208ec4;
   display: inline-block;
   width: 100%;
 }
-/* line 179, ../css.source/modules/account/_my-account-nav.scss */
+/* line 285, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav .connections-link .icon-wrapper {
   border-right: 1px solid #208ec4;
 }
-/* line 180, ../css.source/modules/account/_my-account-nav.scss */
+/* line 286, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .account-nav a.active .icon-wrapper {
   border: none;
 }
-/* line 182, ../css.source/modules/account/_my-account-nav.scss */
+/* line 288, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav i.icon-account-groups {
   width: 35px;
 }
-/* line 183, ../css.source/modules/account/_my-account-nav.scss */
+/* line 289, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav i.icon-account-events {
   background-position: -43px 0px;
   width: 29px;
 }
-/* line 187, ../css.source/modules/account/_my-account-nav.scss */
+/* line 293, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav i.icon-account-comments {
   background-position: -80px 0px;
   width: 36px;
 }
-/* line 191, ../css.source/modules/account/_my-account-nav.scss */
+/* line 297, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav i.icon-account-saved {
   background-position: -125px 0px;
   width: 31px;
 }
-/* line 195, ../css.source/modules/account/_my-account-nav.scss */
+/* line 301, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav i.icon-account-connections {
   background-position: -168px 0px;
   width: 32px;
 }
-/* line 200, ../css.source/modules/account/_my-account-nav.scss */
+/* line 306, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .icon-wrapper i {
   margin-top: 5px;
   margin-top: 0;
 }
-/* line 209, ../css.source/modules/account/_my-account-nav.scss */
+/* line 315, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .active i.icon-account-groups {
   background-position: 0px -46px;
 }
-/* line 210, ../css.source/modules/account/_my-account-nav.scss */
+/* line 316, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .active i.icon-account-events {
   background-position: -43px -46px;
 }
-/* line 211, ../css.source/modules/account/_my-account-nav.scss */
+/* line 317, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .active i.icon-account-saved {
   background-position: -125px -46px;
 }
-/* line 212, ../css.source/modules/account/_my-account-nav.scss */
+/* line 318, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .active i.icon-account-connections {
   background-position: -168px -46px;
 }
-/* line 213, ../css.source/modules/account/_my-account-nav.scss */
+/* line 319, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .active i.icon-account-comments {
   background-position: -80px -46px;
 }
-/* line 216, ../css.source/modules/account/_my-account-nav.scss */
+/* line 322, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .button {
   font-size: 16px;
   font-size: 1rem;
@@ -242,27 +354,27 @@
   min-width: 150px;
   width: 100%;
 }
-/* line 224, ../css.source/modules/account/_my-account-nav.scss */
+/* line 330, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .button:hover {
   color: #000;
   text-decoration: none;
 }
-/* line 233, ../css.source/modules/account/_my-account-nav.scss */
+/* line 339, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .button:first-child {
   margin: 0 20px 0 0;
   border-left: none;
 }
-/* line 240, ../css.source/modules/account/_my-account-nav.scss */
+/* line 346, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .button-wrapper {
   border-left: 1px solid #f4f2f1;
   display: inline-block;
   padding-left: 25px;
 }
-/* line 248, ../css.source/modules/account/_my-account-nav.scss */
+/* line 354, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .notifications-link {
   position: relative;
 }
-/* line 249, ../css.source/modules/account/_my-account-nav.scss */
+/* line 355, ../css.source/modules/account/_my-account-nav.scss */
 .my-account-nav .notification-count {
   font-size: 13px;
   font-size: 0.8125rem;
