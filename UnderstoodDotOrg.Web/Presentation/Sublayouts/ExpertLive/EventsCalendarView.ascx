@@ -8,15 +8,15 @@
     <header class="row calendar-header skiplink-content" aria-role="main">
         <ul class="month-controls arrows-gray">
             <li class="rsArrow rsArrowLeft">
-                <a class="rsArrowIcn" href="REPLACE" title="August 2014">August 2014</a>
+                <a class="rsArrowIcn" href="REPLACE" runat="server" id="linkPreviousMonth"><asp:Literal runat="server" ID="previousMonth" /></a>
             </li>
 
             <li class="month-name">
-                <h2>September 2014</h2>
+                <h2><asp:Literal runat="server" ID="currentMonth" /></h2>
             </li>
 
             <li class="rsArrow rsArrowRight">
-                <a class="rsArrowIcn" href="REPLACE" title="October 2014">October 2014</a>
+                <a class="rsArrowIcn" href="REPLACE" runat="server" id="linkNextMonth"><asp:Literal runat="server" ID="nextMonth" /></a>
             </li>
         </ul>
 
