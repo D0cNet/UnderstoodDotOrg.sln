@@ -907,6 +907,13 @@
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\MyGroups.ascx.designer.cs">
       <DependentUpon>MyGroups.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\EventsCalendarView.ascx.cs">
+      <DependentUpon>EventsCalendarView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\EventsCalendarView.ascx.designer.cs">
+      <DependentUpon>EventsCalendarView.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplate.ascx.cs">
       <DependentUpon>ForumReplyTemplate.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3071,6 +3078,7 @@
     <Content Include="Presentation\Sublayouts\Common\ThinkingOfYouButton.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Groups Search.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\MyGroups.ascx" />
+    <Content Include="Presentation\Sublayouts\ExpertLive\EventsCalendarView.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplate.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplateFront.ascx" />
     <Content Include="Presentation\Sublayouts\Recommendation\ArticleRecommendationIcons.ascx" />
