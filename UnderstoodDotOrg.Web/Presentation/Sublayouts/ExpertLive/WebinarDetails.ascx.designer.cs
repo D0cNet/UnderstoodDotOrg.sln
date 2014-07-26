@@ -148,6 +148,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::System.Web.UI.WebControls.PlaceHolder phHelpful;
         
         /// <summary>
+        /// Sublayout3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout3;
+        
+        /// <summary>
+        /// Sublayout2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout2;
+        
+        /// <summary>
         /// phVideoDetails control.
         /// </summary>
         /// <remarks>
@@ -173,5 +191,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frVideoTranscript;
+        
+        /// <summary>
+        /// Sublayout1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
     }
 }

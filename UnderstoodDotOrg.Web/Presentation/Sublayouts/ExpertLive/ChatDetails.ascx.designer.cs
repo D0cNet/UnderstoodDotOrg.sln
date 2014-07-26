@@ -139,6 +139,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frChatTranscript;
         
         /// <summary>
+        /// Sublayout1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout1;
+        
+        /// <summary>
         /// phPastSidebarDetails control.
         /// </summary>
         /// <remarks>
@@ -146,5 +155,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phPastSidebarDetails;
+        
+        /// <summary>
+        /// Sublayout3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout3;
+        
+        /// <summary>
+        /// Sublayout2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.Sublayout Sublayout2;
     }
 }

@@ -56,18 +56,7 @@
                 <sc:FieldRenderer ID="frChatTranscript" runat="server" FieldName="Chat Transcript" />
 
                 <!-- BEGIN PARTIAL: find-helpful -->
-                <div class="find-this-helpful content rs_read_this" id="count-helpful-content">
-                    <h4>Did you find this helpful?</h4>
-                    <ul>
-                        <li>
-                            <button class="button yes rs_skip">Yes</button>
-                        </li>
-                        <li>
-                            <button class="button no gray rs_skip">No</button>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
+                <sc:sublayout id="Sublayout1" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
                 <!-- END PARTIAL: find-helpful -->
             </asp:PlaceHolder>
         </div> <!-- end .event-content -->
@@ -88,24 +77,11 @@
                 
                 <asp:PlaceHolder ID="phPastSidebarDetails" runat="server" Visible="false">
                 <!-- BEGIN PARTIAL: helpful-count -->
-                <div class="count-helpful">
-                    <a href="#count-helpful-content"><span>34</span>Found this helpful</a>
-                </div>
+                <sc:sublayout id="Sublayout3" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/FoundThisHelpfulCountOnlySideColumn.ascx" />
                 <!-- END PARTIAL: helpful-count -->
                 
                 <!-- BEGIN PARTIAL: find-helpful -->
-                <div class="find-this-helpful sidebar" id="count-helpful-sidebar">
-                    <h4>Did you find this helpful?</h4>
-                    <ul>
-                        <li>
-                            <button class="button yes rs_skip">Yes</button>
-                        </li>
-                        <li>
-                            <button class="button no gray rs_skip">No</button>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
+                <sc:sublayout id="Sublayout2" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulSideBar.ascx" />
                 <!-- END PARTIAL: find-helpful -->
                 </asp:PlaceHolder>
             </div> <!-- end .event-sidebar -->
