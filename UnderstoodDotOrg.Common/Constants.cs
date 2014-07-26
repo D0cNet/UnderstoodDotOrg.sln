@@ -754,6 +754,7 @@ namespace UnderstoodDotOrg.Common
                 public const string SearchLocation = "a";
             }
         }
+        #region User Activty Tracking
         public static class UserActivity_Values
         {
             public const string SetReminder = "Reminder Set";
@@ -761,7 +762,7 @@ namespace UnderstoodDotOrg.Common
             public const string Shared = "Item Shared";
             public const string FoundHelpful_True = "FoundHelpfulTrue";
             public const string FoundHelpful_False = "FoundHelpfulFalse";
-        
+
             public const string SharedWithEmail = "Shared Email";
             public const string SharedWithFacebook = "Shared on Facebook";
             public const string SharedWithPinterest = "Shared on Pinterest";
@@ -782,7 +783,7 @@ namespace UnderstoodDotOrg.Common
         {
             public const int Undefined = 0;
             public const int ContentRelated = 1;
-            
+
             public const int Advocacy_Survey = 2;
             public const int Advocacy_Page = 3;
             public const int Advocacy_Donation = 4;
@@ -796,6 +797,19 @@ namespace UnderstoodDotOrg.Common
             public const int FoundHelpfulVote = 10;
             public const int ContentSkipped = 11;
         }
+        public static class UserActivity_SpecialFilters
+        {
+            //values specifically used in the QA section
+            public const string QA_QuestionWasHelpful = "QuestionWasHelpful";
+            public const string QA_QuestionWasNotHelpoful = "QuestionWasNotHelpful";
+
+            public const string QA_AnswerWasHelpful = "AnswerWasHelpful";
+            public const string QA_AnswerWasNotHelpful = "AnswerWasNotHelpful";          
+        }
+        
+        #endregion
+
+   
         public static class SolrFields
         {
             public const string ChildGrades = "_child_grades";

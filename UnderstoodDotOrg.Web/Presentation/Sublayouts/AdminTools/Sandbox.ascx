@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Sandbox.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools.Sandbox" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<asp:Button ID="btnLogHelpfulQuestion" runat="server" Text="Log Helpful Question" OnClick="btnLogHelpfulQuestion_Click" />
+<br />
 
 <h1> Activity Count: <asp:Label ID="lblActivityCount" runat="server"></asp:Label></h1>
 
@@ -20,9 +22,9 @@ Activity Value
     Was Activity Log a Success? <asp:Label ID="lblSuccess" runat="server" Text="Unknown" Font-Bold="True" ForeColor="#FF3300"></asp:Label>
 </p>
 <hr />
-Log page views: <asp:Button ID="btnLogSub" runat="server" Text="Button" OnClick="btnLogSub_Click" />
+Log page views: <asp:Button ID="btnLogSub" runat="server" Text="Log views" OnClick="btnLogSub_Click" />
 <hr />
-View popular
+View popular subtopic items:<asp:Button ID="btnShowItems" runat="server" Text="Display Popular Items" OnClick="btnShowItems_Click" />
 
 <hr />
 

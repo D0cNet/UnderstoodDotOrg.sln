@@ -1371,7 +1371,34 @@ namespace UnderstoodDotOrg.Domain.Membership
             return success;
 
         }
-
+        /// <summary>
+        /// We record multiple states of helpfulness. Some are contextutal and are filtered on reads. 
+        /// We also record both if an item WAS or WASNOT helpful as distinct rows. 
+        /// </summary>
+        /// <param name="MemberId">The member you are recording</param>
+        /// <param name="ContentId">The content item they interacted with</param>
+        /// <param name="Activity">Use Constants. UserActivity_Values</param>
+        /// <param name="ActivityType">Use Constants. UserActivity_Types</param>
+        /// <param name="SpecialFilter">Use Constatnts. UserActivity_SpecialFilters to provide context of WHERE this was found helpful.</param>
+        /// <returns></returns>
+        public bool LogMemberHelpfulVote (Guid MemberId, Guid ContentId, 
+                                        string Activity, int ActivityType, 
+                                        string SpecialFilter)
+        {
+            bool success = this.LogMemberHelpfulVote(MemberId,
+                                ContentId,
+                                Activity + "_" + SpecialFilter,
+                                ActivityType );
+            return success;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="MemberId"></param>
+        /// <param name="ContentId"></param>
+        /// <param name="Activity">Use Constants: UserActivity_Values</param>
+        /// <param name="ActivityType">Use Constants: UserActivity_Types</param>
+        /// <returns></returns>
         public bool LogMemberHelpfulVote(Guid MemberId, Guid ContentId, string Activity, int ActivityType)
         {
             bool success = false;

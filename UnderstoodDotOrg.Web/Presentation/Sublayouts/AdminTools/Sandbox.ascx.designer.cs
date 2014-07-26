@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
     public partial class Sandbox {
         
         /// <summary>
+        /// btnLogHelpfulQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogHelpfulQuestion;
+        
+        /// <summary>
         /// lblActivityCount control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogSub;
+        
+        /// <summary>
+        /// btnShowItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnShowItems;
         
         /// <summary>
         /// txtEmail control.

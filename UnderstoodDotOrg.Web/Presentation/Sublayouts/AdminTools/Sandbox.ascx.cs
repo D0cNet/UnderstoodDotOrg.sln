@@ -23,8 +23,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                                                                           Constants.UserActivity_Values.Favorited).ToString();
 
             //i read this page. now record it.
-            Guid MemberId = new Guid();
-            Guid ContentId = new Guid();
+           // Guid MemberId = new Guid();
+           // Guid ContentId = new Guid();
             /*
             //Create an instance of the Membership Manager
             MembershipManager mgr = new MembershipManager();
@@ -273,7 +273,34 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
         {
             MembershipManager mgr = new MembershipManager();
 
-            mgr.LogSubtopicPageView(Guid.Parse("93e4c02c-3d3d-4ccd-95a3-180bb513e543"), new Guid(), new Guid());
+            mgr.LogSubtopicPageView(Guid.Parse("93e4c02c-3d3d-4ccd-95a3-180bb513e543"),  Guid.NewGuid() , new Guid());
+            mgr.LogSubtopicPageView(Guid.Parse("93e4c02c-3d3d-4ccd-95a3-180bb513e543"), Guid.NewGuid(), new Guid());
+
+        }
+
+        protected void btnShowItems_Click(object sender, EventArgs e)
+        {
+            ActivityLog log = new ActivityLog();          
+            List<Guid?> stuff = log.MostPopularItems(Guid.Parse("00000000-0000-0000-0000-000000000000"));
+
+            foreach (Guid g in stuff)
+            {
+                Response.Write("<h1>" + g.ToString() + "</h1>" + Environment.NewLine);
+            }
+
+        }
+
+        protected void btnLogHelpfulQuestion_Click(object sender, EventArgs e)
+        {
+            Member m = new Member();
+            m.MemberId = Guid.Parse("93e4c02c-3d3d-4ccd-95a3-180bb513e543"); //throw away user
+            
+            MembershipManager mgr = new MembershipManager();
+            mgr.LogMemberHelpfulVote(m.MemberId , Guid.NewGuid(), 
+                Constants.UserActivity_Values.FoundHelpful_True, 
+                Constants.UserActivity_Types.FoundHelpfulVote,
+                Constants.UserActivity_SpecialFilters.QA_QuestionWasHelpful );
+            
 
         }
     }

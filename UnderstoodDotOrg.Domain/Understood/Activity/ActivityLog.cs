@@ -16,14 +16,56 @@ namespace UnderstoodDotOrg.Domain.Understood.Activity
     public class ActivityLog
     {
         public virtual ICollection<ActivityItem> Activities { get; set; }
-        
         /// <summary>
         /// Creates a new empty activity log
         /// </summary>
         public ActivityLog()
         {
             this.Activities = new HashSet<ActivityItem >();
+           // this.MostPopularItems = new HashSet<Guid>();
         }
+
+        public List<Guid?> MostPopularItems(Guid SubtopicId)
+        {
+             List<Guid?> items = new List<Guid?>();
+            
+            //Gets a list of all items recorded in the table's view of subtopic views where the item that was viewed was in this subtopic
+            // grouping up the total number of views by content item, and ordering them so most popular is first
+            string sql = "SELECT Count(MemberId) as TotalViews, ContentId " +
+                         " FROM [dbo].[vw_SubtopicItemViews] " +
+                         "WHERE Subtopic = @subtopicid " +
+                         " GROUP BY ContentId " +
+                         " ORDER BY TotalViews desc";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@subtopicid", SubtopicId);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Guid g = new Guid();
+                                g = Guid.Parse(reader.GetString(1)); //sql is going to give us a string/varchar back for this. deal with it.
+                                items.Add(g);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return items;
+        }
+       
+        
         /// <summary>
         /// Fills the activcity log based on the member and the value of the activity (see activity value constants)
         /// </summary>
@@ -212,7 +254,7 @@ namespace UnderstoodDotOrg.Domain.Understood.Activity
             return count;
         }
 
-
+        
         private void FillActivityLog (Guid MemberId, string ActivityValue)
         {
             string sql = " SELECT [Key] AS ContentId, Value AS ActivityValue, ActivityType, DateModified " +
