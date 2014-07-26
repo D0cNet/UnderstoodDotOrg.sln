@@ -910,7 +910,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         }
 
-        public static IEnumerable<BaseEventDetailPageItem> GetEventsByMonthAndYear(int month, int year)
+        public static IEnumerable<BaseEventDetailPageItem> GetEventsByMonthAndYear(int month, int year, Expression<Func<EventPage, bool>> optionalPredicate = null)
         {
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
 
@@ -921,11 +921,17 @@ namespace UnderstoodDotOrg.Domain.Search
             {
                 var query = GetCurrentCultureQueryable<EventPage>(context)
                                     .Filter(GetBaseEventPredicate())
-                                    .Filter(i => (i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId) 
+                                    .Filter(i => (i.TemplateId == ID.Parse(ChatEventPageItem.TemplateId)
                                                   || i.TemplateId == ID.Parse(WebinarEventPageItem.TemplateId))
                                             && i.EventStartDate >= startDate
-                                            && i.EventStartDate < endDate)
-                                    .OrderBy(i => i.EventStartDate);
+                                            && i.EventStartDate < endDate);
+
+                if (optionalPredicate != null)
+                {
+                    query = query.Filter(optionalPredicate);
+                }
+
+                query = query.OrderBy(i => i.EventStartDate);
 
                 int totalResults = query.Take(1).GetResults().TotalSearchResults;
 
@@ -1015,6 +1021,11 @@ namespace UnderstoodDotOrg.Domain.Search
             }
         }
 
+        public static IEnumerable<BaseEventDetailPageItem> GetEventsByMonthAndYear(int month, int year, string grade, string issue, string topic)
+        {
+            return GetEventsByMonthAndYear(month, year, GetEventFilterPredicate(grade, issue, topic));
+        }
+        
         public static List<BaseEventDetailPageItem> GetUpcomingWebinars(string grade, string issue, string topic)
         {
             return GetUpcomingEvents(WebinarEventPageItem.TemplateId, GetEventFilterPredicate(grade, issue, topic));
