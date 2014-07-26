@@ -732,163 +732,139 @@
     padding-top: 40px;
   }
 }
-/* line 33, ../css.source/modules/about/_about-partners-list.scss */
+/* line 35, ../css.source/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block {
   height: auto;
   padding: 30px 0;
-  display: table;
+  display: block;
   margin: 0 auto;
   border-bottom: 1px solid #d2d2d2;
+  overflow: hidden;
+  *zoom: 1;
 }
 @media (min-width: 650px), print {
-  /* line 33, ../css.source/modules/about/_about-partners-list.scss */
+  /* line 35, ../css.source/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block {
     padding: 40px 0;
   }
 }
-/* line 43, ../css.source/modules/about/_about-partners-list.scss */
+/* line 46, ../css.source/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block.last {
   border-bottom: 0px;
 }
-/* line 47, ../css.source/modules/about/_about-partners-list.scss */
-.about-partners-list .partner-block .partner-intro {
-  padding: 0;
-}
-@media (min-width: 650px), print {
-  /* line 47, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-intro {
-    margin-top: -39px;
-    padding-left: 10px;
-  }
-}
-@media (min-width: 769px), print {
-  /* line 47, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-intro {
-    margin-top: -56px;
-  }
-}
-@media (min-width: 960px), print {
-  /* line 47, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-intro {
-    margin-top: -85px;
-  }
-}
-/* line 60, ../css.source/modules/about/_about-partners-list.scss */
-.about-partners-list .partner-block .partner-logo {
-  padding: 0;
-}
-@media (min-width: 650px), print {
-  /* line 60, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-logo {
-    margin-top: 10px;
-  }
-}
-/* line 66, ../css.source/modules/about/_about-partners-list.scss */
-.about-partners-list .partner-block .partner-block-logo, .about-partners-list .partner-block .partner-block-text {
-  display: block;
+/* line 50, ../css.source/modules/about/_about-partners-list.scss */
+.about-partners-list .partner-block .partner-block-logo {
+  display: inline-block;
+  width: 271px;
+  height: 131px;
   float: left;
   padding: 0;
-  vertical-align: top;
+  background-color: #f4f2f1;
 }
-@media (min-width: 650px), print {
-  /* line 66, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-block-logo, .about-partners-list .partner-block .partner-block-text {
-    display: table-cell;
+@media (max-width: 767px), print {
+  /* line 50, ../css.source/modules/about/_about-partners-list.scss */
+  .about-partners-list .partner-block .partner-block-logo {
+    display: block;
     float: none;
+    margin: auto auto 30px auto;
   }
 }
-/* line 76, ../css.source/modules/about/_about-partners-list.scss */
-.about-partners-list .partner-block .partner-block-logo {
-  width: 100%;
-  margin-bottom: 20px;
-}
-/* line 79, ../css.source/modules/about/_about-partners-list.scss */
+/* line 64, ../css.source/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-logo a {
   display: block;
-  text-align: center;
-}
-@media (min-width: 480px), print {
-  /* line 79, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-block-logo a {
-    text-align: left;
-  }
-}
-@media (min-width: 650px), print {
-  /* line 76, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-block-logo {
-    margin-bottom: 0;
-    width: auto;
-  }
-}
-/* line 90, ../css.source/modules/about/_about-partners-list.scss */
-.about-partners-list .partner-block .partner-block-logo img {
-  width: 270px;
-  height: auto;
-}
-@media (min-width: 480px), print {
-  /* line 90, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-block-logo img {
-    max-width: 270px;
-  }
-}
-/* line 98, ../css.source/modules/about/_about-partners-list.scss */
-.about-partners-list .partner-block .partner-block-text {
-  padding: 0 0 21px 0;
-  position: relative;
   width: 100%;
+  height: 100%;
+  margin-left: 0;
+  position: relative;
+  background-image: url("../images/logo.u.footer.png");
+  background-repeat: no-repeat;
+  background-size: 33px 60px;
+  background-position: center center;
 }
-@media (min-width: 650px), print {
-  /* line 98, ../css.source/modules/about/_about-partners-list.scss */
+/* line 75, ../css.source/modules/about/_about-partners-list.scss */
+.about-partners-list .partner-block .partner-block-logo img {
+  display: block;
+  height: auto;
+  height: 90px;
+  width: auto;
+  max-width: 90%;
+  margin: auto;
+  background-color: #f4f2f1;
+  position: relative;
+  top: 20px;
+}
+/* line 88, ../css.source/modules/about/_about-partners-list.scss */
+.about-partners-list .partner-block .partner-block-text {
+  display: inline-block;
+  float: left;
+  width: auto;
+  width: 60%;
+  min-height: 131px;
+  vertical-align: top;
+  padding-left: 30px;
+  position: relative;
+  padding-bottom: 30px;
+}
+@media (max-width: 767px), print {
+  /* line 88, ../css.source/modules/about/_about-partners-list.scss */
   .about-partners-list .partner-block .partner-block-text {
-    min-height: 231px;
-    padding-left: 25px;
-    padding-bottom: 21px;
+    display: block;
+    width: 100%;
+    padding-left: 0px;
   }
 }
-@media (min-width: 769px), print {
-  /* line 98, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-block-text {
-    padding-left: 49px;
-  }
-}
-@media (min-width: 960px), print {
-  /* line 98, ../css.source/modules/about/_about-partners-list.scss */
-  .about-partners-list .partner-block .partner-block-text {
-    min-width: 536px;
-  }
-}
-/* line 114, ../css.source/modules/about/_about-partners-list.scss */
+/* line 105, ../css.source/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text h3 {
   margin-bottom: 15px;
   display: block;
   text-transform: capitalize;
-  font-size: 29px;
-  font-size: 1.8125rem;
-  line-height: 29px;
-  line-height: 1.8125rem;
+  font-size: 26px;
+  font-size: 1.625rem;
+  line-height: 26px;
+  line-height: 1.625rem;
   font-weight: normal;
 }
-/* line 121, ../css.source/modules/about/_about-partners-list.scss */
+@media (max-width: 767px), print {
+  /* line 105, ../css.source/modules/about/_about-partners-list.scss */
+  .about-partners-list .partner-block .partner-block-text h3 {
+    text-align: center;
+  }
+}
+/* line 116, ../css.source/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text h3 a {
   color: #7a4183;
   text-decoration: none;
 }
-/* line 125, ../css.source/modules/about/_about-partners-list.scss */
+/* line 120, ../css.source/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text h3 a:hover {
   text-decoration: underline;
 }
+/* line 125, ../css.source/modules/about/_about-partners-list.scss */
+.about-partners-list .partner-block .partner-block-text p {
+  font-family: Arial, sans-serif;
+  color: #696969;
+  font-size: 1rem;
+  line-height: 1.2;
+}
 /* line 131, ../css.source/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text .partner-block-read-more {
-  display: table-cell;
-  vertical-align: bottom;
+  display: block;
   position: absolute;
-  bottom: -4px;
+  bottom: 0px;
+  left: 30px;
 }
-/* line 136, ../css.source/modules/about/_about-partners-list.scss */
+@media (max-width: 767px), print {
+  /* line 131, ../css.source/modules/about/_about-partners-list.scss */
+  .about-partners-list .partner-block .partner-block-text .partner-block-read-more {
+    left: 0px;
+    text-align: center;
+  }
+}
+/* line 140, ../css.source/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text .partner-block-read-more a {
   text-decoration: underline;
 }
-/* line 138, ../css.source/modules/about/_about-partners-list.scss */
+/* line 142, ../css.source/modules/about/_about-partners-list.scss */
 .about-partners-list .partner-block .partner-block-text .partner-block-read-more a:hover {
   text-decoration: none;
 }
