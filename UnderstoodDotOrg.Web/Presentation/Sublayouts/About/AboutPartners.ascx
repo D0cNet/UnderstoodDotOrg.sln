@@ -43,7 +43,7 @@
                                         </asp:HyperLink>
                                     </h3>
                                     <p>
-                                        <sc:FieldRenderer ID="frPartnerDescription" runat="server" FieldName="Short Description" />
+                                        <sc:FieldRenderer ID="frPartnerDescription" runat="server" FieldName="Partner Bio" />
                                     </p>
                                     <span class="partner-block-read-more">
                                         <asp:HyperLink ID="hlPartnerSite" runat="server" Text="Read more"></asp:HyperLink>
