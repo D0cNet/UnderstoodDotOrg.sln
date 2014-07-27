@@ -15,6 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
         protected string CurrentItemUrl { get { return LinkManager.GetItemUrl(this.DataSource); } }
         protected void Page_Load(object sender, EventArgs e)
         {
+            lnkSeeAll.NavigateUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{F349C92A-9781-4342-A05A-5A793630D7DB}"));
             List<Question> dataSource = CommunityHelper.GetQuestionsList("2", 10);
             foreach (Question q in dataSource)
             {

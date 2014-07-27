@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
@@ -16,7 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             bool isUser = false;
             try
             {
-                if (string.IsNullOrEmpty(this.CurrentMember.Email))
+                if (IsUserLoggedIn)
                 {
                     isUser = true;
                 }
@@ -33,11 +34,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 sbCommunityMembers.Visible = false;
                 sbMyFriends.Visible = true;
 
-                sbRecentBlogPosts.Visible = true;
+                if (TelligentService.UserFollowsBlogs(this.CurrentMember.ScreenName))
+                {
+                    sbBlogsIFollow.Visible = true;
+                    sbRecentBlogPosts.Visible = false;
+                }
+                else
+                {
+                    sbRecentBlogPosts.Visible = true;
+                    sbBlogsIFollow.Visible = false;
+                }
             }
             else
             {
-           
+
             }
         }
     }

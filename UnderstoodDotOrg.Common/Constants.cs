@@ -712,8 +712,22 @@ namespace UnderstoodDotOrg.Common
                     {"WA", "Washington"},
                     {"WV", "West Virginia"},
                     {"WI", "Wisconsin"},
-                    {"WY", "Wyoming"},
+                    {"WY", "Wyoming"}
                };
+            }
+        }
+
+        public static Dictionary<string, string> BlogIds
+        {
+            get
+            {
+                // TODO: Add remaining Blog Id's
+                return new Dictionary<string, string>
+                {
+                    {"The Understood Blog", "1"},
+                    {"Motherlode", "2"},
+                    {"Live Well", "3"},
+                };
             }
         }
 

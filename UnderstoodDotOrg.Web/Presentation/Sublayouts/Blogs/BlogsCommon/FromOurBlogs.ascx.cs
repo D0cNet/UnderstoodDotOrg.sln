@@ -56,20 +56,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
 
         protected void BlogPostRepeater_OnItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            //if (e.Item.ItemType == ListItemType.Item)
-            //{
-            //    BlogPost post = (BlogPost)e.Item.DataItem;
-            //    Button button = (Button)e.Item.FindControl("btnFollow");
-            //    button.Click += new System.EventHandler(this.btnFollow_Click);
-            //    if (post.IsFollowing)
-            //    {
-            //        button.Text = "Unfollow";
-            //    }
-            //    else
-            //    {
-            //        button.Text = "Follow";
-            //    }
-            //}
             var post = (BlogPost)e.Item.DataItem;
             FollowButton follBtn = (FollowButton)e.Item.FindControl("follBtn");
             follBtn.LoadState(post.ContentId, post.ContentTypeId, UnderstoodDotOrg.Common.Constants.TelligentContentType.BlogPost);

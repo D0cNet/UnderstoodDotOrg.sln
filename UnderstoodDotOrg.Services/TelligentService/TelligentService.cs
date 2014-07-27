@@ -810,20 +810,21 @@ namespace UnderstoodDotOrg.Services.TelligentService
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xml);
             XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost");
-            XmlNodeList nodes1 = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost/Author");
             int count = 0;
             foreach (XmlNode node in nodes)
             {
+                XmlNode author = node.SelectSingleNode("Author");
+                XmlNode app = node.SelectSingleNode("Content/Application");
                 BlogPost blogPost = new BlogPost()
                 {
                     Title = node["Title"].InnerText,
                     ContentId = node["ContentId"].InnerText,
                     Body = DataFormatHelper.FormatString100(node["Body"].InnerText),
                     PublishedDate = DataFormatHelper.FormatDate(node["PublishedDate"].InnerText),
-                    BlogName = node["HtmlName"].InnerText,
-                    Author = nodes1[count]["DisplayName"].InnerText,
+                    BlogName = app["HtmlName"].InnerText,
+                    Author = author["DisplayName"].InnerText,
 
-                    ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + node["HtmlName"].InnerText + "/" + node["Title"].InnerText, ".aspx", "")
+                    ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + app["HtmlName"].InnerText + "/" + node["Title"].InnerText, ".aspx", "")
                 };
                 blogPosts.Add(blogPost);
                 count++;
@@ -2593,8 +2594,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                 Title = title,
                                 Body = body,
                                 Url = url,
-                                Author=author,
-                                GroupName=groupName,
+                                Author = author,
+                                GroupName = groupName,
                             };
                             searchResultsList.Add(searchResult);
                         }
@@ -2642,7 +2643,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         string url = string.Empty;
                         string groupName = string.Empty;
                         try { groupName = container["HtmlName"].InnerText; }
-                        catch { groupName = string.Empty; }                        
+                        catch { groupName = string.Empty; }
                         string author = user["Username"].InnerText;
 
                         bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
@@ -2671,9 +2672,9 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         };
                         searchResultsList.Add(searchResult);
                     }
-                    }
                 }
-            
+            }
+
             catch { }
             return searchResultsList;
         }
@@ -2780,11 +2781,11 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return questionList;
         }
 
-        public static bool MarkConversationRead(string conversationOwner,string conversationID)
+        public static bool MarkConversationRead(string conversationOwner, string conversationID)
         {
-            bool success=false;
-            string address=String.Empty;
-              if (!conversationID.IsNullOrEmpty() && !String.IsNullOrEmpty(conversationOwner))
+            bool success = false;
+            string address = String.Empty;
+            if (!conversationID.IsNullOrEmpty() && !String.IsNullOrEmpty(conversationOwner))
             {
                 try
                 {
@@ -2810,15 +2811,90 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         }
 
                     });
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     Sitecore.Diagnostics.Log.Error("Error retrieving Marking Conversations as Read in Telligent", ex, typeof(TelligentService));
                 }
-              }
+            }
 
 
             return success;
-            
+
+        }
+
+        public static bool UserFollowsBlogs(string username)
+        {
+            if (username.IsNullOrEmpty())
+            {
+                return false;
+            }
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                webClient.Headers.Add("Rest-Impersonate-User", username.Trim());
+                var requestUrl = GetApiEndPoint("bookmarks.xml?PageSize=100");
+                try
+                {
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList xn = xmlDoc.SelectNodes("Response/Bookmarks/Bookmark");
+                    foreach (XmlNode item in xn)
+                    {
+                        XmlNode node = item.SelectSingleNode("Content");
+                        if (node["ContentTypeId"].InnerText.Equals("ca0e7c80-8686-4d2f-a5a8-63b9e212e922"))
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error(String.Format("Error retrieving user blog bookmarks: "), ex);
+                }
+
+                return false;
+            }
+        }
+
+        public static List<Blog> GetFollowedBlogs(string username)
+        {
+            var followedBlogs = new List<Blog>();
+            if (username.IsNullOrEmpty())
+            {
+                return followedBlogs;
+            }
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                webClient.Headers.Add("Rest-Impersonate-User", username.Trim());
+                var requestUrl = GetApiEndPoint("bookmarks.xml?PageSize=100&ContentTypeIds=ca0e7c80-8686-4d2f-a5a8-63b9e212e922");
+                try
+                {
+                    var xml = webClient.DownloadString(requestUrl);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList xn = xmlDoc.SelectNodes("Response/Bookmarks/Bookmark");
+                    foreach (XmlNode item in xn)
+                    {
+                        XmlNode node = item.SelectSingleNode("Content");
+                        var blog = new Blog()
+                        {
+                            Title = node["HtmlName"].InnerText,
+                        };
+                        followedBlogs.Add(blog);
+                    }
+                    return followedBlogs;
+                }
+                catch (Exception ex)
+                {
+                    Sitecore.Diagnostics.Log.Error(String.Format("Error retrieving user blog bookmarks: "), ex);
+                }
+                return followedBlogs;
+            }
         }
     }
 }

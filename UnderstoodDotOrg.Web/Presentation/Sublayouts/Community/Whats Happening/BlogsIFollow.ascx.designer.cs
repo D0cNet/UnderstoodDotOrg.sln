@@ -10,16 +10,7 @@
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening {
     
     
-    public partial class RecentQuestions {
-        
-        /// <summary>
-        /// frRecentQuestions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frRecentQuestions;
+    public partial class BlogsIFollow {
         
         /// <summary>
         /// lnkSeeAll control.
@@ -31,12 +22,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
         protected global::System.Web.UI.WebControls.HyperLink lnkSeeAll;
         
         /// <summary>
-        /// RecentQuestionsRepeater control.
+        /// rptBlogCards control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RecentQuestionsRepeater;
+        protected global::System.Web.UI.WebControls.Repeater rptBlogCards;
     }
 }

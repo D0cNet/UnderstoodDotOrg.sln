@@ -8,7 +8,7 @@
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows questions next-prev-menu">
 
-                    <a class="view-all" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllQuestionsLabel %></a>
+                    <asp:HyperLink CssClass="view-all" ID="lnkSeeAll" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllQuestionsLabel %></asp:HyperLink>
 
                     <div class="rsArrow rsArrowLeft">
                         <button class="rsArrowIcn"></button>

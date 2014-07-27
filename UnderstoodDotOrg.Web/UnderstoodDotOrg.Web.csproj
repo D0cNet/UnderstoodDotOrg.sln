@@ -907,6 +907,13 @@
     <Compile Include="Presentation\Sublayouts\Community\Parent Groups.ascx.designer.cs">
       <DependentUpon>Parent Groups.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\BlogsIFollow.ascx.cs">
+      <DependentUpon>BlogsIFollow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\BlogsIFollow.ascx.designer.cs">
+      <DependentUpon>BlogsIFollow.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\MyGroups.ascx.cs">
       <DependentUpon>MyGroups.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3099,6 +3106,7 @@
     <Content Include="Presentation\Sublayouts\Common\ThanksButton.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ThinkingOfYouButton.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Groups Search.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\BlogsIFollow.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\MyGroups.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\EventsCalendarView.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\RecommendedBlogs.ascx" />
