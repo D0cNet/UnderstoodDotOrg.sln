@@ -65,6 +65,32 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;                               
         }
 
+        /// <summary>
+        /// Filter query results to return only the provided template ID
+        /// </summary>
+        /// <param name="templateId"></param>
+        /// <param name="member"></param>
+        /// <returns></returns>
+        private static Expression<Func<RecommendedResultItem, bool>> GetBasePredicate(string templateId, Member member = null)
+        {
+            Expression<Func<RecommendedResultItem, bool>> pred = PredicateBuilder.True<RecommendedResultItem>();
+
+            // TODO: retrieve member language
+            pred = pred.And(a => a.Language == "en");
+
+            // Exclude templates
+            pred = pred.And(a => a.Path.Contains(Constants.Search.ContentSearchPath)
+                            && !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
+
+            // Include only content of type templateId
+            pred = pred.And(a => a.Templates.Contains(ID.Parse(templateId)));
+
+            // Include non cloned items
+            pred = pred.And(a => a.SourceItem == ID.Parse(Guid.Empty));
+
+            return pred;
+        }
+
         private static Expression<Func<Article, bool>> GetInheritsArticlePredicate()
         {
             return (a => a.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId)));
@@ -123,6 +149,27 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
+        private static Expression<Func<RecommendedResultItem, bool>> GetMemberInterestsPredicate(Member member, string templateId, bool explicitMatchSearch = false)
+        {
+            Expression<Func<RecommendedResultItem, bool>> pred = PredicateBuilder.False<RecommendedResultItem>();
+
+            if (!explicitMatchSearch)
+            {
+                // Include un-mapped interests
+                pred = pred.Or(a => a.ParentInterests.Contains(ID.Parse(Guid.Empty)));
+            }
+
+            // Include member interests
+            foreach (var interest in member.Interests)
+            {
+                // prevent outer variable trap
+                var i = interest;
+                pred = pred.Or(a => a.ParentInterests.Contains(ID.Parse(i.Key)));
+            }
+
+            return pred;
+        }
+
         private static Expression<Func<Article, bool>> GetMemberBackfillInterestsPredicate(Member member)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
@@ -130,6 +177,24 @@ namespace UnderstoodDotOrg.Domain.Search
             // Workaround Sitecore bug - require a single true condition
             pred = pred.And(GetAlwaysTruePredicate());
             
+            // Exclude member interests
+            foreach (var interest in member.Interests)
+            {
+                // prevent outer variable trap
+                var i = interest;
+                pred = pred.And(a => !a.ParentInterests.Contains(ID.Parse(i.Key)));
+            }
+
+            return pred;
+        }
+
+        private static Expression<Func<RecommendedResultItem, bool>> GetMemberBackfillInterestsPredicate(Member member, string templateId)
+        {
+            Expression<Func<RecommendedResultItem, bool>> pred = PredicateBuilder.True<RecommendedResultItem>();
+
+            // Workaround Sitecore bug - require a single true condition
+            pred = pred.And(GetAlwaysTruePredicate(templateId));
+
             // Exclude member interests
             foreach (var interest in member.Interests)
             {
@@ -222,6 +287,29 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
+        private static Expression<Func<RecommendedResultItem, bool>> GetChildDiagnosisPredicate(Child child, string templateId, bool explicitMatchSearch = false)
+        {
+            Expression<Func<RecommendedResultItem, bool>> pred = PredicateBuilder.False<RecommendedResultItem>();
+
+            if (!explicitMatchSearch)
+            {
+                // Include un tagged
+                pred = pred.Or(a => a.ChildDiagnoses.Contains(ID.Parse(Guid.Empty)));
+
+                // Include content tagged with All
+                pred = pred.Or(a => a.ChildDiagnoses.Contains(ID.Parse(Constants.ArticleTags.AllChildDiagnosis)));
+            }
+
+            foreach (var diagnosis in child.Diagnoses)
+            {
+                // prevent outer variable trap
+                var d = diagnosis;
+                pred = pred.Or(a => a.ChildDiagnoses.Contains(ID.Parse(d.Key)));
+            }
+
+            return pred;
+        }
+
         private static Expression<Func<Article, bool>> GetChildGradesPredicate(Child child, bool explicitMatchSearch = false)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
@@ -245,9 +333,55 @@ namespace UnderstoodDotOrg.Domain.Search
             return pred;
         }
 
+        private static Expression<Func<RecommendedResultItem, bool>> GetChildGradesPredicate(Child child, string templateId, bool explicitMatchSearch = false)
+        {
+            Expression<Func<RecommendedResultItem, bool>> pred = PredicateBuilder.False<RecommendedResultItem>();
+
+            if (!explicitMatchSearch)
+            {
+                // Include un tagged
+                pred = pred.Or(a => a.ChildGrades.Contains(ID.Parse(Guid.Empty)));
+
+                // Include content tagged with All
+                pred = pred.Or(a => a.ChildGrades.Contains(ID.Parse(Constants.ArticleTags.AllChildGrades)));
+            }
+
+            foreach (var grades in child.Grades)
+            {
+                // prevent outer variable trap
+                var g = grades;
+                pred = pred.Or(a => a.ChildGrades.Contains(ID.Parse(g.Key)));
+            }
+
+            return pred;
+        }
+
         private static Expression<Func<Article, bool>> GetChildIssuesPredicate(Child child, bool explicitMatchSearch = false)
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.False<Article>();
+
+            if (!explicitMatchSearch)
+            {
+                // Include un tagged
+                pred = pred.Or(a => a.ChildIssues.Contains(ID.Parse(Guid.Empty)));
+
+                // Include content tagged with All
+                pred = pred.Or(a => a.ChildIssues.Contains(ID.Parse(Constants.ArticleTags.AllChildIssues)));
+            }
+
+            foreach (var issues in child.Issues)
+            {
+                // prevent outer variable trap
+                var i = issues;
+                pred = pred.Or(a => a.ChildIssues.Contains(ID.Parse(i.Key)));
+            }
+
+            return pred;
+        }
+
+        private static Expression<Func<RecommendedResultItem, bool>> GetChildIssuesPredicate(Child child, string templateId, bool explicitMatchSearch = false)
+        {
+            Expression<Func<RecommendedResultItem, bool>> pred = PredicateBuilder.False<RecommendedResultItem>();
 
             if (!explicitMatchSearch)
             {
@@ -293,6 +427,11 @@ namespace UnderstoodDotOrg.Domain.Search
         }
 
         private static Expression<Func<Article, bool>> GetAlwaysTruePredicate()
+        {
+            return (a => a.Paths.Contains(Sitecore.ItemIDs.RootID));
+        }
+
+        private static Expression<Func<RecommendedResultItem, bool>> GetAlwaysTruePredicate(string templateId)
         {
             return (a => a.Paths.Contains(Sitecore.ItemIDs.RootID));
         }
@@ -351,6 +490,24 @@ namespace UnderstoodDotOrg.Domain.Search
             return keys;
         }
 
+        private static List<int> GetRandomRecommendedContentKeys(IQueryable<RecommendedResultItem> query, int totalKeys)
+        {
+            List<int> keys = new List<int>();
+            int totalMatches = query.Take(1).GetResults().TotalSearchResults;
+            int limit = Math.Min(totalMatches, totalKeys);
+            Random rand = new Random();
+            while (keys.Count != limit)
+            {
+                int r = rand.Next(totalMatches);
+                if (!keys.Contains(r))
+                {
+                    keys.Add(r);
+                }
+            }
+
+            return keys;
+        }
+
         private static List<Article> GetRandomBucketArticles(IQueryable<Article> query, int totalEntries)
         {
             List<Article> articles = new List<Article>();
@@ -366,6 +523,23 @@ namespace UnderstoodDotOrg.Domain.Search
             }
 
             return articles;
+        }
+
+        private static List<RecommendedResultItem> GetRandomBucketContent(IQueryable<RecommendedResultItem> query, int totalEntries)
+        {
+            List<RecommendedResultItem> recommendedResults = new List<RecommendedResultItem>();
+
+            foreach (int i in GetRandomRecommendedContentKeys(query, totalEntries))
+            {
+                RecommendedResultItem random = (i == 0) ? query.Take(1).FirstOrDefault() : query.Skip(i).Take(1).FirstOrDefault();
+
+                if (random != null)
+                {
+                    recommendedResults.Add(random);
+                }
+            }
+
+            return recommendedResults;
         }
 
         private static IEnumerable<T> Shuffle<T>(IEnumerable<T> source, Random rng)
@@ -399,6 +573,17 @@ namespace UnderstoodDotOrg.Domain.Search
                 // Calculate remaining spots
                 int spotsToFill = Math.Min(Constants.PERSONALIZATION_ARTICLES_PER_USER - currentEntries, Constants.PERSONALIZATION_ARTICLES_PER_BUCKET);
                 result.AddRange(GetRandomBucketArticles(query, spotsToFill));
+            }
+        }
+
+        private static void AddFromRecommendedContentBucket(IQueryable<RecommendedResultItem> query, ref List<RecommendedResultItem> result)
+        {
+            int currentEntries = result.Count();
+            if (currentEntries < Constants.PERSONALIZATION_ARTICLES_PER_USER)
+            {
+                // Calculate remaining spots
+                int spotsToFill = Math.Min(Constants.PERSONALIZATION_ARTICLES_PER_USER - currentEntries, Constants.PERSONALIZATION_ARTICLES_PER_BUCKET);
+                result.AddRange(GetRandomBucketContent(query, spotsToFill));
             }
         }
 
@@ -846,6 +1031,103 @@ namespace UnderstoodDotOrg.Domain.Search
 
                 //resp.Write("<br><br>");
             }  
+
+            return results;
+        }
+
+
+        /// <summary>
+        /// Retrieves recommended content based on personalization flow - child grade and issues for each child of member, then parent interests
+        /// </summary>
+        /// <param name="member"></param>
+        /// <param name="child"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public static List<RecommendedResultItem> GetRecommendedContent(Member member, string templateId)
+        {
+            List<RecommendedResultItem> results = new List<RecommendedResultItem>();
+
+            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
+
+            using (var ctx = index.CreateSearchContext())
+            {
+                // Pre-process
+                // Filter performs no relevancy scoring
+                var allContentQuery = GetCurrentCultureQueryable<RecommendedResultItem>(ctx)
+                                    .Filter(GetBasePredicate(templateId, member));
+
+                // Start Inclusion/Exclusion processing based on member and child(ren)
+                var matchingContentQuery = allContentQuery;
+
+                int totalMatches = matchingContentQuery.Take(1).GetResults().TotalSearchResults;
+
+                List<RecommendedResultItem> toProcess = new List<RecommendedResultItem>();
+
+                //get results for all children of member
+                if (member.Children != null)
+                {
+                    foreach (Child child in member.Children)
+                    {
+                        // Initial query contains all/none mapping, 
+                        // buckets should exclude the all/none mappings
+
+                        // 1 - Child Grade
+                        if (child.Grades.Any())
+                        {
+                            var firstQuery = matchingContentQuery
+                                                .Filter(GetChildGradesPredicate(child, templateId, true));
+                            AddFromRecommendedContentBucket(firstQuery, ref toProcess);
+                        }
+
+                        // 2 - Child Issues / Diagnosis
+                        bool hasIssues = child.Issues.Any();
+                        bool hasDiagnoses = child.Diagnoses.Any();
+
+                        if (hasIssues || hasDiagnoses)
+                        {
+                            var secondQuery = matchingContentQuery;
+                            if (hasIssues)
+                            {
+                                secondQuery = secondQuery.Filter(GetChildIssuesPredicate(child, templateId, true));
+                            }
+                            if (hasDiagnoses)
+                            {
+                                secondQuery = secondQuery.Filter(GetChildDiagnosisPredicate(child, templateId, true));
+                            }
+
+                            AddFromRecommendedContentBucket(secondQuery, ref toProcess);
+                        }
+                    }
+                }
+                
+
+                // 3 - Parent interest
+                if (member.Interests.Any())
+                {
+                    var thirdQuery = matchingContentQuery
+                                        .Filter(GetMemberInterestsPredicate(member, templateId, true));
+
+                    AddFromRecommendedContentBucket(thirdQuery, ref toProcess);
+                }
+
+                
+                // Backfill
+                int spotsToFill = Constants.PERSONALIZATION_ARTICLES_PER_USER - toProcess.Count();
+                if (spotsToFill > 0)
+                {
+                    var backfillQuery = allContentQuery.Filter(GetMemberBackfillInterestsPredicate(member, templateId));
+
+                    toProcess.AddRange(GetRandomBucketContent(backfillQuery, spotsToFill));
+                    Sitecore.Diagnostics.Log.Info("Personalized backfill for non matching parent interests", backfillQuery);
+                }
+
+                // Post Process
+                List<RecommendedResultItem> finalList = new List<RecommendedResultItem>();
+
+                finalList.AddRange(toProcess);
+
+                results = finalList;
+            }
 
             return results;
         }

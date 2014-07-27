@@ -207,6 +207,7 @@
     <Compile Include="Search\Fields\ArticleMappingField.cs" />
     <Compile Include="Search\JSON\SearchBehaviorArticle.cs" />
     <Compile Include="Search\JSON\SearchArticle.cs" />
+    <Compile Include="Search\RecommendedResultItem.cs" />
     <Compile Include="Search\SearchHelper.cs" />
     <Compile Include="Search\JSON\ResultSet.cs" />
     <Compile Include="Search\SessionSearchResult.cs" />
