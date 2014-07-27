@@ -49,6 +49,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 litExpertType.Text = expert.GetExpertType();
                 hlExpertDetails.NavigateUrl = expert.GetUrl();
             }
+
+            CommunityRecommendationIcons1.MatchingChildrenIds = CommunityRecommendationIcons2.MatchingChildrenIds = Model.BaseEventDetailPage.GetMatchingChildrenIds(this.CurrentMember);
         }
     }
 }

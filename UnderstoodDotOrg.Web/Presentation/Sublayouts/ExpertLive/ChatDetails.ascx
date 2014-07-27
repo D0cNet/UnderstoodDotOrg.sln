@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ChatDetails.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive.ChatDetails" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-
+<%@ Register Src="~/Presentation/Sublayouts/Recommendation/CommunityRecommendationIcons.ascx" TagPrefix="uc1" TagName="CommunityRecommendationIcons" %>
 <div class="container event">
     <header class="row">
         <div class="event-container">
@@ -28,15 +28,12 @@
 
                     <!-- BEGIN PARTIAL: community/experts_recommended_for -->
                     <%--
-                    Phase 2 
+                    Phase 2 --%>
                     <div class="recommended-for">
-                        <p>Recommended for</p>
-                        <span class="children-key">
-                            <ul>
-                                <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
-                            </ul>
-                        </span>
-                    </div>--%>
+                         <p><%= UnderstoodDotOrg.Common.DictionaryConstants.RecommendedForLabel %></p>
+                            <uc1:CommunityRecommendationIcons runat="server" ID="CommunityRecommendationIcons1" />
+           
+                    </div>
                     <!-- END PARTIAL: community/experts_recommended_for -->
                 </div><!-- end .event-image -->
 
@@ -64,20 +61,17 @@
             <div class="col-5 col offset-1 event-sidebar skiplink-sidebar rs_read_this">
                 <!-- BEGIN PARTIAL: community/experts_recommended_for -->
                 <%--
-              Phase 2
+              Phase 2--%>
                 <div class="recommended-for">
-                    <p>Recommended for</p>
-                    <span class="children-key">
-                        <ul>
-                            <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li>
-                        </ul>
-                    </span>
-                </div>--%>
+                    <p><%= UnderstoodDotOrg.Common.DictionaryConstants.RecommendedForLabel %></p>
+                 <uc1:CommunityRecommendationIcons runat="server" ID="CommunityRecommendationIcons2" />
+           
+                </div>
                 <!-- END PARTIAL: community/experts_recommended_for -->
                 
                 <asp:PlaceHolder ID="phPastSidebarDetails" runat="server" Visible="false">
                 <!-- BEGIN PARTIAL: helpful-count -->
-                <sc:sublayout id="Sublayout3" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/FoundThisHelpfulCountOnlySideColumn.ascx" />
+                <sc:sublayout id="Sublayout3" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" />
                 <!-- END PARTIAL: helpful-count -->
                 
                 <!-- BEGIN PARTIAL: find-helpful -->

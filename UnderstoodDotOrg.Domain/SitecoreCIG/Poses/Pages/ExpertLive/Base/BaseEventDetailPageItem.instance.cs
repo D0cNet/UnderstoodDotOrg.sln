@@ -1,5 +1,6 @@
 using System;
 using Sitecore.Data.Items;
+using System.Linq;
 using System.Collections.Generic;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
@@ -143,6 +144,58 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base
             }
 
             return result;
+        }
+
+        public List<Guid> GetMatchingChildrenIds(Domain.Membership.Member member)
+        {
+            var matches = new List<Guid>();
+
+            // Require parent interests and child
+            if (member != null && member.Children.Count > 0)
+            {
+                foreach (var child in member.Children)
+                {
+                    // Child must have grade
+                    if (child.Grades.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    bool gradeMatch = false;
+                    bool issueMatch = false;
+
+                    var childGrade = child.Grades.FirstOrDefault();
+                    var articleGrades = this.Grade.ListItems.Select(i => i.ID.Guid).ToList();
+
+                    // Unmapped or All grades is considered a match in addition to child's grade
+                    if (!articleGrades.Any()
+                        || articleGrades.Contains(childGrade.Key))
+                    {
+                        gradeMatch = true;
+                    }
+
+                    if (child.Issues.Count == 0)
+                    {
+                        issueMatch = true;
+                    }
+                    else
+                    {
+                        var childIssues = child.Issues.Select(i => i.Key).ToList();
+                        var articleIssues = this.ChildIssue.ListItems.Select(i => i.ID.Guid).ToList();
+
+
+                        issueMatch = childIssues.Intersect(articleIssues).ToList().Count() > 0;
+
+                    }
+
+                    if (gradeMatch || issueMatch)
+                    {
+                        matches.Add(child.ChildId);
+                    }
+                }
+            }
+
+            return matches;
         }
     }
 }

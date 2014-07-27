@@ -58,6 +58,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::System.Web.UI.WebControls.Literal litExpertType;
         
         /// <summary>
+        /// CommunityRecommendationIcons2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation.CommunityRecommendationIcons CommunityRecommendationIcons2;
+        
+        /// <summary>
         /// litEventDate control.
         /// </summary>
         /// <remarks>
@@ -85,22 +94,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frHostTitle;
         
         /// <summary>
-        /// frTopicsHeading control.
+        /// litTopicsCoveredLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTopicsHeading;
+        protected global::System.Web.UI.WebControls.Literal litTopicsCoveredLabel;
         
         /// <summary>
-        /// frTopics control.
+        /// litTopicsCovered control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frTopics;
+        protected global::System.Web.UI.WebControls.Literal litTopicsCovered;
         
         /// <summary>
         /// frBodyContent control.
@@ -137,6 +146,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frAddToCalendar;
+        
+        /// <summary>
+        /// CommunityRecommendationIcons control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation.CommunityRecommendationIcons CommunityRecommendationIcons;
         
         /// <summary>
         /// phHelpful control.

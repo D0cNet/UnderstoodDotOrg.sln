@@ -6,6 +6,8 @@
     using UnderstoodDotOrg.Common.Extensions;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
     using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
+    using UnderstoodDotOrg.Common;
+    using System.Text;
 
     public partial class WebinarDetails : BaseSublayout<WebinarEventPageItem>
     {
@@ -19,6 +21,7 @@
             ExpertLivePageItem landingPage = ExpertLivePageItem.GetLandingPage();
             bool landingExists = landingPage != null;
             hlBackExperts.Visible = landingExists;
+            litTopicsCoveredLabel.Text = DictionaryConstants.TopicsCoveredLabel;
             if (landingExists)
             {
                 hlBackExperts.NavigateUrl = landingPage.GetUrl();
@@ -44,8 +47,19 @@
                 hlExpertDetail.NavigateUrl = expert.GetUrl();
                 imgExpert.ImageUrl = expert.GetThumbnailUrl(150, 150);
                 frExpertName.Item = Model.BaseEventDetailPage.Expert;
+                frHostTitle.Item = expert;
                 litExpertType.Text = expert.GetExpertType();
             }
+
+            //Get Topics overed in webinar based on Topics embedded in Parent interest field
+            StringBuilder sb = new StringBuilder();
+            foreach (var topics in Model.BaseEventDetailPage.ParentInterest.ListItems)
+            {
+                sb.Append(topics.Name);
+                sb.Append(",");
+            }
+            litTopicsCovered.Text = sb.Length >1?  sb.Remove(sb.Length - 1, 1).ToString():sb.ToString();
+            CommunityRecommendationIcons2.MatchingChildrenIds = CommunityRecommendationIcons.MatchingChildrenIds = Model.BaseEventDetailPage.GetMatchingChildrenIds(this.CurrentMember);
         }
     }
 }

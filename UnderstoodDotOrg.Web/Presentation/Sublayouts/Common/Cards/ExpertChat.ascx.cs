@@ -39,6 +39,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
                     hlExpertDetail.NavigateUrl = expert.GetUrl();
                     litExpertType.Text = expert.GetExpertType();
                 }
+
+                CommunityRecommendationIcons.MatchingChildrenIds =item.GetMatchingChildrenIds(this.CurrentMember);
             }
         }
     }

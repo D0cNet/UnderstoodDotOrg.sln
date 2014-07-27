@@ -87,8 +87,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             Item currItem = Sitecore.Context.Item;
             var condition = String.IsNullOrEmpty(Issue)?(String.IsNullOrEmpty(Grade)?(String.IsNullOrEmpty(Topic)?"":Topic):Grade):Issue;
             // Chats
-            var chats = ((ExpertLivePageItem)currItem).FeaturedChat.ListItems
+           
+            var chats =  ((ExpertLivePageItem)currItem).FeaturedChat.ListItems
                 .Select(it=> new BaseEventDetailPageItem(it))
+                .Where(it=>it.EventStartDate.DateTime >= DateTime.Now)
                 .ToList();
             if (!String.IsNullOrEmpty(condition))
                 chats = chats.Where(it => FilterFound(it,Grade,Issue,Topic)).ToList();

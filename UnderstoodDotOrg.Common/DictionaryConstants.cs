@@ -3113,5 +3113,9 @@ namespace UnderstoodDotOrg.Common
 
 
         public static string SendPrivateMessageLabel { get { return Translate.TextByDomain(PosesDictionary, "Send Private Message Title"); } }
+
+        public static string TopicsCoveredLabel { get { return Translate.TextByDomain(PosesDictionary, "Topics Covered Label"); } }
+        public static string RecommendedForLabel { get { return Translate.TextByDomain(PosesDictionary, "Recommended For Child Label"); } }
+
     }
 }

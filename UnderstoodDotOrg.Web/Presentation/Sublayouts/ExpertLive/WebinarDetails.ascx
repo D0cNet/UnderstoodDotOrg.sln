@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebinarDetails.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive.WebinarDetails" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-
+<%@ Register Src="~/Presentation/Sublayouts/Recommendation/CommunityRecommendationIcons.ascx" TagPrefix="uc1" TagName="CommunityRecommendationIcons" %>
 <div class="container event">
 
     <header class="row">
@@ -27,25 +27,24 @@
             </div>
 
             <!-- BEGIN PARTIAL: community/experts_recommended_for -->
-            <%--
-              Phase 2
-            <div class="recommended-for">
-                <p>Recommended for</p>
-                <span class="children-key">
-                    <ul>
-                        <li><i class='child-a' title='CHILD NAME HERE'></i></li><li><i class='child-d' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-                    </ul>
-                </span>
+            
+             <!--Phase 2 --> 
+             <%-- --%><div class="recommended-for">
+                <p><%= UnderstoodDotOrg.Common.DictionaryConstants.RecommendedForLabel %></p>
+                 <uc1:CommunityRecommendationIcons runat="server" ID="CommunityRecommendationIcons2" />
+           
             </div>
-             --%>
+             
             <!-- END PARTIAL: community/experts_recommended_for -->
           </div><!-- end .event-image -->
 
           <p class="event-date-time"><asp:Literal runat="server" ID="litEventDate" /></p>
           <p class="event-host-name"><sc:FieldRenderer runat="server" ID="frExpertName" FieldName="Expert Name" /></p>
-          <p class="event-host-title"><sc:FieldRenderer runat="server" ID="frHostTitle" FieldName="Subheading" /></p>
-          <p class="event-topics-subhead"><sc:FieldRenderer ID="frTopicsHeading" runat="server" FieldName="Event Heading" /></p>
-          <p class="event-topics"><sc:FieldRenderer ID="frTopics" FieldName="Event Subheading" runat="server" /></p>
+          <p class="event-host-title"><sc:FieldRenderer runat="server" ID="frHostTitle" FieldName="Expert Heading" /></p>
+          <p class="event-topics-subhead">
+              <asp:Literal  ID="litTopicsCoveredLabel" runat="server" /></p>
+          <p class="event-topics">
+              <asp:Literal ID="litTopicsCovered" runat="server" /></p>
 
           <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />
 
@@ -59,22 +58,20 @@
 
         <div class="col-5 col offset-1 event-sidebar rs_read_this">
             <!-- BEGIN PARTIAL: community/experts_recommended_for -->
-            <%--
-              Phase 2
+            <%----%>
+            <%--  Phase 2--%>
             <div class="recommended-for">
-                <p>Recommended for</p>
-                <span class="children-key">
-                    <ul>
-                        <li><i class='child-b' title='CHILD NAME HERE'></i></li><li><i class='child-c' title='CHILD NAME HERE'></i></li><li><i class='child-e' title='CHILD NAME HERE'></i></li>
-                    </ul>
-                </span>
+                <p><%= UnderstoodDotOrg.Common.DictionaryConstants.RecommendedForLabel %></p>
+                 
+                 <uc1:CommunityRecommendationIcons runat="server" ID="CommunityRecommendationIcons" />
+
             </div>
-                --%>
+                
             <!-- END PARTIAL: community/experts_recommended_for -->
 
             <asp:PlaceHolder ID="phHelpful" runat="server" Visible="false">
                 <!-- BEGIN PARTIAL: helpful-count -->
-                <sc:sublayout id="Sublayout3" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/FoundThisHelpfulCountOnlySideColumn.ascx" />
+                <sc:sublayout id="Sublayout3" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/FoundHelpfulAndCommentCountsSideColumn.ascx" />
                 <!-- END PARTIAL: helpful-count -->
                 
                 <!-- BEGIN PARTIAL: find-helpful -->
