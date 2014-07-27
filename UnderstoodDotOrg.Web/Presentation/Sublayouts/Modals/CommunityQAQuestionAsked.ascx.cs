@@ -156,12 +156,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
                 }
             }
 
-            var queryString = TelligentService.CreateQuestion(title, body, grade, topic, issues, user);
-            var url = "/en/Community and Events/Q and A/Q and A Details.aspx" + queryString;
+            var newQuestion = TelligentService.CreateQuestion(title, body, grade, topic, issues, user);
+            var url = "/en/Community and Events/Q and A/Q and A Details.aspx" + newQuestion.QueryString;
 
-            if (!String.IsNullOrEmpty(queryString))
+            if (newQuestion != null)
             {
-                Item item = Questions.CreateSitecoreQuestion(title, "", "", "", grade, topic, issues, Sitecore.Context.Language);
+                Item item = Questions.CreateSitecoreQuestion(title, newQuestion.WikiId, newQuestion.WikiPageId, newQuestion.ContentId, grade, topic, issues, Sitecore.Context.Language);
 
                 if (item != null)
                 {
@@ -176,41 +176,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
                 }
 
             }
-            /*
-            if (thModel != null)
-            {
-                //Create item in sitecore with returned forumID and threadID
-                threadItem = Discussion.CreateSitecoreForumThread(thModel, frmItemID, Sitecore.Context.Language);
-                if (threadItem != null)
-                {
-                    error_msg.Visible = false;
-
-                    //Redirect to discussion
-                    //Publish thread item
-                    PublishItem(threadItem);
-                    //Sitecore.Web.WebUtil.Redirect(Sitecore.Links.LinkManager.GetItemUrl(threadItem));
-                    ///  clientsideScript("alert('" +String.Format( DictionaryConstants.ForumCreateConfirmation,subject)+"');");
-                    Page.Response.Redirect(Page.Request.Url.ToString(), false);
-                }
-                else
-                {
-                    //Delete from Telligent
-                    TelligentService.DeleteForumThread(frmItemID, thModel.ThreadID);
-                    error_msg.Text = DictionaryConstants.FailedToCreateDiscussionError;
-                    error_msg.Visible = true;
-                    ShowClientSideForm(HiddenText);
-                }
-
-
-            }
             else
             {
                 //The assumption is that if the Thread is null, then there was an error in telligent API call and nothing was created
-                error_msg.Text = DictionaryConstants.FailedToCreateDiscussionError;
-                error_msg.Visible = true;
-                ShowClientSideForm(HiddenText);
+                //error_msg.Text = DictionaryConstants.FailedToCreateDiscussionError;
+                //error_msg.Visible = true;
+                //ShowClientSideForm(HiddenText);
             }
-            */
+            
             Response.Redirect(url);
 
         }

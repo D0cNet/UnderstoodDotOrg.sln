@@ -71,8 +71,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
             adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
             return adminKeyBase64;
         }
-        public static string CreateQuestion(string title, string body, string grade, string topic, List<string> issues, string currentUser)
+        public static Question CreateQuestion(string title, string body, string grade, string topic, List<string> issues, string currentUser)
         {
+            String wikiId = "2";
+
             using (var webClient = new WebClient())
             {
                 try
@@ -82,7 +84,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
 
                     // TODO: change to constant
-                    var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", "2"));
+                    var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", wikiId));
 
                     var values = new NameValueCollection();
                     values["Title"] = title;
@@ -99,7 +101,22 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     string contentId = node["ContentId"].InnerText;
                     string wikiPageId = node["Id"].InnerText;
                     string queryString = "?wikiId=2&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
-                    return queryString;
+
+                    var question = new Question()
+                    {
+                        Title = node["Title"].InnerText,
+                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(node["CreatedDate"].InnerText),
+                        Body = node["Body"].InnerText,
+                        //Author = user["Username"].InnerText,
+                        //Group = app["HtmlName"].InnerText,
+                        CommentCount = node["CommentCount"].InnerText,
+                        WikiId = wikiId,
+                        WikiPageId = wikiPageId,
+                        ContentId = contentId,
+                        QueryString = queryString
+                    };
+
+                    return question;
                 }
                 catch (Exception e)
                 {
