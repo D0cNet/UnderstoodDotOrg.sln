@@ -2781,6 +2781,42 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return questionList;
         }
 
+        public static Question GetQuestion(string wikiId, string wikiPageId, string contentId)
+        {
+            Question question = new Question();
+
+
+            try
+            {
+                using (var webClient = new WebClient())
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                    var requestUrl = GetApiEndPoint(string.Format("wikis/{0}/pages/{1}.xml", wikiId, wikiPageId));
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNode page = xmlDoc.SelectSingleNode("Response/WikiPage");
+                    XmlNode user = xmlDoc.SelectSingleNode("Response/WikiPage/User");
+                    XmlNode app = xmlDoc.SelectSingleNode("Response/WikiPage/Content/Application");
+
+                    question = new Question()
+                    {
+                        Title = page["Title"].InnerText,
+                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(page["CreatedDate"].InnerText),
+                        Body = page["Body"].InnerText,
+                        Author = user["Username"].InnerText,
+                        Group = app["HtmlName"].InnerText,
+                        CommentCount = page["CommentCount"].InnerText
+                    };
+                }
+            }
+            catch { } // TODO: Add Logging
+            return question;
+        }
+
         public static bool MarkConversationRead(string conversationOwner, string conversationID)
         {
             bool success = false;
