@@ -1029,6 +1029,11 @@ namespace UnderstoodDotOrg.Common
             public static string BlogPostTemplateID { get { return "{261A659C-F4D4-4788-BC26-FD0EF5ADE168}"; } }
         }
 
+        public static class Questions
+        {
+            public static string QuestionTemplateID { get { return "{7AEB64D9-86C6-4C78-B526-79EDEDF20D6C}"; } }
+        }
+
         #region Salesforce Item Id to Sitecore Guid Mapping
         /// <summary>
         /// Pass in a Guid from Sitecore, get the corresponding ID that is used in Salesoforce to track the constant

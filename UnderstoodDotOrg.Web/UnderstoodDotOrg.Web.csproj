@@ -930,6 +930,7 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecommendedQuestions.ascx.cs">
       <DependentUpon>RecommendedQuestions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecommendedQuestions.ascx.designer.cs">
       <DependentUpon>RecommendedQuestions.ascx</DependentUpon>

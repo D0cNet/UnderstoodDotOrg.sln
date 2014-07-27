@@ -72,6 +72,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CommunityServices\Blogs.cs" />
+    <Compile Include="CommunityServices\Question.cs" />
     <Compile Include="CommunityServices\Discussion.cs" />
     <Compile Include="CommunityServices\Forum.cs" />
     <Compile Include="CommunityServices\GeoTargeting.cs" />

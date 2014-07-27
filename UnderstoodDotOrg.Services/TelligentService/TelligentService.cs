@@ -71,7 +71,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
             return adminKeyBase64;
         }
-        public static string CreateQuestion(string title, string body, string currentUser)
+        public static string CreateQuestion(string title, string body, string grade, string topic, List<string> issues, string currentUser)
         {
             using (var webClient = new WebClient())
             {

@@ -38,6 +38,9 @@
             if (control != null && !String.IsNullOrEmpty(control.SelectedValue))
             {
                 childIssues = control.SelectedItem.Text;
+
+                dataSource = dataSource.FindAll(q => q.Issues.Contains(childIssues));
+
             }
 
             control = Page.FindControl("main_0$ddlGrades") as DropDownList;
@@ -45,6 +48,9 @@
             if (control != null && !String.IsNullOrEmpty(control.SelectedValue))
             {
                 grades = control.SelectedItem.Text;
+
+                dataSource = dataSource.FindAll(q => q.Grade == grades);
+
             }
 
             control = Page.FindControl("main_0$ddlTopics") as DropDownList;
@@ -52,6 +58,8 @@
             if (control != null && !String.IsNullOrEmpty(control.SelectedValue))
             {
                 topics = control.SelectedItem.Text;
+
+                dataSource = dataSource.FindAll(q => q.Group == topics);
             }
 
             var searchControl = Page.FindControl("main_0$txtSearch") as TextBox;

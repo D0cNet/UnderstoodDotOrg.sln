@@ -7,9 +7,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
-using UnderstoodDotOrg.Domain.TelligentCommunity;
+//using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Services.CommunityServices;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
 {
@@ -32,6 +35,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
         {
             if (!IsPostBack)
             {
+                List<Question> dataSource = TelligentService.GetQuestionsList(2, 100);
+                questionsRepeater.DataSource = dataSource;
+                questionsRepeater.DataBind();
+
                 Item currItem = Sitecore.Context.Item;
 
                 Item[] items = null;
@@ -115,6 +122,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
         {
             var title = QuestionTitleTextBox.Text;
             var body = EnterQuestionTextBox.Text;
+
+            string topic = String.IsNullOrEmpty(ddlTopics.SelectedValue.ToString()) ? String.Empty : ddlTopics.SelectedValue.ToString();
+
+            string grade = String.IsNullOrEmpty(ddlGrades.SelectedValue.ToString()) ? String.Empty : ddlGrades.SelectedValue.ToString(); 
+
             var user = "";
             try
             {
@@ -128,6 +140,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
                 user = "admin";
             }
 
+            List<string> issues = new List<string>();
+
             //save selected issues
             foreach (var item in uxIssues.Items)
             {
@@ -136,14 +150,104 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
 
                 if (checkbox.Checked)
                 {
+                    issues.Add(hidden.Value);
                     //singleChild.Issues.Add(new Issue() { Key = Guid.Parse(checkbox.Attributes["value"]) });
                     //singleChild.Issues.Add(new Issue() { Key = Guid.Parse(hidden.Value) });
                 }
             }
 
-            var url = "/en/Community and Events/Q and A/Q and A Details.aspx" + TelligentService.CreateQuestion(title, body, user);
+            var queryString = TelligentService.CreateQuestion(title, body, grade, topic, issues, user);
+            var url = "/en/Community and Events/Q and A/Q and A Details.aspx" + queryString;
+
+            if (!String.IsNullOrEmpty(queryString))
+            {
+                Item item = Questions.CreateSitecoreQuestion(title, "", "", "", grade, topic, issues, Sitecore.Context.Language);
+
+                if (item != null)
+                {
+                    //error_msg.Visible = false;
+
+                    //Redirect to discussion
+                    //Publish thread item
+                    PublishItem(item);
+                    //Sitecore.Web.WebUtil.Redirect(Sitecore.Links.LinkManager.GetItemUrl(threadItem));
+                    ///  clientsideScript("alert('" +String.Format( DictionaryConstants.ForumCreateConfirmation,subject)+"');");
+                    Page.Response.Redirect(Page.Request.Url.ToString(), false);
+                }
+
+            }
+            /*
+            if (thModel != null)
+            {
+                //Create item in sitecore with returned forumID and threadID
+                threadItem = Discussion.CreateSitecoreForumThread(thModel, frmItemID, Sitecore.Context.Language);
+                if (threadItem != null)
+                {
+                    error_msg.Visible = false;
+
+                    //Redirect to discussion
+                    //Publish thread item
+                    PublishItem(threadItem);
+                    //Sitecore.Web.WebUtil.Redirect(Sitecore.Links.LinkManager.GetItemUrl(threadItem));
+                    ///  clientsideScript("alert('" +String.Format( DictionaryConstants.ForumCreateConfirmation,subject)+"');");
+                    Page.Response.Redirect(Page.Request.Url.ToString(), false);
+                }
+                else
+                {
+                    //Delete from Telligent
+                    TelligentService.DeleteForumThread(frmItemID, thModel.ThreadID);
+                    error_msg.Text = DictionaryConstants.FailedToCreateDiscussionError;
+                    error_msg.Visible = true;
+                    ShowClientSideForm(HiddenText);
+                }
+
+
+            }
+            else
+            {
+                //The assumption is that if the Thread is null, then there was an error in telligent API call and nothing was created
+                error_msg.Text = DictionaryConstants.FailedToCreateDiscussionError;
+                error_msg.Visible = true;
+                ShowClientSideForm(HiddenText);
+            }
+            */
             Response.Redirect(url);
 
         }
+
+        /// <summary>
+        /// Function taken from http://briancaos.wordpress.com/2011/01/14/create-and-publish-items-in-sitecore/
+        /// </summary>
+        /// <param name="item"></param>
+        private void PublishItem(Sitecore.Data.Items.Item item)
+        {
+            // The publishOptions determine the source and target database,
+            // the publish mode and language, and the publish date
+            Sitecore.Publishing.PublishOptions publishOptions =
+              new Sitecore.Publishing.PublishOptions(item.Database,
+                                                     Sitecore.Data.Database.GetDatabase("web"),
+                                                     Sitecore.Publishing.PublishMode.SingleItem,
+                                                     item.Language,
+                                                     System.DateTime.Now);  // Create a publisher with the publishoptions
+            Sitecore.Publishing.Publisher publisher = new Sitecore.Publishing.Publisher(publishOptions);
+
+            // Choose where to publish from
+            publisher.Options.RootItem = item;
+
+            // Publish children as well?
+            publisher.Options.Deep = true;
+
+            // Do the publish!
+            publisher.Publish();
+        }
+ 
+        protected void questionsRepeater_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
+        {
+            var item = (Question)e.Item.DataItem;
+            HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
+
+            hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(item.Author);
+        }
+
     }
 }

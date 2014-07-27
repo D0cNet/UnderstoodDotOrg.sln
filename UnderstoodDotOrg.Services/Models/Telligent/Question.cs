@@ -20,10 +20,15 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string QueryString { get; set; }
         public string AuthorAvatarUrl { get; set; }
         public string Url { get; set; }
+        public string Grade { get; set; }
+        public List<String> Issues { get; set; }
 
-        public Question() { }
+        public Question() 
+        {
+            Issues = new List<string>();
+        }
 
-        public Question(string title, string body, string publishedDate, string author, string group, string commentCount, string wikiId, string wikiPageId, string contentId)
+        public Question(string title, string body, string publishedDate, string author, string group, string grade, List<String> issues, string commentCount, string wikiId, string wikiPageId, string contentId)
         {
             Title = title;
             Body = body;
@@ -34,6 +39,8 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
             WikiId = wikiId;
             WikiPageId = wikiPageId;
             ContentId = contentId;
+            Grade = grade;
+            Issues = issues;
             QueryString = "?wikiId=" + WikiId + "&wikiPageId=" + WikiPageId + "&contentId=" + ContentId;
         }
     }

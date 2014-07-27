@@ -15,84 +15,38 @@
                     <p class="already-asked-header"><sc:Text Field="Already Asked" runat="server" /></p>
 
                     <ul class="similar-answers">
+        <asp:Repeater ID="questionsRepeater" ItemType="UnderstoodDotOrg.Services.Models.Telligent.Question" runat="server" OnItemDataBound="questionsRepeater_ItemDataBound">
+            <ItemTemplate>
                         <!-- BEGIN PARTIAL: community/question-asked -->
                         <li>
                             <div class="question-number"><em>1</em></div>
 
                             <div class="question-detail">
                                 <p>
-                                    <a href="REPLACE">Ex voluptatem ratione quibusdam quo inventore praesentium est eveniet porro?</a>
+                                    <a href="<%# Item.Url %>"><%# Item.Title %></a>
                                 </p>
 
                                 <div class="question-data">
                                     <div class="question-stats">
-                                        <span class="group-label">In Reading Issues</span>
-                                        <span class="user">Asked by Voluptas</span>
-                                        <span class="date-time">1 hour ago</span>
+                                        <span class="group-label">In <%# Item.Group %></span>
+                                        <span class="user">Asked by <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink></span>
+                                        <span class="date-time"> <%# Item.PublishedDate %></span>
                                     </div>
 
-                                    <p class="replies">1 <span class="label">replies</span></p>
+                                    <p class="replies"><%# Item.CommentCount %> <span class="label"><%= UnderstoodDotOrg.Common.DictionaryConstants.RepliesLabel%></span></p>
                                 </div>
                             </div>
 
                             <div class="question-replies">
-                                1
-        <span class="label">replies</span>
+                                <%# Item.CommentCount %>
+        <span class="label"><%= UnderstoodDotOrg.Common.DictionaryConstants.RepliesLabel%></span>
                             </div>
                         </li>
                         <!-- END PARTIAL: community/question-asked -->
-                        <!-- BEGIN PARTIAL: community/question-asked -->
-                        <li>
-                            <div class="question-number"><em>2</em></div>
 
-                            <div class="question-detail">
-                                <p>
-                                    <a href="REPLACE">Rerum omnis doloribus quis veniam sint culpa animi laboriosam expedita temporibus porro doloremque?</a>
-                                </p>
+            </ItemTemplate>
+        </asp:Repeater>
 
-                                <div class="question-data">
-                                    <div class="question-stats">
-                                        <span class="group-label">In Reading Issues</span>
-                                        <span class="user">Asked by Rem</span>
-                                        <span class="date-time">1 hour ago</span>
-                                    </div>
-
-                                    <p class="replies">8 <span class="label">replies</span></p>
-                                </div>
-                            </div>
-
-                            <div class="question-replies">
-                                8
-        <span class="label">replies</span>
-                            </div>
-                        </li>
-                        <!-- END PARTIAL: community/question-asked -->
-                        <!-- BEGIN PARTIAL: community/question-asked -->
-                        <li>
-                            <div class="question-number"><em>3</em></div>
-
-                            <div class="question-detail">
-                                <p>
-                                    <a href="REPLACE">Enim natus qui earum quam sapiente molestias nisi est sit est possimus?</a>
-                                </p>
-
-                                <div class="question-data">
-                                    <div class="question-stats">
-                                        <span class="group-label">In Reading Issues</span>
-                                        <span class="user">Asked by Doloribus</span>
-                                        <span class="date-time">1 hour ago</span>
-                                    </div>
-
-                                    <p class="replies">5 <span class="label">replies</span></p>
-                                </div>
-                            </div>
-
-                            <div class="question-replies">
-                                5
-        <span class="label">replies</span>
-                            </div>
-                        </li>
-                        <!-- END PARTIAL: community/question-asked -->
                     </ul>
 
 
