@@ -942,6 +942,7 @@
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\RecommendedQuestions.ascx.designer.cs">
       <DependentUpon>RecommendedQuestions.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\ExpertLive\EventsLiveCalendarDay.cs" />
     <Compile Include="Presentation\Sublayouts\MyAccount\Notification Templates\ForumReplyTemplate.ascx.cs">
       <DependentUpon>ForumReplyTemplate.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

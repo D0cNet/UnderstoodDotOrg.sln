@@ -13,22 +13,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
     public partial class EventsCalendarView {
         
         /// <summary>
-        /// linkPreviousMonth control.
+        /// hlPreviousMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkPreviousMonth;
-        
-        /// <summary>
-        /// previousMonth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal previousMonth;
+        protected global::System.Web.UI.WebControls.HyperLink hlPreviousMonth;
         
         /// <summary>
         /// currentMonth control.
@@ -40,21 +31,21 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::System.Web.UI.WebControls.Literal currentMonth;
         
         /// <summary>
-        /// linkNextMonth control.
+        /// hlNextMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkNextMonth;
+        protected global::System.Web.UI.WebControls.HyperLink hlNextMonth;
         
         /// <summary>
-        /// nextMonth control.
+        /// listViewEventsLiveCalendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal nextMonth;
+        protected global::System.Web.UI.WebControls.ListView listViewEventsLiveCalendar;
     }
 }
