@@ -15,5 +15,6 @@
     
     <sc:sublayout id="sbBlogPosts" runat="server" path="~/Presentation/SubLayouts/Community/Whats Happening/RecentBlogPosts.ascx" />
 
-
+    <sc:Placeholder ID="phBlogs" runat="server" />
+        
 </div>

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Sitecore.Data;
+using Sitecore.Data.Items;
+using Sitecore.Layouts;
+using Sitecore.Web.UI.WebControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -30,30 +34,64 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
         private string CommunityMembers = @"~/Presentation/SubLayouts/Community/Whats Happening/CommunityMembers.ascx";
         private string MostActiveGroups = @"~/Presentation/SubLayouts/Community/Whats Happening/MostActiveGroups.ascx";
         private string RecentBlogPosts = @"~/Presentation/SubLayouts/Community/Whats Happening/RecentBlogPosts.ascx";
-
+        /// <summary>
+        
+        // for Haddad
+        /// </summary>
+        Database dbMaster = Database.GetDatabase("master"); //im sure this is being stored somewhere else, but whatever
+        private string recommendedQuestionsItem = "/sitecore/content/pathtorecommendedqs";
+        private string recentQuestionsItem = "/sitecore/content/pathstorecents";
+        string renderingXml = "";
+        LayoutDefinition layoutDefinition = new LayoutDefinition();
+        string defaultDeviceId = "{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}";
+        //
         protected void Page_Init(object sender, EventArgs e)
         {
             if (this.CurrentMember != null)
             {
                 //logged in
-
+                Item newItem;
                 //upcoming events or my upcoming events --> fallback to upcoming events (default)
                 //recent questions or recommended questions --> fallback to recent questions (default)
                 //my friends --> fallback to community moderators (default)
                 //recommended groups or my groups --> fallback to active groups (default)
                 //recommended blogs or blogs i follow --> fallback to recent blogs (default)
-
+               
                 //should we display Recommended Questions?
                 var reccommendedQuestions = SearchHelper.GetRecommendedContent(this.CurrentMember, QandADetailsItem.TemplateId)
                         .Where(a => a.GetItem() != null);
                 if (reccommendedQuestions.Count() > 0)
                 {
+                    newItem = dbMaster.GetItem(recommendedQuestionsItem);
+                  
+
                     sbQuestions.Path = this.RecommendedQuestions;
                 }
                 else
                 {
+                    newItem = dbMaster.GetItem(recentQuestionsItem);
+                   
+
                     sbQuestions.Path = this.RecentQuestions;
                 }
+                //RenderingReference rendering = newItem.Visualization.GetRenderings(Sitecore.Context.Device, false).FirstOrDefault();
+                //Sublayout sublayout = new Sublayout();
+                //sublayout.DataSource = newItem.Paths.FullPath;
+                //sublayout.Path = rendering.RenderingItem.InnerItem["Path"];
+                //sublayout.Cacheable = rendering.RenderingItem.Caching.Cacheable;
+
+                ////Not needed now but why not?
+                ////if (rendering.RenderingItem.Caching.Cacheable)
+                ////{
+                ////    sublayout.VaryByData = rendering.RenderingItem.Caching.VaryByData;
+                ////    sublayout.VaryByDevice = rendering.RenderingItem.Caching.VaryByDevice;
+                ////    sublayout.VaryByLogin = rendering.RenderingItem.Caching.VaryByLogin;
+                ////    sublayout.VaryByParm = rendering.RenderingItem.Caching.VaryByParm;
+                ////    sublayout.VaryByQueryString = rendering.RenderingItem.Caching.VaryByQueryString;
+                ////    sublayout.VaryByUser = rendering.RenderingItem.Caching.VaryByUser;
+                ////}
+                //phBlogs.Controls.Add(sublayout);
+
 
                 //even bother with community features?
                 if (!string.IsNullOrEmpty(this.CurrentMember.ScreenName))
