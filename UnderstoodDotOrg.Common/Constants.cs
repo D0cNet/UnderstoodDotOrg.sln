@@ -781,6 +781,10 @@ namespace UnderstoodDotOrg.Common
                 public const string Query = "q";
                 public const string SearchLocation = "a";
             }
+            public static class PrivateMessage
+            {
+                public const string Recipient = "recipient";
+            }
         }
         #region User Activty Tracking
         public static class UserActivity_Values 

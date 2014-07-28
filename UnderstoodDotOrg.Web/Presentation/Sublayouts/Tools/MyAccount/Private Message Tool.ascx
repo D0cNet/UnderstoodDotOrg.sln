@@ -14,7 +14,6 @@
     $(document).ready(function () {
 
         loadDialog();
-        $(".messages-tab > ")
     });
 
     Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function () {
@@ -25,6 +24,7 @@
 
     function loadDialog()
     {
+        var recipient = '<%= RecipientScreenName %>';
         var dlg=$("#dialog-form").dialog({
             autoOpen: false,
             height: 650,
@@ -51,7 +51,9 @@
             });
 
 
-
+        if (recipient != '') {
+            $("#dialog-form").dialog("open");
+        }
     }
 
 

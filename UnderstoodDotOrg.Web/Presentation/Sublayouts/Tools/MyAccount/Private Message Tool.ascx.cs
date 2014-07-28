@@ -19,6 +19,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
 {
 	public partial class Private_Message_Tool : BaseSublayout //System.Web.UI.UserControl
 	{
+        public string RecipientScreenName
+        {
+            get { return Request.QueryString[Constants.QueryStrings.PrivateMessage.Recipient] ?? string.Empty; }
+        }
+
 		public string ScreenName
 		{
 			get
@@ -127,12 +132,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
             var usernames = TelligentService.GetFriends(CurrentMember.ScreenName, FriendPageIndex, 10, out totalFriends).Select(x => new { Username = x.Username }); //TelligentService.GetUserNames().Select(x=> new {Username=x});
 
             if (usernames.Count() < totalFriends)
+            {
                 FriendPageIndex++;
+            }
 
             TotalFriends = totalFriends;
 
             chklUsernames.DataSource = usernames;
             chklUsernames.DataBind();
+
+            if (!string.IsNullOrEmpty(RecipientScreenName))
+            {
+                try
+                {
+                    chklUsernames.SelectedValue = RecipientScreenName;
+                }
+                catch { }
+            }
         }
 
         private void BindConversations(bool forceRefresh=false)
@@ -319,11 +335,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                     Sitecore.Diagnostics.Error.LogError("SendNewMessage Error:\n" + ex.Message);
                 }
 
-                
-                txtSubject.Text = String.Empty;
-                CKEditorControl1.Text = String.Empty;
-                chklUsernames.Items.Cast<ListItem>()
-                    .ToList().ForEach(i => { i.Selected = false; }); 
+
+                Response.Redirect(Request.Url.AbsolutePath);
             }
         }
 
