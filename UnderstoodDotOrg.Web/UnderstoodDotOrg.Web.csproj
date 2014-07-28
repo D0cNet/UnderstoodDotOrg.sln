@@ -921,6 +921,13 @@
     <Compile Include="Presentation\Sublayouts\Community\Whats Happening\MyGroups.ascx.designer.cs">
       <DependentUpon>MyGroups.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningNow.ascx.cs">
+      <DependentUpon>WhatsHappeningNow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningNow.ascx.designer.cs">
+      <DependentUpon>WhatsHappeningNow.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Sublayouts\ExpertLive\EventsCalendarView.ascx.cs">
       <DependentUpon>EventsCalendarView.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3109,6 +3116,7 @@
     <Content Include="Presentation\Sublayouts\Community\Groups Search.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\BlogsIFollow.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\MyGroups.ascx" />
+    <Content Include="Presentation\Sublayouts\Community\Whats Happening\WhatsHappeningNow.ascx" />
     <Content Include="Presentation\Sublayouts\ExpertLive\EventsCalendarView.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\RecommendedBlogs.ascx" />
     <Content Include="Presentation\Sublayouts\Community\Whats Happening\RecommendedQuestions.ascx" />

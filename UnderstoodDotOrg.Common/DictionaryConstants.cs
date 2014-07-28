@@ -3117,5 +3117,19 @@ namespace UnderstoodDotOrg.Common
         public static string TopicsCoveredLabel { get { return Translate.TextByDomain(PosesDictionary, "Topics Covered Label"); } }
         public static string RecommendedForLabel { get { return Translate.TextByDomain(PosesDictionary, "Recommended For Child Label"); } }
 
+
+        public static string RecommendedQuestionsLabel { get { return Translate.TextByDomain(PosesDictionary, "Recommended Questions Label"); } }
+
+        public static string RecommendedBlogsLabel { get { return Translate.TextByDomain(PosesDictionary, "Recommended Blogs Label"); } }
+        
+        public static string AnswerThisQuestionLabel { get { return Translate.TextByDomain(PosesDictionary, "Answer This Question Label"); } }
+        
+        public static string AllBlogsLabel { get { return Translate.TextByDomain(PosesDictionary, "All Blogs Label"); } }
+        
+        public static string AnswerFragment { get { return Translate.TextByDomain(PosesDictionary, "Answer Fragment"); } }
+        
+        public static string AllQuestionsLabel { get { return Translate.TextByDomain(PosesDictionary, "All Questions Label"); } }
+
+        public static string BlogDateStampLabel { get { return Translate.TextByDomain(PosesDictionary, "Blog Date Stamp Label"); } }
     }
 }

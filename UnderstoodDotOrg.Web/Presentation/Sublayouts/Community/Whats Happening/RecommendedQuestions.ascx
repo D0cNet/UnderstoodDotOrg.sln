@@ -3,12 +3,16 @@
 <div class="recent-questions">
     <div class="row">
         <div class="col col-24 recent-questions-wrapper">
-            <h2 class="rs_read_this">Questions That Might Interest You</h2>
+            <h2 class="rs_read_this">
+                <%--Questions That Might Interest You--%>
+                <%= UnderstoodDotOrg.Common.DictionaryConstants.RecommendedQuestionsLabel %>
+            </h2>
             <div class="carousel-arrow-wrapper">
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows questions next-prev-menu">
 
-                    <a class="view-all" href="REPLACE">See all questions</a>
+                    <%--<a class="view-all" href="REPLACE">See all questions</a>--%>
+                    <asp:HyperLink ID="hypAllQuestions" runat="server" CssClass="view-all"></asp:HyperLink>
 
                     <div class="rsArrow rsArrowLeft">
                         <button class="rsArrowIcn"></button>
@@ -22,7 +26,41 @@
             </div>
             <div class="row question-cards">
                 <!-- BEGIN PARTIAL: community/question_card -->
-                <div class="col col-12 question-card rs_read_this">
+                <asp:ListView runat="server" ID="lvQuestionCards" OnItemDataBound="lvQuestionCards_ItemDataBound">
+                    <ItemTemplate>
+                        <div class="col col-12 question-card rs_read_this">
+                            <div class="question-card-info group">
+                                <div class="question-card-title-and-text">
+                                    <div class="question-card-title">
+                                        <%--<a href="REPLACE">Unde Placeat Voluptatem Necessitatibus Totam</a>--%>
+                                        <asp:HyperLink ID="hypQuestionTitle" runat="server"></asp:HyperLink>
+                                    </div>
+                                    <!-- end .question-card-title -->
+                                    <div class="question-card-text">
+                                        <%--Illo fugit aut et accusamus error. Sed fugit facere dolorem quia recusandae et velit est nobis velit sint laborum harum tempora. Cupiditate recusandae assumenda quos eum dolorem aut saepe delectus odit eius velit.--%>
+                                        <asp:Literal runat="server" ID="litQuestionCardText"></asp:Literal>
+                                    </div>
+                                    <!-- end .question-card-text -->
+                                </div>
+                                <ul class="question-card-links">
+                                    <li>
+                                        <%--<a href="REPLACE" class="rs_skip">5 answers</a>--%>
+                                        <asp:HyperLink ID="hypAnswerCount" runat="server" CssClass="rs_skip"></asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <%--<a href="REPLACE" class="rs_skip">Answer this Question</a>--%>
+                                        <asp:HyperLink ID="hypQuestionLink" runat="server" CssClass="rs_skip"></asp:HyperLink>
+                                    </li>
+                                </ul>
+                                <!-- end .question-card-links -->
+                            </div>
+                            <!-- end .question-card-info -->
+                        </div>
+                        <!-- end .question-card -->
+                    </ItemTemplate>
+                </asp:ListView>
+
+                <%--                <div class="col col-12 question-card rs_read_this">
                     <div class="question-card-info group">
                         <div class="question-card-title-and-text">
                             <div class="question-card-title">
@@ -170,7 +208,7 @@
                     <!-- end .question-card-info -->
                 </div>
                 <!-- end .question-card -->
-                <!-- END PARTIAL: community/question_card -->
+                <!-- END PARTIAL: community/question_card -->--%>
             </div>
             <!-- end .question-cards -->
         </div>
