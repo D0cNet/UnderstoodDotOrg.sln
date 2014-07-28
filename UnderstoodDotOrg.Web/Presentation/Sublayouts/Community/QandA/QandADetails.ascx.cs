@@ -26,6 +26,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A
             GroupLabel.Text = question.Group;
             AuthorLabel.Text = question.Author;
             DateLabel.Text = question.PublishedDate;
+
+            SubmitButton.Text = UnderstoodDotOrg.Common.DictionaryConstants.SubmitAnswerLabel;
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
