@@ -20,8 +20,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
     {
         protected override void OnInit(EventArgs e)
         {
-            //Item parentItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(Constants.Pages.ParentsGroupRecommended));
-            //string itemHref = Sitecore.Links.LinkManager.GetItemUrl(parentItem);
             litClose.Text = UnderstoodDotOrg.Common.DictionaryConstants.CloseText;
             litCancel.Text = UnderstoodDotOrg.Common.DictionaryConstants.CancelButtonText;
             litCancel2.Text = UnderstoodDotOrg.Common.DictionaryConstants.CancelButtonText;
@@ -33,20 +31,29 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
+            if (!IsPostBack)
             {
-                //don't do this, and we won't have anything to save...
-                this.DoSetup();
+                String search = Server.UrlDecode(Request.QueryString["search"]);
+
+                List<Question> questions = TelligentService.GetQuestionsList(2, 100);
+
+                if (!String.IsNullOrEmpty(search))
+                {
+                    questions = questions.Where(x => x.Title.ToLower().Contains(search.ToLower())).ToList();
+                }
+
+                questionsRepeater.DataSource = questions;
+                questionsRepeater.DataBind();
+
+
             }
 
+            //don't do this, and we won't have anything to save...
+            this.DoSetup();
         }
 
         protected void DoSetup()
         {
-            List<Question> dataSource = TelligentService.GetQuestionsList(2, 100);
-            questionsRepeater.DataSource = dataSource;
-            questionsRepeater.DataBind();
-
             Item currItem = Sitecore.Context.Item;
 
             Item[] items = null;

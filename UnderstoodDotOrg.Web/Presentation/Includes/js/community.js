@@ -1510,8 +1510,12 @@
       if (typeof(e) !== 'undefined') {
         e.preventDefault();
       }
+      
+      var name = $('#ask').value;
 
-      $.get('/modals/community-qa-question-asked').done(self.renderLightbox);
+      var encName = encodeURIComponent(name);
+
+      $.get('/modals/community-qa-question-asked&search='+encName).done(self.renderLightbox);
     };
 
     self.renderLightbox = function(res) {
