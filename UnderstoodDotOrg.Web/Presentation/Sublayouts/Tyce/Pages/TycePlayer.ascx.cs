@@ -15,9 +15,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Pages
     public partial class TycePlayer : BaseSublayout<TycePlayerPageItem>
     {
         protected ChildLearningIssueItem IssueItem { get; set; }
+        protected bool IsPersonalized { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            var standalone = Request.QueryString["standalone"];
+            IsPersonalized = string.IsNullOrEmpty(standalone) || standalone.ToLower() != bool.TrueString.ToLower();
+
             var simq = Request.QueryString["simq"];
             if (!string.IsNullOrEmpty(simq))
             {

@@ -109,11 +109,11 @@ public CustomTextField CaptionsBubbleText
 }
 
 
-public CustomTextField PersonalizedForChildText
+public CustomTextField PersonalizedTitle
 {
 	get
 	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Personalized For Child Text"]);
+		return new CustomTextField(InnerItem, InnerItem.Fields["Personalized Title"]);
 	}
 }
 
@@ -123,6 +123,15 @@ public CustomTextField StepThreeText
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Step Three Text"]);
+	}
+}
+
+
+public CustomTextField OnDemandTitle
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["On Demand Title"]);
 	}
 }
 
@@ -163,6 +172,15 @@ public CustomTextField ProgressBubbleText
 }
 
 
+public CustomImageField MobileRotationImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Mobile Rotation Image"]);
+	}
+}
+
+
 public CustomTextField SkipBubbleText
 {
 	get
@@ -177,6 +195,15 @@ public CustomTextField BeforeYouBeginTitle
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Before You Begin Title"]);
+	}
+}
+
+
+public CustomTextField MobileRotationText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Mobile Rotation Text"]);
 	}
 }
 

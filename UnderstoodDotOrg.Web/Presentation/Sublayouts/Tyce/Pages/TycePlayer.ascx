@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col col-15 offset-1">
             <a href="<%= Model.TyceBasePage.GetOverviewPage().GetUrl() %>" class="back-to-previous"><i class="icon-arrow-left-blue"></i><%= Model.ExperienceChildsWorldText.Rendered %></a>
-            <h1><%= Model.PersonalizedForChildText.Rendered %></h1>
+            <h1><%= IsPersonalized ? Model.PersonalizedTitle.Rendered : Model.OnDemandTitle.Rendered %></h1>
         </div>
         <!-- .col-15 -->
         <div class="col col-8">
