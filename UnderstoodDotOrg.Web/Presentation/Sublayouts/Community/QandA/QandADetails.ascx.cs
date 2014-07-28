@@ -1,4 +1,5 @@
 ﻿using System;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
@@ -42,8 +43,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A
             {
                 user = "admin";
             }
-            TelligentService.PostAnswer(wikiId, wikiPageId, body, user);
-            Response.Redirect(Request.RawUrl);
+            if (!IsUserLoggedIn)
+            {
+                this.ProfileRedirect(Constants.UserPermission.RegisteredUser);
+            }
+            else if (CurrentMember.ScreenName == null)
+            {
+                this.ProfileRedirect(Constants.UserPermission.CommunityUser);
+            }
+            else
+            {
+                TelligentService.PostAnswer(wikiId, wikiPageId, body, user);
+                Response.Redirect(Request.RawUrl);
+            }
+            
         }
     }
 }
