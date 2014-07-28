@@ -229,4 +229,9 @@ h2.register-community-profile {
   height: 100%;
 }
 
+/* Hide truncated link for calendar for non multi-event */
+.calendar-grid .grid-row > .single .event-name.truncated {
+    display: none;
+}
+
 /* END: AO-created new rules to be ported back to DP CSS */

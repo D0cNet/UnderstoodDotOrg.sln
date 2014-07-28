@@ -1382,6 +1382,14 @@ namespace UnderstoodDotOrg.Common
 			}
 		}
 
+        public static string AtFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "At Fragment");
+            }
+        }
+
         #endregion
 
         #region Core Labels

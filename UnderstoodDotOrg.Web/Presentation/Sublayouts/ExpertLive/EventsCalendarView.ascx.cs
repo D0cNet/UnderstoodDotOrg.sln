@@ -21,6 +21,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 
         protected List<EventsLiveCalendarDay> EventsLiveCalendarDays { get; private set; }
         private DateTime SelectedMonthYear { get; set; }
+        private CultureInfo _cultureInfo;
 
         private void Page_Load(object sender, EventArgs e)
         {
@@ -29,8 +30,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             BuildCalendarData();
 
             EventsLiveCalendarView.ItemDataBound += EventsLiveCalendarView_ItemDataBound;
+            EventsLiveCalendarView.LayoutCreated += EventsLiveCalendarView_LayoutCreated;
             EventsLiveCalendarView.DataSource = EventsLiveCalendarDays;
             EventsLiveCalendarView.DataBind();
+        }
+
+        void EventsLiveCalendarView_LayoutCreated(object sender, EventArgs e)
+        {
+            Literal litSunday = (Literal)EventsLiveCalendarView.FindControl("litSunday");
+            Literal litMonday = (Literal)EventsLiveCalendarView.FindControl("litMonday");
+            Literal litTuesday = (Literal)EventsLiveCalendarView.FindControl("litTuesday");
+            Literal litWednesday = (Literal)EventsLiveCalendarView.FindControl("litWednesday");
+            Literal litThursday = (Literal)EventsLiveCalendarView.FindControl("litThursday");
+            Literal litFriday = (Literal)EventsLiveCalendarView.FindControl("litFriday");
+            Literal litSaturday = (Literal)EventsLiveCalendarView.FindControl("litSaturday");
+
+            DateTimeFormatInfo dtfi = Sitecore.Context.Culture.DateTimeFormat;
+
+            litSunday.Text = dtfi.GetDayName(DayOfWeek.Sunday);
+            litMonday.Text = dtfi.GetDayName(DayOfWeek.Monday);
+            litTuesday.Text = dtfi.GetDayName(DayOfWeek.Tuesday);
+            litWednesday.Text = dtfi.GetDayName(DayOfWeek.Wednesday);
+            litThursday.Text = dtfi.GetDayName(DayOfWeek.Thursday);
+            litFriday.Text = dtfi.GetDayName(DayOfWeek.Friday);
+            litSaturday.Text = dtfi.GetDayName(DayOfWeek.Saturday);
         }
 
         private void ParseRequestedCalendarMonth()
@@ -195,7 +218,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             if (e.IsItem())
             {
                 BaseEventDetailPageItem eventToBind = (BaseEventDetailPageItem)e.Item.DataItem;
-                bool IsChatEvent = (eventToBind.GetEventType().ToLower() == "chat") ? true : false;
+                bool IsChatEvent = eventToBind.InnerItem.TemplateID == Sitecore.Data.ID.Parse(ChatEventPageItem.TemplateId);
                 Literal literalEventTimeDate = (Literal)e.Item.FindControl("literalEventTimeDate");
                 Literal literalEventUTCTime = (Literal)e.Item.FindControl("literalEventUTCTime");
                 HyperLink linkEventDetails = (HyperLink)e.Item.FindControl("linkEventDetails");
@@ -205,13 +228,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 Literal literalExpertName = (Literal)e.Item.FindControl("literalExpertName");
                 Literal literalExpertTitles = (Literal)e.Item.FindControl("literalExpertTitles");
                 Image imageExpert = (Image)e.Item.FindControl("imageExpert");
+                Literal litExpertType = e.FindControlAs<Literal>("litExpertType");
                 HyperLink linkExpert = (HyperLink)e.Item.FindControl("linkExpert");
                 HtmlGenericControl itemSingleEvent = (HtmlGenericControl)e.Item.FindControl("itemSingleEvent");
                 PlaceHolder placeholderLive = (PlaceHolder)e.Item.FindControl("placeholderLive");
 
-                string dateStartText = (IsChatEvent) ? "Live Chat at " : "Live Webinar at ";
                 StringBuilder builderForDateHeading = new StringBuilder();
-                builderForDateHeading.Append(dateStartText);
+                builderForDateHeading.Append(String.Format("{0} {1} ",eventToBind.ContentPage.PageTitle.Rendered, DictionaryConstants.AtFragment));
                 builderForDateHeading.Append(eventToBind.EventStartDate.DateTime.ToString("t"));
                 builderForDateHeading.Append(" ");
                 builderForDateHeading.Append(eventToBind.EventStartDate.DateTime.ToString("%K"));
@@ -248,39 +271,20 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                     imageExpert.ImageUrl = expertToBind.ExpertImage.MediaItem.GetImageUrl();
                     imageExpert.AlternateText = expertToBind.ExpertName;
                     linkExpert.NavigateUrl = expertToBind.GetUrl();
+                    litExpertType.Text = expertToBind.GetExpertType();
                 }
 
-                if (eventToBind.InnerItem.TemplateID == Sitecore.Data.ID.Parse(ChatEventPageItem.TemplateId))
-                {
-                    BindItemForChatEvent(e);
-                }
-                else
-                {
-                    BindItemForWebinarEvent(e);
-                }
+                HtmlGenericControl paragraphChatHeading = (HtmlGenericControl)e.Item.FindControl("paragraphChatHeading");
+                HyperLink linkEventName = (HyperLink)e.Item.FindControl("linkEventName");
+                HyperLink linkEventNameTruncated = (HyperLink)e.Item.FindControl("linkEventNameTruncated");
+
+                paragraphChatHeading.Visible = true;
+                paragraphChatHeading.InnerText = eventToBind.EventHeading.Rendered;
+                linkEventName.Text = eventToBind.ContentPage.PageTitle.Rendered;
+                linkEventName.NavigateUrl = linkEventNameTruncated.NavigateUrl = eventToBind.GetUrl();
+                linkEventNameTruncated.Text = UnderstoodDotOrg.Common.Helpers.TextHelper.TruncateText(
+                    System.Web.HttpUtility.HtmlDecode(eventToBind.ContentPage.PageTitle.Raw), 15);
             }
-        }
-
-        private void BindItemForChatEvent(RepeaterItemEventArgs e)
-        {
-            BaseEventDetailPageItem eventToBind = (BaseEventDetailPageItem)e.Item.DataItem;
-            HtmlGenericControl paragraphChatHeading = (HtmlGenericControl)e.Item.FindControl("paragraphChatHeading");
-            HyperLink linkEventName = (HyperLink)e.Item.FindControl("linkEventName");
-            ExpertDetailPageItem expertToBind = (ExpertDetailPageItem)eventToBind.Expert.Item;
-
-            paragraphChatHeading.Visible = true;
-            paragraphChatHeading.InnerText = eventToBind.EventSubheading.Rendered;
-            linkEventName.Text = eventToBind.EventHeading.Rendered;
-            linkEventName.NavigateUrl = eventToBind.GetUrl();
-        }
-
-        private void BindItemForWebinarEvent(RepeaterItemEventArgs e)
-        {
-            BaseEventDetailPageItem eventToBind = (BaseEventDetailPageItem)e.Item.DataItem;
-            HyperLink linkEventName = (HyperLink)e.Item.FindControl("linkEventName");
-
-            linkEventName.Text = eventToBind.EventHeading.Rendered;
-            linkEventName.NavigateUrl = eventToBind.GetUrl();
         }
 
     }

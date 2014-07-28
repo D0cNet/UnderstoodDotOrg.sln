@@ -40,13 +40,13 @@
     <LayoutTemplate>
         <div class="container calendar calendar-grid rendered">
             <ul class="row month-header">
-                <li class="day-header">Sunday</li>
-                <li class="day-header">Monday</li>
-                <li class="day-header">Tuesday</li>
-                <li class="day-header">Wednesday</li>
-                <li class="day-header">Thursday</li>
-                <li class="day-header">Friday</li>
-                <li class="day-header">Saturday</li>
+                <li class="day-header"><asp:Literal ID="litSunday" runat="server" /></li>
+                <li class="day-header"><asp:Literal ID="litMonday" runat="server" /></li>
+                <li class="day-header"><asp:Literal ID="litTuesday" runat="server" /></li>
+                <li class="day-header"><asp:Literal ID="litWednesday" runat="server" /></li>
+                <li class="day-header"><asp:Literal ID="litThursday" runat="server" /></li>
+                <li class="day-header"><asp:Literal ID="litFriday" runat="server" /></li>
+                <li class="day-header"><asp:Literal ID="litSaturday" runat="server" /></li>
             </ul>
 
             <ul runat="server" id="weekPlaceholder"></ul>
@@ -79,7 +79,7 @@
                     <li class="event" runat="server" id="itemSingleEvent">
                         <div class="event-content">
                             <p visible="false" runat="server" id="paragraphChatHeading" class="event-header rs_skip"><%# Eval("EventHeading.Rendered") %></p>
-                            <%--<a href="#" class="event-name truncated">Ea Rem Est Unde...</a>--%>
+                            <asp:HyperLink runat="server" ID="linkEventNameTruncated" CssClass="event-name truncated rs_skip" />
                             <asp:HyperLink runat="server" ID="linkEventName" CssClass="event-name rs_skip" />
                             <p class="event-time"><asp:Literal runat="server" ID="literalEventUTCTime" /></p>
 
@@ -91,12 +91,12 @@
                         </div>
                         
                         <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
-                        <div class="event-card rs_skip" style="display: none;">
+                        <div class="event-card rs_skip">
                             <div class="event-host-info">
                                 <div class="event-card-image">
                                     <asp:HyperLink runat="server" ID="linkExpert">
                                         <asp:Image runat="server" ID="imageExpert" />
-                                        <div class="image-label">Expert</div>
+                                        <div class="image-label"><asp:Literal ID="litExpertType" runat="server" /></div>
                                     </asp:HyperLink>
                                 </div>
                                 <!-- end .event-card-image -->
