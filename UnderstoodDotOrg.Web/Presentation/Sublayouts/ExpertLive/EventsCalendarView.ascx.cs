@@ -11,10 +11,12 @@ using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Framework.UI;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 {
-    public partial class EventsCalendarView : System.Web.UI.UserControl
+    public partial class EventsCalendarView : BaseSublayout
     {
 
         protected List<EventsLiveCalendarDay> EventsLiveCalendarDays { get; private set; }
@@ -23,7 +25,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
         private void Page_Load(object sender, EventArgs e)
         {
             ParseRequestedCalendarMonth();
-            SetCalendarLiterals();
+            SetCalendarInfo();
             BuildCalendarData();
 
             EventsLiveCalendarView.ItemDataBound += EventsLiveCalendarView_ItemDataBound;
@@ -33,8 +35,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 
         private void ParseRequestedCalendarMonth()
         {
-            string queryMonth = HttpHelper.GetQueryString("month", DateTime.Now.Month.ToString()).Trim();
-            string queryYear = HttpHelper.GetQueryString("year", DateTime.Now.Year.ToString()).Trim();
+            string queryMonth = HttpHelper.GetQueryString(Constants.QueryStrings.ExpertsLive.Month, DateTime.Now.Month.ToString()).Trim();
+            string queryYear = HttpHelper.GetQueryString(Constants.QueryStrings.ExpertsLive.Year, DateTime.Now.Year.ToString()).Trim();
             DateTime queryDate = DateTime.Now;
 
             try
@@ -50,13 +52,25 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             SelectedMonthYear = queryDate;
         }
 
-        private void SetCalendarLiterals()
+        private void SetCalendarInfo()
         {
-            hlPreviousMonth.Text = SelectedMonthYear.AddMonths(-1).ToString("MMMM yyyy");
+            DateTime previous = SelectedMonthYear.AddMonths(-1);
+            DateTime next = SelectedMonthYear.AddMonths(1);
+            hlPreviousMonth.Text = previous.ToString("MMMM yyyy");
             hlPreviousMonth.ToolTip = hlPreviousMonth.Text;
             currentMonth.Text = SelectedMonthYear.ToString("MMMM yyyy");
-            hlNextMonth.Text = SelectedMonthYear.AddMonths(1).ToString("MMMM yyyy");
+            hlNextMonth.Text = next.ToString("MMMM yyyy");
             hlNextMonth.ToolTip = hlNextMonth.Text;
+
+            hlPreviousMonth.NavigateUrl = GetCalendarLink(previous);
+            hlNextMonth.NavigateUrl = GetCalendarLink(next);
+        }
+
+        private string GetCalendarLink(DateTime date)
+        {
+            return String.Format("{0}?{1}={2}&{3}={4}", Sitecore.Context.Item.GetUrl(),
+                    Constants.QueryStrings.ExpertsLive.Month, date.Month,
+                    Constants.QueryStrings.ExpertsLive.Year, date.Year);
         }
 
         private void BuildCalendarData()

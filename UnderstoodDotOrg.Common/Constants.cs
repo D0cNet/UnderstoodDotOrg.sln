@@ -791,6 +791,11 @@ namespace UnderstoodDotOrg.Common
             {
                 public const string Recipient = "recipient";
             }
+            public static class ExpertsLive
+            {
+                public const string Month = "month";
+                public const string Year = "year";
+            }
         }
         #region User Activty Tracking
         public static class UserActivity_Values 
