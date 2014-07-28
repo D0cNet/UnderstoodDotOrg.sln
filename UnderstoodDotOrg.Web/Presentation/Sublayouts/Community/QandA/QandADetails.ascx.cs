@@ -1,11 +1,12 @@
-﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A
+﻿using System;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Services.TelligentService;
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A
 {
-    using System;
-    using UnderstoodDotOrg.Common.Extensions;
-    using UnderstoodDotOrg.Domain.TelligentCommunity;
-    using UnderstoodDotOrg.Framework.UI;
-    using UnderstoodDotOrg.Services.Models.Telligent;
-    using UnderstoodDotOrg.Services.TelligentService;
+
 
     public partial class QandADetails : BaseSublayout
     {
@@ -41,7 +42,7 @@
             {
                 user = "admin";
             }
-            CommunityHelper.PostAnswer(wikiId, wikiPageId, body, user);
+            TelligentService.PostAnswer(wikiId, wikiPageId, body, user);
             Response.Redirect(Request.RawUrl);
         }
     }
