@@ -19,79 +19,61 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 {
     public partial class WhatsHappeningNow : BaseSublayout //System.Web.UI.UserControl
     {
-
-        private string MyUpcomingEvents = @"";
-        private string MyFriends = @"~/Presentation/SubLayouts/Community/Whats Happening/MyFriends.ascx";
-        private string MyGroups = @"~/Presentation/SubLayouts/Community/Whats Happening/MyGroups.ascx";
-        private string RecommendedGroups = @"";
-        private string RecommendedBlogs = @"~/Presentation/SubLayouts/Community/Whats Happening/RecommendedBlogs.ascx";
-        private string RecommendedQuestions = @"~/Presentation/SubLayouts/Community/Whats Happening/RecommendedQuestions.ascx";
-        private string BlogsIFollow = @"~/Presentation/SubLayouts/Community/Whats Happening/BlogsIFollow.ascx";
-
-        //defaults 
-        private string UpcomingEvents = @"~/Presentation/SubLayouts/Community/Whats Happening/UpcomingEvents.ascx";
-        private string RecentQuestions = @"~/Presentation/SubLayouts/Community/Whats Happening/RecentQuestions.ascx";
-        private string CommunityMembers = @"~/Presentation/SubLayouts/Community/Whats Happening/CommunityMembers.ascx";
-        private string MostActiveGroups = @"~/Presentation/SubLayouts/Community/Whats Happening/MostActiveGroups.ascx";
-        private string RecentBlogPosts = @"~/Presentation/SubLayouts/Community/Whats Happening/RecentBlogPosts.ascx";
         /// <summary>
-        
-        // for Haddad
+        /// Private POCO to store references to sublayouts to load into page as it renders
         /// </summary>
-        Database dbMaster = Database.GetDatabase("master"); //im sure this is being stored somewhere else, but whatever
-        private string recommendedQuestionsItem = "/sitecore/content/pathtorecommendedqs";
-        private string recentQuestionsItem = "/sitecore/content/pathstorecents";
-        string renderingXml = "";
-        LayoutDefinition layoutDefinition = new LayoutDefinition();
-        string defaultDeviceId = "{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}";
-        //
+        private class WhatsHappeningAreas
+        {
+            public string Events { get; set; }
+            public string Questions { get; set; }
+            public string CommunityMembers { get; set; }
+            public string Groups { get; set; }
+            public string Blogs { get; set; }
+
+            public WhatsHappeningAreas()
+            {
+                this.Events = WhatsHappeningSublayouts.UpcomingEvents;
+                this.Questions = WhatsHappeningSublayouts.RecentQuestions;
+                this.CommunityMembers = WhatsHappeningSublayouts.CommunityMembers;
+                this.Groups = WhatsHappeningSublayouts.MostActiveGroups;
+                this.Blogs = WhatsHappeningSublayouts.RecentBlogPosts;
+            }
+
+            /// <summary>
+            /// Public class to contain static paths to What's Happening composite sublayouts
+            /// </summary>
+            public class WhatsHappeningSublayouts
+            {
+                //public static string MyUpcomingEvents = @"";
+                public static string MyFriends = @"~/Presentation/SubLayouts/Community/Whats Happening/MyFriends.ascx";
+                public static string MyGroups = @"~/Presentation/SubLayouts/Community/Whats Happening/MyGroups.ascx";
+                //public static string RecommendedGroups = @"";
+                public static string RecommendedBlogs = @"~/Presentation/SubLayouts/Community/Whats Happening/RecommendedBlogs.ascx";
+                public static string RecommendedQuestions = @"~/Presentation/SubLayouts/Community/Whats Happening/RecommendedQuestions.ascx";
+                public static string BlogsIFollow = @"~/Presentation/SubLayouts/Community/Whats Happening/BlogsIFollow.ascx";
+
+                //defaults 
+                public static string UpcomingEvents = @"~/Presentation/SubLayouts/Community/Whats Happening/UpcomingEvents.ascx";
+                public static string RecentQuestions = @"~/Presentation/SubLayouts/Community/Whats Happening/RecentQuestions.ascx";
+                public static string CommunityMembers = @"~/Presentation/SubLayouts/Community/Whats Happening/CommunityMembers.ascx";
+                public static string MostActiveGroups = @"~/Presentation/SubLayouts/Community/Whats Happening/MostActiveGroups.ascx";
+                public static string RecentBlogPosts = @"~/Presentation/SubLayouts/Community/Whats Happening/RecentBlogPosts.ascx";
+            }
+        }
+        
         protected void Page_Init(object sender, EventArgs e)
         {
+            var pageAreas = new WhatsHappeningAreas();
+
             if (this.CurrentMember != null)
             {
-                //logged in
-                Item newItem;
-                //upcoming events or my upcoming events --> fallback to upcoming events (default)
-                //recent questions or recommended questions --> fallback to recent questions (default)
-                //my friends --> fallback to community moderators (default)
-                //recommended groups or my groups --> fallback to active groups (default)
-                //recommended blogs or blogs i follow --> fallback to recent blogs (default)
-               
                 //should we display Recommended Questions?
                 var reccommendedQuestions = SearchHelper.GetRecommendedContent(this.CurrentMember, QandADetailsItem.TemplateId)
                         .Where(a => a.GetItem() != null);
                 if (reccommendedQuestions.Count() > 0)
                 {
-                    newItem = dbMaster.GetItem(recommendedQuestionsItem);
-                  
-
-                    sbQuestions.Path = this.RecommendedQuestions;
+                    pageAreas.Questions = WhatsHappeningAreas.WhatsHappeningSublayouts.RecommendedQuestions;
                 }
-                else
-                {
-                    newItem = dbMaster.GetItem(recentQuestionsItem);
-                   
-
-                    sbQuestions.Path = this.RecentQuestions;
-                }
-                //RenderingReference rendering = newItem.Visualization.GetRenderings(Sitecore.Context.Device, false).FirstOrDefault();
-                //Sublayout sublayout = new Sublayout();
-                //sublayout.DataSource = newItem.Paths.FullPath;
-                //sublayout.Path = rendering.RenderingItem.InnerItem["Path"];
-                //sublayout.Cacheable = rendering.RenderingItem.Caching.Cacheable;
-
-                ////Not needed now but why not?
-                ////if (rendering.RenderingItem.Caching.Cacheable)
-                ////{
-                ////    sublayout.VaryByData = rendering.RenderingItem.Caching.VaryByData;
-                ////    sublayout.VaryByDevice = rendering.RenderingItem.Caching.VaryByDevice;
-                ////    sublayout.VaryByLogin = rendering.RenderingItem.Caching.VaryByLogin;
-                ////    sublayout.VaryByParm = rendering.RenderingItem.Caching.VaryByParm;
-                ////    sublayout.VaryByQueryString = rendering.RenderingItem.Caching.VaryByQueryString;
-                ////    sublayout.VaryByUser = rendering.RenderingItem.Caching.VaryByUser;
-                ////}
-                //phBlogs.Controls.Add(sublayout);
-
 
                 //even bother with community features?
                 if (!string.IsNullOrEmpty(this.CurrentMember.ScreenName))
@@ -99,11 +81,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                     //should we display Blogs I Follow?
                     if (TelligentService.UserFollowsBlogs(this.CurrentMember.ScreenName))
                     {
-                        sbBlogPosts.Path = this.BlogsIFollow;
+                        pageAreas.Blogs = WhatsHappeningAreas.WhatsHappeningSublayouts.BlogsIFollow;
                     }
                     else
                     {
-                        sbBlogPosts.Path = this.RecentBlogPosts;
+                        var reccommnededBlogs = SearchHelper.GetRecommendedContent(this.CurrentMember, BlogsPostPageItem.TemplateId)
+                        .Where(a => a.GetItem() != null);
+                        if (reccommnededBlogs.Count() > 0)
+                        {
+                            pageAreas.Blogs = WhatsHappeningAreas.WhatsHappeningSublayouts.RecommendedBlogs;
+                        }
                     }
 
                     //should we display My Friends?
@@ -112,22 +99,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 
                     if (friendCount > 0)
                     {
-                        sbCommunityMembers.Path = this.MyFriends;
-                    }
-                    else
-                    {
-                        sbCommunityMembers.Path = this.CommunityMembers;
+                        pageAreas.CommunityMembers = WhatsHappeningAreas.WhatsHappeningSublayouts.MyFriends;
                     }
 
                     //should we display My Groups?
                     var usersGroups = TelligentService.GetUserGroups(this.CurrentMember.ScreenName);
                     if (usersGroups.Count > 0)
                     {
-                        sbGroups.Path = this.MyGroups;
-                    }
-                    else
-                    {
-                        sbGroups.Path = this.MostActiveGroups;
+                        pageAreas.Groups = WhatsHappeningAreas.WhatsHappeningSublayouts.MyGroups;
                     }
                 }
                 else
@@ -137,31 +116,36 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                         .Where(a => a.GetItem() != null);
                     if (reccommnededBlogs.Count() > 0)
                     {
-                        sbBlogPosts.Path = this.RecommendedBlogs;
+                        pageAreas.Blogs = WhatsHappeningAreas.WhatsHappeningSublayouts.RecommendedBlogs;
                     }
-                    else
-                    {
-                        sbBlogPosts.Path = this.RecentBlogPosts;
-                    }
-
-                    sbGroups.Path = this.MostActiveGroups;
-                    sbCommunityMembers.Path = this.CommunityMembers;
 
                     //TODO - implement Recommended Groups sublayout
-                    //var recommendedGroups = SearchHelper.GetRecommendedContent(this.CurrentMember, GroupItem.TemplateId);
+                    //var recommendedGroups = SearchHelper.GetRecommendedContent(this.CurrentMember, GroupItem.TemplateId)
+                    //.Where(a => a.GetItem() != null);
                     //if (reccommendedQuestions.Count > 0)
                     //{
                     //    sbGroups.Path = this.RecommendedGroups;
                     //}
                 }
             }
-            else
-            {
-                sbQuestions.Path = this.RecentQuestions;
-                sbBlogPosts.Path = this.RecentBlogPosts;
-                sbGroups.Path = this.MostActiveGroups;
-                sbCommunityMembers.Path = this.CommunityMembers;
-            }
+            
+            ProcessAreas(pageAreas);
+        }
+
+        private void ProcessAreas(WhatsHappeningAreas areas)
+        {
+            BindSublayout(areas.Events);
+            BindSublayout(areas.Questions);
+            BindSublayout(areas.CommunityMembers);
+            BindSublayout(areas.Groups);
+            BindSublayout(areas.Blogs);
+        }
+
+        private void BindSublayout(string path)
+        {
+            Sublayout sublayout = new Sublayout();
+            sublayout.Path = path;
+            phWhatsHappening.Controls.Add(sublayout);
         }
     }
 }
