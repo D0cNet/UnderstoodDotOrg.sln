@@ -67,7 +67,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
                 nickname += "'s";
             }
 
-            var pronoun = gender == "boy" ? "he" : "she";
+            var pronoun = gender == "boy" ? DictionaryConstants.HeFragment : DictionaryConstants.SheFragment;
 
             uxFormTitle.Text = Model.FormTitle.Rendered.Replace("$nickname$", nickname);
             uxIEPquestion.Text = Model.IEPQuestionTitle.Rendered.Replace("$pronoun$", pronoun);

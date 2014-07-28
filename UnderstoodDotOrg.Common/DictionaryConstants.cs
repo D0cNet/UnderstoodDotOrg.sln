@@ -1068,6 +1068,22 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string HeFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "He Fragment");
+            }
+        }
+
+        public static string SheFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "She Fragment");
+            }
+        }
+
         public static string ByFragment
         {
             get

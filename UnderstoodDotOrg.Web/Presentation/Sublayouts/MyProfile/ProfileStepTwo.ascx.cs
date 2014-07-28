@@ -142,7 +142,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
         private string setPronoun(string gender)
         {
-            return gender == "boy" ? "he" : "she";
+            return gender == "boy" ? DictionaryConstants.HeFragment : DictionaryConstants.SheFragment;
         }
 
         protected void SetupCompleteMyProfile()
