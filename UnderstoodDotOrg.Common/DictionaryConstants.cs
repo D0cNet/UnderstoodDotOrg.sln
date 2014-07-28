@@ -633,6 +633,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Input Placeholders
 
+        public static string Community_EnterConversation
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Community_Enter Conversation");
+            }
+        }
+
         public static string Articles_AddCommentText
         {
             get

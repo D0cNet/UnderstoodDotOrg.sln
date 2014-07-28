@@ -39,6 +39,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnSearch.Text = DictionaryConstants.GoButtonText;
+            txtSearch.Attributes.Add("placeholder", DictionaryConstants.Community_EnterConversation);
+
             if (!IsPostBack)
             {
                 ResultCount = 10;
