@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="QuestionAnswers.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA.QuestionAnswers" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/LikeButton.ascx" TagPrefix="uc1" TagName="LikeButton" %>
 <div class="col col-24 skiplink-comments">
     <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.AnswersLabel %> (<asp:Label ID=lbAnswerCount runat="server" />)</h2>
     <!-- BEGIN PARTIAL: community/question_sort -->
