@@ -72,9 +72,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
             foreach (var item in dataSource)
             {
                 BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
-                item.Author = blogPost.Author.Rendered;
+                BlogsAuthorPageItem author = Sitecore.Context.Database.GetItem(blogPost.Author.Raw);
+                item.Author = author.Name;
                 item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
-                item.AuthorUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{5DF5183F-DDC8-4A10-897C-9C93593CF159}")) + item.Author;
+                item.AuthorUrl = LinkManager.GetItemUrl(author);
             }
             return dataSource;
         }

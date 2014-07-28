@@ -9,7 +9,7 @@
             <sc:FieldRenderer ID="BlogDate" runat="server" FieldName="Date" />
             <sc:Text Field="By Text" runat="server" />
             <a id="linkAuthor" runat="server">
-                <sc:FieldRenderer ID="frBlogAuthor" runat="server" FieldName="Author" />
+                <asp:Literal ID="litAuthor" runat="server" />
             </a>
         </p>
     </header>
@@ -30,13 +30,13 @@
 
     <div class="author-details">
         <a class="author-name" id="linkAuthor2" runat="server">
-            <sc:FieldRenderer ID="frBlogAuthor2" runat="server" FieldName="Author" />
+            <asp:Literal ID="litAuthor2" runat="server" />
         </a>
         <a class="author-more-posts" id="linkAuthor3" runat="server">
             <sc:Text Field="More Posts By This Author Text" runat="server" />
         </a>
         <p class="author-description">
-            <asp:Literal ID="ltAuthorBio" runat="server" /></p>
+            <asp:Literal ID="litAuthorBio" runat="server" /></p>
     </div>
 </div>
 <div class="find-this-helpful-small clearfix">

@@ -40,13 +40,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor linkAuthor;
         
         /// <summary>
-        /// frBlogAuthor control.
+        /// litAuthor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBlogAuthor;
+        protected global::System.Web.UI.WebControls.Literal litAuthor;
         
         /// <summary>
         /// BlogBody control.
@@ -67,13 +67,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor linkAuthor2;
         
         /// <summary>
-        /// frBlogAuthor2 control.
+        /// litAuthor2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frBlogAuthor2;
+        protected global::System.Web.UI.WebControls.Literal litAuthor2;
         
         /// <summary>
         /// linkAuthor3 control.
@@ -85,12 +85,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor linkAuthor3;
         
         /// <summary>
-        /// ltAuthorBio control.
+        /// litAuthorBio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltAuthorBio;
+        protected global::System.Web.UI.WebControls.Literal litAuthorBio;
     }
 }

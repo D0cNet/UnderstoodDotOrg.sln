@@ -20,18 +20,18 @@
                             </div>
                             <!-- end .blog-card-title -->
                             <div class="blog-card-post-info">
-                                Posted by <a href="REPLACE"><%# Item.Author %></a> <%# Item.PublishedDate %>
+                                Posted by <a href="<%# Item.AuthorUrl %>"><%# Item.Author %></a> <%# Item.PublishedDate %>
                             </div>
                             <div class="blog-card-post-excerpt">
-                                <%# Item.Body %><a href="<%# Item.ItemUrl %>" class="link-see-more">See more</a>
+                                <%# Item.Body %><br /><a href="<%# Item.ItemUrl %>" class="link-see-more">See more</a>
                             </div>
                         </div>
                         <!-- end .blog-card-info -->
                         <div class="blog-card-author-info">
-                            <a href="REPLACE" class="rs_skip">
+                            <a href="<%# Item.AuthorUrl %>" class="rs_skip">
                                 <img alt="70x70 Placeholder" src="http://placehold.it/70x70" /><br />
                                 <span class="author-name"><%# Item.Author %></span></a><br />
-                            <a href="REPLACE" class="blog-name-wrapper">
+                            <a href="<%# Item.ItemUrl %>" class="blog-name-wrapper">
                                 <span class="blog-name"><%# Item.BlogName %></span>
                             </a>
                             <button type="button" class="button rs_skip">Unfollow</button>

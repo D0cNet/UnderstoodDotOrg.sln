@@ -64,9 +64,10 @@
                     if (!sitecoreId.IsNullOrEmpty())
                     {
                         BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem(sitecoreId);
-                        item.Body = TelligentService.FormatString100(blogPost.Body);
-                        item.Author = blogPost.Author.Rendered;
+                        item.Body = TelligentService.FormatString160(blogPost.Body);
+                        item.Author = Sitecore.Context.Database.GetItem(blogPost.Author.Raw)["Name"];
                         item.ItemUrl = blogPost.GetUrl();
+                        item.AuthorUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(blogPost.Author.Raw));
                     }
                 }
                 rptBlogCards.DataSource = dataSource;

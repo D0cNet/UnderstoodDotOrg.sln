@@ -15,6 +15,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string BlogName { get; set; }
         public string ContentId { get; set; }
         public string ItemUrl { get; set; }
+        public string AuthorUrl { get; set; }
 
         public BlogPost() { }
 

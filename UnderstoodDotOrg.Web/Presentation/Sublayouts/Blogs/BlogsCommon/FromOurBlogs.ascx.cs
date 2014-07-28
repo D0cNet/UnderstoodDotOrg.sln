@@ -28,12 +28,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
                 BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + s[0]);
                 if (blogPost != null)
                 {
-                    item.Author = blogPost.Author.Rendered;
+                    var author = Sitecore.Context.Database.GetItem(blogPost.Author.Raw);
+                    item.Author = author.Name;
                     item.Title = s[0];
                     item.ContentTypeId = blogPost.ContentTypeId;
                     item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));
-                    var author = Sitecore.Context.Database.GetItem("/sitecore/content/Home/Community and Events/Blogs/Author/" + item.Author);
-                    item.AuthorUrl = "/Community and Events/Blogs/Author/" + item.Author;
+                    item.AuthorUrl = LinkManager.GetItemUrl(author);
                     if (this.CurrentMember != null)
                     {
                         if (!this.CurrentMember.ScreenName.IsNullOrEmpty())

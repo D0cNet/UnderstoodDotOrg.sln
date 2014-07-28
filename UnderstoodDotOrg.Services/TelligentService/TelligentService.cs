@@ -46,6 +46,26 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 return inputString;
             }
         }
+
+        public static string FormatString160(string inputString)
+        {
+            if (inputString.Length >= 160)
+            {
+                string myString = inputString.Substring(0, 160);
+
+                int index = myString.LastIndexOf(' ');
+                //Have to check the value for index
+                if (index > -1)
+                    myString = myString.Substring(0, index);
+
+                return myString;
+            }
+            else
+            {
+                return inputString;
+            }
+        }
+
         internal static string GetApiEndPoint(string path)
         {
             // Normalize path
