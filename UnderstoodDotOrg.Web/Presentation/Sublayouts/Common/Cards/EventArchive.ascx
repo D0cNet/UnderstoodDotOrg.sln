@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EventArchive.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards.EventArchive" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
-
+<%@ Register Src="~/Presentation/Sublayouts/Recommendation/CommunityRecommendationIcons.ascx" TagPrefix="uc1" TagName="CommunityRecommendationIcons" %>
 <div class="row">
     <div class="event-card rs_read_this">
         <div class="event-card-info group">
@@ -29,13 +29,8 @@
                 <p class="event-card-topics">
                     <sc:FieldRenderer ID="frSubheading" runat="server" FieldName="Event Subheading" />
                 </p>
-                <%-- Phase 2
-                <span class="children-key">
-                    <ul>
-                        <li><i title="CHILD NAME HERE" class="child-a"></i></li>
-                        <li><i title="CHILD NAME HERE" class="child-b"></i></li>
-                    </ul>
-                </span> --%>
+                <%-- Phase 2--%>
+                  <uc1:CommunityRecommendationIcons runat="server" ID="CommunityRecommendationIcons" />
             </div>
             <!-- end .event-card-details -->
             <div class="event-card-date-details col equalize">

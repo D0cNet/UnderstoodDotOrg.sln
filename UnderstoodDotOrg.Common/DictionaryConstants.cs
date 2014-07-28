@@ -2790,6 +2790,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string ViewTranscriptLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "View Transcript Label");
+            }
+        }
+
         public static string SelectBehaviorLabel
         {
             get
@@ -3131,5 +3139,13 @@ namespace UnderstoodDotOrg.Common
         public static string AllQuestionsLabel { get { return Translate.TextByDomain(PosesDictionary, "All Questions Label"); } }
 
         public static string BlogDateStampLabel { get { return Translate.TextByDomain(PosesDictionary, "Blog Date Stamp Label"); } }
+
+        public static object ExpertLiveArchiveLabel { get { return Translate.TextByDomain(PosesDictionary, "Expert Live Archive Label"); } }
+
+        public static object SuggestWebinarLabel { get { return Translate.TextByDomain(PosesDictionary, "Suggest A Webinar Label"); } }
+
+        public static object EnterTopicLabel { get { return Translate.TextByDomain(PosesDictionary, "Enter Topic Label"); } }
+
+        public static object EnterTopicWaterMarkLabel { get { return Translate.TextByDomain(PosesDictionary, "Enter Your Topic Watermark"); } }
     }
 }

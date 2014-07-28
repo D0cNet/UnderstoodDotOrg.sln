@@ -66,6 +66,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
                         litEventSubDate.Text = eventDate.Value.ToString("yyyy");
                     }
                 }
+                CommunityRecommendationIcons.MatchingChildrenIds = item.GetMatchingChildrenIds(this.CurrentMember);
             }
         }
     }

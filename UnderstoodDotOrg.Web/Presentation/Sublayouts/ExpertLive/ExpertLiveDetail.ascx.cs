@@ -112,7 +112,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             
             var webinars = ((ExpertLivePageItem)currItem).FeaturedEvent.ListItems
                         .Select(it => new BaseEventDetailPageItem(it))
-                       .ToList();
+                        .Where(it => it.EventStartDate.DateTime >= DateTime.Now)
+                        .ToList();
 
             if (IsRecommended)
             {

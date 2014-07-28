@@ -9,7 +9,7 @@
                 <p class="subhead"><sc:FieldRenderer ID="frLiveChatSubHeading" runat="server" FieldName="Live Chat SubHeading" /></p>
             </div>
             <ul class="live-chat-navigation">
-                <%--<li class="header"><a href="REPLACE">See All</a></li>--%>
+                <li class="header"><a id="hrefSeeArchive" runat="server" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllFragment %></a></li>
                 <li class="rsArrow rsArrowLeft">
                     <button class="rsArrowIcn"></button>
                 </li>

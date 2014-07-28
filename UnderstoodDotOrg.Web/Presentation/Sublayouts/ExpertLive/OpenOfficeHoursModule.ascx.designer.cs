@@ -31,6 +31,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frLiveChatSubHeading;
         
         /// <summary>
+        /// hrefSeeArchive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor hrefSeeArchive;
+        
+        /// <summary>
         /// rptExperts control.
         /// </summary>
         /// <remarks>

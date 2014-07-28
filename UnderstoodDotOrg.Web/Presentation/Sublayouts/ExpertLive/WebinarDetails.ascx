@@ -97,11 +97,11 @@
         <!-- BEGIN PARTIAL: transcript-control -->
         <div class="transcript-container Video">
           <div class="read-more mobile-close">
-            <a href="E">Close Transcript<i class="icon-arrow-up-blue"></i></a>
+            <a href="E"><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseTranscriptLabel %><i class="icon-arrow-up-blue"></i></a>
           </div>
           <div class="transcript-wrap clearfix rs_read_this">
             <div>
-              <h2>Video Transcript</h2>
+              <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.ViewTranscriptLabel %></h2>
 
                 <sc:FieldRenderer ID="frVideoTranscript" FieldName="Video Transcript" runat="server" />
             </div>

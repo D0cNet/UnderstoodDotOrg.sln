@@ -7,7 +7,7 @@
 <div class="container archive">
     <div class="row skiplink-content" aria-role="main">
         <header class="col col-24">
-            <h2 class="rs_read_this">Experts Live: Archive</h2>
+            <h2 class="rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.ExpertLiveArchiveLabel %></h2>
         </header>
     </div>
 
@@ -65,12 +65,12 @@
         <div class="form-wrapper rs_read_this">
 
             <header>
-                <h3>Suggest a Webinar</h3>
+                <h3><%= UnderstoodDotOrg.Common.DictionaryConstants.SuggestWebinarLabel %></h3>
             </header>
 
             <fieldset class="col col-24">
-                <label for="enter-your-topic-text" class="visuallyhidden" aria-hidden="true">Enter your topic</label>
-                <input type="text" class="suggest-webinar-field" id="enter-your-topic-text" placeholder="Enter your topic" />
+                <label for="enter-your-topic-text" class="visuallyhidden" aria-hidden="true"><%=UnderstoodDotOrg.Common.DictionaryConstants.EnterTopicLabel %></label>
+                <input type="text" class="suggest-webinar-field" id="enter-your-topic-text" placeholder='<%= UnderstoodDotOrg.Common.DictionaryConstants.EnterTopicWaterMarkLabel %>' />
                 <input type="submit" class="button suggest-webinar-submit rs_skip" value="Submit Topic" />
             </fieldset>
 

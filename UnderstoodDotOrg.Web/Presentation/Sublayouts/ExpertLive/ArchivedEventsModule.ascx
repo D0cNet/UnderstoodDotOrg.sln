@@ -41,7 +41,7 @@
                         </ul>
                     </div>
                     --%>
-
+                        <sc:Sublayout ID="Sublayout1" runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
                 </div>
                 <!-- .col -->
             </div>
