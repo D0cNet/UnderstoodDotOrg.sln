@@ -81,7 +81,7 @@
                 </HeaderTemplate>
 
                 <ItemTemplate>
-                    <li class="event" runat="server" id="eventItem">
+                    <li class="event" runat="server" id="itemSingleEvent">
                         <div class="event-content">
                             <p visible="false" runat="server" id="paragraphChatHeading" class="event-header rs_skip"><%# Eval("EventHeading.Rendered") %></p>
                             <%--<a href="#" class="event-name truncated">Ea Rem Est Unde...</a>--%>

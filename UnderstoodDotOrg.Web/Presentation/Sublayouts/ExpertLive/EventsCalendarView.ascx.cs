@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.Text;
@@ -187,6 +188,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 Literal literalExpertTitles = (Literal)e.Item.FindControl("literalExpertTitles");
                 Image imageExpert = (Image)e.Item.FindControl("imageExpert");
                 HyperLink linkExpert = (HyperLink)e.Item.FindControl("linkExpert");
+                HtmlGenericControl itemSingleEvent = (HtmlGenericControl)e.Item.FindControl("itemSingleEvent");
+                PlaceHolder placeholderLive = (PlaceHolder)e.Item.FindControl("placeholderLive");
 
                 string dateStartText = (IsChatEvent) ? "Live Chat at " : "Live Webinar at ";
                 StringBuilder builderForDateHeading = new StringBuilder();
@@ -195,8 +198,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 builderForDateHeading.Append(" ");
                 builderForDateHeading.Append(eventToBind.EventStartDate.DateTime.ToString("%K"));
                 builderForDateHeading.AppendLine("<br />");
-                builderForDateHeading.Append("MMM d, yyyy");
+                builderForDateHeading.Append(eventToBind.EventStartDate.DateTime.ToString("MMM d, yyyy", CultureInfo.InvariantCulture));
                 literalEventTimeDate.Text = builderForDateHeading.ToString();
+
+                var dateToCheck = eventToBind.EventStartDate.DateTime;
+                var startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                var endDate = startDate.AddDays(1);
+                if (dateToCheck >= startDate && dateToCheck < endDate)
+                {
+                    itemSingleEvent.Attributes["class"] += " live-event";
+                    placeholderLive.Visible = true;
+                }
 
                 literalEventUTCTime.Text = eventToBind.EventStartDate.DateTime.ToUniversalTime().ToString("htt") + " UTC";
                 linkEventDetails.NavigateUrl = linkEventDate.NavigateUrl = eventToBind.GetUrl();
