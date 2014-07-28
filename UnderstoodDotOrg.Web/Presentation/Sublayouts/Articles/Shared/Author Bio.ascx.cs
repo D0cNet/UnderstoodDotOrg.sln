@@ -53,6 +53,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     HyperLink hypImageLink = e.FindControlAs<HyperLink>("hypImageLink");
                     HyperLink hypAuthor = e.FindControlAs<HyperLink>("hypAuthor");
                     HyperLink hypReadMore = e.FindControlAs<HyperLink>("hypReadMore");
+                    HyperLink hypArticleTitleLink = e.FindControlAs<HyperLink>("hypArticleTitleLink");
                     Literal litCommentCount = e.FindControlAs<Literal>("litCommentCount");
                     Literal litArticleTitle = e.FindControlAs<Literal>("litArticleTitle");
                     Literal litDatePosted = e.FindControlAs<Literal>("litDatePosted");
@@ -64,7 +65,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                         hypAuthor.Text = article.AuthorName.Item.DisplayName;
                         hypAuthor.NavigateUrl = Sitecore.Context.Item.GetUrl();
 
-                        hypImageLink.NavigateUrl = hypReadMore.NavigateUrl = article.GetUrl();
+                        hypImageLink.NavigateUrl = hypReadMore.NavigateUrl = hypArticleTitleLink.NavigateUrl = article.GetUrl();
                         hypImageLink.ImageUrl = article.GetArticleThumbnailUrl(230, 129);
 
                         litArticleTitle.Text = article.DisplayName;
