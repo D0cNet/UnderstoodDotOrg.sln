@@ -447,15 +447,12 @@
 	html[lang="en"] .print-only.english-text {
     display: block;
 	}
-	html[lang="es", lang="es-mx"] .print-only.spanish-text {
+	html[lang="es"] .print-only.spanish-text {
     display: block;
 	}
 
 	// force margin between copyright and "for more info"
-	html[lang="en"] footer#footer-page p.print-only.english-text {
-    margin-top:1em;
-	}
-	html[lang="es", lang="es-mx"] footer#footer-page p.print-only.spanish-text {
+	footer#footer-page p.print-only {
     margin-top:1em;
 	}
 }// @media print
