@@ -148,12 +148,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
                 foreach (var item in parentRoles.Skip(2))
                 {
-                    otherRoles.Add(new ListItem() { Value = item.ID.ToString(), Text = item.RoleName.Text });
+                    otherRoles.Add(new ListItem() { Value = item.ID.Guid.ToString(), Text = item.RoleName.Text });
                 }
 
                 uxParentList.DataSource = otherRoles;
-                //uxParentList.DataTextField = "RoleName.Text";
-                //uxParentList.DataValueField = "Id";
+                uxParentList.DataTextField = "Text";
+                uxParentList.DataValueField = "Value";
                 uxParentList.DataBind();
 
                 uxParentList.Items.Insert(0, new ListItem() { Text = DictionaryConstants.ParentRoleDefault, Value = string.Empty });
