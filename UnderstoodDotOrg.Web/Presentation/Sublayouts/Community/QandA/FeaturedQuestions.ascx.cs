@@ -1,16 +1,17 @@
 ﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA
 {
-    using Sitecore.Web.UI.HtmlControls;
-    using System;
-    using System.Collections.Generic;
-    using System.Web.UI.WebControls;
-    using UnderstoodDotOrg.Common;
-    using UnderstoodDotOrg.Common.Extensions;
-    using UnderstoodDotOrg.Domain.Membership;
-    using UnderstoodDotOrg.Domain.SitecoreCIG;
-    using UnderstoodDotOrg.Services.CommunityServices;
-    using UnderstoodDotOrg.Services.Models.Telligent;
-    using UnderstoodDotOrg.Services.TelligentService;
+    using Sitecore.Data.Items;
+using Sitecore.Web.UI.HtmlControls;
+using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Services.CommunityServices;
+using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Services.TelligentService;
 
     public partial class FeaturedQuestions : System.Web.UI.UserControl
     {
@@ -46,7 +47,13 @@
 
             List<Question> questions = new List<Question>();
 
-            if (!String.IsNullOrEmpty(grades) || !String.IsNullOrEmpty(topics) || !String.IsNullOrEmpty(childIssues))
+            var filter = Session["Q&A_Filter"] as String;
+
+            if (filter == "Featured")
+            {
+                questions = GetFeaturedQuestions();
+            }
+            else if (!String.IsNullOrEmpty(grades) || !String.IsNullOrEmpty(topics) || !String.IsNullOrEmpty(childIssues))
             {
                 questions = Questions.FindQuestions(String.IsNullOrEmpty(childIssues) ? new string[] { } : new string[] { childIssues }, String.IsNullOrEmpty(topics) ? new string[] { } : new string[] { topics }, String.IsNullOrEmpty(grades) ? new string[] { } : new string[] { grades });
             }
@@ -55,7 +62,6 @@
                 questions = TelligentService.GetQuestionsList(2, 100);
             }
 
-            var filter = Session["Q&A_Filter"] as String;
 
             if (filter == "Answered")
             {
@@ -81,6 +87,30 @@
 
             questionsRepeater.DataSource = questions;
             questionsRepeater.DataBind();
+        }
+
+        private List<Question> GetFeaturedQuestions()
+        {
+            List<Question> questions = new List<Question>();
+            Item[] items = null;
+
+            Sitecore.Data.Fields.MultilistField featuredQuestions = Sitecore.Context.Item.Fields["FeaturedQuestions"];
+            if (featuredQuestions != null)
+            {
+                items = featuredQuestions.GetItems();
+                foreach (var item in items)
+                {
+                    String wikiId = item["WikiId"];
+                    String wikiPageId = item["WikiPageId"];
+                    String contentId = item["ContentId"];
+
+                    Question question = TelligentService.GetQuestion(wikiId, wikiPageId, contentId);
+
+                    questions.Add(question);
+                }
+            }
+
+            return questions;
         }
 
         protected void questionsRepeater_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
