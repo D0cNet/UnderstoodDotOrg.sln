@@ -67,11 +67,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 
         protected List<BlogPost> InitContent()
         {
-            string blogId = Request.QueryString["BlogId"];
+            BlogPageItem blogPage = Sitecore.Context.Item;
+            string blogId = blogPage.BlogId;
             List<UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost> dataSource = CommunityHelper.ListBlogPosts(blogId, "100");
             foreach (var item in dataSource)
             {
-                BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
+                BlogsPostPageItem blogPost;
+                if (item.Title.Contains("{"))
+                {
+                    string[] s = item.Title.Split('{');
+                    item.Title = s[0];
+                    blogPost = Sitecore.Context.Database.GetItem("{" + s[1]);
+                }
+                else
+                {
+                    blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + item.Title);
+                }
                 BlogsAuthorPageItem author = Sitecore.Context.Database.GetItem(blogPost.Author.Raw);
                 item.Author = author.Name;
                 item.Body = CommunityHelper.FormatString100(CommunityHelper.FormatRemoveHtml(blogPost.Body.Raw));

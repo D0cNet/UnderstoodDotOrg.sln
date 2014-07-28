@@ -17,7 +17,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
         {
             string BlogUrl = String.Empty;
             BlogUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
-                          "/blogposts?BlogId=" + id, ".aspx", "");
+                          "/" + Constants.BlogNames[id], ".aspx", "");
             return BlogUrl;
         }
 

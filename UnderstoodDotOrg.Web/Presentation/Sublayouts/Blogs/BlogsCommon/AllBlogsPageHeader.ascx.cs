@@ -13,9 +13,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var itm = Sitecore.Context.Database.GetItem("{E486F071-8B5F-42B9-91C1-CC8A61A8622E}");
-            var url = LinkManager.GetItemUrl(itm) + "?BlogId=1";
-            btnUnderstoodBlog.HRef = url;
+            btnUnderstoodBlog.HRef = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{401A4297-3D08-4BB5-8F19-EC32A38C82C6}"));
         }
     }
 }

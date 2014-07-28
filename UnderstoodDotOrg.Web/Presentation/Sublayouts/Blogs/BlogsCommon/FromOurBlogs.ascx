@@ -11,7 +11,7 @@
                         <asp:AsyncPostBackTrigger ControlID="" EventName="Click" />
                     </Triggers>--%>
                     <ContentTemplate>
-                <asp:Repeater ID="BlogPostsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" OnItemDataBound="BlogPostRepeater_OnItemDataBound" runat="server">
+                <asp:Repeater ID="BlogPostsRepeater" ItemType="UnderstoodDotOrg.Services.Models.Telligent.BlogPost" OnItemDataBound="BlogPostRepeater_OnItemDataBound" runat="server">
                     <ItemTemplate>
                         <div class="col col-24 blog-card clearfix rs_read_this">
                             <div class="blog-card-image">

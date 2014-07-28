@@ -731,6 +731,20 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static Dictionary<string, string> BlogNames
+        {
+            get
+            {
+                // TODO: Add remaining Blog Id's
+                return new Dictionary<string, string>
+                {
+                    {"1", "The Understood Blog"},
+                    {"2", "Motherlode"},
+                    {"3", "Live Well"},
+                };
+            }
+        }
+
         public static class QueryStrings
         {
             public static class DecisionTool

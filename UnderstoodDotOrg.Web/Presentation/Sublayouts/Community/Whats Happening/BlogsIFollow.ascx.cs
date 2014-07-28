@@ -34,7 +34,7 @@
 
                 var dataSource = new List<BlogPost>();
                 string temp = string.Empty;
-                var blogPostList = TelligentService.ListBlogPosts(blogIds);
+                var blogPostList = TelligentService.ListBlogPosts(blogIds, "100");
                 foreach (var item in blogPostList)
                 {
                     if (!item.BlogName.Equals(temp))

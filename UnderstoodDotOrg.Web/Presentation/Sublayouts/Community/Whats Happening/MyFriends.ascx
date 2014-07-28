@@ -10,7 +10,7 @@
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows members next-prev-menu arrows-gray">
 
-                    <a class="view-all" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllMembersLabel %></a>
+                    <asp:HyperLink ID="hypSeeAll" CssClass="view-all" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllMembersLabel %></asp:HyperLink>
 
                     <div id="arrowLeft" class="rsArrow rsArrowLeft" runat="server">
                         <button class="rsArrowIcn"></button>

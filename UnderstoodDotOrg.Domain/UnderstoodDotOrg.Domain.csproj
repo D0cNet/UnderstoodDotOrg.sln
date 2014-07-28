@@ -445,6 +445,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ToolkitArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\VideoArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\VideoArticlePageItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\Blogs\BlogPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\Blogs\BlogsAuthorPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\Blogs\BlogsAuthorPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\CommunityTemplates\Blogs\BlogsPostPageItem.base.cs" />

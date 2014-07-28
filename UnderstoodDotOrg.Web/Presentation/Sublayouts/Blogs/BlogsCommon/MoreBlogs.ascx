@@ -18,7 +18,7 @@
             <!-- END PARTIAL: community/carousel_arrows -->
             <div class="row blogs-more">
                 <!-- BEGIN PARTIAL: community/more_blogs_card -->
-                <asp:Repeater ID="BlogRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Blog" runat="server">
+                <asp:Repeater ID="BlogRepeater" ItemType="UnderstoodDotOrg.Services.Models.Telligent.Blog" runat="server">
                     <ItemTemplate>
                         <div class="col col-24 blog-card rs_read_this">
                             <div class="blog-card-wrapper">

@@ -616,7 +616,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                             Title = title,
                             Description = description,
                             BlogId = blogId,
-                            Url = "/en/Community and Events/Blogs/BlogPosts?BlogId=" + blogId
+                            Url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("/sitecore/content/Home/Community and Events/Blogs/" + title))
                         };
                         if (!title.Equals("Articles") && !title.Equals("Assistive Tools") && !title.Equals("Behavior Tools"))
                         {
@@ -1425,39 +1425,6 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     catch { } //TODO: Add logging
                 }
             }
-        }
-
-        public static bool IsBookmarked(string username, string contentId)
-        {
-            if (!username.IsNullOrEmpty() || !contentId.IsNullOrEmpty())
-            {
-                using (var webClient = new WebClient())
-                {
-                    try
-                    {
-                        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                        var requestUrl = "http://mysite.com/api.ashx/v2/bookmark.xml";
-
-                        var xml = webClient.DownloadString(requestUrl);
-
-                        var xmlDoc = new XmlDocument();
-                        xmlDoc.LoadXml(xml);
-
-                        XmlNodeList nodes = xmlDoc.SelectNodes("Response/Bookmarks/Bookmarks");
-
-                        if (nodes.Count > 0)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    catch { }
-                }
-            }
-            return false;
         }
     }
 }

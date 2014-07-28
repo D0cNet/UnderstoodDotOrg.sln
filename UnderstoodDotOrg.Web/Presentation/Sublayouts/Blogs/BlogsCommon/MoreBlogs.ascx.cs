@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
 {
@@ -12,7 +13,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Blog> dataSource = CommunityHelper.ListBlogs();
+            List<Blog> dataSource = TelligentService.ListBlogs();
             BlogRepeater.DataSource = dataSource;
             BlogRepeater.DataBind();
         }

@@ -6,7 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Domain.TelligentCommunity;
+using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 {
@@ -14,7 +15,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<BlogPost> dataSource = CommunityHelper.ListBlogPosts(Settings.GetSetting(Constants.Settings.TelligentBlogIds), "6");
+            List<BlogPost> dataSource = TelligentService.ListBlogPosts(Settings.GetSetting(Constants.Settings.TelligentBlogIds), "6");
             foreach (var item in dataSource)
             {
                 string[] s = item.Title.Split('{');

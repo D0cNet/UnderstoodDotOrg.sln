@@ -49,8 +49,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         }
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string query = TextHelper.RemoveHTML(txtSearch.Text);
-            Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=" + Constants.TelligentSearchParams.Group);
+            var qs = HttpUtility.ParseQueryString(Request.QueryString.ToString());
+            qs.Set("q", txtSearch.Text);
+            Response.Redirect(String.Format("{0}?{1}", Request.Path, qs));
         }
     }
 }

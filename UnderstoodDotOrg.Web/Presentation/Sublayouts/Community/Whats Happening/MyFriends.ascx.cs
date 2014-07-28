@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sitecore.Links;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
@@ -39,6 +40,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             {
                 divFriends.Visible = false;
             }
+
+            hypSeeAll.NavigateUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{840AEEF4-5294-4A0D-8D1C-6839E39FE3FE}"));
+
         }
     }
 }

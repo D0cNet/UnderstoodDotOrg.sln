@@ -843,80 +843,84 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return response;
         }
 
-        public static List<BlogPost> ListBlogPosts(string blogId)
+        /// <summary>
+        /// Gets a list of blog posts that a specified blog contains.
+        /// </summary>
+        /// <param name="blogId">As string, if multiple, separate with a comma. Ex:("1,2,4")</param>
+        /// <param name="count">As string, this is the number of records to be returned.</param>
+        /// <returns></returns>
+        public static List<BlogPost> ListBlogPosts(string blogId, string count)
         {
-            var webClient = new WebClient();
-
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
-            var requestUrl = string.Format("{0}api.ashx/v2/blogs/posts.xml?BlogIds={1};", Settings.GetSetting(Constants.Settings.TelligentConfig), blogId);
-
-            var xml = webClient.DownloadString(requestUrl);
-
-            List<BlogPost> blogPosts = new List<BlogPost>();
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost");
-            int count = 0;
-            foreach (XmlNode node in nodes)
+            using (var webClient = new WebClient())
             {
-                XmlNode author = node.SelectSingleNode("Author");
-                XmlNode app = node.SelectSingleNode("Content/Application");
-                BlogPost blogPost = new BlogPost()
+
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                var requestUrl = GetApiEndPoint(string.Format("blogs/posts.xml?BlogIds={0}&PageSize={1}", blogId, count));
+
+                var xml = webClient.DownloadString(requestUrl);
+
+                List<BlogPost> blogPosts = new List<BlogPost>();
+
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                XmlNodeList nodes = xmlDoc.SelectNodes("Response/BlogPosts/BlogPost");
+                foreach (XmlNode node in nodes)
                 {
-                    Title = node["Title"].InnerText,
-                    ContentId = node["ContentId"].InnerText,
-                    Body = DataFormatHelper.FormatString100(node["Body"].InnerText),
-                    PublishedDate = DataFormatHelper.FormatDate(node["PublishedDate"].InnerText),
-                    BlogName = app["HtmlName"].InnerText,
-                    Author = author["DisplayName"].InnerText,
-
-                    ItemUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + app["HtmlName"].InnerText + "/" + node["Title"].InnerText, ".aspx", "")
-                };
-                blogPosts.Add(blogPost);
-                count++;
-
-            }
-            return blogPosts;
-
-        }
-        public static List<Blog> ListBlogs()
-        {
-            var webClient = new WebClient();
-
-            // replace the "admin" and "Admin's API key" with your valid user and apikey!
-            var adminKey = string.Format("{0}:{1}", Settings.GetSetting(Constants.Settings.TelligentAdminApiKey), "admin");
-            var adminKeyBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(adminKey));
-
-            webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-            var requestUrl = string.Format("{0}api.ashx/v2/blogs.xml", Settings.GetSetting(Constants.Settings.TelligentConfig));
-
-            var xml = webClient.DownloadString(requestUrl);
-
-            List<Blog> blogs = new List<Blog>();
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-            XmlNodeList nodes = xmlDoc.SelectNodes("Response/Blogs/Blog");
-            int count = 0;
-            foreach (XmlNode node in nodes)
-            {
-                string title = node["Name"].InnerText;
-                string description = DataFormatHelper.FormatString100(node["Description"].InnerText);
-                Blog blogPost = new Blog(description, title);
-                if (!title.Equals("Articles"))
-                {
-                    blogs.Add(blogPost);
+                    XmlNode author = node.SelectSingleNode("Author");
+                    var blogName = TelligentService.BlogNameById(node["BlogId"].InnerText);
+                    string title = string.Empty;
+                    string sitecoreId = string.Empty;
+                    string url = string.Empty;
+                    if (node["Title"].InnerText.Contains("{"))
+                    {
+                        string[] s = node["Title"].InnerText.Split('{');
+                        title = s[0];
+                        url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{" + s[1]));
+                    }
+                    else
+                    {
+                        url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
+                        "/" + blogName + "/" + node["Title"].InnerText, ".aspx", "");
+                    }
+                    BlogPost blogPost = new BlogPost()
+                    {
+                        Title = node["Title"].InnerText,
+                        ContentId = node["ContentId"].InnerText,
+                        Body = FormatString100(node["Body"].InnerText),
+                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(node["PublishedDate"].InnerText),
+                        BlogName = blogName,
+                        Author = author["DisplayName"].InnerText,
+                        // TODO: Fix this logic a lot
+                        Url = url,
+                        ParentUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) +
+                        "/" + blogName, ".aspx", ""),
+                        CommentCount = node["CommentCount"].InnerText,
+                    };
+                    blogPosts.Add(blogPost);
                 }
-                count++;
+                return blogPosts;
             }
-            return blogs;
         }
 
+        public static string BlogNameById(string blogId)
+        {
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+                var requestUrl = GetApiEndPoint(string.Format("blogs/{0}.xml", blogId));
+
+                var xml = webClient.DownloadString(requestUrl);
+
+                Console.WriteLine(xml);
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+                var nodes = xmlDoc.SelectNodes("/Response/Blog");
+                string blogName = nodes[0]["Name"].InnerText;
+                return blogName;
+            }
+        }
+        
         public static XmlNode ReadGroup(string groupID)
         {
             XmlNode node = null;
@@ -2982,6 +2986,47 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 }
                 return followedBlogs;
             }
+        }
+
+        public static List<Blog> ListBlogs()
+        {
+            List<Blog> blogs = new List<Blog>();
+            try
+            {
+                using (var webClient = new WebClient())
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
+                    var requestUrl = GetApiEndPoint("blogs.xml");
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    blogs = new List<Blog>();
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Blogs/Blog");
+                    int count = 0;
+                    foreach (XmlNode node in nodes)
+                    {
+                        string title = node["Name"].InnerText;
+                        string description = FormatString100(node["Description"].InnerText);
+                        string blogId = node["Id"].InnerText;
+                        Blog blogPost = new Blog()
+                        {
+                            Title = title,
+                            Description = description,
+                            Url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("/sitecore/content/Home/Community and Events/Blogs/" + title))
+                        };
+                        if (!title.Equals("Articles") && !title.Equals("Assistive Tools") && !title.Equals("Behavior Tools"))
+                        {
+                            blogs.Add(blogPost);
+                        }
+                        count++;
+                    }
+                }
+            }
+            catch { } //TODO: Add Logging
+            return blogs;
         }
     }
 }
