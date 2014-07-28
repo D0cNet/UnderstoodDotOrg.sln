@@ -589,13 +589,6 @@
     <Compile Include="Presentation\Sublayouts\Articles\Shared\CommentsSummary.ascx.designer.cs">
       <DependentUpon>CommentsSummary.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Deep Dive Article Section Info Page.ascx.cs">
-      <DependentUpon>Deep Dive Article Section Info Page.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Deep Dive Article Section Info Page.ascx.designer.cs">
-      <DependentUpon>Deep Dive Article Section Info Page.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx.cs">
       <DependentUpon>DeepDiveArticle.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -624,26 +617,12 @@
     <Compile Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx.designer.cs">
       <DependentUpon>KnowledgeQuizQuestionArticlePage.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.cs">
-      <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx.designer.cs">
-      <DependentUpon>Parent Toolkit Page.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\AboutAuthor.ascx.cs">
       <DependentUpon>AboutAuthor.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Shared\AboutAuthor.ascx.designer.cs">
       <DependentUpon>AboutAuthor.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx.cs">
-      <DependentUpon>QuizFoundHelpfulControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx.designer.cs">
-      <DependentUpon>QuizFoundHelpfulControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx.cs">
       <DependentUpon>QuizKeepReadingControl.ascx</DependentUpon>
@@ -763,13 +742,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx.designer.cs">
       <DependentUpon>TextOnlyTipsArticle.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\TipsArticle.ascx.cs">
-      <DependentUpon>TipsArticle.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\TipsArticle.ascx.designer.cs">
-      <DependentUpon>TipsArticle.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\ToolKit.ascx.cs">
       <DependentUpon>ToolKit.ascx</DependentUpon>
@@ -3069,14 +3041,11 @@
     <Content Include="Presentation\Sublayouts\Articles\Checklist Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Comments.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\CommentsSummary.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\Deep Dive Article Section Info Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\DeepDiveArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Glossary Article.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Infographic Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\KnowledgeQuizQuestionArticlePage.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\Parent Toolkit Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\AboutAuthor.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\QuizFoundHelpfulControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizKeepReadingControl.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\QuizTryMoreQuizzes.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\DidYouFindThisHelpful.ascx" />
@@ -3094,7 +3063,6 @@
     <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SuggestArticlePageCarousal.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\TextOnlyTipsArticle.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\TipsArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\ToolKit.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\VideoArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Blogs\AllBlogsPage.ascx" />
