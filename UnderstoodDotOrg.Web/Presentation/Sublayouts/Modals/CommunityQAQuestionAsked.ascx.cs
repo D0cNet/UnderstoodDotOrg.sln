@@ -33,64 +33,70 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            //if (!IsPostBack)
             {
-                List<Question> dataSource = TelligentService.GetQuestionsList(2, 100);
-                questionsRepeater.DataSource = dataSource;
-                questionsRepeater.DataBind();
+                //don't do this, and we won't have anything to save...
+                this.DoSetup();
+            }
 
-                Item currItem = Sitecore.Context.Item;
+        }
 
-                Item[] items = null;
+        protected void DoSetup()
+        {
+            List<Question> dataSource = TelligentService.GetQuestionsList(2, 100);
+            questionsRepeater.DataSource = dataSource;
+            questionsRepeater.DataBind();
 
-                //Grades Drop List
-                Sitecore.Data.Fields.MultilistField grades = currItem.Fields["Grades"];
-                if (grades != null)
+            Item currItem = Sitecore.Context.Item;
+
+            Item[] items = null;
+
+            //Grades Drop List
+            Sitecore.Data.Fields.MultilistField grades = currItem.Fields["Grades"];
+            if (grades != null)
+            {
+                ddlGrades.Items.Insert(0, new ListItem() { Text = DictionaryConstants.NoneOfTheseLabel, Value = string.Empty });
+
+                items = grades.GetItems();
+                //ddlGrades.Items.Add(new ListItem() { Text = DictionaryConstants.GradesLabel, Value = "" });
+                foreach (var item in items)
                 {
-                    ddlGrades.Items.Insert(0, new ListItem() { Text = DictionaryConstants.NoneOfTheseLabel, Value = string.Empty });
-
-                    items = grades.GetItems();
-                    //ddlGrades.Items.Add(new ListItem() { Text = DictionaryConstants.GradesLabel, Value = "" });
-                    foreach (var item in items)
-                    {
-                        ddlGrades.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString().Equals("{7DD838FD-8BD3-4861-8E1E-540E6ED9BBE9}") ? string.Empty : item.ID.ToString() });
-                    }
-
-                    ddlGrades.DataBind();
+                    ddlGrades.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString().Equals("{7DD838FD-8BD3-4861-8E1E-540E6ED9BBE9}") ? string.Empty : item.ID.ToString() });
                 }
 
+                ddlGrades.DataBind();
+            }
 
-                //Topic Drop List
-                Sitecore.Data.Fields.MultilistField topics = currItem.Fields["Topics"];
-                if (topics != null)
+
+            //Topic Drop List
+            Sitecore.Data.Fields.MultilistField topics = currItem.Fields["Topics"];
+            if (topics != null)
+            {
+                ddlTopics.Items.Insert(0, new ListItem() { Text = DictionaryConstants.NoneOfTheseLabel, Value = string.Empty });
+
+                items = topics.GetItems();
+                //ddlTopics.Items.Add(new ListItem() { Text = DictionaryConstants.TopicsLabel, Value = "" });
+                foreach (var item in items)
                 {
-                    ddlTopics.Items.Insert(0, new ListItem() { Text = DictionaryConstants.NoneOfTheseLabel, Value = string.Empty });
-
-                    items = topics.GetItems();
-                    //ddlTopics.Items.Add(new ListItem() { Text = DictionaryConstants.TopicsLabel, Value = "" });
-                    foreach (var item in items)
-                    {
-                        ddlTopics.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
-                    }
-
-                    ddlTopics.DataBind();
+                    ddlTopics.Items.Add(new ListItem() { Text = item.Name, Value = item.ID.ToString() });
                 }
 
-                Sitecore.Data.Fields.MultilistField issues = currItem.Fields["Issues"];
+                ddlTopics.DataBind();
+            }
 
-                if (issues != null)
-                {
-                    items = issues.GetItems();
+            Sitecore.Data.Fields.MultilistField issues = currItem.Fields["Issues"];
 
-                    var dbIssues = items.Select(x => new ChildIssueItem(x));
+            if (issues != null)
+            {
+                items = issues.GetItems();
 
-                    uxIssues.DataSource = dbIssues;
-                    uxIssues.DataBind();
+                var dbIssues = items.Select(x => new ChildIssueItem(x));
 
-                }
-
+                uxIssues.DataSource = dbIssues;
+                uxIssues.DataBind();
 
             }
+
         }
 
         protected void uxIssues_ItemDataBound(object sender, ListViewItemEventArgs e)
@@ -157,10 +163,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
             }
 
             var newQuestion = TelligentService.CreateQuestion(title, body, grade, topic, issues, user);
-            var url = "/en/Community and Events/Q and A/Q and A Details.aspx" + newQuestion.QueryString;
 
             if (newQuestion != null)
             {
+                var url = "/en/Community and Events/Q and A/Q and A Details.aspx" + newQuestion.QueryString;
+
                 Item item = Questions.CreateSitecoreQuestion(title, newQuestion.WikiId, newQuestion.WikiPageId, newQuestion.ContentId, grade, topic, issues, Sitecore.Context.Language);
 
                 if (item != null)
@@ -172,8 +179,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
                     PublishItem(item);
                     //Sitecore.Web.WebUtil.Redirect(Sitecore.Links.LinkManager.GetItemUrl(threadItem));
                     ///  clientsideScript("alert('" +String.Format( DictionaryConstants.ForumCreateConfirmation,subject)+"');");
-                    Page.Response.Redirect(Page.Request.Url.ToString(), false);
+                    //Page.Response.Redirect(Page.Request.Url.ToString(), false);
                 }
+
+                Response.Redirect(url);
 
             }
             else
@@ -184,7 +193,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
                 //ShowClientSideForm(HiddenText);
             }
             
-            Response.Redirect(url);
 
         }
 

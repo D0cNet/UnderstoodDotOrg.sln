@@ -106,6 +106,43 @@ using UnderstoodDotOrg.Services.TelligentService;
 
                     Question question = TelligentService.GetQuestion(wikiId, wikiPageId, contentId);
 
+                    Sitecore.Data.Fields.MultilistField grades = item.Fields["Grade"];
+
+                    if (grades != null)
+                    {
+                        foreach (Sitecore.Data.ID id in grades.TargetIDs)
+                        {
+                            Item targetItem = Sitecore.Context.Database.Items[id];
+                            question.Grade = targetItem.Name;
+                        }
+
+                    }
+
+                    Sitecore.Data.Fields.MultilistField topics = item.Fields["Topic"];
+
+                    if (topics != null)
+                    {
+                        foreach (Sitecore.Data.ID id in topics.TargetIDs)
+                        {
+                            Item targetItem = Sitecore.Context.Database.Items[id];
+                            question.Group = targetItem.Name;
+                        }
+
+                    }
+
+                    Sitecore.Data.Fields.MultilistField issues = item.Fields["Issues"];
+
+                    if (issues != null)
+                    {
+                        foreach (Sitecore.Data.ID id in issues.TargetIDs)
+                        {
+                            Item targetItem = Sitecore.Context.Database.Items[id];
+                            question.Issues.Add(targetItem.Name);
+                        }
+
+                    } 
+
+
                     questions.Add(question);
                 }
             }

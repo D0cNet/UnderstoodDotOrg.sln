@@ -174,7 +174,15 @@ namespace UnderstoodDotOrg.Services.CommunityServices
                                 newItem.Fields["ContentId"].Value = contentId;
                                 newItem.Fields["Grade"].Value = grade;
                                 newItem.Fields["Topic"].Value = topic;
-                                newItem.Fields["Issues"].Value = issues.ToString();
+
+                                Sitecore.Data.Fields.MultilistField issuesField = newItem.Fields["Issues"];
+
+                                foreach(var issue in issues)
+                                {
+                                    issuesField.Add(issue);
+                                }
+
+                                //newItem.Fields["Issues"].SetValue = issuesField;
                                 // errorState = true;
                             }
                             catch (Exception ex)
