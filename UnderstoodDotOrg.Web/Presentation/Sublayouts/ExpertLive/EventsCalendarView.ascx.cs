@@ -23,6 +23,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             ParseRequestedCalendarMonth();
             SetCalendarLiterals();
             BuildCalendarData();
+
             EventsLiveCalendarView.ItemDataBound += EventsLiveCalendarView_ItemDataBound;
             EventsLiveCalendarView.DataSource = EventsLiveCalendarDays;
             EventsLiveCalendarView.DataBind();
@@ -99,9 +100,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 {
                     var thisList = myEvents[keyCurrentItemDate] ?? new List<BaseEventDetailPageItem>();
                     thisList.Add(item);
-                    //cast expert as an expertdetailitem?
-                    //look at controls on landing/details page
-                    //item.Expert.Item.
                     myEvents[keyCurrentItemDate] = thisList;
                 }
                 else
@@ -178,6 +176,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             if (e.Item.ItemType == ListItemType.Item)
             {
                 BaseEventDetailPageItem eventToBind = (BaseEventDetailPageItem)e.Item.DataItem;
+                bool IsChatEvent = (eventToBind.GetEventType().ToLower() == "chat") ? true : false;
                 Literal literalEventTimeDate = (Literal)e.Item.FindControl("literalEventTimeDate");
                 Literal literalEventUTCTime = (Literal)e.Item.FindControl("literalEventUTCTime");
                 HyperLink linkEventDetails = (HyperLink)e.Item.FindControl("linkEventDetails");
@@ -186,13 +185,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 HyperLink linkAddToCalendar = (HyperLink)e.Item.FindControl("linkAddToCalendar");
                 Literal literalExpertName = (Literal)e.Item.FindControl("literalExpertName");
                 Literal literalExpertTitles = (Literal)e.Item.FindControl("literalExpertTitles");
-                Image imgExpert = (Image)e.Item.FindControl("imgExpert");
+                Image imageExpert = (Image)e.Item.FindControl("imageExpert");
                 HyperLink linkExpert = (HyperLink)e.Item.FindControl("linkExpert");
 
-                StringBuilder builderTimeDate = new StringBuilder();
-                builderTimeDate.AppendLine(eventToBind.GetFormattedEventStartTime());
-                builderTimeDate.Append(eventToBind.GetFormattedEventStartDate());
-                literalEventTimeDate.Text = builderTimeDate.ToString();
+                string dateStartText = (IsChatEvent) ? "Live Chat at " : "Live Webinar at ";
+                StringBuilder builderForDateHeading = new StringBuilder();
+                builderForDateHeading.Append(dateStartText);
+                builderForDateHeading.Append(eventToBind.EventStartDate.DateTime.ToString("t"));
+                builderForDateHeading.Append(" ");
+                builderForDateHeading.Append(eventToBind.EventStartDate.DateTime.ToString("%K"));
+                builderForDateHeading.AppendLine("<br />");
+                builderForDateHeading.Append("MMM d, yyyy");
+                literalEventTimeDate.Text = builderForDateHeading.ToString();
 
                 literalEventUTCTime.Text = eventToBind.EventStartDate.DateTime.ToUniversalTime().ToString("htt") + " UTC";
                 linkEventDetails.NavigateUrl = linkEventDate.NavigateUrl = eventToBind.GetUrl();
@@ -200,15 +204,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 linkAddToCalendar.NavigateUrl = eventToBind.AddToCalendarLink.Rendered;
 
                 ExpertDetailPageItem expertToBind = (ExpertDetailPageItem)eventToBind.Expert.Item;
-                literalExpertName.Text = expertToBind.DisplayName;
+                literalExpertName.Text = expertToBind.ExpertName;
                 StringBuilder builderExpertCaption = new StringBuilder();
                 builderExpertCaption.Append(expertToBind.ExpertHeading.Rendered);
-                builderExpertCaption.AppendLine(",<br />");
-                builderExpertCaption.Append(expertToBind.ExpertSubheading.Rendered);
+                if (!string.IsNullOrWhiteSpace(expertToBind.ExpertSubheading.Rendered))
+                {
+                    builderExpertCaption.AppendLine(",<br />");
+                    builderExpertCaption.Append(expertToBind.ExpertSubheading.Rendered);
+                }
                 literalExpertTitles.Text = builderExpertCaption.ToString();
 
-                imgExpert.AlternateText = expertToBind.DisplayName;
-                imgExpert.ImageUrl = expertToBind.ExpertImage.MediaUrl;
+                imageExpert.ImageUrl = expertToBind.ExpertImage.MediaItem.GetImageUrl();
+                imageExpert.AlternateText = expertToBind.ExpertName;
                 linkExpert.NavigateUrl = expertToBind.GetUrl();
 
                 if (expertToBind.GetExpertType().ToLower() == "chat")
@@ -231,7 +238,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 
             paragraphChatHeading.Visible = true;
             paragraphChatHeading.InnerText = eventToBind.EventHeading.Rendered;
-            linkEventName.Text = "Live Chat with " + expertToBind.DisplayName;
+            linkEventName.Text = "Live Chat with " + expertToBind.ExpertName;
         }
 
         private void BindItemForWebinarEvent(RepeaterItemEventArgs e)

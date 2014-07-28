@@ -100,7 +100,7 @@
                             <div class="event-host-info">
                                 <div class="event-card-image">
                                     <asp:HyperLink runat="server" ID="linkExpert">
-                                        <asp:Image runat="server" ID="imgExpert" />
+                                        <asp:Image runat="server" ID="imageExpert" />
                                         <div class="image-label">Expert</div>
                                     </asp:HyperLink>
                                 </div>
