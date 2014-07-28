@@ -64,14 +64,10 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia
 
         private Item GetReviewIfAlreadyExists(string CSMId, AssistiveToolsSearchResultsPageItem searchPage)
         {
-            if(searchPage.InnerItem.Children.Count > 0)
-            {
-                foreach (Item i in Sitecore.Data.Database.GetDatabase("master").SelectItems("/sitecore/content/Home/Tools/Assistive Technology//*[@@templatename='Assistive Tools Review Page']"))
-                {
-                    if (i.Fields["CSM ID"].ToString() == CSMId)
-                        return i;
-                }
-            }
+            Item temp = Sitecore.Data.Database.GetDatabase("master").SelectSingleItem("/sitecore/content/Home/Tools/#Assistive Technology#//*[@@templatename='Assistive Tools Review Page' and @#CSM ID# = '" + CSMId + "']");
+
+            if(temp != null)
+                return temp;
 
             return null;
         }
