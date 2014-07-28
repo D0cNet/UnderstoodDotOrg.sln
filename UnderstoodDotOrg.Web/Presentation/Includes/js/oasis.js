@@ -278,7 +278,10 @@ jQuery(function () {
             } else {
                 $showMoreContainer.show();
             }
+
             $container.append(data);
+            ReadSpeaker.q(function () { rspkr.Toggle.createPlayer() });
+
         }).always(function () {
             inProgress = false;
         });
