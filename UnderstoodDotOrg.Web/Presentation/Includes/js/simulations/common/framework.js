@@ -1,5 +1,4 @@
 /* Simple JavaScript Inheritance By John Resig http://ejohn.org/ MIT Licensed. */
-
 (function(){var initializing=false,fnTest=/xyz/.test(function(){xyz})?/\b_super\b/:/.*/;this.Class=function(){};Class.extend=function(prop){var _super=this.prototype;initializing=true;var prototype=new this();initializing=false;for(var name in prop){prototype[name]=typeof prop[name]=="function"&&typeof _super[name]=="function"&&fnTest.test(prop[name])?(function(name,fn){return function(){var tmp=this._super;this._super=_super[name];var ret=fn.apply(this,arguments);this._super=tmp;return ret}})(name,prop[name]):prop[name]}function Class(){if(!initializing&&this.init)this.init.apply(this,arguments)}Class.prototype=prototype;Class.prototype.constructor=Class;Class.extend=arguments.callee;return Class}})();
 /*! sprintf.js | Copyright (c) 2007-2013 Alexandru Marasteanu <hello at alexei dot ro> | 3 clause BSD license */
 (function(e){function r(e){return Object.prototype.toString.call(e).slice(8,-1).toLowerCase()}function i(e,t){for(var n=[];t>0;n[--t]=e);return n.join("")}var t=function(){return t.cache.hasOwnProperty(arguments[0])||(t.cache[arguments[0]]=t.parse(arguments[0])),t.format.call(null,t.cache[arguments[0]],arguments)};t.format=function(e,n){var s=1,o=e.length,u="",a,f=[],l,c,h,p,d,v;for(l=0;l<o;l++){u=r(e[l]);if(u==="string")f.push(e[l]);else if(u==="array"){h=e[l];if(h[2]){a=n[s];for(c=0;c<h[2].length;c++){if(!a.hasOwnProperty(h[2][c]))throw t('[sprintf] property "%s" does not exist',h[2][c]);a=a[h[2][c]]}}else h[1]?a=n[h[1]]:a=n[s++];if(/[^s]/.test(h[8])&&r(a)!="number")throw t("[sprintf] expecting number but found %s",r(a));switch(h[8]){case"b":a=a.toString(2);break;case"c":a=String.fromCharCode(a);break;case"d":a=parseInt(a,10);break;case"e":a=h[7]?a.toExponential(h[7]):a.toExponential();break;case"f":a=h[7]?parseFloat(a).toFixed(h[7]):parseFloat(a);break;case"o":a=a.toString(8);break;case"s":a=(a=String(a))&&h[7]?a.substring(0,h[7]):a;break;case"u":a>>>=0;break;case"x":a=a.toString(16);break;case"X":a=a.toString(16).toUpperCase()}a=/[def]/.test(h[8])&&h[3]&&a>=0?"+"+a:a,d=h[4]?h[4]=="0"?"0":h[4].charAt(1):" ",v=h[6]-String(a).length,p=h[6]?i(d,v):"",f.push(h[5]?a+p:p+a)}}return f.join("")},t.cache={},t.parse=function(e){var t=e,n=[],r=[],i=0;while(t){if((n=/^[^\x25]+/.exec(t))!==null)r.push(n[0]);else if((n=/^\x25{2}/.exec(t))!==null)r.push("%");else{if((n=/^\x25(?:([1-9]\d*)\$|\(([^\)]+)\))?(\+)?(0|'[^$])?(-)?(\d+)?(?:\.(\d+))?([b-fosuxX])/.exec(t))===null)throw"[sprintf] huh?";if(n[2]){i|=1;var s=[],o=n[2],u=[];if((u=/^([a-z_][a-z_\d]*)/i.exec(o))===null)throw"[sprintf] huh?";s.push(u[1]);while((o=o.substring(u[0].length))!=="")if((u=/^\.([a-z_][a-z_\d]*)/i.exec(o))!==null)s.push(u[1]);else{if((u=/^\[(\d+)\]/.exec(o))===null)throw"[sprintf] huh?";s.push(u[1])}n[2]=s}else i|=2;if(i===3)throw"[sprintf] mixing positional and named placeholders is not (yet) supported";r.push(n)}t=t.substring(n[0].length)}return r};var n=function(e,n,r){return r=n.slice(0),r.splice(0,0,e),t.apply(null,r)};e.sprintf=t,e.vsprintf=n})(typeof exports!="undefined"?exports:window);
@@ -292,7 +291,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                 this.loadSounds();
                 this.canUse3d = has3d();
                 if(!this.nodeMap) {
-                    this.draw(); //@TODO Get rid of the check once all games are converted
+                    this.draw(); //TODO Get rid of the check once all games are converted
                 } else {
                     this.mapNodes();
                 }
@@ -513,8 +512,10 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
         lastTime: null,
         started: null,
         timeLeft: null,
-        paused: false,
+        paused: true,
         decrements: 0,
+        soundLag: 0,
+        soundPlayed: false,
         init: function(cfg) {
             if(cfg.useContainer) {
                 this.node = cfg.container;
@@ -524,6 +525,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                     .addClass('timer');
                 this.ctr.append(this.node);
             }
+            if(cfg.soundLag) this.soundLag = cfg.soundLag;
             this.maxTime = cfg.maxTime;
             this.onTick = $.Callbacks();
             this.onStop = $.Callbacks();
@@ -533,11 +535,16 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.lastTime = new Date().getTime();
             this.interval = setInterval($.proxy(this.tick, this), 1000);
             this.show(this.maxTime);
-            SSGame.current.playSound('clockTick', false);
+            if(!this.soundLag) {
+                SSGame.current.playSound('clockTick', false);
+                this.soundPlayed = true;
+            }
+            this.paused = false;
         },
         stop: function() {
             clearInterval(this.interval);
             SSGame.current.stopSound('clockTick');
+            this.paused = true;
             this.onStop.fire();
         },
         reset: function() {
@@ -564,9 +571,14 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                 var diff = tock - this.lastTime;
                 this.timeLeft -= diff;
                 if(this.timeLeft < 0) this.timeLeft = 0;
-                this.show(Math.round(this.timeLeft / 1000));
+                var timeLeftSeconds = this.timeLeft / 1000;
+                this.show(Math.round(timeLeftSeconds));
                 if(this.timeLeft == 0) this.stop();
                 this.lastTime = tock;
+                if(this.soundLag && !this.soundPlayed && this.maxTime - timeLeftSeconds > this.soundLag) {
+                    SSGame.current.playSound('clockTick', false);
+                    this.soundPlayed = true;
+                }
             }
         },
         show: function(time) {
@@ -620,7 +632,11 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                     position: { my: 'center', at: 'center', of: defaultContainer },
                     resizable: false,
                     show: { effect: 'fade', duration: defaultFadeSpeed },
-                    hide: { effect: 'fade', duration: defaultFadeSpeed }
+                    hide: { effect: 'fade', duration: defaultFadeSpeed },
+                    close: $.proxy(function(e, ui) {
+                        this.mask.remove();
+                        this.mask = null;
+                    }, this)
                 }
             };
             this.settings = $.extend(true, {}, defaults, cfg);
@@ -704,9 +720,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             this.body.dialog('close');
             setTimeout($.proxy(function() {
                 if(typeof this.settings.onClose == 'function') this.settings.onClose();
-                if(!this.settings.reusable) this.cleanup();
-                this.mask.remove();
-                this.mask = null;
+                this.cleanup();
             }, this), this.settings.dialog.hide.duration);
         },
         cleanup: function() {
@@ -725,7 +739,8 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
             return '<p>' + s.split("\n").join('</p><p>') + '</p>';
         },
         destroyAll: function() {
-            $(".SSGame_dialog").dialog("close");
+            $(".SSGame_dialog").dialog("destroy");
+            $(".SSGameModalMask").remove();
         },
         intro: function(game, click) {
             //Get our current configuration
@@ -846,7 +861,7 @@ function has3d(){var e=document.createElement("p"),t,n={webkitTransform:"-webkit
                 text: game.getText(cfg.buttons.restart),
                 click: function() {
                     SSGame.current.reset();
-                    dlg.close();
+                    //dlg.close();
                 }
             }, {
                 text: game.getText(cfg.buttons.continue),

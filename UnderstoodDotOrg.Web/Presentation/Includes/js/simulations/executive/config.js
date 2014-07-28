@@ -2,60 +2,77 @@
     //Reminder: the last element can't have a comma at the end!
     ExecutiveGameConfig = {
         timeInSeconds: 120,
+        timerSoundDelay: 30,
         intro: {
-            buttons: {
+           buttons: {
                 go: {
-                    en: 'Begin'
+                    en: 'Start',
+                  es: 'Comenzar'
                 },
                 next: {
-                    en: 'Next'
+                    en: 'Next',
+                  es: 'Próximo',
                 }
             },
             standaloneTitle: {
-                en: 'Through Your Child\'s Eyes: <b>Organization and Time Management Issues</b>'
+                en: 'Through Your Child\'s Eyes: <b>Organization and Time Management Issues</b>',
+              es: 'A través de los ojos de su hijo: <b>Dificultades con la organización y el manejo del tiempo</b>'
             },
             standaloneText: {
                 en: [
                     'We can all be a little disorganized at times. But how does it feel to be a child or teen who has trouble planning and prioritizing?',
                     'This game will help you understand. (Sound required.)'
+                ].join('<pbr>'),
+              es: [
+                    'Todos podemos ser un poco desorganizados algunas veces. ¿Pero, cómo se siente ser un niño o preadolescente que tienen problemas para planear y priorizar?',
+                    'Este juego le ayudará a entender. (Se requiere sonido.)'
                 ].join('<pbr>')
             },
             gameTitle: {
-                en: 'Catch Up'
+                en: 'Catch Up',
+              es: 'Atrape'
             },
             gameText: {
-                en: 'Catch the falling shapes in the bucket. Click once in any column to move the bucket there. Ready?'
+                en: 'Catch the falling shapes in the bucket. Click once in any column to move the bucket there. Ready?',
+              es: 'Atrape las formas que caen con el cubo. Haga clic en la columna donde quiere que se mueva el cubo. ¿Preparado?'
             }
         },
         outro: {
             buttons: {
                 restart: {
-                    en: 'Try again'
+                    en: 'Try again',
+                  es: 'Intente de nuevo'
                 },
                 continue: {
-                    en: 'Continue'
+                    en: 'Continue',
+              es: 'Continuar'
                 },
                 next: {
-                    en: 'Next'
+                    en: 'Next',
+                  es: 'Próximo',
                 },
                 learn: {
-                    en: 'Learn How'
+                    en: 'Learn How',
+                  es: 'Aprenda cómo'
                 },
                 beginning: {
-                    en: 'Go back to the beginning'
+                    en: 'Go back to the beginning',
+                  es: 'O vuelva al principio'
                 }
             },
             standaloneLinks: {
                 learn: 'http://wolframalpha.com',
                 beginning: 'http://archive.org'
             },
-            standaloneTitle: {
-                en: 'Through Your Child\'s Eyes: <b>Organization and Time Management Issues</b>'
+             standaloneTitle: {
+                en: 'Through Your Child\'s Eyes: <b>Organization and Time Management Issues</b>',
+              es: 'A través de los ojos de su hijo: <b>Dificultades con la organización y el manejo del tiempo</b>'
             },
             gameText: {
                 //No success here!
                 failure: {
-                    en: 'Time\'s up!'
+                    en: 'Time\'s up!',
+                  es: '¡Se acabó el tiempo!'
                 }
             },
             standaloneText: {
@@ -65,7 +82,20 @@
                     'That’s how daily life can seem for children who have trouble with organization and time management.',
                     'The good news? You can work with your child to develop strategies that can help.'
 
+                ].join('<pbr>'),
+                es: [
+                    'A lo mejor pensó que este juego era divertido, pero también frustrante. ¿Por qué se sintió tan lento?',
+                    'Cada vez que iba a atrapar una forma, las instrucciones cambiaban y tuvo que emplear un nuevo plan.',
+                    'Así es como puede ser la vida de los niños que tienen problemas con la organización y el manejo del tiempo.',
+                    '¿Las buenas noticias? Puede trabajar con su hijo para que desarrolle las estrategias que necesita.'
+
                 ].join('<pbr>')
+            }
+        },
+        uiCopy: {
+            score: {
+                en: 'Score',
+                es: 'Puntuación'
             }
         },
         introDurationInSeconds: 0, //0=open until closed
@@ -215,5 +245,3 @@
         }
     };
 })();
-                                
-                                                                                                                                                                                

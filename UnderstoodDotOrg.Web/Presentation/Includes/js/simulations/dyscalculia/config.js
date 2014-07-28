@@ -9,44 +9,58 @@
         intro: {
             buttons: {
                 go: {
-                    en: 'Begin'
+                    en: 'Start',
+                  es: 'Comenzar'
                 },
                 next: {
-                    en: 'Next'
+                    en: 'Next',
+                  es: 'Próximo'
                 }
             },
             standaloneTitle: {
-                en: 'Through Your Child\'s Eyes: <b>Math Issues</b>'
+                en: 'Through Your Child\'s Eyes: <b>Math Issues</b>',
+                es: 'A través de los ojos de su hijo: <b>Dificultades con las matemáticas</b>'
             },
             standaloneText: {
                 en: [
                     'Have you ever wondered why it’s so hard for some kids to work with numbers?',
                     'Try this game to see what it feels like when you have to rely on memory instead of a solid understanding of math.'
-                ].join('<pbr>')
+                ].join('<pbr>'),
+              
+              es: ['¿Se ha preguntado alguna vez por qué es tan difícil para algunos niños trabajar con números?',
+                   'Pruebe este juego para ver cómo se siente tener que depender de la memoria en lugar de su entendimiento sólido de las matemáticas.'
+                   ].join('<pbr>')
             },
             gameTitle: {
-                en: 'Exact Change'
+                en: 'Exact Change',
+              es: 'Cambio Exacto'
             },
             gameText: {
-                en: 'Click on coins to pay for goodies. When you have the exact change, hit Buy.\n\nReady?'
+                en: 'Click on coins to pay for goodies. When you have the exact change, hit Buy.\n\nReady?',
+                es: 'Haga clic en las monedas para pagar. Cuando tenga el cambio exacto, haga click en Comprar.\n\n¿Preparado?'
             }
         },
         outro: {
             buttons: {
                 restart: {
-                    en: 'Try again'
+                    en: 'Try again',
+                  es: 'Intente de nuevo'
                 },
                 continue: {
-                    en: 'Continue'
+                    en: 'Continue',
+              es: 'Continuar'
                 },
                 next: {
-                    en: 'Next'
+                    en: 'Next',
+                  es: 'Próximo',
                 },
                 learn: {
-                    en: 'Learn How'
+                    en: 'Learn How',
+                  es: 'Aprenda cómo'
                 },
                 beginning: {
-                    en: 'Go back to the beginning'
+                    en: 'Go back to the beginning',
+                  es: 'O vuelva al principio'
                 }
             },
             standaloneLinks: {
@@ -54,14 +68,17 @@
                 beginning: 'http://archive.org'
             },
             standaloneTitle: {
-                en: 'Through Your Child\'s Eyes: <b>Math Issues</b>'
+                en: 'Through Your Child\'s Eyes: <b>Math Issues</b>',
+              	es: 'A través de los ojos de su hijo: <b>Dificultades con las matemáticas</b>'
             },
             gameText: {
                 success: {
-                    en: 'Well done—you beat the clock!'
+                    en: 'Well done—you beat the clock!',
+                  es: '¡Bien hecho-venció al reloj!'
                 },
                 failure: {
-                    en: 'Time\'s up!'
+                    en: 'Time\'s up!',
+                  es: '¡Se acabó el tiempo!'
                 }
             },
             standaloneText: {
@@ -72,6 +89,13 @@
                     'Children don’t grow out of math issues. But here’s the good news: you can work with your child to develop strategies that will help.'
 
                 ].join('<pbr>')
+              ,
+              es: [
+                'Probablemente acaba de experimentar lo que los niños con dificultades con las matemáticas siente todos los días: confusión y frustración. Aquí está el porque.',
+                'Las monedas no tenían los valores "correctos", así que usted tuvo que calcular cada compra en lugar de seleccionar las monedas de manera automática.',
+                'Así es como se sienten los niños y preadolescentes que tienen una dificultad con las matemáticas. Y cuando ellos creen que lo están dominando, la tarea se vuelve más difícil.',
+                'Los niños no superan las dificultades con las matemáticas cuando crecen. Pero hay buenas noticias: usted puede trabajar con su hijo para que desarrolle estrategias que le ayudarán.'
+                ].join('<pbr>')
             }
         },
         keyDisplayTimeInMilliseconds: 3000,
@@ -79,8 +103,35 @@
         timeInSeconds: 90,
         itemSize: 50,
         permakey: true,
-        resourcePath: '/games/dyscalculia/resources',
         introDurationInSeconds: 0, //0=open until closed
+        uiCopy: {
+            buy: {
+                en: 'Buy',
+                es: 'Comprar'
+            },
+            key: {
+                en: 'Key',
+                  es: ' '
+            },
+            trayTitle: {
+                en: 'Coin Tray',
+                  es: 'Monedero'
+            },
+            trayDesc: {
+                desktop: {
+                    en: 'Click coins to move them',
+                      es: 'Haga clic en las monedas para moverlas'
+                },
+                tablet: {
+                    en: 'Tap coins to move them',
+                      es: 'Haga clic en las monedas para moverlas'
+                },
+                phone: {
+                    en: 'Tap coins to move them',
+                      es: 'Haga clic en las monedas para moverlas'
+                }
+            }
+        },
         coinUI: {
             desktop: {
                 scatterGrid: [4,3], //[columns,rows]
@@ -118,27 +169,42 @@
         },
         items: [
             {  // 7
-                name: 'Apple',
+                name: {
+                    en: 'Apple',
+                    es: 'Manzana'
+                },
                 value: [7, 7],
                 cls: 'apple',
                 showTally: true
             }, { // 29 + 13
-                name: 'Banana',
+                name: {
+                    en: 'Banana',
+                    es: 'Plátano'
+                },
                 value: [42, 42],
                 cls: 'banana',
                 showTally: true
             }, { // 7 + 13 + 29 + 34
-                name: 'Milk',
+                name: {
+                    en: 'Milk',
+                    es: 'Leche'
+                },
                 value: [83, 83],
                 cls: 'milk',
                 showTally: true
             }, { // 13 + 13 + 13 +7 + 29 + 34
-                name: 'Pretzel',
+                name: {
+                    en: 'Pretzel',
+                    es: 'Pretzel'
+                },
                 value: [109, 109],
                 cls: 'pretzel',
                 showTally: false
             }, { //7 + 13 + 13 + 13 +29 +29 + 34
-                name: 'Ice cream',
+                name: {
+                    en: 'Ice cream',
+                    es: 'Helado'
+                },
                 value: [138, 138],
                 cls: 'icecream',
                 showTally: false
@@ -170,3 +236,6 @@
         ]
     };
 })();
+                                                                                                
+                                                                                                                                
+                

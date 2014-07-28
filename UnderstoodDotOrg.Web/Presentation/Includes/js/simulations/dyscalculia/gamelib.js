@@ -172,6 +172,11 @@
             unsay: function(speedIn) {
                 if(SSGame.current.board.getCurrentBreakpoint()[2] == 'phone') {
                     //Just show it for now
+                    ctr.find('.feedback').remove();
+                    ctr.find('.paybutton').css({
+                        display: 'block',
+                        opacity: 1
+                    });
                 } else {
                     var txt = ctr.find('.feedback');
                     txt.animate({ marginTop: 200 }, speedIn, function() {
@@ -217,7 +222,7 @@
                 game.nodes.store.transit({
                     backgroundColor: '#8fad15'
                 }, t.color[0]).delay(t.color[1]).transit({
-                    backgroundColor: '#298FC2'
+                    backgroundColor: '#426da9'
                 }, t.color[2]);
             },
             showWrong: function() {
@@ -232,7 +237,7 @@
                         game.spinner.setInProgress();
                         ui.unsay(t.color[1]);
                     })
-                    .animate({ backgroundColor: '#298FC2' }, t.color[1]);
+                    .animate({ backgroundColor: '#426da9' }, t.color[1]);
             },
             resetInput: function() {
             }
@@ -248,7 +253,7 @@
         var label = $('<div></div>').addClass('item_name');
         var valLabel = $('<div></div>').addClass('item_value');
         var payButtonTarget = $('<div></div>').addClass('paybuttontarget');
-        var payButton = $('<div></div>').addClass('paybutton').text('Buy');
+        var payButton = $('<div></div>').addClass('paybutton').text(game.getText(game.config.uiCopy.buy));
 
         ctr.append(picture);
         ctr.append(label);
@@ -267,13 +272,67 @@
         return ui;
     }
     var coinTools = {
+        coins: null,
+        init: function(cfg, coinClick) {
+            //Build our coin data
+            var gameVals = [], coinVals = [], key, i, val;
+            for(key in cfg) {
+                gameVals.push(randomizer.coin(cfg[key]));
+            }
+            for(key in gameVals) {
+                val = gameVals[key];
+                for(i = 0; i < val.count; i ++) {
+                    coinVals.push(val);
+                }
+            }
+            SSGame.shuffle(coinVals);
+            var coinObj, coinDim, coinPos, coinStats = [],
+                ctrStats = { width: SSGame.current.nodes.coins.width(), height: SSGame.current.nodes.coins.height() };
+            var coinCfgRoot = SSGame.current.board.getCurrentBreakpoint()[2] == 'phone' ? 'phone' : 'desktop';
+            var coinCfg = SSGame.current.config.coinUI[coinCfgRoot];
+            for(var i=0; i < coinVals.length; ++i) {
+                val = coinVals[i];
+                coinObj = coin(val.cls, val.value, coinClick);
+                SSGame.current.nodes.coins.append(coinObj.body);
+                //Isolate the size of our coin
+                coinDim = { width: coinObj.body.width(), height: coinObj.body.height() };
+                //Figoure out a random position for the coin
+                var layoutGrid = coinCfg.scatterGrid;
+                coinPos = SSGame.getRandomPosition(coinDim, coinStats, ctrStats, coinCfg.scatterAmount, layoutGrid[1], layoutGrid[0], coinCfg.padding);
+                //Actually move the coin
+                coinObj.setPosition(coinPos.left, coinPos.top, coinStats.length + 1);
+                coinObj.body.data('left', coinPos.left);
+                coinObj.body.data('top', coinPos.top);
+                //Track our final stats for the next random placements
+                coinDim.left = coinPos.left;
+                coinDim.top = coinPos.top;
+                coinStats.push(coinDim);
+            }
+            this.coins = gameVals;
+        },
+        drawKey: function() {
+            //Set up the key
+            for(key in this.coins) {
+                val = this.coins[key];
+                c = coin(val.cls, val.value, function(){});
+                c.showValue();
+                SSGame.current.nodes.key.append(c.body);
+            }
+        },
         setAllAvailable: function() {
             $('.coin_anim').stop().remove();
-            SSGame.current.nodes.coins.append(SSGame.current.nodes.counter.find('.coin'));
+            var coins = SSGame.current.nodes.counter.find('.coin');
+            coins.each(function() {
+                var coin = $(this);
+                SSGame.current.nodes.coins.append(coin);
+                coin.css({
+                    left: coin.data('left'),
+                    top: coin.data('top')
+                });
+            });
         },
         adjustZIndex: function(ctr) {
             var coins = ctr.find('.coin');
-            console.log(coins);
             var idx = 1;
             coins.each(function() {
                 $(this).css('zIndex', idx);
@@ -313,6 +372,11 @@
             if(coin.body.hasClass('dime')) dummy.addClass('coin_anim dime_anim');
             if(coin.body.hasClass('nickel')) dummy.addClass('coin_anim nickel_anim');
             if(coin.body.hasClass('penny')) dummy.addClass('coin_anim penny_anim');
+            var frameSize = 100;
+            if(cfgRoot == 'phone') {
+                dummy.addClass('coin_anim_phone');
+                frameSize = 90;
+            }
 
             //Animation assets are sized differently than placed assets, so we need to adjust thier position
             var leftDelta = 50 - Math.round(coin.body.width() / 2); //We know it's 50, but this might need to be configurable later.
@@ -325,13 +389,13 @@
                 animTo.left += leftDelta + 10;
                 animTo.top += topDelta + 10;
             } else {
-                animTo.left += leftDelta;
-                animTo.top += topDelta;
+                animTo.left += leftDelta;// - 5;
+                animTo.top += topDelta;// - 5;
             }
 
             dummy.css(animFrom);
             $(document.body).append(dummy);
-            var justSlideAt = cfg.stopFlippingAt / 100;
+            var justSlideAt = cfg.stopFlippingAt / frameSize;
             //We have frames 0-6, i.e. 0, -100, ..., -600px
             //So 1 flip is 7 frames, 2 flips is 14, etc.
             //We have from 0 tojustSlideAt (0 to <1) in which to do make our N flips,
@@ -346,7 +410,7 @@
                     } else {
                         var absoluteFrame = Math.floor(progress / frameJump);
                         var relativeFrame = Math.floor(absoluteFrame % 7);
-                        var bgPos = (dir > 1) ? relativeFrame * -100 : -600 + (relativeFrame * 100);
+                        var bgPos = (dir > 1) ? relativeFrame * (-1 * frameSize) : -(6 * frameSize) + (relativeFrame * frameSize);
                         if(false) console.log('Frame is %s, bg idx is %s, bg pos is %s',
                             absoluteFrame, relativeFrame, bgPos);
                     }
@@ -414,8 +478,9 @@
                 var coinCfg = SSGame.current.config.coinUI[coinCfgRoot];
                 var ctr = SSGame.current.nodes.coins;
                 var specs = coinTools.getLayoutSpecs(this, ctr);
-                var newPos = SSGame.getRandomPosition(specs.coinSize, specs.siblings, specs.container,
-                        coinCfg.scatterAmount, specs.grid[0], specs.grid[1]);
+                //var newPos = SSGame.getRandomPosition(specs.coinSize, specs.siblings, specs.container,
+                //        coinCfg.scatterAmount, specs.grid[0], specs.grid[1]);
+                var newPos = { left: this.body.data('left'), top: this.body.data('top') };
                 coinTools.adjustZIndex(ctr);
                 newPos.zIndex = specs.siblings.length + 1;
                 //Stick the coin in the new ctr and hide it

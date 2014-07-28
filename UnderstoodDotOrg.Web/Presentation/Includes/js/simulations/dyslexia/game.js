@@ -23,30 +23,34 @@
                 //Then fix the phrase's min width at the size we're switching to so it doesn't jump oddly as the stuff inside moves around.
                 phrase.css('minWidth', newWidth);
                 //Now we animate!
-                phrase.find('.letter').stop(true, true).transition(animations.out, pause);
-                //When the animations are done (hopefully), swap the letters
-                setTimeout(function() {
-                    phrase.find('.letter').remove();
-                    var newLetters = dummyCtr.find('.letter');
-                    phrase.append(newLetters);
-                    dummyCtr.remove();
-                    phrase.find('.letter').css(animations.out).css(letterCss);
-                    newLetters.transition(animations.back, pause);
-                    setTimeout(function() {
-                        phrase.data('nohover', false);
-                        if(typeof onComplete == 'function') onComplete();
-                    }, pause);
-                }, pause);
+                phrase.find('.letter').stop(true, true)
+                    .transition(animations.out, pause)
+                    //When the animations are done (hopefully), swap the letters
+                    .queue(function() {
+                        phrase.find('.letter').remove();
+                        var newLetters = dummyCtr.find('.letter');
+                        phrase.append(newLetters);
+                        dummyCtr.remove();
+                        newLetters
+                            .css(animations.out)
+                            .css(letterCss)
+                            .transition(animations.back, pause)
+                            .queue(function() {
+                                phrase.data('nohover', false);
+                                if(typeof onComplete == 'function') onComplete(newLetters, pause);
+                            });
+                    });
             },
             correct: function(phrase, onComplete) {
                 phrase.data('corrected_visible', true);
-                this._swapTo(phrase, phrase.data('real'), -1, SSGame.current.config.display.letterStates.correct, function() {
-                    setTimeout(function() {
-                        if(!SSGame.current.nodes.sentence.data('successQueued')) {
-                            phrase.data('corrected_visible', false);
-                            phrase.find('.letter').transit(SSGame.current.config.display.letterStates.unknown, 250);
-                        }
-                    }, 2000);
+                this._swapTo(phrase, phrase.data('real'), -1, SSGame.current.config.display.letterStates.correct, function(newLetters, pause) {
+                    if(!SSGame.current.nodes.sentence.data('successQueued')) {
+                        phrase.data('corrected_visible', false);
+                        newLetters
+                            .stop(true, true) //Breaks us out of the current queue we're technically in (UGLY!!!)
+                            .delay(pause * 2)
+                            .transit(SSGame.current.config.display.letterStates.unknown, pause);
+                    }
                     if(typeof onComplete == 'function') onComplete();
                 });
                 thumbs.up(phrase);
@@ -56,7 +60,7 @@
                 thumbs.down(phrase);
             },
             rotate: function(phrase, to, css, onComplete) {
-                phrase.find('.letter').stop(true, true).css(css).transit({'rotate': to}, 'fast',  function(e) {
+                return phrase.find('.letter').stop(true, true).css(css).transit({'rotate': to}, 'fast',  function(e) {
                     phrase.data('nohover', false);
                     if(typeof onComplete == 'function') onComplete();
                 });
@@ -64,25 +68,24 @@
             wrong: function(phrase, onComplete) {
                 phrase.data('wrong_visible', true);
                 thumbs.down(phrase);
-                this.rotate(phrase, 180, SSGame.current.config.display.letterStates.wrong, function() {
-                    setTimeout(function() {
+                this.rotate(phrase, 180, SSGame.current.config.display.letterStates.wrong)
+                    .delay(2000)
+                    .queue(function() {
                         phrase.data('wrong_visible', false);
                         phrase.find('.letter').transit(SSGame.current.config.display.letterStates.unknown, 250);
-                    }, 2000);
-                    if(typeof onComplete == 'function') onComplete();
-                });
+                        if(typeof onComplete == 'function') onComplete();
+                    });
             },
             unwronged: function(phrase, onComplete) {
                 phrase.data('corrected_visible', true);
                 phrase.data('wrong_visible', false);
-                this.rotate(phrase, 0, SSGame.current.config.display.letterStates.correct, function() {
-                    setTimeout(function() {
+                this.rotate(phrase, 0, SSGame.current.config.display.letterStates.correct)
+                    .delay(2000)
+                    .queue(function() {
                         phrase.data('corrected_visible', false);
                         phrase.find('.letter').transit(SSGame.current.config.display.letterStates.unknown, 250);
-                    }, 2000);
-                    if(typeof onComplete == 'function') onComplete();
-                });
-
+                        if(typeof onComplete == 'function') onComplete();
+                    });
             },
             hover: function(phrase) {
                 //We do this manually instead of via CSS for finer control
@@ -151,7 +154,10 @@
         },
         up: function(target) {
             this.makeAt(target, 'thumbsup', 'top')
-                .css('opacity', 0)
+                .css({
+                    opacity: 0,
+                    position: 'absolute'
+                })
                 .transit({
                     opacity: 1,
                     y: '-=' + thumbs.distance
@@ -163,7 +169,10 @@
         },
         down: function(target) {
             this.makeAt(target, 'thumbsdown', 'bottom')
-                .css('opacity', 0)
+                .css({
+                    opacity: 0,
+                    position: 'absolute'
+                })
                 .transit({
                     opacity: 1,
                     y: '+=' + thumbs.distance
@@ -267,7 +276,8 @@
         parseLetters: function(str) {
             var html = [];
             for(var i = 0; i < str.length; i ++) {
-                if(str[i].match(/\w/)) {
+                var esLetters = 'ÀÈÌÒÙàèìòùÁÉÍÓÚÝáéíóúýÂÊÎÔÛâêîôûÃÑÕãñõÄËÏÖÜäëïöü¡¿çÇßØøÅåÆæÞþÐð';
+                if(str[i].match(/[a-zA-ZÀÈÌÒÙàèìòùÁÉÍÓÚÝáéíóúýÂÊÎÔÛâêîôûÃÑÕãñõÄËÏÖÜäëïöüçÇßØøÅåÆæÞþÐð]/)) {
                     html.push('<span class="letter">' + str[i] + '</span>');
                 } else {
                     html.push('<span class="punctuation">' + str[i] + '</span>');
@@ -284,7 +294,12 @@
         idx: 0,
         init: function(game) {
             this.display = game.config.display;
-            this.sentences = SSGame.pick(game.config.sentences, []);
+            var lang = SSGame.current.getLanguage();
+            if(lang && game.config.sentences[lang]) {
+                this.sentences = SSGame.pick(game.config.sentences[lang], []);
+            } else {
+                this.sentences = SSGame.pick(game.config.sentences['en'], []);
+            }
         },
         reset: function() {
             var game = SSGame.current;
@@ -334,7 +349,7 @@
         },
         phraseClick: function(e) {
             var $this = $(this);
-            if($this.is(':animated')) return;
+            if($this.is(':animated')|| $this.has(':animated').length > 0) return;
             if($this.text().replace(/ /g, '') == '') return;
             if($this.find('.letter').length == 0) return;
             var letter = $(this).text().toLowerCase();

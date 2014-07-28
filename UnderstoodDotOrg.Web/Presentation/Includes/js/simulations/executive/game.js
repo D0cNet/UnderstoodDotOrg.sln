@@ -110,7 +110,7 @@
                 this.playSound('gameOverFail', false);
             }
             SSGameModal.outro(this, false);
-            this.lib.trap.nodes.remove();
+            this.lib.trap.nodes.stop();
             this.lib.balls.reset();
             clearInterval(this.interval);
             this.interval = null;
@@ -128,7 +128,8 @@
             this.lib.balls.init();
             this.timer = new SSGameTimer({
                 container: this.nodes.timer,
-                maxTime: this.config.timeInSeconds
+                maxTime: this.config.timeInSeconds,
+                soundLag: this.config.timerSoundDelay,
             });
             this.reset();
             //Cheater!!

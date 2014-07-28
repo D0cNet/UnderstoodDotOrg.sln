@@ -19,16 +19,27 @@
  * this program; if not, write to the Free Software Foundation, Inc., 51
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
-
 (function(){var e=jQuery,f="jQuery.pause",d=1,b=e.fn.animate,a={};function c(){return new Date().getTime()}e.fn.animate=function(k,h,j,i){var g=e.speed(h,j,i);g.complete=g.old;return this.each(function(){if(!this[f]){this[f]=d++}var l=e.extend({},g);b.apply(e(this),[k,e.extend({},l)]);a[this[f]]={run:true,prop:k,opt:l,start:c(),done:0}})};e.fn.pause=function(){return this.each(function(){if(!this[f]){this[f]=d++}var g=a[this[f]];if(g&&g.run){g.done+=c()-g.start;if(g.done>g.opt.duration){delete a[this[f]]}else{e(this).stop();g.run=false}}})};e.fn.resume=function(){return this.each(function(){if(!this[f]){this[f]=d++}var g=a[this[f]];if(g&&!g.run){g.opt.duration-=g.done;g.done=0;g.run=true;g.start=c();b.apply(e(this),[g.prop,e.extend({},g.opt)])}})}})();
 (function() {
     var channels = {
         channels: [],
+        channelPositions: [],
         height: 0,
+        width: 0,
         bottom: 0,
         bottomRelative: 0,
         getAt: function(idx) {
             return channels.channels[idx];
+        },
+        getAtCoordinate: function(x, y) {
+            var curr;
+            for(var i = 0; i < this.channelPositions.length; i ++) {
+                curr = this.channelPositions[i];
+                if(x >= curr[3] && x <= curr[1] && y >= curr[0] && y <= curr[2]) {
+                    return this.channels[i];
+                }
+            }
+            return null;
         },
         getAvailable: function() {
             var full = [];
@@ -48,11 +59,25 @@
                 var inner = channel.find('.inner_channel');
                 var channelTop = channel.offset().top;
                 var channelHeight = channel.height();
+                var channelWidth = channel.width();
                 var channelBorder = inner.css('border-bottom-width').replace('px', '') * 1;
                 if(!channelBorder) channelBorder = 0;
                 this.bottomRelative = channelHeight - channelBorder;
                 this.bottom = this.bottomRelative + channelTop;
                 this.height = channelHeight;
+                this.width = channelWidth;
+            }
+        },
+        updatePositions: function() {
+            var cOff;
+            for(var i = 0; i < this.channels.length; i ++) {
+                cOff = this.channels[i].offset();
+                this.channelPositions[i] = [
+                    cOff.top,
+                    cOff.left + this.width,
+                    cOff.top + this.height,
+                    cOff.left
+                ];
             }
         },
         init: function() {
@@ -61,17 +86,27 @@
             for(var i = 0; i < game.maxChannels; i ++) {
                 channel = $('<div></div>')
                     .addClass('channel channel' + i)
-                    .data('channel', i)
-                    .click(function(e) {
-                        SSGame.current.playSound('pickcolumn', false);
-                        trap.moveTo($(this).data('channel'));
-                    });
+                    .data('channel', i);
                 inner = $('<div></div>').addClass('inner_channel');
                 channel.append(inner);
                 game.nodes.body.append(channel);
                 channels.channels.push(channel);
             }
             this.updateSize();
+            this.updatePositions();
+            $(window).on('resize', function() {
+                console.log('Document resized');
+                channels.updatePositions();
+            });
+            SSGame.current.board.board.click(function(e) {
+                if(!SSGame.current.timer.paused) {
+                    var channel = channels.getAtCoordinate(e.pageX, e.pageY);
+                    if(channel) {
+                        console.log(channel);
+                        trap.moveTo(channel.data('channel'));
+                    }
+                }
+            });
         },
         showText: function(i, txt, color) {
             var cfg = SSGame.current.config.channelText;
@@ -150,6 +185,7 @@
                     }
                 }
             } else {
+                SSGame.current.playSound('pickcolumn', false);
                 var channel = channels.getAt(channelIdx);
                 channel.addClass('targetted');
                 var game = SSGame.current;
@@ -364,7 +400,7 @@
         animations: {
             success: function(ballNode) {
                 var channel = ballNode.data('channel')
-                channels.showText(channel, '+1', '#00FF00');
+                channels.showText(channel, '+1', '#72D333');
                 trap.fadeTo('green', function() {
                     if(SSGame.current.board.getCurrentBreakpoint()[2] !== 'phone') {
                         var txt = SSGame.current.config.channelText.copy[SSGame.current.getLanguage()].right;
@@ -521,10 +557,10 @@
             score.set(score.val - 1);
         },
         set: function(i) {
-            score.node.text('Score: ' + i);
+            score.node.text(SSGame.current.getText(SSGame.current.config.uiCopy.score) + ': ' + i);
             score.val = i;
             if(i < 0) score.node.css('color', 'red');
-            else if(i > 0) score.node.css('color', 'green');
+            else if(i > 0) score.node.css('color', '#72D333');
             else score.node.css('color', '');
         }
     };
@@ -550,6 +586,9 @@
         reset: function() {
             this.second = null;
             this.tick = null;
+            for(i = 0; i < this.rules.scoring.length; i ++) {
+                this.rules.scoring[i].prompted = false;
+            }
         },
         getAll: function(set) {
             var i, n, retVal = [];

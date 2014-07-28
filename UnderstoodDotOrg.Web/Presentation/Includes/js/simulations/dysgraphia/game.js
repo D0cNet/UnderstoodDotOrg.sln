@@ -4,6 +4,7 @@
             lower: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
             higher: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
         },
+        prompts: null,
         currPromptIdx: null,
         currPrompt: null,
         inputUI: null,
@@ -77,6 +78,8 @@
         run: function(localCfg) {
             if(!this._super(localCfg)) return;
             this.board.board.on('breakpointChange', $.proxy(this.setMaxLength, this));
+            var lang = this.getLanguage();
+            this.prompts = (this.config.prompts[lang]) ? this.config.prompts[lang] : this.config.prompts['en'];
             this.inputUI = new WTFInput(this.nodes.input, {
                 maxLength: this.config.maxLength[this.board.getCurrentBreakpoint()[2]],
                 tweakOutputFunction: $.proxy(function(typed) {
@@ -101,7 +104,7 @@
                 });
             this.success = new SSGameSuccess({
                 node: this.nodes.score,
-                count: this.config.prompts.length,
+                count: this.prompts.length,
                 numbers: true
             });
             this.timer = new SSGameTimer({
@@ -149,7 +152,7 @@
         },
         showNextPrompt: function() {
             this.currPromptIdx ++;
-            var options = this.config.prompts[this.currPromptIdx];
+            var options = this.prompts[this.currPromptIdx];
             if(!options) this.timer.stop();
             else {
                 var text = SSGame.pick(options, []);

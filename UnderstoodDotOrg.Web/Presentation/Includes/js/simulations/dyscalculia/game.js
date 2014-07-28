@@ -4,7 +4,6 @@
         state: null,
         currentItem: null,
         nextItemIndex: 0,
-        coins: [],
         interval: null,
         selectedItem: null,
         timer: null,
@@ -22,17 +21,22 @@
                 key: 'dyscalculia_key',
                 score: 'dyscalculia_score',
                 counter: 'dyscalculia_counter',
+                counterCopy: 'dyscalculia_counter_copy',
                 itemContainer: 'dyscalculia_item',
                 coins: 'dyscalculia_coins',
                 selectedCoins: 'dyscalculia_coins_selected',
                 tally: 'dyscalculia_tally'
             });
-            this.nodes.key.append($('<h2>Key</h2>'));
-            this.nodes.counter.append($('<h2>Coin Tray</h2>'));
+            var copy = this.config.uiCopy;
+            var layout = this.board.getCurrentBreakpoint()[2];
+            this.nodes.key.append($('<h2></h2>').text(this.getText(copy.key)));
+            this.nodes.counterCopy.append($('<h2></h2>').text(this.getText(copy.trayTitle)));
+            this.nodes.counterCopy.append($('<p></p>').text(this.getText(copy.trayDesc[layout])));
             this.nodes.counter.append(this.nodes.tally);
             this.spinner = DyscalculiaSpinner(this.nodes.tally);
             this.nodes.store.append(this.nodes.itemContainer);
             this.nodes.counter.append(this.nodes.selectedCoins);
+            this.nodes.counter.append(this.nodes.counterCopy);
         },
         loadSounds: function() {
             var root = '/Presentation/includes/audio/simulations/dyscalculia/effects/';
@@ -48,46 +52,8 @@
             });
         },
         setupElements: function() {
-            //Build our coin data
-            var gameVals = [], coinVals = [], key, i, val;
-            for(key in this.config.coins) {
-                gameVals.push(this.lib.randomizer.coin(this.config.coins[key]));
-            }
-            for(key in gameVals) {
-                val = gameVals[key];
-                for(i = 0; i < val.count; i ++) {
-                    coinVals.push(val);
-                }
-            }
-            SSGame.shuffle(coinVals);
-            var coinObj, coinDim, coinPos, coinStats = [],
-                ctrStats = { width: this.nodes.coins.width(), height: this.nodes.coins.height() };
-            var coinCfgRoot = SSGame.current.board.getCurrentBreakpoint()[2] == 'phone' ? 'phone' : 'desktop';
-            var coinCfg = SSGame.current.config.coinUI[coinCfgRoot];
-            for(var i=0;i<coinVals.length;++i) {
-                val = coinVals[i];
-                coinObj = this.lib.coin(val.cls, val.value, $.proxy(this.coinClick, this));
-                this.nodes.coins.append(coinObj.body);
-                //Isolate the size of our coin
-                coinDim = { width: coinObj.body.width(), height: coinObj.body.height() };
-                //Figoure out a random position for the coin
-                var layoutGrid = coinCfg.scatterGrid;
-                coinPos = SSGame.getRandomPosition(coinDim, coinStats, ctrStats, coinCfg.scatterAmount, layoutGrid[1], layoutGrid[0], coinCfg.padding);
-                //Actually move the coin
-                coinObj.setPosition(coinPos.left, coinPos.top, coinStats.length + 1);
-                //Track our final stats for the next random placements
-                coinDim.left = coinPos.left;
-                coinDim.top = coinPos.top;
-                coinStats.push(coinDim);
-            }
-            this.coins = gameVals;
-            //Set up the key
-            for(key in this.coins) {
-                val = this.coins[key];
-                c = this.lib.coin(val.cls, val.value, function(){});
-                c.showValue();
-                this.nodes.key.append(c.body);
-            }
+            this.lib.coinTools.init(this.config.coins, $.proxy(this.coinClick, this));
+            this.lib.coinTools.drawKey();
         },
         reset: function() {
             this._super();
@@ -164,7 +130,9 @@
                             this.timer.stop();
                         } else {
                             this.nextItemIndex ++;
-                            this.currentItem = this.lib.item(vals.name, vals.cls, vals.value, $.proxy(this.payClick, this));
+                            this.currentItem = this.lib.item(
+                                this.getText(vals.name), vals.cls, vals.value, $.proxy(this.payClick, this)
+                            );
                             if(vals.showTally) {
                                 this.spinner.setValue(0).enable();
                             } else {
