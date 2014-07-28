@@ -76,7 +76,7 @@
 			creates a readspeaker play button for all elements that have a cass of rs_read_this (only for elements that
 			do not have a play button)
 			*/
-			//ReadSpeaker.q(function(){rspkr.Toggle.createPlayer()});
+			ReadSpeaker.q(function(){rspkr.Toggle.createPlayer()});
 		}).always(function() {
 			inProgress = false;
 		});
