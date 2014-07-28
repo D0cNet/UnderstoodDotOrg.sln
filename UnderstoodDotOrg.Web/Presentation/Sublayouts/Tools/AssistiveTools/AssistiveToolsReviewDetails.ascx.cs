@@ -34,6 +34,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
             frSponsorImage.Item = searchPage.InnerItem.Parent;
             frRandRby.Item = searchPage.InnerItem.Parent;
+            AppleImage.Item = searchPage.InnerItem.Parent;
+            GoogleImage.Item = searchPage.InnerItem.Parent;
 
 			lblAboutOurRatingSystem.Text = DictionaryConstants.AboutOurRatingSystemLabel;
 			lblBestFragment.Text = DictionaryConstants.BestFragment;
