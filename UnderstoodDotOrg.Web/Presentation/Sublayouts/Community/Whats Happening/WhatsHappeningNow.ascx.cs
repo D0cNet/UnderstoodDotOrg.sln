@@ -45,8 +45,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             public class WhatsHappeningSublayouts
             {
                 //public static string MyUpcomingEvents = @"";
-                public static string MyFriends = @"~/Presentation/SubLayouts/Community/Whats Happening/MyFriends.ascx";
-                public static string MyGroups = @"~/Presentation/SubLayouts/Community/Whats Happening/MyGroups.ascx";
+                public static string MyFriends = @"~/Presentation/Sublayouts/Community/Whats Happening/MyFriends.ascx";
+                public static string MyGroups = @"~/Presentation/Sublayouts/Community/Whats Happening/MyGroups.ascx";
                 //public static string RecommendedGroups = @"";
                 public static string RecommendedBlogs = @"~/Presentation/SubLayouts/Community/Whats Happening/RecommendedBlogs.ascx";
                 public static string RecommendedQuestions = @"~/Presentation/SubLayouts/Community/Whats Happening/RecommendedQuestions.ascx";
