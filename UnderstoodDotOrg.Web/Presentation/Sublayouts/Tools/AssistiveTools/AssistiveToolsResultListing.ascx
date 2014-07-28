@@ -57,7 +57,7 @@
         </div>
         <div class="see-rating rs_skip" style="display: none;">
             <div class="popover-trigger-container">
-                <a href="REPLACE" class="popover-link rs_preserve rs_skip" data-popover-placement="bottom"><asp:Label ID="lblSeeRating" runat="server" Text="" /></a>
+                <a href="#" class="popover-link rs_preserve rs_skip" data-popover-placement="bottom"><asp:Label ID="lblSeeRating" runat="server" Text="" /></a>
             </div>
             <!-- BEGIN PARTIAL: popover-see-rating -->
             <div class="search-result row popover-container" style="display: none;">
@@ -127,7 +127,7 @@
         </div>
         <div class="grade-info-wrapper rs_skip">
             <div class="popover-trigger-container">
-                <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip"><asp:Label ID="lblMoreInformation" runat="server" Text="" /></i></a>
+                <a href="#" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip"><asp:Label ID="lblMoreInformation" runat="server" Text="" /></i></a>
             </div>
             <!-- BEGIN PARTIAL: popover-grade-info -->
             <div class="grade-tooltip popover-container" style="display: none;">
@@ -169,7 +169,7 @@
         </div>
         <div class="quality-info-wrapper rs_skip">
             <span class="popover-trigger-container">
-                <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip"><asp:Label ID="lblMoreInformation1" runat="server" Text="" /></i></a></span>
+                <a href="#" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip"><asp:Label ID="lblMoreInformation1" runat="server" Text="" /></i></a></span>
             <!-- BEGIN PARTIAL: popover-quality-info -->
             <div class="quality-tooltip popover-container" style="display: none;">
                 <div class="tooltip-title"><asp:Label ID="lblQualityRating" runat="server" Text="" /></div>
@@ -232,7 +232,7 @@
             </div>
             <div class="learning-info-wrapper rs_skip">
                 <div class="popover-trigger-container">
-                    <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip"><asp:Label ID="lblMoreInformation2" runat="server" Text="" /></i></a>
+                    <a href="#" class="popover-link rs_preserve" data-popover-placement="bottom"><i class="icon-tooltip"><asp:Label ID="lblMoreInformation2" runat="server" Text="" /></i></a>
                 </div>
                 <!-- BEGIN PARTIAL: popover-learning-info -->
                 <div class="learning-tooltip popover-container" style="display: none;">
