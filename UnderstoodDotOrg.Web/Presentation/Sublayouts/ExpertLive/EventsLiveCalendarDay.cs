@@ -10,7 +10,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
     {
 
         public IEnumerable<BaseEventDetailPageItem> CurrentEvents { get; private set; }
-        private DateTime CurrentDate { get; set; }
+        public DateTime CurrentDate { get; set; }
 
         public string AbbreviatedMonth
         {

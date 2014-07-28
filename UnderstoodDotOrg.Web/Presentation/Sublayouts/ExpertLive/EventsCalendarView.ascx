@@ -39,7 +39,9 @@
 </style>
 
 <!-- BEGIN PARTIAL: community/calendar/grid_view -->
-<asp:ListView runat="server" ID="listViewEventsLiveCalendar" GroupItemCount="7" GroupPlaceholderID="weekPlaceholder" ItemPlaceholderID="dayPlaceholder">
+<asp:ListView runat="server" ID="EventsLiveCalendarView" GroupItemCount="7" GroupPlaceholderID="weekPlaceholder" ItemPlaceholderID="dayPlaceholder"
+        ItemDataBound="EventsLiveCalendarView_ItemDataBound">
+
     <LayoutTemplate>
         <div class="container calendar calendar-grid rendered">
             <ul class="row month-header">
@@ -63,7 +65,7 @@
     </GroupTemplate>
 
     <ItemTemplate>
-        <li runat="server" class="day desktop">
+        <li runat="server" id="liDay" class="day desktop">
             <p class="date">
                 <span class="month"><%# Eval("AbbreviatedMonth") %></span>
                 <%# Eval("Day") %>
@@ -75,6 +77,7 @@
     <EmptyItemTemplate>
         <li runat="server" class="adjacent-month day desktop" />
     </EmptyItemTemplate>
+
 </asp:ListView>
 <!-- END PARTIAL: community/calendar/grid_view -->
 

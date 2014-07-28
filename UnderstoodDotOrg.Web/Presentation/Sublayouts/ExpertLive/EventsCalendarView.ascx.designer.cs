@@ -40,12 +40,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
         protected global::System.Web.UI.WebControls.HyperLink hlNextMonth;
         
         /// <summary>
-        /// listViewEventsLiveCalendar control.
+        /// EventsLiveCalendarView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView listViewEventsLiveCalendar;
+        protected global::System.Web.UI.WebControls.ListView EventsLiveCalendarView;
     }
 }

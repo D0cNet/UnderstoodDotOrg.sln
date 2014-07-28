@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
@@ -19,8 +20,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             ParseRequestedCalendarMonth();
             SetCalendarLiterals();
             BuildCalendarData();
-            listViewEventsLiveCalendar.DataSource = EventsLiveCalendarDays;
-            listViewEventsLiveCalendar.DataBind();
+            EventsLiveCalendarView.DataSource = EventsLiveCalendarDays;
+            EventsLiveCalendarView.DataBind();
         }
 
         private void ParseRequestedCalendarMonth()
@@ -107,6 +108,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             }
 
             return myEvents;
+        }
+
+        protected void EventsLiveCalendarView_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListViewItemType.DataItem)
+            {
+                EventsLiveCalendarDay eventDay = e.Item.DataItem as EventsLiveCalendarDay;
+                HtmlGenericControl liDay = (HtmlGenericControl)e.Item.FindControl("liDay");
+
+                liDay.Style.Add("height", "237px");
+
+                if (eventDay.CurrentDate < SelectedMonthYear)
+                {
+                    liDay.Attributes["class"] += " adjacent-month";
+                    liDay.Controls.Clear();
+                }
+            }
         }
 
     }
