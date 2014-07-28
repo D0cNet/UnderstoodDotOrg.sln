@@ -9,9 +9,10 @@
         var uploadForm = $('#uploadAvatar'),
             uploadTrigger = $('#main_0_userAvatar');
         if (uploadForm.length === 1) {
-
+            var avatarButtonText = $("#hfUploadAvatarButtonText").val();
+            var inputProxyText = avatarButtonText ? avatarButtonText : "Upload New Image";
             // create custom element
-            var inputProxy = ('<div class="input-proxy choose">Upload New Image</div>');
+            var inputProxy = ('<div class="input-proxy choose">' + inputProxyText + '</div>');
             uploadForm.append(inputProxy);
             // show on hover
             uploadForm.hover(

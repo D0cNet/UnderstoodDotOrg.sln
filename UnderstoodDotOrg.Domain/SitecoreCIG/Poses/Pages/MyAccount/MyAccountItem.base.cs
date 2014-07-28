@@ -217,6 +217,33 @@ public CustomTextField MyNotifications
 }
 
 
+public CustomTextField MyCommentsHeaderText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["My Comments Header Text"]);
+	}
+}
+
+
+public CustomTextField MyConnectionsHeaderText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["My Connections Header Text"]);
+	}
+}
+
+
+public CustomTextField AvatarUploadButtonText
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Avatar Upload Button Text"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

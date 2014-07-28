@@ -19,11 +19,12 @@
     <div class="row account-top-wrapper">
         <div class="col col-23 offset-1">
             <div class="account-photo skiplink-dashboard">
-                <div style="display:none;" id="uploadAvatar">
-                <asp:FileUpload ID="fuUserAvatar" runat="server" AllowMultiple="false" />
-                <asp:Button ID="btnUpload" OnClick="FileUpload" Text="Upload Avatar" runat="server" />
-                    </div>
-                    <img style="height:150px; width:150px;" alt="150x150 Placeholder" id="userAvatar" runat="server" src="http://placehold.it/150x150" />
+                <div style="display: none;" id="uploadAvatar">
+                    <input type="hidden" id="hfUploadAvatarButtonText" value="<%= MyAccountPage.AvatarUploadButtonText.Rendered %>" /> 
+                    <asp:FileUpload ID="fuUserAvatar" runat="server" AllowMultiple="false" />
+                    <asp:Button ID="btnUpload" OnClick="FileUpload" Text="Upload Avatar" runat="server" />
+                </div>
+                <img style="height: 150px; width: 150px;" alt="150x150 Placeholder" id="userAvatar" runat="server" src="http://placehold.it/150x150" />
             </div>
             <div class="account-info">
                 <h1 class="account-username"><%= CurrentMember.ScreenName %></h1>
