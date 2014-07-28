@@ -46,7 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (Session["done"] != null && (string)Session["done"] == "true")
             {
                 string correctAnswers = Session["CorrectAnswers"].ToString();
-                litTextResults.Text = correctAnswers + " out of " + Questions.Count;
+                litTextResults.Text = correctAnswers + DictionaryConstants.OutOfFragment + Questions.Count;
                 btnTakeQuizAgain.Visible = true;
 
                 ResultsFolder = PageResources.Children.Where(i => i.IsOfType(KnowledgeQuizResultsFolderItem.TemplateId)).FirstOrDefault();

@@ -1060,6 +1060,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Fragments
 
+        public static string OutOfFragment
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Out Of Fragment");
+            }
+        }
+
         public static string ForFragment
         {
             get
