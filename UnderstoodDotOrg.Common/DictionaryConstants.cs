@@ -3171,5 +3171,7 @@ namespace UnderstoodDotOrg.Common
         public static object EnterTopicLabel { get { return Translate.TextByDomain(PosesDictionary, "Enter Topic Label"); } }
 
         public static object EnterTopicWaterMarkLabel { get { return Translate.TextByDomain(PosesDictionary, "Enter Your Topic Watermark"); } }
+
+        public static string YouAreFollowingLabel { get { return Translate.TextByDomain(PosesDictionary, "You Are Following Label"); } }
     }
 }

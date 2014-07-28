@@ -12,6 +12,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Services.CommunityServices;
 using UnderstoodDotOrg.Services.Models.Telligent;
 using UnderstoodDotOrg.Services.TelligentService;
+    using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
 
     public partial class FeaturedQuestions : System.Web.UI.UserControl
     {
@@ -156,6 +157,12 @@ using UnderstoodDotOrg.Services.TelligentService;
             HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
 
             hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(item.Author);
+
+            FollowButton btnFoll = e.FindControlAs<FollowButton>("FollowButton");
+            if(btnFoll!=null)
+            {
+                btnFoll.LoadState(item.ContentId, Constants.TelligentContentType.Weblog,item.ContentTypeId);
+            }
         }
     }
 }

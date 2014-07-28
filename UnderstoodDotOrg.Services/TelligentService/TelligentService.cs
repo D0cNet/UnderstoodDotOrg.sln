@@ -1955,7 +1955,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
         {
             bool success = false;
             string address = String.Empty;
-            if ((!string.IsNullOrEmpty(username) && contentId != null && contentType != null))
+            if ((!string.IsNullOrEmpty(username) && contentId != null))
             {
                 using (WebClient client = new WebClient())
                 {
@@ -1963,6 +1963,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     {
                         client.Headers.Add("Rest-User-Token", TelligentAuth());
                         client.Headers.Add("Rest-Impersonate-User", username);
+                        NameValueCollection nv = new NameValueCollection();
                         if (delete)
                             client.Headers.Add("Rest-Method", "DELETE");
                         switch (contentType)
@@ -1980,12 +1981,15 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             case Constants.TelligentContentType.Page:
                                 break;
                             case Constants.TelligentContentType.Weblog:
+                                address =String.Format( GetApiEndPoint("wikis/{0}/favorites.xml"),contentId);
+                                
                                 break;
                             default:
+                              
                                 break;
                         }
 
-                        NameValueCollection nv = new NameValueCollection();
+                     
                         string xml = Encoding.UTF8.GetString(client.UploadValues(address, nv));
                         XmlDocument document = new XmlDocument();
                         document.LoadXml(xml);
@@ -2010,7 +2014,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             bool success = false;
             var values = new NameValueCollection();
             string address = String.Empty;
-            if ((!string.IsNullOrEmpty(username) && contentId != null && contentType != null && contentTypeId != null))
+            if ((!string.IsNullOrEmpty(username) && contentId != null && contentTypeId != null))
             {
                 using (WebClient client = new WebClient())
                 {
@@ -2019,6 +2023,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         client.Headers.Add("Rest-User-Token", TelligentAuth());
                         client.Headers.Add("Rest-Impersonate-User", username);
 
+                        ///With ContentId and ContentTypeId, you can potentially bookmark any content
+                        ///TODO: Refactor bookmarking to only bookmark.xml with contentId and contentTypeId
                         switch (contentType)
                         {
                             case Constants.TelligentContentType.Blog:
@@ -2039,6 +2045,12 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             case Constants.TelligentContentType.Page:
                                 break;
                             case Constants.TelligentContentType.Weblog:
+                                 address = string.Format(GetApiEndPoint("bookmark.xml"));
+                                values = new NameValueCollection()
+                                {
+                                    { "ContentId", contentId },
+                                    { "ContentTypeId", contentTypeId }
+                                };
                                 break;
                             default:
                                 break;
@@ -2135,7 +2147,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
         {
             bool success = false;
             string address = String.Empty;
-            if ((!string.IsNullOrEmpty(username) && contentId != null && contentType != null))
+            string xpath = String.Empty;
+            if ((!string.IsNullOrEmpty(username) && contentId != null ))
             {
                 using (WebClient client = new WebClient())
                 {
@@ -2148,6 +2161,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         {
                             case Constants.TelligentContentType.Blog:
                                 address = string.Format(GetApiEndPoint("blogs/{0}/favorites.xml"), contentId);
+                                xpath = "Response/BlogFavorite";
                                 break;
                             case Constants.TelligentContentType.BlogPost:
 
@@ -2159,6 +2173,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             case Constants.TelligentContentType.Page:
                                 break;
                             case Constants.TelligentContentType.Weblog:
+                              
                                 break;
                             default:
                                 break;
@@ -2168,7 +2183,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         string xml = Encoding.UTF8.GetString(client.DownloadData(address));
                         XmlDocument document = new XmlDocument();
                         document.LoadXml(xml);
-                        XmlNode childNode = document.SelectSingleNode("Response/BlogFavorite").FirstChild;
+                        XmlNode childNode = document.SelectSingleNode(xpath).FirstChild;
                         if (childNode != null)
                         {
                             success = true;
@@ -2189,7 +2204,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             bool success = false;
             var values = new NameValueCollection();
             string address = String.Empty;
-            if ((!string.IsNullOrEmpty(username) && contentId != null && contentType != null && contentTypeId != null))
+            if ((!string.IsNullOrEmpty(username) && contentId != null &&  contentTypeId != null))
             {
                 using (WebClient client = new WebClient())
                 {
@@ -2213,6 +2228,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             case Constants.TelligentContentType.Page:
                                 break;
                             case Constants.TelligentContentType.Weblog:
+                               address = string.Format(GetApiEndPoint("bookmark.xml?ContentId={0}"), contentId);
                                 break;
                             default:
                                 break;
@@ -2822,11 +2838,13 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         Body = xn["Body"].InnerText,
                         WikiPageId = xn["Id"].InnerText,
                         ContentId = xn["ContentId"].InnerText,
+                        ContentTypeId = xn["ContentTypeId"].InnerText,
                         Author = user["Username"].InnerText,
                         Group = app["HtmlName"].InnerText,
                         CommentCount = xn["CommentCount"].InnerText,
                         AuthorAvatarUrl = user["AvatarUrl"].InnerText,
                         QueryString = queryString,
+                        WikiId = wikiId.ToString(),
                         // TODO: replace this with constant or guid lookup
                         Url = "/en/community and events/q and a/q and a details.aspx" + queryString,
                     };

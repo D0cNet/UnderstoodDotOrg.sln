@@ -17,6 +17,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string WikiId { get; set; }
         public string WikiPageId { get; set; }
         public string ContentId { get; set; }
+        public string ContentTypeId { get; set; }
         public string QueryString { get; set; }
         public string AuthorAvatarUrl { get; set; }
         public string Url { get; set; }

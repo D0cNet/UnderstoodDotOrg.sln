@@ -45,7 +45,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
         {
             var post = (BlogPost)e.Item.DataItem;
             FollowButton follBtn = (FollowButton)e.Item.FindControl("follBtn");
-            follBtn.LoadState(post.ContentId, post.ContentTypeId, UnderstoodDotOrg.Common.Constants.TelligentContentType.BlogPost);
+            follBtn.LoadState(post.ContentId,  UnderstoodDotOrg.Common.Constants.TelligentContentType.BlogPost,post.ContentTypeId);
         }
     }
 }
