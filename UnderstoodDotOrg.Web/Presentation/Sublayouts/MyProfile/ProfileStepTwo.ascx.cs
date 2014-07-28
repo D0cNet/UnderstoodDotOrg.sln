@@ -13,6 +13,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Domain.Users;
 using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Helpers;
+using UnderstoodDotOrg.Domain.Personalization;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -303,8 +304,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             }
 
             // Update personalization
-            Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
-            rps.UpdateChild(savedChild.ChildId);
+            PersonalizationHelper.RefreshAndSavePersonalizedContent(singleChild.ChildId);
         }
 
         protected void SetRegisteringUser()

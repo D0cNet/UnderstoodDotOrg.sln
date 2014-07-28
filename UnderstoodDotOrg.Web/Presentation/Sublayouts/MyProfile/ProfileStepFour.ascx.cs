@@ -18,6 +18,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Services.TelligentService;
+using UnderstoodDotOrg.Domain.Personalization;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 {
@@ -273,9 +274,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
         private void runPersonalization()
         {
-            ////run personalization for this user
-            Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
-            rps.UpdateMember(CurrentMember);
+            PersonalizationHelper.RefreshAndSavePersonalizedContent(CurrentMember);
         }
 
         private void updateMember()

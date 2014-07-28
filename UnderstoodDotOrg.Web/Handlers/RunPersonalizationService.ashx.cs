@@ -155,7 +155,7 @@ namespace UnderstoodDotOrg.Web.Handlers
             PersonalizationHelper.SavePersonalizedContent(member, child, articles);
         }
 
-        public void UpdateChild(Guid childId)
+        private void UpdateChild(Guid childId)
         {
             Child child = null;
             try

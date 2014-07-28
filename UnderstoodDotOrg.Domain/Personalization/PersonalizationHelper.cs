@@ -46,6 +46,47 @@ namespace UnderstoodDotOrg.Domain.Personalization
             return results;
         }
 
+        public static void RefreshAndSavePersonalizedContent(Guid childId)
+        {
+            DateTime now = DateTime.Now;
+
+            Child child = null;
+            MembershipManager mm = new MembershipManager();
+            try
+            {
+                child = mm.GetChild(childId);
+            }
+            catch { }
+
+            if (child.Members.Any())
+            {
+                foreach (Member m in child.Members)
+                {
+                    RefreshAndSavePersonalizedContent(m, child);
+                }
+            }
+        }
+
+        public static void RefreshAndSavePersonalizedContent(Member member)
+        {
+            DateTime now = DateTime.Now;
+            foreach (Child child in member.Children)
+            {
+                List<UnderstoodDotOrg.Domain.Search.Article> articles = Domain.Search.SearchHelper.GetArticles(member, child, now);
+
+                PersonalizationHelper.SavePersonalizedContent(member, child, articles);
+            }
+        }
+
+        public static void RefreshAndSavePersonalizedContent(Member member, Child child)
+        {
+            DateTime now = DateTime.Now;
+
+            List<UnderstoodDotOrg.Domain.Search.Article> articles = Domain.Search.SearchHelper.GetArticles(member, child, now);
+
+            PersonalizationHelper.SavePersonalizedContent(member, child, articles);
+        }
+
         public static void SavePersonalizedContent(Member member, Child child, List<Article> articles)
         {
             using (var pc = new PersonalizationContext(System.Configuration.ConfigurationManager.ConnectionStrings[Constants.ConnectionStringMembership].ConnectionString))

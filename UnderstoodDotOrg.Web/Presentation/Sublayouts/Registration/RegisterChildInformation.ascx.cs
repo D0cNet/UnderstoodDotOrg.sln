@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.Personalization;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
 using UnderstoodDotOrg.Framework.UI;
@@ -78,9 +79,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Registration
                 MembershipManager membershipManager = new MembershipManager();
 
                 child = membershipManager.AddChild(child, this.CurrentMember.MemberId);
-                
-                Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
-                rps.UpdateChild(child.ChildId);
+
+                PersonalizationHelper.RefreshAndSavePersonalizedContent(child.ChildId);
 
                 //should we update the current member?
             }

@@ -96,7 +96,7 @@ namespace UnderstoodDotOrg.Domain.Search
             return (a => a.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId)));
         }
 
-        private static Expression<Func<Article, bool>> GetTimelyPredicate(DateTime date)
+        private static Expression<Func<Article, bool>> GetTimelyPredicate(DateTime date, bool skipPathCheck = false)
         {
             // NOTE: Search object must be on left side of comparison ie: 
             // DateTime.MinValue <= a.TimelyEnd will not be evaluated properly by Sitecore LINQ
@@ -119,11 +119,21 @@ namespace UnderstoodDotOrg.Domain.Search
                 && a.TimelyEnd >= comparisonDate);
 
             // Start and end dates
-            // Sitecore bug requires true statement first if you have a sequence of AND negation checks
-            pred = pred
-                .Or(a => a.Paths.Contains(Sitecore.ItemIDs.RootID) && 
-                    a.TimelyStart != DateTime.MinValue && a.TimelyEnd != DateTime.MinValue
-                && a.TimelyStart <= comparisonDate && a.TimelyEnd >= comparisonDate);
+            if (skipPathCheck)
+            {
+                // Paths are null after result set is filled
+                pred = pred
+                    .Or(a => a.TimelyStart != DateTime.MinValue && a.TimelyEnd != DateTime.MinValue
+                    && a.TimelyStart <= comparisonDate && a.TimelyEnd >= comparisonDate);
+            }
+            else
+            {
+                // Sitecore bug requires true statement first if you have a sequence of AND negation checks
+                pred = pred
+                    .Or(a => a.Paths.Contains(Sitecore.ItemIDs.RootID) &&
+                        a.TimelyStart != DateTime.MinValue && a.TimelyEnd != DateTime.MinValue
+                    && a.TimelyStart <= comparisonDate && a.TimelyEnd >= comparisonDate);
+            }
 
             return pred;
         }
@@ -976,7 +986,7 @@ namespace UnderstoodDotOrg.Domain.Search
                 }
 
                 // Shift other articles that may have timely content during bucket filling
-                List<Article> otherTimely = toProcess.AsQueryable().Where(GetTimelyPredicate(date)).ToList();
+                List<Article> otherTimely = toProcess.AsQueryable().Where(GetTimelyPredicate(date, true)).ToList();
                 if (otherTimely.Any())
                 {
                     finalList.AddRange(otherTimely);
