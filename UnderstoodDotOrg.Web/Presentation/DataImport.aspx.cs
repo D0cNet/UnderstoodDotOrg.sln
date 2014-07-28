@@ -202,6 +202,8 @@ namespace UnderstoodDotOrg.Web.Presentation
                             {
                                 newItem.Issues += t.Attributes["name"].InnerText + ",";
                             }
+
+                            newItem.Category = x["csm:review"]["csm:special_needs"].GetAttribute("assistive");
                         }
                     }
                 }
