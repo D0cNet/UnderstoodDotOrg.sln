@@ -40,7 +40,7 @@
 
 <!-- BEGIN PARTIAL: community/calendar/grid_view -->
 <asp:ListView runat="server" ID="EventsLiveCalendarView" GroupItemCount="7" GroupPlaceholderID="weekPlaceholder" ItemPlaceholderID="dayPlaceholder"
-        ItemDataBound="EventsLiveCalendarView_ItemDataBound">
+        OnItemDataBound="EventsLiveCalendarView_ItemDataBound">
 
     <LayoutTemplate>
         <div class="container calendar calendar-grid rendered">
@@ -83,44 +83,47 @@
                 <ItemTemplate>
                     <li class="event" runat="server" id="eventItem">
                         <div class="event-content">
-                            <p class="event-header rs_skip"><%# Eval("EventHeading") %></p>
-                            <a href="#" class="event-name truncated">Ea Rem Est Unde...</a>
-                            <a href="#" class="event-name rs_skip">Corrupti Dolor Quae Illo Veritatis Rerum</a>
+                            <p visible="false" runat="server" id="paragraphChatHeading" class="event-header rs_skip"><%# Eval("EventHeading.Rendered") %></p>
+                            <%--<a href="#" class="event-name truncated">Ea Rem Est Unde...</a>--%>
+                            <asp:HyperLink runat="server" ID="linkEventName" NavigateUrl="#" CssClass="event-name rs_skip" />
                             <p class="event-time"><asp:Literal runat="server" ID="literalEventUTCTime" /></p>
-                            <a href="REPLACE" class="button live-now">Live</a>
-                            <a class="button more-info-toggle rs_skip">More Info</a>
-                            <a class="button more-info-toggle close rs_skip">Close</a>
+
+                            <asp:PlaceHolder runat="server" ID="placeholderLive" Visible="false">
+                                <asp:HyperLink runat="server" ID="linkToLive" CssClass="button live-now">Live</asp:HyperLink>
+                                <asp:HyperLink runat="server" ID="linkMoreInfo" CssClass="button more-info-toggle rs_skip">More Info</asp:HyperLink>
+                                <asp:HyperLink runat="server" ID="linkClose" CssClass="button more-info-toggle close rs_skip">Close</asp:HyperLink>
+                            </asp:PlaceHolder>
                         </div>
                         
                         <!-- BEGIN PARTIAL: community/calendar/event_detail_card -->
                         <div class="event-card rs_skip" style="display: none;">
                             <div class="event-host-info">
                                 <div class="event-card-image">
-                                    <a href="REPLACE">
-                                        <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
-                                        <div class="image-label"><%# Eval("Expert.Rendered") %></div>
-                                    </a>
+                                    <asp:HyperLink runat="server" ID="linkExpert">
+                                        <asp:Image runat="server" ID="imgExpert" />
+                                        <div class="image-label">Expert</div>
+                                    </asp:HyperLink>
                                 </div>
                                 <!-- end .event-card-image -->
                                 <div class="event-card-host-description">
-                                    <h2><%# Eval("ContentPage.PageTitle.Rendered") %></h2>
-                                    <p class="event-card-description"><%# Eval("ContentPage.BodyContent.Rendered") %></p>
+                                    <h2><asp:Literal runat="server" ID="literalExpertName" /></h2>
+                                    <p class="event-card-description"><asp:Literal runat="server" ID="literalExpertTitles" /></p>
                                 </div>
                             </div>
                             <!-- end .event-host-info -->
                             <div class="event-actions">
-                                <p class="event-card-header"><%# Eval("EventHeading") %></p>
+                                <p class="event-card-header"><%# Eval("EventHeading.Rendered") %></p>
                                 <p class="event-card-datetime">
-                                    <a href="REPLACE"><asp:Literal runat="server" ID="literalEventTimeDate" /></a>
+                                    <asp:HyperLink runat="server" ID="linkEventDate"><asp:Literal runat="server" ID="literalEventTimeDate" /></asp:HyperLink>
                                 </p>
                                 <p>
-                                  <a class="event-rsvp" href="<%# Eval("RSVPforEventLink") %>">RSVP for this event</a>
+                                    <asp:HyperLink runat="server" ID="linkRSVP">RSVP for this event</asp:HyperLink>
                                 </p>
                                 <p>
-                                    <a class="add-to-calendar" href="<%# Eval("AddToCalendarLink") %>">Add to my calendar</a>
+                                    <asp:HyperLink runat="server" ID="linkAddToCalendar">Add to my calendar</asp:HyperLink>
                                 </p>
                                 <p>
-                                    <a class="event-details-link" href="REPLACE">Event details</a>
+                                    <asp:HyperLink runat="server" ID="linkEventDetails">Event details</asp:HyperLink>
                                 </p>
                             </div>
                         </div>

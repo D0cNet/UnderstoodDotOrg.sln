@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.Text;
+using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 {
@@ -121,7 +123,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 HtmlGenericControl liDay = (HtmlGenericControl)e.Item.FindControl("liDay");
 
                 liDay.Style.Add("height", "237px");
-                liDay.Attributes["class"] += " " + eventDay.CurrentDate.DayOfWeek.ToString();
+                liDay.Attributes["class"] += " " + eventDay.CurrentDate.DayOfWeek.ToString().ToLower();
 
                 if (eventDay.CurrentDate < SelectedMonthYear)
                 {
@@ -148,11 +150,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             PlaceHolder placeholderEventDayContent = (PlaceHolder)e.Item.FindControl("placeholderEventDayContent");
             Repeater RepeaterSingleDayEvents = (Repeater)e.Item.FindControl("RepeaterSingleDayEvents");
 
-            if (eventDay.CurrentEvents == null || eventDay.CurrentEvents.Count == 0)
+            if (eventDay.CurrentDate < SelectedMonthYear)
             {
                 placeholderEventDayContent.Visible = false;
             }
-            else
+            
+            if (eventDay.CurrentEvents != null && eventDay.CurrentEvents.Count > 0)
             {
                 if (eventDay.CurrentEvents.Count == 1)
                 {
@@ -174,18 +177,69 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
         {
             if (e.Item.ItemType == ListItemType.Item)
             {
-                BaseEventDetailPageItem theEvent = (BaseEventDetailPageItem)e.Item.DataItem;
+                BaseEventDetailPageItem eventToBind = (BaseEventDetailPageItem)e.Item.DataItem;
                 Literal literalEventTimeDate = (Literal)e.Item.FindControl("literalEventTimeDate");
                 Literal literalEventUTCTime = (Literal)e.Item.FindControl("literalEventUTCTime");
+                HyperLink linkEventDetails = (HyperLink)e.Item.FindControl("linkEventDetails");
+                HyperLink linkEventDate = (HyperLink)e.Item.FindControl("linkEventDate");
+                HyperLink linkRSVP = (HyperLink)e.Item.FindControl("linkRSVP");
+                HyperLink linkAddToCalendar = (HyperLink)e.Item.FindControl("linkAddToCalendar");
+                Literal literalExpertName = (Literal)e.Item.FindControl("literalExpertName");
+                Literal literalExpertTitles = (Literal)e.Item.FindControl("literalExpertTitles");
+                Image imgExpert = (Image)e.Item.FindControl("imgExpert");
+                HyperLink linkExpert = (HyperLink)e.Item.FindControl("linkExpert");
 
                 StringBuilder builderTimeDate = new StringBuilder();
-                builderTimeDate.AppendLine(theEvent.GetFormattedEventStartTime());
-                builderTimeDate.Append(theEvent.GetFormattedEventStartDate());
+                builderTimeDate.AppendLine(eventToBind.GetFormattedEventStartTime());
+                builderTimeDate.Append(eventToBind.GetFormattedEventStartDate());
                 literalEventTimeDate.Text = builderTimeDate.ToString();
 
-                literalEventUTCTime.Text = theEvent.GetEventStartDateUtc().Value.ToString();
+                literalEventUTCTime.Text = eventToBind.EventStartDate.DateTime.ToUniversalTime().ToString("htt") + " UTC";
+                linkEventDetails.NavigateUrl = linkEventDate.NavigateUrl = eventToBind.GetUrl();
+                linkRSVP.NavigateUrl = eventToBind.RSVPforEventLink.Rendered;
+                linkAddToCalendar.NavigateUrl = eventToBind.AddToCalendarLink.Rendered;
 
+                ExpertDetailPageItem expertToBind = (ExpertDetailPageItem)eventToBind.Expert.Item;
+                literalExpertName.Text = expertToBind.DisplayName;
+                StringBuilder builderExpertCaption = new StringBuilder();
+                builderExpertCaption.Append(expertToBind.ExpertHeading.Rendered);
+                builderExpertCaption.AppendLine(",<br />");
+                builderExpertCaption.Append(expertToBind.ExpertSubheading.Rendered);
+                literalExpertTitles.Text = builderExpertCaption.ToString();
+
+                imgExpert.AlternateText = expertToBind.DisplayName;
+                imgExpert.ImageUrl = expertToBind.ExpertImage.MediaUrl;
+                linkExpert.NavigateUrl = expertToBind.GetUrl();
+
+                if (expertToBind.GetExpertType().ToLower() == "chat")
+                {
+                    BindItemForChatEvent(e);
+                }
+                else
+                {
+                    BindItemForWebinarEvent(e);
+                }
             }
+        }
+
+        private void BindItemForChatEvent(RepeaterItemEventArgs e)
+        {
+            BaseEventDetailPageItem eventToBind = (BaseEventDetailPageItem)e.Item.DataItem;
+            HtmlGenericControl paragraphChatHeading = (HtmlGenericControl)e.Item.FindControl("paragraphChatHeading");
+            HyperLink linkEventName = (HyperLink)e.Item.FindControl("linkEventName");
+            ExpertDetailPageItem expertToBind = (ExpertDetailPageItem)eventToBind.Expert.Item;
+
+            paragraphChatHeading.Visible = true;
+            paragraphChatHeading.InnerText = eventToBind.EventHeading.Rendered;
+            linkEventName.Text = "Live Chat with " + expertToBind.DisplayName;
+        }
+
+        private void BindItemForWebinarEvent(RepeaterItemEventArgs e)
+        {
+            BaseEventDetailPageItem eventToBind = (BaseEventDetailPageItem)e.Item.DataItem;
+            HyperLink linkEventName = (HyperLink)e.Item.FindControl("linkEventName");
+
+            linkEventName.Text = eventToBind.EventHeading.Rendered;
         }
 
     }
