@@ -4,12 +4,12 @@
 
 .hero-carousel {
   margin: 0;
-  
+
   @include bp($bp-large){
     position: relative;
       &:before {
         content: '';
-        display: block;      
+        display: block;
         position: absolute;
         left: 0;
         bottom: 0;
@@ -181,18 +181,18 @@
   }
   .slide {
     background-position: 50% 0;
-    background-size: 600px 200px;
+    background-size: 100%;
     background-repeat: no-repeat;
     height: 200px;
     @include bp($bp-small-plus){
       height: 400px;
-      background-size: auto;
+      background-size: 100%;
     }
     .text {
       font-weight: bold;
       max-width: 125px;
 
-      @include rem(font-size, 18px);
+      @include rem(font-size, 15px);
         line-height: 1.111;
         color: #298fc2;
         padding: 19px 0 0 27px;

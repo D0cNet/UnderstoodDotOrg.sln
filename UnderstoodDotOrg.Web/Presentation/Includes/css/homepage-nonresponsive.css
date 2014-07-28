@@ -144,7 +144,7 @@
 }
 /* line 70, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .col-12 p {
-  max-width: 247px%;
+  max-width: 247px;
 }
 /* line 75, ../css.source/modules/homepage/_guide-me.scss */
 .guide-me .guide-me-inner .button {
@@ -686,18 +686,18 @@
 /* line 182, ../css.source/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide {
   background-position: 50% 0;
-  background-size: 600px 200px;
+  background-size: 100%;
   background-repeat: no-repeat;
   height: 200px;
   height: 400px;
-  background-size: auto;
+  background-size: 100%;
 }
 /* line 191, ../css.source/modules/carousel/_hero-carousel.scss */
 #hero-carousel-wrapper .slide .text {
   font-weight: bold;
   max-width: 125px;
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.111;
   color: #298fc2;
   padding: 19px 0 0 27px;
