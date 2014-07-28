@@ -24,6 +24,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             {
                 lvQuestionCards.DataSource = SearchHelper.GetRecommendedContent(this.CurrentMember, QandADetailsItem.TemplateId)
                                 .Where(a => a.GetItem() != null)
+                                .Take(6)
                                 .Select(a => new QandADetailsItem(a.GetItem()))
                                 .ToList();
                 lvQuestionCards.DataBind();

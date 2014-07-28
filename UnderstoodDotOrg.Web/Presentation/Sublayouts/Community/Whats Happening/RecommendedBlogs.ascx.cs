@@ -25,6 +25,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             {
                 lvBlogCards.DataSource = SearchHelper.GetRecommendedContent(this.CurrentMember, BlogsPostPageItem.TemplateId)
                             .Where(a => a.GetItem() != null)
+                            .Take(6)
                             .Select(a => new BlogsPostPageItem(a.GetItem()))
                             .ToList();
                 lvBlogCards.DataBind();
