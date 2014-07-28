@@ -4,8 +4,8 @@
 
 <%@ OutputCache Location="None" VaryByParam="none" %>
 <!DOCTYPE html>
-<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="<%= Sitecore.Context.Language.Name %>"><![endif]-->
-<!--[if gte IE 9]><!--><html class="no-js" lang="<%= Sitecore.Context.Language.Name %>"><!--<![endif]-->
+<!--[if lte IE 8]><html class="no-js nonresponsive old-ie" lang="<%= ContextLanguage.InnerItem["Iso"] %>"><![endif]-->
+<!--[if gte IE 9]><!--><html class="no-js" lang="<%= ContextLanguage.InnerItem["Iso"] %>"><!--<![endif]-->
 
 <!-- BEGIN PARTIAL: head -->
 <head runat="server">

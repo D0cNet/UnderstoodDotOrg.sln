@@ -112,7 +112,7 @@
         simConfig : {
             // the language of the sim
             // language: 'en' or 'es'
-            language: '<%= ContextLanuguage.InnerItem["Iso"] %>',
+            language: '<%= ContextLanguage.InnerItem["Iso"] %>',
             // the mode of the presentation
             // presentationMode: 'normal' or 'standalone'
             presentationMode: '<%= IsPersonalized ? "normal" : "standalone" %>'

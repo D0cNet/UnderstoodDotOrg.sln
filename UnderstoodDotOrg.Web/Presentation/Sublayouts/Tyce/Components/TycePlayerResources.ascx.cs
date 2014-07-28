@@ -44,7 +44,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
         protected bool IsStandaloneVideo { get; set; }
 
         private LanguageItem _contextLanguage;
-        protected LanguageItem ContextLanuguage
+        protected LanguageItem ContextLanguage
         {
             get
             {

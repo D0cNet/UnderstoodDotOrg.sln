@@ -14,17 +14,35 @@ using System.Text;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using System.Web.UI.HtmlControls;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
+using Sitecore.Data.Managers;
 namespace UnderstoodDotOrg.Web.Presentation.Layouts
 {
     public partial class Browser : System.Web.UI.Page
     {
         private BasePageNEWItem _pageItem;
+        private LanguageItem _contextLanguage;
         
         protected BasePageNEWItem PageItem
         {
             get
             {
                 return (_pageItem = _pageItem ?? Sitecore.Context.Item);
+            }
+        }
+        protected LanguageItem ContextLanguage
+        {
+            get
+            {
+                if (_contextLanguage == null) 
+                {
+                    var langId = LanguageManager.GetLanguageItemId(Sitecore.Context.Language, Sitecore.Context.Database);
+                    if (langId != (Sitecore.Data.ID)null)
+                    {
+                        _contextLanguage = Sitecore.Context.Database.GetItem(langId);
+                    }
+                }
+                return _contextLanguage;
             }
         }
 
