@@ -131,7 +131,8 @@ jQuery(document).ready(function(){
      * @return {object} this instance
      */
     this.initialize = function() {
-      var $searchResultButton = $('.result-body'),
+      var $searchResultsWrapper = $('.results-wrapper'),
+      		$searchResultButton = $('.result-body'),
           $searchResultItems = $searchResultButton.find('.hover-link-wrapper a'),
           $htmlEl = $('html');
 
@@ -142,15 +143,14 @@ jQuery(document).ready(function(){
       $(window).resize(function() { self.resizeHandler(); });
 
       // button hovers
-      $searchResultButton.on({
-        'mouseenter' : function(){
+      $searchResultsWrapper.on('mouseenter', '.result-body', function(){
           $(this).find('.result-hover').show();
-        },
-        'mouseleave' : function(){
+          console.log($(this));
+	    });
+      $searchResultsWrapper.on('mouseleave', '.result-body', function(){
           $(this).find('.result-hover').hide();
-        }
+          console.log($(this));
       });
- 
 
       new U.keyboard_access ({
         focusElements: $searchResultButton,
