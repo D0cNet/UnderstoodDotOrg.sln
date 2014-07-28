@@ -27,18 +27,19 @@
 
                 litGroupName.Text = group.Name;
                 litGroupDesc.Text = group["Body Content"];
+
+
+                if (!query.IsNullOrEmpty())
+                {
+                    var dataSource = TelligentService.GroupSearch(query, Constants.TelligentSearchParams.Group, groupId, group);
+                    rptResults.DataSource = dataSource;
+                    rptResults.DataBind();
+
+                    litSearchItem.Text = query;
+                    litResultCount.Text = dataSource.Count.ToString();
+                }
             }
             else { litGroupName.Text = "Group Search"; }
-
-            if (!query.IsNullOrEmpty())
-            {
-                var dataSource = TelligentService.GroupSearch(query, Constants.TelligentSearchParams.Group, groupId);
-                rptResults.DataSource = dataSource;
-                rptResults.DataBind();
-
-                litSearchItem.Text = query;
-                litResultCount.Text = dataSource.Count.ToString();
-            }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

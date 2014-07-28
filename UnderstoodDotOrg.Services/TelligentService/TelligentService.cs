@@ -2677,7 +2677,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return searchResultsList;
         }
 
-        public static List<SearchResult> GroupSearch(string q, string param, string groupId)
+        public static List<SearchResult> GroupSearch(string q, string param, string groupId, GroupItem groupItem)
         {
             // TODO: store guids in constants file
             var searchResultsList = new List<SearchResult>();
@@ -2726,7 +2726,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         {
                             body = "&ldquo;" + body + "&rdquo;";
                         }
-
+                        if (groupName.Trim().ToLower().Equals(groupItem.Name.Trim().ToLower())){
                         var searchResult = new SearchResult()
                         {
                             Id = id,
@@ -2742,6 +2742,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             GroupName = groupName,
                         };
                         searchResultsList.Add(searchResult);
+                        }
                     }
                 }
             }

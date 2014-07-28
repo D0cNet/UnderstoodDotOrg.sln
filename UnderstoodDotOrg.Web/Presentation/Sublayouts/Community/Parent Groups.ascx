@@ -85,13 +85,4 @@
     <!-- END PARTIAL: community/show_more -->
     <!-- .show-more -->
 </div>
-<asp:UpdateProgress id="updateProgress" runat="server">
-    <ProgressTemplate>
-        <div style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #000000; opacity: 0.8;">
-            <span style="border-width: 0px; position: fixed; padding: 50px; background-color: #FFFFFF; font-size: 36px; left: 40%; top: 40%;">Loading...</span>
-        </div>
-    </ProgressTemplate>
-</asp:UpdateProgress>
-
-
 <sc:Sublayout ID="Sublayout1" runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />

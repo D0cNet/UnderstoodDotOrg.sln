@@ -192,9 +192,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string query = TextHelper.RemoveHTML(txtSearch.Text);
-            Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")) + "?q=" + query + "&a=" + Constants.TelligentSearchParams.Group);
+            var qs = HttpUtility.ParseQueryString(Request.QueryString.ToString());
+            qs.Set("q", txtSearch.Text);
+            qs.Set("g", Sitecore.Context.Item.ParentID.ToString());
+            Response.Redirect(String.Format("{0}?{1}", LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{97CEFC40-892F-4E44-B94F-26522EB1F7B3}")), qs));
         }
+
         protected void ShowMore()
         {
             //List<MemberCardModel> m = rptMemberCards.DataSource as List<MemberCardModel>;
