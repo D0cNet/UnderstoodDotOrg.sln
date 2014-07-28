@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using System.Text;
 using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
@@ -20,6 +21,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             ParseRequestedCalendarMonth();
             SetCalendarLiterals();
             BuildCalendarData();
+            EventsLiveCalendarView.ItemDataBound += EventsLiveCalendarView_ItemDataBound;
             EventsLiveCalendarView.DataSource = EventsLiveCalendarDays;
             EventsLiveCalendarView.DataBind();
         }
@@ -59,8 +61,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             List<object> exactMonth = new List<object>(thisMonthLastDay.Day);
             int numberPreviousDays = (DayOfWeek.Sunday - thisMonthFirstDay.DayOfWeek);
 
-            var eventResultsCurrentMonth = SearchHelper.GetEventsByMonthAndYear(SelectedMonthYear.Month, SelectedMonthYear.Year);
-            var eventsByDay = GetFilledDictionaryFromEvents(eventResultsCurrentMonth);
+            var queryableCurrentMonthEvents = SearchHelper.GetEventsByMonthAndYear(SelectedMonthYear.Month, SelectedMonthYear.Year);
+            var listCurrentMonthEvents = new List<BaseEventDetailPageItem>(queryableCurrentMonthEvents);
+            var eventsByDay = GetFilledDictionaryFromEvents(listCurrentMonthEvents);
 
             EventsLiveCalendarDays = new List<EventsLiveCalendarDay>();
             DateTime currentDate = thisMonthFirstDay.AddDays(numberPreviousDays);
@@ -114,16 +117,74 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
         {
             if (e.Item.ItemType == ListViewItemType.DataItem)
             {
-                EventsLiveCalendarDay eventDay = e.Item.DataItem as EventsLiveCalendarDay;
+                EventsLiveCalendarDay eventDay = (EventsLiveCalendarDay)e.Item.DataItem;
                 HtmlGenericControl liDay = (HtmlGenericControl)e.Item.FindControl("liDay");
 
                 liDay.Style.Add("height", "237px");
+                liDay.Attributes["class"] += " " + eventDay.CurrentDate.DayOfWeek.ToString();
 
                 if (eventDay.CurrentDate < SelectedMonthYear)
                 {
-                    liDay.Attributes["class"] += " adjacent-month";
-                    liDay.Controls.Clear();
+                    BindAdjacentMonthItem(e, liDay);
                 }
+                else
+                {
+                    BindCurrentMonthItem(e, liDay);
+                }
+
+            }
+        }
+
+        private void BindAdjacentMonthItem(ListViewItemEventArgs e, HtmlGenericControl liDay)
+        {
+            PlaceHolder placeholderEventDayContent = (PlaceHolder)e.Item.FindControl("placeholderEventDayContent");
+            placeholderEventDayContent.Visible = false;
+            liDay.Attributes["class"] += " adjacent-month";
+        }
+
+        private void BindCurrentMonthItem(ListViewItemEventArgs e, HtmlGenericControl liDay)
+        {
+            EventsLiveCalendarDay eventDay = (EventsLiveCalendarDay)e.Item.DataItem;
+            PlaceHolder placeholderEventDayContent = (PlaceHolder)e.Item.FindControl("placeholderEventDayContent");
+            Repeater RepeaterSingleDayEvents = (Repeater)e.Item.FindControl("RepeaterSingleDayEvents");
+
+            if (eventDay.CurrentEvents == null || eventDay.CurrentEvents.Count == 0)
+            {
+                placeholderEventDayContent.Visible = false;
+            }
+            else
+            {
+                if (eventDay.CurrentEvents.Count == 1)
+                {
+                    liDay.Attributes["class"] += " single";
+                }
+                else if (eventDay.CurrentEvents.Count > 1)
+                {
+                    liDay.Attributes["class"] += " multiple-events";
+                }
+
+                RepeaterSingleDayEvents.ItemDataBound += RepeaterSingleDayEvents_ItemDataBound;
+                RepeaterSingleDayEvents.DataSource = eventDay.CurrentEvents;
+                RepeaterSingleDayEvents.DataBind();
+            }
+
+        }
+
+        protected void RepeaterSingleDayEvents_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item)
+            {
+                BaseEventDetailPageItem theEvent = (BaseEventDetailPageItem)e.Item.DataItem;
+                Literal literalEventTimeDate = (Literal)e.Item.FindControl("literalEventTimeDate");
+                Literal literalEventUTCTime = (Literal)e.Item.FindControl("literalEventUTCTime");
+
+                StringBuilder builderTimeDate = new StringBuilder();
+                builderTimeDate.AppendLine(theEvent.GetFormattedEventStartTime());
+                builderTimeDate.Append(theEvent.GetFormattedEventStartDate());
+                literalEventTimeDate.Text = builderTimeDate.ToString();
+
+                literalEventUTCTime.Text = theEvent.GetEventStartDateUtc().Value.ToString();
+
             }
         }
 
