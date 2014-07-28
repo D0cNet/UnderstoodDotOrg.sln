@@ -394,6 +394,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AdvocacyArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AdvocacyArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ArticleCalloutItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ArticleEntryMessageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\ArticleLandingPageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizArticleItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizArticlePage1Item.base.cs" />
@@ -402,6 +403,7 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizArticlePage2Item.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizArticlePageEndItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizArticlePageEndItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AssessmentQuizModalItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AudioArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\AudioArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\BaseforQuiz\QuizAnswersItem.base.cs" />
