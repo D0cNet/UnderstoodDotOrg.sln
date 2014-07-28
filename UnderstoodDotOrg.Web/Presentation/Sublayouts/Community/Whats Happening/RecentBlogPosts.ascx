@@ -21,7 +21,7 @@
                 <!-- END PARTIAL: community/carousel_arrows -->
             </div>
             <div class="row blog-cards">
-                <asp:Repeater ID="BlogsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.BlogPost" runat="server">
+                <asp:Repeater ID="BlogsRepeater" ItemType="UnderstoodDotOrg.Services.Models.Telligent.BlogPost" runat="server">
                     <ItemTemplate>
                         <!-- BEGIN PARTIAL: community/blog_card -->
                         <div class="col col-12 blog-card">
