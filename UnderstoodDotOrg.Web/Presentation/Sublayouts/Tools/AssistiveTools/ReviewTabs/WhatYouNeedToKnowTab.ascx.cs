@@ -20,6 +20,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            AssistiveToolsSearchResultsPageItem searchPage = MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage();
+
+            frFooterContent.Item = searchPage;
+
             var screenshots = Model.Screenshots.ListItems
                 .Where(i => i != null && i.Paths.IsMediaItem)
                 .Select(i => (MediaItem)i);

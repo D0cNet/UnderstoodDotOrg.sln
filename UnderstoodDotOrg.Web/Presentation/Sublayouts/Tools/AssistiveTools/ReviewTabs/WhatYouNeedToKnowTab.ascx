@@ -86,11 +86,7 @@
             </section>
             <footer>
                 <p>
-                    Curabitur porta
-                                    <a href="REPLACE">nunc egestas</a>
-                    pulvinar elementum. Nam sollicitudin nibh pharetra vehicula rhoncus.
-                                    Sed tristique neque a metus molestie, eget suscipit massa consequat.
-                                    <a href="REPLACE">Morbi fringilla rhoncu</a>.
+                    <sc:FieldRenderer ID="frFooterContent" runat="server" FieldName="CSM Item Footer Content" />
                 </p>
             </footer>
 
