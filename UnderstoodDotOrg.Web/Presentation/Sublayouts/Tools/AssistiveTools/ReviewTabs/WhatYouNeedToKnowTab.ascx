@@ -29,9 +29,7 @@
                     <div class="screenshot-thumbs-wrapper">
                         <asp:Repeater ID="rptrScreenshots" runat="server">
                             <ItemTemplate>
-                                <a href="REPLACE">
-                                    <img alt="<%# Eval("Alt") %>" src="<%# Eval("Url") %>" />
-                                </a>
+                                <img alt="<%# Eval("Alt") %>" src="<%# Eval("Url") %>" />
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
@@ -110,3 +108,8 @@
     </div>
     <!-- end .row -->
 </div>
+<style>
+    .screenshot-thumbs-wrapper img{
+        cursor: pointer;
+    }
+</style>
