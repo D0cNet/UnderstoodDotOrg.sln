@@ -39,7 +39,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
 
                 if (!String.IsNullOrEmpty(search))
                 {
-                    questions = questions.Where(x => x.Title.ToLower().Contains(search.ToLower())).ToList();
+                    questions = questions.Where(x => Server.HtmlDecode(x.Title).ToLower().Contains(search.ToLower())).ToList();
                 }
 
                 questionsRepeater.DataSource = questions;
