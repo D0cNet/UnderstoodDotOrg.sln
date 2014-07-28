@@ -4,7 +4,7 @@
     new U.decisionQuiz();
 
       var $hfAnswerIndex = $(".hfAnswerIndex");
-      var $nextQuestion = $(".next-question");
+      var $nextQuestion = $(".next-question"); 
 
       var $answerWrapper = $(".answer-wrapper");
       var $answerControl = $answerWrapper.find("button, input[type='radio']");
