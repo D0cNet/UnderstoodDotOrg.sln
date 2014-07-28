@@ -209,9 +209,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 {
                     Literal litSkill = e.FindControlAs<Literal>("litSkill");
                     HtmlInputCheckBox inputSkill = e.FindControlAs<HtmlInputCheckBox>("inputSkill");
+                    HtmlGenericControl issueLabel = e.FindControlAs<HtmlGenericControl>("issueLabel");
 
                     inputSkill.Attributes.Add("data-id", issue.ID.ToString());
                     litSkill.Text = issue.ContentTitle;
+                    issueLabel.Attributes.Add("for", inputSkill.ID);
                 }
             }
         }

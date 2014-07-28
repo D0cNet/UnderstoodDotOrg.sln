@@ -47,9 +47,7 @@
                                     <span><%= UnderstoodDotOrg.Common.DictionaryConstants.GoodForLabel %></span>
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <span>
-                                    <a class="link-separator" href="REPLACE"><asp:Literal ID="litSkill" runat="server"></asp:Literal></a>
-                                </span>
+                                <span class="link-separator"><asp:Literal ID="litSkill" runat="server"></asp:Literal></span>
                             </ItemTemplate>
                             <FooterTemplate>
                                 </p>
@@ -93,9 +91,7 @@
                                         <span><%= UnderstoodDotOrg.Common.DictionaryConstants.GoodForLabel %></span>
                                 </HeaderTemplate>
                                 <ItemTemplate>
-                                    <span>
-                                        <a class="link-separator" href="REPLACE"><asp:Literal ID="litSkill" runat="server"></asp:Literal></a>
-                                    </span>
+                                    <span class="link-separator"><asp:Literal ID="litSkill" runat="server"></asp:Literal></span>
                                 </ItemTemplate>
                                 <FooterTemplate>
                                     </p>
@@ -186,7 +182,7 @@
                                     <li>
                                         <span class="checkbox-wrap">
                                             <input id="inputSkill" runat="server" type="checkbox" name="rate-goodfor-reading"></span>
-                                        <label for="rate-goodfor-reading"><asp:Literal ID="litSkill" runat="server"></asp:Literal></label>
+                                        <label id="issueLabel" runat="server" for="rate-goodfor-reading"><asp:Literal ID="litSkill" runat="server"></asp:Literal></label>
                                     </li>
                                 </ItemTemplate>
                                 <FooterTemplate>
