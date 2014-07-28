@@ -55,10 +55,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     iconType.Attributes.Add("class", "pdf");
 
-                    string fileSizeText = GetFileSize(dataItem);
-                    if (fileSizeText != "0")
-                        litFileSize.Text = fileSizeText;
-
                     itemLink = ResolveMediaURL(dataItem);
                     hypActionLink.Attributes.Add("download", "download");
                 }
@@ -94,6 +90,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     itemLink = ResolveMediaURL(dataItem);
                 }
 
+                string fileSizeText = GetFileSize(dataItem);
+                if (fileSizeText != "")
+                    litFileSize.Text = fileSizeText;
+
                 hypActionLink.NavigateUrl = hypTitle.NavigateUrl = itemLink;
             }
         }
@@ -105,10 +105,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (lf.LinkType.ToLower() == "media")
             {
                 MediaItem mediaItem = new MediaItem(lf.TargetItem);
-                return mediaItem.Size.ToString();
+                return Math.Round((mediaItem.Size / 1000.0), 0).ToString()+"k";
             }
 
-            return "0";
+            return "";
         }
 
         private string ResolveMediaURL(Item item)
