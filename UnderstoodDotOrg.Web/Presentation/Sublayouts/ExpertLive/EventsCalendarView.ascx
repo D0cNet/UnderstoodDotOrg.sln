@@ -22,7 +22,7 @@
 
         <ul class="calendar-type">
             
-            <li style="border-right: 0px !important;">Calendar View</li>
+            <li>Calendar View</li>
             <!--
             <li><a href="REPLACE">List View</a></li>
             -->
@@ -32,15 +32,10 @@
 </div>
 <!-- END PARTIAL: community/calendar/header -->
 
-<style type="text/css">
-    li.day {
-        height: 237px !important;
-    }
-</style>
 
 <!-- BEGIN PARTIAL: community/calendar/grid_view -->
 <asp:ListView runat="server" ID="EventsLiveCalendarView" GroupItemCount="7" GroupPlaceholderID="weekPlaceholder" ItemPlaceholderID="dayPlaceholder"
-        OnItemDataBound="EventsLiveCalendarView_ItemDataBound">
+        >
 
     <LayoutTemplate>
         <div class="container calendar calendar-grid rendered">
@@ -85,13 +80,13 @@
                         <div class="event-content">
                             <p visible="false" runat="server" id="paragraphChatHeading" class="event-header rs_skip"><%# Eval("EventHeading.Rendered") %></p>
                             <%--<a href="#" class="event-name truncated">Ea Rem Est Unde...</a>--%>
-                            <asp:HyperLink runat="server" ID="linkEventName" NavigateUrl="#" CssClass="event-name rs_skip" />
+                            <asp:HyperLink runat="server" ID="linkEventName" CssClass="event-name rs_skip" />
                             <p class="event-time"><asp:Literal runat="server" ID="literalEventUTCTime" /></p>
 
                             <asp:PlaceHolder runat="server" ID="placeholderLive" Visible="false">
                                 <asp:HyperLink runat="server" ID="linkToLive" CssClass="button live-now">Live</asp:HyperLink>
-                                <asp:HyperLink runat="server" ID="linkMoreInfo" CssClass="button more-info-toggle rs_skip">More Info</asp:HyperLink>
-                                <asp:HyperLink runat="server" ID="linkClose" CssClass="button more-info-toggle close rs_skip">Close</asp:HyperLink>
+                                <asp:HyperLink runat="server" ID="linkMoreInfo" CssClass="button more-info-toggle rs_skip"><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreInformationLabel %></asp:HyperLink>
+                                <asp:HyperLink runat="server" ID="linkClose" CssClass="button more-info-toggle close rs_skip"><%= UnderstoodDotOrg.Common.DictionaryConstants.CloseButtonText %></asp:HyperLink>
                             </asp:PlaceHolder>
                         </div>
                         
@@ -117,13 +112,13 @@
                                     <asp:HyperLink runat="server" ID="linkEventDate"><asp:Literal runat="server" ID="literalEventTimeDate" /></asp:HyperLink>
                                 </p>
                                 <p>
-                                    <asp:HyperLink runat="server" ID="linkRSVP">RSVP for this event</asp:HyperLink>
+                                    <sc:FieldRenderer ID="frRsvpLink" runat="server" FieldName="RSVP for Event Link" />  
                                 </p>
                                 <p>
-                                    <asp:HyperLink runat="server" ID="linkAddToCalendar">Add to my calendar</asp:HyperLink>
+                                    <sc:FieldRenderer ID="frAddToCalendar" runat="server" FieldName="Add To Calendar Link" />  
                                 </p>
                                 <p>
-                                    <asp:HyperLink runat="server" ID="linkEventDetails">Event details</asp:HyperLink>
+                                    <asp:HyperLink runat="server" ID="linkEventDetails"><%= UnderstoodDotOrg.Common.DictionaryConstants.EventDetailsLabel %></asp:HyperLink>
                                 </p>
                             </div>
                         </div>

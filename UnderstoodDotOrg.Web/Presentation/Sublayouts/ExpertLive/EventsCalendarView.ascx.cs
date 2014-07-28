@@ -10,6 +10,7 @@ using UnderstoodDotOrg.Common.Helpers;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 {
@@ -121,7 +122,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 EventsLiveCalendarDay eventDay = (EventsLiveCalendarDay)e.Item.DataItem;
                 HtmlGenericControl liDay = (HtmlGenericControl)e.Item.FindControl("liDay");
 
-                liDay.Style.Add("height", "237px");
                 liDay.Attributes["class"] += " " + eventDay.CurrentDate.DayOfWeek.ToString().ToLower();
 
                 if (eventDay.CurrentDate < SelectedMonthYear)
@@ -153,7 +153,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             {
                 placeholderEventDayContent.Visible = false;
             }
-            
+
             if (eventDay.CurrentEvents != null && eventDay.CurrentEvents.Count > 0)
             {
                 if (eventDay.CurrentEvents.Count == 1)
@@ -169,12 +169,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 RepeaterSingleDayEvents.DataSource = eventDay.CurrentEvents;
                 RepeaterSingleDayEvents.DataBind();
             }
+            else
+            {
+                liDay.Attributes["class"] += " no-events";
+            }
 
         }
 
         protected void RepeaterSingleDayEvents_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if (e.Item.ItemType == ListItemType.Item)
+            if (e.IsItem())
             {
                 BaseEventDetailPageItem eventToBind = (BaseEventDetailPageItem)e.Item.DataItem;
                 bool IsChatEvent = (eventToBind.GetEventType().ToLower() == "chat") ? true : false;
@@ -182,8 +186,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 Literal literalEventUTCTime = (Literal)e.Item.FindControl("literalEventUTCTime");
                 HyperLink linkEventDetails = (HyperLink)e.Item.FindControl("linkEventDetails");
                 HyperLink linkEventDate = (HyperLink)e.Item.FindControl("linkEventDate");
-                HyperLink linkRSVP = (HyperLink)e.Item.FindControl("linkRSVP");
-                HyperLink linkAddToCalendar = (HyperLink)e.Item.FindControl("linkAddToCalendar");
+                Sitecore.Web.UI.WebControls.FieldRenderer frRsvpLink = (Sitecore.Web.UI.WebControls.FieldRenderer)e.Item.FindControl("frRsvpLink");
+                Sitecore.Web.UI.WebControls.FieldRenderer frAddToCalendar = (Sitecore.Web.UI.WebControls.FieldRenderer)e.Item.FindControl("frAddToCalendar");
                 Literal literalExpertName = (Literal)e.Item.FindControl("literalExpertName");
                 Literal literalExpertTitles = (Literal)e.Item.FindControl("literalExpertTitles");
                 Image imageExpert = (Image)e.Item.FindControl("imageExpert");
@@ -212,25 +216,27 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 
                 literalEventUTCTime.Text = eventToBind.EventStartDate.DateTime.ToUniversalTime().ToString("htt") + " UTC";
                 linkEventDetails.NavigateUrl = linkEventDate.NavigateUrl = eventToBind.GetUrl();
-                linkRSVP.NavigateUrl = eventToBind.RSVPforEventLink.Rendered;
-                linkAddToCalendar.NavigateUrl = eventToBind.AddToCalendarLink.Rendered;
+                frRsvpLink.Item = frAddToCalendar.Item = eventToBind;
 
                 ExpertDetailPageItem expertToBind = (ExpertDetailPageItem)eventToBind.Expert.Item;
-                literalExpertName.Text = expertToBind.ExpertName;
-                StringBuilder builderExpertCaption = new StringBuilder();
-                builderExpertCaption.Append(expertToBind.ExpertHeading.Rendered);
-                if (!string.IsNullOrWhiteSpace(expertToBind.ExpertSubheading.Rendered))
+                if (expertToBind != null)
                 {
-                    builderExpertCaption.AppendLine(",<br />");
-                    builderExpertCaption.Append(expertToBind.ExpertSubheading.Rendered);
+                    literalExpertName.Text = expertToBind.ExpertName;
+                    StringBuilder builderExpertCaption = new StringBuilder();
+                    builderExpertCaption.Append(expertToBind.ExpertHeading.Rendered);
+                    if (!string.IsNullOrWhiteSpace(expertToBind.ExpertSubheading.Rendered))
+                    {
+                        builderExpertCaption.AppendLine(",<br />");
+                        builderExpertCaption.Append(expertToBind.ExpertSubheading.Rendered);
+                    }
+                    literalExpertTitles.Text = builderExpertCaption.ToString();
+
+                    imageExpert.ImageUrl = expertToBind.ExpertImage.MediaItem.GetImageUrl();
+                    imageExpert.AlternateText = expertToBind.ExpertName;
+                    linkExpert.NavigateUrl = expertToBind.GetUrl();
                 }
-                literalExpertTitles.Text = builderExpertCaption.ToString();
 
-                imageExpert.ImageUrl = expertToBind.ExpertImage.MediaItem.GetImageUrl();
-                imageExpert.AlternateText = expertToBind.ExpertName;
-                linkExpert.NavigateUrl = expertToBind.GetUrl();
-
-                if (expertToBind.GetExpertType().ToLower() == "chat")
+                if (eventToBind.InnerItem.TemplateID == Sitecore.Data.ID.Parse(ChatEventPageItem.TemplateId))
                 {
                     BindItemForChatEvent(e);
                 }
@@ -249,8 +255,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             ExpertDetailPageItem expertToBind = (ExpertDetailPageItem)eventToBind.Expert.Item;
 
             paragraphChatHeading.Visible = true;
-            paragraphChatHeading.InnerText = eventToBind.EventHeading.Rendered;
-            linkEventName.Text = "Live Chat with " + expertToBind.ExpertName;
+            paragraphChatHeading.InnerText = eventToBind.EventSubheading.Rendered;
+            linkEventName.Text = eventToBind.EventHeading.Rendered;
+            linkEventName.NavigateUrl = eventToBind.GetUrl();
         }
 
         private void BindItemForWebinarEvent(RepeaterItemEventArgs e)
@@ -259,6 +266,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             HyperLink linkEventName = (HyperLink)e.Item.FindControl("linkEventName");
 
             linkEventName.Text = eventToBind.EventHeading.Rendered;
+            linkEventName.NavigateUrl = eventToBind.GetUrl();
         }
 
     }
