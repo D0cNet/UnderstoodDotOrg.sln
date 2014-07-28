@@ -1129,8 +1129,12 @@ body.modal-open #wrapper {
   }
 }
 
+<<<<<<< Updated upstream
 /* line 871, ../css.source/globals.scss */
 footer .print-more-info {
+=======
+/* line 879, ../css.source/globals.scss */
+footer .print-only {
+>>>>>>> Stashed changes
   display: none;
-  margin-top: 1em;
 }

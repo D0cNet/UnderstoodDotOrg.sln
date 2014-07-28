@@ -155,10 +155,9 @@
                 <sc:FieldRenderer ID="frAbstract" runat="server" FieldName="Abstract" />
             </p>
 
-            <div class="print-more-info">
-                <%-- TODO: render the 'more-info' as localized text from sitecore --%>
-                <p>For more information like this, visit <a href="<%= HomepageUrl %>">Understood.org</a></p>
-            </div>
+            <p class="print-only english-text">For more information like this, visit Understood.org</p>
+            <p class="print-only spanish-text">Para obtener más información, visite Understood.org</p>
+
         </div>
         <!-- .col -->
 
