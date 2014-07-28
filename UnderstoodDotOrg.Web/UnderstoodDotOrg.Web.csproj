@@ -2681,6 +2681,7 @@
     <Content Include="Presentation\Includes\images\simulations\common\phone\clock.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\apple.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\banana.png" />
+    <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\cherries.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\clock_clear.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\coins\dime.png" />
     <Content Include="Presentation\Includes\images\simulations\dyscalculia\desktop\coins\dime_seq.png" />
