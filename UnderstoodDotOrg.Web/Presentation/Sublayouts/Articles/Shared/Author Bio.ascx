@@ -22,7 +22,7 @@
             <div class="col col-16 offset-1">   
 
                 <div class="expert-bio-text">
-                    <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Body Content" />   
+                    <sc:FieldRenderer ID="frBodyContent" runat="server" FieldName="Author Biodata" />   
                 </div>
                 <!-- .expert-bio-text -->
             </div>
