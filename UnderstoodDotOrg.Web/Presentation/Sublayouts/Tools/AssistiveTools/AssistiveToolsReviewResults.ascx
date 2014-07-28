@@ -130,6 +130,14 @@
         width: 100%;
         height: auto;
     }
+
+    .result-image-inner{
+        width: 150px;
+    }
+
+    .result-image-inner img{
+        height: auto;
+    }
 </style>
 <div class="assistive-tool-related-articles-small">
     <!-- BEGIN PARTIAL: assistive-tool-related-articles -->

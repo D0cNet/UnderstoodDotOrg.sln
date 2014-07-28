@@ -54,7 +54,7 @@
                             <!-- This hidden span's content matches the alt tag of the image which ReadSpeaker is ignoring -->
                             <span class="visuallyhidden rs_read"><%= Model.ThumbnailImage.Field.Alt %></span>
                             <div class="result-image-inner">
-                                <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom">
+                                <a href="#" class="popover-link rs_preserve" data-popover-placement="bottom">
                                     <%= Model.ThumbnailImage.Rendered %>
                                 </a>
                                 <span class="icon-search rs_preserve"><%= UnderstoodDotOrg.Common.DictionaryConstants.SearchLabel %></span>
@@ -336,4 +336,13 @@
     </div>
     <!-- .row -->
 </div>
+<style>
+    .result-image-inner{
+        width: 150px;
+    }
+
+    .result-image-inner img{
+        height: auto;
+    }
+</style>
 <!-- .container -->

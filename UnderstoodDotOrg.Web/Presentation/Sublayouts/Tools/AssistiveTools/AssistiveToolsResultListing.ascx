@@ -6,7 +6,7 @@
         <div class="result-image-inner">
             <!-- This hidden span's content matches the alt tag of the image which ReadSpeaker is ignoring -->
             <span class="visuallyhidden rs_read"><%= Model.ThumbnailImage.Field.Alt %></span>
-            <a href="REPLACE" class="popover-link rs_preserve" data-popover-placement="bottom">
+            <a href="<%# Eval("Url") %>" class="popover-link rs_preserve" data-popover-placement="bottom">
                 <%= Model.ThumbnailImage.Rendered %>
             </a>
             <span class="icon-search rs_preserve rs_skip"><asp:Label id="lblSearch" runat="server" Text="" /></span>
