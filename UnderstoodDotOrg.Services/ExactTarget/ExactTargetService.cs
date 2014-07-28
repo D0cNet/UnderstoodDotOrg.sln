@@ -13,6 +13,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using System.IO;
 using System.Xml;
+using System.Collections.Generic;
 
 namespace UnderstoodDotOrg.Services.ExactTarget
 {
@@ -1020,25 +1021,41 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[6];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "group_leader_email";
-						newSub.Attributes[0].Value = request.GroupLeaderEmail;
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "group_link";
-						newSub.Attributes[1].Value = request.GroupLink;
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "group_title";
-						newSub.Attributes[2].Value = request.GroupTitle;
-						newSub.Attributes[3] = new etAPI.Attribute();
-						newSub.Attributes[3].Name = "group_mod_bio_link";
-						newSub.Attributes[3].Value = request.GroupModerator.groupModBioLink;
-						newSub.Attributes[4] = new etAPI.Attribute();
-						newSub.Attributes[4].Name = "group_mod_name";
-						newSub.Attributes[4].Value = request.GroupModerator.groupModName;
-						newSub.Attributes[5] = new etAPI.Attribute();
-						newSub.Attributes[5].Name = "group_mod_img_link";
-						newSub.Attributes[5].Value = request.GroupModerator.groupModImgLink;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "group_leader_email";
+                        tempAttribute.Value = request.GroupLeaderEmail;
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "group_link";
+                        tempAttribute.Value = request.GroupLink;
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "group_title";
+                        tempAttribute.Value = request.GroupTitle;
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "group_mod_bio_link";
+                        tempAttribute.Value = request.GroupModerator.groupModBioLink;
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "group_mod_name";
+                        tempAttribute.Value = request.GroupModerator.groupModName;
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "group_mod_img_link";
+                        tempAttribute.Value = request.GroupModerator.groupModImgLink;
+
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+
+
+
+                        newSub.Attributes = AttributeList.ToArray();
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1891,7 +1908,77 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 			return reply;
 		}
 
+
 		//Newsletter Email methods
+        public static BaseReply InvokeE1GeneralNewsLetter(InvokeE1GeneralNewsLetterRequest request)
+        {
+            BaseReply reply = new BaseReply();
+
+            SoapClient client = ExactTargetService.GetInstance();
+
+            StringBuilder sbReturnString = new StringBuilder();
+
+            Guid preferredLanguage = request.PreferredLanguage;
+            int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.E1GeneralNewsLetter, Constants.EmailIDs.E1GeneralNewsLetter);
+
+            try
+            {
+                //Create a GUID for ESD to ensure a unique name and customer key
+                TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Weekly Newsletter");
+
+                string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+                if (cStatus == "OK")
+                {
+                    tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+                    tsd.TriggeredSendStatusSpecified = true; //required
+
+                    string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+                    if (uStatus == "OK")
+                    {
+                        // *** SEND THE TRIGGER EMAIL
+                        Subscriber newSub = new Subscriber();
+                        newSub.EmailAddress = request.ToEmail;
+                        newSub.SubscriberKey = request.ToEmail;
+
+
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
+
+                        //tempAttribute = new etAPI.Attribute();
+                        //tempAttribute.Name = "group_leader_email";
+                        //tempAttribute.Value = request.GroupLeaderEmail;
+
+                        //tempAttribute = new etAPI.Attribute();
+                        //tempAttribute.Name = "domain_link";
+                        //tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+
+
+
+                        newSub.Attributes = AttributeList.ToArray();
+
+
+                        ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+                        reply.Successful = true;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                string message = "Unable to send welcome email.";
+
+                reply.Successful = false;
+                reply.Message = message;
+
+                Log.Error(exc.ToString(), "something went wrong");
+            }
+
+            return reply;
+        }
+
+
 		public static BaseReply InvokeE1ATurnAroundBullying(InvokeE1ATurnAroundBullyingRequest request)
 		{
 			BaseReply reply = new BaseReply();
@@ -1952,6 +2039,70 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			return reply;
 		}
+
+        //public static BaseReply InvokeEM1WelcomeToUnderstoodENID(InvokeEM3ExploreTheCommunityRequest request)
+        //{
+        //    BaseReply reply = new BaseReply();
+
+        //    SoapClient client = ExactTargetService.GetInstance();
+
+        //    StringBuilder sbReturnString = new StringBuilder();
+
+        //    Guid preferredLanguage = request.PreferredLanguage;
+        //    int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM3ExploreTheCommunityENID, Constants.EmailIDs.EM3ExploreTheCommunitySPID);
+
+        //    try
+        //    {
+        //        //Create a GUID for ESD to ensure a unique name and customer key
+        //        TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Explore the Community");
+
+        //        string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
+
+        //        if (cStatus == "OK")
+        //        {
+        //            tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
+        //            tsd.TriggeredSendStatusSpecified = true; //required
+
+        //            string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
+
+        //            if (uStatus == "OK")
+        //            {
+        //                // *** SEND THE TRIGGER EMAIL
+        //                Subscriber newSub = new Subscriber();
+        //                newSub.EmailAddress = request.ToEmail;
+        //                newSub.SubscriberKey = request.ToEmail;
+
+        //                newSub.Attributes = new etAPI.Attribute[3];
+        //                newSub.Attributes[0] = new etAPI.Attribute();
+        //                newSub.Attributes[0].Name = "fullname";
+        //                newSub.Attributes[0].Value = request.FullName;
+        //                newSub.Attributes[1] = new etAPI.Attribute();
+        //                newSub.Attributes[1].Name = "partner_promo";
+        //                newSub.Attributes[1].Value = request.PartnerPromo;
+        //                newSub.Attributes[2] = new etAPI.Attribute();
+        //                newSub.Attributes[2].Name = "profile_completion_bar";
+        //                newSub.Attributes[2].Value = request.ProfileCompletionBar;
+
+        //                ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
+
+        //                reply.Successful = true;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception exc)
+        //    {
+        //        string message = "Unable to send welcome email.";
+
+        //        reply.Successful = false;
+        //        reply.Message = message;
+
+        //        Log.Error(exc.ToString(), "something went wrong");
+        //    }
+
+        //    return reply;
+        //}
+
+
 
         private static string GetChildPersonalizedArticles(Child child)
         {

@@ -10,5 +10,7 @@ namespace UnderstoodDotOrg.Domain.ExactTarget
     {
         public string ToEmail { get; set; }
 		public Guid PreferredLanguage { get; set; }
+        public Uri RequestUrl { get; set; }
+
     }
 }

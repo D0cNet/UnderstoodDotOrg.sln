@@ -117,6 +117,9 @@ namespace UnderstoodDotOrg.Common
 			public static int EM28AppsTechnologySharedWithAFriendENID = 538;
             public static int BehaviorToolSuggestion = 1543;
 
+            public static int E1GeneralNewsLetter = 2303;
+            
+
 			//Spanish IDs
 			public static int EM1WelcomeToUnderstoodSPID = 1725;
 			public static int EM2ParentToolkitSPID = 1714;

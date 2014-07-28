@@ -131,7 +131,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                                     groupModBioLink = grpModel.ModeratorBio,
                                     groupModImgLink = grpModel.ModeratorAvatarUrl, //owner.Avatar,
                                     groupModName = grpModel.ModeratorName
-                                }
+                                }, RequestUrl = Request.Url
                             });
 
                             Text = DictionaryConstants.ViewDiscussionsLabel;

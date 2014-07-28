@@ -99,6 +99,7 @@
     <Compile Include="ExactTarget\InvokeE1B1TurnAroundBullyingRequest.cs" />
     <Compile Include="ExactTarget\InvokeE1B2TurnAroundBullyingRequest.cs" />
     <Compile Include="ExactTarget\InvokeE1CTurnAroundBullyingRequest.cs" />
+    <Compile Include="ExactTarget\InvokeE1GeneralNewsLetterRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM10WebinarConfirmationRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM11DonationAcknowledgementRequest.cs" />
     <Compile Include="ExactTarget\InvokeEM12ThankYouForContactingUsRequest.cs" />
