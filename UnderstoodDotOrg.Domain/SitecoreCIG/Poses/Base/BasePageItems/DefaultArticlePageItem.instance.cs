@@ -35,6 +35,16 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
                         continue;
                     }
 
+                    // Handle IEP Negative child and article tagged for IEP
+                    if (child.IEPStatus == Guid.Parse(Constants.ChildEvaluation.StatusIEPNo)
+                        && OtherApplicableEvaluations.ListItems
+                                .Where(i => i.ID == Sitecore.Data.ID.Parse(Constants.ArticleTags.EvaluatedIEP))
+                                .FirstOrDefault() != null)
+                    {
+                        continue;
+                    }
+
+
                     bool gradeMatch = false;
                     bool issueMatch = false;
 
