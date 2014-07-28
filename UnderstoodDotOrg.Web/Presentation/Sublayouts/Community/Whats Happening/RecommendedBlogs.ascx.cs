@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Sitecore.Links;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,14 +18,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            hypAllBlogs.Text = "blarg";
-            hypAllBlogs.NavigateUrl = "#";
+            hypAllBlogs.Text = DictionaryConstants.SeeAllBlogsLabel;
+            hypAllBlogs.NavigateUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(Constants.Pages.AllBlogs));
 
-            lvBlogCards.DataSource = SearchHelper.GetRecommendedContent(this.CurrentMember, BlogsPostPageItem.TemplateId)
-                        .Where(a => a.GetItem() != null)
-                        .Select(a => new BlogsPostPageItem(a.GetItem()))
-                        .ToList();
-            lvBlogCards.DataBind();
+            if (this.CurrentMember != null)
+            {
+                lvBlogCards.DataSource = SearchHelper.GetRecommendedContent(this.CurrentMember, BlogsPostPageItem.TemplateId)
+                            .Where(a => a.GetItem() != null)
+                            .Select(a => new BlogsPostPageItem(a.GetItem()))
+                            .ToList();
+                lvBlogCards.DataBind();
+            }
+
         }
 
         protected void lvBlogCards_ItemDataBound(object sender, ListViewItemEventArgs e)

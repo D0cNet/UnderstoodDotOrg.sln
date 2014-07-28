@@ -19,7 +19,7 @@
 
         protected void InitContent()
         {
-            lnkSeeAll.NavigateUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}"));
+            lnkSeeAll.NavigateUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(Constants.Pages.AllBlogs));
 
             if (IsUserLoggedIn)
             {
@@ -65,7 +65,14 @@
                     {
                         BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem(sitecoreId);
                         item.Body = TelligentService.FormatString160(blogPost.Body);
-                        item.Author = Sitecore.Context.Database.GetItem(blogPost.Author.Raw)["Name"];
+                        
+                        try
+                        {
+                            item.Author = Sitecore.Context.Database.GetItem(blogPost.Author.Raw)["Name"];
+                        }
+                        catch (Exception)
+                        { }
+
                         item.ItemUrl = blogPost.GetUrl();
                         item.AuthorUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(blogPost.Author.Raw));
                     }

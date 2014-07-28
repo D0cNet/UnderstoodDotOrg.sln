@@ -3,7 +3,9 @@
 <div class="community-my-blogs">
     <div class="row">
         <div class="col col-24 community-my-blogs-wrapper">
-            <h2 class="rs_read_this">Blogs I Follow</h2>
+            <h2 class="rs_read_this"><%--Blogs I Follow--%>
+                <%= UnderstoodDotOrg.Common.DictionaryConstants.BlogsIFollow %>
+            </h2>
             <asp:HyperLink CssClass="button-view-all" ID="lnkSeeAll" runat="server" >See all blogs</asp:HyperLink>
             <div class="row blog-cards">
                 <asp:Repeater ID="rptBlogCards" runat="server" ItemType="UnderstoodDotOrg.Services.Models.Telligent.BlogPost">

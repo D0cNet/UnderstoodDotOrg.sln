@@ -3,7 +3,7 @@
 <div class="community-blogs">
     <div class="row">
         <div class="col col-24 community-blogs-wrapper">
-            <h2><sc:FieldRenderer ID="frRecentBlogPosts" FieldName="Recent Blog Posts Label" runat="server"/></sc:FieldRenderer></h2>
+            <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.RecentBlogPostsLabel %></h2>
             <div class="carousel-arrow-wrapper">
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows blogs next-prev-menu arrows">

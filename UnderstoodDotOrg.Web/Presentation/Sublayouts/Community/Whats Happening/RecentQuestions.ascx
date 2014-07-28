@@ -3,7 +3,7 @@
 <div class="recent-questions">
     <div class="row">
         <div class="col col-24 recent-questions-wrapper">
-            <h2><sc:FieldRenderer ID="frRecentQuestions" FieldName="Recent Questions Text" runat="server"/></h2>
+            <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.RecentQuestionsLabel %></h2>
             <div class="carousel-arrow-wrapper">
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows questions next-prev-menu">

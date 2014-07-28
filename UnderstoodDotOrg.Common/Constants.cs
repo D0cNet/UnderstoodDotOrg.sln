@@ -287,6 +287,9 @@ namespace UnderstoodDotOrg.Common
                 }
             }
 
+            public static Guid AllQuestions { get { return new Guid("{F349C92A-9781-4342-A05A-5A793630D7DB}"); } }
+
+
             public static Guid ParentsGroups
                 {
                 get
