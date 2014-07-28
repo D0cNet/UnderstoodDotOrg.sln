@@ -105,14 +105,6 @@
     color: white;
   }
 }
-.checker input {
-  /* Workaround for IE10 & IE11 default input styling */
-  visibility: hidden;
-
-  @include old-ie {
-    visibility: visible;
-  }
-}
 
 // Purple "your parent toolkit" buttons.
 .button.purple {

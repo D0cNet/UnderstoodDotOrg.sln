@@ -112,13 +112,7 @@ a:focus {
   color: white;
 }
 
-/* line 108, ../css.source/globals.scss */
-.checker input {
-  /* Workaround for IE10 & IE11 default input styling */
-  visibility: hidden;
-}
-
-/* line 118, ../css.source/globals.scss */
+/* line 110, ../css.source/globals.scss */
 .button.purple {
   font-size: 16px;
   font-size: 1rem;
@@ -138,39 +132,39 @@ a:focus {
   line-height: 70px;
   padding-right: 35px;
 }
-/* line 128, ../css.source/globals.scss */
+/* line 120, ../css.source/globals.scss */
 .button.purple:hover {
   background-color: #208ec4;
 }
 
-/* line 131, ../css.source/globals.scss */
+/* line 123, ../css.source/globals.scss */
 .button.white {
   font-size: 16px;
   font-size: 1rem;
   background-color: white;
   color: black;
 }
-/* line 136, ../css.source/globals.scss */
+/* line 128, ../css.source/globals.scss */
 .button.white:hover {
   background-color: #bcbdc0;
 }
-/* line 139, ../css.source/globals.scss */
+/* line 131, ../css.source/globals.scss */
 .button.white.selected, .button.white.active {
   background-color: #7a4183;
   color: white;
 }
-/* line 142, ../css.source/globals.scss */
+/* line 134, ../css.source/globals.scss */
 .button.white.selected:hover, .button.white.active:hover {
   background-color: #9850a2;
 }
 
-/* line 146, ../css.source/globals.scss */
+/* line 138, ../css.source/globals.scss */
 button.rsArrowIcn {
   background: transparent;
   border: none;
 }
 
-/* line 155, ../css.source/globals.scss */
+/* line 147, ../css.source/globals.scss */
 .icon-arrow-down-blue {
   width: 18px;
   height: 11px;
@@ -178,12 +172,12 @@ button.rsArrowIcn {
   background: url('../images/sprite.icon.arrows.png?d45175d1') 0 0 no-repeat;
   background-size: 150px 150px;
 }
-/* line 162, ../css.source/globals.scss */
+/* line 154, ../css.source/globals.scss */
 .no-backgroundsize .icon-arrow-down-blue {
   background-image: url('../images/sprite.icon.arrows.lo-res.png?842ebc63');
 }
 
-/* line 170, ../css.source/globals.scss */
+/* line 162, ../css.source/globals.scss */
 .icon-arrow-right-blue {
   width: 8px;
   height: 12px;
@@ -191,12 +185,12 @@ button.rsArrowIcn {
   background: url('../images/sprite.icon.arrows.png?d45175d1') -25px 0 no-repeat;
   background-size: 150px 150px;
 }
-/* line 177, ../css.source/globals.scss */
+/* line 169, ../css.source/globals.scss */
 .no-backgroundsize .icon-arrow-right-blue {
   background-image: url('../images/sprite.icon.arrows.lo-res.png?842ebc63');
 }
 
-/* line 183, ../css.source/globals.scss */
+/* line 175, ../css.source/globals.scss */
 .icon-arrow-left-blue {
   width: 8px;
   height: 12px;
@@ -204,12 +198,12 @@ button.rsArrowIcn {
   background: url('../images/sprite.icon.arrows.png?d45175d1') -36px 0 no-repeat;
   background-size: 150px 150px;
 }
-/* line 190, ../css.source/globals.scss */
+/* line 182, ../css.source/globals.scss */
 .no-backgroundsize .icon-arrow-left-blue {
   background-image: url('../images/sprite.icon.arrows.lo-res.png?842ebc63');
 }
 
-/* line 197, ../css.source/globals.scss */
+/* line 189, ../css.source/globals.scss */
 .icon-question-mark {
   width: 22px;
   height: 22px;
@@ -218,17 +212,17 @@ button.rsArrowIcn {
   background-size: 22px 22px;
   text-indent: -9999px;
 }
-/* line 205, ../css.source/globals.scss */
+/* line 197, ../css.source/globals.scss */
 .no-backgroundsize .icon-question-mark {
   background-image: url('../images/icon.questionmark.lo-res.png?5c0e8f97');
 }
-/* line 209, ../css.source/globals.scss */
+/* line 201, ../css.source/globals.scss */
 .icon-question-mark.tooltip {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 216, ../css.source/globals.scss */
+/* line 208, ../css.source/globals.scss */
 .icon-close-toolkit {
   width: 16px;
   height: 16px;
@@ -236,21 +230,21 @@ button.rsArrowIcn {
   background: url('../images/icon.close.parent-toolkit.png?9fa99ddc') no-repeat;
   background-size: 25px 25px;
 }
-/* line 223, ../css.source/globals.scss */
+/* line 215, ../css.source/globals.scss */
 .no-backgroundsize .icon-close-toolkit {
   background-image: url('../images/icon.close.parent-toolkit-lo-res.png?50a27c63');
 }
 
-/* line 230, ../css.source/globals.scss */
+/* line 222, ../css.source/globals.scss */
 .children-key {
   padding: 0;
 }
-/* line 233, ../css.source/globals.scss */
+/* line 225, ../css.source/globals.scss */
 .children-key li {
   list-style-type: none;
 }
 
-/* line 243, ../css.source/globals.scss */
+/* line 235, ../css.source/globals.scss */
 .child-a,
 .child-b,
 .child-c,
@@ -263,7 +257,7 @@ button.rsArrowIcn {
   background: url('../images/child.content.indicator.png?3c3177bb') 0 0 no-repeat;
   background-size: 150px 25px;
 }
-/* line 250, ../css.source/globals.scss */
+/* line 242, ../css.source/globals.scss */
 .no-backgroundsize .child-a, .no-backgroundsize
 .child-b, .no-backgroundsize
 .child-c, .no-backgroundsize
@@ -273,42 +267,42 @@ button.rsArrowIcn {
   background-image: url('../images/child.content.indicator.lo-res.png?4e848502');
 }
 
-/* line 255, ../css.source/globals.scss */
+/* line 247, ../css.source/globals.scss */
 .child-a {
   background-position: 0 0;
 }
 
-/* line 258, ../css.source/globals.scss */
+/* line 250, ../css.source/globals.scss */
 .child-b {
   background-position: -25px 0;
 }
 
-/* line 261, ../css.source/globals.scss */
+/* line 253, ../css.source/globals.scss */
 .child-c {
   width: 16px;
   background-position: -50px 0;
 }
 
-/* line 265, ../css.source/globals.scss */
+/* line 257, ../css.source/globals.scss */
 .child-d {
   width: 16px;
   background-position: -75px 0;
 }
 
-/* line 269, ../css.source/globals.scss */
+/* line 261, ../css.source/globals.scss */
 .child-e {
   width: 16px;
   height: 16px;
   background-position: -100px 0;
 }
 
-/* line 274, ../css.source/globals.scss */
+/* line 266, ../css.source/globals.scss */
 .child-f {
   width: 16px;
   background-position: -125px 0;
 }
 
-/* line 287, ../css.source/globals.scss */
+/* line 279, ../css.source/globals.scss */
 input[type=text],
 input[type=password],
 input[type=url],
@@ -331,7 +325,7 @@ input[type=email] {
   border-radius: 0;
 }
 @media (min-width: 650px), print {
-  /* line 287, ../css.source/globals.scss */
+  /* line 279, ../css.source/globals.scss */
   input[type=text],
   input[type=password],
   input[type=url],
@@ -343,7 +337,7 @@ input[type=email] {
     font-size: 1rem;
   }
 }
-/* line 305, ../css.source/globals.scss */
+/* line 297, ../css.source/globals.scss */
 input[type=text]:focus,
 input[type=password]:focus,
 input[type=url]:focus,
@@ -458,7 +452,7 @@ input[type=email][type=text]:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-/* line 322, ../css.source/globals.scss */
+/* line 314, ../css.source/globals.scss */
 textarea {
   background-color: #fff;
   border: solid 2px #e9e9e9;
@@ -479,7 +473,7 @@ textarea {
   resize: none;
 }
 @media (min-width: 650px), print {
-  /* line 322, ../css.source/globals.scss */
+  /* line 314, ../css.source/globals.scss */
   textarea {
     font-size: 16px;
     font-size: 1rem;
@@ -532,13 +526,13 @@ textarea:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-/* line 352, ../css.source/globals.scss */
+/* line 344, ../css.source/globals.scss */
 .selector {
   font-size: 14px;
   font-size: 0.875rem;
 }
 @media (min-width: 650px), print {
-  /* line 352, ../css.source/globals.scss */
+  /* line 344, ../css.source/globals.scss */
   .selector {
     font-size: 16px;
     font-size: 1rem;
@@ -546,88 +540,88 @@ textarea:focus::-webkit-input-placeholder {
 }
 
 @media (max-width: 568px), print {
-  /* line 365, ../css.source/globals.scss */
+  /* line 357, ../css.source/globals.scss */
   .touch select:focus {
     font-size: 16px;
     font-size: 1rem;
   }
 }
 
-/* line 374, ../css.source/globals.scss */
+/* line 366, ../css.source/globals.scss */
 .support-plan {
   background: url('../images/icon.toolkit.support.plan.png?a31ae962') no-repeat;
   background-size: 100px 100px;
 }
-/* line 378, ../css.source/globals.scss */
+/* line 370, ../css.source/globals.scss */
 .no-backgroundsize .support-plan {
   background-image: url('../images/icon.toolkit.support.plan.100.png?4317fef9');
 }
-/* line 382, ../css.source/globals.scss */
+/* line 374, ../css.source/globals.scss */
 .no-backgroundsize .support-plan .icon {
   background-image: url('../images/icon.toolkit.support.plan.60.png?97ebd99b');
 }
 
-/* line 388, ../css.source/globals.scss */
+/* line 380, ../css.source/globals.scss */
 .childs-world {
   background: url('../images/icon.toolkit.childs.world.png?309296d8') no-repeat;
   background-size: 100px 100px;
 }
-/* line 392, ../css.source/globals.scss */
+/* line 384, ../css.source/globals.scss */
 .no-backgroundsize .childs-world {
   background-image: url('../images/icon.toolkit.childs.world.100.png?0047e301');
 }
 
-/* line 398, ../css.source/globals.scss */
+/* line 390, ../css.source/globals.scss */
 .observation-logs {
   background: url('../images/icon.toolkit.observation.png?20150651') no-repeat;
   background-size: 100px 100px;
 }
-/* line 402, ../css.source/globals.scss */
+/* line 394, ../css.source/globals.scss */
 .no-backgroundsize .observation-logs {
   background-image: url('../images/icon.toolkit.observation.100.png?021dcd43');
 }
 
-/* line 408, ../css.source/globals.scss */
+/* line 400, ../css.source/globals.scss */
 .rate-schools {
   background: url('../images/icon.toolkit.ratings.png?4ef60a49') no-repeat;
   background-size: 100px 100px;
 }
-/* line 412, ../css.source/globals.scss */
+/* line 404, ../css.source/globals.scss */
 .no-backgroundsize .rate-schools {
   background-image: url('../images/icon.toolkit.ratings.100.png?4cb2543e');
 }
 
-/* line 418, ../css.source/globals.scss */
+/* line 410, ../css.source/globals.scss */
 .decisions {
   background: url('../images/icon.toolkit.decisions.png?24323d7e') no-repeat;
   background-size: 100px 100px;
 }
-/* line 422, ../css.source/globals.scss */
+/* line 414, ../css.source/globals.scss */
 .no-backgroundsize .decisions {
   background-image: url('../images/icon.toolkit.decisions.100.png?53ccc81a');
 }
 
-/* line 428, ../css.source/globals.scss */
+/* line 420, ../css.source/globals.scss */
 .find {
   background: url('../images/icon.toolkit.find.png?74b6106d') no-repeat;
   background-size: 100px 100px;
 }
-/* line 432, ../css.source/globals.scss */
+/* line 424, ../css.source/globals.scss */
 .no-backgroundsize .find {
   background-image: url('../images/icon.toolkit.find.100.png?49b57275');
 }
 
-/* line 439, ../css.source/globals.scss */
+/* line 431, ../css.source/globals.scss */
 .dropdown {
   position: relative;
   float: left;
 }
-/* line 443, ../css.source/globals.scss */
+/* line 435, ../css.source/globals.scss */
 .dropdown a {
   text-decoration: none;
 }
 
-/* line 448, ../css.source/globals.scss */
+/* line 440, ../css.source/globals.scss */
 .dropdown-toggle {
   display: block;
   height: 50px;
@@ -642,7 +636,7 @@ textarea:focus::-webkit-input-placeholder {
   box-sizing: border-box;
   position: regular;
 }
-/* line 460, ../css.source/globals.scss */
+/* line 452, ../css.source/globals.scss */
 .dropdown-toggle:after {
   content: "";
   position: absolute;
@@ -653,7 +647,7 @@ textarea:focus::-webkit-input-placeholder {
   background: url('../images/arrow.down.000.10.png?f1df820b') 0 0 no-repeat;
 }
 
-/* line 471, ../css.source/globals.scss */
+/* line 463, ../css.source/globals.scss */
 .dropdown-toggle:hover {
   background: #ffbc0d;
   color: #000;
@@ -661,7 +655,7 @@ textarea:focus::-webkit-input-placeholder {
   border: 1px solid #efefef;
 }
 
-/* line 478, ../css.source/globals.scss */
+/* line 470, ../css.source/globals.scss */
 .open .dropdown-toggle {
   background: #fff;
   text-decoration: none;
@@ -669,26 +663,26 @@ textarea:focus::-webkit-input-placeholder {
   color: #696969;
 }
 
-/* line 485, ../css.source/globals.scss */
+/* line 477, ../css.source/globals.scss */
 .open .dropdown-toggle {
   border-bottom: none;
 }
 
-/* line 489, ../css.source/globals.scss */
+/* line 481, ../css.source/globals.scss */
 .dropdown-title {
   display: none;
 }
 
-/* line 494, ../css.source/globals.scss */
+/* line 486, ../css.source/globals.scss */
 .open .dropdown-toggle .current-page {
   display: none;
 }
-/* line 498, ../css.source/globals.scss */
+/* line 490, ../css.source/globals.scss */
 .open .dropdown-toggle .dropdown-title {
   display: inline-block;
 }
 
-/* line 503, ../css.source/globals.scss */
+/* line 495, ../css.source/globals.scss */
 .dropdown-toggle:focus {
   outline: 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
@@ -696,7 +690,7 @@ textarea:focus::-webkit-input-placeholder {
   box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
 }
 
-/* line 507, ../css.source/globals.scss */
+/* line 499, ../css.source/globals.scss */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -711,7 +705,7 @@ textarea:focus::-webkit-input-placeholder {
   padding: 0;
   border: 1px solid #f4f2f1;
 }
-/* line 521, ../css.source/globals.scss */
+/* line 513, ../css.source/globals.scss */
 .dropdown-menu a {
   padding: 0 20px;
   height: 50px;
@@ -720,27 +714,27 @@ textarea:focus::-webkit-input-placeholder {
   color: #696969;
   background: #f4f2f1;
 }
-/* line 530, ../css.source/globals.scss */
+/* line 522, ../css.source/globals.scss */
 .dropdown-menu a:hover, .dropdown-menu a:active {
   background: #794381;
   color: #fff;
 }
-/* line 536, ../css.source/globals.scss */
+/* line 528, ../css.source/globals.scss */
 .dropdown-menu .current-page a {
   color: #794381;
 }
-/* line 539, ../css.source/globals.scss */
+/* line 531, ../css.source/globals.scss */
 .dropdown-menu .current-page a:hover {
   color: #fff;
 }
 
-/* line 544, ../css.source/globals.scss */
+/* line 536, ../css.source/globals.scss */
 .dropdown-menu.pull-right {
   right: 0;
   left: auto;
 }
 
-/* line 548, ../css.source/globals.scss */
+/* line 540, ../css.source/globals.scss */
 .dropdown-menu .divider {
   height: 1px;
   margin: 9px 0;
@@ -748,29 +742,29 @@ textarea:focus::-webkit-input-placeholder {
   background-color: #e5e5e5;
 }
 
-/* line 554, ../css.source/globals.scss */
+/* line 546, ../css.source/globals.scss */
 .open > .dropdown-menu {
   display: block;
 }
 
-/* line 557, ../css.source/globals.scss */
+/* line 549, ../css.source/globals.scss */
 .open > a {
   outline: 0;
 }
 
-/* line 560, ../css.source/globals.scss */
+/* line 552, ../css.source/globals.scss */
 .dropdown-menu-right {
   right: 0;
   left: auto;
 }
 
-/* line 564, ../css.source/globals.scss */
+/* line 556, ../css.source/globals.scss */
 .dropdown-menu-left {
   right: auto;
   left: 0;
 }
 
-/* line 568, ../css.source/globals.scss */
+/* line 560, ../css.source/globals.scss */
 .dropdown-header {
   display: block;
   padding: 3px 20px;
@@ -779,7 +773,7 @@ textarea:focus::-webkit-input-placeholder {
   color: #999;
 }
 
-/* line 575, ../css.source/globals.scss */
+/* line 567, ../css.source/globals.scss */
 .dropdown-backdrop {
   position: fixed;
   top: 0;
@@ -789,13 +783,13 @@ textarea:focus::-webkit-input-placeholder {
   z-index: 990;
 }
 
-/* line 583, ../css.source/globals.scss */
+/* line 575, ../css.source/globals.scss */
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
 }
 
-/* line 588, ../css.source/globals.scss */
+/* line 580, ../css.source/globals.scss */
 .dropup .caret,
 .navbar-fixed-bottom .dropdown .caret {
   content: "";
@@ -803,7 +797,7 @@ textarea:focus::-webkit-input-placeholder {
   border-bottom: 4px solid;
 }
 
-/* line 594, ../css.source/globals.scss */
+/* line 586, ../css.source/globals.scss */
 .dropup .dropdown-menu,
 .navbar-fixed-bottom .dropdown .dropdown-menu {
   top: auto;
@@ -811,19 +805,19 @@ textarea:focus::-webkit-input-placeholder {
   margin-bottom: 1px;
 }
 
-/* line 601, ../css.source/globals.scss */
+/* line 593, ../css.source/globals.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 606, ../css.source/globals.scss */
+/* line 598, ../css.source/globals.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 613, ../css.source/globals.scss */
+/* line 605, ../css.source/globals.scss */
 .col.sidebar-spacer {
   border-right: 1px solid #f4f2f1;
   display: none;
@@ -831,17 +825,17 @@ textarea:focus::-webkit-input-placeholder {
   margin-top: -45px;
 }
 @media (min-width: 769px), print {
-  /* line 613, ../css.source/globals.scss */
+  /* line 605, ../css.source/globals.scss */
   .col.sidebar-spacer {
     display: block;
   }
 }
 
-/* line 626, ../css.source/globals.scss */
+/* line 618, ../css.source/globals.scss */
 body.modal-open {
   margin: 0;
 }
-/* line 629, ../css.source/globals.scss */
+/* line 621, ../css.source/globals.scss */
 body.modal-open #wrapper {
   position: fixed;
   width: 100%;
@@ -849,22 +843,22 @@ body.modal-open #wrapper {
   left: 0;
 }
 
-/* line 638, ../css.source/globals.scss */
+/* line 630, ../css.source/globals.scss */
 .rsTextLarger {
   font-size: 1.1em;
 }
 
-/* line 642, ../css.source/globals.scss */
+/* line 634, ../css.source/globals.scss */
 .rsTextLarge {
   font-size: 1.2em;
 }
 
-/* line 646, ../css.source/globals.scss */
+/* line 638, ../css.source/globals.scss */
 .modal {
   overflow-x: hidden;
   overflow-y: auto;
 }
-/* line 651, ../css.source/globals.scss */
+/* line 643, ../css.source/globals.scss */
 .modal .close-overlay,
 .modal .modal-close {
   font-style: normal;
@@ -883,14 +877,14 @@ body.modal-open #wrapper {
   border: 0;
   line-height: inherit;
 }
-/* line 667, ../css.source/globals.scss */
+/* line 659, ../css.source/globals.scss */
 .modal .close-overlay:hover,
 .modal .modal-close:hover {
   color: #426da9;
   background-position: 0 -18px;
 }
 @media (min-width: 650px) {
-  /* line 651, ../css.source/globals.scss */
+  /* line 643, ../css.source/globals.scss */
   .modal .close-overlay,
   .modal .modal-close {
     font-size: 24px;
@@ -900,38 +894,38 @@ body.modal-open #wrapper {
     padding: 0 0 0 34px;
     top: -45px;
   }
-  /* line 679, ../css.source/globals.scss */
+  /* line 671, ../css.source/globals.scss */
   .modal .close-overlay:hover,
   .modal .modal-close:hover {
     background-position: 0 -22px;
   }
 }
-/* line 691, ../css.source/globals.scss */
+/* line 683, ../css.source/globals.scss */
 .no-backgroundsize .modal .close-overlay, .no-backgroundsize
 .modal .modal-close {
   background-image: url('../images/icon.close.overlay.22.png?79e7ebd7');
   background-position: 0 -1px;
 }
-/* line 695, ../css.source/globals.scss */
+/* line 687, ../css.source/globals.scss */
 .no-backgroundsize .modal .close-overlay:hover, .no-backgroundsize
 .modal .modal-close:hover {
   background-position: 0 -29px;
 }
-/* line 703, ../css.source/globals.scss */
+/* line 695, ../css.source/globals.scss */
 .modal .modal-body .pagination-container {
   width: auto;
   text-align: center;
 }
-/* line 706, ../css.source/globals.scss */
+/* line 698, ../css.source/globals.scss */
 .modal .modal-body .pagination-container li {
   display: inline-block;
   padding: 0px;
 }
-/* line 710, ../css.source/globals.scss */
+/* line 702, ../css.source/globals.scss */
 .modal .modal-body .pagination-container li:first-child {
   margin-left: 0px;
 }
-/* line 713, ../css.source/globals.scss */
+/* line 705, ../css.source/globals.scss */
 .modal .modal-body .pagination-container li button {
   height: 14px;
   width: 14px;
@@ -941,12 +935,12 @@ body.modal-open #wrapper {
   text-indent: -99999px;
   display: block;
 }
-/* line 722, ../css.source/globals.scss */
+/* line 714, ../css.source/globals.scss */
 .modal .modal-body .pagination-container li.selected button {
   background: #7a4183;
 }
 
-/* line 731, ../css.source/globals.scss */
+/* line 723, ../css.source/globals.scss */
 .modal .modal-dialog,
 .modal.fade .modal-dialog {
   -webkit-transform: none;
@@ -960,7 +954,7 @@ body.modal-open #wrapper {
   transition: opacity .2s ease-in-out;
 }
 
-/* line 742, ../css.source/globals.scss */
+/* line 734, ../css.source/globals.scss */
 .modal.in .modal-dialog {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -969,7 +963,7 @@ body.modal-open #wrapper {
   transform: none;
 }
 
-/* line 749, ../css.source/globals.scss */
+/* line 741, ../css.source/globals.scss */
 .modal-dialog {
   margin: 15px;
   position: absolute;
@@ -978,13 +972,13 @@ body.modal-open #wrapper {
   width: 100%;
 }
 @media (min-width: 769px), print {
-  /* line 749, ../css.source/globals.scss */
+  /* line 741, ../css.source/globals.scss */
   .modal-dialog {
     width: 600px;
   }
 }
 
-/* line 761, ../css.source/globals.scss */
+/* line 753, ../css.source/globals.scss */
 .modal-content {
   border-radius: 0;
   border: 0;
@@ -993,7 +987,7 @@ body.modal-open #wrapper {
   box-shadow: none;
 }
 
-/* line 776, ../css.source/globals.scss */
+/* line 768, ../css.source/globals.scss */
 .modal-backdrop {
   background-color: #f4f2f1;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -1004,13 +998,13 @@ body.modal-open #wrapper {
   transition: opacity .2s ease-in-out;
 }
 
-/* line 785, ../css.source/globals.scss */
+/* line 777, ../css.source/globals.scss */
 .modal-backdrop.in {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 789, ../css.source/globals.scss */
+/* line 781, ../css.source/globals.scss */
 .modal-body {
   overflow-y: visible;
   background: #fff;
@@ -1019,12 +1013,12 @@ body.modal-open #wrapper {
   box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
 }
 
-/* line 795, ../css.source/globals.scss */
+/* line 787, ../css.source/globals.scss */
 .modal-footer {
   margin-top: 0;
 }
 
-/* line 799, ../css.source/globals.scss */
+/* line 791, ../css.source/globals.scss */
 .popover {
   border: 1px solid #e9e9e9;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0 0 3px;
@@ -1034,18 +1028,18 @@ body.modal-open #wrapper {
   color: #696969;
 }
 
-/* line 806, ../css.source/globals.scss */
+/* line 798, ../css.source/globals.scss */
 .popover-content {
   padding: 30px 20px;
 }
 @media (min-width: 960px), print {
-  /* line 806, ../css.source/globals.scss */
+  /* line 798, ../css.source/globals.scss */
   .popover-content {
     padding: 40px;
   }
 }
 
-/* line 816, ../css.source/globals.scss */
+/* line 808, ../css.source/globals.scss */
 .modal.modal-standard .modal-dialog {
   width: 96.875%;
   max-width: 500px;
@@ -1054,23 +1048,23 @@ body.modal-open #wrapper {
   color: #696969;
 }
 @media (min-width: 650px) {
-  /* line 816, ../css.source/globals.scss */
+  /* line 808, ../css.source/globals.scss */
   .modal.modal-standard .modal-dialog {
     font-size: 16px;
     font-size: 1rem;
   }
 }
-/* line 827, ../css.source/globals.scss */
+/* line 819, ../css.source/globals.scss */
 .modal.modal-standard .modal-body {
   padding: 27px 7.14% 20px;
 }
 @media (min-width: 650px) {
-  /* line 827, ../css.source/globals.scss */
+  /* line 819, ../css.source/globals.scss */
   .modal.modal-standard .modal-body {
     padding: 27px 40px 30px;
   }
 }
-/* line 834, ../css.source/globals.scss */
+/* line 826, ../css.source/globals.scss */
 .modal.modal-standard h2 {
   font-weight: normal;
   font-size: 24px;
@@ -1078,64 +1072,64 @@ body.modal-open #wrapper {
   color: #794382;
   margin-bottom: 9px;
 }
-/* line 840, ../css.source/globals.scss */
+/* line 832, ../css.source/globals.scss */
 .modal.modal-standard p {
   font-family: arial, sans-serif;
   line-height: 1.6;
   margin-bottom: 12px;
 }
 @media (min-width: 650px) {
-  /* line 840, ../css.source/globals.scss */
+  /* line 832, ../css.source/globals.scss */
   .modal.modal-standard p {
     line-height: 1.5;
   }
 }
-/* line 848, ../css.source/globals.scss */
+/* line 840, ../css.source/globals.scss */
 .modal.modal-standard p a {
   text-decoration: underline;
 }
-/* line 853, ../css.source/globals.scss */
+/* line 845, ../css.source/globals.scss */
 .modal.modal-standard .actions {
   *zoom: 1;
   margin-top: 23px;
   text-align: center;
 }
-/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .modal.modal-standard .actions:after {
   content: "";
   display: table;
   clear: both;
 }
 @media (min-width: 650px) {
-  /* line 853, ../css.source/globals.scss */
+  /* line 845, ../css.source/globals.scss */
   .modal.modal-standard .actions {
     margin-top: 32px;
   }
 }
-/* line 860, ../css.source/globals.scss */
+/* line 852, ../css.source/globals.scss */
 .modal.modal-standard .actions .button {
   margin-right: 0;
 }
 @media (min-width: 650px) {
-  /* line 860, ../css.source/globals.scss */
+  /* line 852, ../css.source/globals.scss */
   .modal.modal-standard .actions .button {
     width: 190px;
   }
-  /* line 864, ../css.source/globals.scss */
+  /* line 856, ../css.source/globals.scss */
   .modal.modal-standard .actions .button:last-child {
     float: left;
   }
-  /* line 867, ../css.source/globals.scss */
+  /* line 859, ../css.source/globals.scss */
   .modal.modal-standard .actions .button:first-child {
     float: right;
   }
-  /* line 870, ../css.source/globals.scss */
+  /* line 862, ../css.source/globals.scss */
   .modal.modal-standard .actions .button:only-child {
     float: none;
   }
 }
 
-/* line 879, ../css.source/globals.scss */
+/* line 871, ../css.source/globals.scss */
 footer .print-more-info {
   display: none;
   margin-top: 1em;

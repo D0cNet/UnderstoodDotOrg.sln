@@ -317,3 +317,15 @@ div#{$class-wrapper}#{$class-upload} {
 
 
 @include retina();
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .checker input {
+    visibility: hidden;
+  }
+}
+
+.checker input {
+  @include old-ie {
+    visibility: visible;
+  }
+}  

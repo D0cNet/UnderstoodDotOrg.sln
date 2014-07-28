@@ -715,3 +715,13 @@ input.uniform-input, input.uniform-input:focus {
     background-image: url(none);
   }
 }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* line 322, ../css.source/uniform-understood.scss */
+  .checker input {
+    visibility: hidden;
+  }
+}
+/* line 3, ../css.source/mixins/_old-ie.scss */
+.old-ie .checker input {
+  visibility: visible;
+}
