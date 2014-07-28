@@ -447,7 +447,7 @@
 	html[lang="en"] .print-only.english-text {
     display: block;
 	}
-	html[lang="es"] .print-only.spanish-text {
+	html[lang="es", lang="es-mx"] .print-only.spanish-text {
     display: block;
 	}
 

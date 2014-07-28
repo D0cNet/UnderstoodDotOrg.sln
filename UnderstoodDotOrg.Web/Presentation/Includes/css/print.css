@@ -1,9 +1,9 @@
 /*
 Syntax error: Invalid CSS after "	html[lang="es"": expected "]", was ", lang="es-mx"]..."
-        on line 458 of /Users/daniel/prj/digital_pulp/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/print.scss
+        on line 450 of /Users/daniel/prj/digital_pulp/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/print.scss
 
 Backtrace:
-/Users/daniel/prj/digital_pulp/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/print.scss:458
+/Users/daniel/prj/digital_pulp/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/print.scss:450
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/scss/parser.rb:1147:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/scss/parser.rb:1085:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/scss/parser.rb:1080:in `tok!'
@@ -71,4 +71,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"	html[lang=\"es\"\": expected \"]\", was \", lang=\"es-mx\"]...\"\A         on line 458 of /Users/daniel/prj/digital_pulp/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/print.scss"; }
+  content: "Syntax error: Invalid CSS after \"	html[lang=\"es\"\": expected \"]\", was \", lang=\"es-mx\"]...\"\A         on line 450 of /Users/daniel/prj/digital_pulp/poses.inetpub/UnderstoodDotOrg.sln/UnderstoodDotOrg.Web/Presentation/includes/css.source/print.scss"; }
