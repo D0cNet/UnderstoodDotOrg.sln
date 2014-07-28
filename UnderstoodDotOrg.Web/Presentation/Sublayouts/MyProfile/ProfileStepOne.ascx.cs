@@ -25,7 +25,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
             
             foreach (var grade in GradeLevelItem.GetGrades())
             {
-                gradeList.Add(new ListItem() { Text = grade.Name, Value = grade.ID.ToString() });
+                gradeList.Add(new ListItem() { Text = grade.Name.Raw, Value = grade.ID.ToString() });
             }
 
             uxSelectGrade1.Items.AddRange(gradeList.ToArray());
