@@ -662,6 +662,8 @@ jQuery(document).ready(function(){
 			for (var i = 0, j = entries.length; i < j; i++) {
 				$container.append(template(entries[i]));
 			}
+
+			ReadSpeaker.q(function () { rspkr.Toggle.createPlayer() });
 			
 			page++;
 		
