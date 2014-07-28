@@ -81,6 +81,7 @@
     <Compile Include="CommunityServices\Threads.cs" />
     <Compile Include="ExactTarget\ExactTargetService.cs" />
     <Compile Include="ExactTarget\IExactTargetService.cs" />
+    <Compile Include="ExactTarget\ScheduledJobs.cs" />
     <Compile Include="LocationServices\GeoIPLookup.cs" />
     <Compile Include="MemberServices\MemberExtensions.cs" />
     <Compile Include="MemberServices\User.cs" />
