@@ -34,18 +34,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyProfile
 
             uxSelectGrade2.Items.AddRange(gradeList.ToArray());
             uxSelectGrade2.DataBind();
+            uxSelectGrade2.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
 
             uxSelectGrade3.Items.AddRange(gradeList.ToArray());
             uxSelectGrade3.DataBind();
+            uxSelectGrade3.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
 
             uxSelectGrade4.Items.AddRange(gradeList.ToArray());
             uxSelectGrade4.DataBind();
+            uxSelectGrade4.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
 
             uxSelectGrade5.Items.AddRange(gradeList.ToArray());
             uxSelectGrade5.DataBind();
+            uxSelectGrade5.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
 
             uxSelectGrade6.Items.AddRange(gradeList.ToArray());
             uxSelectGrade6.DataBind();
+            uxSelectGrade6.Items.Insert(0, new ListItem(DictionaryConstants.SelectGradeLabel, string.Empty));
         }
 
         protected void NextButton_Click(object sender, EventArgs e)
