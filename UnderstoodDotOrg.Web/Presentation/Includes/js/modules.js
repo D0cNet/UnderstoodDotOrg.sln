@@ -545,6 +545,9 @@ the callbacks passed to the module.
             // data results per click (from button data attribute)
             var $dataResultsPerClick = $showMore.data("results-per-click");
 
+            //data sort option (from button data attribute)
+            var $dataSortOption = $showMore.attr("data-sort-option");
+
             //number visible to user, reflecting number of displayed results
             var $categoryDisplayCount = $(".category-display-count").filter("[data-category-id='" + $dataCategoryId + "']");
 
@@ -556,8 +559,7 @@ the callbacks passed to the module.
                 var techTypeId = $("#hfAssistiveTechResultsTechTypeId").val();
                 var platformId = $("#hfAssistiveTechResultsPlatformId").val();
             }
-            
-            var sortOption = $("#hfAssistiveTechResultsSortOption").val();
+            //var sortOption = $("#hfAssistiveTechResultsSortOption").val(); CURRENTLY NOT USED - WILL NEED TO IMPLEMENT
 
             // scroll to top of newly loaded items
             $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
@@ -565,7 +567,7 @@ the callbacks passed to the module.
             var qs = "?count=" + $dataCount +
                 "&pageId=" + $dataPageId +
                 "&categoryId=" + $dataCategoryId +
-                "&sortOption=" + sortOption +
+                "&sortOption=" + $dataSortOption +
                 (keyword ?
                     "&keyword=" + keyword :
                     "&issueId=" + issueId + "&gradeId=" + gradeId + "&techTypeId=" + techTypeId + "&platformId=" + platformId);
@@ -696,7 +698,7 @@ the callbacks passed to the module.
         var featuredSliderArr = [];
         var exploreSliderArr = [];
         var partnersSliderArr = [];
-        var forYouSliderArr = [];
+        var forYouSliderData = {};
         var commentGallerySliderArr = [];
         var parentsAreSayingSliderArr = [];
         var partnersAnchor;
@@ -1208,15 +1210,28 @@ the callbacks passed to the module.
         ///////////////////////////////// Recos For You Slider /////////////////////////////////
 
         // Pushes Recos For You Slider items into an array
-        jQuery(".recos-for-you li").each(function () {
-            forYouSliderArr.push('<li>' + jQuery(this).html() + '</li>');
-        });
+        var recosCarousels = jQuery(".recos-for-you"),
+            len = recosCarousels.length;
+
+        for (var i = 0; i < len; i++) {
+            var slides = recosCarousels.eq(i).find('li');
+            forYouSliderData[i] = [];
+
+            for (var x = 0; x < slides.length; x++) {
+                var slideHTML = '<li>' + slides.eq(x).html() + '</li>';
+
+                forYouSliderData[i].push(slideHTML);
+            }
+        }
 
         // Clears Recos For You Slider Contents
-        $(".recos-for-you").html('');
+        recosCarousels.html('');
 
         // Initializes Recos For You Slider
-        responsiveSliderChange(forYouSliderArr, false, jQuery('.recos-for-you'), 4, false, false, false);
+        for (var i = 0; i < len; i++) {
+             responsiveSliderChange( forYouSliderData[i], false, recosCarousels.eq(i), 4, false, false, false );
+        }
+
         if (Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')) {
             $('.recos-for-you li').equalHeights();
         } else {
