@@ -791,7 +791,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -1039,7 +1039,7 @@ html.canvas .mini-tools-wrap {
   list-style: none;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit .slide ul:after {
   content: "";
   display: table;
@@ -1255,7 +1255,9 @@ html.canvas .mini-tools-wrap {
 }
 /* line 142, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li {
-  width: 100%;
+  width: 235px;
+  height: 380px;
+  margin-right: 50px;
   white-space: normal;
   display: inline-block;
   vertical-align: top;
@@ -1264,125 +1266,112 @@ html.canvas .mini-tools-wrap {
   padding: 18px 20px;
   color: #696969;
   margin-bottom: 96px;
-  height: 330px;
-  height: 340px;
-  height: 350px;
-  height: 360px;
-  height: 380px;
-  height: 400px;
-  margin: 0 4.6%;
-  width: 41.2%;
-  height: 330px;
-  padding: 16px 2% 23px;
-  height: 384px;
-  height: 410px;
-  margin: 0 2.83%;
-  width: 28%;
-  height: 358px;
+  position: relative;
 }
-/* line 195, ../css.source/modules/_more-to-explore.scss */
+/* line 156, ../css.source/modules/_more-to-explore.scss */
+.more-to-explore .more-to-explore-container ul li .rs_read_this {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 202, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .header {
-  height: 80px;
-  height: 90px;
-  height: 122px;
+  height: 150px;
 }
-/* line 206, ../css.source/modules/_more-to-explore.scss */
+/* line 205, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .header h3 {
   color: #7a4183;
   font-weight: normal;
-  font-size: 15px;
-  font-size: 0.9375rem;
-  margin-bottom: 5px;
-  font-size: 24px;
-  font-size: 1.5rem;
-  margin-bottom: 13px;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
 }
-/* line 217, ../css.source/modules/_more-to-explore.scss */
+/* line 213, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .header p {
   font-family: arial, sans-serif;
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  min-height: 4.5em;
-  margin-bottom: 16px;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.375;
-  min-height: 4.125em;
+  font-size: 0.95rem;
+  line-height: 1.3;
 }
-/* line 232, ../css.source/modules/_more-to-explore.scss */
+/* line 222, ../css.source/modules/_more-to-explore.scss */
+.more-to-explore .more-to-explore-container ul li .image {
+  width: 190px;
+  height: 106px;
+}
+/* line 226, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li img {
   width: 100%;
 }
-/* line 238, ../css.source/modules/_more-to-explore.scss */
+/* line 230, ../css.source/modules/_more-to-explore.scss */
+.more-to-explore .more-to-explore-container ul li .footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 236, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .footer a {
-  margin-top: 18px;
   display: inline-block;
   color: #426da9;
   font-weight: normal;
-  font-size: 15px;
-  font-size: 0.9375rem;
-  line-height: 1.333;
+  font-size: 0.8rem;
+  line-height: 1.2;
   text-decoration: underline;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.375;
-  margin-top: 23px;
-}
-/* line 253, ../css.source/modules/_more-to-explore.scss */
-.more-to-explore .more-to-explore-container ul li .footer a:first-child {
   width: 50%;
+  float: left;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+/* line 248, ../css.source/modules/_more-to-explore.scss */
+.more-to-explore .more-to-explore-container ul li .footer a:first-child {
   border-right: solid 1px #f4f2f1;
-  margin-left: 0;
+  padding-right: 10px;
+  padding-left: 00px;
 }
-/* line 259, ../css.source/modules/_more-to-explore.scss */
-.more-to-explore .more-to-explore-container ul li .footer a + a {
-  margin-left: 8%;
-}
-/* line 263, ../css.source/modules/_more-to-explore.scss */
+/* line 254, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .footer a:hover {
   text-decoration: none;
 }
-/* line 271, ../css.source/modules/_more-to-explore.scss */
+/* line 262, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li input {
   width: 100%;
   margin-bottom: 10px;
 }
-/* line 276, ../css.source/modules/_more-to-explore.scss */
+/* line 267, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li fieldset {
   position: relative;
   z-index: 99999;
   margin-bottom: 10px;
 }
-/* line 282, ../css.source/modules/_more-to-explore.scss */
+/* line 273, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools {
   position: relative;
   height: 100%;
 }
-/* line 287, ../css.source/modules/_more-to-explore.scss */
+/* line 278, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools p {
   min-height: 0px;
   margin-bottom: 10px;
 }
-/* line 292, ../css.source/modules/_more-to-explore.scss */
+/* line 283, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools fieldset {
   margin: 0px;
 }
-/* line 294, ../css.source/modules/_more-to-explore.scss */
+/* line 285, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools .header {
   height: auto;
 }
-/* line 296, ../css.source/modules/_more-to-explore.scss */
+/* line 287, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools div.selector {
   margin-bottom: 10px;
 }
-/* line 298, ../css.source/modules/_more-to-explore.scss */
+/* line 289, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools .submit-button-wrap {
   width: 100%;
   position: absolute;
   bottom: -5px;
 }
-/* line 303, ../css.source/modules/_more-to-explore.scss */
+/* line 294, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools .submit-button-wrap .button {
   margin-bottom: 0px;
 }
@@ -1815,7 +1804,7 @@ html.canvas .mini-tools-wrap {
   *zoom: 1;
   margin-bottom: 50px;
 }
-/* line 22, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-listing-container .article:after {
   content: "\0020";
   display: block;
@@ -4212,7 +4201,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
