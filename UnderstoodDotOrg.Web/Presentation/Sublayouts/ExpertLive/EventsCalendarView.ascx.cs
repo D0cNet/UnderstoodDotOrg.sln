@@ -281,7 +281,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                 HyperLink linkEventNameTruncated = (HyperLink)e.Item.FindControl("linkEventNameTruncated");
 
                 paragraphChatHeading.Visible = true;
-                paragraphChatHeading.InnerText = eventToBind.EventHeading.Rendered;
+                paragraphChatHeading.InnerText = eventToBind.EventHeading.Raw;
                 linkEventName.Text = eventToBind.ContentPage.PageTitle.Rendered;
                 linkEventName.NavigateUrl = linkEventNameTruncated.NavigateUrl = eventToBind.GetUrl();
                 linkEventNameTruncated.Text = UnderstoodDotOrg.Common.Helpers.TextHelper.TruncateText(

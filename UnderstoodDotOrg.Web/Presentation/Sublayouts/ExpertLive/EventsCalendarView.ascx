@@ -76,7 +76,7 @@
                 <ItemTemplate>
                     <li class="event" runat="server" id="itemSingleEvent">
                         <div class="event-content">
-                            <p visible="false" runat="server" id="paragraphChatHeading" class="event-header rs_skip"><%# Eval("EventHeading.Rendered") %></p>
+                            <p visible="false" runat="server" id="paragraphChatHeading" class="event-header rs_skip"></p>
                             <asp:HyperLink runat="server" ID="linkEventNameTruncated" CssClass="event-name truncated rs_skip" />
                             <asp:HyperLink runat="server" ID="linkEventName" CssClass="event-name rs_skip" />
                             <p class="event-time"><asp:Literal runat="server" ID="literalEventUTCTime" /></p>
