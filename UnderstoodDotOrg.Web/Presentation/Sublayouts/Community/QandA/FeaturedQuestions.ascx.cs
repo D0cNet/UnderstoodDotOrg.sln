@@ -16,6 +16,8 @@
     using UnderstoodDotOrg.Services.TelligentService;
     using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
     using System.Linq;
+    using System.Web.UI.HtmlControls;
+    using System.Web;
 
     public partial class FeaturedQuestions : System.Web.UI.UserControl
     {
@@ -184,8 +186,17 @@
             var item = (Question)e.Item.DataItem;
             HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
 
-            hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(item.Author);
+            if (hypUserProfileLink != null)
+            {
+                hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(item.Author);
+            }
 
+            HtmlAnchor hrefTopicUrl = e.FindControlAs<HtmlAnchor>("hrefTopicUrl");
+            if(hrefTopicUrl!=null)
+            {
+                Item currItem = Sitecore.Context.Item;
+                hrefTopicUrl.HRef = currItem.GetUrl() + "?topic=" + HttpUtility.UrlEncode(item.Group);
+            }
             FollowButton btnFoll = e.FindControlAs<FollowButton>("FollowButton");
             if(btnFoll!=null)
             {

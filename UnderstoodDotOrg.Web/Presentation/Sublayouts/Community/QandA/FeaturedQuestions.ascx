@@ -14,7 +14,7 @@
                     </div>
                     <div class="question-info">
                         <a href="<%# Item.Url %>" class="title"><%# Item.Title %></a>
-                        <span class="details"><sc:Text Field="In Text" runat="server" /> <a href="q-and-a?topic=<%# HttpUtility.UrlEncode(Item.Group) %>" class="topic"><%# Item.Group %></a> - <sc:Text Field="Asked By Text" runat="server" /> <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
+                        <span class="details"><sc:Text Field="In Text" runat="server" /> <a runat="server" id="hrefTopicUrl" class="topic"><%# Item.Group %></a> - <sc:Text Field="Asked By Text" runat="server" /> <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
                        <%-- <a class="button" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.FollowThisQuestionLabel %></a>--%>
                         <uc1:FollowButton runat="server" ID="FollowButton" />
                     </div>

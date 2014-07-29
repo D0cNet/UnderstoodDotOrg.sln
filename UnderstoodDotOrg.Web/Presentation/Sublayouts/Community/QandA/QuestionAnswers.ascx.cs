@@ -62,8 +62,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA
         {
             var item = (Answer)e.Item.DataItem;
             HyperLink hypUserProfileLink = (HyperLink)e.Item.FindControl("hypUserProfileLink");
-
-            hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(item.Author);
+            if (hypUserProfileLink != null)
+            {
+                hypUserProfileLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(item.Author);
+            }
         }
 
         protected void LikeButton_Click(object sender, EventArgs e)
