@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AssistiveToolsLandingPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.AssistiveToolsLandingPage" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<%@ Import Namespace="UnderstoodDotOrg.Common.Extensions" %>
 <!-- Hero Carousel Module -->
 <div class="container hero-container flush at-hero-container-wrap">
     <!-- BEGIN PARTIAL: at-hero-image -->
@@ -40,7 +41,8 @@
 <div class="container parents-are-saying">
     <div class="row">
         <div class="col col-24 header-container rs_read_this parents-are-saying-heading-rs-wrapper">
-            <h2><asp:Label runat="server" Text="" ID="lblWhatParentsAreSaying" /></h2>
+            <h2>
+                <asp:Label runat="server" Text="" ID="lblWhatParentsAreSaying" /></h2>
         </div>
     </div>
     <div class="row ie-padding">
@@ -51,7 +53,7 @@
                         <li>
                             <div class="rs_read_this parents-are-saying-rs-wrapper">
                                 <h3><%# Eval("Title") %></h3>
-                                <p><%# Eval("ReviewText") %></p>
+                                <%# Eval("ReviewText") %>
                                 <!-- BEGIN PARTIAL: results-slider -->
                                 <%# Eval("RatingHtml") %>
                                 <!-- END PARTIAL: results-slider -->
@@ -61,138 +63,6 @@
                         </li>
                     </ItemTemplate>
                 </asp:Repeater>
-                <%--<li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi Adipisc est un...<a href="REPLACE">read more</a></p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider zero" aria-label=" "></div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">13rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-one" aria-label="Quality Rating: 1">Quality Rating: 1</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">23rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-two" aria-label="Quality Rating: 2">Quality Rating: 2</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">33rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-three" aria-label="Quality Rating: 3">Quality Rating: 3</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">43rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-four" aria-label="Quality Rating: 4">Quality Rating: 4</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">53rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-five" aria-label="Quality Rating: 5">Quality Rating: 5</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-five" aria-label="Quality Rating: 5">Quality Rating: 5</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-four" aria-label="Quality Rating: 4">Quality Rating: 4</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-three" aria-label="Quality Rating: 3">Quality Rating: 3</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-two" aria-label="Quality Rating: 2">Quality Rating: 2</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider blue-one" aria-label="Quality Rating: 1">Quality Rating: 1</div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="rs_read_this parents-are-saying-rs-wrapper">
-                        <h3>Autism Play</h3>
-                        <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi.</p>
-                        <!-- BEGIN PARTIAL: results-slider -->
-                        <div class="results-slider zero" aria-label=" "></div>
-                        <!-- END PARTIAL: results-slider -->
-                        <h4>Parent</h4>
-                        <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
-                    </div>
-                </li>--%>
             </div>
         </div>
     </div>
@@ -204,58 +74,25 @@
 <div class="container more-carousel">
     <div class="row">
         <div class="col col-24">
-            <h2><asp:Label ID="lblRelatedArticles" runat="server" Text="" /></h2>
+            <h2>
+                <asp:Label ID="lblRelatedArticles" runat="server" Text="" /></h2>
             <!-- BEGIN PARTIAL: more-carousel -->
             <div id="featured-slides-container" class="arrows-gray">
                 <ul>
-                    <li>
-                        <div class="rs_read_this">
-                            <a href="REPLACE">
-                                <p>Understand Your Child's Problem: Start a Log</p>
-                                <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="rs_read_this">
-                            <a href="REPLACE">
-                                <p>Does my Child Have Dyslexia? Take the Quiz</p>
-                                <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="rs_read_this">
-                            <a href="REPLACE">
-                                <p>Get Better Recommendations: Create a Profile</p>
-                                <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="rs_read_this">
-                            <a href="REPLACE">
-                                <p>Understand Your Child's Problem: Start a Log</p>
-                                <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="rs_read_this">
-                            <a href="REPLACE">
-                                <p>Does my Child Have Dyslexia? Take the Quiz</p>
-                                <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="rs_read_this">
-                            <a href="REPLACE">
-                                <p>Get Better Recommendations: Create a Profile</p>
-                                <img alt="230x129 Placeholder" src="http://placehold.it/230x129" />
-                            </a>
-                        </div>
-                    </li>
+                    <asp:Repeater ID="rptrFeaturedArticles" runat="server" 
+                        ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems.DefaultArticlePageItem">
+                        <ItemTemplate>
+                            <li>
+                                <div class="rs_read_this">
+                                    <a href="<%# Item.GetUrl() %>">
+                                        <p><%# Item.ContentPage.BasePageNEW.NavigationTitle.Rendered %></p>
+                                        <sc:FieldRenderer ID="frArticleImage" runat="server" Parameters="W=230&H=129" />
+                                        <%--<%# Item.ContentThumbnail.MediaItem != null ? Item.ContentThumbnail.Rendered : Item.FeaturedImage.Rendered %>--%>
+                                    </a>
+                                </div>
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </ul>
             </div>
             <!-- #more-carousel-slides-container-->

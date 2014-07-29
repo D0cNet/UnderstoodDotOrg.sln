@@ -12,6 +12,9 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
+using Sitecore.Web.UI.WebControls;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
@@ -22,19 +25,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             lblRelatedArticles.Text = DictionaryConstants.RelatedArticlesLabel;
             lblWhatParentsAreSaying.Text = DictionaryConstants.WhatParentsAreSayingLabel;
 
-            var reviewItems = AssistiveToolsSearchResultsPageItem.GetSearchResults(searchTerm: "*");
+            BindUserReviews();
+            BindRelatedArticles();
+        }
+
+        protected void BindUserReviews()
+        {
+            var reviewItems = AssistiveToolsSearchResultsPageItem.GetSearchResults();
             var reviews = reviewItems
-                .SelectMany(item => CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid())
+                .SelectMany(item => CSMUserReviewExtensions.GetReviews(item.ID.ToGuid())
                     .Select(userReview =>
                     {
                         var url = item.GetUrl();
                         var grade = Sitecore.Context.Database.GetItemAs<GradeLevelItem>(userReview.RatedGradeId);
+                        var comments = TelligentService.ReadComments(item.BlogId, item.BlogPostId);
+                        var reviewComment = comments
+                            .FirstOrDefault(i => new Guid(i.CommentId) == userReview.TelligentCommentId);
+                        var processedBody = reviewComment != null && !string.IsNullOrEmpty(reviewComment.Body) ? 
+                            reviewComment.Body
+                                .TakeWhile((c, i) => i < reviewComment.Body.Length && (i < 100 || Char.IsLetter(c))) : 
+                            null;
+                        var reviewBody = processedBody != null && processedBody.Any() ? new String(processedBody.ToArray()) : string.Empty;
+
                         return new
                         {
                             Title = item.Title.Rendered,
-                            ReviewText = userReview.ReviewBody
-                                .TakeWhile((c, i) => i < userReview.ReviewBody.Length && (i < 100 || Char.IsLetter(c)))
-                                .Concat("...<a href=\"" + url + "\">Read more</a>"),
+                            ReviewText = reviewBody + "...<a href=\"" + url + "\">Read more</a>",
                             RatingHtml = GetRatingHTML(userReview.Rating),
                             Url = url,
                             LinkText = (grade != null ? grade.Name.Raw + " & " : string.Empty) +
@@ -44,6 +60,28 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
             rptrWhatParentsAreSaying.DataSource = reviews;
             rptrWhatParentsAreSaying.DataBind();
+        }
+
+        protected void BindRelatedArticles()
+        {
+            var relatedArticles = Model.RelatedArticles.ListItems
+                .Where(i => i != null && i.InheritsFromType(DefaultArticlePageItem.TemplateId))
+                .Select(i => (DefaultArticlePageItem)i);
+
+            rptrFeaturedArticles.DataSource = relatedArticles;
+            rptrFeaturedArticles.ItemDataBound += rptrFeaturedArticles_ItemDataBound;
+            rptrFeaturedArticles.DataBind();
+        }
+
+        void rptrFeaturedArticles_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                var article = e.Item.DataItem as DefaultArticlePageItem;
+                var frArticleImage = e.FindControlAs<FieldRenderer>("frArticleImage");
+                frArticleImage.Item = article.InnerItem;
+                frArticleImage.FieldName = article.ContentThumbnail.MediaItem != null ? "Content Thumbnail" : "Featured Image";
+            }
         }
 
         protected string GetRatingHTML(int rating)
