@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AdvocacyLandingPage.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy.AdvocacyLandingPage" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+
 <div class="container l-take-action">
     <div class="row">
         <div class="col col-15 offset-1 skiplink-content" aria-role="main">
@@ -41,7 +43,7 @@
                 <div class="l-take-action-signup">
                     <!-- BEGIN PARTIAL: advocacy/take-action-signup -->
                     <div class="take-action-signup rs_read_this take-action-rs-wrapper">
-                        <h4>Signup for Action Alerts!</h4>
+                        <h4><sc:FieldRenderer runat="server" FieldName="Sidebar Action Alerts Signup Heading" /></h4>
                         <fieldset>
                             <label for="take-action-email" class="visuallyhidden"></label>
                             <input type="text" placeholder="Enter email address" name="signup-newsletter-email" id="take-action-email" class="take-action-input">

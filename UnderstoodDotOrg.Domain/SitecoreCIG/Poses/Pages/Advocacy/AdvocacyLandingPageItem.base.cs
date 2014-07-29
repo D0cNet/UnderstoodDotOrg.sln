@@ -82,6 +82,15 @@ public CustomTextField RelatedContentHeading
 }
 
 
+public CustomTextField SidebarActionAlertsSignupHeading
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Sidebar Action Alerts Signup Heading"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
