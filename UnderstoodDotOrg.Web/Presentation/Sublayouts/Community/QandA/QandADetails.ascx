@@ -17,7 +17,7 @@
                     <div class="description">
                         <asp:Label ID="QuestionBodyLabel" runat="server" />
                     </div>
-                    <span class="details"><%= UnderstoodDotOrg.Common.DictionaryConstants.InFragment %> <a href="REPLACE" class="topic"><asp:Label ID="GroupLabel" runat="server" /></a> - <%= UnderstoodDotOrg.Common.DictionaryConstants.AskedByLabel %> <asp:HyperLink runat="server" ID="hypAuthorLink" class="author"><asp:Label ID="AuthorLabel" runat="server" /></asp:HyperLink> <span class="bullet">&bull;</span> <asp:Label ID="DateLabel" runat="server" /></span>
+                    <span class="details"><%= UnderstoodDotOrg.Common.DictionaryConstants.InFragment %> <a runat="server" id="hrefTopicUrl" class="topic"><asp:Label ID="GroupLabel" runat="server" /></a> - <%= UnderstoodDotOrg.Common.DictionaryConstants.AskedByLabel %> <asp:HyperLink runat="server" ID="hypAuthorLink" class="author"><asp:Label ID="AuthorLabel" runat="server" /></asp:HyperLink> <span class="bullet">&bull;</span> <asp:Label ID="DateLabel" runat="server" /></span>
                     <div class="buttons">
                         <a class="button answer" href="javascript:void" onclick="DisplayForm();"><%= UnderstoodDotOrg.Common.DictionaryConstants.AnswerQuestionLabel %></a>
                         <%--<a class="button follow" href="REPLACE"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.FollowThisQuestionLabel %></span></a>--%>

@@ -1,5 +1,6 @@
 ﻿using Sitecore.Data.Items;
 using System;
+using System.Web;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
@@ -31,7 +32,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A
             AuthorLabel.Text = question.Author;
             hypAuthorLink.NavigateUrl = MembershipHelper.GetPublicProfileUrl(question.Author);
             DateLabel.Text = question.PublishedDate;
-
+            //HtmlAnchor hrefTopicUrl = e.FindControlAs<HtmlAnchor>("hrefTopicUrl");
+            if (hrefTopicUrl != null)
+            {
+                Item parentItem = Sitecore.Context.Item.Parent;
+                hrefTopicUrl.HRef = parentItem.GetUrl() + "?topic=" + HttpUtility.UrlEncode(question.Group);
+            }
             SubmitButton.Text = UnderstoodDotOrg.Common.DictionaryConstants.SubmitAnswerLabel;
             FollowButton.LoadState(question.ContentId, Constants.TelligentContentType.Weblog, question.ContentTypeId);
         }
