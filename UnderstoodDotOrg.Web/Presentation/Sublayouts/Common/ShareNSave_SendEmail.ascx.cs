@@ -42,7 +42,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             {
                 Item currentItem = Sitecore.Context.Item;
 
-                InvokeEM24ContentSharedWithAFriendRequest message = new InvokeEM24ContentSharedWithAFriendRequest { };
+                InvokeEM24ContentSharedWithAFriendRequest message = new InvokeEM24ContentSharedWithAFriendRequest { RequestUrl = Request.Url };
 
                 message.PMText = txtThoughts.Text.Trim();
                 message.ToEmail = txtRecipientEmail.Text.Trim();

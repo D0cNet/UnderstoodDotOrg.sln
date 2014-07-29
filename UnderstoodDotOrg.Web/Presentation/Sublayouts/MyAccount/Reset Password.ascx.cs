@@ -92,7 +92,7 @@
 
                 var member = membershipManager.GetMember(Guid.Parse(ResetTicket.UserID));
                 var user = membershipManager.GetUser(Guid.Parse(ResetTicket.UserID), false);
-                ExactTargetService.InvokeEM23PasswordResetConfirmation(new InvokeEM23PasswordResetConfirmationRequest { PreferredLanguage = member.PreferredLanguage, EmailAddress = user.Email, ReportChangedPasswordLink = "#", ToEmail = user.Email, UserPassword = "**********" });
+                ExactTargetService.InvokeEM23PasswordResetConfirmation(new InvokeEM23PasswordResetConfirmationRequest { PreferredLanguage = member.PreferredLanguage, EmailAddress = user.Email, ReportChangedPasswordLink = "#", ToEmail = user.Email, UserPassword = "**********", RequestUrl = Request.Url });
             }
         }
     }

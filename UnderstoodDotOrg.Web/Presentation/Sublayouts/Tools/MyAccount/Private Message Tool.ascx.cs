@@ -325,7 +325,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
                                                                MsgCenterLink = myAccountLink,
                                                                PMText = CKEditorControl1.Text,
                                                                ReportInappropriateLink = "flagged@understood.org",
-                                                               ToEmail = memberEmail
+                                                               ToEmail = memberEmail,
+                                                               RequestUrl = Request.Url
                                                            });
 
                     }

@@ -2034,71 +2034,7 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 
 			return reply;
 		}
-
-        //public static BaseReply InvokeEM1WelcomeToUnderstoodENID(InvokeEM3ExploreTheCommunityRequest request)
-        //{
-        //    BaseReply reply = new BaseReply();
-
-        //    SoapClient client = ExactTargetService.GetInstance();
-
-        //    StringBuilder sbReturnString = new StringBuilder();
-
-        //    Guid preferredLanguage = request.PreferredLanguage;
-        //    int emailTemplateID = GetEmailTemplateId(preferredLanguage, Constants.EmailIDs.EM3ExploreTheCommunityENID, Constants.EmailIDs.EM3ExploreTheCommunitySPID);
-
-        //    try
-        //    {
-        //        //Create a GUID for ESD to ensure a unique name and customer key
-        //        TriggeredSendDefinition tsd = ExactTargetService.GetSendDefinition(Guid.NewGuid().ToString(), emailTemplateID, request.ToEmail, "Explore the Community");
-
-        //        string cStatus = ExactTargetService.GetCreateResult(ref client, tsd, ref sbReturnString);
-
-        //        if (cStatus == "OK")
-        //        {
-        //            tsd.TriggeredSendStatus = TriggeredSendStatusEnum.Active; //necessary to set the TriggeredSendDefinition to "Running"
-        //            tsd.TriggeredSendStatusSpecified = true; //required
-
-        //            string uStatus = ExactTargetService.GetUpdateResult(ref client, tsd, ref sbReturnString);
-
-        //            if (uStatus == "OK")
-        //            {
-        //                // *** SEND THE TRIGGER EMAIL
-        //                Subscriber newSub = new Subscriber();
-        //                newSub.EmailAddress = request.ToEmail;
-        //                newSub.SubscriberKey = request.ToEmail;
-
-        //                newSub.Attributes = new etAPI.Attribute[3];
-        //                newSub.Attributes[0] = new etAPI.Attribute();
-        //                newSub.Attributes[0].Name = "fullname";
-        //                newSub.Attributes[0].Value = request.FullName;
-        //                newSub.Attributes[1] = new etAPI.Attribute();
-        //                newSub.Attributes[1].Name = "partner_promo";
-        //                newSub.Attributes[1].Value = request.PartnerPromo;
-        //                newSub.Attributes[2] = new etAPI.Attribute();
-        //                newSub.Attributes[2].Name = "profile_completion_bar";
-        //                newSub.Attributes[2].Value = request.ProfileCompletionBar;
-
-        //                ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
-
-        //                reply.Successful = true;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception exc)
-        //    {
-        //        string message = "Unable to send welcome email.";
-
-        //        reply.Successful = false;
-        //        reply.Message = message;
-
-        //        Log.Error(exc.ToString(), "something went wrong");
-        //    }
-
-        //    return reply;
-        //}
-
-
-
+       
         private static string GetChildPersonalizedArticles(Child child)
         {
             StringBuilder sb = new StringBuilder();
