@@ -107,7 +107,7 @@
                             <div class="event-actions">
                                 <p class="event-card-header"><%# Eval("EventHeading.Rendered") %></p>
                                 <p class="event-card-datetime">
-                                    <asp:HyperLink runat="server" ID="linkEventDate"><asp:Literal runat="server" ID="literalEventTimeDate" /></asp:HyperLink>
+                                    <asp:HyperLink runat="server" ID="linkEventDate"></asp:HyperLink>
                                 </p>
                                 <p>
                                     <sc:FieldRenderer ID="frRsvpLink" runat="server" FieldName="RSVP for Event Link" />  

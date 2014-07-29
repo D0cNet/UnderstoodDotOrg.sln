@@ -224,7 +224,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             {
                 BaseEventDetailPageItem eventToBind = (BaseEventDetailPageItem)e.Item.DataItem;
                 bool IsChatEvent = eventToBind.InnerItem.TemplateID == Sitecore.Data.ID.Parse(ChatEventPageItem.TemplateId);
-                Literal literalEventTimeDate = (Literal)e.Item.FindControl("literalEventTimeDate");
                 Literal literalEventUTCTime = (Literal)e.Item.FindControl("literalEventUTCTime");
                 HyperLink linkEventDetails = (HyperLink)e.Item.FindControl("linkEventDetails");
                 HyperLink linkEventDate = (HyperLink)e.Item.FindControl("linkEventDate");
@@ -240,12 +239,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 
                 StringBuilder builderForDateHeading = new StringBuilder();
                 builderForDateHeading.Append(String.Format("{0} {1} ",eventToBind.ContentPage.PageTitle.Rendered, DictionaryConstants.AtFragment));
-                builderForDateHeading.Append(eventToBind.EventStartDate.DateTime.ToString("t"));
+                builderForDateHeading.Append(eventToBind.GetFormattedEventStartTime());
                 builderForDateHeading.Append(" ");
-                builderForDateHeading.Append(eventToBind.EventStartDate.DateTime.ToString("%K"));
-                builderForDateHeading.AppendLine("<br />");
                 builderForDateHeading.Append(eventToBind.EventStartDate.DateTime.ToString("MMM d, yyyy", CultureInfo.InvariantCulture));
-                literalEventTimeDate.Text = builderForDateHeading.ToString();
+                linkEventDate.Text = builderForDateHeading.ToString();
 
                 var dateToCheck = eventToBind.EventStartDate.DateTime;
                 var startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
@@ -273,7 +270,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                     }
                     literalExpertTitles.Text = builderExpertCaption.ToString();
 
-                    imageExpert.ImageUrl = expertToBind.ExpertImage.MediaItem.GetImageUrl();
+                    imageExpert.ImageUrl = expertToBind.GetThumbnailUrl(150, 150);
                     imageExpert.AlternateText = expertToBind.ExpertName;
                     linkExpert.NavigateUrl = expertToBind.GetUrl();
                     litExpertType.Text = expertToBind.GetExpertType();
