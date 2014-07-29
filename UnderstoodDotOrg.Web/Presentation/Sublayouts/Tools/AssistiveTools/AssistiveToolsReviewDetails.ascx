@@ -232,7 +232,7 @@
                                             <div class="learning-scale-wrapper">
                                                 <div class="learning-scale">
                                                     <!-- BEGIN PARTIAL: results-slider -->
-                                                    <div class="results-slider purple-<%= GetSpelledNumber(Model.Quality.Integer) %>" 
+                                                    <div class="results-slider purple-<%= GetSpelledNumber(Model.Learning.Integer) %>" 
                                                         aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>
                                                     <!-- END PARTIAL: results-slider -->
                                                 </div>
