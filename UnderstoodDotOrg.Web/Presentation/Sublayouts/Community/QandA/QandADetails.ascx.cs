@@ -23,8 +23,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A
             wikiPageId = Request.QueryString["wikiPageId"];
             contentId = Request.QueryString["contentId"];
             Item currItem = Sitecore.Context.Item;
-            //UnderstoodDotOrg.Services.Models.Telligent.Question question = TelligentService.GetQuestion(wikiId, wikiPageId, contentId);
-            UnderstoodDotOrg.Services.Models.Telligent.Question question = Questions.GetQuestion(wikiId, wikiPageId, contentId);
+            UnderstoodDotOrg.Services.Models.Telligent.Question question = TelligentService.GetQuestion(wikiId, wikiPageId, contentId);
+            //UnderstoodDotOrg.Services.Models.Telligent.Question question = Questions.GetQuestion(wikiId, wikiPageId, contentId);
             QuestionTitleLabel.Text = question.Title;
             QuestionBodyLabel.Text = question.Body;
             GroupLabel.Text = question.Group;
