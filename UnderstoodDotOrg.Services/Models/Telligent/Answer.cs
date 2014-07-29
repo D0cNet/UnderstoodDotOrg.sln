@@ -14,7 +14,8 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string AuthorAvatar { get; set; }
         public string Likes { get; set; }
         public string Count { get; set; }
-
+        public string ContentId { get; set; }
+        public string ContentTypeId { get; set; }
         public Answer() { }
     }
 }

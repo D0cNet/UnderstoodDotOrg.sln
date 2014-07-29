@@ -38,12 +38,13 @@
                 <div class="description">
                     <%# Item.Body %>
                 </div>
-                <span class="details"><sc:Text Field="In Text" runat="server" /> <a runat="server" id="hrefTopic" class="topic"><asp:Literal ID="lbGroup" runat="server" /></a> - <sc:Text Field="Answered By Text" runat="server" /> <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink>, <asp:Literal ID="lbModerator" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.ModeratorLabel %>" /> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
+                <span class="details"><%= UnderstoodDotOrg.Common.DictionaryConstants.InFragment %> <a runat="server" id="hrefTopic" class="topic"><asp:Literal ID="lbGroup" runat="server" /></a> - <%= UnderstoodDotOrg.Common.DictionaryConstants.AskedByLabel %> <asp:HyperLink ID="hypUserProfileLink" CssClass="author" runat="server"><%# Item.Author %></asp:HyperLink>, <asp:Literal ID="lbModerator" runat="server" Text="<%# UnderstoodDotOrg.Common.DictionaryConstants.ModeratorLabel %>" /> <span class="bullet">&bull;</span> <%# Item.PublishedDate %></span>
                 <div class="buttons">
                     <button id="btnLike" onserverclick="LikeButton_Click" class="helped" runat="server"><i class="icon-comment-like"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ThisHelpedLabel %></button>
                     <button class="report"><i class="icon-comment-flag"></i><%= UnderstoodDotOrg.Common.DictionaryConstants.ReportAsInappropriateLabel %></button>
                 </div>
-                <button class="count-helped"><i class="icon-comment-like"></i><%# Item.Likes %><span class="visuallyhidden">likes</span></button>
+                <uc1:LikeButton runat="server" ID="LikeButton" />
+            <%--    <button class="count-helped"><i class="icon-comment-like"></i><%# Item.Likes %><span class="visuallyhidden">likes</span></button>--%>
             </div>
         </div>
         <!-- END PARTIAL: community/answer_card -->

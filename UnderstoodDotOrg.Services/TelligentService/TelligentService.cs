@@ -90,6 +90,8 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         Body = xn["Body"].InnerText,
                         Author = user["Username"].InnerText,
                         AuthorAvatar = user["AvatarUrl"].InnerText,
+                        ContentId = xn.SelectSingleNode("CommentId").InnerText,
+                        ContentTypeId = xn.SelectSingleNode("CommentContentTypeId").InnerText,
                         Count = nodes.Count.ToString(),
                         Likes = likes,
                     };
