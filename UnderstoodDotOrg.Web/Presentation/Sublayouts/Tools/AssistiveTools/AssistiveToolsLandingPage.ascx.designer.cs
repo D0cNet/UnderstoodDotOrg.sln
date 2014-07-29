@@ -31,15 +31,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
         protected global::System.Web.UI.WebControls.Label lblWhatParentsAreSaying;
         
         /// <summary>
-        /// rptrWhatParentsAreSaying control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptrWhatParentsAreSaying;
-        
-        /// <summary>
         /// lblRelatedArticles control.
         /// </summary>
         /// <remarks>
@@ -47,14 +38,5 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRelatedArticles;
-        
-        /// <summary>
-        /// rptrFeaturedArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptrFeaturedArticles;
     }
 }

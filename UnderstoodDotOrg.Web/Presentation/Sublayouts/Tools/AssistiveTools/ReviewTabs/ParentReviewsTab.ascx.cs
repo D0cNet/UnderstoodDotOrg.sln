@@ -22,12 +22,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 {
     public partial class ParentReviewsTab : BaseSublayout<AssistiveToolsReviewPageItem>
     {
-        public List<Comment> Comments;
+        public AssistiveToolsReviewPageItem pageItem = Sitecore.Context.Item;
+        public List<Comment> comments;
         public bool OpenTab = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Comments = TelligentService.ReadComments(Model.BlogId, Model.BlogPostId);
+            comments = TelligentService.ReadComments(pageItem.BlogId, pageItem.BlogPostId);
 
             if (!IsPostBack)
             {
@@ -39,7 +40,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             rptIssuesChecklist.DataSource = issuesFolder.InnerItem.Children.Select(i => (MetadataItem)i);
             rptIssuesChecklist.DataBind();
 
-            litAverageRating.Text = GetRatingHTML(Int32.Parse(CSMUserReviewExtensions.GetAverageRating(Model.ID.ToGuid())));
+            litAverageRating.Text = GetRatingHTML(Int32.Parse(CSMUserReviewExtensions.GetAverageRating(pageItem.ID.ToGuid())));
 
             rfvGrades.ErrorMessage = DictionaryConstants.ReviewSelectGradeErrorMessage;
             rfvIThinkItIs.ErrorMessage = DictionaryConstants.ReviewIThinkItIsErrorMessaage;
@@ -130,7 +131,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             int total = 0;
             foreach (CSMUserReview r in reviews)
             {
-                Comment comment = Comments.Where(i => new Guid(i.CommentId).ToString() == r.TelligentCommentId.ToString()).FirstOrDefault();
+                Comment comment = comments.Where(i => new Guid(i.CommentId).ToString() == r.TelligentCommentId.ToString()).FirstOrDefault();
                 if (comment != null && !string.IsNullOrEmpty(comment.Body))
                     total += 1;
             }
@@ -166,7 +167,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
                 if (litReviewContent != null)
                 {
-                    Comment comment = Comments.Where(i => new Guid(i.CommentId).ToString() == review.TelligentCommentId.ToString()).FirstOrDefault();
+                    Comment comment = comments.Where(i => new Guid(i.CommentId).ToString() == review.TelligentCommentId.ToString()).FirstOrDefault();
                     if(comment != null)
                         litReviewContent.Text = comment.Body;
                     else
@@ -254,11 +255,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                     if (txbWhatYouThink != null)
                         review.ReviewBody = Sitecore.StringUtil.RemoveTags(txbWhatYouThink.Text);
 
-                    review.CSMItemId = Model.ID.ToGuid();
+                    review.CSMItemId = pageItem.ID.ToGuid();
                     review.MemberId = CurrentMember.MemberId;
-                    review.BlogPostId = Model.BlogPostId;
-                    review.BlogId = Model.BlogId;
-                    review.ContentId = Model.ContentId;
+                    review.BlogPostId = pageItem.BlogPostId;
+                    review.BlogId = pageItem.BlogId;
+                    review.ContentId = pageItem.ContentId;
                     review.UserScreenName = CurrentMember.ScreenName;
                     review.IThinkItIs = ddlIThinkItIs.SelectedValue;
 

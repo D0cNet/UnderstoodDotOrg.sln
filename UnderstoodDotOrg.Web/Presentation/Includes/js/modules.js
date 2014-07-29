@@ -545,6 +545,9 @@ the callbacks passed to the module.
             // data results per click (from button data attribute)
             var $dataResultsPerClick = $showMore.data("results-per-click");
 
+            //data sort option (from button data attribute)
+            var $dataSortOption = $showMore.attr("data-sort-option");
+
             //number visible to user, reflecting number of displayed results
             var $categoryDisplayCount = $(".category-display-count").filter("[data-category-id='" + $dataCategoryId + "']");
 
@@ -556,8 +559,7 @@ the callbacks passed to the module.
                 var techTypeId = $("#hfAssistiveTechResultsTechTypeId").val();
                 var platformId = $("#hfAssistiveTechResultsPlatformId").val();
             }
-            
-            var sortOption = $("#hfAssistiveTechResultsSortOption").val();
+            //var sortOption = $("#hfAssistiveTechResultsSortOption").val(); CURRENTLY NOT USED - WILL NEED TO IMPLEMENT
 
             // scroll to top of newly loaded items
             $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
@@ -565,7 +567,7 @@ the callbacks passed to the module.
             var qs = "?count=" + $dataCount +
                 "&pageId=" + $dataPageId +
                 "&categoryId=" + $dataCategoryId +
-                "&sortOption=" + sortOption +
+                "&sortOption=" + $dataSortOption +
                 (keyword ?
                     "&keyword=" + keyword :
                     "&issueId=" + issueId + "&gradeId=" + gradeId + "&techTypeId=" + techTypeId + "&platformId=" + platformId);
