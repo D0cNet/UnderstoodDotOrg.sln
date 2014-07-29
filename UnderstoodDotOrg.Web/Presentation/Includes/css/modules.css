@@ -3272,25 +3272,42 @@
   display: block;
   height: auto;
   width: auto;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  /* Firefox 3.5+ */
+  filter: grayscale(100%);
+  filter: gray;
 }
-/* line 114, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 122, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li a:focus {
   outline: none;
   box-shadow: 0px 0px 3px #426da9;
 }
-/* line 120, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 126, ../css.source/modules/carousel/_partners-carousel.scss */
+.partners-carousel ul li a:focus, .partners-carousel ul li a:hover {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: none;
+  /* IE 6-9 */
+}
+/* line 135, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li img {
   height: auto;
   width: 100%;
   display: block;
 }
 @media (min-width: 480px), print {
-  /* line 120, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 135, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul li img {
     max-width: 100%;
   }
 }
-/* line 135, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 150, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .viewAll {
   display: none;
   position: absolute;
@@ -3300,24 +3317,24 @@
   color: #298fc2;
 }
 @media (min-width: 769px), print {
-  /* line 135, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 150, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .viewAll {
     display: block;
     right: 45px;
   }
 }
-/* line 150, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 165, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowIcn {
   z-index: 2;
 }
 @media (min-width: 650px), print {
-  /* line 150, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 165, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowIcn {
     top: 0;
     bottom: initial;
   }
 }
-/* line 160, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 175, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowLeft .rsArrowIcn {
   top: auto;
   bottom: 26px;
@@ -3325,7 +3342,7 @@
   margin-right: 15px;
 }
 @media (min-width: 650px), print {
-  /* line 160, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 175, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowLeft .rsArrowIcn {
     margin-right: 0;
     top: 0;
@@ -3333,12 +3350,12 @@
   }
 }
 @media (min-width: 769px), print {
-  /* line 160, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 175, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowLeft .rsArrowIcn {
     right: 119px;
   }
 }
-/* line 179, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 194, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowRight .rsArrowIcn {
   top: auto;
   bottom: 26px;
@@ -3347,7 +3364,7 @@
   margin-left: 15px;
 }
 @media (min-width: 650px), print {
-  /* line 179, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 194, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowRight .rsArrowIcn {
     left: auto;
     margin-left: 0;
