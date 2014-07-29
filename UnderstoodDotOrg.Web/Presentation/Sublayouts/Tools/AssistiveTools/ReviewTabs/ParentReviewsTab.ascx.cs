@@ -101,7 +101,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             if (IsUserLoggedIn)
             {
                 if (reviews.Where(i => i.MemberId == CurrentMember.MemberId).Count() > 0)
+                {
                     pnlReview.Visible = false;
+                    divReviewSideBar.Visible = false;
+                }
             }
 
             if (ddlSorting.SelectedIndex == 0)

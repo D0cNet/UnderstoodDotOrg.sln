@@ -286,7 +286,7 @@
         <!-- end .col col-17 -->
         <div class="col col-6">
             <!-- BEGIN PARTIAL: rate-this-app-sidebar -->
-            <section class="rate-this-app-sidebar">
+            <section  id="divReviewSideBar" runat="server" class="rate-this-app-sidebar">
                 <header>
                     <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.RateThisAppLabel %></h2>
                 </header>
