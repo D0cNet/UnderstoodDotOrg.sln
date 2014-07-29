@@ -102,7 +102,7 @@
                 {
                     foreach (ListItem item in ddlTopics.Items)
                     {
-                        if (item.Text == topic)
+                        if (item.Text.ToLower() == topic.ToLower())
                         {
                             selectItem.Selected = true;
                             break;
