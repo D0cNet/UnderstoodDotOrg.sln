@@ -20,14 +20,12 @@
             </li>
         </ul>
 
-        <ul class="calendar-type">
+        <%-- <ul class="calendar-type">
             
             <li>Calendar View</li>
-            <!--
             <li><a href="REPLACE">List View</a></li>
-            -->
             
-        </ul>
+        </ul>--%>
     </header>
 </div>
 <!-- END PARTIAL: community/calendar/header -->

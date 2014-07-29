@@ -23,18 +23,26 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
         public string Grade { get; set; }
         public string Topic { get; set; }
         public bool IsRecommended { get; set; }
+        public bool IsCalendarView { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             BindEvents();
 
             string featured = HttpHelper.GetQueryString(Constants.EVENT_FEATURED_FILTER_QUERY_STRING).Trim();
             IsFeatured = featured.ToLower() == "true";
-            string recommended = HttpHelper.GetQueryString(UnderstoodDotOrg.Common.Constants.EVENT_RECOMMENDED_FILTER_QUERY_STRING);
+
+            string recommended = HttpHelper.GetQueryString(Constants.EVENT_RECOMMENDED_FILTER_QUERY_STRING);
             IsRecommended = recommended.ToLower() == "true";
+
+            IsCalendarView = !string.IsNullOrEmpty(HttpHelper.GetQueryString(Constants.QueryStrings.ExpertsLive.Month))
+                && !string.IsNullOrEmpty(HttpHelper.GetQueryString(Constants.QueryStrings.ExpertsLive.Year));
+
             Issue = HttpHelper.GetQueryString(Constants.EVENT_ISSUE_FILTER_QUERY_STRING).Trim();
             Grade = HttpHelper.GetQueryString(Constants.EVENT_GRADE_FILTER_QUERY_STRING).Trim();
             Topic = HttpHelper.GetQueryString(Constants.EVENT_TOPIC_FILTER_QUERY_STRING).Trim();
             litSelectedMenu.Text = DictionaryConstants.FilterByLabel;
+
             if (!IsPostBack)
             {
                 BindControls();
@@ -106,7 +114,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
                     frLink.Item = navItem;
                 }
 
-                LinkField lf = navItem.InnerItem.Fields["Link"];
+                LinkField lf = navItem.Link.Field;
 
                 if (Sitecore.Context.Item.ID == lf.TargetItem.ID)
                 {
@@ -140,57 +148,56 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
         {
             ddlGrade.SelectedValue = String.Empty;
             ddlTopics.SelectedValue = String.Empty;
-            //if (!String.IsNullOrEmpty(ddlIssue.SelectedValue))
-            //{
-                Redirect(new Dictionary<string, string>
+            Redirect(new Dictionary<string, string>
             {
                 { Constants.EVENT_ISSUE_FILTER_QUERY_STRING, ddlIssue.SelectedValue }
             });
-           // }
         }
 
         private void ddlGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
             ddlIssue.SelectedValue = String.Empty;
             ddlTopics.SelectedValue = String.Empty;
-            //if (!String.IsNullOrEmpty(ddlGrade.SelectedValue))
-            //{
-                Redirect(new Dictionary<string, string>
+            Redirect(new Dictionary<string, string>
             {
                 { Constants.EVENT_GRADE_FILTER_QUERY_STRING, ddlGrade.SelectedValue }
             });
-          //  }
         }
 
         private void ddlTopics_SelectedIndexChanged(object sender, EventArgs e)
         {
             ddlGrade.SelectedValue = String.Empty;
             ddlIssue.SelectedValue = String.Empty;
-            //if (!String.IsNullOrEmpty(ddlTopics.SelectedValue))
-            //{
-                Redirect(new Dictionary<string, string>
+            Redirect(new Dictionary<string, string>
             {
                 { Constants.EVENT_TOPIC_FILTER_QUERY_STRING, ddlTopics.SelectedValue }
             });
-          //  }
         }
 
         private void Redirect(Dictionary<string, string> keys)
         {
             string baseUrl = String.Concat(Request.Url.AbsolutePath, "?");
 
-           
-                string vars =keys.Count >0? String.Join("&",
-                    keys.Where(x => !String.IsNullOrEmpty(x.Value))
-                        .Select(x => String.Format("{0}={1}", x.Key, x.Value))
-                        ):String.Empty;
-            
-            string parameters = 
-                (IsFeatured  )
-                ? String.Format("{0}=true"+ (String.IsNullOrEmpty(vars) ? "": "&{1}"), Constants.EVENT_FEATURED_FILTER_QUERY_STRING, vars)
-                : (IsRecommended) ? String.Format("{0}=true" + (String.IsNullOrEmpty(vars) ? "" : "&{1}"), Constants.EVENT_RECOMMENDED_FILTER_QUERY_STRING, vars) : vars;
+            if (IsFeatured)
+            {
+                keys.Add(Constants.EVENT_FEATURED_FILTER_QUERY_STRING, "true");
+            }
+            else if (IsRecommended)
+            {
+                keys.Add(Constants.EVENT_RECOMMENDED_FILTER_QUERY_STRING, "true");
+            }
+            else if (IsCalendarView)
+            {
+                keys.Add(Constants.QueryStrings.ExpertsLive.Month, HttpHelper.GetQueryString(Constants.QueryStrings.ExpertsLive.Month));
+                keys.Add(Constants.QueryStrings.ExpertsLive.Year, HttpHelper.GetQueryString(Constants.QueryStrings.ExpertsLive.Year));
+            }
 
-            Response.Redirect(String.Concat(baseUrl, parameters));
+            string vars = String.Join("&",
+                keys.Where(x => !String.IsNullOrEmpty(x.Value))
+                    .Select(x => String.Format("{0}={1}", x.Key, x.Value))
+                    );
+            
+            Response.Redirect(String.Concat(baseUrl, vars));
         }
     }
 }

@@ -18,13 +18,19 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 {
     public partial class EventsCalendarView : BaseSublayout
     {
-
+        public string Issue { get; set; }
+        public string Grade { get; set; }
+        public string Topic { get; set; }
+        
         protected List<EventsLiveCalendarDay> EventsLiveCalendarDays { get; private set; }
         private DateTime SelectedMonthYear { get; set; }
-        private CultureInfo _cultureInfo;
 
         private void Page_Load(object sender, EventArgs e)
         {
+            Issue = HttpHelper.GetQueryString(Constants.EVENT_ISSUE_FILTER_QUERY_STRING).Trim();
+            Grade = HttpHelper.GetQueryString(Constants.EVENT_GRADE_FILTER_QUERY_STRING).Trim();
+            Topic = HttpHelper.GetQueryString(Constants.EVENT_TOPIC_FILTER_QUERY_STRING).Trim();
+
             ParseRequestedCalendarMonth();
             SetCalendarInfo();
             BuildCalendarData();
@@ -68,8 +74,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             }
             catch (Exception)
             {
-                // any kind of exception, just go back to current date
-                queryDate = DateTime.Now;
+                Response.Redirect(Request.Url.AbsolutePath);
             }
 
             SelectedMonthYear = queryDate;
@@ -103,7 +108,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
             List<object> exactMonth = new List<object>(thisMonthLastDay.Day);
             int numberPreviousDays = (DayOfWeek.Sunday - thisMonthFirstDay.DayOfWeek);
 
-            var queryableCurrentMonthEvents = SearchHelper.GetEventsByMonthAndYear(SelectedMonthYear.Month, SelectedMonthYear.Year);
+            var queryableCurrentMonthEvents = SearchHelper.GetEventsByMonthAndYear(SelectedMonthYear.Month, SelectedMonthYear.Year, Grade, Issue, Topic);
             var listCurrentMonthEvents = new List<BaseEventDetailPageItem>(queryableCurrentMonthEvents);
             var eventsByDay = GetFilledDictionaryFromEvents(listCurrentMonthEvents);
 

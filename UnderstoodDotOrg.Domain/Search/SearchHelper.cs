@@ -1208,7 +1208,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         }
 
-        public static IEnumerable<BaseEventDetailPageItem> GetEventsByMonthAndYear(int month, int year, Expression<Func<EventPage, bool>> optionalPredicate = null)
+        private static IEnumerable<BaseEventDetailPageItem> GetEventsByMonthAndYear(int month, int year, Expression<Func<EventPage, bool>> optionalPredicate = null)
         {
             var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
 

@@ -1,31 +1,10 @@
-﻿using Sitecore.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
-using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
-using Sitecore.Data.Items;
-using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.SearchTypes;
-using Sitecore.Links;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders;
-using UnderstoodDotOrg.Domain.SitecoreCIG;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
-using Sitecore.Web.UI.WebControls;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
-using UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
-using Sitecore.ContentSearch.Linq.Utilities;
 using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
-using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Common.Helpers;
-using UnderstoodDotOrg.Domain.Understood.Helper;
+using UnderstoodDotOrg.Domain.Search;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 {
@@ -41,9 +20,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Issue = HttpHelper.GetQueryString("issue").Trim();
-            Grade = HttpHelper.GetQueryString("grade").Trim();
-            Topic = HttpHelper.GetQueryString("topic").Trim();
+            Issue = HttpHelper.GetQueryString(Constants.EVENT_ISSUE_FILTER_QUERY_STRING).Trim();
+            Grade = HttpHelper.GetQueryString(Constants.EVENT_GRADE_FILTER_QUERY_STRING).Trim();
+            Topic = HttpHelper.GetQueryString(Constants.EVENT_TOPIC_FILTER_QUERY_STRING).Trim();
 
             PopulateArchive();
         }
