@@ -76,8 +76,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     iconType.Attributes.Add("class", "word");
 
-                    itemLink = ResolveMediaURL(dataItem);
-                    hypActionLink.Attributes.Add("download", "download");
+                    Sitecore.Data.Fields.ImageField field = dataItem.Fields["link"];
+
+                    if (field != null)
+                    {
+                        MediaItem wordDoc = new MediaItem(field.MediaItem);
+                        itemLink = Sitecore.Resources.Media.MediaManager.GetMediaUrl(wordDoc);
+                        hypActionLink.Attributes.Add("download", "download");
+                        litFileSize.Text = Math.Round((wordDoc.Size / 1000.0), 0).ToString() + "k";
+                    }
+
+                    //itemLink = ResolveMediaURL(dataItem);
                 }
                 else if (dataItem.IsOfType(ArticleToolkitResourceItem.TemplateId))
                 {
@@ -89,9 +98,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                     itemLink = ResolveMediaURL(dataItem);
                 }
 
-                string fileSizeText = GetFileSize(dataItem);
-                if (fileSizeText != "")
-                    litFileSize.Text = fileSizeText;
+                if (!dataItem.IsOfType(WordToolkitResourceItem.TemplateId))
+                {
+                    string fileSizeText = GetFileSize(dataItem);
+                    if (fileSizeText != "")
+                        litFileSize.Text = fileSizeText;
+                }
 
                 hypActionLink.NavigateUrl = hypTitle.NavigateUrl = itemLink;
             }
