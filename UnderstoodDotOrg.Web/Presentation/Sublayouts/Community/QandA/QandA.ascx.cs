@@ -96,15 +96,13 @@
 
                 String topic = Server.UrlDecode(Request.QueryString["topic"]);
 
-                ListItem selectItem = null;
-
                 if (!String.IsNullOrEmpty(topic))
                 {
                     foreach (ListItem item in ddlTopics.Items)
                     {
                         if (item.Text.ToLower() == topic.ToLower())
                         {
-                            selectItem.Selected = true;
+                            item.Selected = true;
                             break;
                         }
                     }
