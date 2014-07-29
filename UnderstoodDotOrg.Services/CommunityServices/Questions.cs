@@ -209,5 +209,50 @@ namespace UnderstoodDotOrg.Services.CommunityServices
 
             return newItem;
         }
+
+        public static Question GetQuestion(string wikiId, string wikiPageId, string contentId)
+        {
+            List<Question> results = new List<Question>();
+            StringBuilder strb = new StringBuilder();
+            StringBuilder strValues = new StringBuilder();
+            //if (Session["groupItems"] is List<GroupCardModel>)
+            //{
+
+            //    //throw new NotImplementedException();
+            //    ///TODO: Implement search results
+            //    results=(List<GroupCardModel>)Session["groupItems"] ;
+            //}
+            strb.Append("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Questions.QuestionTemplateID + "'");
+            string AndCondition = " and (";
+            string OrCondition = " or ";
+            //if ((issues.Count() > 0) || topics.Count() > 0 || grades.Count() > 0)
+            {
+
+                strValues.Append(AndCondition);
+
+                //Build search string based on parameters
+                //Order matters according to Speckle UN-595
+                strValues.Append(" @WikiId= '%" + wikiId + "%'").Append(AndCondition);
+                strValues.Append(" @WikiPageId= '%" + wikiPageId + "%'").Append(AndCondition);
+                //strValues.Append(" @ContentId= '%" + contentId + "%'").Append(AndCondition);
+
+                //Clip " or " from last criteria
+                strValues.Replace(OrCondition, ")", strValues.Length - OrCondition.Length, OrCondition.Length);
+            }
+
+            strb.Append(strValues).Append("]");
+
+            //Use sitecore fast query to perform search
+            Item[] questions = Sitecore.Context.Database.SelectItems(strb.ToString());
+
+            results = questions
+                .Select(x => QuestionFactory(x))
+                .Where(x => x != null)
+                //.OrderByDescending(x => x.NumOfMembers)
+                .ToList<Question>();
+
+            return results.FirstOrDefault<Question>();
+
+        }
     }
 }

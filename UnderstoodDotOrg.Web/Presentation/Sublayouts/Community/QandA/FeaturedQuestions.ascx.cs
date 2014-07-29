@@ -53,11 +53,12 @@
 
             var filter = Session["Q&A_Filter"] as String;
 
-            if (filter == "Featured")
-            {
-                questions = GetFeaturedQuestions();
-            }
-            else if (filter == "Recommended")
+            //if (filter == "Featured")
+            //{
+            //    questions = GetFeaturedQuestions();
+            //}
+            //if (filter == "Recommended")
+            if(1==1)
             {
                 if (this.CurrentMember != null)
                 {
