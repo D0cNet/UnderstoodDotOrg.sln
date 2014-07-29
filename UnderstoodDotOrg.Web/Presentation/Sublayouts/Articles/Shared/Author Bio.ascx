@@ -44,7 +44,7 @@
             <div class="col col-18 offset-1">
                 <h3 class="rs_read_this"><sc:FieldRenderer ID="frExpertBlogsHeading" runat="server" FieldName="Expert Blogs Heading" /></h3>
             </div>
-            <div class="col col-3 offset-1 expert-events-see-more">
+            <div id="seeMoreDiv" runat="server" visible="false" class="col col-3 offset-1 expert-events-see-more">
                 <a href="REPLACE" class="see-more"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeMoreLabel %></a>
             </div>
             <!-- /.col -->

@@ -29,7 +29,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         private void BindContent()
         {
-            IEnumerable<DefaultArticlePageItem> articles = SearchHelper.GetArticlesByAuthor(Sitecore.Context.Item.ID, 2);
+            IEnumerable<DefaultArticlePageItem> articles = SearchHelper.GetArticlesByAuthor(Sitecore.Context.Item.ID, 100);
 
             if (articles.Count() > 0)
             {
