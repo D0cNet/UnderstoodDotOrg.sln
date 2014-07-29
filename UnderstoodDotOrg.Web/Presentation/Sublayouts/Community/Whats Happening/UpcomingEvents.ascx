@@ -7,7 +7,9 @@
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
                 <div class="arrows events next-prev-menu arrows-gray">
 
-                    <a class="view-all" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllExpertLiveEventsLabel %></a>
+                    <%--<a class="view-all" href="REPLACE"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeAllExpertLiveEventsLabel %></a>--%>
+                    <asp:HyperLink runat="server" ID="hypAllEvents" CssClass="view-all">
+                    </asp:HyperLink>
                     <div class="rsArrow rsArrowLeft">
                         <button class="rsArrowIcn"></button>
                     </div>

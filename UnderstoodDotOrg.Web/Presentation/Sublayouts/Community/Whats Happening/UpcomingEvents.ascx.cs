@@ -1,4 +1,5 @@
-﻿using Sitecore.Web.UI.WebControls;
+﻿using Sitecore.Links;
+using Sitecore.Web.UI.WebControls;
 using System;
 using System.Linq;
 using System.Web.UI.WebControls;
@@ -15,6 +16,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            hypAllEvents.NavigateUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(Constants.Pages.ExpertLive));
+            hypAllEvents.Text = UnderstoodDotOrg.Common.DictionaryConstants.SeeAllExpertLiveEventsLabel;
+
             BindEvents();
             BindControls();
         }

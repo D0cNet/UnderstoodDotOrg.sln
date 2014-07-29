@@ -13,6 +13,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
     public partial class UpcomingEvents {
         
         /// <summary>
+        /// hypAllEvents control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypAllEvents;
+        
+        /// <summary>
         /// rptEvents control.
         /// </summary>
         /// <remarks>
