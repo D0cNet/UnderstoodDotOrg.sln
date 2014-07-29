@@ -11,11 +11,15 @@ using UnderstoodDotOrg.Common.Extensions;
 using System.Web.UI.HtmlControls;
 using Sitecore.Data.Fields;
 using Sitecore.Links;
+using Sitecore.Web.UI.WebControls;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 {
     public partial class BlogsAuthorPage : System.Web.UI.UserControl
     {
+
+        public IEnumerable<BlogsAuthorPageItem> Authors { get; set; }
+
         private int ResultCount
         {
             get
@@ -39,6 +43,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
         protected void showmore_Click(object sender, EventArgs e)
         {
             ShowMore();
+        }
+
+        private void BindEvents()
+        {
+            lvAuthors.ItemDataBound += lvAuthors_ItemDataBound;
         }
 
         protected void ShowMore()
@@ -128,6 +137,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 
 
         }
+
+        void lvAuthors_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListViewItemType.DataItem)
+            {
+                BlogsAuthorPageItem author = (BlogsAuthorPageItem)e.Item.DataItem;
+
+                FieldRenderer frAuthorName = (FieldRenderer)e.Item.FindControl("frAuthorName");
+
+                frAuthorName.Item = author;
+
+                HyperLink hypAuthorImage = (HyperLink)e.Item.FindControl("hypAuthorImage");
+                HyperLink hypAuthorName = (HyperLink)e.Item.FindControl("hypAuthorName");
+
+                hypAuthorImage.NavigateUrl = hypAuthorName.NavigateUrl = author.GetUrl();
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Item authorItem = Sitecore.Context.Item;
@@ -145,6 +172,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
                     rptrBlogPosts.DataSource = temp.Take(ResultCount).ToList();
                     rptrBlogPosts.DataBind();
                 }
+            }
+
+            BindEvents();
+            var authorsContainer = Sitecore.Context.Database.GetItem("{5DF5183F-DDC8-4A10-897C-9C93593CF159}");
+            var authors = authorsContainer.Children
+                .Where(i => i.IsOfType(BlogsAuthorPageItem.TemplateId))
+                .Select(i => (BlogsAuthorPageItem)i);
+
+            if (authors.Any())
+            {
+                lvAuthors.DataSource = authors;
+                lvAuthors.DataBind();
             }
         }
     }
