@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Events.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs.Events" %>
+<%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
 <div class="container flush">
     <div class="row">
@@ -8,11 +9,11 @@
 
                 <!-- BEGIN PARTIAL: my-events-tabs -->
                 <ul class="etabs">
-                    <li class="tab upcoming-tab active"><a href="REPLACE">My Upcoming Events</a></li>
+                    <li class="tab upcoming-tab active"><a href="#"><sc:FieldRenderer ID="FieldRenderer1" runat="server" FieldName="Upcoming Events Tab" /></a></li>
                 </ul>
                 <div class="etabs-dropdown">
                     <select>
-                        <option value="upcoming">My Upcoming Events</option>
+                        <option value="upcoming"><sc:FieldRenderer ID="frTopicsCovered" runat="server" FieldName="Upcoming Events Tab" /></option>
                     </select>
                 </div>
 
@@ -38,7 +39,7 @@
 
                                 <div class="col col-15 offset-1 event-content">
                                     <asp:HyperLink ID="hypTitleLink" runat="server" CssClass="event-title"></asp:HyperLink>
-                                    <h4>Topics Covered</h4>
+                                    <h4><sc:FieldRenderer ID="frTopicsCovered" runat="server" FieldName="Topics Covered Text" /></h4>
                                     <p class="topics-covered-list"><asp:Literal ID="litIssuesCovered" runat="server"></asp:Literal></p>
                                     <p class="event-links rs_skip"><asp:HyperLink ID="hypEventDetails" runat="server" CssClass="event-details"></asp:HyperLink></p>
                                 </div>

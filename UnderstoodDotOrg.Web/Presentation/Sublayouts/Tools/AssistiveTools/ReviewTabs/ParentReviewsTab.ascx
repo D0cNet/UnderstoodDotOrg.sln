@@ -127,6 +127,15 @@
             <asp:Panel ID="pnlMoreLink" runat="server" CssClass="show-more" Visible="false">
                 <a href="#" class="show-more-link" data-path="assistive-tech/reviews" data-container="parent-reviews" data-item="parent-review" data-count="6" onclick="$('.hide-show-more').show(); $(this).hide();"><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreResultsLabel %><i class="icon-arrow-down-blue"></i></a>
             </asp:Panel>
+            <script>
+                $(function () {
+
+                    if (<%= OpenTab.ToString().ToLower() %>)
+                    {
+                        location.hash = '#tabs2-parent-reviews';
+                    }
+                })
+            </script>
             <!-- .show-more -->
             <!-- BEGIN PARTIAL: rate-this-app -->
             <asp:Panel ID="pnlReview" runat="server">
@@ -222,7 +231,9 @@
 
                             if (<%= OpenTab.ToString().ToLower() %>)
                             {
-                                location.hash = '#tabs2-parent-reviews';
+                                setTimeout(function(){
+                                   location.hash = '#tabs2-parent-reviews';
+                            }, 1000);
                             }
 
                             var hiddenField = $("[id*='hfKeyValuePairs']");
