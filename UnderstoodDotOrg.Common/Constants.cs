@@ -748,9 +748,9 @@ namespace UnderstoodDotOrg.Common
                 // TODO: Add remaining Blog Id's
                 return new Dictionary<string, string>
                 {
-                    {"1", "The Understood Blog"},
-                    {"2", "Motherlode"},
-                    {"3", "Live Well"},
+                    {"1", "Free Form"},
+                    {"2", "What I Wish Id Known Sooner"},
+                    {"3", "Insider"},
                 };
             }
         }
