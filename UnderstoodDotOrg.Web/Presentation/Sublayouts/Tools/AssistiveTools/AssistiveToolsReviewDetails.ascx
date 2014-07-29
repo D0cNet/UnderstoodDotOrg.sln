@@ -320,7 +320,7 @@
                                 <% } 
                                    if (Model.GooglePlayStoreID != string.Empty) { %>
                                 <a href="https://play.google.com/store/apps/details?id=<%= Model.GooglePlayStoreID.Rendered %>">
-                                    <sc:Image ID="GoogleImage" Field="Google Store Image" runat="server" />
+                                    <sc:Image ID="GoogleImage" Field="Google Play Image" runat="server" />
                                 </a>
                                 <% } %>
                             </div>
