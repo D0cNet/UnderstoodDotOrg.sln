@@ -10,5 +10,6 @@ namespace UnderstoodDotOrg.Domain.ExactTarget
     {
         public string ToEmail { get; set; }//URL to the user's password reset page
         public string UserName { get; set; }//URL to the user's password reset page
+        public string ProfilePercentCompletePlaceholder { get; set; }
     }
 }

@@ -1946,19 +1946,14 @@ namespace UnderstoodDotOrg.Services.ExactTarget
                         etAPI.Attribute tempAttribute;
                         List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-                        //tempAttribute = new etAPI.Attribute();
-                        //tempAttribute.Name = "group_leader_email";
-                        //tempAttribute.Value = request.GroupLeaderEmail;
-
-                        //tempAttribute = new etAPI.Attribute();
-                        //tempAttribute.Name = "domain_link";
-                        //tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
-
-
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "profile_completion_bar";
+                        tempAttribute.Value = request.ProfilePercentCompletePlaceholder;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "fullname";
+                        tempAttribute.Value = request.UserName ; 
 
                         newSub.Attributes = AttributeList.ToArray();
-
-
                         ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
                         reply.Successful = true;

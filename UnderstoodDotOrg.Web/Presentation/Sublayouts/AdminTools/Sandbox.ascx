@@ -2,7 +2,8 @@
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 <asp:Button ID="btnLogHelpfulQuestion" runat="server" Text="Log Helpful Question" OnClick="btnLogHelpfulQuestion_Click" />
 <br />
-
+<h1> Test Newsletter Send</h1>
+<asp:Button ID="btnSendNewsletter" runat="server" Text="Send Newsletter" OnClick="btnSendNewsletter_Click" />
 <h1> Activity Count: <asp:Label ID="lblActivityCount" runat="server"></asp:Label></h1>
 
     <h1>Test User Activity Logging</h1>

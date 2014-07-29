@@ -120,3 +120,17 @@ Preferred Language
 <h4>Results:</h4>
 <asp:Label ID="lblMessage" runat="server" ></asp:Label>
 <br /><br />
+<h2>Run General Newsletter</h2>
+<asp:Button ID="btnRunGeneralNewsletter" runat="server" Text="Run General Newsletter" OnClick="btnRunGeneralNewsletter_Click" />
+<p>
+    &nbsp;</p>
+<p>
+    &nbsp;</p>
+<p>
+    &nbsp;</p>
+<p>
+    &nbsp;</p>
+<p>
+    &nbsp;</p>
+<p>
+    &nbsp;</p>

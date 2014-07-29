@@ -303,5 +303,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
             
 
         }
+
+        protected void btnSendNewsletter_Click(object sender, EventArgs e)
+        {
+            UnderstoodDotOrg.Services.ExactTarget.ScheduledJobs.WeeklyGeneralNewsLetter();
+
+        }
     }
 }

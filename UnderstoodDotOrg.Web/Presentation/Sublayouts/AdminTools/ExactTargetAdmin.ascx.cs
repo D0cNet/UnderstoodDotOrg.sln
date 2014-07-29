@@ -240,6 +240,12 @@
 			//lblMessage.Text = reply.Message;
 		}
 
+        protected void btnRunGeneralNewsletter_Click(object sender, EventArgs e)
+        {
+            UnderstoodDotOrg.Services.ExactTarget.ScheduledJobs.WeeklyGeneralNewsLetter();
+
+        }
+
 
 
 	}
