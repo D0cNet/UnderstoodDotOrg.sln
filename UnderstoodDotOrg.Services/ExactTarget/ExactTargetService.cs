@@ -1027,31 +1027,37 @@ namespace UnderstoodDotOrg.Services.ExactTarget
                         tempAttribute = new etAPI.Attribute();
                         tempAttribute.Name = "group_leader_email";
                         tempAttribute.Value = request.GroupLeaderEmail;
+                        AttributeList.Add(tempAttribute);
 
                         tempAttribute = new etAPI.Attribute();
                         tempAttribute.Name = "group_link";
                         tempAttribute.Value = request.GroupLink;
+                        AttributeList.Add(tempAttribute);
 
                         tempAttribute = new etAPI.Attribute();
                         tempAttribute.Name = "group_title";
                         tempAttribute.Value = request.GroupTitle;
+                        AttributeList.Add(tempAttribute);
 
                         tempAttribute = new etAPI.Attribute();
                         tempAttribute.Name = "group_mod_bio_link";
                         tempAttribute.Value = request.GroupModerator.groupModBioLink;
+                        AttributeList.Add(tempAttribute);
 
                         tempAttribute = new etAPI.Attribute();
                         tempAttribute.Name = "group_mod_name";
                         tempAttribute.Value = request.GroupModerator.groupModName;
+                        AttributeList.Add(tempAttribute);
 
                         tempAttribute = new etAPI.Attribute();
                         tempAttribute.Name = "group_mod_img_link";
                         tempAttribute.Value = request.GroupModerator.groupModImgLink;
-
+                        AttributeList.Add(tempAttribute);
 
                         tempAttribute = new etAPI.Attribute();
                         tempAttribute.Name = "domain_link";
                         tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
 
 
 
