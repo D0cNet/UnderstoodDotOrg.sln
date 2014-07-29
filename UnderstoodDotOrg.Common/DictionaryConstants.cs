@@ -1402,6 +1402,14 @@ namespace UnderstoodDotOrg.Common
 			}
 		}
 
+        public static string MoreResultsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "More Results Label");
+            }
+        }
+
 		public static string Core_EmailSentLabel
 		{
 			get

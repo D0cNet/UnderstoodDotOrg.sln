@@ -125,7 +125,7 @@
             <!-- .parent-reviews -->
             <!-- Show More -->
             <asp:Panel ID="pnlMoreLink" runat="server" CssClass="show-more" Visible="false">
-                <a href="#" class="show-more-link" data-path="assistive-tech/reviews" data-container="parent-reviews" data-item="parent-review" data-count="6" onclick="$('.hide-show-more').show(); $(this).hide();">More Results<i class="icon-arrow-down-blue"></i></a>
+                <a href="#" class="show-more-link" data-path="assistive-tech/reviews" data-container="parent-reviews" data-item="parent-review" data-count="6" onclick="$('.hide-show-more').show(); $(this).hide();"><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreResultsLabel %><i class="icon-arrow-down-blue"></i></a>
             </asp:Panel>
             <!-- .show-more -->
             <!-- BEGIN PARTIAL: rate-this-app -->
