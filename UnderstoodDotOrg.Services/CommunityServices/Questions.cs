@@ -127,7 +127,10 @@ namespace UnderstoodDotOrg.Services.CommunityServices
                     question.Issues.Add(targetItem.Name);
                 }
 
-            } 
+            }
+
+            question.QueryString = "?wikiId=" + wikiId + "&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
+            question.Url = "/en/community and events/q and a/q and a details.aspx" + question.QueryString;
 
             return question;
         }
