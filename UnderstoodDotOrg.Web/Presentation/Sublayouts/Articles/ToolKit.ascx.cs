@@ -76,9 +76,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
                 {
                     iconType.Attributes.Add("class", "word");
 
-                    Sitecore.Data.Fields.FileField fileField = ((Sitecore.Data.Fields.FileField)dataItem.Fields["Link"]);
-
-                    itemLink = ResolveMediaURL(fileField.MediaItem);
+                    itemLink = ResolveMediaURL(dataItem);
+                    hypActionLink.Attributes.Add("download", "download");
                 }
                 else if (dataItem.IsOfType(ArticleToolkitResourceItem.TemplateId))
                 {
