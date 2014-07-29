@@ -567,6 +567,10 @@ namespace UnderstoodDotOrg.Common
             {
                 get { return new Guid("{491396AC-E14D-4EEA-A6BD-181166BB9893}"); }
             }
+            public static Guid ExpertsLiveCalendar
+            {
+                get { return new Guid("{B1706EE7-E119-4991-925F-0C04EFC12CA2}"); }
+            }
         }
 
         #endregion
