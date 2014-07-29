@@ -51,7 +51,8 @@ namespace UnderstoodDotOrg.Domain.Search
             pred = pred.And(GetInheritsArticlePredicate());
 
             // Exclude articles marked for exclusion
-            pred = pred.And(a => !a.OverrideTypes.Contains(ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization)));
+            pred = pred.And(a => a.Path.Contains(Constants.Search.ContentSearchPath)
+                            && !a.OverrideTypes.Contains(ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization)));
 
             // Include non cloned items
             pred = pred.And(a => a.SourceItem == ID.Parse(Guid.Empty));
