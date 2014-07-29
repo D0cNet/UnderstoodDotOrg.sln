@@ -53,9 +53,9 @@
                     </div>
 
                     <div class="row mygroup-grid-header clearfix">
-                        <h3 class="col col-15"><%= UnderstoodDotOrg.Common.DictionaryConstants.DiscussionsLabel %></h3>
-                        <h3 class="col col-3 offset-1"><%= UnderstoodDotOrg.Common.DictionaryConstants.RepliesLabel %></h3>
-                        <h3 class="col col-4 offset-1"><%= UnderstoodDotOrg.Common.DictionaryConstants.LatestPostLabel %></h3>
+                        <h3 class="col col-15"><sc:FieldRenderer ID="FieldRenderer3" runat="server" FieldName="Discussions Text" /></h3>
+                        <h3 class="col col-3 offset-1"><sc:FieldRenderer ID="FieldRenderer2" runat="server" FieldName="Replies Text" /></h3>
+                        <h3 class="col col-4 offset-1"><sc:FieldRenderer ID="FieldRenderer1" runat="server" FieldName="Latest Post Text" /></h3>
                     </div>
 
                     <div class="row mygroup-list clearfix">
@@ -68,15 +68,15 @@
                                     <div class="col col-3 offset-1 reply-count-wrapper">
                                         <span class="reply-count">
                                             <asp:Literal ID="litRepliesCount" runat="server"></asp:Literal>
-                                        </span><span class="reply-label">Replies</span>
+                                        </span><span class="reply-label"><sc:FieldRenderer ID="FieldRenderer2" runat="server" FieldName="Replies Text" /></span>
                                     </div>
                                     <div class="col col-4 offset-1">
                                         <p class="timestamp">
-                                            <span class="lastest-post">Latest post </span>
+                                            <span class="lastest-post"><sc:FieldRenderer runat="server" FieldName="Latest Post Text" /></span>
                                             <asp:Literal ID="litCommentTime" runat="server"></asp:Literal>
                                         </p>
                                         <p class="posted-by-name">
-                                            <asp:HyperLink ID="hypCommentAuthor" runat="server">Vance Floyd</asp:HyperLink>
+                                            <asp:HyperLink ID="hypCommentAuthor" runat="server"></asp:HyperLink>
                                         </p>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                         <div class="container show-more rs_skip">
                             <div class="row">
                                 <div class="col col-24">
-                                    <a class="show-more-link show_more" href="#" data-path="my-account/my-groups" data-container="mygroup-list" data-item="mygroup-item" data-count="2">Show More<i class="icon-arrow-down-blue"></i></a>
+                                    <a class="show-more-link show_more" href="#" data-path="my-account/my-groups" data-container="mygroup-list" data-item="mygroup-item" data-count="2"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -123,8 +123,7 @@
             <!-- BEGIN PARTIAL: my-groups-discussion-form -->
             <section class="my-groups-discussion-form clearfix rs_read_this">
                 <header>
-                    <h2>Start a Discussion in Parents of Kids<br />
-                        with Attention Issues</h2>
+                    <h2><sc:FieldRenderer ID="FieldRenderer4" FieldName="Start a Discussion With Parents" runat="server"/></h2>
                 </header>
                 <label>
                     <span class="visuallyhidden">Title of discussion</span>

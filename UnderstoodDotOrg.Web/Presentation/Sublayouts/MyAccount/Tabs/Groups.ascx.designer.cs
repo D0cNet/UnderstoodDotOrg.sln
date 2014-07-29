@@ -85,6 +85,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frStartADiscussion;
         
         /// <summary>
+        /// FieldRenderer3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer FieldRenderer3;
+        
+        /// <summary>
+        /// FieldRenderer2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer FieldRenderer2;
+        
+        /// <summary>
+        /// FieldRenderer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer FieldRenderer1;
+        
+        /// <summary>
         /// rptComments control.
         /// </summary>
         /// <remarks>
@@ -137,6 +164,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divStartADiscussion;
+        
+        /// <summary>
+        /// FieldRenderer4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer FieldRenderer4;
         
         /// <summary>
         /// txtSubject control.
