@@ -170,7 +170,7 @@
     <!-- .recos-for-you-carousels -->
 
     <div class="recos-upcoming-events container">
-        <div class="row">
+      <%--  <div class="row">
             <div class="col col-24">
                 <h2>Upcoming Events</h2>
                 <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -316,12 +316,14 @@
                     <!-- END PARTIAL: recommendations/upcoming-event -->
                 </div>
             </div>
-        </div>
+        </div>--%>
+
+        <sc:Sublayout ID="upcomingEvents" runat="server" Path="~/Presentation/SubLayouts/Community/Whats Happening/UpcomingEvents.ascx" />
     </div>
     <!-- .recos-upcoming-events -->
 
     <div class="recos-ask-parents container">
-  <div class="row">
+ <%-- <div class="row">
       <div class="col col-24">
           <h2 class="rs_read_this">Ask Our Parents</h2>
           <!-- BEGIN PARTIAL: community/carousel_arrows -->
@@ -446,7 +448,8 @@
 <!-- END PARTIAL: recommendations/ask-parents -->
           </div>
       </div>
-  </div>
+  </div>--%>
+        <sc:Sublayout ID="recommendedQuestions" runat="server" Path="~/Presentation/SubLayouts/Community/Whats Happening/RecommendedQuestions.ascx" />
 </div><!-- .recos-ask-parents -->
 
    
@@ -470,7 +473,7 @@
 <!-- END PARTIAL: children-key -->--%>
 <sc:Sublayout runat="server" Path="~/Presentation/Sublayouts/Recommendation/Recommendation Icons.ascx" />
 
-<div class="container recos-tab-content">
+<%--<div class="container recos-tab-content">
   <div class="row">
       <div class="col col-24">
         <div id="recos-tabs">
@@ -1184,4 +1187,4 @@
       </div>
   </div>
 </div>
-
+--%>
