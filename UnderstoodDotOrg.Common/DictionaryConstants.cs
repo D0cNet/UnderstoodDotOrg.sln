@@ -3197,5 +3197,7 @@ namespace UnderstoodDotOrg.Common
         public static string YouAreFollowingLabel { get { return Translate.TextByDomain(PosesDictionary, "You Are Following Label"); } }
 
         public static object InFragment { get { return Translate.TextByDomain(PosesDictionary, "In Fragment"); } }
+
+        public static string ViewCalendarLabel { get { return Translate.TextByDomain(PosesDictionary, "View Calendar Label"); } }
     }
 }
