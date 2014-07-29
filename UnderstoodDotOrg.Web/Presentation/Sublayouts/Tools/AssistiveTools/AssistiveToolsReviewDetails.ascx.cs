@@ -93,5 +93,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             rptrSubjects.DataSource = subjects;
             rptrSubjects.DataBind();
         }
+
+        protected string GetSpelledNumber(int index)
+        {
+            return SpelledNumbers.Length > index ? SpelledNumbers[index] : "zero";
+        }
     }
 }

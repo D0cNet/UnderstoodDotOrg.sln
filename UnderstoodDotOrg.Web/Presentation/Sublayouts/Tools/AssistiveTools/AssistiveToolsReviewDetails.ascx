@@ -165,7 +165,7 @@
                                                 <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
                                                 <div class="quality-scale">
                                                     <!-- BEGIN PARTIAL: results-slider -->
-                                                    <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>" 
+                                                    <div class="results-slider blue-<%= GetSpelledNumber(Model.Quality.Integer) %>" 
                                                         aria-label="<%= Model.Quality.Integer %>"><%= Model.Quality.Integer %></div>
                                                     <!-- END PARTIAL: results-slider -->
                                                 </div>
@@ -232,7 +232,7 @@
                                             <div class="learning-scale-wrapper">
                                                 <div class="learning-scale">
                                                     <!-- BEGIN PARTIAL: results-slider -->
-                                                    <div class="results-slider purple-<%= SpelledNumbers[Model.Learning.Integer] %>" 
+                                                    <div class="results-slider purple-<%= GetSpelledNumber(Model.Quality.Integer) %>" 
                                                         aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>
                                                     <!-- END PARTIAL: results-slider -->
                                                 </div>

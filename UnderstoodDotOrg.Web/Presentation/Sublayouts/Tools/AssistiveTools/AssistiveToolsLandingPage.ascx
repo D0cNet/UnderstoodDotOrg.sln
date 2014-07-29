@@ -46,7 +46,22 @@
     <div class="row ie-padding">
         <div class="col slider-col col-18 offset-4">
             <div class="parents-are-saying-container">
-                <li>
+                <asp:Repeater ID="rptrWhatParentsAreSaying" runat="server">
+                    <ItemTemplate>
+                        <li>
+                            <div class="rs_read_this parents-are-saying-rs-wrapper">
+                                <h3><%# Eval("Title") %></h3>
+                                <p><%# Eval("ReviewText") %></p>
+                                <!-- BEGIN PARTIAL: results-slider -->
+                                <%# Eval("RatingHtml") %>
+                                <!-- END PARTIAL: results-slider -->
+                                <h4>Parent</h4>
+                                <a href="<%# Eval("Url") %>"><%# Eval("LinkText") %></a>
+                            </div>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <%--<li>
                     <div class="rs_read_this parents-are-saying-rs-wrapper">
                         <h3>Autism Play</h3>
                         <p>Lorem ipsum dolor sit amet cum diceam partur est un ligula eget. Turing adipiscing ma cuming diceam parturi Adipisc est un...<a href="REPLACE">read more</a></p>
@@ -177,7 +192,7 @@
                         <h4>Parent</h4>
                         <a href="REPLACE">3rd grader & Task-to-Task Transitions</a>
                     </div>
-                </li>
+                </li>--%>
             </div>
         </div>
     </div>
