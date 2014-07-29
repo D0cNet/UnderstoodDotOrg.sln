@@ -38,7 +38,7 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.MyAccount
         public IEnumerable<MyAccountBaseItem> GetAccountPages()
         {
             return InnerItem.Children
-                .Where(i => i.InheritsFromType(MyAccountBaseItem.TemplateId))
+                .Where(i => i.InheritsFromType(MyAccountBaseItem.TemplateId) && i.TemplateID.ToString() != AccountEventsPageItem.TemplateId)
                 .Select(i => (MyAccountBaseItem)i);
         }
     }
