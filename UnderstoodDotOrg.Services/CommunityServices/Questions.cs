@@ -107,13 +107,13 @@ namespace UnderstoodDotOrg.Services.CommunityServices
 
             Sitecore.Data.Fields.MultilistField topics = item.Fields["Topic"];
 
-            if (topics != null)
+            if (topics != null && topics.Count >0)
             {
-                foreach (ID id in topics.TargetIDs)
-                {
-                    Item targetItem = Sitecore.Context.Database.Items[id];
-                    question.Group = targetItem.Name;
-                }
+                //foreach (ID id in topics.TargetIDs)
+                //{
+                   // Item targetItem = Sitecore.Context.Database.Items[id];
+                question.Group = topics.TargetIDs.Select(x => Sitecore.Context.Database.Items[x]).FirstOrDefault().Name; //targetItem.Name;
+                //}
 
             }
 
