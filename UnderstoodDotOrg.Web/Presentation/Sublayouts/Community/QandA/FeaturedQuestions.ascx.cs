@@ -1,18 +1,21 @@
 ﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA
 {
     using Sitecore.Data.Items;
-using Sitecore.Web.UI.HtmlControls;
-using System;
-using System.Collections.Generic;
-using System.Web.UI.WebControls;
-using UnderstoodDotOrg.Common;
-using UnderstoodDotOrg.Common.Extensions;
-using UnderstoodDotOrg.Domain.Membership;
-using UnderstoodDotOrg.Domain.SitecoreCIG;
-using UnderstoodDotOrg.Services.CommunityServices;
-using UnderstoodDotOrg.Services.Models.Telligent;
-using UnderstoodDotOrg.Services.TelligentService;
+    using Sitecore.Web.UI.HtmlControls;
+    using System;
+    using System.Collections.Generic;
+    using System.Web.UI.WebControls;
+    using UnderstoodDotOrg.Common;
+    using UnderstoodDotOrg.Common.Extensions;
+    using UnderstoodDotOrg.Domain.Membership;
+    using UnderstoodDotOrg.Domain.Search;
+    using UnderstoodDotOrg.Domain.SitecoreCIG;
+    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.QandA;
+    using UnderstoodDotOrg.Services.CommunityServices;
+    using UnderstoodDotOrg.Services.Models.Telligent;
+    using UnderstoodDotOrg.Services.TelligentService;
     using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
+    using System.Linq;
 
     public partial class FeaturedQuestions : System.Web.UI.UserControl
     {
@@ -54,14 +57,25 @@ using UnderstoodDotOrg.Services.TelligentService;
             {
                 questions = GetFeaturedQuestions();
             }
-            else if (!String.IsNullOrEmpty(grades) || !String.IsNullOrEmpty(topics) || !String.IsNullOrEmpty(childIssues))
+            else if (filter == "Recommended")
             {
-                questions = Questions.FindQuestions(String.IsNullOrEmpty(childIssues) ? new string[] { } : new string[] { childIssues }, String.IsNullOrEmpty(topics) ? new string[] { } : new string[] { topics }, String.IsNullOrEmpty(grades) ? new string[] { } : new string[] { grades });
+                if (this.CurrentMember != null)
+                {
+                    var list = SearchHelper.GetRecommendedContent(this.CurrentMember, QandADetailsItem.TemplateId)
+                                    .Where(a => a.GetItem() != null)
+                                    .Select(a => new QandADetailsItem(a.GetItem()))
+                                    .ToList();
+
+                    questions = null;
+                    //lvQuestionCards.DataBind();
+                }
+
             }
             else
             {
-                questions = TelligentService.GetQuestionsList(2, 100);
+                questions = Questions.FindQuestions(String.IsNullOrEmpty(childIssues) ? new string[] { } : new string[] { childIssues }, String.IsNullOrEmpty(topics) ? new string[] { } : new string[] { topics }, String.IsNullOrEmpty(grades) ? new string[] { } : new string[] { grades });
             }
+
 
 
             if (filter == "Answered")
@@ -149,6 +163,20 @@ using UnderstoodDotOrg.Services.TelligentService;
             }
 
             return questions;
+        }
+
+        private Member _currentMember;
+        public Member CurrentMember
+        {
+            get
+            {
+                return (_currentMember = _currentMember ?? (Member)Session[Constants.currentMemberKey]);
+            }
+            set
+            {
+                Session[Constants.currentMemberKey] =
+                    _currentMember = value;
+            }
         }
 
         protected void questionsRepeater_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)

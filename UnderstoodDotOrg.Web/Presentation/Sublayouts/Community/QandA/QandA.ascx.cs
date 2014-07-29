@@ -94,6 +94,21 @@
 
                 }
 
+                String topic = Server.UrlDecode(Request.QueryString["topic"]);
+
+                ListItem selectItem = null;
+
+                if (!String.IsNullOrEmpty(topic))
+                {
+                    foreach (ListItem item in ddlTopics.Items)
+                    {
+                        if (item.Text == topic)
+                        {
+                            selectItem.Selected = true;
+                            break;
+                        }
+                    }
+                }
 
             }
             else
@@ -193,6 +208,9 @@
             {
                 litSelectedMenu.Text = filter;
             }
+
+
+
         }
 
     }
