@@ -2916,7 +2916,10 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         Body = page["Body"].InnerText,
                         Author = user["Username"].InnerText,
                         Group = app["HtmlName"].InnerText,
-                        CommentCount = page["CommentCount"].InnerText
+                        CommentCount = page["CommentCount"].InnerText,
+                        ContentId = page["ContentId"].InnerText,
+                        ContentTypeId = page["ContentTypeId"].InnerText
+                        
                     };
                 }
             }
