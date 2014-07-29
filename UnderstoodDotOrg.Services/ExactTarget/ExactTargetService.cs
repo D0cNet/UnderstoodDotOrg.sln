@@ -1949,9 +1949,12 @@ namespace UnderstoodDotOrg.Services.ExactTarget
                         tempAttribute = new etAPI.Attribute();
                         tempAttribute.Name = "profile_completion_bar";
                         tempAttribute.Value = request.ProfilePercentCompletePlaceholder;
+                        AttributeList.Add(tempAttribute);
+                        
                         tempAttribute = new etAPI.Attribute();
                         tempAttribute.Name = "fullname";
-                        tempAttribute.Value = request.UserName ; 
+                        tempAttribute.Value = request.UserName ;
+                        AttributeList.Add(tempAttribute);
 
                         newSub.Attributes = AttributeList.ToArray();
                         ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
