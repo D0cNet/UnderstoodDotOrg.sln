@@ -55,4 +55,8 @@
             <!-- end .event-cards -->
         </div>
     </div>
+     <div class="row">
+           <%-- <a class="col-4 button offset-20" href="REPLACE">See Calendar</a>--%>
+         <asp:HyperLink CSSClass="col-4 button offset-20" ID="hypCalendarLink" runat="server" ></asp:HyperLink>
+        </div>
 </div>

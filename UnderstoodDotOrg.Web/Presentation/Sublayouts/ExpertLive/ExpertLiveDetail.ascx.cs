@@ -51,6 +51,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Expert_LIve
             IsFeatured = featured.ToLower() == "true";
             IsRecommended = recommended.ToLower() == "true";
             PopulateUpcomingEvents();
+            hypCalendarLink.Text = UnderstoodDotOrg.Common.DictionaryConstants.ViewCalendarLabel;
+            hypCalendarLink.NavigateUrl = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(UnderstoodDotOrg.Common.Constants.Pages.ExpertsLiveCalendar));
         }
 
         private void BindEvents()
