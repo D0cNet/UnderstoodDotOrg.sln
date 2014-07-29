@@ -45,12 +45,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         
         protected void lbtnFollow_Click(object sender, EventArgs e)
         {
-            //this.ProfileRedirect(Constants.UserPermission.CommunityUser);
-            if (!IsUserLoggedIn)
-            {
-                Response.Redirect(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{31F94423-5969-4506-B782-C3B8E5A2F7B9}")));
-            }
-
+            this.ProfileRedirect(Constants.UserPermission.CommunityUser);
+           
             switch (Type)
             {
                 case Constants.TelligentContentType.BlogPost:

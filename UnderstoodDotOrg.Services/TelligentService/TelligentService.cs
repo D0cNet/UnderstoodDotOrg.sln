@@ -2602,7 +2602,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
         /// <param name="param">Application type to limit the search.
         /// Options: blog, group, question, expert, all</param>
         /// <returns></returns>
-        public static List<SearchResult> CommunitySearch(string q, string param)
+        public static List<SearchResult> BlogSearch(string q, string param)
         {
             // TODO: store guids in constants file
             var searchResultsList = new List<SearchResult>();
@@ -2700,6 +2700,110 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                 Url = url,
                                 Author = author,
                                 GroupName = groupName,
+                            };
+                            searchResultsList.Add(searchResult);
+                        }
+                    }
+                }
+            }
+            catch { }
+            return searchResultsList;
+        }
+
+        public static List<BlogPost> CommunitySearch(string q, string param)
+        {
+            // TODO: store guids in constants file
+            var searchResultsList = new List<BlogPost>();
+            try
+            {
+                using (var webClient = new WebClient())
+                {
+
+                    webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
+                    var requestUrl = string.Format(GetApiEndPoint("search.xml?Query={0}&PageSize=100&Category={1}"), q, param);
+
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList xn = xmlDoc.SelectNodes("Response/SearchResults/SearchResult");
+                    foreach (XmlNode result in xn)
+                    {
+                        XmlNode content = result.SelectSingleNode("Content");
+                        XmlNode application = result.SelectSingleNode("Content/Application");
+                        XmlNode container = result.SelectSingleNode("Group/Container");
+                        XmlNode group = result.SelectSingleNode("Group");
+                        XmlNode user = result.SelectSingleNode("User");
+                        if (!application["HtmlName"].InnerText.Equals("Articles")
+                            && !application["HtmlName"].InnerText.Equals("Assistive Tools")
+                            && !result["ContentType"].InnerText.Equals("status")
+                            && !result["ContentType"].InnerText.Equals("fileapp")
+                            && !result["ContentType"].InnerText.Equals("wikiapp")
+                            && !result["ContentType"].InnerText.Equals("forumapp"))
+                        {
+                            string id = result["Id"].InnerText;
+                            string bestMatchTitle = result["BestMatchTitle"].InnerText;
+                            string title = result["Title"].InnerText;
+                            string bestMatch = result["BestMatch"].InnerText;
+                            string body = result["Body"].InnerText;
+                            string type = result["ContentType"].InnerText;
+                            string typeTransformed = string.Empty;
+                            string date = DataFormatHelper.FormatDate(result["Date"].InnerText);
+                            string url = string.Empty;
+                            string groupName = container["HtmlName"].InnerText;
+                            string author = user["Username"].InnerText;
+                            bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
+                            bestMatchTitle = Regex.Replace(title, "</em>", "</strong>");
+                            bestMatch = Regex.Replace(bestMatch, "<em>", "<strong>");
+                            bestMatch = Regex.Replace(bestMatch, "</em>", "</strong>");
+
+                            if (body != string.Empty)
+                            {
+                                body = "&ldquo;" + body + "&rdquo;";
+                            }
+
+                            switch (type)
+                            {
+                                case "comment":
+                                    typeTransformed = "Blog Comment";
+                                    url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + application["HtmlName"].InnerText + "/" + Regex.Replace(title, "Comment on ", "");
+                                    if (param == "wiki")
+                                    {
+                                        typeTransformed = "Question Answer";
+                                    }
+                                    break;
+                                case "blog":
+                                    typeTransformed = "Blog Post";
+                                    url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + application["HtmlName"].InnerText + "/" + title;
+                                    break;
+                                case "blogapp":
+                                    typeTransformed = "Blog";
+                                    url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{E486F071-8B5F-42B9-91C1-CC8A61A8622E}")) + "?BlogId=" + result["SectionId"].InnerText;
+                                    break;
+                                case "wiki":
+                                    typeTransformed = "Question";
+                                    url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{7356A32F-1795-4EAE-BE24-EBBD79B3093C}")) + String.Format("?wikiId={0}&wikiPageId={1}&contentId={2}", result["WikiId"].InnerText, result["ContentId"].InnerText, id);
+                                    break;
+                                case "forum":
+                                    typeTransformed = "Discussion Post";
+                                    break;
+                                case "forumreply":
+                                    typeTransformed = "Discussion Reply";
+                                    break;
+                                case "group":
+                                    typeTransformed = "Group";
+                                    break;
+                            }
+                            var searchResult = new BlogPost()
+                            {
+                                ContentId = id,
+                                Title = bestMatchTitle,
+                                Body = bestMatch,
+                                PublishedDate = date,
+                                Url = url,
+                                Author = author,
+                                BlogName = groupName,
                             };
                             searchResultsList.Add(searchResult);
                         }

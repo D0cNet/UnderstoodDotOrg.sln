@@ -118,11 +118,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             //this.ProfileRedirect(Constants.UserPermission.CommunityUser);
 
-            if (CurrentMember.ScreenName.IsNullOrEmpty())
-            {
-                Sitecore.Diagnostics.Log.Error(
-                    String.Format("Member has empty screen name, member id: {0}", CurrentMember.MemberId), this);
-            }
+            this.ProfileRedirect(Constants.UserPermission.CommunityUser);
+            
+            Sitecore.Diagnostics.Log.Error(
+            String.Format("Member has empty screen name, member id: {0}", CurrentMember.MemberId), this);
 
             if (TelligentService.PostComment(_blogId, _blogPostId, txtComment.Text.Trim(), CurrentMember.ScreenName))
             {

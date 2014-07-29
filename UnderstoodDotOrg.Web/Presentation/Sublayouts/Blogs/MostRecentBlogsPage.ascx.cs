@@ -1,4 +1,5 @@
-﻿using Sitecore.Links;
+﻿using Sitecore.Data.Items;
+using Sitecore.Links;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 {
@@ -33,8 +35,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            Repeater rptRecentBlogInfo = (Repeater)FindControl("rptRecentBlogInfo");
             string query = TextHelper.RemoveHTML(txtSearch.Text);
-            Response.Redirect(String.Format("{}?q={}&a={}", LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{B1EFCAA6-C79A-4908-84D0-B4BDFA5E25A3}")), query, Constants.TelligentSearchParams.Blog));
+            var dataSource = TelligentService.CommunitySearch(query, Constants.TelligentSearchParams.Blog);
+            rptRecentBlogInfo.DataSource = dataSource;
+            rptRecentBlogInfo.DataBind();
         }
 
         protected void btnMostRecent_Click(object sender, EventArgs e)
