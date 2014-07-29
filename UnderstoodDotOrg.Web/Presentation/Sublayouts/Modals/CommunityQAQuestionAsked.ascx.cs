@@ -35,7 +35,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
             {
                 String search = Server.UrlDecode(Request.QueryString["search"]);
 
-                List<Question> questions = TelligentService.GetQuestionsList(2, 100);
+                List<Question> questions = Questions.FindQuestions(new string[] { }, new string[] { }, new string[] { });
 
                 if (!String.IsNullOrEmpty(search))
                 {

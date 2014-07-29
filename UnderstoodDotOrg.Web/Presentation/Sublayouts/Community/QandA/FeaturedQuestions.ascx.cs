@@ -63,13 +63,12 @@
             {
                 if (this.CurrentMember != null)
                 {
-                    var list = SearchHelper.GetRecommendedContent(this.CurrentMember, QandADetailsItem.TemplateId)
+                    var list = SearchHelper.GetRecommendedContent(this.CurrentMember, Constants.Questions.QuestionTemplateID)
                                     .Where(a => a.GetItem() != null)
-                                    .Select(a => new QandADetailsItem(a.GetItem()))
+                                    .Select(a => Questions.GetQuestion(a.GetItem().Fields["WikiId"].ToString(), a.GetItem().Fields["WikiPageId"].ToString(), a.GetItem().Fields["ContentId"].ToString()))
                                     .ToList();
 
-                    questions = null;
-                    //lvQuestionCards.DataBind();
+                    questions = list;
                 }
 
             }

@@ -235,8 +235,8 @@ namespace UnderstoodDotOrg.Services.CommunityServices
 
                 //Build search string based on parameters
                 //Order matters according to Speckle UN-595
-                strValues.Append(" @WikiId= '%" + wikiId + "%'").Append(AndCondition);
-                strValues.Append(" @WikiPageId= '%" + wikiPageId + "%'").Append(AndCondition);
+                strValues.Append(" @WikiId= '%" + wikiId + "%'").Append(" and ");
+                strValues.Append(" @WikiPageId= '%" + wikiPageId + "%'").Append(" )");
                 //strValues.Append(" @ContentId= '%" + contentId + "%'").Append(AndCondition);
 
                 //Clip " or " from last criteria
