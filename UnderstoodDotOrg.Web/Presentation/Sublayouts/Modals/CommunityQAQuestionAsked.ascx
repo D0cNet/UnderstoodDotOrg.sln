@@ -18,7 +18,7 @@
         <asp:Repeater ID="questionsRepeater" ItemType="UnderstoodDotOrg.Services.Models.Telligent.Question" runat="server" OnItemDataBound="questionsRepeater_ItemDataBound">
             <ItemTemplate>
                         <!-- BEGIN PARTIAL: community/question-asked -->
-                        <li>
+                        <li class="already-asked-question clearfix repeater-item-qa">
                             <div class="question-number"><em><%# Container.ItemIndex + 1 %></em></div>
 
                             <div class="question-detail">
@@ -57,7 +57,7 @@
                     <div class="container show-more rs_skip" id="divShowMore" runat="server">
                         <div class="row">
                             <div class="col col-24">
-                                <a class="show-more-link " href="#" data-path="community/questions-asked" data-container="similar-answers" data-item="question-number" data-count="3"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeMoreLabel %><i class="icon-arrow-down-blue"></i></a>
+                                <a class="show-more-link-qa" href="#" data-path="community/similar-answers" data-container="similar-answers" data-item="already-asked-question" data-count="3"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeMoreLabel %><i class="icon-arrow-down-blue"></i></a>
                             </div>
                         </div>
                     </div>
@@ -132,3 +132,23 @@
 <!-- .modal-dialog -->
 </div>
 <!-- modal -->
+
+<script type="text/javascript">
+
+    var qaShowCount = 3;
+    $(document).ready(function () {
+        for (var i = qaShowCount; i < $(".repeater-item-qa").length; i++) {
+            $(".repeater-item-qa").eq(i).hide();
+        }
+    });
+    $(".show-more-link-qa").click(function () {
+        for (var i = qaShowCount; i < qaShowCount + 5; i++) {
+            $(".repeater-item-qa").eq(i).show();
+        }
+        qaShowCount += 5;
+        if ($(".repeater-item-qa").length <= showCount) {
+            $(".show-more-link-qa").hide();
+        }
+    })
+
+</script>
