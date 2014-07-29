@@ -1,4 +1,5 @@
-﻿using Sitecore.Web.UI.WebControls;
+﻿using Sitecore.Data.Items;
+using Sitecore.Web.UI.WebControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -179,6 +180,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
                     rptArticleInterests.DataSource = interests;
                     rptArticleInterests.DataBind();
                 }
+
+                var overrides = article.OverrideTypes.Select(i => Sitecore.Context.Database.GetItem(i.Guid))
+                                    .Where(i => i != null);
+                Repeater rptArticleOverrides = e.FindControlAs<Repeater>("rptArticleOverrides");
+                if (overrides.Any())
+                {
+                    rptArticleOverrides.DataSource = overrides;
+                    rptArticleOverrides.DataBind();
+                }
             }
         }
 
@@ -224,6 +234,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.AdminTools
 
                 litInterest.Text = (_parentInterests.Contains(item.ID.ToGuid()))
                     ? HighlightMatch(item.InterestName.Rendered) : item.InterestName.Rendered;
+            }
+        }
+
+        protected void rptArticleOverrides_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                Item item = (Item)e.Item.DataItem;
+
+                Literal litOverride = e.FindControlAs<Literal>("litOverride");
+                litOverride.Text = item.Name;
             }
         }
     }

@@ -11,6 +11,7 @@ using SolrNet.Impl.FieldSerializers;
 using SolrNet.Impl.QuerySerializers;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
@@ -19,16 +20,13 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.TextOnlyTipsArticle;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
-using System.ComponentModel;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Child;
-using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Pages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
 
 namespace UnderstoodDotOrg.Domain.Search
 {
@@ -40,19 +38,21 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             Expression<Func<Article, bool>> pred = PredicateBuilder.True<Article>();
 
-            // TODO: retrieve member language
-            pred = pred.And(a => a.Language == "en");
+            // Workaround Sitecore bug - require a single true condition
+            pred = pred.And(GetAlwaysTruePredicate());
 
-            // Exclude templates
-            pred = pred.And(a => a.Path.Contains(Constants.Search.ContentSearchPath)
-                            && !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
+            // Exclude QA
+            pred = pred.And(a => !a.Paths.Contains(ID.Parse(Constants.QATestDataContainer)));
+            
+            // Exclude articles marked for exclusion
+            pred = pred.And(a => !a.OverrideTypes.Contains(ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization)));
+
+
+            // start at content root
+            pred = pred.And(a => a.Path.Contains(Constants.Search.ContentSearchPath));
 
             // Include only articles
             pred = pred.And(GetInheritsArticlePredicate());
-
-            // Exclude articles marked for exclusion
-            pred = pred.And(a => a.Path.Contains(Constants.Search.ContentSearchPath)
-                            && !a.OverrideTypes.Contains(ID.Parse(Constants.ArticleTags.ExcludeFromPersonalization)));
 
             // Include non cloned items
             pred = pred.And(a => a.SourceItem == ID.Parse(Guid.Empty));

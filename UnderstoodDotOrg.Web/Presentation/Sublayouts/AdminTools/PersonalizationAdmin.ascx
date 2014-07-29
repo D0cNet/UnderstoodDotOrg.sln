@@ -142,6 +142,18 @@
                                 </ul>
                             </FooterTemplate>
                         </asp:Repeater>
+                            <asp:Repeater ID="rptArticleOverrides" runat="server" OnItemDataBound="rptArticleOverrides_ItemDataBound">
+                            <HeaderTemplate>
+                                <h5>Overrides:</h5>
+                                <ul>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li><asp:Literal ID="litOverride" runat="server" /></li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </ul>
+                            </FooterTemplate>
+                        </asp:Repeater>
                         </div>
 
                         <div class="article-column">
