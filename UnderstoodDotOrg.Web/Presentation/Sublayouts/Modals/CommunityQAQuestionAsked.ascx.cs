@@ -42,6 +42,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
                     questions = questions.Where(x => Server.HtmlDecode(x.Title).ToLower().Contains(search.ToLower())).ToList();
                 }
 
+                if (questions.Count <= 3)
+                {
+                    divShowMore.Visible = false;
+                }
+
                 questionsRepeater.DataSource = questions;
                 questionsRepeater.DataBind();
 

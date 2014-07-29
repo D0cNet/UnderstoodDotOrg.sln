@@ -11,7 +11,7 @@
 
             <div class="modal-body">
                 <!-- BEGIN PARTIAL: community/qa_already_asked_question -->
-                <div class="community-ask-question already-asked">
+                <div id="divAlreadyAsked" class="community-ask-question already-asked" runat="server">
                     <p class="already-asked-header"><sc:Text Field="Already Asked" runat="server" /></p>
 
                     <ul class="similar-answers">
@@ -19,7 +19,7 @@
             <ItemTemplate>
                         <!-- BEGIN PARTIAL: community/question-asked -->
                         <li>
-                            <div class="question-number"><em>1</em></div>
+                            <div class="question-number"><em><%# Container.ItemIndex + 1 %></em></div>
 
                             <div class="question-detail">
                                 <p>
@@ -54,10 +54,10 @@
                     <!-- Show More -->
                     <!-- BEGIN PARTIAL: community/show_more -->
                     <!--Show More-->
-                    <div class="container show-more rs_skip">
+                    <div class="container show-more rs_skip" id="divShowMore" runat="server">
                         <div class="row">
                             <div class="col col-24">
-                                <a class="show-more-link " href="#" data-path="community/questions-asked" data-container="similar-answers" data-item="question-number" data-count="3">Show More<i class="icon-arrow-down-blue"></i></a>
+                                <a class="show-more-link " href="#" data-path="community/questions-asked" data-container="similar-answers" data-item="question-number" data-count="3"><%= UnderstoodDotOrg.Common.DictionaryConstants.SeeMoreLabel %><i class="icon-arrow-down-blue"></i></a>
                             </div>
                         </div>
                     </div>
@@ -66,14 +66,14 @@
                     <!-- .show-more -->
 
                     <a class="button continue" href="REPLACE">
-                        <span><sc:Text Field="Already Asked" runat="server" /></span>
                         <span><sc:Text Field="Still Need Help" runat="server" /></span>
+                        <span><sc:Text Field="Submit Your Question" runat="server" /></span>
                     </a>
                 </div>
                 <!-- END PARTIAL: community/qa_already_asked_question -->
                 <!-- BEGIN PARTIAL: community/qa_submit_question -->
                 <form id="Form1" runat="server">
-                <div class="community-ask-question submit-question">  
+                <div id="divCommunityAsk" class="community-ask-question submit-question" runat="server">  
                     <h1><sc:Text Field="Submit Your Question" runat="server" /></h1>
                     <h4 class="subhead"><sc:Text Field="Ask Your Question" runat="server" /></h4>
                     <asp:TextBox ID="EnterQuestionTextBox" class="question" minlength="100" MaxLength="1000" aria-required="required" required="required" placeholder="Enter your question..." runat="server" />

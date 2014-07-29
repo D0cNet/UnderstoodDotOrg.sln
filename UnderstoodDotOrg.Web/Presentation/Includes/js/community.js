@@ -1515,7 +1515,9 @@
 
       var encName = encodeURIComponent(name);
 
-      $.get('/modals/community-qa-question-asked?search='+encName).done(self.renderLightbox);
+      $.get('/modals/community-qa-question-asked?search=' + encName).done(self.renderLightbox);
+
+      //self.showQuestion();
     };
 
     self.renderLightbox = function(res) {
