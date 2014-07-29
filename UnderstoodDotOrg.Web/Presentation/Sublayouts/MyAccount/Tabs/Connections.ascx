@@ -7,7 +7,7 @@
         <div class="col col-22 offset-1">
             <!-- BEGIN PARTIAL: my-connections-subheader -->
             <h2 class="rs_read_this"><%= UnderstoodDotOrg.Common.DictionaryConstants.MyConnectionsLabel %></h2>
-            <a href="REPLACE" class="separated-link"><sc:FieldRenderer ID="frAvtivityFeed" FieldName="Activity Feed Text" runat="server" /></a>
+            <%--<a href="REPLACE" class="separated-link"><sc:FieldRenderer ID="frAvtivityFeed" FieldName="Activity Feed Text" runat="server" /></a>--%>
             <fieldset>
                 <span class="select-container sort">
                     <select name="filter" id="filter" class="my-account-dropdown">
