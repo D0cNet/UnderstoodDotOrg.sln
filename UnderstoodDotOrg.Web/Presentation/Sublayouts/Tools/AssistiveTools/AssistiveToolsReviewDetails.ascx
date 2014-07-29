@@ -318,7 +318,7 @@
                                     <sc:Image ID="AppleImage" Field="App Store Image" runat="server" />
                                 </a>
                                 <% } 
-                                   if (Model.AppleAppStoreID != string.Empty) { %>
+                                   if (Model.GooglePlayStoreID != string.Empty) { %>
                                 <a href="https://play.google.com/store/apps/details?id=<%= Model.GooglePlayStoreID.Rendered %>">
                                     <sc:Image ID="GoogleImage" Field="Google Store Image" runat="server" />
                                 </a>
