@@ -31,15 +31,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A {
         protected global::System.Web.UI.WebControls.Label QuestionBodyLabel;
         
         /// <summary>
-        /// Text1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text1;
-        
-        /// <summary>
         /// GroupLabel control.
         /// </summary>
         /// <remarks>
@@ -49,13 +40,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A {
         protected global::System.Web.UI.WebControls.Label GroupLabel;
         
         /// <summary>
-        /// Text2 control.
+        /// hypAuthorLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.Text Text2;
+        protected global::System.Web.UI.WebControls.HyperLink hypAuthorLink;
         
         /// <summary>
         /// AuthorLabel control.
@@ -74,6 +65,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label DateLabel;
+        
+        /// <summary>
+        /// FollowButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.FollowButton FollowButton;
         
         /// <summary>
         /// commentsForm control.

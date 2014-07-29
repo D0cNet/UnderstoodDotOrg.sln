@@ -1,20 +1,21 @@
-﻿namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA
+﻿using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
+using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Domain.SitecoreCIG;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.QandA;
+using UnderstoodDotOrg.Services.Models.Telligent;
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Framework.UI;
+using System.Net;
+using Sitecore.Configuration;
+using System.Text;
+using System.Collections.Specialized;
+using UnderstoodDotOrg.Services.TelligentService;
+namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.QandA
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Web.UI.WebControls;
-    using UnderstoodDotOrg.Common;
-    using UnderstoodDotOrg.Domain.Membership;
-    using UnderstoodDotOrg.Domain.SitecoreCIG;
-    using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.QandA;
-    using UnderstoodDotOrg.Domain.TelligentCommunity;
-    using UnderstoodDotOrg.Common.Extensions;
-    using UnderstoodDotOrg.Framework.UI;
-    using System.Net;
-    using Sitecore.Configuration;
-    using System.Text;
-    using System.Collections.Specialized;
-    using UnderstoodDotOrg.Services.TelligentService;
+ 
 
     public partial class QuestionAnswers : BaseSublayout
     {
@@ -36,7 +37,7 @@
                 wikiPageId = "1";
             }
 
-            var dataSource = CommunityHelper.GetAnswers(wikiId, wikiPageId, contentId);
+            var dataSource = TelligentService.GetAnswers(wikiId, wikiPageId, contentId);
             AnswerRepeater.DataSource = dataSource;
             AnswerRepeater.DataBind();
             try

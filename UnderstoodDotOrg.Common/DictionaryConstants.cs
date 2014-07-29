@@ -3187,5 +3187,7 @@ namespace UnderstoodDotOrg.Common
         public static string RecentQuestionsLabel { get { return Translate.TextByDomain(PosesDictionary, "Recent Questions Label"); } }
 
         public static string YouAreFollowingLabel { get { return Translate.TextByDomain(PosesDictionary, "You Are Following Label"); } }
+
+        public static object InFragment { get { return Translate.TextByDomain(PosesDictionary, "In Fragment"); } }
     }
 }

@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="QandADetails.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Q_and_A.QandADetails" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/FollowButton.ascx" TagPrefix="uc1" TagName="FollowButton" %>
+
 <div class="container community-q-a-details">
     <div class="row skiplink-feature">
         <div class="col col-24">
@@ -15,10 +17,11 @@
                     <div class="description">
                         <asp:Label ID="QuestionBodyLabel" runat="server" />
                     </div>
-                    <span class="details"><sc:Text ID="Text1" Field="In Text" runat="server" /> <a href="REPLACE" class="topic"><asp:Label ID="GroupLabel" runat="server" /></a> - <sc:Text ID="Text2" Field="Asked By Text" runat="server" /> <a href="REPLACE" class="author"><asp:Label ID="AuthorLabel" runat="server" /></a> <span class="bullet">&bull;</span> <asp:Label ID="DateLabel" runat="server" /></span>
+                    <span class="details"><%= UnderstoodDotOrg.Common.DictionaryConstants.InFragment %> <a href="REPLACE" class="topic"><asp:Label ID="GroupLabel" runat="server" /></a> - <%= UnderstoodDotOrg.Common.DictionaryConstants.AskedByLabel %> <asp:HyperLink runat="server" ID="hypAuthorLink" class="author"><asp:Label ID="AuthorLabel" runat="server" /></asp:HyperLink> <span class="bullet">&bull;</span> <asp:Label ID="DateLabel" runat="server" /></span>
                     <div class="buttons">
                         <a class="button answer" href="javascript:void" onclick="DisplayForm();"><%= UnderstoodDotOrg.Common.DictionaryConstants.AnswerQuestionLabel %></a>
-                        <a class="button follow" href="REPLACE"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.FollowThisQuestionLabel %></span></a>
+                        <%--<a class="button follow" href="REPLACE"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.FollowThisQuestionLabel %></span></a>--%>
+                        <uc1:FollowButton runat="server" ID="FollowButton" />
                     </div>
                 </div>
             </div>

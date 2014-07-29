@@ -24,7 +24,7 @@
     <!-- END PARTIAL: community/question_sort -->
     <div class="answer-list">
         <asp:Repeater ID="AnswerRepeater" runat="server"
-            ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Answer" OnItemDataBound="AnswerRepeater_ItemDataBound">
+            ItemType="UnderstoodDotOrg.Services.Models.Telligent.Answer" OnItemDataBound="AnswerRepeater_ItemDataBound">
             <ItemTemplate>
         <!-- BEGIN PARTIAL: community/answer_card -->
         <div class="card-answer">

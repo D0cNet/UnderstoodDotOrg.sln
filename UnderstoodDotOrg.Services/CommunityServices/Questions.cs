@@ -85,7 +85,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
             return results;
         }
 
-        private static Question QuestionFactory(Item item)
+        public static Question QuestionFactory(Item item)
         {
             String wikiId = item["WikiId"];
             String contentId = item["ContentId"];

@@ -438,40 +438,40 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         }
 
 
-        public static List<Answer> GetAnswers(string wikiId, string wikiPageId, string contentId)
-        {
-            string likes = GetTotalLikes(contentId).ToString();
-            List<Answer> answerList = new List<Answer>();
-            using (var webClient = new WebClient())
-            {
-                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                var requestUrl = GetApiEndPoint(string.Format("wikis/{0}/pages/{1}/comments.xml", wikiId, wikiPageId));
+        //public static List<Answer> GetAnswers(string wikiId, string wikiPageId, string contentId)
+        //{
+        //    string likes = GetTotalLikes(contentId).ToString();
+        //    List<Answer> answerList = new List<Answer>();
+        //    using (var webClient = new WebClient())
+        //    {
+        //        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+        //        var requestUrl = GetApiEndPoint(string.Format("wikis/{0}/pages/{1}/comments.xml", wikiId, wikiPageId));
 
-                var xml = webClient.DownloadString(requestUrl);
+        //        var xml = webClient.DownloadString(requestUrl);
 
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
+        //        XmlDocument xmlDoc = new XmlDocument();
+        //        xmlDoc.LoadXml(xml);
 
-                XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
-                int count = 0;
-                foreach (XmlNode xn in nodes)
-                {
-                    XmlNode user = xn.SelectSingleNode("Author");
-                    Answer answer = new Answer()
-                    {
-                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["PublishedDate"].InnerText),
-                        Body = xn["Body"].InnerText,
-                        Author = user["Username"].InnerText,
-                        AuthorAvatar = user["AvatarUrl"].InnerText,
-                        Count = nodes.Count.ToString(),
-                        Likes = likes,
-                    };
-                    answerList.Add(answer);
-                    count++;
-                }
-            }
-            return answerList;
-        }
+        //        XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+        //        int count = 0;
+        //        foreach (XmlNode xn in nodes)
+        //        {
+        //            XmlNode user = xn.SelectSingleNode("Author");
+        //            Answer answer = new Answer()
+        //            {
+        //                PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["PublishedDate"].InnerText),
+        //                Body = xn["Body"].InnerText,
+        //                Author = user["Username"].InnerText,
+        //                AuthorAvatar = user["AvatarUrl"].InnerText,
+        //                Count = nodes.Count.ToString(),
+        //                Likes = likes,
+        //            };
+        //            answerList.Add(answer);
+        //            count++;
+        //        }
+        //    }
+        //    return answerList;
+        //}
 
         public static string BlogNameById(string blogId)
         {
