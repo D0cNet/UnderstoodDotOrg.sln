@@ -6609,7 +6609,7 @@
 }
 /* line 713, ../css.source/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .no-uniform-wrapper label span {
-  padding-left: 10px;
+  padding-left: 0px;
 }
 /* line 717, ../css.source/modules/account/_profile-questions.scss */
 .profile-questions.step-3 .form-actions {
