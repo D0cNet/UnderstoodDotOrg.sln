@@ -1266,10 +1266,16 @@ the callbacks passed to the module.
 
             /* SG - this is dependent on page specific JS - checking if U.Recos exists before firing */
             if (typeof (U.Recos) !== 'undefined') {
-                waitForFinalEvent(function () {
-                    responsiveSliderChange(forYouSliderArr, true, jQuery('.recos-for-you'), 4, false, false, false);
-                    new U.Recos();
-                }, 500, 'forYouSlider');
+              waitForFinalEvent(function () {
+                var recosCarousels = jQuery(".recos-for-you"),
+                    len = recosCarousels.length;
+
+                for (var i = 0; i < len; i++) {
+                  responsiveSliderChange(forYouSliderData[i], false, recosCarousels.eq(i), 4, false, false, false);
+                }
+
+                new U.Recos();
+              }, 500, 'forYouSlider');
             }
 
             waitForFinalEvent(function () {

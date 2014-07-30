@@ -421,271 +421,7 @@
   };
 
 })(jQuery);
-/**
- * Definition for the behaviorTool javascript module.
- */
 
-(function($){
-
-  $(document).ready(function() {
-    var self = this;
-
-    self.dom = {};
-
-    self.init = function(){
-
-      self.dom.container = $('.whats-happening-page');
-      self.dom.html = $('html');
-
-      if (self.dom.container.length === 0) {
-        return;
-      }
-
-      self.dom.html.on('equalHeights', self.equalizeHeights);
-      self.initializeEventsSlider();
-      self.initializeQuestionsSlider();
-      self.initializeMembersSlider();
-      self.initializeGroupsSlider();
-      self.initializeBlogSlider();
-      self.attachHandlers();
-      self.truncate();
-    };
-
-    self.equalizeHeights = function() {
-      // only above 320 viewport or nonresponsive
-      if(Modernizr.mq('(min-width: 321px)') || !Modernizr.mq('only all')){
-        self.dom.container.find('.event-card-title').equalHeights();
-        self.dom.container.find('.event-card-info').equalHeights();
-
-        self.dom.container.find('.question-card-title-and-text').equalHeights();
-      }
-
-      self.dom.container.find('.question-card-info').equalHeights();
-
-      self.dom.container.find('.member-card-name').equalHeights();
-
-      // only above 320 viewport or nonresponsive
-      if(Modernizr.mq('(min-width: 321px)') || !Modernizr.mq('only all')){
-        self.dom.container.find('.group-card-name').equalHeights();
-
-        self.dom.container.find('.group-card-info')
-          .not(self.dom.container.find('.community-my-groups .group-card-info'))
-          .equalHeights();
-      }
-
-      // only above 480 viewport or nonresponsive
-      if(Modernizr.mq('(min-width: 480px)') || !Modernizr.mq('only all')){
-        self.dom.container.find('.community-blogs .blog-card-contents').equalHeights();
-        self.dom.container.find('.community-blogs .blog-card').equalHeights();
-      }
-
-      // only above 650 viewport or nonresponsive
-      if(Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')){
-        self.dom.container.find('.community-my-blogs .blog-card')
-          .each(function (i, element) {
-            var $element =  $(element);
-            $element.find('.rsContent .blog-card-info')
-              .add($element.find('.blog-card-author-info'))
-              .equalHeights();
-          });
-      }
-    };
-
-    self.resize = function() {
-      self.dom.container.find('.event-card-info').height('auto');
-
-      self.dom.container.find('.question-card-title-and-text').height('auto');
-      self.dom.container.find('.question-card-info').height('auto');
-
-      self.dom.container.find('.member-card-name').height('auto');
-
-      self.dom.container.find('.group-card-name').height('auto');
-      self.dom.container.find('.group-card-info').height('auto');
-
-      self.dom.container.find('.group-card-excerpt')
-        .add(self.dom.container.find('.group-card-replies'))
-        .height('auto');
-
-      self.dom.container.find('.community-blogs .blog-card-contents').height('auto');
-      self.dom.container.find('.community-blogs .blog-card').height('auto');
-      self.dom.container
-        .find('.blog-card-author-info')
-        .add(self.dom.container.find('.rsContent .blog-card-info'))
-        .height('auto');
-
-      self.equalizeHeights();
-    };
-
-    self.attachHandlers = function() {
-      self.dom.container
-        .find('.event-cards')
-        .on('click', '.action-skip-this', self.skipItem('.event-card', self.eventSkipped));
-
-      self.dom.container
-        .find('.group-cards')
-        .on('click', '.action-skip-this', self.skipItem('.group-card', self.groupSkipped));
-
-      self.dom.container
-        .find('.blog-cards')
-        .on('click', '.action-skip-this', self.skipItem('.blog-card', self.blogSkipped));
-
-      var $destination = $('.member-cards');
-      $destination.on('click keypress', '.specialty span',
-        U.user_profile.showHoverCard($destination, '.card-child-info', '.specialty-final'));
-    };
-
-    self.skipItem = function(selector, callback) {
-      return function(e) {
-        e.preventDefault();
-
-        var $target = $(e.target);
-
-        var $elements = $(selector);
-        var $elementToRemove = $target.closest(selector);
-        var $nextSlideIndex = $elements.index($elementToRemove) + 1;
-
-        if ($nextSlideIndex >= $elements.length) {
-          $nextSlideIndex -= 2;
-        }
-
-        var $nextSlide = $elements.eq($nextSlideIndex);
-        var $newFocusElement = $nextSlide.find('a').eq(0);
-
-        var currentIndex = $elements.index($elementToRemove);
-        var $currentContainer = $elementToRemove.parent();
-
-
-
-        $elementToRemove.fadeOut(function() {
-          $(this).remove();
-
-          for (var i = currentIndex + 1; i < $elements.length; i++) {
-            var $nextItem = $elements.eq(i);
-            var $newContainer = $nextItem.parent();
-            $currentContainer.append($nextItem);
-            $currentContainer = $newContainer;
-          }
-
-          $newFocusElement.focus();
-
-          callback($currentContainer, $elementToRemove);
-        });
-      };
-    };
-
-    self.eventSkipped = function(destination, elementToRemove) {
-      var $destination = $(destination);
-      var $elementToRemove = $(elementToRemove);
-
-      // TODO Remove this and get data from the backend.
-      // This is just so we don't exhaust the available cards in
-      // the prototype
-      $destination.append($elementToRemove);
-      $elementToRemove.show();
-
-      // TODO - backend integration - notify backend of removed event
-      // and add a fresh event
-    };
-
-    self.groupSkipped = function(destination, elementToRemove) {
-      var $destination = $(destination);
-      var $elementToRemove = $(elementToRemove);
-
-      // TODO Remove this and get data from the backend.
-      // This is just so we don't exhaust the available cards in
-      // the prototype
-      $destination.append($elementToRemove);
-      $elementToRemove.show();
-
-      // TODO - backend integration - notify backend of removed event
-      // and add a fresh event
-    };
-
-    self.blogSkipped = function(destination, elementToRemove) {
-      var $destination = $(destination);
-      var $elementToRemove = $(elementToRemove);
-
-      // TODO Remove this and get data from the backend.
-      // This is just so we don't exhaust the available cards in
-      // the prototype
-      $destination.append($elementToRemove);
-      $elementToRemove.show();
-
-      // TODO - backend integration - notify backend of removed event
-      // and add a fresh event
-    };
-
-    self.initializeEventsSlider = function() {
-      var container = $('.upcoming-events .event-cards');
-      var slideSelector = ".event-card";
-      var navigation = $('.upcoming-events .events.next-prev-menu');
-
-      if (container.length === 0) {
-        return;
-      }
-
-      U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 2, self.resize);
-    };
-
-    self.initializeQuestionsSlider = function() {
-      var container = $('.recent-questions .question-cards');
-      var slideSelector = ".question-card";
-      var navigation = $('.recent-questions .questions.next-prev-menu');
-
-      if (container.length === 0) {
-        return;
-      }
-
-      U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 1, self.resize);
-    };
-
-    self.initializeMembersSlider = function() {
-      var container = $('.community-members .member-cards');
-      var slideSelector = ".member-card";
-      var navigation = $('.community-members .members.next-prev-menu');
-
-      if (container.length === 0) {
-        return;
-      }
-
-      U.carousels.initializeSlider(container, slideSelector, navigation, 4, 3, 2, self.resize);
-    };
-
-    self.initializeGroupsSlider = function() {
-      var container = $('.community-groups .group-cards');
-      var slideSelector = ".group-card";
-      var navigation = $('.community-groups .groups.next-prev-menu');
-
-      if (container.length === 0) {
-        return;
-      }
-
-      U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 2, self.resize);
-    };
-
-    self.initializeBlogSlider = function() {
-      var container = $('.community-blogs .blog-cards');
-      var slideSelector = ".blog-card";
-      var navigation = $('.community-blogs .blogs.next-prev-menu');
-
-      if (container.length === 0) {
-        return;
-      }
-
-      U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 1, self.resize);
-    };
-
-    self.truncate = function() {
-      $('.name-member').ellipsis({
-        row: 2,
-        char: '…' // &hellip;
-      });
-    };
-
-    self.init();
-  });
-
-})(jQuery);
 /**
  * Definition for the Experts Page javascript module.
  */
@@ -1560,15 +1296,280 @@
 
 })(jQuery);
 
+/**
+ * Definition for the whatsHappening what javascript module.
+ */
+(function ($) {
+
+    $(document).ready(function () {
+        new U.whatsHappening();
+    });
+
+    U.whatsHappening = function () {
+        var self = this;
+
+        self.dom = {};
+
+        self.init = function () {
+
+            self.dom.container = $('.whats-happening-page');
+            self.dom.html = $('html');
+
+            if (self.dom.container.length === 0) {
+                return;
+            }
+
+            self.initializeEventsSlider();
+            self.initializeQuestionsSlider();
+            self.initializeMembersSlider();
+
+            // this JS if not IE8 (too many carousels causes IE8 to function poorly)
+            if (Modernizr.mq('only all')) {
+                self.initializeGroupsSlider();
+                self.initializeBlogSlider();
+                self.attachHandlers();
+            }
+
+            self.truncate();
+        };
+
+        self.equalizeHeights = function () {
+            // only above 320 viewport or nonresponsive
+            if (Modernizr.mq('(min-width: 321px)') || !Modernizr.mq('only all')) {
+                self.dom.container.find('.event-card-title').equalHeights();
+                self.dom.container.find('.event-card-info').equalHeights();
+
+                self.dom.container.find('.question-card-title-and-text').equalHeights();
+            }
+
+            //self.dom.container.find('.question-card-info').equalHeights();
+
+            self.dom.container.find('.member-card-name').equalHeights();
+
+            // only above 320 viewport or nonresponsive
+            if (Modernizr.mq('(min-width: 321px)') || !Modernizr.mq('only all')) {
+                self.dom.container.find('.group-card-name').equalHeights();
+
+                self.dom.container.find('.group-card-info')
+                    .not(self.dom.container.find('.community-my-groups .group-card-info'))
+                    .equalHeights();
+            }
+
+            // only above 480 viewport or nonresponsive
+            if (Modernizr.mq('(min-width: 480px)') || !Modernizr.mq('only all')) {
+                self.dom.container.find('.community-blogs .blog-card-contents').equalHeights();
+            }
+
+            // only above 650 viewport or nonresponsive
+            if (Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')) {
+                self.dom.container.find('.community-my-blogs .blog-card')
+                    .each(function (i, element) {
+                        var $element = $(element);
+                        $element.find('.rsContent .blog-card-info')
+                            .add($element.find('.blog-card-author-info'))
+                            .equalHeights();
+                    });
+            }
+        };
+
+        self.resize = function () {
+            self.dom.container.find('.event-card-info').height('auto');
+
+            self.dom.container.find('.question-card-title-and-text').height('auto');
+            self.dom.container.find('.question-card-info').height('auto');
+
+            self.dom.container.find('.member-card-name').height('auto');
+
+            self.dom.container.find('.group-card-name').height('auto');
+            self.dom.container.find('.group-card-info').height('auto');
+
+            self.dom.container.find('.group-card-excerpt')
+                .add(self.dom.container.find('.group-card-replies'))
+                .height('auto');
+
+            self.dom.container.find('.community-blogs .blog-card-contents').height('auto');
+            self.dom.container.find('.community-blogs .blog-card').height('auto');
+            self.dom.container
+                .find('.blog-card-author-info')
+                .add(self.dom.container.find('.rsContent .blog-card-info'))
+                .height('auto');
+
+            self.equalizeHeights();
+        };
+
+        self.attachHandlers = function () {
+            self.dom.container
+                .find('.event-cards')
+                .on('click', '.action-skip-this', self.skipItem('.event-card', self.eventSkipped));
+
+            self.dom.container
+                .find('.group-cards')
+                .on('click', '.action-skip-this', self.skipItem('.group-card', self.groupSkipped));
+
+            self.dom.container
+                .find('.blog-cards')
+                .on('click', '.action-skip-this', self.skipItem('.blog-card', self.blogSkipped));
+
+            self.dom.html.on('equalHeights', self.equalizeHeights);
+
+            var $destination = $('.member-cards');
+            $destination.on('click keypress', '.specialty span',
+                U.user_profile.showHoverCard($destination, '.card-child-info', '.specialty-final'));
+        };
+
+        self.skipItem = function (selector, callback) {
+            return function (e) {
+                e.preventDefault();
+
+                var $target = $(e.target);
+
+                var $elements = $(selector);
+                var $elementToRemove = $target.closest(selector);
+                var $nextSlideIndex = $elements.index($elementToRemove) + 1;
+
+                if ($nextSlideIndex >= $elements.length) {
+                    $nextSlideIndex -= 2;
+                }
+
+                var $nextSlide = $elements.eq($nextSlideIndex);
+                var $newFocusElement = $nextSlide.find('a').eq(0);
+
+                var currentIndex = $elements.index($elementToRemove);
+                var $currentContainer = $elementToRemove.parent();
 
 
 
+                $elementToRemove.fadeOut(function () {
+                    $(this).remove();
 
+                    for (var i = currentIndex + 1; i < $elements.length; i++) {
+                        var $nextItem = $elements.eq(i);
+                        var $newContainer = $nextItem.parent();
+                        $currentContainer.append($nextItem);
+                        $currentContainer = $newContainer;
+                    }
 
+                    $newFocusElement.focus();
 
+                    callback($currentContainer, $elementToRemove);
+                });
+            };
+        };
 
+        self.eventSkipped = function (destination, elementToRemove) {
+            var $destination = $(destination);
+            var $elementToRemove = $(elementToRemove);
 
+            // TODO Remove this and get data from the backend.
+            // This is just so we don't exhaust the available cards in
+            // the prototype
+            $destination.append($elementToRemove);
+            $elementToRemove.show();
 
+            // TODO - backend integration - notify backend of removed event
+            // and add a fresh event
+        };
 
+        self.groupSkipped = function (destination, elementToRemove) {
+            var $destination = $(destination);
+            var $elementToRemove = $(elementToRemove);
 
+            // TODO Remove this and get data from the backend.
+            // This is just so we don't exhaust the available cards in
+            // the prototype
+            $destination.append($elementToRemove);
+            $elementToRemove.show();
 
+            // TODO - backend integration - notify backend of removed event
+            // and add a fresh event
+        };
+
+        self.blogSkipped = function (destination, elementToRemove) {
+            var $destination = $(destination);
+            var $elementToRemove = $(elementToRemove);
+
+            // TODO Remove this and get data from the backend.
+            // This is just so we don't exhaust the available cards in
+            // the prototype
+            $destination.append($elementToRemove);
+            $elementToRemove.show();
+
+            // TODO - backend integration - notify backend of removed event
+            // and add a fresh event
+        };
+
+        self.initializeEventsSlider = function () {
+            var container = $('.upcoming-events .event-cards');
+            var slideSelector = ".event-card";
+            var navigation = $('.upcoming-events .events.next-prev-menu');
+
+            if (container.length === 0) {
+                return;
+            }
+
+            U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 2, self.resize);
+        };
+
+        self.initializeQuestionsSlider = function () {
+            var container = $('.recent-questions .question-cards');
+            var slideSelector = ".question-card";
+            var navigation = $('.recent-questions .questions.next-prev-menu');
+
+            if (container.length === 0) {
+                return;
+            }
+
+            U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 1, self.resize);
+        };
+
+        self.initializeMembersSlider = function () {
+            var container = $('.community-members .member-cards');
+            var slideSelector = ".member-card";
+            var navigation = $('.community-members .members.next-prev-menu');
+
+            if (container.length === 0) {
+                return;
+            }
+
+            U.carousels.initializeSlider(container, slideSelector, navigation, 4, 3, 2, self.resize);
+        };
+
+        self.initializeGroupsSlider = function () {
+            var container = $('.community-groups .group-cards');
+            var slideSelector = ".group-card";
+            var navigation = $('.community-groups .groups.next-prev-menu');
+
+            if (container.length === 0) {
+                return;
+            }
+
+            U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 2, self.resize);
+        };
+
+        self.initializeBlogSlider = function () {
+            var container = $('.community-blogs .blog-cards');
+            var slideSelector = ".blog-card";
+            var navigation = $('.community-blogs .blogs.next-prev-menu');
+
+            if (container.length === 0) {
+                return;
+            }
+
+            U.carousels.initializeSlider(container, slideSelector, navigation, 2, 2, 1, self.resize);
+        };
+
+        self.truncate = function () {
+            $('.name-member').ellipsis({
+                row: 2,
+                char: '…' // &hellip;
+            });
+            $('.event-card-title').ellipsis({
+                row: 4,
+                char: '…' // &hellip;
+            });
+        };
+
+        self.init();
+    };
+
+})(jQuery);
