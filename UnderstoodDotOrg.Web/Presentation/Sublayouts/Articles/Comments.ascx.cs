@@ -46,8 +46,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         protected void Page_Load(object sender, EventArgs e)
         {
             btnSubmit.Text = DictionaryConstants.SubmitButtonText;
+            txtComment.Attributes.Add("maxlength", "1000");
 
-            // TODO: convert to dictionary -- Done
             txtComment.Attributes.Add("placeholder", DictionaryConstants.Articles_AddCommentText);
 
             Item currentItem = Sitecore.Context.Item;
@@ -116,13 +116,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            //this.ProfileRedirect(Constants.UserPermission.CommunityUser);
-
             this.ProfileRedirect(Constants.UserPermission.CommunityUser);
             
-            Sitecore.Diagnostics.Log.Error(
-            String.Format("Member has empty screen name, member id: {0}", CurrentMember.MemberId), this);
-
             if (TelligentService.PostComment(_blogId, _blogPostId, txtComment.Text.Trim(), CurrentMember.ScreenName))
             {
                 PopulateComments();
