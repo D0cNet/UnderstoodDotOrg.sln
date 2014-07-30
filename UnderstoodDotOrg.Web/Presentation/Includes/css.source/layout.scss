@@ -396,22 +396,18 @@ body:after {
     a {
       color: #426da9;
     }
-    .link-sign-in, link-sign-out {
+    .link-sign-in {
       display: inline-block;
       overflow: hidden;
-      width: 45px;
-      height: 45px;
+      width: 25px;
+      height: 25px;
       text-indent: -999em;
       background-image: image-url('avatar.signed-out.png');
       background-size: 25px 25px;
-      background-position: center;
-      background-repeat: no-repeat;
-
       @include bp($bp-small-plus) {
         width: 50px;
         height: 50px;
         background-size: 50px 50px;
-        background-image: image-url('avatar.signed-out.png');
       }
       @include bp($bp-medium) {
         width: auto;
@@ -421,13 +417,6 @@ body:after {
         padding-top: 5px;
       }
     } // .link-sign-in
-    .link-sign-out {
-      background-image: image-url('icon.mobile.avatar.signed-in.png');
-      display: none;
-      @include bp($bp-small-plus) {
-        display: inline-block;
-      }
-    }
   } // .sign-in
   &.is-search-active {
     height: 115px;
@@ -1522,6 +1511,14 @@ footer#footer-page {
       min-height: 185px;
     }
 
+    h1 {
+
+      @include bp(850px) {
+        padding-right: 30%;
+      }
+
+    }
+    
   }
 
   &.has-subhead {
