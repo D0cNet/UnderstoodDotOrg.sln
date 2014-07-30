@@ -6,7 +6,8 @@
             <sc:FieldRenderer ID="BlogTitle" runat="server" FieldName="Title" />
         </h2>
         <p class="byline">
-            <sc:FieldRenderer ID="BlogDate" runat="server" FieldName="Date" />
+           <%-- <sc:FieldRenderer ID="BlogDate"   runat="server" FieldName="Date" />--%>
+            <asp:Literal  ID="litFormattedDate" runat="server" />
             <sc:Text Field="By Text" runat="server" />
             <a id="linkAuthor" runat="server">
                 <asp:Literal ID="litAuthor" runat="server" />

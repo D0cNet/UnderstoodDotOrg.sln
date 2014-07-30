@@ -22,13 +22,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer BlogTitle;
         
         /// <summary>
-        /// BlogDate control.
+        /// litFormattedDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer BlogDate;
+        protected global::System.Web.UI.WebControls.Literal litFormattedDate;
         
         /// <summary>
         /// linkAuthor control.

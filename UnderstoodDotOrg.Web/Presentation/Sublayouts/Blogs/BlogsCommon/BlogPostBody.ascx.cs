@@ -17,6 +17,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
         protected void Page_Load(object sender, EventArgs e)
         {
             BlogsPostPageItem blogCig = new BlogsPostPageItem(Sitecore.Context.Item);
+            litFormattedDate.Text =blogCig.Date.DateTime.ToString("M/dd/yyyy");
             BlogsAuthorPageItem author = Sitecore.Context.Database.GetItem(blogCig.Author.Raw);
             linkAuthor.HRef = linkAuthor2.HRef = linkAuthor3.HRef = LinkManager.GetItemUrl(author);
             litAuthorBio.Text = CommunityHelper.FormatString100(author.Biography.Text) + "...";
