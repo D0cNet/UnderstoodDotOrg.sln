@@ -2044,7 +2044,7 @@ jQuery(document).ready(function () {
 
     U.findHelpful = function () {
         var self = this;
-        var helpfulButtons = jQuery('.find-this-helpful ul li button'),
+        var helpfulButton = jQuery('.find-this-helpful ul li button');
 
         jQuery('.find-this-helpful ul li button').click(function () {
             var tempCount = parseInt(jQuery('.count-helpful a span').html()),
@@ -2082,7 +2082,7 @@ jQuery(document).ready(function () {
 
         self.toggleFindHelpfulSelects = function(buttonType) {
             buttonType.removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
-            $helpfulButton.removeClass('selected');
+            helpfulButton.removeClass('selected');
             buttonType.addClass('selected');
         };
 
