@@ -85,13 +85,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community {
         protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.LikeButton LikeButton;
         
         /// <summary>
-        /// plhGroupDiscussions control.
+        /// rptGroupDiscussion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plhGroupDiscussions;
+        protected global::UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.GroupDiscussionList rptGroupDiscussion;
         
         /// <summary>
         /// litMemberCount control.

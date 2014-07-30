@@ -21,7 +21,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                     var ProfileCommentCard = e.FindControlAs<ProfileCommentCard>("ProfileCommentCard");
                     if (ProfileCommentCard != null)
                     {
-                        ProfileCommentCard.Member = item.Author;
+                        //ProfileCommentCard.Member = item.Author;
+                        ProfileCommentCard.LoadState(item.Author);
                     }
 
                     LikeButton btnLikes = e.FindControlAs<LikeButton>("btnLikes");

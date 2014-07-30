@@ -39,32 +39,53 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
             set { _profileLink = value; }
         }
 
-
-        protected void Page_Load(object sender, EventArgs e)
+        public void LoadState(MemberCardModel mem)
         {
-            //imgAvatar.ImageUrl = !string.IsNullOrEmpty(this.Member.AvatarUrl) ? this.Member.AvatarUrl :  ;
-            if (this.Member != null)
+            if(mem!=null)
             {
-
-                imgAvatar.ImageUrl = this.Member.AvatarUrl;
-                imgAvatar.AlternateText = this.Member.UserName;
+                Member = mem;
+                imgAvatar.ImageUrl = mem.AvatarUrl;
+                imgAvatar.AlternateText = mem.UserName;
 
                 hypName.NavigateUrl = this.ProfileLink;
-                hypName.Text = this.Member.UserName;
+                hypName.Text = mem.UserName;
 
-                litLocation.Text = this.Member.UserLocation;
+                litLocation.Text = mem.UserLocation;
 
-                btnConnect.LoadState(this.Member.UserName);
+                btnConnect.LoadState(mem.UserName);
 
-                if (this.Member.Children != null && this.Member.Children.Count > 0)
+                if (mem.Children != null && mem.Children.Count > 0)
                 {
-                    rptChildCard.DataSource = this.Member.Children;
+                    rptChildCard.DataSource = mem.Children;
                     rptChildCard.DataBind();
                 }
-
             }
-
         }
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    //imgAvatar.ImageUrl = !string.IsNullOrEmpty(this.Member.AvatarUrl) ? this.Member.AvatarUrl :  ;
+        //    //if (this.Member != null)
+        //    //{
+
+        //    //    imgAvatar.ImageUrl = this.Member.AvatarUrl;
+        //    //    imgAvatar.AlternateText = this.Member.UserName;
+
+        //    //    hypName.NavigateUrl = this.ProfileLink;
+        //    //    hypName.Text = this.Member.UserName;
+
+        //    //    litLocation.Text = this.Member.UserLocation;
+
+        //    //    btnConnect.LoadState(this.Member.UserName);
+
+        //    //    if (this.Member.Children != null && this.Member.Children.Count > 0)
+        //    //    {
+        //    //        rptChildCard.DataSource = this.Member.Children;
+        //    //        rptChildCard.DataBind();
+        //    //    }
+
+        //    //}
+
+        //}
 
         /// <summary>
         /// binds each child

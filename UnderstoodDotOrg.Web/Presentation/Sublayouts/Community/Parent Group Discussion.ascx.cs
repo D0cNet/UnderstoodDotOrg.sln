@@ -19,15 +19,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
     public partial class Parent_Group_Discussion : BaseSublayout//System.Web.UI.UserControl
     {
-        GroupDiscussionList rptGroupDiscussion;
+       // GroupDiscussionList rptGroupDiscussion;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             lbSubmitReply.Text = DictionaryConstants.SubmitButtonText;
 
-            rptGroupDiscussion = (GroupDiscussionList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupDiscussionList.ascx");
-            rptGroupDiscussion.ID = "rptGroupCards";
-            plhGroupDiscussions.Controls.Add(rptGroupDiscussion);
+          //  rptGroupDiscussion = (GroupDiscussionList)Page.LoadControl("~/Presentation/Sublayouts/Common/GroupDiscussionList.ascx");
+         //   rptGroupDiscussion.ID = "rptGroupCards";
+         //   plhGroupDiscussions.Controls.Add(rptGroupDiscussion);
 
             //if (!IsPostBack)
             //{

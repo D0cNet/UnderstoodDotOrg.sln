@@ -4,6 +4,8 @@
 <%@ Register Src="~/Presentation/Sublayouts/Common/ThinkingOfYouButton.ascx" TagPrefix="uc1" TagName="ThinkingOfYouButton" %>
 <%@ Register Src="~/Presentation/Sublayouts/Common/LikeButton.ascx" TagPrefix="uc1" TagName="LikeButton" %>
 <%@ Register Src="~/Presentation/Sublayouts/Common/Cards/ProfileCommentCard.ascx" TagPrefix="uc1" TagName="ProfileCommentCard" %>
+<%@ Register Src="~/Presentation/Sublayouts/Common/GroupDiscussionList.ascx" TagPrefix="uc1" TagName="GroupDiscussionList" %>
+
 
 <!-- BEGIN PARTIAL: community/main_header -->
 
@@ -122,9 +124,9 @@
                         <%-- <sc:SubLayout ID="sbDiscussioinList" Path="~/Presentation/Sublayouts/Common/GroupDiscussionList.ascx" runat="server"></sc:SubLayout>--%>
                     </div>
 
-                    <asp:PlaceHolder ID="plhGroupDiscussions" runat="server"></asp:PlaceHolder>
+                   <%-- <asp:PlaceHolder ID="plhGroupDiscussions" runat="server"></asp:PlaceHolder>--%>
 
-
+                    <uc1:GroupDiscussionList ID="rptGroupDiscussion" runat="server"  />
                     <!--Groups Discussion-Post-->
 
                     <!-- END PARTIAL: community/groups_discussion_post -->
