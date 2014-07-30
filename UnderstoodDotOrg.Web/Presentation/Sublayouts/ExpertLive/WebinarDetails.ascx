@@ -88,7 +88,7 @@
         <!-- BEGIN PARTIAL: video-player -->
         <div class="player-container">
           <div class="player">
-                <script language="JavaScript" type="text/javascript" src="/includes/js/BrightcoveExperiences.js"></script> 
+                <script language="JavaScript" type="text/javascript" src="/includes/js/brightcove/BrightcoveExperiences.js"></script> 
             <sc:FieldRenderer ID="frVideoEmbed" runat="server" FieldName="Video Embed" />
           </div>
         </div>
