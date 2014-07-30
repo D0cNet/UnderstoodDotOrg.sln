@@ -2696,8 +2696,11 @@
   position: absolute;
   bottom: 25px;
   width: 20%;
+  /*p {
+      margin-top: 13px;
+  }*/
 }
-/* line 126, ../css.source/modules/account/_my-profile-content.scss */
+/* line 129, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .children-section .profile-details h3 {
   float: left;
   margin-top: 30px;
@@ -2708,17 +2711,17 @@
   margin-top: 0px;
   margin-bottom: 0px;
 }
-/* line 137, ../css.source/modules/account/_my-profile-content.scss */
+/* line 140, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .children-section .profile-details .row {
   margin-bottom: 10px;
 }
-/* line 140, ../css.source/modules/account/_my-profile-content.scss */
+/* line 143, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .children-section .profile-details ul {
   padding-left: 20px;
   text-indent: -30px;
   margin-bottom: 10px;
 }
-/* line 147, ../css.source/modules/account/_my-profile-content.scss */
+/* line 150, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .children-section .profile-details a {
   float: right;
   margin-top: 28px;
@@ -2726,44 +2729,44 @@
   display: block;
   margin-top: 13px;
 }
-/* line 157, ../css.source/modules/account/_my-profile-content.scss */
+/* line 160, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .children-section .section-label {
   overflow: visible;
 }
-/* line 161, ../css.source/modules/account/_my-profile-content.scss */
+/* line 164, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .children-section .section-label a {
   display: block;
   width: 150px;
 }
-/* line 168, ../css.source/modules/account/_my-profile-content.scss */
+/* line 171, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .community-section {
   padding-bottom: 90px;
 }
-/* line 172, ../css.source/modules/account/_my-profile-content.scss */
+/* line 175, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .community-section .inline {
   position: absolute;
   bottom: 5px;
   width: 17%;
 }
-/* line 179, ../css.source/modules/account/_my-profile-content.scss */
+/* line 182, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .contact-section {
   padding-bottom: 90px;
 }
-/* line 183, ../css.source/modules/account/_my-profile-content.scss */
+/* line 186, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .contact-section .profile-notice p {
   width: 20%;
 }
-/* line 191, ../css.source/modules/account/_my-profile-content.scss */
+/* line 194, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .privacy-section a {
   font-size: 18px;
   font-size: 1.125rem;
   text-decoration: none;
 }
-/* line 195, ../css.source/modules/account/_my-profile-content.scss */
+/* line 198, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .privacy-section h3 {
   padding-bottom: 15px;
 }
-/* line 199, ../css.source/modules/account/_my-profile-content.scss */
+/* line 202, ../css.source/modules/account/_my-profile-content.scss */
 .profile-wrap .password {
   font-size: 54px;
   font-size: 3.375rem;

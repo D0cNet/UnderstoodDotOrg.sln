@@ -128,13 +128,13 @@
                             </asp:ListView>
                         </div>
                         <!-- .col -->
+                        <div class="profile-notice inline">
+                            <p>
+                                <asp:Literal ID="ltlNicknameReminderText" runat="server"></asp:Literal>
+                            </p>
+                        </div>
                     </div>
                     <!-- .row -->
-                    <div class="profile-notice inline">
-                        <p>
-                            <asp:Literal ID="ltlNicknameReminderText" runat="server"></asp:Literal>
-                        </p>
-                    </div>
                 </div>
                 <!-- profile-section -->
                 <!-- End My Children -->

@@ -180,14 +180,6 @@ span.validationerror {
   font-size: 0.875rem;
 }
 
-/* SVN rev 1374, 1423 */
-/* increase children row min-height, top-margin on notice text is 
-   interferring with the ability to click "add child" link
- */
-.profile-wrap .profile-section.children-section {
-  min-height: 300px;
-}
-
 /* UNAO-439 */
 /* SVN rev 1701 */
 @media (min-width: 960px), print {

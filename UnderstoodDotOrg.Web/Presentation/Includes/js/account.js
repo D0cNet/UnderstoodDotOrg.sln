@@ -979,6 +979,46 @@
     };
 })(jQuery);
 
+/**
+ * Definition for profile page
+ */
+(function ($) {
+
+    // Initialize the module on page load.
+    $(document).ready(function () {
+        new U.myProfilePage();
+    });
+
+    U.myProfilePage = function () {
+        var self = this;
+
+        /**
+         * Initialize module on page load.
+         * @return {object} this instance
+         */
+        this.initialize = function () {
+            this.sizeChildrenSection();
+        };
+
+        this.sizeChildrenSection = function() {
+            var container = $('.profile-section.children-section');
+            var sectionLabel = container.find('.section-label');
+            var notice = container.find('.profile-notice');
+            var profileDetails = container.find('.profile-details');
+
+            if (sectionLabel.height() + notice.height() > profileDetails.height()) {
+                notice.css('position', 'relative');
+                if (sectionLabel.height() > profileDetails.height())
+                    notice.css('top', '30px');
+                else
+                    notice.css('bottom', '0');
+            }
+        } 
+
+        return this.initialize();
+    };
+
+})(jQuery);
 
 (function ($) {
 
