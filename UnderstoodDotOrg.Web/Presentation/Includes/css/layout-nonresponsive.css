@@ -148,7 +148,7 @@ body:after {
   display: block;
   margin-bottom: 20px;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .language-selection:after {
   content: "";
   display: table;
@@ -272,7 +272,7 @@ body:after {
   *zoom: 1;
   margin: 0 15px;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 #header-page:after {
   content: "";
   display: table;
@@ -1018,7 +1018,7 @@ body:after {
   position: relative;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 #drawermenu .nav-main .slider:after {
   content: "";
   display: table;
@@ -1342,21 +1342,25 @@ footer#footer-page .icon-pinterest:hover {
 .old-ie .page-topic.has-recommendations {
   min-height: 185px;
 }
-/* line 1527, ../css.source/layout.scss */
+/* line 1525, ../css.source/layout.scss */
+.page-topic.has-recommendations h1 {
+  padding-right: 30%;
+}
+/* line 1535, ../css.source/layout.scss */
 .page-topic.has-subhead {
   height: 211px;
   margin-bottom: 75px;
 }
-/* line 1531, ../css.source/layout.scss */
+/* line 1539, ../css.source/layout.scss */
 .page-topic.has-subhead .row:first-child {
   height: 185px;
   padding-bottom: 0;
 }
-/* line 1537, ../css.source/layout.scss */
+/* line 1545, ../css.source/layout.scss */
 .page-topic .row {
   position: relative;
 }
-/* line 1541, ../css.source/layout.scss */
+/* line 1549, ../css.source/layout.scss */
 .page-topic h1 {
   color: #7b3f84;
   font-size: 34px;
@@ -1368,7 +1372,7 @@ footer#footer-page .icon-pinterest:hover {
   line-height: 48px;
   line-height: 3rem;
 }
-/* line 1552, ../css.source/layout.scss */
+/* line 1560, ../css.source/layout.scss */
 .page-topic.logged-in h1 {
   font-size: 28px;
   font-size: 1.75rem;
@@ -1379,34 +1383,34 @@ footer#footer-page .icon-pinterest:hover {
   line-height: 40px;
   line-height: 2.5rem;
 }
-/* line 1562, ../css.source/layout.scss */
+/* line 1570, ../css.source/layout.scss */
 .page-topic .page-subtitle {
   margin: 20px 0 0 0;
   color: #696969;
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 1568, ../css.source/layout.scss */
+/* line 1576, ../css.source/layout.scss */
 .page-topic.behavior-page-topic {
   padding-top: 40px;
   padding: 45px 0;
 }
-/* line 1570, ../css.source/layout.scss */
+/* line 1578, ../css.source/layout.scss */
 .page-topic.behavior-page-topic .share-save-container div.share-save-icon {
   top: 40px;
 }
-/* line 1576, ../css.source/layout.scss */
+/* line 1584, ../css.source/layout.scss */
 .page-topic.behavior-page-topic .share-save-container div.share-save-icon {
   top: 0;
 }
-/* line 1582, ../css.source/layout.scss */
+/* line 1590, ../css.source/layout.scss */
 .page-topic .behavior-subtitle {
   color: #7a4183;
   font-size: 21px;
   font-size: 1.3125rem;
   margin-top: 15px;
 }
-/* line 1588, ../css.source/layout.scss */
+/* line 1596, ../css.source/layout.scss */
 .page-topic a.back-to-previous {
   color: #426da9;
   margin-bottom: 10px;
@@ -1417,7 +1421,7 @@ footer#footer-page .icon-pinterest:hover {
   margin-bottom: 17px;
   margin-bottom: 18px;
 }
-/* line 1604, ../css.source/layout.scss */
+/* line 1612, ../css.source/layout.scss */
 .page-topic a.back-to-previous i {
   margin-right: 7px;
   margin-bottom: -1px;

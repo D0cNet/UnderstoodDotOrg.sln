@@ -1522,6 +1522,14 @@ footer#footer-page {
       min-height: 185px;
     }
 
+    h1 {
+
+      @include bp($bp-medium) {
+        padding-right: 30%;
+      }
+
+    }
+
   }
 
   &.has-subhead {
