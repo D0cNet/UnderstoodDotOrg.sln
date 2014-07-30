@@ -82,7 +82,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
         //    }
         //}
 
-        public string DeleteConversationMessage { get { return DictionaryConstants.DeleteConfirmationLabel; } }
         public string CancelButtonText { get { return DictionaryConstants.CancelButtonText; } }
         public string PopUpTitleText { get { return DictionaryConstants.SendPrivateMessageLabel; } }
 
@@ -96,6 +95,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.MyAccount
             btnDelete.Text = DictionaryConstants.DeleteButtonLabel;
             btnReply.Text = DictionaryConstants.SubmitReplyButtonLabel;
             btnSendNewMessage.Text = DictionaryConstants.SendMessageButtonLabel;
+
+            btnDelete.OnClientClick = String.Format("return confirm('{0}');", DictionaryConstants.DeleteConfirmationLabel.Replace("'", "\'"));
 
             base.OnInit(e);
         }
