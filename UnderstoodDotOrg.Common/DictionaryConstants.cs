@@ -1913,6 +1913,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string SelectStateLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Select State Label");
+            }
+        }
+
         public static string TitleLabel
         {
             get

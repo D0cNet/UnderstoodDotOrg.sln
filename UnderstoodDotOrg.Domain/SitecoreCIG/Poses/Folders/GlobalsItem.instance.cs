@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Generic.Folders;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders.LearningTool;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
@@ -24,6 +25,10 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
         /// <returns></returns>
         public FooterFolderItem GetFooter() {
             return (FooterFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(FooterFolderItem.TemplateId)).FirstOrDefault();
+        }
+
+        public StatesFolderItem GetStatesFolder() {
+            return (StatesFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(StatesFolderItem.TemplateId)).FirstOrDefault();
         }
 
         /// <summary>

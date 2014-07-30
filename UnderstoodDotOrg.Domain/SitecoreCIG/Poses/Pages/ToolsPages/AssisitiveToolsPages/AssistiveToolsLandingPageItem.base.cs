@@ -100,6 +100,9 @@ public CustomImageField ContentThumbnail
 }
 
 
+//Could not find Field Type for Related Articles
+
+
 #endregion //Field Instance Methods
 }
 }

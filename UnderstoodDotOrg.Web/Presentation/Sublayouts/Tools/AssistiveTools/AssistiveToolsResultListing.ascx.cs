@@ -20,8 +20,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-			lblAboutOurRatingSystem.Text = DictionaryConstants.AboutOurRatingSystemLabel;
+            #region Dictionary Constants
+            lblAboutOurRatingSystem.Text = DictionaryConstants.AboutOurRatingSystemLabel;
 			lblBestFragment.Text = DictionaryConstants.BestFragment;
 			lblContentIsAppropriate.Text = DictionaryConstants.ContentIsAppropriateLabel;
 			lblDisappointing.Text = DictionaryConstants.DisappointingLabel;
@@ -57,7 +57,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 			lblSomewhatEngaging.Text = DictionaryConstants.SomewhatEngagingLabel;
 			lblTheBest.Text = DictionaryConstants.TheBestLabel;
 			lblVeryGoodFragment.Text = DictionaryConstants.VeryGoodfragment;
-
+            #endregion
 
             var screenshots = Model.Screenshots.ListItems
                 .Where(i => i != null && i.Paths.IsMediaItem)
@@ -92,6 +92,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             rptrSubjects.DataBind();
 
             litNumReviews.Text = CSMUserReviewExtensions.GetReviews(Model.ID.ToGuid()).Count().ToString();
+        }
+
+        protected string GetSpelledNumber(int index)
+        {
+            return SpelledNumbers.Length > index ? SpelledNumbers[index] : "zero";
         }
     }
 }

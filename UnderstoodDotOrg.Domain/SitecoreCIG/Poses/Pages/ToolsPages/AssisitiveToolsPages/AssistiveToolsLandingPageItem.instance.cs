@@ -5,6 +5,7 @@ using System.Linq;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Web.UI.WebControls;
+using CustomItemGenerator.Fields.ListTypes;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages
 {
@@ -21,5 +22,15 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveT
             var searchPage = GetSearchPage();
             return searchPage != null ? searchPage.GetToolDetailPages() : new List<AssistiveToolsReviewPageItem>();
         }
+
+        #region Field Instance Methods (fields with search)
+        public CustomMultiListField RelatedArticles
+        {
+            get
+            {
+                return new CustomMultiListField(InnerItem, InnerItem.Fields["Related Articles"]);
+            }
+        }
+        #endregion
     }
 }

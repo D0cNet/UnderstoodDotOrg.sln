@@ -217,6 +217,8 @@
     <Compile Include="SitecoreCIG\Brightcove\BrightcoveVideoItem.instance.cs" />
     <Compile Include="SitecoreCIG\Common\MediaElementItem.base.cs" />
     <Compile Include="SitecoreCIG\FolderItem.base.cs" />
+    <Compile Include="SitecoreCIG\Generic\Common\StateItem.base.cs" />
+    <Compile Include="SitecoreCIG\Generic\Folders\StatesFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\LanguageItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.base.cs" />
     <Compile Include="SitecoreCIG\MainsectionItem.instance.cs" />

@@ -319,6 +319,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frStateProvince2;
         
         /// <summary>
+        /// ddlStates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlStates;
+        
+        /// <summary>
         /// frZip control.
         /// </summary>
         /// <remarks>

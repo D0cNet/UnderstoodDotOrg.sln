@@ -89,7 +89,8 @@
                         <span class="visuallyhidden">rating</span>
                         <div class="quality-scale">
                             <!-- BEGIN PARTIAL: results-slider -->
-                            <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>" aria-label="<%= Model.Quality.Integer %>"><%= Model.Quality.Integer %></div>
+                            <div class="results-slider blue-<%= GetSpelledNumber(Model.Quality.Integer) %>" 
+                                aria-label="<%= Model.Quality.Integer %>"><%= Model.Quality.Integer %></div>
                             <!-- END PARTIAL: results-slider -->
                         </div>
                     </div>
@@ -99,7 +100,7 @@
                         <span class="visuallyhidden">rating</span>
                         <div class="learning-scale">
                             <!-- BEGIN PARTIAL: results-slider -->
-                            <div class="results-slider purple-<%= SpelledNumbers[Model.Learning.Integer] %>" aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>
+                            <div class="results-slider purple-<%= GetSpelledNumber(Model.Learning.Integer) %>" aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>
                             <!-- END PARTIAL: results-slider -->
                         </div>
                     </div>
@@ -163,7 +164,7 @@
             <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
             <div class="quality-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
-                <div class="results-slider blue-<%= SpelledNumbers[Model.Quality.Integer] %>" aria-label="<%= Model.Quality.Integer %>"><%= Model.Quality.Integer %></div>
+                <div class="results-slider blue-<%= GetSpelledNumber(Model.Quality.Integer) %>" aria-label="<%= Model.Quality.Integer %>"><%= Model.Quality.Integer %></div>
                 <!-- END PARTIAL: results-slider -->
             </div>
         </div>
@@ -227,7 +228,7 @@
             <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.RatingLabel %></span>
             <div class="learning-scale">
                 <!-- BEGIN PARTIAL: results-slider -->
-                <div class="results-slider purple-<%= SpelledNumbers[Model.Learning.Integer] %>" aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>
+                <div class="results-slider purple-<%= GetSpelledNumber(Model.Learning.Integer) %>" aria-label="<%= Model.Learning.Integer %>"><%= Model.Learning.Integer %></div>
                 <!-- END PARTIAL: results-slider -->
             </div>
             <div class="learning-info-wrapper rs_skip">

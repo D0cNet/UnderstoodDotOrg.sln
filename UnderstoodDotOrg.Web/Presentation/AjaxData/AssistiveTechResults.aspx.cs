@@ -41,7 +41,7 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                 CategoryId = Request["categoryId"].AsNGuid().Value;
                 ClickCount = Request["count"].AsInt();
                 Keyword = Request["keyword"];
-                if (!string.IsNullOrEmpty(Keyword))
+                if (string.IsNullOrEmpty(Keyword))
                 {
                     IssueId = Request["issueId"].AsNGuid();
                     GradeId = Request["gradeId"].AsNGuid();
