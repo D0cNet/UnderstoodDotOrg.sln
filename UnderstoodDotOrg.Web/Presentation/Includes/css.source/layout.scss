@@ -536,6 +536,11 @@ body:after {
       background-image: image-url('logo.u.large.png');
       background-size: contain;
     }
+    html[lang="es"] & {
+      @include bp($bp-medium) {
+        background-image: image-url('logo.u.espanol.large.png') !important;
+      }
+    }
   }
   img {
     width: 90px;
@@ -548,6 +553,9 @@ body:after {
   } // img
   .no-backgroundsize & a {
     background-image: image-url('logo.u.large.lo-res.png');
+  }
+  html[lang="es"].no-backgroundsize & a {
+    background-image: image-url('logo.u.espanol.large.lo-res.png') !important;
   }
 } // .logo-u-main
 
