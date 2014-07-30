@@ -2855,6 +2855,9 @@
     <Content Include="Presentation\Includes\images\welcome\welcome-modal-5.jpg" />
     <Content Include="Presentation\Includes\images\welcome\welcome-modal-5.low-res.jpg" />
     <Content Include="Presentation\Includes\images\welcome\welcome-modal-6.jpg" />
+    <Content Include="Presentation\Includes\js\brightcove\BrightcoveExperiences.js" />
+    <Content Include="Presentation\Includes\js\brightcove\markup.min.js" />
+    <Content Include="Presentation\Includes\js\brightcove\SmartPlayerAPI.js" />
     <Content Include="Presentation\Includes\js\community.js" />
     <Content Include="Presentation\Includes\js\about.js" />
     <Content Include="Presentation\Includes\js\account.js" />
