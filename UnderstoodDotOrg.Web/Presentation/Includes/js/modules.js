@@ -2050,39 +2050,40 @@ jQuery(document).ready(function () {
         jQuery('.find-this-helpful ul li button').click(function () {
             var tempCount = parseInt(jQuery('.count-helpful a span').html());
 
-            // commented out this section because it was targeting two modals at once.
             // disable sibling buttons when selected
             //jQuery(this).removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
 
+            if (jQuery(this).hasClass('helpful-yes')) {
+                jQuery('.find-this-helpful ul li button.yes').removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
+                jQuery('.find-this-helpful ul li button').removeClass('selected');
+                jQuery('.find-this-helpful ul li button.yes').addClass('selected');
+            } else {
+                jQuery('.find-this-helpful ul li button.no').removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
+                jQuery('.find-this-helpful ul li button').removeClass('selected');
+                jQuery('.find-this-helpful ul li button.no').addClass('selected');
+            }
 
-            //if (jQuery(this).hasClass('helpful-yes')) { // Yes is clicked
-               // if (!jQuery(this).hasClass('selected')) {
-                    // Yes not selected
-                    //jQuery('.count-helpful a span').html(tempCount + 1);
-               // }
-           // } else {
-               // if (jQuery('.helpful-yes').hasClass('selected')) { // No is clicked
+
+            if (jQuery(this).hasClass('helpful-yes')) { // Yes is clicked
+                if (!jQuery(this).hasClass('selected')) {
+                     //Yes not selected
+                    jQuery('.count-helpful a span').html(tempCount + 1);
+                }
+            } else {
+                if (jQuery('.helpful-yes').hasClass('selected')) { // No is clicked
                     // No is clicked, yes is selected
-                    //jQuery('.count-helpful a span').html(tempCount - 1);
-               // }
-           // }
+                    jQuery('.count-helpful a span').html(tempCount - 1);
+                }
+            }
+
+            if( $(this).hasClass('disabled') ){
+                jQuery('.find-this-helpful ul li button').removeClass('disabled').parent('li').siblings('li').find('button').removeClass('selected');
+            }
 
             //jQuery('.find-this-helpful ul li button').removeClass('selected');
             //jQuery(this).addClass('selected');
 
 
-            // if button not selected, make button selected state, disable other button
-            if (!$(this).hasClass('selected')) {
-                $(this).addClass('selected').parent('li').siblings('li').find('button').addClass('disabled');
-            }
-                // if button selected, make button not selected, remove disabling of other button
-            else {
-                $(this).removeClass('selected').parent('li').siblings('li').find('button').removeClass('disabled');
-            }
-            // if button is disabled, remove disabled state, and remove selected state of other buttons
-            if ($(this).hasClass('disabled')) {
-                $(this).removeClass('disabled').parent('li').siblings('li').find('button').removeClass('selected');
-            }
 
             return false;
         });
