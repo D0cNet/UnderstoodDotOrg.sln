@@ -39,13 +39,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
                 FieldRenderer frExpertSubheading = e.FindControlAs<FieldRenderer>("frExpertSubheading");
                 System.Web.UI.WebControls.Image imgExpert = e.FindControlAs<System.Web.UI.WebControls.Image>("imgExpert");
                 HyperLink hlEventDetail1 = e.FindControlAs<HyperLink>("hlEventDetail1");
-                HyperLink hlEventDetail2 = e.FindControlAs<HyperLink>("hlEventDetail2");
+                HyperLink hlEventDetail2 = e.FindControlAs<HyperLink>("hlEventDetail2"); 
+                HyperLink hlEventDetail3 = e.FindControlAs<HyperLink>("hlEventDetail3");
                 Literal litExpertType = e.FindControlAs<Literal>("litExpertType");
                 Literal litEventDate = e.FindControlAs<Literal>("litEventDate");
 
                 litEventDate.Text = item.GetFormattedEventStartDate();
-                hlEventDetail1.NavigateUrl = 
-                    hlEventDetail2.NavigateUrl = item.GetUrl();
+                hlEventDetail1.NavigateUrl =
+                    hlEventDetail2.NavigateUrl = hlEventDetail3.NavigateUrl = item.GetUrl();
 
                 // Expert details
                 ExpertDetailPageItem expert = item.Expert.Item;

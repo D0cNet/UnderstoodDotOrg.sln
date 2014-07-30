@@ -14,7 +14,9 @@
         <!-- end .event-card-image -->
         <div class="event-card-details">
             <div class="event-card-datetime">
-                <asp:Literal runat="server" ID="litEventDate"/>
+                 <a href="<%= EventUrl %>">
+                    <asp:Literal runat="server" ID="litEventDate"/>
+                </a>
                 <%--Sun Mar 18 at 12am UTC--%>
             </div>
             <!-- end .event-card-datetime -->
