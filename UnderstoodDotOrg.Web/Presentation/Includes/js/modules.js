@@ -2079,7 +2079,7 @@ jQuery(document).ready(function () {
                 }
                 else {
                     self.toggleFindHelpfulSelects(helpfulButtonNo);
-                    jQuery('.count-helpful a span').html(tempCount - 1);
+                    helpfulCounter.html(tempCount - 1);
                 }
             }
 
