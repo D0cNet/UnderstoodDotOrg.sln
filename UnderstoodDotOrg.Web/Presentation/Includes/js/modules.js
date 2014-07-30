@@ -1125,6 +1125,7 @@ the callbacks passed to the module.
 
             if (moreToExploreContainer.length) {
                 var moreToExplore = moreToExploreContainer.data('royalSlider');
+                moreToExplore.goTo(1);
 
                 moreToExplore.ev.on('rsAfterSlideChange', function () {
                     if (U.carousels.readSpeakerStarted) {
