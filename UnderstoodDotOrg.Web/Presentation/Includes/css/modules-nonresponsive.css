@@ -791,7 +791,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -1039,7 +1039,7 @@ html.canvas .mini-tools-wrap {
   list-style: none;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit .slide ul:after {
   content: "";
   display: table;
@@ -1818,7 +1818,7 @@ html.canvas .mini-tools-wrap {
   *zoom: 1;
   margin-bottom: 50px;
 }
-/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-listing-container .article:after {
   content: "\0020";
   display: block;
@@ -4291,7 +4291,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -5448,14 +5448,14 @@ h2.rs_read_this,
 /* line 47, ../css.source/mixins/_rs-play-button.scss */
 .experts-page .event .event-sidebar .rsbtn_player {
   top: 0;
-  top: -25px;
-  top: -25px;
+  top: -35px;
+  top: -35px;
 }
 /* line 2, ../css.source/mixins/_rs-play-button.scss */
 .experts-page .event .event-sidebar .rsbtn_player {
   left: 0;
-  left: -25px;
-  left: -25px;
+  left: -35px;
+  left: -35px;
 }
 
 /* line 47, ../css.source/mixins/_rs-play-button.scss */

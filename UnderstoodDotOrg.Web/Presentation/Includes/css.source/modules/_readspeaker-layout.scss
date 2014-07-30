@@ -185,8 +185,8 @@ h2.rs_read_this,
 
 //shared
 .experts-page .event .event-sidebar {
-  @include top_rs_btn_responsive(0, -25px, -25px);
-  @include left_rs_btn_responsive(0, -25px, -25px);
+  @include top_rs_btn_responsive(0, -35px, -35px);
+  @include left_rs_btn_responsive(0, -35px, -35px);
 }
 
 //layout specific
