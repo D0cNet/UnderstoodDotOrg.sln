@@ -76,12 +76,16 @@
                 <div id="divCommunityAsk" class="community-ask-question submit-question" runat="server">  
                     <h1><sc:Text Field="Submit Your Question" runat="server" /></h1>
                     <h4 class="subhead"><sc:Text Field="Ask Your Question" runat="server" /></h4>
-                    <asp:TextBox ID="EnterQuestionTextBox" class="question" minlength="100" MaxLength="1000" aria-required="required" required="required" placeholder="Enter your question..." runat="server" />
+                    <asp:TextBox TextMode="multiline" ID="txtQuestion" class="question" minlength="25" MaxLength="1000" aria-required="required" required="required" placeholder="Enter your question..." runat="server" /><br />
+                    <asp:RegularExpressionValidator ID="valQuestionMinLength" runat="server" ControlToValidate="txtQuestion" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="valQuestionMaxLength" runat="server" ControlToValidate="txtQuestion" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
 
                     <h4 class="subhead"><sc:Text Field="Question Title" runat="server" /></h4>
                     <p><sc:Text Field="Question Title Description" runat="server" /></p>
 
-                    <asp:TextBox ID="QuestionTitleTextBox" class="question-title" minlength="100" MaxLength="100" aria-required="required" required="required" placeholder="Enter your question's title..." runat="server" />
+                    <asp:TextBox TextMode="multiline" ID="txtQuestionTitle" class="question-title" minlength="5" MaxLength="100" aria-required="required" required="required" placeholder="Enter your question's title..." runat="server" /><br />
+                    <asp:RegularExpressionValidator ID="valQuestionTitleMinLength" runat="server" ControlToValidate="txtQuestionTitle" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="valQuestionTitleMaxLength" runat="server" ControlToValidate="txtQuestionTitle" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
                     <p class="legend"><sc:Text Field="Question Title Length" runat="server" /></p>
 
                     <fieldset class="related-issues">

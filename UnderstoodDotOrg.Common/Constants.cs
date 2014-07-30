@@ -1206,6 +1206,12 @@ namespace UnderstoodDotOrg.Common
             /// Minimum of 6 characters, no uppercase/special character restriction
             /// </summary>
             public const string Password = @"[\s\S]{6,}";
+
+            public const string MinLength5Characters = @"^[\s\S]{5,}$";
+            public const string MinLength25Characters = @"^[\s\S]{25,}$";
+            public const string MaxLength100Characters = @"^[\s\S]{0,100}$";
+            public const string MaxLength1000Characters = @"^[\s\S]{0,1000}$";
+        
         }
 
         public static class TelligentCommentSort

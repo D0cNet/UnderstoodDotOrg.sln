@@ -67,22 +67,58 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCommunityAsk;
         
         /// <summary>
-        /// EnterQuestionTextBox control.
+        /// txtQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EnterQuestionTextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtQuestion;
         
         /// <summary>
-        /// QuestionTitleTextBox control.
+        /// valQuestionMinLength control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox QuestionTitleTextBox;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator valQuestionMinLength;
+        
+        /// <summary>
+        /// valQuestionMaxLength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator valQuestionMaxLength;
+        
+        /// <summary>
+        /// txtQuestionTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQuestionTitle;
+        
+        /// <summary>
+        /// valQuestionTitleMinLength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator valQuestionTitleMinLength;
+        
+        /// <summary>
+        /// valQuestionTitleMaxLength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator valQuestionTitleMaxLength;
         
         /// <summary>
         /// uxIssues control.

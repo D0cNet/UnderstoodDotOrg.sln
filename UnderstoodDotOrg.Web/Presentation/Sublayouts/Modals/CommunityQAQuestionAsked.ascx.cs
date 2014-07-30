@@ -26,6 +26,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
             litChildsGradeText.Text = UnderstoodDotOrg.Common.DictionaryConstants.ChildsGradeLabel;
             litQuestionText.Text = UnderstoodDotOrg.Common.DictionaryConstants.QuestionTopicLabel;
 
+            valQuestionMinLength.ErrorMessage = DictionaryConstants.CommunityQuestionMinimumLength;
+            valQuestionMinLength.ValidationExpression = Constants.Validators.MinLength25Characters;
+            valQuestionMaxLength.ErrorMessage = DictionaryConstants.CommunityQuestionMaximumLength;
+            valQuestionMaxLength.ValidationExpression = Constants.Validators.MaxLength1000Characters;
+
+            valQuestionTitleMinLength.ErrorMessage = DictionaryConstants.CommunityQuestionTitleMinimumLength;
+            valQuestionTitleMinLength.ValidationExpression = Constants.Validators.MinLength5Characters;
+            valQuestionTitleMaxLength.ErrorMessage = DictionaryConstants.CommunityQuestionTitleMaximumLength;
+            valQuestionTitleMaxLength.ValidationExpression = Constants.Validators.MaxLength100Characters;
+
             base.OnInit(e);
         }
 
@@ -138,8 +148,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
 
         protected void SubmitQuestionButton_Click(object sender, EventArgs e)
         {
-            var title = QuestionTitleTextBox.Text;
-            var body = EnterQuestionTextBox.Text;
+            var title = txtQuestionTitle.Text;
+            var body = txtQuestion.Text;
 
             string topic = String.IsNullOrEmpty(ddlTopics.SelectedValue.ToString()) ? String.Empty : ddlTopics.SelectedValue.ToString();
 

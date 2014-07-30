@@ -932,6 +932,38 @@ namespace UnderstoodDotOrg.Common
 
         #region Registration/Validation
 
+        public static string CommunityQuestionMinimumLength
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Community Question Minimum Length");
+            }
+        }
+
+        public static string CommunityQuestionMaximumLength
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Community Question Maximum Length");
+            }
+        }
+        
+        public static string CommunityQuestionTitleMinimumLength
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Community Question Title Minimum Length");
+            }
+        }
+
+        public static string CommunityQuestionTitleMaximumLength
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Community Question Title Maximum Length");
+            }
+        }
+
         public static string ConfirmPasswordErrorMessage
         {
             get
