@@ -46,6 +46,15 @@ public static implicit operator Item(PartnerInfoItem customItem)
 #region Field Instance Methods
 
 
+public CustomCheckboxField HidePartnerNewsletterCallout
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Hide Partner Newsletter Callout"]);
+	}
+}
+
+
 public CustomTextField FirstFeaturedItemTitle
 {
 	get
@@ -96,6 +105,15 @@ public CustomTextField PartnerTagline
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Partner Tagline"]);
+	}
+}
+
+
+public CustomCheckboxField HidePartnerDonationCallout
+{
+	get
+	{
+		return new CustomCheckboxField(InnerItem, InnerItem.Fields["Hide Partner Donation Callout"]);
 	}
 }
 

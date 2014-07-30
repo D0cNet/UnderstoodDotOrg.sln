@@ -8,6 +8,7 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.AboutPages;
 using UnderstoodDotOrg.Framework.UI;
+using CustomItemGenerator.Fields.LinkTypes;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 {
@@ -36,8 +37,10 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
                 hlPartnersLanding.Text = parent.ContentPage.PageTitle;
             }
 
-            pnlNewsletter.Visible = !Model.PartnerNewsletterLink.Url.IsNullOrEmpty();
-            pnlDonate.Visible = !Model.PartnerDonationLink.Url.IsNullOrEmpty();
+            pnlLogo.Visible = Model.PartnerLogo.MediaItem != null;
+
+            pnlNewsletter.Visible = !Model.HidePartnerNewsletterCallout.Checked;
+            pnlDonate.Visible = !Model.HidePartnerDonationCallout.Checked;
 
             // Featured links
             var collections = new List<dynamic>();

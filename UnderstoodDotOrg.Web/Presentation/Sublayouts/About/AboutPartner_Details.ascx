@@ -34,9 +34,9 @@
                 </div><!-- end body -->
 
                 <div class="partner-detail-sidebar">
-                    <div class="partner-logo rs_read_this">
+                    <asp:Panel ID="pnlLogo" runat="server" CssClass="partner-logo rs_read_this">
                         <sc:FieldRenderer ID="frPartnerLogo" runat="server" FieldName="Partner Logo" Parameters="mw=270&mh=130" />
-                    </div>
+                    </asp:Panel>
 
                     <asp:Panel ID="pnlNewsletter" runat="server" Visible="false" CssClass="partner-newsletter">
                         <h2><sc:FieldRenderer ID="frNewsletterHeading" FieldName="Partner Newsletter Heading" runat="server" /></h2>
