@@ -11,7 +11,7 @@
 
             <div class="modal-body">
                 <!-- BEGIN PARTIAL: community/qa_already_asked_question -->
-                <div id="divAlreadyAsked" class="community-ask-question already-asked" runat="server">
+                <div id="divAlreadyAsked" class="community-ask-question already-asked rs_read_this" runat="server">
                     <p class="already-asked-header"><sc:Text Field="Already Asked" runat="server" /></p>
 
                     <ul class="similar-answers">
@@ -65,7 +65,7 @@
                     <!-- END PARTIAL: community/show_more -->
                     <!-- .show-more -->
 
-                    <a class="button continue" href="REPLACE">
+                    <a class="button continue rs_skip rs_preserve" href="REPLACE">
                         <span><sc:Text Field="Still Need Help" runat="server" /></span>
                         <span><sc:Text Field="Submit Your Question" runat="server" /></span>
                     </a>
@@ -146,7 +146,7 @@
             $(".repeater-item-qa").eq(i).show();
         }
         qaShowCount += 5;
-        if ($(".repeater-item-qa").length <= showCount) {
+        if ($(".repeater-item-qa").length <= qaShowCount) {
             $(".show-more-link-qa").hide();
         }
     })

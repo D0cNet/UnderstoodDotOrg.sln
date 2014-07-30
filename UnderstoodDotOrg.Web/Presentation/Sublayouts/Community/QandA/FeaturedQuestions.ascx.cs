@@ -99,6 +99,10 @@
 
             }
 
+            if (questions.Count <= 5)
+            {
+                divShowMore.Visible = false;
+            }
 
 
             questionsRepeater.DataSource = questions;

@@ -30,7 +30,7 @@
     <!-- Show More -->
     <!-- BEGIN PARTIAL: community/show_more -->
     <!--Show More-->
-    <div class="container show-more rs_skip">
+    <div id="divShowMore" class="container show-more rs_skip" runat="server">
         <div class="row">
             <div class="col col-24">
                 <a class="show-more-link " href="#" data-path="community/parent-questions" data-container="parent-questions" data-item="card-parent-question" data-count="6"><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %><i class="icon-arrow-down-blue"></i></a>

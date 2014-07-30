@@ -228,7 +228,7 @@ namespace UnderstoodDotOrg.Services.CommunityServices
             strb.Append("fast:/sitecore/content/Home//*[@@templateid = '" + Constants.Questions.QuestionTemplateID + "'");
             string AndCondition = " and (";
             string OrCondition = " or ";
-            //if ((issues.Count() > 0) || topics.Count() > 0 || grades.Count() > 0)
+            if (!String.IsNullOrEmpty(wikiId) && !String.IsNullOrEmpty(wikiPageId))
             {
 
                 strValues.Append(AndCondition);

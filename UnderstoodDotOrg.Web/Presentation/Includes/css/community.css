@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /**
  * Include SASS partials for community modules.
  */
@@ -12999,7 +12999,7 @@ div.selector.fixedWidth {
 /* line 325, ../css.source/modules/community/_qa_submit_question.scss */
 .submit-question-modal .modal-dialog {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
 }
 /* line 330, ../css.source/modules/community/_qa_submit_question.scss */
 .submit-question-modal .modal-content {
