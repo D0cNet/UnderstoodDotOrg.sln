@@ -78,15 +78,17 @@
                     <FooterTemplate></FooterTemplate>
                 </asp:Repeater>
             </section>
-            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />  
-            <!-- END PARTIAL: glossary -->
-            <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+            <div class="rs_about_author rs_read_this">
+                <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />  
 
-            <!-- END PARTIAL: reviewed-by -->
-            <!-- BEGIN PARTIAL: find-helpful -->
-            <sc:Sublayout ID="Sublayout2" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
-            <!-- END PARTIAL: find-helpful -->
+                <!-- BEGIN PARTIAL: reviewed-by -->
+                <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+                <!-- END PARTIAL: reviewed-by -->
+
+                <!-- BEGIN PARTIAL: find-helpful -->
+                <sc:Sublayout ID="Sublayout2" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
+                <!-- END PARTIAL: find-helpful -->
+            </div>
         </div>
 
         <div class="col col-1 sidebar-spacer"></div>

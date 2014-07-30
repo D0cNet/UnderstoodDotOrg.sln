@@ -63,12 +63,18 @@
                 <sc:FieldRenderer ID="frOutro" runat="server" FieldName="Outro Text" />
             </div>
             <!-- end infographic -->
-            <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+            <div class="rs_about_author rs_read_this">
+                <!-- BEGIN PARTIAL: reviewed-by -->
+                <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+                <!-- END PARTIAL: reviewed-by -->
+
+                <!-- BEGIN PARTIAL: find-helpful -->
+                <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
+                <!-- END PARTIAL: find-helpful -->
+            </div>
         </div>
     </div>
 </div>
 <!-- .container -->
 
-<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
 

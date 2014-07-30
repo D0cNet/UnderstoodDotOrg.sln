@@ -3560,6 +3560,10 @@ p.reviewed-by .reviewed-by-date {
     float: none;
   }
 }
+/* line 50, ../css.source/modules/article/_reviewed-by.scss */
+p.reviewed-by .reviewed-by-date-rs {
+  display: none;
+}
 
 /* line 2, ../css.source/modules/article/_article-deep-dive-copy.scss */
 .deep-dive-article-container .whats-covered-deep-dive {

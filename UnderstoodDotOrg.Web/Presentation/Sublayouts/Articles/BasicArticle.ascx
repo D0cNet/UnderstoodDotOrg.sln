@@ -37,20 +37,24 @@
                 <!-- end key-takeaways -->
                 <!-- END PARTIAL: key-takeaways -->
             </div>
-            <!-- BEGIN PARTIAL: about-the-author -->
-            <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
+            <div class="rs_about_author rs_read_this">
+              <!-- BEGIN PARTIAL: about-the-author -->
+              <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
+              <!-- END PARTIAL: about-the-author -->
 
-            <!-- END PARTIAL: about-the-author -->
-            <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+              <!-- BEGIN PARTIAL: reviewed-by -->
+              <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+              <!-- END PARTIAL: reviewed-by -->
 
-            <!-- END PARTIAL: reviewed-by -->
-            <!-- BEGIN PARTIAL: find-helpful -->
-            <sc:sublayout id="Sublayout1" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
-            <!-- END PARTIAL: find-helpful -->
-            <div class="find-this-helpful-small">
+              <!-- BEGIN PARTIAL: find-helpful -->
+              <sc:sublayout id="Sublayout1" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
+              <!-- END PARTIAL: find-helpful -->
+
+              <div class="find-this-helpful-small rs_skip">
                 <!-- Module within only appears in under 650px window width-->
+              </div>
             </div>
+
             <!-- BEGIN PARTIAL: keep-reading-mobile -->
 
 

@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DidYouFindThisHelpfulSideBar.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles.Shared.DidYouFindThisHelpfulSideBar" %>
 
-<div class="find-this-helpful-large">
+<div class="find-this-helpful-large rs_skip">
     <!-- Module within only appears in over 650px window width-->
     <!-- BEGIN PARTIAL: find-helpful -->
     <div class="find-this-helpful sidebar rs_read_this">

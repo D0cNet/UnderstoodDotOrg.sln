@@ -123,12 +123,17 @@
                     <sc:FieldRenderer ID="frOutro" runat="server" FieldName="Outro Text" />
                 </p>
             </div>
-
             <!-- .article-checklist -->
-            <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
-            <!-- END PARTIAL: article-checklist -->
-            <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+
+            <div class="rs_about_author rs_read_this">
+                <!-- BEGIN PARTIAL: about-author -->
+                <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
+                <!-- END PARTIAL: about-author -->
+
+                <!-- BEGIN PARTIAL: reviewed-by -->
+                <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+                <!-- END PARTIAL: reviewed-by -->
+            </div>
 
         </div>
 

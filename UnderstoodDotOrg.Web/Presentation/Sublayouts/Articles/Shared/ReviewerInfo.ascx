@@ -6,9 +6,13 @@
     </span>
     <asp:Placeholder ID="uxReviewDate" runat="server" Visible="false">
         <span class="dot"></span>
-        <span class="reviewed-by-date">
+        <span class="reviewed-by-date rs_skip">
             <%--12&nbsp;Dec&nbsp;&apos;13 --%>
             <sc:Date ID="dtReviewedDate" Field="Reviewed Date" runat="server" Format="dd MMM. `yy" />
+        </span>
+        <span class="reviewed-by-date-rs">
+            <%--12&nbsp;Dec&nbsp;&apos;13 --%>
+            <sc:Date Field="Reviewed Date" runat="server" Format="dd MMM. yyyy" />
         </span>
     </asp:Placeholder>
 </p>

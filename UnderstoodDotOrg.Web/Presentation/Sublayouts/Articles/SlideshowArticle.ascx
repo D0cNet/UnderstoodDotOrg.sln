@@ -98,10 +98,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col col-15 offset-2">
-                            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
-                            <!-- BEGIN PARTIAL: reviewed-by -->
-                            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+                            <div class="rs_about_author rs_read_this">
+                                <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
+
+                                <!-- BEGIN PARTIAL: reviewed-by -->
+                                <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
                             <!-- END PARTIAL: reviewed-by -->
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -42,16 +42,19 @@
 
             </div>
             <!-- END PARTIAL: article-actions-copy -->
-            <!-- BEGIN PARTIAL: about-the-author -->
-            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx"/>
+            <div class="rs_about_author rs_read_this">
+                <!-- BEGIN PARTIAL: about-the-author -->
+                <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx"/>
+                <!-- END PARTIAL: about-the-author -->
 
-            <!-- END PARTIAL: about-the-author -->
-           <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+                <!-- BEGIN PARTIAL: reviewed-by -->
+                <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+                <!-- END PARTIAL: reviewed-by  -->
 
-            <div class="find-this-helpful-small">
-                <!-- Module within only appears in under 650px window width-->
-            </div>
+                <div class="find-this-helpful-small rs_skip">
+                    <!-- Module within only appears in under 650px window width-->
+                </div>
+            </div>  
             <!-- BEGIN PARTIAL: keep-reading-mobile -->
 
 
@@ -92,7 +95,3 @@
     <!-- .row -->
 </div>
 <!-- .container -->
-
-
-
-

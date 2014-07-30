@@ -61,17 +61,18 @@
 <div class="container">
     <div class="row">
         <div class="col col-15">
+            <div class="rs_about_author rs_read_this">
+                <!-- BEGIN PARTIAL: reviewed-by -->
+                <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+                <!-- END PARTIAL: reviewed-by -->
 
-            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
-
-            <!-- END PARTIAL: find-helpful -->
+                <!-- BEGIN PARTIAL: find-helpful -->
+                <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
+                <!-- END PARTIAL: find-helpful -->
+            </div>
         </div>
     </div>
     <!-- .row -->
 </div>
 <!-- .container -->
-
-<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
-
-
 

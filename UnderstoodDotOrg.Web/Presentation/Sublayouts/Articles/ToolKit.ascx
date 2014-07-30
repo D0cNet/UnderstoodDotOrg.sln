@@ -63,9 +63,15 @@
     </div>
     <div class="row">
         <div class="col col-15 offset-2">
+            <div class="rs_about_author rs_read_this">
+                <!-- BEGIN PARTIAL: reviewed-by -->
+                <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+                <!-- END PARTIAL: reviewed-by -->
 
-            <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
-
+                <!-- BEGIN PARTIAL: find-helpful -->
+                <sc:sublayout id="Sublayout1" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" />
+                <!-- END PARTIAL: find-helpful -->
+            </div>
         </div>
     </div>
 </div>
@@ -73,4 +79,3 @@
 <!-- END PARTIAL: toolkit-thumbnails -->
 
 
-<sc:sublayout id="Sublayout1" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" />

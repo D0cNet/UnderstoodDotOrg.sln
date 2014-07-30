@@ -76,17 +76,23 @@
                     </FooterTemplate>   
                 </asp:Repeater>
             </div>
-            
-            <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />            
 
-            <!-- END PARTIAL: about-the-author -->
-            <!-- BEGIN PARTIAL: reviewed-by -->
-            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+            <div class="rs_about_author rs_read_this">
+                <!-- BEGIN PARTIAL: about-the-author -->
+                <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />            
+                <!-- END PARTIAL: about-the-author -->
 
-            <!-- END PARTIAL: text-slides -->
+                <!-- BEGIN PARTIAL: reviewed-by -->
+                <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
+                <!-- END PARTIAL: reviewed-by -->
+
+                <!-- BEGIN PARTIAL: find-helpful -->
+                <sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
+                <!-- END PARTIAL: find-helpful -->
+            </div>
+
         </div>
     </div>
 </div>
 <!-- .container -->
 
-<sc:Sublayout Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpful.ascx" runat="server"></sc:Sublayout>
