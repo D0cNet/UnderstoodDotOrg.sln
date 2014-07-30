@@ -6,7 +6,7 @@
 <div class="container article">
     <div class="row row-equal-heights">
         <!-- article -->
-        <div class="col col-15 offset-1">
+        <div class="col col-15 offset-1 rs_read_this">
             <asp:Repeater ID="rptExpertQA" runat="server" OnItemDataBound="rptExpertQA_ItemDataBound">
                 <HeaderTemplate></HeaderTemplate>
                 <ItemTemplate>
@@ -51,19 +51,21 @@
                     min-height: 66px;
                 }
             </style>
-
-
-
             <!-- END PARTIAL: expert-answer -->
-            <!-- BEGIN PARTIAL: about-the-author -->
-            <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
 
-            <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx"/>
+            <div class="rs_about_author rs_read_this">
+                <!-- BEGIN PARTIAL: about-the-author -->
+                <sc:sublayout id="sbAboutAuthor" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
+                <!-- END PARTIAL: about-the-author -->
 
-            <!-- END PARTIAL: about-the-author -->
-            <!-- BEGIN PARTIAL: find-helpful -->
-            <sc:Sublayout ID="Sublayout2" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
-            <!-- END PARTIAL: find-helpful -->
+                <!-- BEGIN PARTIAL: reviewed-by -->
+                <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx"/>
+                <!-- END PARTIAL: reviewed-by -->
+
+                <!-- BEGIN PARTIAL: find-helpful -->
+                <sc:Sublayout ID="Sublayout2" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
+                <!-- END PARTIAL: find-helpful -->
+            </div>
         </div>
 
         <div class="col col-1 sidebar-spacer"></div>
