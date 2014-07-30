@@ -12,9 +12,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Errors
             BindEvents();
             BindContent();
 
-            //Response.TrySkipIisCustomErrors = true;
-            //Response.StatusCode = 404;
-            //Response.Flush();
+            Response.TrySkipIisCustomErrors = true;
+            Response.StatusCode = 404;
+            Response.Flush();
         }
 
         private void BindEvents()
