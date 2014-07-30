@@ -91,6 +91,24 @@ public CustomTextField SidebarActionAlertsSignupHeading
 }
 
 
+public CustomImageField SidebarPromoImage
+{
+	get
+	{
+		return new CustomImageField(InnerItem, InnerItem.Fields["Sidebar Promo Image"]);
+	}
+}
+
+
+public CustomGeneralLinkField SidebarPromoLink
+{
+	get
+	{
+		return new CustomGeneralLinkField(InnerItem, InnerItem.Fields["Sidebar Promo Link"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }

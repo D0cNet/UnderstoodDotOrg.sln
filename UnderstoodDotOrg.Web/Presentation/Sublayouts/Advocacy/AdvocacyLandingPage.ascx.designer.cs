@@ -31,6 +31,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy {
         protected global::Sitecore.Web.UI.WebControls.Sublayout sbCommentsSummary;
         
         /// <summary>
+        /// pnlPromo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlPromo;
+        
+        /// <summary>
+        /// hlPromo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlPromo;
+        
+        /// <summary>
+        /// frPromoImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPromoImage;
+        
+        /// <summary>
         /// rptArticles control.
         /// </summary>
         /// <remarks>

@@ -17,6 +17,23 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
 {
     public partial class AdvocacyLandingPage : BaseSublayout<AdvocacyLandingPageItem>
     {
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            // Dynamically handle link to prevent wrapping image in link with no href
+            if (!string.IsNullOrEmpty(Model.SidebarPromoLink.Url)
+                && Model.SidebarPromoImage.MediaItem != null)
+            {
+                hlPromo.Visible = true;
+                hlPromo.NavigateUrl = Model.SidebarPromoLink.Url;
+                Page.Controls.Remove(frPromoImage);
+                hlPromo.Controls.Add(frPromoImage);
+            }
+            else
+            {
+                hlPromo.Visible = false;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             var globalsItem = MainsectionItem.GetGlobals();

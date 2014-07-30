@@ -53,13 +53,15 @@
                     <!-- .donate -->
                     <!-- END PARTIAL: advocacy/take-action-signup -->
                 </div>
-                <div class="l-take-action-promo">
+                <asp:Panel ID="pnlPromo" runat="server" CssClass="l-take-action-promo">
                     <!-- BEGIN PARTIAL: advocacy/take-action-promo -->
                     <div class="take-action-promo">
-                        <img alt="270x280 Placeholder" src="http://placehold.it/270x280" />
+                        <%-- Link is set to wrap around image if a Promo URL exists in code-behind, otherwise hidden --%>
+                        <asp:HyperLink ID="hlPromo" runat="server" />
+                        <sc:FieldRenderer ID="frPromoImage" runat="server" FieldName="Sidebar Promo Image" Parameters="mw=270&mh=280" />
                     </div>
                     <!-- END PARTIAL: advocacy/take-action-promo -->
-                </div>
+                </asp:Panel>
             </div>
         </div>
     </div>
