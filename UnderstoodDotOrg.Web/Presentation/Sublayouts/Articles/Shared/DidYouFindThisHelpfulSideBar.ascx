@@ -11,7 +11,7 @@
                         <li>
                             <button id="btnYes" runat="server" class="button yes rs_skip" onserverclick="btnYes_ServerClick"></button>
                         </li>
-                        <li>
+                        <li class="gray">
                             <button id="btnNo" runat="server" class="button no rs_skip" onserverclick="btnNo_ServerClick"></button>
                         </li>
                     </ul>

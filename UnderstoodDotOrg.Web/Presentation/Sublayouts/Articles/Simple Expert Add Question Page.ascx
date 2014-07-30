@@ -107,7 +107,7 @@
     <li>
       <button class="helpful-yes">Yes</button>
     </li>
-    <li>
+    <li class="gray">
       <button class="helpful-no">No</button>
     </li>
   </ul>

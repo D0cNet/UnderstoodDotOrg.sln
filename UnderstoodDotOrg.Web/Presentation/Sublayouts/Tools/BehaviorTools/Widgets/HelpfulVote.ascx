@@ -7,7 +7,7 @@
     <li>
       <asp:Button ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button helpful-yes" runat="server"/>
     </li>
-    <li>
+    <li class="gray">
       <asp:Button ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button helpful-no" runat="server"/>
     </li>
   </ul>

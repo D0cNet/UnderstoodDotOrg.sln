@@ -14,7 +14,7 @@
                                 <li>
                                     <button id="btnYes" runat="server" class="button yes rs_skip" onserverclick="btnYes_ServerClick" ></button>
                                 </li>
-                                <li>
+                                <li class="gray">
                                     <button id="btnNo" runat="server" class="button no rs_skip" onserverclick="btnNo_ServerClick"></button>
                                 </li>
                             </ul>
@@ -24,31 +24,32 @@
             </div>
 
             <!-- END PARTIAL: find-helpful -->
-            <div class="find-this-helpful-small rs_skip">
+            <div class="find-this-helpful-small">
                 <!-- Module within only appears in under 650px window width-->
             </div>
+               
+                <!-- BEGIN PARTIAL: find-helpful -->
+                <div class="find-this-helpful sidebar no-margin" id="count-helpful-sidebar rs_read_this">
+                    <h4><asp:Literal ID="ltlDidYouFindThisHelpfulSmall" runat="server"></asp:Literal></h4>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="update-panel">
+                        <ContentTemplate>
+                            <ul>
+                                <li>
+                                    <button id="btnSmallYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
+                                </li>
+                                <li>
+                                    <button id="btnSmallNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
+                                </li>
+                            </ul>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <div class="clearfix"></div>
 
-            <!-- BEGIN PARTIAL: find-helpful -->
-            <div class="find-this-helpful sidebar no-margin" id="count-helpful-sidebar rs_read_this">
-                <h4><asp:Literal ID="ltlDidYouFindThisHelpfulSmall" runat="server"></asp:Literal></h4>
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="update-panel">
-                    <ContentTemplate>
-                        <ul>
-                            <li>
-                                <button id="btnSmallYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
-                            </li>
-                            <li>
-                                <button id="btnSmallNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
-                            </li>
-                        </ul>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-                <div class="clearfix"></div>
+                </div>
 
-            </div>
-            <!-- END PARTIAL: find-helpful -->
-
-            <div class="find-this-helpful-large rs_skip" style="display: none;">
+                <!-- END PARTIAL: find-helpful -->
+           
+            <div class="find-this-helpful-large" style="display: none;">
                 <!-- Module within only appears in over 650px window width-->
             </div>
         </div>

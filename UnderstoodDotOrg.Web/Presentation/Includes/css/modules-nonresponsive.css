@@ -791,7 +791,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -1039,7 +1039,7 @@ html.canvas .mini-tools-wrap {
   list-style: none;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit .slide ul:after {
   content: "";
   display: table;
@@ -1818,7 +1818,7 @@ html.canvas .mini-tools-wrap {
   *zoom: 1;
   margin-bottom: 50px;
 }
-/* line 22, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-listing-container .article:after {
   content: "\0020";
   display: block;
@@ -2597,7 +2597,7 @@ html.canvas .mini-tools-wrap {
 .find-this-helpful ul li:first-child {
   margin-right: 2%;
 }
-/* line 70, ../css.source/modules/_find-helpful.scss */
+/* line 69, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful ul li button {
   width: 100%;
   height: 48px;
@@ -2613,24 +2613,83 @@ html.canvas .mini-tools-wrap {
   padding: 0;
   border-radius: 2px;
   display: block;
+  background-color: #f2af00;
 }
-/* line 89, ../css.source/modules/_find-helpful.scss */
+/* line 87, ../css.source/modules/_find-helpful.scss */
+.find-this-helpful ul li button:hover {
+  background-color: #ffbc0d;
+  color: black;
+  text-decoration: none;
+}
+/* line 92, ../css.source/modules/_find-helpful.scss */
+.touch .find-this-helpful ul li button:hover {
+  background-color: #f2af00;
+}
+/* line 97, ../css.source/modules/_find-helpful.scss */
+.find-this-helpful ul li button:focus {
+  background-color: #ffbc0d;
+  color: black;
+  text-decoration: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 3px;
+  outline: none;
+}
+/* line 3, ../css.source/mixins/_old-ie.scss */
+.old-ie .find-this-helpful ul li button:focus {
+  outline: solid 1px #dfdfdf;
+}
+/* line 104, ../css.source/modules/_find-helpful.scss */
+.touch .find-this-helpful ul li button:focus {
+  background-color: #f2af00;
+}
+/* line 111, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful ul li button.selected, .find-this-helpful ul li button.selected:hover, .find-this-helpful ul li button.selected:focus {
   background: #7a4184;
   color: #fff;
   cursor: default;
 }
-/* line 96, ../css.source/modules/_find-helpful.scss */
+/* line 119, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful ul li button.disabled, .find-this-helpful ul li button.disabled:hover, .find-this-helpful ul li button.disabled:focus {
   background: #d0d1d3;
   color: #333;
   cursor: pointer;
 }
-/* line 102, ../css.source/modules/_find-helpful.scss */
+/* line 125, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful ul li button:focus {
   outline: none;
 }
-/* line 110, ../css.source/modules/_find-helpful.scss */
+/* line 129, ../css.source/modules/_find-helpful.scss */
+.find-this-helpful ul li.gray button {
+  background-color: #bcbdc0;
+  color: black;
+}
+/* line 133, ../css.source/modules/_find-helpful.scss */
+.find-this-helpful ul li.gray button:hover, .find-this-helpful ul li.gray button:focus {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+  background-color: white;
+  color: black;
+}
+/* line 3, ../css.source/mixins/_old-ie.scss */
+.old-ie .find-this-helpful ul li.gray button:hover, .old-ie .find-this-helpful ul li.gray button:focus {
+  outline: solid 1px #dfdfdf;
+}
+/* line 141, ../css.source/modules/_find-helpful.scss */
+.find-this-helpful ul li.gray button.disabled, .find-this-helpful ul li.gray button.disabled:hover, .find-this-helpful ul li.gray button[disabled], .find-this-helpful ul li.gray button[disabled]:hover {
+  -webkit-box-shadow: 0px 0px 0px 0px transparent;
+  -moz-box-shadow: 0px 0px 0px 0px transparent;
+  box-shadow: 0px 0px 0px 0px transparent;
+  background-color: #d0d1d3;
+  color: #4e4e4e;
+}
+/* line 150, ../css.source/modules/_find-helpful.scss */
+.find-this-helpful ul li.gray button.selected, .find-this-helpful ul li.gray button.active, .find-this-helpful ul li.gray button.checked {
+  background-color: #7a4183;
+  color: white;
+}
+/* line 158, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content {
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
@@ -2644,7 +2703,7 @@ html.canvas .mini-tools-wrap {
 .old-ie .find-this-helpful.content {
   outline: solid 1px #dfdfdf;
 }
-/* line 119, ../css.source/modules/_find-helpful.scss */
+/* line 167, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content h4 {
   text-align: center;
   margin: 13px 0;
@@ -2656,7 +2715,7 @@ html.canvas .mini-tools-wrap {
   width: 48%;
   margin-right: 0;
 }
-/* line 137, ../css.source/modules/_find-helpful.scss */
+/* line 185, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content ul {
   width: 280px;
   margin: auto auto;
@@ -2665,17 +2724,17 @@ html.canvas .mini-tools-wrap {
   width: 52%;
   float: left;
 }
-/* line 150, ../css.source/modules/_find-helpful.scss */
+/* line 198, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content li {
   width: auto;
   float: left;
   display: inline;
 }
-/* line 156, ../css.source/modules/_find-helpful.scss */
+/* line 204, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content li:first-child {
   margin-right: 35px;
 }
-/* line 162, ../css.source/modules/_find-helpful.scss */
+/* line 210, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content button {
   width: 135px;
   height: 49px;
@@ -2684,7 +2743,7 @@ html.canvas .mini-tools-wrap {
   width: 70px;
   width: 115px;
 }
-/* line 179, ../css.source/modules/_find-helpful.scss */
+/* line 227, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content, .find-this-helpful.persist {
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 0 3px;
@@ -2698,7 +2757,7 @@ html.canvas .mini-tools-wrap {
 .old-ie .find-this-helpful.content, .old-ie .find-this-helpful.persist {
   outline: solid 1px #dfdfdf;
 }
-/* line 188, ../css.source/modules/_find-helpful.scss */
+/* line 236, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content h4, .find-this-helpful.persist h4 {
   text-align: center;
   margin: 13px 0;
@@ -2710,7 +2769,7 @@ html.canvas .mini-tools-wrap {
   width: 48%;
   margin-right: 0;
 }
-/* line 206, ../css.source/modules/_find-helpful.scss */
+/* line 254, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content ul, .find-this-helpful.persist ul {
   width: 280px;
   margin: auto auto;
@@ -2719,17 +2778,17 @@ html.canvas .mini-tools-wrap {
   width: 52%;
   float: left;
 }
-/* line 219, ../css.source/modules/_find-helpful.scss */
+/* line 267, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content li, .find-this-helpful.persist li {
   width: auto;
   float: left;
   display: inline;
 }
-/* line 225, ../css.source/modules/_find-helpful.scss */
+/* line 273, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content li:first-child, .find-this-helpful.persist li:first-child {
   margin-right: 35px;
 }
-/* line 231, ../css.source/modules/_find-helpful.scss */
+/* line 279, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful.content button, .find-this-helpful.persist button {
   width: 135px;
   height: 49px;
@@ -2739,13 +2798,13 @@ html.canvas .mini-tools-wrap {
   width: 115px;
 }
 
-/* line 248, ../css.source/modules/_find-helpful.scss */
+/* line 296, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful-persist-container {
   background-color: #F4F2F1;
   margin: 0 0 45px 0;
 }
 
-/* line 257, ../css.source/modules/_find-helpful.scss */
+/* line 305, ../css.source/modules/_find-helpful.scss */
 .article.below-common-questions .find-this-helpful {
   display: block;
   box-shadow: none;
@@ -2758,7 +2817,7 @@ html.canvas .mini-tools-wrap {
   padding: 35px 40px;
   margin: 0 0 50px 0;
 }
-/* line 263, ../css.source/modules/_find-helpful.scss */
+/* line 311, ../css.source/modules/_find-helpful.scss */
 .article.below-common-questions .find-this-helpful h4 {
   margin: 8px 0 26px 0;
   font-size: 23px;
@@ -2768,18 +2827,18 @@ html.canvas .mini-tools-wrap {
 .old-ie .article.below-common-questions .find-this-helpful {
   outline: solid 1px #dfdfdf;
 }
-/* line 271, ../css.source/modules/_find-helpful.scss */
+/* line 319, ../css.source/modules/_find-helpful.scss */
 .article.below-common-questions .find-this-helpful h4 {
   margin: 13px 0;
   font-size: 18px;
   font-size: 1.125rem;
 }
 
-/* line 279, ../css.source/modules/_find-helpful.scss */
+/* line 327, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful-small {
   clear: both;
 }
-/* line 282, ../css.source/modules/_find-helpful.scss */
+/* line 330, ../css.source/modules/_find-helpful.scss */
 .find-this-helpful-small .button {
   width: 100% !important;
 }
@@ -4232,7 +4291,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
