@@ -105,10 +105,10 @@
   <h4>Did you find this helpful?</h4>
   <ul>
     <li>
-      <button class="helpful-yes">Yes</button>
+      <button class="helpful-yes rs_preserve">Yes</button>
     </li>
     <li class="gray">
-      <button class="helpful-no">No</button>
+      <button class="helpful-no rs_preserve">No</button>
     </li>
   </ul>
   <div class="clearfix"></div>
