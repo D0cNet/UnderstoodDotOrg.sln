@@ -130,6 +130,9 @@ namespace UnderstoodDotOrg.Services.TelligentService
         {
             String wikiId = "2";
 
+            // TODO: change to constant
+            var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", wikiId));
+
             using (var webClient = new WebClient())
             {
                 try
@@ -137,9 +140,6 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     webClient.Headers.Add("Rest-User-Token", TelligentAuth());
                     currentUser = currentUser.Trim().ToLower();
                     webClient.Headers.Add("Rest-Impersonate-User", currentUser.ToLower());
-
-                    // TODO: change to constant
-                    var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml", wikiId));
 
                     var values = new NameValueCollection();
                     values["Title"] = title;
@@ -175,12 +175,15 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 }
                 catch (Exception e)
                 {
+                    Sitecore.Diagnostics.Log.Error(String.Format("Error posting question: {0}", requestUrl), e);
                     return null;
                 }
             }
         }
         public static void PostAnswer(string wikiId, string wikiPageId, string body, string currentUser)
         {
+            var postUrl = GetApiEndPoint(String.Format("wikis/{0}/pages/{1}/comments.xml", wikiId, wikiPageId));
+
             using (var webClient = new WebClient())
             {
                 if (!currentUser.Equals("admin"))
@@ -190,8 +193,6 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         webClient.Headers.Add("Rest-User-Token", TelligentAuth());
                         currentUser = currentUser.Trim().ToLower();
                         webClient.Headers.Add("Rest-Impersonate-User", currentUser);
-
-                        var postUrl = GetApiEndPoint(String.Format("wikis/{0}/pages/{1}/comments.xml", wikiId, wikiPageId));
 
                         var data = new NameValueCollection()
                         {
@@ -205,7 +206,11 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         // TODO: handle errors
                         string response = webClient.Encoding.GetString(result);
                     }
-                    catch { } //TODO: Add logging
+                    catch (Exception e)
+                    {
+                        Sitecore.Diagnostics.Log.Error(String.Format("Error posting answer: {0}", postUrl), e);
+                    
+                    } 
                 }
             }
         }

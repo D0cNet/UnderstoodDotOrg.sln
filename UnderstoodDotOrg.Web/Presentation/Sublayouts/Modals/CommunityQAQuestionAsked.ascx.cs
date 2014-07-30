@@ -39,7 +39,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
 
                 if (!String.IsNullOrEmpty(search))
                 {
-                    questions = questions.Where(x => Server.HtmlDecode(x.Title).ToLower().Contains(search.ToLower())).ToList();
+                    questions = questions.Where(x => !String.IsNullOrEmpty(x.Title) ? Server.HtmlDecode(x.Title).ToLower().Contains(search.ToLower()) : false ).ToList();
                 }
 
                 if (questions.Count <= 3)
@@ -203,6 +203,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Modals
                 //error_msg.Text = DictionaryConstants.FailedToCreateDiscussionError;
                 //error_msg.Visible = true;
                 //ShowClientSideForm(HiddenText);
+                var url = "/community-and-events/q-and-a";
+                Response.Redirect(url);
+
             }
             
 
