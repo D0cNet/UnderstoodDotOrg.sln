@@ -2048,42 +2048,40 @@ jQuery(document).ready(function () {
         var self = this;
 
         jQuery('.find-this-helpful ul li button').click(function () {
-            var tempCount = parseInt(jQuery('.count-helpful a span').html());
-
-            // disable sibling buttons when selected
-            //jQuery(this).removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
+            var tempCount = parseInt(jQuery('.count-helpful a span').html()),
+                helpfulButtons = jQuery('.find-this-helpful ul li button'),
+                helpfulButtonYes = jQuery('.find-this-helpful ul li button.yes'),
+                helpfulButtonNo = jQuery('.find-this-helpful ul li button.no'),
+                helpfulCounter = jQuery('.count-helpful a span');
 
             if (jQuery(this).hasClass('helpful-yes')) {
-                jQuery('.find-this-helpful ul li button.yes').removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
-                jQuery('.find-this-helpful ul li button').removeClass('selected');
-                jQuery('.find-this-helpful ul li button.yes').addClass('selected');
-            } else {
-                jQuery('.find-this-helpful ul li button.no').removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
-                jQuery('.find-this-helpful ul li button').removeClass('selected');
-                jQuery('.find-this-helpful ul li button.no').addClass('selected');
-            }
-
-
-            if (jQuery(this).hasClass('helpful-yes')) { // Yes is clicked
-                if (!jQuery(this).hasClass('selected')) {
-                     //Yes not selected
-                    jQuery('.count-helpful a span').html(tempCount + 1);
+                if (jQuery(this).hasClass('selected')) {
+                    jQuery('.find-this-helpful ul li button').removeClass('selected disabled');
+                    helpfulCounter.html(tempCount - 1);
+                } else if (jQuery(this).hasClass('disabled'))  {
+                    helpfulCounter.html(tempCount + 2);
                 }
+                else {
+                    helpfulButtonYes.removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
+                    helpfulButtons.removeClass('selected');
+                    helpfulButtonYes.addClass('selected');
+                    helpfulCounter.html(tempCount + 1);
+                }
+                
             } else {
-                if (jQuery('.helpful-yes').hasClass('selected')) { // No is clicked
-                    // No is clicked, yes is selected
+                if (jQuery(this).hasClass('selected')) {
+                    jQuery('.find-this-helpful ul li button').removeClass('selected disabled');
+                    helpfulCounter.html(tempCount + 1);
+                } else if {
+                    helpfulCounter.html(tempCount - 2);
+                }
+                else {
+                    helpfulButtonNo.removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
+                    helpfulButtons.removeClass('selected');
+                    helpfulButtonNo.addClass('selected');
                     jQuery('.count-helpful a span').html(tempCount - 1);
                 }
             }
-
-            if( $(this).hasClass('disabled') ){
-                jQuery('.find-this-helpful ul li button').removeClass('disabled').parent('li').siblings('li').find('button').removeClass('selected');
-            }
-
-            //jQuery('.find-this-helpful ul li button').removeClass('selected');
-            //jQuery(this).addClass('selected');
-
-
 
             return false;
         });
