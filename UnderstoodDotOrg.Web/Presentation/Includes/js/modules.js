@@ -2068,7 +2068,7 @@ jQuery(document).ready(function () {
                 if (jQuery(this).hasClass('selected')) {
                     jQuery('.find-this-helpful ul li button').removeClass('selected disabled');
                     helpfulCounter.html(tempCount + 1);
-                } else if {
+                } else if (jQuery(this).hasClass('disabled')) {
                     helpfulCounter.html(tempCount - 2);
                 }
                 else {
