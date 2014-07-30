@@ -16,8 +16,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-			lblRelatedArticles.Text = DictionaryConstants.RelatedArticlesLabel;
-			lblWhatParentsAreSaying.Text = DictionaryConstants.WhatParentsAreSayingLabel;
+			//lblRelatedArticles.Text = DictionaryConstants.RelatedArticlesLabel;
+			//lblWhatParentsAreSaying.Text = DictionaryConstants.WhatParentsAreSayingLabel;
         }
     }
 }
