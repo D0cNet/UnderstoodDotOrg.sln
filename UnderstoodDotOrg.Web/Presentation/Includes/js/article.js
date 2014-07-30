@@ -634,7 +634,8 @@ $(document).ready(function() {
      * Initialize module on page load.
      * @return {object} this instance
      */
-    this.initialize = function() {
+    this.initialize = function () {
+      var allChecked = false;
       var uniform_elements = [
         '.article-checklist input[type=checkbox]'
       ].join(',');
@@ -642,12 +643,20 @@ $(document).ready(function() {
       // Build uniform components.
       $(uniform_elements).uniform();
 
-      // Auto-check all checkboxes if question is clicked.
-      $('.checklist-question').click(function() {
-        $(this).siblings('.checkboxes-wrapper').each(function() {
-          $(this).find('.checked input').click();
-          $(this).find('input').click();
-        });
+      // Auto-check all checkboxes if question is clicked, toggle.
+      $('.checklist-question').click(function () {
+          if (allChecked == false) {
+              $(this).siblings('.checkboxes-wrapper').each(function () {
+                  $(this).find('.checked input').click();
+                  $(this).find('input').click();
+                  allChecked = true;
+              });
+          } else {
+              $(this).siblings('.checkboxes-wrapper').each(function () {
+                  $(this).find('.checked input').click();
+                  allChecked = false;
+              });
+          }
       });
 
       return this;
