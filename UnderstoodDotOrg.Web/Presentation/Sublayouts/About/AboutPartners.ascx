@@ -43,10 +43,10 @@
                                         </asp:HyperLink>
                                     </h3>
                                     <p>
-                                        <sc:FieldRenderer ID="frPartnerDescription" runat="server" FieldName="Partner Bio" />
+                                        <sc:FieldRenderer ID="frPartnerDescription" runat="server" FieldName="Partner Short Description" />
                                     </p>
                                     <span class="partner-block-read-more">
-                                        <asp:HyperLink ID="hlPartnerSite" runat="server" Text="Read more"></asp:HyperLink>
+                                        <asp:HyperLink ID="hlPartnerSite" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.ReadMoreLabel %></asp:HyperLink>
                                     </span>
                                 </div>
                                 <!-- end partner-block-text -->

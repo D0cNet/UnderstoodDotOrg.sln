@@ -29,7 +29,7 @@
                         </span>
                     </div>
                     <div class="partner-copy rs_read_this">
-                        <sc:FieldRenderer ID="frPartnerBio" runat="server" FieldName="Partner Bio" />
+                        <sc:FieldRenderer ID="frPartnerBio" runat="server" FieldName="Body Content" />
                     </div>
                 </div><!-- end body -->
 

@@ -100,20 +100,20 @@ public CustomTextField PartnerTagline
 }
 
 
-public CustomTextField PartnerBio
-{
-	get
-	{
-		return new CustomTextField(InnerItem, InnerItem.Fields["Partner Bio"]);
-	}
-}
-
-
 public CustomTextField PartnerDonationHeading
 {
 	get
 	{
 		return new CustomTextField(InnerItem, InnerItem.Fields["Partner Donation Heading"]);
+	}
+}
+
+
+public CustomTextField PartnerShortDescription
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Partner Short Description"]);
 	}
 }
 

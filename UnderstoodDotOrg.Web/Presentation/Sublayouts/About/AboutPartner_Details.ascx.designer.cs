@@ -49,15 +49,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         protected global::Sitecore.Web.UI.WebControls.Link lnkPartner;
         
         /// <summary>
-        /// frPartnerLogo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPartnerLogo;
-        
-        /// <summary>
         /// frPartnerBio control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPartnerBio;
+        
+        /// <summary>
+        /// frPartnerLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frPartnerLogo;
         
         /// <summary>
         /// pnlNewsletter control.
