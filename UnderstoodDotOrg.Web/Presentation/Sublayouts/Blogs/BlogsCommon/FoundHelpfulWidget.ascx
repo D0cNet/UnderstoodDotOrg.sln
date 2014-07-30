@@ -16,7 +16,7 @@
 <div class="find-this-helpful-large">
     <div class="find-this-helpful sidebar rs_skip" id="count-helpful-sidebar">
         <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.DidYouFindThisHelpful %></h4>
-        <asp:LinkButton ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button yes rs_skip" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.YesButtonText %></asp:LinkButton>
-        <asp:LinkButton ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button no gray rs_skip" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.NoButtonText %></asp:LinkButton>
+        <asp:LinkButton ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button yes rs_skip rs_preserve" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.YesButtonText %></asp:LinkButton>
+        <asp:LinkButton ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button no gray rs_skip rs_preserve" runat="server"><%= UnderstoodDotOrg.Common.DictionaryConstants.NoButtonText %></asp:LinkButton>
     </div>
 </div>
