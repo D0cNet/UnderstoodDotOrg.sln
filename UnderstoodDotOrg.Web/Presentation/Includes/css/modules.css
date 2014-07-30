@@ -1935,8 +1935,9 @@
 /* line 244, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li img {
   width: auto;
+  max-width: 190px;
 }
-/* line 248, ../css.source/modules/_more-to-explore.scss */
+/* line 249, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .footer {
   width: 100%;
   position: absolute;
@@ -1945,7 +1946,7 @@
   overflow: hidden;
   *zoom: 1;
 }
-/* line 254, ../css.source/modules/_more-to-explore.scss */
+/* line 255, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .footer a {
   display: inline-block;
   color: #426da9;
@@ -1958,22 +1959,22 @@
   padding-left: 10px;
   padding-right: 0px;
 }
-/* line 266, ../css.source/modules/_more-to-explore.scss */
+/* line 267, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .footer a:first-child {
   border-right: solid 1px #f4f2f1;
   padding-right: 10px;
   padding-left: 0px;
 }
-/* line 272, ../css.source/modules/_more-to-explore.scss */
+/* line 273, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .footer a:hover {
   text-decoration: none;
 }
-/* line 280, ../css.source/modules/_more-to-explore.scss */
+/* line 281, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li input {
   width: 100%;
   margin-bottom: 10px;
 }
-/* line 285, ../css.source/modules/_more-to-explore.scss */
+/* line 286, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li fieldset {
   position: relative;
   z-index: 99999;
@@ -1981,35 +1982,35 @@
   width: 100%;
   min-width: 0;
 }
-/* line 293, ../css.source/modules/_more-to-explore.scss */
+/* line 294, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools {
   position: relative;
   height: 100%;
 }
-/* line 298, ../css.source/modules/_more-to-explore.scss */
+/* line 299, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools p {
   min-height: 0px;
   margin-bottom: 10px;
 }
-/* line 303, ../css.source/modules/_more-to-explore.scss */
+/* line 304, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools fieldset {
   margin: 0px;
 }
-/* line 305, ../css.source/modules/_more-to-explore.scss */
+/* line 306, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools .header {
   height: auto;
 }
-/* line 307, ../css.source/modules/_more-to-explore.scss */
+/* line 308, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools div.selector {
   margin: 0 auto 10px auto;
 }
-/* line 311, ../css.source/modules/_more-to-explore.scss */
+/* line 312, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools .submit-button-wrap {
   width: 100%;
   position: absolute;
   bottom: -5px;
 }
-/* line 316, ../css.source/modules/_more-to-explore.scss */
+/* line 317, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .more-to-explore-tools .submit-button-wrap .button {
   margin-bottom: 0px;
 }
