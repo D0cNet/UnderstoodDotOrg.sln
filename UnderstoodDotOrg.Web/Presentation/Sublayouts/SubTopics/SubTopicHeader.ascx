@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SubTopicHeader.ascx.cs" Inherits="UnderstoodDotOrg.Web.Presentation.Sublayouts.SubTopics.SubTopicHeader" %>
 <%@ Register TagPrefix="sc" Namespace="Sitecore.Web.UI.WebControls" Assembly="Sitecore.Kernel" %>
 
-<div class="container page-topic with-share offset-1">
+<div class="container page-topic with-share">
     <div class="row  header-wrapper">
         <div class="col col-14 offset-1 header-title rs_read_this">
             <asp:HyperLink runat="server" ID="hlBreadcrumbNav" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i><asp:Literal runat="server" ID="litPreviousLink"/></asp:HyperLink>
