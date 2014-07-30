@@ -52,7 +52,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                             ThreadModel thModel = UnderstoodDotOrg.Services.CommunityServices.Threads.ThreadModelFactory(forumID, threadID);
 
                             //Populate the initial Post
-                            ProfileCommentCard.Member = thModel.Author;
+                            ProfileCommentCard.LoadState(thModel.Author);
 
                             rptGroupDiscussion.DataSource = thModel.Replies;
                             rptGroupDiscussion.DataBind();
