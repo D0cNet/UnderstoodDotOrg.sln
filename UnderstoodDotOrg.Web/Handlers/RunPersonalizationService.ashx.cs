@@ -152,6 +152,31 @@ namespace UnderstoodDotOrg.Web.Handlers
         {
             List<UnderstoodDotOrg.Domain.Search.Article> articles = Domain.Search.SearchHelper.GetArticles(member, child, _searchDate);
 
+          
+
+            //TEST CODE
+            List<UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems.DefaultArticlePageItem> recommendedArticles;
+
+            recommendedArticles = SearchHelper.GetRecommendedContent(member, UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems.DefaultArticlePageItem.TemplateId)
+                                .Where(a => a.GetItem() != null)
+                                .Select(a => new UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems.DefaultArticlePageItem(a.GetItem()))
+                                .ToList();
+
+            List<UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs.BlogsPostPageItem> recommendedBlogs;
+
+            recommendedBlogs = SearchHelper.GetRecommendedContent(member, UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs.BlogsPostPageItem.TemplateId)
+                                .Where(a => a.GetItem() != null)
+                                .Select(a => new UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.Blogs.BlogsPostPageItem(a.GetItem()))
+                                .ToList();
+
+            //List<UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems.DefaultArticlePageItem> recommendedContent;
+
+            //recommendedContent = SearchHelper.GetRecommendedContent(member, UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems.DefaultArticlePageItem.TemplateId)
+            //                    .Where(a => a.GetItem() != null)
+            //                    .Select(a => new UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems.DefaultArticlePageItem(a.GetItem()))
+            //                    .ToList();
+            //END TEST CODE
+
             PersonalizationHelper.SavePersonalizedContent(member, child, articles);
         }
 

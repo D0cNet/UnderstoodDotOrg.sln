@@ -49,9 +49,9 @@
 <!-- /.modal -->
 
 
-<script language="JavaScript" type="text/javascript" src="/presentation/includes/js/BrightcoveExperiences.js"></script>
-<script type="text/javascript" src="/presentation/includes/js/SmartPlayerAPI.js"></script>
-<script type="text/javascript" src="/presentation/includes/js/markup.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/presentation/includes/js/brightcove/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="/presentation/includes/js/brightcove/SmartPlayerAPI.js"></script>
+<script type="text/javascript" src="/presentation/includes/js/brightcove/markup.min.js"></script>
 <script type="text/javascript">
 
     // config for experience
