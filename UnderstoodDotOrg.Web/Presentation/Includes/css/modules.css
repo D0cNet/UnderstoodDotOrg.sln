@@ -1175,7 +1175,7 @@
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -1526,7 +1526,7 @@
   list-style: none;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit .slide ul:after {
   content: "";
   display: table;
@@ -1934,7 +1934,7 @@
 }
 /* line 244, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li img {
-  width: 100%;
+  width: auto;
 }
 /* line 248, ../css.source/modules/_more-to-explore.scss */
 .more-to-explore .more-to-explore-container ul li .footer {
@@ -2716,7 +2716,7 @@
   margin-bottom: 34px;
   *zoom: 1;
 }
-/* line 22, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-listing-container .article:after {
   content: "\0020";
   display: block;
@@ -5965,7 +5965,7 @@
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
