@@ -45,45 +45,36 @@ namespace UnderstoodDotOrg.Framework.EventHandlers
             {
                 if (item["BlogId"] == string.Empty)
                 {
-                    CreateTelligentPost(item, 4); 
+                    CreateTelligentPost(item, 4);
                 }
             }
-                // Blog Posts
+            // Blog Posts
             else if (item.TemplateID == Sitecore.Data.ID.Parse(BlogsPostPageItem.TemplateId))
             {
                 if (item["BlogId"] == string.Empty)
                 {
                     switch (item.Parent.ID.ToString())
                     {
-                        case "{37478172-CCDF-454E-BABA-D56096EBE8F9}":
-                            CreateTelligentPost(item, 1); 
+                        case "{401A4297-3D08-4BB5-8F19-EC32A38C82C6}":
+                            CreateTelligentPost(item, 1);
                             break;
-                        case "{23DC4EBA-B296-46A7-AC68-D813C9931AF0}":
-                            CreateTelligentPost(item, 2); 
+                        case "{E77C456C-3B33-40B0-8828-C6AA53906045}":
+                            CreateTelligentPost(item, 2);
                             break;
-                        case "{A720AAA9-8AC8-4851-A873-0E0F158C61BD}":
+                        case "{62017F9B-2DF5-490A-95A7-5C1ACF3573D1}":
                             CreateTelligentPost(item, 3);
-                            break;
-                        case "{CEE7D06D-F14F-4A34-BA72-95381FFFCC75}":
-                            CreateTelligentPost(item, 7); 
-                            break;
-                        case "{A6B58A59-A00B-4F6D-BBA2-8ECB82CB0BBA}":
-                            CreateTelligentPost(item, 8); 
-                            break;
-                        case "{D882ED4F-4E03-4351-A764-36DA8EE82EF2}":
-                            CreateTelligentPost(item, 9); 
                             break;
                         default:
                             return;
                     }
                 }
             }
-                // Assistive Tech
+            // Assistive Tech
             else if (item.TemplateID == Sitecore.Data.ID.Parse("{C9DFC576-7750-4A84-9A79-61F16585E64E}"))
             {
                 if (item["BlogId"] == string.Empty)
                 {
-                    CreateTelligentPost(item, Int32.Parse(Settings.GetSetting(Common.Constants.Settings.TelligentAssistiveTechBlogId))); 
+                    CreateTelligentPost(item, Int32.Parse(Settings.GetSetting(Common.Constants.Settings.TelligentAssistiveTechBlogId)));
                 }
             }
         }

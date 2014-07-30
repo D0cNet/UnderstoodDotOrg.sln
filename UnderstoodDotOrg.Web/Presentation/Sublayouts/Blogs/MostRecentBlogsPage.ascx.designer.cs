@@ -85,6 +85,33 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs {
         protected global::System.Web.UI.UpdatePanel upBlogPosts;
         
         /// <summary>
+        /// panResultText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panResultText;
+        
+        /// <summary>
+        /// litResultCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litResultCount;
+        
+        /// <summary>
+        /// litSearchTerm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litSearchTerm;
+        
+        /// <summary>
         /// rptRecentBlogInfo control.
         /// </summary>
         /// <remarks>

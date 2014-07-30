@@ -48,10 +48,10 @@
                     a = Request.QueryString[Constants.QueryStrings.CommunitySearch.SearchLocation];
                 }
 
-                var dataSource = TelligentService.CommunitySearch(q, a);
-                rptResults.DataSource = dataSource;
-                rptResults.DataBind();
-                litResultCount.Text = dataSource.Count.ToString();
+                //var dataSource = TelligentService.CommunitySearch(q, a);
+                //rptResults.DataSource = dataSource;
+                //rptResults.DataBind();
+                //litResultCount.Text = dataSource.Count.ToString();
             }
 
             switch (Request.QueryString[Constants.QueryStrings.CommunitySearch.SearchLocation])

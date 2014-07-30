@@ -31,6 +31,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public DateTime CommentDate { get; set; }
         public Guid SitecoreId { get; set; }
         public string Type { get; set; }
+        public string ParentTitle { get; set; }
 
         public Comment() { }
 

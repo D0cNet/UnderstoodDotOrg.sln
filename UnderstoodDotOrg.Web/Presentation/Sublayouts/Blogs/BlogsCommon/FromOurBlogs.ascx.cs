@@ -26,12 +26,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs.BlogsCommon
             foreach (var item in dataSource)
             {
                 string[] s = item.Title.Split('{');
-                BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem("/Sitecore/Content/Home/Community and Events/Blogs/" + item.BlogName + "/" + s[0]);
+                BlogsPostPageItem blogPost = Sitecore.Context.Database.GetItem(String.Format("{0}{1}", "{", s[1]));
                 if (blogPost != null)
                 {
                     var author = Sitecore.Context.Database.GetItem(blogPost.Author.Raw);
                     item.Author = author.Name;
-                    item.Title = s[0];
+                    item.Title = blogPost.Name;
                     item.ContentTypeId = blogPost.ContentTypeId;
                     item.Body = TelligentService.FormatString100(Sitecore.StringUtil.RemoveTags(blogPost.Body.Raw));
                     item.AuthorUrl = LinkManager.GetItemUrl(author);

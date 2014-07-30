@@ -426,6 +426,70 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return commentList;
         }
 
+        public static List<Comment> ReadComments(string blogIds)
+        {
+            List<Comment> commentList = new List<Comment>();
+
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                    var requestUrl = GetApiEndPoint("comments.xml?PageSize=100&SortOrder=Descending");
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+
+                    foreach (XmlNode xn in nodes)
+                    {
+                        XmlNode author = xn.SelectSingleNode("User");
+                        XmlNode app = xn.SelectSingleNode("Content/Application");
+                        XmlNode content = xn.SelectSingleNode("Content");
+
+                        var commentId = xn["CommentId"].InnerText;
+                        var isApproved = xn["IsApproved"].InnerText;
+                        var replyCount = xn["ReplyCount"].InnerText;
+                        var commentContentTypeId = xn["CommentContentTypeId"].InnerText;
+                        var body = xn["Body"].InnerText;
+                        var publishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["CreatedDate"].InnerText);
+                        var authorId = author["Id"].InnerText;
+                        var authorAvatarUrl = author["AvatarUrl"].InnerText;
+                        var authorDisplayName = author["DisplayName"].InnerText;
+                        var authorProfileUrl = author["ProfileUrl"].InnerText;
+                        var authorUsername = author["Username"].InnerText;
+                        var parentTitle = content["HtmlName"].InnerText;
+                        if (app["HtmlName"].InnerText != "Articles" && app["HtmlName"].InnerText != "General Questions"
+                            && app["HtmlName"].InnerText != "Assistive Tools")
+                        {
+                            Comment comment = new Comment()
+                            {
+                                CommentId = commentId,
+                                IsApproved = isApproved,
+                                ReplyCount = replyCount,
+                                CommentContentTypeId = commentContentTypeId,
+                                Body = body,
+                                PublishedDate = publishedDate,
+                                AuthorId = authorId,
+                                AuthorAvatarUrl = authorAvatarUrl,
+                                AuthorDisplayName = authorDisplayName,
+                                AuthorProfileUrl = authorProfileUrl,
+                                AuthorUsername = authorUsername,
+                                ParentTitle = parentTitle,
+                                Url = "~/Community and Events/Blogs/" + app["HtmlName"].InnerText + "/" + parentTitle,
+                            };
+                            commentList.Add(comment);
+                        }
+                    }
+                }
+                catch { } // TODO: add logging
+            }
+            return commentList;
+        }
+
         public static bool LikeContent(string screenName, string contentId, string contentTypeId)
         {
             var requestUrl = GetApiEndPoint("likes.xml");
@@ -2717,7 +2781,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             return searchResultsList;
         }
 
-        public static List<BlogPost> CommunitySearch(string q, string param)
+        public static List<BlogPost> CommunitySearch(string q, string param, string blogName)
         {
             // TODO: store guids in constants file
             var searchResultsList = new List<BlogPost>();
@@ -2741,17 +2805,19 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         XmlNode application = result.SelectSingleNode("Content/Application");
                         XmlNode container = result.SelectSingleNode("Group/Container");
                         XmlNode group = result.SelectSingleNode("Group");
-                        XmlNode user = result.SelectSingleNode("User");
+                        XmlNode user = result.SelectSingleNode("Users/User");
                         if (!application["HtmlName"].InnerText.Equals("Articles")
                             && !application["HtmlName"].InnerText.Equals("Assistive Tools")
                             && !result["ContentType"].InnerText.Equals("status")
                             && !result["ContentType"].InnerText.Equals("fileapp")
                             && !result["ContentType"].InnerText.Equals("wikiapp")
-                            && !result["ContentType"].InnerText.Equals("forumapp"))
+                            && !result["ContentType"].InnerText.Equals("forumapp")
+                            && application["HtmlName"].InnerText.Equals(blogName))
                         {
                             string id = result["Id"].InnerText;
                             string bestMatchTitle = result["BestMatchTitle"].InnerText;
-                            string title = result["Title"].InnerText;
+                            string[] s = result["Title"].InnerText.Split('{');
+                            string title = s[0];
                             string bestMatch = result["BestMatch"].InnerText;
                             string body = result["Body"].InnerText;
                             string type = result["ContentType"].InnerText;
@@ -2760,11 +2826,16 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             string url = string.Empty;
                             string groupName = container["HtmlName"].InnerText;
                             string author = user["Username"].InnerText;
-                            bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
-                            bestMatchTitle = Regex.Replace(title, "</em>", "</strong>");
-                            bestMatch = Regex.Replace(bestMatch, "<em>", "<strong>");
-                            bestMatch = Regex.Replace(bestMatch, "</em>", "</strong>");
-
+                            if (bestMatchTitle.Contains("<em>"))
+                            {
+                                bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
+                                bestMatchTitle = Regex.Replace(title, "</em>", "</strong>");
+                            }
+                            if (bestMatch.Contains("<em>"))
+                            {
+                                bestMatch = Regex.Replace(bestMatch, "<em>", "<strong>");
+                                bestMatch = Regex.Replace(bestMatch, "</em>", "</strong>");
+                            }
                             if (body != string.Empty)
                             {
                                 body = "&ldquo;" + body + "&rdquo;";
@@ -2774,7 +2845,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             {
                                 case "comment":
                                     typeTransformed = "Blog Comment";
-                                    url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + application["HtmlName"].InnerText + "/" + Regex.Replace(title, "Comment on ", "");
+                                    url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + application["HtmlName"].InnerText + "/" + Regex.Replace(title, "Comment on ", ""), ".aspx", "");
                                     if (param == "wiki")
                                     {
                                         typeTransformed = "Question Answer";
@@ -2782,7 +2853,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                                     break;
                                 case "blog":
                                     typeTransformed = "Blog Post";
-                                    url = LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + application["HtmlName"].InnerText + "/" + title;
+                                    url = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{37FB73FC-F1B3-4C04-B15D-CAFAA7B7C87F}")) + "/" + application["HtmlName"].InnerText + "/" + title, ".aspx", "");
                                     break;
                                 case "blogapp":
                                     typeTransformed = "Blog";
@@ -2805,12 +2876,12 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             var searchResult = new BlogPost()
                             {
                                 ContentId = id,
-                                Title = bestMatchTitle,
+                                Title = result["Title"].InnerText,
                                 Body = bestMatch,
                                 PublishedDate = date,
                                 Url = url,
                                 Author = author,
-                                BlogName = groupName,
+                                BlogName = application["HtmlName"].InnerText,
                             };
                             searchResultsList.Add(searchResult);
                         }
