@@ -37,7 +37,7 @@
                                 <li>
                                     <button id="btnSmallYes" runat="server" class="helpful-yes rs_preserve" onserverclick="btnYes_ServerClick"></button>
                                 </li>
-                                <li>
+                                <li class="gray">
                                     <button id="btnSmallNo" runat="server" class="helpful-no rs_preserve" onserverclick="btnNo_ServerClick"></button>
                                 </li>
                             </ul>
