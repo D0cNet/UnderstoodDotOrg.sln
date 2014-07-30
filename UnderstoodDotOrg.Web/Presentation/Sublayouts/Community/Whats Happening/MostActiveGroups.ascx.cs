@@ -241,7 +241,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                     if (selectedGroups.Count < 1)
                     {
                         this.Visible = false;
-                        return;
+                      //  return;
                     }
                     rptAllGroups.DataSource = selectedGroups;
                     rptAllGroups.DataBind();
