@@ -155,7 +155,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Widgets
                 qs.Add(Constants.QueryStrings.LearningTool.PlatformId, platformId);
             }
 
-            string url = Model.ToolWidget.WidgetButtonLink.Url;
+            string url = Model.GetSearchResultsUrl();
+            
             if (!string.IsNullOrEmpty(url))
             {
                 Response.Redirect(HttpHelper.AssembleUrl(url, qs));

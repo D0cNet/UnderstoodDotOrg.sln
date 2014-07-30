@@ -149,7 +149,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Tiles
             }
 
             // Lookup destination url on linked widget
-            string url = _widget.ToolWidget.WidgetButtonLink.Url;
+            string url = _widget.GetSearchResultsUrl();
             if (!string.IsNullOrEmpty(url))
             {
                 Response.Redirect(HttpHelper.AssembleUrl(url, qs));

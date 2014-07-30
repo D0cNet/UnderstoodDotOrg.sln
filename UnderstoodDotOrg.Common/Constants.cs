@@ -571,6 +571,10 @@ namespace UnderstoodDotOrg.Common
             {
                 get { return new Guid("{B1706EE7-E119-4991-925F-0C04EFC12CA2}"); }
             }
+            public static Guid AssistiveToolResults
+            {
+                get { return new Guid("{5DF609DC-A761-41A3-95E3-89FAC12216A6}"); }
+            }
         }
 
         #endregion
