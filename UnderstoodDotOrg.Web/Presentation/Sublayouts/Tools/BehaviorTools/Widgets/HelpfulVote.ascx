@@ -5,10 +5,10 @@
   <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.DidYouFindThisHelpfulLabel %></h4>
   <ul>
     <li>
-      <asp:Button ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button helpful-yes" runat="server"/>
+      <asp:Button ID="btnLike" OnClick="btnThisHelped_Click" CssClass="button helpful-yes rs_preserve" runat="server"/>
     </li>
-    <li class="gray">
-      <asp:Button ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button helpful-no" runat="server"/>
+    <li class="gray>
+      <asp:Button ID="btnUnlike" OnClick="btnDidntHelp_Click" CssClass="button helpful-no rs_preserve" runat="server"/>
     </li>
   </ul>
   <div class="clearfix"></div>

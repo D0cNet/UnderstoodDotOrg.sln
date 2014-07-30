@@ -12,10 +12,10 @@
                         <ContentTemplate>
                             <ul>
                                 <li>
-                                    <button id="btnYes" runat="server" class="button yes rs_skip" onserverclick="btnYes_ServerClick" ></button>
+                                    <button id="btnYes" runat="server" class="button yes rs_skip rs_preserve" onserverclick="btnYes_ServerClick" ></button>
                                 </li>
                                 <li class="gray">
-                                    <button id="btnNo" runat="server" class="button no rs_skip" onserverclick="btnNo_ServerClick"></button>
+                                    <button id="btnNo" runat="server" class="button no rs_skip rs_preserve" onserverclick="btnNo_ServerClick"></button>
                                 </li>
                             </ul>
                         </ContentTemplate>
@@ -35,10 +35,10 @@
                         <ContentTemplate>
                             <ul>
                                 <li>
-                                    <button id="btnSmallYes" runat="server" class="helpful-yes" onserverclick="btnYes_ServerClick"></button>
+                                    <button id="btnSmallYes" runat="server" class="helpful-yes rs_preserve" onserverclick="btnYes_ServerClick"></button>
                                 </li>
                                 <li>
-                                    <button id="btnSmallNo" runat="server" class="helpful-no" onserverclick="btnNo_ServerClick"></button>
+                                    <button id="btnSmallNo" runat="server" class="helpful-no rs_preserve" onserverclick="btnNo_ServerClick"></button>
                                 </li>
                             </ul>
                         </ContentTemplate>
