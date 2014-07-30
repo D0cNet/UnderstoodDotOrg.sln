@@ -13,16 +13,34 @@
 .partner-detail-body {
   width: 70%;
   float: left;
+
+  @include bp($bp-medium-max){
+    width: 100%;
+    float: none;
+  }
+  @include bp($bp-767-and-smaller){
+    width: 100%;
+    float: none;
+  }
 }
 .partner-detail-sidebar {
   width: 30%;
   float: right;
+
+  @include bp($bp-medium-max){
+    width: 100%;
+    float: none;
+  }
+  @include bp($bp-767-and-smaller){
+    width: 100%;
+    float: none;
+  }
 }
 
 .partner-heading {
   margin-bottom: 20px;
 
-  @include bp($bp-small-plus) {
+  @include bp($bp-large) {
     float: left;
     max-width: 62.5%;
     margin-top: 1px;

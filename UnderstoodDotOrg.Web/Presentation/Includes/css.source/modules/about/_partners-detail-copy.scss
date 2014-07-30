@@ -4,7 +4,7 @@
 
 .partner-copy {
 
-  @include bp($bp-small-plus) {
+  @include bp($bp-large) {
       float: left;
       width: 100%;
       padding-right: 12.5%;
@@ -19,10 +19,6 @@
 
     @include bp($bp-small-plus) {
       margin-bottom: 30px;
-
-      &:last-child {
-        margin-bottom: 80px;
-      }
     }
   } // end .about-video-container p
 } // end .partner-copy

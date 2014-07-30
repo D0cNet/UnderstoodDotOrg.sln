@@ -2418,10 +2418,6 @@
   font-weight: normal;
   margin-bottom: 30px;
 }
-/* line 23, ../css.source/modules/about/_partners-detail-copy.scss */
-.partner-copy p:last-child {
-  margin-bottom: 80px;
-}
 
 /**
  * SASS partial for partners-detail-header module.
@@ -2442,22 +2438,30 @@
 .partner-detail-body {
   width: 70%;
   float: left;
+  width: 100%;
+  float: none;
+  width: 100%;
+  float: none;
 }
 
-/* line 17, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 26, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-detail-sidebar {
   width: 30%;
   float: right;
+  width: 100%;
+  float: none;
+  width: 100%;
+  float: none;
 }
 
-/* line 22, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 40, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading {
   margin-bottom: 20px;
   float: left;
   max-width: 62.5%;
   margin-top: 1px;
 }
-/* line 31, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 49, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading h1.partner-name {
   color: #7a4183;
   font-size: 30px;
@@ -2469,7 +2473,7 @@
   font-size: 36px;
   font-size: 2.25rem;
 }
-/* line 43, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 61, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading h2.partner-tagline {
   color: #696969;
   font-size: 20px;
@@ -2481,7 +2485,7 @@
   font-size: 24px;
   font-size: 1.5rem;
 }
-/* line 55, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 73, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.return-all-partners {
   display: block;
   font-size: 16px;
@@ -2492,16 +2496,16 @@
   margin-bottom: 5px;
   margin-bottom: 15px;
 }
-/* line 66, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 84, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.return-all-partners a {
   color: #7a4183;
   text-decoration: none;
 }
-/* line 70, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 88, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.return-all-partners a:hover {
   text-decoration: underline;
 }
-/* line 76, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 94, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.partner-link {
   font-size: 16px;
   font-size: 1rem;
@@ -2509,11 +2513,11 @@
   line-height: 1.625rem;
   font-weight: normal;
 }
-/* line 81, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 99, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.partner-link a {
   text-decoration: underline;
 }
-/* line 84, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 102, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.partner-link a:hover {
   text-decoration: none;
 }
