@@ -748,6 +748,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string EnterSearchTermWatermark
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Enter Search Term Watermark");
+            }
+        }
+
         #endregion
 
         #region My Profile
