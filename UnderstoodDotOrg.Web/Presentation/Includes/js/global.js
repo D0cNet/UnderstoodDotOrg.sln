@@ -23,11 +23,10 @@
   $(document).ready(function() {
     new U.Global.Carousels();
     new U.Global.GridSpacers();
-    new U.Global.IEGradientSupport();
 //    new U.Global.Tooltips();
-      // @todo Append global modules here?
-      // @todo Do we like this pattern?
-      // @todo Consider splitting with sprockets like modules.js?
+    // @todo Append global modules here?
+    // @todo Do we like this pattern?
+    // @todo Consider splitting with sprockets like modules.js?
   });
 
   /**
@@ -134,65 +133,6 @@
     return this.initialize();
   };
 
-  /*
-  * Used for the partners icons to make them go from grayscale to color on hover
-  * http://www.majas-lapu-izstrade.lv/cross-browser-grayscale-image-example-using-css3-js-v2-0-with-browser-feature-detection-using-modernizr/
-  */
-  U.Global.IEGradientSupport = function () {
-
-      this.initialize = function () {
-          var images = $('#partners-slides-container').find('img');
-          if (images) {
-              var el = document.createElement('div');
-              var prefixes = Modernizr._prefixes;
-              el.style.cssText = prefixes.join('filter:grayscale(100%); ');
-              var filtersSupported = !!el.style.length && ((document.documentMode === undefined || document.documentMode > 9));
-              if (!filtersSupported) {
-                  images.each(function () {
-                      var el = $(this);
-                      el.wrap("<div class='img_wrapper' style='display: inline-block'>").clone().addClass('img_grayscale ieImage').css({ "position": "absolute", "z-index": "5", "opacity": "0" }).insertBefore(el).queue(function () {
-                          var el = $(this);
-                          el.dequeue();
-                      });
-                      this.src = grayscaleIe(this.src);
-                  });
-
-                  $('#partners-slides-container').on('mouseover', '.img_grayscale', function () {
-                      $(this).parent().find('img:first').stop().animate({ opacity: 1 }, 50);
-                  });
-                  $('#partners-slides-container').on('mouseout', '.img_grayscale', function () {
-                      $('.img_grayscale').stop().animate({ opacity: 0 }, 50);
-                  });
-
-              }
-          }
-      };
- 
-      /* Creates a grayscale canvas image */
-      var grayscaleIe = function(src) {
-          var canvas = document.createElement('canvas');
-          var ctx = canvas.getContext('2d');
-          var imgObj = new Image();
-          imgObj.src = src;
-          canvas.width = imgObj.width;
-          canvas.height = imgObj.height; 
-          ctx.drawImage(imgObj, 0, 0); 
-          var imgPixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
-          for(var y = 0; y < imgPixels.height; y++){
-              for(var x = 0; x < imgPixels.width; x++){
-                  var i = (y * 4) * imgPixels.width + x * 4;
-                  var avg = (imgPixels.data[i] + imgPixels.data[i + 1] + imgPixels.data[i + 2]) / 3;
-                  imgPixels.data[i] = avg; 
-                  imgPixels.data[i + 1] = avg; 
-                  imgPixels.data[i + 2] = avg;
-              }
-          }
-          ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
-          return canvas.toDataURL();
-      };
-
-      return this.initialize();
-  }
 
   /**
    * Provides global resizing of grid spacers for sidebars.
@@ -362,7 +302,7 @@
           initialValue = 'rstoggle=rsoff&dpTxtSize=0';
 
       if (!cookie) {
-        U.Global.Cookies.setItem('ReadSpeakerSettings', initialValue);
+          U.Global.Cookies.setItem('ReadSpeakerSettings', initialValue, null, '/');
       }
     };
 
