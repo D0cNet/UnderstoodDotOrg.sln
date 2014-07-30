@@ -2046,10 +2046,10 @@ jQuery(document).ready(function () {
 
     U.findHelpful = function () {
         var self = this;
+        var helpfulButtons = jQuery('.find-this-helpful ul li button'),
 
         jQuery('.find-this-helpful ul li button').click(function () {
             var tempCount = parseInt(jQuery('.count-helpful a span').html()),
-                helpfulButtons = jQuery('.find-this-helpful ul li button'),
                 helpfulButtonYes = jQuery('.find-this-helpful ul li button.yes'),
                 helpfulButtonNo = jQuery('.find-this-helpful ul li button.no'),
                 helpfulCounter = jQuery('.count-helpful a span');
@@ -2062,9 +2062,7 @@ jQuery(document).ready(function () {
                     helpfulCounter.html(tempCount + 2);
                 }
                 else {
-                    helpfulButtonYes.removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
-                    helpfulButtons.removeClass('selected');
-                    helpfulButtonYes.addClass('selected');
+                    self.toggleFindHelpfulSelects(helpfulButtonYes);
                     helpfulCounter.html(tempCount + 1);
                 }
                 
@@ -2076,15 +2074,19 @@ jQuery(document).ready(function () {
                     helpfulCounter.html(tempCount - 2);
                 }
                 else {
-                    helpfulButtonNo.removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
-                    helpfulButtons.removeClass('selected');
-                    helpfulButtonNo.addClass('selected');
+                    self.toggleFindHelpfulSelects(helpfulButtonNo);
                     jQuery('.count-helpful a span').html(tempCount - 1);
                 }
             }
 
             return false;
-        });
+            });
+
+        self.toggleFindHelpfulSelects = function(buttonType) {
+            buttonType.removeClass('disabled').parent('li').siblings('li').find('button').addClass('disabled');
+            $helpfulButton.removeClass('selected');
+            buttonType.addClass('selected');
+        };
 
         // Handle moving sidebar find-this-helpful module around depending on window width
         var $module = $('.find-this-helpful.sidebar');
