@@ -1184,7 +1184,7 @@ the callbacks passed to the module.
             $("#partners-slides-container").next('a.view-all').remove();
 
             // Initializes Partners Slider
-            responsiveSliderChange(partnersSliderArr, false, jQuery('#partners-slides-container'), 6, false, 1000, false, 4, 2);
+            responsiveSliderChange(partnersSliderArr, false, jQuery('#partners-slides-container'), 6, true, 1000, false, 4, 2);
             jQuery("#partners-slides-container .rsArrowLeft").after(partnersAnchor);
 
             ///////////////////////////////// End Partners Slider /////////////////////////////////
@@ -1280,7 +1280,7 @@ the callbacks passed to the module.
             }
 
             waitForFinalEvent(function () {
-                responsiveSliderChange(partnersSliderArr, true, jQuery('#partners-slides-container'), 6, false, 1000, false, 4, 2);
+                responsiveSliderChange(partnersSliderArr, true, jQuery('#partners-slides-container'), 6, true, 1000, false, 4, 2);
                 // only above 960 viewport or nonresponsive
                 if (Modernizr.mq('(min-width: 960px)') || !Modernizr.mq('only all')) {
                     jQuery("#partners-slides-container .rsArrowLeft").after(partnersAnchor);
