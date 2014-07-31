@@ -321,13 +321,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation
             // AS IT WAS FOROLD IN PROPHECY
             //Constants.HANDLER_TIMELY_DATE_QUERY_STRING//
             ////run personalization for this user
-            Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
+            //Handlers.RunPersonalizationService rps = new Handlers.RunPersonalizationService();
 
-            if (uxCal.SelectedDate != null)
-            {
-                rps.ImpersonateSearchDate = uxCal.SelectedDate;
-            }
-            rps.UpdateMember(CurrentMember);
+            //if (uxCal.SelectedDate != null)
+            //{
+            //    rps.ImpersonateSearchDate = uxCal.SelectedDate;
+            //}
+            //rps.UpdateMember(CurrentMember);
         }
     }
 }
