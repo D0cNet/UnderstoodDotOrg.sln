@@ -24,10 +24,22 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
     {
         public List<Comment> Comments;
         public bool OpenTab = false;
+        public bool SubmittedReview = false;
+        public List<CSMUserReview> Reviews;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Comments = TelligentService.ReadComments(Model.BlogId, Model.BlogPostId);
+            Reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
+
+
+            if (IsUserLoggedIn)
+            {
+                if (Reviews.Where(i => i.MemberId == CurrentMember.MemberId).Count() > 0)
+                {
+                    SubmittedReview = true;
+                }
+            }
 
             if (!IsPostBack)
             {
@@ -93,34 +105,30 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
         protected void BindReviews()
         {
-            List<CSMUserReview> reviews = CSMUserReviewExtensions.GetReviews(Sitecore.Context.Item.ID.ToGuid());
 
-            int totalReviews = GetTotalReviews(reviews);
+            int totalReviews = GetTotalReviews(Reviews);
 
-            if (IsUserLoggedIn)
+            if (SubmittedReview)
             {
-                if (reviews.Where(i => i.MemberId == CurrentMember.MemberId).Count() > 0)
-                {
-                    pnlReview.Visible = false;
-                    divReviewSideBar.Visible = false;
-                }
+                pnlReview.Visible = false;
+                divReviewSideBar.Visible = false;
             }
 
             if (ddlSorting.SelectedIndex == 0)
-                reviews = reviews.OrderBy(i => i.Created).Reverse().ToList();
+                Reviews = Reviews.OrderBy(i => i.Created).Reverse().ToList();
             else if (ddlSorting.SelectedIndex == 1)
-                reviews = reviews.OrderBy(i => i.Created).ToList();
+                Reviews = Reviews.OrderBy(i => i.Created).ToList();
             else if (ddlSorting.SelectedIndex == 2)
-                reviews = reviews.OrderBy(i => i.Rating).Reverse().ToList();
+                Reviews = Reviews.OrderBy(i => i.Rating).Reverse().ToList();
             else
-                reviews = reviews.OrderBy(i => i.Rating).ToList();
+                Reviews = Reviews.OrderBy(i => i.Rating).ToList();
 
-            rptReviews.DataSource = reviews.Take(3);
+            rptReviews.DataSource = Reviews.Take(3);
             rptReviews.DataBind();
 
-            if (reviews.Count > 3)
+            if (Reviews.Count > 3)
             {
-                rptShowMoreReviews.DataSource = reviews.Skip(3).Take(3);
+                rptShowMoreReviews.DataSource = Reviews.Skip(3).Take(3);
                 rptShowMoreReviews.DataBind();
                 pnlMoreLink.Visible = true;
             }
@@ -155,6 +163,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
                 Repeater rptSkills = e.FindControlAs<Repeater>("rptSkills");
                 Literal litTitle = e.FindControlAs<Literal>("litTitle");
                 HtmlAnchor reportAnchor = e.FindControlAs<HtmlAnchor>("reportAnchor");
+                HtmlGenericControl writeOwnReviewButton = e.FindControlAs<HtmlGenericControl>("writeOwnReviewButton");
+
+                if (SubmittedReview)
+                {
+                    writeOwnReviewButton.Visible = false;
+                }
 
                 if (litRating != null)
                 {

@@ -54,7 +54,7 @@
                             </FooterTemplate>
                         </asp:Repeater>
                         <div class="review-report">
-                            <span class="write-review">
+                            <span id="writeOwnReviewButton" runat="server" class="write-review">
                                 <i></i>
                                 <a href="#write-review"><%= UnderstoodDotOrg.Common.DictionaryConstants.WriteYourOwnReviewLabel %></a></span>
                             <span class="review-report">
