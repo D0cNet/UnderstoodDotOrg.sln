@@ -246,6 +246,7 @@ $(document).ready(function() {
 		});
 
 		tyceQuestion1.changeEle.on("click", function(e, mobileAlreadyUpdated) {
+			e.preventDefault();
 			tyceQuestion1.doChange();
 			$hfGradeId.val("");
 			$submitAnswersButton.hide();
@@ -320,7 +321,8 @@ $(document).ready(function() {
 			}
 		});
 
-		tyceQuestion2.changeEle.on("click", function() {
+		tyceQuestion2.changeEle.on("click", function(e) {
+			e.preventDefault();
 			$tyceIssue.removeAttr("checked")
 			tyceQuestion2.answerText = "";
 			selectedIssueIds = [];

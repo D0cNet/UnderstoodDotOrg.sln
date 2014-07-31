@@ -109,3 +109,116 @@
     });
 </script>
 <% } %>
+
+<div class="modal fade modal-standard" id="tyce-modal-after-hs" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body rs_read_this">
+        <h2>After High School</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non viverra turpis. Curabitur tristique porta purus nec tincidunt. Donec augue turpis, lobortis suscipit sagittis a, sodales a tellus. Sed neque tortor, consequat et ligula ac, venenatis facilisis neque. In porttitor congue magna, ut elementum massa semper.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non viverra turpis. Curabitur tristique porta purus nec tincidunt. Donec augue turpis.</p>
+        <div class="actions rs_preserve rs_skip">
+          <a href="#" class="button button-close">OK</a>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-standard" id="tyce-modal-why-ask-step-1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body rs_read_this">
+        <h2>Why are we asking this?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="actions rs_preserve rs_skip">
+          <a href="#" class="button button-close">OK</a>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-standard" id="tyce-modal-no-challenge" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2>Other Challenges</h2>
+        <p>At this time, we have experiences for five common learning and attention issues. If you're looking for a specific issue you don't see here, we encourage you to explore our <a href="REPLACE">Learning &amp; Attention</a> Issues section - we have a wide array of content that explores the full spectrum of learning issues.</p>
+        <p>Also - make sure you check back soon. We're always adding more content. <a href="REPLACE">If you have any suggestions</a> for this tool, <a href="REPLACE">contact us and share your thoughts</a>.</p>
+        <div class="actions rs_preserve rs_skip">
+          <a href="#" class="button button-close">OK</a>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-standard" id="tyce-modal-why-ask-step-2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body rs_read_this">
+        <h2>Why are we asking this?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="actions rs_preserve rs_skip">
+          <a href="#" class="button button-close">OK</a>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script>
+$(document).ready(function() {
+  $('select.reponsive-select-mobile').on('change', function() {
+    if ($(this).val() == 'grade-after-highschool') {
+      $('#tyce-modal-after-hs').modal('show');
+      $(window).trigger('resize');
+    }
+  });
+  $('button.tyce-after-hs').on('click', function(e) {
+    e.preventDefault();
+    $('#tyce-modal-after-hs').modal('show');
+    $(window).trigger('resize');
+  });
+
+  $('#tyce-modal-after-hs').find('.button-close').on('click', function(e) {
+    e.preventDefault();
+    $('#tyce-modal-after-hs').modal('hide');
+  });
+  $('#tyce-step-1 .tyce-step-why a').on('click', function(e) {
+    e.preventDefault();
+    $('#tyce-modal-why-ask-step-1').modal('show');
+    $(window).trigger('resize');
+  });
+
+  $('#tyce-modal-why-ask-step-1').find('.button-close').on('click', function(e) {
+    e.preventDefault();
+    $('#tyce-modal-why-ask-step-1').modal('hide');
+  });
+
+    $('#no-challenge').on('click', function(e) {
+    e.preventDefault();
+    $('#tyce-modal-no-challenge').modal('show');
+    $(window).trigger('resize');
+  });
+
+  $('#tyce-modal-no-challenge').find('.button-close').on('click', function(e) {
+    e.preventDefault();
+    $('#tyce-modal-no-challenge').modal('hide');
+  });
+
+  $('#tyce-step-2 .tyce-step-why a').on('click', function(e) {
+    e.preventDefault();
+    $('#tyce-modal-why-ask-step-2').modal('show');
+    $(window).trigger('resize');
+  });
+
+  $('#tyce-modal-why-ask-step-2').find('.button-close').on('click', function(e) {
+    e.preventDefault();
+    $('#tyce-modal-why-ask-step-2').modal('hide');
+  });
+
+});
+</script>
