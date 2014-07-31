@@ -18,7 +18,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         {
             Item context = Sitecore.Context.Item;
 
-            rptTryMoreQuizzes.DataSource = context.Parent.Children.Where(i => i.IsOfType(AssessmentQuizArticleItem.TemplateId) || i.IsOfType(KnowledgeQuizQuestionArticlePageItem.TemplateId)).Take(2).ToList();
+            rptTryMoreQuizzes.DataSource = context.Parent.Children.Where(i => i.IsOfType(AssessmentQuizArticleItem.TemplateId) || i.IsOfType(KnowledgeQuizQuestionArticlePageItem.TemplateId)).Select(i => (DefaultArticlePageItem)i).Take(2).ToList();
             rptTryMoreQuizzes.DataBind();
         }
 
@@ -26,16 +26,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.BehaviorTools
         {
             if (e.IsItem())
             {
-                Item context = (Item)e.Item.DataItem;
+                DefaultArticlePageItem context = (DefaultArticlePageItem)e.Item.DataItem;
 
-                FieldRenderer frQuizImage = e.FindControlAs<FieldRenderer>("frQuizImage");
+                System.Web.UI.WebControls.Image imgImage = e.FindControlAs<System.Web.UI.WebControls.Image>("imgImage");
                 FieldRenderer frQuizName = e.FindControlAs<FieldRenderer>("frQuizName");
                 HyperLink hypMoreLink = e.FindControlAs<HyperLink>("hypMoreLink");
 
                 if (context != null) 
                 {
-                    frQuizImage.Item = context;
-                    frQuizName.Item = context;
+                    imgImage.ImageUrl = context.GetArticleThumbnailUrl(230, 129); ;
+                    frQuizName.Item = context.InnerItem;
 
                     hypMoreLink.NavigateUrl = context.GetUrl();
                 }

@@ -11,7 +11,7 @@
                 <div class="col col-11 offset-1">
                     <div class="quiz clearfix">
                         <div class="quiz-image">
-                            <sc:FieldRenderer ID="frQuizImage" runat="server" FieldName="Content Thumbnail"></sc:FieldRenderer>
+                            <asp:Image ID="imgImage" runat="server" />
                         </div>
                         <div class="quiz-text">
                             <h4><sc:FieldRenderer ID="frQuizName" runat="server" FieldName="Page Title"></sc:FieldRenderer></h4>
