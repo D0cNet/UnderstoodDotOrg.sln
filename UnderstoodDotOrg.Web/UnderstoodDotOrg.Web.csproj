@@ -2890,7 +2890,6 @@
     <Content Include="Presentation\Includes\js\simulations\executive\game.js" />
     <Content Include="Presentation\Includes\js\simulations\executive\gamelib.js" />
     <Content Include="Presentation\Includes\js\site.js" />
-    <Content Include="Presentation\Includes\js\tyce-mobile-player.js" />
     <Content Include="Presentation\Includes\js\tyce.js" />
     <Content Include="Presentation\Includes\js\user_profile.js" />
     <Content Include="Presentation\Includes\js\vendor\bootstrap.js" />
