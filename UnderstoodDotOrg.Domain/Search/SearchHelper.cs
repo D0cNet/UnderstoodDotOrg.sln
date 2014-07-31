@@ -715,7 +715,7 @@ namespace UnderstoodDotOrg.Domain.Search
             // Look for quotes to handle phrase search
             bool phraseSearch = terms.Contains("\\\"");
 
-            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
 
             using (var ctx = index.CreateSearchContext())
             {
