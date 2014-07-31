@@ -38,7 +38,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.ExpertLive {
                 embed.AppendLine("<!-- Start of Brightcove Player -->");
                 embed.AppendLine("");
                 embed.AppendLine("<div style=\"display:none\"></div>");
-                embed.AppendLine("<script language=\"JavaScript\" type=\"text/javascript\" src=\"/presentation/includes/js/brightcove/BrightcoveExperiences.js\"></script>");
+                embed.AppendLine("<script language=\"JavaScript\" type=\"text/javascript\" src=\"//admin.brightcove.com/js/BrightcoveExperiences.js\"></script>");
                 embed.AppendLine("<object id=\"" + CreateEmbedID() + "\" class=\"BrightcoveExperience\">");
                 embed.AppendLine("<param name=\"bgcolor\" value=\"" + BackgroundColor + "\" />");
                 embed.AppendLine("<param name=\"width\" value=\"" + playerWidth + "\" />");
