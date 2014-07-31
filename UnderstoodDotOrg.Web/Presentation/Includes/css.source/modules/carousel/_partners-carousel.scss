@@ -150,14 +150,14 @@
   .viewAll {
     display: none;
     position: absolute;
-    top: 3px;
+    top: 8px;
     right: 111px;
     font-size: 16px;
     color: #298fc2;
     
     @include bp($bp-medium) {
       display: block;
-      right: 45px;
+      right: 51px;
     }
 
   }// .viewAll
@@ -181,12 +181,12 @@
        
     @include bp($bp-small-plus){
       margin-right: 0;
-      top: 0;
+      top: 5px;
       right: 54px;
     }
 
     @include bp($bp-medium) {
-      right: 119px;
+      right: 125px;
     }
 
   }// .rsArrowLeft
@@ -201,8 +201,8 @@
     @include bp($bp-small-plus) {
       left: auto;
       margin-left: 0;
-      top: 0;
-      right: 0;
+      top: 5px;
+      right: 6px;
     }
 
   }// .rsArrowRight

@@ -3312,7 +3312,7 @@
 .partners-carousel .viewAll {
   display: none;
   position: absolute;
-  top: 3px;
+  top: 8px;
   right: 111px;
   font-size: 16px;
   color: #298fc2;
@@ -3321,7 +3321,7 @@
   /* line 150, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .viewAll {
     display: block;
-    right: 45px;
+    right: 51px;
   }
 }
 /* line 165, ../css.source/modules/carousel/_partners-carousel.scss */
@@ -3346,14 +3346,14 @@
   /* line 175, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowLeft .rsArrowIcn {
     margin-right: 0;
-    top: 0;
+    top: 5px;
     right: 54px;
   }
 }
 @media (min-width: 769px), print {
   /* line 175, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowLeft .rsArrowIcn {
-    right: 119px;
+    right: 125px;
   }
 }
 /* line 194, ../css.source/modules/carousel/_partners-carousel.scss */
@@ -3369,8 +3369,8 @@
   .partners-carousel .rsArrowRight .rsArrowIcn {
     left: auto;
     margin-left: 0;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 6px;
   }
 }
 

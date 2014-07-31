@@ -2214,12 +2214,12 @@ html.canvas .mini-tools-wrap {
 .partners-carousel .viewAll {
   display: none;
   position: absolute;
-  top: 3px;
+  top: 8px;
   right: 111px;
   font-size: 16px;
   color: #298fc2;
   display: block;
-  right: 45px;
+  right: 51px;
 }
 /* line 165, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowIcn {
@@ -2234,9 +2234,9 @@ html.canvas .mini-tools-wrap {
   right: 50%;
   margin-right: 15px;
   margin-right: 0;
-  top: 0;
+  top: 5px;
   right: 54px;
-  right: 119px;
+  right: 125px;
 }
 /* line 194, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowRight .rsArrowIcn {
@@ -2247,8 +2247,8 @@ html.canvas .mini-tools-wrap {
   margin-left: 15px;
   left: auto;
   margin-left: 0;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 6px;
 }
 
 /**
