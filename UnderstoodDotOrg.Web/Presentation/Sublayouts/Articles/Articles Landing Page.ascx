@@ -12,7 +12,7 @@
             <ItemTemplate>
                 <div class="col col-5 offset-1 image-left">
                     <asp:HyperLink ID="hypThumbnail" runat="server">
-                    <asp:Image ID="imgThumbnail" runat="server" />
+                        <asp:Image ID="imgThumbnail" runat="server" />
                     </asp:HyperLink>
                 </div>
                 <div class="col col-5 offset-1 question-right">
