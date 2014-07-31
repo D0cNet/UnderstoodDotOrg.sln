@@ -128,6 +128,9 @@
         <asp:literal runat="server" id="footerSectionJS"></asp:literal>
         <script src="/Presentation/includes/js/global.js"></script>
 		<script src="/Presentation/includes/js/oasis.js"></script>
+<script src="/Presentation/includes/js/vendor/jquery.fs.zoomer.min.js"></script>
+<script src="/Presentation/includes/js/vendor/imagesloaded.min.js"></script>
+<script src="/Presentation/includes/js/infographic-zoom.js"></script>
         <%--<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>--%>
         <script src="/Presentation/includes/js/html2canvas.js"></script>
         <script src="/Presentation/includes/js/jspdf.min.js"></script>

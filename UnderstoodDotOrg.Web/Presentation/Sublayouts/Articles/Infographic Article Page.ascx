@@ -14,7 +14,9 @@
             </div>
             <div class="infographic">
                 <%-- <img src="http://placehold.it/100x1000" width="100%" /> --%>
-                <sc:FieldRenderer ID="frInfographicImage" runat="server" FieldName="Image" />
+                <div class="zoom-container">
+                    <sc:FieldRenderer ID="frInfographicImage" runat="server" FieldName="Image" />
+                </div>
                 <!-- BEGIN PARTIAL: infographic-zoom -->
                 <div class="infographic-zoom">
                     <%--generate embed code, have click-to-copy support--%>
@@ -23,9 +25,9 @@
                     <a href="/Handlers/DownloadFile.ashx?id=<%= Sitecore.Context.Item.ID.ToString() %>" class="infographic-zoom-icon infographic-zoom-icon-download"><%= UnderstoodDotOrg.Common.DictionaryConstants.DownloadButtonText %></a>
                     <%--<asp:Button runat="server" ID="uxButtonDownload" CssClass="infographic-zoom-icon infographic-zoom-icon-download" Text="Download" OnClick="uxButtonDownload_Click" />--%>
                     <%--zoom in on infographic within viewport--%>
-                    <a href="REPLACE" class="infographic-zoom-icon infographic-zoom-icon-zoom-in"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_ZoomInText %></a>
+                    <a href="#" class="infographic-zoom-icon infographic-zoom-icon-zoom-in"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_ZoomInText %></a>
                     <%--zoom out on infographic within viewport--%>
-                    <a href="REPLACE" class="infographic-zoom-icon infographic-zoom-icon-zoom-out"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_ZoomOutText %></a>
+                    <a href="#" class="infographic-zoom-icon infographic-zoom-icon-zoom-out"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_ZoomOutText %></a>
                 </div>
                 <style>
                     .infographic img {
@@ -76,5 +78,3 @@
     </div>
 </div>
 <!-- .container -->
-
-
