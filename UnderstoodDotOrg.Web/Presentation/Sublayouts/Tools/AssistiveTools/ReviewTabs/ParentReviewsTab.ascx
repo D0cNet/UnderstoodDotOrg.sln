@@ -229,13 +229,6 @@
                     <script>
                         $(function () {
 
-                            if (<%= OpenTab.ToString().ToLower() %>)
-                            {
-                                setTimeout(function(){
-                                   location.hash = '#tabs2-parent-reviews';
-                            }, 1000);
-                            }
-
                             var hiddenField = $("[id*='hfKeyValuePairs']");
                             var hiddenField2 = $("[id*='hfRating']");
 
@@ -300,16 +293,6 @@
                     <button class="slider-button">4</button>
                     <button class="slider-button">5</button>
                 </div>
-                <script>
-                    $(function(){
-                        if(<%= (!IsUserLoggedIn).ToString().ToLower() %>)
-                        {
-                            setTimeout(function(){
-                                $('.results-slider').off('click');
-                            }, 2000);
-                        }
-                    })
-                </script>
                 <!-- END PARTIAL: results-slider-ratings -->
             </section>
             <!-- END PARTIAL: rate-this-app-sidebar -->
