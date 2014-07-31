@@ -40,6 +40,12 @@
     </div>
     <!-- .row -->
 </div>
+<style>
+    .article-header .push-15 img{
+        width: 100%;
+        height: auto;
+    }
+</style>
 <!-- .container -->
 
 <!-- BEGIN PARTIAL: footer -->
