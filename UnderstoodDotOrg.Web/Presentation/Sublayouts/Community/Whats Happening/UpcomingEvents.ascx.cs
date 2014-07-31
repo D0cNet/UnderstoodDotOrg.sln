@@ -45,7 +45,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
                 Literal litSkipThisText = e.FindControlAs<Literal>("litSkipThisText");
 
                 //litRSVPText.Text = DictionaryConstants.Community_RSVPButtonText;
-                litSkipThisText.Text = DictionaryConstants.Community_SkipThisButtonText;
+                //litSkipThisText.Text = DictionaryConstants.Community_SkipThisButtonText;
 
                 litEventDate.Text = item.GetFormattedEventStartDate();
                 hlEventDetail.NavigateUrl = item.GetUrl();

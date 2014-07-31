@@ -46,7 +46,7 @@
                                     <!-- end .event-card-title -->
                                     <div class="card-buttons">
                                         <%--<button type="button" class="button"><asp:Literal ID="litRSVPText" runat="server"></asp:Literal></button>--%>
-                                        <button class="action-skip-this"><asp:Literal ID="litSkipThisText" runat="server"></asp:Literal></button>
+                                        <%--<button class="action-skip-this"><asp:Literal ID="litSkipThisText" runat="server"></asp:Literal></button>--%>
                                     </div>
                                     <!-- end .card-buttons -->
                                 </div>
