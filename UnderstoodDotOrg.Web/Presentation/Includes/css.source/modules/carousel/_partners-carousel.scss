@@ -39,6 +39,7 @@
 
     @include bp($bp-small-plus) {
       height: 90% !important;
+      position: inherit;
     }
 
   }// .rsOverflow
@@ -150,14 +151,14 @@
   .viewAll {
     display: none;
     position: absolute;
-    top: 8px;
+    top: 3px;
     right: 111px;
     font-size: 16px;
     color: #298fc2;
     
     @include bp($bp-medium) {
       display: block;
-      right: 51px;
+      right: 45px;
     }
 
   }// .viewAll
@@ -181,12 +182,12 @@
        
     @include bp($bp-small-plus){
       margin-right: 0;
-      top: 5px;
+      top: 0;
       right: 54px;
     }
 
     @include bp($bp-medium) {
-      right: 125px;
+      right: 119px;
     }
 
   }// .rsArrowLeft
@@ -201,8 +202,8 @@
     @include bp($bp-small-plus) {
       left: auto;
       margin-left: 0;
-      top: 5px;
-      right: 6px;
+      top: 0;
+      right: 0;
     }
 
   }// .rsArrowRight

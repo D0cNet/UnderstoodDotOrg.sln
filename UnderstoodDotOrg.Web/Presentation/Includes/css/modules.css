@@ -3186,33 +3186,34 @@
   /* line 32, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsOverflow {
     height: 90% !important;
+    position: inherit;
   }
 }
 @media (min-width: 480px), print {
-  /* line 46, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 47, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsSlide {
     position: absolute;
   }
 }
-/* line 53, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 54, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul {
   list-style: none;
   margin: 0 0 0 6%;
   padding: 0;
 }
 @media (min-width: 480px), print {
-  /* line 53, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 54, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul {
     margin-left: 4%;
   }
 }
 @media (min-width: 650px), print {
-  /* line 53, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 54, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul {
     margin-left: 0%;
   }
 }
-/* line 66, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 67, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li {
   display: inline-block;
   margin: 15% 0 105px 10%;
@@ -3221,54 +3222,54 @@
   width: 45%;
 }
 @media (min-width: 480px), print {
-  /* line 66, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 67, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul li {
     margin: 8% 5% 0 0;
     width: 20%;
   }
 }
 @media (min-width: 650px), print {
-  /* line 66, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 67, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul li {
     margin: 15% 0 0 5%;
     width: 21%;
   }
 }
 @media (min-width: 769px), print {
-  /* line 66, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 67, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul li {
     margin: 75px 2% 5%;
     width: 21%;
   }
 }
 @media (min-width: 960px), print {
-  /* line 66, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 67, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul li {
     margin-top: 90px;
     width: 16%;
   }
 }
-/* line 93, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 94, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li:nth-child(2n+1) {
   margin-left: 0;
 }
 @media (min-width: 650px), print {
-  /* line 93, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 94, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul li:nth-child(2n+1) {
     margin-left: 5%;
   }
 }
 @media (min-width: 769px), print {
-  /* line 93, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 94, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul li:nth-child(2n+1) {
     margin-left: 3%;
   }
 }
-/* line 106, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 107, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li:first-child {
   margin-left: 0;
 }
-/* line 110, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 111, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li a {
   display: block;
   height: auto;
@@ -3282,12 +3283,12 @@
   filter: grayscale(100%);
   filter: gray;
 }
-/* line 122, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 123, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li a:focus {
   outline: none;
   box-shadow: 0px 0px 3px #426da9;
 }
-/* line 126, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 127, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li a:focus, .partners-carousel ul li a:hover {
   -webkit-filter: grayscale(0%);
   -moz-filter: grayscale(0%);
@@ -3296,46 +3297,46 @@
   filter: none;
   /* IE 6-9 */
 }
-/* line 135, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 136, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li img {
   height: auto;
   width: 100%;
   display: block;
 }
 @media (min-width: 480px), print {
-  /* line 135, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 136, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel ul li img {
     max-width: 100%;
   }
 }
-/* line 150, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 151, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .viewAll {
   display: none;
   position: absolute;
-  top: 8px;
+  top: 3px;
   right: 111px;
   font-size: 16px;
   color: #298fc2;
 }
 @media (min-width: 769px), print {
-  /* line 150, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 151, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .viewAll {
     display: block;
-    right: 51px;
+    right: 45px;
   }
 }
-/* line 165, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 166, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowIcn {
   z-index: 2;
 }
 @media (min-width: 650px), print {
-  /* line 165, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 166, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowIcn {
     top: 0;
     bottom: initial;
   }
 }
-/* line 175, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 176, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowLeft .rsArrowIcn {
   top: auto;
   bottom: 26px;
@@ -3343,20 +3344,20 @@
   margin-right: 15px;
 }
 @media (min-width: 650px), print {
-  /* line 175, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 176, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowLeft .rsArrowIcn {
     margin-right: 0;
-    top: 5px;
+    top: 0;
     right: 54px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 175, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 176, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowLeft .rsArrowIcn {
-    right: 125px;
+    right: 119px;
   }
 }
-/* line 194, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 195, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowRight .rsArrowIcn {
   top: auto;
   bottom: 26px;
@@ -3365,12 +3366,12 @@
   margin-left: 15px;
 }
 @media (min-width: 650px), print {
-  /* line 194, ../css.source/modules/carousel/_partners-carousel.scss */
+  /* line 195, ../css.source/modules/carousel/_partners-carousel.scss */
   .partners-carousel .rsArrowRight .rsArrowIcn {
     left: auto;
     margin-left: 0;
-    top: 5px;
-    right: 6px;
+    top: 0;
+    right: 0;
   }
 }
 

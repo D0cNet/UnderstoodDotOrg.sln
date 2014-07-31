@@ -2136,12 +2136,13 @@ html.canvas .mini-tools-wrap {
   height: 85% !important;
   width: 100% !important;
   height: 90% !important;
+  position: inherit;
 }
-/* line 46, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 47, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsSlide {
   position: absolute;
 }
-/* line 53, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 54, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul {
   list-style: none;
   margin: 0 0 0 6%;
@@ -2149,7 +2150,7 @@ html.canvas .mini-tools-wrap {
   margin-left: 4%;
   margin-left: 0%;
 }
-/* line 66, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 67, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li {
   display: inline-block;
   margin: 15% 0 105px 10%;
@@ -2165,17 +2166,17 @@ html.canvas .mini-tools-wrap {
   margin-top: 90px;
   width: 16%;
 }
-/* line 93, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 94, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li:nth-child(2n+1) {
   margin-left: 0;
   margin-left: 5%;
   margin-left: 3%;
 }
-/* line 106, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 107, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li:first-child {
   margin-left: 0;
 }
-/* line 110, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 111, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li a {
   display: block;
   height: auto;
@@ -2189,12 +2190,12 @@ html.canvas .mini-tools-wrap {
   filter: grayscale(100%);
   filter: gray;
 }
-/* line 122, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 123, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li a:focus {
   outline: none;
   box-shadow: 0px 0px 3px #426da9;
 }
-/* line 126, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 127, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li a:focus, .partners-carousel ul li a:hover {
   -webkit-filter: grayscale(0%);
   -moz-filter: grayscale(0%);
@@ -2203,42 +2204,42 @@ html.canvas .mini-tools-wrap {
   filter: none;
   /* IE 6-9 */
 }
-/* line 135, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 136, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel ul li img {
   height: auto;
   width: 100%;
   display: block;
   max-width: 100%;
 }
-/* line 150, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 151, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .viewAll {
   display: none;
   position: absolute;
-  top: 8px;
+  top: 3px;
   right: 111px;
   font-size: 16px;
   color: #298fc2;
   display: block;
-  right: 51px;
+  right: 45px;
 }
-/* line 165, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 166, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowIcn {
   z-index: 2;
   top: 0;
   bottom: initial;
 }
-/* line 175, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 176, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowLeft .rsArrowIcn {
   top: auto;
   bottom: 26px;
   right: 50%;
   margin-right: 15px;
   margin-right: 0;
-  top: 5px;
+  top: 0;
   right: 54px;
-  right: 125px;
+  right: 119px;
 }
-/* line 194, ../css.source/modules/carousel/_partners-carousel.scss */
+/* line 195, ../css.source/modules/carousel/_partners-carousel.scss */
 .partners-carousel .rsArrowRight .rsArrowIcn {
   top: auto;
   bottom: 26px;
@@ -2247,8 +2248,8 @@ html.canvas .mini-tools-wrap {
   margin-left: 15px;
   left: auto;
   margin-left: 0;
-  top: 5px;
-  right: 6px;
+  top: 0;
+  right: 0;
 }
 
 /**
