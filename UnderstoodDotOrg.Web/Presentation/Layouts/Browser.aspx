@@ -136,6 +136,8 @@
     <script src="/Presentation/includes/js/vendor/jquery.transit.min.js"></script>
         <sc:Placeholder runat="server" Key="AfterResources" />
         <sc:sublayout id="SBReviewedBy" runat="server" path="~/Presentation/Sublayouts/Articles/Article Entry Message Page.ascx" />
+        
+        <asp:Literal ID="litAnalytics" runat="server" />
 
         <!-- END PARTIAL: footerjs -->
         

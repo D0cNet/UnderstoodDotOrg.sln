@@ -67,6 +67,35 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts
                     phWelcomeTour.Visible = !PageItem.ShowWelcomeTour.Raw.IsNullOrEmpty();
                 }
 			}
+
+            InitGoogleAnalytics();
+        }
+
+        /// <summary>
+        /// Inits the Google Analytics script which is pulled from the global item
+        /// TODO: Moved from the header to the footer due to performace issues. See UNAO-1141
+        /// </summary>
+        protected void InitGoogleAnalytics()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            GlobalsItem global = MainsectionItem.GetGlobals();
+            if (global != null)
+            {
+                sb.AppendLine(global.GoogleAnalytics.Raw);
+            }
+
+            BasePageNEWItem basePage = Sitecore.Context.Item;
+            if (basePage.GoogleAnalytics.Field != null)
+            {
+                sb.AppendLine(basePage.GoogleAnalytics.Raw);
+            }
+
+            string output = sb.ToString().Trim();
+            if (!string.IsNullOrEmpty(output))
+            {
+                litAnalytics.Text = String.Format(@"<script type=""text/javascript"">{0}</script>", output);
+            }
         }
 
         private void BindEvents()

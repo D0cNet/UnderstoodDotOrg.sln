@@ -128,5 +128,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Layouts {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Sublayout SBReviewedBy;
+        
+        /// <summary>
+        /// litAnalytics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litAnalytics;
     }
 }

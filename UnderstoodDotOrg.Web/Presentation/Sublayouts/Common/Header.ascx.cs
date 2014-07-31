@@ -28,31 +28,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
             {
                 this.ProfileRedirect(Constants.UserPermission.AgreedToTerms);
             }
-
-            InitGoogleAnalytics();
-        }
-
-        protected void InitGoogleAnalytics()
-        {
-            StringBuilder sb = new StringBuilder();
-
-            GlobalsItem global = MainsectionItem.GetGlobals();
-            if (global != null)
-            {
-                sb.AppendLine(global.GoogleAnalytics.Raw);
-            }
-
-            BasePageNEWItem basePage = Sitecore.Context.Item;
-            if (basePage.GoogleAnalytics.Field != null)
-            {
-                sb.AppendLine(basePage.GoogleAnalytics.Raw);
-            }
-
-            string output = sb.ToString().Trim();
-            if (!string.IsNullOrEmpty(output))
-            {
-                litAnalytics.Text = String.Format(@"<script type=""text/javascript"">{0}</script>", output);
-            }
         }
     }
 }
