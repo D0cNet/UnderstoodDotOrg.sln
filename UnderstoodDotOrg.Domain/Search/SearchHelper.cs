@@ -1412,7 +1412,7 @@ namespace UnderstoodDotOrg.Domain.Search
         public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issueId, int? minGrade, int? maxGrade, Guid? technologyId, 
             Guid? platformId, string searchTerm, SortOptions.AssistiveToolsSortOptions sortOption)
         {
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
             searchTerm = NormalizeSearchTerm(searchTerm);
 
             bool hasGradeRange = minGrade.HasValue && maxGrade.HasValue;
