@@ -24,6 +24,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (this.CurrentMember != null)
+            {
+                this.ProfileRedirect(Constants.UserPermission.AgreedToTerms);
+            }
+
             InitGoogleAnalytics();
         }
 

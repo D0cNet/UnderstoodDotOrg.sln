@@ -74,9 +74,11 @@ namespace UnderstoodDotOrg.Framework.UI
                     break;
                 case Constants.UserPermission.AgreedToTerms:
                     //redirect to T&C if they have not agreed yet
-                    if (page.CurrentMember != null && !page.CurrentMember.AgreedToSignUpTerms)
+                    var termsUrl = TermsandConditionsItem.GetTermsAndConditionsPage().GetUrl();
+
+                    if (page.CurrentMember != null && !page.CurrentMember.AgreedToSignUpTerms && !page.Request.RawUrl.Contains(termsUrl))
                     {
-                        redirect(page, TermsandConditionsItem.GetTermsAndConditionsPage().GetUrl());
+                        redirect(page, termsUrl);
                     }
                     break;
                 case Constants.UserPermission.CanPersonalize:
