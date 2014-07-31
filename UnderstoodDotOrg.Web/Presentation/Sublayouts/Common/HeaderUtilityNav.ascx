@@ -105,7 +105,7 @@
                     <sc:FieldRenderer ID="frSearchLabel2" runat="server" FieldName="Link" />
                 </label>
                 <input type="text" id="search-term" placeholder="<%= SearchWatermark %>" data-text-default="<%= EnterSearchTermWatermark %>" data-text-large="<%= SearchWatermark %>" data-path="<%= SearchPath %>">
-                <input type="submit" value="<%# UnderstoodDotOrg.Common.DictionaryConstants.GoButtonText %>"  data-value-default="<%# UnderstoodDotOrg.Common.DictionaryConstants.GoButtonText %>" data-value-medium="Submit">
+                <input id="searchButton" runat="server" type="submit" data-value-medium="Submit">
             </span>
         </fieldset>
     </div>
