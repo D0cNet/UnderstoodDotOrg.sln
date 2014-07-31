@@ -175,7 +175,7 @@ body:after {
   font-size: 0.5625rem;
   line-height: 2.889;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .language-selection:after {
   content: "";
   display: table;
@@ -255,8 +255,14 @@ body:after {
     color: transparent;
   }
 }
+@media (min-width: 650px), print {
+  /* line 189, ../css.source/layout.scss */
+  .language-selection .is-active {
+    font-weight: 700;
+  }
+}
 @media (min-width: 480px), print {
-  /* line 198, ../css.source/layout.scss */
+  /* line 202, ../css.source/layout.scss */
   .language-selection a[title]:after {
     display: block;
     content: attr(title);
@@ -265,40 +271,40 @@ body:after {
   }
 }
 @media (min-width: 769px), print {
-  /* line 198, ../css.source/layout.scss */
+  /* line 202, ../css.source/layout.scss */
   .language-selection a[title]:after {
     margin-top: -1.429em;
   }
 }
 @media (min-width: 480px), print {
-  /* line 209, ../css.source/layout.scss */
+  /* line 213, ../css.source/layout.scss */
   .language-selection .is-active[title]:after {
     color: #fff;
   }
 }
 @media (min-width: 769px), print {
-  /* line 209, ../css.source/layout.scss */
+  /* line 213, ../css.source/layout.scss */
   .language-selection .is-active[title]:after {
     color: #7a4183;
   }
 }
 @media (min-width: 480px), print {
-  /* line 217, ../css.source/layout.scss */
+  /* line 221, ../css.source/layout.scss */
   .language-selection a:hover {
     color: #fff;
   }
 }
-/* line 222, ../css.source/layout.scss */
+/* line 226, ../css.source/layout.scss */
 .language-selection a:hover:after {
   color: #426da9;
 }
 
-/* line 227, ../css.source/layout.scss */
+/* line 231, ../css.source/layout.scss */
 .nav-utility {
   display: none;
 }
 @media (min-width: 769px), print {
-  /* line 227, ../css.source/layout.scss */
+  /* line 231, ../css.source/layout.scss */
   .nav-utility {
     display: block;
     float: left;
@@ -308,92 +314,92 @@ body:after {
   }
 }
 @media (min-width: 769px), print {
-  /* line 235, ../css.source/layout.scss */
+  /* line 239, ../css.source/layout.scss */
   .nav-utility li {
     display: inline;
     margin: 0 11px;
   }
 }
-/* line 240, ../css.source/layout.scss */
+/* line 244, ../css.source/layout.scss */
 .nav-utility li:first-child {
   margin-left: 0;
 }
-/* line 244, ../css.source/layout.scss */
+/* line 248, ../css.source/layout.scss */
 .nav-utility a {
   color: #696969;
 }
-/* line 247, ../css.source/layout.scss */
+/* line 251, ../css.source/layout.scss */
 .nav-utility a:hover {
   color: #426da9;
   text-decoration: none;
 }
 
-/* line 254, ../css.source/layout.scss */
+/* line 258, ../css.source/layout.scss */
 .nav-main {
   display: none;
 }
 @media (min-width: 769px), print {
-  /* line 254, ../css.source/layout.scss */
+  /* line 258, ../css.source/layout.scss */
   .nav-main {
     display: block;
   }
 }
-/* line 259, ../css.source/layout.scss */
+/* line 263, ../css.source/layout.scss */
 .nav-main a {
   color: #696969;
 }
-/* line 262, ../css.source/layout.scss */
+/* line 266, ../css.source/layout.scss */
 .nav-main a:hover {
   color: #426da9;
   text-decoration: none;
 }
 
-/* line 269, ../css.source/layout.scss */
+/* line 273, ../css.source/layout.scss */
 #header-page {
   height: 45px;
   position: relative;
   margin: 0;
 }
 @media (min-width: 650px), print {
-  /* line 269, ../css.source/layout.scss */
+  /* line 273, ../css.source/layout.scss */
   #header-page {
     height: 90px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 269, ../css.source/layout.scss */
+  /* line 273, ../css.source/layout.scss */
   #header-page {
     height: auto;
     padding-top: 20px;
     *zoom: 1;
     margin: 0 15px;
   }
-  /* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   #header-page:after {
     content: "";
     display: table;
     clear: both;
   }
 }
-/* line 283, ../css.source/layout.scss */
+/* line 287, ../css.source/layout.scss */
 #header-page .row {
   padding: 0;
 }
 @media (min-width: 769px), print {
-  /* line 283, ../css.source/layout.scss */
+  /* line 287, ../css.source/layout.scss */
   #header-page .row {
     padding: 0 5px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 289, ../css.source/layout.scss */
+  /* line 293, ../css.source/layout.scss */
   #header-page .l-bar {
     float: right;
     clear: right;
     margin-bottom: 35px;
   }
 }
-/* line 296, ../css.source/layout.scss */
+/* line 300, ../css.source/layout.scss */
 #header-page .sign-in {
   position: absolute;
   top: 0;
@@ -401,7 +407,7 @@ body:after {
   width: 45px;
 }
 @media (min-width: 650px), print {
-  /* line 296, ../css.source/layout.scss */
+  /* line 300, ../css.source/layout.scss */
   #header-page .sign-in {
     padding: 20px 0 0 20px;
     right: 245px;
@@ -409,7 +415,7 @@ body:after {
   }
 }
 @media (min-width: 769px), print {
-  /* line 296, ../css.source/layout.scss */
+  /* line 300, ../css.source/layout.scss */
   #header-page .sign-in {
     padding: 0;
     font-size: 14px;
@@ -422,17 +428,17 @@ body:after {
   }
 }
 @media (min-width: 960px), print {
-  /* line 296, ../css.source/layout.scss */
+  /* line 300, ../css.source/layout.scss */
   #header-page .sign-in {
     margin-right: 30px;
   }
 }
-/* line 319, ../css.source/layout.scss */
+/* line 323, ../css.source/layout.scss */
 #header-page .sign-in .user-info {
   text-decoration: none;
   display: inline-block;
 }
-/* line 323, ../css.source/layout.scss */
+/* line 327, ../css.source/layout.scss */
 #header-page .sign-in .user-info.my-account {
   background-image: url('../images/icon.mobile.avatar.signed-in.png?6931be1c');
   background-size: 25px 25px;
@@ -442,55 +448,55 @@ body:after {
   height: 45px;
 }
 @media (min-width: 650px), print {
-  /* line 323, ../css.source/layout.scss */
+  /* line 327, ../css.source/layout.scss */
   #header-page .sign-in .user-info.my-account {
     background: none;
     width: auto;
     height: auto;
   }
 }
-/* line 338, ../css.source/layout.scss */
+/* line 342, ../css.source/layout.scss */
 #header-page .sign-in .user-info img, #header-page .sign-in .user-info span {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 338, ../css.source/layout.scss */
+  /* line 342, ../css.source/layout.scss */
   #header-page .sign-in .user-info img, #header-page .sign-in .user-info span {
     display: inline-block;
   }
 }
-/* line 346, ../css.source/layout.scss */
+/* line 350, ../css.source/layout.scss */
 #header-page .sign-in .user-info:hover .user-name {
   text-decoration: underline;
 }
-/* line 351, ../css.source/layout.scss */
+/* line 355, ../css.source/layout.scss */
 #header-page .sign-in .avatar {
   width: 25px;
 }
 @media (min-width: 650px), print {
-  /* line 351, ../css.source/layout.scss */
+  /* line 355, ../css.source/layout.scss */
   #header-page .sign-in .avatar {
     width: 50px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 351, ../css.source/layout.scss */
+  /* line 355, ../css.source/layout.scss */
   #header-page .sign-in .avatar {
     width: 30px;
   }
 }
-/* line 360, ../css.source/layout.scss */
+/* line 364, ../css.source/layout.scss */
 #header-page .sign-in .user-name {
   display: none;
 }
 @media (min-width: 960px), print {
-  /* line 360, ../css.source/layout.scss */
+  /* line 364, ../css.source/layout.scss */
   #header-page .sign-in .user-name {
     display: inline-block;
     padding: 5px 0 0 5px;
   }
 }
-/* line 367, ../css.source/layout.scss */
+/* line 371, ../css.source/layout.scss */
 #header-page .sign-in .messages {
   display: inline-block;
   background: #426da9;
@@ -508,7 +514,7 @@ body:after {
   border-radius: 2px;
 }
 @media (min-width: 650px), print {
-  /* line 367, ../css.source/layout.scss */
+  /* line 371, ../css.source/layout.scss */
   #header-page .sign-in .messages {
     top: 8px;
     left: 57px;
@@ -519,7 +525,7 @@ body:after {
   }
 }
 @media (min-width: 769px), print {
-  /* line 367, ../css.source/layout.scss */
+  /* line 371, ../css.source/layout.scss */
   #header-page .sign-in .messages {
     top: -9px;
     left: 21px;
@@ -529,11 +535,11 @@ body:after {
     min-width: 18px;
   }
 }
-/* line 396, ../css.source/layout.scss */
+/* line 400, ../css.source/layout.scss */
 #header-page .sign-in a {
   color: #426da9;
 }
-/* line 399, ../css.source/layout.scss */
+/* line 403, ../css.source/layout.scss */
 #header-page .sign-in .link-sign-in, #header-page .sign-in link-sign-out {
   display: inline-block;
   overflow: hidden;
@@ -546,7 +552,7 @@ body:after {
   background-repeat: no-repeat;
 }
 @media (min-width: 650px), print {
-  /* line 399, ../css.source/layout.scss */
+  /* line 403, ../css.source/layout.scss */
   #header-page .sign-in .link-sign-in, #header-page .sign-in link-sign-out {
     width: 50px;
     height: 50px;
@@ -555,7 +561,7 @@ body:after {
   }
 }
 @media (min-width: 769px), print {
-  /* line 399, ../css.source/layout.scss */
+  /* line 403, ../css.source/layout.scss */
   #header-page .sign-in .link-sign-in, #header-page .sign-in link-sign-out {
     width: auto;
     height: auto;
@@ -564,46 +570,46 @@ body:after {
     padding-top: 5px;
   }
 }
-/* line 424, ../css.source/layout.scss */
+/* line 428, ../css.source/layout.scss */
 #header-page .sign-in .link-sign-out {
   background-image: url('../images/icon.mobile.avatar.signed-in.png?6931be1c');
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 424, ../css.source/layout.scss */
+  /* line 428, ../css.source/layout.scss */
   #header-page .sign-in .link-sign-out {
     display: inline-block;
   }
 }
-/* line 432, ../css.source/layout.scss */
+/* line 436, ../css.source/layout.scss */
 #header-page.is-search-active {
   height: 115px;
 }
 @media (min-width: 650px), print {
-  /* line 432, ../css.source/layout.scss */
+  /* line 436, ../css.source/layout.scss */
   #header-page.is-search-active {
     height: 180px;
   }
 }
-/* line 439, ../css.source/layout.scss */
+/* line 443, ../css.source/layout.scss */
 #header-page .nav-main {
   clear: both;
   width: 78%;
 }
 @media (min-width: 930px), print {
-  /* line 439, ../css.source/layout.scss */
+  /* line 443, ../css.source/layout.scss */
   #header-page .nav-main {
     width: 81%;
   }
 }
-/* line 448, ../css.source/layout.scss */
+/* line 452, ../css.source/layout.scss */
 #header-page .nav-main > ul > li {
   float: left;
   width: 20%;
   line-height: 1.125;
   border-top: 5px solid #fff;
 }
-/* line 453, ../css.source/layout.scss */
+/* line 457, ../css.source/layout.scss */
 #header-page .nav-main > ul > li > span a {
   display: block;
   position: relative;
@@ -611,28 +617,28 @@ body:after {
   padding: 12px 5px 0 12px;
 }
 @media (min-width: 820px), print {
-  /* line 453, ../css.source/layout.scss */
+  /* line 457, ../css.source/layout.scss */
   #header-page .nav-main > ul > li > span a {
     padding-left: 20px;
   }
 }
 @media (min-width: 930px), print {
-  /* line 453, ../css.source/layout.scss */
+  /* line 457, ../css.source/layout.scss */
   #header-page .nav-main > ul > li > span a {
     padding-left: 25px;
   }
 }
-/* line 464, ../css.source/layout.scss */
+/* line 468, ../css.source/layout.scss */
 #header-page .nav-main > ul > li > span a br {
   display: none;
 }
 @media (min-width: 820px), print {
-  /* line 464, ../css.source/layout.scss */
+  /* line 468, ../css.source/layout.scss */
   #header-page .nav-main > ul > li > span a br {
     display: block;
   }
 }
-/* line 471, ../css.source/layout.scss */
+/* line 475, ../css.source/layout.scss */
 #header-page .nav-main > ul > li ul {
   display: none;
   position: absolute;
@@ -643,45 +649,45 @@ body:after {
   padding: 13px 20px 16px 12px;
 }
 @media (min-width: 820px), print {
-  /* line 471, ../css.source/layout.scss */
+  /* line 475, ../css.source/layout.scss */
   #header-page .nav-main > ul > li ul {
     padding-left: 20px;
   }
 }
 @media (min-width: 930px), print {
-  /* line 471, ../css.source/layout.scss */
+  /* line 475, ../css.source/layout.scss */
   #header-page .nav-main > ul > li ul {
     padding-left: 25px;
   }
 }
-/* line 485, ../css.source/layout.scss */
+/* line 489, ../css.source/layout.scss */
 #header-page .nav-main > ul > li ul li {
   line-height: 1.188;
   margin-bottom: 13px;
 }
-/* line 490, ../css.source/layout.scss */
+/* line 494, ../css.source/layout.scss */
 #header-page .nav-main > ul > li.is-current {
   border-color: #f4f2f1;
   background: #f4f2f1;
 }
-/* line 493, ../css.source/layout.scss */
+/* line 497, ../css.source/layout.scss */
 #header-page .nav-main > ul > li.is-current > span a:before {
   background: #f4f2f1;
 }
-/* line 496, ../css.source/layout.scss */
+/* line 500, ../css.source/layout.scss */
 #header-page .nav-main > ul > li.is-current + li > span a:before {
   background: #fff;
 }
-/* line 500, ../css.source/layout.scss */
+/* line 504, ../css.source/layout.scss */
 #header-page .nav-main > ul > li.is-active {
   border-color: #7a4183;
   background: none;
 }
-/* line 504, ../css.source/layout.scss */
+/* line 508, ../css.source/layout.scss */
 #header-page .nav-main > ul > li.is-active ul {
   display: block;
 }
-/* line 507, ../css.source/layout.scss */
+/* line 511, ../css.source/layout.scss */
 #header-page .nav-main > ul > li > span a:before {
   content: "";
   display: inline-block;
@@ -693,25 +699,25 @@ body:after {
   top: 15px;
 }
 
-/* line 522, ../css.source/layout.scss */
+/* line 526, ../css.source/layout.scss */
 .logo-u-main {
   float: left;
   padding: 12px 0 0 49px;
 }
 @media (min-width: 650px), print {
-  /* line 522, ../css.source/layout.scss */
+  /* line 526, ../css.source/layout.scss */
   .logo-u-main {
     padding: 24px 0 0 107px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 522, ../css.source/layout.scss */
+  /* line 526, ../css.source/layout.scss */
   .logo-u-main {
     padding: 20px 0 0;
   }
 }
 @media (min-width: 769px), print {
-  /* line 531, ../css.source/layout.scss */
+  /* line 535, ../css.source/layout.scss */
   .logo-u-main a {
     display: block;
     width: 230px;
@@ -721,37 +727,37 @@ body:after {
   }
 }
 @media (min-width: 769px), print {
-  /* line 539, ../css.source/layout.scss */
+  /* line 543, ../css.source/layout.scss */
   html[lang="es"] .logo-u-main a {
     background-image: url('../images/logo.u.espanol.large.png?b17ca15c') !important;
   }
 }
-/* line 545, ../css.source/layout.scss */
+/* line 549, ../css.source/layout.scss */
 .logo-u-main img {
   width: 90px;
 }
 @media (min-width: 650px), print {
-  /* line 545, ../css.source/layout.scss */
+  /* line 549, ../css.source/layout.scss */
   .logo-u-main img {
     width: 180px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 545, ../css.source/layout.scss */
+  /* line 549, ../css.source/layout.scss */
   .logo-u-main img {
     display: none;
   }
 }
-/* line 554, ../css.source/layout.scss */
+/* line 558, ../css.source/layout.scss */
 .no-backgroundsize .logo-u-main a {
   background-image: url('../images/logo.u.large.lo-res.png?9075f13d');
 }
-/* line 557, ../css.source/layout.scss */
+/* line 561, ../css.source/layout.scss */
 html[lang="es"].no-backgroundsize .logo-u-main a {
   background-image: url('../images/logo.u.espanol.large.lo-res.png?e408f627') !important;
 }
 
-/* line 563, ../css.source/layout.scss */
+/* line 567, ../css.source/layout.scss */
 #search-site {
   position: absolute;
   top: 45px;
@@ -760,13 +766,13 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   background: #f4f2f1;
 }
 @media (min-width: 650px), print {
-  /* line 563, ../css.source/layout.scss */
+  /* line 567, ../css.source/layout.scss */
   #search-site {
     top: 90px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 563, ../css.source/layout.scss */
+  /* line 567, ../css.source/layout.scss */
   #search-site {
     float: right;
     position: static;
@@ -775,13 +781,13 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   }
 }
 @media (min-width: 769px), print {
-  /* line 578, ../css.source/layout.scss */
+  /* line 582, ../css.source/layout.scss */
   #search-site.is-focused {
     background: none;
     border-color: #bdbdc0;
   }
 }
-/* line 584, ../css.source/layout.scss */
+/* line 588, ../css.source/layout.scss */
 #search-site legend {
   display: block;
   height: 45px;
@@ -796,7 +802,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   background-position: 50% 50%;
 }
 @media (min-width: 650px), print {
-  /* line 584, ../css.source/layout.scss */
+  /* line 588, ../css.source/layout.scss */
   #search-site legend {
     right: 155px;
     height: 90px;
@@ -806,42 +812,42 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   }
 }
 @media (min-width: 769px), print {
-  /* line 584, ../css.source/layout.scss */
+  /* line 588, ../css.source/layout.scss */
   #search-site legend {
     top: -9999px;
     left: -9999px;
   }
 }
-/* line 607, ../css.source/layout.scss */
+/* line 611, ../css.source/layout.scss */
 .is-search-active #search-site legend {
   background-color: #f4f2f1;
 }
-/* line 611, ../css.source/layout.scss */
+/* line 615, ../css.source/layout.scss */
 #search-site .field {
   display: none;
 }
 @media (min-width: 769px), print {
-  /* line 611, ../css.source/layout.scss */
+  /* line 615, ../css.source/layout.scss */
   #search-site .field {
     display: block;
     height: 28px;
     padding: 2px 10px 0 6px;
   }
 }
-/* line 618, ../css.source/layout.scss */
+/* line 622, ../css.source/layout.scss */
 .is-search-active #search-site .field {
   display: block;
   height: 70px;
   padding: 10px 13px 0;
 }
 @media (min-width: 650px), print {
-  /* line 618, ../css.source/layout.scss */
+  /* line 622, ../css.source/layout.scss */
   .is-search-active #search-site .field {
     height: 90px;
     padding: 16px 33px 0 32px;
   }
 }
-/* line 628, ../css.source/layout.scss */
+/* line 632, ../css.source/layout.scss */
 #search-site input[type="text"] {
   font-size: 14px;
   font-size: 0.875rem;
@@ -853,7 +859,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   padding: 0 10px;
 }
 @media (min-width: 769px), print {
-  /* line 628, ../css.source/layout.scss */
+  /* line 632, ../css.source/layout.scss */
   #search-site input[type="text"] {
     background: none;
     padding: 0;
@@ -863,7 +869,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   }
 }
 @media (min-width: 769px), print {
-  /* line 650, ../css.source/layout.scss */
+  /* line 654, ../css.source/layout.scss */
   #search-site input[type="text"]:focus {
     width: 150px;
     -webkit-transition: all .5s ease;
@@ -873,7 +879,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   }
 }
 @media (min-width: 820px), print {
-  /* line 650, ../css.source/layout.scss */
+  /* line 654, ../css.source/layout.scss */
   #search-site input[type="text"]:focus {
     width: 188px;
   }
@@ -900,7 +906,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
 #search-site input[type="text"]::-webkit-input-placeholder {
   color: #696969;
 }
-/* line 665, ../css.source/layout.scss */
+/* line 669, ../css.source/layout.scss */
 .is-search-active #search-site input[type="text"] {
   font-size: 12px;
   font-size: 0.75rem;
@@ -909,7 +915,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   margin-top: 10px;
 }
 @media (min-width: 650px), print {
-  /* line 665, ../css.source/layout.scss */
+  /* line 669, ../css.source/layout.scss */
   .is-search-active #search-site input[type="text"] {
     font-size: 24px;
     font-size: 1.5rem;
@@ -917,12 +923,12 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
     margin-top: 4px;
   }
 }
-/* line 677, ../css.source/layout.scss */
+/* line 681, ../css.source/layout.scss */
 #search-site input[type="submit"] {
   padding: 0;
   color: inherit;
 }
-/* line 681, ../css.source/layout.scss */
+/* line 685, ../css.source/layout.scss */
 #search-site input[type="submit"]:focus {
   border: solid 2px #99c2e7;
   width: 24px;
@@ -932,7 +938,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   outline: none;
 }
 @media (min-width: 769px), print {
-  /* line 677, ../css.source/layout.scss */
+  /* line 681, ../css.source/layout.scss */
   #search-site input[type="submit"] {
     border: 0;
     width: 20px;
@@ -945,12 +951,12 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
     background-size: 16px 41px;
     text-indent: -999em;
   }
-  /* line 701, ../css.source/layout.scss */
+  /* line 705, ../css.source/layout.scss */
   .no-backgroundsize #search-site input[type="submit"] {
     background-image: url('../images/sprite.icon.search.lo-res.png?ffa3839f');
   }
 }
-/* line 705, ../css.source/layout.scss */
+/* line 709, ../css.source/layout.scss */
 .is-search-active #search-site input[type="submit"] {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -963,7 +969,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   float: right;
 }
 @media (min-width: 650px), print {
-  /* line 705, ../css.source/layout.scss */
+  /* line 709, ../css.source/layout.scss */
   .is-search-active #search-site input[type="submit"] {
     font-size: 18px;
     font-size: 1.125rem;
@@ -971,12 +977,12 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
     min-width: 122px;
   }
 }
-/* line 721, ../css.source/layout.scss */
+/* line 725, ../css.source/layout.scss */
 #search-site.is-focused input[type="submit"] {
   background-position: 50% -23px;
 }
 
-/* line 728, ../css.source/layout.scss */
+/* line 732, ../css.source/layout.scss */
 #toolkit > button {
   background-color: #7a4183;
   color: #fff;
@@ -997,7 +1003,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   text-align: left;
 }
 @media (min-width: 650px), print {
-  /* line 728, ../css.source/layout.scss */
+  /* line 732, ../css.source/layout.scss */
   #toolkit > button {
     width: 155px;
     height: 90px;
@@ -1009,7 +1015,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   }
 }
 @media (min-width: 769px), print {
-  /* line 728, ../css.source/layout.scss */
+  /* line 732, ../css.source/layout.scss */
   #toolkit > button {
     float: right;
     position: static;
@@ -1023,50 +1029,50 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
     cursor: pointer;
   }
 }
-/* line 767, ../css.source/layout.scss */
+/* line 771, ../css.source/layout.scss */
 #toolkit > button.open {
   background-color: #298fc2;
 }
-/* line 769, ../css.source/layout.scss */
+/* line 773, ../css.source/layout.scss */
 #toolkit > button.open:hover, #toolkit > button.open:focus {
   background-color: #298fc2;
 }
-/* line 772, ../css.source/layout.scss */
+/* line 776, ../css.source/layout.scss */
 .touch #toolkit > button.open:hover, .touch #toolkit > button.open:focus {
   background-color: #298fc2;
 }
-/* line 781, ../css.source/layout.scss */
+/* line 785, ../css.source/layout.scss */
 #toolkit > button:hover, #toolkit > button:focus {
   background-color: #298fc2;
   outline: none;
 }
-/* line 785, ../css.source/layout.scss */
+/* line 789, ../css.source/layout.scss */
 .touch #toolkit > button:hover, .touch #toolkit > button:focus {
   background-color: #7a4183;
 }
-/* line 790, ../css.source/layout.scss */
+/* line 794, ../css.source/layout.scss */
 .no-backgroundsize #toolkit > button {
   background-image: url('../images/arrow.down.fff.12.png?77b0482f');
 }
-/* line 798, ../css.source/layout.scss */
+/* line 802, ../css.source/layout.scss */
 #toolkit.is-open > span {
   color: #7a4183;
   background-color: #fdfdfd;
   background-image: url('../images/arrow.up.fff.24.png?f92c32e4');
 }
 @media (min-width: 769px), print {
-  /* line 798, ../css.source/layout.scss */
+  /* line 802, ../css.source/layout.scss */
   #toolkit.is-open > span {
     padding: 13px 35px 0 20px;
     border-top: 5px solid #7a4183;
   }
 }
-/* line 808, ../css.source/layout.scss */
+/* line 812, ../css.source/layout.scss */
 .no-backgroundsize #toolkit.is-open > span {
   background-image: url('../images/arrow.up.fff.12.png?adba2643');
 }
 
-/* line 817, ../css.source/layout.scss */
+/* line 821, ../css.source/layout.scss */
 #button-drawermenu {
   position: absolute;
   z-index: 2;
@@ -1084,7 +1090,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   background-repeat: no-repeat;
 }
 @media (min-width: 650px), print {
-  /* line 817, ../css.source/layout.scss */
+  /* line 821, ../css.source/layout.scss */
   #button-drawermenu {
     width: 44px;
     height: 34px;
@@ -1094,24 +1100,24 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
     background-position: 0 0;
   }
 }
-/* line 841, ../css.source/layout.scss */
+/* line 845, ../css.source/layout.scss */
 #button-drawermenu.is-active {
   background-color: #f2af00;
   background-position: 14px -18px;
 }
 @media (min-width: 650px), print {
-  /* line 841, ../css.source/layout.scss */
+  /* line 845, ../css.source/layout.scss */
   #button-drawermenu.is-active {
     background-position: 0 98%;
     background-color: transparent !important;
   }
 }
-/* line 848, ../css.source/layout.scss */
+/* line 852, ../css.source/layout.scss */
 #button-drawermenu.is-active:hover {
   background-color: #ffbc0d;
 }
 
-/* line 856, ../css.source/layout.scss */
+/* line 860, ../css.source/layout.scss */
 #drawermenu {
   position: fixed;
   top: 0;
@@ -1120,48 +1126,48 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-/* line 863, ../css.source/layout.scss */
+/* line 867, ../css.source/layout.scss */
 #drawermenu.is-wide {
   padding: 17px 19px 0 8px;
   width: 84.4%;
   border-right: 1px solid #dfdfdf;
 }
 @media (min-width: 650px), print {
-  /* line 863, ../css.source/layout.scss */
+  /* line 867, ../css.source/layout.scss */
   #drawermenu.is-wide {
     padding: 30px 43px 0 23px;
   }
 }
-/* line 870, ../css.source/layout.scss */
+/* line 874, ../css.source/layout.scss */
 .language-selector-visible #drawermenu.is-wide {
   padding-top: 62px;
 }
 @media (min-width: 650px), print {
-  /* line 870, ../css.source/layout.scss */
+  /* line 874, ../css.source/layout.scss */
   .language-selector-visible #drawermenu.is-wide {
     padding-top: 120px;
   }
 }
-/* line 877, ../css.source/layout.scss */
+/* line 881, ../css.source/layout.scss */
 #drawermenu .content {
   overflow: hidden;
   padding-bottom: 50px;
 }
-/* line 881, ../css.source/layout.scss */
+/* line 885, ../css.source/layout.scss */
 #drawermenu .logo-u-main {
   padding: 4px 0 0 6px;
 }
 @media (min-width: 650px), print {
-  /* line 881, ../css.source/layout.scss */
+  /* line 885, ../css.source/layout.scss */
   #drawermenu .logo-u-main {
     padding: 8px 0 0 9px;
   }
 }
-/* line 887, ../css.source/layout.scss */
+/* line 891, ../css.source/layout.scss */
 #drawermenu .language-selection {
   display: block;
 }
-/* line 891, ../css.source/layout.scss */
+/* line 895, ../css.source/layout.scss */
 #drawermenu .nav-utility {
   display: block;
   overflow: hidden;
@@ -1170,49 +1176,49 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   line-height: 1.786;
   padding-bottom: 20px;
 }
-/* line 897, ../css.source/layout.scss */
+/* line 901, ../css.source/layout.scss */
 #drawermenu .nav-utility ul {
   float: left;
   position: relative;
   left: 50%;
 }
-/* line 902, ../css.source/layout.scss */
+/* line 906, ../css.source/layout.scss */
 #drawermenu .nav-utility li {
   float: left;
   position: relative;
   right: 50%;
 }
-/* line 907, ../css.source/layout.scss */
+/* line 911, ../css.source/layout.scss */
 #drawermenu .nav-utility li + li {
   border-left: 1px solid #bcbdc0;
 }
-/* line 910, ../css.source/layout.scss */
+/* line 914, ../css.source/layout.scss */
 #drawermenu .nav-utility a {
   display: block;
   padding: 0 13px;
 }
-/* line 914, ../css.source/layout.scss */
+/* line 918, ../css.source/layout.scss */
 #drawermenu .nav-utility li:first-child a {
   padding-left: 0;
 }
-/* line 917, ../css.source/layout.scss */
+/* line 921, ../css.source/layout.scss */
 #drawermenu .nav-utility li:last-child a {
   padding-right: 0;
 }
 @media (min-width: 650px), print {
-  /* line 891, ../css.source/layout.scss */
+  /* line 895, ../css.source/layout.scss */
   #drawermenu .nav-utility {
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 2.778;
     padding-bottom: 30px;
   }
-  /* line 924, ../css.source/layout.scss */
+  /* line 928, ../css.source/layout.scss */
   #drawermenu .nav-utility a {
     padding: 0 49px;
   }
 }
-/* line 930, ../css.source/layout.scss */
+/* line 934, ../css.source/layout.scss */
 #drawermenu .nav-main {
   display: block;
   clear: both;
@@ -1224,7 +1230,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   line-height: 1.056;
 }
 @media (min-width: 650px), print {
-  /* line 930, ../css.source/layout.scss */
+  /* line 934, ../css.source/layout.scss */
   #drawermenu .nav-main {
     font-size: 24px;
     font-size: 1.5rem;
@@ -1233,44 +1239,44 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
     padding-top: 38px;
   }
 }
-/* line 944, ../css.source/layout.scss */
+/* line 948, ../css.source/layout.scss */
 #drawermenu .nav-main br {
   display: none;
 }
-/* line 947, ../css.source/layout.scss */
+/* line 951, ../css.source/layout.scss */
 #drawermenu .nav-main li + li > span {
   border-top: 1px solid #bcbdc0;
 }
-/* line 950, ../css.source/layout.scss */
+/* line 954, ../css.source/layout.scss */
 #drawermenu .nav-main ul {
   width: 50%;
   float: left;
   padding-left: 6px;
 }
 @media (min-width: 650px), print {
-  /* line 950, ../css.source/layout.scss */
+  /* line 954, ../css.source/layout.scss */
   #drawermenu .nav-main ul {
     padding-left: 9px;
   }
 }
-/* line 958, ../css.source/layout.scss */
+/* line 962, ../css.source/layout.scss */
 #drawermenu .nav-main li {
   position: relative;
 }
-/* line 961, ../css.source/layout.scss */
+/* line 965, ../css.source/layout.scss */
 #drawermenu .nav-main li > span {
   display: block;
   padding-right: 35px;
   margin: 0 19px 0 8px;
 }
 @media (min-width: 650px), print {
-  /* line 961, ../css.source/layout.scss */
+  /* line 965, ../css.source/layout.scss */
   #drawermenu .nav-main li > span {
     padding-right: 70px;
     margin: 0 43px 0 23px;
   }
 }
-/* line 971, ../css.source/layout.scss */
+/* line 975, ../css.source/layout.scss */
 #drawermenu .nav-main a,
 #drawermenu .nav-main .title {
   display: block;
@@ -1278,33 +1284,33 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   text-decoration: none;
 }
 @media (min-width: 650px), print {
-  /* line 971, ../css.source/layout.scss */
+  /* line 975, ../css.source/layout.scss */
   #drawermenu .nav-main a,
   #drawermenu .nav-main .title {
     padding: 28px 0 26px;
   }
 }
-/* line 979, ../css.source/layout.scss */
+/* line 983, ../css.source/layout.scss */
 #drawermenu .nav-main .level-2 {
   display: none;
 }
-/* line 981, ../css.source/layout.scss */
+/* line 985, ../css.source/layout.scss */
 #drawermenu .nav-main .level-2 li > span {
   padding-right: 0;
 }
-/* line 985, ../css.source/layout.scss */
+/* line 989, ../css.source/layout.scss */
 #drawermenu .nav-main .level-2 a,
 #drawermenu .nav-main .level-2 .title {
   padding-left: 27px;
 }
 @media (min-width: 650px), print {
-  /* line 985, ../css.source/layout.scss */
+  /* line 989, ../css.source/layout.scss */
   #drawermenu .nav-main .level-2 a,
   #drawermenu .nav-main .level-2 .title {
     padding-left: 32px;
   }
 }
-/* line 991, ../css.source/layout.scss */
+/* line 995, ../css.source/layout.scss */
 #drawermenu .nav-main .level-2 .is-current:after {
   display: none;
   content: 'You are here';
@@ -1323,14 +1329,14 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   line-height: 1.091;
 }
 @media (min-width: 650px), print {
-  /* line 991, ../css.source/layout.scss */
+  /* line 995, ../css.source/layout.scss */
   #drawermenu .nav-main .level-2 .is-current:after {
     padding: 17px 0 0;
     font-size: 22px;
     font-size: 1.375rem;
   }
 }
-/* line 1011, ../css.source/layout.scss */
+/* line 1015, ../css.source/layout.scss */
 #drawermenu .nav-main .level-2 .is-current:before {
   display: none;
   content: '';
@@ -1343,13 +1349,13 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   border-bottom: 9px solid transparent;
 }
 @media (min-width: 650px), print {
-  /* line 1011, ../css.source/layout.scss */
+  /* line 1015, ../css.source/layout.scss */
   #drawermenu .nav-main .level-2 .is-current:before {
     border-width: 18px 18px 18px 0;
     margin-top: -18px;
   }
 }
-/* line 1027, ../css.source/layout.scss */
+/* line 1031, ../css.source/layout.scss */
 #drawermenu .nav-main .button-more {
   width: 22px;
   height: 22px;
@@ -1360,7 +1366,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   top: 20px;
 }
 @media (min-width: 650px), print {
-  /* line 1027, ../css.source/layout.scss */
+  /* line 1031, ../css.source/layout.scss */
   #drawermenu .nav-main .button-more {
     width: 34px;
     height: 34px;
@@ -1369,7 +1375,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
     top: 24px;
   }
 }
-/* line 1043, ../css.source/layout.scss */
+/* line 1047, ../css.source/layout.scss */
 #drawermenu .nav-main .icon-back {
   width: 22px;
   height: 22px;
@@ -1381,7 +1387,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   cursor: pointer;
 }
 @media (min-width: 650px), print {
-  /* line 1043, ../css.source/layout.scss */
+  /* line 1047, ../css.source/layout.scss */
   #drawermenu .nav-main .icon-back {
     width: 34px;
     height: 34px;
@@ -1390,29 +1396,29 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
     top: 23px;
   }
 }
-/* line 1059, ../css.source/layout.scss */
+/* line 1063, ../css.source/layout.scss */
 #drawermenu .nav-main .icon-back:hover {
   background-position: 0 100%;
 }
-/* line 1063, ../css.source/layout.scss */
+/* line 1067, ../css.source/layout.scss */
 #drawermenu .nav-main .slider {
   width: 200%;
   position: relative;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 #drawermenu .nav-main .slider:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 1072, ../css.source/layout.scss */
+/* line 1076, ../css.source/layout.scss */
 #drawermenu.is-open .is-current:after,
 #drawermenu.is-open .is-current:before {
   display: block !important;
 }
 
-/* line 1081, ../css.source/layout.scss */
+/* line 1085, ../css.source/layout.scss */
 #footer-nav {
   margin: 0;
   padding: 0;
@@ -1423,7 +1429,7 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   line-height: 1;
 }
 @media (min-width: 650px), print {
-  /* line 1081, ../css.source/layout.scss */
+  /* line 1085, ../css.source/layout.scss */
   #footer-nav {
     display: table;
     width: 100%;
@@ -1435,19 +1441,19 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   }
 }
 @media (min-width: 769px), print {
-  /* line 1081, ../css.source/layout.scss */
+  /* line 1085, ../css.source/layout.scss */
   #footer-nav {
     padding-left: 0;
     padding-right: 0;
   }
 }
-/* line 1102, ../css.source/layout.scss */
+/* line 1106, ../css.source/layout.scss */
 #footer-nav li {
   border-bottom: 1px solid #bcbdc0;
   vertical-align: top;
 }
 @media (min-width: 650px), print {
-  /* line 1102, ../css.source/layout.scss */
+  /* line 1106, ../css.source/layout.scss */
   #footer-nav li {
     display: table-cell;
     border-bottom: none;
@@ -1456,53 +1462,53 @@ html[lang="es"].no-backgroundsize .logo-u-main a {
   }
 }
 @media (min-width: 650px), print {
-  /* line 1114, ../css.source/layout.scss */
+  /* line 1118, ../css.source/layout.scss */
   #footer-nav li:first-child a {
     padding-left: 0;
     text-align: left;
   }
 }
-/* line 1122, ../css.source/layout.scss */
+/* line 1126, ../css.source/layout.scss */
 #footer-nav li:last-child {
   border-right: none;
   border-bottom: none;
 }
 @media (min-width: 650px), print {
-  /* line 1125, ../css.source/layout.scss */
+  /* line 1129, ../css.source/layout.scss */
   #footer-nav li:last-child a {
     padding-right: 0;
     text-align: right;
   }
 }
-/* line 1133, ../css.source/layout.scss */
+/* line 1137, ../css.source/layout.scss */
 #footer-nav li a {
   display: block;
   padding: 25px 0;
   color: #696969;
 }
-/* line 1138, ../css.source/layout.scss */
+/* line 1142, ../css.source/layout.scss */
 #footer-nav li a:hover {
   color: #426da9;
 }
 @media (min-width: 650px), print {
-  /* line 1133, ../css.source/layout.scss */
+  /* line 1137, ../css.source/layout.scss */
   #footer-nav li a {
     padding: 0 10px;
   }
 }
-/* line 1146, ../css.source/layout.scss */
+/* line 1150, ../css.source/layout.scss */
 #footer-nav li a span {
   display: inline-block;
   text-align: left;
 }
 @media (min-width: 960px), print {
-  /* line 1146, ../css.source/layout.scss */
+  /* line 1150, ../css.source/layout.scss */
   #footer-nav li a span {
     line-height: 25px;
   }
 }
 
-/* line 1162, ../css.source/layout.scss */
+/* line 1166, ../css.source/layout.scss */
 footer#footer-page {
   font-family: Arial, sans-serif;
   background-color: #f4f2f1;
@@ -1516,7 +1522,7 @@ footer#footer-page {
   line-height: 1rem;
 }
 @media (min-width: 650px), print {
-  /* line 1162, ../css.source/layout.scss */
+  /* line 1166, ../css.source/layout.scss */
   footer#footer-page {
     font-size: 16px;
     font-size: 1rem;
@@ -1525,7 +1531,7 @@ footer#footer-page {
   }
 }
 @media (min-width: 769px), print {
-  /* line 1162, ../css.source/layout.scss */
+  /* line 1166, ../css.source/layout.scss */
   footer#footer-page {
     font-size: 14px;
     font-size: 0.875rem;
@@ -1534,7 +1540,7 @@ footer#footer-page {
   }
 }
 @media (min-width: 650px) and (max-width: 768px), print {
-  /* line 1184, ../css.source/layout.scss */
+  /* line 1188, ../css.source/layout.scss */
   footer#footer-page .row .col {
     width: auto;
     float: none;
@@ -1543,42 +1549,42 @@ footer#footer-page {
     padding: 0;
   }
 }
-/* line 1195, ../css.source/layout.scss */
+/* line 1199, ../css.source/layout.scss */
 footer#footer-page .logo-u-footer {
   margin: 0 auto 0 auto;
   display: block;
   width: 25px;
 }
 @media (min-width: 650px), print {
-  /* line 1195, ../css.source/layout.scss */
+  /* line 1199, ../css.source/layout.scss */
   footer#footer-page .logo-u-footer {
     width: 37px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1195, ../css.source/layout.scss */
+  /* line 1199, ../css.source/layout.scss */
   footer#footer-page .logo-u-footer {
     width: 25px;
     margin: 0 auto;
   }
 }
-/* line 1212, ../css.source/layout.scss */
+/* line 1216, ../css.source/layout.scss */
 footer#footer-page .footer-social {
   padding: 50px 30px 20px 30px;
 }
 @media (min-width: 650px), print {
-  /* line 1212, ../css.source/layout.scss */
+  /* line 1216, ../css.source/layout.scss */
   footer#footer-page .footer-social {
     padding: 50px 6.5% 20px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1212, ../css.source/layout.scss */
+  /* line 1216, ../css.source/layout.scss */
   footer#footer-page .footer-social {
     padding: 50px 15px 36px;
   }
 }
-/* line 1225, ../css.source/layout.scss */
+/* line 1229, ../css.source/layout.scss */
 footer#footer-page ul {
   display: table;
   margin: 0 auto 45px auto;
@@ -1587,57 +1593,57 @@ footer#footer-page ul {
   text-align: center;
 }
 @media (min-width: 769px), print {
-  /* line 1225, ../css.source/layout.scss */
+  /* line 1229, ../css.source/layout.scss */
   footer#footer-page ul {
     margin: 0;
     float: right;
   }
 }
-/* line 1237, ../css.source/layout.scss */
+/* line 1241, ../css.source/layout.scss */
 footer#footer-page ul li {
   display: block;
   float: left;
   padding: 0 16px 0 0;
 }
 @media (min-width: 650px), print {
-  /* line 1237, ../css.source/layout.scss */
+  /* line 1241, ../css.source/layout.scss */
   footer#footer-page ul li {
     padding: 0 42px 0 0;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1237, ../css.source/layout.scss */
+  /* line 1241, ../css.source/layout.scss */
   footer#footer-page ul li {
     padding: 0 2px;
   }
 }
-/* line 1250, ../css.source/layout.scss */
+/* line 1254, ../css.source/layout.scss */
 footer#footer-page ul li:first-child {
   padding-left: 0;
 }
-/* line 1254, ../css.source/layout.scss */
+/* line 1258, ../css.source/layout.scss */
 footer#footer-page ul li:last-child {
   padding-right: 0;
 }
-/* line 1260, ../css.source/layout.scss */
+/* line 1264, ../css.source/layout.scss */
 footer#footer-page ul.footer-nav-utility {
   margin-bottom: 25px;
   float: none;
 }
 @media (min-width: 650px), print {
-  /* line 1260, ../css.source/layout.scss */
+  /* line 1264, ../css.source/layout.scss */
   footer#footer-page ul.footer-nav-utility {
     margin-bottom: 40px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1260, ../css.source/layout.scss */
+  /* line 1264, ../css.source/layout.scss */
   footer#footer-page ul.footer-nav-utility {
     margin-top: 18px;
     text-align: left;
   }
 }
-/* line 1273, ../css.source/layout.scss */
+/* line 1277, ../css.source/layout.scss */
 footer#footer-page ul.footer-nav-utility li {
   display: table-cell;
   border-right: 1px solid #696969;
@@ -1645,36 +1651,36 @@ footer#footer-page ul.footer-nav-utility li {
   line-height: 1;
 }
 @media (min-width: 650px), print {
-  /* line 1273, ../css.source/layout.scss */
+  /* line 1277, ../css.source/layout.scss */
   footer#footer-page ul.footer-nav-utility li {
     padding: 0 13px;
   }
 }
-/* line 1283, ../css.source/layout.scss */
+/* line 1287, ../css.source/layout.scss */
 footer#footer-page ul.footer-nav-utility li:first-child {
   padding-left: 0;
 }
-/* line 1287, ../css.source/layout.scss */
+/* line 1291, ../css.source/layout.scss */
 footer#footer-page ul.footer-nav-utility li:last-child {
   padding-right: 0;
   border-right: none;
 }
-/* line 1298, ../css.source/layout.scss */
+/* line 1302, ../css.source/layout.scss */
 footer#footer-page a {
   color: #696969;
 }
-/* line 1302, ../css.source/layout.scss */
+/* line 1306, ../css.source/layout.scss */
 footer#footer-page p {
   text-align: left;
   margin: 0;
 }
 @media (min-width: 769px), print {
-  /* line 1302, ../css.source/layout.scss */
+  /* line 1306, ../css.source/layout.scss */
   footer#footer-page p {
     padding: 0;
   }
 }
-/* line 1312, ../css.source/layout.scss */
+/* line 1316, ../css.source/layout.scss */
 footer#footer-page .icon {
   width: 49px;
   height: 48px;
@@ -1687,7 +1693,7 @@ footer#footer-page .icon {
   text-align: left;
 }
 @media (min-width: 650px), print {
-  /* line 1312, ../css.source/layout.scss */
+  /* line 1316, ../css.source/layout.scss */
   footer#footer-page .icon {
     width: 64px;
     height: 64px;
@@ -1695,203 +1701,203 @@ footer#footer-page .icon {
   }
 }
 @media (min-width: 769px), print {
-  /* line 1312, ../css.source/layout.scss */
+  /* line 1316, ../css.source/layout.scss */
   footer#footer-page .icon {
     width: 42px;
     height: 42px;
     background-size: 193px 93px;
   }
 }
-/* line 1333, ../css.source/layout.scss */
+/* line 1337, ../css.source/layout.scss */
 .no-backgroundsize footer#footer-page .icon {
   width: 42px;
   height: 42px;
   background: url('../images/sprite.social.footer.lo-res.png?a77aa48c');
 }
-/* line 1341, ../css.source/layout.scss */
+/* line 1345, ../css.source/layout.scss */
 footer#footer-page .icon-facebook {
   background-position: 0 0;
 }
-/* line 1344, ../css.source/layout.scss */
+/* line 1348, ../css.source/layout.scss */
 .no-backgroundsize footer#footer-page .icon-facebook {
   background-position: 0 0;
 }
-/* line 1348, ../css.source/layout.scss */
+/* line 1352, ../css.source/layout.scss */
 footer#footer-page .icon-facebook:hover {
   background-position: 0 -56px;
 }
-/* line 1351, ../css.source/layout.scss */
+/* line 1355, ../css.source/layout.scss */
 .touch footer#footer-page .icon-facebook:hover {
   background-position: 0 0;
 }
 @media (min-width: 650px), print {
-  /* line 1348, ../css.source/layout.scss */
+  /* line 1352, ../css.source/layout.scss */
   footer#footer-page .icon-facebook:hover {
     background-position: 0 -74px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1348, ../css.source/layout.scss */
+  /* line 1352, ../css.source/layout.scss */
   footer#footer-page .icon-facebook:hover {
     background-position: 0 -50px;
   }
 }
-/* line 1363, ../css.source/layout.scss */
+/* line 1367, ../css.source/layout.scss */
 .no-backgroundsize footer#footer-page .icon-facebook:hover:hover {
   background-position: 0 -50px;
 }
-/* line 1371, ../css.source/layout.scss */
+/* line 1375, ../css.source/layout.scss */
 footer#footer-page .icon-twitter {
   background-position: -56px 0;
 }
-/* line 1374, ../css.source/layout.scss */
+/* line 1378, ../css.source/layout.scss */
 .no-backgroundsize footer#footer-page .icon-twitter {
   background-position: -50px 0;
 }
 @media (min-width: 650px), print {
-  /* line 1371, ../css.source/layout.scss */
+  /* line 1375, ../css.source/layout.scss */
   footer#footer-page .icon-twitter {
     background-position: -75px 0;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1371, ../css.source/layout.scss */
+  /* line 1375, ../css.source/layout.scss */
   footer#footer-page .icon-twitter {
     background-position: -50px 0;
   }
 }
-/* line 1386, ../css.source/layout.scss */
+/* line 1390, ../css.source/layout.scss */
 footer#footer-page .icon-twitter:hover {
   background-position: -56px -56px;
 }
-/* line 1389, ../css.source/layout.scss */
+/* line 1393, ../css.source/layout.scss */
 .touch footer#footer-page .icon-twitter:hover {
   background-position: -50px 0;
 }
 @media (min-width: 650px), print {
-  /* line 1386, ../css.source/layout.scss */
+  /* line 1390, ../css.source/layout.scss */
   footer#footer-page .icon-twitter:hover {
     background-position: -75px -74px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1386, ../css.source/layout.scss */
+  /* line 1390, ../css.source/layout.scss */
   footer#footer-page .icon-twitter:hover {
     background-position: -50px -50px;
   }
 }
-/* line 1401, ../css.source/layout.scss */
+/* line 1405, ../css.source/layout.scss */
 .no-backgroundsize footer#footer-page .icon-twitter:hover:hover {
   background-position: -50px -50px;
 }
-/* line 1409, ../css.source/layout.scss */
+/* line 1413, ../css.source/layout.scss */
 footer#footer-page .icon-google {
   background-position: -113px 0;
 }
-/* line 1412, ../css.source/layout.scss */
+/* line 1416, ../css.source/layout.scss */
 .no-backgroundsize footer#footer-page .icon-google {
   background-position: -100px 0;
 }
 @media (min-width: 650px), print {
-  /* line 1409, ../css.source/layout.scss */
+  /* line 1413, ../css.source/layout.scss */
   footer#footer-page .icon-google {
     background-position: -151px 0;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1409, ../css.source/layout.scss */
+  /* line 1413, ../css.source/layout.scss */
   footer#footer-page .icon-google {
     background-position: -100px 0;
   }
 }
-/* line 1424, ../css.source/layout.scss */
+/* line 1428, ../css.source/layout.scss */
 footer#footer-page .icon-google:hover {
   background-position: -113px -56px;
 }
-/* line 1427, ../css.source/layout.scss */
+/* line 1431, ../css.source/layout.scss */
 .touch footer#footer-page .icon-google:hover {
   background-position: -100px 0;
 }
 @media (min-width: 650px), print {
-  /* line 1424, ../css.source/layout.scss */
+  /* line 1428, ../css.source/layout.scss */
   footer#footer-page .icon-google:hover {
     background-position: -151px -74px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1424, ../css.source/layout.scss */
+  /* line 1428, ../css.source/layout.scss */
   footer#footer-page .icon-google:hover {
     background-position: -100px -50px;
   }
 }
-/* line 1439, ../css.source/layout.scss */
+/* line 1443, ../css.source/layout.scss */
 .no-backgroundsize footer#footer-page .icon-google:hover:hover {
   background-position: -100px -50px;
 }
-/* line 1447, ../css.source/layout.scss */
+/* line 1451, ../css.source/layout.scss */
 footer#footer-page .icon-pinterest {
   background-position: -170px 0;
 }
-/* line 1450, ../css.source/layout.scss */
+/* line 1454, ../css.source/layout.scss */
 .no-backgroundsize footer#footer-page .icon-pinterest {
   background-position: -150px 0;
 }
 @media (min-width: 650px), print {
-  /* line 1447, ../css.source/layout.scss */
+  /* line 1451, ../css.source/layout.scss */
   footer#footer-page .icon-pinterest {
     background-position: -226px 0;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1447, ../css.source/layout.scss */
+  /* line 1451, ../css.source/layout.scss */
   footer#footer-page .icon-pinterest {
     background-position: -150px 0;
   }
 }
-/* line 1462, ../css.source/layout.scss */
+/* line 1466, ../css.source/layout.scss */
 footer#footer-page .icon-pinterest:hover {
   background-position: -170px -56px;
 }
-/* line 1465, ../css.source/layout.scss */
+/* line 1469, ../css.source/layout.scss */
 .touch footer#footer-page .icon-pinterest:hover {
   background-position: -150px 0;
 }
 @media (min-width: 650px), print {
-  /* line 1462, ../css.source/layout.scss */
+  /* line 1466, ../css.source/layout.scss */
   footer#footer-page .icon-pinterest:hover {
     background-position: -226px -74px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1462, ../css.source/layout.scss */
+  /* line 1466, ../css.source/layout.scss */
   footer#footer-page .icon-pinterest:hover {
     background-position: -150px -50px;
   }
 }
-/* line 1477, ../css.source/layout.scss */
+/* line 1481, ../css.source/layout.scss */
 .no-backgroundsize footer#footer-page .icon-pinterest:hover:hover {
   background-position: -150px -50px;
 }
 
-/* line 1489, ../css.source/layout.scss */
+/* line 1493, ../css.source/layout.scss */
 .page-topic {
   padding: 20px 15px 40px;
   background-color: #f4f2f1;
   margin: 0;
   margin-bottom: 20px;
 }
-/* line 1506, ../css.source/layout.scss */
+/* line 1510, ../css.source/layout.scss */
 .page-topic.no-bottom-margin {
   margin-bottom: 0;
 }
 @media (min-width: 480px), print {
-  /* line 1489, ../css.source/layout.scss */
+  /* line 1493, ../css.source/layout.scss */
   .page-topic {
     padding: 20px 15px 40px;
   }
 }
 @media (min-width: 650px), print {
-  /* line 1489, ../css.source/layout.scss */
+  /* line 1493, ../css.source/layout.scss */
   .page-topic {
     padding: 25px 0 33px;
     margin-bottom: 45px;
@@ -1899,39 +1905,39 @@ footer#footer-page .icon-pinterest:hover {
   }
 }
 @media (min-width: 769px), print {
-  /* line 1489, ../css.source/layout.scss */
+  /* line 1493, ../css.source/layout.scss */
   .page-topic {
     min-height: 183px;
     background-color: #f4f2f1;
   }
 }
-/* line 1524, ../css.source/layout.scss */
+/* line 1528, ../css.source/layout.scss */
 .page-topic.has-recommendations {
   min-height: 270px;
   padding-top: 50px;
   margin-bottom: 20px;
 }
 @media (min-width: 769px), print {
-  /* line 1533, ../css.source/layout.scss */
+  /* line 1537, ../css.source/layout.scss */
   .page-topic.has-recommendations h1 {
     padding-right: 30%;
   }
 }
-/* line 1543, ../css.source/layout.scss */
+/* line 1547, ../css.source/layout.scss */
 .page-topic.has-subhead {
   height: 211px;
   margin-bottom: 75px;
 }
-/* line 1547, ../css.source/layout.scss */
+/* line 1551, ../css.source/layout.scss */
 .page-topic.has-subhead .row:first-child {
   height: 185px;
   padding-bottom: 0;
 }
-/* line 1553, ../css.source/layout.scss */
+/* line 1557, ../css.source/layout.scss */
 .page-topic .row {
   position: relative;
 }
-/* line 1557, ../css.source/layout.scss */
+/* line 1561, ../css.source/layout.scss */
 .page-topic h1 {
   color: #7b3f84;
   font-size: 34px;
@@ -1940,7 +1946,7 @@ footer#footer-page .icon-pinterest:hover {
   line-height: 2.375rem;
 }
 @media (min-width: 650px), print {
-  /* line 1557, ../css.source/layout.scss */
+  /* line 1561, ../css.source/layout.scss */
   .page-topic h1 {
     font-size: 44px;
     font-size: 2.75rem;
@@ -1948,7 +1954,7 @@ footer#footer-page .icon-pinterest:hover {
     line-height: 3rem;
   }
 }
-/* line 1568, ../css.source/layout.scss */
+/* line 1572, ../css.source/layout.scss */
 .page-topic.logged-in h1 {
   font-size: 28px;
   font-size: 1.75rem;
@@ -1956,7 +1962,7 @@ footer#footer-page .icon-pinterest:hover {
   line-height: 2rem;
 }
 @media (min-width: 650px), print {
-  /* line 1568, ../css.source/layout.scss */
+  /* line 1572, ../css.source/layout.scss */
   .page-topic.logged-in h1 {
     font-size: 36px;
     font-size: 2.25rem;
@@ -1964,39 +1970,39 @@ footer#footer-page .icon-pinterest:hover {
     line-height: 2.5rem;
   }
 }
-/* line 1578, ../css.source/layout.scss */
+/* line 1582, ../css.source/layout.scss */
 .page-topic .page-subtitle {
   margin: 20px 0 0 0;
   color: #696969;
   font-size: 18px;
   font-size: 1.125rem;
 }
-/* line 1584, ../css.source/layout.scss */
+/* line 1588, ../css.source/layout.scss */
 .page-topic.behavior-page-topic {
   padding-top: 40px;
 }
-/* line 1586, ../css.source/layout.scss */
+/* line 1590, ../css.source/layout.scss */
 .page-topic.behavior-page-topic .share-save-container div.share-save-icon {
   top: 40px;
 }
 @media (min-width: 650px), print {
-  /* line 1584, ../css.source/layout.scss */
+  /* line 1588, ../css.source/layout.scss */
   .page-topic.behavior-page-topic {
     padding: 45px 0;
   }
-  /* line 1592, ../css.source/layout.scss */
+  /* line 1596, ../css.source/layout.scss */
   .page-topic.behavior-page-topic .share-save-container div.share-save-icon {
     top: 0;
   }
 }
-/* line 1598, ../css.source/layout.scss */
+/* line 1602, ../css.source/layout.scss */
 .page-topic .behavior-subtitle {
   color: #7a4183;
   font-size: 21px;
   font-size: 1.3125rem;
   margin-top: 15px;
 }
-/* line 1604, ../css.source/layout.scss */
+/* line 1608, ../css.source/layout.scss */
 .page-topic a.back-to-previous {
   color: #426da9;
   margin-bottom: 10px;
@@ -2005,30 +2011,30 @@ footer#footer-page .icon-pinterest:hover {
   font-size: 0.875rem;
 }
 @media (min-width: 650px), print {
-  /* line 1604, ../css.source/layout.scss */
+  /* line 1608, ../css.source/layout.scss */
   .page-topic a.back-to-previous {
     margin-bottom: 10px;
   }
 }
 @media (min-width: 769px), print {
-  /* line 1604, ../css.source/layout.scss */
+  /* line 1608, ../css.source/layout.scss */
   .page-topic a.back-to-previous {
     margin-bottom: 17px;
   }
 }
 @media (min-width: 480px), print {
-  /* line 1604, ../css.source/layout.scss */
+  /* line 1608, ../css.source/layout.scss */
   .page-topic a.back-to-previous {
     margin-bottom: 18px;
   }
 }
-/* line 1620, ../css.source/layout.scss */
+/* line 1624, ../css.source/layout.scss */
 .page-topic a.back-to-previous i {
   margin-right: 7px;
   margin-bottom: -1px;
 }
 @media (min-width: 480px), print {
-  /* line 1620, ../css.source/layout.scss */
+  /* line 1624, ../css.source/layout.scss */
   .page-topic a.back-to-previous i {
     margin-right: 13px;
   }

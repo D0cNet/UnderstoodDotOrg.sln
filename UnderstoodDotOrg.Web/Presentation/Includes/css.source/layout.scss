@@ -194,6 +194,10 @@ body:after {
     @include bp($bp-small) {
       color: transparent;
     }
+
+    @include bp($bp-small-plus) {
+      font-weight: 700;
+    }
   }
   a[title]:after {
     @include bp($bp-small) {
