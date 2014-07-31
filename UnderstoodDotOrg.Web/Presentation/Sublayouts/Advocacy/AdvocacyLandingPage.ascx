@@ -46,11 +46,14 @@
                         <h4><sc:FieldRenderer runat="server" FieldName="Sidebar Action Alerts Signup Heading" /></h4>
                         <fieldset>
                             <asp:Label runat="server" CssClass="visuallyhidden" AssociatedControlID="InputAlertSignup" />
-                            <asp:TextBox runat="server" ID="InputAlertSignup" CssClass="take-action-input" />
-                            <asp:Button runat="server" ID="SubmitAlertSignup" CssClass="button take-action-email-button" />
-                            <%--<label for="take-action-email" class="visuallyhidden"></label>
-                            <input type="text" placeholder="Enter email address" name="signup-newsletter-email" id="take-action-email" class="take-action-input">
-                            <input id="take-action-email-button" class="button take-action-email-button" type="submit" value="Sign Up">--%>
+                            <asp:TextBox runat="server" ID="InputAlertSignup" CssClass="take-action-input" TextMode="Email" />
+                            <asp:Button runat="server" ID="SubmitAlertSignup" CssClass="button take-action-email-button" OnClick="SubmitAlertSignup_Click" />
+
+                            <asp:PlaceHolder runat="server" ID="placeholderError" Visible="false">
+                            <div>
+                                <asp:Literal runat="server" ID="literalSignupError" />
+                            </div>
+                            </asp:PlaceHolder>
                         </fieldset>
                     </div>
                     <!-- .donate -->

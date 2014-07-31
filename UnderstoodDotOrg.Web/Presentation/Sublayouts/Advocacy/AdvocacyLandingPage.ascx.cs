@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -12,6 +13,7 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using Sitecore.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
+using UnderstoodDotOrg.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
 {
@@ -68,6 +70,35 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
             }
         }
 
+        protected void SubmitAlertSignup_Click(object sender, EventArgs e)
+        {
+            var givenEmail = InputAlertSignup.Text;
+
+            //src: http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx/
+            string emailGoodEnough = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
+                + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
+                + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+            if (string.IsNullOrWhiteSpace(givenEmail) || !Regex.IsMatch(givenEmail, emailGoodEnough))
+            {
+                AddErrorForEmail();
+            }
+            else
+            {
+                AddEmailViaConvoApi(givenEmail);
+            }
+        }
+
+        private void AddEmailViaConvoApi(string validEmail)
+        {
+            //todo waiting to hear back from NCLD (per bryan)
+        }
+
+        private void AddErrorForEmail()
+        {
+            placeholderError.Visible = true;
+            literalSignupError.Text = DictionaryConstants.SomethingFailedError;
+        }
+
         protected void rptArticles_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             var item = e.Item.DataItem as AdvocacyArticlePageItem;
@@ -120,5 +151,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
                 frButtonText.Item = item;
             }
         }
+
     }
 }
