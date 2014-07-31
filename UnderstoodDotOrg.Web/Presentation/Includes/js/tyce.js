@@ -401,7 +401,7 @@ var TYCE = (function() {
 		// steps for experience
 		$steps = $('.steps li');
 
-		// player container 
+		// player container
 		$tyceplayercontainer = $('.tyce-player-container');
 		$player = $tyceplayercontainer.find('#player');
 		$playerContent = $('.player-content');
@@ -497,7 +497,7 @@ var TYCE = (function() {
 			}
 		});
 
-		// if experience hasn't started 
+		// if experience hasn't started
 		if (!isstarted && opts.isPersonalized) {
 
 			// trigger resize to center modal
@@ -618,11 +618,23 @@ var TYCE = (function() {
 			case 'video':
 
 				// if video player isn't attached
-				if (!videoloaded) {
+				console.log('John testing');
+				console.log('BRIGHTCOVE OBJ', brightcove);
+				if (!videoloaded && brightcove) {
+					attachVideo(step.vid[videotype]);
+					console.log('attach video');
+				} else if (videoloaded && brightcove){
+					loadNextVideo(step.vid[videotype]);
+					console.log('load next video');
+				} else if (!brightcove) {
+					console.log("no brightcove");
+				}
+
+				/* if (!videoloaded) {
 					attachVideo(step.vid[videotype]);
 				} else {
 					loadNextVideo(step.vid[videotype]);
-				}
+				} */
 
 				$skip.show();
 
@@ -736,13 +748,13 @@ var TYCE = (function() {
 			});
 
 		} else {
-			// todo: need to test on ipad to see which events are possible      
+			// todo: need to test on ipad to see which events are possible
 			// var win = document.getElementById('myExperience').contentWindow
 			// win.postMessage({'funct' : 'play'}, "*");
 		}
 	};
 
-	// pause the video 
+	// pause the video
 	function pauseVideo() {
 		// if the flash player is beign used
 		if (playertype == 'flash') {
@@ -916,9 +928,9 @@ var TYCE = (function() {
 			// remove portrait class and add landscape class
 			$('html').removeClass('portrait').addClass('landscape');
 
-			// currently setting height of html, body, form and #wrapper to commpensate for 
+			// currently setting height of html, body, form and #wrapper to commpensate for
 			// iOS's addition of space when setting width and height to 100%
-			// NOTE: setting all of these may not be necessary 
+			// NOTE: setting all of these may not be necessary
 			$('html, body, form, #wrapper').css({
 				'height': window.innerHeight,
 				'overflow': 'hidden'
@@ -929,7 +941,7 @@ var TYCE = (function() {
 				'height': window.innerHeight
 			});
 
-			// when the rotate your phone overlay appears cancel all touchmove events to prevent any scrolling 
+			// when the rotate your phone overlay appears cancel all touchmove events to prevent any scrolling
 			window.ontouchmove = function(event) {
 				event.preventDefault();
 			}
