@@ -505,7 +505,9 @@ var TYCE = (function() {
 			$(window).trigger('resize');
 
 			// show modal
-			$modalbegin.modal('show');
+			$modalbegin.modal('show').find('.button').hide();
+
+
 
 			// set active class of current step
 			$steps.eq(opts.start).addClass('is-active');
@@ -618,23 +620,11 @@ var TYCE = (function() {
 			case 'video':
 
 				// if video player isn't attached
-				console.log('John testing');
-				console.log('BRIGHTCOVE OBJ', brightcove);
-				if (!videoloaded && brightcove) {
-					attachVideo(step.vid[videotype]);
-					console.log('attach video');
-				} else if (videoloaded && brightcove){
-					loadNextVideo(step.vid[videotype]);
-					console.log('load next video');
-				} else if (!brightcove) {
-					console.log("no brightcove");
-				}
-
-				/* if (!videoloaded) {
+				if (!videoloaded) {
 					attachVideo(step.vid[videotype]);
 				} else {
 					loadNextVideo(step.vid[videotype]);
-				} */
+				}
 
 				$skip.show();
 
@@ -694,7 +684,7 @@ var TYCE = (function() {
 	function attachVideo(video) {
 
 	    var usingSSL = window.location.protocol == "https:" ? "true" : "false";
-	    
+
 		var playerData = {
 			"playerID": "3487815387001",
 			"playerKey": "AQ~~,AAAC6NDP1nE~,dOSiqHy89SmnUx7bUwnOZPk5WVUAmCja",
@@ -801,6 +791,8 @@ var TYCE = (function() {
 			captionsModule = _player.getModule(brightcove.api.modules.APIModules.CAPTIONS);
 
 			videoloaded = true;
+
+			$modalbegin.find('.button').fadeIn('fast');
 
 		}
 
