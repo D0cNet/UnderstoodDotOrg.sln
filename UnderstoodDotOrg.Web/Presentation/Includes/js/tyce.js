@@ -705,7 +705,7 @@ var TYCE = (function() {
 		$('#player').append(playerHTML);
 
 		// instantiate the player
-		brightcove.createExperiences();
+		//brightcove.createExperiences();
 
 	};
 
@@ -792,7 +792,11 @@ var TYCE = (function() {
 
 			videoloaded = true;
 
+			// show 'Continue' button
 			$modalbegin.find('.button').fadeIn('fast');
+
+			// instantiate the player
+			brightcove.createExperiences();
 
 		}
 
