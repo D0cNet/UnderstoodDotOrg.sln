@@ -635,7 +635,8 @@ namespace UnderstoodDotOrg.Domain.Search
             {
                 var query = GetCurrentCultureQueryable<Article>(ctx)
                                 .Filter(i => i.Language == Sitecore.Context.Language.Name)
-                                .Filter(i => i.Paths.Contains(container))
+                                .Filter(i => i.Paths.Contains(container)
+                                        && i.ItemId != container)
                                 .Filter(i => i.Templates.Contains(ID.Parse(DefaultArticlePageItem.TemplateId)))
                                 .OrderByDescending(i => i.CreatedDate)
                                 .AsQueryable();
