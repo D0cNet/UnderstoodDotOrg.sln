@@ -3327,61 +3327,63 @@
 .partner-detail-container {
   overflow: hidden;
   *zoom: 1;
+  overflow: visible !important;
+  padding-top: 20px !important;
 }
 
-/* line 13, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 17, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-detail-body {
   width: 70%;
   float: left;
 }
 @media (min-width: 768px) and (max-width: 959px), print {
-  /* line 13, ../css.source/modules/about/_partners-detail-header.scss */
+  /* line 17, ../css.source/modules/about/_partners-detail-header.scss */
   .partner-detail-body {
     width: 100%;
     float: none;
   }
 }
 @media (max-width: 767px), print {
-  /* line 13, ../css.source/modules/about/_partners-detail-header.scss */
+  /* line 17, ../css.source/modules/about/_partners-detail-header.scss */
   .partner-detail-body {
     width: 100%;
     float: none;
   }
 }
 
-/* line 26, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 30, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-detail-sidebar {
   width: 30%;
   float: right;
 }
 @media (min-width: 768px) and (max-width: 959px), print {
-  /* line 26, ../css.source/modules/about/_partners-detail-header.scss */
+  /* line 30, ../css.source/modules/about/_partners-detail-header.scss */
   .partner-detail-sidebar {
     width: 100%;
     float: none;
   }
 }
 @media (max-width: 767px), print {
-  /* line 26, ../css.source/modules/about/_partners-detail-header.scss */
+  /* line 30, ../css.source/modules/about/_partners-detail-header.scss */
   .partner-detail-sidebar {
     width: 100%;
     float: none;
   }
 }
 
-/* line 40, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 44, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading {
   margin-bottom: 20px;
 }
 @media (min-width: 960px), print {
-  /* line 40, ../css.source/modules/about/_partners-detail-header.scss */
+  /* line 44, ../css.source/modules/about/_partners-detail-header.scss */
   .partner-heading {
     float: left;
     max-width: 62.5%;
     margin-top: 1px;
   }
 }
-/* line 49, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 53, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading h1.partner-name {
   color: #7a4183;
   font-size: 30px;
@@ -3392,13 +3394,13 @@
   margin-bottom: 20px;
 }
 @media (min-width: 650px), print {
-  /* line 49, ../css.source/modules/about/_partners-detail-header.scss */
+  /* line 53, ../css.source/modules/about/_partners-detail-header.scss */
   .partner-heading h1.partner-name {
     font-size: 36px;
     font-size: 2.25rem;
   }
 }
-/* line 61, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 65, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading h2.partner-tagline {
   color: #696969;
   font-size: 20px;
@@ -3409,13 +3411,13 @@
   margin-bottom: 20px;
 }
 @media (min-width: 650px), print {
-  /* line 61, ../css.source/modules/about/_partners-detail-header.scss */
+  /* line 65, ../css.source/modules/about/_partners-detail-header.scss */
   .partner-heading h2.partner-tagline {
     font-size: 24px;
     font-size: 1.5rem;
   }
 }
-/* line 73, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 77, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.return-all-partners {
   display: block;
   font-size: 16px;
@@ -3426,21 +3428,21 @@
   margin-bottom: 5px;
 }
 @media (min-width: 650px), print {
-  /* line 73, ../css.source/modules/about/_partners-detail-header.scss */
+  /* line 77, ../css.source/modules/about/_partners-detail-header.scss */
   .partner-heading span.return-all-partners {
     margin-bottom: 15px;
   }
 }
-/* line 84, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 88, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.return-all-partners a {
   color: #7a4183;
   text-decoration: none;
 }
-/* line 88, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 92, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.return-all-partners a:hover {
   text-decoration: underline;
 }
-/* line 94, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 98, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.partner-link {
   font-size: 16px;
   font-size: 1rem;
@@ -3448,11 +3450,11 @@
   line-height: 1.625rem;
   font-weight: normal;
 }
-/* line 99, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 103, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.partner-link a {
   text-decoration: underline;
 }
-/* line 102, ../css.source/modules/about/_partners-detail-header.scss */
+/* line 106, ../css.source/modules/about/_partners-detail-header.scss */
 .partner-heading span.partner-link a:hover {
   text-decoration: none;
 }
