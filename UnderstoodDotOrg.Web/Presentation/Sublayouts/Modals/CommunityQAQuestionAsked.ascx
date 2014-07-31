@@ -77,15 +77,15 @@
                     <h1><sc:Text Field="Submit Your Question" runat="server" /></h1>
                     <h4 class="subhead"><sc:Text Field="Ask Your Question" runat="server" /></h4>
                     <asp:TextBox TextMode="multiline" ID="txtQuestion" class="question" minlength="25" MaxLength="1000" aria-required="required" required="required" placeholder="Enter your question..." runat="server" /><br />
-                    <asp:RegularExpressionValidator ID="valQuestionMinLength" runat="server" ControlToValidate="txtQuestion" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
-                    <asp:RegularExpressionValidator ID="valQuestionMaxLength" runat="server" ControlToValidate="txtQuestion" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="valQuestionMinLength" runat="server" ValidationGroup="QuestionValidation" ControlToValidate="txtQuestion" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="valQuestionMaxLength" runat="server" ValidationGroup="QuestionValidation" ControlToValidate="txtQuestion" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
 
                     <h4 class="subhead"><sc:Text Field="Question Title" runat="server" /></h4>
                     <p><sc:Text Field="Question Title Description" runat="server" /></p>
 
                     <asp:TextBox TextMode="multiline" ID="txtQuestionTitle" class="question-title" minlength="5" MaxLength="100" aria-required="required" required="required" placeholder="Enter your question's title..." runat="server" /><br />
-                    <asp:RegularExpressionValidator ID="valQuestionTitleMinLength" runat="server" ControlToValidate="txtQuestionTitle" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
-                    <asp:RegularExpressionValidator ID="valQuestionTitleMaxLength" runat="server" ControlToValidate="txtQuestionTitle" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="valQuestionTitleMinLength" runat="server" ValidationGroup="QuestionValidation" ControlToValidate="txtQuestionTitle" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="valQuestionTitleMaxLength" runat="server" ValidationGroup="QuestionValidation" ControlToValidate="txtQuestionTitle" CssClass="validationerror" Display="Dynamic"></asp:RegularExpressionValidator>
                     <p class="legend"><sc:Text Field="Question Title Length" runat="server" /></p>
 
                     <fieldset class="related-issues">
@@ -122,7 +122,7 @@
 
                     <div class="button-group">
                         <a href="REPLACE" class="button gray close desktop"><asp:Literal ID="litCancel" runat="server" /></a>
-                        <button onserverclick="SubmitQuestionButton_Click" class="button" runat="server"><sc:Text Field="Submit Your Question" runat="server" /></button>
+                        <button id="btnSubmit" onserverclick="SubmitQuestionButton_Click" causesvalidation="false" onclick="return questionValidate();" class="button" runat="server"><sc:Text Field="Submit Your Question" runat="server" /></button>
                         <a href="REPLACE" class="button gray close mobile"><asp:Literal ID="litCancel2" runat="server" /></a>
                     </div>
                 </div>   
@@ -154,5 +154,11 @@
             $(".show-more-link-qa").hide();
         }
     })
+
+    function questionValidate() {
+        var isValid = Page_ClientValidate("QuestionValidation");
+
+        return isValid;
+    }
 
 </script>
