@@ -680,14 +680,19 @@ var TYCE = (function() {
 
 	// Attach video player
 	function attachVideo(video) {
+
+	    var usingSSL = window.location.protocol == "https:" ? "true" : "false";
+	    
 		var playerData = {
 			"playerID": "3487815387001",
 			"playerKey": "AQ~~,AAAC6NDP1nE~,dOSiqHy89SmnUx7bUwnOZPk5WVUAmCja",
 			"width": "100%",
 			"height": "534",
-			"videoID": null
+			"videoID": null,
+			"secureConnections": usingSSL,
+			"secureHTMLConnections": usingSSL
 		};
-		var playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\"><param name=\"templateReadyHandler\" value=\"TYCE.onTemplateReady\"><param name=\"templateLoadHandler\" value=\"TYCE.onTemplateLoaded\"></object>";
+		var playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\"><param name=\"templateReadyHandler\" value=\"TYCE.onTemplateReady\"><param name=\"templateLoadHandler\" value=\"TYCE.onTemplateLoaded\"><param name=\"secureConnections\" value=\"{{secureConnections}}\" /><param name=\"secureHTMLConnections\" value=\"{{secureHTMLConnections}}\" /></object>";
 
 		playerData.videoID = video;
 
