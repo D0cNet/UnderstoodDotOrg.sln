@@ -49,7 +49,7 @@
 <!-- /.modal -->
 
 
-<script language="JavaScript" type="text/javascript" src="//admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script language="JavaScript" type="text/javascript" src="<%= getBrightcoveExperienceURL() %>"></script>
 <script type="text/javascript" src="//admin.brightcove.com/js/api/SmartPlayerAPI.js"></script>
 <script type="text/javascript" src="//files.brightcove.com/markup.min.js"></script>
 <script type="text/javascript">

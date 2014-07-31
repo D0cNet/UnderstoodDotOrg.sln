@@ -60,6 +60,15 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
             }
         }
 
+        protected string getBrightcoveExperienceURL()
+        {
+            if (CurrentMember != null && CurrentMember.MemberId != null)
+            {
+                return "//sadmin.brightcove.com/js/BrightcoveExperiences.js";
+            }
+            else return "//admin.brightcove.com/js/BrightcoveExperiences.js";
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
