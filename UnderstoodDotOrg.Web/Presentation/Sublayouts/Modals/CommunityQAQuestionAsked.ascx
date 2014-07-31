@@ -122,7 +122,8 @@
 
                     <div class="button-group">
                         <a href="REPLACE" class="button gray close desktop"><asp:Literal ID="litCancel" runat="server" /></a>
-                        <button id="btnSubmit" onserverclick="SubmitQuestionButton_Click" causesvalidation="false" onclick="return questionValidate();" class="button" runat="server"><sc:Text Field="Submit Your Question" runat="server" /></button>
+                        <button id="btnSubmit" onserverclick="SubmitQuestionButton_Click" causesvalidation="false" onclick="if(!questionValidate()) return false;" class="button" runat="server"><sc:Text Field="Submit Your Question" runat="server" /></button>
+
                         <a href="REPLACE" class="button gray close mobile"><asp:Literal ID="litCancel2" runat="server" /></a>
                     </div>
                 </div>   
