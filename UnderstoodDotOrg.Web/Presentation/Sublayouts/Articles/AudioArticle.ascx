@@ -13,9 +13,9 @@
                     <sc:Image ID="imgThumbnail" runat="server" Field="Featured Image" Parameters="mw=290&mh=163" />
                 </div>
                 <div class="audio-quote-text">
-                    <%--<p class="audio-quote-content">"Best quote from the audio file gets shown here dolor sit amet, consectetuer adipiscing elit. Best quote from the audio file gets shown her dolor sit amet, consect etuer adipiscing elit. Best quote from the audio file gets shown her dolor sit amet, consectetuer adipiscing elit."</p>
-    <p class="audio-quote-author">-Dr. Torrington, MD</p>--%>
-                    <sc:FieldRenderer ID="frAudioQuote" runat="server" FieldName="Quote" />
+                    <p class="audio-quote-content">
+                        <sc:FieldRenderer ID="frAudioQuote" runat="server" FieldName="Quote" />
+                    </p>
                 </div>
             </div>
             <!-- END PARTIAL: audio-pull-quote -->
