@@ -1668,13 +1668,6 @@
     <Compile Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx.designer.cs">
       <DependentUpon>CommunityQAQuestionAsked.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx.cs">
-      <DependentUpon>Back To Home.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx.designer.cs">
-      <DependentUpon>Back To Home.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\MyAccount\EmailAndAlertsPreferences.ascx.cs">
       <DependentUpon>EmailAndAlertsPreferences.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3194,7 +3187,6 @@
     <Content Include="Presentation\Sublayouts\Modals\AddAChild.ascx" />
     <Content Include="Presentation\Sublayouts\Modals\Assessment Quiz Modal.ascx" />
     <Content Include="Presentation\Sublayouts\Modals\CommunityQAQuestionAsked.ascx" />
-    <Content Include="Presentation\Sublayouts\MyAccount\Back To Home.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\EmailAndAlertsPreferences.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\Forgot Password.ascx" />
     <Content Include="Presentation\Sublayouts\MyAccount\InternationalUserDisclaimer.ascx" />
