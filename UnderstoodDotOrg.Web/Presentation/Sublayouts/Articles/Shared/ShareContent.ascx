@@ -18,8 +18,10 @@
                     <asp:Literal ID="ltlGooglePlus" runat="server"></asp:Literal></asp:HyperLink>
             </li>
             <li class="clearfix">
-                <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonPin">
-                    <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" /></a>
+                <a class="icon icon-pinterest" href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonPin">
+                    <i class="icon-pinterest"></i>
+                    Pinterest
+				</a>
             </li>
         </ul>
     </div>

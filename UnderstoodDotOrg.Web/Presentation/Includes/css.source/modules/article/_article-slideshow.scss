@@ -439,6 +439,47 @@ $bp-small-720: min-width 720px;
       }
     }
 
+
+    .share-dropdown-menu {
+      z-index: 10;
+
+      ul {
+        margin-left: 15px;
+        margin-right: 15px;
+
+        li {
+          width: 105px;
+          @include rem(font-size, 16px);
+        }
+      }
+
+      a {
+        color: #696969;
+        text-decoration: none;
+        font-family: Arial, Helvetica, san-serif;
+
+        &.icon-facebook:hover,
+        &.icon-facebook:focus {
+          color: #40affc;
+        }
+
+        &.icon-twitter:hover,
+        &.icon-twitter:focus {
+          color: #40affc;
+        }
+
+        &.icon-google:hover,
+        &.icon-google:focus {
+          color: #db0a16;
+        }
+
+        &.icon-pinterest:hover,
+        &.icon-pinterest:focus {
+          color: #cc1f24;
+        }
+      }
+    }
+
     a {
       color: #fff;
       text-decoration: underline;
