@@ -26,6 +26,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                rptrSearchResultsSections.Visible = false;
+                return;
+            }
+
             Session["Search Query"] = Request.RawUrl;
 
             if(context.RelatedArticles.ListItems.Count() > 0)

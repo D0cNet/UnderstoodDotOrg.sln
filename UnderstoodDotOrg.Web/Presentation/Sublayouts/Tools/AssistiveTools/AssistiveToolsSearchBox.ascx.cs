@@ -32,6 +32,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            BindEvents();
+            cvFilters.Text = UnderstoodDotOrg.Common.DictionaryConstants.AssistiveToolRequiredFilterErrorMessage;
+
             if (Sitecore.Context.Language.Name == "es-MX")
             {
                 frNoSpanishWarning.Item = MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage();
@@ -83,6 +86,18 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             }
         }
 
+        private void BindEvents()
+        {
+            cvFilters.ServerValidate += cvFilters_ServerValidate;
+        }
+
+        void cvFilters_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = ddlIssues.SelectedValue != string.Empty
+                || ddlGrades.SelectedValue != string.Empty
+                || ddlTechTypes.SelectedValue != string.Empty;
+        }
+
         protected void btnFindSubmit_Click(object sender, EventArgs e)
         {
             var btnSender = sender as Button;
@@ -98,6 +113,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             }
             else
             {
+                Page.Validate("AssitiveToolFilters");
+                if (!Page.IsValid)
+                {
+                    return;
+                }
+
                 var issueId = ddlIssues.SelectedValue;
                 var gradeId = ddlGrades.SelectedValue;
                 var typeId = ddlTechTypes.SelectedValue;

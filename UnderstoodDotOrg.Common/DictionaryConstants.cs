@@ -932,6 +932,14 @@ namespace UnderstoodDotOrg.Common
 
         #region Registration/Validation
 
+        public static string AssistiveToolRequiredFilterErrorMessage
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Assistive Tool Required Filter Error Message");
+            }
+        }
+
         public static string CommunityQuestionMinimumLength
         {
             get

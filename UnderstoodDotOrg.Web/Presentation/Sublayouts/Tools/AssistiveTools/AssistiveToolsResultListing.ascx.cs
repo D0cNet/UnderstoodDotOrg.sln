@@ -20,6 +20,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                return;
+            }
+
             #region Dictionary Constants
             lblAboutOurRatingSystem.Text = DictionaryConstants.AboutOurRatingSystemLabel;
 			lblBestFragment.Text = DictionaryConstants.BestFragment;

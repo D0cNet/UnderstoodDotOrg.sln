@@ -27,9 +27,10 @@
             </style>
             <div id="browse-by" >
                 <asp:Panel runat="server" CssClass="form rs_read_this" DefaultButton="btnBrowseFind">
-                    <span class="visuallyhidden">Browse By</span>
-                    <span class="visuallyhidden">Search By</span>
+                    <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.BrowseByLabel %></span>
+                    <span class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SearchByLabel %></span>
                     <fieldset>
+                        <asp:CustomValidator ID="cvFilters" runat="server" ValidationGroup="AssitiveToolFilters" />
                         <asp:DropDownList ID="ddlIssues" runat="server" ValidationGroup="vgLearningToolBrowse" CssClass="issue-select">
                         </asp:DropDownList>
                         <asp:DropDownList ID="ddlGrades" runat="server" ValidationGroup="vgLearningToolBrowse" CssClass="grade-select">
