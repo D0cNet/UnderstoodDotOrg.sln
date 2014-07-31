@@ -9,7 +9,7 @@ using CustomItemGenerator.Fields.SimpleTypes;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.SimpleExpertArticle
 {
-public partial class SimpleExpertAddQuestionPageItem : CustomItem
+public partial class SimpleExpertQuestionAnswerItem : CustomItem
 {
 
 public static readonly string TemplateId = "{76EB14F9-CD7C-472C-9CAE-E0470BA471F0}";
@@ -17,17 +17,17 @@ public static readonly string TemplateId = "{76EB14F9-CD7C-472C-9CAE-E0470BA471F
 
 #region Boilerplate CustomItem Code
 
-public SimpleExpertAddQuestionPageItem(Item innerItem) : base(innerItem)
+public SimpleExpertQuestionAnswerItem(Item innerItem) : base(innerItem)
 {
 
 }
 
-public static implicit operator SimpleExpertAddQuestionPageItem(Item innerItem)
+public static implicit operator SimpleExpertQuestionAnswerItem(Item innerItem)
 {
-	return innerItem != null ? new SimpleExpertAddQuestionPageItem(innerItem) : null;
+	return innerItem != null ? new SimpleExpertQuestionAnswerItem(innerItem) : null;
 }
 
-public static implicit operator Item(SimpleExpertAddQuestionPageItem customItem)
+public static implicit operator Item(SimpleExpertQuestionAnswerItem customItem)
 {
 	return customItem != null ? customItem.InnerItem : null;
 }

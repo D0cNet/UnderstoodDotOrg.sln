@@ -435,10 +435,9 @@
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\KnowledgeQuizResultsArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\KnowledgeQuizResultsArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\LandingPageResourceArticlePageItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertAddQuestionPageItem.base.cs" />
-    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertAddQuestionPageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertArticleItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertArticleItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SimpleExpertArticle\SimpleExpertQuestionAnswerItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SlideshowArticlePageItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\SlideshowArticlePageItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Pages\ArticlePages\Slideshow\SlidesPageItem.base.cs" />

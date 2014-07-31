@@ -33,7 +33,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
         {
             if (e.IsItem())
             {
-                var QAItem = e.Item.DataItem as SimpleExpertAddQuestionPageItem;
+                var QAItem = e.Item.DataItem as SimpleExpertQuestionAnswerItem;
 
                 var frQuestion = e.FindControlAs<FieldRenderer>("frQuestion");
                 if (frQuestion != null)

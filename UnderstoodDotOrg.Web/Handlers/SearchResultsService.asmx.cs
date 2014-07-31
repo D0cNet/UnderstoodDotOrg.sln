@@ -61,8 +61,7 @@ namespace UnderstoodDotOrg.Web.Handlers
                         Title = Common.Helpers.TextHelper.HighlightSearchTitle(terms, HttpUtility.HtmlDecode(articleItem.ContentPage.PageTitle.Rendered)),
                         Url = articleItem.GetUrl(),
                         Thumbnail = articleItem.GetArticleThumbnailUrl(230, 129),
-                        Blurb = Common.Helpers.TextHelper.TruncateText(
-                            Sitecore.StringUtil.RemoveTags(HttpUtility.HtmlDecode(articleItem.ContentPage.BodyContent.Raw)), blurbLimit),
+                        Blurb = articleItem.GetSearchResultBlurb(blurbLimit),
                         Type = articleItem.GetArticleType()
                     };
 

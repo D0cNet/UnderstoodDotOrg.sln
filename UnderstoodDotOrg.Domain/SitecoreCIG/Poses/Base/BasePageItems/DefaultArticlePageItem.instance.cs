@@ -11,6 +11,8 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.LandingPages;
 using UnderstoodDotOrg.Domain.Search;
+using System.Web;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages.SimpleExpertArticle;
 
 namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
 {
@@ -161,6 +163,29 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Base.BasePageItems
             }
 
             return results;
+        }
+
+        public string GetSearchResultBlurb(int blurbCharacterLimit)
+        {
+            string source = string.Empty;
+
+            // Look up first question for Expert Article
+            if (InnerItem.TemplateID == Sitecore.Data.ID.Parse(SimpleExpertArticleItem.TemplateId))
+            {
+                SimpleExpertArticleItem sea = InnerItem;
+                SimpleExpertQuestionAnswerItem first = sea.GetSimpleExpertQAList().FirstOrDefault();
+                if (first != null)
+                {
+                    source = first.Question.Raw;
+                }
+            }
+            else
+            {
+                source = ContentPage.BodyContent.Raw;
+            }
+
+            return UnderstoodDotOrg.Common.Helpers.TextHelper.TruncateText(
+                            Sitecore.StringUtil.RemoveTags(HttpUtility.HtmlDecode(source)), blurbCharacterLimit);
         }
     }
 }
