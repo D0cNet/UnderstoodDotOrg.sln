@@ -26,7 +26,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             if (context.KeepReadingContent.ListItems.Count != 0)
             {
-                rptKeepReading.DataSource = context.KeepReadingContent.ListItems.Take(3);
+                rptKeepReading.DataSource = context.KeepReadingContent.ListItems.Where(i => i.InheritsTemplate(DefaultArticlePageItem.TemplateId)).Take(3);
                 rptKeepReading.DataBind();
             }
             else
