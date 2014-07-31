@@ -6,11 +6,31 @@ using System.Threading.Tasks;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.ExactTarget;
 using UnderstoodDotOrg.Domain.Membership;
-
+using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Services.MemberServices;
 namespace UnderstoodDotOrg.Services.CommunityServices
 {
     public class Members
     {
+        public static MemberCardModel MemberCardModelFactory(string musername)
+        {
+            MembershipManager memMan = new MembershipManager();
+
+            Member mUser = memMan.GetMemberByScreenName(musername);
+            return MemberCardModelFactory(mUser);
+        }
+
+        public static MemberCardModel MemberCardModelFactory(Member m)
+        {
+            MemberCardModel mcModel = new MemberCardModel(); 
+             if(m!=null)
+             {
+                 mcModel = new MemberCardModel(m, User.GetUserBadges);
+                 mcModel.UserLocation = m.zipCodeToState();
+             }
+
+                 return mcModel;
+        }
         public static bool SendThinkingOfYou(string senderScreenName, string recipientScreenName)
         {
             try

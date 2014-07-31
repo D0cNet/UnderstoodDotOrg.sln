@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Domain.TelligentCommunity;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.TelligentService;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 {
@@ -19,7 +20,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             var repeater = Page.FindControl("rptModerators") as Repeater;
             if (repeater != null)
             {
-                repeater.DataSource = CommunityHelper.GetModerators();
+                repeater.DataSource = TelligentService.GetModerators();
                 repeater.DataBind();
             }
             //rptModerators.DataSource = CommunityHelper.GetModerators();

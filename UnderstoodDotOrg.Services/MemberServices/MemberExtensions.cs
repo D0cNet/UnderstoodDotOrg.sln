@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using UnderstoodDotOrg.Domain.Membership;
+using UnderstoodDotOrg.Services.CommunityServices;
 
 namespace UnderstoodDotOrg.Services.MemberServices
 {
@@ -14,24 +15,25 @@ namespace UnderstoodDotOrg.Services.MemberServices
         public static string zipCodeToState(this Member member )
         {
             string state = String.Empty;
-            XmlNode node = null;
+           // XmlNode node = null;
             try
             {
-                using (WebClient webClient = new WebClient())
-                {
-                    if (!String.IsNullOrEmpty(member.ZipCode))
-                    {
-                        var requestUrl = "www.webservicex.net/uszip.asmx/GetInfoByZIP?USZip=" + member.ZipCode.Trim();
-                        var xml = webClient.DownloadString(requestUrl);
-                        var xmlDoc = new XmlDocument();
-                        xmlDoc.LoadXml(xml);
-                        node = xmlDoc.SelectSingleNode("NewDataSet/Table/State");
-                        if (node != null)
-                        {
-                            state = node.InnerText;
-                        }
-                    }
-                }
+                //using (WebClient webClient = new WebClient())
+                //{
+                //    if (!String.IsNullOrEmpty(member.ZipCode))
+                //    {
+                //        var requestUrl = "www.webservicex.net/uszip.asmx/GetInfoByZIP?USZip=" + member.ZipCode.Trim();
+                //        var xml = webClient.DownloadString(requestUrl);
+                //        var xmlDoc = new XmlDocument();
+                //        xmlDoc.LoadXml(xml);
+                //        node = xmlDoc.SelectSingleNode("NewDataSet/Table/State");
+                //        if (node != null)
+                //        {
+                //            state = node.InnerText;
+                //        }
+                //    }
+                //}
+               state =  GeoTargeting.GetStateByZip(member.ZipCode);
             }catch(Exception ex)
             {
                 Sitecore.Diagnostics.Log.Error("Error from Member Extension Method zipCodeToState:\n "+ex.Message, ex);

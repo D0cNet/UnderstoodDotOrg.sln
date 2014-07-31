@@ -12,6 +12,7 @@ using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
 using UnderstoodDotOrg.Services.MemberServices;
 using UnderstoodDotOrg.Framework.UI;
+using UnderstoodDotOrg.Services.CommunityServices;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 {
 
@@ -150,7 +151,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
                 //////////////////////////////////////////////////////////
 
 
-                List<MemberCardModel> memberCardSrc = members.Select(m => new MemberCardModel(m, User.GetUserBadges)).ToList<MemberCardModel>();
+                List<MemberCardModel> memberCardSrc = members.Select(m => Members.MemberCardModelFactory(m)).ToList<MemberCardModel>();
 
                 Session["members_parents"] = memberCardSrc;
                 rptMemberCards.DataSource = memberCardSrc.Take(ResultCount).ToList<MemberCardModel>();
@@ -240,7 +241,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
 
 
                 }
-                var memberModels = workingSet.Select(m => new MemberCardModel(m,User.GetUserBadges)).ToList<MemberCardModel>();
+                var memberModels = workingSet.Select(m => Members.MemberCardModelFactory(m)).ToList<MemberCardModel>();
                 Session["members_parents"] = memberModels;
                 return memberModels;
 

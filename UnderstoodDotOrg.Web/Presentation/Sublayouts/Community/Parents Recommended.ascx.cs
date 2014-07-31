@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Understood.Common;
+using UnderstoodDotOrg.Services.CommunityServices;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Common;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
@@ -37,7 +38,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
             List<Member> members = new List<Member>() { mem.GetMember(Guid.Empty) };
             //////////////////////////////////////////////////////////
 
-            List<MemberCardModel> memberCardSrc = members.Select(m => new MemberCardModel(m)).ToList<MemberCardModel>();
+            List<MemberCardModel> memberCardSrc = members.Select(m => Members.MemberCardModelFactory(m)).ToList<MemberCardModel>();
 
             Session["members_parents"] = memberCardSrc;
             rptMemberCards.DataSource = memberCardSrc.Take(25).ToList<MemberCardModel>();

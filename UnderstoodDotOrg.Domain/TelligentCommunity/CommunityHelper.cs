@@ -491,42 +491,42 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
-        public static List<MemberCardModel> GetModerators()
-        {
-            using (var webClient = new WebClient())
-            {
-                string adminKeyBase64 = CommunityHelper.TelligentAuth();
+        //public static List<MemberCardModel> GetModerators()
+        //{
+        //    using (var webClient = new WebClient())
+        //    {
+        //        string adminKeyBase64 = CommunityHelper.TelligentAuth();
 
-                webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
+        //        webClient.Headers.Add("Rest-User-Token", adminKeyBase64);
 
-                var roleid = Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID") ?? "3";
-                var serverHost = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") ?? "localhost/telligent.com";
-                var requestUrl = serverHost + "/api.ashx/v2/roles/" + roleid + "/users.xml";
+        //        var roleid = Sitecore.Configuration.Settings.GetSetting("TelligentModeratorRoleID") ?? "3";
+        //        var serverHost = Sitecore.Configuration.Settings.GetSetting("TelligentConfig") ?? "localhost/telligent.com";
+        //        var requestUrl = serverHost + "/api.ashx/v2/roles/" + roleid + "/users.xml";
 
-                var xml = webClient.DownloadString(requestUrl);
-                var xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
-                var nodes = xmlDoc.SelectNodes("/Response/Users/User");
-                //// PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
-                //// lblCount.Text = nodes.Count.ToString();
-                List<MemberCardModel> memberCardSrc = new List<MemberCardModel>();
-                foreach (XmlNode item in nodes)
-                {
-                    MemberCardModel cm = new MemberCardModel();
-                    cm.AvatarUrl = item.SelectSingleNode("AvatarUrl").InnerText;
+        //        var xml = webClient.DownloadString(requestUrl);
+        //        var xmlDoc = new XmlDocument();
+        //        xmlDoc.LoadXml(xml);
+        //        var nodes = xmlDoc.SelectNodes("/Response/Users/User");
+        //        //// PagedList<Comment> commentList = PublicApi.Comments.Get(new CommentGetOptions() { UserId = 2100 });
+        //        //// lblCount.Text = nodes.Count.ToString();
+        //        List<MemberCardModel> memberCardSrc = new List<MemberCardModel>();
+        //        foreach (XmlNode item in nodes)
+        //        {
+        //            MemberCardModel cm = new MemberCardModel();
+        //            cm.AvatarUrl = item.SelectSingleNode("AvatarUrl").InnerText;
 
-                    // TODO: This is to change once we figure out retrieving users by roleid
-                    cm.UserLabel = "Moderator";
+        //            // TODO: This is to change once we figure out retrieving users by roleid
+        //            cm.UserLabel = "Moderator";
 
-                    cm.UserLocation = item.SelectSingleNode("Location").InnerText;
-                    cm.UserName = item.SelectSingleNode("Username").InnerText;
+        //            cm.UserLocation = item.SelectSingleNode("Location").InnerText;
+        //            cm.UserName = item.SelectSingleNode("Username").InnerText;
 
-                    memberCardSrc.Add(cm);
-                    cm = null;
-                }
-                return memberCardSrc;
-            }
-        }
+        //            memberCardSrc.Add(cm);
+        //            cm = null;
+        //        }
+        //        return memberCardSrc;
+        //    }
+        //}
 
         /// <summary>
         /// Gets a list of blog posts that a specified blog contains.

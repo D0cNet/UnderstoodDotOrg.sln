@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.Understood.Common;
-
+using UnderstoodDotOrg.Services.MemberServices;
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
 {
     public partial class ProfileCommentCard : System.Web.UI.UserControl
@@ -50,7 +50,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common.Cards
                 hypName.NavigateUrl = this.ProfileLink;
                 hypName.Text = mem.UserName;
 
-                litLocation.Text = mem.UserLocation;
+                litLocation.Text = Services.CommunityServices.GeoTargeting.GetStateByZip(mem.UserLocation);
 
                 btnConnect.LoadState(mem.UserName);
 

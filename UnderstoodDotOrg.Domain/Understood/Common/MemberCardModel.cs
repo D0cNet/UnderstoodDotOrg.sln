@@ -29,16 +29,16 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             {
                 if (!String.IsNullOrEmpty(m.ScreenName))
                 {
-                    
-                    this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
-                    this.Children = m.Children.ConvertToChildCardModelList();
-                    this.UserLabel = "Blogger"; //TODO: find role                                                                                   
-                    this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
-                    this.UserName = m.ScreenName;
-                    this.Contactable = m.allowConnections;
-                    this.ProfileLink = m.GetMemberPublicProfile();
-                    if (badgesPop != null)
-                        Badges = badgesPop(m.ScreenName);
+                    initialize(m, badgesPop);
+                    //this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
+                    //this.Children = m.Children.ConvertToChildCardModelList();
+                    //this.UserLabel = "Blogger"; //TODO: find role                                                                                   
+                    //this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
+                    //this.UserName = m.ScreenName;
+                    //this.Contactable = m.allowConnections;
+                    //this.ProfileLink = m.GetMemberPublicProfile();
+                    //if (badgesPop != null)
+                    //    Badges = badgesPop(m.ScreenName);
                 }
             }                                 
         }
@@ -50,19 +50,38 @@ namespace UnderstoodDotOrg.Domain.Understood.Common
             Member mUser = memMan.GetMemberByScreenName(username);
             if (mUser != null)
             {
-               
-                    this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
-                    this.Children = mUser.Children.ConvertToChildCardModelList();
-                    this.UserLabel = "Blogger"; //TODO: find role                                                                                   
-                    this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
-                    this.UserName = mUser.ScreenName;
-                    this.Contactable = mUser.allowConnections;
-                    this.ProfileLink = mUser.GetMemberPublicProfile();
-                    if (badgesPop != null)
-                        Badges = badgesPop(username);
+                initialize(mUser,badgesPop);
+                    //this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
+                    //this.Children = mUser.Children.ConvertToChildCardModelList();
+                    //this.UserLabel = "Blogger"; //TODO: find role                                                                                   
+                    //this.UserLocation = Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
+                    //this.UserName = mUser.ScreenName;
+                    //this.Contactable = mUser.allowConnections;
+                    //this.ProfileLink = mUser.GetMemberPublicProfile();
+                    //if (badgesPop != null)
+                    //    Badges = badgesPop(username);
                 
             }
             
+        }
+        private void initialize(Member m, Func<string, List<UserBadgeModel>> badgesPop = null)
+        {
+            if (m != null)
+            {
+                if (!String.IsNullOrEmpty(m.ScreenName))
+                {
+
+                    this.AvatarUrl = Constants.Settings.AnonymousAvatar; ///TODO: find Avatar URL
+                    this.Children = m.Children.ConvertToChildCardModelList();
+                    this.UserLabel = "Blogger"; //TODO: find role                                                                                   
+                    this.UserLocation = m.ZipCode;// Constants.Settings.DefaultLocation; //TODO: find location translate from zipcode
+                    this.UserName = m.ScreenName;
+                    this.Contactable = m.allowConnections;
+                    this.ProfileLink = m.GetMemberPublicProfile();
+                    if (badgesPop != null)
+                        Badges = badgesPop(m.ScreenName);
+                }
+            }       
         }
         public string AvatarUrl { get; set; }
         public string UserName { get; set; }
