@@ -31,6 +31,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy {
         protected global::Sitecore.Web.UI.WebControls.Sublayout sbCommentsSummary;
         
         /// <summary>
+        /// InputAlertSignup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InputAlertSignup;
+        
+        /// <summary>
+        /// SubmitAlertSignup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SubmitAlertSignup;
+        
+        /// <summary>
         /// pnlPromo control.
         /// </summary>
         /// <remarks>

@@ -19,6 +19,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
     {
         protected void Page_Init(object sender, EventArgs e)
         {
+            SetupSidebarPromoLink();
+            SetupSidebarSignupForm();
+        }
+
+        private void SetupSidebarPromoLink()
+        {
             // Dynamically handle link to prevent wrapping image in link with no href
             if (!string.IsNullOrEmpty(Model.SidebarPromoLink.Url)
                 && Model.SidebarPromoImage.MediaItem != null)
@@ -32,6 +38,12 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Advocacy
             {
                 hlPromo.Visible = false;
             }
+        }
+
+        private void SetupSidebarSignupForm()
+        {
+            InputAlertSignup.Attributes["placeholder"] = Model.SidebarSignupPlaceholder.Raw;
+            SubmitAlertSignup.Text = Model.SidebarSignupButton.Raw;
         }
 
         protected void Page_Load(object sender, EventArgs e)

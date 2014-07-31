@@ -109,6 +109,24 @@ public CustomGeneralLinkField SidebarPromoLink
 }
 
 
+public CustomTextField SidebarSignupPlaceholder
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Sidebar Signup Placeholder"]);
+	}
+}
+
+
+public CustomTextField SidebarSignupButton
+{
+	get
+	{
+		return new CustomTextField(InnerItem, InnerItem.Fields["Sidebar Signup Button"]);
+	}
+}
+
+
 #endregion //Field Instance Methods
 }
 }
