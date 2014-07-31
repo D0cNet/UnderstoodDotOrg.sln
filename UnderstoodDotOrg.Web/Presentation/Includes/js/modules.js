@@ -575,7 +575,7 @@ the callbacks passed to the module.
 
             var maxResults = parseInt($dataMaxResults, 10);
             var resultsPerClick = parseInt($dataResultsPerClick, 10);
-            if (clickCount > Math.ceil(maxResults / resultsPerClick)) {
+            if (clickCount >= Math.ceil(maxResults / resultsPerClick)) {
                 $showMore.parent().parent().hide();
             }
 
