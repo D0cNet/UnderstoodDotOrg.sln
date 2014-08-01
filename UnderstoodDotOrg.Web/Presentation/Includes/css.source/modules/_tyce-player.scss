@@ -326,6 +326,7 @@ html.tyce {
     left: 50%;
     margin-left: -4px;
     background-color: #f4f2f1;
+    outline: 15px solid transparent;
   }
   .ui-slider-vertical .ui-slider-handle {
     left: 50%;
@@ -342,9 +343,10 @@ html.tyce {
   .ui-slider-vertical .ui-slider-range {
     left: 0;
     width: 100%;
+    outline: 15px solid transparent;
   }
   .ui-slider-vertical .ui-slider-range-min {
-    background-color: #7a4183;
+    background-color: #f7ab2e;
   }
   .ui-widget-content {
     border: none;
