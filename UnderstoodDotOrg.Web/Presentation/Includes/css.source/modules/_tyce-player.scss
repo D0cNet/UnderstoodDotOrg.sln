@@ -148,6 +148,7 @@ html.tyce {
 // TYCE player controls
 .controls {
   height: 50px;
+  position: relative;
 
   @include breakpoint($bp-767-and-smaller){
     display: none;
