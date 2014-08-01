@@ -12,11 +12,6 @@
           </ul>
         </div><!-- .get-recommendations -->
     <!-- .get-recommendations -->
-    <div class="thank-you rs_skip">
-      <h4>Thank You!</h4>
-      <p>You've completed <span class="total-completed">3</span> out of <span class="total-questions">100</span> questions.</p>
-      <a href="REPLACE" class="button">Complete my full profile</a>
-    </div><!-- .thank-you -->
 
  </div><!-- .get-better-recommendations -->
 </div><!-- .get-better-recommendations-container --> 
