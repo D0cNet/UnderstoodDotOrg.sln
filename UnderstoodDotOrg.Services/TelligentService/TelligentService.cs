@@ -2944,7 +2944,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             string authorUrl = string.Empty;
                             if (!author.IsNullOrEmpty())
                             {
-                                authorUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{DF854D0A-C127-42CB-90A5-806A695013B1}")), ".aspx", "/") + author;
+                                authorUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{DF854D0A-C127-42CB-90A5-806A695013B1}")), ".aspx", "") + "/" + author;
                             }
                             else {  }
                             bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
@@ -3041,7 +3041,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                             string authorUrl = string.Empty;
                             if (!author.IsNullOrEmpty())
                             {
-                                authorUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{DF854D0A-C127-42CB-90A5-806A695013B1}")), ".aspx", "/") + author;
+                                authorUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{DF854D0A-C127-42CB-90A5-806A695013B1}")), ".aspx", "") + "/" + author;
                             }
                             else { }
                             bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
