@@ -54,15 +54,16 @@
       });
 
 
-        // $('div.tyce-on-demand-container.stories').easytabs({
-        //     tabs: '.tab-controls li'
-        // });
+        $('div.tyce-on-demand-container.stories').easytabs({
+            tabs: '.tab-controls li'
+        });
 
         $('.tyce-personalize').find('.button').on('click', function (e) {
             e.preventDefault();
             $("#tyce-modal-select-child").modal('show');
             $(window).trigger('resize');
         });
+
 
 
 
