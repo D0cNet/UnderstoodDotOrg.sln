@@ -145,7 +145,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About.Newsletter_Signup
                 mm.UpdateMember_ExtendedProperties(member); //bg: Hereya go joe.
 			}
 
-            BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { PreferredLanguage = new Guid(), ToEmail = member.Email, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday" });
+            BaseReply reply = ExactTargetService.InvokeEM7NewsletterConfirmation(new InvokeEM7NewsletterConfirmationRequest { PreferredLanguage = new Guid(), ToEmail = member.Email, ConfirmSubscriptionLink = "www.google.com", WeekDay = "sunday", RequestUrl = Request.Url });
 
             Item next = Sitecore.Context.Database.GetItem(Constants.Pages.NewsletterConfirmation);
             if (next != null) 

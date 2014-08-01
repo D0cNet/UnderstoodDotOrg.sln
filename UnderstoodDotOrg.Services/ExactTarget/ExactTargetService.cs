@@ -349,10 +349,22 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[1];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "fullname";
-						newSub.Attributes[0].Value = request.FirstName;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "fullname";
+                        tempAttribute.Value = request.FirstName;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -460,18 +472,34 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[3];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "fullname";
-						newSub.Attributes[0].Value = request.FullName;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "donation_amount";
-						newSub.Attributes[1].Value = request.DonationAmount;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "fullname";
+                        tempAttribute.Value = request.FullName;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "print_donation_records_link";
-						newSub.Attributes[2].Value = request.PrintDonationRecordsLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "donation_amount";
+                        tempAttribute.Value = request.DonationAmount;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "print_donation_records_link";
+                        tempAttribute.Value = request.PrintDonationRecordsLink;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
+
+
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -584,13 +612,26 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[2];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "child_age";
-						newSub.Attributes[0].Value = request.ChildAge;
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "time_remaining";
-						newSub.Attributes[1].Value = request.TimeRemaining;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "child_age";
+                        tempAttribute.Value = request.ChildAge;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "time_remaining";
+                        tempAttribute.Value = request.TimeRemaining;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -692,16 +733,31 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[3];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "fullname";
-						newSub.Attributes[0].Value = request.FullName;
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "partner_promo";
-						newSub.Attributes[1].Value = request.PartnerPromo;
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "profile_completion_bar";
-						newSub.Attributes[2].Value = request.ProfileCompletionBar;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "fullname";
+                        tempAttribute.Value = request.FullName;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "partner_promo";
+                        tempAttribute.Value = request.PartnerPromo;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "profile_completion_bar";
+                        tempAttribute.Value = request.ProfileCompletionBar;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -905,16 +961,26 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[2];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "week_day";
-						newSub.Attributes[0].Value = request.WeekDay;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "confirm_subscription_link";
-						newSub.Attributes[1].Value = request.WeekDay;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "week_day";
+                        tempAttribute.Value = request.WeekDay;
+                        AttributeList.Add(tempAttribute);
 
-						
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "confirm_subscription_link";
+                        tempAttribute.Value = request.WeekDay;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+                       
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -966,10 +1032,23 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[1];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "profile_completion_bar";
-						newSub.Attributes[0].Value = request.ProfileCompletionBar;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "profile_completion_bar";
+                        tempAttribute.Value = request.ProfileCompletionBar;
+                        AttributeList.Add(tempAttribute);
+
+
+                        newSub.Attributes = AttributeList.ToArray();
+
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1059,8 +1138,6 @@ namespace UnderstoodDotOrg.Services.ExactTarget
                         tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
                         AttributeList.Add(tempAttribute);
 
-
-
                         newSub.Attributes = AttributeList.ToArray();
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
@@ -1113,30 +1190,46 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[6];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "contact_settings_link";
-						newSub.Attributes[0].Value = request.ContactSettingsLink;
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "content_helpfulness_and_comments_module";
-						newSub.Attributes[1].Value = request.ContentHelpfulnessAndCommentsModule;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "reminder_image";
-						newSub.Attributes[2].Value = request.ReminderImage;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "contact_settings_link";
+                        tempAttribute.Value = request.ContactSettingsLink;
+                        AttributeList.Add(tempAttribute);
+                        
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "content_helpfulness_and_comments_module";
+                        tempAttribute.Value = request.ContentHelpfulnessAndCommentsModule;
+                        AttributeList.Add(tempAttribute);
+                        
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "reminder_image";
+                        tempAttribute.Value = request.ReminderImage;
+                        AttributeList.Add(tempAttribute);
+                        
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "reminder_link";
+                        tempAttribute.Value = request.ReminderLink;
+                        AttributeList.Add(tempAttribute);
+                        
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "reminder_summary";
+                        tempAttribute.Value = request.ReminderSummary;
+                        AttributeList.Add(tempAttribute);
+                        
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "reminder_title";
+                        tempAttribute.Value = request.ReminderTitle;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[3] = new etAPI.Attribute();
-						newSub.Attributes[3].Name = "reminder_link";
-						newSub.Attributes[3].Value = request.ReminderLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
 
-						newSub.Attributes[4] = new etAPI.Attribute();
-						newSub.Attributes[4].Name = "reminder_summary";
-						newSub.Attributes[4].Value = request.ReminderSummary;
+                        newSub.Attributes = AttributeList.ToArray();
 
-						newSub.Attributes[5] = new etAPI.Attribute();
-						newSub.Attributes[5].Name = "reminder_title";
-						newSub.Attributes[5].Value = request.ReminderTitle;
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1188,14 +1281,26 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[2];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "child_name";
-						newSub.Attributes[0].Value = request.ChildName;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "observational_journal_link";
-						newSub.Attributes[1].Value = request.ObservationalJournalLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "child_name";
+                        tempAttribute.Value = request.ChildName;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "observational_journal_link";
+                        tempAttribute.Value = request.ObservationalJournalLink;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1247,29 +1352,46 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.EmailAddress = request.ToEmail;
-						newSub.SubscriberKey = request.ToEmail;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes = new etAPI.Attribute[5];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "child_information_confirmation";
-						newSub.Attributes[0].Value = request.ChildInformationConfirmation;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "information_confirmation_link";
-						newSub.Attributes[1].Value = request.InformationConfirmLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "child_information_confirmation";
+                        tempAttribute.Value = request.ChildInformationConfirmation;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "information_denied_link";
-						newSub.Attributes[2].Value = request.InformationDeniedLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "information_confirmation_link";
+                        tempAttribute.Value = request.InformationConfirmLink;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[3] = new etAPI.Attribute();
-						newSub.Attributes[3].Name = "profile_image_link";
-						newSub.Attributes[3].Value = request.ProfileImageLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "information_denied_link";
+                        tempAttribute.Value = request.InformationDeniedLink;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[4] = new etAPI.Attribute();
-						newSub.Attributes[4].Name = "user_profile_link";
-						newSub.Attributes[4].Value = request.UserProfileLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "profile_image_link";
+                        tempAttribute.Value = request.ProfileImageLink;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "user_profile_link";
+                        tempAttribute.Value = request.UserProfileLink;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
+
+
+
+
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1321,10 +1443,21 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[1];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "webinar_module";
-						newSub.Attributes[0].Value = request.WebinarModule;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "webinar_module";
+                        tempAttribute.Value = request.WebinarModule;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1376,22 +1509,39 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[4];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "contact_settings_link";
-						newSub.Attributes[0].Value = request.ContactSettingsLink;
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "msg_center_link";
-						newSub.Attributes[1].Value = request.MsgCenterLink;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "pm_text";
-						newSub.Attributes[2].Value = request.PMText;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[3] = new etAPI.Attribute();
-						newSub.Attributes[3].Name = "report_inappropriate_link";
-						newSub.Attributes[3].Value = request.ReportInappropriateLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "contact_settings_link";
+                        tempAttribute.Value = request.ContactSettingsLink;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "msg_center_link";
+                        tempAttribute.Value = request.MsgCenterLink;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "pm_text";
+                        tempAttribute.Value = request.PMText;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "report_inappropriate_link";
+                        tempAttribute.Value = request.ReportInappropriateLink;
+                        AttributeList.Add(tempAttribute);
+
+
+                        newSub.Attributes = AttributeList.ToArray();
+
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1444,14 +1594,26 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[2];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "password_reset_link";
-						newSub.Attributes[0].Value = request.PasswordResetLink;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "user_name";
-						newSub.Attributes[1].Value = request.ToEmail;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "password_reset_link";
+                        tempAttribute.Value = request.PasswordResetLink;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "user_name";
+                        tempAttribute.Value = request.ToEmail;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1503,18 +1665,29 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[3];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "password_reset_link";
-						newSub.Attributes[0].Value = request.ReportChangedPasswordLink;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "user_name";
-						newSub.Attributes[1].Value = request.EmailAddress;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "password_reset_link";
+                        tempAttribute.Value = request.ReportChangedPasswordLink;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "user_password";
-						newSub.Attributes[2].Value = request.UserPassword;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "user_name";
+                        tempAttribute.Value = request.EmailAddress;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "user_password";
+                        tempAttribute.Value = request.UserPassword;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+                        newSub.Attributes = AttributeList.ToArray();
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1566,34 +1739,52 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[7];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "content_helpfulness_and_comments_module";
-						newSub.Attributes[0].Value = request.ContentHelpfulnessAndCommentsModule;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "pm_text";
-						newSub.Attributes[1].Value = request.PMText;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "reminder_image";
-						newSub.Attributes[2].Value = request.ReminderImage;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "content_helpfulness_and_comments_module";
+                        tempAttribute.Value = request.ContentHelpfulnessAndCommentsModule;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[3] = new etAPI.Attribute();
-						newSub.Attributes[3].Name = "reminder_link";
-						newSub.Attributes[3].Value = request.ReminderLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "pm_text";
+                        tempAttribute.Value = request.PMText;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[4] = new etAPI.Attribute();
-						newSub.Attributes[4].Name = "reminder_summary";
-						newSub.Attributes[4].Value = request.ReminderSummary;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "reminder_image";
+                        tempAttribute.Value = request.ReminderImage;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[5] = new etAPI.Attribute();
-						newSub.Attributes[5].Name = "reminder_title";
-						newSub.Attributes[5].Value = request.ReminderTitle;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "reminder_link";
+                        tempAttribute.Value = request.ReminderLink;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[6] = new etAPI.Attribute();
-						newSub.Attributes[6].Name = "user_contact_first_name";
-						newSub.Attributes[6].Value = request.UserContactFirstName;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "reminder_summary";
+                        tempAttribute.Value = request.ReminderSummary;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "reminder_title";
+                        tempAttribute.Value = request.ReminderTitle;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "user_contact_first_name";
+                        tempAttribute.Value = request.UserContactFirstName;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1645,18 +1836,32 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[7];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "pm_text";
-						newSub.Attributes[0].Value = request.PMText;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "user_contact_first_name";
-						newSub.Attributes[1].Value = request.UserContactFirstName;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "webinar_module";
-						newSub.Attributes[2].Value = request.WebinarModule;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "pm_text";
+                        tempAttribute.Value = request.PMText;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "user_contact_first_name";
+                        tempAttribute.Value = request.UserContactFirstName;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "webinar_module";
+                        tempAttribute.Value = request.WebinarModule;
+                        AttributeList.Add(tempAttribute);
+
+                        newSub.Attributes = AttributeList.ToArray();
+
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1708,50 +1913,77 @@ namespace UnderstoodDotOrg.Services.ExactTarget
 						newSub.EmailAddress = request.ToEmail;
 						newSub.SubscriberKey = request.ToEmail;
 
-						newSub.Attributes = new etAPI.Attribute[11];
-						newSub.Attributes[0] = new etAPI.Attribute();
-						newSub.Attributes[0].Name = "app_description";
-						newSub.Attributes[0].Value = request.AppDescription;
 
-						newSub.Attributes[1] = new etAPI.Attribute();
-						newSub.Attributes[1].Name = "app_good_for";
-						newSub.Attributes[1].Value = request.AppGoodFor;
 
-						newSub.Attributes[2] = new etAPI.Attribute();
-						newSub.Attributes[2].Name = "app_grade";
-						newSub.Attributes[2].Value = request.AppGrade;
+                        etAPI.Attribute tempAttribute;
+                        List<etAPI.Attribute> AttributeList = new List<etAPI.Attribute>();
 
-						newSub.Attributes[3] = new etAPI.Attribute();
-						newSub.Attributes[3].Name = "app_learning_link";
-						newSub.Attributes[3].Value = request.AppLearningLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[4] = new etAPI.Attribute();
-						newSub.Attributes[4].Name = "app_link";
-						newSub.Attributes[4].Value = request.AppLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_description";
+                        tempAttribute.Value = request.AppDescription;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[5] = new etAPI.Attribute();
-						newSub.Attributes[5].Name = "app_logo";
-						newSub.Attributes[5].Value = request.AppLogo;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_good_for";
+                        tempAttribute.Value = request.AppGoodFor;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[6] = new etAPI.Attribute();
-						newSub.Attributes[6].Name = "app_quality";
-						newSub.Attributes[6].Value = request.AppQuality;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_grade";
+                        tempAttribute.Value = request.AppGrade;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[7] = new etAPI.Attribute();
-						newSub.Attributes[7].Name = "app_rating_link";
-						newSub.Attributes[7].Value = request.AppRatingLink;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_learning_link";
+                        tempAttribute.Value = request.AppLearningLink;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[8] = new etAPI.Attribute();
-						newSub.Attributes[8].Name = "app_rating_module";
-						newSub.Attributes[8].Value = request.AppRatingModule;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_link";
+                        tempAttribute.Value = request.AppLink;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[9] = new etAPI.Attribute();
-						newSub.Attributes[9].Name = "app_title";
-						newSub.Attributes[9].Value = request.AppTitle;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_logo";
+                        tempAttribute.Value = request.AppLogo;
+                        AttributeList.Add(tempAttribute);
 
-						newSub.Attributes[10] = new etAPI.Attribute();
-						newSub.Attributes[10].Name = "user_contact_first_name";
-						newSub.Attributes[10].Value = request.UserContactFirstName;
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_quality";
+                        tempAttribute.Value = request.AppQuality;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_rating_link";
+                        tempAttribute.Value = request.AppRatingLink;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_rating_module";
+                        tempAttribute.Value = request.AppRatingModule;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "app_title";
+                        tempAttribute.Value = request.AppTitle;
+                        AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "user_contact_first_name";
+                        tempAttribute.Value = request.UserContactFirstName;
+                        AttributeList.Add(tempAttribute);
+
+
+
+                        newSub.Attributes = AttributeList.ToArray();
+
+
+
 
 						ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);
 
@@ -1961,6 +2193,12 @@ namespace UnderstoodDotOrg.Services.ExactTarget
                         tempAttribute.Name = "fullname";
                         tempAttribute.Value = request.UserName ;
                         AttributeList.Add(tempAttribute);
+
+                        tempAttribute = new etAPI.Attribute();
+                        tempAttribute.Name = "domain_link";
+                        tempAttribute.Value = request.RequestUrl.Scheme + "://" + request.RequestUrl.Authority;
+                        AttributeList.Add(tempAttribute);
+                        newSub.Attributes = AttributeList.ToArray();
 
                         newSub.Attributes = AttributeList.ToArray();
                         ExactTargetService.SendEmail(ref client, tsd, ref sbReturnString, newSub);

@@ -47,6 +47,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
                 message.PMText = txtThoughts.Text.Trim();
                 message.ToEmail = txtRecipientEmail.Text.Trim();
                 message.UserContactFirstName = txtYourName.Text.Trim();
+                message.RequestUrl = Request.Url;
 
                 string domain = new Uri(HttpContext.Current.Request.Url.AbsoluteUri).GetLeftPart(UriPartial.Authority);
 

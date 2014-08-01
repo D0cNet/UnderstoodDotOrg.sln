@@ -42,7 +42,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount
             var membershipManager = new MembershipManager();
             membershipManager.UpdateMember(CurrentMember);
 
-			BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { PreferredLanguage = CurrentMember.PreferredLanguage, ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName });
+			BaseReply reply = ExactTargetService.InvokeWelcomeToUnderstood(new InvokeWelcomeToUnderstoodRequest { PreferredLanguage = CurrentMember.PreferredLanguage, ToEmail = CurrentUser.Email, FirstName = CurrentMember.FirstName, RequestUrl = Request.Url });
             
             //string url = MembershipHelper.GetNextStepURL(1);
             // send them to My Account, not into CMP
