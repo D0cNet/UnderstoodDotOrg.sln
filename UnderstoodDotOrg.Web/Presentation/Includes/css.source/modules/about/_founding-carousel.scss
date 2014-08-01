@@ -106,11 +106,9 @@
         a {
           img {
             width: 140px;
-            height: 81px;
 
             @include bp($bp-small-plus) {
               width: 150px;
-              height: 89px;
             }
           } // end li a img
         } // end li a

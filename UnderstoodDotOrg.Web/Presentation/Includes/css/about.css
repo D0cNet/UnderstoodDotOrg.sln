@@ -2939,26 +2939,24 @@
 /* line 107, ../css.source/modules/about/_founding-carousel.scss */
 .founding-container .founding-slides-wrapper ul li a img {
   width: 140px;
-  height: 81px;
 }
 @media (min-width: 650px), print {
   /* line 107, ../css.source/modules/about/_founding-carousel.scss */
   .founding-container .founding-slides-wrapper ul li a img {
     width: 150px;
-    height: 89px;
   }
 }
-/* line 120, ../css.source/modules/about/_founding-carousel.scss */
+/* line 118, ../css.source/modules/about/_founding-carousel.scss */
 .founding-container .founding-slides-wrapper .rsOverflow {
   overflow: visible;
 }
-/* line 124, ../css.source/modules/about/_founding-carousel.scss */
+/* line 122, ../css.source/modules/about/_founding-carousel.scss */
 .founding-container .founding-slides-wrapper .rsArrowLeft .rsArrowIcn {
   top: 110px;
   right: 50%;
   margin-right: 15px;
 }
-/* line 129, ../css.source/modules/about/_founding-carousel.scss */
+/* line 127, ../css.source/modules/about/_founding-carousel.scss */
 .founding-container .founding-slides-wrapper .rsArrowRight .rsArrowIcn {
   top: 110px;
   right: auto;
