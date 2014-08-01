@@ -1924,7 +1924,7 @@ html.canvas .mini-tools-wrap {
   height: 44px;
   background-size: 34px auto;
   text-indent: -9999px;
-  background-image: url('../images/sprite.btn.carousel.play-pause.png?180a1726');
+  background-image: url('../images/sprite.btn.carousel.play-pause.png?38ca3159');
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: 5px 5px;
@@ -1935,11 +1935,11 @@ html.canvas .mini-tools-wrap {
 }
 /* line 52, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .play-pause.play {
-  background-position: 5px -78.5px;
+  background-position: 5px -79px;
 }
 /* line 55, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .play-pause.play:hover {
-  background-position: 5px -120.5px;
+  background-position: 5px -121px;
 }
 /* line 60, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .no-backgroundsize .carousel-tertiary .play-pause {

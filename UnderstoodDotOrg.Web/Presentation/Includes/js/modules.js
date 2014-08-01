@@ -686,242 +686,199 @@ the callbacks passed to the module.
  * @see {@link https://digitalpulp.atlassian.net/browse/UN-921}
  */
 
-(function ($) {
+(function($) {
 
-    U.carousels = function () {
-        U.carousels.readSpeakerStarted = false;
+        U.carousels = function() {
+            U.carousels.readSpeakerStarted = false;
 
-        // Saves initial page load html for carousel
-        var saveSliderHtml;
-        var featuredSliderArr = [];
-        var exploreSliderArr = [];
-        var partnersSliderArr = [];
-        var forYouSliderData = {};
-        var commentGallerySliderArr = [];
-        var parentsAreSayingSliderArr = [];
-        var partnersAnchor;
-        var topicSliderHtml = [];
-        var topicTitles = [];
-        var onResizeEvent = [];
+            // Saves initial page load html for carousel
+            var saveSliderHtml;
+            var featuredSliderArr = [];
+            var exploreSliderArr = [];
+            var partnersSliderArr = [];
+            var forYouSliderData = {};
+            var commentGallerySliderArr = [];
+            var parentsAreSayingSliderArr = [];
+            var partnersAnchor;
+            var topicSliderHtml = [];
+            var topicTitles = [];
+            var onResizeEvent = [];
 
-        // Causes delay to prevent multiple firings on events such as window resize
-        var waitForFinalEvent = (function () {
-            var timers = {};
-            return function (callback, ms, uniqueId) {
-                if (!uniqueId) {
-                    uniqueId = "Don't call this twice without a uniqueId";
-                }
-                if (timers[uniqueId]) {
-                    clearTimeout(timers[uniqueId]);
-                }
-                timers[uniqueId] = setTimeout(callback, ms);
-            };
-        })();
-
-        // Turns an array of li elements into a grouped items based on numOfSlides
-        var parseHtmlSlides = function (globalSlidesArr, numOfSlides) {
-            var html = '';
-            var slideCount = 0;
-            var slidesArr = globalSlidesArr.slice(0);
-            var itemCount = Math.ceil(slidesArr.length / numOfSlides);
-            while (itemCount > 0) {
-                slideCount++;
-                html += '<div class="m-featured-slide"><div class="rsContent"><ul>';
-                for (var i = 0; i < numOfSlides; i++) {
-                    html += slidesArr.shift() || "";
-                }
-                html += '</ul></div></div>';
-                itemCount--;
-            }
-            return html;
-        };
-
-        // Turns array into a string
-        var printArr = function (arr) {
-            var html = '';
-            var cloneArr = arr.slice(0);
-            for (var i = 0; i < cloneArr.length; i++) {
-                html += cloneArr[i];
-            }
-            return html;
-        };
-
-        U.carousels.keyboardAccess = function (carouselWrappers, separatePagination, nestedCarouselContainer, arrowsBeforeContent) {
-            carouselWrappers.each(function (i, carouselWrapper) {
-                carouselWrapper = $(carouselWrapper);
-
-                U.carousels.accessibleControls(carouselWrapper, arrowsBeforeContent);
-
-                if (nestedCarouselContainer) {
-                    U.carousels.accessibleSlides(nestedCarouselContainer);
-                } else {
-                    U.carousels.accessibleSlides(carouselWrapper);
-                }
-
-                if (!separatePagination) {
-                    U.carousels.accessiblePagination(carouselWrapper);
-                }
-
-                /* Keyboard Navigation is disabled in royal sliders as it triggers animation on */
-                /* All visible sliders - this will re-attach navigation for each instance */
-                var sliderEl = nestedCarouselContainer ? nestedCarouselContainer : carouselWrapper,
-                    slider = sliderEl.data('royalSlider');
-                keyActions = {
-                    37: 'prev',
-                    39: 'next'
+            // Causes delay to prevent multiple firings on events such as window resize
+            var waitForFinalEvent = (function() {
+                var timers = {};
+                return function(callback, ms, uniqueId) {
+                    if (!uniqueId) {
+                        uniqueId = "Don't call this twice without a uniqueId";
+                    }
+                    if (timers[uniqueId]) {
+                        clearTimeout(timers[uniqueId]);
+                    }
+                    timers[uniqueId] = setTimeout(callback, ms);
                 };
+            })();
 
-                carouselWrapper.parent().off('keyup.arrows');
-                carouselWrapper.parent().on('keyup.arrows', function (e) {
-                    var action = keyActions[e.keyCode];
-
-                    if (slider && typeof (action) !== 'undefined') {
-                        slider[action]();
+            // Turns an array of li elements into a grouped items based on numOfSlides
+            var parseHtmlSlides = function(globalSlidesArr, numOfSlides) {
+                var html = '';
+                var slideCount = 0;
+                var slidesArr = globalSlidesArr.slice(0);
+                var itemCount = Math.ceil(slidesArr.length / numOfSlides);
+                while (itemCount > 0) {
+                    slideCount++;
+                    html += '<div class="m-featured-slide"><div class="rsContent"><ul>';
+                    for (var i = 0; i < numOfSlides; i++) {
+                        html += slidesArr.shift() || "";
                     }
-                });
-            });
-        };
-
-        // This method replaced the non-accessible pager elements created by RoyalSlider and
-        // Moves them higher in the dom so they are accessible before the carousel contents
-        U.carousels.accessibleControls = function (carouselWrapper, arrowsBeforeContent) {
-            var rsOverflow = carouselWrapper.find('.rsOverflow'),
-                arrowWrappers = carouselWrapper.find('.rsArrow').not('.rsContent .rsArrow'),
-                pagers = carouselWrapper.find('.rsArrowIcn');
-
-            pagers.each(function (i) {
-                var pager = $(this),
-                    newPager = $('<button />').attr('class', 'rsArrowIcn');
-
-                pager.replaceWith(newPager);
-            });
-
-            if (arrowsBeforeContent) {
-                rsOverflow.before(arrowWrappers);
-            } else {
-                rsOverflow.prepend(arrowWrappers);
-            }
-        };
-
-        // This method ensures that only focusable elements within visible slides
-        // can accept focus (Non-visible elements receive tabindex="-1"
-        U.carousels.accessibleSlides = function (carouselWrapper) {
-            var slider = carouselWrapper.data('royalSlider');
-
-            if (slider) {
-                U.carousels.accessibleSlide(carouselWrapper);
-                U.carousels.pauseOnFocus(slider);
-
-                slider.ev.on('rsAfterSlideChange', function () {
-                    U.carousels.accessibleSlide(carouselWrapper);
-                });
-            }
-        };
-
-        // This method handles allowing/disallowing keyboard focus for
-        // each individual slide within a carousel.
-        U.carousels.accessibleSlide = function (carouselWrapper) {
-            var slider = carouselWrapper.data('royalSlider'),
-                slides = slider.slides,
-                len = slides.length,
-                current_slide = slider.currSlide.content;
-
-            for (var i = 0; i < len; i++) {
-                var obj = slides[i],
-                    slide = obj.content,
-                    focusable = slide.find(':focusable');
-                focusable.removeAttr('tabindex');
-                focusable.filter('[data-tabbable]').attr('tabindex', '0');
-                if (!slide.is(current_slide)) {
-                    focusable.attr('tabindex', '-1');
+                    html += '</ul></div></div>';
+                    itemCount--;
                 }
-            }
-        };
+                return html;
+            };
 
-        U.carousels.accessiblePagination = function (carouselWrapper) {
-            var buttons = carouselWrapper.find('.rsBullet > span');
+            // Turns array into a string
+            var printArr = function(arr) {
+                var html = '';
+                var cloneArr = arr.slice(0);
+                for (var i = 0; i < cloneArr.length; i++) {
+                    html += cloneArr[i];
+                }
+                return html;
+            };
 
-            buttons.each(function (i) {
-                var newPage = i + 1;
-                newButton = $('<button />').text('Page ' + newPage);
+            U.carousels.keyboardAccess = function(carouselWrappers, separatePagination, nestedCarouselContainer, arrowsBeforeContent) {
+                carouselWrappers.each(function(i, carouselWrapper) {
+                    carouselWrapper = $(carouselWrapper);
 
-                buttons.eq(i).replaceWith(newButton);
+                    U.carousels.accessibleControls(carouselWrapper, arrowsBeforeContent);
 
-                // Preventing the new button from triggering form submission
-                newButton.on('click', function (e) {
-                    e.preventDefault();
-                });
-            });
-        };
-
-        U.carousels.pauseOnFocus = function (slider) {
-            var wrapper = slider.slidesJQ[0].parent(),
-                focusable = wrapper.find(':focusable');
-
-            focusable.on('focus', function () {
-                slider.stopAutoPlay();
-            });
-        };
-
-        // Creates slider based on window width, and slider array, and jQuery slider Object
-        var responsiveSliderChange = function (sliderArr, sliderExists, sliderObj, numOfSlides, loopBool, scaleWidth, scaleWidthMobile, numOfSlidesMedium, numOfSlidesSmall) {
-            if (sliderExists) {
-                sliderObj.royalSlider('destroy');
-            }
-            sliderObj.html('');
-            if ((numOfSlidesSmall) && Modernizr.mq('(max-width: 479px)')) {
-                sliderObj.html(parseHtmlSlides(sliderArr, numOfSlidesSmall));
-                sliderObj.royalSlider({
-                    keyboardNavEnabled: false,  // enable keyboard arrows nav
-                    autoScaleSlider: true,
-                    autoScaleSliderWidth: scaleWidthMobile, // base slider width. slider will autocalculate the ratio based on these values.
-                    autoHeight: true,
-                    imageScaleMode: 'none',
-                    imageAlignCenter: false,
-                    loop: loopBool,
-                    controlNavigation: 'none',
-                    arrowsNav: true,
-                    arrowsNavAutoHide: false,
-                    navigateByClick: false,
-                    sliderDrag: false,
-                    autoPlay: {
-                        delay: 4000,
-                        enabled: false
+                    if (nestedCarouselContainer) {
+                        U.carousels.accessibleSlides(nestedCarouselContainer);
+                    } else {
+                        U.carousels.accessibleSlides(carouselWrapper);
                     }
+
+                    if (!separatePagination) {
+                        U.carousels.accessiblePagination(carouselWrapper);
+                    }
+
+                    /* Keyboard Navigation is disabled in royal sliders as it triggers animation on */
+                    /* All visible sliders - this will re-attach navigation for each instance */
+                    var sliderEl = nestedCarouselContainer ? nestedCarouselContainer : carouselWrapper,
+                        slider = sliderEl.data('royalSlider');
+                    keyActions = {
+                        37: 'prev',
+                        39: 'next'
+                    };
+
+                    carouselWrapper.parent().off('keyup.arrows');
+                    carouselWrapper.parent().on('keyup.arrows', function(e) {
+                        var action = keyActions[e.keyCode];
+
+                        if (slider && typeof (action) !== 'undefined') {
+                            slider[action]();
+                        }
+                    });
                 });
-            } else if (Modernizr.mq('(max-width: 479px)')) {
-                sliderObj.royalSlider({
-                    keyboardNavEnabled: false,  // enable keyboard arrows nav
-                    autoScaleSlider: true,
-                    autoScaleSliderWidth: scaleWidthMobile, // base slider width. slider will autocalculate the ratio based on these values.
-                    autoHeight: true,
-                    imageScaleMode: 'none',
-                    imageAlignCenter: false,
-                    loop: loopBool,
-                    controlNavigation: 'none',
-                    arrowsNav: true,
-                    arrowsNavAutoHide: false,
-                    navigateByClick: false,
-                    sliderDrag: false,
-                    autoPlay: {
-                        delay: 4000,
-                        enabled: false
-                    },
-                    slides: parseHtmlSlides(sliderArr, 1)
+            };
+
+            // This method replaced the non-accessible pager elements created by RoyalSlider and
+            // Moves them higher in the dom so they are accessible before the carousel contents
+            U.carousels.accessibleControls = function(carouselWrapper, arrowsBeforeContent) {
+                var rsOverflow = carouselWrapper.find('.rsOverflow'),
+                    arrowWrappers = carouselWrapper.find('.rsArrow').not('.rsContent .rsArrow'),
+                    pagers = carouselWrapper.find('.rsArrowIcn');
+
+                pagers.each(function(i) {
+                    var pager = $(this),
+                        newPager = $('<button />').attr('class', 'rsArrowIcn');
+
+                    pager.replaceWith(newPager);
                 });
-            } else {
-                // If an inbetween state is set for 480px >
-                if ((numOfSlidesMedium) && (Modernizr.mq('(min-width: 480px)') && Modernizr.mq('(max-width: 959px)'))) {
-                    sliderObj.html(parseHtmlSlides(sliderArr, numOfSlidesMedium));
+
+                if (arrowsBeforeContent) {
+                    rsOverflow.before(arrowWrappers);
+                } else {
+                    rsOverflow.prepend(arrowWrappers);
+                }
+            };
+
+            // This method ensures that only focusable elements within visible slides
+            // can accept focus (Non-visible elements receive tabindex="-1"
+            U.carousels.accessibleSlides = function(carouselWrapper) {
+                var slider = carouselWrapper.data('royalSlider');
+
+                if (slider) {
+                    U.carousels.accessibleSlide(carouselWrapper);
+                    U.carousels.pauseOnFocus(slider);
+
+                    slider.ev.on('rsAfterSlideChange', function() {
+                        U.carousels.accessibleSlide(carouselWrapper);
+                    });
+                }
+            };
+
+            // This method handles allowing/disallowing keyboard focus for
+            // each individual slide within a carousel.
+            U.carousels.accessibleSlide = function(carouselWrapper) {
+                var slider = carouselWrapper.data('royalSlider'),
+                    slides = slider.slides,
+                    len = slides.length,
+                    current_slide = slider.currSlide.content;
+
+                for (var i = 0; i < len; i++) {
+                    var obj = slides[i],
+                        slide = obj.content,
+                        focusable = slide.find(':focusable');
+                    focusable.removeAttr('tabindex');
+                    focusable.filter('[data-tabbable]').attr('tabindex', '0');
+                    if (!slide.is(current_slide)) {
+                        focusable.attr('tabindex', '-1');
+                    }
+                }
+            };
+
+            U.carousels.accessiblePagination = function(carouselWrapper) {
+                var buttons = carouselWrapper.find('.rsBullet > span');
+
+                buttons.each(function(i) {
+                    var newPage = i + 1;
+                    newButton = $('<button />').text('Page ' + newPage);
+
+                    buttons.eq(i).replaceWith(newButton);
+
+                    // Preventing the new button from triggering form submission
+                    newButton.on('click', function(e) {
+                        e.preventDefault();
+                    });
+                });
+            };
+
+            U.carousels.pauseOnFocus = function(slider) {
+                var wrapper = slider.slidesJQ[0].parent(),
+                    focusable = wrapper.find(':focusable');
+
+                focusable.on('focus', function() {
+                    slider.stopAutoPlay();
+                });
+            };
+
+            // Creates slider based on window width, and slider array, and jQuery slider Object
+            var responsiveSliderChange = function(sliderArr, sliderExists, sliderObj, numOfSlides, loopBool, scaleWidth, scaleWidthMobile, numOfSlidesMedium, numOfSlidesSmall) {
+                if (sliderExists) {
+                    sliderObj.royalSlider('destroy');
+                }
+                sliderObj.html('');
+                if ((numOfSlidesSmall) && Modernizr.mq('(max-width: 479px)')) {
+                    sliderObj.html(parseHtmlSlides(sliderArr, numOfSlidesSmall));
                     sliderObj.royalSlider({
-                        keyboardNavEnabled: false,  // enable keyboard arrows nav
+                        keyboardNavEnabled: false, // enable keyboard arrows nav
                         autoScaleSlider: true,
-                        autoScaleSliderWidth: scaleWidth, // base slider width. slider will autocalculate the ratio based on these values.
+                        autoScaleSliderWidth: scaleWidthMobile, // base slider width. slider will autocalculate the ratio based on these values.
                         autoHeight: true,
                         imageScaleMode: 'none',
                         imageAlignCenter: false,
                         loop: loopBool,
-                        numImagesToPreload: 99,
                         controlNavigation: 'none',
                         arrowsNav: true,
                         arrowsNavAutoHide: false,
@@ -931,116 +888,168 @@ the callbacks passed to the module.
                             delay: 4000,
                             enabled: false
                         }
+                    });
+                } else if (Modernizr.mq('(max-width: 479px)')) {
+                    sliderObj.royalSlider({
+                        keyboardNavEnabled: false, // enable keyboard arrows nav
+                        autoScaleSlider: true,
+                        autoScaleSliderWidth: scaleWidthMobile, // base slider width. slider will autocalculate the ratio based on these values.
+                        autoHeight: true,
+                        imageScaleMode: 'none',
+                        imageAlignCenter: false,
+                        loop: loopBool,
+                        controlNavigation: 'none',
+                        arrowsNav: true,
+                        arrowsNavAutoHide: false,
+                        navigateByClick: false,
+                        sliderDrag: false,
+                        autoPlay: {
+                            delay: 4000,
+                            enabled: false
+                        },
+                        slides: parseHtmlSlides(sliderArr, 1)
                     });
                 } else {
-                    sliderObj.html(parseHtmlSlides(sliderArr, numOfSlides));
-                    sliderObj.royalSlider({
-                        keyboardNavEnabled: false,  // enable keyboard arrows nav
-                        autoScaleSlider: true,
-                        autoScaleSliderWidth: scaleWidth, // base slider width. slider will autocalculate the ratio based on these values.
-                        autoHeight: true,
-                        imageScaleMode: 'none',
-                        imageAlignCenter: false,
-                        loop: loopBool,
-                        numImagesToPreload: 99,
-                        controlNavigation: 'none',
-                        arrowsNav: true,
-                        arrowsNavAutoHide: false,
-                        navigateByClick: false,
-                        sliderDrag: false,
-                        autoPlay: {
-                            delay: 4000,
-                            enabled: false
-                        }
-                    });
+                    // If an inbetween state is set for 480px >
+                    if ((numOfSlidesMedium) && (Modernizr.mq('(min-width: 480px)') && Modernizr.mq('(max-width: 959px)'))) {
+                        sliderObj.html(parseHtmlSlides(sliderArr, numOfSlidesMedium));
+                        sliderObj.royalSlider({
+                            keyboardNavEnabled: false, // enable keyboard arrows nav
+                            autoScaleSlider: true,
+                            autoScaleSliderWidth: scaleWidth, // base slider width. slider will autocalculate the ratio based on these values.
+                            autoHeight: true,
+                            imageScaleMode: 'none',
+                            imageAlignCenter: false,
+                            loop: loopBool,
+                            numImagesToPreload: 99,
+                            controlNavigation: 'none',
+                            arrowsNav: true,
+                            arrowsNavAutoHide: false,
+                            navigateByClick: false,
+                            sliderDrag: false,
+                            autoPlay: {
+                                delay: 4000,
+                                enabled: false
+                            }
+                        });
+                    } else {
+                        sliderObj.html(parseHtmlSlides(sliderArr, numOfSlides));
+                        sliderObj.royalSlider({
+                            keyboardNavEnabled: false, // enable keyboard arrows nav
+                            autoScaleSlider: true,
+                            autoScaleSliderWidth: scaleWidth, // base slider width. slider will autocalculate the ratio based on these values.
+                            autoHeight: true,
+                            imageScaleMode: 'none',
+                            imageAlignCenter: false,
+                            loop: loopBool,
+                            numImagesToPreload: 99,
+                            controlNavigation: 'none',
+                            arrowsNav: true,
+                            arrowsNavAutoHide: false,
+                            navigateByClick: false,
+                            sliderDrag: false,
+                            autoPlay: {
+                                delay: 4000,
+                                enabled: false
+                            }
+                        });
+                    }
                 }
-            }
 
-            /*
+                /*
              creates a readspeaker play button for all elements that have a case of rs_read_this (only for elements that
              do not have a play button). Used to recreate play buttons on resize of window
              */
-            //ReadSpeaker.q(function () {
-            //  U.carousels.readSpeakerStarted = true;
-            //  rspkr.Toggle.createPlayer();
-            //});
+                //ReadSpeaker.q(function () {
+                //  U.carousels.readSpeakerStarted = true;
+                //  rspkr.Toggle.createPlayer();
+                //});
 
-            U.carousels.keyboardAccess(sliderObj);
-        };
+                U.carousels.keyboardAccess(sliderObj);
+            };
 
-        var topicCarousel = function (topicCarousel, sliderExists, sliderHtml) {
-            if (sliderExists) {
-                topicCarousel.royalSlider('destroy');
-                topicCarousel.html(sliderHtml);
-            }
+            var topicCarousel = function(topicCarousel, sliderExists, sliderHtml) {
+                if (sliderExists) {
+                    topicCarousel.royalSlider('destroy');
+                    topicCarousel.html(sliderHtml);
+                }
 
-            var topicCount = 0;
-            jQuery("#topic-carousel .title").each(function () {
-                jQuery(this).html(topicTitles[topicCount]);
-                topicCount++;
-            });
-
-            if (Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')) {
-                topicCarousel.royalSlider({
-                    arrowsNav: false,
-                    arrowsNavAutoHide: false,
-                    navigateByClick: false,
-                    fadeinLoadedSlide: true,
-                    controlNavigationSpacing: 0,
-                    controlNavigation: 'thumbnails',
-                    thumbs: {
-                        autoCenter: false,
-                        fitInViewport: true,
-                        orientation: 'vertical',
-                        spacing: 0,
-                        drag: false,
-                        paddingBottom: 0
-                    },
-                    autoPlay: {
-                        // autoplay options go gere
-                        enabled: true,
-                        pauseOnHover: true,
-                        delay: 2000
-                    },
-                    keyboardNavEnabled: false,
-                    imageScaleMode: 'fill',
-                    imageAlignCenter: true,
-                    slidesSpacing: 0,
-                    loop: true,
-                    loopRewind: true,
-                    numImagesToPreload: 4,
-                    autoScaleSlider: true,
-                    autoScaleSliderHeight: 354,
-                    imgWidth: 630,
-                    imgHeight: 354,
-                    sliderDrag: false
+                var topicCount = 0;
+                jQuery("#topic-carousel .title").each(function() {
+                    jQuery(this).html(topicTitles[topicCount]);
+                    topicCount++;
                 });
-            } else {
-                topicCarousel.royalSlider({
-                    arrowsNav: true,
-                    arrowsNavAutoHide: false,
-                    arrowsNavHideOnTouch: false,
-                    navigateByClick: false,
-                    fadeinLoadedSlide: true,
-                    //      controlNavigationSpacing: 0,
-                    keyboardNavEnabled: false,
-                    imageScaleMode: 'fill',
-                    imageAlignCenter: false,
-                    slidesSpacing: 18,
-                    loop: true,
-                    loopRewind: true,
-                    numImagesToPreload: 4,
-                    autoScaleSlider: true,
-                    //      autoScaleSliderHeight: 354,
-                    autoPlay: {
-                        // autoplay options go gere
-                        enabled: false,
-                        pauseOnHover: true,
-                        delay: 2000
-                    },
-                    sliderDrag: false
-                });
-            }
+
+                if (Modernizr.mq('(min-width: 650px)') || !Modernizr.mq('only all')) {
+                    topicCarousel.royalSlider({
+                        arrowsNav: false,
+                        arrowsNavAutoHide: false,
+                        navigateByClick: false,
+                        fadeinLoadedSlide: true,
+                        controlNavigationSpacing: 0,
+                        controlNavigation: 'thumbnails',
+                        thumbs: {
+                            autoCenter: false,
+                            fitInViewport: true,
+                            orientation: 'vertical',
+                            spacing: 0,
+                            drag: false,
+                            paddingBottom: 0
+                        },
+                        autoPlay: {
+                            // autoplay options go gere
+                            enabled: true,
+                            pauseOnHover: true,
+                            delay: 2000
+                        },
+                        keyboardNavEnabled: false,
+                        imageScaleMode: 'fill',
+                        imageAlignCenter: true,
+                        slidesSpacing: 0,
+                        loop: true,
+                        loopRewind: true,
+                        numImagesToPreload: 4,
+                        autoScaleSlider: true,
+                        autoScaleSliderHeight: 354,
+                        imgWidth: 630,
+                        imgHeight: 354,
+                        sliderDrag: false
+                    });
+                } else {
+                    topicCarousel.royalSlider({
+                        arrowsNav: true,
+                        arrowsNavAutoHide: false,
+                        arrowsNavHideOnTouch: false,
+                        navigateByClick: false,
+                        fadeinLoadedSlide: true,
+                        //      controlNavigationSpacing: 0,
+                        keyboardNavEnabled: false,
+                        imageScaleMode: 'fill',
+                        imageAlignCenter: false,
+                        slidesSpacing: 18,
+                        loop: true,
+                        loopRewind: true,
+                        numImagesToPreload: 4,
+                        autoScaleSlider: true,
+                        //      autoScaleSliderHeight: 354,
+                        autoPlay: {
+                            // autoplay options go gere
+                            enabled: false,
+                            pauseOnHover: true,
+                            delay: 2000
+                        },
+                        sliderDrag: false
+                    });
+                }
+
+                console.log("initial load");
+                console.log("container height :"); 
+                console.log(jQuery('#topic-carousel').height());
+                console.log("container rscontent height :");
+                console.log(jQuery('#topic-carousel .rsContent').height());
+                console.log("container rscontent img height :");
+                console.log(jQuery('#topic-carousel .rsContent img').height());
+                );
 
             var slider = topicCarousel.data('royalSlider'),
                 buttons = topicCarousel.find('.rsTmb'),
@@ -1072,6 +1081,10 @@ the callbacks passed to the module.
                 slider.goTo(index);
             });
 
+            self.attachHandlers = function () {
+                self.dom.playPause.on('click', self.playPause);
+            };
+
             var tcSlideTitle = jQuery("#topic-carousel .rsTmb"),
             tcSlideLength = tcSlideTitle.length,
             tcSlideTitleWrapper = tcSlideTitle.parents('.rsNavItem'),
@@ -1080,12 +1093,6 @@ the callbacks passed to the module.
 
             thumbnailContainer.css("height", "100%");
             tcSlideTitleWrapper.css("height", slideHeight);
-
-            var slideHeight = $('.carousel-tertiary img').height();
-
-            self.attachHandlers = function () {
-                self.dom.playPause.on('click', self.playPause);
-            };
 
             U.carousels.keyboardAccess(topicCarousel);
         };
