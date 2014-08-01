@@ -2918,46 +2918,69 @@ namespace UnderstoodDotOrg.Services.TelligentService
                         XmlNode group = result.SelectSingleNode("Group");
                         XmlNode user = result.SelectSingleNode("Users/User");
 
-                        string id = result["Id"].InnerText;
-                        string bestMatchTitle = result["BestMatchTitle"].InnerText;
-                        string title = result["Title"].InnerText;
-                        string bestMatch = result["BestMatch"].InnerText;
-                        string body = result["Body"].InnerText;
-                        string type = result["ContentType"].InnerText;
-                        string typeTransformed = string.Empty;
-                        string date = DataFormatHelper.FormatDate(result["Date"].InnerText);
-                        string url = string.Empty;
-                        string groupName = string.Empty;
-                        try { groupName = container["HtmlName"].InnerText; }
-                        catch { groupName = string.Empty; }
-                        string author = user["Username"].InnerText;
-
-                        bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
-                        bestMatchTitle = Regex.Replace(title, "</em>", "</strong>");
-                        bestMatch = Regex.Replace(bestMatch, "<em>", "<strong>");
-                        bestMatch = Regex.Replace(bestMatch, "</em>", "</strong>");
-
-                        if (body != string.Empty)
+                        try
                         {
-                            body = "&ldquo;" + body + "&rdquo;";
+                            string id = result["Id"].InnerText;
+                            string bestMatchTitle = result["BestMatchTitle"].InnerText;
+                            string title = result["Title"].InnerText;
+                            string bestMatch = result["BestMatch"].InnerText;
+                            string body = result["Body"].InnerText;
+                            string type = result["ContentType"].InnerText;
+                            string typeTransformed = string.Empty;
+                            string date = DataFormatHelper.FormatDate(result["Date"].InnerText);
+                            string url = string.Empty;
+                            string groupName = string.Empty;
+                            string threadId = string.Empty;
+                            try { threadId = result["ThreadId"].InnerText; }
+                            catch { threadId = string.Empty; }
+                            try { groupName = container["HtmlName"].InnerText; }
+                            catch { groupName = string.Empty; }
+                            string boardName = string.Empty;
+                            try { boardName = application["HtmlName"].InnerText; }
+                            catch { boardName = string.Empty; }
+                            string author = string.Empty;
+                            try { author = user["Username"].InnerText; }
+                            catch { author = string.Empty; }
+                            string authorUrl = string.Empty;
+                            if (!author.IsNullOrEmpty())
+                            {
+                                authorUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{DF854D0A-C127-42CB-90A5-806A695013B1}")), ".aspx", "/") + author;
+                            }
+                            else {  }
+                            bestMatchTitle = Regex.Replace(title, "<em>", "<strong>");
+                            bestMatchTitle = Regex.Replace(title, "</em>", "</strong>");
+                            bestMatch = Regex.Replace(bestMatch, "<em>", "<strong>");
+                            bestMatch = Regex.Replace(bestMatch, "</em>", "</strong>");
+
+                            if (body != string.Empty)
+                            {
+                                body = "&ldquo;" + body + "&rdquo;";
+                            }
+                            string trimName = Regex.Replace(group["Key"].InnerText.Trim().ToLower(), "[^a-zA-Z0-9]+", "");
+                            string compName = Regex.Replace(groupItem.Name.Trim().ToLower(), "[^a-zA-Z0-9_]+", "");
+                            if (trimName.Equals(compName) && !author.IsNullOrEmpty())
+                            {
+                                var searchResult = new SearchResult()
+                                {
+                                    Id = id,
+                                    BestMatchTitle = bestMatchTitle,
+                                    BestMatchBody = FormatString100(bestMatch),
+                                    Type = type,
+                                    TypeTransformed = typeTransformed,
+                                    Date = date,
+                                    Title = title,
+                                    Body = FormatString100(body),
+                                    Url = url,
+                                    Author = author,
+                                    GroupName = groupName,
+                                    Board = boardName,
+                                    AuthorUrl = authorUrl,
+                                    ThreadId = threadId,
+                                };
+                                searchResultsList.Add(searchResult);
+                            }
                         }
-                        if (groupName.Trim().ToLower().Equals(groupItem.Name.Trim().ToLower())){
-                        var searchResult = new SearchResult()
-                        {
-                            Id = id,
-                            BestMatchTitle = bestMatchTitle,
-                            BestMatchBody = FormatString100(bestMatch),
-                            Type = type,
-                            TypeTransformed = typeTransformed,
-                            Date = date,
-                            Title = title,
-                            Body = FormatString100(body),
-                            Url = url,
-                            Author = author,
-                            GroupName = groupName,
-                        };
-                        searchResultsList.Add(searchResult);
-                        }
+                        catch { }
                     }
                 }
             }
@@ -3264,6 +3287,32 @@ namespace UnderstoodDotOrg.Services.TelligentService
             }
             catch { } //TODO: Add Logging
             return blogs;
+        }
+
+        public static Thread GetThreadData(string threadId)
+        {
+            Thread thread = new Thread();
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers.Add("Rest-User-Token", TelligentService.TelligentAuth());
+                var requestUrl = GetApiEndPoint(string.Format("forums/threads/{0}.xml", threadId));
+
+                var xml = webClient.DownloadString(requestUrl);
+
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+
+                XmlNode response = xmlDoc.SelectSingleNode("Response/Thread");
+                XmlNode createdBy = response.SelectSingleNode("Content/CreatedByUser");
+
+                thread = new Thread()
+                {
+                    ReplyCount = response["ReplyCount"].InnerText,
+                    StartedBy = createdBy["Username"].InnerText,
+
+                };
+            }
+            return thread;
         }
     }
 }

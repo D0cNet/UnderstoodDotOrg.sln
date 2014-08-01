@@ -20,6 +20,9 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string GroupName { get; set; }
         public string Author { get; set; }
         public string ReplyCount { get; set; }
+        public string Board { get; set; }
+        public string AuthorUrl { get; set; }
+        public string ThreadId { get; set; }
 
         public SearchResult() { }
     }

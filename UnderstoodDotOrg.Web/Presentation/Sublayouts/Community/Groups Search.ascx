@@ -8,7 +8,8 @@
             <header class="groups-heading">
                 <div class="col col-24 rs_read_this">
                     <div class="col col-18 title">
-                        <h2><asp:Literal runat="server" ID="litGroupName" /></h2>
+                        <h2>
+                            <asp:Literal runat="server" ID="litGroupName" /></h2>
                     </div>
                     <!-- BEGIN PARTIAL: community/groups_private_heading -->
                     <!--groups private partial-->
@@ -28,14 +29,19 @@
                         <img alt="150x150 Placeholder" src="http://placehold.it/150x150" />
                     </div>
                     <div class="description col col-17">
-                        <p><asp:Literal runat="server" ID="litGroupDesc" /></p>
+                        <p>
+                            <asp:Literal runat="server" ID="litGroupDesc" /></p>
                         <p><span class="leader">Rerum</span>, Group Leader</p>
                     </div>
                 </div>
                 <div class="statistics col col-5">
                     <div class="meta">
-                        <p class="members"><asp:Literal runat="server" ID="litMemberCount" /> Members</p>
-                        <p class="discussions"><asp:Literal runat="server" ID="litDiscussionCount" /> Discussions</p>
+                        <p class="members">
+                            <asp:Literal runat="server" ID="litMemberCount" />
+                            Members</p>
+                        <p class="discussions">
+                            <asp:Literal runat="server" ID="litDiscussionCount" />
+                            Discussions</p>
                     </div>
                     <div class="mobile-search-box">
                         <h3>Find a conversation</h3>
@@ -59,7 +65,9 @@
         <div class="row">
             <div class="col col-23 individual-group skiplink-content" aria-role="main">
                 <header class="search-results  offset-1 rs_read_this">
-                    <span class="results-for"><asp:Literal runat="server" ID="litResultCount" /> Results for
+                    <span class="results-for">
+                        <asp:Literal runat="server" ID="litResultCount" />
+                        Results for
                     <h3>"<asp:Literal runat="server" ID="litSearchItem" />"</h3>
                     </span>
                 </header>
@@ -73,50 +81,58 @@
                         <h4 class="col replies">Replies</h4>
                         <h4 class="col latest-post-tabular">Latest Post</h4>
                     </header>
-                    <asp:Repeater ID="rptResults" runat="server"
-                        ItemType="UnderstoodDotOrg.Services.Models.Telligent.SearchResult">
-                        <HeaderTemplate>
-                            <ul class="discussions table-discussions search-results rs_read_this">
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <!-- BEGIN PARTIAL: community/conversation_list_item -->
-                            <!--section.container.conversation-list-item-->
-                            <li class="repeater-item">
-                                <div class="col summary">
-                                    <h4>Discussion:</h4>
-                                    <a href="REPLACE"><%# Item.BestMatchTitle %></a>
-                                </div>
-                                <div class="col latest-post rs_skip">
-                                    <h4>Latest Post:</h4>
-                                    <p class="mins-ago"><%# Item.Date %></p>
-                                    <a href="REPLACE">At</a>
-                                    <p><%# Item.BestMatchBody %></p>
-                                </div>
-                                <div class="col board">
-                                    <h4>Board:</h4>
-                                    <a href="REPLACE"><%# Item.GroupName %></a>
-                                </div>
-                                <div class="col started-by">
-                                    <h4>Started by:</h4>
-                                    <a href="REPLACE"><%# Item.Author %></a>
-                                </div>
+                    <asp:UpdatePanel runat="server">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="btnShowMore" EventName="Click" />
+                        </Triggers>
+                        <ContentTemplate>
+                            <asp:Repeater ID="rptResults" runat="server"
+                                ItemType="UnderstoodDotOrg.Services.Models.Telligent.SearchResult"
+                                OnItemDataBound="rptResults_ItemDataBound">
+                                <HeaderTemplate>
+                                    <ul class="discussions table-discussions search-results rs_read_this">
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <!-- BEGIN PARTIAL: community/conversation_list_item -->
+                                    <!--section.container.conversation-list-item-->
+                                    <li>
+                                        <div class="col summary">
+                                            <h4>Discussion:</h4>
+                                            <asp:Hyperlink ID="hypDiscussion" runat="server"><%# Item.BestMatchTitle %></asp:Hyperlink>
+                                        </div>
+                                        <div class="col latest-post rs_skip">
+                                            <h4>Latest Post:</h4>
+                                            <p class="mins-ago"><%# Item.Date %></p>
+                                            <a href="REPLACE">At</a>
+                                            <p><%# Item.BestMatchBody %></p>
+                                        </div>
+                                        <div class="col board">
+                                            <h4>Board:</h4>
+                                            <asp:Hyperlink ID="hypBoard" runat="server"><%# Item.Board %></asp:Hyperlink>
+                                        </div>
+                                        <div class="col started-by">
+                                            <h4>Started by:</h4>
+                                            <asp:Hyperlink runat="server" ID="hypStartedBy" ><asp:Literal ID="litStartedBy" runat="server" /></asp:Hyperlink>
+                                        </div>
 
-                                <div class="col replies">
-                                    <h4>Replies:</h4>
-                                    <p>95</p>
-                                </div>
-                                <div class="col latest-post-tabular">
-                                    <h4>Latest Post:</h4>
-                                    <p><%# Item.Date %></p>
-                                    <a href="REPLACE"><%# Item.Author %></a>
-                                    <p><%# Item.BestMatchBody %></p>
-                                </div>
-                            </li>
-                        </ItemTemplate>
-                        <FooterTemplate>
-                            </ul>
-                        </FooterTemplate>
-                    </asp:Repeater>
+                                        <div class="col replies">
+                                            <h4>Replies:</h4>
+                                            <p><asp:Literal ID="litReplies" runat="server" /></p>
+                                        </div>
+                                        <div class="col latest-post-tabular">
+                                            <h4>Latest Post:</h4>
+                                            <p><%# Item.Date %></p>
+                                            <a href="<%# Item.AuthorUrl %>"><%# Item.Author %></a>
+                                            <p><%# Item.BestMatchBody %></p>
+                                        </div>
+                                    </li>
+                                </ItemTemplate>
+                                <FooterTemplate>
+                                    </ul>
+                                </FooterTemplate>
+                            </asp:Repeater>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                     <!-- END PARTIAL: community/conversation_list_item -->
                     <!-- end .discussions -->
                 </div>
@@ -133,7 +149,7 @@
     <div class="container show-more rs_skip">
         <div class="row">
             <div class="col col-24">
-                <a class="show-more-link " href="#" data-path="community/search-results" data-container="table-discussions" data-item="summary" data-count="3">Show More<i class="icon-arrow-down-blue"></i></a>
+                <asp:LinkButton ID="btnShowMore" runat="server" OnClick="btnShowMore_Click">Show More<i class="icon-arrow-down-blue"></i></asp:LinkButton>
             </div>
         </div>
     </div>
