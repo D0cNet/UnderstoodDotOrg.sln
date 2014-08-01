@@ -69,6 +69,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Blogs
                             item.Author = author.Name;
                         }
                         else { item.Author = null; }
+
+                        var telligentDetails = TelligentService.ReadBlogBody(blogPost.BlogId, blogPost.BlogPostId);
+                        item.CommentCount = telligentDetails.CommentCount;
                     }
                 }
             }

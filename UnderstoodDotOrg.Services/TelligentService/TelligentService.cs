@@ -691,7 +691,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
             return count;
         }
-        public static BlogPost ReadBlogBody(int blogId, int blogPostId)
+        public static BlogPost ReadBlogBody(string blogId, string blogPostId)
         {
             int id = 0;
             int postId = 0;
@@ -723,15 +723,17 @@ namespace UnderstoodDotOrg.Services.TelligentService
 
                     XmlNode auth = xmlDoc.SelectSingleNode("Response/BlogPost/Author");
 
+                    XmlNode app = xmlDoc.SelectSingleNode("Response/BlogPost/Content/Application");
 
                     blogPost = new BlogPost
                     {
                         Body = node["Body"].InnerText,
                         Title = node["Title"].InnerText,
                         ContentId = node["ContentId"].InnerText,
-                        BlogName = node["HtmlName"].InnerText,
+                        BlogName = app["HtmlName"].InnerText,
                         PublishedDate = DataFormatHelper.FormatDate(node["PublishedDate"].InnerText),
-                        Author = auth["DisplayName"].InnerText
+                        Author = auth["DisplayName"].InnerText,
+                        CommentCount = node["CommentCount"].InnerText,
                     };
 
                 }
