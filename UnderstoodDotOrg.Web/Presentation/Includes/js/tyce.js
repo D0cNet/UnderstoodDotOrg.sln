@@ -652,6 +652,12 @@ var TYCE = (function() {
 
 				initSimulation();
 
+				// adjustments for standalone simulation
+				if(opts.simConfig.presentationMode == 'standalone') {
+					var gameboardHeight = $('#gameboard').outerHeight();
+					$playerContent.css('height', gameboardHeight);	
+				}
+
 				break;
 
 				// if it's nothing
