@@ -102,7 +102,7 @@
                 <!-- END PARTIAL: key-takeaways -->
 
                 <!-- Sources -->
-                <div id="divSources" runat="server" class="key-takeaways">
+                <div id="divSources" runat="server" class="key-takeaways no-border-top">
                     <header class='header-key-takeaways'>
                         <h2>
                             <sc:FieldRenderer ID="FieldRenderer2" runat="server" FieldName="Sources Header" />
@@ -111,6 +111,11 @@
                     <sc:FieldRenderer ID="FieldRenderer1" runat="server" FieldName="Sources Content" />
                 </div>
             </div>
+            <style>
+                .no-border-top {
+                    border-top: none;
+                }
+            </style>
             <div class="rs_about_author rs_read_this">
                 <!-- BEGIN PARTIAL: about-the-author -->
                 <sc:Sublayout ID="sbAboutAuthor" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/AboutAuthor.ascx" />
