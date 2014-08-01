@@ -107,18 +107,18 @@
                         HyperLink hypStartedBy = (HyperLink)e.Item.FindControl("hypStartedBy");
                         if (hypStartedBy != null)
                         {
-                            hypStartedBy.NavigateUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{DF854D0A-C127-42CB-90A5-806A695013B1}")), ".aspx", "/") + thread.StartedBy;
+                            hypStartedBy.NavigateUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{DF854D0A-C127-42CB-90A5-806A695013B1}")), ".aspx", "") + "/" + thread.StartedBy;
                         }
                     }
                     HyperLink hypBoard = (HyperLink)e.Item.FindControl("hypBoard");
                     if (hypBoard != null)
                     {
-                        hypBoard.NavigateUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{40726696-1FD7-41CC-A662-A618C7BEEE0A}")), ".aspx", "/") + item.GroupName.Trim() + "/" + item.Board.Trim();
+                        hypBoard.NavigateUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{40726696-1FD7-41CC-A662-A618C7BEEE0A}")), ".aspx", "") + "/" + item.GroupName.Trim() + "/" + item.Board.Trim();
                     }
                     HyperLink hypDiscussion = (HyperLink)e.Item.FindControl("hypDiscussion");
                     if (hypDiscussion != null)
                     {
-                        hypDiscussion.NavigateUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{40726696-1FD7-41CC-A662-A618C7BEEE0A}")), ".aspx", "/") + item.GroupName.Trim() + "/" + item.Board.Trim() + "/" + Regex.Replace(item.BestMatchTitle, "RE:", "").Trim();
+                        hypDiscussion.NavigateUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{40726696-1FD7-41CC-A662-A618C7BEEE0A}")), ".aspx", "") + "/" + item.GroupName.Trim() + "/" + item.Board.Trim() + "/" + Regex.Replace(item.BestMatchTitle, "RE:", "").Trim();
                     }
                     if (Request.QueryString["b"].Equals("true"))
                     {
