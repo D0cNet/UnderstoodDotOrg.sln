@@ -18,7 +18,7 @@ namespace UnderstoodDotOrg.Framework.Pipelines
                 var url = Sitecore.Context.Item.GetUrl();
                 var context = System.Web.HttpContext.Current;
 
-                if (!context.Request.RawUrl.Contains(url))
+                if (!context.Request.RawUrl.Contains(url) || context.Request.RawUrl.Contains("/sitecore/"))
                 {
                     context.Response.RedirectPermanent(url);
                 }
