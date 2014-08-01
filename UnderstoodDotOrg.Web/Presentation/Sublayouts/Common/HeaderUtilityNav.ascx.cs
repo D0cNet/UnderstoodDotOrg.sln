@@ -47,9 +47,6 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Common
         {
             HeaderFolder = HeaderFolderItem.GetHeader();
 
-            searchButton.Attributes.Add("value", DictionaryConstants.GoButtonText);
-            searchButton.Attributes.Add("data-value-default", DictionaryConstants.GoButtonText);
-
             if (IsUserLoggedIn)
             {
 				phLoggedIn.Visible = true;
