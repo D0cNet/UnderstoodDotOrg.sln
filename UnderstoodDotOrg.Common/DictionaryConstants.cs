@@ -1895,6 +1895,14 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string Articles_SaveMyAnswers
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Articles_Save My Answers");
+            }
+        }
+
 
 
         #endregion Article Labels

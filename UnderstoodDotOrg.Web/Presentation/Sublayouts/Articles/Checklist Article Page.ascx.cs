@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Membership;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ArticlePages;
@@ -23,6 +24,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            btnSaveAnswers.Text = DictionaryConstants.Articles_SaveMyAnswers;
 
             if (!Page.IsPostBack)
             {

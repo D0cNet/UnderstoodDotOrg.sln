@@ -83,13 +83,11 @@
                         <p id="confirmationText" runat="server" class="confirmation" visible="false"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_AnswersSavedText %></p>
                         <p id="errorText" runat="server" visible="false"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_SomethingWentWrongText %></p>
                         <div class="save-answers">
-                            <asp:button runat="server" ID="btnSaveAnswers" class="submit button" Text="Save My Answers" OnClick="btnSaveAnswers_Click" />
+                            <asp:button runat="server" ID="btnSaveAnswers" class="submit button" OnClick="btnSaveAnswers_Click" />
                         </div>
                         <div class="download-pdf">
                             <div class="download button gray"><%= UnderstoodDotOrg.Common.DictionaryConstants.Articles_DownloadasPDFButtonText %></div>
                         </div>
-                        <!--        <div class="button"><input class="checklist-form-save" type="submit" value="Save My Answers"></div>
-                                    <div class="button"><input class="submit-button" type="submit" value="Download as PDF"></div> -->
                     </div>
                     <script>
                         // Render the screenshot image
