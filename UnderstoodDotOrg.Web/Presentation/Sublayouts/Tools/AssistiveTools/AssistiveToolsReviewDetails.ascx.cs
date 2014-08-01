@@ -57,7 +57,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 			lblNotForLearningFragment.Text = DictionaryConstants.NotForLearningfragment;
 			lblNotRecommended.Text = DictionaryConstants.NotRecommendedLabel;
 			lblOffFragment.Text = DictionaryConstants.OffFragment;
-			lblOnFragment.Text = DictionaryConstants.Onfragment;
+			lblOnFragment.Text = DictionaryConstants.OnRatingLabel;
 			lblPauseFragment.Text = DictionaryConstants.Pausefragment;
 			lblPrettyEngaging.Text = DictionaryConstants.PrettyEngagingLabel;
 			lblQuality.Text = DictionaryConstants.QualityLabel;

@@ -74,9 +74,9 @@
                             </div>
                             <div class="col col-4 pull-6">
                                 <span class="result-count">
-                                    <span class="category-display-count" data-category-id="<%# Eval("CategoryId") %>"><%# Eval("CategoryResultDisplayCount") %></span> 
+                                    <span class="category-display-count" data-category-id="<%# Eval("CategoryId") %>"><%# Eval("DisplayCount") %></span> 
                                     of
-                                    <%# Eval("CategoryResultTotalCount") %> results
+                                    <%# Eval("TotalCount") %> results
                                 </span>
                             </div>
                         </header>
@@ -99,7 +99,7 @@
                                     <div class="col col-24">
                                         <a class="at-show-more-link " href="#" data-path="AssistiveTechResults" data-category-id="<%# Eval("CategoryId") %>" 
                                             data-item="search-results" data-page-id="<%= Model.ID.Guid.ToString() %>" data-count="1" 
-                                            data-container="container<%# Eval("CategoryId") %>" data-max-results="<%# Eval("CategoryResultTotalCount") %>"
+                                            data-container="container<%# Eval("CategoryId") %>" data-max-results="<%# Eval("TotalCount") %>"
                                             data-results-per-click="<%= UnderstoodDotOrg.Common.Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE %>">
                                             <%= UnderstoodDotOrg.Common.DictionaryConstants.ShowMoreLabel %>
                                             <i class="icon-arrow-down-blue"></i>

@@ -1390,7 +1390,7 @@ namespace UnderstoodDotOrg.Common
 			}
 		}
 
-		public static string Onfragment
+		public static string OnFragment
 		{
 			get
 			{
@@ -3265,5 +3265,7 @@ namespace UnderstoodDotOrg.Common
         public static string ViewCalendarLabel { get { return Translate.TextByDomain(PosesDictionary, "View Calendar Label"); } }
 
         public static string SelectYourChildLabel { get { return Translate.TextByDomain(PosesDictionary, "Select Your Child Label"); } }
+
+        public static string OnRatingLabel { get { return Translate.TextByDomain(PosesDictionary, "On Rating Label"); } }
     }
 }

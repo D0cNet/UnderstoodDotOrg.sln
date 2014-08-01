@@ -13,25 +13,46 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveT
 {
     public partial class AssistiveToolsSearchResultsPageItem
     {
-        public static IEnumerable<AssistiveToolsReviewPageItem> GetSearchResults(Guid? issueId = null, Guid? gradeRangeId = null, Guid? technologyId = null, 
+        private static void GetMinMaxGrade(Guid gradeRangeId, out int? minGrade, out int? maxGrade)
+        {
+            minGrade = null;
+            maxGrade = null;
+
+            AssistiveToolsGradeRangeItem rangeItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(gradeRangeId));
+
+            if (rangeItem != null)
+            {
+                minGrade = rangeItem.GradeLowerBound.Integer;
+                maxGrade = rangeItem.GradeUpperBound.Integer;
+            }
+        }
+
+        public static List<AssistiveToolSearchResultSet> GetGroupedSearchResults(int page, Guid? issueId = null, Guid? gradeRangeId = null, Guid? technologyId = null, 
             Guid? platformId = null, string searchTerm = null, SearchHelper.SortOptions.AssistiveToolsSortOptions sortOption = 0)
         {
             int? minGrade = null;
             int? maxGrade = null;
 
-            // Lookup grade range in Sitecore
             if (gradeRangeId.HasValue)
             {
-                AssistiveToolsGradeRangeItem rangeItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(gradeRangeId));
-
-                if (rangeItem != null)
-                {
-                    minGrade = rangeItem.GradeLowerBound.Integer;
-                    maxGrade = rangeItem.GradeUpperBound.Integer;
-                }
+                GetMinMaxGrade(gradeRangeId.Value, out minGrade, out maxGrade);
             }
 
-            return SearchHelper.GetAssitiveToolsReviewPages(issueId, minGrade, maxGrade, technologyId, platformId, searchTerm, sortOption);
+            return SearchHelper.GetAssitiveToolsReviewPages(page, issueId, minGrade, maxGrade, technologyId, platformId, searchTerm, sortOption);
+        }
+
+        public static IEnumerable<AssistiveToolsReviewPageItem> GetSearchResultsByCategory(int page, Guid categoryId, Guid? issueId = null, Guid? gradeRangeId = null, Guid? technologyId = null,
+            Guid? platformId = null, string searchTerm = null, SearchHelper.SortOptions.AssistiveToolsSortOptions sortOption = 0)
+        {
+            int? minGrade = null;
+            int? maxGrade = null;
+
+            if (gradeRangeId.HasValue)
+            {
+                GetMinMaxGrade(gradeRangeId.Value, out minGrade, out maxGrade);
+            }
+
+            return SearchHelper.GetAssitiveToolsReviewPagesByCategory(page, categoryId, issueId, minGrade, maxGrade, technologyId, platformId, searchTerm, sortOption);
         }
     }
 }

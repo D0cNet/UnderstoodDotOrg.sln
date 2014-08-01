@@ -24,6 +24,7 @@ using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.DecisionTool.Pages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ExpertLive.Base;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.BehaviorToolsPages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.TYCE.Pages;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Shared.BaseTemplate.Parent;
@@ -611,7 +612,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             List<Article> results = new List<Article>();
 
-            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
             using (var ctx = index.CreateSearchContext())
             {
                 var articlesQuery = GetCurrentCultureQueryable<Article>(ctx)
@@ -630,7 +631,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             List<Article> results = new List<Article>();
 
-            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
             using (var ctx = index.CreateSearchContext())
             {
                 var query = GetCurrentCultureQueryable<Article>(ctx)
@@ -664,7 +665,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             List<Article> results = new List<Article>();
 
-            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
             using (var ctx = index.CreateSearchContext())
             {
                 var allArticlesQuery = GetCurrentCultureQueryable<Article>(ctx)
@@ -814,7 +815,7 @@ namespace UnderstoodDotOrg.Domain.Search
         /// <returns></returns>
         public static List<BehaviorAdvice> GetAllBehaviorArticles(string challenge, string grade)
         {
-            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
 
             using (var ctx = index.CreateSearchContext())
             {
@@ -828,7 +829,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static List<BehaviorAdvice> PerformBehaviorArticleSearch(string challenge, string grade, int page, out int totalResults)
         {
-            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
 
             using (var ctx = index.CreateSearchContext())
             {
@@ -844,7 +845,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static Article GetArticle(ID itemId)
         {
-            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
             using (var ctx = index.CreateSearchContext())
             {
                 return GetCurrentCultureQueryable<Article>(ctx)
@@ -1059,7 +1060,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             List<RecommendedResultItem> results = new List<RecommendedResultItem>();
 
-            var index = ContentSearchManager.GetIndex(Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
 
             using (var ctx = index.CreateSearchContext())
             {
@@ -1148,7 +1149,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             var finalResults = new List<SearchResultItem>();
             var result = Enumerable.Empty<SearchResultItem>();
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.Search.ArticleSearchIndex);
 
             using (var context = index.CreateSearchContext())
             {
@@ -1212,7 +1213,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         private static IEnumerable<BaseEventDetailPageItem> GetEventsByMonthAndYear(int month, int year, Expression<Func<EventPage, bool>> optionalPredicate = null)
         {
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.Search.ArticleSearchIndex);
 
             DateTime startDate = new DateTime(year, month, 1);
             DateTime endDate = startDate.AddMonths(1);
@@ -1245,7 +1246,7 @@ namespace UnderstoodDotOrg.Domain.Search
         public static IEnumerable<BaseEventDetailPageItem> GetUpcomingEvents(int totalResults)
         {
             // TODO: refactor to use GetUpcomingEvents
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.Search.ArticleSearchIndex);
 
             using (var context = index.CreateSearchContext())
             {
@@ -1265,7 +1266,7 @@ namespace UnderstoodDotOrg.Domain.Search
         public static IEnumerable<BaseEventDetailPageItem> GetExpertsUpcomingEvents(ID expertId, int totalResults)
         {
             // TODO: refactor to use GetUpcomingEvents
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.Search.ArticleSearchIndex);
 
             using (var context = index.CreateSearchContext())
             {
@@ -1304,7 +1305,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static List<SearchResultItem> GetParentInterests()
         {
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.Search.ArticleSearchIndex);
             ID container = ID.Parse(Constants.ParentInterestsContainer);
 
             using (var context = index.CreateSearchContext())
@@ -1353,7 +1354,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static List<BaseEventDetailPageItem> GetArchivedEvents(int page, int pageSize, out int totalResults, Expression<Func<EventPage, bool>> optionalPredicate = null)
         {
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.Search.ArticleSearchIndex);
 
             using (var context = index.CreateSearchContext())
             {
@@ -1388,7 +1389,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         public static IEnumerable<ExpertDetailPageItem> GetRandomizedExpertsWithOpenOfficeHours()
         {
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.Search.ArticleSearchIndex);
 
             using (var context = index.CreateSearchContext())
             {
@@ -1410,76 +1411,163 @@ namespace UnderstoodDotOrg.Domain.Search
             }
         }
 
-        public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPages(Guid? issueId, int? minGrade, int? maxGrade, Guid? technologyId, 
+        private static IQueryable<AssistiveToolReview> GetBaseAssitiveToolQuery(IProviderSearchContext context, Guid? issueId, int? minGrade, int? maxGrade, Guid? technologyId,
+            Guid? platformId, string searchTerm, SortOptions.AssistiveToolsSortOptions sortOption)
+        {
+            bool hasGradeRange = minGrade.HasValue && maxGrade.HasValue;
+
+            var query = GetCurrentCultureQueryable<AssistiveToolReview>(context)
+                               .Filter(i => i.Language == Sitecore.Context.Language.Name
+                                       && i.Path.Contains(Constants.Search.ContentSearchPath))
+                               .Filter(i => i.TemplateId == ID.Parse(AssistiveToolsReviewPageItem.TemplateId));
+
+            if (issueId.HasValue)
+            {
+                query = query.Where(i => i.Issues.Contains(ID.Parse(issueId.Value)));
+            }
+            if (hasGradeRange)
+            {
+                query = query.Where(i => i.TargetGrade >= minGrade && i.TargetGrade <= maxGrade);
+            }
+            if (technologyId.HasValue)
+            {
+                query = query.Where(i => i.Technology.Contains(ID.Parse(technologyId.Value)));
+            }
+            if (platformId.HasValue)
+            {
+                query = query.Where(i => i.Platforms.Contains(ID.Parse(platformId)));
+            }
+
+            if (issueId.HasValue || hasGradeRange || technologyId.HasValue || platformId.HasValue)
+            {
+                searchTerm = null;
+            }
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                // TODO: search against specific fields of content
+                query = query
+                    .Where(i => i.Content.Contains(searchTerm));
+            }
+
+            // Sort
+            switch (sortOption)
+            {
+                case SortOptions.AssistiveToolsSortOptions.GradeLevel:
+                    query = query.OrderByDescending(i => i.GradeRating);
+                    break;
+                case SortOptions.AssistiveToolsSortOptions.LearningRating:
+                    query = query.OrderByDescending(i => i.LearningRating);
+                    break;
+                case SortOptions.AssistiveToolsSortOptions.QualityRating:
+                    query = query.OrderByDescending(i => i.QualityRating);
+                    break;
+                case SortOptions.AssistiveToolsSortOptions.MostRecent:
+                    query = query.OrderByDescending(i => i.PublishDate);
+                    break;
+            }
+
+            return query;
+        }
+
+        public static List<AssistiveToolSearchResultSet> GetAssitiveToolsReviewPages(int page, Guid? issueId, int? minGrade, int? maxGrade, Guid? technologyId, 
             Guid? platformId, string searchTerm, SortOptions.AssistiveToolsSortOptions sortOption)
         {
             var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
             searchTerm = NormalizeSearchTerm(searchTerm);
 
-            bool hasGradeRange = minGrade.HasValue && maxGrade.HasValue;
+            using (var context = index.CreateSearchContext())
+            {
+                var query = GetBaseAssitiveToolQuery(context, issueId, minGrade, maxGrade, technologyId, platformId, searchTerm, sortOption);
+
+                IEnumerable<FacetValue> facetValues = Enumerable.Empty<FacetValue>();
+                var facetQuery = query.FacetOn(i => i.Category);
+
+                var facets = facetQuery.GetFacets();
+                
+                var facet = facets.Categories.FirstOrDefault();
+                if (facet != null)
+                {
+                    // Remove unmapped content
+                    facetValues = facet.Values
+                                        .Where(c => c.Name.ToLower() != Guid.Empty.ToString("N").ToLower());
+                }
+
+                int pageSize = Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE;
+                int offset = (page - 1) * pageSize;
+
+                List<AssistiveToolSearchResultSet> results = new List<AssistiveToolSearchResultSet>();
+
+                foreach (FacetValue fv in facetValues)
+                {
+                    // Lookup category
+                    AssistiveToolsCategoryItem category = Sitecore.Context.Database.GetItem(ID.Parse(fv.Name));
+                    if (category == null)
+                    {
+                        Sitecore.Diagnostics.Log.Error(String.Format("Cannot find assistive tool category: {0}", fv.Name), typeof(SearchHelper));
+                        continue;
+                    }
+
+                    // Execute search
+                    var filtered = query.Filter(i => i.Category == ID.Parse(fv.Name))
+                                        .Skip(offset)
+                                        .Take(pageSize)
+                                        .ToList();
+
+                    // Populate sitecore items
+                    var items = filtered.Select(i => (AssistiveToolsReviewPageItem)i.GetItem())
+                                       .Where(i => i != null);
+
+                    string modalContent = category.HelpModalContent.Rendered;
+
+                    if (items.Count() > 0)
+                    {
+                        AssistiveToolSearchResultSet srs = new AssistiveToolSearchResultSet
+                        {
+                            CategoryId = category.ID.ToGuid(),
+                            CategoryTitle = category.Metadata.ContentTitle.Rendered,
+                            HelpModalContent = modalContent,
+                            ShowHelpModal = !string.IsNullOrEmpty(modalContent),
+                            TotalCount = fv.AggregateCount,
+                            DisplayCount = items.Count(),
+                            SearchResults = items,
+                            HasMoreResults = items.Count() < fv.AggregateCount
+                        };
+
+                        results.Add(srs);
+                    }
+                }
+
+                // Sort by category title
+                if (results.Any())
+                {
+                    results = results.OrderBy(x => x.CategoryTitle).ToList();
+                }
+
+                return results;
+            }
+        }
+
+        public static IEnumerable<AssistiveToolsReviewPageItem> GetAssitiveToolsReviewPagesByCategory(int page, Guid categoryId, Guid? issueId, int? minGrade, int? maxGrade, Guid? technologyId,
+            Guid? platformId, string searchTerm, SortOptions.AssistiveToolsSortOptions sortOption)
+        {
+            var index = ContentSearchManager.GetIndex(Constants.Search.ArticleSearchIndex);
+            searchTerm = NormalizeSearchTerm(searchTerm);
 
             using (var context = index.CreateSearchContext())
             {
-                var query = GetCurrentCultureQueryable<AssistiveToolReview>(context)
-                                .Filter(i => i.Language == Sitecore.Context.Language.Name
-                                        && i.Path.Contains(Constants.Search.ContentSearchPath))
-                                .Filter(i => i.TemplateId == ID.Parse(AssistiveToolsReviewPageItem.TemplateId));
+                var query = GetBaseAssitiveToolQuery(context, issueId, minGrade, maxGrade, technologyId, platformId, searchTerm, sortOption);
 
-                if (issueId.HasValue)
-                {
-                    query = query.Where(i => i.Issues.Contains(ID.Parse(issueId.Value)));
-                }
-                if (hasGradeRange)
-                {
-                    query = query.Where(i => i.TargetGrade >= minGrade && i.TargetGrade <= maxGrade);
-                }
-                if (technologyId.HasValue)
-                {
-                    query = query.Where(i => i.Technology.Contains(ID.Parse(technologyId.Value)));
-                }
-                if (platformId.HasValue)
-                {
-                    query = query.Where(i => i.Platforms.Contains(ID.Parse(platformId)));
-                }
+                int pageSize = Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE;
+                int offset = (page - 1) * pageSize;
 
-                if (issueId.HasValue || hasGradeRange || technologyId.HasValue || platformId.HasValue)
-                {
-                    searchTerm = null;
-                }
+                var results = query.Filter(i => i.Category == ID.Parse(categoryId))
+                                .Skip(offset)
+                                .Take(pageSize)
+                                .ToList();
 
-                if (!string.IsNullOrEmpty(searchTerm))
-                {
-                    // TODO: search against specific fields of content
-                    query = query
-                        .Where(i => i.Content.Contains(searchTerm));
-                }
-
-                // Sort
-                switch (sortOption)
-                {
-                    case SortOptions.AssistiveToolsSortOptions.GradeLevel:
-                        query = query.OrderByDescending(i => i.GradeRating);
-                        break;
-                    case SortOptions.AssistiveToolsSortOptions.LearningRating:
-                        query = query.OrderByDescending(i => i.LearningRating);
-                        break;
-                    case SortOptions.AssistiveToolsSortOptions.QualityRating:
-                        query = query.OrderByDescending(i => i.QualityRating);
-                        break;
-                    case SortOptions.AssistiveToolsSortOptions.MostRecent:
-                        query = query.OrderByDescending(i => i.PublishDate);
-                        break;
-                }
-
-                var total = query.Take(1).GetResults().TotalSearchResults;
-
-                // Execute solr query
-                var results = query.Take(total).ToList();
-
-                return results
-                    .Select(res => res.GetItem())
-                    .Where(i => i != null)
-                    .Select(i => new AssistiveToolsReviewPageItem(i));
+                return results.Select(i => (AssistiveToolsReviewPageItem)i.GetItem())
+                              .Where(i => i != null);
             }
         }
 
@@ -1487,7 +1575,7 @@ namespace UnderstoodDotOrg.Domain.Search
         {
             IEnumerable<DefaultArticlePageItem> articles = Enumerable.Empty<DefaultArticlePageItem>();
 
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.Search.ArticleSearchIndex);
             
             using (var context = index.CreateSearchContext())
             {
@@ -1546,7 +1634,7 @@ namespace UnderstoodDotOrg.Domain.Search
 
         private static List<BaseEventDetailPageItem> GetUpcomingEvents(string templateId, Expression<Func<EventPage, bool>> optionalPredicate = null)
         {
-            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.CURRENT_INDEX_NAME);
+            var index = ContentSearchManager.GetIndex(UnderstoodDotOrg.Common.Constants.Search.ArticleSearchIndex);
             
             using (var context = index.CreateSearchContext())
             {

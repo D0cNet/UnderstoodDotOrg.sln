@@ -44,13 +44,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             var rawSortOption = Request.QueryString[Constants.QueryStrings.LearningTool.SortOption];
             SortOption = rawSortOption.AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>(defaultValue: defaultSortValue);
 
-            IEnumerable<AssistiveToolsReviewPageItem> searchResults;
+            IEnumerable<AssistiveToolSearchResultSet> searchResults;
 
             var keyword = Request.QueryString[Constants.QueryStrings.LearningTool.Keyword];
             if (!string.IsNullOrEmpty(keyword))
             {
                 hfAssistiveTechResultsKeyword.Value = keyword;
-                searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(searchTerm: keyword, sortOption: SortOption);
+                searchResults = AssistiveToolsSearchResultsPageItem.GetGroupedSearchResults(1, searchTerm: keyword, sortOption: SortOption);
             }
             else
             {
@@ -71,7 +71,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
                     hfAssistiveTechResultsTechTypeId.Value = rawTypeId ?? string.Empty;
                     hfAssistiveTechResultsPlatformId.Value = rawPlatformId ?? string.Empty;
 
-                    searchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(issueId, gradeId, typeId, platformId, 
+                    searchResults = AssistiveToolsSearchResultsPageItem.GetGroupedSearchResults(1, issueId, gradeId, typeId, platformId, 
                         sortOption: SortOption);
                 }
                 else
@@ -82,43 +82,16 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             }
 
             hfAssistiveTechResultsSortOption.Value = rawSortOption ?? string.Empty;
-			
-            if (!Page.IsPostBack)
+
+            if (searchResults.Any())
             {
-                var categoryResults = searchResults
-                    .Where(i => i.Category.Item != null && i.Category.Item.IsOfType(AssistiveToolsCategoryItem.TemplateId))
-                    .GroupBy(i => (AssistiveToolsCategoryItem)i.Category.Item, new CustomItemComparer<AssistiveToolsCategoryItem>())
-                    .Select(categoryGroup =>
-                    {
-                        var helpModalContent = categoryGroup.Key.HelpModalContent.Rendered;
-                        var results = categoryGroup.AsEnumerable();
-                        var resultTotalCount = results.Count();
-                        var resultDisplayCount = Math.Min(Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE, resultTotalCount);
-
-                        return new
-                        {
-                            CategoryId = categoryGroup.Key.ID.Guid,
-                            CategoryTitle = categoryGroup.Key.Metadata.ContentTitle.Rendered,
-                            HelpModalContent = helpModalContent,
-                            ShowHelpModal = helpModalContent != string.Empty,
-                            CategoryResultTotalCount = resultTotalCount,
-                            CategoryResultDisplayCount = resultDisplayCount,
-                            SearchResults = results.Take(resultDisplayCount),
-                            HasMoreResults = resultDisplayCount < resultTotalCount
-                        };
-                    })
-                    .OrderBy(cr => cr.CategoryTitle);
-
-                if (categoryResults.Count() > 0)
-                {
-                    rptrSearchResultsSections.DataSource = categoryResults;
-                    rptrSearchResultsSections.ItemDataBound += rptrSearchResultsSections_ItemDataBound;
-                    rptrSearchResultsSections.DataBind();
-                }
-                else
-                {
-                    pnlNoResults.Visible = true;
-                }
+                rptrSearchResultsSections.DataSource = searchResults;
+                rptrSearchResultsSections.ItemDataBound += rptrSearchResultsSections_ItemDataBound;
+                rptrSearchResultsSections.DataBind();
+            }
+            else
+            {
+                pnlNoResults.Visible = true;
             }
         }
 

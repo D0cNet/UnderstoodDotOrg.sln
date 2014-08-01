@@ -35,5 +35,8 @@ namespace UnderstoodDotOrg.Domain.Search
 
         [IndexField("target_grade")]
         public int TargetGrade { get; set; }
+
+        [IndexField("category")]
+        public ID Category { get; set; }
     }
 }

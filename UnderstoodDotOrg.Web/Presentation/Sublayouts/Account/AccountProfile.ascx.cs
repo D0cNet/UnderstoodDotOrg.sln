@@ -57,7 +57,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             if (telligentUser == null || telligentUser.Username != screenName)
             {
                 // TODO: display error?
-
+                Sitecore.Diagnostics.Log.Info(String.Format("View Profile - Could not find user in telligent: {0}", screenName), this);
                 Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
                 return;
             }
@@ -69,7 +69,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Account
             if (_profileMember == null)
             {
                 // TODO: display error?
-
+                Sitecore.Diagnostics.Log.Info(String.Format("View Profile - Could not find member with screen name: {0}", screenName), this);
                 Response.Redirect(MainsectionItem.GetHomeItem().GetUrl());
                 return;
             }

@@ -25,18 +25,11 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
         protected Guid? TechTypeId { get; set; }
         protected Guid? PlatformId { get; set; }
 
-        protected AssistiveToolsSearchResultsPageItem SearchPage
-        {
-            get
-            {
-                return Sitecore.Context.Database.GetItemAs<AssistiveToolsSearchResultsPageItem>(SearchPageId);
-            }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
+                // TODO: convert to constants
                 SearchPageId = Request["pageId"].AsNGuid().Value;
                 CategoryId = Request["categoryId"].AsNGuid().Value;
                 ClickCount = Request["count"].AsInt();
@@ -52,18 +45,15 @@ namespace UnderstoodDotOrg.Web.Presentation.AjaxData
                 var defaultSortValue = (int)SearchHelper.SortOptions.AssistiveToolsSortOptions.Relevance;
                 SortOption = Request["sortOption"].AsEnum<SearchHelper.SortOptions.AssistiveToolsSortOptions>(defaultValue: defaultSortValue);
 
-                SearchResults = AssistiveToolsSearchResultsPageItem.GetSearchResults(
+                SearchResults = AssistiveToolsSearchResultsPageItem.GetSearchResultsByCategory(
+                    ClickCount + 1,
+                    CategoryId,
                     IssueId, 
                     GradeId, 
                     TechTypeId, 
                     PlatformId, 
                     Keyword, 
                     SortOption);
-
-                SearchResults = SearchResults
-                    .Where(i => i.Category.Item != null && i.Category.Item.ID.Guid == CategoryId)
-                    .Skip(ClickCount * Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE)
-                    .Take(Constants.ASSISTIVE_TECH_ENTRIES_PER_PAGE);
 
                 rptrResults.DataSource = SearchResults;
                 rptrResults.DataBind();

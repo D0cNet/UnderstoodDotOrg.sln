@@ -196,6 +196,7 @@
     <Compile Include="Salesforce\SforceService.cs" />
     <Compile Include="Search\Article.cs" />
     <Compile Include="Search\AssistiveToolReview.cs" />
+    <Compile Include="Search\AssistiveToolSearchResultSet.cs" />
     <Compile Include="Search\BehaviorAdvice.cs" />
     <Compile Include="Search\EventPage.cs" />
     <Compile Include="Search\Expert.cs" />
