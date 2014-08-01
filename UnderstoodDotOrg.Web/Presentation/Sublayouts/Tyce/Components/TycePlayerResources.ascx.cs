@@ -62,7 +62,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
 
         protected string getBrightcoveExperienceURL()
         {
-            if (CurrentMember != null && CurrentMember.MemberId != null)
+            if (CurrentMember != null && CurrentMember.MemberId != null || Request.IsSecureConnection)
             {
                 return "//sadmin.brightcove.com/js/BrightcoveExperiences.js";
             }
