@@ -43,7 +43,7 @@ $event-carousel-white: #ffffff;
 
   .event-carousel{
     width: 100%;
-    min-height: 268px; //needed for royalslider
+    min-height: 280px; //needed for royalslider
 
     .rsOverflow {
 
@@ -158,6 +158,8 @@ $event-carousel-white: #ffffff;
             padding: 0;
             color: $event-carousel-gray;
             font-weight: normal;
+            height: 44px;
+            overflow: hidden;
             @include rem(font-size, 15px);
             @include rem(line-height, 21px);
           }
@@ -169,7 +171,7 @@ $event-carousel-white: #ffffff;
 
     .rsArrow.rsArrowLeft{
       .rsArrowIcn{
-        top: 226px;
+        top: 245px;
         right: 55%;
         @include bp($bp-small){
           right: 54%;
@@ -183,7 +185,7 @@ $event-carousel-white: #ffffff;
 
     .rsArrow.rsArrowRight{
       .rsArrowIcn{
-        top: 226px;
+        top: 245px;
         right: 30%;
         @include bp($bp-small){
           right: 37%;

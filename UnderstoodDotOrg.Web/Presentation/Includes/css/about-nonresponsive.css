@@ -111,7 +111,7 @@
 /* line 44, ../css.source/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel {
   width: 100%;
-  min-height: 268px;
+  min-height: 280px;
 }
 /* line 3, ../css.source/mixins/_old-ie.scss */
 .old-ie .about-experts-event-carousel .event-carousel .rsOverflow {
@@ -212,22 +212,24 @@
   padding: 0;
   color: dimgrey;
   font-weight: normal;
+  height: 44px;
+  overflow: hidden;
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 21px;
   line-height: 1.3125rem;
 }
-/* line 171, ../css.source/modules/about/_about-experts-event-carousel.scss */
+/* line 173, ../css.source/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .rsArrow.rsArrowLeft .rsArrowIcn {
-  top: 226px;
+  top: 245px;
   right: 55%;
   right: 54%;
   top: 0px;
   right: 44px;
 }
-/* line 185, ../css.source/modules/about/_about-experts-event-carousel.scss */
+/* line 187, ../css.source/modules/about/_about-experts-event-carousel.scss */
 .about-experts-event-carousel .event-carousel .rsArrow.rsArrowRight .rsArrowIcn {
-  top: 226px;
+  top: 245px;
   right: 30%;
   right: 37%;
   top: 0px;
