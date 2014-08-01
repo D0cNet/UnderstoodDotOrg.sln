@@ -145,11 +145,9 @@ jQuery(document).ready(function(){
       // button hovers
       $searchResultsWrapper.on('mouseenter', '.result-body', function(){
           $(this).find('.result-hover').show();
-          console.log($(this));
 	    });
       $searchResultsWrapper.on('mouseleave', '.result-body', function(){
           $(this).find('.result-hover').hide();
-          console.log($(this));
       });
 
       new U.keyboard_access ({
