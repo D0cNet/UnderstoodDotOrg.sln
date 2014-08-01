@@ -106,6 +106,7 @@
             // Make vars
             self.$buttonGuideMe = $('.button-guide-me');
             self.$guideMeOverlay = $('.container-guide-me-overlay');
+            self.$checkboxes = self.$guideMeOverlay.find('.checkbox-wrap, input');
             self.$parentToolkit = $('.parent-toolkit');
             self.$guideMeClose = $('.close-guide');
             self.$guideMeInner = $('.guide-me-inner');
@@ -136,6 +137,16 @@
 
                     }
                 });
+            });
+
+            // SG -- The combination of markup and uniform styling will not work for IE
+            // As the integration has already being done, creating a JS workaround
+            self.$checkboxes.on('click', function(e, force) {
+              if (!force) {
+                e.stopPropagation();
+              }
+
+              $(this).find('input').trigger('click', [true]);
             });
 
             function heroCarouselInit() {
