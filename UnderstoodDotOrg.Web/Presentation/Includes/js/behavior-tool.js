@@ -669,6 +669,17 @@ jQuery(document).ready(function(){
 		
 		}).always(function() {
 			inProgress = false;
+      this.$wrapper = $('.advice-results .results-outer-wrapper');
+
+      var tallest = 0;
+      $('.advice-results .result-body').each(function() {
+        var height = $(this).height();
+        if (height > tallest) {
+          tallest = height;
+        }
+      });
+      var height = tallest + 45;
+      $('.advice-results .result-hover a').css('height', height / 2);
 		});
 	};
 
