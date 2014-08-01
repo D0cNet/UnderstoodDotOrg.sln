@@ -294,12 +294,12 @@ namespace UnderstoodDotOrg.Common
 
 
             public static Guid ParentsGroups
-                {
+            {
                 get
-                    {
+                {
                     return new Guid("{40726696-1FD7-41CC-A662-A618C7BEEE0A}");
-                    }
                 }
+            }
             //public static Guid ParentsGroupAll
             //    {
             //    get
@@ -308,31 +308,31 @@ namespace UnderstoodDotOrg.Common
             //        }
             //    }
             public static Guid ParentsGroupRecommended
-                {
+            {
                 get
-                    {
+                {
                     return new Guid("{08B7AE83-F21D-474A-BA49-470AE71B2C12}");
-                    }
                 }
+            }
             public static Guid ParentsLikeMeFeatured
             {
-            get
+                get
                 {
-                return new Guid("{23D6A9BA-6C62-4AF8-A2E0-AD18843EB105}");
+                    return new Guid("{23D6A9BA-6C62-4AF8-A2E0-AD18843EB105}");
                 }
             }
             public static Guid ParentsLikeMeAll
             {
-            get
+                get
                 {
-                return new Guid("{E88BE8FC-4272-4136-918E-47DFA4FF4EF5}");
+                    return new Guid("{E88BE8FC-4272-4136-918E-47DFA4FF4EF5}");
                 }
             }
             public static Guid ParentsLikeMeRecommended
             {
-            get
+                get
                 {
-                return new Guid("{87E601F6-EA02-4D89-A91A-C3DAE789120E}");
+                    return new Guid("{87E601F6-EA02-4D89-A91A-C3DAE789120E}");
                 }
             }
 
@@ -375,7 +375,7 @@ namespace UnderstoodDotOrg.Common
                     return new Guid("{2A5936E4-1C1A-4F4C-8DDE-EB768BD43E81}");
                 }
             }
-            
+
             public static Guid MyAccountConnections
             {
                 get
@@ -472,8 +472,10 @@ namespace UnderstoodDotOrg.Common
                 }
             }
 
-            public static Guid Recommendation {
-                get {
+            public static Guid Recommendation
+            {
+                get
+                {
                     return new Guid("{FAC9E8A7-9BD0-452E-8DB0-9C58AE3378DF}");
                 }
             }
@@ -574,6 +576,10 @@ namespace UnderstoodDotOrg.Common
             public static Guid AssistiveToolResults
             {
                 get { return new Guid("{5DF609DC-A761-41A3-95E3-89FAC12216A6}"); }
+            }
+            public static Guid QandADetails
+            {
+                get { return new Guid("{7356A32F-1795-4EAE-BE24-EBBD79B3093C}"); }
             }
         }
 

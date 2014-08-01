@@ -21,7 +21,7 @@
                 <!-- END PARTIAL: community/carousel_arrows -->
             </div>
             <div class="row question-cards">
-                <asp:Repeater ID="RecentQuestionsRepeater" ItemType="UnderstoodDotOrg.Domain.TelligentCommunity.Question" runat="server">
+                <asp:Repeater ID="RecentQuestionsRepeater" ItemType="UnderstoodDotOrg.Services.Models.Telligent.Question" runat="server">
                     <ItemTemplate>
                         <!-- BEGIN PARTIAL: community/question_card -->
                         <div class="col col-12 question-card">

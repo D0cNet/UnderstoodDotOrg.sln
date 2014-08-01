@@ -2,6 +2,9 @@
 using Sitecore.Data.Items;
 using Sitecore.Globalization;
 using Sitecore.SecurityModel;
+using Sitecore.Links;
+using Sitecore.Web.UI.WebControls;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +14,23 @@ using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.CommunityTemplates.GroupsTemplate;
 using UnderstoodDotOrg.Domain.Understood.Common;
 using UnderstoodDotOrg.Services.Models.Telligent;
-
+using UnderstoodDotOrg.Common.Extensions;
+using UnderstoodDotOrg.Domain.Membership;
 namespace UnderstoodDotOrg.Services.CommunityServices
 {
     public static class Questions
     {
+
+        public static List<Question> FindQuestions(Member user)
+        {
+
+             String [] issues = new List<string>(user.Children.Select(x => x.Issues.Select(k => k.Key.ToString("B").ToUpper())).SelectMany(x=>x)).ToArray();
+                String[] grades = new List<string>(user.Children.Select(x => x.Grades.Select(g => g.Key.ToString("B").ToUpper())).SelectMany(x => x)).ToArray() ;
+                String[] topics = user.Interests.Select(x => x.Key.ToString("B").ToUpper()).ToArray();
+                //String[] states = new string[] { user.zipCodeToState() };
+                //String[] partners = new string[0];
+                return FindQuestions(issues, topics, grades);
+        }
         /// <summary>
         /// Function to return a list of GroupModels based on the search criteria for Groups
         /// </summary>
@@ -92,46 +107,47 @@ namespace UnderstoodDotOrg.Services.CommunityServices
             String wikiPageId = item["WikiPageId"];
 
             Question question = TelligentService.TelligentService.GetQuestion(wikiId, wikiPageId, contentId);
-
-            Sitecore.Data.Fields.MultilistField grades = item.Fields["Grade"];
-
-            if (grades != null)
+            if (question != null)
             {
-                foreach (ID id in grades.TargetIDs)
+                Sitecore.Data.Fields.MultilistField grades = item.Fields["Grade"];
+
+                if (grades != null)
                 {
-                    Item targetItem = Sitecore.Context.Database.Items[id];
-                    question.Grade = targetItem.Name;
+                    foreach (ID id in grades.TargetIDs)
+                    {
+                        Item targetItem = Sitecore.Context.Database.Items[id];
+                        question.Grade = targetItem.Name;
+                    }
+
                 }
 
-            }
+                Sitecore.Data.Fields.MultilistField topics = item.Fields["Topic"];
 
-            Sitecore.Data.Fields.MultilistField topics = item.Fields["Topic"];
-
-            if (topics != null && topics.Count >0)
-            {
-                //foreach (ID id in topics.TargetIDs)
-                //{
-                   // Item targetItem = Sitecore.Context.Database.Items[id];
-                question.Group = topics.TargetIDs.Select(x => Sitecore.Context.Database.Items[x]).FirstOrDefault().Name; //targetItem.Name;
-                //}
-
-            }
-
-            Sitecore.Data.Fields.MultilistField issues = item.Fields["Issues"];
-
-            if (issues != null)
-            {
-                foreach (ID id in issues.TargetIDs)
+                if (topics != null && topics.Count > 0)
                 {
-                    Item targetItem = Sitecore.Context.Database.Items[id];
-                    question.Issues.Add(targetItem.Name);
+                    //foreach (ID id in topics.TargetIDs)
+                    //{
+                    // Item targetItem = Sitecore.Context.Database.Items[id];
+                    question.Group = topics.TargetIDs.Select(x => Sitecore.Context.Database.Items[x]).FirstOrDefault().Name; //targetItem.Name;
+                    //}
+
                 }
 
+                Sitecore.Data.Fields.MultilistField issues = item.Fields["Issues"];
+
+                if (issues != null)
+                {
+                    foreach (ID id in issues.TargetIDs)
+                    {
+                        Item targetItem = Sitecore.Context.Database.Items[id];
+                        question.Issues.Add(targetItem.Name);
+                    }
+
+                }
+                Item QAItem = Sitecore.Context.Database.GetItem(ID.Parse(Constants.Pages.QandADetails));
+                question.QueryString = "?wikiId=" + wikiId + "&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
+                question.Url =QAItem.GetUrl()+ question.QueryString; //"/en/community and events/q and a/q and a details.aspx" +
             }
-
-            question.QueryString = "?wikiId=" + wikiId + "&wikiPageId=" + wikiPageId + "&contentId=" + contentId;
-            question.Url = "/en/community and events/q and a/q and a details.aspx" + question.QueryString;
-
             return question;
         }
 
@@ -255,6 +271,24 @@ namespace UnderstoodDotOrg.Services.CommunityServices
                 .ToList<Question>();
 
             return results.FirstOrDefault<Question>();
+
+        }
+        public static List<Question> RecentQuestions(int listCount)
+        {
+            List<Question> q = new List<Question>();
+            Item QAItem = Sitecore.Context.Database.GetItem(ID.Parse(Constants.Pages.QandADetails));
+            if (QAItem.HasChildren)
+            {
+                q = QAItem.Children.Select(question => QuestionFactory(question))
+                                    //.Where(question => question != null)
+                                    //.OrderByDescending(question => int.Parse(question.CommentCount))
+                                    //.ThenByDescending(question => Convert.ToDateTime(question.Date))
+                                    .Take(listCount)
+                                    .ToList<Question>();
+            }
+
+            return q;
+
 
         }
     }

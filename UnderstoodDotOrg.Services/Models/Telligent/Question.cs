@@ -10,6 +10,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
     {
         public string Title { get; set; }
         public string Body { get; set; }
+        public string Date { get; set; }
         public string PublishedDate { get; set; }
         public string Author { get; set; }
         public string Group { get; set; }
@@ -23,7 +24,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string Url { get; set; }
         public string Grade { get; set; }
         public List<String> Issues { get; set; }
-
+        public static string TemplateID { get { return "{7AEB64D9-86C6-4C78-B526-79EDEDF20D6C}"; } }
         public Question() 
         {
             Issues = new List<string>();

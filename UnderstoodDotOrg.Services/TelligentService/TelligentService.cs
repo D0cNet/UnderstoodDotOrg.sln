@@ -3153,7 +3153,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
             {
 
                 webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml?PageSize={1}", wikiId.ToString(), pageSize.ToString()));
+                var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml?PageSize={1}&SortBy=CommentCount", wikiId.ToString(), pageSize.ToString()));
 
                 var xml = webClient.DownloadString(requestUrl);
 
@@ -3215,6 +3215,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     question = new Question()
                     {
                         Title = page["Title"].InnerText,
+                        Date = page["CreatedDate"].InnerText,
                         PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(page["CreatedDate"].InnerText),
                         Body = page["Body"].InnerText,
                         Author = user["Username"].InnerText,
@@ -3226,7 +3227,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                     };
                 }
             }
-            catch { } // TODO: Add Logging
+            catch { question = null; } // TODO: Add Logging
             return question;
         }
 

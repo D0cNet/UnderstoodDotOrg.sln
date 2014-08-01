@@ -10,6 +10,8 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Common;
 using Sitecore.Links;
+using UnderstoodDotOrg.Services.CommunityServices;
+using UnderstoodDotOrg.Services.Models.Telligent;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
 {
@@ -22,10 +24,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             
             if (this.CurrentMember != null)
             {
-                lvQuestionCards.DataSource = SearchHelper.GetRecommendedContent(this.CurrentMember, QandADetailsItem.TemplateId)
+                lvQuestionCards.DataSource = SearchHelper.GetRecommendedContent(this.CurrentMember,Question.TemplateID)// QandADetailsItem.TemplateId)
                                 .Where(a => a.GetItem() != null)
-                                .Take(6)
-                                .Select(a => new QandADetailsItem(a.GetItem()))
+                                .Select(a => Questions.QuestionFactory(a.GetItem())) //Items can exist in sitecore, but not telligent, therefore there will be missing items from this call
+                                .Where(a=> a!=null)
+                                 .Take(6)
                                 .ToList();
                 lvQuestionCards.DataBind();
             }
@@ -38,17 +41,17 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             var hypAnswerCount = e.Item.FindControl("hypAnswerCount") as HyperLink;
             var hypQuestionLink = e.Item.FindControl("hypQuestionLink") as HyperLink;
 
-            var item = e.Item.DataItem as QandADetailsItem;
+            var item = e.Item.DataItem as Question;//QandADetailsItem;
 
             if (hypQuestionTitle != null && litQuestionCardText != null && hypAnswerCount != null && hypQuestionLink != null)
             {
-                hypQuestionTitle.Text = item.QuestionTitle;
-                hypAnswerCount.Text = "5 " + DictionaryConstants.AnswerFragment;
+                hypQuestionTitle.Text = item.Title;
+                hypAnswerCount.Text =item.CommentCount + DictionaryConstants.AnswerFragment;
                 hypQuestionLink.Text = DictionaryConstants.AnswerThisQuestionLabel;
 
-                hypQuestionTitle.NavigateUrl = hypQuestionLink.NavigateUrl = hypAnswerCount.NavigateUrl = item.GetUrl();
+                hypQuestionTitle.NavigateUrl = hypQuestionLink.NavigateUrl = hypAnswerCount.NavigateUrl = item.Url;
 
-                litQuestionCardText.Text = item.QuestionBody;
+                litQuestionCardText.Text = item.Body;
             }
         }
     }

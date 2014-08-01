@@ -388,54 +388,54 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
         }
 
-        public static List<Question> GetQuestionsList(string wikiId, int count)
-        {
-            int id = 0;
-            List<Question> questionList = new List<Question>();
+        //public static List<Question> GetQuestionsList(string wikiId, int count)
+        //{
+        //    int id = 0;
+        //    List<Question> questionList = new List<Question>();
 
-            if (String.IsNullOrEmpty(wikiId) || !Int32.TryParse(wikiId, out id))
-            {
-                return questionList;
-            }
+        //    if (String.IsNullOrEmpty(wikiId) || !Int32.TryParse(wikiId, out id))
+        //    {
+        //        return questionList;
+        //    }
 
-            using (var webClient = new WebClient())
-            {
+        //    using (var webClient = new WebClient())
+        //    {
 
-                webClient.Headers.Add("Rest-User-Token", TelligentAuth());
-                var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml?PageSize={1}", wikiId, count));
+        //        webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+        //        var requestUrl = GetApiEndPoint(String.Format("wikis/{0}/pages.xml?PageSize={1}", wikiId, count));
 
-                var xml = webClient.DownloadString(requestUrl);
+        //        var xml = webClient.DownloadString(requestUrl);
 
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(xml);
+        //        XmlDocument xmlDoc = new XmlDocument();
+        //        xmlDoc.LoadXml(xml);
 
-                XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
-                foreach (XmlNode xn in nodes)
-                {
-                    XmlNode user = xn.SelectSingleNode("User");
-                    XmlNode app = xn.SelectSingleNode("Content/Application");
+        //        XmlNodeList nodes = xmlDoc.SelectNodes("Response/WikiPages/WikiPage");
+        //        foreach (XmlNode xn in nodes)
+        //        {
+        //            XmlNode user = xn.SelectSingleNode("User");
+        //            XmlNode app = xn.SelectSingleNode("Content/Application");
 
-                    var queryString = "?wikiId=" + wikiId + "&wikiPageId=" + xn["Id"].InnerText + "&contentId=" + xn["ContentId"].InnerText;
+        //            var queryString = "?wikiId=" + wikiId + "&wikiPageId=" + xn["Id"].InnerText + "&contentId=" + xn["ContentId"].InnerText;
 
-                    Question question = new Question()
-                    {
-                        Title = xn["Title"].InnerText,
-                        PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["CreatedDate"].InnerText),
-                        Body = xn["Body"].InnerText,
-                        WikiPageId = xn["Id"].InnerText,
-                        ContentId = xn["ContentId"].InnerText,
-                        Author = user["Username"].InnerText,
-                        Group = app["HtmlName"].InnerText,
-                        CommentCount = xn["CommentCount"].InnerText,
-                        QueryString = queryString,
-                        // TODO: replace this with constant or guid lookup
-                        Url = "/en/community-and-events/q-and-a/q-and-a-details" + queryString,
-                    };
-                    questionList.Add(question);
-                }
-            }
-            return questionList;
-        }
+        //            Question question = new Question()
+        //            {
+        //                Title = xn["Title"].InnerText,
+        //                PublishedDate = UnderstoodDotOrg.Common.Helpers.DataFormatHelper.FormatDate(xn["CreatedDate"].InnerText),
+        //                Body = xn["Body"].InnerText,
+        //                WikiPageId = xn["Id"].InnerText,
+        //                ContentId = xn["ContentId"].InnerText,
+        //                Author = user["Username"].InnerText,
+        //                Group = app["HtmlName"].InnerText,
+        //                CommentCount = xn["CommentCount"].InnerText,
+        //                QueryString = queryString,
+        //                // TODO: replace this with constant or guid lookup
+        //                Url = "/en/community-and-events/q-and-a/q-and-a-details" + queryString,
+        //            };
+        //            questionList.Add(question);
+        //        }
+        //    }
+        //    return questionList;
+        //}
 
 
         //public static List<Answer> GetAnswers(string wikiId, string wikiPageId, string contentId)
