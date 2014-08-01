@@ -228,7 +228,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
         {
             IntroductionVideo = new VideoIdPair(videoGradeSet.IntroductionWithSubtitles, videoGradeSet.IntroductionWithoutSubtitles);
             ChildStoryVideo = new VideoIdPair(videoGradeSet.ChildStoryWithSubtitles, videoGradeSet.ChildStoryWithoutSubtitles);        
-            ExpertSummaryVideo = new VideoIdPair(IssueItem.ExpertSummaryWithSubtitles, IssueItem.ExpertSummaryWithoutSubtitles);
+            //ExpertSummaryVideo = new VideoIdPair(IssueItem.ExpertSummaryWithSubtitles, IssueItem.ExpertSummaryWithoutSubtitles);
         }
 
         protected class VideoIdPair
