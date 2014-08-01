@@ -46,7 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community.Whats_Happening
             if (hypQuestionTitle != null && litQuestionCardText != null && hypAnswerCount != null && hypQuestionLink != null)
             {
                 hypQuestionTitle.Text = item.Title;
-                hypAnswerCount.Text =item.CommentCount + DictionaryConstants.AnswerFragment;
+                hypAnswerCount.Text =item.CommentCount +" "+ DictionaryConstants.AnswerFragment;
                 hypQuestionLink.Text = DictionaryConstants.AnswerThisQuestionLabel;
 
                 hypQuestionTitle.NavigateUrl = hypQuestionLink.NavigateUrl = hypAnswerCount.NavigateUrl = item.Url;
