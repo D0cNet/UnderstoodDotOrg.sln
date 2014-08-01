@@ -1072,6 +1072,15 @@ the callbacks passed to the module.
                 slider.goTo(index);
             });
 
+            var tcSlideTitle = jQuery("#topic-carousel .rsTmb"),
+            tcSlideLength = tcSlideTitle.length,
+            tcSlideTitleWrapper = tcSlideTitle.parents('.rsNavItem'),
+            thumbnailContainer = tcSlideTitle.parents('.rsThumbsContainer'),
+            slideHeight = (100 / tcSlideLength) + "%";
+
+            thumbnailContainer.css("height", "100%");
+            tcSlideTitleWrapper.css("height", slideHeight);
+
             self.attachHandlers = function () {
                 self.dom.playPause.on('click', self.playPause);
             };
