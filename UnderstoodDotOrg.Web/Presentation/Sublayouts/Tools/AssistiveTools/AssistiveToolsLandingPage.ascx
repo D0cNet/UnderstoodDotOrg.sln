@@ -38,7 +38,7 @@
 
 <!-- What Parents are Saying -->
 <!-- BEGIN PARTIAL: parents-are-saying -->
-<div id="divParentReviews" runat="server" class="container parents-are-saying">
+<div id="divParentReviews" runat="server" class="container parents-are-saying" visible="false">
     <div class="row">
         <div class="col col-24 header-container rs_read_this parents-are-saying-heading-rs-wrapper">
             <h2>
@@ -75,7 +75,7 @@
 <!-- end What Parents are Saying -->
 
 <!-- What Parents are Saying -->
-<div class="container more-carousel">
+<div id="divRelatedArticles" runat="server" class="container more-carousel" visible="false">
     <div class="row">
         <div class="col col-24">
             <h2>
