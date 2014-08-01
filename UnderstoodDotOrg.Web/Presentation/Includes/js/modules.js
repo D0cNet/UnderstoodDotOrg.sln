@@ -1081,6 +1081,8 @@ the callbacks passed to the module.
             thumbnailContainer.css("height", "100%");
             tcSlideTitleWrapper.css("height", slideHeight);
 
+            var slideHeight = $('.carousel-tertiary img').height();
+
             self.attachHandlers = function () {
                 self.dom.playPause.on('click', self.playPause);
             };

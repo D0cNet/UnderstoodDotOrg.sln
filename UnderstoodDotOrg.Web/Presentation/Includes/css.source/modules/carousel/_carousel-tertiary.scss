@@ -46,14 +46,14 @@
     background-position: 5px 5px;
 
     &:hover {
-      background-position: 5px -36.5px;
+      background-position: 5px -37.5px;
     }
 
     &.play {
-      background-position: 5px -73px;
+      background-position: 5px -78.5px;
 
       &:hover {
-        background-position: 5px -109.5px;
+        background-position: 5px -120.5px;
       }
     }
 
@@ -98,6 +98,15 @@
 
       .rsThumb.rsNavSelected { 
         top: 0px;
+      }
+
+      .rsContent img {
+        height: auto;
+        width: 100%;
+        @include bp($bp-small-plus) {
+          height: auto;
+          width: auto;
+        }
       }
     }// .topic-carousel
 
