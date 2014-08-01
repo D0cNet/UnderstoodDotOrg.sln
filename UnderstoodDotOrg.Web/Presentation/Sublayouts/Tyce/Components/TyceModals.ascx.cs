@@ -129,7 +129,14 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tyce.Components
             if (Sitecore.Context.Item.IsOfType(TyceOverviewPageItem.TemplateId))
             {
                 TyceOverviewPageItem context = (TyceOverviewPageItem)Sitecore.Context.Item;
-                PleaseSelectChild = context.PleaseSelectChildModalText;
+
+                int childCount = 0;
+                if (this.CurrentMember != null && this.CurrentMember.Children != null && this.CurrentMember.Children.Count > 0)
+                {
+                    childCount = this.CurrentMember.Children.Count;
+                }
+
+                PleaseSelectChild = context.PleaseSelectChildModalText.Rendered.Replace("[#]", childCount.ToString());
             }
 
             if (Sitecore.Context.Item.IsOfType(TyceQuestionsPageItem.TemplateId))

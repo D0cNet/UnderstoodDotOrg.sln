@@ -3255,5 +3255,7 @@ namespace UnderstoodDotOrg.Common
         public static object InFragment { get { return Translate.TextByDomain(PosesDictionary, "In Fragment"); } }
 
         public static string ViewCalendarLabel { get { return Translate.TextByDomain(PosesDictionary, "View Calendar Label"); } }
+
+        public static string SelectYourChildLabel { get { return Translate.TextByDomain(PosesDictionary, "Select Your Child Label"); } }
     }
 }

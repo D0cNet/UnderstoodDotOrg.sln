@@ -115,11 +115,11 @@
         <div class="modal-content">
             <button type="button" class="close-overlay" data-dismiss="modal" aria-hidden="true">Close</button>
             <div class="modal-body rs_preserve rs_skip">
-                <h2>Select your Child</h2>
-                <p>Your profile contains <%= IsUserLoggedIn ? CurrentMember.Children.Count : 0 %> children. 
+                <h2><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectYourChildLabel %></h2>
+                <p>
                    <%= PleaseSelectChild %></p>
                 <fieldset>
-                    <legend class="visuallyhidden">Select your Child</legend>
+                    <legend class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SelectYourChildLabel %></legend>
                     <ul class="input-buttons">
                         <asp:Repeater ID="rptrChildSelectionModal" runat="server">
                             <ItemTemplate>
