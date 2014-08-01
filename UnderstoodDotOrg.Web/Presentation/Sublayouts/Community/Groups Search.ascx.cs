@@ -38,7 +38,7 @@
 
                 if (!query.IsNullOrEmpty())
                 {
-                    if (!Request.QueryString["b"].Equals("true"))
+                    if (!Request.QueryString["b"].Equals("true") || Request.QueryString["b"] == null)
                     {
                         dataSource = TelligentService.GroupSearch(query, Constants.TelligentSearchParams.Group, groupId, group);
                         Session["groupSearch"] = dataSource;
