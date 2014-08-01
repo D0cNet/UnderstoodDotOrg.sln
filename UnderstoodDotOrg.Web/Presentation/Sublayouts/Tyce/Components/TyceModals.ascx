@@ -65,8 +65,6 @@
         });
 
 
-
-
         // var $tyceModalAfterHighSchool = $('#tyce-modal-after-hs');
 
         // $('select.reponsive-select-mobile').on('change', function () {
