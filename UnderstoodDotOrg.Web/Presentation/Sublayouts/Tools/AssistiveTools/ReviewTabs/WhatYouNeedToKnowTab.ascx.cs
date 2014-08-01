@@ -38,7 +38,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
 
             var platforms = Model.Platforms.ListItems
                 .Where(i => i != null && i.IsOfType(AssistiveToolsPlatformItem.TemplateId))
-                .Select(i => (AssistiveToolsPlatformItem)i).ToList();
+                .Select(i => (MetadataItem)i).ToList();
 
             rptrPlatforms.DataSource = platforms;
             rptrPlatforms.DataBind();
@@ -54,6 +54,24 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             rptrSubjectsAndSkills.DataBind();
 
             frPlatformsLink.Item = MainsectionItem.GetHomePageItem().GetToolsPage().GetAssistiveToolsLandingPage().GetSearchPage();
+        }
+
+        protected void rptrPlatforms_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.IsItem())
+            {
+                MetadataItem platform = (MetadataItem)e.Item.DataItem;
+
+                Literal litPlatform = e.FindControlAs<Literal>("litPlatform");
+
+                if (e.Item.ItemIndex == 0)
+                {
+                    litPlatform.Text = platform.ContentTitle.Raw;
+                }
+                else
+                    litPlatform.Text = ", " + platform.ContentTitle.Raw;
+
+            }
         }
     }
 }

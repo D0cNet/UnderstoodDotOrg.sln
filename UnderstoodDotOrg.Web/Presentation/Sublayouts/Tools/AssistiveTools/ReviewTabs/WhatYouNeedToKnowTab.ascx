@@ -9,11 +9,8 @@
                 <p><%= Model.WhatParentsNeedtoKnow.Rendered %></p>
                 <p class="skip_this">
                     <span class="platform-list">
-                        <asp:Repeater ID="rptrPlatforms" runat="server"
-                            ItemType="UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData.AssistiveToolsPlatformItem">
-                            <ItemTemplate>
-                                <%# Item.Metadata.ContentTitle.Rendered %>
-                            </ItemTemplate>
+                        <asp:Repeater ID="rptrPlatforms" runat="server" OnItemDataBound="rptrPlatforms_ItemDataBound">
+                            <ItemTemplate><asp:Literal ID="litPlatform" runat="server"></asp:Literal></ItemTemplate>
                         </asp:Repeater>
                         <%--<a href="REPLACE">iPhone</a>,
                         <a href="REPLACE">Android</a>--%>
