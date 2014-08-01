@@ -11,6 +11,8 @@ using UnderstoodDotOrg.Framework.UI;
 using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.Search;
 using UnderstoodDotOrg.Web.Presentation.Sublayouts.Recommendation;
+using UnderstoodDotOrg.Domain.ExactTarget;
+using UnderstoodDotOrg.Services.ExactTarget;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 {
@@ -21,6 +23,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             imgBanner.ImageUrl = this.Model.BannerImage.MediaItem != null ? this.Model.BannerImage.MediaUrl : "";
 
             List<DefaultArticlePageItem> recommendedArticles;
@@ -31,6 +35,9 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.About
                                     .Where(a => a.GetItem() != null)
                                     .Select(a => new DefaultArticlePageItem(a.GetItem()))
                                     .ToList();
+
+                BaseReply reply = ExactTargetService.InvokeEM11DonationAcknowledgement(new InvokeEM11DonationAcknowledgementRequest { RequestUrl = Request.Url, DonationAmount = "$0.00", FullName = CurrentMember.FirstName, PreferredLanguage = CurrentMember.PreferredLanguage, ToEmail = CurrentMember.Email});
+
 
                 if (recommendedArticles.Count > 0)
                 {
