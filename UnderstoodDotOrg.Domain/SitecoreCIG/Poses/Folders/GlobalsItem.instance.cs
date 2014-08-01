@@ -63,6 +63,11 @@ namespace UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Folders
                 .FirstOrDefault(i => i.IsOfType(AdvocacyLinkFolderItem.TemplateId));
         }
 
+        public RecommendationQuestionsFolderItem GetRecommendationsFolder()
+        {
+            return (RecommendationQuestionsFolderItem)InnerItem.GetChildren().Where(i => i.IsOfType(RecommendationQuestionsFolderItem.TemplateId)).FirstOrDefault();
+        }
+
         /// <summary>
         /// Gets promos folder item.
         /// </summary>

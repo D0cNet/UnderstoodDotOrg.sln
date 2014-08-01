@@ -210,6 +210,11 @@
                 self.openOverlay();
             });
 
+            if (getParameterByName("recommend") == "true")
+            {
+                self.openOverlay();
+            }
+
             // Trigger overlay close
             self.$guideMeClose.on('click', function (e) {
                 e.preventDefault();

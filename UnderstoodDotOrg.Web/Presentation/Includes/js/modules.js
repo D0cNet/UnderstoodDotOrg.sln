@@ -147,7 +147,7 @@ the callbacks passed to the module.
         var $childcontentindicator = $('.child-content-indicator:first');
 
         // button click event
-        $getrecommends.find('.button').on('click', submitQuestion);
+        //$getrecommends.find('.button').on('click', submitQuestion);
 
         // if the seconday nav is on the page attach events for moving it around
         if (!$('.nav-secondary').length) {

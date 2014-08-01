@@ -298,6 +298,7 @@
     <Compile Include="SitecoreCIG\Poses\Folders\PromosFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PublicAccountFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\PublicAccountFolderItem.instance.cs" />
+    <Compile Include="SitecoreCIG\Poses\Folders\RecommendationQuestionsFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\SocialMediaFolderItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\Folders\TimezoneFolderItem.base.cs" />
@@ -329,6 +330,7 @@
     <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\NavigationLinkItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\PromoItem.base.cs" />
+    <Compile Include="SitecoreCIG\Poses\General\RecommendationQuestionItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SiteSettingsItem.base.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SiteSettingsItem.instance.cs" />
     <Compile Include="SitecoreCIG\Poses\General\SiteSettingsItem.static.cs" />

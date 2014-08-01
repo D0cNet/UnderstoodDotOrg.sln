@@ -20,5 +20,50 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Topic {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Sitecore.Web.UI.WebControls.Sublayout slUpcomingEvent;
+        
+        /// <summary>
+        /// litQuestionHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litQuestionHeader;
+        
+        /// <summary>
+        /// litWhyAskHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litWhyAskHeader;
+        
+        /// <summary>
+        /// litWhyAskContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litWhyAskContent;
+        
+        /// <summary>
+        /// litQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litQuestion;
+        
+        /// <summary>
+        /// hypCompleteProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypCompleteProfile;
     }
 }
