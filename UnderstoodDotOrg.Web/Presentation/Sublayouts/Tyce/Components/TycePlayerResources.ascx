@@ -78,13 +78,13 @@
                 // simulation type
                 type: 'sim'
             },
-            {
-                type: 'video',
-                vid: {
-                    'default': '<%= ExpertSummaryVideo.WithoutSubtitlesVideoId %>',
-                    'hardcoded': '<%= ExpertSummaryVideo.WithSubtitlesVideoId %>'
-                }
-            },
+            //{
+            //    type: 'video',
+            //    vid: {
+            //        'default': '<%= ExpertSummaryVideo.WithoutSubtitlesVideoId %>',
+            //        'hardcoded': '<%= ExpertSummaryVideo.WithSubtitlesVideoId %>'
+            //    }
+            //},
             {
                 type: 'video',
                 vid: {
