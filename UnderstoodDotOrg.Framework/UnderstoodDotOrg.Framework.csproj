@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventHandlers\ArticlesAndBlogsHandler.cs" />
+    <Compile Include="Pipelines\CanonicalRedirect.cs" />
     <Compile Include="Pipelines\IdentifyClone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\BaseAjaxPage.cs">

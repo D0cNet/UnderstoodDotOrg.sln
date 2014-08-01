@@ -56,6 +56,7 @@
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\CustomEvents.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\DataFolder.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\LinkManager.config" />
+    <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Pipeline.HttpRequest.CanonicalRedirect.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Pipeline.Publish.IdentifyClone.config" />
     <None Include="EnvironmentSpecifics\DEV01\App_Config\Include\Sitecore.ContentSearch.Solr.Indexes.config">
       <SubType>Designer</SubType>
@@ -81,6 +82,7 @@
     <None Include="EnvironmentSpecifics\PROD_AUTH\App_Config\Include\DataFolder.config" />
     <None Include="EnvironmentSpecifics\PROD_AUTH\App_Config\Include\LinkManager.config" />
     <None Include="EnvironmentSpecifics\PROD_AUTH\App_Config\Include\NewsMover.config" />
+    <None Include="EnvironmentSpecifics\PROD_AUTH\App_Config\Include\Pipeline.HttpRequest.CanonicalRedirect.config" />
     <None Include="EnvironmentSpecifics\PROD_AUTH\App_Config\Include\Pipeline.Publish.IdentifyClone.config" />
     <None Include="EnvironmentSpecifics\PROD_AUTH\App_Config\Include\Sitecore.Analytics.config" />
     <None Include="EnvironmentSpecifics\PROD_AUTH\App_Config\Include\Sitecore.Analytics.ExcludeRobots.config" />
@@ -99,6 +101,7 @@
     <None Include="EnvironmentSpecifics\PROD_WEB01\App_Config\Include\DataFolder.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB01\App_Config\Include\LinkManager.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB01\App_Config\Include\NewsMover.config" />
+    <None Include="EnvironmentSpecifics\PROD_WEB01\App_Config\Include\Pipeline.HttpRequest.CanonicalRedirect.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB01\App_Config\Include\Pipeline.Publish.IdentifyClone.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB01\App_Config\Include\Sitecore.Analytics.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB01\App_Config\Include\Sitecore.Analytics.ExcludeRobots.config" />
@@ -117,6 +120,7 @@
     <None Include="EnvironmentSpecifics\PROD_WEB02\App_Config\Include\DataFolder.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB02\App_Config\Include\LinkManager.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB02\App_Config\Include\NewsMover.config" />
+    <None Include="EnvironmentSpecifics\PROD_WEB02\App_Config\Include\Pipeline.HttpRequest.CanonicalRedirect.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB02\App_Config\Include\Pipeline.Publish.IdentifyClone.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB02\App_Config\Include\Sitecore.Analytics.config" />
     <None Include="EnvironmentSpecifics\PROD_WEB02\App_Config\Include\Sitecore.Analytics.ExcludeRobots.config" />
@@ -135,6 +139,7 @@
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\DataFolder.config" />
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\LinkManager.config" />
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\NewsMover.config" />
+    <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Pipeline.HttpRequest.CanonicalRedirect.config" />
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Pipeline.Publish.IdentifyClone.config" />
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.Analytics.config" />
     <None Include="EnvironmentSpecifics\QA_204.232.148.68\App_Config\Include\Sitecore.Analytics.ExcludeRobots.config" />
