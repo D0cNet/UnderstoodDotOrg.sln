@@ -161,7 +161,7 @@
                 <fieldset>
                     <label for="join-discussion-text" class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.JoinDiscussionLabel %></label>
                     <%--<textarea class="comment" id="join-discussion-text" placeholder="Join the discussion"></textarea>--%>
-                    <asp:TextBox CssClass="comment" Columns="40" Rows="40" ID="txtBody" runat="server" ViewStateMode="Enabled"></asp:TextBox>
+                    <asp:TextBox TextMode="MultiLine" CssClass="comment" Columns="40" Rows="40" ID="txtBody" runat="server" ViewStateMode="Enabled"></asp:TextBox>
                     <%--<a href="REPLACE" class="button rs_skip">Submit</a>--%>
                     <asp:LinkButton CssClass="button rs_skip" OnClick="lbSubmitReply_Click"  ID="lbSubmitReply" runat="server" />
                 </fieldset>

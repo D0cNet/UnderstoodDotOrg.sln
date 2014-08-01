@@ -6,36 +6,32 @@
 <%@ Register Src="~/Presentation/Sublayouts/Common/Cards/ProfileCommentCard.ascx" TagPrefix="uc1" TagName="ProfileCommentCard" %>
 
 <asp:Repeater ID="rptDiscussionList" OnItemDataBound="rptDiscussionList_ItemDataBound" runat="server">
-    <HeaderTemplate>
-        <div class="discussion-post clearfix rs_read_this">
-    </HeaderTemplate>
     <ItemTemplate>
-        <div class="col col-4 discussion-contributer">
-            <%--each poster in thread--%>
-            <uc1:ProfileCommentCard runat="server" id="ProfileCommentCard" />
-        </div>
-        <div class="discussion-comment">
-            <p><%# Eval("Body") %></p>
-        </div>
-        <footer class="discussion-footer rs_skip">
-            <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowYourSupportLabel %></h4>
-            <ul class="support-menu">
-                <li>
-                    <uc1:ThanksButton runat="server" ID="btnThanks" />
+        <div class="discussion-post clearfix rs_read_this">
+            <div class="col col-4 discussion-contributer">
+                <%--each poster in thread--%>
+                <uc1:ProfileCommentCard runat="server" ID="ProfileCommentCard" />
+            </div>
+            <div class="discussion-comment">
+                <p><%# Eval("Body") %></p>
+            </div>
+            <footer class="discussion-footer rs_skip">
+                <h4><%= UnderstoodDotOrg.Common.DictionaryConstants.ShowYourSupportLabel %></h4>
+                <ul class="support-menu">
+                    <li>
+                        <uc1:ThanksButton runat="server" ID="btnThanks" />
 
-                </li>
-                <li>
-                    <uc1:ThinkingOfYouButton runat="server" ID="btnThinkingOfYou" />
-                </li>
-                <li>
-                    <uc1:LikeButton runat="server" ID="btnLikes" />
-                </li>
-            </ul>
-        </footer>
-    </ItemTemplate>
-    <FooterTemplate>
+                    </li>
+                    <li>
+                        <uc1:ThinkingOfYouButton runat="server" ID="btnThinkingOfYou" />
+                    </li>
+                    <li>
+                        <uc1:LikeButton runat="server" ID="btnLikes" />
+                    </li>
+                </ul>
+            </footer>
         </div>
-    </FooterTemplate>
+    </ItemTemplate>
 </asp:Repeater>
 
 
