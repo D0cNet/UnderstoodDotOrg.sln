@@ -1971,7 +1971,11 @@ html.canvas .mini-tools-wrap {
   display: none;
   display: block;
 }
-/* line 101, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 99, ../css.source/modules/carousel/_carousel-tertiary.scss */
+.carousel-tertiary .topicCarousel .rsSlide .rsThumb.rsNavSelected {
+  top: 0px;
+}
+/* line 105, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs {
   overflow: visible;
   position: absolute;
@@ -1980,7 +1984,7 @@ html.canvas .mini-tools-wrap {
   font-size: 1.25rem;
   color: #426da9;
 }
-/* line 111, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 115, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsTmb {
   display: inline-block;
   vertical-align: middle;
@@ -1993,18 +1997,18 @@ html.canvas .mini-tools-wrap {
   margin-left: 10px;
   margin-right: 6px;
 }
-/* line 120, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 124, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsTmb:hover, .carousel-tertiary .topicCarousel .rsTmb:focus {
   color: #426da9;
   text-decoration: underline;
 }
-/* line 138, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 142, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsNavSelected .rsTmb,
 .carousel-tertiary .topicCarousel .rsNavSelected .rsTmb:hover,
 .carousel-tertiary .topicCarousel .rsNavSelected .rsTmb:focus {
   color: #fff;
 }
-/* line 142, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 146, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumb {
   width: 190px;
   height: 25%;
@@ -2019,7 +2023,7 @@ html.canvas .mini-tools-wrap {
   line-height: 22px;
   line-height: 1.375rem;
 }
-/* line 158, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 162, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumb:before {
   content: '';
   display: inline-block;
@@ -2028,15 +2032,15 @@ html.canvas .mini-tools-wrap {
   margin-right: -0.25em;
   /* Adjusts for spacing */
 }
-/* line 166, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 170, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumb:last-child {
   border-bottom: none;
 }
-/* line 170, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 174, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumb:hover {
   color: #426da9;
 }
-/* line 176, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 180, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs {
   width: 240px;
   height: 100%;
@@ -2047,7 +2051,7 @@ html.canvas .mini-tools-wrap {
   top: auto;
   display: block;
 }
-/* line 185, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 189, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumbsContainer {
   height: 100%;
   margin-left: 50px;
@@ -2058,7 +2062,7 @@ html.canvas .mini-tools-wrap {
   top: 0;
   right: 40px;
 }
-/* line 205, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 209, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumb.rsNavSelected {
   background-color: #794382;
   position: relative;
@@ -2071,15 +2075,15 @@ html.canvas .mini-tools-wrap {
   border: none;
   color: #ffffff;
 }
-/* line 216, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 220, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumb.rsNavSelected .rsTmb {
   border: none;
 }
-/* line 220, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 224, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumb.rsNavSelected:hover {
   color: #ffffff;
 }
-/* line 227, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 231, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsArrowLeft .rsArrowIcn {
   background-position: 0 -37px;
   top: auto;
@@ -2087,11 +2091,11 @@ html.canvas .mini-tools-wrap {
   right: 57%;
   z-index: 2;
 }
-/* line 234, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 238, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsArrowLeft .rsArrowIcn:hover {
   background-position: 0 -75px;
 }
-/* line 239, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 243, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsArrowRight .rsArrowIcn {
   background-position: -38px -37px;
   top: auto;
@@ -2100,11 +2104,11 @@ html.canvas .mini-tools-wrap {
   right: 40%;
   right: 43%;
 }
-/* line 244, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 248, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsArrowRight .rsArrowIcn:hover {
   background-position: -38px -75px;
 }
-/* line 255, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 259, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsOverflow {
   overflow: visible;
   overflow: hidden;
