@@ -126,13 +126,23 @@ jQuery(document).ready(function(){
     // The outer wrapper, for adding/removing slider content.
     this.$wrapper = null;
 
+      // button hovers
+    this.attachHoverHandlers = function () {
+      var $searchResultsWrapper = $('.results-wrapper');
+      $searchResultsWrapper.on('mouseenter', '.result-body', function(){
+          $(this).find('.result-hover').show();
+	    });
+      $searchResultsWrapper.on('mouseleave', '.result-body', function(){
+          $(this).find('.result-hover').hide();
+      });
+    }
+
     /**
      * Initialize module on page load.
      * @return {object} this instance
      */
     this.initialize = function() {
-      var $searchResultsWrapper = $('.results-wrapper'),
-      		$searchResultButton = $('.result-body'),
+      var $searchResultButton = $('.result-body'),
           $searchResultItems = $searchResultButton.find('.hover-link-wrapper a'),
           $htmlEl = $('html');
 
@@ -142,13 +152,7 @@ jQuery(document).ready(function(){
 
       $(window).resize(function() { self.resizeHandler(); });
 
-      // button hovers
-      $searchResultsWrapper.on('mouseenter', '.result-body', function(){
-          $(this).find('.result-hover').show();
-	    });
-      $searchResultsWrapper.on('mouseleave', '.result-body', function(){
-          $(this).find('.result-hover').hide();
-      });
+      this.attachHoverHandlers();
 
       new U.keyboard_access ({
         focusElements: $searchResultButton,
@@ -283,6 +287,8 @@ jQuery(document).ready(function(){
       this.$slider.remove();
       this.$slider = null;
       this.$wrapper.append(this.$html);
+      U.Global.adviceResults.equalizeHeights();
+      U.Global.adviceResults.attachHoverHandlers();
       return this;
     };
 
