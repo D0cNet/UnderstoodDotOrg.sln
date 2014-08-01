@@ -1042,15 +1042,6 @@ the callbacks passed to the module.
                     });
                 }
 
-                console.log("initial load");
-                console.log("container height :"); 
-                console.log(jQuery('#topic-carousel').height());
-                console.log("container rscontent height :");
-                console.log(jQuery('#topic-carousel .rsContent').height());
-                console.log("container rscontent img height :");
-                console.log(jQuery('#topic-carousel .rsContent img').height());
-                );
-
             var slider = topicCarousel.data('royalSlider'),
                 buttons = topicCarousel.find('.rsTmb'),
                 playPauseButton = topicCarousel.parent().find('.play-pause'),
