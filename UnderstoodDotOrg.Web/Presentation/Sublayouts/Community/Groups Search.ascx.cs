@@ -38,13 +38,28 @@
 
                 if (!query.IsNullOrEmpty())
                 {
-                    dataSource = TelligentService.GroupSearch(query, Constants.TelligentSearchParams.Group, groupId, group);
-                    Session["groupSearch"] = dataSource;
-                    rptResults.DataSource = dataSource.Take(10).ToList();
-                    rptResults.DataBind();
+                    if (!Request.QueryString["b"].Equals("true"))
+                    {
+                        dataSource = TelligentService.GroupSearch(query, Constants.TelligentSearchParams.Group, groupId, group);
+                        Session["groupSearch"] = dataSource;
+                        rptResults.DataSource = dataSource.Take(10).ToList();
+                        rptResults.DataBind();
 
-                    litSearchItem.Text = query;
-                    litResultCount.Text = dataSource.Count.ToString();
+                        litSearchItem.Text = query;
+                        litResultCount.Text = dataSource.Count.ToString();
+                        panBoardTitle.Visible = true;
+                    }
+                    else
+                    {
+                        dataSource = TelligentService.BoardSearch(query, Constants.TelligentSearchParams.Group, groupId, group);
+                        Session["groupSearch"] = dataSource;
+                        rptResults.DataSource = dataSource.Take(10).ToList();
+                        rptResults.DataBind();
+
+                        litSearchItem.Text = query;
+                        litResultCount.Text = dataSource.Count.ToString();
+                        panBoardTitle.Visible = false;
+                    }
                 }
             }
             else { litGroupName.Text = "Group Search"; }
@@ -104,6 +119,16 @@
                     if (hypDiscussion != null)
                     {
                         hypDiscussion.NavigateUrl = Regex.Replace(LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{40726696-1FD7-41CC-A662-A618C7BEEE0A}")), ".aspx", "/") + item.GroupName.Trim() + "/" + item.Board.Trim() + "/" + Regex.Replace(item.BestMatchTitle, "RE:", "").Trim();
+                    }
+                    if (Request.QueryString["b"].Equals("true"))
+                    {
+                        Panel panBoard = (Panel)e.Item.FindControl("panBoard");
+                        panBoard.Visible = false;
+                    }
+                    else
+                    {
+                        Panel panBoard = (Panel)e.Item.FindControl("panBoard");
+                        panBoard.Visible = true;
                     }
                 }
             }

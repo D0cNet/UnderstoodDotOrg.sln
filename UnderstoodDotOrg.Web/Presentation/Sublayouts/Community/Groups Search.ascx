@@ -76,7 +76,9 @@
                 <div class="discussion-box col col-23 offset-1">
                     <header class="rs_skip">
                         <h4 class="col summary">Discussion</h4>
-                        <h4 class="col board">Board</h4>
+                        <asp:Panel ID="panBoardTitle" runat="server">
+                            <h4 class="col board">Board</h4>
+                        </asp:Panel>
                         <h4 class="col started-by">Started by</h4>
                         <h4 class="col replies">Replies</h4>
                         <h4 class="col latest-post-tabular">Latest Post</h4>
@@ -106,10 +108,12 @@
                                             <a href="REPLACE">At</a>
                                             <p><%# Item.BestMatchBody %></p>
                                         </div>
-                                        <div class="col board">
-                                            <h4>Board:</h4>
-                                            <asp:Hyperlink ID="hypBoard" runat="server"><%# Item.Board %></asp:Hyperlink>
-                                        </div>
+                                        <asp:Panel ID="panBoard" runat="server">
+                                            <div class="col board">
+                                                <h4>Board:</h4>
+                                                <asp:HyperLink ID="hypBoard" runat="server"><%# Item.Board %></asp:HyperLink>
+                                            </div>
+                                        </asp:Panel>
                                         <div class="col started-by">
                                             <h4>Started by:</h4>
                                             <asp:Hyperlink runat="server" ID="hypStartedBy" ><asp:Literal ID="litStartedBy" runat="server" /></asp:Hyperlink>

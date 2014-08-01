@@ -194,7 +194,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Community
         {
             var qs = HttpUtility.ParseQueryString(Request.QueryString.ToString());
             qs.Set("q", txtSearch.Text);
-            qs.Set("g", Sitecore.Context.Item.ParentID.ToString());
+            qs.Set("g", Sitecore.Context.Item.ID.ToString());
+            qs.Set("b", "true");
             Response.Redirect(String.Format("{0}?{1}", LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem("{97CEFC40-892F-4E44-B94F-26522EB1F7B3}")), qs));
         }
 
