@@ -633,6 +633,9 @@ var TYCE = (function() {
 				$playpause.removeClass('is-disabled');
 				$volume.removeClass('is-disabled');
 
+				// revert slider to full opacity when steps change, see next step below
+				$('.volume-slider').css('opacity', '1');
+
 				break;
 
 				// if it's a simulation
@@ -646,7 +649,12 @@ var TYCE = (function() {
 				}
 
 				$playpause.addClass('is-disabled');
+
 				$volume.addClass('is-disabled');
+
+				// hide volume with opacity if mouse is over slider when steps change
+				// .hide() won't work here since the mouseenter event is taking precedence 
+				$('.volume-slider').css('opacity', '0');
 
 				$skip.hide();
 
