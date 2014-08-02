@@ -20,10 +20,10 @@
         </div>
         <div class="col col-9 partner-image-column">
             <span class="powered-by"><%= Model.PoweredbyText.Rendered %></span>
-            <a href="<%= Model.PoweredbyLink.Url %>" class="partner-image">
+            <a href="<%= Model.PoweredbyLink.Url %>" target="_blank" class="partner-image">
                 <%= Model.PoweredbyLogo.Rendered %>
             </a>
-            <a href="<%= Model.PoweredbyLink.Url %>" class="partner-text">
+            <a href="<%= Model.PoweredbyLink.Url %>" target="_blank"class="partner-text">
                 <%= Model.PoweredbyLink.Field.Text %>
             </a>
             <div class="share-save-pagetopic"></div>
