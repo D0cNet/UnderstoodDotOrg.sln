@@ -526,10 +526,10 @@ html.canvas .mini-tools-wrap {
 /* line 57, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li.title {
   position: relative;
-  display: none;
+  padding: 0 20px;
 }
-/* line 62, ../css.source/modules/_secondary-menu.scss */
-.nav-secondary .menu > li.title button {
+/* line 60, ../css.source/modules/_secondary-menu.scss */
+.nav-secondary .menu > li.title span {
   background: transparent;
   border: none;
   color: white;
@@ -537,19 +537,20 @@ html.canvas .mini-tools-wrap {
   display: table-cell;
   vertical-align: middle;
   height: 50px;
-  padding: 0 50px 0 20px;
+  padding-left: 0px;
 }
-/* line 72, ../css.source/modules/_secondary-menu.scss */
+/* line 70, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li.title .icon-hide-show-fff {
   position: absolute;
   right: 26px;
   top: 23px;
+  display: none;
 }
-/* line 79, ../css.source/modules/_secondary-menu.scss */
+/* line 80, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li + li {
   border-left: 1px solid #298fc2;
 }
-/* line 82, ../css.source/modules/_secondary-menu.scss */
+/* line 83, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li span {
   display: table;
   width: 100%;
@@ -560,33 +561,33 @@ html.canvas .mini-tools-wrap {
   line-height: inherit;
   padding-left: inherit;
 }
-/* line 94, ../css.source/modules/_secondary-menu.scss */
+/* line 95, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li a {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
   padding: 0 15px;
   padding: 0 20px;
-  padding: 0 30px;
+  padding: 0 20px;
 }
-/* line 107, ../css.source/modules/_secondary-menu.scss */
+/* line 108, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li a.selected {
   background: #426da9;
   background: #298fc2;
 }
-/* line 113, ../css.source/modules/_secondary-menu.scss */
+/* line 114, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li a:hover, .nav-secondary .menu > li a:focus {
   background: #426da9;
   text-decoration: none;
   background: #298fc2;
 }
-/* line 123, ../css.source/modules/_secondary-menu.scss */
+/* line 124, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li .label-more {
   display: none;
   display: table;
   width: 100%;
 }
-/* line 129, ../css.source/modules/_secondary-menu.scss */
+/* line 130, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li .label-more button {
   background: transparent;
   border: none;
@@ -599,14 +600,14 @@ html.canvas .mini-tools-wrap {
   vertical-align: middle;
   width: 100%;
 }
-/* line 141, ../css.source/modules/_secondary-menu.scss */
+/* line 142, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .menu > li .label-more .icon-hide-show-fff {
   vertical-align: text-top;
   position: relative;
   top: 5px;
   margin-left: 14px;
 }
-/* line 151, ../css.source/modules/_secondary-menu.scss */
+/* line 152, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .submenu {
   display: none;
   position: absolute;
@@ -620,11 +621,11 @@ html.canvas .mini-tools-wrap {
   background: #426da9;
   width: 150px;
 }
-/* line 168, ../css.source/modules/_secondary-menu.scss */
+/* line 169, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .submenu .inner {
   position: relative;
 }
-/* line 171, ../css.source/modules/_secondary-menu.scss */
+/* line 172, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .submenu ul {
   height: 312px;
   overflow: auto;
@@ -638,12 +639,12 @@ html.canvas .mini-tools-wrap {
   height: 380px;
   height: 460px;
 }
-/* line 190, ../css.source/modules/_secondary-menu.scss */
+/* line 191, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .submenu li > span {
   display: block;
   height: auto;
 }
-/* line 193, ../css.source/modules/_secondary-menu.scss */
+/* line 194, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .submenu li > span a {
   padding: 15px 20px;
   line-height: 1.375;
@@ -654,7 +655,7 @@ html.canvas .mini-tools-wrap {
   position: relative;
   padding-left: 12px;
 }
-/* line 209, ../css.source/modules/_secondary-menu.scss */
+/* line 210, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .submenu li + li a:before {
   content: '';
   display: block;
@@ -667,25 +668,25 @@ html.canvas .mini-tools-wrap {
   border-right: 15px solid #426da9;
   border-left: 18px solid #426da9;
 }
-/* line 225, ../css.source/modules/_secondary-menu.scss */
+/* line 226, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .submenu li + li a:hover:before,
 .nav-secondary .submenu li + li a:focus:before,
 .nav-secondary .submenu li + li a.selected:before {
   content: none;
 }
-/* line 233, ../css.source/modules/_secondary-menu.scss */
+/* line 234, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .is-open .submenu {
   display: block;
 }
-/* line 236, ../css.source/modules/_secondary-menu.scss */
+/* line 237, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .is-open .title button {
   visibility: hidden;
 }
-/* line 239, ../css.source/modules/_secondary-menu.scss */
+/* line 240, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .is-open .icon-hide-show-fff {
   background-position: 0 100%;
 }
-/* line 244, ../css.source/modules/_secondary-menu.scss */
+/* line 245, ../css.source/modules/_secondary-menu.scss */
 .nav-secondary .icon-hide-show-fff {
   display: inline-block;
   width: 9px;
@@ -693,7 +694,7 @@ html.canvas .mini-tools-wrap {
   background-image: url('../images/sprite.icon.hide-show.fff.png?5399f75d');
   background-size: 9px 12px;
 }
-/* line 250, ../css.source/modules/_secondary-menu.scss */
+/* line 251, ../css.source/modules/_secondary-menu.scss */
 .no-backgroundsize .nav-secondary .icon-hide-show-fff {
   background-image: url('../images/icon.arrow.down.fff.9.png?88dbba10');
 }
@@ -791,7 +792,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";
@@ -1039,7 +1040,7 @@ html.canvas .mini-tools-wrap {
   list-style: none;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit .slide ul:after {
   content: "";
   display: table;
@@ -1819,7 +1820,7 @@ html.canvas .mini-tools-wrap {
   *zoom: 1;
   margin-bottom: 50px;
 }
-/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-listing-container .article:after {
   content: "\0020";
   display: block;
@@ -4304,7 +4305,7 @@ html.canvas .mini-tools-wrap {
   display: block;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .parent-toolkit-header-container .slide ul:after,
 .tab-toolkit-header-container .slide ul:after {
   content: "";

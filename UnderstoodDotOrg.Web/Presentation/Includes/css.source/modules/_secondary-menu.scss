@@ -56,10 +56,8 @@
       }
       &.title {
       position: relative;
-        @include bp($bp-small-plus){
-          display: none;
-        }
-        button {
+      padding: 0 20px;
+        span {
           background: transparent;
           border: none;
           color: white;
@@ -67,12 +65,15 @@
           display: table-cell;
           vertical-align: middle;
           height: 50px;
-          padding: 0 50px 0 20px;
+          padding-left: 0px;
         }
         .icon-hide-show-fff {
           position: absolute;
           right: 26px;
           top: 23px;
+          @include bp($bp-small-plus){
+            display: none;
+          }
         }
       } // &.title
 
@@ -102,7 +103,7 @@
           padding: 0 20px;
         }
         @include bp($bp-large){
-          padding: 0 30px;
+          padding: 0 20px;
         }
         &.selected {
           background: #426da9;
@@ -113,7 +114,7 @@
         &:hover, &:focus {
           background: #426da9;
           text-decoration: none;
-          
+
           @include bp($bp-small-plus){
             background: #298fc2;
           }
