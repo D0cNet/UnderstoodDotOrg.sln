@@ -2,13 +2,26 @@
  * SASS partial for advocacy-signup
  */
 
-.advocacy-article{
+.advocacy-article {
   margin-bottom: 44px;
-  .article-header{
+  color: #696969;
+  font-size: 0.9375rem;
+  font-family: arial, sans-serif;
+  line-height: 1.2rem;
+
+  .article-header {
     @include bp($bp-small-plus){
       margin-bottom: 53px;
     }
-    p{
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: #7a4183;
+      margin: 30px 0 15px 0;
+    }
+
+    p {
       margin-top: 20px;
       margin-bottom: 15px;
       @include bp($bp-small-plus){
@@ -16,6 +29,54 @@
         margin-bottom: 15px;
       }
     }
+
+    ul {
+      list-style: disc;
+      margin: 0 0 30px 30px;
+      padding: 0;
+
+      li {
+        color: #696969;
+        font-size: 0.9375rem;
+        font-family: arial, sans-serif;
+        line-height: 1.2rem;
+        position: relative;
+        margin-top: 12px;
+        padding: 0px;
+      }
+
+      li:first-child {
+        margin-top: 0;
+      }
+
+    }
+
+    ol {
+
+      li {
+        color: #696969;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: arial, sans-serif;
+
+        p {
+          color: #696969;
+          font-size: 0.9375rem;
+          font-family: arial, sans-serif;
+          line-height: 1.2rem;
+          position: relative;
+          margin: 12px 0 20px 0px;
+          padding: 0px;
+        }
+      }
+
+    }
+
+    .quote-layout-1 {
+      margin-top: 30px;
+      padding: 2.5% 5%;
+    }
+
     .share-save-container{
       position: relative;
       @include bp($bp-large){
@@ -23,17 +84,18 @@
       }
     }
   }
-  .article-callout{
+
+  .article-callout {
     margin-bottom: 32px;
     @include bp($bp-small-plus){
       margin-bottom: 50px;
     }
-    .article-callout-item{
+    .article-callout-item {
       margin-bottom: 15px;
       @include bp($bp-small-plus){
         margin-bottom: 25px;
       }
-      .article-callout-title{
+      .article-callout-title {
         color:#7a4183;
         @include rem(font-size, 24px);
         @include rem(line-height, 30px);
@@ -47,10 +109,12 @@
       }
     }
   }
+
   .article-call-to-action{
     margin-bottom: 45px;
   }
-  p{
+
+  p {
     color: #696969;
     font-family: Arial, sans-serif;
     @include rem(font-size, 15px);

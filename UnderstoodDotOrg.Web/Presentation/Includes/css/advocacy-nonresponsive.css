@@ -10,34 +10,87 @@
 /* line 5, ../css.source/modules/advocacy/_advocacy-article.scss */
 .advocacy-article {
   margin-bottom: 44px;
+  color: #696969;
+  font-size: 0.9375rem;
+  font-family: arial, sans-serif;
+  line-height: 1.2rem;
 }
-/* line 7, ../css.source/modules/advocacy/_advocacy-article.scss */
+/* line 12, ../css.source/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-header {
   margin-bottom: 53px;
 }
-/* line 11, ../css.source/modules/advocacy/_advocacy-article.scss */
+/* line 17, ../css.source/modules/advocacy/_advocacy-article.scss */
+.advocacy-article .article-header h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #7a4183;
+  margin: 30px 0 15px 0;
+}
+/* line 24, ../css.source/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-header p {
   margin-top: 20px;
   margin-bottom: 15px;
   margin-top: -7px;
   margin-bottom: 15px;
 }
-/* line 19, ../css.source/modules/advocacy/_advocacy-article.scss */
+/* line 33, ../css.source/modules/advocacy/_advocacy-article.scss */
+.advocacy-article .article-header ul {
+  list-style: disc;
+  margin: 0 0 30px 30px;
+  padding: 0;
+}
+/* line 38, ../css.source/modules/advocacy/_advocacy-article.scss */
+.advocacy-article .article-header ul li {
+  color: #696969;
+  font-size: 0.9375rem;
+  font-family: arial, sans-serif;
+  line-height: 1.2rem;
+  position: relative;
+  margin-top: 12px;
+  padding: 0px;
+}
+/* line 48, ../css.source/modules/advocacy/_advocacy-article.scss */
+.advocacy-article .article-header ul li:first-child {
+  margin-top: 0;
+}
+/* line 56, ../css.source/modules/advocacy/_advocacy-article.scss */
+.advocacy-article .article-header ol li {
+  color: #696969;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+}
+/* line 62, ../css.source/modules/advocacy/_advocacy-article.scss */
+.advocacy-article .article-header ol li p {
+  color: #696969;
+  font-size: 0.9375rem;
+  font-family: arial, sans-serif;
+  line-height: 1.2rem;
+  position: relative;
+  margin: 12px 0 20px 0px;
+  padding: 0px;
+}
+/* line 75, ../css.source/modules/advocacy/_advocacy-article.scss */
+.advocacy-article .article-header .quote-layout-1 {
+  margin-top: 30px;
+  padding: 2.5% 5%;
+}
+/* line 80, ../css.source/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-header .share-save-container {
   position: relative;
   left: -36px;
 }
-/* line 26, ../css.source/modules/advocacy/_advocacy-article.scss */
+/* line 88, ../css.source/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-callout {
   margin-bottom: 32px;
   margin-bottom: 50px;
 }
-/* line 31, ../css.source/modules/advocacy/_advocacy-article.scss */
+/* line 93, ../css.source/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-callout .article-callout-item {
   margin-bottom: 15px;
   margin-bottom: 25px;
 }
-/* line 36, ../css.source/modules/advocacy/_advocacy-article.scss */
+/* line 98, ../css.source/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-callout .article-callout-item .article-callout-title {
   color: #7a4183;
   font-size: 24px;
@@ -52,11 +105,11 @@
   line-height: 2.25rem;
   margin-bottom: 16px;
 }
-/* line 50, ../css.source/modules/advocacy/_advocacy-article.scss */
+/* line 113, ../css.source/modules/advocacy/_advocacy-article.scss */
 .advocacy-article .article-call-to-action {
   margin-bottom: 45px;
 }
-/* line 53, ../css.source/modules/advocacy/_advocacy-article.scss */
+/* line 117, ../css.source/modules/advocacy/_advocacy-article.scss */
 .advocacy-article p {
   color: #696969;
   font-family: Arial, sans-serif;
