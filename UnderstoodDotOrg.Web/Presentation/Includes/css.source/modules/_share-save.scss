@@ -110,6 +110,13 @@
         background-position: -120px -40px;
       }
 
+      @include bp($bp-small-max) {
+        margin-right: 0px;
+      }
+      @include bp($bp-mobile) {
+        margin-right: 0px;
+      }
+
     }
     .icon-remind {
       background-position: -160px 0;

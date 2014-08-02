@@ -5182,50 +5182,62 @@
 .share-save-container div.share-save-icon .icon-print:hover {
   background-position: -120px -40px;
 }
-/* line 114, ../css.source/modules/_share-save.scss */
+@media (min-width: 480px) and (max-width: 649px), print {
+  /* line 106, ../css.source/modules/_share-save.scss */
+  .share-save-container div.share-save-icon .icon-print {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 479px), print {
+  /* line 106, ../css.source/modules/_share-save.scss */
+  .share-save-container div.share-save-icon .icon-print {
+    margin-right: 0px;
+  }
+}
+/* line 121, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-icon .icon-remind {
   background-position: -160px 0;
   margin-right: 0;
 }
-/* line 118, ../css.source/modules/_share-save.scss */
+/* line 125, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-icon .icon-remind:hover {
   background-position: -160px -40px;
 }
-/* line 122, ../css.source/modules/_share-save.scss */
+/* line 129, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-icon .icon-remind.active:hover {
   background-position: -482px -40px;
 }
-/* line 126, ../css.source/modules/_share-save.scss */
+/* line 133, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-icon .icon-remind.active {
   background-position: -482px 0px;
 }
-/* line 128, ../css.source/modules/_share-save.scss */
+/* line 135, ../css.source/modules/_share-save.scss */
 .touch .share-save-container div.share-save-icon .icon-remind.active {
   background-position: -482px 0px;
 }
-/* line 135, ../css.source/modules/_share-save.scss */
+/* line 142, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-icon .icon-rss {
   background-position: -400px 0;
   margin-right: 0;
   display: none;
 }
-/* line 140, ../css.source/modules/_share-save.scss */
+/* line 147, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-icon .icon-rss:hover {
   background-position: -400px -40px;
 }
-/* line 145, ../css.source/modules/_share-save.scss */
+/* line 152, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-icon.is-open .tools {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 @media (min-width: 650px), print {
-  /* line 145, ../css.source/modules/_share-save.scss */
+  /* line 152, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-icon.is-open .tools {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
-/* line 159, ../css.source/modules/_share-save.scss */
+/* line 166, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon {
   display: inline-block;
   position: relative;
@@ -5234,17 +5246,17 @@
   z-index: 9;
   margin: 0 auto;
 }
-/* line 167, ../css.source/modules/_share-save.scss */
+/* line 174, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon br {
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 167, ../css.source/modules/_share-save.scss */
+  /* line 174, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon br {
     display: inline-block;
   }
 }
-/* line 175, ../css.source/modules/_share-save.scss */
+/* line 182, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .toggle {
   width: 170px;
   margin: 0;
@@ -5254,7 +5266,7 @@
   top: 57px;
 }
 @media (min-width: 650px), print {
-  /* line 175, ../css.source/modules/_share-save.scss */
+  /* line 182, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .toggle {
     position: relative;
     left: 0;
@@ -5264,45 +5276,45 @@
   }
 }
 @media (min-width: 650px), print {
-  /* line 159, ../css.source/modules/_share-save.scss */
+  /* line 166, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon {
     width: auto;
     position: absolute;
   }
 }
-/* line 198, ../css.source/modules/_share-save.scss */
+/* line 205, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .icon-facebook {
   background-position: -200px 0;
 }
-/* line 201, ../css.source/modules/_share-save.scss */
+/* line 208, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .icon-facebook:hover {
   background-position: -200px -40px;
 }
-/* line 207, ../css.source/modules/_share-save.scss */
+/* line 214, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .icon-twitter {
   background-position: -240px 0;
 }
-/* line 211, ../css.source/modules/_share-save.scss */
+/* line 218, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .icon-twitter:hover {
   background-position: -240px -40px;
 }
-/* line 216, ../css.source/modules/_share-save.scss */
+/* line 223, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .icon-googleplus {
   background-position: -280px 0;
 }
-/* line 220, ../css.source/modules/_share-save.scss */
+/* line 227, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .icon-googleplus:hover {
   background-position: -280px -40px;
 }
-/* line 225, ../css.source/modules/_share-save.scss */
+/* line 232, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .icon-pinterest {
   background-position: -320px 0;
 }
-/* line 229, ../css.source/modules/_share-save.scss */
+/* line 236, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .icon-pinterest:hover {
   background-position: -320px -40px;
 }
-/* line 235, ../css.source/modules/_share-save.scss */
+/* line 242, ../css.source/modules/_share-save.scss */
 .share-save-container div.share-save-social-icon .socicon {
   background-image: url('../images/sprite.share-save.social.png?84c22273');
   background-size: 521px 78px;
@@ -5314,17 +5326,17 @@
   margin-right: 0px;
 }
 @media (min-width: 650px), print {
-  /* line 235, ../css.source/modules/_share-save.scss */
+  /* line 242, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .socicon {
     display: block;
   }
 }
-/* line 249, ../css.source/modules/_share-save.scss */
+/* line 256, ../css.source/modules/_share-save.scss */
 .no-backgroundsize .share-save-container div.share-save-social-icon .socicon {
   background-image: url('../images/sprite.share-save.social.lo-res.png?5eac5118');
 }
 @media (min-width: 650px), print {
-  /* line 159, ../css.source/modules/_share-save.scss */
+  /* line 166, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon {
     left: 0px;
     top: 0;
@@ -5332,55 +5344,55 @@
     display: inline-block;
     margin-right: 0;
   }
-  /* line 262, ../css.source/modules/_share-save.scss */
+  /* line 269, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .icon-facebook {
     background-position: -200px 0;
     margin-top: -10px;
     margin-left: 25px;
   }
-  /* line 267, ../css.source/modules/_share-save.scss */
+  /* line 274, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .icon-facebook:hover {
     background-position: -200px -40px;
   }
-  /* line 272, ../css.source/modules/_share-save.scss */
+  /* line 279, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .icon-twitter {
     background-position: -240px 0;
     margin-top: -30px;
     margin-left: 0px;
   }
-  /* line 277, ../css.source/modules/_share-save.scss */
+  /* line 284, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .icon-twitter:hover {
     background-position: -240px -40px;
   }
-  /* line 282, ../css.source/modules/_share-save.scss */
+  /* line 289, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .icon-googleplus {
     background-position: -280px 0;
     margin-top: -22px;
     margin-left: 0px;
   }
-  /* line 287, ../css.source/modules/_share-save.scss */
+  /* line 294, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .icon-googleplus:hover {
     background-position: -280px -40px;
   }
-  /* line 293, ../css.source/modules/_share-save.scss */
+  /* line 300, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .icon-pinterest {
     background-position: -320px 0;
     margin-top: -32px;
     margin-left: 25px;
   }
-  /* line 299, ../css.source/modules/_share-save.scss */
+  /* line 306, ../css.source/modules/_share-save.scss */
   .share-save-container div.share-save-social-icon .icon-pinterest:hover {
     background-position: -320px -40px;
   }
 }
 
-/* line 312, ../css.source/modules/_share-save.scss */
+/* line 319, ../css.source/modules/_share-save.scss */
 .community-main-header div.share-save-social-icon .toggle {
   left: -78px;
   top: 57px;
 }
 @media (min-width: 650px), print {
-  /* line 312, ../css.source/modules/_share-save.scss */
+  /* line 319, ../css.source/modules/_share-save.scss */
   .community-main-header div.share-save-social-icon .toggle {
     position: relative;
     left: 0;
@@ -5390,39 +5402,39 @@
   }
 }
 
-/* line 325, ../css.source/modules/_share-save.scss */
+/* line 332, ../css.source/modules/_share-save.scss */
 .community-main-header .share-save-container div.share-save-icon {
   width: 240px;
 }
-/* line 328, ../css.source/modules/_share-save.scss */
+/* line 335, ../css.source/modules/_share-save.scss */
 .community-main-header .share-save-container div.share-save-icon .icon-remind {
   margin-right: 5px;
 }
-/* line 332, ../css.source/modules/_share-save.scss */
+/* line 339, ../css.source/modules/_share-save.scss */
 .community-main-header .share-save-container div.share-save-icon .icon-rss {
   margin-right: 0;
   display: inline-block;
 }
 
 @media (min-width: 650px), print {
-  /* line 341, ../css.source/modules/_share-save.scss */
+  /* line 348, ../css.source/modules/_share-save.scss */
   .page-topic.with-share > .row > div.offset-1:first-child {
     display: table-cell;
     float: none;
     padding-left: 4.166666%;
   }
-  /* line 346, ../css.source/modules/_share-save.scss */
+  /* line 353, ../css.source/modules/_share-save.scss */
   .page-topic.with-share > .row > div.col-14:first-child {
     width: 68%;
   }
-  /* line 349, ../css.source/modules/_share-save.scss */
+  /* line 356, ../css.source/modules/_share-save.scss */
   .page-topic.with-share > .row > div:last-child {
     display: table-cell;
     vertical-align: middle;
     float: none;
   }
 }
-/* line 359, ../css.source/modules/_share-save.scss */
+/* line 366, ../css.source/modules/_share-save.scss */
 .share-save-dd-container {
   text-align: center;
   position: relative;
@@ -5433,14 +5445,14 @@
   display: none;
 }
 @media (min-width: 650px), print {
-  /* line 359, ../css.source/modules/_share-save.scss */
+  /* line 366, ../css.source/modules/_share-save.scss */
   .share-save-dd-container {
     display: block;
     text-align: left;
     top: -30px;
   }
 }
-/* line 374, ../css.source/modules/_share-save.scss */
+/* line 381, ../css.source/modules/_share-save.scss */
 .share-save-dd-container h3 {
   font-size: 16px;
   font-size: 1rem;
@@ -5448,11 +5460,11 @@
   color: #696969;
   padding-bottom: 10px;
 }
-/* line 381, ../css.source/modules/_share-save.scss */
+/* line 388, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon {
   min-width: 190px;
 }
-/* line 385, ../css.source/modules/_share-save.scss */
+/* line 392, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon {
   background-image: url('../images/sprite.share-save.social.png?84c22273');
   background-size: 468px 70px;
@@ -5464,94 +5476,94 @@
   text-indent: -9999px;
   width: 29px;
 }
-/* line 396, ../css.source/modules/_share-save.scss */
+/* line 403, ../css.source/modules/_share-save.scss */
 .no-backgroundsize .share-save-dd-container div.share-save-dd-icon .icon {
   background-image: url('../images/sprite.share-save.social.390.png?a20d3882');
 }
-/* line 402, ../css.source/modules/_share-save.scss */
+/* line 409, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-share-dd {
   background-position: -2px 0px;
 }
-/* line 406, ../css.source/modules/_share-save.scss */
+/* line 413, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-share-dd.active-dd, .share-save-dd-container div.share-save-dd-icon .icon-share-dd.active-dd:hover {
   background-position: -325px 0px;
 }
-/* line 410, ../css.source/modules/_share-save.scss */
+/* line 417, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-share-dd:hover {
   background-position: -2px -36px;
 }
-/* line 415, ../css.source/modules/_share-save.scss */
+/* line 422, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-email {
   background-position: -38px -0px;
 }
-/* line 418, ../css.source/modules/_share-save.scss */
+/* line 425, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-email:hover {
   background-position: -38px -36px;
 }
-/* line 423, ../css.source/modules/_share-save.scss */
+/* line 430, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-save {
   background-position: -74px -0px;
 }
-/* line 426, ../css.source/modules/_share-save.scss */
+/* line 433, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-save:hover {
   background-position: -74px -36px;
 }
-/* line 430, ../css.source/modules/_share-save.scss */
+/* line 437, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-save.active:hover {
   background-position: -397px -36px;
 }
-/* line 434, ../css.source/modules/_share-save.scss */
+/* line 441, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-save.active {
   background-position: -397px 0px;
 }
-/* line 436, ../css.source/modules/_share-save.scss */
+/* line 443, ../css.source/modules/_share-save.scss */
 .touch .share-save-dd-container div.share-save-dd-icon .icon-save.active {
   background-position: -397px 0px;
 }
-/* line 442, ../css.source/modules/_share-save.scss */
+/* line 449, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-print {
   background-position: -109.5px 0px;
 }
-/* line 445, ../css.source/modules/_share-save.scss */
+/* line 452, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-print:hover {
   background-position: -109.5px -36px;
 }
-/* line 450, ../css.source/modules/_share-save.scss */
+/* line 457, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-remind {
   background-position: -145.5px 0px;
 }
-/* line 453, ../css.source/modules/_share-save.scss */
+/* line 460, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-remind:hover {
   background-position: -145.5px -36px;
 }
-/* line 457, ../css.source/modules/_share-save.scss */
+/* line 464, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-remind.active:hover {
   background-position: -434px -36px;
 }
-/* line 461, ../css.source/modules/_share-save.scss */
+/* line 468, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-remind.active {
   background-position: -434px 0px;
 }
-/* line 463, ../css.source/modules/_share-save.scss */
+/* line 470, ../css.source/modules/_share-save.scss */
 .touch .share-save-dd-container div.share-save-dd-icon .icon-remind.active {
   background-position: -434px 0px;
 }
-/* line 469, ../css.source/modules/_share-save.scss */
+/* line 476, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-rss {
   background-position: -360.5px 0px;
   margin-right: 0;
   display: none;
 }
-/* line 474, ../css.source/modules/_share-save.scss */
+/* line 481, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon .icon-rss:hover {
   background-position: -360.5px -36px;
 }
-/* line 479, ../css.source/modules/_share-save.scss */
+/* line 486, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-icon.is-open-dd .tools {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 484, ../css.source/modules/_share-save.scss */
+/* line 491, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon {
   display: inline-block;
   position: relative;
@@ -5560,11 +5572,11 @@
   z-index: 9;
   margin: 0 auto;
 }
-/* line 492, ../css.source/modules/_share-save.scss */
+/* line 499, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon br {
   display: none;
 }
-/* line 496, ../css.source/modules/_share-save.scss */
+/* line 503, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .toggle-dd {
   min-width: 152px;
   max-width: 152px;
@@ -5575,44 +5587,44 @@
   top: 70px;
 }
 @media (min-width: 650px), print {
-  /* line 496, ../css.source/modules/_share-save.scss */
+  /* line 503, ../css.source/modules/_share-save.scss */
   .share-save-dd-container div.share-save-dd-social-icon .toggle-dd {
     left: 32px;
   }
 }
-/* line 510, ../css.source/modules/_share-save.scss */
+/* line 517, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .icon-facebook {
   background-position: -181px -2px;
 }
-/* line 513, ../css.source/modules/_share-save.scss */
+/* line 520, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .icon-facebook:hover {
   background-position: -181px -37px;
 }
-/* line 518, ../css.source/modules/_share-save.scss */
+/* line 525, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .icon-twitter {
   background-position: -217px -2px;
 }
-/* line 521, ../css.source/modules/_share-save.scss */
+/* line 528, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .icon-twitter:hover {
   background-position: -217px -37px;
 }
-/* line 526, ../css.source/modules/_share-save.scss */
+/* line 533, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .icon-googleplus {
   background-position: -253px -2px;
 }
-/* line 528, ../css.source/modules/_share-save.scss */
+/* line 535, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .icon-googleplus:hover {
   background-position: -253px -37px;
 }
-/* line 533, ../css.source/modules/_share-save.scss */
+/* line 540, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .icon-pinterest {
   background-position: -289px -2px;
 }
-/* line 536, ../css.source/modules/_share-save.scss */
+/* line 543, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .icon-pinterest:hover {
   background-position: -289px -37px;
 }
-/* line 541, ../css.source/modules/_share-save.scss */
+/* line 548, ../css.source/modules/_share-save.scss */
 .share-save-dd-container div.share-save-dd-social-icon .socicon {
   background-image: url('../images/sprite.share-save.social.png?84c22273');
   background-size: 390px 70px;
@@ -5623,7 +5635,7 @@
   width: 31px;
   margin-right: 0px;
 }
-/* line 551, ../css.source/modules/_share-save.scss */
+/* line 558, ../css.source/modules/_share-save.scss */
 .no-backgroundsize .share-save-dd-container div.share-save-dd-social-icon .socicon {
   background-image: url('../images/sprite.share-save.social.390.png?a20d3882');
 }
