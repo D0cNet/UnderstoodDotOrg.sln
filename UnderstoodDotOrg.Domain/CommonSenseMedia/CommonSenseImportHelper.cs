@@ -258,7 +258,7 @@ namespace UnderstoodDotOrg.Domain.Importer
                     {
                         if (!string.IsNullOrEmpty(itemTemplateID))
                         {
-                            string id = addMetadata(strippedString, folder, itemTemplateID);
+                            string id = addMetadata(strippedString, s, folder, itemTemplateID);
                             ret.Add(id);
                         }
                     }
@@ -425,7 +425,7 @@ namespace UnderstoodDotOrg.Domain.Importer
         /// <param name="Name">Name/title to use for content</param>
         /// <param name="Mapping">Mapping to relate the new metadata to</param>
         /// <returns>GUID of the new Metadata</returns>
-        public static string addMetadata(string Name, string folderID, string itemTemplateID)
+        public static string addMetadata(string strippedName, string rawName, string folderID, string itemTemplateID)
         {
             using (new SecurityDisabler())
             {
@@ -433,11 +433,11 @@ namespace UnderstoodDotOrg.Domain.Importer
                 Sitecore.Data.Database web = Sitecore.Configuration.Factory.GetDatabase("web");
                 Item container = master.GetItem(folderID);
                 TemplateItem metadataTemplate = master.Templates[itemTemplateID];
-                Item newItem = container.Add(Name, metadataTemplate);
+                Item newItem = container.Add(strippedName, metadataTemplate);
 
                 newItem.Editing.BeginEdit();
 
-                newItem["Content Title"] = Name;
+                newItem["Content Title"] = rawName;
 
                 newItem.Editing.EndEdit();
 

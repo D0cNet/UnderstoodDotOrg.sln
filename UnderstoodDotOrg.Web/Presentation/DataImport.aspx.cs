@@ -29,13 +29,26 @@ namespace UnderstoodDotOrg.Web.Presentation
 
             string exeDir = System.IO.Path.GetDirectoryName(exeLocation);
 
+            XmlTextReader apps;
+            XmlTextReader games;
+            XmlTextReader websites;
+
             using (var webClient = new WebClient())
             {
                 try
                 {
-                    XmlTextReader apps = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1&delta=1406563200");
-                    XmlTextReader games = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1&delta=1406563200");
-                    XmlTextReader websites = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1&delta=1406563200");
+                    if (Request.QueryString["reimport"] != null && Request.QueryString["reimport"].ToString() == "true")
+                    {
+                        apps = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1");
+                        games = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1");
+                        websites = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1");
+                    }
+                    else
+                    {
+                        apps = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=app&special_needs=1&delta=1406563200");
+                        games = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=game&special_needs=1&delta=1406563200");
+                        websites = new XmlTextReader("http://api.commonsensemedia.org/api/v2/reviews/browse?api_key=534823b372928738c93803b534a7a770&channel=website&special_needs=1&delta=1406563200");
+                    }
 
                     totalEntries += ImportCategory(GetEntries(apps));
                     totalEntries += ImportCategory(GetEntries(games));
