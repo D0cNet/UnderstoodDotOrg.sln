@@ -25,6 +25,7 @@
       padding: 0 4%;
       overflow: hidden;
       margin: 0;
+      max-height: 354px;
     }
   }// #topic-carousel
 
@@ -104,7 +105,8 @@
         height: auto;
         width: 100%;
         @include bp($bp-small-plus) {
-          height: auto;
+          height: 100%;
+          max-height: 354px;
           width: auto;
         }
       }
@@ -221,7 +223,7 @@
         width: 270px;
         height: 26%;
         left: -80px;
-        top: -1px;
+        top: 0px;
         padding: 0 0 0 80px;
         z-index: 2;
         border: none;
