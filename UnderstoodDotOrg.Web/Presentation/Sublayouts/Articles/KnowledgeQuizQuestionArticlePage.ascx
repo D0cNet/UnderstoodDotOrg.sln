@@ -52,6 +52,16 @@
                         <asp:Literal ID="litCorrect" runat="server" ></asp:Literal>
                         <asp:Literal ID="litIncorrect" runat="server" ></asp:Literal>
                     </p>
+                    <div id="divCorrectAnswerReveal" runat="server" class="answer-choices incorrect" visible="false">
+                        <ul>
+                            <li>
+                                <input type="radio" name="example" checked="checked">
+                                <span class="correct-answer-reveal">
+                                    <asp:Literal ID="litCorrectAnswerReveal" runat="server"></asp:Literal>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
                     <p class="explanation">
                         <sc:FieldRenderer ID="frExplanation" runat="server" FieldName="Answer Explanation" />
                     </p>

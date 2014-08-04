@@ -51,6 +51,8 @@
                 <sc:Sublayout ID="SBReviewedBy" runat="server" Path="~/Presentation/Sublayouts/Articles/Shared/ReviewerInfo.ascx" />
                 <!-- END PARTIAL: reviewed-by  -->
 
+                <sc:sublayout id="Sublayout3" runat="server" path="~/Presentation/Sublayouts/Articles/Shared/DidYouFindThisHelpfulOther.ascx" />
+
                 <div class="find-this-helpful-small rs_skip">
                     <!-- Module within only appears in under 650px window width-->
                 </div>

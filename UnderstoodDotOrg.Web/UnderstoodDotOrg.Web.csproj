@@ -716,13 +716,6 @@
     <Compile Include="Presentation\Sublayouts\Articles\Shared\ShareContent.ascx.designer.cs">
       <DependentUpon>ShareContent.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.cs">
-      <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx.designer.cs">
-      <DependentUpon>Simple Expert Add Question Page.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx.cs">
       <DependentUpon>Simple Expert Article Page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1209,13 +1202,6 @@
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\Page Topic.ascx.designer.cs">
       <DependentUpon>Page Topic.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx.cs">
-      <DependentUpon>PartnersCarousel.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx.designer.cs">
-      <DependentUpon>PartnersCarousel.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx.cs">
       <DependentUpon>ShareAndSaveTool.ascx</DependentUpon>
@@ -2991,7 +2977,6 @@
     <Content Include="Presentation\Sublayouts\Articles\Shared\PromotionalsList.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\ReviewerInfo.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Shared\ShareContent.ascx" />
-    <Content Include="Presentation\Sublayouts\Articles\Simple Expert Add Question Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\Simple Expert Article Page.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SlideshowArticle.ascx" />
     <Content Include="Presentation\Sublayouts\Articles\SuggestArticlePageCarousal.ascx" />
@@ -3061,7 +3046,6 @@
     <Content Include="Presentation\Sublayouts\Common\More Carousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\MoreToExplore.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Page Topic.ascx" />
-    <Content Include="Presentation\Sublayouts\Common\PartnersCarousel.ascx" />
     <Content Include="Presentation\Sublayouts\Common\ShareAndSaveTool.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Start A Discussion.ascx" />
     <Content Include="Presentation\Sublayouts\Common\Tiles\EventTile.ascx" />
