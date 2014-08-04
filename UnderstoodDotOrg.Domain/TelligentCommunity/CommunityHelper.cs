@@ -48,6 +48,42 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             };
         }
 
+        public static List<CommentSortOption> GetMyAccountCommentsSortOptions()
+        {
+            return GetMyAccountFavoritesSortOptions();
+        }
+
+        public static List<CommentSortOption> GetMyAccountFavoritesSortOptions()
+        {
+            return new List<CommentSortOption>
+            {
+                new CommentSortOption 
+                {
+                    Value = UnderstoodDotOrg.Common.Constants.MyAccountSearchValues.MostRecent.ToString(),
+                    Description = DictionaryConstants.MostRecentLabel,
+                    SortAscending = false
+                },
+                new CommentSortOption
+                {
+                    Value = UnderstoodDotOrg.Common.Constants.MyAccountSearchValues.OldestToNewest.ToString(),
+                    Description = DictionaryConstants.OldestToNewestLabel,
+                    SortAscending = true
+                },
+                new CommentSortOption
+                {
+                    Value = UnderstoodDotOrg.Common.Constants.MyAccountSearchValues.NumberOfComments.ToString(),
+                    Description = DictionaryConstants.NumberOfCommentsLabel,
+                    SortAscending = true
+                },
+                new CommentSortOption
+                {
+                    Value = UnderstoodDotOrg.Common.Constants.MyAccountSearchValues.RecentComments.ToString(),
+                    Description = DictionaryConstants.RecentCommentsLabel,
+                    SortAscending = true
+                }
+            };
+        }
+
         
         /// <summary>
         /// Formats the input string to show only the first 100 characters
@@ -154,8 +190,7 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                     webClient.Headers.Add("Rest-User-Token", TelligentAuth());
 
                     // TODO: Add error handling for invalid ids
-
-                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml?PageSize=1",
+                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml?PageSize=1&SortBy=CreatedUtcDate&SortOrder=Descending",
                         blogId, blogPostId));
                     var xml = webClient.DownloadString(requestUrl);
 
@@ -173,6 +208,48 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             }
 
             return count;
+        }
+
+        public static DateTime? GetRecentCommentDate(string blogId, string blogPostId)
+        {
+            int id = 0;
+            int postId = 0;
+
+            if (String.IsNullOrEmpty(blogId) || String.IsNullOrEmpty(blogPostId)
+                || !Int32.TryParse(blogId, out id) || !Int32.TryParse(blogPostId, out postId))
+            {
+                return null;
+            }
+
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    webClient.Headers.Add("Rest-User-Token", TelligentAuth());
+
+                    // TODO: Add error handling for invalid ids
+                    var requestUrl = GetApiEndPoint(String.Format("blogs/{0}/posts/{1}/comments.xml?PageSize=1&SortBy=CreatedUtcDate&SortOrder=Descending",
+                        blogId, blogPostId));
+                    var xml = webClient.DownloadString(requestUrl);
+
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xml);
+
+                    XmlNodeList nodes = xmlDoc.SelectNodes("Response/Comments/Comment");
+
+                    foreach (XmlNode xn in nodes)
+                    {
+                        string commentDate = xn["PublishedDate"].InnerText;
+                        DateTime parsedDate = DateTime.Parse(commentDate);
+
+                        return parsedDate;
+                    }
+
+                }
+                catch { }
+            }
+
+            return null;
         }
 
         public static BlogPost ReadBlogBody(int blogId, int blogPostId)
@@ -1045,6 +1122,20 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
             return totalComments;
         }
 
+        public static DateTime? GetRecentCommentDate(Sitecore.Data.Items.Item item)
+        {
+            DateTime? recentCommentDate = null;
+
+            if (item.Fields["BlogId"] != null && item.Fields["BlogPostId"] != null)
+            {
+                recentCommentDate = CommunityHelper.GetRecentCommentDate(
+                                item.Fields["BlogId"].Value,
+                                item.Fields["BlogPostId"].Value);
+            }
+
+            return recentCommentDate;
+        }
+
         public static List<FavoritesModel> GetFavorites(Guid username)
         {
             List<FavoritesModel> favoritesList = new List<FavoritesModel>();
@@ -1063,7 +1154,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
                         Url = item.GetUrl(),
                         ContentId = ai.ContentId,
                         ReplyCount = GetTotalComments(item).ToString(),
-                        Type = GetContentType(item)
+                        RecentCommentDate = GetRecentCommentDate(item),
+                        Type = GetContentType(item),
+                        Date = ai.DateModified
                     });
                 }
             }

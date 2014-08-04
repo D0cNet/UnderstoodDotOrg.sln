@@ -25,6 +25,7 @@ namespace UnderstoodDotOrg.Services.Models.Telligent
         public string AuthorDisplayName { get; set; }
         public string AuthorProfileUrl { get; set; }
         public string ReplyCount { get; set; }
+        public DateTime? RecentReplyDate { get; set; }
         public string IsApproved { get; set; }
         public string AuthorUsername { get; set; }
         public string CommentTitle { get; set; }

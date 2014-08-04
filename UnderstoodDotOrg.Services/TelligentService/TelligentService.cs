@@ -905,6 +905,7 @@ namespace UnderstoodDotOrg.Services.TelligentService
                 foreach (XmlNode xn in container.SelectNodes("Comment"))
                 {
                     Comment comment = new Comment(xn);
+                    //comment.ReplyCount = GetTotalComments(comment.Bl);
                     comments.Add(comment);
                 }
             });
