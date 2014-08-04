@@ -1912,8 +1912,9 @@ html.canvas .mini-tools-wrap {
   padding: 0 4%;
   overflow: hidden;
   margin: 0;
+  max-height: 354px;
 }
-/* line 32, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 33, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .play-pause {
   display: block;
   z-index: 2;
@@ -1930,32 +1931,32 @@ html.canvas .mini-tools-wrap {
   background-repeat: no-repeat;
   background-position: 5px 5px;
 }
-/* line 48, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 49, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .play-pause:hover {
   background-position: 5px -37.5px;
 }
-/* line 52, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 53, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .play-pause.play {
   background-position: 5px -79px;
 }
-/* line 55, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 56, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .play-pause.play:hover {
   background-position: 5px -121px;
 }
-/* line 60, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 61, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .no-backgroundsize .carousel-tertiary .play-pause {
   background-image: url('../images/sprite.btn.carousel.play-pause.lo-res.png?c529550b');
 }
-/* line 67, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 68, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsBullets {
   display: none;
 }
-/* line 71, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 72, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsSlide {
   overflow: visible;
   overflow: hidden;
 }
-/* line 78, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 79, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsSlide .title {
   font-size: 20px;
   font-size: 1.25rem;
@@ -1967,23 +1968,24 @@ html.canvas .mini-tools-wrap {
   height: 50px;
   display: none;
 }
-/* line 91, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 92, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsSlide .rsTmb {
   display: none;
   display: block;
 }
-/* line 99, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 100, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsSlide .rsThumb.rsNavSelected {
   top: 0px;
 }
-/* line 103, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 104, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsSlide .rsContent img {
   height: auto;
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 354px;
   width: auto;
 }
-/* line 114, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 116, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs {
   overflow: visible;
   position: absolute;
@@ -1992,7 +1994,7 @@ html.canvas .mini-tools-wrap {
   font-size: 1.25rem;
   color: #426da9;
 }
-/* line 124, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 126, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsTmb {
   display: inline-block;
   vertical-align: middle;
@@ -2005,18 +2007,18 @@ html.canvas .mini-tools-wrap {
   margin-left: 10px;
   margin-right: 6px;
 }
-/* line 133, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 135, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsTmb:hover, .carousel-tertiary .topicCarousel .rsTmb:focus {
   color: #426da9;
   text-decoration: underline;
 }
-/* line 151, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 153, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsNavSelected .rsTmb,
 .carousel-tertiary .topicCarousel .rsNavSelected .rsTmb:hover,
 .carousel-tertiary .topicCarousel .rsNavSelected .rsTmb:focus {
   color: #fff;
 }
-/* line 155, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 157, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumb {
   width: 190px;
   height: 25%;
@@ -2031,7 +2033,7 @@ html.canvas .mini-tools-wrap {
   line-height: 22px;
   line-height: 1.375rem;
 }
-/* line 171, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 173, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumb:before {
   content: '';
   display: inline-block;
@@ -2040,15 +2042,15 @@ html.canvas .mini-tools-wrap {
   margin-right: -0.25em;
   /* Adjusts for spacing */
 }
-/* line 179, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 181, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumb:last-child {
   border-bottom: none;
 }
-/* line 183, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 185, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumb:hover {
   color: #426da9;
 }
-/* line 189, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 191, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs {
   width: 240px;
   height: 100%;
@@ -2059,7 +2061,7 @@ html.canvas .mini-tools-wrap {
   top: auto;
   display: block;
 }
-/* line 198, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 200, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumbs .rsThumbsContainer {
   height: 100%;
   margin-left: 50px;
@@ -2070,28 +2072,28 @@ html.canvas .mini-tools-wrap {
   top: 0;
   right: 40px;
 }
-/* line 218, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 220, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumb.rsNavSelected {
   background-color: #794382;
   position: relative;
   width: 270px;
   height: 26%;
   left: -80px;
-  top: -1px;
+  top: 0px;
   padding: 0 0 0 80px;
   z-index: 2;
   border: none;
   color: #ffffff;
 }
-/* line 229, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 231, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumb.rsNavSelected .rsTmb {
   border: none;
 }
-/* line 233, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 235, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsThumb.rsNavSelected:hover {
   color: #ffffff;
 }
-/* line 240, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 242, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsArrowLeft .rsArrowIcn {
   background-position: 0 -37px;
   top: auto;
@@ -2099,11 +2101,11 @@ html.canvas .mini-tools-wrap {
   right: 57%;
   z-index: 2;
 }
-/* line 247, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 249, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsArrowLeft .rsArrowIcn:hover {
   background-position: 0 -75px;
 }
-/* line 252, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 254, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsArrowRight .rsArrowIcn {
   background-position: -38px -37px;
   top: auto;
@@ -2112,11 +2114,11 @@ html.canvas .mini-tools-wrap {
   right: 40%;
   right: 43%;
 }
-/* line 257, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 259, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsArrowRight .rsArrowIcn:hover {
   background-position: -38px -75px;
 }
-/* line 268, ../css.source/modules/carousel/_carousel-tertiary.scss */
+/* line 270, ../css.source/modules/carousel/_carousel-tertiary.scss */
 .carousel-tertiary .topicCarousel .rsOverflow {
   overflow: visible;
   overflow: hidden;
