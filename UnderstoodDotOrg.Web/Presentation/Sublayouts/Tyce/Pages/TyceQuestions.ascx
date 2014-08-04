@@ -6,7 +6,7 @@
                 <header>
                     <h2>
                         <span class="num">1</span>
-                        <span class="tyce-step-question"><%= Model.QuestionOneText.Rendered %></span>
+                        <label for="personalize-grade-mobile" class="tyce-step-question"><%= Model.QuestionOneText.Rendered %></span>
                         <span class="tyce-step-answer" style="display: none;"><%= Model.QuestionOneAnswerText.Rendered %></span>
                         <span class="instructions"><%= Model.QuestionOneInstructions.Rendered %></span>
                     </h2>
@@ -16,8 +16,6 @@
                     <a href="REPLACE" class="button tyce-step-change" style="display: none;">Change</a>
                 </header>
                 <div class="body">
-                    <label for="personalize-grade-mobile" class="visuallyhidden">
-                        <%= Model.QuestionOneText.Rendered %>:</label>
                     <select id="personalize-grade-mobile" class="responsive-select-mobile" required aria-required="true">
                         <option value="">Select a grade</option>
                         <asp:Repeater ID="rptrGradeOptions" runat="server" 
@@ -59,8 +57,6 @@
                 </header>
                 <div class="body">
                     <fieldset>
-                        <legend class="visuallyhidden">
-                            <%= Model.QuestionTwoText.Rendered %></legend>
                         <ul class="input-buttons">
                             <asp:Repeater ID="rptrChildIssues" runat="server">
                                 <ItemTemplate>
