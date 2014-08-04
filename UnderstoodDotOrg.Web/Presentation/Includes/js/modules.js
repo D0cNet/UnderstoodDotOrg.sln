@@ -929,25 +929,7 @@ the callbacks passed to the module.
                     });
                 }
 
-            var slider = topicCarousel.data('royalSlider'),
-                buttons = topicCarousel.find('.rsTmb'),
-                playPauseButton = topicCarousel.parent().find('.play-pause'),
-                playPause = function (e) {
-                    e.stopPropagation();
-                    e.preventDefault();
-
-                    var iconState = playPauseButton.hasClass('pause') ? 'play' : 'pause';
-
-                    playPauseButton.removeClass('play pause').addClass(iconState);
-
-                    if (iconState == 'pause') {
-                        slider.startAutoPlay();
-                    } else {
-                        slider.stopAutoPlay();
-                    }
-                };
-
-            playPauseButton.on('click', playPause);
+                var buttons = topicCarousel.find('.rsTmb');
 
             buttons.on('click', function (e) {
                 e.preventDefault();
@@ -970,7 +952,27 @@ the callbacks passed to the module.
             tcSlideTitleWrapper.css("height", slideHeight);
 
             U.carousels.keyboardAccess(topicCarousel);
-        };
+            };
+
+            var playPauseButton = function (topicCarousel) {
+                var slider = topicCarousel.data('royalSlider'),
+                    playPauseButton = topicCarousel.parent().find('.play-pause'),
+                    playPause = function (e) {
+                        e.stopPropagation();
+                        e.preventDefault();
+
+                        var iconState = playPauseButton.hasClass('pause') ? 'play' : 'pause';
+                        playPauseButton.removeClass('play pause').addClass(iconState);
+
+                        if (iconState == 'pause') {
+                            slider.startAutoPlay();
+                        } else {
+                            slider.stopAutoPlay();
+                        }
+                    };
+
+                playPauseButton.on('click', playPause);
+            };
 
         // On Document Ready: Destroy carousel if window width under 480
         $(document).ready(function () {
@@ -1096,6 +1098,7 @@ the callbacks passed to the module.
 
             // Call topic carousel
             topicCarousel(jQuery('#topic-carousel'), false, topicSliderHtml);
+            playPauseButton(jQuery('#topic-carousel'));
 
         });
 
