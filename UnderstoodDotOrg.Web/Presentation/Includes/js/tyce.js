@@ -630,8 +630,8 @@ var TYCE = (function() {
 
 				$skip.show();
 
-				$playpause.removeClass('is-disabled');
-				$volume.removeClass('is-disabled');
+				$playpause.removeClass('is-disabled').removeAttr('disabled');
+				$volume.removeClass('is-disabled').removeAttr('disabled');
 
 				// revert slider to full opacity when steps change, see next step below
 				$('.volume-slider').css('opacity', '1');
