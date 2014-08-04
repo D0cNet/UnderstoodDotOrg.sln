@@ -66,8 +66,8 @@
                             <div class="col col-6 push-8">
                                 <fieldset>
                                     <span class="select-container sort">
-                                        <label class="visuallyhidden">Sort by</label>
-                                        <asp:DropDownList ID="ddlSortOptions" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlSortOptions_SelectedIndexChanged">
+                                        <label class="visuallyhidden"><%= UnderstoodDotOrg.Common.DictionaryConstants.SortByLabel %></label>
+                                        <asp:DropDownList ID="ddlSortOptions" runat="server" OnSelectedIndexChanged="ddlSortOptions_SelectedIndexChanged">
                                         </asp:DropDownList>
                                     </span>
                                 </fieldset>
@@ -75,8 +75,8 @@
                             <div class="col col-4 pull-6">
                                 <span class="result-count">
                                     <span class="category-display-count" data-category-id="<%# Eval("CategoryId") %>"><%# Eval("DisplayCount") %></span> 
-                                    of
-                                    <%# Eval("TotalCount") %> results
+                                    <%= UnderstoodDotOrg.Common.DictionaryConstants.ofFragment %>
+                                    <%# Eval("TotalCount") %> <%= UnderstoodDotOrg.Common.DictionaryConstants.ResultsFragment %>
                                 </span>
                             </div>
                         </header>

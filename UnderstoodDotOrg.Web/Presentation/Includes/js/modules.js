@@ -466,12 +466,6 @@ the callbacks passed to the module.
 
 (function ($) {
 
-    // Initialize the module on page load.
-    $(document).ready(function () {
-        new U.showMore();
-    });
-
-
     /*
      *  Show More Functionality
      *
@@ -499,114 +493,7 @@ the callbacks passed to the module.
      */
 
 
-    U.showMore = function (options) {
-
-        // path for data
-        var $dataPath = '/Presentation/AjaxData/';
-
-        var $body = $(document.body);
-
-
-        // init
-        function init() {
-            showHideMore();
-        }
-
-        // request more items
-        function requestMore(event) {
-
-            // show more button container
-            var $showMoreContainer = $(this);
-            // show more button class
-
-            var $showMore = $(event.currentTarget);
-
-            // data container class name to populate (from button data attribute)
-            var $dataContainer = $("." + $showMore.data('container'));
-
-            // data class name for each item (for counting) (from button data attribute)
-            var $dataItem = $("." + $showMore.data('item'));
-
-            // data file (from button data attribute)
-            var $dataFile = $showMore.data('path');
-
-            // data count (from button data attribute)
-            var $dataCount = $showMore.attr('data-count');
-
-            // data page id (from button data attribute)
-            var $dataPageId = $showMore.data("page-id");
-
-            // data category id (from button data attribute)
-            var $dataCategoryId = $showMore.attr("data-category-id");
-
-            // data max results (from button data attribute)
-            var $dataMaxResults = $showMore.data("max-results");
-
-            // data results per click (from button data attribute)
-            var $dataResultsPerClick = $showMore.data("results-per-click");
-
-            //number visible to user, reflecting number of displayed results
-            var $categoryDisplayCount = $(".category-display-count").filter("[data-category-id='" + $dataCategoryId + "']");
-
-            //search parameters
-            var keyword = $("#hfAssistiveTechResultsKeyword").val();
-            if (!keyword) {
-                var issueId = $("#hfAssistiveTechResultsIssueId").val();
-                var gradeId = $("#hfAssistiveTechResultsGradeId").val();
-                var techTypeId = $("#hfAssistiveTechResultsTechTypeId").val();
-                var platformId = $("#hfAssistiveTechResultsPlatformId").val();
-            }
-            
-            var sortOption = $("#hfAssistiveTechResultsSortOption").val();
-
-            // scroll to top of newly loaded items
-            $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
-
-            var qs = "?count=" + $dataCount +
-                "&pageId=" + $dataPageId +
-                "&categoryId=" + $dataCategoryId +
-                "&sortOption=" + sortOption +
-                (keyword ?
-                    "&keyword=" + keyword :
-                    "&issueId=" + issueId + "&gradeId=" + gradeId + "&techTypeId=" + techTypeId + "&platformId=" + platformId);
-
-            var clickCount = parseInt($dataCount, 10) + 1;
-            $showMore.attr("data-count", clickCount);
-
-            var maxResults = parseInt($dataMaxResults, 10);
-            var resultsPerClick = parseInt($dataResultsPerClick, 10);
-            if (clickCount >= Math.ceil(maxResults / resultsPerClick)) {
-                $showMore.parent().parent().hide();
-            }
-
-            // Ajax load items
-            $.get($dataPath + $dataFile + '.aspx' + qs, function (data) {
-                var newContent = $(data);                
-                $dataContainer.append(newContent);
-                newContent.find(':focusable').eq(0).focus();
-
-                $categoryDisplayCount.html(Math.min(resultsPerClick * clickCount, maxResults));
-
-                /*
-                creates a readspeaker play button for all elements that have a cass of rs_read_this (only for elements that
-                do not have a play button)
-                */
-                ReadSpeaker.q(function(){rspkr.Toggle.createPlayer()});
-
-            }, 'html');
-
-            return false;
-        }
-
-        // show / hide more button
-        // we're delegating this because the show-more function isn't always loaded on initial page load.
-        function showHideMore() {
-            $body.on('click', '.at-show-more-link', requestMore);
-        }
-
-        init();
-
-    };
+    
 
 })(jQuery);
 /**
