@@ -6,9 +6,13 @@
 <div class="container page-topic with-share">
     <div class="row  header-wrapper">
         <div class="col col-14 offset-1 header-title rs_read_this">
-            <asp:HyperLink runat="server" ID="hlBreadcrumbNav" CssClass="back-to-previous"><i class="icon-arrow-left-blue"></i><asp:Literal runat="server" ID="litPreviousLink"/></asp:HyperLink>
+            <asp:HyperLink runat="server" ID="hlBreadcrumbNav" CssClass="back-to-previous">
+                <i class="icon-arrow-left-blue"></i>
+                <asp:Literal runat="server" ID="litPreviousLink" />
+            </asp:HyperLink>
 
-            <h1><asp:Literal runat="server" ID="litTitle" /></h1>
+            <h1>
+                <asp:Literal runat="server" ID="litTitle" /></h1>
         </div>
 
         <div class="col col-9 header-share-save">
@@ -30,13 +34,17 @@
                     <div class="label-menu"><span><%= UnderstoodDotOrg.Common.DictionaryConstants.MenuButtonText %></span></div>
                     <ul class="menu" aria-label="secondary-navigation" aria-role="navigation">
                         <li class="title">
-                            <!-- UN-4965 TRANSLATION NEEDED -->
-                            <span>Overview</span>
+                            <%-- UN-4965 TRANSLATION NEEDED --%>
+                            <span><%--Overview--%>
+                                <%= UnderstoodDotOrg.Common.DictionaryConstants.OverviewButtonText %>
+                            </span>
                             <i class="icon-hide-show-fff"></i>
                         </li>
                         <li class="submenu">
                             <div class="inner">
-                                <div class="label-more"><button><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreButtonText %> <i class="icon-hide-show-fff"></i></button></div>
+                                <div class="label-more">
+                                    <button><%= UnderstoodDotOrg.Common.DictionaryConstants.MoreButtonText %> <i class="icon-hide-show-fff"></i></button>
+                                </div>
                                 <ul>
     </HeaderTemplate>
     <ItemTemplate>
@@ -52,7 +60,7 @@
                         <!-- .submenu -->
                     </ul>
                     <!-- .menu -->
-                    <!-- END ELEMENT: Menu -->
+        <!-- END ELEMENT: Menu -->
                 </div>
                 <!-- .col -->
             </div>
