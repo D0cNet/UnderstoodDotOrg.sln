@@ -134,6 +134,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools.Revi
             }
 
             litNumberOfReviews.Text = totalReviews.ToString() + " Reviews of this App";
+            if (totalReviews == 0)
+                reviewDetailsBox.Visible = false;
         }
 
         private int GetTotalReviews(List<CSMUserReview> reviews)

@@ -3,7 +3,7 @@
 <div id="tabs2-parent-reviews" class="panel-container">
     <div class="row ">
         <div class="col col-17">
-            <div class="review-intro rs_read_this">
+            <div id="reviewDetailsBox" runat="server" class="review-intro rs_read_this">
                 <span class="visuallyhidden">review rating</span>
                 <div class="review-rating">
                     <!-- BEGIN PARTIAL: results-slider -->
