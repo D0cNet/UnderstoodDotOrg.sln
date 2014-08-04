@@ -2664,6 +2664,22 @@ namespace UnderstoodDotOrg.Common
             }
         }
 
+        public static string NumberOfCommentsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Number Of Comments Label");
+            }
+        }
+
+        public static string RecentCommentsLabel
+        {
+            get
+            {
+                return Translate.TextByDomain(PosesDictionary, "Recent Comments Label");
+            }
+        }
+
         public static string RecommendedForYouLabel
         {
             get

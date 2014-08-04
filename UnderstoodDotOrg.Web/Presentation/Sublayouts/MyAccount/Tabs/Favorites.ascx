@@ -15,12 +15,9 @@
                     </select>
                 </span>
                 <span class="select-container sort">
-                    <select name="sort" id="sort" class="my-account-dropdown">
-                        <option value=""><sc:FieldRenderer ID="frMostRecent" FieldName="Most Recent Text" runat="server" /></option>
-                        <option value=""><sc:FieldRenderer ID="frOldestToNewest" FieldName="Oldest To Newest Text" runat="server" /></option>
-                        <option value=""><sc:FieldRenderer ID="frNumberOfComments" FieldName="Number Of Comments Text" runat="server" /></option>
-                        <option value=""><sc:FieldRenderer ID="frRecentComments" FieldName="Recent Comments Text" runat="server" /></option>
-                    </select>
+                   <asp:DropDownList name="sort" AutoPostBack="true" OnSelectedIndexChanged="ddlSort_SelectedIndexChanged"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Value" ID="ddlSort" aria-required="true" runat="server">
+                   </asp:DropDownList>
+
                 </span>
             </fieldset>
 

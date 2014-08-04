@@ -22,12 +22,9 @@
 
                 <span class="select-container sort">
                     <label for="my-comments-sort" class="visuallyhidden">Sort Comments</label>
-                    <select name="my-comments-sort" id="my-comments-sort">
-                        <option><sc:FieldRenderer ID="frDDMostCommented" FieldName="DD Most Commented Text" runat="server"/></option>
-                        <option><sc:FieldRenderer ID="frDDMostRecentComments" FieldName="DD Most Recent Comments Text" runat="server"/></option>
-                        <option><sc:FieldRenderer ID="frDDMostRecent" FieldName="DD Most Recent Text" runat="server"/></option>
-                        <option><sc:FieldRenderer ID="frDDOldest" FieldName="DD Oldest" runat="server"/></option>
-                    </select>
+                   <asp:DropDownList name="my-comments-sort" AutoPostBack="true" OnSelectedIndexChanged="ddlSort_SelectedIndexChanged"  AppendDataBoundItems="true" DataTextField="Name" DataValueField="Value" ID="ddlSort" aria-required="true" runat="server">
+                   </asp:DropDownList>
+
                 </span>
 
             </fieldset>

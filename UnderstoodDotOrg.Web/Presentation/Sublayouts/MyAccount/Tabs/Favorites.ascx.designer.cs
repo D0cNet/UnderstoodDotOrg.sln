@@ -31,40 +31,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs {
         protected global::Sitecore.Web.UI.WebControls.FieldRenderer frFilterComments;
         
         /// <summary>
-        /// frMostRecent control.
+        /// ddlSort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frMostRecent;
-        
-        /// <summary>
-        /// frOldestToNewest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frOldestToNewest;
-        
-        /// <summary>
-        /// frNumberOfComments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frNumberOfComments;
-        
-        /// <summary>
-        /// frRecentComments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Sitecore.Web.UI.WebControls.FieldRenderer frRecentComments;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSort;
         
         /// <summary>
         /// pnlFavorites control.

@@ -22,6 +22,32 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+
+                var items = CommunityHelper.GetMyAccountFavoritesSortOptions();
+
+                foreach (var item in items)
+                {
+
+                    ddlSort.Items.Add(new ListItem() { Text = item.Description, Value = item.Value });
+                }
+
+                ddlSort.DataBind();
+
+                foreach (ListItem item in ddlSort.Items)
+                {
+                    if (item.Value == UnderstoodDotOrg.Common.Constants.MyAccountSearchValues.MostRecent.ToString())
+                    {
+                        ddlSort.SelectedValue = item.Value;
+                        break;
+                    }
+                }
+
+                SortFavorites();
+
+            }
+
             var favoritesList = CommunityHelper.GetFavorites(CurrentMember.MemberId);
             if ((favoritesList != null) && (favoritesList.Count != 0))
             {
@@ -34,6 +60,43 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             {
                 pnlNoFavorites.Visible = true;
             }
+        }
+
+        private void SortFavorites()
+        {
+            String sort = ddlSort.SelectedValue;
+
+            List<FavoritesModel> favoritesList = CommunityHelper.GetFavorites(CurrentMember.MemberId);
+
+            if (sort == UnderstoodDotOrg.Common.Constants.MyAccountSearchValues.MostRecent.ToString())
+            {
+                favoritesList = favoritesList.OrderByDescending(x => x.Date).ToList();
+            }
+            else if (sort == UnderstoodDotOrg.Common.Constants.MyAccountSearchValues.OldestToNewest.ToString())
+            {
+                favoritesList = favoritesList.OrderBy(x => x.Date).ToList();
+            }
+            else if (sort == UnderstoodDotOrg.Common.Constants.MyAccountSearchValues.NumberOfComments.ToString())
+            {
+                favoritesList = favoritesList.OrderByDescending(x => x.ReplyCount).ToList();
+            }
+            else if (sort == UnderstoodDotOrg.Common.Constants.MyAccountSearchValues.RecentComments.ToString())
+            {
+                favoritesList = favoritesList.OrderByDescending(x => x.RecentCommentDate).ToList();
+            }
+
+            if ((favoritesList != null) && (favoritesList.Count != 0))
+            {
+                pnlFavorites.Visible = true;
+
+                rptFavorites.DataSource = favoritesList;
+                rptFavorites.DataBind();
+            }
+            else
+            {
+                pnlNoFavorites.Visible = true;
+            }
+
         }
 
         public Item context = Sitecore.Context.Item;
@@ -104,5 +167,11 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.MyAccount.Tabs
             Literal ltlTwitter = (Literal)e.Item.FindControl("ltlTwitter");
             ltlTwitter.Text = DictionaryConstants.SocialSharingTwitter;
         }
+
+        protected void ddlSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortFavorites();
+        }
+
     }
 }

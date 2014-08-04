@@ -940,6 +940,14 @@ namespace UnderstoodDotOrg.Common
             CanPersonalize
         }
 
+        public enum MyAccountSearchValues
+        {
+            MostRecent = 1,
+            OldestToNewest = 2,
+            NumberOfComments = 3,
+            RecentComments = 4
+        }
+
         #region Notification templates and types
         
         public static class NotificationElements

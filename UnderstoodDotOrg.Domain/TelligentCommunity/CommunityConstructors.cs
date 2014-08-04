@@ -200,7 +200,9 @@ namespace UnderstoodDotOrg.Domain.TelligentCommunity
         public Guid ContentId { get; set; }
         public string ContentTypeId { get; set; }
         public string Url { get; set; }
-        
+        public DateTime Date { get; set; }
+        public DateTime? RecentCommentDate { get; set; }
+
         public FavoritesModel() { }
     }
 
