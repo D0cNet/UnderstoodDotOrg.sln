@@ -946,3 +946,141 @@ function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
+
+// Assistive tools AJAX
+(function ($) {
+    // path for data
+    var $dataPath = '/Presentation/AjaxData/';
+
+    var $body = $(document.body);
+
+    // Initialize the module on page load.
+    $(document).ready(function () {
+        init();
+    });
+
+    // request more items
+    function requestMore($link, $sort) {
+
+        // show more button container
+        var $showMoreContainer = $link.closest(".show-more");
+        // show more button class
+
+        var $showMore = $link;
+
+        // data container class name to populate (from button data attribute)
+        var $dataContainer = $("." + $showMore.data('container'));
+
+        // data class name for each item (for counting) (from button data attribute)
+        var $dataItem = $("." + $showMore.data('item'));
+
+        // data file (from button data attribute)
+        var $dataFile = $showMore.data('path');
+
+        // data count (from button data attribute)
+        var $dataCount = $showMore.attr('data-count');
+
+        // data page id (from button data attribute)
+        var $dataPageId = $showMore.data("page-id");
+
+        // data category id (from button data attribute)
+        var $dataCategoryId = $showMore.attr("data-category-id");
+
+        // data max results (from button data attribute)
+        var $dataMaxResults = $showMore.data("max-results");
+
+        // data results per click (from button data attribute)
+        var $dataResultsPerClick = $showMore.data("results-per-click");
+
+        //number visible to user, reflecting number of displayed results
+        var $categoryDisplayCount = $(".category-display-count").filter("[data-category-id='" + $dataCategoryId + "']");
+
+        //search parameters
+        var keyword = $("#hfAssistiveTechResultsKeyword").val();
+        if (!keyword) {
+            var issueId = $("#hfAssistiveTechResultsIssueId").val();
+            var gradeId = $("#hfAssistiveTechResultsGradeId").val();
+            var techTypeId = $("#hfAssistiveTechResultsTechTypeId").val();
+            var platformId = $("#hfAssistiveTechResultsPlatformId").val();
+        }
+
+        var sortOption = $sort.val();
+
+        // scroll to top of newly loaded items
+        $('html,body').animate({ scrollTop: $showMoreContainer.offset().top - 40 }, 500);
+
+        var qs = "?count=" + $dataCount +
+            "&pageId=" + $dataPageId +
+            "&categoryId=" + $dataCategoryId +
+            "&sortOption=" + sortOption +
+            (keyword ?
+                "&keyword=" + keyword :
+                "&issueId=" + issueId + "&gradeId=" + gradeId + "&techTypeId=" + techTypeId + "&platformId=" + platformId);
+
+        var clickCount = parseInt($dataCount, 10) + 1;
+        $showMore.attr("data-count", clickCount);
+
+        var maxResults = parseInt($dataMaxResults, 10);
+        var resultsPerClick = parseInt($dataResultsPerClick, 10);
+
+        if (clickCount > 1) {
+            toggleShowMore(clickCount, maxResults, resultsPerClick, $showMore);
+        }
+
+        // Ajax load items
+        $.get($dataPath + $dataFile + '.aspx' + qs, function (data) {
+            var newContent = $(data);
+            $dataContainer.append(newContent);
+            newContent.find(':focusable').eq(0).focus();
+
+            // When sort filter resets, only display "show more" after first result set has loaded
+            if (clickCount == 1) {
+                toggleShowMore(clickCount, maxResults, resultsPerClick, $showMore);
+            }
+
+            $categoryDisplayCount.html(Math.min(resultsPerClick * clickCount, maxResults));
+
+            /*
+            creates a readspeaker play button for all elements that have a cass of rs_read_this (only for elements that
+            do not have a play button)
+            */
+            ReadSpeaker.q(function () { rspkr.Toggle.createPlayer() });
+
+        }, 'html');
+    }
+
+    function toggleShowMore(clickCount, maxResults, resultsPerClick, $link) {
+        if (clickCount >= Math.ceil(maxResults / resultsPerClick)) {
+            $link.parent().parent().hide();
+        } else {
+            $link.parent().parent().show();
+        }
+    }
+
+    function init() {
+        
+        $(".tech-search-results").each(function () {
+            var $sortSelect = $(this).find(".select-container select");
+            var $link = $(this).find(".at-show-more-link");
+
+            $link.on('click', function (e) {
+                e.preventDefault();
+
+                requestMore($(this), $sortSelect);
+            });
+
+            $sortSelect.on("change", function () {
+                var $dataContainer = $("." + $link.data('container'));
+                $dataContainer.html("");
+
+                // reset page index
+                $link.attr("data-count", "0");
+                // Hide show more
+                $link.parent().parent().hide();
+
+                requestMore($link, $sortSelect);
+            });
+        });
+    };
+
+})(jQuery);

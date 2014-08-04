@@ -3267,5 +3267,7 @@ namespace UnderstoodDotOrg.Common
         public static string SelectYourChildLabel { get { return Translate.TextByDomain(PosesDictionary, "Select Your Child Label"); } }
 
         public static string OnRatingLabel { get { return Translate.TextByDomain(PosesDictionary, "On Rating Label"); } }
+
+        public static string ResultsFragment { get { return Translate.TextByDomain(PosesDictionary, "Results Fragment"); } }
     }
 }
