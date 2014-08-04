@@ -1013,13 +1013,14 @@
         self.dom.filter.find('.filter.selected').removeClass('selected');
         var $closest = $target.closest('.filter');
         $closest.addClass('selected');
-        self.sortBy($closest.data('sort-by'));
+
+        // TODO - Sort the blogs
+        //self.sortBy($closest.data('sort-by'));
       };
 
       //self.sortBy = function(sortBy) {
       //  var $postList = $('.blog-post-list');
       //  $postList.fadeOut(function() {
-      //    // TODO - Sort the blogs
       //    $postList.fadeIn();
       //  });
       //};
