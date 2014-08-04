@@ -32,42 +32,39 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
         protected void BindUserReviews()
         {
             // TODO: don't retrieve all reviews
-            //var reviewItems = AssistiveToolsSearchResultsPageItem.GetSearchResults(1);
-            //var reviews = reviewItems
-            //    .SelectMany(item => CSMUserReviewExtensions.GetReviews(item.ID.ToGuid())
-            //        .Select(userReview =>
-            //        {
-            //            var url = item.GetUrl();
-            //            var grade = Sitecore.Context.Database.GetItemAs<GradeLevelItem>(userReview.RatedGradeId);
-            //            var comments = TelligentService.ReadComments(item.BlogId, item.BlogPostId);
-            //            var reviewComment = comments
-            //                .FirstOrDefault(i => new Guid(i.CommentId) == userReview.TelligentCommentId);
-            //            var processedBody = reviewComment != null && !string.IsNullOrEmpty(reviewComment.Body) && reviewComment.Body.Length > 100 ? 
-            //                reviewComment.Body
-            //                    .TakeWhile((c, i) => i < reviewComment.Body.Length && (i < 100 || Char.IsLetter(c))) : 
-            //                reviewComment.Body;
-            //            var reviewBody = processedBody != null && processedBody.Any() ? new String(processedBody.ToArray()) : string.Empty;
+            var reviews = CSMUserReviewExtensions.GetRecentReviews()
+                    .Select(userReview =>
+                    {
+                        AssistiveToolsReviewPageItem item = (AssistiveToolsReviewPageItem)Sitecore.Context.Database.GetItem(userReview.CSMItemId);
+                        var url = item.GetUrl();
+                        var grade = Sitecore.Context.Database.GetItemAs<GradeLevelItem>(userReview.RatedGradeId);
+                        var comment = TelligentService.ReadComments(item.BlogId, item.BlogPostId).Where(i => new Guid(i.CommentId).ToString() == userReview.TelligentCommentId.ToString()).FirstOrDefault();
+                        var processedBody = comment != null && !string.IsNullOrEmpty(comment.Body) && comment.Body.Length > 100 ?
+                            ""
+                                .TakeWhile((c, i) => i < comment.Body.Length && (i < 100 || Char.IsLetter(c))) :
+                            comment.Body;
+                        var reviewBody = processedBody != null && processedBody.Any() ? new String(processedBody.ToArray()) : string.Empty;
 
-            //            return new
-            //            {
-            //                Title = item.Title.Rendered,
-            //                ReviewText = "<p>" + Sitecore.StringUtil.RemoveTags(reviewBody) + "...<a href=\"" + url + "\">" + DictionaryConstants.ReadMoreLabel + "</a></p>",
-            //                RatingHtml = GetRatingHTML(userReview.Rating),
-            //                Url = url,
-            //                LinkText = (grade != null ? grade.Name.Raw + " & " : string.Empty) +
-            //                    string.Join(" & ", userReview.UserReviewIssues.Select(i => i.ContentTitle.Raw))
-            //            };
-            //        }));
+                        return new
+                        {
+                            Title = userReview.ReviewTitle,
+                            ReviewText = "<p>" + Sitecore.StringUtil.RemoveTags(reviewBody) + "...<a href=\"" + url + "\">" + DictionaryConstants.ReadMoreLabel + "</a></p>",
+                            RatingHtml = GetRatingHTML(userReview.Rating),
+                            Url = url,
+                            LinkText = (grade != null ? grade.Name.Raw + " & " : string.Empty) +
+                                string.Join(" & ", userReview.UserReviewIssues.Select(i => i.ContentTitle.Raw))
+                        };
+                    });
 
-            //if (reviews.Count() > 0)
-            //{
-            //    rptrWhatParentsAreSaying.DataSource = reviews;
-            //    rptrWhatParentsAreSaying.DataBind();
-            //}
-            //else
-            //{
+            if (reviews.Count() > 0)
+            {
+                rptrWhatParentsAreSaying.DataSource = reviews;
+                rptrWhatParentsAreSaying.DataBind();
+            }
+            else
+            {
                 divParentReviews.Visible = false;
-            //}
+            }
         }
 
         protected void BindRelatedArticles()

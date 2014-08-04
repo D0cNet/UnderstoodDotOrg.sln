@@ -67,6 +67,58 @@ namespace UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews
             return reviews;
         }
 
+        public static List<CSMUserReview> GetRecentReviews()
+        {
+            List<CSMUserReview> reviews = new List<CSMUserReview>();
+            string sql = " SELECT ReviewId, " +
+                                " MemberId, " +
+                                " CSMItemId, " +
+                                " Rating, " +
+                                " RatedGradeId, " +
+                                " GradeAppropriateness, " +
+                                " Created, " +
+                                " LastModified, " +
+                                " TelligentCommentId, " +
+                                " ReviewTitle " +
+                                " FROM CSMUserReviews " +
+                                " WHERE  LastModified >= '" + DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd") + "' AND LastModified <= '" + DateTime.Now.AddDays(1).ToString("yyyy-MM-dd") + "'";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["membership"].ConnectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                CSMUserReview review = new CSMUserReview();
+                                review.ReviewId = reader.GetGuid(0);
+                                review.MemberId = reader.GetGuid(1);
+                                review.CSMItemId = reader.GetGuid(2);
+                                review.Rating = reader.GetInt32(3);
+                                review.RatedGradeId = reader.GetGuid(4);
+                                review.GradeAppropriateness = reader.GetInt32(5);
+                                review.Created = reader.GetDateTime(6);
+                                review.LastModified = reader.GetDateTime(7);
+                                review.TelligentCommentId = reader.GetGuid(8);
+                                review.ReviewTitle = reader.GetString(9);
+                                review.UserReviewIssues = GetSkills(review.ReviewId);
+                                reviews.Add(review);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return reviews;
+        }
+
         public static List<MetadataItem> GetSkills(Guid reviewId)
         {
             List<MetadataItem> skills = new List<MetadataItem>();
