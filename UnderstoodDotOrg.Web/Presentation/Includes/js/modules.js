@@ -959,9 +959,6 @@ the callbacks passed to the module.
                 slider.goTo(index);
             });
 
-            self.attachHandlers = function () {
-                self.dom.playPause.on('click', self.playPause);
-            };
 
             var tcSlideTitle = jQuery("#topic-carousel .rsTmb"),
             tcSlideLength = tcSlideTitle.length,
