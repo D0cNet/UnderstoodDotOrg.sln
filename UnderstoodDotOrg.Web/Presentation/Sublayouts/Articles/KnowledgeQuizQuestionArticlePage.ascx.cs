@@ -46,7 +46,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             if (Session["done"] != null && (string)Session["done"] == "true")
             {
                 string correctAnswers = Session["CorrectAnswers"].ToString();
-                litTextResults.Text = correctAnswers + DictionaryConstants.OutOfFragment + Questions.Count;
+                litTextResults.Text = correctAnswers + " " + DictionaryConstants.OutOfFragment + " " + Questions.Count;
                 btnTakeQuizAgain.Visible = true;
 
                 ResultsFolder = PageResources.Children.Where(i => i.IsOfType(KnowledgeQuizResultsFolderItem.TemplateId)).FirstOrDefault();
@@ -203,6 +203,8 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
 
             UpdateAnswers(Answer);
             rblAnswer.Items.Clear();
+            divCorrectAnswerReveal.Visible = true;
+            litCorrectAnswerReveal.Text = Answer.CorrectAnswer;
             ShowQuestionResult();
             JumpToAnswer = true;
         }
@@ -212,6 +214,7 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Articles
             Session["qNum"] = (QuestionNumber + 1);
             btnTrue.Visible = true;
             btnFalse.Visible = true;
+            divCorrectAnswerReveal.Visible = false;
             Response.Redirect(Request.CurrentExecutionFilePath);
         }
 

@@ -11,6 +11,7 @@ using UnderstoodDotOrg.Common.Extensions;
 using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.Pages.ToolsPages.AssisitiveToolsPages.ReviewData;
 using UnderstoodDotOrg.Common;
 using UnderstoodDotOrg.Domain.CommonSenseMedia.CSMReviews;
+using UnderstoodDotOrg.Domain.SitecoreCIG.Poses.General;
 
 namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
 {
@@ -97,6 +98,13 @@ namespace UnderstoodDotOrg.Web.Presentation.Sublayouts.Tools.AssistiveTools
             rptrSubjects.DataBind();
 
             litNumReviews.Text = CSMUserReviewExtensions.GetReviews(Model.ID.ToGuid()).Count().ToString();
+
+            MetadataItem type = (MetadataItem)Model.Type.ListItems.FirstOrDefault();
+
+            if (type != null)
+                litType.Text = type.ContentTitle.Raw;
+
+            litDate.Text = Model.PublishDate.DateTime.Year.ToString();
         }
 
         protected string GetSpelledNumber(int index)

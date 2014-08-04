@@ -38,7 +38,7 @@
             </section>
         </div>
         <!-- END PARTIAL: assistive-tech-screenshots-popover -->
-        <div class="result-type">(App, 2013)</div>
+        <div class="result-type">(<asp:Literal ID="litType" runat="server"></asp:Literal>, <asp:Literal ID="litDate" runat="server"></asp:Literal>)</div>
     </div>
     <div class="result-details col col-7 offset-1">
         <h3 class="result-title"><a href="<%= Model.GetUrl() %>" style="color: rgb(122, 65, 131);"><%= Model.Title.Rendered %></a></h3>
