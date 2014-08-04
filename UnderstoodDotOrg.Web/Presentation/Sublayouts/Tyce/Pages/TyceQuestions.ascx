@@ -6,7 +6,7 @@
                 <header>
                     <h2>
                         <span class="num">1</span>
-                        <label for="personalize-grade-mobile" class="tyce-step-question"><%= Model.QuestionOneText.Rendered %></span>
+                        <label for="personalize-grade-mobile" class="tyce-step-question"><%= Model.QuestionOneText.Rendered %></label>
                         <span class="tyce-step-answer" style="display: none;"><%= Model.QuestionOneAnswerText.Rendered %></span>
                         <span class="instructions"><%= Model.QuestionOneInstructions.Rendered %></span>
                     </h2>
